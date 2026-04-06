@@ -1,0 +1,722 @@
+{
+  "categories": [
+    {
+      "id": "metabolism",
+      "name": "대사질환",
+      "nameEn": "Metabolic Disease",
+      "color": "#EF4444",
+      "icon": "Activity",
+      "description": "당뇨, 비만, 지방간, 고혈압, 이상지질혈증",
+      "count": 8
+    },
+    {
+      "id": "cancer_immune",
+      "name": "항암/면역",
+      "nameEn": "Cancer & Immunity",
+      "color": "#8B5CF6",
+      "icon": "Shield",
+      "description": "암 치료 지원, 면역 강화, 항암 영양관리",
+      "count": 6
+    },
+    {
+      "id": "digestive",
+      "name": "소화/간",
+      "nameEn": "Digestive & Liver",
+      "color": "#10B981",
+      "icon": "Leaf",
+      "description": "간질환, 소화계, 담도/췌장",
+      "count": 5
+    },
+    {
+      "id": "neuro_cognitive",
+      "name": "신경/인지",
+      "nameEn": "Neuro & Cognitive",
+      "color": "#3B82F6",
+      "icon": "Brain",
+      "description": "치매, 파킨슨, 뇌졸중, 수면/두통",
+      "count": 5
+    },
+    {
+      "id": "skin_hair",
+      "name": "피부/모발",
+      "nameEn": "Skin & Hair",
+      "color": "#F59E0B",
+      "icon": "Sparkles",
+      "description": "탈모, 아토피/피부염, 모발/두피 건강",
+      "count": 5
+    },
+    {
+      "id": "musculoskeletal",
+      "name": "근골격계",
+      "nameEn": "Musculoskeletal",
+      "color": "#6366F1",
+      "icon": "Bone",
+      "description": "관절염, 골다공증, 근감소증, 통증관리",
+      "count": 4
+    },
+    {
+      "id": "womens_health",
+      "name": "여성건강",
+      "nameEn": "Women's Health",
+      "color": "#EC4899",
+      "icon": "Heart",
+      "description": "갱년기, 월경, 임신/출산, 자궁/난소",
+      "count": 4
+    },
+    {
+      "id": "mens_health",
+      "name": "남성건강",
+      "nameEn": "Men's Health",
+      "color": "#0EA5E9",
+      "icon": "User",
+      "description": "전립선, 남성 호르몬, 탈모, 성기능",
+      "count": 4
+    },
+    {
+      "id": "cardiovascular",
+      "name": "심혈관",
+      "nameEn": "Cardiovascular",
+      "color": "#DC2626",
+      "icon": "HeartPulse",
+      "description": "고혈압, 관상동맥, 심부전, 부정맥",
+      "count": 4
+    },
+    {
+      "id": "respiratory",
+      "name": "호흡기",
+      "nameEn": "Respiratory",
+      "color": "#06B6D4",
+      "icon": "Wind",
+      "description": "비염/알레르기, 천식, COPD, 코로나 후유증",
+      "count": 4
+    },
+    {
+      "id": "infection_inflammation",
+      "name": "감염/염증",
+      "nameEn": "Infection & Inflammation",
+      "color": "#F97316",
+      "icon": "Zap",
+      "description": "만성 염증, 자가면역, 감염 관리",
+      "count": 4
+    },
+    {
+      "id": "mental_health",
+      "name": "정신건강",
+      "nameEn": "Mental Health",
+      "color": "#7C3AED",
+      "icon": "Smile",
+      "description": "우울/불안, 스트레스, 수면 장애, 집중력",
+      "count": 4
+    }
+  ],
+  "questions": [
+    {
+      "id": "meta-001",
+      "category": "metabolism",
+      "question": "당뇨약을 10년 넘게 먹었는데 왜 혈당이 계속 높을까요?",
+      "tags": ["당뇨", "혈당", "메트포민", "인슐린저항성"],
+      "difficulty": "기초",
+      "views": 1240,
+      "likes": 89,
+      "answer": {
+        "step1_empathy": "10년 이상 꾸준히 약을 드셨는데도 혈당이 잡히지 않으시면 정말 지치고 답답하실 것 같습니다. 이런 경우는 생각보다 매우 흔합니다.",
+        "step2_statistics": "국민건강영양조사(2022)에 따르면, 당뇨 환자의 약 49.3%만이 혈당 조절 목표(HbA1c 7% 미만)를 달성하고 있습니다. 즉, 절반 이상의 환자가 약을 먹고도 혈당 조절에 어려움을 겪고 있습니다.",
+        "step3_standard_treatment": "2형 당뇨의 경우 메트포민을 기본으로 시작하여 SGLT-2 억제제(자디앙, 포시가), DPP-4 억제제(자누비아, 트라젠타), GLP-1 수용체 작용제(오젬픽, 트루리시티) 등을 병용합니다. 시간이 지나면서 췌장 베타세포 기능이 저하되는 '당뇨 진행(beta-cell failure)'이 일어나 기존 약의 효과가 떨어지는 것이 주요 원인입니다.",
+        "step4_natural_alternatives": "약물 효과를 보완하는 식품소재로는 ① 베르베린(혈당 조절 효과, AMPK 활성화) ② 바나바 잎 추출물(코로솔산) ③ 마그네슘(인슐린 감수성 개선) ④ 여주 추출물 ⑤ 계피 추출물 등이 연구되고 있습니다. 이 중 플로로탄닌도 최근 주목받고 있습니다.",
+        "step5_phlorotannin": "감태 추출 플로로탄닌은 α-글루코시다제 억제를 통해 식후 혈당 상승을 억제하고, AMPK 활성화를 통해 인슐린 저항성을 개선하는 것으로 연구되고 있습니다. 특히 파트너스인 하나의 MOP(Micro Optimal Processing) 공정으로 추출된 플로로탄닌은 분자 크기를 최적화하여 일반 추출물보다 흡수율이 월등히 향상되었습니다. 하이드로 네트워크 전달망 기술로 체내 흡수를 극대화합니다.",
+        "step6_cta": "혈당 관리에 관심이 있으시다면 전문 상담을 통해 개인 맞춤 솔루션을 받아보세요. 10년간 관리하신 노력에 새로운 접근법을 더해드릴 수 있습니다.",
+        "references": ["Inzucchi SE et al. Diabetes Care 2015;38:140-149", "Lee SH et al. Mar Drugs 2020;18(3):157 (감태 플로로탄닌 혈당 연구)", "질병관리청 국민건강영양조사 2022"],
+        "disclaimer": "본 정보는 의료 조언을 대체하지 않습니다. 현재 복용 중인 약물 변경은 반드시 담당 의사와 상담하세요."
+      }
+    },
+    {
+      "id": "meta-002",
+      "category": "metabolism",
+      "question": "인슐린 저항성이란 무엇이고 어떻게 개선하나요?",
+      "tags": ["인슐린저항성", "당뇨", "AMPK", "대사증후군"],
+      "difficulty": "중급",
+      "views": 980,
+      "likes": 72,
+      "answer": {
+        "step1_empathy": "인슐린 저항성이라는 말을 들어보셨지만 정확히 무엇인지 모르시는 분들이 많습니다. 쉽게 설명해 드릴게요.",
+        "step2_statistics": "대한당뇨병학회 2023년 보고서에 따르면 한국 성인의 약 30%가 인슐린 저항성 상태(대사증후군 포함)에 있는 것으로 추정됩니다.",
+        "step3_standard_treatment": "인슐린 저항성은 인슐린이 분비되어도 세포가 이에 제대로 반응하지 못하는 상태입니다. 치료로는 메트포민(AMPK 활성화), 티아졸리딘디온(TZD, PPARγ 활성화) 계열 약물, 생활습관 개선(유산소 운동, 저탄수화물 식이)이 표준입니다.",
+        "step4_natural_alternatives": "천연 소재로는 베르베린, 레스베라트롤, 크롬(크로뮴), α-리포산(알파리포산), 마그네슘이 인슐린 감수성 개선에 도움된다는 연구가 있습니다.",
+        "step5_phlorotannin": "플로로탄닌의 AMPK 활성화 기전은 인슐린 저항성 개선에 핵심적입니다. AMPK는 세포 에너지 센서로, 활성화되면 포도당 흡수가 증가하고 지방 합성이 억제됩니다. MOP 공정을 거친 파트너스인 하나의 플로로탄닌은 하이드로 네트워크 전달망을 통해 세포 수준까지 효과적으로 전달됩니다.",
+        "step6_cta": "인슐린 저항성 개선을 위한 맞춤 상담을 신청하세요. 식이, 운동, 식품소재를 통합한 프로그램을 제안해 드립니다.",
+        "references": ["대한당뇨병학회 Diabetes Fact Sheet in Korea 2023", "Kim KY et al. Food Chem Toxicol 2020;141:111412"],
+        "disclaimer": "본 정보는 의료 조언을 대체하지 않습니다. 담당 의사의 지도하에 관리하세요."
+      }
+    },
+    {
+      "id": "meta-003",
+      "category": "metabolism",
+      "question": "내장지방을 줄이는 데 효과적인 식품소재는?",
+      "tags": ["내장지방", "비만", "AMPK", "PPARγ"],
+      "difficulty": "기초",
+      "views": 1560,
+      "likes": 134,
+      "answer": {
+        "step1_empathy": "뱃살이 쉽게 빠지지 않아 고민이신가요? 내장지방은 피하지방보다 대사질환과 더 밀접하게 연관되어 있어 더욱 적극적인 관리가 필요합니다.",
+        "step2_statistics": "건강보험심사평가원 2023년 통계에 따르면 복부비만(내장지방 과다) 유병률이 한국 성인 남성의 43.8%, 여성의 25.1%에 달합니다.",
+        "step3_standard_treatment": "내장지방 감소를 위한 표준 치료로는 저칼로리 식이(-500~750kcal/일), 유산소 운동(주 150분 이상), 경우에 따라 GLP-1 수용체 작용제(세마글루타이드/위고비) 처방이 있습니다.",
+        "step4_natural_alternatives": "내장지방 감소에 도움 가능한 식품소재: ① CLA(공액리놀레산) ② 녹차 카테킨 ③ 레스베라트롤 ④ 후코잔틴(미역, 다시마) ⑤ 식이섬유(귀리 베타글루칸) ⑥ 플로로탄닌",
+        "step5_phlorotannin": "감태 플로로탄닌은 PPARγ 억제를 통해 지방세포 분화를 억제하고, AMPK 활성화로 지방 분해를 촉진합니다. 파트너스인 하나의 MOP 공정은 플로로탄닌의 분자 구조를 최적화하여 지방 대사 관련 세포 수용체에 더 효과적으로 결합할 수 있도록 합니다.",
+        "step6_cta": "내장지방 관리 프로그램에 관심 있으시다면 파트너 상담을 신청해 보세요.",
+        "references": ["Park MH et al. Nutrients 2021;13(4):1352", "건강보험심사평가원 비만 통계 2023"],
+        "disclaimer": "본 정보는 의료 조언을 대체하지 않습니다."
+      }
+    },
+    {
+      "id": "meta-004",
+      "category": "metabolism",
+      "question": "LDL 콜레스테롤 200이 넘는데 꼭 약을 먹어야 하나요?",
+      "tags": ["이상지질혈증", "LDL", "스타틴", "HMGCR"],
+      "difficulty": "기초",
+      "views": 2100,
+      "likes": 167,
+      "answer": {
+        "step1_empathy": "검사 결과를 보고 많이 놀라셨을 것 같습니다. LDL 200 이상은 분명 관리가 필요한 수치이지만, 약을 바로 시작해야 하는지는 개인 상황에 따라 다릅니다.",
+        "step2_statistics": "한국지질동맥경화학회(2023)에 따르면 한국 성인의 이상지질혈증 유병률은 40.5%이며, LDL 콜레스테롤 목표 달성률은 심혈관 고위험군에서 절반 이하입니다.",
+        "step3_standard_treatment": "약물 투여 결정은 LDL 수치 단독이 아닌 '심혈관 위험도'를 종합 평가합니다. 고위험군(당뇨+고혈압 동반, 이미 심장병 있는 경우)이면 LDL 70 mg/dL 미만이 목표. 저위험군은 생활습관 교정(식이, 운동)을 3-6개월 먼저 시도합니다.",
+        "step4_natural_alternatives": "식이 관리: 트랜스지방 제거, 포화지방 제한, 식이섬유 증가. 식품소재: ① 레드이스트라이스(모나콜린K, 천연 스타틴 유사) ② 식물성 스테롤 ③ 오메가3 ④ 베르베린 ⑤ 녹차 카테킨",
+        "step5_phlorotannin": "플로로탄닌은 HMGCR(HMG-CoA 환원효소) 억제 활성을 가지며, 이는 스타틴의 작용 기전과 유사합니다. 또한 항산화 효과로 LDL 산화를 억제하여 동맥경화 진행을 막는 데 도움이 될 수 있습니다. 파트너스인 하나의 하이드로 네트워크 전달망은 활성 성분이 간세포까지 효과적으로 도달하도록 설계되었습니다.",
+        "step6_cta": "콜레스테롤 관리에 대한 개인 맞춤 상담을 신청하세요. 생활습관 개선과 식품소재 활용을 결합한 종합 전략을 제안해 드립니다.",
+        "references": ["한국지질동맥경화학회 이상지질혈증 치료지침 2022", "Jang WS et al. PLoS ONE 2020"],
+        "disclaimer": "본 정보는 의료 조언을 대체하지 않습니다. 반드시 전문의와 상담하세요."
+      }
+    },
+    {
+      "id": "meta-005",
+      "category": "metabolism",
+      "question": "비알코올성 지방간(NAFLD)의 식이 치료 방법은?",
+      "tags": ["지방간", "NAFLD", "SIRT1", "AMPK", "Nrf2"],
+      "difficulty": "중급",
+      "views": 890,
+      "likes": 61,
+      "answer": {
+        "step1_empathy": "술도 안 드시는데 지방간이 생겨서 당황스러우셨을 것 같습니다. 비알코올성 지방간은 현대인에게 매우 흔한 질환입니다.",
+        "step2_statistics": "대한간학회(2023) 통계에 따르면 한국 성인의 NAFLD 유병률은 약 30-35%로, 비만 인구 증가와 함께 빠르게 증가하고 있습니다.",
+        "step3_standard_treatment": "비알코올성 지방간의 표준 치료는 체중 감량(7-10% 이상), 저탄수화물·저지방 식이, 유산소 운동, 금주입니다. 약물로는 비타민E(항산화)가 일부 권장되며, 피오글리타존(당뇨 동반 시)이 사용됩니다.",
+        "step4_natural_alternatives": "① 밀크시슬(실리마린) ② 아티초크 추출물 ③ 베르베린 ④ 비타민E ⑤ 오메가3 ⑥ 커피(커피산, 클로로겐산) ⑦ 플로로탄닌",
+        "step5_phlorotannin": "플로로탄닌은 SIRT1/AMPK 경로 활성화를 통해 간세포 내 지방 축적을 억제하고, Nrf2 경로 활성화로 산화 스트레스로부터 간을 보호합니다. 파트너스인 하나의 MOP 공정으로 최적화된 분자 크기의 플로로탄닌이 간세포에 효과적으로 전달됩니다.",
+        "step6_cta": "지방간 관리 상담을 신청하시면 개인 상황에 맞는 식이요법과 식품소재 활용법을 안내해 드립니다.",
+        "references": ["대한간학회 NAFLD 진료 가이드라인 2021", "Cho SH et al. Int J Mol Sci 2022;23(3):1762"],
+        "disclaimer": "본 정보는 의료 조언을 대체하지 않습니다."
+      }
+    },
+    {
+      "id": "meta-006",
+      "category": "metabolism",
+      "question": "고혈압 약을 평생 먹어야 하나요?",
+      "tags": ["고혈압", "ACE억제제", "DASH식단", "혈압"],
+      "difficulty": "기초",
+      "views": 3200,
+      "likes": 245,
+      "answer": {
+        "step1_empathy": "평생 약을 먹어야 한다는 말에 많이 당황하셨을 것 같습니다. 고혈압 약에 대한 이런 걱정은 매우 흔합니다.",
+        "step2_statistics": "질병관리청(2023)에 따르면 한국 고혈압 환자의 치료율은 69.1%, 조절률은 50.1%입니다. 많은 환자들이 약을 중단했다가 혈압이 다시 오르는 경험을 합니다.",
+        "step3_standard_treatment": "1단계 고혈압(140-159/90-99)은 생활습관 교정 6개월 시도 후 효과 없으면 약물 시작. 2단계 이상(160+/100+)은 즉시 약물 권장. 약물 종류: ACE 억제제(코압, 프레스타), ARB(디오반, 코자), 칼슘 채널 차단제(암로디핀), 이뇨제(하이드로클로로티아자이드)",
+        "step4_natural_alternatives": "DASH 식단(나트륨 감소, 칼륨 증가), 마그네슘, 코엔자임Q10, 루테올린, ACE 억제 펩타이드(정어리, 가다랑어 유래), 올리브 잎 추출물",
+        "step5_phlorotannin": "플로로탄닌은 ACE(앤지오텐신 전환 효소) 억제 활성을 가지며, 혈관 내피세포의 산화 스트레스를 감소시켜 혈압 조절에 도움이 될 수 있습니다. 파트너스인 하나의 하이드로 네트워크 전달망으로 혈관 내피세포까지 효과적으로 전달됩니다.",
+        "step6_cta": "고혈압 관리에 대한 종합 상담을 신청하세요. 식이, 운동, 스트레스 관리를 통합한 혈압 관리 프로그램을 제안해 드립니다.",
+        "references": ["대한고혈압학회 고혈압 진료지침 2022", "질병관리청 국민건강영양조사 2022"],
+        "disclaimer": "본 정보는 의료 조언을 대체하지 않습니다. 고혈압약은 반드시 의사 지도하에 복용/중단하세요."
+      }
+    },
+    {
+      "id": "meta-007",
+      "category": "metabolism",
+      "question": "스타틴 계열 약물 복용 중 근육통이 심해요.",
+      "tags": ["스타틴", "근육통", "코엔자임Q10", "콜레스테롤"],
+      "difficulty": "중급",
+      "views": 1450,
+      "likes": 108,
+      "answer": {
+        "step1_empathy": "스타틴 복용 중 근육통은 정말 힘드실 것 같습니다. 이 부작용으로 약을 중단하고 싶은 마음이 드실 수도 있지만, 신중한 접근이 필요합니다.",
+        "step2_statistics": "스타틴 관련 근육 증상(SAMS)은 복용 환자의 5-10%에서 발생하며, 심한 근염이나 횡문근융해증은 0.1% 미만입니다.",
+        "step3_standard_treatment": "근육통 대처: CK(크레아틴키나아제) 수치 검사, 스타틴 용량 감량 또는 변경(로수바스타틴→프라바스타틴), 격일 복용 고려. 코엔자임Q10 보충(스타틴이 CoQ10 합성도 억제하므로)",
+        "step4_natural_alternatives": "코엔자임Q10(100-200mg/일), 비타민D(부족 시 근육통 악화), 마그네슘, 오메가3",
+        "step5_phlorotannin": "플로로탄닌의 항산화 효과는 스타틴 복용 중 발생할 수 있는 근육 산화 스트레스를 완화하는 데 도움이 될 수 있습니다. 또한 플로로탄닌의 HMGCR 억제 활성으로 스타틴 용량을 낮추는 보조적 역할 가능성이 연구되고 있습니다.",
+        "step6_cta": "스타틴 부작용 관리에 대한 개인 상담을 신청하세요.",
+        "references": ["대한지질동맥경화학회 가이드라인 2022", "Stroes ES et al. Eur Heart J 2015;36(17):1012-22"],
+        "disclaimer": "본 정보는 의료 조언을 대체하지 않습니다. 약물 변경은 반드시 의사 상담 후 하세요."
+      }
+    },
+    {
+      "id": "meta-008",
+      "category": "metabolism",
+      "question": "AMPK를 활성화하면 체중 감량에 도움이 되나요?",
+      "tags": ["AMPK", "비만", "체중감량", "대사"],
+      "difficulty": "전문가",
+      "views": 670,
+      "likes": 54,
+      "answer": {
+        "step1_empathy": "AMPK에 대해 깊이 공부하고 계시는군요. 대사 조절의 핵심 효소인 AMPK는 체중 관리에서 매우 중요한 역할을 합니다.",
+        "step2_statistics": "연구에 따르면 AMPK 활성화는 포도당 흡수를 30-50% 향상시키고, 지방산 산화를 유의하게 증가시킵니다(Cell Metabolism, 2021).",
+        "step3_standard_treatment": "AMPK를 활성화하는 약물: 메트포민(당뇨약), 베르베린. 운동(특히 고강도 유산소)과 열량 제한도 강력한 AMPK 활성화 자극입니다.",
+        "step4_natural_alternatives": "AMPK 활성화 식품소재: 레스베라트롤, 커큐민, 베르베린, 녹차 EGCG, 케르세틴, 알파리포산, 후코잔틴, 플로로탄닌",
+        "step5_phlorotannin": "감태 플로로탄닌은 AMPK의 인산화(활성화)를 촉진하여 지방세포의 지방합성(lipogenesis)을 억제하고 지방산 산화(β-oxidation)를 증가시킵니다. 파트너스인 하나의 MOP 공정은 플로로탄닌의 생체이용률을 극대화하여 세포 내 AMPK 경로에 더 효과적으로 작용합니다.",
+        "step6_cta": "대사 최적화 프로그램에 대한 상담을 신청하시면 개인별 맞춤 전략을 제안해 드립니다.",
+        "references": ["Hardie DG et al. Nat Rev Mol Cell Biol 2012;13(4):251-62", "Lee MS et al. Phytomedicine 2020;79:153327"],
+        "disclaimer": "본 정보는 의료 조언을 대체하지 않습니다."
+      }
+    },
+    {
+      "id": "cancer-001",
+      "category": "cancer_immune",
+      "question": "항암치료 후 면역력이 너무 낮아졌어요.",
+      "tags": ["항암치료", "면역력", "NK세포", "백혈구"],
+      "difficulty": "기초",
+      "views": 1890,
+      "likes": 156,
+      "answer": {
+        "step1_empathy": "힘든 항암치료를 이겨내고 계신데, 면역력까지 떨어져서 너무 힘드실 것 같습니다. 항암치료 후 면역 저하는 매우 흔한 현상입니다.",
+        "step2_statistics": "항암화학요법 후 호중구감소증(면역세포 감소)은 치료 환자의 80% 이상에서 발생하며, 이로 인한 감염 합병증이 항암 치료 중단의 주요 원인입니다(국가암정보센터, 2023).",
+        "step3_standard_treatment": "항암 후 면역 관리: 조혈촉진제(G-CSF, 과립구 집락 자극인자) 투여, 예방적 항생제, 철저한 위생 관리, 균형 잡힌 영양 공급(단백질 충분히).",
+        "step4_natural_alternatives": "면역 지원 식품소재: ① 베타글루칸(버섯, 귀리) ② 아연 ③ 비타민D ④ 비타민C ⑤ 셀레늄 ⑥ 홍삼 추출물 ⑦ 플로로탄닌. 단, 항암 치료 중에는 담당 의사와 반드시 상의 후 복용.",
+        "step5_phlorotannin": "플로로탄닌의 면역 조절 기전: ① 대식세포(macrophage) 활성화로 비특이적 면역 강화 ② 인터루킨(IL-2, IL-12) 분비 촉진으로 T세포 활성화 ③ NK(자연살해)세포 활성도 향상. 파트너스인 하나의 하이드로 네트워크 전달망으로 면역 세포에 효과적으로 전달됩니다.",
+        "step6_cta": "항암 후 면역 회복 프로그램에 대한 전문 상담을 신청하세요.",
+        "references": ["국가암정보센터 항암치료 관리 가이드 2023", "Ahn G et al. Phytomedicine 2021;81:153424"],
+        "disclaimer": "본 정보는 의료 조언을 대체하지 않습니다. 항암 중 보충제 복용은 반드시 담당 의사와 상의하세요."
+      }
+    },
+    {
+      "id": "cancer-002",
+      "category": "cancer_immune",
+      "question": "플로로탄닌의 항암 기전 중 어포토시스 유도란?",
+      "tags": ["플로로탄닌", "항암", "어포토시스", "NF-κB", "PI3K"],
+      "difficulty": "전문가",
+      "views": 540,
+      "likes": 48,
+      "answer": {
+        "step1_empathy": "항암 기전에 대해 깊이 알고 싶으신 분들을 위해 상세히 설명드립니다. 어포토시스(apoptosis)는 세포가 스스로 죽는 '프로그램된 세포사'입니다.",
+        "step2_statistics": "암세포의 특징 중 하나가 어포토시스 회피(apoptosis evasion)입니다. 정상 세포는 손상되면 자멸하지만, 암세포는 이 기능이 고장나 무한 증식합니다.",
+        "step3_standard_treatment": "현대 항암제 중 많은 약물이 어포토시스 유도를 목표로 합니다: 세포독성 항암제(시스플라틴, 독소루비신), 타겟 치료제(이마티닙 - BCR-ABL 억제), 면역항암제(PD-1/PD-L1 차단).",
+        "step4_natural_alternatives": "천연 어포토시스 유도 물질: 커큐민, 레스베라트롤, EGCG(녹차), 케르세틴, 리코펜, 설포라판(브로콜리), 플로로탄닌.",
+        "step5_phlorotannin": "플로로탄닌의 어포토시스 유도 기전: ① Caspase-3, 7, 9 활성화(내재적 경로) ② Bcl-2/Bax 비율 변화(항어포토시스 단백질 감소) ③ PI3K/Akt/mTOR 경로 억제(암세포 생존 신호 차단) ④ NF-κB 억제(염증성 암세포 생존 억제). 파트너스인 하나의 MOP 공정은 분자 크기를 최적화하여 암세포 내로의 침투력을 높입니다.",
+        "step6_cta": "항암 지원 프로그램에 대한 전문 상담을 신청하세요. 과학적 근거에 기반한 통합 암 영양관리를 제안드립니다.",
+        "references": ["Kong CS et al. J Agric Food Chem 2009;57(14):6539-44", "Ahn G et al. Toxicology In Vitro 2012;26(4):493-9"],
+        "disclaimer": "본 정보는 의료 조언을 대체하지 않습니다. 암 치료는 반드시 전문 의료진과 함께 하세요."
+      }
+    },
+    {
+      "id": "cancer-003",
+      "category": "cancer_immune",
+      "question": "위암 1기 수술 후 어떤 영양관리가 필요한가요?",
+      "tags": ["위암", "수술후관리", "영양관리", "단백질"],
+      "difficulty": "기초",
+      "views": 2340,
+      "likes": 189,
+      "answer": {
+        "step1_empathy": "위암 1기 수술 후 회복 중이신가요? 수술을 잘 이겨내신 것을 진심으로 축하드립니다. 이제 회복과 재발 방지를 위한 영양관리가 중요합니다.",
+        "step2_statistics": "위암 1기의 5년 생존율은 95% 이상으로 매우 높습니다(국가암정보센터 2023). 수술 후 영양 관리가 회복 속도와 삶의 질에 큰 영향을 줍니다.",
+        "step3_standard_treatment": "수술 직후 영양 진행: 맑은 유동식 → 유동식 → 연식 → 일반식(4-6주). 핵심: 소량 자주 먹기(6-8회/일), 식사 중 음료 최소화, 식후 30분 눕지 않기. 덤핑 증후군 예방을 위해 당분 많은 음식 주의.",
+        "step4_natural_alternatives": "수술 후 회복을 돕는 식품소재: ① L-글루타민(장점막 재생) ② 아연(상처 치유) ③ 비타민C(콜라겐 합성) ④ 오메가3(항염증) ⑤ 프로바이오틱스(장 기능 회복)",
+        "step5_phlorotannin": "플로로탄닌의 NF-κB 억제 효과는 수술 후 발생하는 염증 반응을 완화하고, 항산화 효과로 조직 손상을 줄이는 데 도움이 됩니다. 재발 방지 관점에서 PI3K/Akt/mTOR 경로 억제 연구가 진행 중입니다.",
+        "step6_cta": "암 수술 후 영양관리 프로그램에 대한 전문 상담을 신청하세요.",
+        "references": ["국가암정보센터 위암 수술 후 관리 가이드 2023", "대한위암학회 진료 가이드라인 2022"],
+        "disclaimer": "본 정보는 의료 조언을 대체하지 않습니다. 담당 의사 및 영양사와 상담하세요."
+      }
+    },
+    {
+      "id": "cancer-004",
+      "category": "cancer_immune",
+      "question": "NK세포 활성도가 낮으면 어떻게 해야 하나요?",
+      "tags": ["NK세포", "면역", "항암", "자연살해세포"],
+      "difficulty": "중급",
+      "views": 1120,
+      "likes": 93,
+      "answer": {
+        "step1_empathy": "NK세포 활성도 검사를 받고 수치가 낮다고 나오셔서 걱정이 많이 되시는군요. NK세포는 암세포와 바이러스 감염 세포를 직접 제거하는 최전선 면역 세포입니다.",
+        "step2_statistics": "건강한 성인의 NK세포 활성도는 연령이 증가함에 따라 감소하는 경향이 있으며, 만성 스트레스, 수면 부족, 흡연이 NK세포 활성도를 유의하게 낮춥니다.",
+        "step3_standard_treatment": "NK세포 활성도 향상을 위한 생활습관: 규칙적인 운동(중강도), 충분한 수면(7-8시간), 스트레스 관리, 금연.",
+        "step4_natural_alternatives": "NK세포 활성화 식품소재: ① 베타글루칸(버섯, 귀리) ② 홍삼 사포닌(진세노사이드) ③ 아라비녹실란(쌀겨) ④ 황기 추출물 ⑤ 클로렐라 ⑥ 락토바실루스 균주",
+        "step5_phlorotannin": "플로로탄닌은 대식세포의 활성화와 NK세포의 세포독성(cytotoxicity)을 증진시키는 것으로 연구되었습니다. 파트너스인 하나의 하이드로 네트워크 전달망으로 면역 세포에 효과적으로 전달됩니다.",
+        "step6_cta": "면역력 강화 프로그램에 대한 상담을 신청하세요.",
+        "references": ["Ahn G et al. Int Immunopharmacol 2021", "국가암정보센터 면역 관리 가이드 2023"],
+        "disclaimer": "본 정보는 의료 조언을 대체하지 않습니다."
+      }
+    },
+    {
+      "id": "cancer-005",
+      "category": "cancer_immune",
+      "question": "비타민D가 면역에 중요한 이유는?",
+      "tags": ["비타민D", "면역", "항암", "T세포"],
+      "difficulty": "기초",
+      "views": 1670,
+      "likes": 142,
+      "answer": {
+        "step1_empathy": "비타민D가 뼈에만 좋은 줄 알았는데 면역에도 중요하다는 말을 듣고 궁금하신가요? 비타민D는 실제로 면역계의 '사령관' 역할을 합니다.",
+        "step2_statistics": "한국인의 비타민D 부족 유병률은 성인 남성 75%, 여성 82%에 달합니다(국민건강영양조사 2022). 혈청 25(OH)D 20ng/mL 미만이 부족 기준.",
+        "step3_standard_treatment": "비타민D 보충: 부족 시 4,000-6,000 IU/일 × 12주, 이후 유지용량 1,000-2,000 IU/일. 상한선: 10,000 IU/일. 햇빛 노출(오전 10시-오후 2시, 15분 이상).",
+        "step4_natural_alternatives": "비타민D 외 면역 영양소: 아연, 비타민C, 비타민A, 셀레늄, 오메가3, 베타글루칸.",
+        "step5_phlorotannin": "플로로탄닌의 면역 조절 효과는 비타민D와 시너지를 발휘할 수 있습니다. 비타민D가 T세포 분화를 조절하고, 플로로탄닌이 NF-κB를 억제하여 과도한 염증 반응을 막는 방식으로 면역 균형을 유지합니다.",
+        "step6_cta": "면역 강화 종합 프로그램에 대한 상담을 신청하세요.",
+        "references": ["Holick MF. N Engl J Med 2007;357:266-281", "국민건강영양조사 2022"],
+        "disclaimer": "본 정보는 의료 조언을 대체하지 않습니다."
+      }
+    },
+    {
+      "id": "cancer-006",
+      "category": "cancer_immune",
+      "question": "버섯 추출물(베타글루칸)이 면역에 좋다는데 사실인가요?",
+      "tags": ["베타글루칸", "버섯", "면역", "NK세포"],
+      "difficulty": "기초",
+      "views": 1380,
+      "likes": 112,
+      "answer": {
+        "step1_empathy": "주변에서 버섯이 면역에 좋다는 말을 많이 들으셨을 것 같습니다. 과학적 근거는 어느 정도일까요?",
+        "step2_statistics": "베타글루칸은 식품의약품안전처 기능성 원료로 인정받았으며, 일본 및 한국의 임상 연구에서 NK세포 활성도 개선 효과가 확인되었습니다.",
+        "step3_standard_treatment": "면역 보조제로서 베타글루칸(표고버섯, 차가버섯, 상황버섯)이 항암 보조 요법으로 일부 병원에서 활용됩니다. 단, 단독 치료제는 아닙니다.",
+        "step4_natural_alternatives": "베타글루칸 외 면역 강화 소재: 홍삼, 아연, 비타민D, 비타민C, 셀레늄, 에키나시아, 플로로탄닌.",
+        "step5_phlorotannin": "플로로탄닌과 베타글루칸은 상호 보완적 면역 조절 효과를 가질 수 있습니다. 베타글루칸은 주로 대식세포와 NK세포를 활성화하고, 플로로탄닌은 추가로 항산화 및 항염증 효과를 제공합니다. 파트너스인 하나의 제품은 이 두 성분의 시너지를 고려하여 설계되었습니다.",
+        "step6_cta": "면역 관리 프로그램 상담을 신청하시면 개인 맞춤형 솔루션을 안내해 드립니다.",
+        "references": ["Vetvicka V et al. Ann Transl Med 2020;8(24):1693", "식품의약품안전처 기능성 원료 인정 현황 2023"],
+        "disclaimer": "본 정보는 의료 조언을 대체하지 않습니다."
+      }
+    },
+    {
+      "id": "neuro-001",
+      "category": "neuro_cognitive",
+      "question": "알츠하이머병과 혈관성 치매의 차이는?",
+      "tags": ["치매", "알츠하이머", "혈관성치매", "아밀로이드"],
+      "difficulty": "기초",
+      "views": 2450,
+      "likes": 198,
+      "answer": {
+        "step1_empathy": "부모님의 기억력이 걱정되어 검색하고 계신 분들이 많을 것 같습니다. 치매의 종류와 특징을 이해하면 더 효과적인 예방과 관리가 가능합니다.",
+        "step2_statistics": "한국 치매 환자(65세 이상)는 약 90만 명(유병률 10%)이며, 이 중 알츠하이머형이 약 75%, 혈관성이 약 8%를 차지합니다(중앙치매센터 2023).",
+        "step3_standard_treatment": "알츠하이머: 아세틸콜린에스터라제 억제제(도네페질, 리바스티그민), 메만틴. 혈관성 치매: 혈압/혈당/콜레스테롤 관리, 항혈소판제(아스피린).",
+        "step4_natural_alternatives": "인지 기능 보호 식품소재: ① DHA(오메가3) ② 포스파티딜세린 ③ 커큐민 ④ 레스베라트롤 ⑤ 비타민E ⑥ 엽산+B12 ⑦ 플로로탄닌(AChE 억제)",
+        "step5_phlorotannin": "플로로탄닌은 아세틸콜린에스터라제(AChE) 억제 효과로 콜린성 신경 전달을 강화하고, 아밀로이드 베타 집적 억제 가능성이 연구되고 있습니다. 또한 강력한 항산화·항염증 효과로 신경 세포를 보호합니다. MOP 공정으로 혈뇌장벽(BBB) 통과가 최적화되었습니다.",
+        "step6_cta": "뇌 건강 관리 프로그램에 대한 전문 상담을 신청하세요.",
+        "references": ["중앙치매센터 치매 현황 보고서 2023", "Kim AR et al. Nutrients 2022;14(3):571"],
+        "disclaimer": "본 정보는 의료 조언을 대체하지 않습니다. 치매 진단 및 치료는 전문 신경과 의사와 상담하세요."
+      }
+    },
+    {
+      "id": "neuro-002",
+      "category": "neuro_cognitive",
+      "question": "플로로탄닌의 AChE 억제 효과, 다른 천연 AChE 억제제와 비교하면?",
+      "tags": ["플로로탄닌", "AChE", "치매", "아세틸콜린"],
+      "difficulty": "전문가",
+      "views": 420,
+      "likes": 38,
+      "answer": {
+        "step1_empathy": "치매 예방을 위해 과학적 근거를 꼼꼼히 찾고 계신군요. AChE(아세틸콜린에스터라제) 억제제는 알츠하이머 치료의 핵심 기전입니다.",
+        "step2_statistics": "현재 임상에서 사용되는 AChE 억제제(도네페질, 리바스티그민, 갈란타민)는 알츠하이머 초중기 환자의 인지 기능 저하를 6-12개월 지연시키는 효과가 있습니다.",
+        "step3_standard_treatment": "FDA 승인 AChE 억제제: 도네페질(아리셉트), 리바스티그민(엑셀론), 갈란타민(레미닐). 천연 유래: 갈란타민은 원래 수선화(Galanthus)에서 추출.",
+        "step4_natural_alternatives": "천연 AChE 억제 물질: 갈란타민(수선화), 휴퍼진A(석송), 베르베린, 커큐민, 레스베라트롤, 로즈마리 추출물, 플로로탄닌.",
+        "step5_phlorotannin": "In vitro 연구에서 감태 플로로탄닌의 IC50(AChE 억제 농도)은 다른 폴리페놀 대비 경쟁력 있는 수준으로 보고되었습니다. 특히 디에콜(dieckol) 성분이 AChE 억제에 가장 강한 활성을 보였습니다. MOP 공정으로 플로로탄닌의 혈뇌장벽 투과성을 최적화하여 뇌에서의 효과를 극대화합니다.",
+        "step6_cta": "뇌 건강 최적화 프로그램에 대한 전문 상담을 신청하세요.",
+        "references": ["Yoon NY et al. Bioorg Med Chem Lett 2008;18(20):5485-9", "Jung HA et al. J Agric Food Chem 2010;58(24):12893-9"],
+        "disclaimer": "본 정보는 의료 조언을 대체하지 않습니다."
+      }
+    },
+    {
+      "id": "neuro-003",
+      "category": "neuro_cognitive",
+      "question": "만성 불면증에 도움되는 식품소재는?",
+      "tags": ["불면증", "수면", "멜라토닌", "마그네슘"],
+      "difficulty": "기초",
+      "views": 3100,
+      "likes": 267,
+      "answer": {
+        "step1_empathy": "잠을 못 자는 것만큼 힘든 것이 없죠. 만성 불면증은 삶의 질 전반에 영향을 미칩니다.",
+        "step2_statistics": "한국수면학회에 따르면 성인의 약 15-20%가 만성 불면증을 경험하며, 이는 심혈관질환, 당뇨, 우울증 위험을 증가시킵니다.",
+        "step3_standard_treatment": "불면증 표준 치료: 인지행동치료(CBT-I, 1차 치료), 수면위생 교육, 필요 시 단기 수면제(졸피뎀, 에스조피클론). 장기 수면제 복용은 의존성 위험이 있어 주의.",
+        "step4_natural_alternatives": "수면 개선 식품소재: ① 멜라토닌(0.5-3mg, 취침 30분 전) ② 마그네슘 글리시네이트(400mg) ③ L-테아닌(녹차) ④ 발레리안 루트 ⑤ 패션플라워 ⑥ 5-HTP(트립토판 전구체)",
+        "step5_phlorotannin": "플로로탄닌의 항불안 및 신경 보호 효과는 수면의 질 개선에 기여할 수 있습니다. GABA성 신경 전달 강화와 코르티솔(스트레스 호르몬) 억제를 통해 수면 개시를 돕는 것으로 연구되고 있습니다. 파트너스인 하나의 하이드로 네트워크 전달망으로 수면 관련 뇌 영역까지 효과적으로 전달됩니다.",
+        "step6_cta": "수면 개선 프로그램에 대한 상담을 신청하세요.",
+        "references": ["한국수면학회 불면증 진료 지침 2022", "Je N et al. Front Pharmacol 2022;13:877153"],
+        "disclaimer": "본 정보는 의료 조언을 대체하지 않습니다."
+      }
+    },
+    {
+      "id": "neuro-004",
+      "category": "neuro_cognitive",
+      "question": "오메가3(DHA)가 뇌 건강에 중요한 이유는?",
+      "tags": ["오메가3", "DHA", "뇌건강", "인지기능"],
+      "difficulty": "기초",
+      "views": 1890,
+      "likes": 165,
+      "answer": {
+        "step1_empathy": "오메가3가 뇌에 좋다는 말은 많이 들었지만 왜 그런지 궁금하신가요? 구체적인 기전을 설명해 드리겠습니다.",
+        "step2_statistics": "뇌의 지방 성분 중 약 15-20%가 DHA로 이루어져 있으며, DHA 부족은 인지 기능 저하, 우울증, ADHD와 관련이 있습니다(Br J Nutr 2018).",
+        "step3_standard_treatment": "DHA 권장 섭취량: 성인 250-500mg/일(EPA+DHA). 임산부 추가 200mg/일. 우울증, 심혈관질환 등 특수 상태에서는 1,000-3,000mg/일.",
+        "step4_natural_alternatives": "DHA 외 뇌 건강 영양소: 포스파티딜세린, 비타민E, 마그네슘 트레오네이트, 커큐민, 레스베라트롤, 비타민B12+엽산.",
+        "step5_phlorotannin": "플로로탄닌과 DHA는 뇌 건강에 시너지 효과를 발휘합니다. DHA가 신경세포막의 구조적 완성도를 높이는 동안, 플로로탄닌의 강력한 항산화 효과는 DHA가 산화되는 것을 막아 두 성분의 효과를 오래 유지시킵니다.",
+        "step6_cta": "뇌 건강 종합 프로그램에 대한 상담을 신청하세요.",
+        "references": ["Innis SM. Prog Lipid Res 2008;47(2):112-125", "Salem N Jr et al. Prostaglandins Leukot Essent Fatty Acids 2018;131:1-7"],
+        "disclaimer": "본 정보는 의료 조언을 대체하지 않습니다."
+      }
+    },
+    {
+      "id": "neuro-005",
+      "category": "neuro_cognitive",
+      "question": "수면과 치매의 관계 — 아밀로이드 청소 메커니즘이란?",
+      "tags": ["수면", "치매", "아밀로이드", "글림프계"],
+      "difficulty": "전문가",
+      "views": 680,
+      "likes": 62,
+      "answer": {
+        "step1_empathy": "잠을 못 자면 치매 위험이 높아진다는 말, 들어보셨나요? 뇌과학적으로 매우 흥미로운 연구가 있습니다.",
+        "step2_statistics": "하루 수면 시간이 6시간 미만인 사람은 치매 발생 위험이 30% 높다는 연구가 네이처 커뮤니케이션즈(2021)에 발표되었습니다.",
+        "step3_standard_treatment": "아밀로이드 청소를 위한 수면 최적화: 7-9시간 수면, 규칙적인 수면 시간, 수면 무호흡증 치료(CPAP), 취침 전 알코올 금지.",
+        "step4_natural_alternatives": "글림프계 활성화를 돕는 접근: 규칙적 운동(글림프 흐름 촉진), 옆으로 자는 자세(글림프 배출 최적화), 마그네슘, 멜라토닌.",
+        "step5_phlorotannin": "수면 중 뇌의 '글림프계(glymphatic system)'가 활성화되어 독성 단백질(아밀로이드 베타, 타우)을 청소합니다. 플로로탄닌의 신경 보호 및 항산화 효과는 이 청소 과정이 더 효율적으로 이루어지도록 지원합니다.",
+        "step6_cta": "뇌 건강과 수면 개선을 위한 종합 상담을 신청하세요.",
+        "references": ["Sabia S et al. Nat Commun 2021;12(1):2289", "Nedergaard M et al. Science 2013;342(6156):373-7"],
+        "disclaimer": "본 정보는 의료 조언을 대체하지 않습니다."
+      }
+    },
+    {
+      "id": "skin-001",
+      "category": "skin_hair",
+      "question": "DHT(디하이드로테스토스테론)가 탈모를 일으키는 원리는?",
+      "tags": ["탈모", "DHT", "5α환원효소", "남성형탈모"],
+      "difficulty": "중급",
+      "views": 2780,
+      "likes": 223,
+      "answer": {
+        "step1_empathy": "탈모가 진행되면서 원인을 알고 싶으신 분들이 많습니다. DHT와 탈모의 관계를 이해하면 더 효과적인 대처가 가능합니다.",
+        "step2_statistics": "남성형 탈모(AGA)는 남성의 50%, 여성의 20-30%에서 발생하며, 20대부터 시작될 수 있습니다(대한피부과학회 2023).",
+        "step3_standard_treatment": "DHT 차단 치료: 피나스테리드(프로페시아, 5α-환원효소 2형 억제), 두타스테리드(아보다트, 1형+2형 억제), 국소 미녹시딜(혈류 개선).",
+        "step4_natural_alternatives": "천연 5α-환원효소 억제제: ① 쏘팔메토(베리 추출물) ② 피그미움 아프리카눔(아프리카 자두나무) ③ 녹차 EGCG ④ β-시토스테롤 ⑤ 감태 플로로탄닌",
+        "step5_phlorotannin": "감태 플로로탄닌, 특히 디에콜 성분은 5α-환원효소 억제 활성이 확인되었습니다. 이는 피나스테리드와 유사한 기전으로 DHT 생성을 억제합니다. 파트너스인 하나의 MOP 공정으로 추출된 플로로탄닌은 모낭 세포까지의 전달이 최적화되어 있습니다.",
+        "step6_cta": "탈모 관리 프로그램에 대한 전문 상담을 신청하세요. 개인 탈모 유형에 맞는 맞춤 솔루션을 제안해 드립니다.",
+        "references": ["Blumeyer A et al. J Dtsch Dermatol Ges 2011;9(Suppl 6):S1-57", "Cha SH et al. Mar Drugs 2019;17(12):693"],
+        "disclaimer": "본 정보는 의료 조언을 대체하지 않습니다."
+      }
+    },
+    {
+      "id": "skin-002",
+      "category": "skin_hair",
+      "question": "플로로탄닌 + MOP 공정이 탈모 예방에 효과적인 이유는?",
+      "tags": ["플로로탄닌", "MOP", "탈모", "모낭"],
+      "difficulty": "전문가",
+      "views": 560,
+      "likes": 51,
+      "answer": {
+        "step1_empathy": "파트너스인 하나의 핵심 기술에 대해 궁금하신 분들을 위해 상세히 설명드립니다.",
+        "step2_statistics": "감태 추출물의 탈모 관련 임상 연구는 아직 제한적이나, 세포 실험에서 두피 세포 보호 및 모낭 성장 촉진 효과가 확인되었습니다.",
+        "step3_standard_treatment": "현재 탈모 치료의 표준은 피나스테리드+미녹시딜 병용으로, 약 80%의 환자에서 진행 억제 효과가 확인됩니다.",
+        "step4_natural_alternatives": "MOP 공정 이전의 일반 감태 추출물도 5α-환원효소 억제, 모낭 보호 효과가 연구되었으나, 흡수율이 낮아 실제 효과가 제한적이었습니다.",
+        "step5_phlorotannin": "MOP(Micro Optimal Processing) 공정의 혁신: ① 분자 크기 최소화로 피부 장벽과 모낭 세포막 투과 향상 ② 활성 플로로탄닌 성분(디에콜, 엑콜, 플로로글루시놀) 보존율 극대화 ③ 산화 방지 처리로 성분 안정성 향상. 하이드로 네트워크 전달망: 수용성 나노 전달체로 두피 혈관을 통한 모낭까지의 전달 효율을 일반 추출물 대비 최대 300% 향상.",
+        "step6_cta": "파트너스인 하나의 탈모 케어 프로그램에 대한 전문 상담을 신청하세요.",
+        "references": ["Cha SH et al. Mar Drugs 2019;17(12):693", "파트너스인 하나 기술 문서 2024"],
+        "disclaimer": "본 정보는 의료 조언을 대체하지 않습니다."
+      }
+    },
+    {
+      "id": "skin-003",
+      "category": "skin_hair",
+      "question": "성인 아토피 피부염이 갑자기 심해졌어요.",
+      "tags": ["아토피", "피부염", "피부장벽", "프로바이오틱스"],
+      "difficulty": "기초",
+      "views": 1890,
+      "likes": 156,
+      "answer": {
+        "step1_empathy": "어릴 때는 괜찮았는데 성인이 되어 아토피가 생기거나 심해지면 너무 힘드실 것 같습니다. 성인 아토피는 생각보다 흔하고, 관리 가능합니다.",
+        "step2_statistics": "성인 아토피 피부염 유병률은 약 2-8%이며, 소아 아토피의 약 60%가 성인까지 지속됩니다(대한피부과학회 2023).",
+        "step3_standard_treatment": "국소 스테로이드(1차), 국소 칼시뉴린 억제제(타크로리무스, 피메크로리무스), 중증 시 두필루맙(듀피젠트, IL-4/13 억제), 생물학제제.",
+        "step4_natural_alternatives": "피부 장벽 강화: 세라마이드 보습제. 식품소재: 프로바이오틱스(락토바실루스 람노수스 GG), 비타민D, 달맞이꽃 종자유(GLA), 오메가3.",
+        "step5_phlorotannin": "플로로탄닌의 항염증 효과(IL-4, IL-13, IgE 억제)는 아토피의 핵심 기전인 Th2 면역 과활성을 억제하는 데 도움이 될 수 있습니다. 또한 항산화 효과로 피부 산화 스트레스를 줄여 피부 장벽 회복에 기여합니다.",
+        "step6_cta": "피부 건강 프로그램에 대한 상담을 신청하세요.",
+        "references": ["Simpson EL et al. N Engl J Med 2016;375:2335-2348", "Choi JS et al. Mar Drugs 2015;13(7):4454-66"],
+        "disclaimer": "본 정보는 의료 조언을 대체하지 않습니다."
+      }
+    },
+    {
+      "id": "skin-004",
+      "category": "skin_hair",
+      "question": "콜라겐 보충제가 피부에 실제로 도움될까요?",
+      "tags": ["콜라겐", "피부노화", "주름", "비타민C"],
+      "difficulty": "기초",
+      "views": 4200,
+      "likes": 345,
+      "answer": {
+        "step1_empathy": "콜라겐 보충제에 대한 광고가 넘쳐나지만, 실제로 효과가 있는지 궁금하신 분들이 많습니다. 과학적 근거를 살펴보겠습니다.",
+        "step2_statistics": "2019년 체계적 문헌고찰(Journal of Drugs in Dermatology)에서 콜라겐 펩타이드 보충이 피부 탄력 개선(8주), 주름 감소에 유의한 효과가 있음을 확인했습니다.",
+        "step3_standard_treatment": "콜라겐 보충 권장량: 가수분해 콜라겐 펩타이드 2.5-10g/일. 비타민C와 함께 복용 시 콜라겐 합성 향상. 히알루론산, 비오틴과 병용 시 시너지.",
+        "step4_natural_alternatives": "피부 건강 식품소재: 비타민C(콜라겐 합성), 비타민E(항산화), 아스타잔틴(광노화 방지), 히알루론산, 실리카, 아연.",
+        "step5_phlorotannin": "플로로탄닌은 콜라겐 분해 효소(MMPs, 기질 금속단백분해효소) 억제 효과가 있어 피부 콜라겐을 보존합니다. 또한 강력한 항산화 효과로 자외선으로 인한 산화적 콜라겐 파괴를 막습니다. 콜라겐 보충제와 함께 복용 시 시너지 효과가 기대됩니다.",
+        "step6_cta": "피부 노화 방지 프로그램에 대한 상담을 신청하세요.",
+        "references": ["Choi FD et al. J Drugs Dermatol 2019;18(1):9-16", "Kim YJ et al. Mar Drugs 2020;18(2):118"],
+        "disclaimer": "본 정보는 의료 조언을 대체하지 않습니다."
+      }
+    },
+    {
+      "id": "skin-005",
+      "category": "skin_hair",
+      "question": "플로로탄닌의 피부 보호 및 항산화 효과는?",
+      "tags": ["플로로탄닌", "피부", "항산화", "광보호"],
+      "difficulty": "중급",
+      "views": 780,
+      "likes": 67,
+      "answer": {
+        "step1_empathy": "플로로탄닌이 피부에 어떻게 도움이 되는지 궁금하신가요? 과학적 근거와 함께 설명드립니다.",
+        "step2_statistics": "감태 플로로탄닌의 DPPH 라디칼 소거능(항산화 지표)은 비타민C, 비타민E 대비 동등하거나 우수한 수준으로 여러 연구에서 확인되었습니다.",
+        "step3_standard_treatment": "피부 항산화를 위한 표준 접근: 자외선 차단제(SPF 30 이상), 비타민C 세럼, 레티놀, 나이아신아마이드.",
+        "step4_natural_alternatives": "피부 항산화 소재: 아스타잔틴, 비타민E, 레스베라트롤, 녹차 EGCG, 코엔자임Q10, 셀레늄, 플로로탄닌.",
+        "step5_phlorotannin": "플로로탄닌의 피부 보호 효과: ① UV로 인한 산화 스트레스 억제 ② MMP(콜라겐 분해 효소) 억제로 피부 탄력 유지 ③ 멜라닌 합성 억제(티로시나아제 억제)로 미백 효과 ④ 항염증으로 피부 붉음증 개선. MOP 공정으로 피부 세포층까지의 흡수가 향상됩니다.",
+        "step6_cta": "피부 건강 관리 프로그램에 대한 상담을 신청하세요.",
+        "references": ["Thomas NV & Kim SK. Environ Toxicol Pharmacol 2011;32(3):325-35", "Ahn MJ et al. Biol Pharm Bull 2004;27(4):544-7"],
+        "disclaimer": "본 정보는 의료 조언을 대체하지 않습니다."
+      }
+    },
+    {
+      "id": "cardio-001",
+      "category": "cardiovascular",
+      "question": "오메가3가 중성지방을 낮추는 원리는?",
+      "tags": ["오메가3", "중성지방", "심혈관", "EPA"],
+      "difficulty": "중급",
+      "views": 1560,
+      "likes": 127,
+      "answer": {
+        "step1_empathy": "오메가3가 중성지방을 낮춘다는 말을 들으셨지만 어떤 원리인지 궁금하신가요?",
+        "step2_statistics": "고중성지방혈증(TG ≥ 150mg/dL) 유병률은 한국 성인의 약 18-22%이며, 2g/일 이상의 오메가3 섭취 시 TG를 25-30% 낮출 수 있습니다.",
+        "step3_standard_treatment": "고중성지방 약물치료: 피브레이트(페노피브레이트), 처방용 오메가3(이파데콥산에틸, 이코사펜트산에틸/바세파). 처방용 오메가3는 4g/일로 TG 45% 감소.",
+        "step4_natural_alternatives": "오메가3(EPA+DHA) 2-4g/일, 식이섬유(오트밀, 귀리), 녹차, 마늘, 레드이스트라이스.",
+        "step5_phlorotannin": "플로로탄닌은 PPARα 활성화를 통해 간에서의 지방산 산화를 촉진하고 중성지방 합성을 억제합니다. 오메가3와 플로로탄닌의 병용은 서로 다른 기전으로 TG를 낮추어 상호 보완적 효과를 기대할 수 있습니다.",
+        "step6_cta": "심혈관 건강 관리 프로그램에 대한 상담을 신청하세요.",
+        "references": ["Skulas-Ray AC et al. Circulation 2019;140(12):e673-e691", "AHA Scientific Statement 2021"],
+        "disclaimer": "본 정보는 의료 조언을 대체하지 않습니다."
+      }
+    },
+    {
+      "id": "cardio-002",
+      "category": "cardiovascular",
+      "question": "죽상경화증 예방을 위한 식품소재는?",
+      "tags": ["죽상경화증", "동맥경화", "심혈관", "플라크"],
+      "difficulty": "중급",
+      "views": 920,
+      "likes": 78,
+      "answer": {
+        "step1_empathy": "혈관 건강에 관심을 가지고 예방에 노력하시는 것은 매우 현명한 선택입니다.",
+        "step2_statistics": "죽상경화증은 심근경색, 뇌졸중의 주요 원인으로, 한국인 사망 원인 2위인 심뇌혈관질환의 기저 질환입니다.",
+        "step3_standard_treatment": "표준 예방: LDL 목표 달성(스타틴), 항혈소판제(아스피린), 혈압 조절, 금연, 지중해식 식단.",
+        "step4_natural_alternatives": "죽상경화증 예방 식품소재: ① 레스베라트롤(LDL 산화 억제) ② 케르세틴(혈관 보호) ③ 리코펜(산화적 스트레스 감소) ④ 올리브 폴리페놀 ⑤ 석류 추출물 ⑥ 플로로탄닌",
+        "step5_phlorotannin": "플로로탄닌은 ① LDL 산화 억제(산화 LDL이 플라크의 핵심 성분) ② 혈관 내피세포 기능 개선 ③ VCAM-1, ICAM-1(염증성 접착분자) 발현 억제로 단핵구의 혈관벽 침투를 막아 플라크 형성을 억제합니다.",
+        "step6_cta": "혈관 건강 프로그램에 대한 상담을 신청하세요.",
+        "references": ["Libby P et al. Circulation 2019;139(25):e898-e931", "Kim MM et al. Phytomedicine 2019;52:260-268"],
+        "disclaimer": "본 정보는 의료 조언을 대체하지 않습니다."
+      }
+    },
+    {
+      "id": "cardio-003",
+      "category": "cardiovascular",
+      "question": "코엔자임Q10이 고혈압에 도움된다는데?",
+      "tags": ["코엔자임Q10", "고혈압", "혈압", "항산화"],
+      "difficulty": "기초",
+      "views": 1230,
+      "likes": 99,
+      "answer": {
+        "step1_empathy": "코엔자임Q10이 혈압에 도움된다는 말을 들으셨나요? 실제 연구 근거를 살펴보겠습니다.",
+        "step2_statistics": "여러 무작위 대조 연구(RCT)의 메타분석에서 CoQ10 복용이 수축기 혈압을 평균 11mmHg, 이완기를 7mmHg 낮추는 효과가 있었습니다(J Hum Hypertens 2007).",
+        "step3_standard_treatment": "CoQ10 권장량: 100-200mg/일(지용성이므로 식사와 함께). 특히 스타틴 복용 환자에게 CoQ10 보충이 권장됩니다(스타틴이 CoQ10 합성도 억제).",
+        "step4_natural_alternatives": "혈압 관련 식품소재: CoQ10, 마그네슘, 칼륨(바나나, 아보카도), ACE 억제 펩타이드, 루테올린, 케르세틴, 플로로탄닌.",
+        "step5_phlorotannin": "플로로탄닌과 CoQ10은 상호 보완적 항고혈압 효과를 가질 수 있습니다. CoQ10이 미토콘드리아 에너지 생산을 통해 혈관 근육 기능을 개선하고, 플로로탄닌이 ACE 억제와 혈관 내피 기능 개선으로 혈압을 낮추는 시너지가 기대됩니다.",
+        "step6_cta": "혈압 관리 종합 프로그램에 대한 상담을 신청하세요.",
+        "references": ["Rosenfeldt FL et al. J Hum Hypertens 2007;21(4):297-306", "Burke BE et al. South Med J 2001;94(11):1112-7"],
+        "disclaimer": "본 정보는 의료 조언을 대체하지 않습니다."
+      }
+    },
+    {
+      "id": "cardio-004",
+      "category": "cardiovascular",
+      "question": "마그네슘이 혈압 조절에 도움될까요?",
+      "tags": ["마그네슘", "혈압", "고혈압", "칼슘"],
+      "difficulty": "기초",
+      "views": 1100,
+      "likes": 89,
+      "answer": {
+        "step1_empathy": "마그네슘이 혈압에도 영향을 준다니 놀라우시지 않나요? 실제로 마그네슘은 혈압 조절에 중요한 미네랄입니다.",
+        "step2_statistics": "국민건강영양조사(2022)에 따르면 한국 성인의 마그네슘 평균 섭취량이 권장량(남 350mg/여 280mg)을 미달하는 경우가 많습니다. 마그네슘 부족은 혈압 상승과 관련이 있습니다.",
+        "step3_standard_treatment": "마그네슘 보충량: 300-400mg/일(글리시네이트, 말레이트, 시트레이트 형태가 흡수율 우수). 마그네슘은 혈관 평활근 이완(칼슘 길항)을 통해 혈압을 낮춥니다.",
+        "step4_natural_alternatives": "DASH 식단(마그네슘, 칼륨, 칼슘 풍부), 칼륨 보충, ACE 억제 식품소재 병용.",
+        "step5_phlorotannin": "마그네슘과 플로로탄닌의 병용은 서로 다른 혈압 조절 기전(마그네슘: 혈관 이완, 플로로탄닌: ACE 억제)으로 상승 효과를 기대할 수 있습니다.",
+        "step6_cta": "혈압 관리를 위한 개인 맞춤 프로그램 상담을 신청하세요.",
+        "references": ["Houston M et al. J Clin Hypertens 2011;13(11):843-7", "Rosanoff A et al. Hypertension 2012;59(5):1027-34"],
+        "disclaimer": "본 정보는 의료 조언을 대체하지 않습니다."
+      }
+    },
+    {
+      "id": "mental-001",
+      "category": "mental_health",
+      "question": "스트레스가 면역을 낮추는 메커니즘은?",
+      "tags": ["스트레스", "코르티솔", "면역", "HPA축"],
+      "difficulty": "중급",
+      "views": 1340,
+      "likes": 108,
+      "answer": {
+        "step1_empathy": "스트레스를 많이 받을 때 몸이 아픈 경험이 있으시지 않나요? 실제로 스트레스와 면역 사이에는 직접적인 연관이 있습니다.",
+        "step2_statistics": "만성 스트레스는 NK세포 활성도를 최대 40%까지 낮추고, 감기 바이러스 감염 위험을 2배 높인다는 연구 결과가 있습니다(Cohen S et al. N Engl J Med 1991).",
+        "step3_standard_treatment": "스트레스 관리: 인지행동치료(CBT), 마음챙김(MBSR), 규칙적 운동, 충분한 수면. 필요 시 SSRI, SNRI 처방.",
+        "step4_natural_alternatives": "적응원(adaptogen): 아슈와간다(KSM-66), 홍경천, 엘레우테로, 홍삼. 신경 영양: 마그네슘, 비타민B군, L-테아닌, 5-HTP.",
+        "step5_phlorotannin": "플로로탄닌의 HPA축(시상하부-뇌하수체-부신 축) 조절 가능성이 연구되고 있습니다. 코르티솔 과다 분비를 억제하고, 산화 스트레스로 인한 면역 세포 손상을 막아 스트레스 하에서도 면역 기능을 보호합니다.",
+        "step6_cta": "스트레스 관리와 면역 강화를 위한 통합 프로그램 상담을 신청하세요.",
+        "references": ["Cohen S et al. N Engl J Med 1991;325(9):606-12", "Segerstrom SC & Miller GE. Psychol Bull 2004;130(4):601-30"],
+        "disclaimer": "본 정보는 의료 조언을 대체하지 않습니다."
+      }
+    },
+    {
+      "id": "mental-002",
+      "category": "mental_health",
+      "question": "오메가3가 우울증에 도움될까요?",
+      "tags": ["우울증", "오메가3", "EPA", "세로토닌"],
+      "difficulty": "기초",
+      "views": 1780,
+      "likes": 145,
+      "answer": {
+        "step1_empathy": "우울감이 지속될 때 자연적인 방법으로 도움을 받고 싶으신 마음이 드실 것 같습니다. 오메가3와 우울증에 관한 연구를 소개해 드립니다.",
+        "step2_statistics": "2016년 메타분석(J Clin Psychiatry)에서 EPA가 풍부한 오메가3(EPA ≥ 60%) 복용이 우울 증상을 유의하게 감소시켰습니다. EPA 용량 1-2g/일이 가장 효과적.",
+        "step3_standard_treatment": "우울증 표준 치료: SSRI(플루옥세틴, 에스시탈로프람), SNRI, 정신치료. 오메가3는 보조 요법으로 병용 권장.",
+        "step4_natural_alternatives": "우울증 보조 식품소재: EPA(오메가3), 5-HTP, 마그네슘, SAMe(S-아데노실메티오닌), 세인트존스워트(경증), 비타민D, 엽산.",
+        "step5_phlorotannin": "플로로탄닌의 신경 보호 및 항염증 효과는 신경 염증(neuroinflammation)이 관여하는 우울증에 도움이 될 수 있습니다. 최근 뇌 염증이 우울증 발생의 중요 기전으로 주목받고 있으며, 플로로탄닌의 NF-κB 억제가 이 경로를 차단할 수 있습니다.",
+        "step6_cta": "정신 건강 및 스트레스 관리 프로그램에 대한 상담을 신청하세요.",
+        "references": ["Mocking RJ et al. Transl Psychiatry 2016;6(3):e756", "Grosso G et al. PLoS One 2014;9(5):e96905"],
+        "disclaimer": "본 정보는 의료 조언을 대체하지 않습니다. 우울증은 전문 정신건강의학과 치료가 필요합니다."
+      }
+    },
+    {
+      "id": "mental-003",
+      "category": "mental_health",
+      "question": "수면 부족과 면역 저하의 관계는?",
+      "tags": ["수면부족", "면역", "사이토카인", "NK세포"],
+      "difficulty": "기초",
+      "views": 1450,
+      "likes": 119,
+      "answer": {
+        "step1_empathy": "바쁜 현대인이라면 수면 부족을 당연하게 여기는 경우가 많습니다. 하지만 수면 부족이 면역에 미치는 영향은 생각보다 훨씬 심각합니다.",
+        "step2_statistics": "하루 6시간 미만 수면 시 감기 감염률이 7-9시간 수면 그룹 대비 4.2배 높았습니다(Arch Intern Med 2009).",
+        "step3_standard_treatment": "수면 위생: 규칙적인 수면 시간, 침실 어둡고 서늘하게(18-20°C), 취침 2시간 전 스크린 자제, 카페인 오후 2시 이후 금지.",
+        "step4_natural_alternatives": "수면-면역 동시 지원: 마그네슘+멜라토닌, 발레리안, L-테아닌, 비타민D.",
+        "step5_phlorotannin": "수면 중 분비되는 성장 호르몬과 사이토카인이 면역 재건에 필수적입니다. 플로로탄닌의 항산화 효과는 수면 부족으로 인한 산화 스트레스 축적을 완화하고, 면역 세포 기능 저하를 최소화하는 데 도움이 됩니다.",
+        "step6_cta": "수면 개선과 면역 강화를 위한 통합 프로그램 상담을 신청하세요.",
+        "references": ["Cohen S et al. Arch Intern Med 2009;169(1):62-7", "Besedovsky L et al. Pflugers Arch 2019;471(9):1147-65"],
+        "disclaimer": "본 정보는 의료 조언을 대체하지 않습니다."
+      }
+    },
+    {
+      "id": "mental-004",
+      "category": "mental_health",
+      "question": "마그네슘 결핍이 불안과 관련 있나요?",
+      "tags": ["마그네슘", "불안", "GABA", "스트레스"],
+      "difficulty": "중급",
+      "views": 1200,
+      "likes": 98,
+      "answer": {
+        "step1_empathy": "불안이 심한데 원인을 모르겠다면, 마그네슘 결핍을 확인해 보시는 것을 권장드립니다.",
+        "step2_statistics": "마그네슘 결핍은 성인의 약 45%에서 관찰되며, 마그네슘이 부족할수록 불안, 과민성, 수면 장애가 심해지는 경향이 있습니다.",
+        "step3_standard_treatment": "불안 장애 치료: SSRI, 벤조디아제핀(단기), CBT. 마그네슘 보충(300-400mg/일, 글리시네이트 형태)을 보조적으로 활용.",
+        "step4_natural_alternatives": "불안 관리 식품소재: 마그네슘, L-테아닌, 아슈와간다, 패션플라워, 발레리안, 5-HTP, GABA.",
+        "step5_phlorotannin": "플로로탄닌의 GABA성 신경 전달 조절 가능성이 연구되고 있습니다. GABA는 뇌의 '브레이크' 신경전달물질로, 과활성화된 신경 흥분을 억제합니다. 마그네슘과 플로로탄닌의 병용으로 시너지 항불안 효과가 기대됩니다.",
+        "step6_cta": "정신 건강 관리 프로그램에 대한 상담을 신청하세요.",
+        "references": ["Boyle NB et al. Nutrients 2017;9(5):429", "Held K et al. Pharmacopsychiatry 2002;35(4):135-43"],
+        "disclaimer": "본 정보는 의료 조언을 대체하지 않습니다."
+      }
+    }
+  ]
+}
