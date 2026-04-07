@@ -32,6 +32,7 @@ export default function Footer() {
               {[
                 { to: '/', label: '홈' },
                 { to: '/qa', label: '건강 Q&A' },
+                { to: '/learn', label: '🌊 쉽게 배우기' },
                 { to: '/phlorotannin', label: '플로로탄닌 소개' },
                 { to: '/partner', label: '파트너 참여' },
                 { to: '/consult', label: '문의하기' },
