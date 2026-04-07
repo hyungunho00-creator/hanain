@@ -151,9 +151,9 @@ function QACard({ qa, isOpen, onToggle, searchQuery, categories }) {
             </p>
             <p className="text-xs text-gray-400">
               © 2025 플로로탄닌 파트너스 — 본 콘텐츠의 무단 복제·배포를 금합니다.
-              콘텐츠 사용·제휴 문의:{' '}
-              <a href="mailto:meul777@naver.com?subject=[저작권 문의]" className="text-cyan-hana hover:underline font-medium">
-                meul777@naver.com
+              문의:{' '}
+              <a href="sms:01056528206?body=%5B%EC%A0%80%EC%9E%91%EA%B6%8C%20%EB%AC%B8%EC%9D%98%5D%20" className="text-cyan-hana hover:underline font-medium">
+                010-5652-8206
               </a>
             </p>
           </div>
@@ -438,13 +438,21 @@ export default function QAPage() {
             <div className="bg-ocean-gradient rounded-2xl p-6 text-white">
               <MessageSquare className="w-6 h-6 text-cyan-hana mb-3" />
               <h3 className="font-bold mb-1">더 궁금하신 게 있으신가요?</h3>
-              <p className="text-gray-300 text-sm mb-4">찾는 정보가 없거나 더 알고 싶다면 문자로 편하게 연락주세요. 전문 파트너가 답변드립니다.</p>
-              <a
-                href="sms:01056528206?body=안녕하세요! 플로로탄닌 파트너스 건강 Q&A를 보고 문의드립니다."
-                className="block w-full bg-cyan-hana text-white py-3 rounded-xl text-center text-sm font-semibold hover:bg-opacity-90 transition-colors"
-              >
-                💬 010-5652-8206 문자 보내기
-              </a>
+              <p className="text-gray-300 text-sm mb-4">찾는 정보가 없거나 더 알고 싶다면 전화나 문자로 편하게 연락주세요.</p>
+              <div className="space-y-2">
+                <a
+                  href="tel:01056528206"
+                  className="flex items-center justify-center gap-2 w-full bg-cyan-hana text-white py-3 rounded-xl text-sm font-semibold hover:bg-opacity-90 transition-colors"
+                >
+                  📞 010-5652-8206 전화하기
+                </a>
+                <a
+                  href="sms:01056528206?body=%5B%ED%94%8C%EB%A1%9C%EB%A1%9C%ED%83%84%EB%8B%8C%20%ED%8C%8C%ED%8A%B8%EB%84%88%EC%8A%A4%5D%20%EA%B1%B4%EA%B0%95%20Q%26A%EB%A5%BC%20%EB%B3%B4%EA%B3%A0%20%EB%AC%B8%EC%9D%98%EB%93%9C%EB%A6%BD%EB%8B%88%EB%8B%A4."
+                  className="flex items-center justify-center gap-2 w-full bg-white/10 border border-white/30 text-white py-3 rounded-xl text-sm font-semibold hover:bg-white/20 transition-colors"
+                >
+                  💬 010-5652-8206 문자 보내기
+                </a>
+              </div>
             </div>
 
             {/* Partner CTA */}

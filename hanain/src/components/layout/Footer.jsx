@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Waves, Mail, Phone, MessageCircle } from 'lucide-react'
+import { Waves, Phone, MessageCircle } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -80,11 +80,11 @@ export default function Footer() {
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <Mail className="w-4 h-4 text-cyan-hana mt-0.5 flex-shrink-0" />
+                <MessageCircle className="w-4 h-4 text-cyan-hana mt-0.5 flex-shrink-0" />
                 <div>
-                  <div className="text-gray-400 text-xs mb-1">이메일 문의</div>
-                  <a href="mailto:meul777@naver.com" className="text-white font-medium hover:text-cyan-hana transition-colors break-all">
-                    meul777@naver.com
+                  <div className="text-gray-400 text-xs mb-1">문자 문의</div>
+                  <a href="sms:01056528206?body=%5B%ED%94%8C%EB%A1%9C%EB%A1%9C%ED%83%84%EB%8B%8C%20%ED%8C%8C%ED%8A%B8%EB%84%88%EC%8A%A4%5D%20%EB%AC%B8%EC%9D%98%EB%93%9C%EB%A6%BD%EB%8B%88%EB%8B%A4." className="text-white font-medium hover:text-cyan-hana transition-colors">
+                    010-5652-8206
                   </a>
                 </div>
               </li>
@@ -110,18 +110,18 @@ export default function Footer() {
               </p>
             </div>
             <a
-              href="mailto:meul777@naver.com?subject=[저작권/제휴 문의] 플로로탄닌 파트너스&body=안녕하세요, 콘텐츠 사용 및 제휴 관련 문의드립니다."
+              href="sms:01056528206?body=%5B%EC%A0%80%EC%9E%91%EA%B6%8C%2F%EC%A0%9C%ED%9C%B4%20%EB%AC%B8%EC%9D%98%5D%20"
               className="flex-shrink-0 inline-flex items-center gap-2 bg-cyan-hana text-white text-xs font-semibold px-4 py-2.5 rounded-full hover:bg-opacity-90 transition-all whitespace-nowrap"
             >
-              <Mail className="w-3.5 h-3.5" />
-              콘텐츠 사용·제휴 문의
+              <MessageCircle className="w-3.5 h-3.5" />
+              콘텐츠 사용·제휴 문자 문의
             </a>
           </div>
         </div>
 
         <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-3">
           <p className="text-xs text-gray-400">
-            © 2025 플로로탄닌 파트너스 · 대표 이메일: meul777@naver.com · 010-5652-8206
+            © 2025 플로로탄닌 파트너스 · 연락: 010-5652-8206
           </p>
           <p className="text-xs text-gray-400 text-center md:text-right max-w-md">
             본 사이트의 정보는 건강 교육 목적이며 의료 처방·진단을 대체하지 않습니다.

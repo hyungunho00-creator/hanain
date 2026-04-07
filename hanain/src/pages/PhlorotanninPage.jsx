@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import {
   Waves, ChevronDown, ChevronRight, ArrowRight, ExternalLink,
   Shield, Activity, Brain, Heart, Zap, Leaf, Star, BookOpen,
-  FlaskConical, Microscope, TrendingUp, Users, CheckCircle, Mail
+  FlaskConical, Microscope, TrendingUp, Users, CheckCircle, Phone, MessageSquare
 } from 'lucide-react'
 
 // ─── 데이터 ───────────────────────────────────────────────
@@ -446,11 +446,11 @@ export default function PhlorotanninPage() {
                 </p>
               </div>
               <a
-                href="mailto:meul777@naver.com?subject=[저작권/제휴 문의] 플로로탄닌 소개 페이지&body=안녕하세요, 콘텐츠 사용 및 제휴 관련 문의드립니다."
+                href="sms:01056528206?body=%5B%EC%A0%80%EC%9E%91%EA%B6%8C%2F%EC%A0%9C%ED%9C%B4%20%EB%AC%B8%EC%9D%98%5D%20"
                 className="flex-shrink-0 inline-flex items-center gap-2 bg-ocean-deep text-white text-xs font-semibold px-5 py-2.5 rounded-full hover:bg-opacity-80 transition-all whitespace-nowrap"
               >
-                <Mail className="w-3.5 h-3.5" />
-                콘텐츠 사용·제휴 문의
+                <MessageSquare className="w-3.5 h-3.5" />
+                010-5652-8206 문자 문의
               </a>
             </div>
           </div>
@@ -528,11 +528,19 @@ export default function PhlorotanninPage() {
             ))}
           </div>
           <div className="flex flex-wrap gap-4 justify-center">
-            <a href="mailto:meul777@naver.com?subject=플로로탄닌 문의"
+            <a
+              href="tel:01056528206"
               className="flex items-center gap-2 bg-white text-ocean-deep px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all"
             >
-              <Mail className="w-5 h-5" />
-              meul777@naver.com
+              <Phone className="w-5 h-5" />
+              010-5652-8206 전화하기
+            </a>
+            <a
+              href="sms:01056528206?body=%5B%ED%94%8C%EB%A1%9C%EB%A1%9C%ED%83%84%EB%8B%8C%20%EB%AC%B8%EC%9D%98%5D%20"
+              className="flex items-center gap-2 btn-secondary px-8 py-4"
+            >
+              <MessageSquare className="w-5 h-5" />
+              010-5652-8206 문자하기
             </a>
           </div>
         </div>
@@ -553,7 +561,7 @@ export default function PhlorotanninPage() {
               </p>
             </div>
             <a
-              href="mailto:meul777@naver.com?subject=[콘텐츠 사용/제휴 문의] 플로로탄닌 파트너스&body=안녕하세요, 콘텐츠 사용 또는 제휴 관련 문의드립니다.%0A%0A회사·기관명:%0A담당자명:%0A문의 내용:"
+              href="sms:01056528206?body=%5B%EC%BD%98%ED%85%90%EC%B8%A0%20%EC%82%AC%EC%9A%A9%2F%EC%A0%9C%ED%9C%B4%20%EB%AC%B8%EC%9D%98%5D%20"
               className="flex-shrink-0 inline-flex items-center gap-2 bg-cyan-600 text-white text-xs font-semibold px-5 py-2.5 rounded-full hover:bg-cyan-700 transition-all whitespace-nowrap"
             >
               <Mail className="w-3.5 h-3.5" />

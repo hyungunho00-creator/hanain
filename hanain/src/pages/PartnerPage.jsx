@@ -305,8 +305,8 @@ export default function PartnerPage() {
               <p className="text-xs text-gray-400 text-center leading-relaxed">
                 본 사이트의 교육 자료·커리큘럼·콘텐츠는 저작권법의 보호를 받습니다. 무단 복제·배포를 금합니다.<br />
                 콘텐츠 사용 또는 제휴 문의:{' '}
-                <a href="mailto:meul777@naver.com?subject=[파트너/제휴 문의]" className="text-cyan-600 hover:underline font-medium">
-                  meul777@naver.com
+                <a href="sms:01056528206?body=%5B%ED%8C%8C%ED%8A%B8%EB%84%88%2F%EC%A0%9C%ED%9C%B4%20%EB%AC%B8%EC%9D%98%5D%20" className="text-cyan-600 hover:underline font-medium">
+                  010-5652-8206 문자
                 </a>
               </p>
             </div>

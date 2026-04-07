@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import {
   ArrowRight, Search, BookOpen, Users, ChevronRight,
   Star, MessageCircle, Waves, Leaf, Brain, Heart,
-  Shield, Activity, Zap, Mail, Phone
+  Shield, Activity, Zap, Phone
 } from 'lucide-react'
 
 
@@ -470,18 +470,18 @@ export default function HomePage() {
           </p>
           <div className="flex flex-wrap gap-4 justify-center mb-10">
             <a
-              href="mailto:meul777@naver.com"
+              href="tel:01056528206"
               className="flex items-center gap-2 bg-white text-ocean-deep px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all"
             >
-              <Mail className="w-5 h-5" />
-              meul777@naver.com
+              <Phone className="w-5 h-5" />
+              010-5652-8206 전화하기
             </a>
             <a
-              href="tel:01056528206"
+              href="sms:01056528206?body=%5B%ED%94%8C%EB%A1%9C%EB%A1%9C%ED%83%84%EB%8B%8C%20%ED%8C%8C%ED%8A%B8%EB%84%88%EC%8A%A4%5D%20%EC%83%81%EB%8B%B4%20%EB%AC%B8%EC%9D%98%EB%93%9C%EB%A6%BD%EB%8B%88%EB%8B%A4."
               className="flex items-center gap-2 btn-secondary px-8 py-4"
             >
-              <Phone className="w-5 h-5" />
-              010-5652-8206
+              <MessageCircle className="w-5 h-5" />
+              010-5652-8206 문자하기
             </a>
           </div>
           <div className="flex flex-wrap gap-3 justify-center">
