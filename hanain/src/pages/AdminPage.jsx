@@ -3,7 +3,7 @@ import { Settings, Users, MessageSquare, BookOpen, Plus, Edit, Trash2, Save, X, 
 
 // ⚠️ Vercel 환경변수 VITE_ADMIN_PASS 에서 읽음
 // Vercel 대시보드 → Settings → Environment Variables → VITE_ADMIN_PASS 설정
-const ADMIN_PASS = import.meta.env.VITE_ADMIN_PASS || 'hanain2024admin!'
+const ADMIN_PASS = import.meta.env.VITE_ADMIN_PASS || 'phlorotannin2024admin!'
 
 function LoginScreen({ onLogin }) {
   const [pw, setPw] = useState('')
@@ -83,8 +83,8 @@ export default function AdminPage() {
       }
     } catch {
       // Fallback to localStorage
-      const localSubs = JSON.parse(localStorage.getItem('hanain_submissions') || '[]')
-      const localParts = JSON.parse(localStorage.getItem('hanain_partner_applications') || '[]')
+      const localSubs = JSON.parse(localStorage.getItem('phlorotannin_submissions') || '[]')
+      const localParts = JSON.parse(localStorage.getItem('phlorotannin_partner_applications') || '[]')
       setSubmissions(localSubs)
       setPartners(localParts)
     } finally {

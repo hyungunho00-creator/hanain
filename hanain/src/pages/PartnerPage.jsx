@@ -131,9 +131,9 @@ export default function PartnerPage() {
       }
     } catch {
       // Formspree 실패 시 localStorage 임시 저장 + 성공 처리
-      const existing = JSON.parse(localStorage.getItem('hanain_partner_applications') || '[]')
+      const existing = JSON.parse(localStorage.getItem('phlorotannin_partner_applications') || '[]')
       existing.push({ ...data, timestamp: new Date().toISOString() })
-      localStorage.setItem('hanain_partner_applications', JSON.stringify(existing))
+      localStorage.setItem('phlorotannin_partner_applications', JSON.stringify(existing))
       setSuccess(true)
       reset()
     } finally {

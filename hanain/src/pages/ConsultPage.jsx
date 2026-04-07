@@ -109,17 +109,17 @@ export default function ConsultPage() {
         setFormData({ name: '', phone: '', email: '', category: '', concern: '', preferredTime: '', privacyAgreed: false })
       } else {
         // Fallback: localStorage 저장
-        const existing = JSON.parse(localStorage.getItem('hanain_submissions') || '[]')
+        const existing = JSON.parse(localStorage.getItem('phlorotannin_submissions') || '[]')
         existing.push({ ...formData, timestamp: new Date().toISOString() })
-        localStorage.setItem('hanain_submissions', JSON.stringify(existing))
+        localStorage.setItem('phlorotannin_submissions', JSON.stringify(existing))
         setSuccess(true)
         setFormData({ name: '', phone: '', email: '', category: '', concern: '', preferredTime: '', privacyAgreed: false })
       }
     } catch {
       // 네트워크 오류 시에도 로컬 저장 후 성공 처리
-      const existing = JSON.parse(localStorage.getItem('hanain_submissions') || '[]')
+      const existing = JSON.parse(localStorage.getItem('phlorotannin_submissions') || '[]')
       existing.push({ ...formData, timestamp: new Date().toISOString() })
-      localStorage.setItem('hanain_submissions', JSON.stringify(existing))
+      localStorage.setItem('phlorotannin_submissions', JSON.stringify(existing))
       setSuccess(true)
       setFormData({ name: '', phone: '', email: '', category: '', concern: '', preferredTime: '', privacyAgreed: false })
     } finally {
