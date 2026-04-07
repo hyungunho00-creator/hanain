@@ -1,47 +1,40 @@
 import { Link } from 'react-router-dom'
-import { Leaf, Mail, Phone, MapPin, Camera, PlayCircle } from 'lucide-react'
+import { Waves, Mail, Phone, MessageCircle } from 'lucide-react'
 
 export default function Footer() {
   return (
     <footer className="bg-ocean-deep text-gray-300">
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+
           {/* Brand */}
           <div className="md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
               <div className="w-10 h-10 bg-gradient-to-br from-cyan-hana to-blue-500 rounded-xl flex items-center justify-center">
-                <Leaf className="w-6 h-6 text-white" />
+                <Waves className="w-6 h-6 text-white" />
               </div>
               <div>
-                <div className="text-white font-bold">파트너스인 하나</div>
-                <div className="text-cyan-hana text-xs">Partners in HANA</div>
+                <div className="text-white font-bold">플로로탄닌 파트너스</div>
+                <div className="text-cyan-hana text-xs">Phlorotannin Partners</div>
               </div>
             </div>
             <p className="text-sm text-gray-400 leading-relaxed">
-              감태 플로로탄닌 기반 건강 솔루션.<br />
-              MOP 공정 + 하이드로 네트워크 전달망 기술로<br />
-              최고의 흡수율을 제공합니다.
+              해조류 유래 플로로탄닌에 관한<br />
+              건강 정보를 나누고, 올바른 지식으로<br />
+              파트너를 연결하는 정보 커뮤니티입니다.
             </p>
-            <div className="flex gap-3 mt-5">
-              <a href="#" className="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center hover:bg-cyan-hana transition-colors">
-                <Camera className="w-4 h-4" />
-              </a>
-              <a href="#" className="w-9 h-9 bg-white/10 rounded-lg flex items-center justify-center hover:bg-cyan-hana transition-colors">
-                <PlayCircle className="w-4 h-4" />
-              </a>
-            </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-white font-semibold mb-4">빠른 메뉴</h3>
+            <h3 className="text-white font-semibold mb-4">메뉴</h3>
             <ul className="space-y-2 text-sm">
               {[
                 { to: '/', label: '홈' },
-                { to: '/qa', label: 'Q&A 라이브러리' },
-                { to: '/tech', label: '기술 소개' },
-                { to: '/partner', label: '파트너 신청' },
-                { to: '/consult', label: '상담 신청' },
+                { to: '/qa', label: '건강 Q&A' },
+                { to: '/phlorotannin', label: '플로로탄닌 소개' },
+                { to: '/partner', label: '파트너 참여' },
+                { to: '/consult', label: '문의하기' },
               ].map(item => (
                 <li key={item.to}>
                   <Link to={item.to} className="hover:text-cyan-hana transition-colors">
@@ -52,14 +45,21 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Categories */}
+          {/* Q&A Categories */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Q&A 카테고리</h3>
+            <h3 className="text-white font-semibold mb-4">건강 정보 카테고리</h3>
             <ul className="space-y-2 text-sm">
-              {['대사질환', '항암/면역', '소화/간', '신경/인지', '피부/모발', '근골격계'].map(cat => (
-                <li key={cat}>
-                  <Link to={`/qa?category=${cat}`} className="hover:text-cyan-hana transition-colors">
-                    {cat}
+              {[
+                { id: 'metabolism', name: '대사질환' },
+                { id: 'cancer_immune', name: '항암/면역' },
+                { id: 'digestive', name: '소화/간' },
+                { id: 'neuro_cognitive', name: '신경/인지' },
+                { id: 'cardiovascular', name: '심혈관' },
+                { id: 'mental_health', name: '정신건강' },
+              ].map(cat => (
+                <li key={cat.id}>
+                  <Link to={`/qa?category=${cat.id}`} className="hover:text-cyan-hana transition-colors">
+                    {cat.name}
                   </Link>
                 </li>
               ))}
@@ -68,30 +68,63 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="text-white font-semibold mb-4">연락처</h3>
-            <ul className="space-y-3 text-sm">
-              <li className="flex items-start gap-2">
+            <h3 className="text-white font-semibold mb-4">문의</h3>
+            <ul className="space-y-4 text-sm">
+              <li className="flex items-start gap-3">
                 <Phone className="w-4 h-4 text-cyan-hana mt-0.5 flex-shrink-0" />
-                <span>1588-0000</span>
+                <div>
+                  <div className="text-gray-400 text-xs mb-1">전화 문의</div>
+                  <a href="tel:01056528206" className="text-white font-medium hover:text-cyan-hana transition-colors">
+                    010-5652-8206
+                  </a>
+                </div>
               </li>
-              <li className="flex items-start gap-2">
+              <li className="flex items-start gap-3">
                 <Mail className="w-4 h-4 text-cyan-hana mt-0.5 flex-shrink-0" />
-                <span>info@hanain.co.kr</span>
+                <div>
+                  <div className="text-gray-400 text-xs mb-1">이메일 문의</div>
+                  <a href="mailto:meul777@naver.com" className="text-white font-medium hover:text-cyan-hana transition-colors break-all">
+                    meul777@naver.com
+                  </a>
+                </div>
               </li>
-              <li className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 text-cyan-hana mt-0.5 flex-shrink-0" />
-                <span>서울특별시 강남구<br />테헤란로 123</span>
+              <li className="flex items-start gap-3">
+                <MessageCircle className="w-4 h-4 text-cyan-hana mt-0.5 flex-shrink-0" />
+                <div>
+                  <div className="text-gray-400 text-xs mb-1">운영 시간</div>
+                  <div className="text-white">평일 09:00 – 18:00</div>
+                </div>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-gray-500">
-            © 2024 파트너스인 하나 (Partners in HANA). All rights reserved.
+        {/* 저작권 안내 박스 */}
+        <div className="border border-white/10 rounded-2xl bg-white/5 px-6 py-5 mt-12 mb-6">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+            <div>
+              <p className="text-white text-sm font-semibold mb-1">© 2025 플로로탄닌 파트너스. All rights reserved.</p>
+              <p className="text-gray-400 text-xs leading-relaxed">
+                본 사이트의 모든 콘텐츠(Q&A, 건강 정보, 이미지, 텍스트 등)는 저작권법에 의해 보호받습니다.<br />
+                무단 복제·배포·상업적 이용을 금합니다. 인용 시 반드시 출처를 명시하세요.
+              </p>
+            </div>
+            <a
+              href="mailto:meul777@naver.com?subject=[저작권/제휴 문의] 플로로탄닌 파트너스&body=안녕하세요, 콘텐츠 사용 및 제휴 관련 문의드립니다."
+              className="flex-shrink-0 inline-flex items-center gap-2 bg-cyan-hana text-white text-xs font-semibold px-4 py-2.5 rounded-full hover:bg-opacity-90 transition-all whitespace-nowrap"
+            >
+              <Mail className="w-3.5 h-3.5" />
+              콘텐츠 사용·제휴 문의
+            </a>
+          </div>
+        </div>
+
+        <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-3">
+          <p className="text-xs text-gray-600">
+            © 2025 플로로탄닌 파트너스 · 대표 이메일: meul777@naver.com · 010-5652-8206
           </p>
           <p className="text-xs text-gray-600 text-center md:text-right max-w-md">
-            본 사이트의 정보는 의료 조언을 대체하지 않습니다. 건강 문제는 반드시 전문 의료진과 상담하시기 바랍니다.
+            본 사이트의 정보는 건강 교육 목적이며 의료 처방·진단을 대체하지 않습니다.
           </p>
         </div>
       </div>

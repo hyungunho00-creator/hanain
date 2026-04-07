@@ -1,4 +1,11 @@
-# Logs
+# ===== 보안: 절대 GitHub에 올리면 안 되는 파일 =====
+.env
+.env.local
+.env.production
+.env.production.local
+.env.development.local
+
+# ===== Logs =====
 logs
 *.log
 npm-debug.log*
@@ -22,3 +29,12 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# ===== 데이터 생성 스크립트 (개발용, 배포 불필요) =====
+src/data/gen_*.py
+src/data/build_*.py
+src/data/generate_*.py
+src/data/merge_*.py
+src/data/add_*.py
+src/data/qa_*.json
+src/data/cardio_*.json

@@ -1,14 +1,47 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { useSearchParams, Link } from 'react-router-dom'
-import { Search, ChevronDown, ChevronUp, ThumbsUp, Share2, X, Filter, BookOpen, TrendingUp } from 'lucide-react'
-import qaData from '../data/qa.json'
+import { Search, ChevronDown, ThumbsUp, Share2, X, Filter, BookOpen, TrendingUp, MessageSquare } from 'lucide-react'
 
 const ITEMS_PER_PAGE = 20
+
+// 카테고리 색상 → 가독성 높은 hex 색상 맵 (모든 색상 흰 텍스트 또는 어두운 텍스트 보장)
+const CAT_COLORS = {
+  metabolism:           { bg: '#0077B6', text: '#ffffff' },  // 대사질환 - 진파랑
+  cancer_immune:        { bg: '#7C3AED', text: '#ffffff' },  // 항암/면역 - 진보라
+  digestive:            { bg: '#059669', text: '#ffffff' },  // 소화/간 - 진초록
+  cardiovascular:       { bg: '#DC2626', text: '#ffffff' },  // 심혈관 - 진빨강
+  neuro_cognitive:      { bg: '#4338CA', text: '#ffffff' },  // 신경/인지 - 진인디고
+  mental_health:        { bg: '#BE185D', text: '#ffffff' },  // 정신건강 - 진핑크
+  musculoskeletal:      { bg: '#C2410C', text: '#ffffff' },  // 근골격계 - 진오렌지
+  skin_hair:            { bg: '#B45309', text: '#ffffff' },  // 피부/모발 - 진앰버 (노란배경 제거)
+  respiratory:          { bg: '#0E7490', text: '#ffffff' },  // 호흡기 - 진시안
+  infection_inflammation:{ bg: '#0F766E', text: '#ffffff' }, // 감염/염증 - 진틸
+  womens_health:        { bg: '#BE123C', text: '#ffffff' },  // 여성건강 - 진로즈
+  mens_health:          { bg: '#334155', text: '#ffffff' },  // 남성건강 - 진슬레이트
+}
+
+// qa.json의 color 필드(문자열) 또는 category id로 색상 반환
+function getCatBgColor(colorOrId, catId) {
+  // catId로 직접 매핑 (우선)
+  if (catId && CAT_COLORS[catId]) return CAT_COLORS[catId].bg
+  // color 문자열로 fallback
+  const fallback = {
+    blue: '#0077B6', purple: '#7C3AED', green: '#059669',
+    red: '#DC2626', indigo: '#4338CA', pink: '#BE185D',
+    orange: '#C2410C', yellow: '#B45309', cyan: '#0E7490',
+    teal: '#0F766E', rose: '#BE123C', slate: '#334155',
+  }
+  return fallback[colorOrId] || '#334155'
+}
+
+function getCatTextColor(colorOrId, catId) {
+  return '#ffffff'  // 모든 카테고리 배경색이 어두우므로 항상 흰색
+}
 
 function highlightText(text, query) {
   if (!query || query.length < 2) return text
   const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi')
-  return text.replace(regex, '<mark>$1</mark>')
+  return text.replace(regex, '<mark class="bg-yellow-100 text-yellow-800 rounded px-0.5">$1</mark>')
 }
 
 function QACard({ qa, isOpen, onToggle, searchQuery, categories }) {
@@ -27,28 +60,39 @@ function QACard({ qa, isOpen, onToggle, searchQuery, categories }) {
   const handleShare = async (e) => {
     e.stopPropagation()
     try {
-      await navigator.clipboard.writeText(window.location.href + '?q=' + encodeURIComponent(qa.question))
+      await navigator.clipboard.writeText(window.location.origin + '/qa?q=' + encodeURIComponent(qa.question))
       alert('링크가 복사되었습니다!')
     } catch {
-      alert('링크 복사: ' + window.location.href)
+      alert('링크 복사: ' + window.location.origin + '/qa')
     }
   }
 
+  // Normalize answer to string
+  const answerText = typeof qa.answer === 'string'
+    ? qa.answer
+    : [
+        qa.answer.step1_empathy,
+        qa.answer.step2_statistics,
+        qa.answer.step3_standard_treatment,
+        qa.answer.step4_natural_alternatives,
+        qa.answer.step5_phlorotannin,
+        qa.answer.step6_cta,
+      ].filter(Boolean).join('\n\n')
+
+  const references = typeof qa.answer !== 'string' ? qa.answer.references : null
+
   return (
-    <div className={`bg-white rounded-2xl shadow-sm border transition-all duration-200 overflow-hidden ${isOpen ? 'border-cyan-hana shadow-md' : 'border-gray-100 hover:border-gray-200'}`}>
+    <div
+      data-id={qa.id}
+      className={`bg-white rounded-2xl shadow-sm border transition-all duration-200 overflow-hidden ${isOpen ? 'border-cyan-hana shadow-md' : 'border-gray-100 hover:border-gray-200 hover:shadow-sm'}`}
+    >
       {/* Question header */}
-      <button
-        onClick={onToggle}
-        className="w-full text-left p-6"
-      >
+      <button onClick={onToggle} className="w-full text-left p-5 md:p-6">
         <div className="flex items-start gap-4">
           <div className="flex-1 min-w-0">
             <div className="flex flex-wrap items-center gap-2 mb-2">
               {cat && (
-                <span
-                  className="text-xs font-bold px-2.5 py-1 rounded-full text-white"
-                  style={{ backgroundColor: cat.color }}
-                >
+                <span className="text-xs font-bold px-2.5 py-1 rounded-full" style={{ backgroundColor: getCatBgColor(cat.color, cat.id), color: '#ffffff' }}>
                   {cat.name}
                 </span>
               )}
@@ -60,13 +104,11 @@ function QACard({ qa, isOpen, onToggle, searchQuery, categories }) {
                 {qa.difficulty}
               </span>
               {qa.tags.slice(0, 3).map(tag => (
-                <span key={tag} className="text-xs text-gray-400 bg-gray-100 px-2 py-0.5 rounded-full">
-                  #{tag}
-                </span>
+                <span key={tag} className="text-xs text-gray-400 bg-gray-100 px-2 py-0.5 rounded-full">#{tag}</span>
               ))}
             </div>
             <h3
-              className="font-semibold text-ocean-deep text-lg leading-snug"
+              className="font-semibold text-ocean-deep text-base md:text-lg leading-snug"
               dangerouslySetInnerHTML={{ __html: highlightText(qa.question, searchQuery) }}
             />
             <div className="flex items-center gap-4 mt-2 text-xs text-gray-400">
@@ -80,71 +122,73 @@ function QACard({ qa, isOpen, onToggle, searchQuery, categories }) {
         </div>
       </button>
 
-      {/* Answer */}
+      {/* Answer — column/editorial style */}
       {isOpen && (
-        <div className="border-t border-gray-100 p-6 bg-gray-50">
-          <div className="space-y-5">
-            {[
-              { key: 'step1_empathy', label: '💬 공감', color: 'bg-blue-50 border-blue-200' },
-              { key: 'step2_statistics', label: '📊 현황 통계', color: 'bg-green-50 border-green-200' },
-              { key: 'step3_standard_treatment', label: '🏥 표준 치료', color: 'bg-yellow-50 border-yellow-200' },
-              { key: 'step4_natural_alternatives', label: '🌿 천연 대안', color: 'bg-teal-50 border-teal-200' },
-              { key: 'step5_phlorotannin', label: '⚗️ 플로로탄닌 & MOP 기술', color: 'bg-cyan-50 border-cyan-200' },
-              { key: 'step6_cta', label: '📞 상담 안내', color: 'bg-purple-50 border-purple-200' },
-            ].map(step => (
-              qa.answer[step.key] && (
-                <div key={step.key} className={`rounded-xl border p-4 ${step.color}`}>
-                  <div className="font-semibold text-sm text-gray-600 mb-1">{step.label}</div>
-                  <p className="text-gray-700 text-sm leading-relaxed">{qa.answer[step.key]}</p>
-                </div>
-              )
-            ))}
+        <div className="border-t border-gray-100 px-5 md:px-6 py-5 bg-slate-50">
+          {/* Article-style answer body */}
+          <div className="text-gray-700 text-sm md:text-base leading-[1.9] whitespace-pre-line mb-5">
+            {answerText}
+          </div>
 
-            {/* References */}
-            {qa.answer.references?.length > 0 && (
-              <div className="bg-gray-100 rounded-xl p-4">
-                <div className="font-semibold text-sm text-gray-500 mb-2">📚 참고 문헌</div>
-                <ul className="space-y-1">
-                  {qa.answer.references.map((ref, i) => (
-                    <li key={i} className="text-xs text-gray-500 flex items-start gap-2">
-                      <span className="text-gray-400">[{i+1}]</span>
-                      <span>{ref}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            {/* Disclaimer */}
-            <div className="text-xs text-gray-400 italic border-t pt-3">
-              ⚠️ {qa.answer.disclaimer}
+          {/* References — subtle footer */}
+          {references?.length > 0 && (
+            <div className="border-t border-gray-200 pt-4 mb-4">
+              <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">참고 자료</p>
+              <ul className="space-y-1">
+                {references.map((ref, i) => (
+                  <li key={i} className="text-xs text-gray-400 flex items-start gap-1.5">
+                    <span>[{i + 1}]</span><span>{ref}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
+          )}
 
-            {/* Actions */}
-            <div className="flex items-center gap-3 pt-2">
-              <button
-                onClick={handleLike}
-                className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                  liked ? 'bg-cyan-hana text-white' : 'bg-white border border-gray-200 text-gray-600 hover:border-cyan-hana hover:text-cyan-hana'
-                }`}
-              >
-                <ThumbsUp className="w-4 h-4" />
-                도움이 됐어요 {likeCount}
-              </button>
-              <button
-                onClick={handleShare}
-                className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-white border border-gray-200 text-gray-600 hover:border-cyan-hana hover:text-cyan-hana transition-all"
-              >
-                <Share2 className="w-4 h-4" />
-                공유
-              </button>
-              <Link
-                to="/consult"
-                className="ml-auto btn-primary text-sm py-2"
-              >
-                상담 신청
-              </Link>
-            </div>
+          {/* Disclaimer + Copyright */}
+          <div className="border border-gray-200 rounded-xl bg-gray-50 px-4 py-3 mb-5 space-y-1">
+            <p className="text-xs text-gray-400 italic">
+              ※ 본 내용은 교육·정보 목적으로 제공되며 의료적 진단이나 처방을 대체하지 않습니다.
+            </p>
+            <p className="text-xs text-gray-400">
+              © 2025 플로로탄닌 파트너스 — 본 콘텐츠의 무단 복제·배포를 금합니다.
+              콘텐츠 사용·제휴 문의:{' '}
+              <a href="mailto:meul777@naver.com?subject=[저작권 문의]" className="text-cyan-hana hover:underline font-medium">
+                meul777@naver.com
+              </a>
+            </p>
+          </div>
+
+          {/* Actions */}
+          <div className="flex flex-wrap items-center gap-3">
+            <button
+              onClick={handleLike}
+              className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                liked ? 'bg-cyan-hana text-white' : 'bg-white border border-gray-200 text-gray-600 hover:border-cyan-hana hover:text-cyan-hana'
+              }`}
+            >
+              <ThumbsUp className="w-4 h-4" />
+              도움이 됐어요 {likeCount}
+            </button>
+            <button
+              onClick={handleShare}
+              className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-white border border-gray-200 text-gray-600 hover:border-cyan-hana hover:text-cyan-hana transition-all"
+            >
+              <Share2 className="w-4 h-4" />
+              공유
+            </button>
+            <a
+              href="sms:01056528206?body=안녕하세요! 플로로탄닌 파트너스 건강 Q&A를 보고 문의드립니다."
+              className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-white border border-gray-200 text-gray-600 hover:border-cyan-hana hover:text-cyan-hana transition-all"
+            >
+              <MessageSquare className="w-4 h-4" />
+              문자 보내기
+            </a>
+            <Link
+              to="/partner"
+              className="ml-auto flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold bg-ocean-deep text-white hover:bg-opacity-90 transition-all"
+            >
+              파트너 연결
+            </Link>
           </div>
         </div>
       )}
@@ -153,13 +197,45 @@ function QACard({ qa, isOpen, onToggle, searchQuery, categories }) {
 }
 
 export default function QAPage() {
-  const [searchParams, setSearchParams] = useSearchParams()
+  const [searchParams] = useSearchParams()
   const [searchQuery, setSearchQuery] = useState(searchParams.get('q') || '')
   const [activeCategory, setActiveCategory] = useState(searchParams.get('category') || 'all')
-  const [openId, setOpenId] = useState(null)
+  const [openId, setOpenId] = useState(searchParams.get('openId') || null)
   const [page, setPage] = useState(1)
   const [debouncedQuery, setDebouncedQuery] = useState(searchQuery)
   const debounceRef = useRef(null)
+  const [qaData, setQaData] = useState({ questions: [], categories: [] })
+  const [loading, setLoading] = useState(true)
+
+  // ✅ URL 파라미터가 바뀔 때마다 state 동기화 (Footer/외부 링크 클릭 대응)
+  useEffect(() => {
+    const cat = searchParams.get('category') || 'all'
+    const q   = searchParams.get('q') || ''
+    const oid = searchParams.get('openId') || null
+    setActiveCategory(cat)
+    setSearchQuery(q)
+    setDebouncedQuery(q)
+    setOpenId(oid)
+    setPage(1)
+  }, [searchParams])
+
+  useEffect(() => {
+    fetch('/qa.json')
+      .then(r => r.json())
+      .then(d => {
+        setQaData(d)
+        setLoading(false)
+        // openId가 있으면 해당 아이템으로 스크롤 + 오픈
+        const targetId = searchParams.get('openId')
+        if (targetId) {
+          setTimeout(() => {
+            const el = document.querySelector(`[data-id="${targetId}"]`)
+            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' })
+          }, 400)
+        }
+      })
+      .catch(() => setLoading(false))
+  }, [])
 
   useEffect(() => {
     if (debounceRef.current) clearTimeout(debounceRef.current)
@@ -171,25 +247,50 @@ export default function QAPage() {
   }, [searchQuery])
 
   const filteredQuestions = useCallback(() => {
-    let results = qaData.questions
+    let results = (qaData.questions || [])
     if (activeCategory !== 'all') {
       results = results.filter(q => q.category === activeCategory)
     }
     if (debouncedQuery) {
       const q = debouncedQuery.toLowerCase()
-      results = results.filter(r =>
-        r.question.toLowerCase().includes(q) ||
-        r.tags.some(t => t.toLowerCase().includes(q)) ||
-        Object.values(r.answer).join(' ').toLowerCase().includes(q)
-      )
+      results = results.filter(r => {
+        const answerText = typeof r.answer === 'string'
+          ? r.answer
+          : Object.values(r.answer).filter(v => typeof v === 'string').join(' ')
+        return (
+          r.question.toLowerCase().includes(q) ||
+          (r.tags || []).some(t => t.toLowerCase().includes(q)) ||
+          answerText.toLowerCase().includes(q)
+        )
+      })
     }
     return results
-  }, [activeCategory, debouncedQuery])
+  }, [activeCategory, debouncedQuery, qaData])
 
   const questions = filteredQuestions()
   const totalPages = Math.ceil(questions.length / ITEMS_PER_PAGE)
-  const paginatedQuestions = questions.slice((page - 1) * ITEMS_PER_PAGE, page * ITEMS_PER_PAGE)
-  const popularQuestions = [...qaData.questions].sort((a, b) => b.views - a.views).slice(0, 10)
+
+  // openId가 있을 때 해당 아이템이 있는 페이지로 자동 이동
+  const targetOpenId = searchParams.get('openId')
+  const effectivePage = (() => {
+    if (targetOpenId && questions.length > 0) {
+      const idx = questions.findIndex(q => q.id === targetOpenId)
+      if (idx >= 0) return Math.floor(idx / ITEMS_PER_PAGE) + 1
+    }
+    return page
+  })()
+
+  const paginatedQuestions = questions.slice((effectivePage - 1) * ITEMS_PER_PAGE, effectivePage * ITEMS_PER_PAGE)
+  const popularQuestions = [...(qaData.questions || [])].sort((a, b) => b.views - a.views).slice(0, 10)
+
+  if (loading) return (
+    <div className="pt-16 min-h-screen flex items-center justify-center bg-gray-50">
+      <div className="text-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600 mx-auto mb-4"></div>
+        <p className="text-gray-500">Q&A 데이터 로딩 중...</p>
+      </div>
+    </div>
+  )
 
   return (
     <div className="pt-16 min-h-screen bg-gray-50">
@@ -198,18 +299,17 @@ export default function QAPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center gap-3 text-white mb-4">
             <BookOpen className="w-6 h-6 text-cyan-hana" />
-            <span className="text-cyan-hana font-medium">Q&A 라이브러리</span>
+            <span className="text-cyan-hana font-medium">건강 정보 아카이브</span>
           </div>
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-6">건강 정보 Q&A</h1>
-
-          {/* Search bar */}
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">건강 Q&amp;A 라이브러리</h1>
+          <p className="text-gray-300 mb-6 text-sm md:text-base">올바른 건강 정보, 소재별 근거 중심 해설 · {qaData.questions.length}개 아티클</p>
           <div className="relative max-w-2xl">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
             <input
               type="text"
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
-              placeholder="질문, 증상, 태그로 검색..."
+              placeholder="질환명, 성분, 증상으로 검색..."
               className="w-full bg-white pl-12 pr-10 py-4 rounded-2xl focus:outline-none focus:ring-2 focus:ring-cyan-hana text-gray-700 shadow-lg"
             />
             {searchQuery && (
@@ -222,7 +322,7 @@ export default function QAPage() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 py-8">
-        {/* Category tabs - mobile horizontal scroll */}
+        {/* Category tabs */}
         <div className="flex gap-2 overflow-x-auto pb-3 mb-6 scrollbar-hide">
           <button
             onClick={() => { setActiveCategory('all'); setPage(1) }}
@@ -239,7 +339,7 @@ export default function QAPage() {
               className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-all ${
                 activeCategory === cat.id ? 'text-white' : 'bg-white text-gray-600 hover:bg-gray-100'
               }`}
-              style={activeCategory === cat.id ? { backgroundColor: cat.color } : {}}
+              style={activeCategory === cat.id ? { backgroundColor: getCatBgColor(cat.color, cat.id), color: '#ffffff' } : {}}
             >
               {cat.name} ({cat.count})
             </button>
@@ -250,18 +350,24 @@ export default function QAPage() {
           {/* Main Q&A list */}
           <div className="lg:col-span-2 space-y-4">
             {debouncedQuery && (
-              <div className="text-sm text-gray-500 mb-4">
+              <div className="text-sm text-gray-500 mb-2">
                 "<strong>{debouncedQuery}</strong>" 검색 결과: {questions.length}개
               </div>
             )}
 
             {paginatedQuestions.length === 0 ? (
-              <div className="card text-center py-16">
+              <div className="bg-white rounded-2xl p-16 text-center shadow-sm border border-gray-100">
                 <Search className="w-12 h-12 text-gray-300 mx-auto mb-4" />
-                <p className="text-gray-400">검색 결과가 없습니다.</p>
-                <button onClick={() => { setSearchQuery(''); setActiveCategory('all') }} className="mt-4 text-cyan-hana text-sm hover:underline">
-                  전체 보기
-                </button>
+                <p className="text-gray-400 mb-1">검색 결과가 없습니다.</p>
+                <p className="text-xs text-gray-400 mb-4">더 궁금하신 내용은 이메일로 문의해 주세요.</p>
+                <div className="flex justify-center gap-3">
+                  <button onClick={() => { setSearchQuery(''); setActiveCategory('all') }} className="text-cyan-hana text-sm hover:underline">
+                    전체 보기
+                  </button>
+                  <a href="sms:01056528206?body=안녕하세요! 건강 정보 관련 문의드립니다." className="text-cyan-hana text-sm hover:underline">
+                    문자 문의
+                  </a>
+                </div>
               </div>
             ) : (
               paginatedQuestions.map(qa => (
@@ -279,22 +385,21 @@ export default function QAPage() {
             {/* Pagination */}
             {totalPages > 1 && (
               <div className="flex justify-center gap-2 mt-8">
-                <button onClick={() => setPage(p => Math.max(1, p-1))} disabled={page === 1} className="px-4 py-2 rounded-lg bg-white border disabled:opacity-40 hover:border-cyan-hana transition-colors text-sm">
+                <button onClick={() => setPage(p => Math.max(1, p - 1))} disabled={page === 1}
+                  className="px-4 py-2 rounded-lg bg-white border disabled:opacity-40 hover:border-cyan-hana transition-colors text-sm">
                   이전
                 </button>
                 {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
                   const p = Math.max(1, Math.min(totalPages - 4, page - 2)) + i
                   return (
-                    <button
-                      key={p}
-                      onClick={() => setPage(p)}
-                      className={`w-10 h-10 rounded-lg text-sm font-medium transition-all ${page === p ? 'bg-cyan-hana text-white' : 'bg-white border hover:border-cyan-hana'}`}
-                    >
+                    <button key={p} onClick={() => setPage(p)}
+                      className={`w-10 h-10 rounded-lg text-sm font-medium transition-all ${page === p ? 'bg-cyan-hana text-white' : 'bg-white border hover:border-cyan-hana'}`}>
                       {p}
                     </button>
                   )
                 })}
-                <button onClick={() => setPage(p => Math.min(totalPages, p+1))} disabled={page === totalPages} className="px-4 py-2 rounded-lg bg-white border disabled:opacity-40 hover:border-cyan-hana transition-colors text-sm">
+                <button onClick={() => setPage(p => Math.min(totalPages, p + 1))} disabled={page === totalPages}
+                  className="px-4 py-2 rounded-lg bg-white border disabled:opacity-40 hover:border-cyan-hana transition-colors text-sm">
                   다음
                 </button>
               </div>
@@ -304,27 +409,24 @@ export default function QAPage() {
           {/* Sidebar */}
           <div className="hidden lg:block space-y-6">
             {/* Popular questions */}
-            <div className="card">
+            <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
               <div className="flex items-center gap-2 mb-4">
                 <TrendingUp className="w-5 h-5 text-cyan-hana" />
-                <h3 className="font-semibold text-ocean-deep">인기 질문 TOP 10</h3>
+                <h3 className="font-semibold text-ocean-deep">많이 읽은 아티클</h3>
               </div>
               <div className="space-y-3">
                 {popularQuestions.map((qa, i) => (
-                  <button
-                    key={qa.id}
+                  <button key={qa.id}
                     onClick={() => {
-                      setSearchQuery('')
-                      setActiveCategory('all')
-                      setOpenId(qa.id)
-                      setTimeout(() => document.querySelector(`[data-id="${qa.id}"]`)?.scrollIntoView({ behavior: 'smooth' }), 100)
+                      setActiveCategory('all'); setSearchQuery(''); setOpenId(qa.id); setPage(1)
+                      setTimeout(() => document.querySelector(`[data-id="${qa.id}"]`)?.scrollIntoView({ behavior: 'smooth', block: 'center' }), 200)
                     }}
-                    className="w-full text-left flex items-start gap-2 hover:text-cyan-hana transition-colors"
+                    className="w-full text-left flex items-start gap-2 group"
                   >
-                    <span className={`text-xs font-bold flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center ${i < 3 ? 'bg-gold-hana text-white' : 'bg-gray-100 text-gray-500'}`}>
-                      {i+1}
+                    <span className={`text-xs font-bold flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center mt-0.5 ${i < 3 ? 'bg-cyan-hana text-white' : 'bg-gray-100 text-gray-500'}`}>
+                      {i + 1}
                     </span>
-                    <span className="text-sm text-gray-600 hover:text-cyan-hana leading-snug line-clamp-2">
+                    <span className="text-sm text-gray-600 group-hover:text-cyan-hana leading-snug line-clamp-2 transition-colors">
                       {qa.question}
                     </span>
                   </button>
@@ -332,35 +434,45 @@ export default function QAPage() {
               </div>
             </div>
 
-            {/* Quick consult */}
+            {/* SMS CTA */}
             <div className="bg-ocean-gradient rounded-2xl p-6 text-white">
-              <h3 className="font-bold mb-2">빠른 상담 신청</h3>
-              <p className="text-gray-300 text-sm mb-4">원하는 답을 못 찾으셨나요? 전문가와 1:1 상담을 받아보세요.</p>
-              <Link to="/consult" className="block w-full bg-cyan-hana text-white py-3 rounded-xl text-center text-sm font-semibold hover:bg-opacity-90 transition-colors">
-                상담 신청하기
+              <MessageSquare className="w-6 h-6 text-cyan-hana mb-3" />
+              <h3 className="font-bold mb-1">더 궁금하신 게 있으신가요?</h3>
+              <p className="text-gray-300 text-sm mb-4">찾는 정보가 없거나 더 알고 싶다면 문자로 편하게 연락주세요. 전문 파트너가 답변드립니다.</p>
+              <a
+                href="sms:01056528206?body=안녕하세요! 플로로탄닌 파트너스 건강 Q&A를 보고 문의드립니다."
+                className="block w-full bg-cyan-hana text-white py-3 rounded-xl text-center text-sm font-semibold hover:bg-opacity-90 transition-colors"
+              >
+                💬 010-5652-8206 문자 보내기
+              </a>
+            </div>
+
+            {/* Partner CTA */}
+            <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
+              <h3 className="font-semibold text-ocean-deep mb-2">파트너 교육 프로그램</h3>
+              <p className="text-gray-500 text-sm mb-4">이 정보를 고객에게 직접 전달하고 싶으신가요? 플로로탄닌 파트너스에서 더 많은 정보를 탐색해 보세요.</p>
+              <Link to="/partner" className="block w-full text-center py-2.5 rounded-xl border-2 border-ocean-deep text-ocean-deep text-sm font-semibold hover:bg-ocean-deep hover:text-white transition-all">
+                파트너 과정 알아보기
               </Link>
             </div>
 
             {/* Categories */}
-            <div className="card">
+            <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
               <h3 className="font-semibold text-ocean-deep mb-4 flex items-center gap-2">
                 <Filter className="w-4 h-4 text-cyan-hana" />
-                카테고리
+                카테고리별 보기
               </h3>
-              <div className="space-y-2">
+              <div className="space-y-1">
                 {qaData.categories.map(cat => (
-                  <button
-                    key={cat.id}
+                  <button key={cat.id}
                     onClick={() => { setActiveCategory(cat.id); setPage(1) }}
-                    className={`w-full flex items-center justify-between px-3 py-2 rounded-lg transition-colors ${
-                      activeCategory === cat.id ? 'bg-gray-100' : 'hover:bg-gray-50'
-                    }`}
+                    className={`w-full flex items-center justify-between px-3 py-2 rounded-lg transition-colors ${activeCategory === cat.id ? 'bg-gray-100' : 'hover:bg-gray-50'}`}
                   >
                     <div className="flex items-center gap-2">
-                      <div className="w-3 h-3 rounded-full" style={{ backgroundColor: cat.color }} />
+                      <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: getCatBgColor(cat.color, cat.id) }} />
                       <span className="text-sm text-gray-700">{cat.name}</span>
                     </div>
-                    <span className="text-xs text-gray-400">{cat.count}</span>
+                    <span className="text-xs text-gray-400 bg-gray-100 px-2 py-0.5 rounded-full">{cat.count}</span>
                   </button>
                 ))}
               </div>

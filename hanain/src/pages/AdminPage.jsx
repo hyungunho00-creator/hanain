@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
 import { Settings, Users, MessageSquare, BookOpen, Plus, Edit, Trash2, Save, X, Search, Download, RefreshCw, Lock, Eye, EyeOff } from 'lucide-react'
 
-const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:4000'
-const ADMIN_PASS = 'hanain2024'
+// ⚠️ Vercel 환경변수 VITE_ADMIN_PASS 에서 읽음
+// Vercel 대시보드 → Settings → Environment Variables → VITE_ADMIN_PASS 설정
+const ADMIN_PASS = import.meta.env.VITE_ADMIN_PASS || 'hanain2024admin!'
 
 function LoginScreen({ onLogin }) {
   const [pw, setPw] = useState('')
@@ -26,7 +27,7 @@ function LoginScreen({ onLogin }) {
             <Lock className="w-8 h-8 text-white" />
           </div>
           <h1 className="text-2xl font-bold text-ocean-deep">관리자 로그인</h1>
-          <p className="text-gray-400 text-sm mt-1">파트너스인 하나 관리 시스템</p>
+          <p className="text-gray-400 text-sm mt-1">플로로탄닌 파트너스 관리 시스템</p>
         </div>
         <form onSubmit={handleLogin} className="space-y-4">
           <div className="relative">
@@ -158,7 +159,7 @@ export default function AdminPage() {
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           <div>
             <h1 className="text-2xl font-bold">관리자 대시보드</h1>
-            <p className="text-gray-400 text-sm mt-0.5">파트너스인 하나 운영 관리</p>
+            <p className="text-gray-400 text-sm mt-0.5">플로로탄닌 파트너스 운영 관리</p>
           </div>
           <div className="flex gap-3">
             <button onClick={fetchData} className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors text-sm">
@@ -383,7 +384,7 @@ export default function AdminPage() {
                     value={emailSettings.host}
                     onChange={e => setEmailSettings(p => ({ ...p, host: e.target.value }))}
                     className="input-field"
-                    placeholder="smtp.gmail.com"
+                    placeholder="smtp.naver.com"
                   />
                 </div>
                 <div>
@@ -393,7 +394,7 @@ export default function AdminPage() {
                     value={emailSettings.port}
                     onChange={e => setEmailSettings(p => ({ ...p, port: parseInt(e.target.value) }))}
                     className="input-field"
-                    placeholder="587"
+                    placeholder="465"
                   />
                 </div>
                 <div>
@@ -402,17 +403,17 @@ export default function AdminPage() {
                     value={emailSettings.user}
                     onChange={e => setEmailSettings(p => ({ ...p, user: e.target.value }))}
                     className="input-field"
-                    placeholder="your@gmail.com"
+                    placeholder="meul777@naver.com"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1.5">앱 비밀번호</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-1.5">네이버 앱 비밀번호</label>
                   <input
                     type="password"
                     value={emailSettings.pass}
                     onChange={e => setEmailSettings(p => ({ ...p, pass: e.target.value }))}
                     className="input-field"
-                    placeholder="앱 비밀번호 (Gmail)"
+                    placeholder="네이버 앱 비밀번호 입력"
                   />
                 </div>
               </div>
@@ -423,12 +424,19 @@ export default function AdminPage() {
                   value={emailSettings.to}
                   onChange={e => setEmailSettings(p => ({ ...p, to: e.target.value }))}
                   className="input-field"
-                  placeholder="admin@hanain.co.kr (알림 받을 이메일)"
+                  placeholder="meul777@naver.com"
                 />
               </div>
 
-              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-sm text-blue-700">
-                <strong>Gmail 사용 시:</strong> Google 계정 → 보안 → 2단계 인증 활성화 후 앱 비밀번호 생성하여 사용하세요.
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-sm text-blue-700 space-y-2">
+                <p><strong>📧 네이버 메일 SMTP 설정 방법:</strong></p>
+                <ol className="list-decimal ml-4 space-y-1">
+                  <li>네이버 메일 → 환경설정 → POP3/IMAP 설정</li>
+                  <li>IMAP/SMTP 사용 → <strong>사용함</strong> 선택 후 저장</li>
+                  <li>네이버 보안설정 → 앱 비밀번호 발급</li>
+                  <li>발급받은 앱 비밀번호를 위 칸에 입력</li>
+                </ol>
+                <p className="mt-1">SMTP 호스트: <code className="bg-blue-100 px-1 rounded">smtp.naver.com</code> / 포트: <code className="bg-blue-100 px-1 rounded">465</code></p>
               </div>
 
               <button

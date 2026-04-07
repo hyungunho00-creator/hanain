@@ -2,12 +2,14 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { Users, Award, TrendingUp, BookOpen, CheckCircle, ChevronDown, ChevronUp, Send, Star } from 'lucide-react'
 
-const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:4000'
+// Formspree로 파트너 신청 전송 → meul777@naver.com 수신
+// https://formspree.io 가입 후 파트너용 Form ID 교체 (현재 ConsultPage와 동일 ID 공유)
+const FORMSPREE_PARTNER_ID = import.meta.env.VITE_FORMSPREE_PARTNER_ID || 'xpwzgkqv'
 
 const curriculum = [
   {
     week: '1주차',
-    title: '파트너스인 하나 브랜드 이해',
+    title: '플로로탄닌 파트너스 이해',
     topics: ['감태 플로로탄닌 기초 과학', 'MOP 공정 이해', '하이드로 네트워크 기술', '제품 라인업 소개'],
   },
   {
@@ -110,18 +112,25 @@ export default function PartnerPage() {
   const onSubmit = async (data) => {
     setIsSubmitting(true)
     try {
-      const res = await fetch(BACKEND_URL + '/api/partner', {
+      // Formspree로 전송 (백엔드 서버 불필요)
+      const res = await fetch(`https://formspree.io/f/${FORMSPREE_PARTNER_ID}`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          ...data,
+          _subject: '[파트너 신청] ' + data.name,
+          _replyto: data.email,
+        }),
       })
-      if (res.ok) {
+      const json = await res.json()
+      if (res.ok && !json.error) {
         setSuccess(true)
         reset()
       } else {
-        throw new Error('Server error')
+        throw new Error(json.error || 'Formspree error')
       }
     } catch {
+      // Formspree 실패 시 localStorage 임시 저장 + 성공 처리
       const existing = JSON.parse(localStorage.getItem('hanain_partner_applications') || '[]')
       existing.push({ ...data, timestamp: new Date().toISOString() })
       localStorage.setItem('hanain_partner_applications', JSON.stringify(existing))
@@ -137,15 +146,19 @@ export default function PartnerPage() {
       {success && <SuccessModal onClose={() => setSuccess(false)} />}
 
       {/* Hero */}
-      <div className="bg-ocean-gradient py-16 text-white">
+      <div className="bg-ocean-gradient py-20">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex items-center gap-2 text-gold-hana text-sm font-medium mb-4">
+          <div className="flex items-center gap-2 text-gold-hana text-sm font-medium mb-5">
             <Users className="w-4 h-4" />
-            파트너 프로그램
+            <span>파트너 프로그램</span>
           </div>
-          <h1 className="text-4xl font-bold mb-4">파트너스인 하나와 함께<br />성장하세요</h1>
-          <p className="text-gray-300 text-lg max-w-xl">
-            건강 지식으로 가치를 창출하는 네트워크 파트너 프로그램. 교육부터 수익 창출까지 모두 지원합니다.
+          <h1 className="text-4xl md:text-5xl font-bold mb-5 leading-tight" style={{ color: '#ffffff' }}>
+            플로로탄닌 파트너스와<br />
+            <span style={{ color: '#00B4D8' }}>함께 성장하세요</span>
+          </h1>
+          <p className="text-lg max-w-xl leading-relaxed" style={{ color: '#d1e8f5' }}>
+            건강 지식으로 가치를 창출하는 네트워크 파트너 프로그램.<br />
+            교육부터 수익 창출까지 모두 지원합니다.
           </p>
         </div>
       </div>
@@ -154,7 +167,7 @@ export default function PartnerPage() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="section-title text-center mb-4">파트너 혜택</h2>
-          <p className="section-subtitle text-center">파트너스인 하나가 제공하는 지원 프로그램</p>
+          <p className="section-subtitle text-center">플로로탄닌 파트너스가 제공하는 지원</p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
@@ -283,6 +296,20 @@ export default function PartnerPage() {
               {isSubmitting ? <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" /> : <Send className="w-5 h-5" />}
               파트너 신청하기
             </button>
+
+            {/* 저작권 / 사용 문의 */}
+            <div className="mt-6 border-t border-gray-100 pt-5 space-y-1">
+              <p className="text-xs text-gray-400 text-center">
+                © 2025 <span className="font-semibold text-gray-500">플로로탄닌 파트너스</span> — All rights reserved.
+              </p>
+              <p className="text-xs text-gray-400 text-center leading-relaxed">
+                본 사이트의 교육 자료·커리큘럼·콘텐츠는 저작권법의 보호를 받습니다. 무단 복제·배포를 금합니다.<br />
+                콘텐츠 사용 또는 제휴 문의:{' '}
+                <a href="mailto:meul777@naver.com?subject=[파트너/제휴 문의]" className="text-cyan-600 hover:underline font-medium">
+                  meul777@naver.com
+                </a>
+              </p>
+            </div>
           </form>
         </div>
       </section>

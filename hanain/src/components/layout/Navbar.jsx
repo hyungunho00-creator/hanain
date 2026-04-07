@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Menu, X, Leaf } from 'lucide-react'
+import { Waves } from 'lucide-react'
 
 const navLinks = [
   { path: '/', label: '홈' },
-  { path: '/qa', label: 'Q&A 라이브러리' },
-  { path: '/tech', label: '기술 소개' },
-  { path: '/partner', label: '파트너 신청' },
-  { path: '/consult', label: '상담 신청' },
+  { path: '/qa', label: '건강 Q&A' },
+  { path: '/phlorotannin', label: '플로로탄닌 소개' },
+  { path: '/partner', label: '파트너 참여' },
+  { path: '/consult', label: '문의하기' },
 ]
 
 export default function Navbar() {
@@ -34,11 +34,11 @@ export default function Navbar() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
             <div className="w-9 h-9 bg-gradient-to-br from-cyan-hana to-blue-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-              <Leaf className="w-5 h-5 text-white" />
+              <Waves className="w-5 h-5 text-white" />
             </div>
             <div>
-              <span className="text-white font-bold text-base leading-tight block">파트너스인 하나</span>
-              <span className="text-cyan-hana text-xs leading-tight block">Partners in HANA</span>
+              <span className="text-white font-bold text-base leading-tight block">플로로탄닌 파트너스</span>
+              <span className="text-cyan-hana text-xs leading-tight block">Phlorotannin Partners</span>
             </div>
           </Link>
 
@@ -57,12 +57,6 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <Link
-              to="/admin"
-              className="ml-2 px-4 py-2 bg-gold-hana text-white rounded-lg text-sm font-medium hover:bg-opacity-90 transition-all"
-            >
-              관리자
-            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -70,7 +64,15 @@ export default function Navbar() {
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden text-white p-2 rounded-lg hover:bg-white/10 transition-colors"
           >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isOpen ? (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
           </button>
         </div>
       </div>
@@ -92,12 +94,6 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <Link
-              to="/admin"
-              className="block px-4 py-3 bg-gold-hana text-white rounded-lg text-sm font-medium"
-            >
-              관리자 페이지
-            </Link>
           </div>
         </div>
       )}

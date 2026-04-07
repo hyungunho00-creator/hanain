@@ -107,7 +107,7 @@ async function sendNotificationEmail(type, data) {
       : '새 파트너 신청이 접수되었습니다'
 
     const html = `
-      <h2 style="color: #0A1628;">파트너스인 하나 - ${subject}</h2>
+      <h2 style="color: #0A1628;">플로로탄닌 파트너스 - ${subject}</h2>
       <table style="border-collapse: collapse; width: 100%;">
         ${Object.entries(data).map(([k, v]) => `
           <tr>
@@ -120,7 +120,7 @@ async function sendNotificationEmail(type, data) {
     `
 
     await transporter.sendMail({
-      from: `파트너스인 하나 <${settings.user}>`,
+      from: `플로로탄닌 파트너스 <${settings.user}>`,
       to: settings.recipient_email,
       subject,
       html,
@@ -129,11 +129,11 @@ async function sendNotificationEmail(type, data) {
     // Also send confirmation to applicant
     if (data.이메일) {
       await transporter.sendMail({
-        from: `파트너스인 하나 <${settings.user}>`,
+        from: `플로로탄닌 파트너스 <${settings.user}>`,
         to: data.이메일,
-        subject: '신청이 완료되었습니다 - 파트너스인 하나',
+        subject: '신청이 완료되었습니다 - 플로로탄닌 파트너스',
         html: `
-          <h2 style="color: #0A1628;">파트너스인 하나</h2>
+          <h2 style="color: #0A1628;">플로로탄닌 파트너스</h2>
           <p>${data.이름 || '고객'}님, 신청이 완료되었습니다.</p>
           <p>빠른 시일 내에 연락드리겠습니다.</p>
           <br>
@@ -360,7 +360,7 @@ app.post('/api/admin/test-email', adminAuth, async (req, res) => {
     await transporter.sendMail({
       from: settings.user,
       to: settings.recipient_email,
-      subject: '[테스트] 파트너스인 하나 이메일 테스트',
+      subject: '[테스트] 플로로탄닌 파트너스 이메일 테스트',
       text: '이메일 설정이 올바르게 작동합니다.'
     })
 
@@ -379,6 +379,6 @@ app.get('/{*path}', (req, res) => {
 })
 
 app.listen(PORT, () => {
-  console.log(`✅ 파트너스인 하나 Backend running on http://localhost:${PORT}`)
+  console.log(`✅ 플로로탄닌 파트너스 Backend running on http://localhost:${PORT}`)
   console.log(`📊 Database: ${DB_PATH}`)
 })
