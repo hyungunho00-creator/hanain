@@ -1,6 +1,4 @@
 {
-  "buildCommand": "cd hanain && npm install && npm run build",
-  "outputDirectory": "hanain/dist",
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ]
