@@ -3,8 +3,9 @@ import { Link, useNavigate } from 'react-router-dom'
 import {
   Waves, ChevronDown, ChevronRight, ArrowRight, ExternalLink,
   Shield, Activity, Brain, Heart, Zap, Leaf, Star, BookOpen,
-  FlaskConical, Microscope, TrendingUp, Users, CheckCircle, Phone, MessageSquare
+  FlaskConical, Microscope, TrendingUp, Users, CheckCircle, Phone, MessageSquare, Mail
 } from 'lucide-react'
+import RevealContact from '../components/common/RevealContact'
 
 // ─── 데이터 ───────────────────────────────────────────────
 const MECHANISMS = [
@@ -528,20 +529,23 @@ export default function PhlorotanninPage() {
             ))}
           </div>
           <div className="flex flex-wrap gap-4 justify-center">
-            <a
-              href="tel:01056528206"
+            <RevealContact
+              type="tel"
+              label="전화 상담 신청"
+              revealLabel="010-5652-8206 전화하기"
+              phone="01056528206"
+              displayPhone="010-5652-8206"
               className="flex items-center gap-2 bg-white text-ocean-deep px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all"
-            >
-              <Phone className="w-5 h-5" />
-              010-5652-8206 전화하기
-            </a>
-            <a
-              href="sms:01056528206?body=%5B%ED%94%8C%EB%A1%9C%EB%A1%9C%ED%83%84%EB%8B%8C%20%EB%AC%B8%EC%9D%98%5D%20"
+            />
+            <RevealContact
+              type="sms"
+              label="문자로 문의하기"
+              revealLabel="010-5652-8206 문자하기"
+              phone="01056528206"
+              displayPhone="010-5652-8206"
+              smsBody="[플로로탄닌 문의] "
               className="flex items-center gap-2 btn-secondary px-8 py-4"
-            >
-              <MessageSquare className="w-5 h-5" />
-              010-5652-8206 문자하기
-            </a>
+            />
           </div>
         </div>
       </section>

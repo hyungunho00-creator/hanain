@@ -265,12 +265,25 @@ export default function PartnerPage() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1.5">관심 분야</label>
+              <label className="block text-sm font-medium text-gray-700 mb-1.5">관심 건강/활동 분야</label>
               <div className="grid grid-cols-2 gap-2">
-                {['건강/웰니스', '의료/약학', '뷰티/헬스케어', '교육/코칭', '영업/마케팅', '기타'].map(item => (
+                {[
+                  '암치료/항암 관리',
+                  '당뇨/혈당 조절',
+                  '고혈압/혈관 건강',
+                  '탈모/피부 개선',
+                  '치매/인지 건강',
+                  '다이어트/비만',
+                  '건강/웰니스',
+                  '의료/약학',
+                  '뷰티/헬스케어',
+                  '교육/코칭',
+                  '영업/마케팅',
+                  '기타',
+                ].map(item => (
                   <label key={item} className="flex items-center gap-2 cursor-pointer">
                     <input type="checkbox" {...register('interests')} value={item} className="accent-cyan-hana" />
-                    <span className="text-sm text-gray-600">{item}</span>
+                    <span className="text-sm text-gray-700">{item}</span>
                   </label>
                 ))}
               </div>

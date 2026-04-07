@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { useSearchParams, Link } from 'react-router-dom'
-import { Search, ChevronDown, ThumbsUp, Share2, X, Filter, BookOpen, TrendingUp, MessageSquare } from 'lucide-react'
+import { Search, ChevronDown, ThumbsUp, Share2, X, Filter, BookOpen, TrendingUp, MessageSquare, Phone, ChevronRight } from 'lucide-react'
 
 const ITEMS_PER_PAGE = 20
 
@@ -42,6 +42,62 @@ function highlightText(text, query) {
   if (!query || query.length < 2) return text
   const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi')
   return text.replace(regex, '<mark class="bg-yellow-100 text-yellow-800 rounded px-0.5">$1</mark>')
+}
+
+// 전화번호 숨김 + 클릭 시 번호 노출 카드
+function ContactCard() {
+  const [showPhone, setShowPhone] = useState(false)
+  const [showSms, setShowSms] = useState(false)
+
+  return (
+    <div className="bg-ocean-gradient rounded-2xl p-6">
+      <MessageSquare className="w-6 h-6 text-gold-hana mb-3" />
+      <h3 className="font-bold text-white text-base mb-2">더 궁금하신 게 있으신가요?</h3>
+      <p className="text-gray-200 text-sm mb-4 leading-relaxed">
+        찾는 정보가 없거나 더 알고 싶다면<br />전화나 문자로 편하게 연락주세요.
+      </p>
+      <div className="space-y-2">
+        {/* 전화 - 클릭하면 번호 노출 후 연결 */}
+        {!showPhone ? (
+          <button
+            onClick={() => setShowPhone(true)}
+            className="flex items-center justify-center gap-2 w-full bg-cyan-hana text-white py-3 rounded-xl text-sm font-semibold hover:bg-opacity-90 transition-all"
+          >
+            <Phone className="w-4 h-4" />
+            전화 상담 번호 보기
+            <ChevronRight className="w-4 h-4 opacity-70" />
+          </button>
+        ) : (
+          <a
+            href="tel:01056528206"
+            className="flex items-center justify-center gap-2 w-full bg-cyan-hana text-white py-3 rounded-xl text-sm font-semibold hover:bg-opacity-90 transition-all"
+          >
+            <Phone className="w-4 h-4" />
+            010-5652-8206 &nbsp;전화하기
+          </a>
+        )}
+        {/* 문자 - 클릭하면 번호 노출 후 문자앱 연결 */}
+        {!showSms ? (
+          <button
+            onClick={() => setShowSms(true)}
+            className="flex items-center justify-center gap-2 w-full bg-white/10 border border-white/30 text-white py-3 rounded-xl text-sm font-semibold hover:bg-white/20 transition-all"
+          >
+            <MessageSquare className="w-4 h-4" />
+            문자 상담 번호 보기
+            <ChevronRight className="w-4 h-4 opacity-70" />
+          </button>
+        ) : (
+          <a
+            href="sms:01056528206?body=%5B%ED%94%8C%EB%A1%9C%EB%A1%9C%ED%83%84%EB%8B%8C%20%ED%8C%8C%ED%8A%B8%EB%84%88%EC%8A%A4%5D%20%EA%B1%B4%EA%B0%95%20Q%26A%EB%A5%BC%20%EB%B3%B4%EA%B3%A0%20%EB%AC%B8%EC%9D%98%EB%93%9C%EB%A6%BD%EB%8B%88%EB%8B%A4."
+            className="flex items-center justify-center gap-2 w-full bg-white/10 border border-white/30 text-white py-3 rounded-xl text-sm font-semibold hover:bg-white/20 transition-all"
+          >
+            <MessageSquare className="w-4 h-4" />
+            010-5652-8206 &nbsp;문자 보내기
+          </a>
+        )}
+      </div>
+    </div>
+  )
 }
 
 function QACard({ qa, isOpen, onToggle, searchQuery, categories }) {
@@ -435,25 +491,7 @@ export default function QAPage() {
             </div>
 
             {/* SMS CTA */}
-            <div className="bg-ocean-gradient rounded-2xl p-6 text-white">
-              <MessageSquare className="w-6 h-6 text-cyan-hana mb-3" />
-              <h3 className="font-bold mb-1">더 궁금하신 게 있으신가요?</h3>
-              <p className="text-gray-300 text-sm mb-4">찾는 정보가 없거나 더 알고 싶다면 전화나 문자로 편하게 연락주세요.</p>
-              <div className="space-y-2">
-                <a
-                  href="tel:01056528206"
-                  className="flex items-center justify-center gap-2 w-full bg-cyan-hana text-white py-3 rounded-xl text-sm font-semibold hover:bg-opacity-90 transition-colors"
-                >
-                  📞 010-5652-8206 전화하기
-                </a>
-                <a
-                  href="sms:01056528206?body=%5B%ED%94%8C%EB%A1%9C%EB%A1%9C%ED%83%84%EB%8B%8C%20%ED%8C%8C%ED%8A%B8%EB%84%88%EC%8A%A4%5D%20%EA%B1%B4%EA%B0%95%20Q%26A%EB%A5%BC%20%EB%B3%B4%EA%B3%A0%20%EB%AC%B8%EC%9D%98%EB%93%9C%EB%A6%BD%EB%8B%88%EB%8B%A4."
-                  className="flex items-center justify-center gap-2 w-full bg-white/10 border border-white/30 text-white py-3 rounded-xl text-sm font-semibold hover:bg-white/20 transition-colors"
-                >
-                  💬 010-5652-8206 문자 보내기
-                </a>
-              </div>
-            </div>
+            <ContactCard />
 
             {/* Partner CTA */}
             <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">

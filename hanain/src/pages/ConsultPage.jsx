@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Calendar, Phone, Clock, CheckCircle, MessageSquare, Send } from 'lucide-react'
+import RevealContact from '../components/common/RevealContact'
 
 const PHONE_NUMBER = '01056528206'
 const PHONE_DISPLAY = '010-5652-8206'
@@ -141,10 +142,11 @@ export default function ConsultPage() {
             <MessageSquare className="w-4 h-4" />
             상담 신청
           </div>
-          <h1 className="text-4xl font-bold mb-4">상담 신청하기</h1>
-          <p className="text-gray-300 text-lg max-w-xl">
-            아래 정보를 입력하고 <strong className="text-white">상담 신청 문자 보내기</strong>를 누르면<br />
-            작성한 내용이 문자로 바로 전송됩니다.
+          <h1 className="text-4xl font-bold text-white mb-4">상담 신청하기</h1>
+          <p className="text-gray-200 text-lg max-w-xl leading-relaxed">
+            아래 정보를 입력하고{' '}
+            <strong className="text-gold-hana">상담 신청 문자 보내기</strong>를 누르면<br />
+            작성한 내용이 문자로 자동 입력됩니다.
           </p>
         </div>
       </div>
@@ -180,30 +182,21 @@ export default function ConsultPage() {
             <div className="card bg-cyan-hana/5 border border-cyan-hana/20">
               <h4 className="font-bold text-ocean-deep mb-3 text-sm">📞 바로 연락하기</h4>
               <div className="space-y-3">
-                <a
-                  href={`tel:${PHONE_NUMBER}`}
-                  className="flex items-center gap-3 bg-white rounded-xl p-3 border border-gray-100 hover:border-cyan-hana hover:shadow-sm transition-all"
-                >
-                  <div className="w-9 h-9 bg-cyan-hana rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-4 h-4 text-white" />
-                  </div>
-                  <div>
-                    <div className="text-xs font-semibold text-gray-800">전화 연결</div>
-                    <div className="text-xs text-cyan-hana font-bold">{PHONE_DISPLAY}</div>
-                  </div>
-                </a>
-                <a
-                  href={`sms:${PHONE_NUMBER}?body=${encodeURIComponent('[플로로탄닌 파트너스] 상담 문의드립니다.')}`}
-                  className="flex items-center gap-3 bg-white rounded-xl p-3 border border-gray-100 hover:border-cyan-hana hover:shadow-sm transition-all"
-                >
-                  <div className="w-9 h-9 bg-ocean-deep rounded-xl flex items-center justify-center flex-shrink-0">
-                    <MessageSquare className="w-4 h-4 text-white" />
-                  </div>
-                  <div>
-                    <div className="text-xs font-semibold text-gray-800">문자 보내기</div>
-                    <div className="text-xs text-gray-600">{PHONE_DISPLAY}</div>
-                  </div>
-                </a>
+                <RevealContact
+                  type="tel"
+                  label="전화 상담 번호 확인"
+                  phone={PHONE_NUMBER}
+                  displayPhone={PHONE_DISPLAY}
+                  className="w-full bg-white rounded-xl p-3 border border-gray-100 hover:border-cyan-hana hover:shadow-sm transition-all text-sm font-semibold text-ocean-deep"
+                />
+                <RevealContact
+                  type="sms"
+                  label="문자 상담 번호 확인"
+                  phone={PHONE_NUMBER}
+                  displayPhone={PHONE_DISPLAY}
+                  smsBody="[플로로탄닌 파트너스] 상담 문의드립니다."
+                  className="w-full bg-white rounded-xl p-3 border border-gray-100 hover:border-cyan-hana hover:shadow-sm transition-all text-sm font-semibold text-ocean-deep"
+                />
               </div>
             </div>
 
@@ -338,26 +331,23 @@ export default function ConsultPage() {
 
             {/* 바로 전화 / 문자 */}
             <div className="mt-6 grid sm:grid-cols-2 gap-4">
-              <a
-                href={`tel:${PHONE_NUMBER}`}
-                className="flex items-center justify-center gap-3 p-4 bg-cyan-hana text-white rounded-2xl font-semibold hover:bg-opacity-90 transition-all hover:shadow-md"
-              >
-                <Phone className="w-5 h-5" />
-                <div className="text-left">
-                  <div className="text-xs opacity-80">지금 바로 통화</div>
-                  <div>{PHONE_DISPLAY}</div>
-                </div>
-              </a>
-              <a
-                href={`sms:${PHONE_NUMBER}?body=${encodeURIComponent('[플로로탄닌 파트너스] 상담 문의드립니다.')}`}
-                className="flex items-center justify-center gap-3 p-4 bg-white border-2 border-ocean-deep text-ocean-deep rounded-2xl font-semibold hover:bg-ocean-deep hover:text-white transition-all hover:shadow-md"
-              >
-                <MessageSquare className="w-5 h-5" />
-                <div className="text-left">
-                  <div className="text-xs opacity-70">간단하게 문자로</div>
-                  <div>{PHONE_DISPLAY}</div>
-                </div>
-              </a>
+              <RevealContact
+                type="tel"
+                label="전화 상담 신청하기"
+                revealLabel={`${PHONE_DISPLAY} 전화하기`}
+                phone={PHONE_NUMBER}
+                displayPhone={PHONE_DISPLAY}
+                className="p-4 bg-cyan-hana text-white rounded-2xl font-semibold hover:bg-opacity-90 transition-all hover:shadow-md w-full"
+              />
+              <RevealContact
+                type="sms"
+                label="문자 상담 신청하기"
+                revealLabel={`${PHONE_DISPLAY} 문자 보내기`}
+                phone={PHONE_NUMBER}
+                displayPhone={PHONE_DISPLAY}
+                smsBody="[플로로탄닌 파트너스] 상담 문의드립니다."
+                className="p-4 bg-white border-2 border-ocean-deep text-ocean-deep rounded-2xl font-semibold hover:bg-ocean-deep hover:text-white transition-all hover:shadow-md w-full"
+              />
             </div>
 
             {/* 저작권 */}

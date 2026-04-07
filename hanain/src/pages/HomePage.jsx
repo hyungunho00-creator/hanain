@@ -5,6 +5,7 @@ import {
   Star, MessageCircle, Waves, Leaf, Brain, Heart,
   Shield, Activity, Zap, Phone
 } from 'lucide-react'
+import RevealContact from '../components/common/RevealContact'
 
 
 function useCountUp(target, duration = 2000) {
@@ -469,20 +470,23 @@ export default function HomePage() {
             건강 정보, 자연 소재, 파트너 활동 등 어떤 내용이든 편하게 문의해 주세요.
           </p>
           <div className="flex flex-wrap gap-4 justify-center mb-10">
-            <a
-              href="tel:01056528206"
+            <RevealContact
+              type="tel"
+              label="전화 상담 신청"
+              revealLabel="010-5652-8206 전화하기"
+              phone="01056528206"
+              displayPhone="010-5652-8206"
               className="flex items-center gap-2 bg-white text-ocean-deep px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all"
-            >
-              <Phone className="w-5 h-5" />
-              010-5652-8206 전화하기
-            </a>
-            <a
-              href="sms:01056528206?body=%5B%ED%94%8C%EB%A1%9C%EB%A1%9C%ED%83%84%EB%8B%8C%20%ED%8C%8C%ED%8A%B8%EB%84%88%EC%8A%A4%5D%20%EC%83%81%EB%8B%B4%20%EB%AC%B8%EC%9D%98%EB%93%9C%EB%A6%BD%EB%8B%88%EB%8B%A4."
+            />
+            <RevealContact
+              type="sms"
+              label="문자 상담 신청"
+              revealLabel="010-5652-8206 문자하기"
+              phone="01056528206"
+              displayPhone="010-5652-8206"
+              smsBody="[플로로탄닌 파트너스] 상담 문의드립니다."
               className="flex items-center gap-2 btn-secondary px-8 py-4"
-            >
-              <MessageCircle className="w-5 h-5" />
-              010-5652-8206 문자하기
-            </a>
+            />
           </div>
           <div className="flex flex-wrap gap-3 justify-center">
             <Link to="/qa" className="text-sm text-cyan-hana hover:underline flex items-center gap-1">
@@ -509,7 +513,7 @@ export default function HomePage() {
               본 사이트의 모든 콘텐츠는 저작권법에 의해 보호받습니다. 무단 복제·배포를 금합니다.
             </p>
             <a
-              href="mailto:meul777@naver.com?subject=[저작권/콘텐츠 사용 문의]&body=안녕하세요, 콘텐츠 사용 관련 문의드립니다."
+              href="sms:01056528206?body=%5B%EC%BD%98%ED%85%90%EC%B8%A0%20%EC%82%AC%EC%9A%A9%20%EB%AC%B8%EC%9D%98%5D%20"
               className="flex-shrink-0 text-xs text-cyan-600 hover:underline font-medium whitespace-nowrap"
             >
               콘텐츠 사용 문의 →
