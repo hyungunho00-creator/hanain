@@ -8,6 +8,8 @@ import PartnerPage from './pages/PartnerPage'
 import ConsultPage from './pages/ConsultPage'
 import AdminPage from './pages/AdminPage'
 import PhlorotanninPage from './pages/PhlorotanninPage'
+import LearnPage from './pages/LearnPage'
+import EasyHealthPage from './pages/EasyHealthPage'
 import ScrollToTop from './components/common/ScrollToTop'
 
 function App() {
@@ -24,6 +26,8 @@ function App() {
             <Route path="/consult" element={<ConsultPage />} />
             <Route path="/admin" element={<AdminPage />} />
             <Route path="/phlorotannin" element={<PhlorotanninPage />} />
+            <Route path="/learn" element={<LearnPage />} />
+            <Route path="/easy" element={<EasyHealthPage />} />
           </Routes>
         </main>
         <Footer />

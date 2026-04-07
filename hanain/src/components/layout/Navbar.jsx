@@ -5,6 +5,7 @@ import { Waves } from 'lucide-react'
 const navLinks = [
   { path: '/', label: '홈' },
   { path: '/qa', label: '건강 Q&A' },
+  { path: '/learn', label: '🌊 쉽게 배우기' },
   { path: '/phlorotannin', label: '플로로탄닌 소개' },
   { path: '/partner', label: '파트너 참여' },
   { path: '/consult', label: '문의하기' },

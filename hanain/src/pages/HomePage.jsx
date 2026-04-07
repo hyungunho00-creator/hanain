@@ -250,6 +250,32 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ─── 쉬운 건강 설명 배너 ─── */}
+      <section className="py-10 bg-gradient-to-r from-cyan-500 to-blue-600">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="text-center md:text-left">
+              <div className="inline-flex items-center gap-2 bg-white/20 text-white text-xs font-bold px-3 py-1.5 rounded-full mb-3">
+                🆕 새 페이지 오픈!
+              </div>
+              <h3 className="text-xl md:text-2xl font-black text-white mb-2">
+                🩺 중학생도 이해하는 건강 설명
+              </h3>
+              <p className="text-blue-100 text-sm leading-relaxed">
+                당뇨·고혈압·탈모·치매… 왜 생기는지,<br />
+                플로로탄닌이 어떻게 도움이 되는지 그림처럼 쉽게!
+              </p>
+            </div>
+            <Link
+              to="/easy"
+              className="flex-shrink-0 flex items-center gap-2 bg-yellow-400 text-gray-900 px-8 py-4 rounded-full font-black text-base hover:bg-yellow-300 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 whitespace-nowrap"
+            >
+              쉬운 설명 보러가기 →
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ─── 오늘의 추천 Q&A ─── */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-6">
