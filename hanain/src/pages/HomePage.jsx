@@ -488,11 +488,11 @@ export default function HomePage() {
             <Link to="/qa" className="text-sm text-cyan-hana hover:underline flex items-center gap-1">
               건강 Q&A 탐색 <ChevronRight className="w-3 h-3" />
             </Link>
-            <span className="text-gray-600">|</span>
+            <span className="text-gray-400">|</span>
             <Link to="/partner" className="text-sm text-cyan-hana hover:underline flex items-center gap-1">
               파트너 참여 <ChevronRight className="w-3 h-3" />
             </Link>
-            <span className="text-gray-600">|</span>
+            <span className="text-gray-400">|</span>
             <Link to="/consult" className="text-sm text-cyan-hana hover:underline flex items-center gap-1">
               상담 신청 <ChevronRight className="w-3 h-3" />
             </Link>

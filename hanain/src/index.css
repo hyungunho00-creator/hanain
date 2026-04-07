@@ -5,12 +5,16 @@
 @layer base {
   body {
     font-family: 'Noto Sans KR', sans-serif;
-    color: #374151;
+    color: #1f2937;
     background-color: #ffffff;
   }
 
   h1, h2, h3, h4, h5, h6 {
     color: #0A1628;
+  }
+
+  p, li, span, div {
+    line-height: 1.7;
   }
 }
 
@@ -36,11 +40,11 @@
   }
 
   .section-subtitle {
-    @apply text-gray-500 text-lg mb-12;
+    @apply text-gray-600 text-lg mb-12;
   }
 
   .input-field {
-    @apply w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-hana focus:border-transparent transition-all duration-200;
+    @apply w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-hana focus:border-transparent transition-all duration-200 text-gray-800;
   }
 
   .category-badge {

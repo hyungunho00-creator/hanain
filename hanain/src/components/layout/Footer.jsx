@@ -120,10 +120,10 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-3">
-          <p className="text-xs text-gray-600">
+          <p className="text-xs text-gray-400">
             © 2025 플로로탄닌 파트너스 · 대표 이메일: meul777@naver.com · 010-5652-8206
           </p>
-          <p className="text-xs text-gray-600 text-center md:text-right max-w-md">
+          <p className="text-xs text-gray-400 text-center md:text-right max-w-md">
             본 사이트의 정보는 건강 교육 목적이며 의료 처방·진단을 대체하지 않습니다.
           </p>
         </div>
