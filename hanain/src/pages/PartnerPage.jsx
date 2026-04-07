@@ -1,10 +1,8 @@
 import { useState } from 'react'
-import { useForm } from 'react-hook-form'
-import { Users, Award, TrendingUp, BookOpen, CheckCircle, ChevronDown, ChevronUp, Send, Star } from 'lucide-react'
+import { Users, Award, TrendingUp, BookOpen, CheckCircle, ChevronDown, ChevronUp, Send, Star, MessageSquare, Phone } from 'lucide-react'
 
-// Formspree로 파트너 신청 전송 → meul777@naver.com 수신
-// https://formspree.io 가입 후 파트너용 Form ID 교체 (현재 ConsultPage와 동일 ID 공유)
-const FORMSPREE_PARTNER_ID = import.meta.env.VITE_FORMSPREE_PARTNER_ID || 'xpwzgkqv'
+const PHONE_NUMBER = '01056528206'
+const PHONE_DISPLAY = '010-5652-8206'
 
 const curriculum = [
   {
@@ -53,6 +51,25 @@ const successCases = [
   },
 ]
 
+function buildSmsBody(data) {
+  const interests = Array.isArray(data.interests)
+    ? data.interests.join(', ')
+    : data.interests || '미선택'
+  const lines = [
+    '[플로로탄닌 파트너스] 파트너 신청',
+    '─────────────────',
+    `이름: ${data.name}`,
+    `연락처: ${data.phone}`,
+    data.email ? `이메일: ${data.email}` : '',
+    data.job ? `현재 직업: ${data.job}` : '',
+    interests ? `관심 분야: ${interests}` : '',
+    data.message ? `문의 내용: ${data.message}` : '',
+    '─────────────────',
+    '위 내용으로 파트너 신청합니다.',
+  ]
+  return lines.filter(Boolean).join('\n')
+}
+
 function CurriculumCard({ item }) {
   const [isOpen, setIsOpen] = useState(false)
   return (
@@ -86,64 +103,108 @@ function CurriculumCard({ item }) {
   )
 }
 
-function SuccessModal({ onClose }) {
+// SMS 준비 완료 모달
+function SmsModal({ formData, onClose }) {
+  const smsBody = buildSmsBody(formData)
+  const smsLink = `sms:${PHONE_NUMBER}?body=${encodeURIComponent(smsBody)}`
+
   return (
     <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
       <div className="bg-white rounded-3xl p-8 max-w-md w-full text-center shadow-2xl">
-        <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-          <CheckCircle className="w-10 h-10 text-green-500" />
+        <div className="w-20 h-20 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <MessageSquare className="w-10 h-10 text-cyan-hana" />
         </div>
-        <h3 className="text-2xl font-bold text-ocean-deep mb-3">파트너 신청 완료!</h3>
-        <p className="text-gray-500 mb-6">
-          파트너 신청이 접수되었습니다.<br />
-          담당 매니저가 영업일 기준 1-2일 내 연락드리겠습니다.
+        <h3 className="text-2xl font-bold text-ocean-deep mb-3">신청 준비 완료!</h3>
+        <p className="text-gray-700 mb-2 font-medium">
+          아래 버튼을 누르면 문자 앱이 열리면서<br />
+          신청 내용이 자동으로 입력됩니다.
         </p>
-        <button onClick={onClose} className="btn-primary w-full">확인</button>
+        <p className="text-gray-500 text-sm mb-5">
+          전송 버튼을 한 번만 눌러주시면 됩니다.
+        </p>
+
+        {/* SMS 미리보기 */}
+        <div className="bg-gray-50 rounded-2xl p-4 mb-6 text-left border border-gray-200">
+          <p className="text-xs text-gray-400 font-semibold mb-2 uppercase tracking-wide">문자 미리보기</p>
+          <pre className="text-xs text-gray-700 whitespace-pre-wrap leading-relaxed font-sans">{smsBody}</pre>
+        </div>
+
+        <div className="space-y-3">
+          <a
+            href={smsLink}
+            className="w-full btn-primary py-4 flex items-center justify-center gap-2 text-base"
+          >
+            <MessageSquare className="w-5 h-5" />
+            문자 앱 열고 전송하기
+          </a>
+          <button
+            onClick={onClose}
+            className="w-full py-3 text-sm text-gray-400 hover:text-gray-600 transition-colors"
+          >
+            나중에 보내기
+          </button>
+        </div>
       </div>
     </div>
   )
 }
 
 export default function PartnerPage() {
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    job: '',
+    interests: [],
+    message: '',
+    privacyAgreed: false,
+  })
+  const [errors, setErrors] = useState({})
   const [success, setSuccess] = useState(false)
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const { register, handleSubmit, reset, formState: { errors } } = useForm()
 
-  const onSubmit = async (data) => {
-    setIsSubmitting(true)
-    try {
-      // Formspree로 전송 (백엔드 서버 불필요)
-      const res = await fetch(`https://formspree.io/f/${FORMSPREE_PARTNER_ID}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({
-          ...data,
-          _subject: '[파트너 신청] ' + data.name,
-          _replyto: data.email,
-        }),
-      })
-      const json = await res.json()
-      if (res.ok && !json.error) {
-        setSuccess(true)
-        reset()
-      } else {
-        throw new Error(json.error || 'Formspree error')
-      }
-    } catch {
-      // Formspree 실패 시 localStorage 임시 저장 + 성공 처리
-      const existing = JSON.parse(localStorage.getItem('phlorotannin_partner_applications') || '[]')
-      existing.push({ ...data, timestamp: new Date().toISOString() })
-      localStorage.setItem('phlorotannin_partner_applications', JSON.stringify(existing))
-      setSuccess(true)
-      reset()
-    } finally {
-      setIsSubmitting(false)
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target
+    if (type === 'checkbox' && name === 'interests') {
+      setFormData(prev => ({
+        ...prev,
+        interests: checked
+          ? [...prev.interests, value]
+          : prev.interests.filter(i => i !== value),
+      }))
+    } else if (type === 'checkbox') {
+      setFormData(prev => ({ ...prev, [name]: checked }))
+    } else {
+      setFormData(prev => ({ ...prev, [name]: value }))
     }
+    if (errors[name]) setErrors(prev => ({ ...prev, [name]: '' }))
+  }
+
+  const validate = () => {
+    const errs = {}
+    if (!formData.name.trim()) errs.name = '이름을 입력해주세요'
+    if (!formData.phone.match(/^[0-9-+]{10,13}$/)) errs.phone = '올바른 연락처를 입력해주세요'
+    if (!formData.privacyAgreed) errs.privacyAgreed = '개인정보 수집에 동의해주세요'
+    return errs
+  }
+
+  const onSubmit = (e) => {
+    e.preventDefault()
+    const errs = validate()
+    if (Object.keys(errs).length > 0) { setErrors(errs); return }
+    setSuccess(true)
   }
 
   return (
     <div className="pt-16">
-      {success && <SuccessModal onClose={() => setSuccess(false)} />}
+      {success && (
+        <SmsModal
+          formData={formData}
+          onClose={() => {
+            setSuccess(false)
+            setFormData({ name: '', phone: '', email: '', job: '', interests: [], message: '', privacyAgreed: false })
+          }}
+        />
+      )}
 
       {/* Hero */}
       <div className="bg-ocean-gradient py-20">
@@ -234,34 +295,72 @@ export default function PartnerPage() {
       <section className="py-16 bg-gray-50">
         <div className="max-w-2xl mx-auto px-6">
           <h2 className="section-title text-center mb-4">파트너 신청</h2>
-          <p className="section-subtitle text-center">지금 바로 파트너 신청서를 제출하세요</p>
+          <p className="section-subtitle text-center">아래 정보를 입력하고 문자로 신청하세요</p>
 
-          <form onSubmit={handleSubmit(onSubmit)} className="card space-y-5">
+          {/* 안내 배너 */}
+          <div className="bg-cyan-50 border border-cyan-200 rounded-2xl p-4 mb-6 flex items-start gap-3">
+            <MessageSquare className="w-5 h-5 text-cyan-600 mt-0.5 flex-shrink-0" />
+            <div>
+              <div className="text-sm font-bold text-cyan-800">이렇게 진행됩니다</div>
+              <div className="text-sm text-cyan-700 mt-1 leading-relaxed">
+                ① 아래 양식 작성 → ② <strong>파트너 신청 문자 보내기</strong> 클릭 → ③ 문자 앱에서 <strong>전송</strong>
+              </div>
+            </div>
+          </div>
+
+          <form onSubmit={onSubmit} className="card space-y-5">
+            <h3 className="font-bold text-ocean-deep text-lg">파트너 신청서</h3>
+
             <div className="grid md:grid-cols-2 gap-5">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1.5">이름 *</label>
-                <input {...register('name', { required: '이름을 입력해주세요' })} className="input-field" placeholder="홍길동" />
-                {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>}
+                <input
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="input-field"
+                  placeholder="홍길동"
+                />
+                {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1.5">연락처 *</label>
-                <input {...register('phone', { required: '연락처를 입력해주세요' })} className="input-field" placeholder="010-0000-0000" />
-                {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone.message}</p>}
+                <input
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="input-field"
+                  placeholder="010-0000-0000"
+                  type="tel"
+                />
+                {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone}</p>}
               </div>
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1.5">이메일 *</label>
-              <input {...register('email', {
-                required: '이메일을 입력해주세요',
-                pattern: { value: /^\S+@\S+$/i, message: '올바른 이메일을 입력해주세요' }
-              })} className="input-field" placeholder="example@email.com" />
-              {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
+              <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                이메일
+                <span className="text-xs text-gray-400 font-normal ml-1">(선택사항)</span>
+              </label>
+              <input
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                className="input-field"
+                placeholder="example@email.com"
+                type="email"
+              />
             </div>
 
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1.5">현재 직업</label>
-              <input {...register('job')} className="input-field" placeholder="예: 간호사, 약사, 주부, 자영업 등" />
+              <input
+                name="job"
+                value={formData.job}
+                onChange={handleChange}
+                className="input-field"
+                placeholder="예: 간호사, 약사, 주부, 자영업 등"
+              />
             </div>
 
             <div>
@@ -282,7 +381,14 @@ export default function PartnerPage() {
                   '기타',
                 ].map(item => (
                   <label key={item} className="flex items-center gap-2 cursor-pointer">
-                    <input type="checkbox" {...register('interests')} value={item} className="accent-cyan-hana" />
+                    <input
+                      type="checkbox"
+                      name="interests"
+                      value={item}
+                      checked={formData.interests.includes(item)}
+                      onChange={handleChange}
+                      className="accent-cyan-hana"
+                    />
                     <span className="text-sm text-gray-700">{item}</span>
                   </label>
                 ))}
@@ -290,9 +396,14 @@ export default function PartnerPage() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1.5">문의 내용</label>
+              <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                문의 내용
+                <span className="text-xs text-gray-400 font-normal ml-1">(선택사항 — 문자에 자동 포함)</span>
+              </label>
               <textarea
-                {...register('message')}
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
                 rows={3}
                 className="input-field resize-none"
                 placeholder="파트너 활동 관련 궁금한 점을 자유롭게 적어주세요."
@@ -300,26 +411,65 @@ export default function PartnerPage() {
             </div>
 
             <div className="flex items-start gap-2">
-              <input type="checkbox" {...register('privacyAgreed', { required: '동의해주세요' })} className="mt-1 accent-cyan-hana" />
-              <label className="text-sm text-gray-600">개인정보 수집 및 이용에 동의합니다. (필수)</label>
+              <input
+                type="checkbox"
+                name="privacyAgreed"
+                checked={formData.privacyAgreed}
+                onChange={handleChange}
+                className="mt-1 accent-cyan-hana w-4 h-4"
+              />
+              <label className="text-sm text-gray-600">
+                <span className="font-medium">개인정보 수집 및 이용에 동의합니다.</span> (필수)
+              </label>
             </div>
-            {errors.privacyAgreed && <p className="text-red-500 text-xs">{errors.privacyAgreed.message}</p>}
+            {errors.privacyAgreed && <p className="text-red-500 text-xs">{errors.privacyAgreed}</p>}
 
-            <button type="submit" disabled={isSubmitting} className="w-full btn-gold py-4 flex items-center justify-center gap-2">
-              {isSubmitting ? <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" /> : <Send className="w-5 h-5" />}
-              파트너 신청하기
+            {/* 제출 버튼 */}
+            <button
+              type="submit"
+              className="w-full bg-ocean-deep text-white py-4 rounded-2xl font-bold text-base flex items-center justify-center gap-3 hover:bg-opacity-90 transition-all hover:shadow-lg hover:-translate-y-0.5"
+            >
+              <MessageSquare className="w-5 h-5" />
+              파트너 신청 문자 보내기
+              <Send className="w-4 h-4 opacity-70" />
             </button>
 
-            {/* 저작권 / 사용 문의 */}
-            <div className="mt-6 border-t border-gray-100 pt-5 space-y-1">
+            <p className="text-xs text-center text-gray-500">
+              버튼을 누르면 작성하신 내용이 담긴 문자가 준비됩니다.<br />
+              문자 앱에서 <strong>전송</strong>만 누르면 완료!
+            </p>
+
+            {/* 바로 전화 */}
+            <div className="border-t border-gray-100 pt-5">
+              <p className="text-xs text-center text-gray-400 mb-3">또는 바로 연락하기</p>
+              <div className="grid grid-cols-2 gap-3">
+                <a
+                  href={`tel:${PHONE_NUMBER}`}
+                  className="flex items-center justify-center gap-2 py-3 bg-white border-2 border-ocean-deep text-ocean-deep rounded-xl text-sm font-semibold hover:bg-ocean-deep hover:text-white transition-all"
+                >
+                  <Phone className="w-4 h-4" />
+                  {PHONE_DISPLAY}
+                </a>
+                <a
+                  href={`sms:${PHONE_NUMBER}?body=${encodeURIComponent('[플로로탄닌 파트너스] 파트너 신청 문의드립니다.')}`}
+                  className="flex items-center justify-center gap-2 py-3 bg-cyan-hana text-white rounded-xl text-sm font-semibold hover:bg-opacity-90 transition-all"
+                >
+                  <MessageSquare className="w-4 h-4" />
+                  문자 문의
+                </a>
+              </div>
+            </div>
+
+            {/* 저작권 */}
+            <div className="border-t border-gray-100 pt-5 space-y-1">
               <p className="text-xs text-gray-400 text-center">
                 © 2025 <span className="font-semibold text-gray-500">플로로탄닌 파트너스</span> — All rights reserved.
               </p>
               <p className="text-xs text-gray-400 text-center leading-relaxed">
                 본 사이트의 교육 자료·커리큘럼·콘텐츠는 저작권법의 보호를 받습니다. 무단 복제·배포를 금합니다.<br />
                 콘텐츠 사용 또는 제휴 문의:{' '}
-                <a href="sms:01056528206?body=%5B%ED%8C%8C%ED%8A%B8%EB%84%88%2F%EC%A0%9C%ED%9C%B4%20%EB%AC%B8%EC%9D%98%5D%20" className="text-cyan-600 hover:underline font-medium">
-                  010-5652-8206 문자
+                <a href={`sms:${PHONE_NUMBER}?body=${encodeURIComponent('[파트너/제휴 문의] ')}`} className="text-cyan-600 hover:underline font-medium">
+                  {PHONE_DISPLAY} 문자
                 </a>
               </p>
             </div>
