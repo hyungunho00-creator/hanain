@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { useSearchParams, Link } from 'react-router-dom'
 import { Search, ChevronDown, ThumbsUp, Share2, X, Filter, BookOpen, TrendingUp, MessageSquare, Phone, ChevronRight } from 'lucide-react'
+import { PARTNER_CONFIG } from '../config/partner'
 
 const ITEMS_PER_PAGE = 20
 
@@ -69,11 +70,11 @@ function ContactCard() {
           </button>
         ) : (
           <a
-            href="tel:01056528206"
+            href={`tel:${PARTNER_CONFIG.phone}`}
             className="flex items-center justify-center gap-2 w-full bg-cyan-hana text-white py-3 rounded-xl text-sm font-semibold hover:bg-opacity-90 transition-all"
           >
             <Phone className="w-4 h-4" />
-            010-5652-8206 &nbsp;전화하기
+            {PARTNER_CONFIG.phoneDisplay} &nbsp;전화하기
           </a>
         )}
         {/* 문자 - 클릭하면 번호 노출 후 문자앱 연결 */}
@@ -88,11 +89,11 @@ function ContactCard() {
           </button>
         ) : (
           <a
-            href="sms:01056528206?body=%5B%ED%94%8C%EB%A1%9C%EB%A1%9C%ED%83%84%EB%8B%8C%20%ED%8C%8C%ED%8A%B8%EB%84%88%EC%8A%A4%5D%20%EA%B1%B4%EA%B0%95%20Q%26A%EB%A5%BC%20%EB%B3%B4%EA%B3%A0%20%EB%AC%B8%EC%9D%98%EB%93%9C%EB%A6%BD%EB%8B%88%EB%8B%A4."
+            href={`sms:${PARTNER_CONFIG.phone}?body=%5B%ED%94%8C%EB%A1%9C%EB%A1%9C%ED%83%84%EB%8B%8C%20%ED%8C%8C%ED%8A%B8%EB%84%88%EC%8A%A4%5D%20%EA%B1%B4%EA%B0%95%20Q%26A%EB%A5%BC%20%EB%B3%B4%EA%B3%A0%20%EB%AC%B8%EC%9D%98%EB%93%9C%EB%A6%BD%EB%8B%88%EB%8B%A4.`}
             className="flex items-center justify-center gap-2 w-full bg-white/10 border border-white/30 text-white py-3 rounded-xl text-sm font-semibold hover:bg-white/20 transition-all"
           >
             <MessageSquare className="w-4 h-4" />
-            010-5652-8206 &nbsp;문자 보내기
+            {PARTNER_CONFIG.phoneDisplay} &nbsp;문자 보내기
           </a>
         )}
       </div>
@@ -231,7 +232,7 @@ function QACard({ qa, isOpen, onToggle, searchQuery, categories }) {
               공유
             </button>
             <a
-              href="sms:01056528206?body=안녕하세요! 플로로탄닌 파트너스 건강 Q&A를 보고 문의드립니다."
+              href={`sms:${PARTNER_CONFIG.phone}?body=안녕하세요! 플로로탄닌 파트너스 건강 Q&A를 보고 문의드립니다.`}
               className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-white border border-gray-200 text-gray-600 hover:border-cyan-hana hover:text-cyan-hana transition-all"
             >
               <MessageSquare className="w-4 h-4" />
@@ -418,7 +419,7 @@ export default function QAPage() {
                   <button onClick={() => { setSearchQuery(''); setActiveCategory('all') }} className="text-cyan-hana text-sm hover:underline">
                     전체 보기
                   </button>
-                  <a href="sms:01056528206?body=안녕하세요! 건강 정보 관련 문의드립니다." className="text-cyan-hana text-sm hover:underline">
+                  <a href={`sms:${PARTNER_CONFIG.phone}?body=안녕하세요! 건강 정보 관련 문의드립니다.`} className="text-cyan-hana text-sm hover:underline">
                     문자 문의
                   </a>
                 </div>

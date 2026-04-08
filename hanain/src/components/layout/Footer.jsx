@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { PARTNER_CONFIG } from '../../config/partner'
 import { Waves, Phone, MessageCircle } from 'lucide-react'
 import RevealContact from '../common/RevealContact'
 
@@ -85,9 +86,9 @@ export default function Footer() {
                   <RevealContact
                     type="tel"
                     label="클릭하여 연결"
-                    revealLabel="010-5652-8206"
-                    phone="01056528206"
-                    displayPhone="010-5652-8206"
+                    revealLabel={PARTNER_CONFIG.phoneDisplay}
+                    phone={PARTNER_CONFIG.phone}
+                    displayPhone={PARTNER_CONFIG.phoneDisplay}
                     className="text-white font-medium hover:text-cyan-hana transition-colors"
                   />
                 </div>
@@ -99,9 +100,9 @@ export default function Footer() {
                   <RevealContact
                     type="sms"
                     label="클릭하여 연결"
-                    revealLabel="010-5652-8206"
-                    phone="01056528206"
-                    displayPhone="010-5652-8206"
+                    revealLabel={PARTNER_CONFIG.phoneDisplay}
+                    phone={PARTNER_CONFIG.phone}
+                    displayPhone={PARTNER_CONFIG.phoneDisplay}
                     className="text-white font-medium hover:text-cyan-hana transition-colors"
                   />
                 </div>
@@ -131,8 +132,8 @@ export default function Footer() {
               type="sms"
               label="콘텐츠 사용·제휴 문의"
               revealLabel="010-5652-8206 문자하기"
-              phone="01056528206"
-              displayPhone="010-5652-8206"
+              phone={PARTNER_CONFIG.phone}
+              displayPhone={PARTNER_CONFIG.phoneDisplay}
               icon={MessageCircle}
               className="flex-shrink-0 inline-flex items-center gap-2 bg-cyan-hana text-white text-xs font-semibold px-4 py-2.5 rounded-full hover:bg-opacity-90 transition-all whitespace-nowrap"
             />

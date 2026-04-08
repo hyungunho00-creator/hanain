@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { MessageCircle, X, Phone, Calendar, ChevronUp } from 'lucide-react'
+import { PARTNER_CONFIG } from '../../config/partner'
 
 export default function FloatingButton() {
   const [isOpen, setIsOpen] = useState(false)
@@ -33,11 +34,11 @@ export default function FloatingButton() {
             </button>
           ) : (
             <a
-              href="tel:01056528206"
+              href={`tel:${PARTNER_CONFIG.phone}`}
               className="flex items-center gap-2 bg-green-500 text-white px-4 py-2.5 rounded-full shadow-lg hover:shadow-xl transition-all text-sm font-medium"
             >
               <Phone className="w-4 h-4" />
-              010-5652-8206
+              {PARTNER_CONFIG.phoneDisplay}
             </a>
           )}
           <Link

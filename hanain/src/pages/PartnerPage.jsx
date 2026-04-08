@@ -1,8 +1,9 @@
 import { useState } from 'react'
+import { PARTNER_CONFIG } from '../config/partner'
 import { Users, Award, TrendingUp, BookOpen, CheckCircle, ChevronDown, ChevronUp, Send, Star, MessageSquare, Phone } from 'lucide-react'
 
-const PHONE_NUMBER = '01056528206'
-const PHONE_DISPLAY = '010-5652-8206'
+const PHONE_NUMBER = PARTNER_CONFIG.phone
+const PHONE_DISPLAY = PARTNER_CONFIG.phoneDisplay
 
 const curriculum = [
   {

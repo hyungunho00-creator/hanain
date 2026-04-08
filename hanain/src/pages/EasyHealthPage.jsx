@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { PARTNER_CONFIG } from '../config/partner'
 import { Link } from 'react-router-dom'
 import { ChevronDown, ChevronUp, MessageSquare, ArrowRight, CheckCircle } from 'lucide-react'
 

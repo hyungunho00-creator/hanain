@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { PARTNER_CONFIG } from '../config/partner'
 import { Link, useNavigate } from 'react-router-dom'
 import {
   Waves, ChevronDown, ChevronRight, ArrowRight, ExternalLink,
@@ -533,16 +534,16 @@ export default function PhlorotanninPage() {
               type="tel"
               label="전화 상담 신청"
               revealLabel="010-5652-8206 전화하기"
-              phone="01056528206"
-              displayPhone="010-5652-8206"
+              phone={PARTNER_CONFIG.phone}
+              displayPhone={PARTNER_CONFIG.phoneDisplay}
               className="flex items-center gap-2 bg-white text-ocean-deep px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all"
             />
             <RevealContact
               type="sms"
               label="문자로 문의하기"
               revealLabel="010-5652-8206 문자하기"
-              phone="01056528206"
-              displayPhone="010-5652-8206"
+              phone={PARTNER_CONFIG.phone}
+              displayPhone={PARTNER_CONFIG.phoneDisplay}
               smsBody="[플로로탄닌 문의] "
               className="flex items-center gap-2 btn-secondary px-8 py-4"
             />
