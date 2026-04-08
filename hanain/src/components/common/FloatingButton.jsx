@@ -4,6 +4,7 @@ import { MessageCircle, X, Phone, Calendar, ChevronUp } from 'lucide-react'
 
 export default function FloatingButton() {
   const [isOpen, setIsOpen] = useState(false)
+  const [showPhone, setShowPhone] = useState(false)
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -22,13 +23,23 @@ export default function FloatingButton() {
             <Calendar className="w-4 h-4 text-cyan-hana" />
             상담 신청
           </Link>
-          <a
-            href="tel:01056528206"
-            className="flex items-center gap-2 bg-white text-ocean-deep px-4 py-2.5 rounded-full shadow-lg hover:shadow-xl transition-all text-sm font-medium"
-          >
-            <Phone className="w-4 h-4 text-green-500" />
-            010-5652-8206
-          </a>
+          {!showPhone ? (
+            <button
+              onClick={() => setShowPhone(true)}
+              className="flex items-center gap-2 bg-white text-ocean-deep px-4 py-2.5 rounded-full shadow-lg hover:shadow-xl transition-all text-sm font-medium"
+            >
+              <Phone className="w-4 h-4 text-green-500" />
+              전화 연결
+            </button>
+          ) : (
+            <a
+              href="tel:01056528206"
+              className="flex items-center gap-2 bg-green-500 text-white px-4 py-2.5 rounded-full shadow-lg hover:shadow-xl transition-all text-sm font-medium"
+            >
+              <Phone className="w-4 h-4" />
+              010-5652-8206
+            </a>
+          )}
           <Link
             to="/partner"
             onClick={() => setIsOpen(false)}

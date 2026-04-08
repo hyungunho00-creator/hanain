@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Waves, Phone, MessageCircle } from 'lucide-react'
+import RevealContact from '../common/RevealContact'
 
 export default function Footer() {
   return (
@@ -76,33 +77,43 @@ export default function Footer() {
           {/* Contact */}
           <div>
             <h3 className="text-white font-semibold mb-4">문의</h3>
-            <ul className="space-y-4 text-sm">
-              <li className="flex items-start gap-3">
+            <div className="space-y-3 text-sm">
+              <div className="flex items-start gap-3">
                 <Phone className="w-4 h-4 text-cyan-hana mt-0.5 flex-shrink-0" />
                 <div>
                   <div className="text-gray-400 text-xs mb-1">전화 문의</div>
-                  <a href="tel:01056528206" className="text-white font-medium hover:text-cyan-hana transition-colors">
-                    010-5652-8206
-                  </a>
+                  <RevealContact
+                    type="tel"
+                    label="클릭하여 연결"
+                    revealLabel="010-5652-8206"
+                    phone="01056528206"
+                    displayPhone="010-5652-8206"
+                    className="text-white font-medium hover:text-cyan-hana transition-colors"
+                  />
                 </div>
-              </li>
-              <li className="flex items-start gap-3">
+              </div>
+              <div className="flex items-start gap-3">
                 <MessageCircle className="w-4 h-4 text-cyan-hana mt-0.5 flex-shrink-0" />
                 <div>
                   <div className="text-gray-400 text-xs mb-1">문자 문의</div>
-                  <a href="sms:01056528206?body=%5B%ED%94%8C%EB%A1%9C%EB%A1%9C%ED%83%84%EB%8B%8C%20%ED%8C%8C%ED%8A%B8%EB%84%88%EC%8A%A4%5D%20%EB%AC%B8%EC%9D%98%EB%93%9C%EB%A6%BD%EB%8B%88%EB%8B%A4." className="text-white font-medium hover:text-cyan-hana transition-colors">
-                    010-5652-8206
-                  </a>
+                  <RevealContact
+                    type="sms"
+                    label="클릭하여 연결"
+                    revealLabel="010-5652-8206"
+                    phone="01056528206"
+                    displayPhone="010-5652-8206"
+                    className="text-white font-medium hover:text-cyan-hana transition-colors"
+                  />
                 </div>
-              </li>
-              <li className="flex items-start gap-3">
+              </div>
+              <div className="flex items-start gap-3">
                 <MessageCircle className="w-4 h-4 text-cyan-hana mt-0.5 flex-shrink-0" />
                 <div>
                   <div className="text-gray-400 text-xs mb-1">운영 시간</div>
                   <div className="text-white">평일 09:00 – 18:00</div>
                 </div>
-              </li>
-            </ul>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -116,19 +127,21 @@ export default function Footer() {
                 무단 복제·배포·상업적 이용을 금합니다. 인용 시 반드시 출처를 명시하세요.
               </p>
             </div>
-            <a
-              href="sms:01056528206?body=%5B%EC%A0%80%EC%9E%91%EA%B6%8C%2F%EC%A0%9C%ED%9C%B4%20%EB%AC%B8%EC%9D%98%5D%20"
+            <RevealContact
+              type="sms"
+              label="콘텐츠 사용·제휴 문의"
+              revealLabel="010-5652-8206 문자하기"
+              phone="01056528206"
+              displayPhone="010-5652-8206"
+              icon={MessageCircle}
               className="flex-shrink-0 inline-flex items-center gap-2 bg-cyan-hana text-white text-xs font-semibold px-4 py-2.5 rounded-full hover:bg-opacity-90 transition-all whitespace-nowrap"
-            >
-              <MessageCircle className="w-3.5 h-3.5" />
-              콘텐츠 사용·제휴 문자 문의
-            </a>
+            />
           </div>
         </div>
 
         <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-3">
           <p className="text-xs text-gray-400">
-            © 2025 플로로탄닌 파트너스 · 연락: 010-5652-8206
+            © 2025 플로로탄닌 파트너스
           </p>
           <p className="text-xs text-gray-400 text-center md:text-right max-w-md">
             본 사이트의 정보는 건강 교육 목적이며 의료 처방·진단을 대체하지 않습니다.
