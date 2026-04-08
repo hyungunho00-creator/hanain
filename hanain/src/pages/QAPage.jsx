@@ -207,10 +207,7 @@ function QACard({ qa, isOpen, onToggle, searchQuery, categories }) {
             </p>
             <p className="text-xs text-gray-400">
               © 2025 플로로탄닌 파트너스 — 본 콘텐츠의 무단 복제·배포를 금합니다.
-              문의:{' '}
-              <a href="sms:01056528206?body=%5B%EC%A0%80%EC%9E%91%EA%B6%8C%20%EB%AC%B8%EC%9D%98%5D%20" className="text-cyan-hana hover:underline font-medium">
-                010-5652-8206
-              </a>
+              자료 사용 문의는 아래 [문자 보내기]를 이용해 주세요.
             </p>
           </div>
 
