@@ -16,7 +16,7 @@
       "color": "#8B5CF6",
       "icon": "Shield",
       "description": "암 예방, 항암 치료 지원, 면역력 강화",
-      "count": 100
+      "count": 155
     },
     {
       "id": "digestive",
@@ -43,7 +43,7 @@
       "color": "#6366F1",
       "icon": "Brain",
       "description": "치매, 파킨슨, 인지 기능, 두통",
-      "count": 100
+      "count": 130
     },
     {
       "id": "mental_health",
@@ -52,7 +52,7 @@
       "color": "#EC4899",
       "icon": "Smile",
       "description": "우울증, 불안장애, 수면장애, 스트레스",
-      "count": 100
+      "count": 110
     },
     {
       "id": "musculoskeletal",
@@ -79,7 +79,7 @@
       "color": "#06B6D4",
       "icon": "Wind",
       "description": "천식, COPD, 폐 건강, 기관지염",
-      "count": 100
+      "count": 102
     },
     {
       "id": "infection_inflammation",
@@ -88,7 +88,7 @@
       "color": "#14B8A6",
       "icon": "AlertTriangle",
       "description": "바이러스, 세균 감염, 만성 염증",
-      "count": 100
+      "count": 110
     },
     {
       "id": "womens_health",
@@ -97,7 +97,7 @@
       "color": "#F43F5E",
       "icon": "Heart",
       "description": "갱년기, 호르몬, 자궁 건강, 임신",
-      "count": 100
+      "count": 102
     },
     {
       "id": "mens_health",
@@ -106,7 +106,7 @@
       "color": "#64748B",
       "icon": "User",
       "description": "전립선, 남성호르몬, 성기능, 탈모",
-      "count": 100
+      "count": 102
     }
   ],
   "questions": [
