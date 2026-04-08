@@ -489,7 +489,7 @@ export default function HomePage() {
       {/* ─── CTA / Contact ─── */}
       <section className="py-20 bg-ocean-gradient text-white">
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
             궁금한 점이 있으신가요?
           </h2>
           <p className="text-gray-200 mb-10 text-lg leading-relaxed">

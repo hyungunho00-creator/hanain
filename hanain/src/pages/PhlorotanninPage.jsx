@@ -502,7 +502,7 @@ export default function PhlorotanninPage() {
       <section className="py-16 bg-ocean-gradient text-white">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <Waves className="w-10 h-10 text-cyan-300 mx-auto mb-4" />
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
             플로로탄닌, 직접 경험해보세요
           </h2>
           <p className="text-gray-300 text-lg mb-10 leading-relaxed">

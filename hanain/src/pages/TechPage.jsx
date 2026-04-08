@@ -78,7 +78,7 @@ export default function TechPage() {
             <FlaskConical className="w-4 h-4" />
             기술 소개
           </div>
-          <h1 className="text-4xl font-bold mb-4">MOP + 하이드로 네트워크<br />전달망 기술</h1>
+          <h1 className="text-4xl font-bold mb-4 text-white">MOP + 하이드로 네트워크<br />전달망 기술</h1>
           <p className="text-gray-300 max-w-xl text-lg">
             파트너스인 하나의 핵심 특허 기술로 감태 플로로탄닌의 흡수율을 혁신적으로 향상시켰습니다.
           </p>
@@ -161,7 +161,7 @@ export default function TechPage() {
             {/* Hydro Network visualization */}
             <div className="mt-16 bg-ocean-gradient rounded-3xl p-10 text-white text-center">
               <Droplets className="w-12 h-12 text-cyan-hana mx-auto mb-4" />
-              <h3 className="text-2xl font-bold mb-4">하이드로 네트워크 전달망</h3>
+              <h3 className="text-2xl font-bold mb-4 text-white">하이드로 네트워크 전달망</h3>
               <p className="text-gray-300 max-w-2xl mx-auto mb-8 leading-relaxed">
                 수용성 나노 캡슐 기술로 플로로탄닌을 체내 흡수 경로에 최적화된 크기로 포집합니다.
                 위산으로부터 보호하고 소장에서 선택적으로 방출하여 흡수율을 극대화합니다.
