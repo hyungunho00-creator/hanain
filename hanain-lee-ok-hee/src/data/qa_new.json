@@ -1,0 +1,113 @@
+{
+  "categories": [
+    {
+      "id": "metabolism",
+      "name": "대사질환",
+      "nameEn": "Metabolic Disease",
+      "color": "#EF4444",
+      "icon": "Activity",
+      "description": "당뇨, 비만, 지방간, 고혈압, 이상지질혈증",
+      "count": 0
+    },
+    {
+      "id": "cancer_immune",
+      "name": "항암/면역",
+      "nameEn": "Cancer & Immunity",
+      "color": "#8B5CF6",
+      "icon": "Shield",
+      "description": "암 치료 지원, 면역 강화, 항암 영양관리",
+      "count": 0
+    },
+    {
+      "id": "digestive",
+      "name": "소화/간",
+      "nameEn": "Digestive & Liver",
+      "color": "#10B981",
+      "icon": "Leaf",
+      "description": "간질환, 소화계, 담도/췌장",
+      "count": 0
+    },
+    {
+      "id": "neuro_cognitive",
+      "name": "신경/인지",
+      "nameEn": "Neuro & Cognitive",
+      "color": "#3B82F6",
+      "icon": "Brain",
+      "description": "치매, 파킨슨, 뇌졸중, 수면/두통",
+      "count": 0
+    },
+    {
+      "id": "skin_hair",
+      "name": "피부/모발",
+      "nameEn": "Skin & Hair",
+      "color": "#F59E0B",
+      "icon": "Sparkles",
+      "description": "탈모, 아토피/피부염, 모발/두피 건강",
+      "count": 0
+    },
+    {
+      "id": "musculoskeletal",
+      "name": "근골격계",
+      "nameEn": "Musculoskeletal",
+      "color": "#6366F1",
+      "icon": "Bone",
+      "description": "관절염, 골다공증, 근감소증, 통증관리",
+      "count": 0
+    },
+    {
+      "id": "womens_health",
+      "name": "여성건강",
+      "nameEn": "Women's Health",
+      "color": "#EC4899",
+      "icon": "Heart",
+      "description": "갱년기, 월경, 임신/출산, 자궁/난소",
+      "count": 0
+    },
+    {
+      "id": "mens_health",
+      "name": "남성건강",
+      "nameEn": "Men's Health",
+      "color": "#0EA5E9",
+      "icon": "User",
+      "description": "전립선, 남성 호르몬, 탈모, 성기능",
+      "count": 0
+    },
+    {
+      "id": "cardiovascular",
+      "name": "심혈관",
+      "nameEn": "Cardiovascular",
+      "color": "#DC2626",
+      "icon": "HeartPulse",
+      "description": "고혈압, 관상동맥, 심부전, 부정맥",
+      "count": 0
+    },
+    {
+      "id": "respiratory",
+      "name": "호흡기",
+      "nameEn": "Respiratory",
+      "color": "#06B6D4",
+      "icon": "Wind",
+      "description": "비염/알레르기, 천식, COPD, 코로나 후유증",
+      "count": 0
+    },
+    {
+      "id": "infection_inflammation",
+      "name": "감염/염증",
+      "nameEn": "Infection & Inflammation",
+      "color": "#F97316",
+      "icon": "Zap",
+      "description": "만성 염증, 자가면역, 감염 관리",
+      "count": 0
+    },
+    {
+      "id": "mental_health",
+      "name": "정신건강",
+      "nameEn": "Mental Health",
+      "color": "#7C3AED",
+      "icon": "Smile",
+      "description": "우울/불안, 스트레스, 수면 장애, 집중력",
+      "count": 0
+    }
+  ],
+  "questions": []
+}
