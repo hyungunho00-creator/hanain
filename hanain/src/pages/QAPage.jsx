@@ -159,7 +159,7 @@ function QACard({ qa, isOpen, onToggle, searchQuery, categories }) {
               }`}>
                 {qa.difficulty}
               </span>
-              {qa.tags.slice(0, 3).map(tag => (
+              {(qa.tags || []).slice(0, 3).map(tag => (
                 <span key={tag} className="text-xs text-gray-400 bg-gray-100 px-2 py-0.5 rounded-full">#{tag}</span>
               ))}
             </div>
