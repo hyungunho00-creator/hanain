@@ -169,12 +169,12 @@ export default function HomePage() {
           </div>
 
           {/* Quick tags */}
-          <div className="flex flex-wrap gap-2 justify-center">
+          <div className="flex flex-wrap gap-2 justify-center relative z-10">
             {['당뇨', '탈모', '지방간', '고혈압', '아토피', '치매', '수면', '면역'].map(tag => (
               <Link
                 key={tag}
                 to={`/qa?q=${tag}`}
-                className="text-xs bg-white/10 text-gray-300 px-3 py-1.5 rounded-full hover:bg-cyan-hana hover:text-white transition-colors"
+                className="text-xs bg-white/20 text-white px-4 py-2 rounded-full hover:bg-cyan-hana hover:text-white transition-all duration-300 border border-white/30 hover:border-cyan-hana cursor-pointer"
               >
                 #{tag}
               </Link>
