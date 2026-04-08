@@ -401,7 +401,7 @@ export default function HomePage() {
                 <Link to="/phlorotannin" className="btn-primary inline-flex items-center gap-2">
                   플로로탄닌 상세 소개 <ArrowRight className="w-4 h-4" />
                 </Link>
-                <Link to="/qa?q=플로로탄닌" className="btn-secondary inline-flex items-center gap-2">
+                <Link to="/qa?q=플로로탄닌" className="inline-flex items-center gap-2 border-2 border-ocean-deep text-ocean-deep px-6 py-3 rounded-full font-semibold hover:bg-ocean-deep hover:text-white transition-all duration-300">
                   관련 Q&A 보기
                 </Link>
               </div>
@@ -492,7 +492,7 @@ export default function HomePage() {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             궁금한 점이 있으신가요?
           </h2>
-          <p className="text-gray-300 mb-10 text-lg leading-relaxed">
+          <p className="text-gray-200 mb-10 text-lg leading-relaxed">
             건강 정보, 자연 소재, 파트너 활동 등 어떤 내용이든 편하게 문의해 주세요.
           </p>
           <div className="flex flex-wrap gap-4 justify-center mb-10">
@@ -518,11 +518,11 @@ export default function HomePage() {
             <Link to="/qa" className="text-sm text-cyan-hana hover:underline flex items-center gap-1">
               건강 Q&A 탐색 <ChevronRight className="w-3 h-3" />
             </Link>
-            <span className="text-gray-400">|</span>
+            <span className="text-gray-300">|</span>
             <Link to="/partner" className="text-sm text-cyan-hana hover:underline flex items-center gap-1">
               파트너 참여 <ChevronRight className="w-3 h-3" />
             </Link>
-            <span className="text-gray-400">|</span>
+            <span className="text-gray-300">|</span>
             <Link to="/consult" className="text-sm text-cyan-hana hover:underline flex items-center gap-1">
               상담 신청 <ChevronRight className="w-3 h-3" />
             </Link>

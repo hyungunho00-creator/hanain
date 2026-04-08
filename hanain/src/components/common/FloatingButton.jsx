@@ -23,11 +23,11 @@ export default function FloatingButton() {
             상담 신청
           </Link>
           <a
-            href="tel:15880000"
+            href="tel:01056528206"
             className="flex items-center gap-2 bg-white text-ocean-deep px-4 py-2.5 rounded-full shadow-lg hover:shadow-xl transition-all text-sm font-medium"
           >
             <Phone className="w-4 h-4 text-green-500" />
-            전화 문의
+            010-5652-8206
           </a>
           <Link
             to="/partner"
