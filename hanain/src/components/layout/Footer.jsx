@@ -54,9 +54,15 @@ export default function Footer() {
                 { id: 'metabolism', name: '대사질환' },
                 { id: 'cancer_immune', name: '항암/면역' },
                 { id: 'digestive', name: '소화/간' },
-                { id: 'neuro_cognitive', name: '신경/인지' },
                 { id: 'cardiovascular', name: '심혈관' },
+                { id: 'neuro_cognitive', name: '신경/인지' },
                 { id: 'mental_health', name: '정신건강' },
+                { id: 'respiratory', name: '호흡기' },
+                { id: 'musculoskeletal', name: '근골격' },
+                { id: 'skin_hair', name: '피부/모발' },
+                { id: 'infection_inflammation', name: '감염/염증' },
+                { id: 'mens_health', name: '남성건강' },
+                { id: 'womens_health', name: '여성건강' },
               ].map(cat => (
                 <li key={cat.id}>
                   <Link to={`/qa?category=${cat.id}`} className="hover:text-cyan-hana transition-colors">
