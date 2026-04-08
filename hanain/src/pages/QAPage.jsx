@@ -102,7 +102,7 @@ function ContactCard() {
 
 function QACard({ qa, isOpen, onToggle, searchQuery, categories }) {
   const [liked, setLiked] = useState(false)
-  const [likeCount, setLikeCount] = useState(qa.likes)
+  const [likeCount, setLikeCount] = useState(qa.likes || 0)
   const cat = categories.find(c => c.id === qa.category)
 
   const handleLike = (e) => {
@@ -168,7 +168,7 @@ function QACard({ qa, isOpen, onToggle, searchQuery, categories }) {
               dangerouslySetInnerHTML={{ __html: highlightText(qa.question, searchQuery) }}
             />
             <div className="flex items-center gap-4 mt-2 text-xs text-gray-400">
-              <span>👁 {qa.views.toLocaleString()}</span>
+              <span>👁 {(qa.views || 0).toLocaleString()}</span>
               <span>👍 {likeCount}</span>
             </div>
           </div>
@@ -337,7 +337,7 @@ export default function QAPage() {
   })()
 
   const paginatedQuestions = questions.slice((effectivePage - 1) * ITEMS_PER_PAGE, effectivePage * ITEMS_PER_PAGE)
-  const popularQuestions = [...(qaData.questions || [])].sort((a, b) => b.views - a.views).slice(0, 10)
+  const popularQuestions = [...(qaData.questions || [])].sort((a, b) => (b.views || 0) - (a.views || 0)).slice(0, 10)
 
   if (loading) return (
     <div className="pt-16 min-h-screen flex items-center justify-center bg-gray-50">
