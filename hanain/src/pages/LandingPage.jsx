@@ -76,10 +76,16 @@ export default function LandingPage() {
           
           <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 mx-auto my-8"></div>
           
-          <p className="text-xl text-gray-600 mb-12">
-            당뇨·치매·심혈관 건강에 관심 있는 분들이 찾는<br />
-            천연 원료 정보
+          <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+            당뇨, 치매, 심혈관, 암, 간 건강, 면역력, 피부, 소화기 등<br />
+            <strong className="text-gray-800">다양한 건강 관심사를 가진 분들이 주목하는 이유</strong>
           </p>
+          
+          <div className="bg-white/80 backdrop-blur-sm px-6 py-4 rounded-xl inline-block mb-12 border-2 border-cyan-200">
+            <p className="text-cyan-700 font-semibold">
+              💬 <span className="text-gray-800">1,311개 질문</span>에 대한 답변이 궁금하신가요?
+            </p>
+          </div>
           
           {/* Primary CTA */}
           <div className="space-y-4 mb-8">
@@ -125,8 +131,8 @@ export default function LandingPage() {
             </p>
           </div>
 
-          {/* 3가지 핵심 질문 */}
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
+          {/* 기본 소개 */}
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
             {/* 1. 뭐야? */}
             <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition border-2 border-transparent hover:border-cyan-300">
               <div className="text-5xl mb-4 text-center">🌊</div>
@@ -162,19 +168,135 @@ export default function LandingPage() {
                 </p>
               </div>
             </div>
+          </div>
 
-            {/* 3. 어디에 관심? */}
-            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition border-2 border-transparent hover:border-cyan-300">
-              <div className="text-5xl mb-4 text-center">👥</div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900 text-center">
-                어떤 분들이 관심?
-              </h3>
-              <div className="space-y-2 text-gray-700">
-                <p>💉 혈당 관리 공부 중이신 분</p>
-                <p>🧠 인지 건강 관심 많은 분</p>
-                <p>❤️ 혈압·콜레스테롤 공부하는 분</p>
-                <p>😴 건강 정보 찾으시는 분</p>
-                <p>🌿 천연 원료 알고 싶은 분</p>
+          {/* 질병별 기전 (확장) */}
+          <div className="mb-12">
+            <h3 className="text-3xl font-bold text-center mb-8 text-gray-900">
+              💊 건강 관심사별 연구 기전
+            </h3>
+            <p className="text-center text-gray-600 mb-8">
+              1,311개 질문에 대한 답은 플로로탄닌이 어떤 기전을 가지는지<br />
+              <strong className="text-cyan-600">연구 자료가 있습니다</strong>
+            </p>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* 당뇨 */}
+              <div className="bg-gradient-to-br from-red-50 to-orange-50 p-6 rounded-xl border-2 border-red-200 hover:shadow-lg transition">
+                <div className="text-4xl mb-3">💉</div>
+                <h4 className="text-xl font-bold mb-3 text-gray-900">당뇨 관리</h4>
+                <ul className="space-y-2 text-sm text-gray-700">
+                  <li>• α-글루코시다제 억제</li>
+                  <li>• 인슐린 저항성 개선</li>
+                  <li>• 혈당 조절 보조</li>
+                </ul>
+              </div>
+
+              {/* 치매 */}
+              <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-xl border-2 border-purple-200 hover:shadow-lg transition">
+                <div className="text-4xl mb-3">🧠</div>
+                <h4 className="text-xl font-bold mb-3 text-gray-900">치매 예방</h4>
+                <ul className="space-y-2 text-sm text-gray-700">
+                  <li>• AChE 억제 (기억력)</li>
+                  <li>• 베타아밀로이드 감소</li>
+                  <li>• 신경세포 보호</li>
+                </ul>
+              </div>
+
+              {/* 심혈관 */}
+              <div className="bg-gradient-to-br from-red-50 to-pink-50 p-6 rounded-xl border-2 border-red-300 hover:shadow-lg transition">
+                <div className="text-4xl mb-3">❤️</div>
+                <h4 className="text-xl font-bold mb-3 text-gray-900">심혈관 건강</h4>
+                <ul className="space-y-2 text-sm text-gray-700">
+                  <li>• 혈관 내피세포 보호</li>
+                  <li>• 혈압·콜레스테롤 조절</li>
+                  <li>• 혈전 생성 억제</li>
+                </ul>
+              </div>
+
+              {/* 암/면역 */}
+              <div className="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-xl border-2 border-blue-200 hover:shadow-lg transition">
+                <div className="text-4xl mb-3">🛡️</div>
+                <h4 className="text-xl font-bold mb-3 text-gray-900">암·면역</h4>
+                <ul className="space-y-2 text-sm text-gray-700">
+                  <li>• 항산화 작용</li>
+                  <li>• NK세포 활성 증가</li>
+                  <li>• 항암제 부작용 완화</li>
+                </ul>
+              </div>
+
+              {/* 간 건강 */}
+              <div className="bg-gradient-to-br from-green-50 to-teal-50 p-6 rounded-xl border-2 border-green-200 hover:shadow-lg transition">
+                <div className="text-4xl mb-3">🫀</div>
+                <h4 className="text-xl font-bold mb-3 text-gray-900">간 건강</h4>
+                <ul className="space-y-2 text-sm text-gray-700">
+                  <li>• 간 해독 기능 지원</li>
+                  <li>• 지방간 개선 연구</li>
+                  <li>• 간 효소 수치 조절</li>
+                </ul>
+              </div>
+
+              {/* 피부/노화 */}
+              <div className="bg-gradient-to-br from-yellow-50 to-orange-50 p-6 rounded-xl border-2 border-yellow-200 hover:shadow-lg transition">
+                <div className="text-4xl mb-3">✨</div>
+                <h4 className="text-xl font-bold mb-3 text-gray-900">피부·노화</h4>
+                <ul className="space-y-2 text-sm text-gray-700">
+                  <li>• 콜라겐 생성 촉진</li>
+                  <li>• 자외선 손상 보호</li>
+                  <li>• 항노화 효과</li>
+                </ul>
+              </div>
+
+              {/* 소화기 */}
+              <div className="bg-gradient-to-br from-indigo-50 to-purple-50 p-6 rounded-xl border-2 border-indigo-200 hover:shadow-lg transition">
+                <div className="text-4xl mb-3">🔥</div>
+                <h4 className="text-xl font-bold mb-3 text-gray-900">소화기·염증</h4>
+                <ul className="space-y-2 text-sm text-gray-700">
+                  <li>• 위염·대장염 개선</li>
+                  <li>• NF-κB 억제</li>
+                  <li>• 장 건강 보조</li>
+                </ul>
+              </div>
+
+              {/* 체중/대사 */}
+              <div className="bg-gradient-to-br from-pink-50 to-red-50 p-6 rounded-xl border-2 border-pink-200 hover:shadow-lg transition">
+                <div className="text-4xl mb-3">⚖️</div>
+                <h4 className="text-xl font-bold mb-3 text-gray-900">체중·대사</h4>
+                <ul className="space-y-2 text-sm text-gray-700">
+                  <li>• 지방 축적 억제</li>
+                  <li>• 대사율 개선</li>
+                  <li>• 체중 관리 보조</li>
+                </ul>
+              </div>
+
+              {/* 관절/뼈 */}
+              <div className="bg-gradient-to-br from-gray-50 to-slate-100 p-6 rounded-xl border-2 border-gray-300 hover:shadow-lg transition">
+                <div className="text-4xl mb-3">🦴</div>
+                <h4 className="text-xl font-bold mb-3 text-gray-900">관절·뼈</h4>
+                <ul className="space-y-2 text-sm text-gray-700">
+                  <li>• 관절 염증 완화</li>
+                  <li>• 뼈 밀도 유지</li>
+                  <li>• 연골 보호</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* QA 보기 CTA */}
+            <div className="mt-10 text-center">
+              <div className="bg-gradient-to-r from-cyan-50 to-blue-50 p-8 rounded-2xl border-2 border-cyan-300 inline-block">
+                <p className="text-2xl font-bold text-gray-900 mb-4">
+                  💬 더 궁금하신가요?
+                </p>
+                <p className="text-gray-700 mb-6">
+                  1,311개 질문을 직접 확인하고<br />
+                  플로로탄닌 기전을 알아보세요
+                </p>
+                <button 
+                  onClick={() => navigate('/qa')}
+                  className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-3 rounded-xl font-bold hover:from-cyan-600 hover:to-blue-700 transform hover:scale-105 transition shadow-lg"
+                >
+                  📋 1,311개 질문 보기 →
+                </button>
               </div>
             </div>
           </div>
