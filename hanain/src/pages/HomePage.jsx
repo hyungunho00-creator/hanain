@@ -233,7 +233,7 @@ export default function HomePage() {
                 color: 'text-gold-hana',
                 bg: 'bg-gold-hana/10',
                 title: '파트너 연결',
-                desc: '정보를 공부하다 보면 자연스럽게 파트너들을 만나게 됩니다. 네트워크 판매에 관심 있는 분들과 건강 정보를 찾는 분들의 중간 다리 역할을 합니다.',
+                desc: '건강 정보를 함께 공부하다 보면 자연스럽게 뜻이 맞는 파트너들을 만납니다. 관심 있는 분들이 함께할 수 있도록 연결해드립니다.',
               },
             ].map((item, i) => (
               <div key={i} className="card flex flex-col items-start gap-4">
@@ -424,7 +424,7 @@ export default function HomePage() {
                 <div className="text-xs text-cyan-hana font-medium mb-2">이런 분들께 도움이 됩니다</div>
                 <ul className="text-sm space-y-1 text-gray-300">
                   <li>• 자연 소재에 관심 있는 건강 관리자</li>
-                  <li>• 네트워크 판매를 공부하는 파트너</li>
+                  <li>• 건강 정보를 함께 나누고 싶은 파트너</li>
                   <li>• 올바른 소재 정보를 찾는 소비자</li>
                 </ul>
               </div>
@@ -458,13 +458,13 @@ export default function HomePage() {
               {
                 step: '02',
                 title: '파트너 연결',
-                desc: '플로로탄닌 관련 제품과 파트너를 자연스럽게 만납니다. 문의 메일 또는 전화로 연결됩니다.',
+                desc: '플로로탄닌 관련 정보와 파트너를 자연스럽게 만납니다. 전화 또는 문자로 편하게 연결됩니다.',
                 color: 'bg-gold-hana/10 text-gold-hana',
               },
               {
                 step: '03',
                 title: '함께 활동',
-                desc: '네트워크 파트너로서 올바른 건강 정보를 전달하며 사람들과 연결하는 의미 있는 활동을 합니다.',
+                desc: '파트너로서 올바른 건강 정보를 함께 나누고 주변 사람들과 건강하게 연결되는 의미 있는 활동을 합니다.',
                 color: 'bg-green-500/10 text-green-600',
               },
             ].map(item => (

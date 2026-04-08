@@ -8,7 +8,7 @@ const curriculum = [
   {
     week: '1주차',
     title: '플로로탄닌 파트너스 이해',
-    topics: ['감태 플로로탄닌 기초 과학', 'MOP 공정 이해', '하이드로 네트워크 기술', '제품 라인업 소개'],
+    topics: ['감태 플로로탄닌 기초 과학', 'MOP 공정 이해', '하이드로 포집 기술', '제품 라인업 소개'],
   },
   {
     week: '2주차',
@@ -18,12 +18,12 @@ const curriculum = [
   {
     week: '3주차',
     title: '비즈니스 스킬',
-    topics: ['파트너 네트워크 구조 이해', '고객 상담 스크립트', 'SNS 마케팅 기초', 'DB 수집 전략'],
+    topics: ['파트너 활동 구조 이해', '건강 정보 안내 방법', '소셜 미디어 활용 기초', '고객 응대 방법'],
   },
   {
     week: '4주차',
     title: '실전 적용 & 수료',
-    topics: ['모의 상담 실습', '개인 마케팅 계획 수립', '네트워크 목표 설정', '수료증 발급'],
+    topics: ['모의 상담 실습', '개인 활동 계획 수립', '파트너 목표 설정', '수료증 발급'],
   },
 ]
 
@@ -32,14 +32,14 @@ const successCases = [
     initial: 'K',
     role: '간호사 출신 파트너',
     location: '서울',
-    quote: '의료 지식을 활용해 고객 신뢰를 얻기 쉬웠습니다. 월 수입이 기존 대비 2배 이상으로 늘었어요.',
+    quote: '의료 지식을 활용해 사람들에게 신뢰를 얻기 쉬웠습니다. 파트너로 활동하면서 건강에 대한 보람찬 역할을 하고 있어요.',
     duration: '파트너 활동 18개월',
   },
   {
     initial: 'P',
     role: '전업주부 출신 파트너',
     location: '부산',
-    quote: '처음에는 많이 걱정했지만 체계적인 교육 덕분에 자신감이 생겼습니다. 지금은 저도 누군가를 교육하고 있어요.',
+    quote: '처음에는 많이 걱정했지만 체계적인 교육 덕분에 자신감이 생겼습니다. 이제는 주변 분들에게 건강 정보를 나누는 역할을 하고 있어요.',
     duration: '파트너 활동 12개월',
   },
   {
@@ -218,8 +218,8 @@ export default function PartnerPage() {
             <span style={{ color: '#00B4D8' }}>함께 성장하세요</span>
           </h1>
           <p className="text-lg max-w-xl leading-relaxed" style={{ color: '#d1e8f5' }}>
-            건강 지식으로 가치를 창출하는 네트워크 파트너 프로그램.<br />
-            교육부터 수익 창출까지 모두 지원합니다.
+            건강 정보를 함께 나누고, 뜻이 맞는 분들과<br />
+            파트너로 함께할 수 있습니다.
           </p>
         </div>
       </div>
@@ -233,9 +233,9 @@ export default function PartnerPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { icon: BookOpen, title: '체계적 교육', desc: '4주 온/오프라인 교육 커리큘럼 + 건강 과학 심화 교육', color: '#00B4D8' },
-              { icon: TrendingUp, title: '수익 창출', desc: '투명한 수익 구조와 다양한 보상 프로그램', color: '#F0A500' },
+              { icon: TrendingUp, title: '활동 지원', desc: '파트너 활동에 필요한 자료와 정보를 함께 제공합니다', color: '#F0A500' },
               { icon: Award, title: '브랜드 지원', desc: '마케팅 자료, SNS 콘텐츠, Q&A 라이브러리 활용 지원', color: '#8B5CF6' },
-              { icon: Users, title: '커뮤니티', desc: '파트너 단톡방, 월간 세미나, 1:1 멘토링', color: '#10B981' },
+              { icon: Users, title: '함께하는 커뮤니티', desc: '같은 뜻을 가진 파트너들과 정보를 나누고 함께 성장해요', color: '#10B981' },
             ].map(item => (
               <div key={item.title} className="card text-center hover:scale-105 transition-transform">
                 <div className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: item.color + '20' }}>
