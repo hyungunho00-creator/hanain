@@ -182,9 +182,10 @@ function QACard({ qa, isOpen, onToggle, searchQuery, categories }) {
       {isOpen && (
         <div className="border-t border-gray-100 px-5 md:px-6 py-5 bg-slate-50">
           {/* Article-style answer body */}
-          <div className="text-gray-700 text-sm md:text-base leading-[1.9] whitespace-pre-line mb-5">
-            {answerText}
-          </div>
+          <div 
+            className="text-gray-700 text-sm md:text-base leading-[1.9] whitespace-pre-line mb-5"
+            dangerouslySetInnerHTML={{ __html: answerText }}
+          />
 
           {/* References — subtle footer */}
           {references?.length > 0 && (
