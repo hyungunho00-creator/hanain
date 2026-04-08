@@ -8,7 +8,6 @@ import {
 
 export default function LandingPage() {
   const navigate = useNavigate()
-  const [contactForm, setContactForm] = useState({ name: '', phone: '' })
   const [scrollProgress, setScrollProgress] = useState(0)
 
   // 스크롤 진행도 추적
@@ -21,12 +20,6 @@ export default function LandingPage() {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
-
-  const handleContactSubmit = (e) => {
-    e.preventDefault()
-    alert('접수 완료! 플로로탄닌 원료 정보를 곧 보내드리겠습니다.')
-    setContactForm({ name: '', phone: '' })
-  }
 
   const scrollToSection = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
@@ -629,7 +622,7 @@ export default function LandingPage() {
       </section>
 
       {/* ============================================ */}
-      {/* 최종 CTA - 원료 정보 신청                   */}
+      {/* 최종 CTA - 문자하기                        */}
       {/* ============================================ */}
       <section id="contact-form" className="py-20 px-4 bg-gradient-to-br from-cyan-100 via-blue-100 to-indigo-100">
         <div className="max-w-2xl mx-auto">
@@ -640,10 +633,10 @@ export default function LandingPage() {
             </div>
             
             <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gray-900">
-              연락처 남겨주시면<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-600">
-                플로로탄닌 자세한 정보<br />무료 제공
+                플로로탄닌 자세한 정보
               </span>
+              <br />문자로 받아보세요
             </h2>
           </div>
 
@@ -665,48 +658,18 @@ export default function LandingPage() {
 
             <div className="w-full h-1 bg-gradient-to-r from-cyan-300 via-blue-300 to-indigo-300 my-8"></div>
 
-            {/* 폼 */}
-            <form onSubmit={handleContactSubmit} className="space-y-4">
-              <input
-                type="text"
-                placeholder="이름"
-                required
-                value={contactForm.name}
-                onChange={(e) => setContactForm({...contactForm, name: e.target.value})}
-                className="w-full px-6 py-4 border-2 border-gray-300 rounded-xl focus:border-cyan-500 focus:outline-none text-lg"
-              />
-              <input
-                type="tel"
-                placeholder="연락처 (010-1234-5678)"
-                required
-                pattern="01[0-9]-?[0-9]{3,4}-?[0-9]{4}"
-                value={contactForm.phone}
-                onChange={(e) => setContactForm({...contactForm, phone: e.target.value})}
-                className="w-full px-6 py-4 border-2 border-gray-300 rounded-xl focus:border-cyan-500 focus:outline-none text-lg"
-              />
-              <button
-                type="submit"
-                className="w-full bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-600 text-white px-8 py-5 rounded-xl text-xl font-bold hover:from-cyan-600 hover:via-blue-600 hover:to-indigo-700 transform hover:scale-105 transition shadow-2xl"
-              >
-                📱 원료 정보 받기
-              </button>
-            </form>
+            {/* 문자하기 버튼 */}
+            <a 
+              href="sms:?body=플로로탄닌 원료 정보를 받고 싶습니다."
+              className="block w-full bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-600 text-white px-8 py-6 rounded-xl text-xl font-bold hover:from-cyan-600 hover:via-blue-600 hover:to-indigo-700 transform hover:scale-105 transition shadow-2xl text-center"
+            >
+              💬 문자하기
+            </a>
 
             <p className="text-center text-sm text-gray-500 mt-6">
-              * 이름과 연락처만 입력하면 끝<br />
-              영업일 기준 24시간 내 연락드립니다
+              * 클릭하면 문자 앱이 실행됩니다<br />
+              영업일 기준 24시간 내 답변드립니다
             </p>
-          </div>
-
-          {/* 추가 연락 수단 */}
-          <div className="mt-8 space-y-4">
-            <a 
-              href="tel:01056528206"
-              className="block w-full bg-white text-cyan-600 px-8 py-4 rounded-xl text-lg font-semibold border-2 border-cyan-600 hover:bg-cyan-50 transform hover:scale-105 transition text-center"
-            >
-              <FaPhone className="inline mr-2" />
-              전화 문의: 010-5652-8206
-            </a>
           </div>
 
           {/* 파트너 안내 */}
@@ -741,15 +704,9 @@ export default function LandingPage() {
             </ul>
           </div>
 
-          <div className="text-center text-gray-600 space-y-2">
-            <p className="flex items-center justify-center gap-2">
-              <FaPhone /> 문의: 010-5652-8206
-            </p>
-            <p className="flex items-center justify-center gap-2">
-              <FaEnvelope /> 카카오톡: 010-5652-8206
-            </p>
-            <p className="text-sm text-gray-500 mt-4">
-              © 2026 Hanain Partners. 플로로탄닌 원료 정보 제공.
+          <div className="text-center text-gray-600">
+            <p className="text-sm text-gray-500">
+              © 2026 플로로탄닌 파트너스. 플로로탄닌 원료 정보 제공.
             </p>
           </div>
         </div>
