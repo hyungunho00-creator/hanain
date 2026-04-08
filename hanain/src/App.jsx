@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 import FloatingButton from './components/common/FloatingButton'
+import LandingPage from './pages/LandingPage'
 import HomePage from './pages/HomePage'
 import QAPage from './pages/QAPage'
 import PartnerPage from './pages/PartnerPage'
@@ -20,7 +21,8 @@ function App() {
         <Navbar />
         <main className="flex-1">
           <Routes>
-            <Route path="/" element={<HomePage />} />
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/home" element={<HomePage />} />
             <Route path="/qa" element={<QAPage />} />
             <Route path="/partner" element={<PartnerPage />} />
             <Route path="/consult" element={<ConsultPage />} />
