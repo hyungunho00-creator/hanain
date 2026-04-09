@@ -59,7 +59,7 @@ const CATEGORIES = [
     short: '회복·식단·염증',
     desc: '치료 후 회복 과정에서 놓치기 쉬운 정보들을 정리했습니다. 식단, 염증 조절, 성분의 흐름을 함께 살펴보다 보면 자연스럽게 연결된 맥락이 보입니다.',
     related: '→ 당뇨·염증 카테고리와 함께 보면 이해가 깊어집니다',
-    path: '/qa', query: '암',
+    path: '/qa', query: '암', categoryId: 'cancer_immune',
     accent: { border: 'border-rose-200', hover: 'hover:border-rose-400', tag: 'bg-rose-100 text-rose-700', dot: 'bg-rose-500', btn: 'text-rose-600' },
   },
   {
@@ -69,7 +69,7 @@ const CATEGORIES = [
     short: '혈당·대사·식단',
     desc: '혈당 수치만이 아니라 식단의 구조와 대사 흐름 전반을 함께 보는 관점이 필요합니다. 정보를 따라가다 보면 플로로탄닌이라는 키워드와 자주 마주치게 됩니다.',
     related: '→ 혈압·비만·염증 정보와 연결되는 흐름이 있습니다',
-    path: '/qa', query: '당뇨',
+    path: '/qa', query: '당뇨', categoryId: 'metabolism',
     accent: { border: 'border-emerald-200', hover: 'hover:border-emerald-400', tag: 'bg-emerald-100 text-emerald-700', dot: 'bg-emerald-500', btn: 'text-emerald-600' },
   },
   {
@@ -79,7 +79,7 @@ const CATEGORIES = [
     short: '인지·기억·집중',
     desc: '집중력 저하, 기억력 변화, 피로감은 따로 보이지만 서로 연결되어 있습니다. 이 정보를 읽다 보면 뇌 건강과 전신 염증·대사가 공통 키워드로 모이는 구조가 보입니다.',
     related: '→ 수면·피로·회복 카테고리와 함께 이해됩니다',
-    path: '/qa', query: '치매',
+    path: '/qa', query: '치매', categoryId: 'neuro_cognitive',
     accent: { border: 'border-violet-200', hover: 'hover:border-violet-400', tag: 'bg-violet-100 text-violet-700', dot: 'bg-violet-500', btn: 'text-violet-600' },
   },
   {
@@ -89,7 +89,7 @@ const CATEGORIES = [
     short: '염증·피로·회복',
     desc: '만성 피로와 반복되는 염증은 여러 질환의 공통 기반입니다. 이 흐름을 이해하면 암, 당뇨, 뇌 건강 정보가 왜 같은 성분 이야기로 이어지는지 알 수 있습니다.',
     related: '→ 면역·심혈관 정보와도 연결됩니다',
-    path: '/qa', query: '염증',
+    path: '/qa', query: '염증', categoryId: 'infection_inflammation',
     accent: { border: 'border-amber-200', hover: 'hover:border-amber-400', tag: 'bg-amber-100 text-amber-700', dot: 'bg-amber-500', btn: 'text-amber-600' },
   },
   {
@@ -99,7 +99,7 @@ const CATEGORIES = [
     short: '노화·가족·예방',
     desc: '부모님의 건강, 자녀의 성장, 나 자신의 노화까지 — 가족 건강을 챙기다 보면 결국 생활습관과 기반 성분에 대한 질문으로 이어집니다.',
     related: '→ 여성건강·근골격계 카테고리와 연결됩니다',
-    path: '/qa', query: '건강',
+    path: '/qa', query: '건강', categoryId: '',
     accent: { border: 'border-sky-200', hover: 'hover:border-sky-400', tag: 'bg-sky-100 text-sky-700', dot: 'bg-sky-500', btn: 'text-sky-600' },
   },
   {
@@ -254,7 +254,12 @@ export default function LandingPage() {
   const goCategory = (cat) => {
     if (cat.path === '/phlorotannin') { navigate('/phlorotannin'); return }
     if (cat.path === '/learn') { navigate('/learn'); return }
-    navigate(`${cat.path}?q=${encodeURIComponent(cat.query)}`)
+    // categoryId가 있으면 카테고리 필터로 이동 (검색어 없이), 없으면 검색어로 이동
+    if (cat.categoryId) {
+      navigate(`${cat.path}?category=${encodeURIComponent(cat.categoryId)}`)
+    } else {
+      navigate(`${cat.path}?q=${encodeURIComponent(cat.query)}`)
+    }
   }
 
   const scrollProgress = typeof document !== 'undefined'
