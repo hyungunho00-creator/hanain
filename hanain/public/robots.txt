@@ -1,0 +1,60 @@
+# robots.txt — phlorotannin.com
+# 최종 업데이트: 2026-04-09
+
+# ── 모든 봇 기본 설정 ──────────────────────────────
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /admin/
+Disallow: /api/
+Disallow: /api
+Crawl-delay: 1
+
+# ── 구글봇 명시적 허용 (크롤 딜레이 없음) ──────────
+User-agent: Googlebot
+Allow: /
+Disallow: /admin
+Disallow: /admin/
+Disallow: /api/
+
+# ── 구글 이미지봇 허용 ─────────────────────────────
+User-agent: Googlebot-Image
+Allow: /
+Allow: /og-image.png
+Allow: /favicon.svg
+
+# ── 네이버 봇 (Yeti) 명시적 허용 ─────────────────
+User-agent: Yeti
+Allow: /
+Disallow: /admin
+Disallow: /admin/
+Disallow: /api/
+Crawl-delay: 1
+
+# ── 빙봇 허용 ─────────────────────────────────────
+User-agent: Bingbot
+Allow: /
+Disallow: /admin
+Disallow: /api/
+Crawl-delay: 1
+
+# ── 다음 카카오봇 허용 ────────────────────────────
+User-agent: Daum
+Allow: /
+Disallow: /admin
+Disallow: /api/
+
+# ── 카카오 미리보기봇 허용 ────────────────────────
+User-agent: Kakaotalk-Scrap
+Allow: /
+
+# ── 트위터/X 카드봇 허용 ─────────────────────────
+User-agent: Twitterbot
+Allow: /
+
+# ── 페이스북 크롤러 허용 ──────────────────────────
+User-agent: facebookexternalhit
+Allow: /
+
+# ── 사이트맵 위치 ─────────────────────────────────
+Sitemap: https://phlorotannin.com/sitemap.xml

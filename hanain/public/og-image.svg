@@ -1,0 +1,29 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0077B6"/>
+      <stop offset="50%" stop-color="#0096C7"/>
+      <stop offset="100%" stop-color="#00B4D8"/>
+    </linearGradient>
+  </defs>
+  <!-- 장식 원 -->
+  <circle cx="1050" cy="100" r="200" fill="white" fill-opacity="0.05"/>
+  <circle cx="150" cy="530" r="150" fill="white" fill-opacity="0.05"/>
+  <circle cx="900" cy="550" r="120" fill="white" fill-opacity="0.04"/>
+  <!-- 로고 영역 -->
+  <rect x="80" y="80" width="6" height="80" rx="3" fill="#90E0EF"/>
+  <!-- 메인 타이틀 -->
+  <text x="110" y="150" font-family="'Noto Sans KR', sans-serif" font-size="64" font-weight="800" fill="white">플로로탄닌 파트너스</text>
+  <!-- 서브타이틀 -->
+  <text x="110" y="220" font-family="'Noto Sans KR', sans-serif" font-size="32" font-weight="400" fill="#ADE8F4">해양 폴리페놀 전문 건강 정보 커뮤니티</text>
+  <!-- 구분선 -->
+  <rect x="110" y="260" width="980" height="2" rx="1" fill="white" fill-opacity="0.2"/>
+  <!-- 특징 3개 -->
+  <text x="110" y="330" font-family="'Noto Sans KR', sans-serif" font-size="26" fill="white">🧬 12개 질환별 과학적 근거</text>
+  <text x="110" y="390" font-family="'Noto Sans KR', sans-serif" font-size="26" fill="white">📚 1,200개 건강 Q&amp;A</text>
+  <text x="110" y="450" font-family="'Noto Sans KR', sans-serif" font-size="26" fill="white">🌊 감태 유래 6가지 작용 기전</text>
+  <!-- URL -->
+  <rect x="80" y="530" width="1040" height="60" rx="12" fill="white" fill-opacity="0.1"/>
+  <text x="600" y="568" font-family="monospace" font-size="24" fill="white" fill-opacity="0.9" text-anchor="middle">phlorotannin.com</text>
+</svg>

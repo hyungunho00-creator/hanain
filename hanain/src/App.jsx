@@ -11,30 +11,35 @@ import AdminPage from './pages/AdminPage'
 import PhlorotanninPage from './pages/PhlorotanninPage'
 import LearnPage from './pages/LearnPage'
 import EasyHealthPage from './pages/EasyHealthPage'
+import PartnerLandingPage from './pages/PartnerLandingPage'
 import ScrollToTop from './components/common/ScrollToTop'
+import { PartnerProvider } from './context/PartnerContext'
 
 function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="min-h-screen flex flex-col">
-        <Navbar />
-        <main className="flex-1">
-          <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/home" element={<HomePage />} />
-            <Route path="/qa" element={<QAPage />} />
-            <Route path="/partner" element={<PartnerPage />} />
-            <Route path="/consult" element={<ConsultPage />} />
-            <Route path="/admin" element={<AdminPage />} />
-            <Route path="/phlorotannin" element={<PhlorotanninPage />} />
-            <Route path="/learn" element={<LearnPage />} />
-            <Route path="/easy" element={<EasyHealthPage />} />
-          </Routes>
-        </main>
-        <Footer />
-        <FloatingButton />
-      </div>
+      <PartnerProvider>
+        <div className="min-h-screen flex flex-col">
+          <Navbar />
+          <main className="flex-1">
+            <Routes>
+              <Route path="/" element={<LandingPage />} />
+              <Route path="/home" element={<HomePage />} />
+              <Route path="/qa" element={<QAPage />} />
+              <Route path="/partner" element={<PartnerPage />} />
+              <Route path="/consult" element={<ConsultPage />} />
+              <Route path="/admin" element={<AdminPage />} />
+              <Route path="/phlorotannin" element={<PhlorotanninPage />} />
+              <Route path="/learn" element={<LearnPage />} />
+              <Route path="/easy" element={<EasyHealthPage />} />
+              <Route path="/p/:slug" element={<PartnerLandingPage />} />
+            </Routes>
+          </main>
+          <Footer />
+          <FloatingButton />
+        </div>
+      </PartnerProvider>
     </Router>
   )
 }

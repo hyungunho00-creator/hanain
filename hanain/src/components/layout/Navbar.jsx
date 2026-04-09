@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Waves } from 'lucide-react'
 
-const navLinks = [
+const NAV_LINKS = [
   { path: '/', label: '홈' },
   { path: '/qa', label: '건강 Q&A' },
   { path: '/learn', label: '🌊 쉽게 배우기' },
@@ -32,24 +32,22 @@ export default function Navbar() {
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
             <div className="w-9 h-9 bg-gradient-to-br from-cyan-hana to-blue-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
               <Waves className="w-5 h-5 text-white" />
             </div>
             <div>
-              <span className="text-white font-bold text-base leading-tight block">플로로탄닌 파트너스</span>
-              <span className="text-cyan-hana text-xs leading-tight block">Phlorotannin Partners</span>
+              <span className="text-white font-bold text-lg leading-tight block">플로로탄닌 파트너스</span>
+              <span className="text-cyan-hana text-sm leading-tight block">Phlorotannin Partners</span>
             </div>
           </Link>
 
-          {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-1">
-            {navLinks.map(link => (
+            {NAV_LINKS.map(link => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                className={`px-4 py-2 rounded-lg text-base font-medium transition-all duration-200 ${
                   location.pathname === link.path
                     ? 'bg-cyan-hana text-white'
                     : 'text-gray-300 hover:text-white hover:bg-white/10'
@@ -60,7 +58,6 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden text-white p-2 rounded-lg hover:bg-white/10 transition-colors"
@@ -78,15 +75,14 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden bg-ocean-deep border-t border-white/10">
           <div className="px-4 py-3 space-y-1">
-            {navLinks.map(link => (
+            {NAV_LINKS.map(link => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`block px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
+                className={`block px-4 py-3 rounded-lg text-base font-medium transition-colors ${
                   location.pathname === link.path
                     ? 'bg-cyan-hana text-white'
                     : 'text-gray-300 hover:text-white hover:bg-white/10'

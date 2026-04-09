@@ -2,28 +2,170 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- ===== 파비콘 & 앱 아이콘 ===== -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="플로로탄닌(Phlorotannin) 전문 건강 정보 커뮤니티. 갈조류 유래 해양 폴리페놀 플로로탄닌의 과학적 근거와 12개 질환별 1,200개 건강 Q&A를 제공합니다." />
-    <meta name="keywords" content="플로로탄닌, phlorotannin, 감태, 미역, 다시마, 해양폴리페놀, 건강정보, 플로로탄닌파트너스, 항산화, 혈당, 혈압, 치매예방" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <meta name="theme-color" content="#065f46" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="플로로탄닌" />
+
+    <!-- ===== 기본 SEO ===== -->
+    <title>플로로탄닌 파트너스 | 해양 폴리페놀 건강 정보 아카이브</title>
+    <meta name="description" content="암·당뇨·뇌질환·만성염증·가족 건강까지 — 감태 추출 해양 폴리페놀 플로로탄닌(Phlorotannin) 전문 건강 정보 아카이브. 12개 질환 카테고리, 1,200개 Q&A 제공. 구매 유도 없는 순수 정보형 사이트." />
+    <meta name="keywords" content="플로로탄닌, phlorotannin, 감태, 해양폴리페놀, 건강정보, 암회복식단, 당뇨혈당관리, 뇌건강치매예방, 만성염증, 혈압관리, 항산화, 항염증, 면역강화, 건강Q&A" />
     <meta name="author" content="플로로탄닌 파트너스" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="language" content="Korean" />
+    <link rel="canonical" href="https://phlorotannin.com/" />
 
-    <!-- Open Graph (카카오톡/SNS 공유 시 미리보기) -->
+    <!-- ===== hreflang ===== -->
+    <link rel="alternate" hreflang="ko" href="https://phlorotannin.com/" />
+    <link rel="alternate" hreflang="ko-KR" href="https://phlorotannin.com/" />
+    <link rel="alternate" hreflang="x-default" href="https://phlorotannin.com/" />
+
+    <!-- ===== Open Graph (카카오/SNS 공유 최적화) ===== -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="플로로탄닌 파트너스 | 해양 폴리페놀 건강 정보" />
-    <meta property="og:description" content="감태 플로로탄닌의 6가지 작용 기전과 12개 질환 근거, 1,200개 건강 Q&A를 확인하세요." />
-    <meta property="og:url" content="https://phlorotannin.vercel.app" />
+    <meta property="og:site_name" content="플로로탄닌 파트너스" />
+    <meta property="og:title" content="플로로탄닌 파트너스 | 해양 폴리페놀 건강 정보 아카이브" />
+    <meta property="og:description" content="암·당뇨·뇌질환·염증·가족 건강 정보를 찾는 분들을 위한 플로로탄닌 건강 정보 아카이브. 1,200개 Q&A, 12개 질환 카테고리. 구매 유도 없는 순수 정보형 사이트." />
+    <meta property="og:url" content="https://phlorotannin.com/" />
     <meta property="og:locale" content="ko_KR" />
+    <meta property="og:image" content="https://phlorotannin.com/og-image.png" />
+    <meta property="og:image:secure_url" content="https://phlorotannin.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="플로로탄닌 파트너스 - 해양 폴리페놀 건강 정보 아카이브" />
+    <meta property="og:image:type" content="image/png" />
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="플로로탄닌 파트너스" />
-    <meta name="twitter:description" content="해양 폴리페놀 플로로탄닌 전문 건강 정보 커뮤니티" />
+    <!-- ===== Twitter Card ===== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@phlorotannin" />
+    <meta name="twitter:title" content="플로로탄닌 파트너스 | 해양 폴리페놀 건강 정보" />
+    <meta name="twitter:description" content="암·당뇨·뇌질환·염증 건강 정보 아카이브. 플로로탄닌의 작용 기전과 12개 질환 Q&A 1,200개." />
+    <meta name="twitter:image" content="https://phlorotannin.com/og-image.png" />
+    <meta name="twitter:image:alt" content="플로로탄닌 파트너스 건강 정보 아카이브" />
 
-    <title>플로로탄닌 파트너스 | 건강 정보 커뮤니티</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- ===== 네이버 서치어드바이저 소유권 확인 ===== -->
+    <meta name="naver-site-verification" content="9070e155846304f7a532561814fb3d36d458af07" />
+
+    <!-- ===== Google Search Console 소유권 확인 ===== -->
+    <meta name="google-site-verification" content="ia0nX1dfOFDCcex3AVKi2yyYHZdN1XqurS-AvIDQesg" />
+
+    <!-- ===== JSON-LD 구조화 데이터 ===== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://phlorotannin.com/#organization",
+          "name": "플로로탄닌 파트너스",
+          "alternateName": ["Phlorotannin Partners", "플로로탄닌"],
+          "url": "https://phlorotannin.com",
+          "logo": {
+            "@type": "ImageObject",
+            "@id": "https://phlorotannin.com/#logo",
+            "url": "https://phlorotannin.com/og-image.png",
+            "contentUrl": "https://phlorotannin.com/og-image.png",
+            "width": 1200,
+            "height": 630,
+            "caption": "플로로탄닌 파트너스 로고"
+          },
+          "image": { "@id": "https://phlorotannin.com/#logo" },
+          "description": "감태 추출 해양 폴리페놀 플로로탄닌 전문 건강 정보 아카이브. 암·당뇨·뇌질환·염증 등 12개 질환 카테고리 1,200개 Q&A 제공.",
+          "foundingDate": "2024",
+          "areaServed": "KR",
+          "knowsLanguage": "ko"
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://phlorotannin.com/#website",
+          "url": "https://phlorotannin.com",
+          "name": "플로로탄닌 파트너스",
+          "alternateName": "Phlorotannin Partners Health Archive",
+          "description": "감태 플로로탄닌의 과학적 근거와 12개 질환별 건강 Q&A 1,200개 제공하는 정보형 건강 아카이브",
+          "publisher": { "@id": "https://phlorotannin.com/#organization" },
+          "inLanguage": "ko-KR",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://phlorotannin.com/qa?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://phlorotannin.com/#webpage",
+          "url": "https://phlorotannin.com",
+          "name": "플로로탄닌 건강 정보 아카이브 | 플로로탄닌 파트너스",
+          "description": "암·당뇨·뇌질환·만성염증·가족 건강까지 — 플로로탄닌 관련 건강 정보를 기초 개념부터 작용 기전까지 정리한 정보형 사이트. 1,200개 Q&A 제공.",
+          "isPartOf": { "@id": "https://phlorotannin.com/#website" },
+          "about": { "@id": "https://phlorotannin.com/#organization" },
+          "inLanguage": "ko-KR",
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "홈", "item": "https://phlorotannin.com/" }
+            ]
+          },
+          "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": ["h1", "h2", ".speakable"]
+          }
+        },
+        {
+          "@type": "MedicalWebPage",
+          "@id": "https://phlorotannin.com/#medpage",
+          "url": "https://phlorotannin.com",
+          "name": "플로로탄닌 건강 정보 아카이브",
+          "description": "해양 폴리페놀 플로로탄닌(Phlorotannin) 전문 건강 정보. 12개 질환 카테고리 Q&A 아카이브.",
+          "medicalAudience": {
+            "@type": "MedicalAudience",
+            "audienceType": "일반 건강 관심자 및 만성질환 정보 탐색자"
+          },
+          "about": {
+            "@type": "MedicalCondition",
+            "name": "만성질환 예방 및 건강 관리",
+            "alternateName": ["당뇨", "고혈압", "치매예방", "항암", "만성염증"]
+          },
+          "isPartOf": { "@id": "https://phlorotannin.com/#website" },
+          "inLanguage": "ko-KR"
+        }
+      ]
+    }
+    </script>
+
+    <!-- ===== 폰트 (Noto Sans KR — 한국어 최적화) ===== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- ===== 리소스 프리로드 ===== -->
+    <!-- og-image는 SNS 공유용이므로 preload 불필요 -->
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+
+    <!-- ===== Google Analytics GA4 ===== -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M14ZCFHD8K"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-M14ZCFHD8K', {
+        'send_page_view': true,
+        'cookie_flags': 'SameSite=None;Secure',
+        'anonymize_ip': true
+      });
+    </script>
   </head>
   <body>
     <div id="root"></div>
