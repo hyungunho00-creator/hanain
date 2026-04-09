@@ -394,10 +394,35 @@ export default function QAPage() {
             />
             {searchQuery && (
               <button onClick={() => setSearchQuery('')} className="absolute right-4 top-1/2 -translate-y-1/2">
-                <X className="w-4 h-4 text-gray-400" />
+                <X className="w-5 h-5 text-gray-400 hover:text-gray-700" />
               </button>
             )}
           </div>
+
+          {/* 검색어 활성 상태 표시 — 눈에 띄는 필터 태그 */}
+          {searchQuery && (
+            <div className="flex items-center gap-3 mt-4">
+              <div className="flex items-center gap-2 bg-white/20 border border-white/40 rounded-full px-4 py-2">
+                <Search className="w-4 h-4 text-white/80" />
+                <span className="text-white font-semibold text-base">
+                  &ldquo;{searchQuery}&rdquo; 검색 중
+                </span>
+                <button
+                  onClick={() => setSearchQuery('')}
+                  className="ml-1 flex items-center justify-center w-5 h-5 rounded-full bg-white/30 hover:bg-white/50 transition-colors"
+                  aria-label="검색어 지우기"
+                >
+                  <X className="w-3 h-3 text-white" />
+                </button>
+              </div>
+              <button
+                onClick={() => { setSearchQuery(''); setActiveCategory('all'); setPage(1) }}
+                className="text-white/80 hover:text-white text-sm font-semibold underline underline-offset-2 transition-colors"
+              >
+                전체 목록 보기
+              </button>
+            </div>
+          )}
         </div>
       </div>
 
@@ -430,8 +455,17 @@ export default function QAPage() {
           {/* Main Q&A list */}
           <div className="lg:col-span-2 space-y-4">
             {debouncedQuery && (
-              <div className="text-base text-gray-500 mb-2">
-                "<strong>{debouncedQuery}</strong>" 검색 결과: {questions.length}개
+              <div className="flex items-center justify-between bg-teal-50 border border-teal-200 rounded-xl px-4 py-3 mb-2">
+                <span className="text-base text-teal-800 font-medium">
+                  <strong>&ldquo;{debouncedQuery}&rdquo;</strong> 검색 결과 {questions.length}개
+                </span>
+                <button
+                  onClick={() => { setSearchQuery(''); setActiveCategory('all'); setPage(1) }}
+                  className="flex items-center gap-1.5 text-sm font-bold text-teal-600 hover:text-teal-800 transition-colors"
+                >
+                  <X className="w-4 h-4" />
+                  전체 보기
+                </button>
               </div>
             )}
 
