@@ -216,15 +216,15 @@ function SectionLabel({ children }) {
 }
 
 // ─── 섹션 헤더 컴포넌트 ─────────────────────────────────────
-function SectionHeader({ label, title, subtitle, accent }) {
+function SectionHeader({ label, title, subtitle }) {
   return (
-    <div className="mb-14">
+    <div className="mb-10">
       <SectionLabel>{label}</SectionLabel>
-      <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-[1.2] tracking-tight mb-6">
+      <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 leading-[1.3] tracking-tight mb-4 break-keep">
         {title}
       </h2>
       {subtitle && (
-        <p className="text-xl md:text-2xl text-gray-500 leading-[1.9] max-w-2xl">
+        <p className="text-base md:text-lg text-gray-500 leading-[1.9] max-w-2xl">
           {subtitle}
         </p>
       )}
@@ -297,40 +297,40 @@ export default function LandingPage() {
           </div>
 
           {/* 메인 헤드라인 */}
-          <h1 className="text-[2.8rem] md:text-[4rem] font-extrabold text-gray-900 leading-[1.1] tracking-tight mb-10">
-            <span className="block text-gray-400 text-2xl md:text-3xl font-normal mb-4 tracking-normal leading-[1.7]">
+          <h1 className="text-[2.2rem] md:text-[3.5rem] font-extrabold text-gray-900 leading-[1.2] tracking-tight mb-8">
+            <span className="block text-gray-400 text-lg md:text-2xl font-normal mb-3 tracking-normal leading-[1.7]">
               암, 당뇨, 뇌질환, 회복, 가족 건강…
             </span>
             다른 이유로 들어와도<br />
             <span className="text-teal-600">결국 같은 정보로</span><br />
             <span className="relative inline-block">
               모이게 됩니다
-              <span className="absolute -bottom-1 left-0 w-full h-[6px] bg-teal-100 rounded-full" />
+              <span className="absolute -bottom-1 left-0 w-full h-[5px] bg-teal-100 rounded-full" />
             </span>
           </h1>
 
           {/* 서브카피 */}
-          <div className="space-y-5 mb-12 max-w-2xl">
-            <p className="text-xl md:text-2xl text-gray-600 leading-[1.9]">
+          <div className="space-y-4 mb-10 max-w-2xl">
+            <p className="text-lg md:text-xl text-gray-600 leading-[1.9]">
               회복, 식단, 염증, 피로, 인지, 대사까지 — 각자 다른 고민으로 찾기 시작하지만,
               깊이 알아볼수록 <strong className="text-gray-800 font-semibold">공통으로 마주하게 되는 정보</strong>가 있습니다.
             </p>
-            <p className="text-lg md:text-xl text-gray-500 leading-[1.9]">
+            <p className="text-base md:text-lg text-gray-500 leading-[1.9]">
               이곳은 <strong className="text-gray-700 font-semibold">플로로탄닌 관련 정보</strong>를 기초 개념부터
               작용 기전까지, 한 흐름으로 이해할 수 있도록 정리해온 건강 정보 공간입니다.
             </p>
           </div>
 
           {/* 자동 순환 질문 배너 */}
-          <div className="bg-gray-50 border-2 border-gray-200 rounded-2xl px-6 py-5 mb-12">
-            <div className="flex items-center gap-4">
-              <span className="flex-shrink-0 w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-600">
+          <div className="bg-gray-50 border border-gray-200 rounded-xl px-4 py-4 mb-10">
+            <div className="flex items-center gap-3">
+              <span className="flex-shrink-0 w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center text-teal-600">
                 <Icon.Search />
               </span>
-              <div className="overflow-hidden h-8 flex-1">
+              <div className="overflow-hidden flex-1 min-w-0">
                 <p
                   key={questionIdx}
-                  className="text-lg text-gray-600 font-medium truncate"
+                  className="text-base text-gray-600 font-medium truncate"
                   style={{ animation: 'fadeSlide 0.45s ease' }}
                 >
                   "{SAMPLE_QUESTIONS[questionIdx]}"
@@ -338,41 +338,41 @@ export default function LandingPage() {
               </div>
               <button
                 onClick={() => navigate('/qa')}
-                className="flex-shrink-0 text-base font-bold text-teal-600 hover:text-teal-800 whitespace-nowrap transition-colors"
+                className="flex-shrink-0 text-sm font-bold text-teal-600 hover:text-teal-800 whitespace-nowrap transition-colors"
               >
-                답변 보기 →
+                보기 →
               </button>
             </div>
           </div>
 
           {/* 강점 배지 */}
-          <div className="flex flex-wrap gap-3 mb-12">
+          <div className="grid grid-cols-2 gap-2.5 mb-10">
             {[
-              { text: '1,200개+ Q&A 아카이브', icon: '📚' },
-              { text: '12개 질환 카테고리',    icon: '🗂️' },
-              { text: '기초 개념부터 기전까지', icon: '🔬' },
-              { text: '구매 유도 없음',         icon: '✅' },
+              { text: '1,200개+ Q&A', icon: '📚' },
+              { text: '12개 질환 카테고리', icon: '🗂️' },
+              { text: '기초부터 기전까지', icon: '🔬' },
+              { text: '구매 유도 없음', icon: '✅' },
             ].map((item) => (
               <span key={item.text}
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white border-2 border-gray-200 text-base md:text-lg text-gray-700 shadow-sm font-semibold">
-                <span className="text-xl leading-none">{item.icon}</span>
-                {item.text}
+                className="inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-white border border-gray-200 text-base text-gray-700 shadow-sm font-semibold">
+                <span className="text-lg leading-none flex-shrink-0">{item.icon}</span>
+                <span className="break-keep">{item.text}</span>
               </span>
             ))}
           </div>
 
           {/* CTA 버튼 */}
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col gap-3">
             <button
               onClick={() => navigate('/qa')}
-              className="flex items-center justify-center gap-3 bg-teal-600 hover:bg-teal-700 active:bg-teal-800 text-white px-8 py-5 rounded-2xl text-xl font-bold transition-colors shadow-xl shadow-teal-100"
+              className="flex items-center justify-center gap-2.5 bg-teal-600 hover:bg-teal-700 active:bg-teal-800 text-white px-6 py-4 rounded-xl text-lg font-bold transition-colors shadow-lg shadow-teal-100"
             >
               <Icon.BookOpen />
               질환별 정보 탐색하기
             </button>
             <button
               onClick={() => navigate('/phlorotannin')}
-              className="flex items-center justify-center gap-3 bg-white hover:bg-gray-50 text-gray-800 px-8 py-5 rounded-2xl text-xl font-bold border-2 border-gray-300 hover:border-teal-400 transition-colors"
+              className="flex items-center justify-center gap-2.5 bg-white hover:bg-gray-50 text-gray-800 px-6 py-4 rounded-xl text-lg font-bold border-2 border-gray-200 hover:border-teal-300 transition-colors"
             >
               <Icon.Leaf />
               플로로탄닌 이해하기
@@ -407,7 +407,7 @@ export default function LandingPage() {
             subtitle="관심 있는 주제를 선택하면 관련 Q&A와 정보 페이지로 바로 이동합니다. 어떤 카테고리로 들어와도 자연스럽게 다른 카테고리와 연결됩니다."
           />
 
-          <div className="space-y-5">
+          <div className="space-y-4">
             {CATEGORIES.map((cat) => (
               <article
                 key={cat.id}
@@ -415,18 +415,18 @@ export default function LandingPage() {
                 role="button"
                 tabIndex={0}
                 onKeyDown={e => e.key === 'Enter' && goCategory(cat)}
-                className={`w-full text-left bg-white rounded-2xl border-2 ${cat.accent.border} ${cat.accent.hover} transition-all duration-200 p-7 md:p-8 cursor-pointer group hover:shadow-lg`}
+                className={`w-full text-left bg-white rounded-2xl border-2 ${cat.accent.border} ${cat.accent.hover} transition-all duration-200 cursor-pointer group hover:shadow-md`}
               >
-                <div className="flex items-start gap-5">
-                  <span className="text-4xl flex-shrink-0 mt-0.5">{cat.emoji}</span>
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-start justify-between gap-3 mb-4">
-                      <span className="font-extrabold text-gray-900 text-2xl leading-snug">{cat.label}</span>
-                      <span className={`text-base px-4 py-1.5 rounded-full flex-shrink-0 font-bold ${cat.accent.tag}`}>{cat.short}</span>
-                    </div>
-                    <p className="text-lg text-gray-600 leading-[1.9] mb-4">{cat.desc}</p>
-                    <p className={`text-base font-bold ${cat.accent.btn}`}>{cat.related}</p>
-                  </div>
+                {/* 카드 상단: 이모지 + 배지 한 줄 */}
+                <div className="flex items-center gap-3 px-5 pt-5 pb-3">
+                  <span className="text-2xl leading-none flex-shrink-0">{cat.emoji}</span>
+                  <span className={`text-sm px-3 py-1 rounded-full font-bold flex-shrink-0 ${cat.accent.tag}`}>{cat.short}</span>
+                </div>
+                {/* 카드 본문 */}
+                <div className="px-5 pb-5">
+                  <p className="font-extrabold text-gray-900 text-xl leading-[1.4] mb-3 break-keep">{cat.label}</p>
+                  <p className="text-base text-gray-500 leading-[1.8] mb-3">{cat.desc}</p>
+                  <p className={`text-sm font-bold ${cat.accent.btn}`}>{cat.related}</p>
                 </div>
               </article>
             ))}
@@ -524,51 +524,51 @@ export default function LandingPage() {
           />
 
           {/* 다이어그램 */}
-          <div className="bg-white rounded-3xl border-2 border-gray-100 p-8 md:p-12 mb-12 shadow-sm">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+          <div className="bg-white rounded-2xl border border-gray-100 p-6 mb-10 shadow-sm">
+            <div className="grid grid-cols-2 gap-3 mb-6">
               {[
-                { label: '암·회복',   sub: '식단·염증·면역',    color: 'bg-rose-50 border-rose-300 text-rose-700' },
-                { label: '당뇨·대사', sub: '혈당·인슐린·비만',  color: 'bg-emerald-50 border-emerald-300 text-emerald-700' },
-                { label: '뇌·인지',   sub: '기억·집중·수면',    color: 'bg-violet-50 border-violet-300 text-violet-700' },
-                { label: '염증·피로', sub: '만성염증·회복력',   color: 'bg-amber-50 border-amber-300 text-amber-700' },
+                { label: '암·회복',   sub: '식단·염증·면역',    color: 'bg-rose-50 border-rose-200 text-rose-700' },
+                { label: '당뇨·대사', sub: '혈당·인슐린·비만',  color: 'bg-emerald-50 border-emerald-200 text-emerald-700' },
+                { label: '뇌·인지',   sub: '기억·집중·수면',    color: 'bg-violet-50 border-violet-200 text-violet-700' },
+                { label: '염증·피로', sub: '만성염증·회복력',   color: 'bg-amber-50 border-amber-200 text-amber-700' },
               ].map((item) => (
-                <div key={item.label} className={`rounded-2xl border-2 px-4 py-5 text-center ${item.color}`}>
-                  <div className="font-extrabold text-xl mb-2">{item.label}</div>
-                  <div className="text-base mt-1 opacity-80 font-semibold">{item.sub}</div>
+                <div key={item.label} className={`rounded-xl border px-3 py-4 text-center ${item.color}`}>
+                  <div className="font-extrabold text-lg mb-1">{item.label}</div>
+                  <div className="text-sm opacity-80 font-medium">{item.sub}</div>
                 </div>
               ))}
             </div>
 
-            <div className="flex items-center justify-center gap-4 mb-10">
-              <div className="h-0.5 flex-1 bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
-              <div className="px-5 py-2.5 rounded-full bg-gray-100 border-2 border-gray-200">
-                <span className="text-base font-bold text-gray-500">공통으로 등장하는 키워드</span>
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <div className="h-px flex-1 bg-gray-200" />
+              <div className="px-3 py-1.5 rounded-full bg-gray-100 border border-gray-200">
+                <span className="text-sm font-bold text-gray-500">공통 키워드</span>
               </div>
-              <div className="h-0.5 flex-1 bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
+              <div className="h-px flex-1 bg-gray-200" />
             </div>
 
             <div className="text-center">
-              <span className="inline-flex items-center gap-3 bg-teal-600 text-white px-10 py-5 rounded-2xl text-2xl font-extrabold shadow-xl shadow-teal-100">
+              <span className="inline-flex items-center gap-2 bg-teal-600 text-white px-6 py-3.5 rounded-xl text-lg font-extrabold shadow-md shadow-teal-100">
                 <Icon.Wave />
-                플로로탄닌 (Phlorotannin)
+                플로로탄닌
               </span>
-              <p className="text-base text-gray-500 mt-5 leading-[1.9] font-medium">
+              <p className="text-sm text-gray-400 mt-3 leading-[1.7]">
                 갈조류(감태·미역·다시마) 유래 해양 폴리페놀<br />
-                다양한 질환 연구에서 반복 등장하는 공통 성분
+                다양한 질환 연구에서 반복 등장
               </p>
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col gap-3">
             <button
               onClick={() => navigate('/phlorotannin')}
-              className="flex items-center justify-center gap-3 bg-teal-600 hover:bg-teal-700 text-white px-8 py-5 rounded-2xl text-xl font-bold transition-colors shadow-lg shadow-teal-100"
+              className="flex items-center justify-center gap-2 bg-teal-600 hover:bg-teal-700 text-white px-6 py-4 rounded-xl text-lg font-bold transition-colors shadow-md shadow-teal-100"
             >
               플로로탄닌 기전 이해하기 <Icon.ArrowRight />
             </button>
             <button
               onClick={() => navigate('/qa')}
-              className="flex items-center justify-center gap-3 bg-white hover:bg-gray-50 text-gray-800 px-8 py-5 rounded-2xl text-xl font-bold border-2 border-gray-300 hover:border-gray-400 transition-colors"
+              className="flex items-center justify-center gap-2 bg-white hover:bg-gray-50 text-gray-800 px-6 py-4 rounded-xl text-lg font-bold border-2 border-gray-200 hover:border-gray-300 transition-colors"
             >
               질환별 Q&A 전체 보기 <Icon.ArrowRight />
             </button>
@@ -590,7 +590,7 @@ export default function LandingPage() {
             title={<>한 가지를 보러 들어와도,<br /><span className="text-teal-600">함께 보면 이해가 쉬워집니다</span></>}
           />
 
-          <div className="grid sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {CROSS_LINKS.map((item) => (
               <button
                 key={item.title}
@@ -599,12 +599,12 @@ export default function LandingPage() {
                     ? navigate('/learn')
                     : navigate(`${item.path}?q=${encodeURIComponent(item.query)}`)
                 }
-                className={`text-left rounded-2xl p-8 border-2 transition-all group hover:shadow-md ${item.color}`}
+                className={`text-left rounded-2xl p-6 border-2 transition-all group hover:shadow-md ${item.color}`}
               >
-                <span className={`inline-block text-base font-extrabold px-4 py-2 rounded-full mb-5 ${item.badgeColor}`}>{item.badge}</span>
-                <h3 className="font-extrabold text-gray-900 text-xl mb-4 leading-snug">{item.title}</h3>
-                <p className="text-lg text-gray-500 leading-[1.9] mb-5">{item.desc}</p>
-                <span className="inline-flex items-center gap-2 text-base font-bold text-teal-600 group-hover:gap-3 transition-all">
+                <span className={`inline-block text-sm font-bold px-3 py-1 rounded-full mb-3 ${item.badgeColor}`}>{item.badge}</span>
+                <h3 className="font-extrabold text-gray-900 text-lg mb-2 leading-snug break-keep">{item.title}</h3>
+                <p className="text-base text-gray-500 leading-[1.8] mb-4">{item.desc}</p>
+                <span className="inline-flex items-center gap-1.5 text-sm font-bold text-teal-600 group-hover:gap-2.5 transition-all">
                   바로 보기 <Icon.ArrowRight />
                 </span>
               </button>
@@ -644,23 +644,23 @@ export default function LandingPage() {
             title="먼저 궁금하셨던 것들"
           />
 
-          <div className="space-y-4">
+          <div className="space-y-3">
             {FAQS.map((faq, i) => (
-              <div key={i} className="bg-white rounded-2xl border-2 border-gray-100 overflow-hidden hover:border-teal-200 transition-colors shadow-sm">
+              <div key={i} className="bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-teal-300 transition-colors">
                 <button
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full text-left px-8 py-6 flex items-center justify-between gap-5"
+                  className="w-full text-left px-5 py-5 flex items-center justify-between gap-4"
                   aria-expanded={openFaq === i}
                 >
-                  <span className="font-extrabold text-gray-900 text-xl leading-snug">{faq.q}</span>
-                  <span className="flex-shrink-0 text-teal-500">
+                  <span className="font-bold text-gray-900 text-lg leading-snug break-keep">{faq.q}</span>
+                  <span className="flex-shrink-0 text-teal-500 ml-2">
                     <Icon.ChevronDown open={openFaq === i} />
                   </span>
                 </button>
                 {openFaq === i && (
-                  <div className="px-8 pb-8">
-                    <div className="h-0.5 bg-gray-100 mb-6" />
-                    <p className="text-lg text-gray-600 leading-[1.9]">{faq.a}</p>
+                  <div className="px-5 pb-5">
+                    <div className="h-px bg-gray-100 mb-4" />
+                    <p className="text-base text-gray-600 leading-[1.9]">{faq.a}</p>
                   </div>
                 )}
               </div>
@@ -687,16 +687,16 @@ export default function LandingPage() {
       <section ref={contactRef} className="py-28 px-5 bg-white">
         <div className="max-w-2xl mx-auto">
 
-          <div className="text-center mb-14">
-            <div className="inline-flex items-center gap-2.5 px-5 py-3 rounded-full bg-teal-50 border-2 border-teal-200 mb-8">
-              <span className="w-3 h-3 rounded-full bg-teal-500 animate-pulse inline-block" />
-              <span className="text-base font-extrabold text-teal-700">질문 남기기</span>
+          <div className="text-center mb-10">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal-50 border border-teal-200 mb-6">
+              <span className="w-2 h-2 rounded-full bg-teal-500 animate-pulse inline-block" />
+              <span className="text-sm font-bold text-teal-700">질문 남기기</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 leading-[1.2]">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4 leading-[1.3] break-keep">
               혼자 찾기 어려웠던 정보,<br />
               <span className="text-teal-600">질문부터 남겨보세요</span>
             </h2>
-            <p className="text-gray-500 text-xl leading-[1.9] max-w-md mx-auto">
+            <p className="text-gray-500 text-lg leading-[1.9] max-w-md mx-auto">
               구매 권유나 가입 요청이 없습니다.<br />
               관심 있는 분야와 궁금한 점을 남겨주시면
               해당 정보 흐름을 개인별로 안내드립니다.
@@ -704,48 +704,48 @@ export default function LandingPage() {
           </div>
 
           {/* 안내 포인트 */}
-          <div className="grid grid-cols-3 gap-4 mb-12">
+          <div className="grid grid-cols-3 gap-3 mb-8">
             {[
-              { label: '질문만 남겨도\n됩니다', icon: '💬' },
+              { label: '질문만\n남겨도 됩니다', icon: '💬' },
               { label: '구매 권유\n없음', icon: '🚫' },
               { label: '맞춤 정보\n안내', icon: '📋' },
             ].map((item) => (
-              <div key={item.icon} className="bg-gray-50 rounded-2xl p-6 text-center border-2 border-gray-100 hover:border-teal-200 transition-colors">
-                <span className="text-3xl block mb-3">{item.icon}</span>
-                <span className="text-base text-gray-600 leading-snug font-bold whitespace-pre-line">{item.label}</span>
+              <div key={item.icon} className="bg-gray-50 rounded-xl p-4 text-center border border-gray-100">
+                <span className="text-2xl block mb-2">{item.icon}</span>
+                <span className="text-sm text-gray-600 leading-snug font-bold whitespace-pre-line break-keep">{item.label}</span>
               </div>
             ))}
           </div>
 
           {/* 문자 CTA 카드 */}
-          <div className="bg-gradient-to-br from-teal-50 to-cyan-50 rounded-3xl border-2 border-teal-100 p-10 mb-8">
-            <h3 className="font-extrabold text-gray-900 mb-3 text-3xl leading-snug">관심 분야 및 궁금한 점</h3>
-            <p className="text-lg text-gray-500 mb-8 leading-[1.9]">
+          <div className="bg-gradient-to-br from-teal-50 to-cyan-50 rounded-2xl border border-teal-100 p-6 mb-6">
+            <h3 className="font-extrabold text-gray-900 mb-2 text-xl leading-snug">관심 분야 및 궁금한 점</h3>
+            <p className="text-base text-gray-500 mb-5 leading-[1.8]">
               아래 버튼을 누르면 문자 앱이 열립니다. 관심 있는 질환·분야와 궁금한 점을 자유롭게 적어 보내주세요.
             </p>
 
-            <div className="space-y-3 mb-8">
+            <div className="space-y-2 mb-5">
               {[
                 '예) 암 회복 중인데 플로로탄닌 관련 정보가 궁금합니다.',
                 '예) 당뇨 식단 조절 중인데 관련 정보를 더 알고 싶습니다.',
                 '예) 뇌 건강에 관심이 많아 기초부터 공부하고 싶습니다.',
               ].map((ex) => (
-                <div key={ex} className="flex items-start gap-3 bg-white rounded-xl px-5 py-4 border-2 border-teal-100">
+                <div key={ex} className="flex items-start gap-2.5 bg-white rounded-xl px-4 py-3 border border-teal-100">
                   <span className="text-teal-500 flex-shrink-0 mt-0.5"><Icon.Check /></span>
-                  <p className="text-lg text-gray-500 leading-relaxed">{ex}</p>
+                  <p className="text-base text-gray-500 leading-relaxed">{ex}</p>
                 </div>
               ))}
             </div>
 
             <a
               href={`sms:${partner.phone}?body=${encodeURIComponent('[플로로탄닌 정보 문의]\n관심 분야: \n궁금한 점: ')}`}
-              className="flex items-center justify-center gap-3 w-full bg-teal-600 hover:bg-teal-700 active:bg-teal-800 text-white py-6 rounded-2xl text-2xl font-extrabold transition-colors shadow-xl shadow-teal-100"
+              className="flex items-center justify-center gap-2.5 w-full bg-teal-600 hover:bg-teal-700 active:bg-teal-800 text-white py-5 rounded-xl text-xl font-extrabold transition-colors shadow-lg shadow-teal-100"
             >
               <Icon.MessageCircle />
               문자로 질문 남기기
             </a>
-            <p className="text-center text-base text-gray-400 mt-4">
-              문자 앱이 열리면 내용을 자유롭게 수정하셔도 됩니다 · 영업일 기준 24시간 내 안내드립니다
+            <p className="text-center text-sm text-gray-400 mt-3">
+              문자 앱이 열리면 내용을 자유롭게 수정하셔도 됩니다 · 24시간 내 안내드립니다
             </p>
           </div>
 
