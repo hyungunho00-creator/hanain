@@ -477,7 +477,7 @@ export default function PhlorotanninPage() {
             {/* 저작권 안내 */}
             <div className="mt-8 border border-gray-200 rounded-2xl bg-gray-50 px-6 py-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
               <div>
-                <p className="text-base font-semibold text-gray-700 mb-1">© 2025 플로로탄닌 파트너스 — 저작권 안내</p>
+                <p className="text-base font-semibold text-gray-700 mb-1">© 2026 플로로탄닌 파트너스 — 저작권 안내</p>
                 <p className="text-sm text-gray-500 leading-relaxed">
                   본 페이지의 모든 콘텐츠(기전 설명, 논문 해설, 도표, 비교표 등)는 저작권법에 의해 보호됩니다.<br />
                   무단 복제·스크랩·상업적 이용을 금하며, 인용 시 반드시 출처를 명시하세요.
@@ -593,7 +593,7 @@ export default function PhlorotanninPage() {
           <div className="bg-white rounded-2xl border border-gray-200 px-6 py-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-sm">
             <div>
               <p className="text-base font-semibold text-gray-700 mb-1">
-                © 2025 플로로탄닌 파트너스 — All rights reserved.
+                © 2026 플로로탄닌 파트너스 — All rights reserved.
               </p>
               <p className="text-sm text-gray-500 leading-relaxed">
                 본 페이지의 모든 콘텐츠(기전 설명, 논문 해설, 도표, 비교표 등)는 저작권법에 의해 보호받습니다.<br />

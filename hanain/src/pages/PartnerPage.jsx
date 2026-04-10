@@ -2,6 +2,7 @@ import { useState , useEffect } from 'react'
 import { usePartner } from '../context/PartnerContext'
 import SEOHead from '../components/common/SEOHead'
 import { Users, Award, TrendingUp, BookOpen, CheckCircle, ChevronDown, ChevronUp, Send, Star, MessageSquare, Phone } from 'lucide-react'
+import RevealContact from '../components/common/RevealContact'
 
 const curriculum = [
   {
@@ -452,33 +453,34 @@ export default function PartnerPage() {
             <div className="border-t border-gray-100 pt-5">
               <p className="text-sm text-center text-gray-400 mb-3">또는 바로 연락하기</p>
               <div className="grid grid-cols-2 gap-3">
-                <a
-                  href={`tel:${PHONE_NUMBER}`}
+                <RevealContact
+                  type="tel"
+                  label="전화 문의"
+                  phone={PHONE_NUMBER}
+                  displayPhone={PHONE_DISPLAY}
                   className="flex items-center justify-center gap-2 py-3 bg-white border-2 border-ocean-deep text-ocean-deep rounded-xl text-base font-semibold hover:bg-ocean-deep hover:text-white transition-all"
-                >
-                  <Phone className="w-4 h-4" />
-                  {PHONE_DISPLAY}
-                </a>
-                <a
-                  href={`sms:${PHONE_NUMBER}?body=${encodeURIComponent('[플로로탄닌 파트너스] 파트너 신청 문의드립니다.')}`}
+                />
+                <RevealContact
+                  type="sms"
+                  label="문자 문의"
+                  phone={PHONE_NUMBER}
+                  displayPhone={PHONE_DISPLAY}
+                  smsBody="[플로로탄닌 파트너스] 파트너 신청 문의드립니다."
                   className="flex items-center justify-center gap-2 py-3 bg-cyan-hana text-white rounded-xl text-base font-semibold hover:bg-opacity-90 transition-all"
-                >
-                  <MessageSquare className="w-4 h-4" />
-                  문자 문의
-                </a>
+                />
               </div>
             </div>
 
             {/* 저작권 */}
             <div className="border-t border-gray-100 pt-5 space-y-1">
               <p className="text-sm text-gray-400 text-center">
-                © 2025 <span className="font-semibold text-gray-500">플로로탄닌 파트너스</span> — All rights reserved.
+                © 2026 <span className="font-semibold text-gray-500">플로로탄닌 파트너스</span> — All rights reserved.
               </p>
               <p className="text-sm text-gray-400 text-center leading-relaxed">
                 본 사이트의 교육 자료·커리큘럼·콘텐츠는 저작권법의 보호를 받습니다. 무단 복제·배포를 금합니다.<br />
                 콘텐츠 사용 또는 제휴 문의:{' '}
                 <a href={`sms:${PHONE_NUMBER}?body=${encodeURIComponent('[파트너/제휴 문의] ')}`} className="text-cyan-600 hover:underline font-medium">
-                  {PHONE_DISPLAY} 문자
+                  문자로 문의하기
                 </a>
               </p>
             </div>

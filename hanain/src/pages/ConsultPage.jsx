@@ -130,7 +130,7 @@ export default function ConsultPage() {
     <div className="pt-16">
       <SEOHead
         title="상담 문의"
-        description="플로로탄닌 파트너스 상담 문의. 건강 고민을 전문가와 상담하세요."
+        description="플로로탄닌 파트너스 문의. 건강 정보와 파트너 활동에 대해 편하게 문의하세요."
         keywords="플로로탄닌 상담, 건강 상담, 감태 건강식품 문의"
         canonical="https://phlorotannin.com/consult"
       />
@@ -170,8 +170,8 @@ export default function ConsultPage() {
               <h3 className="font-bold text-ocean-deep mb-4">연락처 안내</h3>
               <div className="space-y-4">
                 {[
-                  { icon: Phone, title: '전화 상담', desc: `평일 09:00 – 18:00\n${PHONE_DISPLAY}` },
-                  { icon: MessageSquare, title: '문자 상담', desc: `24시간 접수 가능\n${PHONE_DISPLAY}` },
+                  { icon: Phone, title: '전화 상담', desc: '평일 09:00 – 18:00\n번호 확인 후 연결' },
+                  { icon: MessageSquare, title: '문자 상담', desc: '24시간 접수 가능\n번호 확인 후 연결' },
                   { icon: Clock, title: '응답 시간', desc: '영업일 기준\n24시간 이내 답변' },
                   { icon: Calendar, title: '상담 주제', desc: '건강 정보 / 자연 소재\n파트너 활동 안내' },
                 ].map(item => (
@@ -363,7 +363,7 @@ export default function ConsultPage() {
             {/* 저작권 */}
             <div className="mt-6 border-t border-gray-100 pt-5 text-center space-y-1">
               <p className="text-sm text-gray-400">
-                © 2025 <span className="font-semibold text-gray-600">플로로탄닌 파트너스</span> — All rights reserved.
+                © 2026 <span className="font-semibold text-gray-600">플로로탄닌 파트너스</span> — All rights reserved.
               </p>
               <p className="text-sm text-gray-400 leading-relaxed">
                 본 사이트의 모든 콘텐츠는 저작권법의 보호를 받습니다. 무단 복제·배포를 금합니다.

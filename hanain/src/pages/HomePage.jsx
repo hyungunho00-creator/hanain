@@ -577,7 +577,7 @@ export default function HomePage() {
         <div className="max-w-5xl mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-3">
             <p className="text-sm text-gray-500 text-center md:text-left">
-              © 2025 <span className="font-semibold text-gray-600">플로로탄닌 파트너스</span> — All rights reserved. |
+              © 2026 <span className="font-semibold text-gray-600">플로로탄닌 파트너스</span> — All rights reserved. |
               본 사이트의 모든 콘텐츠는 저작권법에 의해 보호받습니다. 무단 복제·배포를 금합니다.
             </p>
             <a
