@@ -15,6 +15,9 @@ import PartnerLandingPage from './pages/PartnerLandingPage'
 import LoginPage from './pages/LoginPage'
 import SignupPage from './pages/SignupPage'
 import AuthCallbackPage from './pages/AuthCallbackPage'
+import CommunityPage from './pages/CommunityPage'
+import CommunityWritePage from './pages/CommunityWritePage'
+import CommunityPostPage from './pages/CommunityPostPage'
 import ScrollToTop from './components/common/ScrollToTop'
 import { PartnerProvider } from './context/PartnerContext'
 import { AuthProvider } from './context/AuthContext'
@@ -45,6 +48,12 @@ function AppInner() {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignupPage />} />
             <Route path="/auth/callback" element={<AuthCallbackPage />} />
+
+            {/* 신규: 커뮤니티 */}
+            <Route path="/community" element={<CommunityPage />} />
+            <Route path="/community/write" element={<CommunityWritePage />} />
+            <Route path="/community/edit/:postId" element={<CommunityWritePage />} />
+            <Route path="/community/post/:postId" element={<CommunityPostPage />} />
           </Routes>
         </main>
         <Footer />
