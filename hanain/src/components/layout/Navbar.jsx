@@ -6,7 +6,6 @@ import { useAuth } from '../../context/AuthContext'
 const NAV_LINKS = [
   { path: '/', label: '홈' },
   { path: '/qa', label: '건강 Q&A' },
-  { path: '/community', label: '💬 커뮤니티' },
   { path: '/learn', label: '🌊 쉽게 배우기' },
   { path: '/phlorotannin', label: '플로로탄닌 소개' },
   { path: '/partner', label: '파트너 참여' },
@@ -19,7 +18,7 @@ export default function Navbar() {
   const [profileOpen, setProfileOpen] = useState(false)
   const location = useLocation()
   const navigate = useNavigate()
-  const { user, profile, isMember, signOut } = useAuth()
+  const { user, profile, signOut } = useAuth()
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
@@ -63,7 +62,7 @@ export default function Navbar() {
                 key={link.path}
                 to={link.path}
                 className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-                  location.pathname === link.path || location.pathname.startsWith(link.path + '/')
+                  location.pathname === link.path
                     ? 'bg-cyan-hana text-white'
                     : 'text-gray-300 hover:text-white hover:bg-white/10'
                 }`}
@@ -72,8 +71,8 @@ export default function Navbar() {
               </Link>
             ))}
 
-            {/* 로그인 상태 */}
-            {user ? (
+            {/* 로그인된 경우에만 아바타 드롭다운 표시 */}
+            {user && (
               <div className="relative ml-2">
                 <button
                   onClick={() => setProfileOpen(v => !v)}
@@ -126,21 +125,6 @@ export default function Navbar() {
                   </div>
                 )}
               </div>
-            ) : (
-              <div className="flex items-center gap-1 ml-2">
-                <Link
-                  to="/login"
-                  className="px-3 py-2 rounded-lg text-sm font-medium text-gray-300 hover:text-white hover:bg-white/10 transition-all"
-                >
-                  로그인
-                </Link>
-                <Link
-                  to="/signup"
-                  className="px-3 py-2 rounded-lg text-sm font-semibold bg-cyan-hana text-white hover:bg-opacity-90 transition-all"
-                >
-                  회원가입
-                </Link>
-              </div>
             )}
           </div>
 
@@ -171,7 +155,7 @@ export default function Navbar() {
                 key={link.path}
                 to={link.path}
                 className={`block px-4 py-3 rounded-lg text-base font-medium transition-colors ${
-                  location.pathname === link.path || location.pathname.startsWith(link.path + '/')
+                  location.pathname === link.path
                     ? 'bg-cyan-hana text-white'
                     : 'text-gray-300 hover:text-white hover:bg-white/10'
                 }`}
@@ -179,37 +163,27 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            {/* 모바일 로그인/사용자 */}
-            <div className="border-t border-white/10 mt-2 pt-2">
-              {user ? (
-                <>
-                  <div className="px-4 py-2 text-gray-400 text-sm flex items-center gap-2">
-                    <div className="w-6 h-6 rounded-full bg-cyan-hana flex items-center justify-center text-white text-xs font-bold">
-                      {displayName.charAt(0)}
-                    </div>
-                    {displayName}
+
+            {/* 로그인된 경우에만 사용자 메뉴 표시 */}
+            {user && (
+              <div className="border-t border-white/10 mt-2 pt-2">
+                <div className="px-4 py-2 text-gray-400 text-sm flex items-center gap-2">
+                  <div className="w-6 h-6 rounded-full bg-cyan-hana flex items-center justify-center text-white text-xs font-bold">
+                    {displayName.charAt(0)}
                   </div>
-                  <Link to="/community/write" className="block px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/10">
-                    ✏️ 글쓰기
-                  </Link>
-                  <button
-                    onClick={handleSignOut}
-                    className="w-full text-left block px-4 py-3 rounded-lg text-base font-medium text-red-400 hover:text-red-300 hover:bg-white/10"
-                  >
-                    로그아웃
-                  </button>
-                </>
-              ) : (
-                <>
-                  <Link to="/login" className="block px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/10">
-                    로그인
-                  </Link>
-                  <Link to="/signup" className="block px-4 py-3 rounded-lg text-base font-medium bg-cyan-hana text-white text-center mt-1">
-                    무료 회원가입
-                  </Link>
-                </>
-              )}
-            </div>
+                  {displayName}
+                </div>
+                <Link to="/community/write" className="block px-4 py-3 rounded-lg text-base font-medium text-gray-300 hover:text-white hover:bg-white/10">
+                  ✏️ 글쓰기
+                </Link>
+                <button
+                  onClick={handleSignOut}
+                  className="w-full text-left block px-4 py-3 rounded-lg text-base font-medium text-red-400 hover:text-red-300 hover:bg-white/10"
+                >
+                  로그아웃
+                </button>
+              </div>
+            )}
           </div>
         </div>
       )}
