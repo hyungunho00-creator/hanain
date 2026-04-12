@@ -1,6 +1,6 @@
 import os, json, hashlib, requests, time, mimetypes
 
-VERCEL_TOKEN = "vcp_8VbzLrpTimfQewu1rTSn6fKjyMKle7T3stHb5fFTR3W5iRfzKD2bL2VT"
+VERCEL_TOKEN = "vcp_1hzc1Bc2fZRGwLftWiq6wyh3BKH7WOoKFcNYakVvp7UUs4KZ4T1ilrk7"
 TEAM_ID = "team_ZrgDT3bXQCqVrblRy6NkjDtL"
 HEADERS = {"Authorization": f"Bearer {VERCEL_TOKEN}"}
 DIST = "dist"
