@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- 메인 랜딩 페이지 — 최우선 순위 -->
+  <url>
+    <loc>https://phlorotannin.com/</loc>
+    <lastmod>2026-04-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og-image.png</image:loc>
+      <image:title>플로로탄닌 파트너스 — 해양 폴리페놀 건강 정보 아카이브</image:title>
+      <image:caption>암·당뇨·뇌질환·염증·가족 건강 등 다양한 건강 주제의 플로로탄닌 정보 아카이브. 1,200개 Q&A, 12개 카테고리.</image:caption>
+    </image:image>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://phlorotannin.com/"/>
+  </url>
+
+  <!-- 건강 Q&A — 핵심 콘텐츠, 매일 업데이트 -->
+  <url>
+    <loc>https://phlorotannin.com/qa</loc>
+    <lastmod>2026-04-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og-image.png</image:loc>
+      <image:title>건강 Q&A 1,200개 — 플로로탄닌 파트너스</image:title>
+      <image:caption>혈당, 혈압, 치매, 항암, 소화, 피부, 수면 등 12개 질환 카테고리의 1,200개 건강 Q&A 아카이브.</image:caption>
+    </image:image>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa"/>
+  </url>
+
+  <!-- 홈 (건강 정보 허브) -->
+  <url>
+    <loc>https://phlorotannin.com/home</loc>
+    <lastmod>2026-04-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/home"/>
+  </url>
+
+  <!-- 플로로탄닌 소개 — 핵심 정보 페이지 -->
+  <url>
+    <loc>https://phlorotannin.com/phlorotannin</loc>
+    <lastmod>2026-04-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og-image.png</image:loc>
+      <image:title>플로로탄닌 소개 — 해양 폴리페놀 기초부터 기전까지</image:title>
+      <image:caption>감태에서 추출한 해양 폴리페놀 플로로탄닌의 구조, 작용 기전, 12개 질환 연구 근거.</image:caption>
+    </image:image>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/phlorotannin"/>
+  </url>
+
+  <!-- 쉽게 배우기 -->
+  <url>
+    <loc>https://phlorotannin.com/learn</loc>
+    <lastmod>2026-04-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/learn"/>
+  </url>
+
+  <!-- 쉬운 건강 정보 -->
+  <url>
+    <loc>https://phlorotannin.com/easy</loc>
+    <lastmod>2026-04-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/easy"/>
+  </url>
+
+  <!-- 상담 문의 -->
+  <url>
+    <loc>https://phlorotannin.com/consult</loc>
+    <lastmod>2026-04-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.78</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/consult"/>
+  </url>
+
+  <!-- 파트너 참여 -->
+  <url>
+    <loc>https://phlorotannin.com/partner</loc>
+    <lastmod>2026-04-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/partner"/>
+  </url>
+
+</urlset>

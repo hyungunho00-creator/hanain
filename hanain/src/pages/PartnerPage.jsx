@@ -1,9 +1,8 @@
-import { useState } from 'react'
-import { PARTNER_CONFIG } from '../config/partner'
+import { useState , useEffect } from 'react'
+import { usePartner } from '../context/PartnerContext'
+import SEOHead from '../components/common/SEOHead'
 import { Users, Award, TrendingUp, BookOpen, CheckCircle, ChevronDown, ChevronUp, Send, Star, MessageSquare, Phone } from 'lucide-react'
-
-const PHONE_NUMBER = PARTNER_CONFIG.phone
-const PHONE_DISPLAY = PARTNER_CONFIG.phoneDisplay
+import RevealContact from '../components/common/RevealContact'
 
 const curriculum = [
   {
@@ -79,12 +78,12 @@ function CurriculumCard({ item }) {
         onClick={() => setIsOpen(!isOpen)}
         className="w-full flex items-center gap-4 p-5 hover:bg-gray-50 transition-colors"
       >
-        <div className="w-16 h-16 bg-cyan-hana/10 text-cyan-hana rounded-xl flex items-center justify-center font-bold text-sm flex-shrink-0">
+        <div className="w-16 h-16 bg-cyan-hana/10 text-cyan-hana rounded-xl flex items-center justify-center font-bold text-base flex-shrink-0">
           {item.week}
         </div>
         <div className="flex-1 text-left">
           <div className="font-semibold text-ocean-deep">{item.title}</div>
-          <div className="text-sm text-gray-400">{item.topics.length}개 주제</div>
+          <div className="text-base text-gray-400">{item.topics.length}개 주제</div>
         </div>
         {isOpen ? <ChevronUp className="w-5 h-5 text-gray-400" /> : <ChevronDown className="w-5 h-5 text-gray-400" />}
       </button>
@@ -92,7 +91,7 @@ function CurriculumCard({ item }) {
         <div className="border-t border-gray-100 bg-gray-50 p-5">
           <ul className="space-y-2">
             {item.topics.map((topic, i) => (
-              <li key={i} className="flex items-center gap-2 text-sm text-gray-600">
+              <li key={i} className="flex items-center gap-2 text-base text-gray-600">
                 <CheckCircle className="w-4 h-4 text-cyan-hana flex-shrink-0" />
                 {topic}
               </li>
@@ -120,27 +119,27 @@ function SmsModal({ formData, onClose }) {
           아래 버튼을 누르면 문자 앱이 열리면서<br />
           신청 내용이 자동으로 입력됩니다.
         </p>
-        <p className="text-gray-500 text-sm mb-5">
+        <p className="text-gray-500 text-base mb-5">
           전송 버튼을 한 번만 눌러주시면 됩니다.
         </p>
 
         {/* SMS 미리보기 */}
         <div className="bg-gray-50 rounded-2xl p-4 mb-6 text-left border border-gray-200">
-          <p className="text-xs text-gray-400 font-semibold mb-2 uppercase tracking-wide">문자 미리보기</p>
-          <pre className="text-xs text-gray-700 whitespace-pre-wrap leading-relaxed font-sans">{smsBody}</pre>
+          <p className="text-sm text-gray-400 font-semibold mb-2 uppercase tracking-wide">문자 미리보기</p>
+          <pre className="text-sm text-gray-700 whitespace-pre-wrap leading-relaxed font-sans">{smsBody}</pre>
         </div>
 
         <div className="space-y-3">
           <a
             href={smsLink}
-            className="w-full btn-primary py-4 flex items-center justify-center gap-2 text-base"
+            className="w-full btn-primary py-4 flex items-center justify-center gap-2 text-lg"
           >
             <MessageSquare className="w-5 h-5" />
             문자 앱 열고 전송하기
           </a>
           <button
             onClick={onClose}
-            className="w-full py-3 text-sm text-gray-400 hover:text-gray-600 transition-colors"
+            className="w-full py-3 text-base text-gray-400 hover:text-gray-600 transition-colors"
           >
             나중에 보내기
           </button>
@@ -151,6 +150,10 @@ function SmsModal({ formData, onClose }) {
 }
 
 export default function PartnerPage() {
+  const partner = usePartner()
+  const PHONE_NUMBER = partner.phone
+  const PHONE_DISPLAY = partner.phoneDisplay
+
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -197,6 +200,12 @@ export default function PartnerPage() {
 
   return (
     <div className="pt-16">
+      <SEOHead
+        title="파트너 참여"
+        description="플로로탄닌 파트너스 파트너 참여 안내. 건강 정보를 공유하고 파트너로 함께하세요."
+        keywords="플로로탄닌 파트너, 건강 파트너십, 건강식품 사업, 파트너 모집"
+        canonical="https://phlorotannin.com/partner"
+      />
       {success && (
         <SmsModal
           formData={formData}
@@ -210,7 +219,7 @@ export default function PartnerPage() {
       {/* Hero */}
       <div className="bg-ocean-gradient py-20">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex items-center gap-2 text-gold-hana text-sm font-medium mb-5">
+          <div className="flex items-center gap-2 text-gold-hana text-base font-medium mb-5">
             <Users className="w-4 h-4" />
             <span>파트너 프로그램</span>
           </div>
@@ -218,7 +227,7 @@ export default function PartnerPage() {
             플로로탄닌 파트너스와<br />
             <span style={{ color: '#00B4D8' }}>함께 성장하세요</span>
           </h1>
-          <p className="text-lg max-w-xl leading-relaxed" style={{ color: '#d1e8f5' }}>
+          <p className="text-xl max-w-xl leading-relaxed" style={{ color: '#d1e8f5' }}>
             건강 정보를 함께 나누고, 뜻이 맞는 분들과<br />
             파트너로 함께할 수 있습니다.
           </p>
@@ -243,7 +252,7 @@ export default function PartnerPage() {
                   <item.icon className="w-7 h-7" style={{ color: item.color }} />
                 </div>
                 <h3 className="font-bold text-ocean-deep mb-2">{item.title}</h3>
-                <p className="text-gray-500 text-sm">{item.desc}</p>
+                <p className="text-gray-500 text-base">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -276,14 +285,14 @@ export default function PartnerPage() {
                 <div className="flex items-center gap-1 mb-4">
                   {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 text-gold-hana fill-gold-hana" />)}
                 </div>
-                <p className="text-gray-600 text-sm leading-relaxed mb-4 italic">"{cs.quote}"</p>
+                <p className="text-gray-600 text-base leading-relaxed mb-4 italic">"{cs.quote}"</p>
                 <div className="flex items-center gap-3 border-t pt-4">
                   <div className="w-10 h-10 bg-ocean-deep text-white rounded-full flex items-center justify-center font-bold">
                     {cs.initial}
                   </div>
                   <div>
-                    <div className="font-semibold text-ocean-deep text-sm">{cs.role}</div>
-                    <div className="text-xs text-gray-400">{cs.location} · {cs.duration}</div>
+                    <div className="font-semibold text-ocean-deep text-base">{cs.role}</div>
+                    <div className="text-sm text-gray-400">{cs.location} · {cs.duration}</div>
                   </div>
                 </div>
               </div>
@@ -302,19 +311,19 @@ export default function PartnerPage() {
           <div className="bg-cyan-50 border border-cyan-200 rounded-2xl p-4 mb-6 flex items-start gap-3">
             <MessageSquare className="w-5 h-5 text-cyan-600 mt-0.5 flex-shrink-0" />
             <div>
-              <div className="text-sm font-bold text-cyan-800">이렇게 진행됩니다</div>
-              <div className="text-sm text-cyan-700 mt-1 leading-relaxed">
+              <div className="text-base font-bold text-cyan-800">이렇게 진행됩니다</div>
+              <div className="text-base text-cyan-700 mt-1 leading-relaxed">
                 ① 아래 양식 작성 → ② <strong>파트너 신청 문자 보내기</strong> 클릭 → ③ 문자 앱에서 <strong>전송</strong>
               </div>
             </div>
           </div>
 
           <form onSubmit={onSubmit} className="card space-y-5">
-            <h3 className="font-bold text-ocean-deep text-lg">파트너 신청서</h3>
+            <h3 className="font-bold text-ocean-deep text-xl">파트너 신청서</h3>
 
             <div className="grid md:grid-cols-2 gap-5">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1.5">이름 *</label>
+                <label className="block text-base font-medium text-gray-700 mb-1.5">이름 *</label>
                 <input
                   name="name"
                   value={formData.name}
@@ -322,10 +331,10 @@ export default function PartnerPage() {
                   className="input-field"
                   placeholder="홍길동"
                 />
-                {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
+                {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1.5">연락처 *</label>
+                <label className="block text-base font-medium text-gray-700 mb-1.5">연락처 *</label>
                 <input
                   name="phone"
                   value={formData.phone}
@@ -334,14 +343,14 @@ export default function PartnerPage() {
                   placeholder="010-0000-0000"
                   type="tel"
                 />
-                {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone}</p>}
+                {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
               </div>
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1.5">
+              <label className="block text-base font-medium text-gray-700 mb-1.5">
                 이메일
-                <span className="text-xs text-gray-400 font-normal ml-1">(선택사항)</span>
+                <span className="text-sm text-gray-400 font-normal ml-1">(선택사항)</span>
               </label>
               <input
                 name="email"
@@ -354,7 +363,7 @@ export default function PartnerPage() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1.5">현재 직업</label>
+              <label className="block text-base font-medium text-gray-700 mb-1.5">현재 직업</label>
               <input
                 name="job"
                 value={formData.job}
@@ -365,7 +374,7 @@ export default function PartnerPage() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1.5">관심 건강/활동 분야</label>
+              <label className="block text-base font-medium text-gray-700 mb-1.5">관심 건강/활동 분야</label>
               <div className="grid grid-cols-2 gap-2">
                 {[
                   '암치료/항암 관리',
@@ -390,16 +399,16 @@ export default function PartnerPage() {
                       onChange={handleChange}
                       className="accent-cyan-hana"
                     />
-                    <span className="text-sm text-gray-700">{item}</span>
+                    <span className="text-base text-gray-700">{item}</span>
                   </label>
                 ))}
               </div>
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1.5">
+              <label className="block text-base font-medium text-gray-700 mb-1.5">
                 문의 내용
-                <span className="text-xs text-gray-400 font-normal ml-1">(선택사항 — 문자에 자동 포함)</span>
+                <span className="text-sm text-gray-400 font-normal ml-1">(선택사항 — 문자에 자동 포함)</span>
               </label>
               <textarea
                 name="message"
@@ -419,58 +428,59 @@ export default function PartnerPage() {
                 onChange={handleChange}
                 className="mt-1 accent-cyan-hana w-4 h-4"
               />
-              <label className="text-sm text-gray-600">
+              <label className="text-base text-gray-600">
                 <span className="font-medium">개인정보 수집 및 이용에 동의합니다.</span> (필수)
               </label>
             </div>
-            {errors.privacyAgreed && <p className="text-red-500 text-xs">{errors.privacyAgreed}</p>}
+            {errors.privacyAgreed && <p className="text-red-500 text-sm">{errors.privacyAgreed}</p>}
 
             {/* 제출 버튼 */}
             <button
               type="submit"
-              className="w-full bg-ocean-deep text-white py-4 rounded-2xl font-bold text-base flex items-center justify-center gap-3 hover:bg-opacity-90 transition-all hover:shadow-lg hover:-translate-y-0.5"
+              className="w-full bg-ocean-deep text-white py-4 rounded-2xl font-bold text-lg flex items-center justify-center gap-3 hover:bg-opacity-90 transition-all hover:shadow-lg hover:-translate-y-0.5"
             >
               <MessageSquare className="w-5 h-5" />
               파트너 신청 문자 보내기
               <Send className="w-4 h-4 opacity-70" />
             </button>
 
-            <p className="text-xs text-center text-gray-500">
+            <p className="text-sm text-center text-gray-500">
               버튼을 누르면 작성하신 내용이 담긴 문자가 준비됩니다.<br />
               문자 앱에서 <strong>전송</strong>만 누르면 완료!
             </p>
 
             {/* 바로 전화 */}
             <div className="border-t border-gray-100 pt-5">
-              <p className="text-xs text-center text-gray-400 mb-3">또는 바로 연락하기</p>
+              <p className="text-sm text-center text-gray-400 mb-3">또는 바로 연락하기</p>
               <div className="grid grid-cols-2 gap-3">
-                <a
-                  href={`tel:${PHONE_NUMBER}`}
-                  className="flex items-center justify-center gap-2 py-3 bg-white border-2 border-ocean-deep text-ocean-deep rounded-xl text-sm font-semibold hover:bg-ocean-deep hover:text-white transition-all"
-                >
-                  <Phone className="w-4 h-4" />
-                  {PHONE_DISPLAY}
-                </a>
-                <a
-                  href={`sms:${PHONE_NUMBER}?body=${encodeURIComponent('[플로로탄닌 파트너스] 파트너 신청 문의드립니다.')}`}
-                  className="flex items-center justify-center gap-2 py-3 bg-cyan-hana text-white rounded-xl text-sm font-semibold hover:bg-opacity-90 transition-all"
-                >
-                  <MessageSquare className="w-4 h-4" />
-                  문자 문의
-                </a>
+                <RevealContact
+                  type="tel"
+                  label="전화 문의"
+                  phone={PHONE_NUMBER}
+                  displayPhone={PHONE_DISPLAY}
+                  className="flex items-center justify-center gap-2 py-3 bg-white border-2 border-ocean-deep text-ocean-deep rounded-xl text-base font-semibold hover:bg-ocean-deep hover:text-white transition-all"
+                />
+                <RevealContact
+                  type="sms"
+                  label="문자 문의"
+                  phone={PHONE_NUMBER}
+                  displayPhone={PHONE_DISPLAY}
+                  smsBody="[플로로탄닌 파트너스] 파트너 신청 문의드립니다."
+                  className="flex items-center justify-center gap-2 py-3 bg-cyan-hana text-white rounded-xl text-base font-semibold hover:bg-opacity-90 transition-all"
+                />
               </div>
             </div>
 
             {/* 저작권 */}
             <div className="border-t border-gray-100 pt-5 space-y-1">
-              <p className="text-xs text-gray-400 text-center">
-                © 2025 <span className="font-semibold text-gray-500">플로로탄닌 파트너스</span> — All rights reserved.
+              <p className="text-sm text-gray-400 text-center">
+                © 2026 <span className="font-semibold text-gray-500">플로로탄닌 파트너스</span> — All rights reserved.
               </p>
-              <p className="text-xs text-gray-400 text-center leading-relaxed">
+              <p className="text-sm text-gray-400 text-center leading-relaxed">
                 본 사이트의 교육 자료·커리큘럼·콘텐츠는 저작권법의 보호를 받습니다. 무단 복제·배포를 금합니다.<br />
                 콘텐츠 사용 또는 제휴 문의:{' '}
                 <a href={`sms:${PHONE_NUMBER}?body=${encodeURIComponent('[파트너/제휴 문의] ')}`} className="text-cyan-600 hover:underline font-medium">
-                  {PHONE_DISPLAY} 문자
+                  문자로 문의하기
                 </a>
               </p>
             </div>

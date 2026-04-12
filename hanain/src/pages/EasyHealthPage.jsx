@@ -1,5 +1,6 @@
-import { useState } from 'react'
-import { PARTNER_CONFIG } from '../config/partner'
+import { useState , useEffect } from 'react'
+import { usePartner } from '../context/PartnerContext'
+import SEOHead from '../components/common/SEOHead'
 import { Link } from 'react-router-dom'
 import { ChevronDown, ChevronUp, MessageSquare, ArrowRight, CheckCircle } from 'lucide-react'
 
@@ -197,12 +198,12 @@ function DiseaseCard({ d }) {
         </div>
         <div className="flex-1">
           <div
-            className="text-xs font-bold px-2.5 py-1 rounded-full inline-block mb-1"
+            className="text-sm font-bold px-2.5 py-1 rounded-full inline-block mb-1"
             style={{ backgroundColor: d.color + '20', color: d.color }}
           >
             {d.name}
           </div>
-          <p className="font-bold text-gray-800 text-base leading-tight">{d.tagline}</p>
+          <p className="font-bold text-gray-800 text-lg leading-tight">{d.tagline}</p>
         </div>
         <div
           className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0"
@@ -220,19 +221,19 @@ function DiseaseCard({ d }) {
         <div className="px-5 pb-6 space-y-4">
           {/* 쉬운 설명 */}
           <div className="bg-white rounded-2xl p-4 border border-gray-100">
-            <p className="text-sm font-bold text-gray-500 mb-2">📖 쉽게 설명하면</p>
-            <p className="text-gray-800 text-sm leading-relaxed">{d.simple}</p>
-            <p className="text-gray-500 text-xs mt-2 italic">→ {d.what}</p>
+            <p className="text-base font-bold text-gray-500 mb-2">📖 쉽게 설명하면</p>
+            <p className="text-gray-800 text-base leading-relaxed">{d.simple}</p>
+            <p className="text-gray-500 text-sm mt-2 italic">→ {d.what}</p>
           </div>
 
           {/* 증상 체크 */}
           <div className="bg-white rounded-2xl p-4 border border-gray-100">
-            <p className="text-sm font-bold text-gray-500 mb-3">🩺 이런 증상이 있다면?</p>
+            <p className="text-base font-bold text-gray-500 mb-3">🩺 이런 증상이 있다면?</p>
             <div className="grid grid-cols-2 gap-2">
               {d.symptom.map((s, i) => (
                 <div key={i} className="flex items-center gap-2">
-                  <span className="text-base">⚠️</span>
-                  <span className="text-sm text-gray-700">{s}</span>
+                  <span className="text-lg">⚠️</span>
+                  <span className="text-base text-gray-700">{s}</span>
                 </div>
               ))}
             </div>
@@ -243,10 +244,10 @@ function DiseaseCard({ d }) {
             className="rounded-2xl p-4"
             style={{ backgroundColor: d.color + '10', border: `1.5px solid ${d.color}30` }}
           >
-            <p className="text-sm font-bold mb-2" style={{ color: d.color }}>🌊 플로로탄닌이 어떻게 도움이 되나요?</p>
-            <p className="text-gray-800 text-sm leading-relaxed mb-3">{d.howHelps}</p>
+            <p className="text-base font-bold mb-2" style={{ color: d.color }}>🌊 플로로탄닌이 어떻게 도움이 되나요?</p>
+            <p className="text-gray-800 text-base leading-relaxed mb-3">{d.howHelps}</p>
             <div
-              className="rounded-xl px-4 py-2.5 text-sm font-semibold"
+              className="rounded-xl px-4 py-2.5 text-base font-semibold"
               style={{ backgroundColor: d.color + '15', color: d.color }}
             >
               {d.analogy}
@@ -257,8 +258,8 @@ function DiseaseCard({ d }) {
           <div className="bg-white rounded-2xl p-4 border border-gray-100 flex items-start gap-3">
             <span className="text-xl flex-shrink-0">🔬</span>
             <div>
-              <p className="text-xs font-bold text-gray-400 mb-1">연구 근거</p>
-              <p className="text-sm text-gray-700">{d.evidence}</p>
+              <p className="text-sm font-bold text-gray-400 mb-1">연구 근거</p>
+              <p className="text-base text-gray-700">{d.evidence}</p>
             </div>
           </div>
 
@@ -266,15 +267,15 @@ function DiseaseCard({ d }) {
           <div className="bg-amber-50 rounded-2xl p-4 border border-amber-100 flex items-start gap-3">
             <span className="text-xl flex-shrink-0">💡</span>
             <div>
-              <p className="text-xs font-bold text-amber-600 mb-1">함께 하면 더 좋은 생활 습관</p>
-              <p className="text-sm text-gray-700">{d.tip}</p>
+              <p className="text-sm font-bold text-amber-600 mb-1">함께 하면 더 좋은 생활 습관</p>
+              <p className="text-base text-gray-700">{d.tip}</p>
             </div>
           </div>
 
           {/* Q&A 바로가기 */}
           <Link
             to={`/qa?category=${d.id}`}
-            className="flex items-center justify-center gap-2 w-full py-3 rounded-2xl text-sm font-bold text-white transition-all hover:opacity-90"
+            className="flex items-center justify-center gap-2 w-full py-3 rounded-2xl text-base font-bold text-white transition-all hover:opacity-90"
             style={{ backgroundColor: d.color }}
           >
             {d.name} 관련 Q&A 더 보기 <ArrowRight className="w-4 h-4" />
@@ -294,13 +295,13 @@ function FaqItem({ item }) {
         onClick={() => setOpen(!open)}
         className="w-full text-left px-5 py-4 flex items-center gap-3 hover:bg-gray-50 transition-colors"
       >
-        <span className="text-lg flex-shrink-0">🙋</span>
-        <span className="font-semibold text-gray-800 flex-1 text-sm md:text-base">{item.q}</span>
+        <span className="text-xl flex-shrink-0">🙋</span>
+        <span className="font-semibold text-gray-800 flex-1 text-base md:text-lg">{item.q}</span>
         {open ? <ChevronUp className="w-5 h-5 text-gray-400 flex-shrink-0" /> : <ChevronDown className="w-5 h-5 text-gray-400 flex-shrink-0" />}
       </button>
       {open && (
         <div className="px-5 pb-5 pt-1 bg-cyan-50 border-t border-gray-100">
-          <p className="text-sm text-gray-700 leading-relaxed">{item.a}</p>
+          <p className="text-base text-gray-700 leading-relaxed">{item.a}</p>
         </div>
       )}
     </div>
@@ -309,6 +310,7 @@ function FaqItem({ item }) {
 
 // ─── 메인 페이지 ──────────────────────────────────────────────────
 export default function EasyHealthPage() {
+  const partner = usePartner()
   const [activeFilter, setActiveFilter] = useState('all')
 
   const filters = [
@@ -328,6 +330,12 @@ export default function EasyHealthPage() {
 
   return (
     <div className="pt-16 min-h-screen bg-gray-50">
+      <SEOHead
+        title="쉬운 건강 정보"
+        description="누구나 이해하기 쉬운 건강 정보. 플로로탄닌의 혈당·혈압·체중관리·피부·수면 건강 효과를 쉽게 설명합니다."
+        keywords="쉬운 건강 정보, 플로로탄닌 쉽게, 건강상식, 혈당관리 방법, 자연 건강식품"
+        canonical="https://phlorotannin.com/easy"
+      />
 
       {/* ── 히어로 ── */}
       <section className="bg-gradient-to-br from-cyan-500 via-blue-600 to-indigo-700 py-16 md:py-24 relative overflow-hidden">
@@ -340,14 +348,14 @@ export default function EasyHealthPage() {
         </div>
 
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-          <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm border border-white/30 text-white px-5 py-2 rounded-full text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm border border-white/30 text-white px-5 py-2 rounded-full text-base font-medium mb-6">
             🌊 바다가 준 선물 · 쉽게 알아보기
           </div>
           <h1 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
             우리 몸이 왜 아픈지<br />
             <span className="text-yellow-300">쉽게 알아봐요!</span>
           </h1>
-          <p className="text-blue-100 text-base md:text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
+          <p className="text-blue-100 text-lg md:text-xl leading-relaxed mb-8 max-w-2xl mx-auto">
             어려운 의학 용어 없이,<br className="md:hidden" /> 중학생도 이해할 수 있게 설명해 드려요.<br />
             플로로탄닌이 각 질환에 어떻게 도움이 되는지 함께 알아봐요 😊
           </p>
@@ -361,12 +369,12 @@ export default function EasyHealthPage() {
             ].map((item, i) => (
               <div key={i} className="bg-white/20 backdrop-blur-sm rounded-2xl py-3 px-2">
                 <div className="text-2xl mb-1">{item.emoji}</div>
-                <div className="text-white text-xs font-bold">{item.text}</div>
+                <div className="text-white text-sm font-bold">{item.text}</div>
               </div>
             ))}
           </div>
 
-          <a href="#diseases" className="inline-flex items-center gap-2 bg-yellow-400 text-gray-900 px-8 py-4 rounded-full font-black text-base hover:bg-yellow-300 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
+          <a href="#diseases" className="inline-flex items-center gap-2 bg-yellow-400 text-gray-900 px-8 py-4 rounded-full font-black text-lg hover:bg-yellow-300 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
             바로 알아보기 👇
           </a>
         </div>
@@ -384,8 +392,8 @@ export default function EasyHealthPage() {
             {basicCards.map((c, i) => (
               <div key={i} className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-3xl p-6 text-center border border-cyan-100 hover:shadow-md transition-all hover:-translate-y-1">
                 <div className="text-4xl mb-3">{c.emoji}</div>
-                <h3 className="font-black text-gray-800 mb-2 text-base">{c.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{c.desc}</p>
+                <h3 className="font-black text-gray-800 mb-2 text-lg">{c.title}</h3>
+                <p className="text-gray-600 text-base leading-relaxed">{c.desc}</p>
               </div>
             ))}
           </div>
@@ -400,9 +408,9 @@ export default function EasyHealthPage() {
           </h2>
           <div className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden">
             <div className="grid grid-cols-3 bg-gray-50 border-b border-gray-100">
-              <div className="p-3 text-xs font-bold text-gray-400 text-center">항목</div>
-              <div className="p-3 text-sm font-black text-center text-green-700 bg-green-50">🌱 육지<br/>(녹차·포도)</div>
-              <div className="p-3 text-sm font-black text-center text-blue-700 bg-blue-50">🌊 바다<br/>(플로로탄닌)</div>
+              <div className="p-3 text-sm font-bold text-gray-400 text-center">항목</div>
+              <div className="p-3 text-base font-black text-center text-green-700 bg-green-50">🌱 육지<br/>(녹차·포도)</div>
+              <div className="p-3 text-base font-black text-center text-blue-700 bg-blue-50">🌊 바다<br/>(플로로탄닌)</div>
             </div>
             {[
               ['발견 장소', '육상 식물', '해조류(미역·감태)'],
@@ -412,9 +420,9 @@ export default function EasyHealthPage() {
               ['특이점', '식품으로 친숙', '해양 기원 독특함'],
             ].map(([label, land, sea], i) => (
               <div key={i} className={`grid grid-cols-3 border-b border-gray-50 ${i % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'}`}>
-                <div className="p-3 text-xs font-bold text-gray-500 flex items-center justify-center text-center">{label}</div>
-                <div className="p-3 text-xs text-gray-600 flex items-center justify-center text-center border-x border-gray-100">{land}</div>
-                <div className="p-3 text-xs font-semibold text-blue-700 flex items-center justify-center text-center">{sea}</div>
+                <div className="p-3 text-sm font-bold text-gray-500 flex items-center justify-center text-center">{label}</div>
+                <div className="p-3 text-sm text-gray-600 flex items-center justify-center text-center border-x border-gray-100">{land}</div>
+                <div className="p-3 text-sm font-semibold text-blue-700 flex items-center justify-center text-center">{sea}</div>
               </div>
             ))}
           </div>
@@ -427,7 +435,7 @@ export default function EasyHealthPage() {
           <div className="text-center mb-8">
             <span className="text-3xl">🩺</span>
             <h2 className="text-2xl md:text-3xl font-black text-gray-800 mt-2 mb-2">질환별로 알아보기</h2>
-            <p className="text-gray-500 text-sm">궁금한 질환을 클릭하면 자세한 설명이 펼쳐져요!</p>
+            <p className="text-gray-500 text-base">궁금한 질환을 클릭하면 자세한 설명이 펼쳐져요!</p>
           </div>
 
           {/* 필터 탭 */}
@@ -436,7 +444,7 @@ export default function EasyHealthPage() {
               <button
                 key={f.id}
                 onClick={() => setActiveFilter(f.id)}
-                className={`flex-shrink-0 flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-bold transition-all ${
+                className={`flex-shrink-0 flex items-center gap-1.5 px-4 py-2 rounded-full text-base font-bold transition-all ${
                   activeFilter === f.id
                     ? 'bg-cyan-500 text-white shadow-md'
                     : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
@@ -462,7 +470,7 @@ export default function EasyHealthPage() {
           <div className="text-center mb-10">
             <span className="text-3xl">⚙️</span>
             <h2 className="text-2xl md:text-3xl font-black text-white mt-2 mb-2">몸 속에서 어떻게 작동할까요?</h2>
-            <p className="text-gray-400 text-sm">복잡하지 않아요, 딱 이것만 기억하세요!</p>
+            <p className="text-gray-400 text-base">복잡하지 않아요, 딱 이것만 기억하세요!</p>
           </div>
 
           {/* 흐름도 */}
@@ -476,8 +484,8 @@ export default function EasyHealthPage() {
               <div key={i} className="flex md:flex-row flex-col items-center gap-2 md:gap-0">
                 <div className={`bg-gradient-to-br ${step.color} rounded-2xl p-5 text-center w-36 shadow-lg`}>
                   <div className="text-3xl mb-2">{step.emoji}</div>
-                  <div className="text-white font-black text-sm">{step.label}</div>
-                  <div className="text-white/70 text-xs mt-1">{step.sub}</div>
+                  <div className="text-white font-black text-base">{step.label}</div>
+                  <div className="text-white/70 text-sm mt-1">{step.sub}</div>
                 </div>
                 {i < 3 && (
                   <div className="text-gray-400 text-2xl md:mx-2 rotate-90 md:rotate-0">→</div>
@@ -498,11 +506,11 @@ export default function EasyHealthPage() {
             ].map((item, i) => (
               <div key={i} className="bg-white/10 backdrop-blur-sm rounded-2xl p-3.5 flex items-center gap-3">
                 <span className="text-xl">{item.emoji}</span>
-                <span className="text-white text-xs font-semibold leading-snug">{item.text}</span>
+                <span className="text-white text-sm font-semibold leading-snug">{item.text}</span>
               </div>
             ))}
           </div>
-          <p className="text-center text-gray-500 text-xs mt-4">※ 어려운 영어 이름은 몰라도 돼요. 6가지 방법으로 몸을 지킨다는 것만 기억하세요!</p>
+          <p className="text-center text-gray-500 text-sm mt-4">※ 어려운 영어 이름은 몰라도 돼요. 6가지 방법으로 몸을 지킨다는 것만 기억하세요!</p>
         </div>
       </section>
 
@@ -512,7 +520,7 @@ export default function EasyHealthPage() {
           <div className="text-center mb-8">
             <span className="text-3xl">❓</span>
             <h2 className="text-2xl md:text-3xl font-black text-gray-800 mt-2 mb-2">자주 묻는 질문</h2>
-            <p className="text-gray-500 text-sm">궁금한 게 있으시면 클릭해 보세요!</p>
+            <p className="text-gray-500 text-base">궁금한 게 있으시면 클릭해 보세요!</p>
           </div>
           <div className="space-y-3">
             {faqs.map((item, i) => (
@@ -528,8 +536,8 @@ export default function EasyHealthPage() {
           <div className="flex items-start gap-3">
             <span className="text-2xl flex-shrink-0">⚠️</span>
             <div>
-              <p className="font-bold text-amber-800 mb-1 text-sm">꼭 읽어주세요</p>
-              <p className="text-amber-700 text-sm leading-relaxed">
+              <p className="font-bold text-amber-800 mb-1 text-base">꼭 읽어주세요</p>
+              <p className="text-amber-700 text-base leading-relaxed">
                 이 페이지의 내용은 <strong>교육·정보 제공 목적</strong>이며, 의료적 진단이나 치료를 대체하지 않습니다.
                 건강 문제가 있으시면 반드시 <strong>전문 의사</strong>와 상담하세요.
                 플로로탄닌은 현재 활발히 연구 중인 소재로, 일부 결과는 동물·세포 실험 수준입니다.
@@ -552,13 +560,13 @@ export default function EasyHealthPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/qa"
-              className="flex items-center justify-center gap-2 bg-white text-blue-700 px-8 py-4 rounded-full font-black text-base hover:bg-blue-50 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
+              className="flex items-center justify-center gap-2 bg-white text-blue-700 px-8 py-4 rounded-full font-black text-lg hover:bg-blue-50 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
             >
               📚 건강 Q&A 보기
             </Link>
             <Link
               to="/consult"
-              className="flex items-center justify-center gap-2 bg-yellow-400 text-gray-900 px-8 py-4 rounded-full font-black text-base hover:bg-yellow-300 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
+              className="flex items-center justify-center gap-2 bg-yellow-400 text-gray-900 px-8 py-4 rounded-full font-black text-lg hover:bg-yellow-300 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
             >
               <MessageSquare className="w-5 h-5" />
               전문가에게 문의하기
@@ -568,14 +576,14 @@ export default function EasyHealthPage() {
           {/* 빠른 연락 */}
           <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
             <a
-              href="tel:01056528206"
-              className="flex items-center justify-center gap-2 bg-white/20 border border-white/40 text-white px-6 py-3 rounded-full text-sm font-bold hover:bg-white/30 transition-all"
+              href={`tel:${partner.phone}`}
+              className="flex items-center justify-center gap-2 bg-white/20 border border-white/40 text-white px-6 py-3 rounded-full text-base font-bold hover:bg-white/30 transition-all"
             >
               📞 전화 상담 번호 보기
             </a>
             <a
-              href="sms:01056528206?body=%5B%ED%94%8C%EB%A1%9C%EB%A1%9C%ED%83%84%EB%8B%8C%20%EB%AC%B8%EC%9D%98%5D%20"
-              className="flex items-center justify-center gap-2 bg-white/20 border border-white/40 text-white px-6 py-3 rounded-full text-sm font-bold hover:bg-white/30 transition-all"
+              href={`sms:${partner.phone}?body=${encodeURIComponent('[플로로탄닌 문의] ')}`}
+              className="flex items-center justify-center gap-2 bg-white/20 border border-white/40 text-white px-6 py-3 rounded-full text-base font-bold hover:bg-white/30 transition-all"
             >
               💬 문자로 문의하기
             </a>
@@ -585,7 +593,7 @@ export default function EasyHealthPage() {
 
       {/* 저작권 */}
       <div className="py-5 bg-gray-100 border-t border-gray-200 text-center">
-        <p className="text-xs text-gray-400">
+        <p className="text-sm text-gray-400">
           © 2025 플로로탄닌 파트너스 — 본 콘텐츠의 무단 복제·배포를 금합니다.
         </p>
       </div>

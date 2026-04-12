@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom'
-import { PARTNER_CONFIG } from '../../config/partner'
+import { usePartner } from '../../context/PartnerContext'
 import { Waves, Phone, MessageCircle } from 'lucide-react'
 import RevealContact from '../common/RevealContact'
 
 export default function Footer() {
+  const partner = usePartner()
+
   return (
     <footer className="bg-ocean-deep text-gray-300">
       <div className="max-w-7xl mx-auto px-6 py-16">
@@ -17,10 +19,10 @@ export default function Footer() {
               </div>
               <div>
                 <div className="text-white font-bold">플로로탄닌 파트너스</div>
-                <div className="text-cyan-hana text-xs">Phlorotannin Partners</div>
+                <div className="text-cyan-hana text-sm">Phlorotannin Partners</div>
               </div>
             </div>
-            <p className="text-sm text-gray-400 leading-relaxed">
+            <p className="text-base text-gray-400 leading-relaxed">
               해조류 유래 플로로탄닌에 관한<br />
               건강 정보를 나누고, 올바른 지식으로<br />
               파트너를 연결하는 정보 커뮤니티입니다.
@@ -30,7 +32,7 @@ export default function Footer() {
           {/* Quick Links */}
           <div>
             <h3 className="text-white font-semibold mb-4">메뉴</h3>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-2 text-base">
               {[
                 { to: '/', label: '홈' },
                 { to: '/qa', label: '건강 Q&A' },
@@ -51,7 +53,7 @@ export default function Footer() {
           {/* Q&A Categories */}
           <div>
             <h3 className="text-white font-semibold mb-4">건강 정보 카테고리</h3>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-2 text-base">
               {[
                 { id: 'metabolism', name: '대사질환' },
                 { id: 'cancer_immune', name: '항암/면역' },
@@ -78,17 +80,17 @@ export default function Footer() {
           {/* Contact */}
           <div>
             <h3 className="text-white font-semibold mb-4">문의</h3>
-            <div className="space-y-3 text-sm">
+            <div className="space-y-3 text-base">
               <div className="flex items-start gap-3">
                 <Phone className="w-4 h-4 text-cyan-hana mt-0.5 flex-shrink-0" />
                 <div>
-                  <div className="text-gray-400 text-xs mb-1">전화 문의</div>
+                  <div className="text-gray-400 text-sm mb-1">전화 문의</div>
                   <RevealContact
                     type="tel"
                     label="클릭하여 연결"
-                    revealLabel={PARTNER_CONFIG.phoneDisplay}
-                    phone={PARTNER_CONFIG.phone}
-                    displayPhone={PARTNER_CONFIG.phoneDisplay}
+                    revealLabel={partner.phoneDisplay}
+                    phone={partner.phone}
+                    displayPhone={partner.phoneDisplay}
                     className="text-white font-medium hover:text-cyan-hana transition-colors"
                   />
                 </div>
@@ -96,13 +98,13 @@ export default function Footer() {
               <div className="flex items-start gap-3">
                 <MessageCircle className="w-4 h-4 text-cyan-hana mt-0.5 flex-shrink-0" />
                 <div>
-                  <div className="text-gray-400 text-xs mb-1">문자 문의</div>
+                  <div className="text-gray-400 text-sm mb-1">문자 문의</div>
                   <RevealContact
                     type="sms"
                     label="클릭하여 연결"
-                    revealLabel={PARTNER_CONFIG.phoneDisplay}
-                    phone={PARTNER_CONFIG.phone}
-                    displayPhone={PARTNER_CONFIG.phoneDisplay}
+                    revealLabel={partner.phoneDisplay}
+                    phone={partner.phone}
+                    displayPhone={partner.phoneDisplay}
                     className="text-white font-medium hover:text-cyan-hana transition-colors"
                   />
                 </div>
@@ -110,7 +112,7 @@ export default function Footer() {
               <div className="flex items-start gap-3">
                 <MessageCircle className="w-4 h-4 text-cyan-hana mt-0.5 flex-shrink-0" />
                 <div>
-                  <div className="text-gray-400 text-xs mb-1">운영 시간</div>
+                  <div className="text-gray-400 text-sm mb-1">운영 시간</div>
                   <div className="text-white">평일 09:00 – 18:00</div>
                 </div>
               </div>
@@ -122,8 +124,8 @@ export default function Footer() {
         <div className="border border-white/10 rounded-2xl bg-white/5 px-6 py-5 mt-12 mb-6">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
             <div>
-              <p className="text-white text-sm font-semibold mb-1">© 2025 플로로탄닌 파트너스. All rights reserved.</p>
-              <p className="text-gray-400 text-xs leading-relaxed">
+              <p className="text-white text-base font-semibold mb-1">© 2025 플로로탄닌 파트너스. All rights reserved.</p>
+              <p className="text-gray-400 text-sm leading-relaxed">
                 본 사이트의 모든 콘텐츠(Q&A, 건강 정보, 이미지, 텍스트 등)는 저작권법에 의해 보호받습니다.<br />
                 무단 복제·배포·상업적 이용을 금합니다. 인용 시 반드시 출처를 명시하세요.
               </p>
@@ -131,20 +133,20 @@ export default function Footer() {
             <RevealContact
               type="sms"
               label="콘텐츠 사용·제휴 문의"
-              revealLabel="010-5652-8206 문자하기"
-              phone={PARTNER_CONFIG.phone}
-              displayPhone={PARTNER_CONFIG.phoneDisplay}
+              revealLabel={`${partner.phoneDisplay} 문자하기`}
+              phone={partner.phone}
+              displayPhone={partner.phoneDisplay}
               icon={MessageCircle}
-              className="flex-shrink-0 inline-flex items-center gap-2 bg-cyan-hana text-white text-xs font-semibold px-4 py-2.5 rounded-full hover:bg-opacity-90 transition-all whitespace-nowrap"
+              className="flex-shrink-0 inline-flex items-center gap-2 bg-cyan-hana text-white text-sm font-semibold px-4 py-2.5 rounded-full hover:bg-opacity-90 transition-all whitespace-nowrap"
             />
           </div>
         </div>
 
         <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-3">
-          <p className="text-xs text-gray-400">
+          <p className="text-sm text-gray-400">
             © 2025 플로로탄닌 파트너스
           </p>
-          <p className="text-xs text-gray-400 text-center md:text-right max-w-md">
+          <p className="text-sm text-gray-400 text-center md:text-right max-w-md">
             본 사이트의 정보는 건강 교육 목적이며 의료 처방·진단을 대체하지 않습니다.
           </p>
         </div>

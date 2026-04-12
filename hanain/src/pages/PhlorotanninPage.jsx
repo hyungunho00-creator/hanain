@@ -1,5 +1,6 @@
-import { useState } from 'react'
-import { PARTNER_CONFIG } from '../config/partner'
+import { useState , useEffect } from 'react'
+import { usePartner } from '../context/PartnerContext'
+import SEOHead from '../components/common/SEOHead'
 import { Link, useNavigate } from 'react-router-dom'
 import {
   Waves, ChevronDown, ChevronRight, ArrowRight, ExternalLink,
@@ -130,19 +131,19 @@ function AccordionItem({ item, isOpen, onToggle }) {
           <Icon className="w-6 h-6 text-white" />
         </div>
         <div className="flex-1 min-w-0">
-          <div className="text-xs font-semibold text-cyan-600 mb-0.5">{item.subtitle}</div>
-          <div className="font-bold text-gray-800 text-base md:text-lg leading-snug">{item.title}</div>
+          <div className="text-sm font-semibold text-cyan-600 mb-0.5">{item.subtitle}</div>
+          <div className="font-bold text-gray-800 text-lg md:text-xl leading-snug">{item.title}</div>
         </div>
         <ChevronDown className={`w-5 h-5 text-gray-400 flex-shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
       </button>
       {isOpen && (
         <div className="px-5 md:px-6 pb-6">
           <div className="border-t border-gray-100 pt-5">
-            <p className="text-gray-700 text-sm md:text-base leading-[1.9] whitespace-pre-line mb-5">{item.body}</p>
+            <p className="text-gray-700 text-base md:text-lg leading-[1.9] whitespace-pre-line mb-5">{item.body}</p>
             <div className="bg-gray-50 rounded-xl p-4">
-              <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">참고 문헌</p>
+              <p className="text-sm font-semibold text-gray-400 uppercase tracking-wide mb-2">참고 문헌</p>
               {item.refs.map((r, i) => (
-                <p key={i} className="text-xs text-gray-500 flex items-start gap-1.5 mb-1">
+                <p key={i} className="text-sm text-gray-500 flex items-start gap-1.5 mb-1">
                   <span className="text-cyan-500 font-bold flex-shrink-0">[{i+1}]</span>{r}
                 </p>
               ))}
@@ -155,12 +156,47 @@ function AccordionItem({ item, isOpen, onToggle }) {
 }
 
 export default function PhlorotanninPage() {
+  const partner = usePartner()
   const navigate = useNavigate()
   const [openMech, setOpenMech] = useState(0)
   const [activeDis, setActiveDis] = useState(null)
 
+  const phloroJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "MedicalWebPage",
+        "@id": "https://phlorotannin.com/phlorotannin",
+        "url": "https://phlorotannin.com/phlorotannin",
+        "name": "플로로탄닌(Phlorotannin)이란? - 해양 폴리페놀 과학적 근거",
+        "description": "감태·미역·다시마 등 갈조류에서 추출한 해양 폴리페놀 플로로탄닌의 6가지 과학적 작용기전",
+        "inLanguage": "ko-KR",
+        "about": {
+          "@type": "Drug",
+          "name": "플로로탄닌 (Phlorotannin)",
+          "alternateName": ["Phlorotannin", "감태추출물", "해양폴리페놀"],
+          "description": "갈조류(감태·미역·다시마)에서 추출한 해양 폴리페놀 계열 천연 소재"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "홈", "item": "https://phlorotannin.com/" },
+          { "@type": "ListItem", "position": 2, "name": "플로로탄닌 소개", "item": "https://phlorotannin.com/phlorotannin" }
+        ]
+      }
+    ]
+  }
+
   return (
     <div className="pt-16 min-h-screen bg-white">
+      <SEOHead
+        title="플로로탄닌이란?"
+        description="플로로탄닌(Phlorotannin)이란 무엇인가? 감태·미역·다시마 등 갈조류에서 추출한 해양 폴리페놀의 6가지 과학적 작용기전과 논문 근거."
+        keywords="플로로탄닌이란, phlorotannin 효능, 감태 추출물, 해양 폴리페놀, 갈조류 성분, 알파글루코시다제 억제, ACE억제"
+        canonical="https://phlorotannin.com/phlorotannin"
+        jsonLd={phloroJsonLd}
+      />
 
       {/* ── Hero ── */}
       <section className="relative bg-ocean-gradient overflow-hidden py-20 md:py-28">
@@ -169,7 +205,7 @@ export default function PhlorotanninPage() {
           <div className="absolute bottom-0 right-0 w-80 h-80 bg-blue-600/10 rounded-full blur-3xl" />
         </div>
         <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
-          <div className="inline-flex items-center gap-2 bg-cyan-400/20 border border-cyan-400/30 text-cyan-300 px-5 py-2 rounded-full text-sm font-medium mb-8">
+          <div className="inline-flex items-center gap-2 bg-cyan-400/20 border border-cyan-400/30 text-cyan-300 px-5 py-2 rounded-full text-base font-medium mb-8">
             <Waves className="w-4 h-4" />
             해양 폴리페놀 · 과학적 근거 기반
           </div>
@@ -177,7 +213,7 @@ export default function PhlorotanninPage() {
             플로로탄닌<br />
             <span className="text-cyan-300">Phlorotannin</span>
           </h1>
-          <p className="text-gray-300 text-lg md:text-xl leading-relaxed mb-8 max-w-3xl mx-auto">
+          <p className="text-gray-300 text-xl md:text-xl leading-relaxed mb-8 max-w-3xl mx-auto">
             갈조류(미역·다시마·감태)에서만 발견되는 해양 폴리페놀.<br />
             단순한 항산화제를 넘어, 6가지 분자 기전으로 <strong className="text-white">12개 질환 영역</strong>에 작용하는 
             차세대 자연 소재의 과학을 확인하세요.
@@ -208,8 +244,8 @@ export default function PhlorotanninPage() {
             ].map((s, i) => (
               <div key={i} className="text-center p-5 bg-white rounded-2xl shadow-sm border border-gray-100">
                 <div className="text-2xl md:text-3xl font-bold text-ocean-deep mb-1">{s.n}</div>
-                <div className="text-sm font-semibold text-gray-700 mb-1">{s.label}</div>
-                <div className="text-xs text-gray-400">{s.sub}</div>
+                <div className="text-base font-semibold text-gray-700 mb-1">{s.label}</div>
+                <div className="text-sm text-gray-400">{s.sub}</div>
               </div>
             ))}
           </div>
@@ -220,7 +256,7 @@ export default function PhlorotanninPage() {
       <section className="py-16 bg-white">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 text-cyan-600 text-sm font-medium mb-3">
+            <div className="inline-flex items-center gap-2 text-cyan-600 text-base font-medium mb-3">
               <Microscope className="w-4 h-4" />
               분자 구조
             </div>
@@ -249,8 +285,8 @@ export default function PhlorotanninPage() {
                     <text x="4" y="41" fontSize="7" fill="#d97706">OH</text>
                   </svg>
                 </div>
-                <div className="text-sm font-semibold text-gray-700">단량체 (1개)</div>
-                <div className="text-xs text-gray-500 mt-1">수산기 3개 / MW 126 Da</div>
+                <div className="text-base font-semibold text-gray-700">단량체 (1개)</div>
+                <div className="text-sm text-gray-500 mt-1">수산기 3개 / MW 126 Da</div>
               </div>
 
               <div className="text-2xl text-cyan-500 font-bold">→ 중합 →</div>
@@ -270,8 +306,8 @@ export default function PhlorotanninPage() {
                     <circle cx="15" cy="50" r="4" fill="#f59e0b"/>
                   </svg>
                 </div>
-                <div className="text-sm font-semibold text-gray-700">이량체 이상</div>
-                <div className="text-xs text-gray-500 mt-1">수산기 6개↑ / 생리활성 시작</div>
+                <div className="text-base font-semibold text-gray-700">이량체 이상</div>
+                <div className="text-sm text-gray-500 mt-1">수산기 6개↑ / 생리활성 시작</div>
               </div>
 
               <div className="text-2xl text-cyan-500 font-bold">→ 고중합 →</div>
@@ -283,7 +319,7 @@ export default function PhlorotanninPage() {
                     <div className="relative w-20 h-20">
                       {[0,1,2,3,4,5].map(i => (
                         <div key={i}
-                          className="absolute w-8 h-8 rounded-lg border-2 border-rose-400 bg-rose-50 flex items-center justify-center text-xs font-bold text-rose-600"
+                          className="absolute w-8 h-8 rounded-lg border-2 border-rose-400 bg-rose-50 flex items-center justify-center text-sm font-bold text-rose-600"
                           style={{
                             left: `${20 + Math.cos(i*60*Math.PI/180)*22}px`,
                             top: `${20 + Math.sin(i*60*Math.PI/180)*22}px`,
@@ -293,8 +329,8 @@ export default function PhlorotanninPage() {
                     </div>
                   </div>
                 </div>
-                <div className="text-sm font-semibold text-gray-700">Dieckol (6량체)</div>
-                <div className="text-xs text-gray-500 mt-1">최고 활성 · 감태 대표 성분</div>
+                <div className="text-base font-semibold text-gray-700">Dieckol (6량체)</div>
+                <div className="text-sm text-gray-500 mt-1">최고 활성 · 감태 대표 성분</div>
               </div>
             </div>
           </div>
@@ -303,9 +339,9 @@ export default function PhlorotanninPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {STRUCTURE_FEATURES.map((f, i) => (
               <div key={i} className="bg-gray-50 rounded-2xl p-5 border border-gray-100">
-                <div className="text-xs text-cyan-600 font-semibold mb-1">{f.label}</div>
+                <div className="text-sm text-cyan-600 font-semibold mb-1">{f.label}</div>
                 <div className="font-bold text-gray-800 mb-1">{f.value}</div>
-                <div className="text-xs text-gray-500">{f.desc}</div>
+                <div className="text-sm text-gray-500">{f.desc}</div>
               </div>
             ))}
           </div>
@@ -316,7 +352,7 @@ export default function PhlorotanninPage() {
       <section id="mechanism" className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 text-cyan-600 text-sm font-medium mb-3">
+            <div className="inline-flex items-center gap-2 text-cyan-600 text-base font-medium mb-3">
               <FlaskConical className="w-4 h-4" />
               분자 기전
             </div>
@@ -342,7 +378,7 @@ export default function PhlorotanninPage() {
       <section className="py-16 bg-white">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 text-cyan-600 text-sm font-medium mb-3">
+            <div className="inline-flex items-center gap-2 text-cyan-600 text-base font-medium mb-3">
               <Activity className="w-4 h-4" />
               질환별 관련성
             </div>
@@ -363,23 +399,23 @@ export default function PhlorotanninPage() {
                 }`}
               >
                 <div className="text-2xl mb-2">{d.icon}</div>
-                <div className={`font-semibold text-sm mb-1 ${activeDis === i ? 'text-white' : 'text-gray-800'}`}>{d.name}</div>
+                <div className={`font-semibold text-base mb-1 ${activeDis === i ? 'text-white' : 'text-gray-800'}`}>{d.name}</div>
                 {activeDis === i ? (
                   <div className="mt-2 space-y-2">
-                    <div className="text-xs text-cyan-100 leading-snug">📌 {d.mech}</div>
-                    <div className="text-xs text-cyan-200 font-semibold">✓ {d.evidence}</div>
+                    <div className="text-sm text-cyan-100 leading-snug">📌 {d.mech}</div>
+                    <div className="text-sm text-cyan-200 font-semibold">✓ {d.evidence}</div>
                     <button
                       onClick={(e) => {
                         e.stopPropagation()
                         navigate(`/qa?category=${d.cat}`)
                       }}
-                      className="mt-2 w-full flex items-center justify-center gap-1.5 bg-white text-cyan-700 text-xs font-bold py-2 px-3 rounded-xl hover:bg-cyan-50 transition-colors"
+                      className="mt-2 w-full flex items-center justify-center gap-1.5 bg-white text-cyan-700 text-sm font-bold py-2 px-3 rounded-xl hover:bg-cyan-50 transition-colors"
                     >
                       관련 Q&A 보기 <ArrowRight className="w-3 h-3" />
                     </button>
                   </div>
                 ) : (
-                  <div className="text-xs text-gray-400">{d.mech.split(' ')[0]}</div>
+                  <div className="text-sm text-gray-400">{d.mech.split(' ')[0]}</div>
                 )}
               </button>
             ))}
@@ -390,7 +426,7 @@ export default function PhlorotanninPage() {
                 onClick={() => {
                   navigate(`/qa?category=${DISEASES[activeDis].cat}`)
                 }}
-                className="inline-flex items-center gap-2 px-8 py-4 bg-cyan-600 text-white rounded-full text-sm font-semibold hover:bg-cyan-700 transition-colors shadow-lg"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-cyan-600 text-white rounded-full text-base font-semibold hover:bg-cyan-700 transition-colors shadow-lg"
               >
                 {DISEASES[activeDis].name} 관련 Q&A 전체 보기 <ArrowRight className="w-4 h-4" />
               </button>
@@ -403,7 +439,7 @@ export default function PhlorotanninPage() {
       <section className="py-16 bg-gray-50">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 text-cyan-600 text-sm font-medium mb-3">
+            <div className="inline-flex items-center gap-2 text-cyan-600 text-base font-medium mb-3">
               <BookOpen className="w-4 h-4" />
               연구 근거
             </div>
@@ -414,13 +450,13 @@ export default function PhlorotanninPage() {
             {PAPERS.map((p, i) => (
               <div key={i} className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm flex items-start gap-4 hover:shadow-md transition-shadow">
                 <div className="w-16 h-16 bg-ocean-deep rounded-2xl flex flex-col items-center justify-center flex-shrink-0">
-                  <div className="text-cyan-300 text-xs font-medium">{p.year}</div>
-                  <div className="text-white text-xs text-center font-bold leading-tight mt-0.5">{p.journal.split(' ').slice(0,2).join(' ')}</div>
+                  <div className="text-cyan-300 text-sm font-medium">{p.year}</div>
+                  <div className="text-white text-sm text-center font-bold leading-tight mt-0.5">{p.journal.split(' ').slice(0,2).join(' ')}</div>
                 </div>
                 <div className="flex-1 min-w-0">
-                  <div className="font-semibold text-gray-800 mb-1 text-sm md:text-base">{p.title}</div>
-                  <div className="text-xs text-gray-500 italic mb-2">{p.journal} ({p.year})</div>
-                  <div className="inline-flex items-center gap-1.5 bg-cyan-50 text-cyan-700 text-xs px-3 py-1 rounded-full font-medium">
+                  <div className="font-semibold text-gray-800 mb-1 text-base md:text-lg">{p.title}</div>
+                  <div className="text-sm text-gray-500 italic mb-2">{p.journal} ({p.year})</div>
+                  <div className="inline-flex items-center gap-1.5 bg-cyan-50 text-cyan-700 text-sm px-3 py-1 rounded-full font-medium">
                     <CheckCircle className="w-3 h-3" />
                     {p.highlight}
                   </div>
@@ -433,7 +469,7 @@ export default function PhlorotanninPage() {
               href="https://pubmed.ncbi.nlm.nih.gov/?term=phlorotannin"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-cyan-600 text-sm font-semibold hover:underline"
+              className="inline-flex items-center gap-2 text-cyan-600 text-base font-semibold hover:underline"
             >
               PubMed에서 전체 논문 검색 <ExternalLink className="w-4 h-4" />
             </a>
@@ -441,18 +477,18 @@ export default function PhlorotanninPage() {
             {/* 저작권 안내 */}
             <div className="mt-8 border border-gray-200 rounded-2xl bg-gray-50 px-6 py-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
               <div>
-                <p className="text-sm font-semibold text-gray-700 mb-1">© 2025 플로로탄닌 파트너스 — 저작권 안내</p>
-                <p className="text-xs text-gray-500 leading-relaxed">
+                <p className="text-base font-semibold text-gray-700 mb-1">© 2026 플로로탄닌 파트너스 — 저작권 안내</p>
+                <p className="text-sm text-gray-500 leading-relaxed">
                   본 페이지의 모든 콘텐츠(기전 설명, 논문 해설, 도표, 비교표 등)는 저작권법에 의해 보호됩니다.<br />
                   무단 복제·스크랩·상업적 이용을 금하며, 인용 시 반드시 출처를 명시하세요.
                 </p>
               </div>
               <a
-                href="sms:01056528206?body=%5B%EC%A0%80%EC%9E%91%EA%B6%8C%2F%EC%A0%9C%ED%9C%B4%20%EB%AC%B8%EC%9D%98%5D%20"
-                className="flex-shrink-0 inline-flex items-center gap-2 bg-ocean-deep text-white text-xs font-semibold px-5 py-2.5 rounded-full hover:bg-opacity-80 transition-all whitespace-nowrap"
+                href={`sms:${partner.phone}?body=${encodeURIComponent('[저작권/제휴 문의] ')}`}
+                className="flex-shrink-0 inline-flex items-center gap-2 bg-ocean-deep text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-opacity-80 transition-all whitespace-nowrap"
               >
                 <MessageSquare className="w-3.5 h-3.5" />
-                010-5652-8206 문자 문의
+                {partner.phoneDisplay} 문자 문의
               </a>
             </div>
           </div>
@@ -467,12 +503,12 @@ export default function PhlorotanninPage() {
             <p className="text-gray-500">왜 플로로탄닌이 특별한가?</p>
           </div>
           <div className="overflow-x-auto">
-            <table className="w-full text-sm">
+            <table className="w-full text-base">
               <thead>
                 <tr className="border-b-2 border-gray-200">
                   <th className="text-left py-3 px-4 text-gray-500 font-medium">구분</th>
-                  <th className="py-3 px-4 text-center text-gray-600 font-semibold bg-gray-50 rounded-t-xl">육상 폴리페놀<br/><span className="text-xs font-normal">(포도씨, 녹차, 강황 등)</span></th>
-                  <th className="py-3 px-4 text-center text-cyan-700 font-bold bg-cyan-50 rounded-t-xl">해양 플로로탄닌<br/><span className="text-xs font-normal">(감태, 미역, 다시마)</span></th>
+                  <th className="py-3 px-4 text-center text-gray-600 font-semibold bg-gray-50 rounded-t-xl">육상 폴리페놀<br/><span className="text-sm font-normal">(포도씨, 녹차, 강황 등)</span></th>
+                  <th className="py-3 px-4 text-center text-cyan-700 font-bold bg-cyan-50 rounded-t-xl">해양 플로로탄닌<br/><span className="text-sm font-normal">(감태, 미역, 다시마)</span></th>
                 </tr>
               </thead>
               <tbody>
@@ -506,7 +542,7 @@ export default function PhlorotanninPage() {
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
             플로로탄닌, 직접 경험해보세요
           </h2>
-          <p className="text-gray-300 text-lg mb-10 leading-relaxed">
+          <p className="text-gray-300 text-xl mb-10 leading-relaxed">
             과학적 근거가 충분히 쌓였습니다. 이제 일상에서 어떻게 활용할 수 있는지
             전문 파트너와 함께 알아보세요.
           </p>
@@ -522,8 +558,8 @@ export default function PhlorotanninPage() {
               >
                 <c.icon className="w-6 h-6 text-cyan-300 mb-3" />
                 <div className="font-bold text-white mb-1">{c.title}</div>
-                <div className="text-gray-300 text-sm mb-4">{c.desc}</div>
-                <div className="inline-flex items-center gap-1 text-cyan-300 text-sm font-semibold group-hover:gap-2 transition-all">
+                <div className="text-gray-300 text-base mb-4">{c.desc}</div>
+                <div className="inline-flex items-center gap-1 text-cyan-300 text-base font-semibold group-hover:gap-2 transition-all">
                   {c.btn} <ArrowRight className="w-3 h-3" />
                 </div>
               </button>
@@ -533,17 +569,17 @@ export default function PhlorotanninPage() {
             <RevealContact
               type="tel"
               label="전화 상담 신청"
-              revealLabel="010-5652-8206 전화하기"
-              phone={PARTNER_CONFIG.phone}
-              displayPhone={PARTNER_CONFIG.phoneDisplay}
+              revealLabel={`${partner.phoneDisplay} 전화하기`}
+              phone={partner.phone}
+              displayPhone={partner.phoneDisplay}
               className="flex items-center gap-2 bg-white text-ocean-deep px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all"
             />
             <RevealContact
               type="sms"
               label="문자로 문의하기"
-              revealLabel="010-5652-8206 문자하기"
-              phone={PARTNER_CONFIG.phone}
-              displayPhone={PARTNER_CONFIG.phoneDisplay}
+              revealLabel={`${partner.phoneDisplay} 문자하기`}
+              phone={partner.phone}
+              displayPhone={partner.phoneDisplay}
               smsBody="[플로로탄닌 문의] "
               className="flex items-center gap-2 btn-secondary px-8 py-4"
             />
@@ -556,24 +592,24 @@ export default function PhlorotanninPage() {
         <div className="max-w-4xl mx-auto px-6">
           <div className="bg-white rounded-2xl border border-gray-200 px-6 py-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-sm">
             <div>
-              <p className="text-sm font-semibold text-gray-700 mb-1">
-                © 2025 플로로탄닌 파트너스 — All rights reserved.
+              <p className="text-base font-semibold text-gray-700 mb-1">
+                © 2026 플로로탄닌 파트너스 — All rights reserved.
               </p>
-              <p className="text-xs text-gray-500 leading-relaxed">
+              <p className="text-sm text-gray-500 leading-relaxed">
                 본 페이지의 모든 콘텐츠(기전 설명, 논문 해설, 도표, 비교표 등)는 저작권법에 의해 보호받습니다.<br />
                 교육·비상업적 목적의 인용 시 출처(플로로탄닌 파트너스, phlorotannin-partners.com)를 반드시 명시하세요.<br />
                 상업적 이용·무단 복제·배포는 금지되며, 위반 시 법적 조치가 취해질 수 있습니다.
               </p>
             </div>
             <a
-              href="sms:01056528206?body=%5B%EC%BD%98%ED%85%90%EC%B8%A0%20%EC%82%AC%EC%9A%A9%2F%EC%A0%9C%ED%9C%B4%20%EB%AC%B8%EC%9D%98%5D%20"
-              className="flex-shrink-0 inline-flex items-center gap-2 bg-cyan-600 text-white text-xs font-semibold px-5 py-2.5 rounded-full hover:bg-cyan-700 transition-all whitespace-nowrap"
+              href={`sms:${partner.phone}?body=${encodeURIComponent('[콘텐츠 사용/제휴 문의] ')}`}
+              className="flex-shrink-0 inline-flex items-center gap-2 bg-cyan-600 text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-cyan-700 transition-all whitespace-nowrap"
             >
               <Mail className="w-3.5 h-3.5" />
               콘텐츠 사용·제휴 문의
             </a>
           </div>
-          <p className="text-center text-xs text-gray-400 mt-4">
+          <p className="text-center text-sm text-gray-400 mt-4">
             ※ 본 페이지의 정보는 건강 교육 목적이며 의료 처방·진단을 대체하지 않습니다. 건강 문제는 반드시 전문의와 상담하세요.
           </p>
         </div>

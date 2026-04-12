@@ -1,0 +1,76 @@
+name: Deploy Partner Site
+
+on:
+  workflow_dispatch:
+    inputs:
+      partner_name:
+        description: '파트너 이름 (영문, 예: hong-gil-dong)'
+        required: true
+      partner_phone:
+        description: '파트너 전화번호 (숫자만, 예: 01012345678)'
+        required: true
+      partner_phone_display:
+        description: '파트너 전화번호 표시 형식 (예: 010-1234-5678)'
+        required: true
+      partner_name_kr:
+        description: '파트너 이름 (한글)'
+        required: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: hanain/package-lock.json
+
+      - name: Install dependencies
+        run: |
+          cd hanain
+          npm ci
+
+      - name: Build with partner phone number
+        run: |
+          cd hanain
+          VITE_PARTNER_PHONE=${{ github.event.inputs.partner_phone }} \
+          VITE_PARTNER_PHONE_DISPLAY="${{ github.event.inputs.partner_phone_display }}" \
+          VITE_PARTNER_NAME="${{ github.event.inputs.partner_name_kr }}" \
+          VITE_ADMIN_PASS=56528206 \
+          VITE_FORMSPREE_ID=xkopavwq \
+          VITE_FORMSPREE_PARTNER_ID=xkopavwq \
+          npm run build
+
+      - name: Deploy to Vercel
+        run: |
+          cd hanain
+          PROJECT_NAME="hanain-${{ github.event.inputs.partner_name }}"
+          
+          # Vercel CLI 설치
+          npm install -g vercel@latest
+          
+          # 프로젝트 배포 (새 프로젝트 자동 생성)
+          DEPLOY_URL=$(vercel deploy dist \
+            --token=${{ secrets.VERCEL_TOKEN }} \
+            --scope=team_ZrgDT3bXQCqVrblRy6NkjDtL \
+            --name="$PROJECT_NAME" \
+            --prod \
+            --yes \
+            2>&1 | tail -1)
+          
+          echo "Deployed to: $DEPLOY_URL"
+          echo "DEPLOY_URL=$DEPLOY_URL" >> $GITHUB_OUTPUT
+        id: deploy
+
+      - name: Report result
+        run: |
+          echo "✅ 파트너 배포 완료!"
+          echo "파트너: ${{ github.event.inputs.partner_name_kr }}"
+          echo "전화번호: ${{ github.event.inputs.partner_phone_display }}"

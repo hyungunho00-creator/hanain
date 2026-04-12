@@ -1,7 +1,8 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { useSearchParams, Link } from 'react-router-dom'
 import { Search, ChevronDown, ThumbsUp, Share2, X, Filter, BookOpen, TrendingUp, MessageSquare, Phone, ChevronRight } from 'lucide-react'
-import { PARTNER_CONFIG } from '../config/partner'
+import { usePartner } from '../context/PartnerContext'
+import SEOHead from '../components/common/SEOHead'
 
 const ITEMS_PER_PAGE = 20
 
@@ -47,14 +48,15 @@ function highlightText(text, query) {
 
 // 전화번호 숨김 + 클릭 시 번호 노출 카드
 function ContactCard() {
+  const partner = usePartner()
   const [showPhone, setShowPhone] = useState(false)
   const [showSms, setShowSms] = useState(false)
 
   return (
     <div className="bg-ocean-gradient rounded-2xl p-6">
       <MessageSquare className="w-6 h-6 text-gold-hana mb-3" />
-      <h3 className="font-bold text-white text-base mb-2">더 궁금하신 게 있으신가요?</h3>
-      <p className="text-gray-200 text-sm mb-4 leading-relaxed">
+      <h3 className="font-bold text-white text-lg mb-2">더 궁금하신 게 있으신가요?</h3>
+      <p className="text-gray-200 text-base mb-4 leading-relaxed">
         찾는 정보가 없거나 더 알고 싶다면<br />전화나 문자로 편하게 연락주세요.
       </p>
       <div className="space-y-2">
@@ -62,7 +64,7 @@ function ContactCard() {
         {!showPhone ? (
           <button
             onClick={() => setShowPhone(true)}
-            className="flex items-center justify-center gap-2 w-full bg-cyan-hana text-white py-3 rounded-xl text-sm font-semibold hover:bg-opacity-90 transition-all"
+            className="flex items-center justify-center gap-2 w-full bg-cyan-hana text-white py-3 rounded-xl text-base font-semibold hover:bg-opacity-90 transition-all"
           >
             <Phone className="w-4 h-4" />
             전화 상담 번호 보기
@@ -70,18 +72,18 @@ function ContactCard() {
           </button>
         ) : (
           <a
-            href={`tel:${PARTNER_CONFIG.phone}`}
-            className="flex items-center justify-center gap-2 w-full bg-cyan-hana text-white py-3 rounded-xl text-sm font-semibold hover:bg-opacity-90 transition-all"
+            href={`tel:${partner.phone}`}
+            className="flex items-center justify-center gap-2 w-full bg-cyan-hana text-white py-3 rounded-xl text-base font-semibold hover:bg-opacity-90 transition-all"
           >
             <Phone className="w-4 h-4" />
-            {PARTNER_CONFIG.phoneDisplay} &nbsp;전화하기
+            {partner.phoneDisplay} &nbsp;전화하기
           </a>
         )}
         {/* 문자 - 클릭하면 번호 노출 후 문자앱 연결 */}
         {!showSms ? (
           <button
             onClick={() => setShowSms(true)}
-            className="flex items-center justify-center gap-2 w-full bg-white/10 border border-white/30 text-white py-3 rounded-xl text-sm font-semibold hover:bg-white/20 transition-all"
+            className="flex items-center justify-center gap-2 w-full bg-white/10 border border-white/30 text-white py-3 rounded-xl text-base font-semibold hover:bg-white/20 transition-all"
           >
             <MessageSquare className="w-4 h-4" />
             문자 상담 번호 보기
@@ -89,11 +91,11 @@ function ContactCard() {
           </button>
         ) : (
           <a
-            href={`sms:${PARTNER_CONFIG.phone}?body=%5B%ED%94%8C%EB%A1%9C%EB%A1%9C%ED%83%84%EB%8B%8C%20%ED%8C%8C%ED%8A%B8%EB%84%88%EC%8A%A4%5D%20%EA%B1%B4%EA%B0%95%20Q%26A%EB%A5%BC%20%EB%B3%B4%EA%B3%A0%20%EB%AC%B8%EC%9D%98%EB%93%9C%EB%A6%BD%EB%8B%88%EB%8B%A4.`}
-            className="flex items-center justify-center gap-2 w-full bg-white/10 border border-white/30 text-white py-3 rounded-xl text-sm font-semibold hover:bg-white/20 transition-all"
+            href={`sms:${partner.phone}?body=${encodeURIComponent('[플로로탄닌 파트너스] 건강 Q&A를 보고 문의드립니다.')}`}
+            className="flex items-center justify-center gap-2 w-full bg-white/10 border border-white/30 text-white py-3 rounded-xl text-base font-semibold hover:bg-white/20 transition-all"
           >
             <MessageSquare className="w-4 h-4" />
-            {PARTNER_CONFIG.phoneDisplay} &nbsp;문자 보내기
+            {partner.phoneDisplay} &nbsp;문자 보내기
           </a>
         )}
       </div>
@@ -102,6 +104,7 @@ function ContactCard() {
 }
 
 function QACard({ qa, isOpen, onToggle, searchQuery, categories }) {
+  const partner = usePartner()
   const [liked, setLiked] = useState(false)
   const [likeCount, setLikeCount] = useState(qa.likes || 0)
   const cat = categories.find(c => c.id === qa.category)
@@ -149,7 +152,7 @@ function QACard({ qa, isOpen, onToggle, searchQuery, categories }) {
           <div className="flex-1 min-w-0">
             <div className="flex flex-wrap items-center gap-2 mb-2">
               {cat && (
-                <span className="text-xs font-bold px-2.5 py-1 rounded-full" style={{ backgroundColor: getCatBgColor(cat.color, cat.id), color: '#ffffff' }}>
+                <span className="text-sm font-bold px-2.5 py-1 rounded-full" style={{ backgroundColor: getCatBgColor(cat.color, cat.id), color: '#ffffff' }}>
                   {cat.name}
                 </span>
               )}
@@ -161,14 +164,14 @@ function QACard({ qa, isOpen, onToggle, searchQuery, categories }) {
                 {qa.difficulty}
               </span>
               {(qa.tags || []).slice(0, 3).map(tag => (
-                <span key={tag} className="text-xs text-gray-400 bg-gray-100 px-2 py-0.5 rounded-full">#{tag}</span>
+                <span key={tag} className="text-sm text-gray-400 bg-gray-100 px-2 py-0.5 rounded-full">#{tag}</span>
               ))}
             </div>
             <h3
-              className="font-semibold text-ocean-deep text-base md:text-lg leading-snug"
+              className="font-semibold text-ocean-deep text-lg md:text-xl leading-snug"
               dangerouslySetInnerHTML={{ __html: highlightText(qa.question, searchQuery) }}
             />
-            <div className="flex items-center gap-4 mt-2 text-xs text-gray-400">
+            <div className="flex items-center gap-4 mt-2 text-sm text-gray-400">
               <span>👁 {(qa.views || 0).toLocaleString()}</span>
               <span>👍 {likeCount}</span>
             </div>
@@ -184,17 +187,17 @@ function QACard({ qa, isOpen, onToggle, searchQuery, categories }) {
         <div className="border-t border-gray-100 px-5 md:px-6 py-5 bg-slate-50">
           {/* Article-style answer body */}
           <div 
-            className="text-gray-700 text-sm md:text-base leading-[1.9] whitespace-pre-line mb-5"
+            className="text-gray-700 text-base md:text-lg leading-[1.9] whitespace-pre-line mb-5"
             dangerouslySetInnerHTML={{ __html: answerText }}
           />
 
           {/* References — subtle footer */}
           {references?.length > 0 && (
             <div className="border-t border-gray-200 pt-4 mb-4">
-              <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">참고 자료</p>
+              <p className="text-sm font-semibold text-gray-400 uppercase tracking-wide mb-2">참고 자료</p>
               <ul className="space-y-1">
                 {references.map((ref, i) => (
-                  <li key={i} className="text-xs text-gray-400 flex items-start gap-1.5">
+                  <li key={i} className="text-sm text-gray-400 flex items-start gap-1.5">
                     <span>[{i + 1}]</span><span>{ref}</span>
                   </li>
                 ))}
@@ -204,10 +207,10 @@ function QACard({ qa, isOpen, onToggle, searchQuery, categories }) {
 
           {/* Disclaimer + Copyright */}
           <div className="border border-gray-200 rounded-xl bg-gray-50 px-4 py-3 mb-5 space-y-1">
-            <p className="text-xs text-gray-400 italic">
+            <p className="text-sm text-gray-400 italic">
               ※ 본 내용은 교육·정보 목적으로 제공되며 의료적 진단이나 처방을 대체하지 않습니다.
             </p>
-            <p className="text-xs text-gray-400">
+            <p className="text-sm text-gray-400">
               © 2025 플로로탄닌 파트너스 — 본 콘텐츠의 무단 복제·배포를 금합니다.
               자료 사용 문의는 아래 [문자 보내기]를 이용해 주세요.
             </p>
@@ -217,7 +220,7 @@ function QACard({ qa, isOpen, onToggle, searchQuery, categories }) {
           <div className="flex flex-wrap items-center gap-3">
             <button
               onClick={handleLike}
-              className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all ${
+              className={`flex items-center gap-2 px-4 py-2 rounded-full text-base font-medium transition-all ${
                 liked ? 'bg-cyan-hana text-white' : 'bg-white border border-gray-200 text-gray-600 hover:border-cyan-hana hover:text-cyan-hana'
               }`}
             >
@@ -226,21 +229,21 @@ function QACard({ qa, isOpen, onToggle, searchQuery, categories }) {
             </button>
             <button
               onClick={handleShare}
-              className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-white border border-gray-200 text-gray-600 hover:border-cyan-hana hover:text-cyan-hana transition-all"
+              className="flex items-center gap-2 px-4 py-2 rounded-full text-base font-medium bg-white border border-gray-200 text-gray-600 hover:border-cyan-hana hover:text-cyan-hana transition-all"
             >
               <Share2 className="w-4 h-4" />
               공유
             </button>
             <a
-              href={`sms:${PARTNER_CONFIG.phone}?body=안녕하세요! 플로로탄닌 파트너스 건강 Q&A를 보고 문의드립니다.`}
-              className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-white border border-gray-200 text-gray-600 hover:border-cyan-hana hover:text-cyan-hana transition-all"
+              href={`sms:${partner.phone}?body=${encodeURIComponent('안녕하세요! 플로로탄닌 파트너스 건강 Q&A를 보고 문의드립니다.')}`}
+              className="flex items-center gap-2 px-4 py-2 rounded-full text-base font-medium bg-white border border-gray-200 text-gray-600 hover:border-cyan-hana hover:text-cyan-hana transition-all"
             >
               <MessageSquare className="w-4 h-4" />
               문자 보내기
             </a>
             <Link
               to="/partner"
-              className="ml-auto flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold bg-ocean-deep text-white hover:bg-opacity-90 transition-all"
+              className="ml-auto flex items-center gap-2 px-4 py-2 rounded-full text-base font-semibold bg-ocean-deep text-white hover:bg-opacity-90 transition-all"
             >
               파트너 연결
             </Link>
@@ -252,6 +255,7 @@ function QACard({ qa, isOpen, onToggle, searchQuery, categories }) {
 }
 
 export default function QAPage() {
+  const partner = usePartner()
   const [searchParams] = useSearchParams()
   const [searchQuery, setSearchQuery] = useState(searchParams.get('q') || '')
   const [activeCategory, setActiveCategory] = useState(searchParams.get('category') || 'all')
@@ -347,8 +351,29 @@ export default function QAPage() {
     </div>
   )
 
+  // FAQ JSON-LD (상위 10개 질문)
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": (qaData.questions || []).slice(0, 10).map(q => ({
+      "@type": "Question",
+      "name": q.question || q.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": (q.answer || q.a || '').slice(0, 300)
+      }
+    }))
+  }
+
   return (
     <div className="pt-16 min-h-screen bg-gray-50">
+      <SEOHead
+        title="건강 Q&A 1,200개"
+        description="플로로탄닌 관련 1,200개 건강 질문과 답변. 혈당, 혈압, 치매, 항암, 소화, 피부, 수면 등 12개 질환 카테고리 Q&A."
+        keywords="플로로탄닌 Q&A, 감태 효능, 건강 질문 답변, 혈당 낮추는 식품, 혈압 낮추는 법, 치매예방 식품, 항산화 효과"
+        canonical="https://phlorotannin.com/qa"
+        jsonLd={faqJsonLd}
+      />
       {/* Header */}
       <div className="bg-ocean-gradient py-12">
         <div className="max-w-7xl mx-auto px-6">
@@ -357,7 +382,7 @@ export default function QAPage() {
             <span className="text-cyan-hana font-medium">건강 정보 아카이브</span>
           </div>
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">건강 Q&amp;A 라이브러리</h1>
-          <p className="text-gray-300 mb-6 text-sm md:text-base">올바른 건강 정보, 소재별 근거 중심 해설 · {qaData.questions.length}개 아티클</p>
+          <p className="text-gray-300 mb-6 text-base md:text-lg">올바른 건강 정보, 소재별 근거 중심 해설 · {qaData.questions.length}개 아티클</p>
           <div className="relative max-w-2xl">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
             <input
@@ -369,10 +394,35 @@ export default function QAPage() {
             />
             {searchQuery && (
               <button onClick={() => setSearchQuery('')} className="absolute right-4 top-1/2 -translate-y-1/2">
-                <X className="w-4 h-4 text-gray-400" />
+                <X className="w-5 h-5 text-gray-400 hover:text-gray-700" />
               </button>
             )}
           </div>
+
+          {/* 검색어 활성 상태 표시 — 눈에 띄는 필터 태그 */}
+          {searchQuery && (
+            <div className="flex items-center gap-3 mt-4">
+              <div className="flex items-center gap-2 bg-white/20 border border-white/40 rounded-full px-4 py-2">
+                <Search className="w-4 h-4 text-white/80" />
+                <span className="text-white font-semibold text-base">
+                  &ldquo;{searchQuery}&rdquo; 검색 중
+                </span>
+                <button
+                  onClick={() => setSearchQuery('')}
+                  className="ml-1 flex items-center justify-center w-5 h-5 rounded-full bg-white/30 hover:bg-white/50 transition-colors"
+                  aria-label="검색어 지우기"
+                >
+                  <X className="w-3 h-3 text-white" />
+                </button>
+              </div>
+              <button
+                onClick={() => { setSearchQuery(''); setActiveCategory('all'); setPage(1) }}
+                className="text-white/80 hover:text-white text-sm font-semibold underline underline-offset-2 transition-colors"
+              >
+                전체 목록 보기
+              </button>
+            </div>
+          )}
         </div>
       </div>
 
@@ -381,7 +431,7 @@ export default function QAPage() {
         <div className="flex gap-2 overflow-x-auto pb-3 mb-6 scrollbar-hide">
           <button
             onClick={() => { setActiveCategory('all'); setPage(1) }}
-            className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-all ${
+            className={`flex-shrink-0 px-4 py-2 rounded-full text-base font-medium transition-all ${
               activeCategory === 'all' ? 'bg-ocean-deep text-white' : 'bg-white text-gray-600 hover:bg-gray-100'
             }`}
           >
@@ -391,7 +441,7 @@ export default function QAPage() {
             <button
               key={cat.id}
               onClick={() => { setActiveCategory(cat.id); setPage(1) }}
-              className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-all ${
+              className={`flex-shrink-0 px-4 py-2 rounded-full text-base font-medium transition-all ${
                 activeCategory === cat.id ? 'text-white' : 'bg-white text-gray-600 hover:bg-gray-100'
               }`}
               style={activeCategory === cat.id ? { backgroundColor: getCatBgColor(cat.color, cat.id), color: '#ffffff' } : {}}
@@ -405,8 +455,17 @@ export default function QAPage() {
           {/* Main Q&A list */}
           <div className="lg:col-span-2 space-y-4">
             {debouncedQuery && (
-              <div className="text-sm text-gray-500 mb-2">
-                "<strong>{debouncedQuery}</strong>" 검색 결과: {questions.length}개
+              <div className="flex items-center justify-between bg-teal-50 border border-teal-200 rounded-xl px-4 py-3 mb-2">
+                <span className="text-base text-teal-800 font-medium">
+                  <strong>&ldquo;{debouncedQuery}&rdquo;</strong> 검색 결과 {questions.length}개
+                </span>
+                <button
+                  onClick={() => { setSearchQuery(''); setActiveCategory('all'); setPage(1) }}
+                  className="flex items-center gap-1.5 text-sm font-bold text-teal-600 hover:text-teal-800 transition-colors"
+                >
+                  <X className="w-4 h-4" />
+                  전체 보기
+                </button>
               </div>
             )}
 
@@ -414,12 +473,12 @@ export default function QAPage() {
               <div className="bg-white rounded-2xl p-16 text-center shadow-sm border border-gray-100">
                 <Search className="w-12 h-12 text-gray-300 mx-auto mb-4" />
                 <p className="text-gray-400 mb-1">검색 결과가 없습니다.</p>
-                <p className="text-xs text-gray-400 mb-4">더 궁금하신 내용은 이메일로 문의해 주세요.</p>
+                <p className="text-sm text-gray-400 mb-4">더 궁금하신 내용은 이메일로 문의해 주세요.</p>
                 <div className="flex justify-center gap-3">
-                  <button onClick={() => { setSearchQuery(''); setActiveCategory('all') }} className="text-cyan-hana text-sm hover:underline">
+                  <button onClick={() => { setSearchQuery(''); setActiveCategory('all') }} className="text-cyan-hana text-base hover:underline">
                     전체 보기
                   </button>
-                  <a href={`sms:${PARTNER_CONFIG.phone}?body=안녕하세요! 건강 정보 관련 문의드립니다.`} className="text-cyan-hana text-sm hover:underline">
+                  <a href={`sms:${partner.phone}?body=${encodeURIComponent('안녕하세요! 건강 정보 관련 문의드립니다.')}`} className="text-cyan-hana text-base hover:underline">
                     문자 문의
                   </a>
                 </div>
@@ -441,20 +500,20 @@ export default function QAPage() {
             {totalPages > 1 && (
               <div className="flex justify-center gap-2 mt-8">
                 <button onClick={() => setPage(p => Math.max(1, p - 1))} disabled={page === 1}
-                  className="px-4 py-2 rounded-lg bg-white border disabled:opacity-40 hover:border-cyan-hana transition-colors text-sm">
+                  className="px-4 py-2 rounded-lg bg-white border disabled:opacity-40 hover:border-cyan-hana transition-colors text-base">
                   이전
                 </button>
                 {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
                   const p = Math.max(1, Math.min(totalPages - 4, page - 2)) + i
                   return (
                     <button key={p} onClick={() => setPage(p)}
-                      className={`w-10 h-10 rounded-lg text-sm font-medium transition-all ${page === p ? 'bg-cyan-hana text-white' : 'bg-white border hover:border-cyan-hana'}`}>
+                      className={`w-10 h-10 rounded-lg text-base font-medium transition-all ${page === p ? 'bg-cyan-hana text-white' : 'bg-white border hover:border-cyan-hana'}`}>
                       {p}
                     </button>
                   )
                 })}
                 <button onClick={() => setPage(p => Math.min(totalPages, p + 1))} disabled={page === totalPages}
-                  className="px-4 py-2 rounded-lg bg-white border disabled:opacity-40 hover:border-cyan-hana transition-colors text-sm">
+                  className="px-4 py-2 rounded-lg bg-white border disabled:opacity-40 hover:border-cyan-hana transition-colors text-base">
                   다음
                 </button>
               </div>
@@ -481,7 +540,7 @@ export default function QAPage() {
                     <span className={`text-xs font-bold flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center mt-0.5 ${i < 3 ? 'bg-cyan-hana text-white' : 'bg-gray-100 text-gray-500'}`}>
                       {i + 1}
                     </span>
-                    <span className="text-sm text-gray-600 group-hover:text-cyan-hana leading-snug line-clamp-2 transition-colors">
+                    <span className="text-base text-gray-600 group-hover:text-cyan-hana leading-snug line-clamp-2 transition-colors">
                       {qa.question}
                     </span>
                   </button>
@@ -495,8 +554,8 @@ export default function QAPage() {
             {/* Partner CTA */}
             <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
               <h3 className="font-semibold text-ocean-deep mb-2">파트너 교육 프로그램</h3>
-              <p className="text-gray-500 text-sm mb-4">이 정보를 고객에게 직접 전달하고 싶으신가요? 플로로탄닌 파트너스에서 더 많은 정보를 탐색해 보세요.</p>
-              <Link to="/partner" className="block w-full text-center py-2.5 rounded-xl border-2 border-ocean-deep text-ocean-deep text-sm font-semibold hover:bg-ocean-deep hover:text-white transition-all">
+              <p className="text-gray-500 text-base mb-4">이 정보를 고객에게 직접 전달하고 싶으신가요? 플로로탄닌 파트너스에서 더 많은 정보를 탐색해 보세요.</p>
+              <Link to={`/partner`} className="block w-full text-center py-2.5 rounded-xl border-2 border-ocean-deep text-ocean-deep text-base font-semibold hover:bg-ocean-deep hover:text-white transition-all">
                 파트너 과정 알아보기
               </Link>
             </div>
@@ -515,9 +574,9 @@ export default function QAPage() {
                   >
                     <div className="flex items-center gap-2">
                       <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: getCatBgColor(cat.color, cat.id) }} />
-                      <span className="text-sm text-gray-700">{cat.name}</span>
+                      <span className="text-base text-gray-700">{cat.name}</span>
                     </div>
-                    <span className="text-xs text-gray-400 bg-gray-100 px-2 py-0.5 rounded-full">{cat.count}</span>
+                    <span className="text-sm text-gray-400 bg-gray-100 px-2 py-0.5 rounded-full">{cat.count}</span>
                   </button>
                 ))}
               </div>
