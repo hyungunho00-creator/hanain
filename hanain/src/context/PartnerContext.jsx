@@ -14,7 +14,27 @@ const DEFAULT_PARTNER = {
 const PartnerContext = createContext(DEFAULT_PARTNER)
 
 // ───────────────────────────────────────────
-// 호스트명에서 파트너 슬러그 추출
+// 1순위: index.html에 주입된 window._PARTNER_CONFIG 읽기
+//   <script>window._PARTNER_CONFIG={phone:"...",display:"...",name:"...",slug:"..."}</script>
+// ───────────────────────────────────────────
+function getPartnerFromWindowConfig() {
+  try {
+    const cfg = window._PARTNER_CONFIG
+    if (cfg && cfg.phone && cfg.slug) {
+      return {
+        id: cfg.slug,
+        name: cfg.name || '플로로탄닌 파트너스',
+        phone: cfg.phone,
+        phoneDisplay: cfg.display || cfg.phone,
+        prefix: '',
+      }
+    }
+  } catch { /* 무시 */ }
+  return null
+}
+
+// ───────────────────────────────────────────
+// 2순위: 호스트명에서 파트너 슬러그 추출
 // 예) hanain-hong-abc123.vercel.app → hong-abc123
 //     phlorotannin.com → null (본사)
 // ───────────────────────────────────────────
@@ -23,10 +43,11 @@ function getPartnerSlugFromHost() {
   // 본사 도메인이면 null
   if (host === 'phlorotannin.com' || host === 'www.phlorotannin.com') return null
   if (host === 'localhost' || host === '127.0.0.1') return null
-  // hanain-{slug}.vercel.app 또는 hanain-{slug}-xxx.vercel.app 형태
-  // 프로젝트명: hanain-{slug}
-  const m = host.match(/^hanain-([^.]+)(?:-[a-z0-9]+)?\.vercel\.app$/) ||
-            host.match(/^hanain-([^-]+-[^.]+?)(?:-\w+)?\.vercel\.app$/)
+
+  // hanain-{slug}.vercel.app 패턴 (슬러그에 하이픈 포함 가능)
+  // ex) hanain-hong-gil-dong-abc123.vercel.app
+  // 프로젝트명 전체가 hanain-{slug}이고 .vercel.app 앞에 배포ID(-xxx)가 붙을 수 있음
+  const m = host.match(/^hanain-(.+?)(?:-[a-z0-9]{8,})?\.vercel\.app$/)
   if (m) return m[1]
   return null
 }
@@ -36,7 +57,6 @@ function getPartnerSlugFromHost() {
 // ───────────────────────────────────────────
 async function fetchPartnerBySlug(slug) {
   try {
-    // 항상 본사 phlorotannin.com에서 최신 partners.json 로드
     const MAIN_SITE = 'https://phlorotannin.com'
     const resp = await fetch(`${MAIN_SITE}/partners.json?t=${Date.now()}`, {
       cache: 'no-store',
@@ -53,10 +73,22 @@ async function fetchPartnerBySlug(slug) {
 export { DEFAULT_PARTNER }
 
 export function PartnerProvider({ children }) {
-  const [partner, setPartner] = useState(DEFAULT_PARTNER)
+  const [partner, setPartner] = useState(() => {
+    // 초기값: window._PARTNER_CONFIG 우선 읽기 (깜빡임 방지)
+    return getPartnerFromWindowConfig() || DEFAULT_PARTNER
+  })
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
+    // 1순위: window._PARTNER_CONFIG 주입값 있으면 바로 사용
+    const fromWindow = getPartnerFromWindowConfig()
+    if (fromWindow) {
+      setPartner(fromWindow)
+      setLoading(false)
+      return
+    }
+
+    // 2순위: 호스트명 슬러그 → partners.json 조회
     const slug = getPartnerSlugFromHost()
     if (!slug) {
       setLoading(false)
@@ -76,7 +108,6 @@ export function PartnerProvider({ children }) {
     })
   }, [])
 
-  // 로딩 중에도 기본값으로 렌더링 (번쩍임 없음)
   return (
     <PartnerContext.Provider value={partner}>
       {children}
