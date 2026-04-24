@@ -272,14 +272,7 @@ function DiseaseCard({ d }) {
             </div>
           </div>
 
-          {/* Q&A 바로가기 */}
-          <Link
-            to={`/qa?category=${d.id}`}
-            className="flex items-center justify-center gap-2 w-full py-3 rounded-2xl text-base font-bold text-white transition-all hover:opacity-90"
-            style={{ backgroundColor: d.color }}
-          >
-            {d.name} 관련 Q&A 더 보기 <ArrowRight className="w-4 h-4" />
-          </Link>
+
         </div>
       )}
     </div>
@@ -960,12 +953,6 @@ export default function EasyHealthPage() {
             전화나 문자로 편하게 연락주세요!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/qa"
-              className="flex items-center justify-center gap-2 bg-white text-blue-700 px-8 py-4 rounded-full font-black text-lg hover:bg-blue-50 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
-            >
-              📚 건강 Q&A 보기
-            </Link>
             <Link
               to="/consult"
               className="flex items-center justify-center gap-2 bg-yellow-400 text-gray-900 px-8 py-4 rounded-full font-black text-lg hover:bg-yellow-300 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
