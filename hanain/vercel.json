@@ -23,6 +23,14 @@
       ]
     },
     {
+      "source": "/rss.xml",
+      "headers": [
+        { "key": "Content-Type", "value": "application/rss+xml; charset=UTF-8" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Cache-Control", "value": "public, max-age=3600" }
+      ]
+    },
+    {
       "source": "/(qa\\.json|favicon\\.svg|og-image\\.png|og-image\\.svg|robots\\.txt|sitemap\\.xml|icons\\.svg)",
       "headers": [
         { "key": "Access-Control-Allow-Origin", "value": "*" }
@@ -30,6 +38,6 @@
     }
   ],
   "rewrites": [
-    { "source": "/((?!assets|favicon\\.svg|og-image\\.png|og-image\\.svg|robots\\.txt|sitemap\\.xml|qa\\.json|partners\\.json|icons\\.svg|naver[^/]*\\.html).*)", "destination": "/index.html" }
+    { "source": "/((?!assets|favicon\\.svg|og-image\\.png|og-image\\.svg|robots\\.txt|sitemap\\.xml|rss\\.xml|qa\\.json|partners\\.json|icons\\.svg|naver[^/]*\\.html).*)", "destination": "/index.html" }
   ]
 }
