@@ -795,9 +795,7 @@ function QuizSection() {
               <button onClick={reset} className="bg-purple-500 text-white font-bold py-3 px-8 rounded-full hover:bg-purple-600 transition-colors">
                 🔄 다시 도전
               </button>
-              <button onClick={() => navigate('/qa')} className="bg-gray-100 text-gray-600 font-bold py-3 px-8 rounded-full hover:bg-gray-200 transition-colors">
-                📚 Q&A 더 보기
-              </button>
+
             </div>
           </div>
         ) : (
@@ -973,13 +971,7 @@ function CTASection() {
           더 궁금한 게 있다면 1,311개 Q&A를 탐색해보세요!
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-md mx-auto">
-          <button
-            onClick={() => navigate(`/qa`)}
-            className="bg-white text-cyan-700 font-bold py-4 px-4 rounded-2xl hover:bg-cyan-50 transition-colors shadow-lg text-base"
-          >
-            📚 Q&A 탐색하기
-          </button>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-md mx-auto">
           <button
             onClick={() => navigate(`/phlorotannin`)}
             className="bg-white/20 text-white font-bold py-4 px-4 rounded-2xl hover:bg-white/30 transition-colors border border-white/30 text-base"
