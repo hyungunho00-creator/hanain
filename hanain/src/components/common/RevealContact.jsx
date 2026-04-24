@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { Phone, MessageSquare, ChevronRight } from 'lucide-react'
-import { PARTNER_CONFIG } from '../../config/partner'
 
 /**
  * RevealContact
@@ -10,8 +9,9 @@ import { PARTNER_CONFIG } from '../../config/partner'
  * Props:
  *   type: 'tel' | 'sms'
  *   label: 버튼에 표시할 기본 라벨 (예: "전화 상담 신청")
- *   revealLabel: 번호 노출 후 표시할 텍스트 (예: "010-5652-8206 전화하기")
- *   phone: 전화번호 숫자만 (예: {PARTNER_CONFIG.phone})
+ *   revealLabel: 번호 노출 후 표시할 텍스트 (예: "010-XXXX-XXXX 전화하기")
+ *   phone: 전화번호 숫자만 (파트너 번호 또는 기본 번호)
+ *   displayPhone: 표시용 전화번호 (010-XXXX-XXXX 형식)
  *   smsBody: 문자 기본 내용 (type=sms 일 때)
  *   className: 버튼 스타일 클래스
  */
@@ -19,8 +19,8 @@ export default function RevealContact({
   type = 'tel',
   label,
   revealLabel,
-  phone = PARTNER_CONFIG.phone,
-  displayPhone = PARTNER_CONFIG.phoneDisplay,
+  phone = '01056528206',
+  displayPhone = '010-5652-8206',
   smsBody = '[플로로탄닌 파트너스] 상담 문의드립니다.',
   className = '',
 }) {

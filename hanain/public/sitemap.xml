@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- ===== 메인 페이지 ===== -->
+  <url>
+    <loc>https://phlorotannin.com/</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og-image.png</image:loc>
+      <image:title>플로로탄닌 파트너스 — 해양 폴리페놀 건강 정보 아카이브</image:title>
+      <image:caption>암·당뇨·뇌질환·염증·가족 건강 등 다양한 건강 주제의 플로로탄닌 정보 아카이브. 1,311개 Q&A, 12개 카테고리.</image:caption>
+    </image:image>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://phlorotannin.com/"/>
+  </url>
+
+  <!-- ===== 건강 Q&A 전체 ===== -->
+  <url>
+    <loc>https://phlorotannin.com/qa</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og-image.png</image:loc>
+      <image:title>건강 Q&A 1,311개 — 플로로탄닌 파트너스</image:title>
+      <image:caption>혈당, 혈압, 치매, 항암, 소화, 피부, 수면 등 12개 질환 카테고리의 1,311개 건강 Q&A 아카이브.</image:caption>
+    </image:image>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa"/>
+  </url>
+
+  <!-- ===== Q&A 카테고리별 페이지 (12개) — 네이버 크롤링 핵심 ===== -->
+  <url>
+    <loc>https://phlorotannin.com/qa?category=metabolism</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa?category=metabolism"/>
+  </url>
+
+  <url>
+    <loc>https://phlorotannin.com/qa?category=cancer_immune</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa?category=cancer_immune"/>
+  </url>
+
+  <url>
+    <loc>https://phlorotannin.com/qa?category=cardiovascular</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa?category=cardiovascular"/>
+  </url>
+
+  <url>
+    <loc>https://phlorotannin.com/qa?category=neuro_cognitive</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa?category=neuro_cognitive"/>
+  </url>
+
+  <url>
+    <loc>https://phlorotannin.com/qa?category=mental_health</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.88</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa?category=mental_health"/>
+  </url>
+
+  <url>
+    <loc>https://phlorotannin.com/qa?category=digestive</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.88</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa?category=digestive"/>
+  </url>
+
+  <url>
+    <loc>https://phlorotannin.com/qa?category=musculoskeletal</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.88</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa?category=musculoskeletal"/>
+  </url>
+
+  <url>
+    <loc>https://phlorotannin.com/qa?category=skin_hair</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.88</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa?category=skin_hair"/>
+  </url>
+
+  <url>
+    <loc>https://phlorotannin.com/qa?category=respiratory</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa?category=respiratory"/>
+  </url>
+
+  <url>
+    <loc>https://phlorotannin.com/qa?category=infection_inflammation</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa?category=infection_inflammation"/>
+  </url>
+
+  <url>
+    <loc>https://phlorotannin.com/qa?category=womens_health</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa?category=womens_health"/>
+  </url>
+
+  <url>
+    <loc>https://phlorotannin.com/qa?category=mens_health</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa?category=mens_health"/>
+  </url>
+
+  <!-- ===== 핵심 정보 페이지 ===== -->
+  <url>
+    <loc>https://phlorotannin.com/home</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/home"/>
+  </url>
+
+  <url>
+    <loc>https://phlorotannin.com/phlorotannin</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og-image.png</image:loc>
+      <image:title>플로로탄닌이란? 효능·부작용·연구 정리</image:title>
+      <image:caption>감태에서 추출한 해양 폴리페놀 플로로탄닌의 효능, 부작용, 최신 연구 결과.</image:caption>
+    </image:image>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/phlorotannin"/>
+  </url>
+
+  <url>
+    <loc>https://phlorotannin.com/learn</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/learn"/>
+  </url>
+
+  <url>
+    <loc>https://phlorotannin.com/easy</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/easy"/>
+  </url>
+
+  <!-- ===== 서비스 페이지 ===== -->
+  <url>
+    <loc>https://phlorotannin.com/consult</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/consult"/>
+  </url>
+
+  <url>
+    <loc>https://phlorotannin.com/partner</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/partner"/>
+  </url>
+
+  <url>
+    <loc>https://phlorotannin.com/community</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.70</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/community"/>
+  </url>
+
+</urlset>

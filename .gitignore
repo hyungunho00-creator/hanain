@@ -5,3 +5,4 @@ backend/.env
 hanain/.env
 hanain/dist/
 *.log
+.vercel

@@ -7,11 +7,19 @@
     font-family: 'Noto Sans KR', sans-serif;
     color: #1f2937;
     background-color: #ffffff;
+    /* 모바일 가독성: 기본 폰트 크기 18px */
+    font-size: 1.125rem;
+    line-height: 1.75;
+    /* 한글 단어 단위 줄바꿈: 단어가 중간에 잘리지 않도록 */
+    word-break: keep-all;
+    overflow-wrap: break-word;
   }
 
   /* 기본 제목 색상 (밝은 배경용) */
   h1, h2, h3, h4, h5, h6 {
     color: #0A1628;
+    word-break: keep-all;
+    overflow-wrap: break-word;
   }
 
   /* 어두운 배경(text-white 부모) 안에서는 흰색 상속 */
@@ -20,10 +28,36 @@
     color: inherit;
   }
 
-
-
-  p, li, span, div {
+  p, li, span {
     line-height: 1.7;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+  /* div는 line-height만 적용 (word-break는 body에서 상속) */
+  div {
+    line-height: 1.7;
+  }
+
+  /* 버튼 텍스트도 단어 단위 줄바꿈 */
+  button {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+}
+
+@layer utilities {
+  /* 한글 줄바꿈 유틸리티 클래스 */
+  .keep-all {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+  /* 영문/숫자 혼용 시 강제 줄바꿈 방지 */
+  .break-keep {
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+    line-break: strict;
   }
 }
 

@@ -1,24 +1,287 @@
 import { useState, useEffect } from 'react'
-import { Settings, Users, MessageSquare, BookOpen, Plus, Edit, Trash2, Save, X, Search, Download, RefreshCw, Lock, Eye, EyeOff } from 'lucide-react'
+import { Settings, Users, MessageSquare, BookOpen, Trash2, Save, X, Search, Download, RefreshCw, Lock, Eye, EyeOff, Copy, Check, Link2, Phone, UserPlus, Rocket, AlertCircle, CheckCircle, Loader, Globe, PlayCircle, PenSquare, ChevronDown, ChevronRight, ExternalLink, Pin, PinOff, Star } from 'lucide-react'
+import { supabase, setVideoMain } from '../lib/supabase'
 
-// ⚠️ Vercel 환경변수 VITE_ADMIN_PASS 에서 읽음
-// Vercel 대시보드 → Settings → Environment Variables → VITE_ADMIN_PASS 설정
-const ADMIN_PASS = import.meta.env.VITE_ADMIN_PASS || 'phlorotannin2024admin!'
+const ADMIN_PASS = import.meta.env.VITE_ADMIN_PASS || '56528206'
+const PARTNERS_KEY = 'phlorotannin_partners_v2'
+const VERCEL_TOKEN_KEY = 'phlorotannin_vercel_token'
+const GH_TOKEN_KEY = 'phlorotannin_gh_token'
+const VERCEL_TEAM_ID = 'team_ZrgDT3bXQCqVrblRy6NkjDtL'
+const GH_REPO = 'hyungunho00-creator/hanain'
+const GH_FILE_PATH = 'hanain/public/partners.json'
+const MAIN_SITE = 'https://phlorotannin.com'
 
+// ───────────────────────────────────────────
+// 유틸
+// ───────────────────────────────────────────
+function formatPhone(raw) {
+  const digits = raw.replace(/\D/g, '')
+  if (digits.length === 11) return digits.replace(/(\d{3})(\d{4})(\d{4})/, '$1-$2-$3')
+  if (digits.length === 10) return digits.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3')
+  return digits
+}
+
+function makeSlug() {
+  return Math.random().toString(36).substring(2, 8)
+}
+
+function isValidSlug(s) {
+  return /^[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?$/.test(s)
+}
+
+async function sha1hex(buffer) {
+  const buf = buffer instanceof ArrayBuffer ? buffer : buffer.buffer
+  const h = await crypto.subtle.digest('SHA-1', buf)
+  return Array.from(new Uint8Array(h)).map(b => b.toString(16).padStart(2, '0')).join('')
+}
+
+// ───────────────────────────────────────────
+// GitHub: partners.json 읽기/쓰기
+// ───────────────────────────────────────────
+async function ghGetPartnersJson(ghToken) {
+  const resp = await fetch(
+    `https://api.github.com/repos/${GH_REPO}/contents/${GH_FILE_PATH}`,
+    { headers: { Authorization: `token ${ghToken}`, Accept: 'application/vnd.github.v3+json' } }
+  )
+  if (!resp.ok) throw new Error(`GitHub 파일 읽기 실패: ${resp.status}`)
+  const data = await resp.json()
+  const content = JSON.parse(atob(data.content.replace(/\n/g, '')))
+  return { content, sha: data.sha }
+}
+
+async function ghUpdatePartnersJson(ghToken, newContent, fileSha) {
+  const encoded = btoa(unescape(encodeURIComponent(JSON.stringify(newContent, null, 2))))
+  const resp = await fetch(
+    `https://api.github.com/repos/${GH_REPO}/contents/${GH_FILE_PATH}`,
+    {
+      method: 'PUT',
+      headers: {
+        Authorization: `token ${ghToken}`,
+        Accept: 'application/vnd.github.v3+json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        message: '파트너 목록 업데이트',
+        content: encoded,
+        sha: fileSha,
+        branch: 'main',
+      }),
+    }
+  )
+  if (!resp.ok) {
+    const err = await resp.json()
+    throw new Error(`GitHub 쓰기 실패: ${err.message}`)
+  }
+  return await resp.json()
+}
+
+// ───────────────────────────────────────────
+// Vercel: 파트너 껍데기 사이트 배포 (v2 — 런타임 동적 로드 방식)
+//
+// [이전 방식의 문제]
+// 파트너 사이트 생성 당시의 JS/CSS 해시 파일명을 하드코딩
+// → 본사 재배포 시 파일명(해시)이 바뀌면 파트너 사이트 404 + CORS 에러 발생
+//
+// [새 방식]
+// 파트너 index.html에 JS/CSS를 직접 넣지 않음
+// 대신 <script>가 런타임에 phlorotannin.com/index.html을 fetch해서
+// 최신 JS/CSS 파일명을 파싱한 뒤 동적으로 <link>/<script> 태그를 생성·주입
+// → 본사가 몇 번 재배포되어도 파트너 사이트는 항상 최신 파일을 로드
+// ───────────────────────────────────────────
+async function deployPartnerShell({ vercelToken, slug, partnerName, phone, phoneDisplay, onProgress }) {
+  const teamId = VERCEL_TEAM_ID
+  const headers = { Authorization: `Bearer ${vercelToken}` }
+
+  onProgress('🔨 파트너 전용 HTML 생성 중...')
+
+  // 파트너 설정값 (런타임에 window._PARTNER_CONFIG로 노출)
+  const configJson = JSON.stringify({ phone, display: phoneDisplay, name: partnerName, slug })
+
+  // 파트너 전용 index.html
+  // · JS/CSS를 직접 넣지 않고 런타임에 본사 /index.html을 fetch해서 동적으로 삽입
+  // · phlorotannin.com에 CORS 헤더(Access-Control-Allow-Origin: *)가 설정되어 있어야 함
+  //   → vercel.json에 assets/* 헤더 추가로 해결
+  const partnerHtml = `<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#065f46" />
+  <title>플로로탄닌 파트너스</title>
+  <script>
+    // 파트너 설정 — JS 번들보다 먼저 실행되어야 함
+    window._PARTNER_CONFIG = ${configJson};
+
+    // 런타임에 본사 index.html을 fetch → 최신 JS/CSS 파일명 파싱 → 동적 주입
+    (function() {
+      var MAIN = 'https://phlorotannin.com';
+      var t = Date.now();
+
+      fetch(MAIN + '/index.html?_t=' + t, { cache: 'no-store' })
+        .then(function(r) { return r.text(); })
+        .then(function(html) {
+          // JS 파일명 추출
+          var jsMatch  = html.match(/src="(\\/assets\\/[^"]+\\.js)"/);
+          // CSS 파일명 추출
+          var cssMatch = html.match(/href="(\\/assets\\/[^"]+\\.css)"/);
+
+          if (!jsMatch || !cssMatch) {
+            document.getElementById('_pload').textContent =
+              '⚠️ 사이트 로드 오류 — 잠시 후 새로고침 해주세요.';
+            return;
+          }
+
+          var jsUrl  = MAIN + jsMatch[1];
+          var cssUrl = MAIN + cssMatch[1];
+
+          // CSS 동적 삽입
+          var link = document.createElement('link');
+          link.rel = 'stylesheet';
+          link.crossOrigin = 'anonymous';
+          link.href = cssUrl;
+          document.head.appendChild(link);
+
+          // JS 동적 삽입
+          var script = document.createElement('script');
+          script.type = 'module';
+          script.crossOrigin = 'anonymous';
+          script.src = jsUrl;
+          document.head.appendChild(script);
+        })
+        .catch(function(e) {
+          console.error('파트너 사이트 로드 실패:', e);
+          document.getElementById('_pload').textContent =
+            '⚠️ 네트워크 오류 — 새로고침 해주세요.';
+        });
+    })();
+  </script>
+</head>
+<body>
+  <div id="root"></div>
+  <div id="_pload" style="display:none;padding:2rem;text-align:center;color:#666;font-family:sans-serif;"></div>
+</body>
+</html>`
+
+  // vercel.json — SPA 라우팅 + CORS 헤더
+  const vercelJson = JSON.stringify({
+    headers: [
+      {
+        source: "/(.*)",
+        headers: [
+          { key: "Access-Control-Allow-Origin", value: "*" }
+        ]
+      }
+    ],
+    rewrites: [{ source: '/(.*)', destination: '/index.html' }]
+  })
+
+  // 4. 파일 업로드
+  onProgress('☁️ Vercel에 파일 업로드 중...')
+
+  async function uploadBytes(bytes, ct) {
+    const hash = await sha1hex(bytes)
+    const r = await fetch(`https://api.vercel.com/v2/files?teamId=${teamId}`, {
+      method: 'POST',
+      headers: { ...headers, 'Content-Type': ct, 'x-vercel-digest': hash },
+      body: bytes,
+    })
+    if (!r.ok && r.status !== 409) throw new Error(`파일 업로드 실패 (${r.status})`)
+    return { hash, size: bytes.byteLength }
+  }
+
+  const enc = new TextEncoder()
+  const [htmlInfo, jsonInfo] = await Promise.all([
+    uploadBytes(enc.encode(partnerHtml), 'text/html'),
+    uploadBytes(enc.encode(vercelJson),  'application/json'),
+  ])
+
+  // favicon도 시도
+  let favInfo = null
+  try {
+    const favResp = await fetch(`${MAIN_SITE}/favicon.svg`)
+    if (favResp.ok) {
+      const favBytes = new Uint8Array(await favResp.arrayBuffer())
+      favInfo = await uploadBytes(favBytes, 'image/svg+xml')
+    }
+  } catch { /* 무시 */ }
+
+  const files = [
+    { file: 'index.html',   sha: htmlInfo.hash, size: htmlInfo.size },
+    { file: 'vercel.json',  sha: jsonInfo.hash,  size: jsonInfo.size },
+  ]
+  if (favInfo) files.push({ file: 'favicon.svg', sha: favInfo.hash, size: favInfo.size })
+
+  // 5. 배포 생성
+  onProgress('🚀 Vercel 배포 생성 중...')
+  const projectName = `hanain-${slug}`
+  const deployResp = await fetch(`https://api.vercel.com/v13/deployments?teamId=${teamId}`, {
+    method: 'POST',
+    headers: { ...headers, 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      name: projectName,
+      files,
+      projectSettings: { framework: null, buildCommand: '', installCommand: '', outputDirectory: '' },
+      target: 'production',
+      public: true,
+    }),
+  })
+  const deployData = await deployResp.json()
+  if (!deployResp.ok) throw new Error(`배포 생성 실패: ${JSON.stringify(deployData).slice(0, 200)}`)
+
+  const deployId  = deployData.id
+  const deployUrl = deployData.url
+
+  // 6. SSO 보호 해제 (약 5초 후 프로젝트가 생성됨)
+  await new Promise(r => setTimeout(r, 5000))
+  try {
+    onProgress('🔓 공개 접근 설정 중...')
+    const projResp = await fetch(`https://api.vercel.com/v9/projects/${projectName}?teamId=${teamId}`, { headers })
+    if (projResp.ok) {
+      const proj = await projResp.json()
+      if (proj.id) {
+        await fetch(`https://api.vercel.com/v9/projects/${proj.id}?teamId=${teamId}`, {
+          method: 'PATCH',
+          headers: { ...headers, 'Content-Type': 'application/json' },
+          body: JSON.stringify({ ssoProtection: null, framework: null, buildCommand: '', installCommand: '', outputDirectory: '' }),
+        })
+      }
+    }
+  } catch { /* 무시 */ }
+
+  // 7. 배포 완료 대기 (최대 2분)
+  onProgress('⏳ 배포 완료 대기 중...')
+  let status = 'INITIALIZING'
+  let finalUrl = deployUrl
+  for (let i = 0; i < 40; i++) {
+    await new Promise(r => setTimeout(r, 3000))
+    try {
+      const sr = await fetch(`https://api.vercel.com/v13/deployments/${deployId}?teamId=${teamId}`, { headers })
+      const sd = await sr.json()
+      status = sd.status || sd.readyState || status
+      if (sd.url) finalUrl = sd.url
+      if (status === 'READY') break
+      if (status === 'ERROR') throw new Error(`Vercel 배포 오류: ${sd.errorCode || ''} ${sd.errorMessage || ''}`)
+    } catch (e) {
+      if (e.message.startsWith('Vercel 배포 오류')) throw e
+    }
+    onProgress(`⏳ 배포 중... (${(i + 1) * 3}초)`)
+  }
+
+  onProgress('✅ 배포 완료!')
+  return { url: `https://${finalUrl}`, projectName, slug, deployId }
+}
+
+// ───────────────────────────────────────────
+// 로그인 화면
+// ───────────────────────────────────────────
 function LoginScreen({ onLogin }) {
   const [pw, setPw] = useState('')
   const [show, setShow] = useState(false)
   const [err, setErr] = useState(false)
-
   const handleLogin = (e) => {
     e.preventDefault()
-    if (pw === ADMIN_PASS) {
-      onLogin()
-    } else {
-      setErr(true)
-    }
+    if (pw === ADMIN_PASS) onLogin(); else setErr(true)
   }
-
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-6">
       <div className="bg-white rounded-3xl shadow-xl p-8 w-full max-w-md">
@@ -27,22 +290,18 @@ function LoginScreen({ onLogin }) {
             <Lock className="w-8 h-8 text-white" />
           </div>
           <h1 className="text-2xl font-bold text-ocean-deep">관리자 로그인</h1>
-          <p className="text-gray-400 text-sm mt-1">플로로탄닌 파트너스 관리 시스템</p>
+          <p className="text-gray-400 text-base mt-1">플로로탄닌 파트너스 관리 시스템</p>
         </div>
         <form onSubmit={handleLogin} className="space-y-4">
           <div className="relative">
-            <input
-              type={show ? 'text' : 'password'}
-              value={pw}
+            <input type={show ? 'text' : 'password'} value={pw}
               onChange={e => { setPw(e.target.value); setErr(false) }}
-              placeholder="관리자 비밀번호"
-              className={`input-field pr-10 ${err ? 'border-red-500' : ''}`}
-            />
+              placeholder="관리자 비밀번호" className={`input-field pr-10 ${err ? 'border-red-500' : ''}`} />
             <button type="button" onClick={() => setShow(!show)} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400">
               {show ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
             </button>
           </div>
-          {err && <p className="text-red-500 text-sm">비밀번호가 올바르지 않습니다.</p>}
+          {err && <p className="text-red-500 text-base">비밀번호가 올바르지 않습니다.</p>}
           <button type="submit" className="w-full btn-primary py-3">로그인</button>
         </form>
       </div>
@@ -50,304 +309,1381 @@ function LoginScreen({ onLogin }) {
   )
 }
 
-export default function AdminPage() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
-  const [activeTab, setActiveTab] = useState('submissions')
-  const [submissions, setSubmissions] = useState([])
+function CopyButton({ text, label = '복사' }) {
+  const [copied, setCopied] = useState(false)
+  return (
+    <button
+      onClick={() => navigator.clipboard.writeText(text).then(() => { setCopied(true); setTimeout(() => setCopied(false), 2000) })}
+      className={`flex items-center gap-1 text-sm px-2.5 py-1.5 rounded-lg font-medium transition-all ${copied ? 'bg-green-100 text-green-600' : 'bg-gray-100 hover:bg-gray-200 text-gray-600'}`}>
+      {copied ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
+      {copied ? '복사됨!' : label}
+    </button>
+  )
+}
+
+// ───────────────────────────────────────────
+// 파트너 관리 탭
+// ───────────────────────────────────────────
+function PartnerManageTab() {
   const [partners, setPartners] = useState([])
-  const [qaItems, setQaItems] = useState([])
-  const [loading, setLoading] = useState(false)
   const [search, setSearch] = useState('')
-  const [showQaForm, setShowQaForm] = useState(false)
-  const [editingQa, setEditingQa] = useState(null)
-  const [stats, setStats] = useState({})
-  const [emailSettings, setEmailSettings] = useState({ host: '', port: 587, user: '', pass: '', to: '' })
-  const [settingsSaved, setSettingsSaved] = useState(false)
+  const [showForm, setShowForm] = useState(false)
+  const [form, setForm] = useState({ name: '', phone: '', memo: '' })
+  const [errors, setErrors] = useState({})
+  const [result, setResult] = useState(null)
 
-  const fetchData = async () => {
-    setLoading(true)
-    try {
-      const [subRes, partRes, statsRes, settingsRes] = await Promise.all([
-        fetch(BACKEND_URL + '/api/admin/submissions', { headers: { 'x-admin-key': ADMIN_PASS } }),
-        fetch(BACKEND_URL + '/api/admin/partners', { headers: { 'x-admin-key': ADMIN_PASS } }),
-        fetch(BACKEND_URL + '/api/admin/stats', { headers: { 'x-admin-key': ADMIN_PASS } }),
-        fetch(BACKEND_URL + '/api/admin/email-settings', { headers: { 'x-admin-key': ADMIN_PASS } }),
-      ])
-
-      if (subRes.ok) setSubmissions(await subRes.json())
-      if (partRes.ok) setPartners(await partRes.json())
-      if (statsRes.ok) setStats(await statsRes.json())
-      if (settingsRes.ok) {
-        const s = await settingsRes.json()
-        setEmailSettings(s)
-      }
-    } catch {
-      // Fallback to localStorage
-      const localSubs = JSON.parse(localStorage.getItem('phlorotannin_submissions') || '[]')
-      const localParts = JSON.parse(localStorage.getItem('phlorotannin_partner_applications') || '[]')
-      setSubmissions(localSubs)
-      setPartners(localParts)
-    } finally {
-      setLoading(false)
-    }
-  }
-
+  // partners.json + localStorage 모두에서 파트너 로드 (병합, 전화번호 중복 제거)
   useEffect(() => {
-    if (isLoggedIn) fetchData()
-  }, [isLoggedIn])
+    async function loadAll() {
+      // 1) partners.json (서버)
+      let serverList = []
+      try {
+        const r = await fetch('/partners.json?t=' + Date.now(), { cache: 'no-store' })
+        if (r.ok) {
+          const d = await r.json()
+          serverList = d.partners || []
+        }
+      } catch {}
 
-  const downloadCSV = (data, filename) => {
-    if (data.length === 0) return
-    const keys = Object.keys(data[0])
-    const csv = [keys.join(','), ...data.map(r => keys.map(k => `"${(r[k] || '').toString().replace(/"/g, '""')}"`).join(','))].join('\n')
-    const blob = new Blob(['\uFEFF' + csv], { type: 'text/csv;charset=utf-8;' })
-    const a = document.createElement('a')
-    a.href = URL.createObjectURL(blob)
-    a.download = filename
-    a.click()
-  }
+      // 2) localStorage
+      const localList = JSON.parse(localStorage.getItem(PARTNERS_KEY) || '[]')
 
-  const saveEmailSettings = async () => {
-    try {
-      await fetch(BACKEND_URL + '/api/admin/email-settings', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'x-admin-key': ADMIN_PASS },
-        body: JSON.stringify(emailSettings),
-      })
-      setSettingsSaved(true)
-      setTimeout(() => setSettingsSaved(false), 3000)
-    } catch {
-      setSettingsSaved(true)
-      setTimeout(() => setSettingsSaved(false), 3000)
+      // 3) 병합 (전화번호 기준 중복 제거, 서버 우선)
+      const merged = [...serverList]
+      for (const lp of localList) {
+        const exists = merged.some(p => p.phone === lp.phone || p.slug === lp.slug)
+        if (!exists) merged.push(lp)
+      }
+      setPartners(merged)
+      // localStorage도 최신화
+      localStorage.setItem(PARTNERS_KEY, JSON.stringify(merged))
     }
+    loadAll()
+  }, [])
+
+  const saveLocal = (list) => {
+    localStorage.setItem(PARTNERS_KEY, JSON.stringify(list))
+    setPartners(list)
   }
 
-  const deleteSubmission = async (id) => {
+  const validate = () => {
+    const errs = {}
+    if (!form.name.trim()) errs.name = '파트너 이름을 입력하세요'
+    const digits = form.phone.replace(/\D/g, '')
+    if (digits.length < 10 || digits.length > 11) errs.phone = '올바른 전화번호를 입력하세요'
+    if (digits.length >= 10 && partners.some(p => p.phone === digits)) errs.phone = '이미 등록된 전화번호입니다'
+    return errs
+  }
+
+  const addPartner = () => {
+    const errs = validate()
+    if (Object.keys(errs).length > 0) { setErrors(errs); return }
+
+    const digits       = form.phone.replace(/\D/g, '')
+    const phoneDisplay = formatPhone(digits)
+    const name         = form.name.trim()
+    const siteUrl      = `${MAIN_SITE}/p/${digits}`
+
+    const newPartner = {
+      slug: digits,          // 전화번호를 slug로 사용
+      name,
+      phone: digits,
+      phoneDisplay,
+      siteUrl,
+      memo: form.memo.trim(),
+      createdAt: new Date().toISOString(),
+    }
+
+    const updated = [newPartner, ...partners]
+    saveLocal(updated)
+    setForm({ name: '', phone: '', memo: '' })
+    setErrors({})
+    setShowForm(false)
+    setResult({ success: true, url: siteUrl, name })
+  }
+
+  const deletePartner = (slug) => {
     if (!confirm('삭제하시겠습니까?')) return
-    try {
-      await fetch(BACKEND_URL + '/api/admin/submissions/' + id, {
-        method: 'DELETE',
-        headers: { 'x-admin-key': ADMIN_PASS }
-      })
-      setSubmissions(prev => prev.filter(s => s.id !== id))
-    } catch {
-      setSubmissions(prev => prev.filter(s => s.id !== id))
-    }
+    saveLocal(partners.filter(p => p.slug !== slug))
   }
 
-  const filteredSubmissions = submissions.filter(s =>
-    !search || s.name?.includes(search) || s.email?.includes(search) || s.phone?.includes(search)
+  const downloadCSV = () => {
+    if (!partners.length) return
+    const rows = [
+      ['이름', '전화번호', '파트너URL', '메모', '등록일'],
+      ...partners.map(p => [p.name, p.phoneDisplay, p.siteUrl || '', p.memo || '', new Date(p.createdAt).toLocaleDateString('ko-KR')])
+    ]
+    const csv  = rows.map(r => r.map(v => `"${v}"`).join(',')).join('\n')
+    const blob = new Blob(['\uFEFF' + csv], { type: 'text/csv;charset=utf-8;' })
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob)
+    a.download = `파트너목록_${new Date().toLocaleDateString('ko-KR')}.csv`; a.click()
+  }
+
+  const filtered = partners.filter(p =>
+    !search || p.name?.includes(search) || p.phoneDisplay?.includes(search) || p.memo?.includes(search)
   )
-
-  const filteredPartners = partners.filter(p =>
-    !search || p.name?.includes(search) || p.email?.includes(search)
-  )
-
-  if (!isLoggedIn) return <LoginScreen onLogin={() => setIsLoggedIn(true)} />
-
-  const tabs = [
-    { id: 'submissions', label: '상담 문의', icon: MessageSquare, count: submissions.length },
-    { id: 'partners', label: '파트너 신청', icon: Users, count: partners.length },
-    { id: 'stats', label: '통계', icon: BookOpen },
-    { id: 'settings', label: '이메일 설정', icon: Settings },
-  ]
 
   return (
-    <div className="pt-16 min-h-screen bg-gray-50">
-      {/* Header */}
-      <div className="bg-ocean-deep text-white py-6">
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+    <div className="space-y-4">
+
+      {/* ── 헤더 ── */}
+      <div className="bg-white rounded-2xl shadow-sm p-5">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
-            <h1 className="text-2xl font-bold">관리자 대시보드</h1>
-            <p className="text-gray-400 text-sm mt-0.5">플로로탄닌 파트너스 운영 관리</p>
+            <h3 className="font-bold text-ocean-deep text-xl flex items-center gap-2">
+              <Globe className="w-5 h-5 text-cyan-hana" />
+              파트너 전자명함 관리
+            </h3>
+            <p className="text-base text-gray-500 mt-0.5">
+              이름·전화번호 입력만으로 전자명함 URL 즉시 발급
+            </p>
           </div>
-          <div className="flex gap-3">
-            <button onClick={fetchData} className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors text-sm">
-              <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} />
-              새로고침
+          <div className="flex items-center gap-2 flex-shrink-0">
+            <button onClick={downloadCSV}
+              className="flex items-center gap-1.5 text-base bg-gray-100 hover:bg-gray-200 px-3 py-2 rounded-lg">
+              <Download className="w-4 h-4" /> CSV
             </button>
-            <button onClick={() => setIsLoggedIn(false)} className="text-gray-400 hover:text-white text-sm">로그아웃</button>
+            <button onClick={() => { setShowForm(true); setErrors({}); setResult(null) }}
+              className="flex items-center gap-1.5 text-base bg-ocean-deep text-white px-4 py-2 rounded-lg hover:bg-opacity-90">
+              <UserPlus className="w-4 h-4" /> 파트너 추가
+            </button>
+          </div>
+        </div>
+
+        {/* 안내 */}
+        <div className="mt-4 bg-amber-50 border border-amber-200 rounded-xl p-4">
+          <p className="font-semibold text-amber-800 mb-1">✨ 새로운 전자명함 시스템</p>
+          <div className="grid sm:grid-cols-2 gap-2 text-amber-700 text-sm">
+            {[
+              '이름 + 전화번호만 입력하면 URL 즉시 발급',
+              'phlorotannin.com/p/전화번호 형태의 깔끔한 URL',
+              '전자명함 앞·뒷면, QR코드 자동 생성',
+              '명함 이미지 다운로드 기능 내장',
+            ].map(t => (
+              <div key={t} className="flex items-start gap-1.5">
+                <CheckCircle className="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-amber-500" />
+                <span>{t}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
 
-      {/* Stats cards */}
+      {/* 결과 */}
+      {result && (
+        <div className={`rounded-xl p-4 border ${result.success ? 'bg-green-50 border-green-200' : 'bg-red-50 border-red-200'}`}>
+          {result.success ? (
+            <div>
+              <p className="font-bold text-green-800 flex items-center gap-2 mb-3">
+                <CheckCircle className="w-5 h-5" /> 🎉 {result.name} 파트너 전자명함 등록 완료!
+              </p>
+              <p className="text-sm font-semibold text-green-700 mb-1">📎 파트너 전달 URL (전자명함)</p>
+              <div className="flex items-center gap-2 bg-white rounded-lg p-3 border border-green-300">
+                <Globe className="w-4 h-4 text-green-600 flex-shrink-0" />
+                <span className="text-base text-gray-800 font-mono flex-1 font-semibold break-all">{result.url}</span>
+                <CopyButton text={result.url} label="복사" />
+              </div>
+              <p className="text-sm text-green-600 mt-2">
+                ✅ 이 URL을 파트너에게 전달하세요. 접속하면 전자명함이 바로 표시됩니다.<br />
+                ✅ 배포 없이 즉시 사용 가능합니다.
+              </p>
+            </div>
+          ) : (
+            <div>
+              <p className="font-bold text-red-800 flex items-center gap-2"><AlertCircle className="w-5 h-5" /> 등록 실패</p>
+              <p className="text-base text-red-600 mt-1">{result.error}</p>
+            </div>
+          )}
+          <button onClick={() => setResult(null)} className="mt-3 text-sm text-gray-400 hover:text-gray-600">닫기</button>
+        </div>
+      )}
+
+      {/* 추가 폼 */}
+      {showForm && (
+        <div className="bg-white rounded-2xl shadow-sm p-6 border-2 border-amber-200">
+          <div className="flex items-center justify-between mb-4">
+            <h4 className="font-bold text-ocean-deep text-lg">새 파트너 추가</h4>
+            <button onClick={() => { setShowForm(false); setErrors({}) }}><X className="w-5 h-5 text-gray-400" /></button>
+          </div>
+          <div className="grid sm:grid-cols-2 gap-4">
+            {/* 이름 */}
+            <div>
+              <label className="block text-base font-medium text-gray-700 mb-1.5">파트너 이름 <span className="text-red-500">*</span></label>
+              <input value={form.name}
+                onChange={e => { setForm(p => ({ ...p, name: e.target.value })); setErrors(p => ({ ...p, name: '' })) }}
+                className={`input-field ${errors.name ? 'border-red-400' : ''}`} placeholder="예: 홍길동" />
+              {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
+            </div>
+            {/* 전화번호 */}
+            <div>
+              <label className="block text-base font-medium text-gray-700 mb-1.5">전화번호 <span className="text-red-500">*</span></label>
+              <input value={form.phone} type="tel"
+                onChange={e => { setForm(p => ({ ...p, phone: e.target.value })); setErrors(p => ({ ...p, phone: '' })) }}
+                className={`input-field ${errors.phone ? 'border-red-400' : ''}`} placeholder="010-0000-0000" />
+              {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
+              {form.phone.replace(/\D/g,'').length >= 10 && !errors.phone && (
+                <p className="text-sm text-emerald-600 mt-1 flex items-center gap-1">
+                  <CheckCircle className="w-3 h-3" />
+                  발급 URL: <span className="font-mono font-semibold">phlorotannin.com/p/{form.phone.replace(/\D/g,'')}</span>
+                </p>
+              )}
+            </div>
+            {/* 메모 */}
+            <div className="sm:col-span-2">
+              <label className="block text-base font-medium text-gray-700 mb-1.5">메모 (선택)</label>
+              <input value={form.memo}
+                onChange={e => setForm(p => ({ ...p, memo: e.target.value }))}
+                className="input-field" placeholder="예: 서울 강남 지역" />
+            </div>
+          </div>
+          <div className="flex gap-3 mt-5">
+            <button onClick={addPartner}
+              className="flex items-center gap-2 bg-ocean-deep text-white px-6 py-2.5 rounded-xl font-semibold hover:bg-opacity-90">
+              <UserPlus className="w-4 h-4" /> 즉시 등록
+            </button>
+            <button onClick={() => { setShowForm(false); setErrors({}) }}
+              className="px-6 py-2.5 rounded-xl border border-gray-200 text-gray-500 hover:bg-gray-50">취소</button>
+          </div>
+          <p className="text-sm text-gray-400 mt-2">⚡ 배포 없이 즉시 URL이 발급됩니다</p>
+        </div>
+      )}
+
+      {/* 검색 */}
+      <div className="bg-white rounded-2xl shadow-sm p-4">
+        <div className="relative max-w-sm">
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+          <input type="text" value={search} onChange={e => setSearch(e.target.value)}
+            placeholder="이름, 전화번호 검색..." className="input-field pl-9 py-2 text-base" />
+        </div>
+      </div>
+
+      {/* 파트너 목록 */}
+      <div className="bg-white rounded-2xl shadow-sm overflow-hidden">
+        {filtered.length === 0 ? (
+          <div className="p-16 text-center">
+            <Globe className="w-12 h-12 text-gray-200 mx-auto mb-3" />
+            <p className="text-gray-400">{search ? '검색 결과 없음' : '등록된 파트너가 없습니다'}</p>
+            {!search && (
+              <button onClick={() => { setShowForm(true); setErrors({}) }}
+                className="mt-4 text-base text-cyan-hana hover:underline">첫 번째 파트너 추가 →</button>
+            )}
+          </div>
+        ) : (
+          <div className="divide-y">
+            {filtered.map((p, idx) => (
+              <div key={p.slug || idx} className="p-5 hover:bg-gray-50">
+                <div className="flex items-start justify-between gap-4">
+                  <div className="flex items-start gap-4 min-w-0">
+                    <div className="w-10 h-10 bg-ocean-deep/10 rounded-xl flex items-center justify-center text-base font-bold text-ocean-deep flex-shrink-0">{idx + 1}</div>
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <span className="font-bold text-gray-800">{p.name}</span>
+                        {p.memo && <span className="text-sm bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full">{p.memo}</span>}
+                        <span className="text-sm bg-green-100 text-green-600 px-2 py-0.5 rounded-full flex items-center gap-1">
+                          <CheckCircle className="w-3 h-3" /> 활성
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-1.5 mt-1 text-base text-gray-500">
+                        <Phone className="w-3.5 h-3.5" /><span>{p.phoneDisplay}</span>
+                      </div>
+                      {p.siteUrl && (
+                        <div className="mt-2 flex items-center gap-2 flex-wrap">
+                          <div className="flex items-center gap-1.5 bg-blue-50 border border-blue-200 rounded-lg px-3 py-1.5 min-w-0">
+                            <Link2 className="w-3.5 h-3.5 text-blue-600 flex-shrink-0" />
+                            <span className="text-sm text-blue-700 font-mono truncate max-w-[260px]">{p.siteUrl}</span>
+                          </div>
+                          <CopyButton text={p.siteUrl} label="URL 복사" />
+                          <CopyButton text={p.phoneDisplay} label="번호 복사" />
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2 flex-shrink-0">
+                    <span className="text-sm text-gray-400 hidden sm:block">{new Date(p.createdAt).toLocaleDateString('ko-KR')}</span>
+                    {p.siteUrl && (
+                      <a href={p.siteUrl} target="_blank" rel="noopener noreferrer"
+                        className="text-gray-300 hover:text-cyan-hana p-1.5 rounded-lg hover:bg-cyan-50 transition-colors">
+                        <Eye className="w-4 h-4" />
+                      </a>
+                    )}
+                    <button onClick={() => deletePartner(p.slug)}
+                      className="text-gray-300 hover:text-red-500 p-1.5 rounded-lg hover:bg-red-50 transition-colors">
+                      <Trash2 className="w-4 h-4" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {partners.length > 0 && (
+        <p className="text-base text-gray-400 text-center">
+          총 <strong className="text-gray-600">{partners.length}명</strong> 등록
+        </p>
+      )}
+    </div>
+  )
+}
+
+// ───────────────────────────────────────────
+// Q&A 답변 관리 탭 (Supabase)
+// ───────────────────────────────────────────
+function QAAnswerTab() {
+  const [questions, setQuestions] = useState([])
+  const [loading, setLoading] = useState(false)
+  const [search, setSearch] = useState('')
+  const [expandedId, setExpandedId] = useState(null)
+  const [answerForms, setAnswerForms] = useState({})   // { questionId: draftText }
+  const [saving, setSaving] = useState({})
+  const [msg, setMsg] = useState({})
+
+  // qa.json에서 질문 목록 로드 (Supabase 없어도 동작)
+  useEffect(() => {
+    setLoading(true)
+    fetch('/qa.json')
+      .then(r => r.json())
+      .then(async d => {
+        // Supabase answers 조회
+        const { data: answers } = await supabase
+          .from('answers')
+          .select('question_id, content, id')
+          .eq('is_official', true)
+        const answerMap = {}
+        ;(answers || []).forEach(a => { answerMap[a.question_id] = a })
+
+        const cats = {}
+        d.categories.forEach(c => { cats[c.id] = c })
+
+        setQuestions(d.questions.map(q => ({
+          ...q,
+          categoryName: cats[q.category]?.name || q.category,
+          categoryColor: cats[q.category]?.color || '#00B4D8',
+          dbAnswer: answerMap[q.id] || null,
+        })))
+        setLoading(false)
+      })
+      .catch(() => setLoading(false))
+  }, [])
+
+  const filtered = search
+    ? questions.filter(q =>
+        q.question.includes(search) ||
+        q.category.includes(search) ||
+        (q.tags || []).some(t => t.includes(search))
+      )
+    : questions
+
+  async function handleSaveAnswer(q) {
+    const content = answerForms[q.id]
+    if (!content?.trim()) return
+    setSaving(s => ({ ...s, [q.id]: true }))
+    setMsg(m => ({ ...m, [q.id]: '' }))
+
+    // 기존 답변이 있으면 update, 없으면 insert
+    let error
+    if (q.dbAnswer?.id) {
+      const res = await supabase.from('answers').update({ content: content.trim(), updated_at: new Date().toISOString() }).eq('id', q.dbAnswer.id)
+      error = res.error
+    } else {
+      const res = await supabase.from('answers').insert({
+        question_id: q.id,
+        content: content.trim(),
+        is_official: true,
+        author_id: null,
+      })
+      error = res.error
+    }
+
+    setSaving(s => ({ ...s, [q.id]: false }))
+    if (error) {
+      setMsg(m => ({ ...m, [q.id]: '저장 실패: ' + error.message }))
+    } else {
+      setMsg(m => ({ ...m, [q.id]: '✅ 저장되었습니다.' }))
+      // 로컬 상태 갱신
+      setQuestions(qs => qs.map(item => item.id === q.id
+        ? { ...item, dbAnswer: { ...item.dbAnswer, content: content.trim() } }
+        : item
+      ))
+      setTimeout(() => setMsg(m => ({ ...m, [q.id]: '' })), 3000)
+    }
+  }
+
+  return (
+    <div className="space-y-4">
+      <div className="bg-white rounded-2xl shadow-sm p-5">
+        <div className="flex items-center justify-between mb-4 flex-wrap gap-3">
+          <h2 className="font-bold text-ocean-deep text-lg flex items-center gap-2">
+            <PenSquare className="w-5 h-5 text-cyan-hana" />
+            Q&A 답변 관리 ({filtered.length.toLocaleString()}개)
+          </h2>
+          <div className="relative">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+            <input
+              type="text"
+              value={search}
+              onChange={e => setSearch(e.target.value)}
+              placeholder="질문 검색..."
+              className="pl-9 pr-4 py-2 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-cyan-hana w-64"
+            />
+          </div>
+        </div>
+        <p className="text-sm text-gray-500 mb-4">
+          💡 qa.json 기반 질문 목록입니다. 답변을 입력하면 Supabase DB에 저장되며, 질문 상세 페이지에 자동 표시됩니다.
+        </p>
+
+        {loading ? (
+          <div className="py-8 text-center text-gray-400 animate-pulse">로딩 중...</div>
+        ) : (
+          <div className="divide-y divide-gray-100 max-h-[70vh] overflow-y-auto">
+            {filtered.map(q => {
+              const isOpen = expandedId === q.id
+              const draft = answerForms[q.id] ?? (q.dbAnswer?.content || q.answer || '')
+              return (
+                <div key={q.id} className="py-3">
+                  {/* 질문 헤더 */}
+                  <button
+                    onClick={() => {
+                      setExpandedId(isOpen ? null : q.id)
+                      if (!answerForms[q.id]) {
+                        setAnswerForms(f => ({ ...f, [q.id]: q.dbAnswer?.content || q.answer || '' }))
+                      }
+                    }}
+                    className="w-full flex items-start gap-3 text-left hover:bg-gray-50 rounded-xl px-2 py-2 transition"
+                  >
+                    <span
+                      className="shrink-0 text-xs font-bold px-2 py-0.5 rounded-full text-white mt-0.5"
+                      style={{ backgroundColor: q.categoryColor }}
+                    >
+                      {q.categoryName}
+                    </span>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-sm font-medium text-gray-800 leading-snug line-clamp-2">{q.question}</p>
+                      <div className="flex items-center gap-3 mt-1">
+                        <span className="text-xs text-gray-400">{q.id}</span>
+                        {q.dbAnswer
+                          ? <span className="text-xs text-green-600 font-medium">✅ 답변 있음</span>
+                          : <span className="text-xs text-amber-500 font-medium">⚠️ DB 답변 없음 (qa.json 사용)</span>
+                        }
+                      </div>
+                    </div>
+                    {isOpen ? <ChevronDown className="w-4 h-4 text-gray-400 shrink-0 mt-1" /> : <ChevronRight className="w-4 h-4 text-gray-400 shrink-0 mt-1" />}
+                  </button>
+
+                  {/* 답변 편집 영역 */}
+                  {isOpen && (
+                    <div className="mt-3 ml-2 pl-4 border-l-2 border-cyan-hana/30 space-y-3">
+                      <div className="bg-blue-50 rounded-xl p-3 text-xs text-blue-700">
+                        <strong>현재 qa.json 답변 (참고용):</strong>
+                        <p className="mt-1 text-gray-500 line-clamp-3">
+                          {typeof q.answer === 'string' ? q.answer.slice(0, 200) : JSON.stringify(q.answer).slice(0, 200)}...
+                        </p>
+                      </div>
+                      <div>
+                        <label className="block text-sm font-semibold text-gray-700 mb-1.5">
+                          관리자 답변 (공식 답변 — HTML 가능)
+                        </label>
+                        <textarea
+                          value={draft}
+                          onChange={e => setAnswerForms(f => ({ ...f, [q.id]: e.target.value }))}
+                          rows={8}
+                          className="w-full border border-gray-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-hana resize-y font-mono"
+                          placeholder="답변 내용을 입력하세요. HTML 태그 사용 가능 (<p>, <br>, <strong>, <ul><li> 등)"
+                        />
+                        <p className="text-xs text-gray-400 mt-1">* 저장하면 질문 상세 페이지 '전문 답변' 섹션에 표시됩니다.</p>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <button
+                          onClick={() => handleSaveAnswer(q)}
+                          disabled={saving[q.id]}
+                          className="flex items-center gap-2 px-5 py-2 bg-cyan-hana text-white rounded-xl text-sm font-semibold hover:bg-opacity-90 transition disabled:opacity-60"
+                        >
+                          <Save className="w-4 h-4" />
+                          {saving[q.id] ? '저장 중...' : '답변 저장'}
+                        </button>
+                        {msg[q.id] && (
+                          <span className={`text-sm ${msg[q.id].includes('실패') ? 'text-red-500' : 'text-green-600'}`}>
+                            {msg[q.id]}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )
+            })}
+          </div>
+        )}
+      </div>
+    </div>
+  )
+}
+
+// ───────────────────────────────────────────
+// 사용자 질문 관리 탭 (비회원 질문)
+// ───────────────────────────────────────────
+const CATEGORY_NAMES = {
+  metabolism: '대사질환', cancer_immune: '항암/면역', digestive: '소화/간',
+  cardiovascular: '심혈관', neuro_cognitive: '뇌/인지', mental_health: '정신건강',
+  musculoskeletal: '근골격', skin_hair: '피부/모발', respiratory: '호흡기',
+  infection_inflammation: '감염/염증', womens_health: '여성건강', mens_health: '남성건강',
+}
+
+function UserQuestionsTab() {
+  const [questions, setQuestions]   = useState([])
+  const [loading, setLoading]       = useState(false)
+  const [filter, setFilter]         = useState('')       // '' | 'pending' | 'answered'
+  const [expandedId, setExpandedId] = useState(null)
+  const [drafts, setDrafts]         = useState({})       // { id: answerText }
+  const [saving, setSaving]         = useState({})
+  const [msg, setMsg]               = useState({})
+
+  async function load() {
+    setLoading(true)
+    const { data } = await supabase
+      .from('user_questions')
+      .select('*')
+      .order('created_at', { ascending: false })
+    setQuestions(data || [])
+    setLoading(false)
+  }
+
+  useEffect(() => { load() }, [])
+
+  const filtered = questions.filter(q =>
+    (!filter || q.status === filter)
+  )
+
+  async function handleSaveAnswer(q) {
+    const answer = (drafts[q.id] ?? q.admin_answer ?? '').trim()
+    if (!answer) return
+    setSaving(s => ({ ...s, [q.id]: true }))
+    const { error } = await supabase
+      .from('user_questions')
+      .update({ admin_answer: answer, status: 'answered', answered_at: new Date().toISOString() })
+      .eq('id', q.id)
+    setSaving(s => ({ ...s, [q.id]: false }))
+    if (error) {
+      setMsg(m => ({ ...m, [q.id]: '❌ 저장 실패: ' + error.message }))
+    } else {
+      setMsg(m => ({ ...m, [q.id]: '✅ 답변 저장 완료!' }))
+      setQuestions(prev => prev.map(item =>
+        item.id === q.id ? { ...item, admin_answer: answer, status: 'answered' } : item
+      ))
+      setTimeout(() => setMsg(m => ({ ...m, [q.id]: '' })), 3000)
+    }
+  }
+
+  async function handleDelete(id) {
+    if (!confirm('삭제하시겠습니까?')) return
+    await supabase.from('user_questions').delete().eq('id', id)
+    setQuestions(prev => prev.filter(q => q.id !== id))
+  }
+
+  const pendingCount  = questions.filter(q => q.status === 'pending').length
+  const answeredCount = questions.filter(q => q.status === 'answered').length
+
+  return (
+    <div className="space-y-4">
+      {/* 상단 요약 + 필터 */}
+      <div className="bg-white rounded-2xl shadow-sm p-5 flex flex-wrap items-center justify-between gap-4">
+        <div className="flex gap-4">
+          <div className="text-center">
+            <div className="text-2xl font-bold text-orange-500">{pendingCount}</div>
+            <div className="text-xs text-gray-400">미답변</div>
+          </div>
+          <div className="text-center">
+            <div className="text-2xl font-bold text-teal-500">{answeredCount}</div>
+            <div className="text-xs text-gray-400">답변완료</div>
+          </div>
+          <div className="text-center">
+            <div className="text-2xl font-bold text-gray-700">{questions.length}</div>
+            <div className="text-xs text-gray-400">전체</div>
+          </div>
+        </div>
+        <div className="flex gap-2">
+          {[['', '전체'], ['pending', '미답변'], ['answered', '답변완료']].map(([val, label]) => (
+            <button key={val} onClick={() => setFilter(val)}
+              className={`px-3 py-1.5 rounded-lg text-sm font-medium transition ${
+                filter === val ? 'bg-ocean-deep text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+              }`}>
+              {label}
+            </button>
+          ))}
+          <button onClick={load} className="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 transition">
+            <RefreshCw className={`w-4 h-4 text-gray-500 ${loading ? 'animate-spin' : ''}`} />
+          </button>
+        </div>
+      </div>
+
+      {/* 질문 목록 */}
+      <div className="space-y-3">
+        {loading && <div className="bg-white rounded-2xl p-10 text-center text-gray-400">불러오는 중...</div>}
+        {!loading && filtered.length === 0 && (
+          <div className="bg-white rounded-2xl p-10 text-center text-gray-400">
+            {filter === 'pending' ? '미답변 질문이 없습니다 🎉' : '질문이 없습니다.'}
+          </div>
+        )}
+        {filtered.map(q => {
+          const isOpen = expandedId === q.id
+          const draftVal = drafts[q.id] ?? q.admin_answer ?? ''
+          return (
+            <div key={q.id} className={`bg-white rounded-2xl shadow-sm border-l-4 ${q.status === 'answered' ? 'border-teal-400' : 'border-orange-400'}`}>
+              {/* 헤더 */}
+              <button
+                className="w-full text-left px-5 py-4 flex items-start justify-between gap-3"
+                onClick={() => setExpandedId(isOpen ? null : q.id)}
+              >
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2 flex-wrap mb-1">
+                    <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${
+                      q.status === 'answered' ? 'bg-teal-100 text-teal-700' : 'bg-orange-100 text-orange-700'
+                    }`}>
+                      {q.status === 'answered' ? '✅ 답변완료' : '⏳ 미답변'}
+                    </span>
+                    {q.category_id && (
+                      <span className="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">
+                        {CATEGORY_NAMES[q.category_id] || q.category_id}
+                      </span>
+                    )}
+                    <span className="text-xs text-gray-400">
+                      {q.guest_name || '익명'} {q.guest_contact ? `· ${q.guest_contact}` : ''}
+                    </span>
+                    <span className="text-xs text-gray-300">
+                      {new Date(q.created_at).toLocaleDateString('ko-KR')}
+                    </span>
+                  </div>
+                  <p className="font-semibold text-gray-800 text-sm leading-snug break-keep">{q.title}</p>
+                  {q.content && <p className="text-xs text-gray-400 mt-1 line-clamp-1">{q.content}</p>}
+                </div>
+                <ChevronDown className={`w-5 h-5 text-gray-400 shrink-0 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+              </button>
+
+              {/* 펼침 내용 */}
+              {isOpen && (
+                <div className="px-5 pb-5 border-t border-gray-50 pt-4 space-y-4">
+                  {/* 질문 상세 */}
+                  {q.content && (
+                    <div className="bg-gray-50 rounded-xl p-4 text-sm text-gray-600 leading-relaxed whitespace-pre-wrap">
+                      {q.content}
+                    </div>
+                  )}
+                  {/* 연락처 */}
+                  {q.guest_contact && (
+                    <div className="flex items-center gap-2 text-sm text-gray-500">
+                      <Phone className="w-4 h-4 text-gray-400" />
+                      <a href={`tel:${q.guest_contact}`} className="hover:text-teal-600 font-medium">{q.guest_contact}</a>
+                    </div>
+                  )}
+                  {/* 답변 입력 */}
+                  <div>
+                    <label className="block text-sm font-bold text-gray-700 mb-2">답변 작성</label>
+                    <textarea
+                      rows={5}
+                      value={draftVal}
+                      onChange={e => setDrafts(d => ({ ...d, [q.id]: e.target.value }))}
+                      placeholder="고객에게 전달할 답변을 작성하세요."
+                      className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-400 resize-none transition"
+                    />
+                    {msg[q.id] && <p className="text-xs mt-1 text-teal-600">{msg[q.id]}</p>}
+                    <div className="flex gap-2 mt-2">
+                      <button
+                        onClick={() => handleSaveAnswer(q)}
+                        disabled={saving[q.id]}
+                        className="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-teal-500 text-white text-sm font-bold hover:bg-teal-600 disabled:opacity-60 transition"
+                      >
+                        <Save className="w-4 h-4" />
+                        {saving[q.id] ? '저장 중...' : '답변 저장'}
+                      </button>
+                      <button
+                        onClick={() => handleDelete(q.id)}
+                        className="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-gray-100 text-gray-500 text-sm font-medium hover:bg-red-50 hover:text-red-500 transition"
+                      >
+                        <Trash2 className="w-4 h-4" />
+                        삭제
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          )
+        })}
+      </div>
+    </div>
+  )
+}
+
+// ───────────────────────────────────────────
+// YouTube 관리 탭 (Supabase) — v2
+// 수정사항:
+// 1. type="url" 제거 → youtu.be 단축 URL 허용
+// 2. URL 자동 정규화 (youtu.be → youtube.com/watch?v=)
+// 3. question_id: UUID 대신 카테고리만 선택 (question_id는 DB에서 조회)
+//    → qa.json의 legacy_id(cardio-001 등)를 카테고리와 묶어서 관리
+// ───────────────────────────────────────────
+function YouTubeManageTab() {
+  const [videos, setVideos] = useState([])
+  const [loading, setLoading] = useState(false)
+  const [form, setForm] = useState({
+    youtubeUrl: '', videoTitle: '', videoSummary: '',
+    legacyId: '', categoryId: '', sortOrder: 0,
+  })
+  const [saving, setSaving] = useState(false)
+  const [msg, setMsg] = useState('')
+  const [preview, setPreview] = useState(null) // 미리보기 비디오 ID
+  const [togglingId, setTogglingId] = useState(null) // 메인 토글 중인 ID
+
+  const CATEGORY_OPTIONS = [
+    { id: 'metabolism',            name: '대사질환' },
+    { id: 'cancer_immune',         name: '항암/면역' },
+    { id: 'digestive',             name: '소화/간' },
+    { id: 'cardiovascular',        name: '심혈관' },
+    { id: 'neuro_cognitive',       name: '뇌/인지' },
+    { id: 'mental_health',         name: '정신건강' },
+    { id: 'musculoskeletal',       name: '근골격' },
+    { id: 'skin_hair',             name: '피부/모발' },
+    { id: 'respiratory',           name: '호흡기' },
+    { id: 'infection_inflammation',name: '감염/염증' },
+    { id: 'womens_health',         name: '여성건강' },
+    { id: 'mens_health',           name: '남성건강' },
+  ]
+
+  // YouTube URL에서 videoId 추출 (youtu.be, watch?v=, embed/ 모두 지원)
+  function extractVideoId(url) {
+    if (!url) return null
+    const m = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([^&\s?#/]+)/)
+    return m?.[1] || null
+  }
+
+  // youtu.be → 표준 URL 정규화
+  function normalizeYoutubeUrl(url) {
+    const id = extractVideoId(url.trim())
+    if (!id) return url.trim()
+    return `https://www.youtube.com/watch?v=${id}`
+  }
+
+  // URL 입력 시 실시간 미리보기
+  function handleUrlChange(val) {
+    setForm(f => ({ ...f, youtubeUrl: val }))
+    const id = extractVideoId(val)
+    setPreview(id)
+  }
+
+  function loadVideos() {
+    setLoading(true)
+    supabase
+      .from('question_videos')
+      .select('*')
+      .order('created_at', { ascending: false })
+      .then(({ data }) => {
+        setVideos(data || [])
+        setLoading(false)
+      })
+  }
+
+  // 초기 영상 2개 자동 시드 (DB가 비어있을 때만)
+  async function seedDefaultVideos() {
+    const DEFAULTS = [
+      {
+        youtube_url:   'https://www.youtube.com/watch?v=lOM_Bn7wCsU',
+        video_title:   '플로로탄닌 건강 정보 영상 1',
+        video_summary: null,
+        question_id:   null,
+        category_id:   null,
+        sort_order:    0,
+        is_main:       true,
+      },
+      {
+        youtube_url:   'https://www.youtube.com/watch?v=GdUU7sk04rc',
+        video_title:   '플로로탄닌 건강 정보 영상 2',
+        video_summary: null,
+        question_id:   null,
+        category_id:   null,
+        sort_order:    1,
+        is_main:       true,
+      },
+    ]
+    const { data: existing } = await supabase.from('question_videos').select('id').limit(1)
+    if (!existing || existing.length === 0) {
+      await supabase.from('question_videos').insert(DEFAULTS)
+    }
+  }
+
+  useEffect(() => {
+    seedDefaultVideos().then(() => loadVideos())
+  }, [])
+
+  async function handleAdd(e) {
+    e.preventDefault()
+    const rawUrl = form.youtubeUrl.trim()
+    const videoId = extractVideoId(rawUrl)
+
+    // 유효성 검사
+    if (!rawUrl) { setMsg('❌ YouTube URL을 입력해주세요.'); return }
+    if (!videoId) { setMsg('❌ 올바른 YouTube URL이 아닙니다. (youtu.be/... 또는 youtube.com/watch?v=... 형식)'); return }
+    if (!form.videoTitle.trim()) { setMsg('❌ 영상 제목을 입력해주세요.'); return }
+
+    const normalizedUrl = `https://www.youtube.com/watch?v=${videoId}`
+
+    setSaving(true); setMsg('')
+
+    // question_id는 UUID여야 하므로 비워둠 (카테고리 기준으로 등록)
+    // legacy_id를 video_summary에 저장해서 나중에 참조 가능하게 함
+    const summaryWithLegacy = [
+      form.videoSummary.trim(),
+      form.legacyId.trim() ? `[질문ID:${form.legacyId.trim()}]` : ''
+    ].filter(Boolean).join(' ')
+
+    const { error } = await supabase.from('question_videos').insert({
+      youtube_url:   normalizedUrl,
+      video_title:   form.videoTitle.trim(),
+      video_summary: summaryWithLegacy || null,
+      question_id:   null,   // UUID 타입이므로 빈 값으로 저장, 카테고리로 연결
+      category_id:   form.categoryId || null,
+      sort_order:    Number(form.sortOrder) || 0,
+    })
+    setSaving(false)
+
+    if (error) {
+      setMsg('❌ 저장 실패: ' + error.message)
+    } else {
+      setMsg(`✅ 등록 완료! 영상 ID: ${videoId}`)
+      setForm({ youtubeUrl: '', videoTitle: '', videoSummary: '', legacyId: '', categoryId: '', sortOrder: 0 })
+      setPreview(null)
+      loadVideos()
+      setTimeout(() => setMsg(''), 4000)
+    }
+  }
+
+  async function handleDelete(id) {
+    if (!confirm('삭제하시겠습니까?')) return
+    await supabase.from('question_videos').delete().eq('id', id)
+    loadVideos()
+  }
+
+  // 메인 고정 토글 — is_main=true는 최대 2개만 허용
+  async function handleToggleMain(v) {
+    const mainCount = videos.filter(x => x.is_main).length
+    if (!v.is_main && mainCount >= 2) {
+      setMsg('❌ 메인 고정은 최대 2개까지만 가능합니다. 기존 고정을 먼저 해제해주세요.')
+      setTimeout(() => setMsg(''), 3000)
+      return
+    }
+    setTogglingId(v.id)
+    const { error } = await setVideoMain(v.id, !v.is_main)
+    setTogglingId(null)
+    if (error) {
+      setMsg('❌ 변경 실패: ' + error.message)
+    } else {
+      setMsg(v.is_main ? '📌 메인 고정 해제됨' : '✅ 메인에 고정되었습니다!')
+      setTimeout(() => setMsg(''), 2500)
+      loadVideos()
+    }
+  }
+
+  return (
+    <div className="space-y-6">
+      {/* 등록 폼 */}
+      <div className="bg-white rounded-2xl shadow-sm p-6">
+        <h2 className="font-bold text-ocean-deep text-lg mb-4 flex items-center gap-2">
+          <PlayCircle className="w-5 h-5 text-red-500" />
+          YouTube 영상 등록
+        </h2>
+
+        {/* 안내 */}
+        <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-5 space-y-1 text-sm text-blue-700">
+          <p>📌 <strong>카테고리</strong>를 선택하면 해당 카테고리 페이지에 영상이 표시됩니다.</p>
+          <p>📌 <strong>YouTube URL</strong>은 youtu.be 단축 링크, youtube.com 전체 URL 모두 가능합니다.</p>
+          <p>📌 <strong>질문 레거시 ID</strong>(예: cardio-001)를 입력하면 참고용으로 저장됩니다.</p>
+        </div>
+
+        <form onSubmit={handleAdd} className="space-y-4">
+          {/* URL + 미리보기 */}
+          <div className="grid md:grid-cols-2 gap-4 items-start">
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-1.5">
+                YouTube URL <span className="text-red-500">*</span>
+              </label>
+              {/* type="text"로 고정 — type="url"은 youtu.be를 거부함 */}
+              <input
+                type="text"
+                value={form.youtubeUrl}
+                onChange={e => handleUrlChange(e.target.value)}
+                className="w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-hana"
+                placeholder="https://youtu.be/xxxx 또는 https://youtube.com/watch?v=xxxx"
+              />
+              {preview && (
+                <p className="text-xs text-green-600 mt-1 flex items-center gap-1">
+                  <CheckCircle className="w-3 h-3" /> 영상 ID 인식됨: <span className="font-mono">{preview}</span>
+                </p>
+              )}
+              {form.youtubeUrl && !preview && (
+                <p className="text-xs text-red-500 mt-1">⚠️ 유효한 YouTube URL을 입력하세요</p>
+              )}
+            </div>
+            {/* 실시간 썸네일 미리보기 */}
+            <div>
+              {preview ? (
+                <div className="rounded-xl overflow-hidden border border-gray-200 aspect-video bg-black">
+                  <img
+                    src={`https://img.youtube.com/vi/${preview}/mqdefault.jpg`}
+                    alt="미리보기"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              ) : (
+                <div className="rounded-xl border-2 border-dashed border-gray-200 aspect-video flex items-center justify-center text-gray-300 text-sm">
+                  URL 입력 시 미리보기
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* 제목 + 요약 */}
+          <div className="grid md:grid-cols-2 gap-4">
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-1.5">
+                영상 제목 <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                value={form.videoTitle}
+                onChange={e => setForm(f => ({ ...f, videoTitle: e.target.value }))}
+                className="w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-hana"
+                placeholder="영상 제목"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-1.5">요약 설명 (선택)</label>
+              <input
+                type="text"
+                value={form.videoSummary}
+                onChange={e => setForm(f => ({ ...f, videoSummary: e.target.value }))}
+                className="w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-hana"
+                placeholder="영상 한 줄 설명"
+              />
+            </div>
+          </div>
+
+          {/* 카테고리 + 질문ID + 순서 */}
+          <div className="grid md:grid-cols-3 gap-4">
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-1.5">
+                카테고리 <span className="text-gray-400 font-normal text-xs">(표시 위치)</span>
+              </label>
+              <select
+                value={form.categoryId}
+                onChange={e => setForm(f => ({ ...f, categoryId: e.target.value }))}
+                className="w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-hana bg-white"
+              >
+                <option value="">선택 안 함</option>
+                {CATEGORY_OPTIONS.map(c => (
+                  <option key={c.id} value={c.id}>{c.name}</option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-1.5">
+                질문 레거시 ID <span className="text-gray-400 font-normal text-xs">(참고용)</span>
+              </label>
+              <input
+                type="text"
+                value={form.legacyId}
+                onChange={e => setForm(f => ({ ...f, legacyId: e.target.value }))}
+                className="w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-hana"
+                placeholder="예: cardio-001 (선택)"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-1.5">정렬 순서</label>
+              <input
+                type="number"
+                value={form.sortOrder}
+                onChange={e => setForm(f => ({ ...f, sortOrder: e.target.value }))}
+                className="w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-hana"
+                min="0"
+              />
+            </div>
+          </div>
+
+          {msg && (
+            <p className={`text-sm font-medium px-3 py-2 rounded-lg ${msg.includes('❌') ? 'bg-red-50 text-red-600' : 'bg-green-50 text-green-600'}`}>
+              {msg}
+            </p>
+          )}
+          <button
+            type="submit"
+            disabled={saving}
+            className="flex items-center gap-2 px-6 py-3 bg-cyan-hana text-white rounded-xl font-semibold hover:bg-opacity-90 transition disabled:opacity-60"
+          >
+            <Save className="w-4 h-4" />
+            {saving ? '등록 중...' : 'YouTube 영상 등록'}
+          </button>
+        </form>
+      </div>
+
+      {/* 등록된 영상 목록 */}
+      <div className="bg-white rounded-2xl shadow-sm p-6">
+        <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
+          <div>
+            <h3 className="font-bold text-ocean-deep flex items-center gap-2">
+              <span>등록된 영상 ({videos.length}개)</span>
+              {videos.filter(v => v.is_main).length > 0 && (
+                <span className="text-xs bg-teal-100 text-teal-700 px-2 py-0.5 rounded-full font-semibold">
+                  📌 메인 고정 {videos.filter(v => v.is_main).length}/2
+                </span>
+              )}
+            </h3>
+            <p className="text-xs text-gray-400 mt-0.5">
+              📌 버튼으로 메인 페이지에 고정할 영상을 선택하세요 (최대 2개)
+            </p>
+          </div>
+          <button onClick={loadVideos} className="text-sm text-gray-400 hover:text-cyan-hana flex items-center gap-1">
+            <RefreshCw className="w-3.5 h-3.5" /> 새로고침
+          </button>
+        </div>
+
+        {/* 메인 고정 현황 미리보기 */}
+        {videos.filter(v => v.is_main).length > 0 && (
+          <div className="mb-5 p-4 bg-teal-50 border border-teal-200 rounded-xl">
+            <p className="text-sm font-bold text-teal-800 mb-3 flex items-center gap-2">
+              <Star className="w-4 h-4" /> 현재 메인 페이지에 표시되는 영상
+            </p>
+            <div className="flex gap-3 flex-wrap">
+              {videos.filter(v => v.is_main).map(v => {
+                const vid = extractVideoId(v.youtube_url)
+                return (
+                  <div key={v.id} className="flex items-center gap-2 bg-white rounded-xl border border-teal-200 p-2 pr-3">
+                    {vid && (
+                      <img src={`https://img.youtube.com/vi/${vid}/mqdefault.jpg`} alt="" className="w-16 h-10 object-cover rounded-lg" />
+                    )}
+                    <div>
+                      <p className="text-xs font-semibold text-gray-800 line-clamp-1 max-w-[150px]">{v.video_title}</p>
+                      <button
+                        onClick={() => handleToggleMain(v)}
+                        disabled={togglingId === v.id}
+                        className="text-xs text-red-400 hover:text-red-600 mt-0.5 flex items-center gap-1"
+                      >
+                        <PinOff className="w-3 h-3" /> 고정 해제
+                      </button>
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        )}
+
+        {loading ? (
+          <div className="py-8 text-center text-gray-400 animate-pulse">로딩 중...</div>
+        ) : videos.length === 0 ? (
+          <div className="py-8 text-center text-gray-400">
+            <PlayCircle className="w-10 h-10 mx-auto mb-2 text-gray-200" />
+            <p>등록된 영상이 없습니다.</p>
+            <p className="text-sm mt-1">위 폼에서 YouTube URL을 입력해 등록하세요.</p>
+          </div>
+        ) : (
+          <div className="space-y-3">
+            {videos.map(v => {
+              const vid = extractVideoId(v.youtube_url)
+              const catName = CATEGORY_OPTIONS.find(c => c.id === v.category_id)?.name
+              const isToggling = togglingId === v.id
+              return (
+                <div key={v.id} className={`flex items-start gap-3 p-3 border rounded-xl transition ${v.is_main ? 'border-teal-300 bg-teal-50/50' : 'border-gray-100 hover:border-gray-200'}`}>
+                  {vid ? (
+                    <img
+                      src={`https://img.youtube.com/vi/${vid}/mqdefault.jpg`}
+                      alt={v.video_title}
+                      className="w-24 h-16 object-cover rounded-lg shrink-0"
+                    />
+                  ) : (
+                    <div className="w-24 h-16 bg-gray-100 rounded-lg shrink-0 flex items-center justify-center">
+                      <PlayCircle className="w-6 h-6 text-gray-300" />
+                    </div>
+                  )}
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2 flex-wrap">
+                      {v.is_main && (
+                        <span className="text-xs bg-teal-500 text-white px-2 py-0.5 rounded-full font-bold flex items-center gap-1">
+                          <Pin className="w-2.5 h-2.5" /> 메인 고정
+                        </span>
+                      )}
+                      <p className="text-sm font-semibold text-gray-800 line-clamp-1">{v.video_title}</p>
+                    </div>
+                    {v.video_summary && <p className="text-xs text-gray-500 mt-0.5 line-clamp-1">{v.video_summary}</p>}
+                    <div className="flex flex-wrap gap-2 mt-1.5">
+                      {catName && (
+                        <span className="text-xs bg-green-50 text-green-600 px-2 py-0.5 rounded-full">
+                          {catName}
+                        </span>
+                      )}
+                      {!catName && !v.question_id && (
+                        <span className="text-xs bg-yellow-50 text-yellow-600 px-2 py-0.5 rounded-full">
+                          ⚠️ 카테고리 미지정
+                        </span>
+                      )}
+                      <span className="text-xs bg-gray-50 text-gray-500 px-2 py-0.5 rounded-full font-mono">
+                        {vid}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="flex flex-col items-end gap-2 shrink-0">
+                    {/* 메인 고정 토글 버튼 */}
+                    <button
+                      onClick={() => handleToggleMain(v)}
+                      disabled={isToggling}
+                      title={v.is_main ? '메인 고정 해제' : '메인에 고정'}
+                      className={`flex items-center gap-1 text-xs px-3 py-1.5 rounded-lg font-semibold transition-all ${
+                        v.is_main
+                          ? 'bg-teal-100 text-teal-700 hover:bg-teal-200'
+                          : 'bg-gray-100 text-gray-500 hover:bg-teal-50 hover:text-teal-600'
+                      } disabled:opacity-50`}
+                    >
+                      {isToggling ? (
+                        <Loader className="w-3 h-3 animate-spin" />
+                      ) : v.is_main ? (
+                        <><PinOff className="w-3 h-3" /> 고정 해제</>
+                      ) : (
+                        <><Pin className="w-3 h-3" /> 메인 고정</>
+                      )}
+                    </button>
+                    <div className="flex items-center gap-1">
+                      <a
+                        href={v.youtube_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs text-red-500 hover:underline flex items-center gap-1"
+                      >
+                        <ExternalLink className="w-3 h-3" /> 보기
+                      </a>
+                      <button
+                        onClick={() => handleDelete(v.id)}
+                        className="text-gray-300 hover:text-red-500 transition p-1"
+                      >
+                        <Trash2 className="w-4 h-4" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        )}
+      </div>
+    </div>
+  )
+}
+
+// ───────────────────────────────────────────
+// 메인 AdminPage
+// ───────────────────────────────────────────
+export default function AdminPage() {
+  const [isLoggedIn,    setIsLoggedIn]    = useState(false)
+  const [activeTab,     setActiveTab]     = useState('user_questions')
+  const [submissions,   setSubmissions]   = useState([])
+  const [partners,      setPartners]      = useState([])
+  const [loading,       setLoading]       = useState(false)
+  const [search,        setSearch]        = useState('')
+  const [emailSettings, setEmailSettings] = useState({ host: '', port: 587, user: '', pass: '', to: '' })
+  const [settingsSaved, setSettingsSaved] = useState(false)
+
+  const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || ''
+
+  const fetchData = async () => {
+    setLoading(true)
+    try {
+      const localSubs  = JSON.parse(localStorage.getItem('phlorotannin_submissions') || '[]')
+      const localParts = JSON.parse(localStorage.getItem('phlorotannin_partner_applications') || '[]')
+      setSubmissions(localSubs); setPartners(localParts)
+      if (BACKEND_URL) {
+        const [subRes, partRes] = await Promise.all([
+          fetch(BACKEND_URL + '/api/admin/submissions',  { headers: { 'x-admin-key': ADMIN_PASS } }),
+          fetch(BACKEND_URL + '/api/admin/partners',     { headers: { 'x-admin-key': ADMIN_PASS } }),
+        ])
+        if (subRes.ok)  setSubmissions(await subRes.json())
+        if (partRes.ok) setPartners(await partRes.json())
+      }
+    } catch {}
+    setLoading(false)
+  }
+
+  useEffect(() => { if (isLoggedIn) fetchData() }, [isLoggedIn])
+
+  const downloadCSV = (data, filename) => {
+    if (!data.length) return
+    const keys = Object.keys(data[0])
+    const csv  = [keys.join(','), ...data.map(r => keys.map(k => `"${(r[k] || '').toString().replace(/"/g, '""')}"`).join(','))].join('\n')
+    const blob = new Blob(['\uFEFF' + csv], { type: 'text/csv;charset=utf-8;' })
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = filename; a.click()
+  }
+
+  const deleteSubmission = (id) => {
+    if (!confirm('삭제하시겠습니까?')) return
+    setSubmissions(prev => prev.filter(s => s.id !== id))
+  }
+
+  const filteredSubs  = submissions.filter(s => !search || s.name?.includes(search) || s.email?.includes(search) || s.phone?.includes(search))
+  const filteredParts = partners.filter(p => !search || p.name?.includes(search) || p.email?.includes(search))
+
+  if (!isLoggedIn) return <LoginScreen onLogin={() => setIsLoggedIn(true)} />
+
+  const tabs = [
+    { id: 'user_questions', label: '고객 질문',    icon: MessageSquare },
+    { id: 'partner_manage', label: '파트너 관리',  icon: Globe },
+    { id: 'qa_answers',     label: 'Q&A 답변',     icon: PenSquare },
+    { id: 'youtube',        label: 'YouTube',       icon: PlayCircle },
+    { id: 'submissions',    label: '상담 문의',     icon: MessageSquare, count: submissions.length },
+    { id: 'partners',       label: '파트너 신청',   icon: Users,         count: partners.length },
+    { id: 'stats',          label: '통계',          icon: BookOpen },
+    { id: 'settings',       label: '설정',          icon: Settings },
+  ]
+
+  return (
+    <div className="pt-16 min-h-screen bg-gray-50">
+      <div className="bg-ocean-deep text-white py-6">
+        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+          <div>
+            <h1 className="text-2xl font-bold">관리자 대시보드</h1>
+            <p className="text-gray-400 text-base mt-0.5">플로로탄닌 파트너스 운영 관리</p>
+          </div>
+          <div className="flex gap-3">
+            <button onClick={fetchData} className="flex items-center gap-2 text-gray-300 hover:text-white text-base">
+              <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} /> 새로고침
+            </button>
+            <button onClick={() => setIsLoggedIn(false)} className="text-gray-400 hover:text-white text-base">로그아웃</button>
+          </div>
+        </div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-6 py-6">
+        {/* 통계 카드 */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
           {[
-            { label: '총 상담 문의', value: submissions.length, color: 'text-cyan-hana' },
-            { label: '파트너 신청', value: partners.length, color: 'text-gold-hana' },
-            { label: '뉴스레터 구독', value: submissions.filter(s => s.formType === 'newsletter').length, color: 'text-purple-500' },
-            { label: '오늘 신규', value: [...submissions, ...partners].filter(s => {
-              const d = new Date(s.timestamp || s.created_at)
-              const today = new Date()
-              return d.toDateString() === today.toDateString()
-            }).length, color: 'text-green-500' },
+            { label: '등록 파트너', value: JSON.parse(localStorage.getItem(PARTNERS_KEY) || '[]').length, color: 'text-cyan-hana' },
+            { label: '상담 문의',   value: submissions.length,  color: 'text-blue-500' },
+            { label: '파트너 신청', value: partners.length,     color: 'text-gold-hana' },
+            { label: '오늘 신규',   value: [...submissions, ...partners].filter(s => new Date(s.timestamp || s.created_at).toDateString() === new Date().toDateString()).length, color: 'text-green-500' },
           ].map(item => (
             <div key={item.label} className="bg-white rounded-2xl shadow-sm p-5">
               <div className={`text-3xl font-bold ${item.color}`}>{item.value}</div>
-              <div className="text-sm text-gray-500 mt-1">{item.label}</div>
+              <div className="text-base text-gray-500 mt-1">{item.label}</div>
             </div>
           ))}
         </div>
 
-        {/* Tabs */}
+        {/* 탭 */}
         <div className="flex gap-1 bg-white rounded-xl p-1 shadow-sm mb-6 overflow-x-auto">
           {tabs.map(tab => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              className={`flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium whitespace-nowrap transition-all ${
-                activeTab === tab.id ? 'bg-ocean-deep text-white' : 'text-gray-500 hover:bg-gray-100'
-              }`}
-            >
+            <button key={tab.id} onClick={() => setActiveTab(tab.id)}
+              className={`flex items-center gap-2 px-4 py-2.5 rounded-lg text-base font-medium whitespace-nowrap transition-all ${activeTab === tab.id ? 'bg-ocean-deep text-white' : 'text-gray-500 hover:bg-gray-100'}`}>
               <tab.icon className="w-4 h-4" />
               {tab.label}
               {tab.count !== undefined && (
-                <span className={`text-xs px-1.5 py-0.5 rounded-full ${activeTab === tab.id ? 'bg-white/20 text-white' : 'bg-gray-100 text-gray-500'}`}>
-                  {tab.count}
-                </span>
+                <span className={`text-xs px-1.5 py-0.5 rounded-full ${activeTab === tab.id ? 'bg-white/20 text-white' : 'bg-gray-100 text-gray-500'}`}>{tab.count}</span>
               )}
             </button>
           ))}
         </div>
 
-        {/* Submissions tab */}
+        {activeTab === 'user_questions' && <UserQuestionsTab />}
+
+        {activeTab === 'partner_manage' && <PartnerManageTab />}
+
+        {activeTab === 'qa_answers' && <QAAnswerTab />}
+
+        {activeTab === 'youtube' && <YouTubeManageTab />}
+
         {activeTab === 'submissions' && (
           <div className="bg-white rounded-2xl shadow-sm overflow-hidden">
             <div className="p-5 border-b flex items-center justify-between gap-4">
               <div className="relative flex-1 max-w-sm">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
-                <input type="text" value={search} onChange={e => setSearch(e.target.value)} placeholder="이름, 이메일 검색..." className="input-field pl-9 py-2 text-sm" />
+                <input type="text" value={search} onChange={e => setSearch(e.target.value)} placeholder="검색..." className="input-field pl-9 py-2 text-base" />
               </div>
-              <button
-                onClick={() => downloadCSV(filteredSubmissions, '상담문의_' + new Date().toLocaleDateString() + '.csv')}
-                className="flex items-center gap-2 text-sm bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg transition-colors"
-              >
-                <Download className="w-4 h-4" /> CSV 다운로드
+              <button onClick={() => downloadCSV(filteredSubs, '상담문의.csv')}
+                className="flex items-center gap-2 text-base bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg">
+                <Download className="w-4 h-4" /> CSV
               </button>
             </div>
             <div className="overflow-x-auto">
               <table className="w-full">
-                <thead>
-                  <tr className="bg-gray-50 text-left">
-                    <th className="p-4 text-xs font-semibold text-gray-500 uppercase">이름</th>
-                    <th className="p-4 text-xs font-semibold text-gray-500 uppercase">연락처</th>
-                    <th className="p-4 text-xs font-semibold text-gray-500 uppercase">이메일</th>
-                    <th className="p-4 text-xs font-semibold text-gray-500 uppercase">카테고리</th>
-                    <th className="p-4 text-xs font-semibold text-gray-500 uppercase">유형</th>
-                    <th className="p-4 text-xs font-semibold text-gray-500 uppercase">날짜</th>
-                    <th className="p-4 text-xs font-semibold text-gray-500 uppercase"></th>
-                  </tr>
-                </thead>
+                <thead><tr className="bg-gray-50">{['이름','연락처','이메일','카테고리','유형','날짜',''].map(h => <th key={h} className="p-4 text-sm font-semibold text-gray-500 text-left">{h}</th>)}</tr></thead>
                 <tbody>
-                  {filteredSubmissions.length === 0 ? (
-                    <tr><td colSpan={7} className="p-12 text-center text-gray-400">데이터가 없습니다</td></tr>
-                  ) : (
-                    filteredSubmissions.map((s, i) => (
+                  {filteredSubs.length === 0
+                    ? <tr><td colSpan={7} className="p-12 text-center text-gray-400">데이터가 없습니다</td></tr>
+                    : filteredSubs.map((s, i) => (
                       <tr key={s.id || i} className="border-t hover:bg-gray-50">
                         <td className="p-4 font-medium text-gray-700">{s.name}</td>
-                        <td className="p-4 text-gray-500 text-sm">{s.phone}</td>
-                        <td className="p-4 text-gray-500 text-sm">
-                          <a href={`mailto:${s.email}`} className="hover:text-cyan-hana">{s.email}</a>
-                        </td>
-                        <td className="p-4 text-gray-500 text-sm">{s.category}</td>
-                        <td className="p-4">
-                          <span className={`text-xs px-2 py-1 rounded-full font-medium ${s.formType === 'newsletter' ? 'bg-purple-100 text-purple-600' : 'bg-blue-100 text-blue-600'}`}>
-                            {s.formType === 'newsletter' ? '뉴스레터' : '상담'}
-                          </span>
-                        </td>
-                        <td className="p-4 text-gray-400 text-xs">{new Date(s.timestamp || s.created_at).toLocaleDateString('ko-KR')}</td>
-                        <td className="p-4">
-                          <button onClick={() => deleteSubmission(s.id || i)} className="text-gray-300 hover:text-red-500 transition-colors">
-                            <Trash2 className="w-4 h-4" />
-                          </button>
-                        </td>
+                        <td className="p-4 text-gray-500 text-base">{s.phone}</td>
+                        <td className="p-4 text-gray-500 text-base"><a href={`mailto:${s.email}`} className="hover:text-cyan-hana">{s.email}</a></td>
+                        <td className="p-4 text-gray-500 text-base">{s.category}</td>
+                        <td className="p-4"><span className={`text-xs px-2 py-1 rounded-full font-medium ${s.formType === 'newsletter' ? 'bg-purple-100 text-purple-600' : 'bg-blue-100 text-blue-600'}`}>{s.formType === 'newsletter' ? '뉴스레터' : '상담'}</span></td>
+                        <td className="p-4 text-gray-400 text-sm">{new Date(s.timestamp || s.created_at).toLocaleDateString('ko-KR')}</td>
+                        <td className="p-4"><button onClick={() => deleteSubmission(s.id || i)} className="text-gray-300 hover:text-red-500"><Trash2 className="w-4 h-4" /></button></td>
                       </tr>
-                    ))
-                  )}
+                    ))}
                 </tbody>
               </table>
             </div>
           </div>
         )}
 
-        {/* Partners tab */}
         {activeTab === 'partners' && (
           <div className="bg-white rounded-2xl shadow-sm overflow-hidden">
             <div className="p-5 border-b flex items-center justify-between gap-4">
               <div className="relative flex-1 max-w-sm">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
-                <input type="text" value={search} onChange={e => setSearch(e.target.value)} placeholder="이름, 이메일 검색..." className="input-field pl-9 py-2 text-sm" />
+                <input type="text" value={search} onChange={e => setSearch(e.target.value)} placeholder="검색..." className="input-field pl-9 py-2 text-base" />
               </div>
-              <button
-                onClick={() => downloadCSV(filteredPartners, '파트너신청_' + new Date().toLocaleDateString() + '.csv')}
-                className="flex items-center gap-2 text-sm bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg transition-colors"
-              >
-                <Download className="w-4 h-4" /> CSV 다운로드
+              <button onClick={() => downloadCSV(filteredParts, '파트너신청.csv')}
+                className="flex items-center gap-2 text-base bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg">
+                <Download className="w-4 h-4" /> CSV
               </button>
             </div>
             <div className="overflow-x-auto">
               <table className="w-full">
-                <thead>
-                  <tr className="bg-gray-50 text-left">
-                    <th className="p-4 text-xs font-semibold text-gray-500 uppercase">이름</th>
-                    <th className="p-4 text-xs font-semibold text-gray-500 uppercase">연락처</th>
-                    <th className="p-4 text-xs font-semibold text-gray-500 uppercase">이메일</th>
-                    <th className="p-4 text-xs font-semibold text-gray-500 uppercase">직업</th>
-                    <th className="p-4 text-xs font-semibold text-gray-500 uppercase">신청일</th>
-                  </tr>
-                </thead>
+                <thead><tr className="bg-gray-50">{['이름','연락처','이메일','직업','신청일'].map(h => <th key={h} className="p-4 text-sm font-semibold text-gray-500 text-left">{h}</th>)}</tr></thead>
                 <tbody>
-                  {filteredPartners.length === 0 ? (
-                    <tr><td colSpan={5} className="p-12 text-center text-gray-400">데이터가 없습니다</td></tr>
-                  ) : (
-                    filteredPartners.map((p, i) => (
+                  {filteredParts.length === 0
+                    ? <tr><td colSpan={5} className="p-12 text-center text-gray-400">데이터가 없습니다</td></tr>
+                    : filteredParts.map((p, i) => (
                       <tr key={p.id || i} className="border-t hover:bg-gray-50">
                         <td className="p-4 font-medium text-gray-700">{p.name}</td>
-                        <td className="p-4 text-gray-500 text-sm">{p.phone}</td>
-                        <td className="p-4 text-gray-500 text-sm">
-                          <a href={`mailto:${p.email}`} className="hover:text-cyan-hana">{p.email}</a>
-                        </td>
-                        <td className="p-4 text-gray-500 text-sm">{p.job}</td>
-                        <td className="p-4 text-gray-400 text-xs">{new Date(p.timestamp || p.created_at).toLocaleDateString('ko-KR')}</td>
+                        <td className="p-4 text-gray-500 text-base">{p.phone}</td>
+                        <td className="p-4 text-gray-500 text-base"><a href={`mailto:${p.email}`} className="hover:text-cyan-hana">{p.email}</a></td>
+                        <td className="p-4 text-gray-500 text-base">{p.job}</td>
+                        <td className="p-4 text-gray-400 text-sm">{new Date(p.timestamp || p.created_at).toLocaleDateString('ko-KR')}</td>
                       </tr>
-                    ))
-                  )}
+                    ))}
                 </tbody>
               </table>
             </div>
           </div>
         )}
 
-        {/* Stats tab */}
         {activeTab === 'stats' && (
           <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-white rounded-2xl shadow-sm p-6">
               <h3 className="font-bold text-ocean-deep mb-4">카테고리별 문의</h3>
               <div className="space-y-3">
-                {Object.entries(
-                  submissions.reduce((acc, s) => {
-                    acc[s.category || '미지정'] = (acc[s.category || '미지정'] || 0) + 1
-                    return acc
-                  }, {})
-                ).sort((a, b) => b[1] - a[1]).slice(0, 8).map(([cat, count]) => (
+                {Object.entries(submissions.reduce((acc, s) => { acc[s.category || '미지정'] = (acc[s.category || '미지정'] || 0) + 1; return acc }, {}))
+                  .sort((a, b) => b[1] - a[1]).slice(0, 8).map(([cat, count]) => (
                   <div key={cat} className="flex items-center gap-3">
-                    <div className="flex-1 text-sm text-gray-600 truncate">{cat}</div>
-                    <div className="w-24 h-2 bg-gray-100 rounded-full">
-                      <div className="h-2 bg-cyan-hana rounded-full" style={{ width: `${(count / submissions.length) * 100}%` }} />
-                    </div>
-                    <div className="text-xs text-gray-400 w-6 text-right">{count}</div>
+                    <div className="flex-1 text-base text-gray-600 truncate">{cat}</div>
+                    <div className="w-24 h-2 bg-gray-100 rounded-full"><div className="h-2 bg-cyan-hana rounded-full" style={{ width: `${(count / Math.max(1, submissions.length)) * 100}%` }} /></div>
+                    <div className="text-sm text-gray-400 w-6 text-right">{count}</div>
                   </div>
                 ))}
+                {submissions.length === 0 && <p className="text-gray-400 text-base">데이터가 없습니다</p>}
               </div>
             </div>
             <div className="bg-white rounded-2xl shadow-sm p-6">
               <h3 className="font-bold text-ocean-deep mb-4">월별 신청 현황</h3>
               <div className="space-y-3">
                 {Array.from({ length: 6 }, (_, i) => {
-                  const d = new Date()
-                  d.setMonth(d.getMonth() - (5 - i))
+                  const d = new Date(); d.setMonth(d.getMonth() - (5 - i))
                   const month = d.toLocaleDateString('ko-KR', { year: 'numeric', month: 'long' })
                   const count = [...submissions, ...partners].filter(s => {
                     const sd = new Date(s.timestamp || s.created_at)
@@ -356,11 +1692,9 @@ export default function AdminPage() {
                   return { month, count }
                 }).map(item => (
                   <div key={item.month} className="flex items-center gap-3">
-                    <div className="text-sm text-gray-600 w-24">{item.month}</div>
-                    <div className="flex-1 h-2 bg-gray-100 rounded-full">
-                      <div className="h-2 bg-gold-hana rounded-full" style={{ width: `${Math.min(100, (item.count / 10) * 100)}%` }} />
-                    </div>
-                    <div className="text-xs text-gray-400 w-6 text-right">{item.count}</div>
+                    <div className="text-base text-gray-600 w-28">{item.month}</div>
+                    <div className="flex-1 h-2 bg-gray-100 rounded-full"><div className="h-2 bg-gold-hana rounded-full" style={{ width: `${Math.min(100, (item.count / 10) * 100)}%` }} /></div>
+                    <div className="text-sm text-gray-400 w-6 text-right">{item.count}</div>
                   </div>
                 ))}
               </div>
@@ -368,105 +1702,33 @@ export default function AdminPage() {
           </div>
         )}
 
-        {/* Email Settings tab */}
         {activeTab === 'settings' && (
-          <div className="max-w-2xl">
+          <div className="max-w-2xl space-y-4">
             <div className="bg-white rounded-2xl shadow-sm p-6 space-y-5">
               <div>
-                <h3 className="font-bold text-ocean-deep text-lg mb-1">이메일 알림 설정</h3>
-                <p className="text-sm text-gray-500">상담 신청, 파트너 신청 시 자동으로 이메일 알림을 받을 수 있습니다.</p>
+                <h3 className="font-bold text-ocean-deep text-xl mb-1">이메일 알림 설정</h3>
+                <p className="text-base text-gray-500">상담 신청, 파트너 신청 시 자동으로 이메일 알림을 받을 수 있습니다.</p>
               </div>
-
               <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1.5">SMTP 호스트</label>
-                  <input
-                    value={emailSettings.host}
-                    onChange={e => setEmailSettings(p => ({ ...p, host: e.target.value }))}
-                    className="input-field"
-                    placeholder="smtp.naver.com"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1.5">SMTP 포트</label>
-                  <input
-                    type="number"
-                    value={emailSettings.port}
-                    onChange={e => setEmailSettings(p => ({ ...p, port: parseInt(e.target.value) }))}
-                    className="input-field"
-                    placeholder="465"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1.5">발신 이메일</label>
-                  <input
-                    value={emailSettings.user}
-                    onChange={e => setEmailSettings(p => ({ ...p, user: e.target.value }))}
-                    className="input-field"
-                    placeholder="meul777@naver.com"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1.5">네이버 앱 비밀번호</label>
-                  <input
-                    type="password"
-                    value={emailSettings.pass}
-                    onChange={e => setEmailSettings(p => ({ ...p, pass: e.target.value }))}
-                    className="input-field"
-                    placeholder="네이버 앱 비밀번호 입력"
-                  />
-                </div>
+                <div><label className="block text-base font-medium text-gray-700 mb-1.5">SMTP 호스트</label><input value={emailSettings.host} onChange={e => setEmailSettings(p => ({ ...p, host: e.target.value }))} className="input-field" placeholder="smtp.gmail.com" /></div>
+                <div><label className="block text-base font-medium text-gray-700 mb-1.5">SMTP 포트</label><input type="number" value={emailSettings.port} onChange={e => setEmailSettings(p => ({ ...p, port: parseInt(e.target.value) }))} className="input-field" placeholder="587" /></div>
+                <div><label className="block text-base font-medium text-gray-700 mb-1.5">발신 이메일</label><input value={emailSettings.user} onChange={e => setEmailSettings(p => ({ ...p, user: e.target.value }))} className="input-field" placeholder="your@gmail.com" /></div>
+                <div><label className="block text-base font-medium text-gray-700 mb-1.5">앱 비밀번호</label><input type="password" value={emailSettings.pass} onChange={e => setEmailSettings(p => ({ ...p, pass: e.target.value }))} className="input-field" /></div>
               </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1.5">알림 수신 이메일</label>
-                <input
-                  value={emailSettings.to}
-                  onChange={e => setEmailSettings(p => ({ ...p, to: e.target.value }))}
-                  className="input-field"
-                  placeholder="meul777@naver.com"
-                />
-              </div>
-
-              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 text-sm text-blue-700 space-y-2">
-                <p><strong>📧 네이버 메일 SMTP 설정 방법:</strong></p>
-                <ol className="list-decimal ml-4 space-y-1">
-                  <li>네이버 메일 → 환경설정 → POP3/IMAP 설정</li>
-                  <li>IMAP/SMTP 사용 → <strong>사용함</strong> 선택 후 저장</li>
-                  <li>네이버 보안설정 → 앱 비밀번호 발급</li>
-                  <li>발급받은 앱 비밀번호를 위 칸에 입력</li>
-                </ol>
-                <p className="mt-1">SMTP 호스트: <code className="bg-blue-100 px-1 rounded">smtp.naver.com</code> / 포트: <code className="bg-blue-100 px-1 rounded">465</code></p>
-              </div>
-
+              <div><label className="block text-base font-medium text-gray-700 mb-1.5">알림 수신 이메일</label><input value={emailSettings.to} onChange={e => setEmailSettings(p => ({ ...p, to: e.target.value }))} className="input-field" placeholder="your@gmail.com" /></div>
               <button
-                onClick={saveEmailSettings}
-                className={`w-full py-3 rounded-xl font-semibold flex items-center justify-center gap-2 transition-all ${
-                  settingsSaved ? 'bg-green-500 text-white' : 'btn-primary'
-                }`}
-              >
-                {settingsSaved ? (
-                  <><span>✓</span> 저장되었습니다!</>
-                ) : (
-                  <><Save className="w-4 h-4" /> 설정 저장</>
-                )}
+                onClick={() => { setSettingsSaved(true); setTimeout(() => setSettingsSaved(false), 3000) }}
+                className={`w-full py-3 rounded-xl font-semibold flex items-center justify-center gap-2 ${settingsSaved ? 'bg-green-500 text-white' : 'btn-primary'}`}>
+                {settingsSaved ? <><Check className="w-4 h-4" /> 저장되었습니다!</> : <><Save className="w-4 h-4" /> 설정 저장</>}
               </button>
             </div>
-
-            <div className="bg-white rounded-2xl shadow-sm p-6 mt-4 space-y-4">
-              <h3 className="font-bold text-ocean-deep">Q&A 데이터 관리</h3>
-              <p className="text-sm text-gray-500">Q&A를 추가/수정하려면 아래 GitHub 링크에서 직접 편집하거나, JSON 형식으로 업로드하세요.</p>
-              <div className="bg-gray-50 rounded-xl p-4 text-sm font-mono text-gray-600">
-                GitHub 저장소: hyungunho00-creator/hanain<br />
-                파일 경로: src/data/qa.json
-              </div>
-              <a
-                href="https://github.com/hyungunho00-creator/hanain"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-gray-800 text-white px-4 py-2 rounded-lg text-sm hover:bg-gray-700 transition-colors"
-              >
-                GitHub에서 편집하기
+            <div className="bg-white rounded-2xl shadow-sm p-6 space-y-3">
+              <h3 className="font-bold text-ocean-deep">GitHub 저장소</h3>
+              <div className="bg-gray-50 rounded-xl p-4 text-base font-mono text-gray-600">hyungunho00-creator/hanain · hanain/public/partners.json</div>
+              <a href="https://github.com/hyungunho00-creator/hanain/blob/main/hanain/public/partners.json"
+                target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-gray-800 text-white px-4 py-2 rounded-lg text-base hover:bg-gray-700">
+                partners.json 직접 편집
               </a>
             </div>
           </div>

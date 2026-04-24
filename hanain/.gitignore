@@ -39,3 +39,4 @@ src/data/add_*.py
 src/data/qa_*.json
 src/data/cardio_*.json
 .vercel
+core

@@ -1,7 +1,8 @@
-import { useState } from 'react'
-import { PARTNER_CONFIG } from '../config/partner'
+import { useState, useEffect } from 'react'
+import { usePartner } from '../context/PartnerContext'
+import SEOHead from '../components/common/SEOHead'
 import { Link } from 'react-router-dom'
-import { ChevronDown, ChevronUp, MessageSquare, ArrowRight, CheckCircle } from 'lucide-react'
+import { ChevronDown, ChevronUp, MessageSquare, ArrowRight, CheckCircle, BookOpen } from 'lucide-react'
 
 // ─── 질환별 카드 데이터 (쉬운 말로) ───────────────────────────────
 const diseases = [
@@ -197,12 +198,12 @@ function DiseaseCard({ d }) {
         </div>
         <div className="flex-1">
           <div
-            className="text-xs font-bold px-2.5 py-1 rounded-full inline-block mb-1"
+            className="text-sm font-bold px-2.5 py-1 rounded-full inline-block mb-1"
             style={{ backgroundColor: d.color + '20', color: d.color }}
           >
             {d.name}
           </div>
-          <p className="font-bold text-gray-800 text-base leading-tight">{d.tagline}</p>
+          <p className="font-bold text-gray-800 text-lg leading-tight">{d.tagline}</p>
         </div>
         <div
           className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0"
@@ -220,19 +221,19 @@ function DiseaseCard({ d }) {
         <div className="px-5 pb-6 space-y-4">
           {/* 쉬운 설명 */}
           <div className="bg-white rounded-2xl p-4 border border-gray-100">
-            <p className="text-sm font-bold text-gray-500 mb-2">📖 쉽게 설명하면</p>
-            <p className="text-gray-800 text-sm leading-relaxed">{d.simple}</p>
-            <p className="text-gray-500 text-xs mt-2 italic">→ {d.what}</p>
+            <p className="text-base font-bold text-gray-500 mb-2">📖 쉽게 설명하면</p>
+            <p className="text-gray-800 text-base leading-relaxed">{d.simple}</p>
+            <p className="text-gray-500 text-sm mt-2 italic">→ {d.what}</p>
           </div>
 
           {/* 증상 체크 */}
           <div className="bg-white rounded-2xl p-4 border border-gray-100">
-            <p className="text-sm font-bold text-gray-500 mb-3">🩺 이런 증상이 있다면?</p>
+            <p className="text-base font-bold text-gray-500 mb-3">🩺 이런 증상이 있다면?</p>
             <div className="grid grid-cols-2 gap-2">
               {d.symptom.map((s, i) => (
                 <div key={i} className="flex items-center gap-2">
-                  <span className="text-base">⚠️</span>
-                  <span className="text-sm text-gray-700">{s}</span>
+                  <span className="text-lg">⚠️</span>
+                  <span className="text-base text-gray-700">{s}</span>
                 </div>
               ))}
             </div>
@@ -243,10 +244,10 @@ function DiseaseCard({ d }) {
             className="rounded-2xl p-4"
             style={{ backgroundColor: d.color + '10', border: `1.5px solid ${d.color}30` }}
           >
-            <p className="text-sm font-bold mb-2" style={{ color: d.color }}>🌊 플로로탄닌이 어떻게 도움이 되나요?</p>
-            <p className="text-gray-800 text-sm leading-relaxed mb-3">{d.howHelps}</p>
+            <p className="text-base font-bold mb-2" style={{ color: d.color }}>🌊 플로로탄닌이 어떻게 도움이 되나요?</p>
+            <p className="text-gray-800 text-base leading-relaxed mb-3">{d.howHelps}</p>
             <div
-              className="rounded-xl px-4 py-2.5 text-sm font-semibold"
+              className="rounded-xl px-4 py-2.5 text-base font-semibold"
               style={{ backgroundColor: d.color + '15', color: d.color }}
             >
               {d.analogy}
@@ -257,8 +258,8 @@ function DiseaseCard({ d }) {
           <div className="bg-white rounded-2xl p-4 border border-gray-100 flex items-start gap-3">
             <span className="text-xl flex-shrink-0">🔬</span>
             <div>
-              <p className="text-xs font-bold text-gray-400 mb-1">연구 근거</p>
-              <p className="text-sm text-gray-700">{d.evidence}</p>
+              <p className="text-sm font-bold text-gray-400 mb-1">연구 근거</p>
+              <p className="text-base text-gray-700">{d.evidence}</p>
             </div>
           </div>
 
@@ -266,15 +267,15 @@ function DiseaseCard({ d }) {
           <div className="bg-amber-50 rounded-2xl p-4 border border-amber-100 flex items-start gap-3">
             <span className="text-xl flex-shrink-0">💡</span>
             <div>
-              <p className="text-xs font-bold text-amber-600 mb-1">함께 하면 더 좋은 생활 습관</p>
-              <p className="text-sm text-gray-700">{d.tip}</p>
+              <p className="text-sm font-bold text-amber-600 mb-1">함께 하면 더 좋은 생활 습관</p>
+              <p className="text-base text-gray-700">{d.tip}</p>
             </div>
           </div>
 
           {/* Q&A 바로가기 */}
           <Link
             to={`/qa?category=${d.id}`}
-            className="flex items-center justify-center gap-2 w-full py-3 rounded-2xl text-sm font-bold text-white transition-all hover:opacity-90"
+            className="flex items-center justify-center gap-2 w-full py-3 rounded-2xl text-base font-bold text-white transition-all hover:opacity-90"
             style={{ backgroundColor: d.color }}
           >
             {d.name} 관련 Q&A 더 보기 <ArrowRight className="w-4 h-4" />
@@ -294,13 +295,384 @@ function FaqItem({ item }) {
         onClick={() => setOpen(!open)}
         className="w-full text-left px-5 py-4 flex items-center gap-3 hover:bg-gray-50 transition-colors"
       >
-        <span className="text-lg flex-shrink-0">🙋</span>
-        <span className="font-semibold text-gray-800 flex-1 text-sm md:text-base">{item.q}</span>
+        <span className="text-xl flex-shrink-0">🙋</span>
+        <span className="font-semibold text-gray-800 flex-1 text-base md:text-lg">{item.q}</span>
         {open ? <ChevronUp className="w-5 h-5 text-gray-400 flex-shrink-0" /> : <ChevronDown className="w-5 h-5 text-gray-400 flex-shrink-0" />}
       </button>
       {open && (
         <div className="px-5 pb-5 pt-1 bg-cyan-50 border-t border-gray-100">
-          <p className="text-sm text-gray-700 leading-relaxed">{item.a}</p>
+          <p className="text-base text-gray-700 leading-relaxed">{item.a}</p>
+        </div>
+      )}
+    </div>
+  )
+}
+
+// ─── 심화 연구 카테고리 데이터 ────────────────────────────────────
+const CATEGORIES = [
+  {
+    id: 'cancer',
+    emoji: '🛡️',
+    label: '암·면역 관리',
+    color: '#7C3AED',
+    bg: '#F5F3FF',
+    border: '#DDD6FE',
+    headline: '치료 후 몸이 너무 무겁다면…',
+    subHeadline: '회복, 염증, 산화 스트레스까지 함께 보는 이유',
+    sections: [
+      {
+        type: 'list',
+        title: '치료 후 몸이 이렇게 무겁다면…',
+        content: ['조금만 움직여도 쉽게 지침', '치료가 끝났는데도 몸이 무거운 느낌', '충분히 쉬어도 개운하지 않음', '돌처럼 무거운 몸 속 느낌'],
+      },
+      {
+        type: 'text',
+        title: '사람들은 치료보다 회복기 무너진 몸 때문에 더 절박해진다',
+        content: '항암·방사선 치료 이후에도 만성 염증과 산화 스트레스가 지속되며, 식욕 저하와 소화력 약화가 이어집니다. 회복기의 몸은 지속적인 내부 부담을 받고 있습니다.',
+      },
+      {
+        type: 'text',
+        title: '플로로탄닌이 암 연구에서 반복 등장하는 이유',
+        content: '① 세포 생존·증식 조절 경로 연구\n② 세포 분열·세포사멸 신호 연구\n③ 염증·면역 반응(NF-κB) 조절\n④ 혈관신생(VEGF) 억제 연구',
+      },
+      {
+        type: 'check',
+        title: '회복 환경까지 챙기는 현명한 선택',
+        content: ['적극적인 회복 접근법', '염증·산화 스트레스 관리', '근거 기반 보조 성분 활용', '회복 공백 최소화'],
+      },
+      {
+        type: 'ref',
+        title: '참고 논문',
+        content: ['Phlorotannins in Cancer Prevention (PMC, 2023)', 'Antioxidant and Anti-inflammatory Effects of Phlorotannins', 'Antitumor Activity via Apoptotic Signaling in Gastric and Colorectal Cells'],
+      },
+    ],
+  },
+  {
+    id: 'fatigue',
+    emoji: '⚡',
+    label: '피로·염증 관리',
+    color: '#D97706',
+    bg: '#FFFBEB',
+    border: '#FDE68A',
+    headline: '아무리 자도 피곤한 몸, 원인이 따로 있습니다',
+    subHeadline: '만성 염증과 산화 스트레스가 피로의 뿌리',
+    sections: [
+      {
+        type: 'list',
+        title: '이런 피로가 반복되고 있나요?',
+        content: ['아침에 일어나도 개운하지 않음', '오후 2~4시 급격한 에너지 저하', '몸이 무겁고 무기력함', '충분히 쉬어도 회복이 안 됨'],
+      },
+      {
+        type: 'text',
+        title: '만성 피로의 진짜 원인: 내부 염증',
+        content: '만성 피로는 의지의 문제가 아닙니다. 몸 속 NF-κB 신호가 과활성화되어 ROS(활성산소), 사이토카인이 계속 생성되고, iNOS·COX-2 효소가 저강도 만성 염증을 지속시킵니다.',
+      },
+      {
+        type: 'text',
+        title: '플로로탄닌이 피로 회복에 주목받는 이유',
+        content: '해조류 유래 폴리페놀인 플로로탄닌은 강력한 항산화·항염증 효과를 가집니다. ROS를 직접 중화하고 NF-κB 신호를 조절하여, 커피·에너지 드링크가 아닌 몸 속 환경 자체를 개선합니다.',
+      },
+      {
+        type: 'check',
+        title: '버티는 관리 vs 회복하는 관리',
+        content: ['체내 부담 줄이기', '산화 스트레스와 염증 동시 접근', '야간 회복 환경 개선', '아침에 더 가볍게 일어나기'],
+      },
+      {
+        type: 'ref',
+        title: '참고 논문',
+        content: ['Antioxidant and Anti-inflammatory Effects of Marine Phlorotannins', 'Marine Phlorotannins: Biological Activities and Potential Applications'],
+      },
+    ],
+  },
+  {
+    id: 'heart',
+    emoji: '❤️',
+    label: '심혈관 관리',
+    color: '#DC2626',
+    bg: '#FEF2F2',
+    border: '#FECACA',
+    headline: '조금만 움직여도 숨이 차고 손발이 차갑다면',
+    subHeadline: '혈관 건강과 순환 개선을 함께 보는 이유',
+    sections: [
+      {
+        type: 'list',
+        title: '이런 신호가 있다면?',
+        content: ['조금 움직여도 쉽게 지침', '계단 오르면 숨이 참', '손발이 자주 차가움', '아침에 일어나면 몸이 무거움'],
+      },
+      {
+        type: 'text',
+        title: '혈관 건강이 전신 활력에 영향을 줍니다',
+        content: '혈관 내피 기능이 저하되면 산화 스트레스가 증가하고, 혈액순환이 나빠져 전신 피로와 무기력함이 나타납니다. 일산화질소(NO) 생성이 줄어들면 혈관 탄력도 감소합니다.',
+      },
+      {
+        type: 'text',
+        title: '플로로탄닌 심혈관 연구의 3가지 핵심',
+        content: '① ACE 억제 → 혈압 조절\n② 산화 스트레스 감소 → 혈관 내피 보호\n③ 지질 산화 억제 → 혈관 건강 유지',
+      },
+      {
+        type: 'ref',
+        title: '참고 논문',
+        content: ['Phlorotannins: Anti-inflammatory and Antioxidant Activities', 'Marine Phlorotannins: Biological Activities and Potential Applications'],
+      },
+    ],
+  },
+  {
+    id: 'joint',
+    emoji: '🦴',
+    label: '관절·근육 관리',
+    color: '#C2410C',
+    bg: '#FFF7ED',
+    border: '#FED7AA',
+    headline: '무릎이 뻣뻣하고 계단이 두려워진다면',
+    subHeadline: '연골 보호와 염증 관리를 함께 보는 이유',
+    sections: [
+      {
+        type: 'list',
+        title: '이런 불편함이 있으신가요?',
+        content: ['아침에 관절이 뻣뻣함', '계단 오르내리기 불편', '오래 걸으면 무릎이 아픔', '날씨가 흐리면 더 아픔'],
+      },
+      {
+        type: 'text',
+        title: '관절 통증은 연골 소실과 염증의 악순환',
+        content: '연골을 파괴하는 MMP 효소가 과활성화되면 연골이 닳고, 염증이 생기면 통증이 심해집니다. 이 악순환을 끊는 것이 핵심입니다.',
+      },
+      {
+        type: 'check',
+        title: '다시 잘 움직이고 싶은 분들의 선택',
+        content: ['염증 줄이기', '관절과 근육 환경 함께 챙기기', '통증이 심해지기 전에 관리', '일상 움직임의 질 높이기'],
+      },
+      {
+        type: 'ref',
+        title: '참고 논문',
+        content: ['Phlorotannins: Anti-inflammatory and Antioxidant Activities', 'Marine Phlorotannins: Biological Activities and Potential Applications'],
+      },
+    ],
+  },
+  {
+    id: 'sleep',
+    emoji: '🌙',
+    label: '수면 관리',
+    color: '#4F46E5',
+    bg: '#EEF2FF',
+    border: '#C7D2FE',
+    headline: '자다가 자주 깨는 밤, 플로로탄닌이 다시 보이는 이유',
+    subHeadline: '수면의 질과 야간 회복 환경을 함께 보는 성분',
+    sections: [
+      {
+        type: 'list',
+        title: '이런 밤이 반복되고 있나요?',
+        content: ['아침에 일어나도 개운하지 않음', '밤에 자주 뒤척임', '잠을 자도 쉰 것 같지 않음', '하루가 무겁게 시작됨'],
+      },
+      {
+        type: 'text',
+        title: '수면 문제는 의지의 문제가 아닙니다',
+        content: '산화 스트레스와 만성 염증은 수면의 질에 직접 영향을 줍니다. 몸이 밤 사이 회복해야 하는 과정이 내부 염증 부담으로 인해 방해를 받습니다. NF-κB 과활성화와 ROS 축적이 수면 회복을 저해하는 주요 기전으로 연구되고 있습니다.',
+      },
+      {
+        type: 'text',
+        title: '플로로탄닌과 수면의 연결고리',
+        content: '플로로탄닌의 강력한 항산화·항염증 효과는 야간 회복 환경을 개선합니다. ROS를 중화하고 NF-κB 신호를 조절하여 몸이 진짜 쉴 수 있는 조건을 만들어줍니다. 단순 수면 유도제가 아닌, 회복 환경 자체를 개선하는 접근입니다.',
+      },
+      {
+        type: 'text',
+        title: '사이토카인과 수면 사이클의 관계',
+        content: '만성 염증으로 인한 사이토카인(IL-6, TNF-α) 과분비는 수면 사이클을 교란합니다. 플로로탄닌은 이 사이토카인 분비를 억제함으로써 수면 구조를 안정시키는 데 도움을 줄 수 있습니다.',
+      },
+      {
+        type: 'check',
+        title: '진짜 쉬는 밤을 만드는 선택',
+        content: ['수면 환경 개선', '산화 스트레스와 염증을 줄이는 성분 선택', '몸이 진짜 쉴 수 있는 야간 환경 만들기', '아침에 더 가볍게 일어나기'],
+      },
+      {
+        type: 'ref',
+        title: '참고 논문',
+        content: ['Antioxidant and Anti-inflammatory Effects of Marine Phlorotannins', 'The Role of Phlorotannins in Sleep Quality Improvement Studies'],
+      },
+    ],
+  },
+  {
+    id: 'brain',
+    emoji: '🧠',
+    label: '뇌·치매 예방',
+    color: '#0891B2',
+    bg: '#ECFEFF',
+    border: '#A5F3FC',
+    headline: '자꾸 깜빡할수록, 플로로탄닌이 다시 보입니다',
+    subHeadline: '기억력, 인지 건강, 신경 보호를 함께 보는 이유',
+    sections: [
+      {
+        type: 'list',
+        title: '이런 순간이 쌓이고 있나요?',
+        content: ['방금 뭘 하려 했는지 잊어버림', '대화 중 단어가 떠오르지 않음', '집중력이 예전 같지 않음', '자주 깜빡하고 멍해짐'],
+      },
+      {
+        type: 'text',
+        title: '뇌 건강 저하는 산화 스트레스에서 시작됩니다',
+        content: '뇌는 우리 몸에서 산소를 가장 많이 소비하는 기관으로, 산화 스트레스에 특히 취약합니다. 베타아밀로이드 축적, AChE 과활성화, 신경 염증이 인지 기능 저하를 가속화합니다.',
+      },
+      {
+        type: 'text',
+        title: '플로로탄닌의 뇌 보호 3가지 기전',
+        content: '① AChE(아세틸콜린에스테라제) 억제 → 기억력 관련 신경전달물질 보호\n② 신경 염증(뇌 NF-κB) 조절 → 뇌세포 보호\n③ 강력한 항산화 효과 → 산화 스트레스로부터 뇌세포 보호',
+      },
+      {
+        type: 'text',
+        title: '식후 혈당과 뇌 안개(Brain Fog)의 연결',
+        content: '식후 혈당 급등→급락은 집중력 저하와 멍한 느낌(브레인 포그)을 일으킵니다. 플로로탄닌은 α-아밀라아제·α-글루코시다아제를 억제해 혈당 스파이크를 줄이고, 식후 인지 기능 저하를 방지하는 데도 도움을 줍니다.',
+      },
+      {
+        type: 'check',
+        title: '뇌 건강을 챙기는 현명한 선택',
+        content: ['산화 스트레스와 신경 염증 동시 관리', '식후 혈당 스파이크 최소화', '신경전달물질 보호', '지속적인 인지 기능 유지'],
+      },
+      {
+        type: 'ref',
+        title: '참고 논문',
+        content: ['Phlorotannins as Inhibitors of AChE Activity and Neuroprotective Agents', 'Marine Phlorotannins and Neuroprotection Studies (PMC)', 'Phlorotannins: Towards New Pharmacological Interventions for Diabetes Mellitus Type 2'],
+      },
+    ],
+  },
+  {
+    id: 'diabetes',
+    emoji: '🍽️',
+    label: '혈당·식후 관리',
+    color: '#0077B6',
+    bg: '#EFF8FF',
+    border: '#BAE6FD',
+    headline: '밥 먹고 나서 졸리고 멍하다면',
+    subHeadline: '공복 혈당만이 아닌 식후 상태까지 함께 보는 이유',
+    sections: [
+      {
+        type: 'list',
+        title: '식후 이런 경험이 있으신가요?',
+        content: ['밥 먹고 나면 급격히 졸림', '식후 집중력이 뚝 떨어짐', '점심 후 오후가 버거움', '혈당 수치보다 느낌이 먼저 옴'],
+      },
+      {
+        type: 'text',
+        title: '공복 혈당 관리만으론 부족합니다',
+        content: '공복 혈당이 정상이어도 식후 혈당 스파이크가 반복되면 피로, 집중력 저하, 기분 변화가 나타납니다. 식후 상태 관리가 일상 에너지의 핵심입니다.',
+      },
+      {
+        type: 'text',
+        title: '플로로탄닌의 혈당 관리 3가지 기전',
+        content: '① α-아밀라아제 억제 → 탄수화물 소화 속도 조절\n② α-글루코시다아제 억제 → 포도당 흡수 지연\n③ PTP1B 억제 → 인슐린 저항성 개선',
+      },
+      {
+        type: 'text',
+        title: '식후 혈당과 식후 에너지의 관계',
+        content: '혈당이 빠르게 오르고 빠르게 떨어지는 패턴은 식후 피로 사이클을 만듭니다. 플로로탄닌은 이 스파이크를 완만하게 만들어 식후 에너지와 집중력을 유지하는 데 도움을 줍니다.',
+      },
+      {
+        type: 'check',
+        title: '혈당 스파이크를 줄이는 현명한 선택',
+        content: ['식후 혈당 급등·급락 최소화', '인슐린 감수성 개선', '식후 에너지와 집중력 유지', '항산화 효과로 식후 산화 스트레스 감소'],
+      },
+      {
+        type: 'ref',
+        title: '참고 논문',
+        content: ['Phlorotannins: Towards New Pharmacological Interventions for Diabetes Mellitus Type 2', 'Antioxidant and Antidiabetic Properties of Phlorotannins from Brown Seaweeds', 'A phlorotannin constituent of Ecklonia cava alleviates postprandial hyperglycaemia in diabetic mice'],
+      },
+    ],
+  },
+]
+
+// ─── 심화 섹션 카드 ────────────────────────────────────────────────
+function CategoryCard({ cat }) {
+  const [open, setOpen] = useState(false)
+
+  const renderSection = (sec, i) => {
+    if (sec.type === 'list') {
+      return (
+        <div key={i} className="bg-white rounded-2xl p-4 border border-gray-100">
+          <p className="font-bold text-gray-700 mb-3 text-base">📋 {sec.title}</p>
+          <ul className="space-y-2">
+            {sec.content.map((item, j) => (
+              <li key={j} className="flex items-start gap-2 text-base text-gray-600">
+                <span className="mt-1 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: cat.color, marginTop: '8px' }} />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )
+    }
+    if (sec.type === 'text') {
+      return (
+        <div key={i} className="bg-white rounded-2xl p-4 border border-gray-100">
+          <p className="font-bold text-gray-700 mb-2 text-base">📖 {sec.title}</p>
+          <p className="text-base text-gray-600 leading-relaxed whitespace-pre-line">{sec.content}</p>
+        </div>
+      )
+    }
+    if (sec.type === 'check') {
+      return (
+        <div key={i} className="rounded-2xl p-4" style={{ backgroundColor: cat.color + '10', border: `1.5px solid ${cat.color}30` }}>
+          <p className="font-bold mb-3 text-base" style={{ color: cat.color }}>✅ {sec.title}</p>
+          <ul className="space-y-2">
+            {sec.content.map((item, j) => (
+              <li key={j} className="flex items-center gap-2 text-base text-gray-700">
+                <CheckCircle className="w-4 h-4 flex-shrink-0" style={{ color: cat.color }} />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )
+    }
+    if (sec.type === 'ref') {
+      return (
+        <div key={i} className="bg-gray-50 rounded-2xl p-4 border border-gray-200">
+          <p className="font-bold text-gray-400 mb-2 text-sm">🔬 {sec.title}</p>
+          <ul className="space-y-1">
+            {sec.content.map((item, j) => (
+              <li key={j} className="text-sm text-gray-500 leading-relaxed">• {item}</li>
+            ))}
+          </ul>
+        </div>
+      )
+    }
+    return null
+  }
+
+  return (
+    <div
+      className="rounded-3xl overflow-hidden shadow-sm border-2 transition-all duration-300"
+      style={{ borderColor: open ? cat.color : cat.border, backgroundColor: open ? cat.bg : '#ffffff' }}
+    >
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full text-left p-5 flex items-center gap-4"
+      >
+        <div
+          className="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"
+          style={{ backgroundColor: cat.bg }}
+        >
+          {cat.emoji}
+        </div>
+        <div className="flex-1">
+          <div
+            className="text-sm font-bold px-2.5 py-1 rounded-full inline-block mb-1"
+            style={{ backgroundColor: cat.color + '20', color: cat.color }}
+          >
+            {cat.label}
+          </div>
+          <p className="font-bold text-gray-800 text-base leading-tight">{cat.headline}</p>
+          <p className="text-gray-500 text-sm mt-0.5">{cat.subHeadline}</p>
+        </div>
+        <div
+          className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0"
+          style={{ backgroundColor: cat.color + '15' }}
+        >
+          {open
+            ? <ChevronUp className="w-4 h-4" style={{ color: cat.color }} />
+            : <ChevronDown className="w-4 h-4" style={{ color: cat.color }} />
+          }
+        </div>
+      </button>
+
+      {open && (
+        <div className="px-5 pb-6 space-y-4">
+          {cat.sections.map((sec, i) => renderSection(sec, i))}
         </div>
       )}
     </div>
@@ -309,6 +681,7 @@ function FaqItem({ item }) {
 
 // ─── 메인 페이지 ──────────────────────────────────────────────────
 export default function EasyHealthPage() {
+  const partner = usePartner()
   const [activeFilter, setActiveFilter] = useState('all')
 
   const filters = [
@@ -328,6 +701,12 @@ export default function EasyHealthPage() {
 
   return (
     <div className="pt-16 min-h-screen bg-gray-50">
+      <SEOHead
+        title="쉬운 건강 정보"
+        description="누구나 이해하기 쉬운 건강 정보. 플로로탄닌의 혈당·혈압·체중관리·피부·수면 건강 효과를 쉽게 설명합니다."
+        keywords="쉬운 건강 정보, 플로로탄닌 쉽게, 건강상식, 혈당관리 방법, 자연 건강식품"
+        canonical="https://phlorotannin.com/easy"
+      />
 
       {/* ── 히어로 ── */}
       <section className="bg-gradient-to-br from-cyan-500 via-blue-600 to-indigo-700 py-16 md:py-24 relative overflow-hidden">
@@ -340,14 +719,14 @@ export default function EasyHealthPage() {
         </div>
 
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-          <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm border border-white/30 text-white px-5 py-2 rounded-full text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm border border-white/30 text-white px-5 py-2 rounded-full text-base font-medium mb-6">
             🌊 바다가 준 선물 · 쉽게 알아보기
           </div>
           <h1 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
             우리 몸이 왜 아픈지<br />
             <span className="text-yellow-300">쉽게 알아봐요!</span>
           </h1>
-          <p className="text-blue-100 text-base md:text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
+          <p className="text-blue-100 text-lg md:text-xl leading-relaxed mb-8 max-w-2xl mx-auto">
             어려운 의학 용어 없이,<br className="md:hidden" /> 중학생도 이해할 수 있게 설명해 드려요.<br />
             플로로탄닌이 각 질환에 어떻게 도움이 되는지 함께 알아봐요 😊
           </p>
@@ -361,12 +740,12 @@ export default function EasyHealthPage() {
             ].map((item, i) => (
               <div key={i} className="bg-white/20 backdrop-blur-sm rounded-2xl py-3 px-2">
                 <div className="text-2xl mb-1">{item.emoji}</div>
-                <div className="text-white text-xs font-bold">{item.text}</div>
+                <div className="text-white text-sm font-bold">{item.text}</div>
               </div>
             ))}
           </div>
 
-          <a href="#diseases" className="inline-flex items-center gap-2 bg-yellow-400 text-gray-900 px-8 py-4 rounded-full font-black text-base hover:bg-yellow-300 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
+          <a href="#diseases" className="inline-flex items-center gap-2 bg-yellow-400 text-gray-900 px-8 py-4 rounded-full font-black text-lg hover:bg-yellow-300 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
             바로 알아보기 👇
           </a>
         </div>
@@ -384,8 +763,8 @@ export default function EasyHealthPage() {
             {basicCards.map((c, i) => (
               <div key={i} className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-3xl p-6 text-center border border-cyan-100 hover:shadow-md transition-all hover:-translate-y-1">
                 <div className="text-4xl mb-3">{c.emoji}</div>
-                <h3 className="font-black text-gray-800 mb-2 text-base">{c.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{c.desc}</p>
+                <h3 className="font-black text-gray-800 mb-2 text-lg">{c.title}</h3>
+                <p className="text-gray-600 text-base leading-relaxed">{c.desc}</p>
               </div>
             ))}
           </div>
@@ -400,9 +779,9 @@ export default function EasyHealthPage() {
           </h2>
           <div className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden">
             <div className="grid grid-cols-3 bg-gray-50 border-b border-gray-100">
-              <div className="p-3 text-xs font-bold text-gray-400 text-center">항목</div>
-              <div className="p-3 text-sm font-black text-center text-green-700 bg-green-50">🌱 육지<br/>(녹차·포도)</div>
-              <div className="p-3 text-sm font-black text-center text-blue-700 bg-blue-50">🌊 바다<br/>(플로로탄닌)</div>
+              <div className="p-3 text-sm font-bold text-gray-400 text-center">항목</div>
+              <div className="p-3 text-base font-black text-center text-green-700 bg-green-50">🌱 육지<br/>(녹차·포도)</div>
+              <div className="p-3 text-base font-black text-center text-blue-700 bg-blue-50">🌊 바다<br/>(플로로탄닌)</div>
             </div>
             {[
               ['발견 장소', '육상 식물', '해조류(미역·감태)'],
@@ -412,9 +791,9 @@ export default function EasyHealthPage() {
               ['특이점', '식품으로 친숙', '해양 기원 독특함'],
             ].map(([label, land, sea], i) => (
               <div key={i} className={`grid grid-cols-3 border-b border-gray-50 ${i % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'}`}>
-                <div className="p-3 text-xs font-bold text-gray-500 flex items-center justify-center text-center">{label}</div>
-                <div className="p-3 text-xs text-gray-600 flex items-center justify-center text-center border-x border-gray-100">{land}</div>
-                <div className="p-3 text-xs font-semibold text-blue-700 flex items-center justify-center text-center">{sea}</div>
+                <div className="p-3 text-sm font-bold text-gray-500 flex items-center justify-center text-center">{label}</div>
+                <div className="p-3 text-sm text-gray-600 flex items-center justify-center text-center border-x border-gray-100">{land}</div>
+                <div className="p-3 text-sm font-semibold text-blue-700 flex items-center justify-center text-center">{sea}</div>
               </div>
             ))}
           </div>
@@ -427,7 +806,7 @@ export default function EasyHealthPage() {
           <div className="text-center mb-8">
             <span className="text-3xl">🩺</span>
             <h2 className="text-2xl md:text-3xl font-black text-gray-800 mt-2 mb-2">질환별로 알아보기</h2>
-            <p className="text-gray-500 text-sm">궁금한 질환을 클릭하면 자세한 설명이 펼쳐져요!</p>
+            <p className="text-gray-500 text-base">궁금한 질환을 클릭하면 자세한 설명이 펼쳐져요!</p>
           </div>
 
           {/* 필터 탭 */}
@@ -436,7 +815,7 @@ export default function EasyHealthPage() {
               <button
                 key={f.id}
                 onClick={() => setActiveFilter(f.id)}
-                className={`flex-shrink-0 flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-bold transition-all ${
+                className={`flex-shrink-0 flex items-center gap-1.5 px-4 py-2 rounded-full text-base font-bold transition-all ${
                   activeFilter === f.id
                     ? 'bg-cyan-500 text-white shadow-md'
                     : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
@@ -462,7 +841,7 @@ export default function EasyHealthPage() {
           <div className="text-center mb-10">
             <span className="text-3xl">⚙️</span>
             <h2 className="text-2xl md:text-3xl font-black text-white mt-2 mb-2">몸 속에서 어떻게 작동할까요?</h2>
-            <p className="text-gray-400 text-sm">복잡하지 않아요, 딱 이것만 기억하세요!</p>
+            <p className="text-gray-400 text-base">복잡하지 않아요, 딱 이것만 기억하세요!</p>
           </div>
 
           {/* 흐름도 */}
@@ -476,8 +855,8 @@ export default function EasyHealthPage() {
               <div key={i} className="flex md:flex-row flex-col items-center gap-2 md:gap-0">
                 <div className={`bg-gradient-to-br ${step.color} rounded-2xl p-5 text-center w-36 shadow-lg`}>
                   <div className="text-3xl mb-2">{step.emoji}</div>
-                  <div className="text-white font-black text-sm">{step.label}</div>
-                  <div className="text-white/70 text-xs mt-1">{step.sub}</div>
+                  <div className="text-white font-black text-base">{step.label}</div>
+                  <div className="text-white/70 text-sm mt-1">{step.sub}</div>
                 </div>
                 {i < 3 && (
                   <div className="text-gray-400 text-2xl md:mx-2 rotate-90 md:rotate-0">→</div>
@@ -498,11 +877,11 @@ export default function EasyHealthPage() {
             ].map((item, i) => (
               <div key={i} className="bg-white/10 backdrop-blur-sm rounded-2xl p-3.5 flex items-center gap-3">
                 <span className="text-xl">{item.emoji}</span>
-                <span className="text-white text-xs font-semibold leading-snug">{item.text}</span>
+                <span className="text-white text-sm font-semibold leading-snug">{item.text}</span>
               </div>
             ))}
           </div>
-          <p className="text-center text-gray-500 text-xs mt-4">※ 어려운 영어 이름은 몰라도 돼요. 6가지 방법으로 몸을 지킨다는 것만 기억하세요!</p>
+          <p className="text-center text-gray-500 text-sm mt-4">※ 어려운 영어 이름은 몰라도 돼요. 6가지 방법으로 몸을 지킨다는 것만 기억하세요!</p>
         </div>
       </section>
 
@@ -512,12 +891,43 @@ export default function EasyHealthPage() {
           <div className="text-center mb-8">
             <span className="text-3xl">❓</span>
             <h2 className="text-2xl md:text-3xl font-black text-gray-800 mt-2 mb-2">자주 묻는 질문</h2>
-            <p className="text-gray-500 text-sm">궁금한 게 있으시면 클릭해 보세요!</p>
+            <p className="text-gray-500 text-base">궁금한 게 있으시면 클릭해 보세요!</p>
           </div>
           <div className="space-y-3">
             {faqs.map((item, i) => (
               <FaqItem key={i} item={item} />
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 심화 연구 자료 섹션 ── */}
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="text-center mb-10">
+            <div className="inline-flex items-center gap-2 bg-indigo-50 border border-indigo-200 text-indigo-700 px-4 py-2 rounded-full text-sm font-bold mb-4">
+              <BookOpen className="w-4 h-4" /> 논문 기반 심화 정보
+            </div>
+            <h2 className="text-2xl md:text-3xl font-black text-gray-800 mb-3">
+              건강 고민별 플로로탄닌 연구 자료
+            </h2>
+            <p className="text-gray-500 text-base leading-relaxed max-w-2xl mx-auto">
+              위의 쉬운 설명이 마음에 드셨나요?<br />
+              각 건강 고민별로 <strong>실제 연구 내용</strong>을 더 깊이 알아보세요.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-4">
+            {CATEGORIES.map(cat => (
+              <CategoryCard key={cat.id} cat={cat} />
+            ))}
+          </div>
+
+          <div className="mt-8 bg-blue-50 rounded-2xl p-5 border border-blue-100 text-center">
+            <p className="text-blue-800 text-sm font-semibold">
+              🔬 위 내용은 학술 연구 자료를 바탕으로 작성된 교육 정보입니다.<br />
+              의료적 진단·치료를 대체하지 않으며, 건강 문제는 반드시 전문 의사와 상담하세요.
+            </p>
           </div>
         </div>
       </section>
@@ -528,8 +938,8 @@ export default function EasyHealthPage() {
           <div className="flex items-start gap-3">
             <span className="text-2xl flex-shrink-0">⚠️</span>
             <div>
-              <p className="font-bold text-amber-800 mb-1 text-sm">꼭 읽어주세요</p>
-              <p className="text-amber-700 text-sm leading-relaxed">
+              <p className="font-bold text-amber-800 mb-1 text-base">꼭 읽어주세요</p>
+              <p className="text-amber-700 text-base leading-relaxed">
                 이 페이지의 내용은 <strong>교육·정보 제공 목적</strong>이며, 의료적 진단이나 치료를 대체하지 않습니다.
                 건강 문제가 있으시면 반드시 <strong>전문 의사</strong>와 상담하세요.
                 플로로탄닌은 현재 활발히 연구 중인 소재로, 일부 결과는 동물·세포 실험 수준입니다.
@@ -552,13 +962,13 @@ export default function EasyHealthPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/qa"
-              className="flex items-center justify-center gap-2 bg-white text-blue-700 px-8 py-4 rounded-full font-black text-base hover:bg-blue-50 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
+              className="flex items-center justify-center gap-2 bg-white text-blue-700 px-8 py-4 rounded-full font-black text-lg hover:bg-blue-50 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
             >
               📚 건강 Q&A 보기
             </Link>
             <Link
               to="/consult"
-              className="flex items-center justify-center gap-2 bg-yellow-400 text-gray-900 px-8 py-4 rounded-full font-black text-base hover:bg-yellow-300 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
+              className="flex items-center justify-center gap-2 bg-yellow-400 text-gray-900 px-8 py-4 rounded-full font-black text-lg hover:bg-yellow-300 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
             >
               <MessageSquare className="w-5 h-5" />
               전문가에게 문의하기
@@ -568,14 +978,14 @@ export default function EasyHealthPage() {
           {/* 빠른 연락 */}
           <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
             <a
-              href="tel:01056528206"
-              className="flex items-center justify-center gap-2 bg-white/20 border border-white/40 text-white px-6 py-3 rounded-full text-sm font-bold hover:bg-white/30 transition-all"
+              href={`tel:${partner.phone}`}
+              className="flex items-center justify-center gap-2 bg-white/20 border border-white/40 text-white px-6 py-3 rounded-full text-base font-bold hover:bg-white/30 transition-all"
             >
               📞 전화 상담 번호 보기
             </a>
             <a
-              href="sms:01056528206?body=%5B%ED%94%8C%EB%A1%9C%EB%A1%9C%ED%83%84%EB%8B%8C%20%EB%AC%B8%EC%9D%98%5D%20"
-              className="flex items-center justify-center gap-2 bg-white/20 border border-white/40 text-white px-6 py-3 rounded-full text-sm font-bold hover:bg-white/30 transition-all"
+              href={`sms:${partner.phone}?body=${encodeURIComponent('[플로로탄닌 문의] ')}`}
+              className="flex items-center justify-center gap-2 bg-white/20 border border-white/40 text-white px-6 py-3 rounded-full text-base font-bold hover:bg-white/30 transition-all"
             >
               💬 문자로 문의하기
             </a>
@@ -585,7 +995,7 @@ export default function EasyHealthPage() {
 
       {/* 저작권 */}
       <div className="py-5 bg-gray-100 border-t border-gray-200 text-center">
-        <p className="text-xs text-gray-400">
+        <p className="text-sm text-gray-400">
           © 2025 플로로탄닌 파트너스 — 본 콘텐츠의 무단 복제·배포를 금합니다.
         </p>
       </div>

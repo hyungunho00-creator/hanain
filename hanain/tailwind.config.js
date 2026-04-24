@@ -18,6 +18,20 @@ export default {
       fontFamily: {
         sans: ['Noto Sans KR', 'sans-serif'],
       },
+      // 모바일 가독성: 전체 폰트 크기 1단계 상향
+      // xs=14, sm=16, base=18, lg=20, xl=22, 2xl=26, 3xl=32, 4xl=40
+      fontSize: {
+        'xs':   ['0.875rem', { lineHeight: '1.6' }],   // 14px (기존 12px)
+        'sm':   ['1rem',     { lineHeight: '1.7' }],   // 16px (기존 14px)
+        'base': ['1.125rem', { lineHeight: '1.75' }],  // 18px (기존 16px)
+        'lg':   ['1.25rem',  { lineHeight: '1.75' }],  // 20px (기존 18px)
+        'xl':   ['1.375rem', { lineHeight: '1.7' }],   // 22px (기존 20px)
+        '2xl':  ['1.625rem', { lineHeight: '1.4' }],   // 26px (기존 24px)
+        '3xl':  ['2rem',     { lineHeight: '1.3' }],   // 32px (기존 30px)
+        '4xl':  ['2.5rem',   { lineHeight: '1.2' }],   // 40px (기존 36px)
+        '5xl':  ['3rem',     { lineHeight: '1.1' }],   // 48px
+        '6xl':  ['3.75rem',  { lineHeight: '1.05' }],  // 60px
+      },
       animation: {
         'wave': 'wave 6s ease-in-out infinite',
         'float': 'float 3s ease-in-out infinite',
