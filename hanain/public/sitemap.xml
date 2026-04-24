@@ -12,13 +12,13 @@
     <image:image>
       <image:loc>https://phlorotannin.com/og-image.png</image:loc>
       <image:title>플로로탄닌 파트너스 — 해양 폴리페놀 건강 정보 아카이브</image:title>
-      <image:caption>암·당뇨·뇌질환·염증·가족 건강 등 다양한 건강 주제의 플로로탄닌 정보 아카이브. 1,311개 Q&A, 12개 카테고리.</image:caption>
+      <image:caption>암·당뇨·뇌질환·염증·가족 건강 등 다양한 건강 주제의 플로로탄닌 정보 아카이브. 1,311개 Q&amp;A, 12개 카테고리.</image:caption>
     </image:image>
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://phlorotannin.com/"/>
   </url>
 
-  <!-- ===== 건강 Q&A 전체 ===== -->
+  <!-- ===== 건강 Q&amp;A 전체 ===== -->
   <url>
     <loc>https://phlorotannin.com/qa</loc>
     <lastmod>2026-04-24</lastmod>
@@ -26,13 +26,13 @@
     <priority>0.95</priority>
     <image:image>
       <image:loc>https://phlorotannin.com/og-image.png</image:loc>
-      <image:title>건강 Q&A 1,311개 — 플로로탄닌 파트너스</image:title>
-      <image:caption>혈당, 혈압, 치매, 항암, 소화, 피부, 수면 등 12개 질환 카테고리의 1,311개 건강 Q&A 아카이브.</image:caption>
+      <image:title>건강 Q&amp;A 1,311개 — 플로로탄닌 파트너스</image:title>
+      <image:caption>혈당, 혈압, 치매, 항암, 소화, 피부, 수면 등 12개 질환 카테고리의 1,311개 건강 Q&amp;A 아카이브.</image:caption>
     </image:image>
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa"/>
   </url>
 
-  <!-- ===== Q&A 카테고리별 페이지 (12개) — 네이버 크롤링 핵심 ===== -->
+  <!-- ===== Q&amp;A 카테고리별 페이지 (12개) — 네이버 크롤링 핵심 ===== -->
   <url>
     <loc>https://phlorotannin.com/qa?category=metabolism</loc>
     <lastmod>2026-04-24</lastmod>
