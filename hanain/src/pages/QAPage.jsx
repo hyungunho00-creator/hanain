@@ -289,14 +289,25 @@ export default function QAPage() {
     (activeCategory === 'all' ? totalCount : (catCounts[activeCategory] || 0)) / ITEMS_PER_PAGE
   )
 
+  const STATIC_FAQ = [
+    { q: '플로로탄닌이란 무엇인가요?', a: '플로로탄닌(Phlorotannin)은 감태·미역·다시마 등 갈조류에서 추출되는 해양 폴리페놀 성분입니다. 강력한 항산화, 항염, 혈당 조절 효과가 연구되고 있습니다.' },
+    { q: '플로로탄닌이 혈당에 도움이 되나요?', a: '임상 연구에 따르면 플로로탄닌 섭취 후 공복 혈당이 약 27% 감소한 결과가 보고되었습니다. 알파-글루코시다아제 억제를 통해 식후 혈당 급상승을 완화합니다.' },
+    { q: '플로로탄닌은 고혈압에도 효과가 있나요?', a: '플로로탄닌은 ACE(안지오텐신 전환효소) 억제 작용으로 혈압 조절에 도움이 될 수 있으며, 일부 임상 연구에서 혈압 감소 효과가 관찰되었습니다.' },
+    { q: '플로로탄닌이 치매 예방에 도움이 되나요?', a: '플로로탄닌은 아세틸콜린에스테라제 억제 및 산화 스트레스 감소를 통해 인지 기능 보호에 기여할 수 있습니다. 뇌 신경 세포 보호 효과가 연구되고 있습니다.' },
+    { q: '플로로탄닌은 항암 효과가 있나요?', a: '암세포 사멸 유도(아폽토시스)와 혈관신생 억제 효과가 세포 실험 및 동물 실험에서 보고되었습니다.' },
+    { q: '플로로탄닌을 어떻게 섭취하나요?', a: '식품의약품안전처에서 인정한 감태 추출물 형태의 건강기능식품으로 섭취할 수 있습니다.' },
+  ]
+
+  const dynamicFaq = questions.slice(0, 10)
+    .filter(q => q.question && q.answer)
+    .map(q => ({ "@type": "Question", "name": q.question, "acceptedAnswer": { "@type": "Answer", "text": (q.answer || '').slice(0, 300) } }))
+
   const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": questions.slice(0, 10).map(q => ({
-      "@type": "Question",
-      "name": q.question,
-      "acceptedAnswer": { "@type": "Answer", "text": (q.answer || '').slice(0, 300) }
-    }))
+    "mainEntity": dynamicFaq.length >= 3
+      ? dynamicFaq
+      : STATIC_FAQ.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } }))
   }
 
   return (
