@@ -128,11 +128,15 @@ export function PartnerProvider({ children }) {
     if (phoneFromPath) {
       fetchPartnerByPhone(phoneFromPath).then(found => {
         if (found) {
+          const rawPhone = found.phone?.replace(/\D/g, '') || ''
+          const fallbackDisplay = rawPhone.length === 11
+            ? `${rawPhone.slice(0,3)}-${rawPhone.slice(3,7)}-${rawPhone.slice(7)}`
+            : rawPhone
           const p = {
             id: found.slug,
             name: found.name,
-            phone: found.phone,
-            phoneDisplay: found.phoneDisplay,
+            phone: rawPhone,
+            phoneDisplay: found.phoneDisplay || fallbackDisplay,
             prefix: '',
           }
           setPartner(p)
@@ -154,11 +158,15 @@ export function PartnerProvider({ children }) {
     if (slug) {
       fetchPartnerBySlug(slug).then(found => {
         if (found) {
+          const rawPhone = found.phone?.replace(/\D/g, '') || ''
+          const fallbackDisplay = rawPhone.length === 11
+            ? `${rawPhone.slice(0,3)}-${rawPhone.slice(3,7)}-${rawPhone.slice(7)}`
+            : rawPhone
           setPartner({
             id: found.slug,
             name: found.name,
-            phone: found.phone,
-            phoneDisplay: found.phoneDisplay,
+            phone: rawPhone,
+            phoneDisplay: found.phoneDisplay || fallbackDisplay,
             prefix: '',
           })
         }

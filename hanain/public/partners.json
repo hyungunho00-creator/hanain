@@ -138,26 +138,29 @@
     {
       "slug": "01068997896",
       "name": "조은석",
-      "phone": "010-6899-7896",
+      "phone": "01068997896",
       "siteUrl": "https://phlorotannin.com/p/01068997896",
       "memo": "",
-      "createdAt": "2026-04-27T00:00:00.000Z"
+      "createdAt": "2026-04-27T00:00:00.000Z",
+      "phoneDisplay": "010-6899-7896"
     },
     {
       "slug": "01083886261",
       "name": "신진숙",
-      "phone": "010-8388-6261",
+      "phone": "01083886261",
       "siteUrl": "https://phlorotannin.com/p/01083886261",
       "memo": "",
-      "createdAt": "2026-04-27T00:00:00.000Z"
+      "createdAt": "2026-04-27T00:00:00.000Z",
+      "phoneDisplay": "010-8388-6261"
     },
     {
       "slug": "01036688494",
       "name": "장혜원",
-      "phone": "010-3668-8494",
+      "phone": "01036688494",
       "siteUrl": "https://phlorotannin.com/p/01036688494",
       "memo": "",
-      "createdAt": "2026-04-27T00:00:00.000Z"
+      "createdAt": "2026-04-27T00:00:00.000Z",
+      "phoneDisplay": "010-3668-8494"
     }
   ]
 }
