@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
 import { Phone, MessageSquare, BookOpen, Leaf, ChevronRight, Shield, Brain, Heart, Zap, Users, CheckCircle, AlertCircle } from 'lucide-react'
 import SEOHead from '../components/common/SEOHead'
+import { savePartnerToSession } from '../context/PartnerContext'
 
 const MAIN_SITE = 'https://phlorotannin.com'
 
@@ -36,9 +37,24 @@ export default function PartnerLandingPage() {
   useEffect(() => {
     if (!slug) { setNotFound(true); setLoading(false); return }
     fetchPartner(slug).then(p => {
-      if (p) setPartner(p)
-      else setNotFound(true)
-      setLoading(false)
+      if (p) {
+        // 파트너 정보 세션에 저장 후 메인으로 리다이렉트
+        const rawPhone = p.phone?.replace(/\D/g, '') || slug
+        const fallbackDisplay = rawPhone.length === 11
+          ? `${rawPhone.slice(0,3)}-${rawPhone.slice(3,7)}-${rawPhone.slice(7)}`
+          : rawPhone
+        savePartnerToSession({
+          id: p.slug,
+          name: p.name,
+          phone: rawPhone,
+          phoneDisplay: p.phoneDisplay || fallbackDisplay,
+          prefix: '',
+        })
+        navigate('/', { replace: true })
+      } else {
+        setNotFound(true)
+        setLoading(false)
+      }
     })
   }, [slug])
 

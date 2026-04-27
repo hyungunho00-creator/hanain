@@ -69,10 +69,40 @@ export default function Navbar() {
                   {link.label}
                 </Link>
               ))}
+              {/* 파트너 명함 버튼 (데스크톱) */}
+              {isPartner && (
+                <button
+                  onClick={() => navigate(cardPath)}
+                  className="ml-2 flex items-center gap-1.5 px-4 py-2 rounded-lg font-bold text-sm transition-all active:scale-95"
+                  style={{
+                    background: `linear-gradient(135deg, ${GOLD}, ${GOLD2})`,
+                    color: NAVY,
+                    boxShadow: `0 2px 10px ${GOLD}60`,
+                  }}
+                >
+                  <CreditCard className="w-4 h-4" style={{ color: NAVY }} />
+                  {partner.name} 명함
+                </button>
+              )}
             </div>
 
-            {/* 모바일 오른쪽 영역: 메뉴 버튼 */}
+            {/* 모바일 오른쪽 영역: 명함 버튼 + 메뉴 버튼 */}
             <div className="md:hidden flex items-center gap-2">
+              {/* 파트너 명함 버튼 (모바일 상단바) */}
+              {isPartner && (
+                <button
+                  onClick={() => navigate(cardPath)}
+                  className="flex items-center gap-1.5 px-3 py-2 rounded-lg font-bold text-sm active:scale-95 transition-transform"
+                  style={{
+                    background: `linear-gradient(135deg, ${GOLD}, ${GOLD2})`,
+                    color: NAVY,
+                    boxShadow: `0 2px 8px ${GOLD}60`,
+                  }}
+                >
+                  <CreditCard className="w-4 h-4" style={{ color: NAVY }} />
+                  <span style={{ color: NAVY }}>{partner.name} 명함</span>
+                </button>
+              )}
               {/* 햄버거 버튼 */}
               <button
                 onClick={() => setIsOpen(!isOpen)}
