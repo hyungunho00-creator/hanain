@@ -134,6 +134,22 @@
       "siteUrl": "https://phlorotannin.com/p/01056528206",
       "memo": "관리자",
       "createdAt": "2026-04-09T12:53:34.685Z"
+    },
+    {
+      "slug": "01068997896",
+      "name": "조은석",
+      "phone": "010-6899-7896",
+      "siteUrl": "https://phlorotannin.com/p/01068997896",
+      "memo": "",
+      "createdAt": "2026-04-27T00:00:00.000Z"
+    },
+    {
+      "slug": "01083886261",
+      "name": "신진숙",
+      "phone": "010-8388-6261",
+      "siteUrl": "https://phlorotannin.com/p/01083886261",
+      "memo": "",
+      "createdAt": "2026-04-27T00:00:00.000Z"
     }
   ]
 }
