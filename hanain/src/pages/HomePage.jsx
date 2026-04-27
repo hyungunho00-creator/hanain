@@ -202,10 +202,7 @@ export default function HomePage() {
           </div>
 
           <div className="flex flex-wrap gap-3 justify-center mb-8">
-            <Link to={`/qa`} className="btn-primary flex items-center gap-2 px-8 py-3.5">
-              전체 Q&A 보기 <ArrowRight className="w-4 h-4" />
-            </Link>
-            <Link to={`/consult`} className="btn-secondary flex items-center gap-2 px-8 py-3.5">
+            <Link to={`/consult`} className="btn-primary flex items-center gap-2 px-8 py-3.5">
               파트너 문의하기 <MessageCircle className="w-4 h-4" />
             </Link>
           </div>
@@ -363,11 +360,7 @@ export default function HomePage() {
             })}
           </div>
 
-          <div className="text-center mt-10">
-            <Link to={`/qa`} className="btn-primary inline-flex items-center gap-2 px-10 py-4">
-              전체 Q&A 보기 <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
+
         </div>
       </section>
 
@@ -443,9 +436,7 @@ export default function HomePage() {
                 <Link to={`/phlorotannin`} className="btn-primary inline-flex items-center gap-2">
                   플로로탄닌 상세 소개 <ArrowRight className="w-4 h-4" />
                 </Link>
-                <Link to={`/qa?q=플로로탄닌`} className="inline-flex items-center gap-2 border-2 border-ocean-deep text-ocean-deep px-6 py-3 rounded-full font-semibold hover:bg-ocean-deep hover:text-white transition-all duration-300">
-                  관련 Q&A 보기
-                </Link>
+
               </div>
             </div>
 
@@ -557,10 +548,6 @@ export default function HomePage() {
             />
           </div>
           <div className="flex flex-wrap gap-3 justify-center">
-            <Link to={`/qa`} className="text-base text-cyan-hana hover:underline flex items-center gap-1">
-              건강 Q&A 탐색 <ChevronRight className="w-3 h-3" />
-            </Link>
-            <span className="text-gray-300">|</span>
             <Link to={`/partner`} className="text-base text-cyan-hana hover:underline flex items-center gap-1">
               파트너 참여 <ChevronRight className="w-3 h-3" />
             </Link>

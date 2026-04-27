@@ -222,12 +222,7 @@ export default function PhlorotanninPage() {
             <a href="#mechanism" className="btn-primary flex items-center gap-2 px-8 py-3.5">
               작용 기전 보기 <ChevronDown className="w-4 h-4" />
             </a>
-            <button
-              onClick={() => { navigate('/qa?q=플로로탄닌') }}
-              className="btn-secondary flex items-center gap-2 px-8 py-3.5"
-            >
-              관련 Q&A 보기 <ArrowRight className="w-4 h-4" />
-            </button>
+
           </div>
         </div>
       </section>
@@ -404,15 +399,7 @@ export default function PhlorotanninPage() {
                   <div className="mt-2 space-y-2">
                     <div className="text-sm text-cyan-100 leading-snug">📌 {d.mech}</div>
                     <div className="text-sm text-cyan-200 font-semibold">✓ {d.evidence}</div>
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation()
-                        navigate(`/qa?category=${d.cat}`)
-                      }}
-                      className="mt-2 w-full flex items-center justify-center gap-1.5 bg-white text-cyan-700 text-sm font-bold py-2 px-3 rounded-xl hover:bg-cyan-50 transition-colors"
-                    >
-                      관련 Q&A 보기 <ArrowRight className="w-3 h-3" />
-                    </button>
+
                   </div>
                 ) : (
                   <div className="text-sm text-gray-400">{d.mech.split(' ')[0]}</div>
@@ -420,18 +407,7 @@ export default function PhlorotanninPage() {
               </button>
             ))}
           </div>
-          {activeDis !== null && (
-            <div className="mt-6 text-center">
-              <button
-                onClick={() => {
-                  navigate(`/qa?category=${DISEASES[activeDis].cat}`)
-                }}
-                className="inline-flex items-center gap-2 px-8 py-4 bg-cyan-600 text-white rounded-full text-base font-semibold hover:bg-cyan-700 transition-colors shadow-lg"
-              >
-                {DISEASES[activeDis].name} 관련 Q&A 전체 보기 <ArrowRight className="w-4 h-4" />
-              </button>
-            </div>
-          )}
+
         </div>
       </section>
 
@@ -546,9 +522,8 @@ export default function PhlorotanninPage() {
             과학적 근거가 충분히 쌓였습니다. 이제 일상에서 어떻게 활용할 수 있는지
             전문 파트너와 함께 알아보세요.
           </p>
-          <div className="grid md:grid-cols-3 gap-4 mb-10">
+          <div className="grid md:grid-cols-2 gap-4 mb-10">
             {[
-              { icon: BookOpen, title: '1,311건 건강 Q&A', desc: '플로로탄닌 관련 질환별 심층 답변', link: '/qa?q=플로로탄닌', btn: 'Q&A 탐색' },
               { icon: Users, title: '파트너 연결', desc: '제품 체험 및 파트너 활동 안내', link: '/partner', btn: '파트너 알아보기' },
               { icon: Mail, title: '1:1 전문 상담', desc: '궁금한 점을 직접 물어보세요', link: '/consult', btn: '상담 신청' },
             ].map((c, i) => (

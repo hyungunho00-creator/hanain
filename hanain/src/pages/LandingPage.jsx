@@ -397,43 +397,6 @@ export default function LandingPage() {
       </section>
 
       {/* ════════════════════════════════════
-          4. 질환별 Q&A 탐색
-      ════════════════════════════════════ */}
-      <section className="py-12 px-5 bg-gray-50">
-        <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-8">
-            <p className="text-sm font-bold text-teal-600 tracking-widest uppercase mb-2">질환별 탐색</p>
-            <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 break-keep">
-              관심 있는 질환을 선택하세요
-            </h2>
-            <p className="text-gray-500 text-sm mt-2">터치 한 번으로 관련 Q&A로 바로 이동합니다</p>
-          </div>
-
-          <div className="grid grid-cols-4 gap-3">
-            {DISEASE_CATEGORIES.map((cat) => (
-              <button
-                key={cat.name}
-                onClick={() => goCategory(cat)}
-                className="flex flex-col items-center justify-center gap-1.5 bg-white rounded-2xl py-5 px-2 border-2 border-gray-100 hover:border-teal-300 hover:bg-teal-50 transition-all group"
-              >
-                <span className="text-2xl group-hover:scale-110 transition-transform">{cat.emoji}</span>
-                <span className="text-xs font-bold text-gray-700 text-center leading-snug break-keep">{cat.name}</span>
-              </button>
-            ))}
-          </div>
-
-          <div className="mt-6 text-center">
-            <button
-              onClick={() => navigate('/qa')}
-              className="inline-flex items-center gap-2 px-6 py-3 bg-teal-600 hover:bg-teal-700 text-white rounded-full text-sm font-bold transition-colors shadow-md shadow-teal-100"
-            >
-              전체 Q&A 보기 <ArrowRight />
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* ════════════════════════════════════
           FAQ
       ════════════════════════════════════ */}
       <section className="py-12 px-5 bg-gray-50">
