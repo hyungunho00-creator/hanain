@@ -31,8 +31,8 @@ function AppInner() {
         <Navbar />
         <main className="flex-1">
           <Routes>
-            <Route path="/"              element={<HomePage />} />
-            <Route path="/home"          element={<LandingPage />} />
+            <Route path="/"              element={<LandingPage />} />
+            <Route path="/home"          element={<HomePage />} />
             <Route path="/qa"            element={<QAPage />} />
             <Route path="/partner"       element={<PartnerPage />} />
             <Route path="/consult"       element={<ConsultPage />} />

@@ -134,7 +134,7 @@ export default function HomePage() {
         title="건강 정보 허브"
         description="플로로탄닌 파트너스 건강 정보 허브. 혈당·혈압·치매예방·항암·소화건강 등 플로로탄닌의 12개 건강 효능 정보."
         keywords="플로로탄닌 효능, 감태 건강, 해양폴리페놀 효과, 혈당개선, 혈압조절, 항산화식품, 치매예방식품"
-        canonical="https://phlorotannin.com/"
+        canonical="https://phlorotannin.com/home"
         jsonLd={homeJsonLd}
       />
 

@@ -180,7 +180,7 @@ export default function LandingPage() {
         title="플로로탄닌 건강 정보 아카이브"
         description="암·당뇨·뇌질환·염증 등 다양한 건강 문제를 찾는 분들을 위해 플로로탄닌 관련 정보를 기초부터 기전까지 정리한 정보형 사이트입니다."
         keywords="플로로탄닌, 감태, 해양폴리페놀, 암 회복 식단, 당뇨 혈당 관리, 뇌 건강 치매예방, 만성염증"
-        canonical="https://phlorotannin.com/home"
+        canonical="https://phlorotannin.com/"
         jsonLd={landingJsonLd}
       />
 
