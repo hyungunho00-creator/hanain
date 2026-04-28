@@ -25,7 +25,7 @@ export default function Navbar() {
 
   // 파트너 컨텍스트가 실제 파트너인지 (기본값 010-5652-8206 제외)
   const isPartner = partner && partner.phone && partner.phone !== '01056528206'
-  const cardPath  = isPartner ? `/p/${partner.phone}` : null
+  const cardPath  = isPartner ? `/p/${partner.phone}?view=card` : null
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)

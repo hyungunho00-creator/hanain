@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate, useSearchParams } from 'react-router-dom'
 import {
   Phone, MessageSquare, Globe, Download,
   AlertCircle, ChevronRight, Leaf, Heart, Star, Shield, BookOpen, UserPlus,
@@ -266,6 +266,8 @@ async function drawBack(partner, cardUrl) {
 export default function BusinessCardPage() {
   const { phone }  = useParams()
   const navigate   = useNavigate()
+  const [searchParams] = useSearchParams()
+  const viewCard = searchParams.get('view') === 'card'
   const [partner,     setPartner]     = useState(null)
   const [loading,     setLoading]     = useState(true)
   const [notFound,    setNotFound]    = useState(false)
@@ -285,14 +287,7 @@ export default function BusinessCardPage() {
           ? `${rawPhone.slice(0,3)}-${rawPhone.slice(3,7)}-${rawPhone.slice(7)}`
           : rawPhone
 
-        // 이미 세션에 같은 파트너가 저장돼 있으면 → 명함 버튼 클릭이므로 명함 페이지 그대로 표시
-        let alreadySaved = false
-        try {
-          const stored = JSON.parse(sessionStorage.getItem('phlorotannin_active_partner') || 'null')
-          if (stored && stored.phone === rawPhone) alreadySaved = true
-        } catch { /* 무시 */ }
-
-        // 세션에 저장 (처음이든 재방문이든 항상 최신 데이터로 갱신)
+        // 세션에 저장 (항상 최신 데이터로 갱신)
         savePartnerToSession({
           id: p.slug, name: p.name,
           phone: rawPhone,
@@ -300,12 +295,12 @@ export default function BusinessCardPage() {
           prefix: '',
         })
 
-        if (alreadySaved) {
-          // 명함 버튼 클릭 → 명함 페이지 표시
+        if (viewCard) {
+          // ?view=card 파라미터 있음 → 명함 버튼 클릭이므로 명함 페이지 표시
           setPartner(p)
           setLoading(false)
         } else {
-          // 처음 파트너 링크 접속 → 메인으로 리다이렉트
+          // 파라미터 없음 → 처음 파트너 링크 접속이므로 메인으로 리다이렉트
           navigate('/', { replace: true })
         }
       } else {
