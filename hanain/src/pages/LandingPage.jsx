@@ -105,25 +105,44 @@ const FAQS = [
   },
 ]
 
+// ⚠️ FAQPage를 메인(/)과 QA(/qa) 양쪽에 두면 Google이 중복으로 처리함
+// → 메인은 WebSite + WebPage + Organization만 사용, FAQPage는 /qa 전용
 const landingJsonLd = {
   "@context": "https://schema.org",
   "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://phlorotannin.com/#website",
+      "url": "https://phlorotannin.com/",
+      "name": "플로로탄닌 파트너스",
+      "description": "암·당뇨·뇌질환·염증·피부·모발 등 다양한 건강 주제를 다루는 플로로탄닌 관련 정보형 사이트.",
+      "inLanguage": "ko-KR",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://phlorotannin.com/qa?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
     {
       "@type": "WebPage",
       "@id": "https://phlorotannin.com/#webpage",
       "url": "https://phlorotannin.com/",
       "name": "플로로탄닌 건강 정보 아카이브 | 플로로탄닌 파트너스",
-      "description": "암·당뇨·뇌질환·염증·회복기 식단 등 다양한 건강 주제를 다루는 플로로탄닌 관련 정보형 사이트.",
+      "description": "암·당뇨·뇌질환·염증·피부·모발 회복기 식단 등 다양한 건강 주제를 다루는 플로로탄닌 관련 정보형 사이트.",
       "inLanguage": "ko-KR",
+      "isPartOf": { "@id": "https://phlorotannin.com/#website" }
     },
     {
-      "@type": "FAQPage",
-      "@id": "https://phlorotannin.com/#faqpage",
-      "mainEntity": FAQS.map(f => ({
-        "@type": "Question",
-        "name": f.q,
-        "acceptedAnswer": { "@type": "Answer", "text": f.a }
-      }))
+      "@type": "Organization",
+      "@id": "https://phlorotannin.com/#organization",
+      "name": "플로로탄닌 파트너스",
+      "url": "https://phlorotannin.com/",
+      "description": "해양 폴리페놀 플로로탄닌 관련 건강 정보 아카이브 및 파트너 프로그램 운영",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "availableLanguage": "Korean"
+      }
     }
   ]
 }
