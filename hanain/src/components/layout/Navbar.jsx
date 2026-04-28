@@ -21,7 +21,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const location  = useLocation()
   const navigate  = useNavigate()
-  const partner = usePartner()   // usePartner()는 partner 객체를 직접 반환
+  const partner = usePartner()
 
   // 파트너 컨텍스트가 실제 파트너인지 (기본값 010-5652-8206 제외)
   const isPartner = partner && partner.phone && partner.phone !== '01056528206'
@@ -44,13 +44,18 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16">
 
             {/* 로고 */}
-            <Link to="/" className="flex items-center gap-2 group">
-              <div className="w-9 h-9 bg-gradient-to-br from-cyan-hana to-blue-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+            <Link to="/" className="flex items-center gap-2 group flex-shrink-0">
+              <div className="w-9 h-9 bg-gradient-to-br from-cyan-hana to-blue-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
                 <Waves className="w-5 h-5 text-white" />
               </div>
-              <div>
+              {/* 데스크탑에서만 전체 로고 텍스트 표시 */}
+              <div className="hidden sm:block">
                 <span className="text-white font-bold text-lg leading-tight block">플로로탄닌 파트너스</span>
                 <span className="text-cyan-hana text-sm leading-tight block">Phlorotannin Partners</span>
+              </div>
+              {/* 모바일에서 짧은 로고 */}
+              <div className="block sm:hidden">
+                <span className="text-white font-bold text-base leading-tight block">플로로탄닌</span>
               </div>
             </Link>
 
@@ -73,54 +78,54 @@ export default function Navbar() {
               {isPartner && (
                 <button
                   onClick={() => navigate(cardPath)}
-                  className="ml-2 flex items-center gap-1.5 px-4 py-2 rounded-lg font-bold text-sm transition-all active:scale-95"
+                  className="ml-2 flex items-center gap-1.5 px-3 py-2 rounded-lg font-bold text-sm transition-all active:scale-95 whitespace-nowrap"
                   style={{
                     background: `linear-gradient(135deg, ${GOLD}, ${GOLD2})`,
                     color: NAVY,
                     boxShadow: `0 2px 10px ${GOLD}60`,
                   }}
                 >
-                  <CreditCard className="w-4 h-4" style={{ color: NAVY }} />
-                  {partner.name} 명함
+                  <CreditCard className="w-4 h-4 flex-shrink-0" style={{ color: NAVY }} />
+                  <span style={{ color: NAVY }}>{partner.name} 명함</span>
                 </button>
               )}
             </div>
 
             {/* 모바일 오른쪽 영역: 명함 버튼 + 메뉴 버튼 */}
-            <div className="md:hidden flex items-center gap-2">
-              {/* 파트너 명함 버튼 (모바일 상단바) */}
+            <div className="md:hidden flex items-center gap-1.5">
+              {/* 파트너 명함 버튼 (모바일) - 아이콘 + 이름만, 컴팩트 */}
               {isPartner && (
                 <button
                   onClick={() => navigate(cardPath)}
-                  className="flex items-center gap-1.5 px-3 py-2 rounded-lg font-bold text-sm active:scale-95 transition-transform"
+                  className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg font-bold text-xs active:scale-95 transition-transform whitespace-nowrap"
                   style={{
                     background: `linear-gradient(135deg, ${GOLD}, ${GOLD2})`,
                     color: NAVY,
-                    boxShadow: `0 2px 8px ${GOLD}60`,
+                    boxShadow: `0 2px 6px ${GOLD}50`,
                   }}
                 >
-                  <CreditCard className="w-4 h-4" style={{ color: NAVY }} />
-                  <span style={{ color: NAVY }}>{partner.name} 명함</span>
+                  <CreditCard className="w-3.5 h-3.5 flex-shrink-0" style={{ color: NAVY }} />
+                  <span style={{ color: NAVY, fontSize: '12px', fontWeight: '700' }}>{partner.name}</span>
                 </button>
               )}
               {/* 햄버거 버튼 */}
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="flex items-center gap-1.5 text-white px-3 py-2 rounded-lg hover:bg-white/10 transition-colors"
+                className="flex items-center gap-1 text-white px-2.5 py-1.5 rounded-lg hover:bg-white/10 transition-colors"
               >
                 {isOpen ? (
                   <>
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                     </svg>
-                    <span className="text-base font-bold">닫기</span>
+                    <span className="text-sm font-bold">닫기</span>
                   </>
                 ) : (
                   <>
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
-                    <span className="text-base font-bold">메뉴</span>
+                    <span className="text-sm font-bold">메뉴</span>
                   </>
                 )}
               </button>
