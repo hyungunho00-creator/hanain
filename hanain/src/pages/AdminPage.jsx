@@ -826,7 +826,7 @@ function QAAnswerTab() {
 const CATEGORY_NAMES = {
   metabolism: '대사질환', cancer_immune: '항암/면역', digestive: '소화/간',
   cardiovascular: '심혈관', neuro_cognitive: '뇌/인지', mental_health: '정신건강',
-  musculoskeletal: '근골격', skin_hair: '피부/모발', respiratory: '호흡기',
+  musculoskeletal: '근골격', skin: '피부', hair: '모발', skin_hair: '피부/모발(구)', respiratory: '호흡기',
   infection_inflammation: '감염/염증', womens_health: '여성건강', mens_health: '남성건강',
 }
 
@@ -1043,7 +1043,8 @@ function YouTubeManageTab() {
     { id: 'neuro_cognitive',       name: '뇌/인지' },
     { id: 'mental_health',         name: '정신건강' },
     { id: 'musculoskeletal',       name: '근골격' },
-    { id: 'skin_hair',             name: '피부/모발' },
+    { id: 'skin',                  name: '피부' },
+    { id: 'hair',                  name: '모발' },
     { id: 'respiratory',           name: '호흡기' },
     { id: 'infection_inflammation',name: '감염/염증' },
     { id: 'womens_health',         name: '여성건강' },

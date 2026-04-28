@@ -1,42 +1,62 @@
-import { useState, useEffect, useCallback, useRef } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useSearchParams, Link } from 'react-router-dom'
-import { ChevronDown, ThumbsUp, Share2, Filter, BookOpen, TrendingUp, MessageSquare, Phone, ChevronRight } from 'lucide-react'
+import { ChevronDown, ThumbsUp, Share2, Filter, BookOpen, TrendingUp, MessageSquare, Phone, ChevronRight, Search, X } from 'lucide-react'
 import { usePartner } from '../context/PartnerContext'
 import SEOHead from '../components/common/SEOHead'
-import { getQaCategories, getQaQuestions, getQaPopular, getQaCategoryCounts } from '../lib/supabase'
 
 const ITEMS_PER_PAGE = 20
 
-const CAT_COLORS = {
-  metabolism:             { bg: '#0077B6', text: '#ffffff' },
-  cancer_immune:          { bg: '#7C3AED', text: '#ffffff' },
-  digestive:              { bg: '#059669', text: '#ffffff' },
-  cardiovascular:         { bg: '#DC2626', text: '#ffffff' },
-  neuro_cognitive:        { bg: '#4338CA', text: '#ffffff' },
-  mental_health:          { bg: '#BE185D', text: '#ffffff' },
-  musculoskeletal:        { bg: '#C2410C', text: '#ffffff' },
-  skin_hair:              { bg: '#B45309', text: '#ffffff' },
-  respiratory:            { bg: '#0E7490', text: '#ffffff' },
-  infection_inflammation: { bg: '#0F766E', text: '#ffffff' },
-  womens_health:          { bg: '#BE123C', text: '#ffffff' },
-  mens_health:            { bg: '#334155', text: '#ffffff' },
-}
+// 카테고리 정의 (qa.json 기준 - skin/hair 분리)
+const QA_CATEGORIES = [
+  { id: 'metabolism',             name: '대사질환',    emoji: '🩸' },
+  { id: 'cancer_immune',          name: '항암/면역',   emoji: '💪' },
+  { id: 'digestive',              name: '소화/간 건강', emoji: '🫁' },
+  { id: 'cardiovascular',         name: '심혈관',      emoji: '❤️' },
+  { id: 'neuro_cognitive',        name: '뇌/인지',     emoji: '🧠' },
+  { id: 'mental_health',          name: '정신건강',    emoji: '😴' },
+  { id: 'musculoskeletal',        name: '근골격',      emoji: '🦴' },
+  { id: 'skin',                   name: '피부',        emoji: '✨' },
+  { id: 'hair',                   name: '모발',        emoji: '💇' },
+  { id: 'respiratory',            name: '호흡기',      emoji: '🫀' },
+  { id: 'infection_inflammation', name: '감염/염증',   emoji: '🔥' },
+  { id: 'womens_health',          name: '여성건강',    emoji: '🌸' },
+  { id: 'mens_health',            name: '남성건강',    emoji: '💪' },
+]
 
-function getCatBg(catId) {
-  return (CAT_COLORS[catId] || { bg: '#334155' }).bg
+const CAT_COLORS = {
+  metabolism:             { bg: '#0077B6' },
+  cancer_immune:          { bg: '#7C3AED' },
+  digestive:              { bg: '#059669' },
+  cardiovascular:         { bg: '#DC2626' },
+  neuro_cognitive:        { bg: '#4338CA' },
+  mental_health:          { bg: '#BE185D' },
+  musculoskeletal:        { bg: '#C2410C' },
+  skin:                   { bg: '#D97706' },
+  hair:                   { bg: '#92400E' },
+  skin_hair:              { bg: '#B45309' }, // legacy fallback
+  respiratory:            { bg: '#0E7490' },
+  infection_inflammation: { bg: '#0F766E' },
+  womens_health:          { bg: '#BE123C' },
+  mens_health:            { bg: '#334155' },
 }
 
 const CAT_SLUG_MAP = {
   metabolism: 'metabolism', cancer_immune: 'cancer-immune',
   digestive: 'digestive', cardiovascular: 'cardiovascular',
   neuro_cognitive: 'neuro-cognitive', mental_health: 'mental-health',
-  musculoskeletal: 'musculoskeletal', skin_hair: 'skin-hair',
+  musculoskeletal: 'musculoskeletal',
+  skin: 'skin', hair: 'hair', skin_hair: 'skin-hair',
   respiratory: 'respiratory', infection_inflammation: 'infection-inflammation',
   womens_health: 'womens-health', mens_health: 'mens-health',
 }
 
-function makeSlug(q) {
-  return q.replace(/[^\w\s가-힣]/g, '').replace(/\s+/g, '-').slice(0, 60)
+function getCatBg(catId) {
+  return (CAT_COLORS[catId] || { bg: '#334155' }).bg
+}
+
+function getCatName(catId) {
+  const cat = QA_CATEGORIES.find(c => c.id === catId)
+  return cat ? cat.name : catId
 }
 
 function highlightText(text, query) {
@@ -85,11 +105,10 @@ function ContactCard() {
   )
 }
 
-function QACard({ qa, isOpen, onToggle, searchQuery, categories }) {
+function QACard({ qa, isOpen, onToggle, searchQuery }) {
   const partner = usePartner()
   const [liked, setLiked] = useState(false)
   const [likeCount, setLikeCount] = useState(qa.likes || 0)
-  const cat = categories.find(c => c.id === qa.category_id)
 
   const handleLike = (e) => {
     e.stopPropagation()
@@ -115,6 +134,9 @@ function QACard({ qa, isOpen, onToggle, searchQuery, categories }) {
       ].filter(Boolean).join('\n\n')
 
   const references = typeof qa.answer !== 'string' ? qa.answer?.references : null
+  const catId = qa.category_id || qa.category
+  const catName = getCatName(catId)
+  const catBg = getCatBg(catId)
 
   return (
     <div
@@ -125,14 +147,14 @@ function QACard({ qa, isOpen, onToggle, searchQuery, categories }) {
         <div className="flex items-start gap-4">
           <div className="flex-1 min-w-0">
             <div className="flex flex-wrap items-center gap-2 mb-2">
-              {cat && (
+              {catId && (
                 <Link
-                  to={`/category/${CAT_SLUG_MAP[cat.id] || cat.id}`}
+                  to={`/category/${CAT_SLUG_MAP[catId] || catId}`}
                   onClick={e => e.stopPropagation()}
                   className="text-sm font-bold px-2.5 py-1 rounded-full hover:opacity-80 transition-opacity"
-                  style={{ backgroundColor: getCatBg(cat.id), color: '#ffffff' }}
+                  style={{ backgroundColor: catBg, color: '#ffffff' }}
                 >
-                  {cat.name}
+                  {catName}
                 </Link>
               )}
               <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${
@@ -140,7 +162,7 @@ function QACard({ qa, isOpen, onToggle, searchQuery, categories }) {
                 qa.difficulty === 'intermediate' || qa.difficulty === '중급' ? 'bg-yellow-100 text-yellow-700' :
                 'bg-red-100 text-red-700'
               }`}>
-                {qa.difficulty === 'basic' ? '기초' : qa.difficulty === 'intermediate' ? '중급' : qa.difficulty === 'advanced' ? '심화' : qa.difficulty}
+                {qa.difficulty === 'basic' ? '기초' : qa.difficulty === 'intermediate' ? '중급' : qa.difficulty === 'advanced' ? '심화' : (qa.difficulty || '기초')}
               </span>
               {(qa.tags || []).slice(0, 3).map(tag => (
                 <span key={tag} className="text-sm text-gray-400 bg-gray-100 px-2 py-0.5 rounded-full">#{tag}</span>
@@ -151,7 +173,7 @@ function QACard({ qa, isOpen, onToggle, searchQuery, categories }) {
               dangerouslySetInnerHTML={{ __html: highlightText(qa.question, searchQuery) }}
             />
             <div className="flex items-center gap-4 mt-2 text-sm text-gray-400">
-              <span>👁 {(qa.views || 0).toLocaleString()}</span>
+              <span>👁 {(qa.views || qa.view_count || 0).toLocaleString()}</span>
               <span>👍 {likeCount}</span>
             </div>
           </div>
@@ -217,105 +239,170 @@ function QACard({ qa, isOpen, onToggle, searchQuery, categories }) {
 }
 
 export default function QAPage() {
-  const partner = usePartner()
-  const [searchParams] = useSearchParams()
+  const [searchParams, setSearchParams] = useSearchParams()
   const [activeCategory, setActiveCategory] = useState(searchParams.get('category') || 'all')
   const [openId, setOpenId] = useState(searchParams.get('openId') || null)
   const [page, setPage] = useState(1)
+  const [searchQuery, setSearchQuery] = useState(searchParams.get('q') || '')
+  const [searchInput, setSearchInput] = useState(searchParams.get('q') || '')
 
-  const [categories, setCategories] = useState([])
+  // qa.json 기반 전체 데이터
+  const [allQuestions, setAllQuestions] = useState([])
+  const [dataLoaded, setDataLoaded] = useState(false)
+
+  // 표시할 질문 목록 (카테고리/검색/페이지 필터)
   const [questions, setQuestions] = useState([])
   const [totalCount, setTotalCount] = useState(0)
+  const [catCounts, setCatCounts] = useState({})
   const [popularList, setPopularList] = useState([])
   const [loading, setLoading] = useState(true)
-  const [catCounts, setCatCounts] = useState({})
+
+  const searchInputRef = useRef(null)
+
+  // qa.json 로드 (최초 1회)
+  useEffect(() => {
+    fetch('/qa.json')
+      .then(r => r.json())
+      .then(data => {
+        const qs = data.questions || []
+        setAllQuestions(qs)
+
+        // 카테고리별 카운트
+        const counts = {}
+        qs.forEach(q => {
+          const c = q.category || q.category_id || ''
+          counts[c] = (counts[c] || 0) + 1
+        })
+        setCatCounts(counts)
+        setTotalCount(qs.length)
+
+        // 인기 질문 (조회수 순 상위 10)
+        const popular = [...qs]
+          .sort((a, b) => (b.views || b.view_count || 0) - (a.views || a.view_count || 0))
+          .slice(0, 10)
+        setPopularList(popular)
+
+        setDataLoaded(true)
+        setLoading(false)
+      })
+      .catch(() => setLoading(false))
+  }, [])
 
   // URL 파라미터 동기화
   useEffect(() => {
     const cat = searchParams.get('category') || 'all'
     const oid = searchParams.get('openId') || null
+    const q = searchParams.get('q') || ''
     setActiveCategory(cat)
     setOpenId(oid)
+    setSearchQuery(q)
+    setSearchInput(q)
     setPage(1)
   }, [searchParams])
 
-  // 카테고리 + 전체 카운트 로드 (최초 1회)
+  // 필터링 + 페이지네이션
   useEffect(() => {
-    async function loadCategories() {
-      const cats = await getQaCategories()
-      setCategories(cats)
+    if (!dataLoaded) return
+    setLoading(true)
 
-      // 카테고리별 개수: 각 카테고리에 count=exact HEAD 요청 (1000행 제한 우회)
-      const { counts, total } = await getQaCategoryCounts()
-      setCatCounts(counts)
-      setTotalCount(total)
+    let filtered = [...allQuestions]
 
-      // 인기 질문 (전체, 조회수순)
-      const pop = await getQaPopular(null, 10)
-      setPopularList(pop)
+    // 검색어 필터
+    if (searchQuery && searchQuery.length >= 1) {
+      const q = searchQuery.toLowerCase()
+      filtered = filtered.filter(item => {
+        const qText = (item.question || '').toLowerCase()
+        const aText = typeof item.answer === 'string'
+          ? item.answer.toLowerCase()
+          : Object.values(item.answer || {}).join(' ').toLowerCase()
+        const tags = (item.tags || []).join(' ').toLowerCase()
+        return qText.includes(q) || aText.includes(q) || tags.includes(q)
+      })
     }
-    loadCategories()
-  }, [])
 
-  // 질문 목록 로드 (카테고리/페이지 변경 시)
-  useEffect(() => {
-    async function loadQuestions() {
-      setLoading(true)
-      const catId = activeCategory === 'all' ? null : activeCategory
-      const result = await getQaQuestions({ categoryId: catId, page, limit: ITEMS_PER_PAGE })
-      setQuestions(result.data)
-      if (activeCategory === 'all') {
-        setTotalCount(result.count)
-      }
-      setLoading(false)
-
-      // openId 스크롤
-      const oid = searchParams.get('openId')
-      if (oid) {
-        setTimeout(() => {
-          const el = document.querySelector(`[data-id="${oid}"]`)
-          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' })
-        }, 400)
-      }
+    // 카테고리 필터
+    if (activeCategory !== 'all') {
+      filtered = filtered.filter(item =>
+        (item.category || item.category_id) === activeCategory
+      )
     }
-    loadQuestions()
-  }, [activeCategory, page])
 
-  const currentCatCount = activeCategory === 'all'
-    ? Object.values(catCounts).reduce((a, b) => a + b, 0)
-    : (catCounts[activeCategory] || 0)
+    // 인기순 정렬
+    filtered.sort((a, b) => (b.views || b.view_count || 0) - (a.views || a.view_count || 0))
 
-  const totalPages = Math.ceil(
-    (activeCategory === 'all' ? totalCount : (catCounts[activeCategory] || 0)) / ITEMS_PER_PAGE
-  )
+    const total = filtered.length
+    const start = (page - 1) * ITEMS_PER_PAGE
+    const paged = filtered.slice(start, start + ITEMS_PER_PAGE)
+
+    setQuestions(paged)
+    setTotalCount(total)
+    setLoading(false)
+
+    // openId 스크롤
+    if (openId) {
+      setTimeout(() => {
+        const el = document.querySelector(`[data-id="${openId}"]`)
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      }, 400)
+    }
+  }, [allQuestions, dataLoaded, activeCategory, page, searchQuery, openId])
+
+  const totalPages = Math.ceil(totalCount / ITEMS_PER_PAGE)
+
+  const handleSearch = (e) => {
+    e.preventDefault()
+    const q = searchInput.trim()
+    const params = {}
+    if (q) params.q = q
+    if (activeCategory !== 'all') params.category = activeCategory
+    setSearchParams(params)
+    setPage(1)
+  }
+
+  const clearSearch = () => {
+    setSearchInput('')
+    const params = {}
+    if (activeCategory !== 'all') params.category = activeCategory
+    setSearchParams(params)
+    setPage(1)
+  }
+
+  const handleCategoryChange = (catId) => {
+    setActiveCategory(catId)
+    setPage(1)
+    const params = {}
+    if (searchQuery) params.q = searchQuery
+    if (catId !== 'all') params.category = catId
+    setSearchParams(params)
+  }
+
+  const totalAll = Object.values(catCounts).reduce((a, b) => a + b, 0)
 
   const STATIC_FAQ = [
     { q: '플로로탄닌이란 무엇인가요?', a: '플로로탄닌(Phlorotannin)은 감태·미역·다시마 등 갈조류에서 추출되는 해양 폴리페놀 성분입니다. 강력한 항산화, 항염, 혈당 조절 효과가 연구되고 있습니다.' },
-    { q: '플로로탄닌이 혈당에 도움이 되나요?', a: '임상 연구에 따르면 플로로탄닌 섭취 후 공복 혈당이 약 27% 감소한 결과가 보고되었습니다. 알파-글루코시다아제 억제를 통해 식후 혈당 급상승을 완화합니다.' },
-    { q: '플로로탄닌은 고혈압에도 효과가 있나요?', a: '플로로탄닌은 ACE(안지오텐신 전환효소) 억제 작용으로 혈압 조절에 도움이 될 수 있으며, 일부 임상 연구에서 혈압 감소 효과가 관찰되었습니다.' },
-    { q: '플로로탄닌이 치매 예방에 도움이 되나요?', a: '플로로탄닌은 아세틸콜린에스테라제 억제 및 산화 스트레스 감소를 통해 인지 기능 보호에 기여할 수 있습니다. 뇌 신경 세포 보호 효과가 연구되고 있습니다.' },
+    { q: '플로로탄닌이 혈당에 도움이 되나요?', a: '임상 연구에 따르면 플로로탄닌 섭취 후 공복 혈당이 약 27% 감소한 결과가 보고되었습니다.' },
+    { q: '플로로탄닌은 피부에 효과가 있나요?', a: '플로로탄닌은 항산화·항염 작용으로 피부 염증 완화, 아토피 개선, 피부 장벽 강화에 도움이 될 수 있습니다.' },
+    { q: '플로로탄닌은 고혈압에도 효과가 있나요?', a: '플로로탄닌은 ACE(안지오텐신 전환효소) 억제 작용으로 혈압 조절에 도움이 될 수 있습니다.' },
+    { q: '플로로탄닌이 치매 예방에 도움이 되나요?', a: '플로로탄닌은 아세틸콜린에스테라제 억제 및 산화 스트레스 감소를 통해 인지 기능 보호에 기여할 수 있습니다.' },
     { q: '플로로탄닌은 항암 효과가 있나요?', a: '암세포 사멸 유도(아폽토시스)와 혈관신생 억제 효과가 세포 실험 및 동물 실험에서 보고되었습니다.' },
-    { q: '플로로탄닌을 어떻게 섭취하나요?', a: '식품의약품안전처에서 인정한 감태 추출물 형태의 건강기능식품으로 섭취할 수 있습니다.' },
   ]
-
-  const dynamicFaq = questions.slice(0, 10)
-    .filter(q => q.question && q.answer)
-    .map(q => ({ "@type": "Question", "name": q.question, "acceptedAnswer": { "@type": "Answer", "text": (q.answer || '').slice(0, 300) } }))
 
   const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": dynamicFaq.length >= 3
-      ? dynamicFaq
-      : STATIC_FAQ.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } }))
+    "mainEntity": STATIC_FAQ.map(f => ({
+      "@type": "Question",
+      "name": f.q,
+      "acceptedAnswer": { "@type": "Answer", "text": f.a }
+    }))
   }
 
   return (
     <div className="pt-16 min-h-screen bg-gray-50">
       <SEOHead
-        title={`건강 Q&A ${totalCount.toLocaleString()}개`}
-        description={`플로로탄닌 관련 ${totalCount.toLocaleString()}개 건강 질문과 답변. 혈당, 혈압, 치매, 항암, 소화, 피부 등 12개 질환 카테고리 Q&A.`}
-        keywords="플로로탄닌 Q&A, 감태 효능, 건강 질문 답변, 혈당 낮추는 식품, 혈압 낮추는 법, 치매예방 식품, 항산화 효과"
+        title={`건강 Q&A ${totalAll.toLocaleString()}개`}
+        description={`플로로탄닌 관련 ${totalAll.toLocaleString()}개 건강 질문과 답변. 혈당, 혈압, 치매, 항암, 피부, 모발, 아토피, 발뒤꿈치 갈라짐 등 13개 질환 카테고리 Q&A.`}
+        keywords="플로로탄닌 Q&A, 감태 효능, 건강 질문 답변, 혈당 낮추는 식품, 혈압 낮추는 법, 치매예방 식품, 피부 건강, 아토피 치료, 발뒤꿈치 갈라짐, 탈모 예방, 모발 건강, 항산화 효과"
         canonical="https://phlorotannin.com/qa"
         jsonLd={faqJsonLd}
       />
@@ -329,8 +416,39 @@ export default function QAPage() {
           </div>
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">건강 Q&amp;A 라이브러리</h1>
           <p className="text-gray-300 mb-6 text-base md:text-lg">
-            올바른 건강 정보, 소재별 근거 중심 해설 · {totalCount.toLocaleString()}개 아티클
+            올바른 건강 정보, 소재별 근거 중심 해설 · {totalAll.toLocaleString()}개 아티클
           </p>
+
+          {/* 🔍 검색창 */}
+          <form onSubmit={handleSearch} className="relative max-w-2xl">
+            <div className="flex items-center bg-white rounded-2xl shadow-lg overflow-hidden">
+              <Search className="w-5 h-5 text-gray-400 ml-4 flex-shrink-0" />
+              <input
+                ref={searchInputRef}
+                type="text"
+                value={searchInput}
+                onChange={e => setSearchInput(e.target.value)}
+                placeholder="증상·질환·성분을 검색하세요 (예: 아토피, 발뒤꿈치, 탈모)"
+                className="flex-1 px-3 py-3.5 text-base text-gray-800 outline-none placeholder-gray-400 bg-transparent"
+              />
+              {searchInput && (
+                <button type="button" onClick={clearSearch} className="p-2 mr-1 text-gray-400 hover:text-gray-600">
+                  <X className="w-4 h-4" />
+                </button>
+              )}
+              <button
+                type="submit"
+                className="bg-cyan-hana text-white px-5 py-3.5 text-base font-semibold hover:bg-opacity-90 transition-all whitespace-nowrap"
+              >
+                검색
+              </button>
+            </div>
+            {searchQuery && (
+              <p className="text-cyan-200 text-sm mt-2 ml-1">
+                「{searchQuery}」 검색 결과: {totalCount.toLocaleString()}개
+              </p>
+            )}
+          </form>
         </div>
       </div>
 
@@ -338,23 +456,23 @@ export default function QAPage() {
         {/* Category tabs */}
         <div className="flex gap-2 overflow-x-auto pb-3 mb-6 scrollbar-hide">
           <button
-            onClick={() => { setActiveCategory('all'); setPage(1) }}
+            onClick={() => handleCategoryChange('all')}
             className={`flex-shrink-0 px-4 py-2 rounded-full text-base font-medium transition-all ${
               activeCategory === 'all' ? 'bg-ocean-deep text-white' : 'bg-white text-gray-600 hover:bg-gray-100'
             }`}
           >
-            전체 ({Object.values(catCounts).reduce((a, b) => a + b, 0).toLocaleString()})
+            전체 ({totalAll.toLocaleString()})
           </button>
-          {categories.map(cat => (
+          {QA_CATEGORIES.map(cat => (
             <button
               key={cat.id}
-              onClick={() => { setActiveCategory(cat.id); setPage(1) }}
+              onClick={() => handleCategoryChange(cat.id)}
               className={`flex-shrink-0 px-4 py-2 rounded-full text-base font-medium transition-all ${
                 activeCategory === cat.id ? 'text-white' : 'bg-white text-gray-600 hover:bg-gray-100'
               }`}
               style={activeCategory === cat.id ? { backgroundColor: getCatBg(cat.id), color: '#ffffff' } : {}}
             >
-              {cat.name} ({(catCounts[cat.id] || 0).toLocaleString()})
+              {cat.emoji} {cat.name} ({(catCounts[cat.id] || 0).toLocaleString()})
             </button>
           ))}
         </div>
@@ -371,8 +489,10 @@ export default function QAPage() {
               </div>
             ) : questions.length === 0 ? (
               <div className="bg-white rounded-2xl p-16 text-center shadow-sm border border-gray-100">
-                <p className="text-gray-400 mb-1">해당 카테고리에 정보가 없습니다.</p>
-                <button onClick={() => setActiveCategory('all')} className="text-cyan-hana text-base hover:underline mt-3">
+                <p className="text-gray-400 mb-1">
+                  {searchQuery ? `「${searchQuery}」에 해당하는 정보가 없습니다.` : '해당 카테고리에 정보가 없습니다.'}
+                </p>
+                <button onClick={() => { clearSearch(); handleCategoryChange('all') }} className="text-cyan-hana text-base hover:underline mt-3">
                   전체 보기
                 </button>
               </div>
@@ -383,8 +503,7 @@ export default function QAPage() {
                   qa={qa}
                   isOpen={openId === qa.id}
                   onToggle={() => setOpenId(openId === qa.id ? null : qa.id)}
-                  searchQuery=""
-                  categories={categories}
+                  searchQuery={searchQuery}
                 />
               ))
             )}
@@ -426,7 +545,8 @@ export default function QAPage() {
                   <button
                     key={qa.id}
                     onClick={() => {
-                      setActiveCategory(qa.category_id || 'all')
+                      const catId = qa.category || qa.category_id || 'all'
+                      handleCategoryChange(catId)
                       setPage(1)
                       setOpenId(qa.id)
                       setTimeout(() => {
@@ -466,14 +586,14 @@ export default function QAPage() {
                 카테고리별 보기
               </h3>
               <div className="space-y-1">
-                {categories.map(cat => (
+                {QA_CATEGORIES.map(cat => (
                   <div key={cat.id} className={`flex items-center justify-between px-3 py-2 rounded-lg transition-colors ${activeCategory === cat.id ? 'bg-gray-100' : 'hover:bg-gray-50'}`}>
                     <button
-                      onClick={() => { setActiveCategory(cat.id); setPage(1) }}
+                      onClick={() => handleCategoryChange(cat.id)}
                       className="flex items-center gap-2 flex-1 text-left"
                     >
                       <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: getCatBg(cat.id) }} />
-                      <span className="text-base text-gray-700">{cat.name}</span>
+                      <span className="text-base text-gray-700">{cat.emoji} {cat.name}</span>
                     </button>
                     <span className="text-sm text-gray-400 bg-gray-100 px-2 py-0.5 rounded-full">
                       {(catCounts[cat.id] || 0).toLocaleString()}

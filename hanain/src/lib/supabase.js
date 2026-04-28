@@ -543,7 +543,7 @@ export async function getQaQuestions({ categoryId = null, page = 1, limit = 20, 
 // 카테고리별 정확한 카운트 집계 (Supabase 1000행 제한 우회)
 export async function getQaCategoryCounts() {
   const cats = ['metabolism','cancer_immune','digestive','cardiovascular',
-    'neuro_cognitive','mental_health','musculoskeletal','skin_hair',
+    'neuro_cognitive','mental_health','musculoskeletal','skin','hair',
     'respiratory','infection_inflammation','womens_health','mens_health']
 
   const counts = {}

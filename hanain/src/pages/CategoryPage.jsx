@@ -10,7 +10,7 @@ const SLUG_TO_ID = {
   'metabolism': 'metabolism', 'cancer-immune': 'cancer_immune',
   'digestive': 'digestive', 'cardiovascular': 'cardiovascular',
   'neuro-cognitive': 'neuro_cognitive', 'mental-health': 'mental_health',
-  'musculoskeletal': 'musculoskeletal', 'skin-hair': 'skin_hair',
+  'musculoskeletal': 'musculoskeletal', 'skin-hair': 'skin_hair', 'skin': 'skin', 'hair': 'hair',
   'respiratory': 'respiratory', 'infection-inflammation': 'infection_inflammation',
   'womens-health': 'womens_health', 'mens-health': 'mens_health',
 }
@@ -310,7 +310,8 @@ export default function CategoryPage() {
                     { slug: 'digestive', name: '소화/간', color: '#10B981' },
                     { slug: 'mental-health', name: '정신건강', color: '#F59E0B' },
                     { slug: 'musculoskeletal', name: '근골격', color: '#F97316' },
-                    { slug: 'skin-hair', name: '피부/모발', color: '#EC4899' },
+                    { slug: 'skin', name: '피부', color: '#D97706' },
+                    { slug: 'hair', name: '모발', color: '#92400E' },
                     { slug: 'respiratory', name: '호흡기', color: '#06B6D4' },
                     { slug: 'infection-inflammation', name: '감염/염증', color: '#DC2626' },
                     { slug: 'womens-health', name: '여성건강', color: '#F472B6' },

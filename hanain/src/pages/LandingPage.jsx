@@ -78,6 +78,8 @@ const DISEASE_CATEGORIES = [
   { emoji: '🧠', name: '뇌·인지', categoryId: 'neuro_cognitive', query: '치매' },
   { emoji: '🔥', name: '염증·피로', categoryId: 'infection_inflammation', query: '염증' },
   { emoji: '❤️', name: '심혈관', categoryId: 'cardiovascular', query: '혈압' },
+  { emoji: '✨', name: '피부 건강', categoryId: 'skin', query: '아토피' },
+  { emoji: '💇', name: '모발 건강', categoryId: 'hair', query: '탈모' },
   { emoji: '😴', name: '수면·정신', categoryId: 'mental_health', query: '수면' },
   { emoji: '🦴', name: '근골격계', categoryId: 'musculoskeletal', query: '관절' },
   { emoji: '🌊', name: '플로로탄닌', path: '/phlorotannin' },
@@ -179,7 +181,7 @@ export default function LandingPage() {
       <SEOHead
         title="플로로탄닌 건강 정보 아카이브"
         description="암·당뇨·뇌질환·염증 등 다양한 건강 문제를 찾는 분들을 위해 플로로탄닌 관련 정보를 기초부터 기전까지 정리한 정보형 사이트입니다."
-        keywords="플로로탄닌, 감태, 해양폴리페놀, 암 회복 식단, 당뇨 혈당 관리, 뇌 건강 치매예방, 만성염증"
+        keywords="플로로탄닌, 감태, 해양폴리페놀, 암 회복 식단, 당뇨 혈당 관리, 뇌 건강 치매예방, 만성염증, 피부 건강, 아토피, 발뒤꿈치 갈라짐, 탈모 예방, 모발 건강"
         canonical="https://phlorotannin.com/"
         jsonLd={landingJsonLd}
       />
