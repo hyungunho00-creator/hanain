@@ -222,10 +222,24 @@ export default function LandingPage() {
 
           {/* 질환 태그 */}
           <div className="flex flex-wrap gap-2 mb-10">
-            {['💪 암·회복', '🩸 당뇨', '🧠 뇌 건강', '🔥 염증', '❤️ 심혈관', '😴 수면·정신', '🦴 근골격'].map(tag => (
-              <span key={tag} className="px-3 py-1.5 bg-gray-100 rounded-full text-sm font-semibold text-gray-600">
-                {tag}
-              </span>
+            {[
+              { label: '💪 암·회복',   cat: 'cancer_immune' },
+              { label: '🩸 당뇨',      cat: 'metabolism' },
+              { label: '🧠 뇌 건강',   cat: 'neuro_cognitive' },
+              { label: '🔥 염증',      cat: 'infection_inflammation' },
+              { label: '❤️ 심혈관',   cat: 'cardiovascular' },
+              { label: '✨ 피부 건강', cat: 'skin' },
+              { label: '💇 모발 건강', cat: 'hair' },
+              { label: '😴 수면·정신', cat: 'mental_health' },
+              { label: '🦴 근골격',    cat: 'musculoskeletal' },
+            ].map(tag => (
+              <button
+                key={tag.label}
+                onClick={() => navigate(`/qa?category=${tag.cat}`)}
+                className="px-3 py-1.5 bg-gray-100 hover:bg-teal-50 hover:text-teal-700 rounded-full text-sm font-semibold text-gray-600 transition-colors"
+              >
+                {tag.label}
+              </button>
             ))}
           </div>
 
