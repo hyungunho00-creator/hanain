@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useMemo } from 'react'
 import { useSearchParams, Link } from 'react-router-dom'
 import { ChevronDown, ThumbsUp, Share2, Filter, BookOpen, TrendingUp, MessageSquare, Phone, ChevronRight, Search, X } from 'lucide-react'
 import { usePartner } from '../context/PartnerContext'
@@ -240,22 +240,28 @@ function QACard({ qa, isOpen, onToggle, searchQuery }) {
 
 export default function QAPage() {
   const [searchParams, setSearchParams] = useSearchParams()
-  const [activeCategory, setActiveCategory] = useState(searchParams.get('category') || 'all')
-  const [openId, setOpenId] = useState(searchParams.get('openId') || null)
-  const [page, setPage] = useState(1)
-  const [searchQuery, setSearchQuery] = useState(searchParams.get('q') || '')
-  const [searchInput, setSearchInput] = useState(searchParams.get('q') || '')
+
+  // ✅ URL params를 직접 파생 — state 비동기 타이밍 버그 완전 제거
+  const activeCategory = searchParams.get('category') || 'all'
+  const openId = searchParams.get('openId') || null
+  const searchQuery = searchParams.get('q') || ''
+  const page = Number(searchParams.get('page') || '1')
+
+  // 검색창 입력값만 별도 state (입력 중 URL 갱신 방지)
+  const [searchInput, setSearchInput] = useState(searchQuery)
+
+  // searchQuery(URL) 바뀌면 입력창도 동기화
+  useEffect(() => {
+    setSearchInput(searchQuery)
+  }, [searchQuery])
 
   // qa.json 기반 전체 데이터
   const [allQuestions, setAllQuestions] = useState([])
   const [dataLoaded, setDataLoaded] = useState(false)
-
-  // 표시할 질문 목록 (카테고리/검색/페이지 필터)
-  const [questions, setQuestions] = useState([])
-  const [totalCount, setTotalCount] = useState(0)
   const [catCounts, setCatCounts] = useState({})
   const [popularList, setPopularList] = useState([])
-  const [loading, setLoading] = useState(true)
+  // loading = 데이터 미로드 상태
+  const loading = !dataLoaded
 
   const searchInputRef = useRef(null)
 
@@ -274,7 +280,6 @@ export default function QAPage() {
           counts[c] = (counts[c] || 0) + 1
         })
         setCatCounts(counts)
-        setTotalCount(qs.length)
 
         // 인기 질문 (조회수 순 상위 10)
         const popular = [...qs]
@@ -288,28 +293,15 @@ export default function QAPage() {
       .catch(() => setLoading(false))
   }, [])
 
-  // URL 파라미터 동기화
-  useEffect(() => {
-    const cat = searchParams.get('category') || 'all'
-    const oid = searchParams.get('openId') || null
-    const q = searchParams.get('q') || ''
-    setActiveCategory(cat)
-    setOpenId(oid)
-    setSearchQuery(q)
-    setSearchInput(q)
-    setPage(1)
-  }, [searchParams])
-
-  // 필터링 + 페이지네이션
-  useEffect(() => {
-    if (!dataLoaded) return
-    setLoading(true)
+  // ✅ 필터링: URL params 직접 사용 → state 타이밍 문제 없음
+  const { questions, totalCount } = useMemo(() => {
+    if (!dataLoaded) return { questions: [], totalCount: 0 }
 
     let filtered = [...allQuestions]
 
     // 검색어 필터
-    if (searchQuery && searchQuery.length >= 1) {
-      const q = searchQuery.toLowerCase()
+    const q = searchQuery.trim().toLowerCase()
+    if (q.length >= 1) {
       filtered = filtered.filter(item => {
         const qText = (item.question || '').toLowerCase()
         const aText = typeof item.answer === 'string'
@@ -333,21 +325,27 @@ export default function QAPage() {
     const total = filtered.length
     const start = (page - 1) * ITEMS_PER_PAGE
     const paged = filtered.slice(start, start + ITEMS_PER_PAGE)
+    return { questions: paged, totalCount: total }
+  }, [allQuestions, dataLoaded, activeCategory, page, searchQuery])
 
-    setQuestions(paged)
-    setTotalCount(total)
-    setLoading(false)
-
-    // openId 스크롤
+  // openId 스크롤
+  useEffect(() => {
     if (openId) {
       setTimeout(() => {
         const el = document.querySelector(`[data-id="${openId}"]`)
         if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' })
       }, 400)
     }
-  }, [allQuestions, dataLoaded, activeCategory, page, searchQuery, openId])
+  }, [openId, questions])
 
   const totalPages = Math.ceil(totalCount / ITEMS_PER_PAGE)
+
+  const setPage = (p) => {
+    const params = Object.fromEntries(searchParams.entries())
+    if (p === 1) delete params.page
+    else params.page = String(p)
+    setSearchParams(params)
+  }
 
   const handleSearch = (e) => {
     e.preventDefault()
@@ -356,7 +354,6 @@ export default function QAPage() {
     if (q) params.q = q
     if (activeCategory !== 'all') params.category = activeCategory
     setSearchParams(params)
-    setPage(1)
   }
 
   const clearSearch = () => {
@@ -364,12 +361,9 @@ export default function QAPage() {
     const params = {}
     if (activeCategory !== 'all') params.category = activeCategory
     setSearchParams(params)
-    setPage(1)
   }
 
   const handleCategoryChange = (catId) => {
-    setActiveCategory(catId)
-    setPage(1)
     const params = {}
     if (searchQuery) params.q = searchQuery
     if (catId !== 'all') params.category = catId

@@ -397,8 +397,9 @@ export default function BusinessCardPage() {
   const sms = `sms:${partner.phone}?body=${encodeURIComponent('[PHLOROTANNIN PARTNERS] 안녕하세요! 명함을 보고 연락드립니다.')}`
 
   const nameLen = (partner.name || '').length
-  const screenNameSize = nameLen <= 3 ? '2.6rem' : nameLen <= 4 ? '2.1rem' : '1.7rem'
-  const screenLetterSp = nameLen <= 3 ? '0.18em' : nameLen <= 4 ? '0.12em' : '0.08em'
+  // 화면 너비에 따라 반응형으로 조정: vw 기반으로 절대 잘리지 않게
+  const screenNameSize = nameLen <= 2 ? '2.8rem' : nameLen <= 3 ? '2.4rem' : nameLen <= 4 ? '2.0rem' : '1.6rem'
+  const screenLetterSp = nameLen <= 3 ? '0.15em' : nameLen <= 4 ? '0.10em' : '0.06em'
 
   return (
     <>
@@ -454,7 +455,7 @@ export default function BusinessCardPage() {
                       <p style={{ fontSize: '10px', color: GOLD, fontWeight: '800', letterSpacing: '2.5px', textTransform: 'uppercase', marginBottom: '10px' }}>
                         PHLOROTANNIN PARTNERS
                       </p>
-                      <h1 style={{ fontSize: screenNameSize, fontWeight: '900', color: NAVY, letterSpacing: screenLetterSp, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', marginBottom: '8px', lineHeight: 1.1 }}>
+                      <h1 style={{ fontSize: screenNameSize, fontWeight: '900', color: NAVY, letterSpacing: screenLetterSp, wordBreak: 'keep-all', overflowWrap: 'break-word', whiteSpace: 'normal', marginBottom: '8px', lineHeight: 1.15 }}>
                         {partner.name}
                       </h1>
                       <p style={{ fontSize: '14px', color: GOLD, fontWeight: '800', letterSpacing: '2px', marginBottom: '10px' }}>
@@ -464,11 +465,11 @@ export default function BusinessCardPage() {
                       <p style={{ fontSize: '13px', color: '#4a5568', lineHeight: '1.9' }}>신뢰를 전하는 회복 솔루션</p>
                       <p style={{ fontSize: '15px', color: NAVY, fontWeight: '800', marginTop: '4px' }}>✆&nbsp; {partner.phoneDisplay}</p>
                     </div>
-                    <div className="flex flex-col items-center gap-2 flex-shrink-0">
-                      <div style={{ border: `2px solid ${GOLD}`, borderRadius: '12px', padding: '5px', background: '#fff', boxShadow: `0 6px 24px ${GOLD}35` }}>
-                        <QRCode url={cardUrl} size={95} />
+                    <div className="flex flex-col items-center gap-2 flex-shrink-0" style={{ maxWidth: '85px' }}>
+                      <div style={{ border: `2px solid ${GOLD}`, borderRadius: '10px', padding: '4px', background: '#fff', boxShadow: `0 4px 16px ${GOLD}35` }}>
+                        <QRCode url={cardUrl} size={75} />
                       </div>
-                      <p style={{ fontSize: '9px', color: GOLD, letterSpacing: '2px', fontWeight: '700', textTransform: 'uppercase' }}>SCAN ME</p>
+                      <p style={{ fontSize: '8px', color: GOLD, letterSpacing: '1.5px', fontWeight: '700', textTransform: 'uppercase' }}>SCAN ME</p>
                     </div>
                   </div>
                   <div className="flex items-center justify-between mt-4 pt-4" style={{ borderTop: `1.5px solid ${GOLD}30` }}>
