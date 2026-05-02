@@ -161,6 +161,96 @@
       "memo": "",
       "createdAt": "2026-04-27T00:00:00.000Z",
       "phoneDisplay": "010-3668-8494"
+    },
+    {
+      "slug": "01053026118",
+      "name": "이순이",
+      "phone": "01053026118",
+      "phoneDisplay": "010-5302-6118",
+      "siteUrl": "https://phlorotannin.com/p/01053026118",
+      "memo": "",
+      "createdAt": "2026-05-02T00:00:00.000Z"
+    },
+    {
+      "slug": "01058772460",
+      "name": "임건해",
+      "phone": "01058772460",
+      "phoneDisplay": "010-5877-2460",
+      "siteUrl": "https://phlorotannin.com/p/01058772460",
+      "memo": "",
+      "createdAt": "2026-05-02T00:00:00.000Z"
+    },
+    {
+      "slug": "01037335804",
+      "name": "노춘균",
+      "phone": "01037335804",
+      "phoneDisplay": "010-3733-5804",
+      "siteUrl": "https://phlorotannin.com/p/01037335804",
+      "memo": "",
+      "createdAt": "2026-05-02T00:00:00.000Z"
+    },
+    {
+      "slug": "01048540023",
+      "name": "고복선",
+      "phone": "01048540023",
+      "phoneDisplay": "010-4854-0023",
+      "siteUrl": "https://phlorotannin.com/p/01048540023",
+      "memo": "",
+      "createdAt": "2026-05-02T00:00:00.000Z"
+    },
+    {
+      "slug": "01072360121",
+      "name": "김영동",
+      "phone": "01072360121",
+      "phoneDisplay": "010-7236-0121",
+      "siteUrl": "https://phlorotannin.com/p/01072360121",
+      "memo": "",
+      "createdAt": "2026-05-02T00:00:00.000Z"
+    },
+    {
+      "slug": "01071145750",
+      "name": "오예지",
+      "phone": "01071145750",
+      "phoneDisplay": "010-7114-5750",
+      "siteUrl": "https://phlorotannin.com/p/01071145750",
+      "memo": "",
+      "createdAt": "2026-05-02T00:00:00.000Z"
+    },
+    {
+      "slug": "01031376106",
+      "name": "신상옥",
+      "phone": "01031376106",
+      "phoneDisplay": "010-3137-6106",
+      "siteUrl": "https://phlorotannin.com/p/01031376106",
+      "memo": "",
+      "createdAt": "2026-05-02T00:00:00.000Z"
+    },
+    {
+      "slug": "01071877748",
+      "name": "정화영",
+      "phone": "01071877748",
+      "phoneDisplay": "010-7187-7748",
+      "siteUrl": "https://phlorotannin.com/p/01071877748",
+      "memo": "",
+      "createdAt": "2026-05-02T00:00:00.000Z"
+    },
+    {
+      "slug": "01077712989",
+      "name": "정주리",
+      "phone": "01077712989",
+      "phoneDisplay": "010-7771-2989",
+      "siteUrl": "https://phlorotannin.com/p/01077712989",
+      "memo": "",
+      "createdAt": "2026-05-02T00:00:00.000Z"
+    },
+    {
+      "slug": "01082509873",
+      "name": "남점자",
+      "phone": "01082509873",
+      "phoneDisplay": "010-8250-9873",
+      "siteUrl": "https://phlorotannin.com/p/01082509873",
+      "memo": "",
+      "createdAt": "2026-05-02T00:00:00.000Z"
     }
   ]
 }
