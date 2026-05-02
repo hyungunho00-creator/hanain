@@ -318,11 +318,11 @@ export async function updateUserProfile(userId, updates) {
 }
 
 // ── Community posts (기존) ────────────────────────────────
-export async function getPosts({ category = null, page = 1, limit = 20, search = '' } = {}) {
+export async function getCommunityPosts({ category = null, page = 1, limit = 20, search = '' } = {}) {
   let query = supabase
-    .from('posts')
+    .from('community_posts')
     .select(`id, title, category, view_count, like_count, comment_count, share_count, created_at, author_id,
-      users!posts_author_id_fkey(nickname, avatar_url)`, { count: 'exact' })
+      users!community_posts_author_id_fkey(nickname, avatar_url)`, { count: 'exact' })
     .eq('status', 'published').eq('is_public', true)
     .order('created_at', { ascending: false })
     .range((page - 1) * limit, page * limit - 1)
@@ -332,37 +332,37 @@ export async function getPosts({ category = null, page = 1, limit = 20, search =
   return { data: data || [], error, count }
 }
 
-export async function getPost(id) {
+export async function getCommunityPost(id) {
   const { data, error } = await supabase
-    .from('posts')
-    .select(`*, users!posts_author_id_fkey(id, nickname, avatar_url, role)`)
+    .from('community_posts')
+    .select(`*, users!community_posts_author_id_fkey(id, nickname, avatar_url, role)`)
     .eq('id', id).single()
   return { data, error }
 }
 
-export async function createPost({ title, content, category, is_public = true }) {
+export async function createCommunityPost({ title, content, category, is_public = true }) {
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) return { error: { message: '로그인이 필요합니다.' } }
-  const { data, error } = await supabase.from('posts')
+  const { data, error } = await supabase.from('community_posts')
     .insert({ title, content, category, is_public, author_id: user.id, status: 'published' })
     .select().single()
   return { data, error }
 }
 
-export async function updatePost(id, { title, content, category, is_public }) {
-  const { data, error } = await supabase.from('posts')
+export async function updateCommunityPost(id, { title, content, category, is_public }) {
+  const { data, error } = await supabase.from('community_posts')
     .update({ title, content, category, is_public, updated_at: new Date().toISOString() })
     .eq('id', id).select().single()
   return { data, error }
 }
 
-export async function deletePost(id) {
-  return supabase.from('posts').delete().eq('id', id)
+export async function deleteCommunityPost(id) {
+  return supabase.from('community_posts').delete().eq('id', id)
 }
 
 export async function getComments(postId) {
-  const { data } = await supabase.from('comments')
-    .select(`id, content, created_at, is_deleted, users!comments_author_id_fkey(id, nickname, avatar_url)`)
+  const { data } = await supabase.from('community_comments')
+    .select(`id, content, created_at, is_deleted, users!community_comments_author_id_fkey(id, nickname, avatar_url)`)
     .eq('post_id', postId).eq('is_deleted', false).order('created_at', { ascending: true })
   return { data: data || [] }
 }
@@ -370,31 +370,31 @@ export async function getComments(postId) {
 export async function createComment(postId, content) {
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) return { error: { message: '로그인이 필요합니다.' } }
-  const { data, error } = await supabase.from('comments')
+  const { data, error } = await supabase.from('community_comments')
     .insert({ post_id: postId, author_id: user.id, content })
-    .select(`id, content, created_at, users!comments_author_id_fkey(id, nickname, avatar_url)`).single()
+    .select(`id, content, created_at, users!community_comments_author_id_fkey(id, nickname, avatar_url)`).single()
   return { data, error }
 }
 
 export async function deleteComment(commentId, postId) {
-  const { error } = await supabase.from('comments').update({ is_deleted: true }).eq('id', commentId)
+  const { error } = await supabase.from('community_comments').update({ is_deleted: true }).eq('id', commentId)
   return { error }
 }
 
 export async function toggleLike(postId) {
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) return { error: '로그인 필요' }
-  const { data: existing } = await supabase.from('likes').select('id')
+  const { data: existing } = await supabase.from('community_likes').select('id')
     .eq('post_id', postId).eq('user_id', user.id).single()
   if (existing) {
-    await supabase.from('likes').delete().eq('id', existing.id)
-    const { data: p } = await supabase.from('posts').select('like_count').eq('id', postId).single()
-    if (p) await supabase.from('posts').update({ like_count: Math.max(0, p.like_count - 1) }).eq('id', postId)
+    await supabase.from('community_likes').delete().eq('id', existing.id)
+    const { data: p } = await supabase.from('community_posts').select('like_count').eq('id', postId).single()
+    if (p) await supabase.from('community_posts').update({ like_count: Math.max(0, p.like_count - 1) }).eq('id', postId)
     return { liked: false }
   } else {
-    await supabase.from('likes').insert({ post_id: postId, user_id: user.id })
-    const { data: p } = await supabase.from('posts').select('like_count').eq('id', postId).single()
-    if (p) await supabase.from('posts').update({ like_count: (p.like_count || 0) + 1 }).eq('id', postId)
+    await supabase.from('community_likes').insert({ post_id: postId, user_id: user.id })
+    const { data: p } = await supabase.from('community_posts').select('like_count').eq('id', postId).single()
+    if (p) await supabase.from('community_posts').update({ like_count: (p.like_count || 0) + 1 }).eq('id', postId)
     return { liked: true }
   }
 }
@@ -402,7 +402,7 @@ export async function toggleLike(postId) {
 export async function getLikeStatus(postId) {
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) return { liked: false }
-  const { data } = await supabase.from('likes').select('id')
+  const { data } = await supabase.from('community_likes').select('id')
     .eq('post_id', postId).eq('user_id', user.id).single()
   return { liked: !!data }
 }
@@ -410,13 +410,11 @@ export async function getLikeStatus(postId) {
 export async function logShare(postId, platform) {
   const partnerSlug = localStorage.getItem('ref_partner') || null
   await supabase.from('share_logs').insert({ post_id: postId, partner_slug: partnerSlug, platform }).catch(() => {})
-  const { data } = await supabase.from('posts').select('share_count').eq('id', postId).single()
-  if (data) await supabase.from('posts').update({ share_count: (data.share_count || 0) + 1 }).eq('id', postId)
 }
 
 export async function incrementViewCount(id) {
-  const { data } = await supabase.from('posts').select('view_count').eq('id', id).single()
-  if (data) await supabase.from('posts').update({ view_count: (data.view_count || 0) + 1 }).eq('id', id)
+  const { data } = await supabase.from('community_posts').select('view_count').eq('id', id).single()
+  if (data) await supabase.from('community_posts').update({ view_count: (data.view_count || 0) + 1 }).eq('id', id)
 }
 
 // ── Admin: Questions ──────────────────────────────────────
@@ -570,4 +568,62 @@ export async function getQaPopular(categoryId = null, limit = 10) {
   if (categoryId) q = q.eq('category_id', categoryId)
   const { data } = await q
   return data || []
+}
+
+// ── Blog Posts ────────────────────────────────────────────
+export async function getPosts({ category = null, tag = null, limit = 20, page = 1 } = {}) {
+  let q = supabase
+    .from('posts')
+    .select('id,slug,title,excerpt,category,tags,og_image,created_at,view_count')
+    .eq('status', 'published')
+    .order('created_at', { ascending: false })
+    .range((page - 1) * limit, page * limit - 1)
+  if (category) q = q.eq('category', category)
+  if (tag) q = q.contains('tags', [tag])
+  const { data, error } = await q
+  return { data: data || [], error }
+}
+
+export async function getPostBySlug(slug) {
+  const { data, error } = await supabase
+    .from('posts')
+    .select('*')
+    .eq('slug', slug)
+    .eq('status', 'published')
+    .single()
+  return { data, error }
+}
+
+export async function getPostCount(category = null) {
+  let q = supabase.from('posts').select('id', { count: 'exact', head: true }).eq('status', 'published')
+  if (category) q = q.eq('category', category)
+  const { count } = await q
+  return count || 0
+}
+
+export async function incrementPostView(slug) {
+  await supabase.rpc('increment_post_view', { post_slug: slug }).catch(() => {})
+}
+
+// 관리자용 (service role 필요 없이 anon으로도 upsert 가능하게 RLS 설정됨)
+export async function upsertPost(post) {
+  const { data, error } = await supabase
+    .from('posts')
+    .upsert(post, { onConflict: 'slug' })
+    .select()
+    .single()
+  return { data, error }
+}
+
+export async function deletePost(id) {
+  const { error } = await supabase.from('posts').delete().eq('id', id)
+  return { error }
+}
+
+export async function getAllPostsAdmin() {
+  const { data, error } = await supabase
+    .from('posts')
+    .select('id,slug,title,category,tags,status,created_at,view_count')
+    .order('created_at', { ascending: false })
+  return { data: data || [], error }
 }

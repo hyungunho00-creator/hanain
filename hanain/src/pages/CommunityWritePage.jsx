@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, useParams, Link } from 'react-router-dom'
 import { ArrowLeft, Send, Lock, Globe, AlertCircle } from 'lucide-react'
-import { createPost, updatePost, getPost } from '../lib/supabase'
+import { createCommunityPost as createPost, updateCommunityPost as updatePost, getCommunityPost as getPost } from '../lib/supabase'
 import { COMMUNITY_CATEGORIES } from '../data/communityCategories'
 import { useAuth } from '../context/AuthContext'
 import SEOHead from '../components/common/SEOHead'

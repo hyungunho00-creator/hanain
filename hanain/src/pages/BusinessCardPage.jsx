@@ -16,15 +16,28 @@ const CREAM = '#FFFDF7'
 const CREAM2 = '#FBF5E6'
 const CREAM3 = '#F5EDD2'
 
+const PARTNERS_JSON_URL = 'https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/public/partners.json'
+
 async function fetchPartnerByPhone(phone) {
   try {
-    const resp = await fetch(`${MAIN_SITE}/partners.json?t=${Date.now()}`, { cache: 'no-store' })
-    if (!resp.ok) return null
-    const data = await resp.json()
-    const digits = phone.replace(/\D/g, '')
-    return (data.partners || []).find(p =>
-      p.phone?.replace(/\D/g, '') === digits || p.slug === digits
-    ) || null
+    // Supabase Storage → fallback: Vercel 배포 파일
+    const urls = [
+      `${PARTNERS_JSON_URL}?t=${Date.now()}`,
+      `${MAIN_SITE}/partners.json?t=${Date.now()}`,
+    ]
+    for (const url of urls) {
+      try {
+        const resp = await fetch(url, { cache: 'no-store' })
+        if (!resp.ok) continue
+        const data = await resp.json()
+        const digits = phone.replace(/\D/g, '')
+        const found = (data.partners || []).find(p =>
+          p.phone?.replace(/\D/g, '') === digits || p.slug === digits
+        )
+        if (found) return found
+      } catch { continue }
+    }
+    return null
   } catch { return null }
 }
 

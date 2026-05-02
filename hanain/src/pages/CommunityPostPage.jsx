@@ -5,8 +5,8 @@ import {
   Send, Copy, Check, AlertCircle, ChevronRight
 } from 'lucide-react'
 import {
-  getPost, getComments, createComment, deleteComment,
-  toggleLike, getLikeStatus, incrementViewCount, deletePost, logShare
+  getCommunityPost as getPost, getComments, createComment, deleteComment,
+  toggleLike, getLikeStatus, incrementViewCount, deleteCommunityPost as deletePost, logShare
 } from '../lib/supabase'
 import { getCategoryById } from '../data/communityCategories'
 import { useAuth } from '../context/AuthContext'

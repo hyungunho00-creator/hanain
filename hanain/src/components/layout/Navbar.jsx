@@ -8,8 +8,9 @@ const NAV_LINKS = [
   { path: '/easy',        label: '플로로탄닌 쉽게 배우기', num: '①' },
   { path: '/phlorotannin',label: '플로로탄닌 소개',        num: '②' },
   { path: '/qa',          label: '건강 Q&A',              num: '③' },
-  { path: '/partner',     label: '파트너 참여',            num: '④' },
-  { path: '/consult',     label: '문의하기',               num: '⑤' },
+  { path: '/blog',        label: '연구 블로그',            num: '④' },
+  { path: '/partner',     label: '파트너 참여',            num: '⑤' },
+  { path: '/consult',     label: '문의하기',               num: '⑥' },
 ]
 
 const GOLD  = '#B8953A'

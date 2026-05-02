@@ -23,13 +23,16 @@ export default function SEOHead({
   ogImage = 'https://phlorotannin.com/og-image.png',
   noindex = false,
   jsonLd = null,
+  lang = 'ko',
 }) {
-  const SITE_NAME = '플로로탄닌 파트너스'
-  const DEFAULT_DESC = '암·당뇨·뇌질환·만성염증 등 다양한 건강 주제의 플로로탄닌 관련 정보 아카이브. 12개 질환 카테고리, 1,311개 Q&A 제공.'
+  const SITE_NAME = '플로로탄닌 파트너스 | Phlorotannin Partners'
+  const DEFAULT_DESC = '암·당뇨·뇌질환·만성염증 등 다양한 건강 주제의 플로로탄닌(phlorotannin) 관련 정보 아카이브. PH-100, 에콜, 비에콜 등 플로로탄닌 유도 성분 12개 질환 카테고리, 1,361개 Q&A 제공.'
+  const DEFAULT_KEYWORDS = '플로로탄닌,phlorotannin,PH-100,에콜,비에콜,ecol,bioecol,감태 폴리페놀,해양 폴리페놀,플로로탄닌 효능,당뇨약 부작용,항암,면역,노화방지'
   const fullTitle = title
     ? `${title} | ${SITE_NAME}`
     : `${SITE_NAME} | 해양 폴리페놀 건강 정보 아카이브`
   const finalDesc = description || DEFAULT_DESC
+  const finalKeywords = keywords ? `${keywords},${DEFAULT_KEYWORDS}` : DEFAULT_KEYWORDS
 
   useEffect(() => {
     // ─── title ───
@@ -51,9 +54,29 @@ export default function SEOHead({
       el.setAttribute('content', content)
     }
 
+    // hreflang 태그 추가 (한국어/영어 병행 노출)
+    const addHreflang = (hreflang, href) => {
+      const existing = document.querySelector(`link[rel="alternate"][hreflang="${hreflang}"]`)
+      if (existing) { existing.setAttribute('href', href); return }
+      const link = document.createElement('link')
+      link.setAttribute('rel', 'alternate')
+      link.setAttribute('hreflang', hreflang)
+      link.setAttribute('href', href)
+      document.head.appendChild(link)
+    }
+    if (canonical) {
+      addHreflang('ko', canonical)
+      addHreflang('x-default', canonical)
+    }
+
+    // lang 속성 설정
+    if (document.documentElement) {
+      document.documentElement.setAttribute('lang', lang === 'en' ? 'en' : 'ko')
+    }
+
     // ─── 기본 SEO ───
     setMeta('meta[name="description"]', finalDesc)
-    if (keywords) setMeta('meta[name="keywords"]', keywords)
+    setMeta('meta[name="keywords"]', finalKeywords)
     setMeta(
       'meta[name="robots"]',
       noindex
@@ -96,13 +119,16 @@ export default function SEOHead({
 
     // ─── JSON-LD 구조화 데이터 ───
     if (jsonLd) {
-      // 기존 페이지별 JSON-LD 제거 후 새로 삽입
       document.querySelectorAll('script[data-seo-jsonld]').forEach(el => el.remove())
-      const script = document.createElement('script')
-      script.type = 'application/ld+json'
-      script.setAttribute('data-seo-jsonld', 'true')
-      script.textContent = JSON.stringify(jsonLd, null, 0)
-      document.head.appendChild(script)
+      // 배열이면 여러 개 삽입, 객체면 하나 삽입
+      const items = Array.isArray(jsonLd) ? jsonLd : [jsonLd]
+      items.forEach((item, idx) => {
+        const script = document.createElement('script')
+        script.type = 'application/ld+json'
+        script.setAttribute('data-seo-jsonld', String(idx))
+        script.textContent = JSON.stringify(item, null, 0)
+        document.head.appendChild(script)
+      })
     }
 
     // ─── GA4 페이지뷰 이벤트 ───
@@ -113,7 +139,7 @@ export default function SEOHead({
         page_path: canonical ? new URL(canonical).pathname : window.location.pathname,
       })
     }
-  }, [fullTitle, finalDesc, keywords, canonical, ogImage, noindex, ogType, jsonLd])
+  }, [fullTitle, finalDesc, finalKeywords, canonical, ogImage, noindex, ogType, jsonLd, lang])
 
   return null
 }

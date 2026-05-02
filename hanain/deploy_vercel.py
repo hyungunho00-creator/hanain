@@ -1,6 +1,6 @@
 import os, json, hashlib, requests, time, mimetypes
 
-VERCEL_TOKEN = "vcp_1AfmXmsosxkEboCgRModdyInNsFETzzMpT51K1RMiKU4BeJOL30fdP5I"
+VERCEL_TOKEN = os.environ.get("VERCEL_TOKEN", "")
 TEAM_ID = "team_ZrgDT3bXQCqVrblRy6NkjDtL"
 HEADERS = {"Authorization": f"Bearer {VERCEL_TOKEN}"}
 DIST = "dist"

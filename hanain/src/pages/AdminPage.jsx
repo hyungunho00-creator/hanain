@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import { Settings, Users, MessageSquare, BookOpen, Trash2, Save, X, Search, Download, RefreshCw, Lock, Eye, EyeOff, Copy, Check, Link2, Phone, UserPlus, Rocket, AlertCircle, CheckCircle, Loader, Globe, PlayCircle, PenSquare, ChevronDown, ChevronRight, ExternalLink, Pin, PinOff, Star } from 'lucide-react'
-import { supabase, setVideoMain } from '../lib/supabase'
+import { Settings, Users, MessageSquare, BookOpen, Trash2, Save, X, Search, Download, RefreshCw, Lock, Eye, EyeOff, Copy, Check, Link2, Phone, UserPlus, Rocket, AlertCircle, CheckCircle, Loader, Globe, PlayCircle, PenSquare, ChevronDown, ChevronRight, ExternalLink, Pin, PinOff, Star, FileText, Plus, Edit3 } from 'lucide-react'
+import { supabase, setVideoMain, upsertPost, getAllPostsAdmin, deletePost } from '../lib/supabase'
 
 const ADMIN_PASS = import.meta.env.VITE_ADMIN_PASS || '56528206'
 const PARTNERS_KEY = 'phlorotannin_partners_v2'
@@ -1023,6 +1023,242 @@ function UserQuestionsTab() {
 // 3. question_id: UUID 대신 카테고리만 선택 (question_id는 DB에서 조회)
 //    → qa.json의 legacy_id(cardio-001 등)를 카테고리와 묶어서 관리
 // ───────────────────────────────────────────
+
+// ── 블로그 관리 탭 ─────────────────────────
+const BLOG_CATS = [
+  { id: 'general',       name: '일반' },
+  { id: 'diabetes',      name: '당뇨·혈당' },
+  { id: 'cancer',        name: '항암·면역' },
+  { id: 'brain',         name: '뇌·인지' },
+  { id: 'cardiovascular',name: '심혈관' },
+  { id: 'inflammation',  name: '염증·면역' },
+  { id: 'skin',          name: '피부·모발' },
+  { id: 'research',      name: '연구·임상' },
+]
+
+const EMPTY_POST = {
+  slug:'', title:'', excerpt:'', content:'',
+  category:'general', tags:'', meta_title:'', meta_desc:'',
+  og_image:'', status:'published'
+}
+
+function BlogManageTab() {
+  const [posts,   setPosts]   = useState([])
+  const [loading, setLoading] = useState(true)
+  const [editing, setEditing] = useState(null)   // null = 목록, {} = 편집
+  const [form,    setForm]    = useState(EMPTY_POST)
+  const [saving,  setSaving]  = useState(false)
+  const [msg,     setMsg]     = useState('')
+
+  const loadPosts = () => {
+    setLoading(true)
+    getAllPostsAdmin().then(({ data }) => { setPosts(data); setLoading(false) })
+  }
+  useEffect(() => { loadPosts() }, [])
+
+  const openNew  = () => { setForm(EMPTY_POST); setEditing('new') }
+  const openEdit = (p) => {
+    setForm({ ...p, tags: (p.tags || []).join(', ') })
+    setEditing(p.id)
+  }
+
+  const handleSave = async () => {
+    if (!form.title.trim() || !form.slug.trim() || !form.content.trim()) {
+      setMsg('❌ 제목, 슬러그, 본문은 필수입니다'); return
+    }
+    setSaving(true)
+    const payload = {
+      ...form,
+      tags: form.tags ? form.tags.split(',').map(t => t.trim()).filter(Boolean) : [],
+      meta_title: form.meta_title || form.title,
+      meta_desc:  form.meta_desc  || form.excerpt,
+    }
+    if (editing !== 'new') payload.id = editing
+    const { error } = await upsertPost(payload)
+    setSaving(false)
+    if (error) { setMsg('❌ 저장 실패: ' + error.message); return }
+    setMsg('✅ 저장 완료!')
+    setTimeout(() => { setMsg(''); setEditing(null); loadPosts() }, 1200)
+  }
+
+  const handleDelete = async (id, title) => {
+    if (!confirm(`"${title}" 글을 삭제하시겠습니까?`)) return
+    await deletePost(id)
+    loadPosts()
+  }
+
+  // ── 편집 화면 ──
+  if (editing !== null) return (
+    <div className="bg-white rounded-2xl shadow-sm p-6">
+      <div className="flex items-center justify-between mb-6">
+        <h2 className="text-xl font-bold text-gray-900">
+          {editing === 'new' ? '✏️ 새 글 작성' : '✏️ 글 수정'}
+        </h2>
+        <button onClick={() => setEditing(null)} className="text-gray-400 hover:text-gray-700"><X className="w-5 h-5"/></button>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+        <div>
+          <label className="block text-sm font-semibold text-gray-700 mb-1">제목 *</label>
+          <input value={form.title} onChange={e=>setForm({...form,title:e.target.value})}
+            placeholder="예: 플로로탄닌 당뇨 임상 2b 성공"
+            className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-teal-400"/>
+        </div>
+        <div>
+          <label className="block text-sm font-semibold text-gray-700 mb-1">슬러그 * (URL)</label>
+          <input value={form.slug} onChange={e=>setForm({...form,slug:e.target.value.toLowerCase().replace(/\s+/g,'-')})}
+            placeholder="phlorotannin-diabetes-clinical-2b"
+            className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-teal-400"/>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+        <div>
+          <label className="block text-sm font-semibold text-gray-700 mb-1">카테고리</label>
+          <select value={form.category} onChange={e=>setForm({...form,category:e.target.value})}
+            className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-teal-400">
+            {BLOG_CATS.map(c=><option key={c.id} value={c.id}>{c.name}</option>)}
+          </select>
+        </div>
+        <div>
+          <label className="block text-sm font-semibold text-gray-700 mb-1">상태</label>
+          <select value={form.status} onChange={e=>setForm({...form,status:e.target.value})}
+            className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-teal-400">
+            <option value="published">발행</option>
+            <option value="draft">임시저장</option>
+          </select>
+        </div>
+        <div>
+          <label className="block text-sm font-semibold text-gray-700 mb-1">태그 (쉼표 구분)</label>
+          <input value={form.tags} onChange={e=>setForm({...form,tags:e.target.value})}
+            placeholder="phlorotannin, PH-100, 당뇨, eckol"
+            className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-teal-400"/>
+        </div>
+      </div>
+
+      <div className="mb-4">
+        <label className="block text-sm font-semibold text-gray-700 mb-1">요약 (excerpt)</label>
+        <textarea value={form.excerpt} onChange={e=>setForm({...form,excerpt:e.target.value})}
+          rows={2} placeholder="글 목록에 표시되는 짧은 요약 (2~3줄)"
+          className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-teal-400 resize-none"/>
+      </div>
+
+      <div className="mb-4">
+        <label className="block text-sm font-semibold text-gray-700 mb-1">
+          본문 * <span className="font-normal text-gray-400">(마크다운 지원: ## 제목, **굵게**, - 목록)</span>
+        </label>
+        <textarea value={form.content} onChange={e=>setForm({...form,content:e.target.value})}
+          rows={18} placeholder="## 소제목&#10;&#10;본문 내용...&#10;&#10;- 항목 1&#10;- 항목 2"
+          className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-teal-400 resize-y"/>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4 p-4 bg-blue-50 rounded-xl">
+        <div>
+          <label className="block text-sm font-semibold text-blue-700 mb-1">SEO 제목 (meta_title)</label>
+          <input value={form.meta_title} onChange={e=>setForm({...form,meta_title:e.target.value})}
+            placeholder="비우면 제목 자동 사용 | 60자 이내 권장"
+            className="w-full border border-blue-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"/>
+          <p className="text-xs text-blue-500 mt-1">{form.meta_title.length}/60자</p>
+        </div>
+        <div>
+          <label className="block text-sm font-semibold text-blue-700 mb-1">SEO 설명 (meta_desc)</label>
+          <textarea value={form.meta_desc} onChange={e=>setForm({...form,meta_desc:e.target.value})}
+            rows={2} placeholder="검색 결과에 표시되는 설명 | 160자 이내 권장"
+            className="w-full border border-blue-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 resize-none"/>
+          <p className="text-xs text-blue-500 mt-1">{form.meta_desc.length}/160자</p>
+        </div>
+      </div>
+
+      <div className="mb-6">
+        <label className="block text-sm font-semibold text-gray-700 mb-1">대표 이미지 URL (og_image)</label>
+        <input value={form.og_image} onChange={e=>setForm({...form,og_image:e.target.value})}
+          placeholder="https://... (비우면 기본 이미지 사용)"
+          className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-teal-400"/>
+      </div>
+
+      {msg && <p className="mb-4 text-sm font-semibold text-center">{msg}</p>}
+
+      <div className="flex gap-3 justify-end">
+        <button onClick={() => setEditing(null)}
+          className="px-5 py-2.5 rounded-xl border border-gray-200 text-sm font-semibold text-gray-600 hover:bg-gray-50">
+          취소
+        </button>
+        <button onClick={handleSave} disabled={saving}
+          className="px-6 py-2.5 rounded-xl bg-teal-600 hover:bg-teal-700 text-white text-sm font-bold flex items-center gap-2 disabled:opacity-60">
+          {saving ? <Loader className="w-4 h-4 animate-spin"/> : <Save className="w-4 h-4"/>}
+          {saving ? '저장 중...' : '저장 & 발행'}
+        </button>
+      </div>
+    </div>
+  )
+
+  // ── 목록 화면 ──
+  return (
+    <div className="bg-white rounded-2xl shadow-sm">
+      <div className="p-5 border-b flex items-center justify-between">
+        <h2 className="text-lg font-bold text-gray-900 flex items-center gap-2">
+          <FileText className="w-5 h-5 text-teal-600"/> 블로그 글 관리
+          <span className="text-sm font-normal text-gray-400">({posts.length}개)</span>
+        </h2>
+        <button onClick={openNew}
+          className="flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white text-sm font-bold px-4 py-2.5 rounded-xl transition-colors">
+          <Plus className="w-4 h-4"/> 새 글 작성
+        </button>
+      </div>
+
+      {loading ? (
+        <div className="flex justify-center py-16"><div className="w-8 h-8 border-4 border-teal-500 border-t-transparent rounded-full animate-spin"/></div>
+      ) : posts.length === 0 ? (
+        <div className="text-center py-16 text-gray-400">
+          <FileText className="w-12 h-12 mx-auto mb-3 opacity-30"/>
+          <p className="font-medium">아직 글이 없습니다</p>
+          <p className="text-sm mt-1">Supabase SQL Editor에서 테이블을 먼저 생성하세요</p>
+          <a href="https://supabase.com/dashboard/project/rlfxuyeoluoeaxuujtly/sql"
+            target="_blank" rel="noopener"
+            className="inline-flex items-center gap-1.5 mt-3 text-teal-600 text-sm font-semibold hover:underline">
+            <ExternalLink className="w-4 h-4"/> Supabase SQL Editor 열기
+          </a>
+        </div>
+      ) : (
+        <div className="divide-y divide-gray-50">
+          {posts.map(p => (
+            <div key={p.id} className="flex items-center justify-between px-5 py-4 hover:bg-gray-50 gap-4">
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2 mb-1">
+                  <span className={`text-xs px-2 py-0.5 rounded-full font-semibold ${
+                    p.status === 'published' ? 'bg-green-100 text-green-700' : 'bg-yellow-100 text-yellow-700'
+                  }`}>{p.status === 'published' ? '발행' : '임시저장'}</span>
+                  <span className="text-xs text-gray-400 bg-gray-100 px-2 py-0.5 rounded-full">
+                    {BLOG_CATS.find(c=>c.id===p.category)?.name || p.category}
+                  </span>
+                </div>
+                <p className="font-semibold text-gray-900 truncate">{p.title}</p>
+                <p className="text-xs text-gray-400 mt-0.5">
+                  /blog/{p.slug} · {new Date(p.created_at).toLocaleDateString('ko-KR')} · 조회 {p.view_count}
+                </p>
+              </div>
+              <div className="flex items-center gap-2 flex-shrink-0">
+                <a href={`https://phlorotannin.com/blog/${p.slug}`} target="_blank" rel="noopener"
+                  className="p-2 text-gray-400 hover:text-teal-600 hover:bg-teal-50 rounded-lg transition-all">
+                  <Eye className="w-4 h-4"/>
+                </a>
+                <button onClick={() => openEdit(p)}
+                  className="p-2 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all">
+                  <Edit3 className="w-4 h-4"/>
+                </button>
+                <button onClick={() => handleDelete(p.id, p.title)}
+                  className="p-2 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-all">
+                  <Trash2 className="w-4 h-4"/>
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  )
+}
+
 function YouTubeManageTab() {
   const [videos, setVideos] = useState([])
   const [loading, setLoading] = useState(false)
@@ -1531,6 +1767,7 @@ export default function AdminPage() {
   if (!isLoggedIn) return <LoginScreen onLogin={() => setIsLoggedIn(true)} />
 
   const tabs = [
+    { id: 'blog',           label: '블로그 관리',  icon: FileText },
     { id: 'user_questions', label: '고객 질문',    icon: MessageSquare },
     { id: 'partner_manage', label: '파트너 관리',  icon: Globe },
     { id: 'qa_answers',     label: 'Q&A 답변',     icon: PenSquare },
@@ -1587,6 +1824,8 @@ export default function AdminPage() {
             </button>
           ))}
         </div>
+
+        {activeTab === 'blog'           && <BlogManageTab />}
 
         {activeTab === 'user_questions' && <UserQuestionsTab />}
 

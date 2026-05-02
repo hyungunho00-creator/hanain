@@ -66,19 +66,43 @@ const WHY_NOW = [
   },
 ]
 
-// ── 네트워크 오해와 진실 ────────────────────────────
-const MYTH_FACTS = [
+// ── 시장성과 수익 확장성 ───────────────────────────
+const MARKET_GROWTH = [
   {
-    myth: '다단계 = 불법 피라미드?',
-    fact: '다단계판매는 방문판매법에 명시된 합법적 사업 형태입니다. 공정거래위원회 등록, 정보 공개, 소비자피해보상보험, 수당 기준 공개 — 모든 조건을 충족해야 합니다. 합법 네트워크는 법 안의 사업입니다.',
+    icon: '📊',
+    title: '국내 건강기능식품 시장 5조 9천억',
+    desc: '연평균 8% 이상 성장 중. 고령화·건강 관심 증가로 시장 자체가 커지는 구조입니다. 경쟁이 아닌 성장하는 파이에 올라타는 것입니다.',
+    highlight: '연 8% 이상 성장',
   },
   {
-    myth: '혼자 물건을 떠안아야 한다?',
-    fact: '재고 부담, 강제 할당 — 그런 구조는 꺾입니다. 우리는 실사용자 + 재구매 + 소개 + 복제가 살아 있는 재구매 중심 구조입니다. 진짜 써보고 다시 사는 사람이 1명이라도 생기면, 그 흐름이 구조의 시작입니다.',
+    icon: '🌿',
+    title: '플로로탄닌 — 아직 선점 가능한 성분',
+    desc: '홍삼·오메가3는 이미 포화. 플로로탄닌은 국내외 SCI 논문이 쏟아지는 신흥 성분입니다. 지금 콘텐츠를 쌓으면 검색 1페이지 점령이 가능합니다.',
+    highlight: '블루오션 성분',
   },
   {
-    myth: '경험이 있어야 시작할 수 있다?',
-    fact: '우리는 제품만 주는 팀이 아닙니다. 설득력 있는 사업 자료, SNS용 콘텐츠, 초보도 말할 수 있는 스크립트, 개인 웹페이지까지 — 처음이어도 시작할 수 있게 만드는 팀이 강한 팀입니다.',
+    icon: '🔁',
+    title: '재구매율이 만드는 안정적 수익',
+    desc: '건강식품은 한 번 효과를 본 사람이 반복 구매합니다. 소개 1명이 팀으로 이어지는 구조 — 시간이 지날수록 수익이 누적됩니다.',
+    highlight: '재구매 기반 누적 수익',
+  },
+  {
+    icon: '📱',
+    title: '디지털 콘텐츠로 무한 확장',
+    desc: '블로그·SNS·유튜브·커뮤니티 어디서든 활동 가능. 개인 웹페이지를 통해 24시간 문의가 들어오는 구조를 만들 수 있습니다.',
+    highlight: '온라인 무한 확장',
+  },
+  {
+    icon: '🏥',
+    title: '다양한 수익 채널 확장',
+    desc: '제품 판매 → 파트너 육성 → 건강 강의 → 콘텐츠 수익. 하나의 전문성이 여러 방향으로 수익을 만드는 구조입니다.',
+    highlight: '멀티 수익 채널',
+  },
+  {
+    icon: '🌐',
+    title: '글로벌 시장 잠재력',
+    desc: 'phlorotannin 관련 글로벌 연구·시장이 확장 중. 한국이 선도하는 감태 추출 기술 — 해외 시장 진출 가능성을 열어두고 있습니다.',
+    highlight: '해외 진출 가능성',
   },
 ]
 
@@ -350,39 +374,39 @@ export default function PartnerPage() {
         </div>
       </section>
 
-      {/* ── 네트워크 오해와 진실 ──────────────────────── */}
+      {/* ── 시장성과 수익 확장성 ─────────────────────── */}
       <section className="py-16 px-4" style={{ background: '#F8F9FA' }}>
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <p style={{ fontSize: '11px', color: GOLD, letterSpacing: '3px', fontWeight: '700', textAlign: 'center', marginBottom: '8px' }}>
-            FACTS
+            MARKET OPPORTUNITY
           </p>
           <h2 className="text-3xl font-bold text-center mb-3" style={{ color: NAVY }}>
-            네트워크에 대한 오해와 진실
+            플로로탄닌의 시장성과 수익 확장 가능성
           </h2>
           <p className="text-center text-gray-500 mb-10 text-sm">
-            네트워크가 나쁜 게 아닙니다. 불법 피라미드가 나쁜 것입니다.
+            성장하는 시장에서 일찍 시작한 사람이 유리합니다
           </p>
-          <div className="space-y-4">
-            {MYTH_FACTS.map((item, i) => (
-              <div key={i} className="rounded-2xl bg-white overflow-hidden"
-                style={{ border: `1.5px solid #E5E7EB`, boxShadow: '0 2px 8px rgba(0,0,0,0.05)' }}>
-                <div className="px-5 py-3 flex items-center gap-3"
-                  style={{ background: '#FFF1F2', borderBottom: '1px solid #FECDD3' }}>
-                  <span style={{ fontSize: '18px' }}>❌</span>
-                  <p className="font-bold text-red-700 text-sm">{item.myth}</p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {MARKET_GROWTH.map((item, i) => (
+              <div key={i} className="rounded-2xl bg-white p-6"
+                style={{ border: `1.5px solid ${GOLD}25`, boxShadow: `0 2px 16px ${GOLD}08` }}>
+                <div className="text-3xl mb-3">{item.icon}</div>
+                <div className="inline-block text-xs font-bold px-2 py-0.5 rounded-full mb-2"
+                  style={{ background: `${GOLD}18`, color: GOLD }}>
+                  {item.highlight}
                 </div>
-                <div className="px-5 py-4 flex items-start gap-3">
-                  <span style={{ fontSize: '18px', flexShrink: 0 }}>✅</span>
-                  <p className="text-gray-700 text-sm leading-relaxed">{item.fact}</p>
-                </div>
+                <h3 className="font-bold text-sm mb-2 leading-snug" style={{ color: NAVY }}>{item.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
-          <div className="mt-6 rounded-2xl p-5"
-            style={{ background: '#EFF6FF', border: '1.5px solid #BFDBFE' }}>
-            <p style={{ fontSize: '13px', color: '#1E40AF', lineHeight: 1.8 }}>
-              📌 <strong>출처:</strong> 공정거래위원회 / 한국소비자원 / 찾기쉬운생활법령정보<br />
-              합법 다단계판매는 방문판매법에 의해 엄격히 규제됩니다. 후원수당 총액은 공급 상품 가격 합계액의 35%를 초과할 수 없습니다.
+          <div className="mt-8 rounded-2xl p-6 text-center"
+            style={{ background: `linear-gradient(135deg, ${NAVY}, #1a3a6a)`, border: `2px solid ${GOLD}50` }}>
+            <p className="text-lg font-bold mb-2" style={{ color: GOLD2 }}>
+              "지금 시작하는 사람이 3년 후 가장 앞서 있습니다"
+            </p>
+            <p className="text-sm" style={{ color: '#a0b8d0' }}>
+              플로로탄닌 파트너스와 함께 건강 시장의 성장을 수익으로 연결하세요
             </p>
           </div>
         </div>

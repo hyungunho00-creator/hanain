@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import { usePartner } from '../context/PartnerContext'
 import SEOHead from '../components/common/SEOHead'
-import { getMainVideos } from '../lib/supabase'
+import { getMainVideos, getPosts } from '../lib/supabase'
 
 // ─── YouTube ID 추출 ──────────────────────────────────────────
 function extractYoutubeId(url) {
@@ -163,6 +163,63 @@ const MessageCircle = () => (
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
   </svg>
 )
+
+// ── 블로그 미리보기 섹션 ──────────────────────────────────
+const CAT_COLORS = {
+  diabetes:'bg-orange-100 text-orange-700', cancer:'bg-red-100 text-red-700',
+  brain:'bg-purple-100 text-purple-700', cardiovascular:'bg-rose-100 text-rose-700',
+  inflammation:'bg-yellow-100 text-yellow-700', skin:'bg-pink-100 text-pink-700',
+  research:'bg-blue-100 text-blue-700', general:'bg-gray-100 text-gray-700',
+}
+const CAT_NAMES = {
+  diabetes:'당뇨·혈당', cancer:'항암·면역', brain:'뇌·인지',
+  cardiovascular:'심혈관', inflammation:'염증·면역',
+  skin:'피부·모발', research:'연구·임상', general:'일반',
+}
+function BlogPreviewSection() {
+  const [posts, setPosts] = useState([])
+  useEffect(() => {
+    getPosts({ limit: 3 }).then(({ data }) => setPosts(data || []))
+  }, [])
+  if (posts.length === 0) return null
+  return (
+    <section className="py-12 px-5 bg-gray-50">
+      <div className="max-w-4xl mx-auto">
+        <div className="flex items-center justify-between mb-6">
+          <div>
+            <p className="text-xs font-bold text-teal-600 tracking-widest uppercase mb-1">Research Blog</p>
+            <h2 className="text-xl font-extrabold text-gray-900">최신 연구 블로그</h2>
+            <p className="text-sm text-gray-500 mt-0.5">PH-100 · 에콜 · 디에콜 임상·연구 최신 정보</p>
+          </div>
+          <Link to="/blog"
+            className="text-sm font-semibold text-teal-600 hover:text-teal-700 flex items-center gap-1 whitespace-nowrap">
+            전체보기 →
+          </Link>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {posts.map(post => {
+            const catColor = CAT_COLORS[post.category] || 'bg-gray-100 text-gray-700'
+            const catName  = CAT_NAMES[post.category]  || post.category
+            const date     = new Date(post.created_at).toLocaleDateString('ko-KR', { month:'long', day:'numeric' })
+            return (
+              <Link key={post.id} to={`/blog/${post.slug}`}
+                className="bg-white rounded-2xl border border-gray-100 p-5 hover:shadow-md hover:border-teal-200 transition-all group">
+                <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${catColor}`}>{catName}</span>
+                <h3 className="text-sm font-bold text-gray-900 mt-3 mb-2 line-clamp-2 group-hover:text-teal-600 transition-colors leading-snug">
+                  {post.title}
+                </h3>
+                {post.excerpt && (
+                  <p className="text-xs text-gray-500 line-clamp-2 leading-relaxed">{post.excerpt}</p>
+                )}
+                <p className="text-xs text-gray-400 mt-3">{date}</p>
+              </Link>
+            )
+          })}
+        </div>
+      </div>
+    </section>
+  )
+}
 
 export default function LandingPage() {
   const partner = usePartner()
@@ -469,6 +526,9 @@ export default function LandingPage() {
       {/* ════════════════════════════════════
           CTA: 문자 문의
       ════════════════════════════════════ */}
+      {/* ════ 연구 블로그 최신글 ════ */}
+      <BlogPreviewSection />
+
       <section className="py-12 px-5 bg-white">
         <div className="max-w-lg mx-auto text-center">
           <h2 className="text-xl font-extrabold text-gray-900 mb-2 break-keep">
