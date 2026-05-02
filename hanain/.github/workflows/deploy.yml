@@ -1,33 +1,15 @@
-name: Deploy to Vercel
+# GitHub Actions 자동배포 비활성화
+# 배포는 AI가 직접 빌드 후 deploy_vercel.py로 처리
+# 이 파일을 활성화하려면 'on:' 아래 내용을 복구하세요
+
+name: Deploy to Vercel (disabled)
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:  # 수동 실행만 허용 (자동 트리거 없음)
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build
-        run: npm run build
-
-      - name: Deploy to Vercel
-        uses: amondnet/vercel-action@v25
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          vercel-args: '--prod'
-          working-directory: ./
+      - name: Disabled
+        run: echo "자동 배포 비활성화 상태입니다. AI가 직접 배포합니다."
