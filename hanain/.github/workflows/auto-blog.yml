@@ -38,9 +38,9 @@ jobs:
           DRY=${{ github.event.inputs.dry_run || 'false' }}
 
           if [ "$DRY" = "true" ]; then
-            python3 hanain/auto_post_gemini.py --count $COUNT --dry-run
+            python3 auto_post_gemini.py --count $COUNT --dry-run
           else
-            python3 hanain/auto_post_gemini.py --count $COUNT
+            python3 auto_post_gemini.py --count $COUNT
           fi
 
       - name: Done
