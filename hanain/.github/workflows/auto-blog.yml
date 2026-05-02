@@ -2,8 +2,8 @@ name: Auto Blog Post (Daily)
 
 on:
   schedule:
-    - cron: '0 21 * * *'   # 매일 새벽 6시 KST (UTC 21:00 전날)
-  workflow_dispatch:         # 수동 실행도 가능
+    - cron: '0 21 * * *'   # 매일 오전 6시 KST (UTC 21:00 전날)
+  workflow_dispatch:
     inputs:
       count:
         description: '발행할 글 수'
@@ -29,18 +29,14 @@ jobs:
         run: pip install requests
 
       - name: Run auto posting
-        env:
-          GEMINI_API_KEY:          ${{ secrets.GEMINI_API_KEY }}
-          SUPABASE_URL:            ${{ secrets.SUPABASE_URL }}
-          SUPABASE_SERVICE_KEY:    ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: |
           COUNT=${{ github.event.inputs.count || '3' }}
           DRY=${{ github.event.inputs.dry_run || 'false' }}
 
           if [ "$DRY" = "true" ]; then
-            python3 auto_post_gemini.py --count $COUNT --dry-run
+            python3 hanain/auto_post_gemini.py --count $COUNT --dry-run
           else
-            python3 auto_post_gemini.py --count $COUNT
+            python3 hanain/auto_post_gemini.py --count $COUNT
           fi
 
       - name: Done
