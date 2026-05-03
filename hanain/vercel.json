@@ -1,10 +1,25 @@
 {
   "headers": [
     {
+      "source": "/assets/(.*)\\.js",
+      "headers": [
+        { "key": "Content-Type", "value": "application/javascript; charset=utf-8" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/assets/(.*)\\.css",
+      "headers": [
+        { "key": "Content-Type", "value": "text/css; charset=utf-8" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
       "source": "/assets/(.*)",
       "headers": [
         { "key": "Access-Control-Allow-Origin", "value": "*" },
-        { "key": "Access-Control-Allow-Methods", "value": "GET, OPTIONS" },
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
       ]
     },
@@ -38,6 +53,9 @@
     }
   ],
   "rewrites": [
-    { "source": "/((?!assets|favicon\\.svg|og-image\\.png|og-image\\.svg|robots\\.txt|sitemap\\.xml|rss\\.xml|qa\\.json|partners\\.json|icons\\.svg|naver[^/]*\\.html).*)", "destination": "/index.html" }
+    {
+      "source": "/((?!assets/|favicon\\.svg|og-image\\.png|og-image\\.svg|robots\\.txt|sitemap\\.xml|rss\\.xml|qa\\.json|partners\\.json|icons\\.svg|naver[^/]*\\.html).*)",
+      "destination": "/index.html"
+    }
   ]
 }
