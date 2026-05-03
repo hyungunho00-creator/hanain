@@ -3,193 +3,732 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
-  <!-- ===== 메인 페이지 ===== -->
   <url>
     <loc>https://phlorotannin.com/</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-05-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <image:image>
-      <image:loc>https://phlorotannin.com/og-image.png</image:loc>
-      <image:title>플로로탄닌 파트너스 — 해양 폴리페놀 건강 정보 아카이브</image:title>
-      <image:caption>암·당뇨·뇌질환·염증·가족 건강 등 다양한 건강 주제의 플로로탄닌 정보 아카이브. 1,311개 Q&amp;A, 12개 카테고리.</image:caption>
-    </image:image>
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://phlorotannin.com/"/>
   </url>
-
-  <!-- ===== 건강 Q&amp;A 전체 ===== -->
   <url>
     <loc>https://phlorotannin.com/qa</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-05-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.95</priority>
-    <image:image>
-      <image:loc>https://phlorotannin.com/og-image.png</image:loc>
-      <image:title>건강 Q&amp;A 1,311개 — 플로로탄닌 파트너스</image:title>
-      <image:caption>혈당, 혈압, 치매, 항암, 소화, 피부, 수면 등 12개 질환 카테고리의 1,311개 건강 Q&amp;A 아카이브.</image:caption>
-    </image:image>
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa"/>
   </url>
-
-  <!-- ===== Q&amp;A 카테고리별 페이지 (12개) — 네이버 크롤링 핵심 ===== -->
+  <url>
+    <loc>https://phlorotannin.com/blog</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/phlorotannin</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/phlorotannin"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/home</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/home"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/learn</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/learn"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/easy</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/easy"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/partner</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/partner"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/consult</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/consult"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/community</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.65</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/community"/>
+  </url>
   <url>
     <loc>https://phlorotannin.com/qa?category=metabolism</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-05-03</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa?category=metabolism"/>
   </url>
-
   <url>
     <loc>https://phlorotannin.com/qa?category=cancer_immune</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-05-03</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa?category=cancer_immune"/>
   </url>
-
-  <url>
-    <loc>https://phlorotannin.com/qa?category=cardiovascular</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa?category=cardiovascular"/>
-  </url>
-
-  <url>
-    <loc>https://phlorotannin.com/qa?category=neuro_cognitive</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa?category=neuro_cognitive"/>
-  </url>
-
-  <url>
-    <loc>https://phlorotannin.com/qa?category=mental_health</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.88</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa?category=mental_health"/>
-  </url>
-
   <url>
     <loc>https://phlorotannin.com/qa?category=digestive</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-05-03</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.88</priority>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa?category=digestive"/>
   </url>
-
+  <url>
+    <loc>https://phlorotannin.com/qa?category=cardiovascular</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa?category=cardiovascular"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/qa?category=neuro_cognitive</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa?category=neuro_cognitive"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/qa?category=mental_health</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa?category=mental_health"/>
+  </url>
   <url>
     <loc>https://phlorotannin.com/qa?category=musculoskeletal</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-05-03</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.88</priority>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa?category=musculoskeletal"/>
   </url>
-
   <url>
     <loc>https://phlorotannin.com/qa?category=skin_hair</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-05-03</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.88</priority>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa?category=skin_hair"/>
   </url>
-
   <url>
     <loc>https://phlorotannin.com/qa?category=respiratory</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-05-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa?category=respiratory"/>
   </url>
-
   <url>
     <loc>https://phlorotannin.com/qa?category=infection_inflammation</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-05-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa?category=infection_inflammation"/>
   </url>
-
   <url>
     <loc>https://phlorotannin.com/qa?category=womens_health</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-05-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa?category=womens_health"/>
   </url>
-
   <url>
     <loc>https://phlorotannin.com/qa?category=mens_health</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-05-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa?category=mens_health"/>
   </url>
-
-  <!-- ===== 핵심 정보 페이지 ===== -->
   <url>
-    <loc>https://phlorotannin.com/home</loc>
-    <lastmod>2026-04-24</lastmod>
+    <loc>https://phlorotannin.com/blog?category=diabetes</loc>
+    <lastmod>2026-05-03</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/home"/>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog?category=diabetes"/>
   </url>
-
   <url>
-    <loc>https://phlorotannin.com/phlorotannin</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.90</priority>
-    <image:image>
-      <image:loc>https://phlorotannin.com/og-image.png</image:loc>
-      <image:title>플로로탄닌이란? 효능·부작용·연구 정리</image:title>
-      <image:caption>감태에서 추출한 해양 폴리페놀 플로로탄닌의 효능, 부작용, 최신 연구 결과.</image:caption>
-    </image:image>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/phlorotannin"/>
+    <loc>https://phlorotannin.com/blog?category=cancer</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog?category=cancer"/>
   </url>
-
   <url>
-    <loc>https://phlorotannin.com/learn</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/learn"/>
+    <loc>https://phlorotannin.com/blog?category=brain</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog?category=brain"/>
   </url>
-
   <url>
-    <loc>https://phlorotannin.com/easy</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/easy"/>
+    <loc>https://phlorotannin.com/blog?category=cardiovascular</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog?category=cardiovascular"/>
   </url>
-
-  <!-- ===== 서비스 페이지 ===== -->
   <url>
-    <loc>https://phlorotannin.com/consult</loc>
-    <lastmod>2026-04-24</lastmod>
+    <loc>https://phlorotannin.com/blog?category=inflammation</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog?category=inflammation"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog?category=skin</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog?category=skin"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog?category=research</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog?category=research"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog?category=general</loc>
+    <lastmod>2026-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog?category=general"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/omega-3-phlorotannin-synergy-anti-inflammatory-blood-sugar-cardiovascular-health</loc>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/consult"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/omega-3-phlorotannin-synergy-anti-inflammatory-blood-sugar-cardiovascular-health"/>
+    <image:image>
+      <image:loc>/og-image.png</image:loc>
+      <image:title>오메가3 + 플로로탄닌 병용: 항염·혈당·심혈관 시너지 Omega-3 + Phlorotannin: Anti-inflammatory, Blood Sugar, Cardiovascular Synergy</image:title>
+    </image:image>
   </url>
-
   <url>
-    <loc>https://phlorotannin.com/partner</loc>
-    <lastmod>2026-04-24</lastmod>
+    <loc>https://phlorotannin.com/blog/type-2-diabetes-natural-treatment-phlorotannin-berberine-cinnamon-dietary-therap</loc>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/partner"/>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/type-2-diabetes-natural-treatment-phlorotannin-berberine-cinnamon-dietary-therap"/>
+    <image:image>
+      <image:loc>/og-image.png</image:loc>
+      <image:title>제2형 당뇨병 자연치료: 플로로탄닌, 베르베린, 계피, 식이요법 (Type 2 Diabetes Natural Treatment)</image:title>
+    </image:image>
   </url>
-
   <url>
-    <loc>https://phlorotannin.com/community</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.70</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/community"/>
+    <loc>https://phlorotannin.com/blog/turmeric-curcumin-side-effects-gastrointestinal-blood-thinning-gallstone-caution</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/turmeric-curcumin-side-effects-gastrointestinal-blood-thinning-gallstone-caution"/>
+    <image:image>
+      <image:loc>/og-image.png</image:loc>
+      <image:title>강황 부작용: 위장 장애, 혈액 희석, 담석 주의 Curcumin Side Effects: GI, Blood Thinning, Gallstone Caution</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/prebiotics-probiotics-synbiotics-gut-health-difference-choice-phlorotannin</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/prebiotics-probiotics-synbiotics-gut-health-difference-choice-phlorotannin"/>
+    <image:image>
+      <image:loc>/og-image.png</image:loc>
+      <image:title>프리바이오틱스 vs 프로바이오틱스 vs 신바이오틱스: 장 건강을 위한 선택의 차이 (Prebiotics vs Probiotics vs Synbiotics: The Difference for Gut Health)</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/manseong-sinjang-jilhwan-ckd-yeongyang-gwanri-danbaekjil-in-kallyum-jojeol-sinja</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/manseong-sinjang-jilhwan-ckd-yeongyang-gwanri-danbaekjil-in-kallyum-jojeol-sinja"/>
+    <image:image>
+      <image:loc>/og-image.png</image:loc>
+      <image:title>만성 신장 질환(CKD) 영양 관리: 단백질·인·칼륨 조절 가이드 (CKD Nutrition Management: Protein, Phosphorus, Potassium Control Guide)</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/pre-workout-energy-boosters-caffeine-beta-alanine-citrulline-vs-phlorotannin</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/pre-workout-energy-boosters-caffeine-beta-alanine-citrulline-vs-phlorotannin"/>
+    <image:image>
+      <image:loc>/og-image.png</image:loc>
+      <image:title>운동 전 에너지 부스터: 카페인, 베타알라닌, 시트룰린 vs 플로로탄닌 | Pre-Workout Boosters</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/nac-n-acetylcysteine-benefits-antioxidant-liver-lung-mental-health-guide</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/nac-n-acetylcysteine-benefits-antioxidant-liver-lung-mental-health-guide"/>
+    <image:image>
+      <image:loc>/og-image.png</image:loc>
+      <image:title>NAC(N-아세틸시스테인) 효능: 항산화·간 보호·폐·정신건강 완벽 가이드 (N-Acetylcysteine Benefits: Antioxidant, Liver, Lung, Mental Health)</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/natural-remedies-period-pain-pms-magnesium-omega3-vitamin-b6-curcumin-phlorotann</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/natural-remedies-period-pain-pms-magnesium-omega3-vitamin-b6-curcumin-phlorotann"/>
+    <image:image>
+      <image:loc>/og-image.png</image:loc>
+      <image:title>생리통·PMS 자연치료: 마그네슘·오메가3·비타민B6·커큐민 (Natural Remedies for Period Pain &amp; PMS)</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/coq10-side-effects-gastrointestinal-hypotension-blood-thinning-anticoagulant-cau</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/coq10-side-effects-gastrointestinal-hypotension-blood-thinning-anticoagulant-cau"/>
+    <image:image>
+      <image:loc>/og-image.png</image:loc>
+      <image:title>CoQ10 부작용: 위장 장애, 혈압 저하, 혈액 희석 주의 (CoQ10 Side Effects: GI Upset, Hypotension, Blood Thinning Caution)</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/ppi-long-term-side-effects-magnesium-b12-kidney-deficiency-risk</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/ppi-long-term-side-effects-magnesium-b12-kidney-deficiency-risk"/>
+    <image:image>
+      <image:loc>/og-image.png</image:loc>
+      <image:title>PPI 장기 복용 부작용: 마그네슘, B12, 신장 위험 (PPI Long-Term Side Effects: Magnesium, B12, Kidney Risks)</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/resveratrol-benefits-anti-aging-cardiovascular-anti-cancer-brain-health-grape-sk</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/resveratrol-benefits-anti-aging-cardiovascular-anti-cancer-brain-health-grape-sk"/>
+    <image:image>
+      <image:loc>/og-image.png</image:loc>
+      <image:title>레스베라트롤 효능: 항노화·심혈관·항암·뇌 건강 (Resveratrol Benefits: Anti-Aging, Cardiovascular, Anti-Cancer, Brain Health)</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/calcium-channel-blocker-amlodipine-side-effects-edema-headache-facial-flushing-g</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/calcium-channel-blocker-amlodipine-side-effects-edema-headache-facial-flushing-g"/>
+    <image:image>
+      <image:loc>/og-image.png</image:loc>
+      <image:title>칼슘채널차단제(암로디핀) 부작용: 부종·두통·안면홍조 상세 가이드 Calcium Channel Blocker (Amlodipine) Side Effects: Edema, Headache, Facial Flushing</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/phlorotannin-sleep-gaba-receptor-clinical-study-korea</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/phlorotannin-sleep-gaba-receptor-clinical-study-korea"/>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og-image.png</image:loc>
+      <image:title>플로로탄닌과 수면 — GABA 수용체 연구와 국내 임상 결과</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/phlorotannin-diabetes-blood-sugar-mechanism-alpha-glucosidase</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/phlorotannin-diabetes-blood-sugar-mechanism-alpha-glucosidase"/>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og-image.png</image:loc>
+      <image:title>플로로탄닌이 혈당을 낮추는 메커니즘 — 당뇨약과 어떻게 다른가</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/ecklonia-cava-seaweed-phlorotannin-extraction-bioavailability</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/ecklonia-cava-seaweed-phlorotannin-extraction-bioavailability"/>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og-image.png</image:loc>
+      <image:title>감태(Ecklonia cava)란? — 플로로탄닌의 원료와 추출 기술</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/phlorotannin-vs-quercetin-resveratrol-polyphenol-comparison</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/phlorotannin-vs-quercetin-resveratrol-polyphenol-comparison"/>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og-image.png</image:loc>
+      <image:title>플로로탄닌 vs 퀘르세틴 vs 레스베라트롤 — 폴리페놀 비교 완전 분석</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/phlorotannin-ph100-clinical-research-summary-2024</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/phlorotannin-ph100-clinical-research-summary-2024"/>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og-image.png</image:loc>
+      <image:title>PH-100 임상 연구 정리 — 플로로탄닌 표준화 추출물이 다른 이유</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/psoriasis-autoimmune-skin-natural-treatment-phlorotannin</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/psoriasis-autoimmune-skin-natural-treatment-phlorotannin"/>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og-image.png</image:loc>
+      <image:title>건선(Psoriasis) — 자가면역 피부 질환, 재발 없이 관리하는 법</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/dry-skin-barrier-ceramide-omega3-phlorotannin-moisture</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/dry-skin-barrier-ceramide-omega3-phlorotannin-moisture"/>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og-image.png</image:loc>
+      <image:title>피부 장벽이 무너지면? — 건조, 예민, 가려움의 진짜 원인</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/acne-hormonal-adult-gut-skin-phlorotannin</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/acne-hormonal-adult-gut-skin-phlorotannin"/>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og-image.png</image:loc>
+      <image:title>성인 여드름 — 10대랑 왜 다른가, 호르몬과 장 문제가 핵심</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/skin-aging-collagen-antioxidant-phlorotannin-marine-cosmetic</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/skin-aging-collagen-antioxidant-phlorotannin-marine-cosmetic"/>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og-image.png</image:loc>
+      <image:title>피부 노화를 늦추는 성분 비교 — 레티놀, 비타민C, 플로로탄닌</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/hair-loss-cause-type-natural-treatment-phlorotannin</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/hair-loss-cause-type-natural-treatment-phlorotannin"/>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og-image.png</image:loc>
+      <image:title>탈모 원인별 완전 정리 — 어떤 탈모인지 알아야 치료도 된다</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/covid-long-covid-chronic-fatigue-immune-recovery-phlorotannin</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/covid-long-covid-chronic-fatigue-immune-recovery-phlorotannin"/>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og-image.png</image:loc>
+      <image:title>코로나 후유증(롱코비드) — 면역 회복이 더딜 때 도움이 되는 성분들</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/atopy-eczema-skin-inflammation-gut-microbiome-phlorotannin</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/atopy-eczema-skin-inflammation-gut-microbiome-phlorotannin"/>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og-image.png</image:loc>
+      <image:title>아토피 피부염 — 장(腸)을 고치면 피부가 좋아지는 이유</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/nsaid-painkillers-stomach-kidney-side-effects-alternative</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/nsaid-painkillers-stomach-kidney-side-effects-alternative"/>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og-image.png</image:loc>
+      <image:title>진통제(소염제) 장기 복용 부작용 — 위장·신장을 지키면서 통증 관리하는 법</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/rheumatoid-arthritis-joint-pain-natural-relief-phlorotannin</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/rheumatoid-arthritis-joint-pain-natural-relief-phlorotannin"/>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og-image.png</image:loc>
+      <image:title>류마티스 관절염 약 부작용 — 면역억제제 없이 관절 염증 관리할 수 있나</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/chronic-inflammation-silent-disease-natural-management</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/chronic-inflammation-silent-disease-natural-management"/>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og-image.png</image:loc>
+      <image:title>만성 염증 — 암, 당뇨, 치매의 공통 뿌리를 끊는 법</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/metabolic-syndrome-waist-circumference-cardiovascular-risk</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/metabolic-syndrome-waist-circumference-cardiovascular-risk"/>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og-image.png</image:loc>
+      <image:title>대사증후군 — 허리둘레 하나로 심혈관 위험을 예측한다</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/heart-palpitation-arrhythmia-natural-management-magnesium</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/heart-palpitation-arrhythmia-natural-management-magnesium"/>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og-image.png</image:loc>
+      <image:title>두근거림·부정맥 — 심장이 불규칙하게 뛸 때 놓치면 안 되는 신호</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/arteriosclerosis-inflammation-vascular-age-phlorotannin</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/arteriosclerosis-inflammation-vascular-age-phlorotannin"/>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og-image.png</image:loc>
+      <image:title>혈관 나이가 실제 나이보다 10년 늙었다 — 동맥경화 되돌릴 수 있나</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/cholesterol-statin-side-effects-coq10-phlorotannin</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/cholesterol-statin-side-effects-coq10-phlorotannin"/>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og-image.png</image:loc>
+      <image:title>스타틴(고지혈증약) 부작용과 CoQ10 — 근육통의 진짜 원인</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/high-blood-pressure-medication-side-effects-natural-alternative</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/high-blood-pressure-medication-side-effects-natural-alternative"/>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og-image.png</image:loc>
+      <image:title>고혈압약 부작용 정리 — 오래 먹어도 괜찮을까?</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/stroke-prevention-cerebrovascular-health-phlorotannin</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/stroke-prevention-cerebrovascular-health-phlorotannin"/>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og-image.png</image:loc>
+      <image:title>뇌졸중 전조 증상과 예방 — 골든타임 3시간의 중요성</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/adhd-adult-concentration-natural-approach-phlorotannin</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/adhd-adult-concentration-natural-approach-phlorotannin"/>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og-image.png</image:loc>
+      <image:title>성인 ADHD와 집중력 저하 — 약 없이 개선할 수 있을까?</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/sleep-disorder-insomnia-brain-health-phlorotannin-gaba</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/sleep-disorder-insomnia-brain-health-phlorotannin-gaba"/>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og-image.png</image:loc>
+      <image:title>수면장애와 뇌 건강 — 잠 못 자면 치매 위험이 높아진다</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/brain-fog-chronic-fatigue-cognitive-decline-phlorotannin</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/brain-fog-chronic-fatigue-cognitive-decline-phlorotannin"/>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og-image.png</image:loc>
+      <image:title>브레인 포그(Brain Fog) — 머리가 안 돌아가는 느낌, 그냥 두면 안 되는 이유</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/dementia-prevention-early-warning-signs-natural-support</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/dementia-prevention-early-warning-signs-natural-support"/>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og-image.png</image:loc>
+      <image:title>치매 초기 증상 10가지 — 혹시 나도? 조기 발견이 핵심인 이유</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/anticancer-immunity-nk-cell-activation-phlorotannin</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/anticancer-immunity-nk-cell-activation-phlorotannin"/>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og-image.png</image:loc>
+      <image:title>NK세포가 암을 잡는 원리 — 자연 면역력을 키우는 방법</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/breast-cancer-estrogen-diet-phlorotannin-marine-polyphenol</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/breast-cancer-estrogen-diet-phlorotannin-marine-polyphenol"/>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og-image.png</image:loc>
+      <image:title>유방암과 에스트로겐 — 호르몬 관련 암에서 식이 관리가 중요한 이유</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/liver-cancer-fatty-liver-progression-natural-protection</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/liver-cancer-fatty-liver-progression-natural-protection"/>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og-image.png</image:loc>
+      <image:title>지방간에서 간암까지 — 진행을 막는 자연 성분들</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/colorectal-cancer-prevention-diet-phlorotannin-polyphenol</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/colorectal-cancer-prevention-diet-phlorotannin-polyphenol"/>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og-image.png</image:loc>
+      <image:title>대장암 예방에 좋은 음식과 성분 — 식이 폴리페놀의 역할</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/cancer-patients-red-ginseng-interaction-phlorotannin-alternative</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/cancer-patients-red-ginseng-interaction-phlorotannin-alternative"/>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og-image.png</image:loc>
+      <image:title>암환자가 홍삼 먹어도 될까? 항암 중 건강기능식품 주의사항</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/phlorotannin-ph100-prediabetes-improvement-study</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/phlorotannin-ph100-prediabetes-improvement-study"/>
+    <image:image>
+      <image:loc>/og-image.png</image:loc>
+      <image:title>PH-100 플로로탄닌: 당뇨 전단계 개선 효과 연구 | Phlorotannin Prediabetes Study</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/ecklonia-cava-extract-blood-sugar-phlorotannin-eckol</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/ecklonia-cava-extract-blood-sugar-phlorotannin-eckol"/>
+    <image:image>
+      <image:loc>/og-image.png</image:loc>
+      <image:title>감태 추출물 혈당 낮추는 원리 | Ecklonia Cava Extract Blood Sugar Control</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/phlorotannin-diabetes-treatment-clinical-trials-update</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/phlorotannin-diabetes-treatment-clinical-trials-update"/>
+    <image:image>
+      <image:loc>/og-image.png</image:loc>
+      <image:title>플로로탄닌 당뇨병 치료 임상시험 최신 결과 | Phlorotannin Diabetes Clinical Trial Update</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/phlorotannin-diabetes-ph100-blood-sugar-control-mechanism</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/phlorotannin-diabetes-ph100-blood-sugar-control-mechanism"/>
+    <image:image>
+      <image:loc>/og-image.png</image:loc>
+      <image:title>플로로탄닌 당뇨 임상 2b 성공: PH-100 혈당 조절 | Phlorotannin Diabetes</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/phlorotannin-diabetes-clinical-trial-2b-success-blood-sugar-management</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/phlorotannin-diabetes-clinical-trial-2b-success-blood-sugar-management"/>
+    <image:image>
+      <image:loc>/og-image.png</image:loc>
+      <image:title>플로로탄닌 당뇨 임상 2b 성공: 혈당 관리 새 지평 | Phlorotannin Diabetes Trial</image:title>
+    </image:image>
   </url>
 
 </urlset>
