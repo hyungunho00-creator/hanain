@@ -7,12 +7,75 @@
 
     <!-- ===== 파비콘 & 앱 아이콘 ===== -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="apple-touch-icon" href="/favicon.svg" />
-    <meta name="theme-color" content="#065f46" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0D1B3E" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <meta name="apple-mobile-web-app-title" content="플로로탄닌" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta id="apple-app-title" name="apple-mobile-web-app-title" content="플로로탄닌" />
+
+    <!-- ===== 동적 PWA Manifest (/p/ 파트너 페이지 전용) ===== -->
+    <script>
+    (function() {
+      var path = window.location.pathname;
+      var m = path.match(/^\/p\/(\d+)/);
+      if (m) {
+        var phone = m[1];
+        // 파트너 이름은 partners.json에서 가져와야 하지만,
+        // manifest는 페이지 로드 초기에 즉시 필요하므로
+        // 먼저 기본 이름으로 manifest를 주입하고, JS 로드 후 교체한다.
+        var manifestData = {
+          name: '플로로탄닌',
+          short_name: '플로로탄닌',
+          start_url: '/p/' + phone + '?view=card',
+          display: 'standalone',
+          background_color: '#0D1B3E',
+          theme_color: '#0D1B3E',
+          orientation: 'portrait',
+          icons: [
+            { src: '/icon-192.png', sizes: '192x192', type: 'image/png', purpose: 'any maskable' },
+            { src: '/icon-512.png', sizes: '512x512', type: 'image/png', purpose: 'any maskable' }
+          ]
+        };
+        var blob = new Blob([JSON.stringify(manifestData)], { type: 'application/json' });
+        var url = URL.createObjectURL(blob);
+        var link = document.createElement('link');
+        link.rel = 'manifest';
+        link.href = url;
+        document.head.appendChild(link);
+
+        // partners.json에서 파트너 이름을 가져와 manifest & apple-title 업데이트
+        var partnersUrls = [
+          'https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/public/partners.json?t=' + Date.now(),
+          'https://phlorotannin.com/partners.json?t=' + Date.now()
+        ];
+        function tryFetch(idx) {
+          if (idx >= partnersUrls.length) return;
+          fetch(partnersUrls[idx], { cache: 'no-store' })
+            .then(function(r) { return r.ok ? r.json() : Promise.reject(); })
+            .then(function(data) {
+              var partners = data.partners || [];
+              var found = partners.find(function(p) {
+                return (p.phone || '').replace(/\D/g, '') === phone || p.slug === phone;
+              });
+              if (found && found.name) {
+                var appName = '플로로탄닌 - ' + found.name;
+                // manifest 교체
+                manifestData.name = appName;
+                manifestData.short_name = appName;
+                var blob2 = new Blob([JSON.stringify(manifestData)], { type: 'application/json' });
+                link.href = URL.createObjectURL(blob2);
+                // iOS apple-mobile-web-app-title 교체
+                var appleTitle = document.getElementById('apple-app-title');
+                if (appleTitle) appleTitle.setAttribute('content', appName);
+              }
+            })
+            .catch(function() { tryFetch(idx + 1); });
+        }
+        tryFetch(0);
+      }
+    })();
+    </script>
 
     <!-- ===== 기본 SEO (Yeti/봇 공통 — JS 실행 전 읽힘) ===== -->
     <title id="page-title">플로로탄닌 파트너스 | 해양 폴리페놀 건강 정보 아카이브</title>

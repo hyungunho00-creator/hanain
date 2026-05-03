@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useParams, useNavigate, useSearchParams } from 'react-router-dom'
 import {
   Phone, MessageSquare, Globe, Download,
-  AlertCircle, ChevronRight, Leaf, Heart, Star, Shield, BookOpen, UserPlus,
+  AlertCircle, ChevronRight, Leaf, Heart, Star, Shield, BookOpen, UserPlus, Smartphone, X, Share,
 } from 'lucide-react'
 import SEOHead from '../components/common/SEOHead'
 import { savePartnerToSession } from '../context/PartnerContext'
@@ -288,8 +288,28 @@ export default function BusinessCardPage() {
   const [flipped,     setFlipped]     = useState(false)
   const [saved,       setSaved]       = useState(false)
   const [showContact, setShowContact] = useState(false)
+  const [showHomeGuide, setShowHomeGuide] = useState(false)
+  const [isIOS, setIsIOS] = useState(false)
+  const [deferredPrompt, setDeferredPrompt] = useState(null)
+  const [bannerDismissed, setBannerDismissed] = useState(false)
+  const deferredPromptRef = useRef(null)
 
   const cardUrl = `${MAIN_SITE}/p/${phone}`
+
+  // ── iOS 감지 & Android beforeinstallprompt 캐치 ──
+  useEffect(() => {
+    const ua = navigator.userAgent || ''
+    const ios = /iPhone|iPad|iPod/i.test(ua) && !/CriOS/i.test(ua)
+    setIsIOS(ios)
+
+    const handler = (e) => {
+      e.preventDefault()
+      deferredPromptRef.current = e
+      setDeferredPrompt(e)
+    }
+    window.addEventListener('beforeinstallprompt', handler)
+    return () => window.removeEventListener('beforeinstallprompt', handler)
+  }, [])
 
   useEffect(() => {
     if (!phone) { setNotFound(true); setLoading(false); return }
@@ -322,6 +342,23 @@ export default function BusinessCardPage() {
       }
     })
   }, [phone])
+
+  // ── 홈화면 바로가기 만들기 핸들러 ──
+  const handleAddToHome = async () => {
+    if (isIOS) {
+      // iOS: 안내 팝업 표시
+      setShowHomeGuide(true)
+    } else if (deferredPromptRef.current) {
+      // Android Chrome: 네이티브 팝업 트리거
+      deferredPromptRef.current.prompt()
+      const { outcome } = await deferredPromptRef.current.userChoice
+      deferredPromptRef.current = null
+      setDeferredPrompt(null)
+    } else {
+      // 이미 설치됐거나 지원 안 되는 브라우저
+      setShowHomeGuide(true)
+    }
+  }
 
   // 앞면 + 뒷면을 세로로 이어붙여 PNG 1장으로 다운로드
   const downloadCard = async () => {
@@ -770,12 +807,100 @@ export default function BusinessCardPage() {
             </div>
           </div>
 
+          {/* ════ 홈화면 바로가기 배너 ════ */}
+          {!bannerDismissed && (
+            <div className="rounded-2xl p-4 mb-5 relative"
+              style={{ background: `linear-gradient(135deg, #1a3a6a 0%, ${NAVY} 100%)`, border: `2px solid ${GOLD}60`, boxShadow: `0 4px 20px ${NAVY}50` }}>
+              <button
+                onClick={() => setBannerDismissed(true)}
+                style={{ position: 'absolute', top: '10px', right: '12px', color: `${GOLD}80`, background: 'none', border: 'none', cursor: 'pointer', fontSize: '18px', lineHeight: 1 }}
+              >✕</button>
+              <div className="flex items-center gap-3 mb-3">
+                <div style={{ width: '40px', height: '40px', borderRadius: '12px', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', background: `linear-gradient(135deg, ${GOLD}, ${GOLD2})` }}>
+                  <Smartphone style={{ width: '20px', height: '20px', color: NAVY }} />
+                </div>
+                <div>
+                  <p style={{ fontSize: '15px', fontWeight: '900', color: '#fff' }}>홈화면 바로가기 만들기</p>
+                  <p style={{ fontSize: '12px', color: GOLD2 }}>언제든 편하게 바로 접속하세요</p>
+                </div>
+              </div>
+              <button
+                onClick={handleAddToHome}
+                className="w-full py-3 rounded-xl font-bold active:scale-95 transition-transform"
+                style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLD2})`, color: NAVY, fontSize: '15px' }}>
+                📱 홈화면에 바로가기 추가하기
+              </button>
+            </div>
+          )}
+
           <p className="text-center pb-8"
             style={{ fontSize: '12px', color: '#aaa', lineHeight: '1.9' }}>
             본 페이지는 건강 정보 제공 목적이며<br />특정 제품 판매와 무관합니다.
           </p>
         </div>
       </div>
+
+      {/* ════ iOS 홈화면 추가 안내 팝업 ════ */}
+      {showHomeGuide && (
+        <div
+          className="fixed inset-0 z-50 flex items-end justify-center"
+          style={{ background: 'rgba(0,0,0,0.6)' }}
+          onClick={() => setShowHomeGuide(false)}
+        >
+          <div
+            className="w-full max-w-md rounded-t-3xl p-6 pb-10"
+            style={{ background: '#FFFDF7', border: `3px solid ${GOLD}` }}
+            onClick={e => e.stopPropagation()}
+          >
+            {/* 핸들 */}
+            <div className="w-10 h-1.5 rounded-full mx-auto mb-5" style={{ background: `${GOLD}60` }} />
+
+            {/* 제목 */}
+            <div className="flex items-center gap-3 mb-6">
+              <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: `linear-gradient(135deg, ${NAVY}, #1a3a6a)`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                <Smartphone style={{ width: '24px', height: '24px', color: GOLD }} />
+              </div>
+              <div>
+                <p style={{ fontSize: '18px', fontWeight: '900', color: NAVY }}>홈화면 바로가기 만들기</p>
+                <p style={{ fontSize: '13px', color: '#888' }}>아이폰 · 아이패드 안내</p>
+              </div>
+            </div>
+
+            {/* iOS 단계 */}
+            {[
+              { num: '1', icon: '⬆️', text: '하단 공유 버튼을 누르세요', sub: '화면 아래 가운데 네모+화살표 버튼' },
+              { num: '2', icon: '➕', text: '"홈 화면에 추가" 를 누르세요', sub: '목록을 아래로 내리면 보입니다' },
+              { num: '3', icon: '✅', text: '오른쪽 위 "추가" 를 누르세요', sub: `"플로로탄닌 - ${partner?.name || ''}" 이름으로 저장돼요` },
+            ].map(step => (
+              <div key={step.num} className="flex items-start gap-4 mb-5">
+                <div style={{ width: '44px', height: '44px', borderRadius: '50%', flexShrink: 0, background: `linear-gradient(135deg, ${GOLD}, ${GOLD2})`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <span style={{ fontSize: '20px' }}>{step.icon}</span>
+                </div>
+                <div style={{ paddingTop: '4px' }}>
+                  <p style={{ fontSize: '16px', fontWeight: '800', color: NAVY, lineHeight: 1.4 }}>{step.text}</p>
+                  {step.sub && <p style={{ fontSize: '13px', color: '#888', marginTop: '3px' }}>{step.sub}</p>}
+                </div>
+              </div>
+            ))}
+
+            {/* 안드로이드 안내 (접히는 텍스트) */}
+            <div className="rounded-xl p-3 mb-4" style={{ background: '#f5f0e8', border: `1px solid ${GOLD}30` }}>
+              <p style={{ fontSize: '13px', color: '#888', lineHeight: 1.7 }}>
+                📱 <strong style={{ color: NAVY }}>안드로이드(Chrome)</strong>는 팝업이 자동으로 뜹니다.<br />
+                뜨지 않으면 주소창 오른쪽 ⋮ 메뉴 → "홈 화면에 추가"
+              </p>
+            </div>
+
+            <button
+              onClick={() => setShowHomeGuide(false)}
+              className="w-full py-3 rounded-2xl font-bold"
+              style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLD2})`, color: NAVY, fontSize: '16px' }}
+            >
+              확인했어요
+            </button>
+          </div>
+        </div>
+      )}
     </>
   )
 }
