@@ -840,7 +840,7 @@ export default function BusinessCardPage() {
         </div>
       </div>
 
-      {/* ════ iOS 홈화면 추가 안내 팝업 ════ */}
+      {/* ════ iOS 홈화면 추가 안내 팝업 (초간단) ════ */}
       {showHomeGuide && (
         <div
           className="fixed inset-0 z-50 flex items-end justify-center"
@@ -852,51 +852,32 @@ export default function BusinessCardPage() {
             style={{ background: '#FFFDF7', border: `3px solid ${GOLD}` }}
             onClick={e => e.stopPropagation()}
           >
-            {/* 핸들 */}
             <div className="w-10 h-1.5 rounded-full mx-auto mb-5" style={{ background: `${GOLD}60` }} />
 
-            {/* 제목 */}
-            <div className="flex items-center gap-3 mb-6">
-              <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: `linear-gradient(135deg, ${NAVY}, #1a3a6a)`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                <Smartphone style={{ width: '24px', height: '24px', color: GOLD }} />
-              </div>
-              <div>
-                <p style={{ fontSize: '18px', fontWeight: '900', color: NAVY }}>홈화면 바로가기 만들기</p>
-                <p style={{ fontSize: '13px', color: '#888' }}>아이폰 · 아이패드 안내</p>
-              </div>
-            </div>
+            <p style={{ fontSize: '20px', fontWeight: '900', color: NAVY, textAlign: 'center', marginBottom: '20px' }}>
+              📱 홈화면 바로가기 만들기
+            </p>
 
-            {/* iOS 단계 */}
-            {[
-              { num: '1', icon: '⬆️', text: '하단 공유 버튼을 누르세요', sub: '화면 아래 가운데 네모+화살표 버튼' },
-              { num: '2', icon: '➕', text: '"홈 화면에 추가" 를 누르세요', sub: '목록을 아래로 내리면 보입니다' },
-              { num: '3', icon: '✅', text: '오른쪽 위 "추가" 를 누르세요', sub: `"플로로탄닌 - ${partner?.name || ''}" 이름으로 저장돼요` },
-            ].map(step => (
-              <div key={step.num} className="flex items-start gap-4 mb-5">
-                <div style={{ width: '44px', height: '44px', borderRadius: '50%', flexShrink: 0, background: `linear-gradient(135deg, ${GOLD}, ${GOLD2})`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <span style={{ fontSize: '20px' }}>{step.icon}</span>
-                </div>
-                <div style={{ paddingTop: '4px' }}>
-                  <p style={{ fontSize: '16px', fontWeight: '800', color: NAVY, lineHeight: 1.4 }}>{step.text}</p>
-                  {step.sub && <p style={{ fontSize: '13px', color: '#888', marginTop: '3px' }}>{step.sub}</p>}
-                </div>
-              </div>
-            ))}
-
-            {/* 안드로이드 안내 (접히는 텍스트) */}
-            <div className="rounded-xl p-3 mb-4" style={{ background: '#f5f0e8', border: `1px solid ${GOLD}30` }}>
-              <p style={{ fontSize: '13px', color: '#888', lineHeight: 1.7 }}>
-                📱 <strong style={{ color: NAVY }}>안드로이드(Chrome)</strong>는 팝업이 자동으로 뜹니다.<br />
-                뜨지 않으면 주소창 오른쪽 ⋮ 메뉴 → "홈 화면에 추가"
+            {/* 핵심 2줄 안내 */}
+            <div className="rounded-2xl p-5 mb-5" style={{ background: `linear-gradient(135deg, ${NAVY}, #1a3a6a)` }}>
+              <p style={{ fontSize: '17px', fontWeight: '800', color: '#fff', marginBottom: '14px', lineHeight: 1.6 }}>
+                ① 아래 <span style={{ color: GOLD2 }}>공유 버튼</span> ⬆️ 누르기
+              </p>
+              <p style={{ fontSize: '17px', fontWeight: '800', color: '#fff', lineHeight: 1.6 }}>
+                ② <span style={{ color: GOLD2 }}>"홈 화면에 추가"</span> 누르기
               </p>
             </div>
 
+            <p style={{ fontSize: '13px', color: '#aaa', textAlign: 'center', marginBottom: '16px' }}>
+              아이콘 이름: <strong style={{ color: NAVY }}>플로로탄닌 - {partner?.name || ''}</strong>
+            </p>
+
             <button
               onClick={() => setShowHomeGuide(false)}
-              className="w-full py-3 rounded-2xl font-bold"
-              style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLD2})`, color: NAVY, fontSize: '16px' }}
+              className="w-full py-4 rounded-2xl font-bold"
+              style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLD2})`, color: NAVY, fontSize: '17px' }}
             >
-              확인했어요
+              확인
             </button>
           </div>
         </div>
