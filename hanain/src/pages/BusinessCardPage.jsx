@@ -306,8 +306,27 @@ export default function BusinessCardPage() {
       e.preventDefault()
       deferredPromptRef.current = e
       setDeferredPrompt(e)
+
+      // ?pwa=1 파라미터로 넘어온 경우 → 자동으로 설치 팝업 바로 트리거
+      if (new URLSearchParams(window.location.search).get('pwa') === '1') {
+        setTimeout(() => {
+          e.prompt()
+          deferredPromptRef.current = null
+          setDeferredPrompt(null)
+        }, 300)
+      }
     }
     window.addEventListener('beforeinstallprompt', handler)
+
+    // iOS + pwa=1 → 공유시트 자동으로 열기
+    if (ios && new URLSearchParams(window.location.search).get('pwa') === '1') {
+      setTimeout(() => {
+        if (navigator.share) {
+          navigator.share({ url: window.location.href.split('?')[0] + '?view=card' }).catch(() => {})
+        }
+      }, 800)
+    }
+
     return () => window.removeEventListener('beforeinstallprompt', handler)
   }, [])
 
@@ -357,37 +376,40 @@ export default function BusinessCardPage() {
   // ── 홈화면 바로가기 만들기 핸들러 ──
   const handleAddToHome = async () => {
     const { isInApp, isAndroid, isIphone, isChrome, isSafari } = getBrowserEnv()
-    const encodedUrl = encodeURIComponent(cardUrl)
+    // pwa=1 붙인 URL → Chrome/Safari로 넘어가서 자동 트리거용
+    const pwaUrl = `${cardUrl}?view=card&pwa=1`
+    const encodedPwaUrl = encodeURIComponent(pwaUrl)
 
     if (isInApp && isAndroid) {
-      // 카카오/인앱 Android → Chrome으로 강제 이동
-      // Chrome이 열리면서 페이지 로드 → 상단 "홈화면에 추가" 팝업 자동으로 뜸
-      const intentUrl = `intent://${cardUrl.replace(/^https?:\/\//, '')}#Intent;scheme=https;package=com.android.chrome;end`
+      // 카카오 등 인앱 Android → Chrome으로 강제 이동, pwa=1 파라미터 포함
+      const intentUrl = `intent://${pwaUrl.replace(/^https?:\/\//, '')}#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=${encodedPwaUrl};end`
       window.location.href = intentUrl
+
     } else if (isInApp && isIphone) {
-      // 카카오/인앱 iOS → Safari로 강제 이동
-      window.location.href = cardUrl.replace('https://', 'x-safari-https://')
+      // 카카오 등 인앱 iOS → Safari로 강제 이동, pwa=1 파라미터 포함
+      window.location.href = pwaUrl.replace('https://', 'x-safari-https://')
+
     } else if (isAndroid && deferredPromptRef.current) {
-      // Android Chrome, 이미 설치 가능 → 바로 OS 팝업
+      // Android Chrome, prompt 준비됨 → 바로 OS 설치 팝업
       deferredPromptRef.current.prompt()
-      const { outcome } = await deferredPromptRef.current.userChoice
+      await deferredPromptRef.current.userChoice
       deferredPromptRef.current = null
       setDeferredPrompt(null)
-    } else if (isAndroid && !deferredPromptRef.current) {
-      // Android Chrome인데 이미 설치됐거나 prompt 없음 → Chrome으로 다시 열기
-      const intentUrl = `intent://${cardUrl.replace(/^https?:\/\//, '')}#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=${encodedUrl};end`
-      window.location.href = intentUrl
+
     } else if (isIphone && isSafari) {
-      // Safari에서 직접 열린 경우 → 공유시트 열어서 "홈화면에 추가" 유도
+      // iPhone Safari → 공유시트 열기 (홈화면에 추가 선택하면 됨)
       if (navigator.share) {
-        try { await navigator.share({ url: cardUrl }) } catch (e) { /* 취소 */ }
+        try { await navigator.share({ url: cardUrl + '?view=card' }) } catch (e) { /* 취소 */ }
       } else {
         setShowHomeGuide(true)
       }
+
     } else if (isIphone && !isSafari) {
-      // iOS Chrome 등 → Safari로 강제 이동
-      window.location.href = cardUrl.replace('https://', 'x-safari-https://')
+      // iPhone 인앱 외 기타 브라우저 → Safari로 강제 이동
+      window.location.href = pwaUrl.replace('https://', 'x-safari-https://')
+
     } else {
+      // 그 외 (데스크탑 등) → 안내 팝업
       setShowHomeGuide(true)
     }
   }
