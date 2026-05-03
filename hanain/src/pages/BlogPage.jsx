@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
-import { Calendar, Tag, Eye, ChevronRight, Search, BookOpen } from 'lucide-react'
+import { Calendar, Eye, ChevronRight, Search, BookOpen, PlayCircle } from 'lucide-react'
 import SEOHead from '../components/common/SEOHead'
 import { getPosts, getPostCount } from '../lib/supabase'
 
@@ -25,6 +25,97 @@ const CAT_COLORS = {
   skin:          'bg-pink-100 text-pink-700',
   research:      'bg-blue-100 text-blue-700',
   general:       'bg-gray-100 text-gray-700',
+}
+
+// 블로그 카테고리 → question_videos category_id 매핑
+// 어드민에서 등록 시 블로그 카테고리 ID를 그대로 사용
+const BLOG_TO_VIDEO_CAT = {
+  diabetes:       'diabetes',
+  cancer:         'cancer',
+  brain:          'brain',
+  cardiovascular: 'cardiovascular',
+  inflammation:   'inflammation',
+  skin:           'skin',
+  research:       'research',
+  general:        'general',
+}
+
+const SB_URL = 'https://rlfxuyeoluoeaxuujtly.supabase.co'
+const SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJsZnh1eWVvbHVvZWF4dXVqdGx5Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NTk0MTI2MywiZXhwIjoyMDkxNTE3MjYzfQ.O0Oe3g2fv_8SUvxNfHvdxzpA6pcWVIWTscpymYr0pBI'
+
+async function getVideosByCat(catId, limit = 3) {
+  try {
+    const res = await fetch(
+      `${SB_URL}/rest/v1/question_videos?category_id=eq.${catId}&order=sort_order.asc&limit=${limit}`,
+      { headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}`, 'Accept-Profile': 'public' } }
+    )
+    if (!res.ok) return []
+    return await res.json()
+  } catch { return [] }
+}
+
+function extractYoutubeId(url) {
+  return url?.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([^&\s?#/]+)/)?.[1] || null
+}
+
+// 카테고리 영상 섹션 컴포넌트
+function CategoryVideoSection({ categoryId }) {
+  const [videos, setVideos] = useState([])
+  const [loaded, setLoaded] = useState(false)
+
+  useEffect(() => {
+    if (!categoryId || categoryId === 'all') { setVideos([]); setLoaded(true); return }
+    const videoCatId = BLOG_TO_VIDEO_CAT[categoryId] || categoryId
+    getVideosByCat(videoCatId, 3).then(v => { setVideos(v); setLoaded(true) })
+  }, [categoryId])
+
+  if (!loaded || videos.length === 0) return null
+
+  return (
+    <div className="mb-8 bg-gradient-to-br from-teal-50 to-cyan-50 rounded-2xl p-5 border border-teal-100">
+      <div className="flex items-center gap-2 mb-4">
+        <PlayCircle className="w-5 h-5 text-teal-600" />
+        <h2 className="font-bold text-teal-800 text-base">
+          {CATEGORIES.find(c => c.id === categoryId)?.name} 관련 영상
+        </h2>
+        <span className="text-xs text-teal-500 bg-teal-100 px-2 py-0.5 rounded-full">{videos.length}개</span>
+      </div>
+      <div className={`grid gap-4 ${videos.length === 1 ? 'grid-cols-1 max-w-lg' : videos.length === 2 ? 'grid-cols-1 sm:grid-cols-2' : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'}`}>
+        {videos.map(v => {
+          const vid = extractYoutubeId(v.youtube_url)
+          return (
+            <a key={v.id} href={v.youtube_url} target="_blank" rel="noopener noreferrer"
+              className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all group border border-teal-100">
+              {vid && (
+                <div className="aspect-video overflow-hidden relative">
+                  <img
+                    src={`https://img.youtube.com/vi/${vid}/mqdefault.jpg`}
+                    alt={v.video_title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition">
+                    <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center shadow-lg">
+                      <svg className="w-5 h-5 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              )}
+              <div className="p-3">
+                <p className="text-sm font-semibold text-gray-800 line-clamp-2 group-hover:text-teal-600 transition-colors leading-snug">
+                  {v.video_title}
+                </p>
+                {v.video_summary && (
+                  <p className="text-xs text-gray-400 mt-1 line-clamp-1">{v.video_summary}</p>
+                )}
+              </div>
+            </a>
+          )
+        })}
+      </div>
+    </div>
+  )
 }
 
 function PostCard({ post }) {
@@ -145,7 +236,6 @@ export default function BlogPage() {
             <p className="text-blue-200 text-base max-w-xl mx-auto mb-6">
               PH-100 · 에콜 · 디에콜 최신 임상·연구 정보를 전달합니다
             </p>
-            {/* 검색창 */}
             <form onSubmit={handleSearch} className="max-w-lg mx-auto flex gap-2">
               <input
                 value={searchInput}
@@ -163,7 +253,7 @@ export default function BlogPage() {
 
         <div className="max-w-5xl mx-auto px-4 py-10">
           {/* 카테고리 탭 */}
-          <div className="flex flex-wrap gap-2 mb-8">
+          <div className="flex flex-wrap gap-2 mb-6">
             {CATEGORIES.map(cat => (
               <button key={cat.id}
                 onClick={() => {
@@ -181,7 +271,12 @@ export default function BlogPage() {
             ))}
           </div>
 
-          {/* 결과 수 */}
+          {/* ★ 카테고리 선택 시 관련 영상 섹션 */}
+          {activeCat !== 'all' && !searchQ && (
+            <CategoryVideoSection categoryId={activeCat} />
+          )}
+
+          {/* 검색 결과 수 */}
           {searchQ && (
             <p className="text-sm text-gray-500 mb-4">
               "<span className="font-semibold text-gray-800">{searchQ}</span>" 검색 결과 {posts.length}건

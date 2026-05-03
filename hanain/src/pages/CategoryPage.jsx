@@ -1,7 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
-import { Eye, Heart, ChevronRight, Play } from 'lucide-react'
-import { getVideosByCategory } from '../lib/supabase'
+import { Eye, Heart, ChevronRight } from 'lucide-react'
 import { getQaCategories, getQaQuestions, getQaPopular } from '../lib/supabase'
 import SEOHead from '../components/common/SEOHead'
 
@@ -55,7 +54,6 @@ export default function CategoryPage() {
   const [category, setCategory] = useState(null)
   const [questions, setQuestions] = useState([])
   const [popular, setPopular] = useState([])
-  const [videos, setVideos] = useState([])
   const [total, setTotal] = useState(0)
   const [page, setPage] = useState(1)
   const [sort, setSort] = useState('popular')
@@ -64,7 +62,6 @@ export default function CategoryPage() {
 
   const totalPages = Math.ceil(total / PAGE_SIZE)
 
-  // 카테고리 로드 (qa_categories 테이블에서)
   useEffect(() => {
     async function loadCat() {
       const catId = SLUG_TO_ID[slug] || slug
@@ -76,7 +73,6 @@ export default function CategoryPage() {
     loadCat()
   }, [slug])
 
-  // 질문 목록 로드 (qa_questions 테이블에서)
   const loadQuestions = useCallback(async () => {
     if (!category) return
     setLoading(true)
@@ -97,20 +93,15 @@ export default function CategoryPage() {
 
   useEffect(() => { loadQuestions() }, [loadQuestions])
 
-  // 인기질문 + 영상 로드 (최초 1회)
   useEffect(() => {
     if (!category) return
     async function loadExtras() {
-      const [pop, vids] = await Promise.all([
-        getQaPopular(category.id, 5),
-        getVideosByCategory(category.id, 3),
-      ])
+      const pop = await getQaPopular(category.id, 5)
       setPopular(pop.map(q => ({
         id: q.id,
         slug: q.question.replace(/[^\w\s가-힣]/g, '').replace(/\s+/g, '-').slice(0, 60),
         title: q.question,
       })))
-      setVideos(vids)
     }
     loadExtras()
   }, [category])
@@ -157,10 +148,7 @@ export default function CategoryPage() {
                 )}
                 <p className="text-white/60 text-sm mt-2">총 {total.toLocaleString()}개 질문</p>
               </div>
-
             </div>
-
-
           </div>
         </div>
 
@@ -188,7 +176,6 @@ export default function CategoryPage() {
                     {s.label}
                   </button>
                 ))}
-
               </div>
 
               {/* 질문 목록 */}
@@ -266,34 +253,6 @@ export default function CategoryPage() {
                         <p className="text-xs text-gray-600 group-hover:text-cyan-hana transition line-clamp-2 leading-snug">{q.title}</p>
                       </Link>
                     ))}
-                  </div>
-                </div>
-              )}
-
-              {/* 관련 영상 */}
-              {videos.length > 0 && (
-                <div className="bg-white rounded-2xl border border-border-hana p-5">
-                  <h3 className="font-bold text-ocean-deep mb-3 text-sm flex items-center gap-2">
-                    <Play className="w-4 h-4 text-cyan-hana" />
-                    관련 영상
-                  </h3>
-                  <div className="space-y-3">
-                    {videos.map(v => {
-                      const vid = v.youtube_url.match(/(?:v=|youtu\.be\/)([^&\s]+)/)?.[1]
-                      return (
-                        <a key={v.id} href={v.youtube_url} target="_blank" rel="noopener noreferrer"
-                          className="flex gap-2 group hover:opacity-90 transition">
-                          {vid && (
-                            <img src={`https://img.youtube.com/vi/${vid}/mqdefault.jpg`}
-                              alt={v.video_title} className="w-20 h-14 object-cover rounded-lg shrink-0" />
-                          )}
-                          <div className="flex-1 min-w-0">
-                            <p className="text-xs font-medium text-gray-700 group-hover:text-cyan-hana line-clamp-2">{v.video_title}</p>
-                            {v.video_summary && <p className="text-xs text-gray-400 mt-0.5 line-clamp-1">{v.video_summary}</p>}
-                          </div>
-                        </a>
-                      )
-                    })}
                   </div>
                 </div>
               )}

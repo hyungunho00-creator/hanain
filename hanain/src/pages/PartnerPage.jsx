@@ -343,6 +343,28 @@ export default function PartnerPage() {
         </a>
       </div>
 
+      {/* ── 파트너 소개 영상 ───────────────────────────── */}
+      <section className="py-12 px-4" style={{ background: '#0d1f3c' }}>
+        <div className="max-w-3xl mx-auto text-center">
+          <p style={{ fontSize: '11px', color: '#C9A84C', letterSpacing: '3px', fontWeight: '700', marginBottom: '8px' }}>
+            PARTNER INTRO VIDEO
+          </p>
+          <h2 className="text-2xl font-bold mb-6" style={{ color: '#fff' }}>
+            플로로탄닌 파트너스, 영상으로 먼저 확인하세요
+          </h2>
+          <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl" style={{ paddingBottom: '56.25%' }}>
+            <iframe
+              src="https://www.youtube.com/embed/lkLEZ4nhlx8"
+              title="플로로탄닌 파트너스 소개 영상"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="absolute inset-0 w-full h-full"
+              style={{ border: 'none' }}
+            />
+          </div>
+        </div>
+      </section>
+
       {/* ── 왜 지금인가 ───────────────────────────────── */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">

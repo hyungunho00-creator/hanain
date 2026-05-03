@@ -207,7 +207,7 @@ function QACard({ qa, isOpen, onToggle, searchQuery }) {
             </p>
             <p className="text-sm text-gray-400">
               © 2025 플로로탄닌 파트너스 — 본 콘텐츠의 무단 복제·배포를 금합니다.
-              자료 사용 문의는 아래 [문자 보내기]를 이용해 주세요.
+              더 자세한 내용이 궁금하시면 아래 [파트너 연락하기]를 이용해 주세요.
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-3">
@@ -229,7 +229,7 @@ function QACard({ qa, isOpen, onToggle, searchQuery }) {
               href={`sms:${partner.phone}?body=${encodeURIComponent('안녕하세요! 플로로탄닌 파트너스 건강 Q&A를 보고 문의드립니다.')}`}
               className="flex items-center gap-2 px-4 py-2 rounded-full text-base font-medium bg-white border border-gray-200 text-gray-600 hover:border-cyan-hana hover:text-cyan-hana transition-all"
             >
-              <MessageSquare className="w-4 h-4" />문자 보내기
+              <MessageSquare className="w-4 h-4" />파트너 연락하기
             </a>
           </div>
         </div>
@@ -367,6 +367,16 @@ export default function QAPage() {
     const params = {}
     if (searchQuery) params.q = searchQuery
     if (catId !== 'all') params.category = catId
+    setSearchParams(params)
+  }
+
+  const setOpenId = (id) => {
+    const params = Object.fromEntries(searchParams.entries())
+    if (!id || openId === id) {
+      delete params.openId
+    } else {
+      params.openId = id
+    }
     setSearchParams(params)
   }
 
@@ -531,6 +541,37 @@ export default function QAPage() {
                 </button>
               </div>
             )}
+
+            {/* CTA Section */}
+            <div className="mt-12 rounded-2xl overflow-hidden bg-gradient-to-br from-[#0a1628] to-[#0e2a4a] text-white p-8 shadow-lg">
+              <div className="max-w-2xl">
+                <p className="text-cyan-300 text-sm font-semibold uppercase tracking-widest mb-3">이 내용, 나에게도 해당될까요?</p>
+                <h2 className="text-2xl font-bold mb-4 leading-snug">
+                  같은 고민을 먼저 겪은 사람에게<br />
+                  직접 물어보세요
+                </h2>
+                <p className="text-gray-300 text-base mb-2 leading-relaxed">
+                  글로 읽는 것과 내 상황에 적용하는 건 다릅니다. 나이·복용 중인 약·생활 습관에 따라 같은 성분도 접근법이 달라지거든요.
+                </p>
+                <p className="text-gray-300 text-base mb-6 leading-relaxed">
+                  파트너는 의료인이 아닙니다. 하지만 <span className="text-white font-semibold">같은 고민을 먼저 공부한 사람</span>으로서, 시중 제품 차이와 내게 맞는 선택 기준을 함께 정리해 드립니다.
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  <a
+                    href="/partner"
+                    className="inline-flex items-center gap-2 bg-cyan-400 hover:bg-cyan-300 text-[#0a1628] font-bold px-6 py-3 rounded-xl transition-all text-base shadow"
+                  >
+                    파트너와 이야기하기 →
+                  </a>
+                  <a
+                    href={`sms:010-5652-8206?body=${encodeURIComponent('안녕하세요, Q&A 보다가 제 상황이랑 비슷한 것 같아서요. 좀 더 여쭤봐도 될까요?')}`}
+                    className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3 rounded-xl transition-all text-base border border-white/20"
+                  >
+                    문자로 편하게 물어보기
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Sidebar */}

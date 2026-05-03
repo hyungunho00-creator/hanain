@@ -255,7 +255,7 @@ export default function BlogPostPage() {
               플로로탄닌에 대해 더 궁금한 게 있으신가요?
             </h3>
             <p className="text-sm mb-5" style={{ color: '#a0b8d0' }}>
-              시중 제품과의 차이점, 내 건강에 맞는 섯법, 구매 방법까지<br />
+              시중 제품과의 차이점, 내 건강에 맞는 선택법, 구매 방법까지<br />
               전문가가 직접 답변드립니다
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">

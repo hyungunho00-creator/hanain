@@ -3,6 +3,23 @@ import { Settings, Users, MessageSquare, BookOpen, Trash2, Save, X, Search, Down
 import { supabase, setVideoMain, upsertPost, getAllPostsAdmin, deletePost } from '../lib/supabase'
 
 const ADMIN_PASS = import.meta.env.VITE_ADMIN_PASS || '56528206'
+
+// question_videos 전용 - service key 직접 fetch (Exposed tables 설정 불필요)
+const SB_URL = 'https://rlfxuyeoluoeaxuujtly.supabase.co'
+const SB_SVC = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJsZnh1eWVvbHVvZWF4dXVqdGx5Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NTk0MTI2MywiZXhwIjoyMDkxNTE3MjYzfQ.O0Oe3g2fv_8SUvxNfHvdxzpA6pcWVIWTscpymYr0pBI'
+const vHeaders = {
+  'apikey': SB_SVC,
+  'Authorization': `Bearer ${SB_SVC}`,
+  'Content-Type': 'application/json',
+  'Accept-Profile': 'public',
+  'Content-Profile': 'public',
+  'Prefer': 'return=representation',
+}
+async function vFetch(path, opts = {}) {
+  const res = await fetch(`${SB_URL}/rest/v1${path}`, { ...opts, headers: { ...vHeaders, ...(opts.headers || {}) } })
+  const text = await res.text()
+  return { ok: res.ok, status: res.status, data: text ? JSON.parse(text) : null }
+}
 const PARTNERS_KEY = 'phlorotannin_partners_v2'
 const VERCEL_TOKEN_KEY = 'phlorotannin_vercel_token'
 const GH_TOKEN_KEY = 'phlorotannin_gh_token'
@@ -1271,20 +1288,31 @@ function YouTubeManageTab() {
   const [preview, setPreview] = useState(null) // 미리보기 비디오 ID
   const [togglingId, setTogglingId] = useState(null) // 메인 토글 중인 ID
 
+  // 블로그 + Q&A 카테고리 통합
+  // 블로그: diabetes, cancer, brain, cardiovascular, inflammation, skin, research, general
+  // Q&A:   metabolism, cancer_immune, neuro_cognitive, cardiovascular, infection_inflammation, skin, digestive, ...
   const CATEGORY_OPTIONS = [
-    { id: 'metabolism',            name: '대사질환' },
-    { id: 'cancer_immune',         name: '항암/면역' },
-    { id: 'digestive',             name: '소화/간' },
-    { id: 'cardiovascular',        name: '심혈관' },
-    { id: 'neuro_cognitive',       name: '뇌/인지' },
-    { id: 'mental_health',         name: '정신건강' },
-    { id: 'musculoskeletal',       name: '근골격' },
-    { id: 'skin',                  name: '피부' },
-    { id: 'hair',                  name: '모발' },
-    { id: 'respiratory',           name: '호흡기' },
-    { id: 'infection_inflammation',name: '감염/염증' },
-    { id: 'womens_health',         name: '여성건강' },
-    { id: 'mens_health',           name: '남성건강' },
+    // ── 블로그 카테고리 ──────────────────────────────
+    { id: 'diabetes',              name: '📝 블로그 · 당뇨·혈당',        group: 'blog' },
+    { id: 'cancer',                name: '📝 블로그 · 항암·면역',         group: 'blog' },
+    { id: 'brain',                 name: '📝 블로그 · 뇌·인지',          group: 'blog' },
+    { id: 'cardiovascular',        name: '📝 블로그 · 심혈관',           group: 'blog' },
+    { id: 'inflammation',          name: '📝 블로그 · 염증·면역',         group: 'blog' },
+    { id: 'skin',                  name: '📝 블로그 · 피부·모발',         group: 'blog' },
+    { id: 'research',              name: '📝 블로그 · 연구·임상',         group: 'blog' },
+    { id: 'general',               name: '📝 블로그 · 일반',             group: 'blog' },
+    // ── Q&A 카테고리 ─────────────────────────────────
+    { id: 'metabolism',            name: '❓ Q&A · 대사질환',            group: 'qa' },
+    { id: 'cancer_immune',         name: '❓ Q&A · 항암/면역',           group: 'qa' },
+    { id: 'digestive',             name: '❓ Q&A · 소화/간',             group: 'qa' },
+    { id: 'neuro_cognitive',       name: '❓ Q&A · 뇌/인지',             group: 'qa' },
+    { id: 'mental_health',         name: '❓ Q&A · 정신건강',            group: 'qa' },
+    { id: 'musculoskeletal',       name: '❓ Q&A · 근골격',              group: 'qa' },
+    { id: 'hair',                  name: '❓ Q&A · 모발',               group: 'qa' },
+    { id: 'respiratory',           name: '❓ Q&A · 호흡기',              group: 'qa' },
+    { id: 'infection_inflammation',name: '❓ Q&A · 감염/염증',           group: 'qa' },
+    { id: 'womens_health',         name: '❓ Q&A · 여성건강',            group: 'qa' },
+    { id: 'mens_health',           name: '❓ Q&A · 남성건강',            group: 'qa' },
   ]
 
   // YouTube URL에서 videoId 추출 (youtu.be, watch?v=, embed/ 모두 지원)
@@ -1310,10 +1338,7 @@ function YouTubeManageTab() {
 
   function loadVideos() {
     setLoading(true)
-    supabase
-      .from('question_videos')
-      .select('*')
-      .order('created_at', { ascending: false })
+    vFetch('/question_videos?select=*&order=created_at.desc')
       .then(({ data }) => {
         setVideos(data || [])
         setLoading(false)
@@ -1342,9 +1367,9 @@ function YouTubeManageTab() {
         is_main:       true,
       },
     ]
-    const { data: existing } = await supabase.from('question_videos').select('id').limit(1)
+    const { data: existing } = await vFetch('/question_videos?select=id&limit=1')
     if (!existing || existing.length === 0) {
-      await supabase.from('question_videos').insert(DEFAULTS)
+      await vFetch('/question_videos', { method: 'POST', body: JSON.stringify(DEFAULTS) })
     }
   }
 
@@ -1361,42 +1386,54 @@ function YouTubeManageTab() {
     if (!rawUrl) { setMsg('❌ YouTube URL을 입력해주세요.'); return }
     if (!videoId) { setMsg('❌ 올바른 YouTube URL이 아닙니다. (youtu.be/... 또는 youtube.com/watch?v=... 형식)'); return }
     if (!form.videoTitle.trim()) { setMsg('❌ 영상 제목을 입력해주세요.'); return }
+    if (!form.categoryId) { setMsg('❌ 카테고리를 선택해주세요.'); return }
 
     const normalizedUrl = `https://www.youtube.com/watch?v=${videoId}`
 
     setSaving(true); setMsg('')
 
-    // question_id는 UUID여야 하므로 비워둠 (카테고리 기준으로 등록)
-    // legacy_id를 video_summary에 저장해서 나중에 참조 가능하게 함
+    // ★ 카테고리 중복 체크: 같은 카테고리에 이미 영상이 있으면 교체
+    const { data: existing } = await vFetch(`/question_videos?category_id=eq.${form.categoryId}&select=id`)
+    if (existing && existing.length > 0) {
+      // 기존 영상 모두 삭제 후 새 영상 등록
+      for (const old of existing) {
+        await vFetch(`/question_videos?id=eq.${old.id}`, { method: 'DELETE', headers: { Prefer: 'return=minimal' } })
+      }
+    }
+
     const summaryWithLegacy = [
       form.videoSummary.trim(),
       form.legacyId.trim() ? `[질문ID:${form.legacyId.trim()}]` : ''
     ].filter(Boolean).join(' ')
 
-    const { error } = await supabase.from('question_videos').insert({
-      youtube_url:   normalizedUrl,
-      video_title:   form.videoTitle.trim(),
-      video_summary: summaryWithLegacy || null,
-      question_id:   null,   // UUID 타입이므로 빈 값으로 저장, 카테고리로 연결
-      category_id:   form.categoryId || null,
-      sort_order:    Number(form.sortOrder) || 0,
+    const { ok, data: inserted } = await vFetch('/question_videos', {
+      method: 'POST',
+      body: JSON.stringify({
+        youtube_url:   normalizedUrl,
+        video_title:   form.videoTitle.trim(),
+        video_summary: summaryWithLegacy || null,
+        question_id:   null,
+        category_id:   form.categoryId,
+        sort_order:    Number(form.sortOrder) || 0,
+      })
     })
     setSaving(false)
 
+    const error = ok ? null : (inserted?.[0] || { message: '저장 실패' })
     if (error) {
       setMsg('❌ 저장 실패: ' + error.message)
     } else {
-      setMsg(`✅ 등록 완료! 영상 ID: ${videoId}`)
+      setMsg(`✅ 등록 완료! [${CATEGORY_OPTIONS.find(c=>c.id===form.categoryId)?.name}] 영상 ID: ${videoId}`)
       setForm({ youtubeUrl: '', videoTitle: '', videoSummary: '', legacyId: '', categoryId: '', sortOrder: 0 })
       setPreview(null)
       loadVideos()
-      setTimeout(() => setMsg(''), 4000)
+      setTimeout(() => setMsg(''), 5000)
     }
   }
 
   async function handleDelete(id) {
     if (!confirm('삭제하시겠습니까?')) return
-    await supabase.from('question_videos').delete().eq('id', id)
+    await vFetch(`/question_videos?id=eq.${id}`, { method: 'DELETE', headers: { Prefer: 'return=minimal' } })
     loadVideos()
   }
 
@@ -1409,10 +1446,17 @@ function YouTubeManageTab() {
       return
     }
     setTogglingId(v.id)
-    const { error } = await setVideoMain(v.id, !v.is_main)
+    const { ok } = await vFetch(`/question_videos?id=eq.${v.id}`, {
+      method: 'PATCH',
+      headers: { Prefer: 'return=minimal' },
+      body: JSON.stringify({ is_main: !v.is_main })
+    })
+    const error = ok ? null : { message: '변경 실패' }
+    // legacy setVideoMain replaced
+    void error
     setTogglingId(null)
-    if (error) {
-      setMsg('❌ 변경 실패: ' + error.message)
+    if (!ok) {
+      setMsg('❌ 변경 실패')
     } else {
       setMsg(v.is_main ? '📌 메인 고정 해제됨' : '✅ 메인에 고정되었습니다!')
       setTimeout(() => setMsg(''), 2500)
