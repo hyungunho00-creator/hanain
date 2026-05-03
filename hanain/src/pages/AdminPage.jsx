@@ -1301,14 +1301,14 @@ function YouTubeManageTab() {
     { id: 'skin',                  name: '📝 블로그 · 피부·모발',         group: 'blog' },
     { id: 'research',              name: '📝 블로그 · 연구·임상',         group: 'blog' },
     { id: 'general',               name: '📝 블로그 · 일반',             group: 'blog' },
-    // ── Q&A 카테고리 ─────────────────────────────────
+    // ── Q&A 카테고리 (DB: qa_categories) ─────────────────────────────────
     { id: 'metabolism',            name: '❓ Q&A · 대사질환',            group: 'qa' },
     { id: 'cancer_immune',         name: '❓ Q&A · 항암/면역',           group: 'qa' },
     { id: 'digestive',             name: '❓ Q&A · 소화/간',             group: 'qa' },
     { id: 'neuro_cognitive',       name: '❓ Q&A · 뇌/인지',             group: 'qa' },
     { id: 'mental_health',         name: '❓ Q&A · 정신건강',            group: 'qa' },
     { id: 'musculoskeletal',       name: '❓ Q&A · 근골격',              group: 'qa' },
-    { id: 'hair',                  name: '❓ Q&A · 모발',               group: 'qa' },
+    { id: 'skin_hair',             name: '❓ Q&A · 피부/모발',           group: 'qa' },
     { id: 'respiratory',           name: '❓ Q&A · 호흡기',              group: 'qa' },
     { id: 'infection_inflammation',name: '❓ Q&A · 감염/염증',           group: 'qa' },
     { id: 'womens_health',         name: '❓ Q&A · 여성건강',            group: 'qa' },

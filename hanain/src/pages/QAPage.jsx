@@ -6,7 +6,7 @@ import SEOHead from '../components/common/SEOHead'
 
 const ITEMS_PER_PAGE = 20
 
-// 카테고리 정의 (qa.json 기준 - skin/hair 분리)
+// 카테고리 정의 (DB qa_categories 기준)
 const QA_CATEGORIES = [
   { id: 'metabolism',             name: '대사질환',    emoji: '🩸' },
   { id: 'cancer_immune',          name: '항암/면역',   emoji: '💪' },
@@ -15,8 +15,7 @@ const QA_CATEGORIES = [
   { id: 'neuro_cognitive',        name: '뇌/인지',     emoji: '🧠' },
   { id: 'mental_health',          name: '정신건강',    emoji: '😴' },
   { id: 'musculoskeletal',        name: '근골격',      emoji: '🦴' },
-  { id: 'skin',                   name: '피부',        emoji: '✨' },
-  { id: 'hair',                   name: '모발',        emoji: '💇' },
+  { id: 'skin_hair',              name: '피부/모발',   emoji: '✨' },
   { id: 'respiratory',            name: '호흡기',      emoji: '🫀' },
   { id: 'infection_inflammation', name: '감염/염증',   emoji: '🔥' },
   { id: 'womens_health',          name: '여성건강',    emoji: '🌸' },
@@ -31,9 +30,7 @@ const CAT_COLORS = {
   neuro_cognitive:        { bg: '#4338CA' },
   mental_health:          { bg: '#BE185D' },
   musculoskeletal:        { bg: '#C2410C' },
-  skin:                   { bg: '#D97706' },
-  hair:                   { bg: '#92400E' },
-  skin_hair:              { bg: '#B45309' }, // legacy fallback
+  skin_hair:              { bg: '#B45309' },
   respiratory:            { bg: '#0E7490' },
   infection_inflammation: { bg: '#0F766E' },
   womens_health:          { bg: '#BE123C' },
@@ -45,7 +42,7 @@ const CAT_SLUG_MAP = {
   digestive: 'digestive', cardiovascular: 'cardiovascular',
   neuro_cognitive: 'neuro-cognitive', mental_health: 'mental-health',
   musculoskeletal: 'musculoskeletal',
-  skin: 'skin', hair: 'hair', skin_hair: 'skin-hair',
+  skin_hair: 'skin-hair',
   respiratory: 'respiratory', infection_inflammation: 'infection-inflammation',
   womens_health: 'womens-health', mens_health: 'mens-health',
 }
@@ -288,9 +285,8 @@ export default function QAPage() {
         setPopularList(popular)
 
         setDataLoaded(true)
-        setLoading(false)
       })
-      .catch(() => setLoading(false))
+      .catch(() => setDataLoaded(true))
   }, [])
 
   // ✅ 필터링: URL params 직접 사용 → state 타이밍 문제 없음

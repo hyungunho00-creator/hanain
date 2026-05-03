@@ -4,12 +4,13 @@ import { Eye, Heart, ChevronRight } from 'lucide-react'
 import { getQaCategories, getQaQuestions, getQaPopular } from '../lib/supabase'
 import SEOHead from '../components/common/SEOHead'
 
-// URL slug → category_id 매핑
+// URL slug → category_id 매핑 (DB qa_categories 기준)
 const SLUG_TO_ID = {
   'metabolism': 'metabolism', 'cancer-immune': 'cancer_immune',
   'digestive': 'digestive', 'cardiovascular': 'cardiovascular',
   'neuro-cognitive': 'neuro_cognitive', 'mental-health': 'mental_health',
-  'musculoskeletal': 'musculoskeletal', 'skin-hair': 'skin_hair', 'skin': 'skin', 'hair': 'hair',
+  'musculoskeletal': 'musculoskeletal',
+  'skin-hair': 'skin_hair', 'skin-hair-care': 'skin_hair',
   'respiratory': 'respiratory', 'infection-inflammation': 'infection_inflammation',
   'womens-health': 'womens_health', 'mens-health': 'mens_health',
 }
@@ -269,13 +270,12 @@ export default function CategoryPage() {
                     { slug: 'digestive', name: '소화/간', color: '#10B981' },
                     { slug: 'mental-health', name: '정신건강', color: '#F59E0B' },
                     { slug: 'musculoskeletal', name: '근골격', color: '#F97316' },
-                    { slug: 'skin', name: '피부', color: '#D97706' },
-                    { slug: 'hair', name: '모발', color: '#92400E' },
+                    { slug: 'skin-hair', name: '피부/모발', color: '#B45309' },
                     { slug: 'respiratory', name: '호흡기', color: '#06B6D4' },
                     { slug: 'infection-inflammation', name: '감염/염증', color: '#DC2626' },
                     { slug: 'womens-health', name: '여성건강', color: '#F472B6' },
                     { slug: 'mens-health', name: '남성건강', color: '#3B82F6' },
-                  ].filter(c => c.slug !== slug).map(c => (
+                  ].filter(c => c.slug !== slug && c.slug !== (SLUG_TO_ID[slug] || slug)).map(c => (
                     <Link key={c.slug} to={`/category/${c.slug}`}
                       className="flex items-center gap-2 text-xs text-gray-600 hover:text-cyan-hana transition py-1">
                       <span className="w-2 h-2 rounded-full" style={{ backgroundColor: c.color }} />
