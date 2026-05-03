@@ -288,43 +288,33 @@ export default function BusinessCardPage() {
   const [flipped,     setFlipped]     = useState(false)
   const [saved,       setSaved]       = useState(false)
   const [showContact, setShowContact] = useState(false)
-  const [showHomeGuide, setShowHomeGuide] = useState(false)
-  const [isIOS, setIsIOS] = useState(false)
-  const [deferredPrompt, setDeferredPrompt] = useState(null)
-  const [bannerDismissed, setBannerDismissed] = useState(false)
+  const [showInstallBanner, setShowInstallBanner] = useState(false)  // 상단 고정 안내 배너
+  const [installBannerType, setInstallBannerType] = useState('android') // 'android' | 'ios'
   const deferredPromptRef = useRef(null)
 
   const cardUrl = `${MAIN_SITE}/p/${phone}`
 
-  // ── 브라우저/OS 감지 & Android beforeinstallprompt 캐치 ──
+  // ── Android beforeinstallprompt 캐치 + ?pwa=1 로 넘어온 경우 상단 배너 표시 ──
   useEffect(() => {
     const ua = navigator.userAgent || ''
-    const ios = /iPhone|iPad|iPod/i.test(ua)
-    setIsIOS(ios)
+    const isAndroid = /Android/i.test(ua)
+    const isIphone = /iPhone|iPad|iPod/i.test(ua)
 
+    // Android: beforeinstallprompt 저장
     const handler = (e) => {
       e.preventDefault()
       deferredPromptRef.current = e
-      setDeferredPrompt(e)
-
-      // ?pwa=1 파라미터로 넘어온 경우 → 자동으로 설치 팝업 바로 트리거
-      if (new URLSearchParams(window.location.search).get('pwa') === '1') {
-        setTimeout(() => {
-          e.prompt()
-          deferredPromptRef.current = null
-          setDeferredPrompt(null)
-        }, 300)
-      }
     }
     window.addEventListener('beforeinstallprompt', handler)
 
-    // iOS + pwa=1 → 공유시트 자동으로 열기
-    if (ios && new URLSearchParams(window.location.search).get('pwa') === '1') {
-      setTimeout(() => {
-        if (navigator.share) {
-          navigator.share({ url: window.location.href.split('?')[0] + '?view=card' }).catch(() => {})
-        }
-      }, 800)
+    // ?pwa=1 파라미터 → Chrome/Safari로 넘어온 상태 → 상단 안내 배너 표시
+    if (new URLSearchParams(window.location.search).get('pwa') === '1') {
+      if (isIphone) {
+        setInstallBannerType('ios')
+      } else {
+        setInstallBannerType('android')
+      }
+      setShowInstallBanner(true)
     }
 
     return () => window.removeEventListener('beforeinstallprompt', handler)
@@ -362,55 +352,33 @@ export default function BusinessCardPage() {
     })
   }, [phone])
 
-  // ── 브라우저 환경 체크 ──
-  const getBrowserEnv = () => {
+  // ── 홈화면 바로가기 만들기 핸들러 ──
+  const handleAddToHome = () => {
     const ua = navigator.userAgent || ''
     const isInApp = /KAKAOTALK|NAVER|Instagram|FB_IAB|FBAN|FBAV|Line|wv|WebView/i.test(ua)
     const isAndroid = /Android/i.test(ua)
     const isIphone = /iPhone|iPad|iPod/i.test(ua)
-    const isChrome = /Chrome/i.test(ua) && !/Edge|OPR/i.test(ua)
     const isSafari = /Safari/i.test(ua) && !/Chrome|CriOS|FxiOS/i.test(ua)
-    return { isInApp, isAndroid, isIphone, isChrome, isSafari }
-  }
 
-  // ── 홈화면 바로가기 만들기 핸들러 ──
-  const handleAddToHome = async () => {
-    const { isInApp, isAndroid, isIphone, isChrome, isSafari } = getBrowserEnv()
-    // pwa=1 붙인 URL → Chrome/Safari로 넘어가서 자동 트리거용
+    // ?pwa=1 붙인 URL: Chrome/Safari로 넘어간 후 상단 배너가 자동으로 뜸
     const pwaUrl = `${cardUrl}?view=card&pwa=1`
     const encodedPwaUrl = encodeURIComponent(pwaUrl)
 
-    if (isInApp && isAndroid) {
-      // 카카오 등 인앱 Android → Chrome으로 강제 이동, pwa=1 파라미터 포함
+    if (isAndroid) {
+      // Android (인앱 포함 전부) → Chrome으로 강제 이동
+      // Chrome 열리면 ?pwa=1 감지 → 상단에 "⋮ → 홈 화면에 추가" 배너 자동으로 표시
       const intentUrl = `intent://${pwaUrl.replace(/^https?:\/\//, '')}#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=${encodedPwaUrl};end`
       window.location.href = intentUrl
 
-    } else if (isInApp && isIphone) {
-      // 카카오 등 인앱 iOS → Safari로 강제 이동, pwa=1 파라미터 포함
-      window.location.href = pwaUrl.replace('https://', 'x-safari-https://')
-
-    } else if (isAndroid && deferredPromptRef.current) {
-      // Android Chrome, prompt 준비됨 → 바로 OS 설치 팝업
-      deferredPromptRef.current.prompt()
-      await deferredPromptRef.current.userChoice
-      deferredPromptRef.current = null
-      setDeferredPrompt(null)
-
-    } else if (isIphone && isSafari) {
-      // iPhone Safari → 공유시트 열기 (홈화면에 추가 선택하면 됨)
-      if (navigator.share) {
-        try { await navigator.share({ url: cardUrl + '?view=card' }) } catch (e) { /* 취소 */ }
-      } else {
-        setShowHomeGuide(true)
-      }
-
-    } else if (isIphone && !isSafari) {
-      // iPhone 인앱 외 기타 브라우저 → Safari로 강제 이동
+    } else if (isIphone) {
+      // iPhone (인앱 포함 전부) → Safari로 강제 이동
+      // Safari 열리면 ?pwa=1 감지 → 상단에 "⬆️ → 홈 화면에 추가" 배너 자동으로 표시
       window.location.href = pwaUrl.replace('https://', 'x-safari-https://')
 
     } else {
-      // 그 외 (데스크탑 등) → 안내 팝업
-      setShowHomeGuide(true)
+      // 데스크탑 등 → 배너 바로 표시
+      setInstallBannerType('android')
+      setShowInstallBanner(true)
     }
   }
 
@@ -861,31 +829,22 @@ export default function BusinessCardPage() {
             </div>
           </div>
 
-          {/* ════ 홈화면 바로가기 배너 ════ */}
-          {!bannerDismissed && (
-            <div className="rounded-2xl p-4 mb-5 relative"
-              style={{ background: `linear-gradient(135deg, #1a3a6a 0%, ${NAVY} 100%)`, border: `2px solid ${GOLD}60`, boxShadow: `0 4px 20px ${NAVY}50` }}>
-              <button
-                onClick={() => setBannerDismissed(true)}
-                style={{ position: 'absolute', top: '10px', right: '12px', color: `${GOLD}80`, background: 'none', border: 'none', cursor: 'pointer', fontSize: '18px', lineHeight: 1 }}
-              >✕</button>
-              <div className="flex items-center gap-3 mb-3">
-                <div style={{ width: '40px', height: '40px', borderRadius: '12px', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', background: `linear-gradient(135deg, ${GOLD}, ${GOLD2})` }}>
-                  <Smartphone style={{ width: '20px', height: '20px', color: NAVY }} />
-                </div>
-                <div>
-                  <p style={{ fontSize: '15px', fontWeight: '900', color: '#fff' }}>홈화면 바로가기 만들기</p>
-                  <p style={{ fontSize: '12px', color: GOLD2 }}>언제든 편하게 바로 접속하세요</p>
-                </div>
-              </div>
-              <button
-                onClick={handleAddToHome}
-                className="w-full py-3 rounded-xl font-bold active:scale-95 transition-transform"
-                style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLD2})`, color: NAVY, fontSize: '15px' }}>
-                📱 홈화면에 바로가기 추가하기
-              </button>
-            </div>
-          )}
+          {/* ════ 홈화면 바로가기 버튼 ════ */}
+          <button
+            onClick={handleAddToHome}
+            className="w-full flex items-center justify-center gap-3 rounded-2xl py-4 mb-4 active:scale-95 transition-transform"
+            style={{
+              background: `linear-gradient(135deg, ${GOLD}, ${GOLD2})`,
+              color: NAVY,
+              boxShadow: `0 4px 20px ${GOLD}60`,
+              border: 'none',
+              fontSize: '16px',
+              fontWeight: '800',
+            }}
+          >
+            <Smartphone className="w-5 h-5" />
+            홈화면 바로가기 만들기
+          </button>
 
           <p className="text-center pb-8"
             style={{ fontSize: '12px', color: '#aaa', lineHeight: '1.9' }}>
@@ -894,45 +853,44 @@ export default function BusinessCardPage() {
         </div>
       </div>
 
-      {/* ════ iOS 홈화면 추가 안내 팝업 (초간단) ════ */}
-      {showHomeGuide && (
+      {/* ════ Chrome/Safari 이동 후 상단 고정 안내 배너 ════ */}
+      {showInstallBanner && (
         <div
-          className="fixed inset-0 z-50 flex items-end justify-center"
-          style={{ background: 'rgba(0,0,0,0.6)' }}
-          onClick={() => setShowHomeGuide(false)}
+          style={{
+            position: 'fixed', top: 0, left: 0, right: 0, zIndex: 9999,
+            background: `linear-gradient(135deg, ${NAVY}, #1a3a6a)`,
+            borderBottom: `3px solid ${GOLD}`,
+            padding: '14px 16px 14px 16px',
+            boxShadow: '0 4px 20px rgba(0,0,0,0.4)',
+          }}
         >
-          <div
-            className="w-full max-w-md rounded-t-3xl p-6 pb-10"
-            style={{ background: '#FFFDF7', border: `3px solid ${GOLD}` }}
-            onClick={e => e.stopPropagation()}
-          >
-            <div className="w-10 h-1.5 rounded-full mx-auto mb-5" style={{ background: `${GOLD}60` }} />
+          {/* 닫기 */}
+          <button
+            onClick={() => setShowInstallBanner(false)}
+            style={{ position: 'absolute', top: '10px', right: '14px', color: `${GOLD}`, background: 'none', border: 'none', fontSize: '20px', lineHeight: 1, cursor: 'pointer' }}
+          >✕</button>
 
-            <p style={{ fontSize: '20px', fontWeight: '900', color: NAVY, textAlign: 'center', marginBottom: '20px' }}>
-              📱 홈화면 바로가기 만들기
-            </p>
-
-            {/* 핵심 2줄 안내 */}
-            <div className="rounded-2xl p-5 mb-5" style={{ background: `linear-gradient(135deg, ${NAVY}, #1a3a6a)` }}>
-              <p style={{ fontSize: '17px', fontWeight: '800', color: '#fff', marginBottom: '14px', lineHeight: 1.6 }}>
-                ① 아래 <span style={{ color: GOLD2 }}>공유 버튼</span> ⬆️ 누르기
-              </p>
-              <p style={{ fontSize: '17px', fontWeight: '800', color: '#fff', lineHeight: 1.6 }}>
-                ② <span style={{ color: GOLD2 }}>"홈 화면에 추가"</span> 누르기
-              </p>
+          <div className="flex items-center gap-3" style={{ paddingRight: '28px' }}>
+            <div style={{ width: '36px', height: '36px', borderRadius: '10px', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', background: `linear-gradient(135deg, ${GOLD}, ${GOLD2})` }}>
+              <Smartphone style={{ width: '18px', height: '18px', color: NAVY }} />
             </div>
-
-            <p style={{ fontSize: '13px', color: '#aaa', textAlign: 'center', marginBottom: '16px' }}>
-              아이콘 이름: <strong style={{ color: NAVY }}>플로로탄닌 - {partner?.name || ''}</strong>
-            </p>
-
-            <button
-              onClick={() => setShowHomeGuide(false)}
-              className="w-full py-4 rounded-2xl font-bold"
-              style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLD2})`, color: NAVY, fontSize: '17px' }}
-            >
-              확인
-            </button>
+            <div>
+              {installBannerType === 'android' ? (
+                <>
+                  <p style={{ fontSize: '14px', fontWeight: '900', color: '#fff', marginBottom: '2px' }}>
+                    우상단 <span style={{ color: GOLD2 }}>⋮</span> 누르고 →  <span style={{ color: GOLD2 }}>"홈 화면에 추가"</span> 누르세요
+                  </p>
+                  <p style={{ fontSize: '12px', color: `${GOLD2}` }}>그러면 바로가기가 만들어져요 📱</p>
+                </>
+              ) : (
+                <>
+                  <p style={{ fontSize: '14px', fontWeight: '900', color: '#fff', marginBottom: '2px' }}>
+                    하단 <span style={{ color: GOLD2 }}>⬆️ 공유</span> 누르고 → <span style={{ color: GOLD2 }}>"홈 화면에 추가"</span> 누르세요
+                  </p>
+                  <p style={{ fontSize: '12px', color: `${GOLD2}` }}>그러면 바로가기가 만들어져요 📱</p>
+                </>
+              )}
+            </div>
           </div>
         </div>
       )}
