@@ -296,10 +296,10 @@ export default function BusinessCardPage() {
 
   const cardUrl = `${MAIN_SITE}/p/${phone}`
 
-  // ── iOS 감지 & Android beforeinstallprompt 캐치 ──
+  // ── 브라우저/OS 감지 & Android beforeinstallprompt 캐치 ──
   useEffect(() => {
     const ua = navigator.userAgent || ''
-    const ios = /iPhone|iPad|iPod/i.test(ua) && !/CriOS/i.test(ua)
+    const ios = /iPhone|iPad|iPod/i.test(ua)
     setIsIOS(ios)
 
     const handler = (e) => {
@@ -343,19 +343,51 @@ export default function BusinessCardPage() {
     })
   }, [phone])
 
+  // ── 브라우저 환경 체크 ──
+  const getBrowserEnv = () => {
+    const ua = navigator.userAgent || ''
+    const isInApp = /KAKAOTALK|NAVER|Instagram|FB_IAB|FBAN|FBAV|Line|wv|WebView/i.test(ua)
+    const isAndroid = /Android/i.test(ua)
+    const isIphone = /iPhone|iPad|iPod/i.test(ua)
+    const isChrome = /Chrome/i.test(ua) && !/Edge|OPR/i.test(ua)
+    const isSafari = /Safari/i.test(ua) && !/Chrome|CriOS|FxiOS/i.test(ua)
+    return { isInApp, isAndroid, isIphone, isChrome, isSafari }
+  }
+
   // ── 홈화면 바로가기 만들기 핸들러 ──
   const handleAddToHome = async () => {
-    if (isIOS) {
-      // iOS: 안내 팝업 표시
-      setShowHomeGuide(true)
-    } else if (deferredPromptRef.current) {
-      // Android Chrome: 네이티브 팝업 트리거
+    const { isInApp, isAndroid, isIphone, isChrome, isSafari } = getBrowserEnv()
+    const encodedUrl = encodeURIComponent(cardUrl)
+
+    if (isInApp && isAndroid) {
+      // 카카오/인앱 Android → Chrome으로 강제 이동
+      // Chrome이 열리면서 페이지 로드 → 상단 "홈화면에 추가" 팝업 자동으로 뜸
+      const intentUrl = `intent://${cardUrl.replace(/^https?:\/\//, '')}#Intent;scheme=https;package=com.android.chrome;end`
+      window.location.href = intentUrl
+    } else if (isInApp && isIphone) {
+      // 카카오/인앱 iOS → Safari로 강제 이동
+      window.location.href = cardUrl.replace('https://', 'x-safari-https://')
+    } else if (isAndroid && deferredPromptRef.current) {
+      // Android Chrome, 이미 설치 가능 → 바로 OS 팝업
       deferredPromptRef.current.prompt()
       const { outcome } = await deferredPromptRef.current.userChoice
       deferredPromptRef.current = null
       setDeferredPrompt(null)
+    } else if (isAndroid && !deferredPromptRef.current) {
+      // Android Chrome인데 이미 설치됐거나 prompt 없음 → Chrome으로 다시 열기
+      const intentUrl = `intent://${cardUrl.replace(/^https?:\/\//, '')}#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=${encodedUrl};end`
+      window.location.href = intentUrl
+    } else if (isIphone && isSafari) {
+      // Safari에서 직접 열린 경우 → 공유시트 열어서 "홈화면에 추가" 유도
+      if (navigator.share) {
+        try { await navigator.share({ url: cardUrl }) } catch (e) { /* 취소 */ }
+      } else {
+        setShowHomeGuide(true)
+      }
+    } else if (isIphone && !isSafari) {
+      // iOS Chrome 등 → Safari로 강제 이동
+      window.location.href = cardUrl.replace('https://', 'x-safari-https://')
     } else {
-      // 이미 설치됐거나 지원 안 되는 브라우저
       setShowHomeGuide(true)
     }
   }
