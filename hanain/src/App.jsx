@@ -21,6 +21,7 @@ import QuestionWritePage from './pages/QuestionWritePage'
 import CategoryPage from './pages/CategoryPage'
 import BlogPage from './pages/BlogPage'
 import BlogPostPage from './pages/BlogPostPage'
+import InfoRoomPage from './pages/InfoRoomPage'
 import ScrollToTop from './components/common/ScrollToTop'
 import { PartnerProvider } from './context/PartnerContext'
 import { AuthProvider } from './context/AuthContext'
@@ -49,6 +50,10 @@ function AppInner() {
             <Route path="/community/write"            element={<CommunityWritePage />} />
             <Route path="/community/edit/:postId"     element={<CommunityWritePage />} />
             <Route path="/community/post/:postId"     element={<CommunityPostPage />} />
+
+            {/* 정보방 */}
+            <Route path="/inforoom"           element={<InfoRoomPage />} />
+            <Route path="/p/:phone/inforoom"  element={<InfoRoomPage />} />
 
             {/* 블로그 */}
             <Route path="/blog"           element={<BlogPage />} />

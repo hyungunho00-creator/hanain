@@ -18,26 +18,26 @@ const CREAM = '#FFFDF7'
 const BENEFITS = [
   {
     icon: BookOpen,
-    title: '체계적 교육',
-    desc: '4주 온·오프라인 커리큘럼 + 질환별 심화 교육. 처음이어도 바로 시작할 수 있습니다.',
+    title: '교육 지원',
+    desc: '질환별 건강 정보, 성분 과학, 고객 응대까지 — 필요한 지식을 체계적으로 지원합니다.',
     color: '#00B4D8',
   },
   {
     icon: Zap,
-    title: '시작 도구 제공',
-    desc: '개인 웹페이지, SNS 콘텐츠, 설명 스크립트까지 — 혼자 던져놓지 않습니다.',
+    title: '다양한 지원',
+    desc: '개인 웹페이지, SNS 콘텐츠, 전자명함, 설명 자료까지 — 혼자 시작해도 갖출 것은 다 갖춥니다.',
     color: '#F0A500',
   },
   {
     icon: Repeat,
     title: '재구매 중심 구조',
-    desc: '실사용자 + 재구매 + 소개. 시간이 지날수록 강해지는 구조입니다.',
+    desc: '건강은 한 번으로 끝나지 않습니다. 신뢰가 쌓일수록 관계가 이어지는 구조입니다.',
     color: '#8B5CF6',
   },
   {
     icon: Users,
-    title: '함께하는 팀',
-    desc: '같은 뜻을 가진 파트너들과 정보를 나누고 함께 성장합니다.',
+    title: '함께하는 네트워크',
+    desc: '같은 방향을 보는 파트너들과 정보를 나누고 서로의 전문성을 연결합니다.',
     color: '#10B981',
   },
 ]
@@ -56,8 +56,8 @@ const WHY_NOW = [
   },
   {
     emoji: '🔄',
-    title: '재구매가 구조를 만듭니다',
-    desc: '건강은 한 번 사고 끝나는 시장이 아닙니다. 먹으면 또 먹어야 하는 구조 — 소개 → 재구매 → 팀 확장의 흐름이 반복될 때 조직은 스스로 자랍니다.',
+    title: '재구매가 관계를 만듭니다',
+    desc: '건강은 한 번 사고 끝나는 시장이 아닙니다. 효과를 경험한 사람이 다시 찾고, 주변에 소개합니다. 신뢰 기반의 반복 구조입니다.',
   },
   {
     emoji: '⏰',
@@ -66,69 +66,45 @@ const WHY_NOW = [
   },
 ]
 
-// ── 시장성과 수익 확장성 ───────────────────────────
+// ── 이런 분들과 함께합니다 ────────────────────────
+const WHO_FIT = [
+  { emoji: '💆', title: '힐링센터 · 웰니스샵', desc: '고객에게 건강 정보를 전하는 일을 이미 하고 계신 분. 플로로탄닌은 설명 자산이 됩니다.' },
+  { emoji: '✨', title: '피부샵 · 마사지샵', desc: '피부·관절·회복에 관심 있는 고객층을 이미 보유한 분. 자연스럽게 연결되는 이야기입니다.' },
+  { emoji: '🌿', title: '건강식품 사업자', desc: '온·오프라인에서 건강 관련 제품을 이미 다루고 있는 분. 성분 하나가 전체 라인업을 강화합니다.' },
+  { emoji: '🏃', title: '운동·피트니스 관련', desc: '근육 회복, 에너지 대사, 항염에 관심 있는 고객과 일하는 분. 과학적 근거가 신뢰를 높입니다.' },
+  { emoji: '📱', title: '온라인 콘텐츠 활동가', desc: '블로그·SNS·유튜브로 건강 정보를 나누는 분. 1,361개 Q&A가 콘텐츠 소재가 됩니다.' },
+  { emoji: '🤝', title: '건강에 관심 많은 누구나', desc: '전문 경력 없어도 괜찮습니다. 주변 사람에게 좋은 정보를 먼저 전하는 것에서 시작됩니다.' },
+]
+
+// ── 시장성 ───────────────────────────────────────
 const MARKET_GROWTH = [
   {
     icon: '📊',
     title: '국내 건강기능식품 시장 5조 9천억',
-    desc: '연평균 8% 이상 성장 중. 고령화·건강 관심 증가로 시장 자체가 커지는 구조입니다. 경쟁이 아닌 성장하는 파이에 올라타는 것입니다.',
+    desc: '연평균 8% 이상 성장 중. 고령화·건강 관심 증가로 시장 자체가 커지는 구조입니다.',
     highlight: '연 8% 이상 성장',
   },
   {
     icon: '🌿',
     title: '플로로탄닌 — 아직 선점 가능한 성분',
-    desc: '홍삼·오메가3는 이미 포화. 플로로탄닌은 국내외 SCI 논문이 쏟아지는 신흥 성분입니다. 지금 콘텐츠를 쌓으면 검색 1페이지 점령이 가능합니다.',
+    desc: '홍삼·오메가3는 이미 포화. 플로로탄닌은 SCI 논문이 쏟아지는 신흥 성분. 지금이 콘텐츠 선점 시점입니다.',
     highlight: '블루오션 성분',
   },
   {
     icon: '🔁',
-    title: '재구매율이 만드는 안정적 수익',
-    desc: '건강식품은 한 번 효과를 본 사람이 반복 구매합니다. 소개 1명이 팀으로 이어지는 구조 — 시간이 지날수록 수익이 누적됩니다.',
-    highlight: '재구매 기반 누적 수익',
+    title: '신뢰가 쌓이는 재구매 구조',
+    desc: '효과를 경험한 사람이 다시 찾습니다. 관계 중심으로 움직이는 건강 시장의 특성입니다.',
+    highlight: '관계 기반 구조',
   },
   {
     icon: '📱',
-    title: '디지털 콘텐츠로 무한 확장',
-    desc: '블로그·SNS·유튜브·커뮤니티 어디서든 활동 가능. 개인 웹페이지를 통해 24시간 문의가 들어오는 구조를 만들 수 있습니다.',
-    highlight: '온라인 무한 확장',
-  },
-  {
-    icon: '🏥',
-    title: '다양한 수익 채널 확장',
-    desc: '제품 판매 → 파트너 육성 → 건강 강의 → 콘텐츠 수익. 하나의 전문성이 여러 방향으로 수익을 만드는 구조입니다.',
-    highlight: '멀티 수익 채널',
-  },
-  {
-    icon: '🌐',
-    title: '글로벌 시장 잠재력',
-    desc: 'phlorotannin 관련 글로벌 연구·시장이 확장 중. 한국이 선도하는 감태 추출 기술 — 해외 시장 진출 가능성을 열어두고 있습니다.',
-    highlight: '해외 진출 가능성',
+    title: '온·오프라인 어디서든',
+    desc: '매장 방문 고객에게도, 온라인 팔로워에게도. 채널을 가리지 않고 전문성을 연결할 수 있습니다.',
+    highlight: '채널 무관 활동',
   },
 ]
 
-// ── 커리큘럼 ─────────────────────────────────────────
-const CURRICULUM = [
-  {
-    week: '1주차',
-    title: '플로로탄닌 파트너스 이해',
-    topics: ['감태 플로로탄닌 기초 과학', 'MOP 공정 이해', '하이드로 포집 기술', '제품 라인업 소개'],
-  },
-  {
-    week: '2주차',
-    title: '건강 과학 심화 교육',
-    topics: ['12개 카테고리 질환별 기전', '표준 의학 치료와 식품소재 비교', 'SCI 논문 읽는 법', 'Q&A 라이브러리 활용법'],
-  },
-  {
-    week: '3주차',
-    title: '비즈니스 스킬',
-    topics: ['파트너 활동 구조 이해', '건강 정보 안내 방법', '소셜 미디어 활용 기초', '고객 응대 방법'],
-  },
-  {
-    week: '4주차',
-    title: '실전 적용 & 수료',
-    topics: ['모의 상담 실습', '개인 활동 계획 수립', '파트너 목표 설정', '수료증 발급'],
-  },
-]
+
 
 // ── 성공 사례 ─────────────────────────────────────────
 const SUCCESS_CASES = [
@@ -141,9 +117,9 @@ const SUCCESS_CASES = [
   },
   {
     initial: 'P',
-    role: '전업주부 출신 파트너',
+    role: '피부샵 운영 파트너',
     location: '부산',
-    quote: '처음에는 많이 걱정했지만 체계적인 교육 덕분에 자신감이 생겼습니다. 이제는 주변 분들에게 건강 정보를 나누는 역할을 하고 있어요.',
+    quote: '고객들에게 피부 관리 외에 건강 이야기를 나눌 수 있게 됐습니다. 플로로탄닌 성분 자료가 설명 도구가 되더라고요.',
     duration: '파트너 활동 12개월',
   },
   {
@@ -326,13 +302,13 @@ export default function PartnerPage() {
           PHLOROTANNIN PARTNERS
         </p>
         <h1 className="text-4xl md:text-5xl font-bold mb-5 leading-tight" style={{ color: '#fff' }}>
-          건강시장에서<br />
-          <span style={{ color: GOLD2 }}>먼저 자리 잡는 사람이</span><br />
-          돈을 벌기 시작합니다
+          건강을 다루는 사람이라면<br />
+          <span style={{ color: GOLD2 }}>전문성이 더 깊어지는</span><br />
+          파트너십입니다
         </h1>
         <p className="text-lg max-w-xl mx-auto leading-relaxed" style={{ color: '#a0b8d0' }}>
-          실버시장 + 플로로탄닌 성분력 + 재구매 구조 + 팀 시스템.<br />
-          지금이 가장 빠른 진입 시점입니다.
+          힐링센터·피부샵·건강식품·온라인 활동까지 —<br />
+          이미 건강 관련 일을 하고 있다면 자연스럽게 연결됩니다.
         </p>
         <a
           href="#apply"
@@ -396,40 +372,42 @@ export default function PartnerPage() {
         </div>
       </section>
 
-      {/* ── 시장성과 수익 확장성 ─────────────────────── */}
+      {/* ── 이런 분들과 함께합니다 ─────────────────── */}
       <section className="py-16 px-4" style={{ background: '#F8F9FA' }}>
         <div className="max-w-5xl mx-auto">
-          <p style={{ fontSize: '11px', color: GOLD, letterSpacing: '3px', fontWeight: '700', textAlign: 'center', marginBottom: '8px' }}>
-            MARKET OPPORTUNITY
-          </p>
-          <h2 className="text-3xl font-bold text-center mb-3" style={{ color: NAVY }}>
-            플로로탄닌의 시장성과 수익 확장 가능성
-          </h2>
-          <p className="text-center text-gray-500 mb-10 text-sm">
-            성장하는 시장에서 일찍 시작한 사람이 유리합니다
-          </p>
+          <p style={{ fontSize: '11px', color: GOLD, letterSpacing: '3px', fontWeight: '700', textAlign: 'center', marginBottom: '8px' }}>WHO WE WORK WITH</p>
+          <h2 className="text-3xl font-bold text-center mb-3" style={{ color: NAVY }}>이런 분들과 함께합니다</h2>
+          <p className="text-center text-gray-500 mb-10 text-sm">건강과 관련된 일을 하고 있다면, 이미 절반은 준비된 겁니다</p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {MARKET_GROWTH.map((item, i) => (
+            {WHO_FIT.map((item, i) => (
               <div key={i} className="rounded-2xl bg-white p-6"
                 style={{ border: `1.5px solid ${GOLD}25`, boxShadow: `0 2px 16px ${GOLD}08` }}>
-                <div className="text-3xl mb-3">{item.icon}</div>
-                <div className="inline-block text-xs font-bold px-2 py-0.5 rounded-full mb-2"
-                  style={{ background: `${GOLD}18`, color: GOLD }}>
-                  {item.highlight}
-                </div>
-                <h3 className="font-bold text-sm mb-2 leading-snug" style={{ color: NAVY }}>{item.title}</h3>
+                <div className="text-3xl mb-3">{item.emoji}</div>
+                <h3 className="font-bold mb-2" style={{ color: NAVY }}>{item.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
-          <div className="mt-8 rounded-2xl p-6 text-center"
-            style={{ background: `linear-gradient(135deg, ${NAVY}, #1a3a6a)`, border: `2px solid ${GOLD}50` }}>
-            <p className="text-lg font-bold mb-2" style={{ color: GOLD2 }}>
-              "지금 시작하는 사람이 3년 후 가장 앞서 있습니다"
-            </p>
-            <p className="text-sm" style={{ color: '#a0b8d0' }}>
-              플로로탄닌 파트너스와 함께 건강 시장의 성장을 수익으로 연결하세요
-            </p>
+        </div>
+      </section>
+
+      {/* ── 시장성 ───────────────────────────────────── */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <p style={{ fontSize: '11px', color: GOLD, letterSpacing: '3px', fontWeight: '700', textAlign: 'center', marginBottom: '8px' }}>MARKET</p>
+          <h2 className="text-3xl font-bold text-center mb-3" style={{ color: NAVY }}>왜 지금 플로로탄닌인가</h2>
+          <p className="text-center text-gray-500 mb-10 text-sm">성장하는 시장에서 선점 가능한 성분</p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+            {MARKET_GROWTH.map((item, i) => (
+              <div key={i} className="rounded-2xl p-6"
+                style={{ border: `1.5px solid ${GOLD}25`, background: `${GOLD}06` }}>
+                <div className="text-3xl mb-3">{item.icon}</div>
+                <div className="inline-block text-xs font-bold px-2 py-0.5 rounded-full mb-2"
+                  style={{ background: `${GOLD}18`, color: GOLD }}>{item.highlight}</div>
+                <h3 className="font-bold text-sm mb-2" style={{ color: NAVY }}>{item.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -458,21 +436,7 @@ export default function PartnerPage() {
         </div>
       </section>
 
-      {/* ── 교육 커리큘럼 ────────────────────────────── */}
-      <section className="py-16 px-4" style={{ background: '#F8F9FA' }}>
-        <div className="max-w-3xl mx-auto">
-          <p style={{ fontSize: '11px', color: GOLD, letterSpacing: '3px', fontWeight: '700', textAlign: 'center', marginBottom: '8px' }}>
-            CURRICULUM
-          </p>
-          <h2 className="text-3xl font-bold text-center mb-3" style={{ color: NAVY }}>교육 커리큘럼</h2>
-          <p className="text-center text-gray-500 mb-10 text-sm">4주 집중 교육으로 전문 파트너가 됩니다</p>
-          <div className="space-y-4">
-            {CURRICULUM.map(item => (
-              <CurriculumCard key={item.week} item={item} />
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       {/* ── 성공 사례 ─────────────────────────────────── */}
       <section className="py-16 px-4 bg-white">
@@ -587,9 +551,9 @@ export default function PartnerPage() {
               <label className="block text-sm font-medium text-gray-700 mb-1.5">관심 건강/활동 분야</label>
               <div className="grid grid-cols-2 gap-2">
                 {[
-                  '암치료/항암 관리', '당뇨/혈당 조절', '고혈압/혈관 건강', '탈모/피부 개선',
-                  '치매/인지 건강', '다이어트/비만', '건강/웰니스', '의료/약학',
-                  '뷰티/헬스케어', '교육/코칭', '영업/마케팅', '기타',
+                  '힐링센터·웰니스샵', '피부샵·마사지샵', '건강식품 사업', '운동·피트니스',
+                  '당뇨/혈당 관리', '고혈압/혈관 건강', '피부·탈모 관리', '치매/인지 건강',
+                  '의료·약학 종사', '온라인 콘텐츠 활동', '시니어 케어', '기타',
                 ].map(item => (
                   <label key={item} className="flex items-center gap-2 cursor-pointer">
                     <input
@@ -679,7 +643,7 @@ export default function PartnerPage() {
                 © 2026 <span className="font-semibold text-gray-500">플로로탄닌 파트너스</span> — All rights reserved.
               </p>
               <p className="text-xs text-gray-400 text-center leading-relaxed">
-                본 사이트의 교육 자료·커리큘럼·콘텐츠는 저작권법의 보호를 받습니다. 무단 복제·배포를 금합니다.
+                본 사이트의 교육 자료·콘텐츠는 저작권법의 보호를 받습니다. 무단 복제·배포를 금합니다.
               </p>
             </div>
           </form>

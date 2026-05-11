@@ -50,11 +50,19 @@
       "headers": [
         { "key": "Access-Control-Allow-Origin", "value": "*" }
       ]
+    },
+    {
+      "source": "/(flyer_product_front\\.png|flyer_product_back\\.png)",
+      "headers": [
+        { "key": "Content-Type", "value": "image/png" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Cache-Control", "value": "public, max-age=86400" }
+      ]
     }
   ],
   "rewrites": [
     {
-      "source": "/((?!assets/|favicon\\.svg|og-image\\.png|og-image\\.svg|robots\\.txt|sitemap\\.xml|rss\\.xml|qa\\.json|partners\\.json|icons\\.svg|naver[^/]*\\.html).*)",
+      "source": "/((?!assets/|favicon\\.svg|og-image\\.png|og-image\\.svg|robots\\.txt|sitemap\\.xml|rss\\.xml|qa\\.json|partners\\.json|icons\\.svg|naver[^/]*\\.html|flyer_product_front\\.png|flyer_product_back\\.png).*)",
       "destination": "/index.html"
     }
   ]
