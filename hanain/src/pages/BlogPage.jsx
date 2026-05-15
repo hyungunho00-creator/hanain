@@ -215,9 +215,9 @@ export default function BlogPage() {
   return (
     <>
       <SEOHead
-        title="플로로탄닌 건강 블로그 | Phlorotannin Research & Health"
-        description="플로로탄닌(Phlorotannin), PH-100, 에콜(Eckol), 디에콜(Dieckol) 최신 연구·임상 정보. 당뇨 임상 2b, 혈당 조절, 항암, 뇌 건강 천연물 최신 뉴스."
-        keywords="플로로탄닌,phlorotannin,PH-100,에콜,eckol,디에콜,dieckol,당뇨임상,혈당조절,해양폴리페놀,감태추출물,brown algae"
+        title="건강정보 블로그 | 플로로탄닌·감태추출물·해양 폴리페놀 연구 아카이브"
+        description="감태추출물·해양 폴리페놀·플로로탄닌의 최신 연구와 건강정보를 정리한 블로그 아카이브. 항산화·염증·혈당·수면·면역·뇌 건강·암환자 가족 건강정보·당뇨 건강정보까지 폭넓게 다루는 종합 건강정보 데이터센터입니다."
+        keywords="플로로탄닌 블로그, 감태추출물 블로그, 해양 폴리페놀 연구, 갈조류 폴리페놀, 항산화 건강정보, 염증 건강정보, 혈당 건강정보, 면역, 뇌 건강"
         canonical="https://phlorotannin.com/blog"
         jsonLd={blogJsonLd}
       />

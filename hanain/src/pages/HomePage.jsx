@@ -131,9 +131,9 @@ export default function HomePage() {
   return (
     <div className="pt-16">
       <SEOHead
-        title="건강 정보 허브"
-        description="플로로탄닌 파트너스 건강 정보 허브. 혈당·혈압·치매예방·항암·소화건강 등 플로로탄닌의 12개 건강 효능 정보."
-        keywords="플로로탄닌 효능, 감태 건강, 해양폴리페놀 효과, 혈당개선, 혈압조절, 항산화식품, 치매예방식품"
+        title="플로로탄닌 건강정보 허브 | 감태추출물·해양 폴리페놀 쉽게 이해하기"
+        description="플로로탄닌 건강정보 허브 — 감태추출물·해양 폴리페놀을 중심으로 항산화·염증·혈당·수면·면역·뇌 건강 정보를 한곳에서 쉽게 이해할 수 있는 종합 건강정보 데이터센터입니다."
+        keywords="플로로탄닌 건강정보 허브, 감태추출물 효과, 해양 폴리페놀, 항산화, 염증, 혈당 건강정보, 수면 건강정보, 면역 건강정보, 뇌 건강"
         canonical="https://phlorotannin.com/home"
         jsonLd={homeJsonLd}
       />

@@ -191,9 +191,9 @@ export default function PhlorotanninPage() {
   return (
     <div className="pt-16 min-h-screen bg-white">
       <SEOHead
-        title="플로로탄닌이란?"
-        description="플로로탄닌(Phlorotannin)이란 무엇인가? 감태·미역·다시마 등 갈조류에서 추출한 해양 폴리페놀의 6가지 과학적 작용기전과 논문 근거."
-        keywords="플로로탄닌이란, phlorotannin 효능, 감태 추출물, 해양 폴리페놀, 갈조류 성분, 알파글루코시다제 억제, ACE억제"
+        title="플로로탄닌이란? 감태추출물·해양 폴리페놀 작용기전 정리"
+        description="플로로탄닌(Phlorotannin)이란 무엇인가 — 감태추출물에서 유래한 해양 폴리페놀(갈조류 폴리페놀)의 항산화·염증 기전, 혈당·면역·뇌 건강 관련 작용을 논문 근거와 함께 정리한 종합 건강정보 데이터센터 페이지입니다."
+        keywords="플로로탄닌이란, 감태추출물, 해양 폴리페놀, 갈조류 폴리페놀, 항산화, 염증, 혈당 건강정보, 면역, 뇌 건강"
         canonical="https://phlorotannin.com/phlorotannin"
         jsonLd={phloroJsonLd}
       />

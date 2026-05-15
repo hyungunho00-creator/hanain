@@ -126,9 +126,9 @@ export default function CategoryPage() {
   return (
     <>
       <SEOHead
-        title={`${category.name} 건강 Q&A | 플로로탄닌 파트너스`}
-        description={`${category.name} 관련 건강 질문과 전문 답변. ${category.description || ''} 플로로탄닌 건강 정보 아카이브.`}
-        keywords={`${category.name}, ${category.name_en || ''}, 플로로탄닌, 건강 Q&A, ${category.description || ''}`}
+        title={`${category.name} | 플로로탄닌 종합 건강정보 데이터센터`}
+        description={`${category.name} 건강정보 아카이브 — ${category.description || '플로로탄닌·감태추출물·해양 폴리페놀 기반 건강정보'}. 항산화·염증·면역·병원정보·전문가 Q&A까지 정리하는 종합 건강정보 데이터센터입니다.`}
+        keywords={`${category.name}, ${category.name_en || ''}, 플로로탄닌, 감태추출물, 해양 폴리페놀, 건강정보 아카이브, 종합 건강정보 데이터센터`}
         canonical={`https://phlorotannin.com/category/${slug}`}
       />
 

@@ -1003,9 +1003,9 @@ export default function LearnPage() {
   return (
     <div className="pt-16">
       <SEOHead
-        title="쉽게 배우기"
-        description="플로로탄닌의 효능과 건강 효과를 쉽게 배우세요. 과학적 근거를 일반인도 이해할 수 있게 설명합니다."
-        keywords="플로로탄닌 공부, 해양폴리페놀 배우기, 감태 성분 원리, 건강기능식품 이해"
+        title="플로로탄닌 쉽게 배우기 | 감태추출물·해양 폴리페놀 학습 가이드"
+        description="플로로탄닌·감태추출물·해양 폴리페놀의 작용기전과 건강 효과를 단계별로 쉽게 학습하는 가이드. 항산화·염증·혈당·수면·면역·뇌 건강까지 일반인이 이해할 수 있도록 정리한 건강정보 아카이브."
+        keywords="플로로탄닌 학습, 감태추출물 공부, 해양 폴리페놀 배우기, 갈조류 폴리페놀, 항산화 학습, 염증 학습, 혈당 건강정보"
         canonical="https://phlorotannin.com/learn"
       />
       <IntroHero />

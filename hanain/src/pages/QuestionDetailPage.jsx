@@ -233,9 +233,9 @@ export default function QuestionDetailPage() {
   return (
     <>
       <SEOHead
-        title={question.title}
+        title={`${question.title} | 플로로탄닌·감태추출물 건강정보 Q&A`}
         description={seoDesc}
-        keywords={[cat?.name, ...(question.tags || []), '플로로탄닌', '건강 Q&A', '플로로탄닌 효능'].filter(Boolean).join(', ')}
+        keywords={[cat?.name, ...(question.tags || []), '플로로탄닌', '감태추출물', '해양 폴리페놀', '건강정보 아카이브', '전문가 Q&A'].filter(Boolean).join(', ')}
         canonical={pageUrl}
         ogType="article"
         jsonLd={jsonLd}

@@ -1,0 +1,763 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>플로로탄닌 파트너스 — 건강 블로그 &amp; Q&amp;A</title>
+    <link>https://phlorotannin.com</link>
+    <description>감태 추출 해양 폴리페놀 플로로탄닌(Phlorotannin) 전문 건강 정보. 당뇨·항암·뇌건강·심혈관·염증 최신 블로그 &amp; Q&amp;A 아카이브.</description>
+    <language>ko</language>
+    <lastBuildDate>Mon, 11 May 2026 02:08:44 +0000</lastBuildDate>
+    <atom:link href="https://phlorotannin.com/rss.xml" rel="self" type="application/rss+xml"/>
+    <copyright>© 2026 플로로탄닌 파트너스</copyright>
+    <category>건강/의학</category>
+    <ttl>720</ttl>
+    <image>
+      <url>https://phlorotannin.com/og-image.png</url>
+      <title>플로로탄닌 파트너스</title>
+      <link>https://phlorotannin.com</link>
+    </image>
+
+  <item>
+    <title>감태추출물 플로로탄닌 — 바다에서 버티며 만든 성분이 사람 몸에 필요한 과학적 이유</title>
+    <link>https://phlorotannin.com/blog/gamtae-extract-phlorotannin-science-marine-polyphenol-research</link>
+    <description><![CDATA[감태추출물 플로로탄닌의 분자 구조, 흡수 기전, 주요 임상 연구를 총정리합니다. 해양 폴리페놀이 육상 폴리페놀과 다른 이유, Dieckol·Eckol의 다중 기전 작용 원리를 알아보세요.]]></description>
+    <category>연구·임상</category>
+    <pubDate>Sun, 10 May 2026 15:35:15 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/gamtae-extract-phlorotannin-science-marine-polyphenol-research</guid>
+    <enclosure url="/og-image.png" type="image/png"/>
+    <dc:subject>감태추출물, 플로로탄닌, 해양폴리페놀, Ecklonia cava, Dieckol</dc:subject>
+  </item>
+  <item>
+    <title>항암 치료 중 몸이 너무 힘드신 분들께 — 감태추출물 플로로탄닌이 면역 회복에 활용되는 이유</title>
+    <link>https://phlorotannin.com/blog/gamtae-extract-immune-recovery-cancer-phlorotannin</link>
+    <description><![CDATA[항암 치료 중 면역력 저하, 만성 피로, 구역감으로 힘드신 분들께. 감태추출물 플로로탄닌이 NK세포 활성화와 Nrf2 경로로 정상세포를 보호하고 면역을 회복하는 기전을 설명합니다.]]></description>
+    <category>항암·면역</category>
+    <pubDate>Sun, 10 May 2026 15:35:15 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/gamtae-extract-immune-recovery-cancer-phlorotannin</guid>
+    <enclosure url="/og-image.png" type="image/png"/>
+    <dc:subject>감태추출물, 항암보조, 면역회복, 플로로탄닌, NK세포</dc:subject>
+  </item>
+  <item>
+    <title>비싼 콜라겐 먹어도 피부가 그대로인 이유 — 감태추출물이 피부 회복에 접근하는 다른 방식</title>
+    <link>https://phlorotannin.com/blog/gamtae-extract-skin-recovery-collagen-phlorotannin</link>
+    <description><![CDATA[콜라겐을 먹는다고 콜라겐이 피부에 붙지 않습니다. 감태추출물 플로로탄닌이 항산화·항염으로 피부 세포 환경 자체를 개선해 콜라겐 합성을 유도하는 원리를 알아보세요.]]></description>
+    <category>피부·모발</category>
+    <pubDate>Sun, 10 May 2026 15:35:14 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/gamtae-extract-skin-recovery-collagen-phlorotannin</guid>
+    <enclosure url="/og-image.png" type="image/png"/>
+    <dc:subject>감태추출물, 피부회복, 플로로탄닌, 콜라겐합성, 항산화</dc:subject>
+  </item>
+  <item>
+    <title>온몸이 찌뿌둥한데 염증 수치는 정상이라고요 — 감태추출물이 만성 염증에 접근하는 방식</title>
+    <link>https://phlorotannin.com/blog/gamtae-extract-chronic-inflammation-joint-phlorotannin</link>
+    <description><![CDATA[병원에서 검사해도 정상인데 몸은 항상 무겁고 관절이 아프다면. 감태추출물 플로로탄닌이 COX-2·IL-6·TNF-α 경로를 통해 만성 염증을 관리하는 기전을 알아보세요.]]></description>
+    <category>염증·면역</category>
+    <pubDate>Sun, 10 May 2026 15:35:13 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/gamtae-extract-chronic-inflammation-joint-phlorotannin</guid>
+    <enclosure url="/og-image.png" type="image/png"/>
+    <dc:subject>감태추출물, 만성염증, 관절통증, 플로로탄닌, 항염</dc:subject>
+  </item>
+  <item>
+    <title>혈압약 20년째인데 혈관은 나아지고 있을까요 — 감태추출물 플로로탄닌의 혈관 회복 기전</title>
+    <link>https://phlorotannin.com/blog/gamtae-extract-blood-pressure-vascular-recovery-phlorotannin</link>
+    <description><![CDATA[혈압약을 오래 먹어도 혈관 노화는 계속됩니다. 감태추출물 플로로탄닌이 eNOS 활성화·산화질소 생성으로 혈관 탄성을 회복하는 기전을 알아보세요.]]></description>
+    <category>심혈관</category>
+    <pubDate>Sun, 10 May 2026 15:35:13 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/gamtae-extract-blood-pressure-vascular-recovery-phlorotannin</guid>
+    <enclosure url="/og-image.png" type="image/png"/>
+    <dc:subject>감태추출물, 혈압관리, 혈관회복, 플로로탄닌, 산화질소</dc:subject>
+  </item>
+  <item>
+    <title>자고 일어나도 피곤한 분들께 — 감태추출물 플로로탄닌과 수면의 질·뇌 회복의 과학</title>
+    <link>https://phlorotannin.com/blog/gamtae-extract-sleep-brain-recovery-phlorotannin</link>
+    <description><![CDATA[잠을 자도 피곤하고, 낮에 멍하고, 기억력이 떨어진다면. 감태추출물 플로로탄닌의 GABA 수용체 활성화와 베타아밀로이드 억제 기전으로 수면과 뇌 회복에 접근하는 방법을 알아보세요.]]></description>
+    <category>뇌·인지</category>
+    <pubDate>Sun, 10 May 2026 15:35:12 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/gamtae-extract-sleep-brain-recovery-phlorotannin</guid>
+    <enclosure url="/og-image.png" type="image/png"/>
+    <dc:subject>감태추출물, 수면개선, 뇌회복, 플로로탄닌, GABA</dc:subject>
+  </item>
+  <item>
+    <title>혈당약 먹는데 혈당이 안 잡히는 이유 — 감태추출물이 혈당 관리에 다르게 접근하는 방식</title>
+    <link>https://phlorotannin.com/blog/gamtae-extract-blood-sugar-management-phlorotannin</link>
+    <description><![CDATA[혈당약을 먹어도 식후 혈당이 튀고, 인슐린 저항성이 개선되지 않는다면. 감태추출물 플로로탄닌이 α-글루코시다제와 AMPK 경로로 혈당 관리에 접근하는 방식을 설명합니다.]]></description>
+    <category>당뇨·혈당</category>
+    <pubDate>Sun, 10 May 2026 15:35:11 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/gamtae-extract-blood-sugar-management-phlorotannin</guid>
+    <enclosure url="/og-image.png" type="image/png"/>
+    <dc:subject>감태추출물, 혈당관리, 플로로탄닌, 인슐린저항성, 공복혈당</dc:subject>
+  </item>
+  <item>
+    <title>감태추출물, 이름 말고 구조를 보셔야 합니다 — 해양 폴리페놀 플로로탄닌의 진짜 이야기</title>
+    <link>https://phlorotannin.com/blog/gamtae-extract-phlorotannin-structure-not-name</link>
+    <description><![CDATA[알부민, 콜라겐, 태반... 이름만 화려한 건강식품에 지치셨다면. 감태추출물 플로로탄닌이 다른 이유는 이름이 아니라 분자구조에 있습니다. 회복의 과학을 쉽게 풀어드립니다.]]></description>
+    <category>일반</category>
+    <pubDate>Sun, 10 May 2026 15:35:11 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/gamtae-extract-phlorotannin-structure-not-name</guid>
+    <enclosure url="/og-image.png" type="image/png"/>
+    <dc:subject>감태추출물, 플로로탄닌, 해양폴리페놀, 건강식품, 회복</dc:subject>
+  </item>
+  <item>
+    <title>당뇨 전단계(공복혈당장애)에서 식단으로 되돌리기: 과학이 검증한 6가지 핵심 전략</title>
+    <link>https://phlorotannin.com/blog/phlorotannin-health-guide-phloro-01</link>
+    <description><![CDATA[공복혈당이 100~125 mg/dL 사이라면 아직 늦지 않았습니다. 최신 임상 연구가 증명하는 당뇨 전단계 역전 식단 전략을 상세히 소개합니다.]]></description>
+    <category>당뇨·혈당</category>
+    <pubDate>Sat, 09 May 2026 03:32:36 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/phlorotannin-health-guide-phloro-01</guid>
+    <enclosure url="/og-image.png" type="image/png"/>
+    <dc:subject>당뇨전단계, 공복혈당장애, 혈당조절식단, 인슐린저항성, 플로로탄닌</dc:subject>
+  </item>
+  <item>
+    <title>장 건강 완전 가이드: 과민성 장 증후군부터 마이크로바이옴까지 — 현대 장 과학 총정리</title>
+    <link>https://phlorotannin.com/blog/phlorotannin-health-guide-phloro-16</link>
+    <description><![CDATA[장은 제2의 뇌입니다. 과민성 장 증후군, 장 누수, 마이크로바이옴 불균형의 원인과 해결책을 최신 장 과학과 함께 완전히 정리합니다.]]></description>
+    <category>일반</category>
+    <pubDate>Sat, 09 May 2026 03:32:36 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/phlorotannin-health-guide-phloro-16</guid>
+    <enclosure url="/og-image.png" type="image/png"/>
+    <dc:subject>장건강, 마이크로바이옴, 과민성장증후군, 장누수, 프로바이오틱스</dc:subject>
+  </item>
+  <item>
+    <title>플로로탄닌 흡수율 높이는 방법: 생체이용률을 결정하는 5가지 인자</title>
+    <link>https://phlorotannin.com/blog/phlorotannin-health-guide-phloro-14</link>
+    <description><![CDATA[아무리 좋은 성분도 흡수되지 않으면 효과가 없습니다. 플로로탄닌의 체내 흡수와 분포를 결정하는 5가지 핵심 인자를 과학적으로 분석합니다.]]></description>
+    <category>연구·임상</category>
+    <pubDate>Sat, 09 May 2026 03:32:36 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/phlorotannin-health-guide-phloro-14</guid>
+    <enclosure url="/og-image.png" type="image/png"/>
+    <dc:subject>플로로탄닌흡수, 생체이용률, 해양폴리페놀, 건강기능식품, 에클로니아카바</dc:subject>
+  </item>
+  <item>
+    <title>피부 노화를 늦추는 항산화 성분 TOP 5: 레티놀·비타민C·플로로탄닌의 과학</title>
+    <link>https://phlorotannin.com/blog/phlorotannin-health-guide-phloro-12</link>
+    <description><![CDATA[자외선·산화 스트레스로 인한 피부 노화를 과학적으로 억제하는 최고의 항산화 성분 5가지를 분자 기전부터 실제 적용법까지 상세히 분석합니다.]]></description>
+    <category>피부·모발</category>
+    <pubDate>Sat, 09 May 2026 03:32:36 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/phlorotannin-health-guide-phloro-12</guid>
+    <enclosure url="/og-image.png" type="image/png"/>
+    <dc:subject>피부노화, 항산화, 레티놀, 비타민C, 플로로탄닌</dc:subject>
+  </item>
+  <item>
+    <title>류마티스 관절염 vs. 퇴행성 관절염: 차이점과 각각의 관리법 완전 비교</title>
+    <link>https://phlorotannin.com/blog/phlorotannin-health-guide-phloro-10</link>
+    <description><![CDATA[비슷해 보이지만 전혀 다른 두 관절 질환의 원인·증상·진단·치료 전략을 최신 류마티스학 근거와 함께 명확하게 비교합니다.]]></description>
+    <category>염증·면역</category>
+    <pubDate>Sat, 09 May 2026 03:32:36 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/phlorotannin-health-guide-phloro-10</guid>
+    <enclosure url="/og-image.png" type="image/png"/>
+    <dc:subject>류마티스관절염, 퇴행성관절염, 관절건강, 항염증, 플로로탄닌</dc:subject>
+  </item>
+  <item>
+    <title>LDL 콜레스테롤 낮추는 식품 TOP 7과 피해야 할 것 — 심장내과 근거 완전 정리</title>
+    <link>https://phlorotannin.com/blog/phlorotannin-health-guide-phloro-08</link>
+    <description><![CDATA[스타틴 약 없이 또는 약과 병행하여 LDL을 낮추는 과학적으로 검증된 식품과 식이 성분을 심장내과 근거와 함께 총정리합니다.]]></description>
+    <category>심혈관</category>
+    <pubDate>Sat, 09 May 2026 03:32:36 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/phlorotannin-health-guide-phloro-08</guid>
+    <enclosure url="/og-image.png" type="image/png"/>
+    <dc:subject>LDL콜레스테롤, 심혈관건강, 콜레스테롤식단, 베타글루칸, 식물스테롤</dc:subject>
+  </item>
+  <item>
+    <title>수면 부족이 뇌에 미치는 영향: 인지·기억·감정 조절까지 — 신경과학 완전 해설</title>
+    <link>https://phlorotannin.com/blog/phlorotannin-health-guide-phloro-06</link>
+    <description><![CDATA[만성 수면 부족은 단순한 피로를 넘어 기억 형성, 감정 조절, 치매 위험까지 광범위하게 손상시킵니다. 최신 신경과학으로 수면-뇌 연결 고리를 해설합니다.]]></description>
+    <category>뇌·인지</category>
+    <pubDate>Sat, 09 May 2026 03:32:36 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/phlorotannin-health-guide-phloro-06</guid>
+    <enclosure url="/og-image.png" type="image/png"/>
+    <dc:subject>수면부족, 뇌건강, 수면질개선, 기억력, 감정조절</dc:subject>
+  </item>
+  <item>
+    <title>암 예방 식단: WHO가 권고하는 10가지 수칙과 항암 성분 완전 분석</title>
+    <link>https://phlorotannin.com/blog/phlorotannin-health-guide-phloro-04</link>
+    <description><![CDATA[세계보건기구(WHO) 권고 기준과 최신 역학 연구를 바탕으로 암 위험을 낮추는 10가지 식이 전략과 핵심 항암 성분을 과학적으로 분석합니다.]]></description>
+    <category>항암·면역</category>
+    <pubDate>Sat, 09 May 2026 03:32:36 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/phlorotannin-health-guide-phloro-04</guid>
+    <enclosure url="/og-image.png" type="image/png"/>
+    <dc:subject>암예방식단, 항암성분, WHO권고, 설포라판, 플로로탄닌</dc:subject>
+  </item>
+  <item>
+    <title>인슐린 저항성이란? 원인·증상·개선법 총정리 — 당뇨·비만·지방간의 공통 뿌리</title>
+    <link>https://phlorotannin.com/blog/phlorotannin-health-guide-phloro-02</link>
+    <description><![CDATA[인슐린 저항성은 당뇨뿐 아니라 비만, 지방간, 심혈관질환의 공통 원인입니다. 세포 수준의 메커니즘부터 실전 개선법까지 과학적으로 정리합니다.]]></description>
+    <category>당뇨·혈당</category>
+    <pubDate>Sat, 09 May 2026 03:32:36 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/phlorotannin-health-guide-phloro-02</guid>
+    <enclosure url="/og-image.png" type="image/png"/>
+    <dc:subject>인슐린저항성, 당뇨예방, 내장지방, 혈당개선, 플로로탄닌</dc:subject>
+  </item>
+  <item>
+    <title>마그네슘 결핍: 현대인 70%가 부족한 미네랄과 보충법 완전 가이드</title>
+    <link>https://phlorotannin.com/blog/phlorotannin-health-guide-phloro-15</link>
+    <description><![CDATA[300가지 이상의 효소 반응에 관여하는 마그네슘이 왜 부족한지, 어떤 증상을 일으키는지, 어떻게 효과적으로 보충하는지 과학적으로 정리합니다.]]></description>
+    <category>일반</category>
+    <pubDate>Sat, 09 May 2026 03:32:36 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/phlorotannin-health-guide-phloro-15</guid>
+    <enclosure url="/og-image.png" type="image/png"/>
+    <dc:subject>마그네슘결핍, 마그네슘보충, 미네랄, 불면증, 근육경련</dc:subject>
+  </item>
+  <item>
+    <title>플로로탄닌 SCI 핵심 논문 총정리 2020~2025: 건강 효과별 최신 연구 7편</title>
+    <link>https://phlorotannin.com/blog/sci-20242025-7-phloro-13</link>
+    <description><![CDATA[혈당 조절·항암·신경 보호·항염증·피부 건강 등 플로로탄닌의 주요 건강 효과를 입증하는 2020~2025년 최신 SCI 논문 7편을 분야별로 해설합니다.]]></description>
+    <category>연구·임상</category>
+    <pubDate>Sat, 09 May 2026 03:32:36 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/sci-20242025-7-phloro-13</guid>
+    <enclosure url="/og-image.png" type="image/png"/>
+    <dc:subject>플로로탄닌연구, 에클로니아카바, 해양폴리페놀, SCI논문, 건강기능식품</dc:subject>
+  </item>
+  <item>
+    <title>탈모 원인 5가지와 유형별 해결 전략: 영양부터 두피 케어까지 완전 가이드</title>
+    <link>https://phlorotannin.com/blog/phlorotannin-health-guide-phloro-11</link>
+    <description><![CDATA[안드로겐성·원형·휴지기 탈모 등 탈모 유형별 원인과 과학적으로 검증된 해결법을 영양·두피 케어·의학적 치료까지 체계적으로 정리합니다.]]></description>
+    <category>피부·모발</category>
+    <pubDate>Sat, 09 May 2026 03:32:36 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/phlorotannin-health-guide-phloro-11</guid>
+    <enclosure url="/og-image.png" type="image/png"/>
+    <dc:subject>탈모원인, 탈모해결, 두피케어, 안드로겐성탈모, 영양탈모</dc:subject>
+  </item>
+  <item>
+    <title>만성 염증이 모든 병의 뿌리인 이유: C반응단백(CRP)과 생활습관의 과학</title>
+    <link>https://phlorotannin.com/blog/phlorotannin-health-guide-phloro-09</link>
+    <description><![CDATA[당뇨·심장병·암·치매까지, 만성 저등급 염증이 어떻게 모든 만성 질환을 연결하는지 CRP 바이오마커와 함께 과학적으로 해설합니다.]]></description>
+    <category>염증·면역</category>
+    <pubDate>Sat, 09 May 2026 03:32:36 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/phlorotannin-health-guide-phloro-09</guid>
+    <enclosure url="/og-image.png" type="image/png"/>
+    <dc:subject>만성염증, CRP, 항염증식단, 염증바이오마커, 플로로탄닌</dc:subject>
+  </item>
+  <item>
+    <title>고혈압 약 없이 낮추는 법: 생활습관 개입의 임상 근거와 실천 전략</title>
+    <link>https://phlorotannin.com/blog/phlorotannin-health-guide-phloro-07</link>
+    <description><![CDATA[약을 시작하기 전, 혹은 약과 병행하여 혈압을 낮출 수 있는 생활습관 중재법을 임상 연구 근거와 함께 상세히 안내합니다.]]></description>
+    <category>심혈관</category>
+    <pubDate>Sat, 09 May 2026 03:32:36 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/phlorotannin-health-guide-phloro-07</guid>
+    <enclosure url="/og-image.png" type="image/png"/>
+    <dc:subject>고혈압, 혈압낮추기, DASH식단, 나트륨, 생활습관</dc:subject>
+  </item>
+  <item>
+    <title>50대부터 시작하는 치매 예방: 뇌 건강 지키는 7가지 과학적 습관</title>
+    <link>https://phlorotannin.com/blog/phlorotannin-health-guide-phloro-05</link>
+    <description><![CDATA[치매는 노년의 불가피한 운명이 아닙니다. 뇌 과학이 밝혀낸 7가지 예방 습관으로 인지 기능 저하를 늦추고 치매 위험을 최대 40%까지 줄이는 방법을 안내합니다.]]></description>
+    <category>뇌·인지</category>
+    <pubDate>Sat, 09 May 2026 03:32:36 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/phlorotannin-health-guide-phloro-05</guid>
+    <enclosure url="/og-image.png" type="image/png"/>
+    <dc:subject>치매예방, 알츠하이머, 뇌건강, 인지기능, 플로로탄닌</dc:subject>
+  </item>
+  <item>
+    <title>항암 치료 중 면역력 유지하는 법: 영양·식품·생활습관 종합 가이드</title>
+    <link>https://phlorotannin.com/blog/phlorotannin-health-guide-phloro-03</link>
+    <description><![CDATA[항암 치료의 부작용을 최소화하고 치료 효과를 극대화하기 위한 면역 지지 영양 전략을 최신 종양 영양학 근거와 함께 상세히 안내합니다.]]></description>
+    <category>항암·면역</category>
+    <pubDate>Sat, 09 May 2026 03:32:36 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/phlorotannin-health-guide-phloro-03</guid>
+    <enclosure url="/og-image.png" type="image/png"/>
+    <dc:subject>항암치료, 면역력, 암환자영양, 항암식단, 플로로탄닌</dc:subject>
+  </item>
+  <item>
+    <title>오메가3 + 플로로탄닌 병용: 항염·혈당·심혈관 시너지 Omega-3 + Phlorotannin: Anti-inflammatory, Blood Sugar, Cardiovascular Synergy</title>
+    <link>https://phlorotannin.com/blog/omega-3-phlorotannin-synergy-anti-inflammatory-blood-sugar-cardiovascular-health</link>
+    <description><![CDATA[현대인의 건강을 위협하는 만성 염증, 혈당 문제, 심혈관 질환. 오메가3와 플로로탄닌의 혁신적인 병용 섭취로 이 모든 문제에 강력한 시너지를 경험하세요. 바다의 두 보물이 선사하는 놀라운 건강 효과를 탐구합니다.]]></description>
+    <category>일반</category>
+    <pubDate>Sat, 02 May 2026 23:38:34 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/omega-3-phlorotannin-synergy-anti-inflammatory-blood-sugar-cardiovascular-health</guid>
+    <enclosure url="/og-image.png" type="image/png"/>
+    <dc:subject>오메가3, 플로로탄닌, 항염증, 혈당 조절, 심혈관 건강</dc:subject>
+  </item>
+  <item>
+    <title>제2형 당뇨병 자연치료: 플로로탄닌, 베르베린, 계피, 식이요법 (Type 2 Diabetes Natural Treatment)</title>
+    <link>https://phlorotannin.com/blog/type-2-diabetes-natural-treatment-phlorotannin-berberine-cinnamon-dietary-therap</link>
+    <description><![CDATA[제2형 당뇨병은 현대인의 만성 질환 중 하나로, 식습관 및 생활 습관과 밀접한 관련이 있습니다. 이 글에서는 플로로탄닌, 베르베린, 계피 등 자연 유래 성분과 올바른 식이요법을 통해 혈당을 효과적으로 관리하고 건강을 증진하는 방법을 심층적으로 다룹니다.]]></description>
+    <category>당뇨·혈당</category>
+    <pubDate>Sat, 02 May 2026 23:37:53 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/type-2-diabetes-natural-treatment-phlorotannin-berberine-cinnamon-dietary-therap</guid>
+    <enclosure url="/og-image.png" type="image/png"/>
+    <dc:subject>제2형 당뇨병, 자연치료, 플로로탄닌, 베르베린, 계피</dc:subject>
+  </item>
+  <item>
+    <title>강황 부작용: 위장 장애, 혈액 희석, 담석 주의 Curcumin Side Effects: GI, Blood Thinning, Gallstone Caution</title>
+    <link>https://phlorotannin.com/blog/turmeric-curcumin-side-effects-gastrointestinal-blood-thinning-gallstone-caution</link>
+    <description><![CDATA[강황은 강력한 항염증 효과로 잘 알려져 있지만, 부작용 또한 존재합니다. 이 글에서는 강황과 커큐민 섭취 시 발생할 수 있는 위장 장애, 혈액 희석, 담석 위험 등 주요 부작용을 심층적으로 다루고, 안전하게 섭취하는 방법을 안내합니다.]]></description>
+    <category>염증·면역</category>
+    <pubDate>Sat, 02 May 2026 23:36:43 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/turmeric-curcumin-side-effects-gastrointestinal-blood-thinning-gallstone-caution</guid>
+    <enclosure url="/og-image.png" type="image/png"/>
+    <dc:subject>강황 부작용, 커큐민 부작용, 위장 장애, 혈액 희석, 담석</dc:subject>
+  </item>
+  <item>
+    <title>프리바이오틱스 vs 프로바이오틱스 vs 신바이오틱스: 장 건강을 위한 선택의 차이 (Prebiotics vs Probiotics vs Synbiotics: The Difference for Gut Health)</title>
+    <link>https://phlorotannin.com/blog/prebiotics-probiotics-synbiotics-gut-health-difference-choice-phlorotannin</link>
+    <description><![CDATA[장 건강을 위한 필수 요소인 프리바이오틱스, 프로바이오틱스, 신바이오틱스의 명확한 차이점을 알아보고, 각 성분이 우리 몸에 어떻게 작용하며, 나에게 맞는 최적의 선택은 무엇인지 상세히 설명합니다.]]></description>
+    <category>일반</category>
+    <pubDate>Sat, 02 May 2026 23:34:58 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/prebiotics-probiotics-synbiotics-gut-health-difference-choice-phlorotannin</guid>
+    <enclosure url="/og-image.png" type="image/png"/>
+    <dc:subject>프리바이오틱스, 프로바이오틱스, 신바이오틱스, 장 건강, 장내 미생물</dc:subject>
+  </item>
+  <item>
+    <title>만성 신장 질환(CKD) 영양 관리: 단백질·인·칼륨 조절 가이드 (CKD Nutrition Management: Protein, Phosphorus, Potassium Control Guide)</title>
+    <link>https://phlorotannin.com/blog/manseong-sinjang-jilhwan-ckd-yeongyang-gwanri-danbaekjil-in-kallyum-jojeol-sinja</link>
+    <description><![CDATA[만성 신장 질환(CKD)은 신장 기능 저하로 인해 영양 관리가 매우 중요합니다. 단백질, 인, 칼륨 섭취를 적절히 조절하여 신장 기능을 보호하고 합병증을 예방하는 방법을 자세히 알아봅니다.]]></description>
+    <category>일반</category>
+    <pubDate>Sat, 02 May 2026 23:34:21 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/manseong-sinjang-jilhwan-ckd-yeongyang-gwanri-danbaekjil-in-kallyum-jojeol-sinja</guid>
+    <enclosure url="/og-image.png" type="image/png"/>
+    <dc:subject>만성 신장 질환, CKD, 단백질, 인, 칼륨</dc:subject>
+  </item>
+  <item>
+    <title>운동 전 에너지 부스터: 카페인, 베타알라닌, 시트룰린 vs 플로로탄닌 | Pre-Workout Boosters</title>
+    <link>https://phlorotannin.com/blog/pre-workout-energy-boosters-caffeine-beta-alanine-citrulline-vs-phlorotannin</link>
+    <description><![CDATA[운동 전 에너지, 집중력, 지구력 향상을 위한 보충제 선택에 고민이 많으신가요? 카페인, 베타알라닌, 시트룰린 등 기존 성분과 차세대 해양 폴리페놀 플로로탄닌의 차별화된 효과를 심층 비교합니다.]]></description>
+    <category>일반</category>
+    <pubDate>Sat, 02 May 2026 23:32:54 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/pre-workout-energy-boosters-caffeine-beta-alanine-citrulline-vs-phlorotannin</guid>
+    <enclosure url="/og-image.png" type="image/png"/>
+    <dc:subject>운동 전 보충제, 카페인, 베타알라닌, 시트룰린, 플로로탄닌</dc:subject>
+  </item>
+  <item>
+    <title>NAC(N-아세틸시스테인) 효능: 항산화·간 보호·폐·정신건강 완벽 가이드 (N-Acetylcysteine Benefits: Antioxidant, Liver, Lung, Mental Health)</title>
+    <link>https://phlorotannin.com/blog/nac-n-acetylcysteine-benefits-antioxidant-liver-lung-mental-health-guide</link>
+    <description><![CDATA[NAC(N-아세틸시스테인)는 글루타치온의 전구체로 강력한 항산화 작용을 하며, 간 보호, 폐 건강 증진, 그리고 정신건강 개선에 중요한 역할을 합니다. 이 글에서 NAC의 다양한 효능과 올바른 섭취 방법을 자세히 알아보세요.]]></description>
+    <category>일반</category>
+    <pubDate>Sat, 02 May 2026 09:46:54 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/nac-n-acetylcysteine-benefits-antioxidant-liver-lung-mental-health-guide</guid>
+    <enclosure url="/og-image.png" type="image/png"/>
+    <dc:subject>NAC, N-아세틸시스테인, 항산화제, 간 건강, 폐 질환</dc:subject>
+  </item>
+  <item>
+    <title>생리통·PMS 자연치료: 마그네슘·오메가3·비타민B6·커큐민 (Natural Remedies for Period Pain &amp; PMS)</title>
+    <link>https://phlorotannin.com/blog/natural-remedies-period-pain-pms-magnesium-omega3-vitamin-b6-curcumin-phlorotann</link>
+    <description><![CDATA[매달 찾아오는 생리통과 PMS, 더 이상 참지 마세요! 마그네슘, 오메가3, 비타민B6, 커큐민 등 자연 유래 성분으로 생리통과 PMS 증상을 완화하고 삶의 질을 높이는 방법을 소개합니다.]]></description>
+    <category>일반</category>
+    <pubDate>Sat, 02 May 2026 09:43:56 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/natural-remedies-period-pain-pms-magnesium-omega3-vitamin-b6-curcumin-phlorotann</guid>
+    <enclosure url="/og-image.png" type="image/png"/>
+    <dc:subject>생리통, PMS, 월경전증후군, 마그네슘, 오메가3</dc:subject>
+  </item>
+  <item>
+    <title>CoQ10 부작용: 위장 장애, 혈압 저하, 혈액 희석 주의 (CoQ10 Side Effects: GI Upset, Hypotension, Blood Thinning Caution)</title>
+    <link>https://phlorotannin.com/blog/coq10-side-effects-gastrointestinal-hypotension-blood-thinning-anticoagulant-cau</link>
+    <description><![CDATA[CoQ10은 강력한 항산화제로 알려져 있지만, 일부 사람들에게는 위장 장애, 혈압 저하, 혈액 희석 등의 부작용을 유발할 수 있습니다. 복용 전 반드시 전문가와 상담하고 주의사항을 숙지해야 합니다.]]></description>
+    <category>심혈관</category>
+    <pubDate>Sat, 02 May 2026 09:43:22 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/coq10-side-effects-gastrointestinal-hypotension-blood-thinning-anticoagulant-cau</guid>
+    <enclosure url="/og-image.png" type="image/png"/>
+    <dc:subject>CoQ10 부작용, 위장 장애, 혈압 저하, 혈액 희석, 복용 주의</dc:subject>
+  </item>
+  <item>
+    <title>PPI 장기 복용 부작용: 마그네슘, B12, 신장 위험 (PPI Long-Term Side Effects: Magnesium, B12, Kidney Risks)</title>
+    <link>https://phlorotannin.com/blog/ppi-long-term-side-effects-magnesium-b12-kidney-deficiency-risk</link>
+    <description><![CDATA[오메프라졸, 판토프라졸 등 PPI 장기 복용 시 발생할 수 있는 마그네슘 결핍, B12 흡수 저하, 신장 기능 저하와 같은 부작용에 대해 심층적으로 알아봅니다. 안전한 위산 억제제 사용 가이드와 대처법을 제시합니다.]]></description>
+    <category>일반</category>
+    <pubDate>Sat, 02 May 2026 09:40:23 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/ppi-long-term-side-effects-magnesium-b12-kidney-deficiency-risk</guid>
+    <enclosure url="/og-image.png" type="image/png"/>
+    <dc:subject>PPI, 오메프라졸, 판토프라졸, 부작용, 마그네슘 결핍</dc:subject>
+  </item>
+  <item>
+    <title>레스베라트롤 효능: 항노화·심혈관·항암·뇌 건강 (Resveratrol Benefits: Anti-Aging, Cardiovascular, Anti-Cancer, Brain Health)</title>
+    <link>https://phlorotannin.com/blog/resveratrol-benefits-anti-aging-cardiovascular-anti-cancer-brain-health-grape-sk</link>
+    <description><![CDATA[레스베라트롤은 포도껍질에서 발견되는 강력한 항산화 성분으로, 항노화, 심혈관 보호, 항암, 뇌 건강 증진 등 다양한 효능으로 주목받고 있습니다. 이 글에서 레스베라트롤의 모든 것을 파헤쳐 보세요.]]></description>
+    <category>일반</category>
+    <pubDate>Sat, 02 May 2026 09:39:46 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/resveratrol-benefits-anti-aging-cardiovascular-anti-cancer-brain-health-grape-sk</guid>
+    <enclosure url="/og-image.png" type="image/png"/>
+    <dc:subject>레스베라트롤, 항노화, 심혈관 건강, 항암, 뇌 건강</dc:subject>
+  </item>
+  <item>
+    <title>칼슘채널차단제(암로디핀) 부작용: 부종·두통·안면홍조 상세 가이드 Calcium Channel Blocker (Amlodipine) Side Effects: Edema, Headache, Facial Flushing</title>
+    <link>https://phlorotannin.com/blog/calcium-channel-blocker-amlodipine-side-effects-edema-headache-facial-flushing-g</link>
+    <description><![CDATA[고혈압 치료에 널리 사용되는 칼슘채널차단제, 특히 암로디핀 복용 시 나타날 수 있는 주요 부작용인 부종, 두통, 안면홍조에 대해 자세히 알아봅니다. 부작용의 원인과 관리법, 그리고 보완적인 건강 관리 전략까지 종합적으로 다룹니다.]]></description>
+    <category>심혈관</category>
+    <pubDate>Sat, 02 May 2026 09:29:40 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/calcium-channel-blocker-amlodipine-side-effects-edema-headache-facial-flushing-g</guid>
+    <enclosure url="/og-image.png" type="image/png"/>
+    <dc:subject>칼슘채널차단제, 암로디핀, 부작용, 부종, 두통</dc:subject>
+  </item>
+  <item>
+    <title>플로로탄닌과 수면 — GABA 수용체 연구와 국내 임상 결과</title>
+    <link>https://phlorotannin.com/blog/phlorotannin-sleep-gaba-receptor-clinical-study-korea</link>
+    <description><![CDATA[수면의 질 개선에서 플로로탄닌이 주목받는 이유. GABA 수용체를 통한 작용 기전과 국내 임상 연구 결과를 살펴봅니다.]]></description>
+    <category>연구·임상</category>
+    <pubDate>Sat, 02 May 2026 07:19:47 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/phlorotannin-sleep-gaba-receptor-clinical-study-korea</guid>
+    <enclosure url="https://phlorotannin.com/og-image.png" type="image/png"/>
+    <dc:subject>플로로탄닌수면, GABA수용체, 수면의질, 임상연구, 불면증</dc:subject>
+  </item>
+  <item>
+    <title>플로로탄닌이 혈당을 낮추는 메커니즘 — 당뇨약과 어떻게 다른가</title>
+    <link>https://phlorotannin.com/blog/phlorotannin-diabetes-blood-sugar-mechanism-alpha-glucosidase</link>
+    <description><![CDATA[플로로탄닌이 혈당에 영향을 주는 구체적인 기전을 알아봅니다. 알파-글루코시다제 억제부터 인슐린 감수성 개선까지.]]></description>
+    <category>연구·임상</category>
+    <pubDate>Sat, 02 May 2026 07:19:46 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/phlorotannin-diabetes-blood-sugar-mechanism-alpha-glucosidase</guid>
+    <enclosure url="https://phlorotannin.com/og-image.png" type="image/png"/>
+    <dc:subject>플로로탄닌혈당, 당뇨기전, 알파글루코시다제, AMPK, 혈당조절</dc:subject>
+  </item>
+  <item>
+    <title>감태(Ecklonia cava)란? — 플로로탄닌의 원료와 추출 기술</title>
+    <link>https://phlorotannin.com/blog/ecklonia-cava-seaweed-phlorotannin-extraction-bioavailability</link>
+    <description><![CDATA[제주 청정 바다에서 자라는 감태. 플로로탄닌의 원료가 되는 이 갈조류의 특성과 성분 추출 기술을 알아봅니다.]]></description>
+    <category>연구·임상</category>
+    <pubDate>Sat, 02 May 2026 07:19:45 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/ecklonia-cava-seaweed-phlorotannin-extraction-bioavailability</guid>
+    <enclosure url="https://phlorotannin.com/og-image.png" type="image/png"/>
+    <dc:subject>감태, Ecklonia cava, 플로로탄닌추출, MOP공정, 생체이용률</dc:subject>
+  </item>
+  <item>
+    <title>플로로탄닌 vs 퀘르세틴 vs 레스베라트롤 — 폴리페놀 비교 완전 분석</title>
+    <link>https://phlorotannin.com/blog/phlorotannin-vs-quercetin-resveratrol-polyphenol-comparison</link>
+    <description><![CDATA[건강식품 시장의 대표 폴리페놀들을 비교합니다. 육상 식물 폴리페놀과 해양 플로로탄닌은 구조와 효능에서 어떻게 다를까요?]]></description>
+    <category>연구·임상</category>
+    <pubDate>Sat, 02 May 2026 07:19:45 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/phlorotannin-vs-quercetin-resveratrol-polyphenol-comparison</guid>
+    <enclosure url="https://phlorotannin.com/og-image.png" type="image/png"/>
+    <dc:subject>플로로탄닌비교, 퀘르세틴, 레스베라트롤, 폴리페놀, 항산화비교</dc:subject>
+  </item>
+  <item>
+    <title>PH-100 임상 연구 정리 — 플로로탄닌 표준화 추출물이 다른 이유</title>
+    <link>https://phlorotannin.com/blog/phlorotannin-ph100-clinical-research-summary-2024</link>
+    <description><![CDATA[플로로탄닌 중에서도 PH-100은 표준화된 추출 공정을 거친 성분입니다. 현재까지 발표된 임상·전임상 연구 결과를 정리합니다.]]></description>
+    <category>연구·임상</category>
+    <pubDate>Sat, 02 May 2026 07:19:44 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/phlorotannin-ph100-clinical-research-summary-2024</guid>
+    <enclosure url="https://phlorotannin.com/og-image.png" type="image/png"/>
+    <dc:subject>PH-100, 플로로탄닌임상, 에콜, 디에콜, 감태연구</dc:subject>
+  </item>
+  <item>
+    <title>건선(Psoriasis) — 자가면역 피부 질환, 재발 없이 관리하는 법</title>
+    <link>https://phlorotannin.com/blog/psoriasis-autoimmune-skin-natural-treatment-phlorotannin</link>
+    <description><![CDATA[건선은 완치가 어렵지만 관리가 가능합니다. 자가면역 메커니즘을 이해하고 재발을 줄이는 자연 접근법을 알아봅니다.]]></description>
+    <category>피부·모발</category>
+    <pubDate>Sat, 02 May 2026 07:19:43 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/psoriasis-autoimmune-skin-natural-treatment-phlorotannin</guid>
+    <enclosure url="https://phlorotannin.com/og-image.png" type="image/png"/>
+    <dc:subject>건선, 자가면역피부, 플로로탄닌, 피부염증, 건선치료</dc:subject>
+  </item>
+  <item>
+    <title>피부 장벽이 무너지면? — 건조, 예민, 가려움의 진짜 원인</title>
+    <link>https://phlorotannin.com/blog/dry-skin-barrier-ceramide-omega3-phlorotannin-moisture</link>
+    <description><![CDATA[아무리 보습제를 발라도 건조하고, 조금만 자극받아도 예민해지는 피부. 피부 장벽 기능의 원리와 회복 방법을 알아봅니다.]]></description>
+    <category>피부·모발</category>
+    <pubDate>Sat, 02 May 2026 07:19:42 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/dry-skin-barrier-ceramide-omega3-phlorotannin-moisture</guid>
+    <enclosure url="https://phlorotannin.com/og-image.png" type="image/png"/>
+    <dc:subject>피부장벽, 건조피부, 세라마이드, 플로로탄닌, 보습</dc:subject>
+  </item>
+  <item>
+    <title>성인 여드름 — 10대랑 왜 다른가, 호르몬과 장 문제가 핵심</title>
+    <link>https://phlorotannin.com/blog/acne-hormonal-adult-gut-skin-phlorotannin</link>
+    <description><![CDATA[성인 여드름은 청소년 여드름과 원인이 다릅니다. 호르몬 불균형과 장 건강 문제를 중심으로 성인 여드름을 관리하는 법을 알아봅니다.]]></description>
+    <category>피부·모발</category>
+    <pubDate>Sat, 02 May 2026 07:19:42 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/acne-hormonal-adult-gut-skin-phlorotannin</guid>
+    <enclosure url="https://phlorotannin.com/og-image.png" type="image/png"/>
+    <dc:subject>성인여드름, 호르몬여드름, 장피부축, 플로로탄닌, 피부건강</dc:subject>
+  </item>
+  <item>
+    <title>피부 노화를 늦추는 성분 비교 — 레티놀, 비타민C, 플로로탄닌</title>
+    <link>https://phlorotannin.com/blog/skin-aging-collagen-antioxidant-phlorotannin-marine-cosmetic</link>
+    <description><![CDATA[항노화 피부 성분들의 작용 기전을 비교합니다. 레티놀, 비타민C와 함께 주목받는 해양 폴리페놀 플로로탄닌의 특성을 알아봅니다.]]></description>
+    <category>피부·모발</category>
+    <pubDate>Sat, 02 May 2026 07:19:41 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/skin-aging-collagen-antioxidant-phlorotannin-marine-cosmetic</guid>
+    <enclosure url="https://phlorotannin.com/og-image.png" type="image/png"/>
+    <dc:subject>피부노화, 레티놀, 비타민C, 플로로탄닌, 항노화</dc:subject>
+  </item>
+  <item>
+    <title>탈모 원인별 완전 정리 — 어떤 탈모인지 알아야 치료도 된다</title>
+    <link>https://phlorotannin.com/blog/hair-loss-cause-type-natural-treatment-phlorotannin</link>
+    <description><![CDATA[탈모는 원인에 따라 치료법이 완전히 달라집니다. 남성형, 원형, 스트레스성, 영양결핍성 탈모를 구분하고 적절한 접근법을 알아봅니다.]]></description>
+    <category>피부·모발</category>
+    <pubDate>Sat, 02 May 2026 07:19:40 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/hair-loss-cause-type-natural-treatment-phlorotannin</guid>
+    <enclosure url="https://phlorotannin.com/og-image.png" type="image/png"/>
+    <dc:subject>탈모원인, 탈모치료, DHT, 플로로탄닌, 두피건강</dc:subject>
+  </item>
+  <item>
+    <title>코로나 후유증(롱코비드) — 면역 회복이 더딜 때 도움이 되는 성분들</title>
+    <link>https://phlorotannin.com/blog/covid-long-covid-chronic-fatigue-immune-recovery-phlorotannin</link>
+    <description><![CDATA[코로나 완치 후에도 피로, 브레인포그, 호흡 곤란이 지속되는 롱코비드. 만성 염증과 면역 불균형을 회복하는 방법을 알아봅니다.]]></description>
+    <category>염증·면역</category>
+    <pubDate>Sat, 02 May 2026 07:19:39 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/covid-long-covid-chronic-fatigue-immune-recovery-phlorotannin</guid>
+    <enclosure url="https://phlorotannin.com/og-image.png" type="image/png"/>
+    <dc:subject>롱코비드, 코로나후유증, 만성피로, 플로로탄닌, 면역회복</dc:subject>
+  </item>
+  <item>
+    <title>아토피 피부염 — 장(腸)을 고치면 피부가 좋아지는 이유</title>
+    <link>https://phlorotannin.com/blog/atopy-eczema-skin-inflammation-gut-microbiome-phlorotannin</link>
+    <description><![CDATA[아토피는 피부만의 문제가 아닙니다. 장-피부 축(Gut-Skin Axis)을 통해 장 건강이 아토피에 미치는 영향을 알아봅니다.]]></description>
+    <category>염증·면역</category>
+    <pubDate>Sat, 02 May 2026 07:19:39 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/atopy-eczema-skin-inflammation-gut-microbiome-phlorotannin</guid>
+    <enclosure url="https://phlorotannin.com/og-image.png" type="image/png"/>
+    <dc:subject>아토피, 피부염, 장피부축, 플로로탄닌, 장건강</dc:subject>
+  </item>
+  <item>
+    <title>진통제(소염제) 장기 복용 부작용 — 위장·신장을 지키면서 통증 관리하는 법</title>
+    <link>https://phlorotannin.com/blog/nsaid-painkillers-stomach-kidney-side-effects-alternative</link>
+    <description><![CDATA[이부프로펜, 나프록센 같은 NSAID를 오래 드시는 분들, 위장과 신장 보호가 중요합니다. 자연 소염 성분과 비교해봅니다.]]></description>
+    <category>염증·면역</category>
+    <pubDate>Sat, 02 May 2026 07:19:38 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/nsaid-painkillers-stomach-kidney-side-effects-alternative</guid>
+    <enclosure url="https://phlorotannin.com/og-image.png" type="image/png"/>
+    <dc:subject>소염제부작용, NSAID, 위장보호, 플로로탄닌, 자연소염</dc:subject>
+  </item>
+  <item>
+    <title>류마티스 관절염 약 부작용 — 면역억제제 없이 관절 염증 관리할 수 있나</title>
+    <link>https://phlorotannin.com/blog/rheumatoid-arthritis-joint-pain-natural-relief-phlorotannin</link>
+    <description><![CDATA[류마티스 약의 부작용이 걱정되시나요? 주요 약물 부작용과 자연 항염증 성분을 통한 보완 접근법을 알아봅니다.]]></description>
+    <category>염증·면역</category>
+    <pubDate>Sat, 02 May 2026 07:19:37 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/rheumatoid-arthritis-joint-pain-natural-relief-phlorotannin</guid>
+    <enclosure url="https://phlorotannin.com/og-image.png" type="image/png"/>
+    <dc:subject>류마티스관절염, 관절염약부작용, 항염증, 플로로탄닌, 자가면역</dc:subject>
+  </item>
+  <item>
+    <title>고혈압약을 평생 먹어야 하나요?</title>
+    <link>https://phlorotannin.com/qa</link>
+    <description><![CDATA[심혈관 — 고혈압은 생활습관 개선(저염식, 운동, 금연)과 함께 약물치료를 병행하는 것이 일반적입니다. 혈압이 안정적으로 조절되고 생활습관이 충분히 개선되면 전문의와 상의해 약을 줄이거나 중단할 수 있는 경우도 있습니다. 마그네슘·칼륨·오메가-3 등 미네랄과 해조류 유래 후코이단·<span class="text-green-600 font-semibold">플로로탄닌<...]]></description>
+    <category>심혈관</category>
+    <pubDate>Fri, 24 Apr 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="false">phlorotannin-qa-cardio-001</guid>
+  </item>
+  <item>
+    <title>가슴이 조이는 느낌이 자주 드는데 협심증일까요?</title>
+    <link>https://phlorotannin.com/qa</link>
+    <description><![CDATA[심혈관 — 흉부 압박감·조이는 느낌은 협심증의 대표적 증상이지만 역류성식도염, 근골격계 통증, 불안장애 등 다른 원인일 수도 있습니다. 협심증은 관상동맥이 좁아져 심근에 혈액이 부족해지는 상태로, 운동이나 스트레스 시 악화되는 경향이 있습니다. 오메가-3 지방산, 코엔자임Q10, 비타민E, 그리고 해조류 플로로탄닌의 혈소판 응집 억제 및 혈관 보호 작용이 심혈관 건강...]]></description>
+    <category>심혈관</category>
+    <pubDate>Fri, 24 Apr 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="false">phlorotannin-qa-cardio-002</guid>
+  </item>
+  <item>
+    <title>심근경색은 어떻게 예방할 수 있나요?</title>
+    <link>https://phlorotannin.com/qa</link>
+    <description><![CDATA[심혈관 — 심근경색 예방의 핵심은 관상동맥 동맥경화를 줄이는 것입니다. LDL 콜레스테롤·혈압·혈당 관리, 금연, 적정 체중 유지가 가장 중요하고, 아스피린·스타틴 계열 약물이 고위험군에 처방됩니다. 자연소재로는 오메가-3, 베르베린, 레드이스트라이스, 폴리페놀 계열이 연구되어 있고, 해조류 기반 플로로탄닌은 항산화·항염증 경로혈관 내피세포 기능 보호에 기여할 수 있...]]></description>
+    <category>심혈관</category>
+    <pubDate>Fri, 24 Apr 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="false">phlorotannin-qa-cardio-003</guid>
+  </item>
+  <item>
+    <title>심방세동 진단을 받았는데 어떻게 관리해야 하나요?</title>
+    <link>https://phlorotannin.com/qa</link>
+    <description><![CDATA[심혈관 — 심방세동은 심방이 불규칙하게 떨리는 부정맥으로, 뇌졸중 위험을 높이기 때문에 혈전 예방 약물(항응고제)과 심박수·리듬 조절 치료가 필요합니다. 마그네슘, 코엔자임Q10, 오메가-3는 심근 전기 안정성에 도움이 된다는 연구가 있으며, 플로로탄닌의 항산화 효과가 심방 조직의 산화스트레스 감소에 기여할 수 있습니다. 카페인·알코올 과다 섭취를 피하고, 전문의와 ...]]></description>
+    <category>심혈관</category>
+    <pubDate>Fri, 24 Apr 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="false">phlorotannin-qa-cardio-004</guid>
+  </item>
+  <item>
+    <title>좋은 콜레스테롤(HDL)을 높이는 방법이 있나요?</title>
+    <link>https://phlorotannin.com/qa</link>
+    <description><![CDATA[심혈관 — HDL 콜레스테롤은 혈관 벽에 쌓인 콜레스테롤을 간으로 회수하는 역할을 합니다. 규칙적인 유산소 운동(주 150분 이상)이 HDL을 높이는 가장 효과적인 방법이며, 불포화지방산(올리브오일, 견과류, 오메가-3)도 HDL 상승에 도움이 됩니다. 해조류의 플로로탄닌은 간에서 콜레스테롤 대사를 조절하는 효소 경로에 작용한다는 연구들이 보고되어 있으며, 나이아신(...]]></description>
+    <category>심혈관</category>
+    <pubDate>Fri, 24 Apr 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="false">phlorotannin-qa-cardio-005</guid>
+  </item>
+  <item>
+    <title>혈전이 생기는 이유와 예방법은 무엇인가요?</title>
+    <link>https://phlorotannin.com/qa</link>
+    <description><![CDATA[심혈관 — 혈전은 혈소판이 과도하게 응집되거나 혈액 점도가 높아질 때 형성됩니다. 장시간 앉아있기, 탈수, 흡연, 고지혈증, 염증 상태가 위험 요인입니다. 오메가-3 지방산은 혈소판 응집을 억제하고, 비타민E는 혈관 내피 기능을 보호하며, 마늘·생강 추출물도 항혈전 작용으로 연구됩니다. 플로로탄닌은 <span class="text-green-600 font-semib...]]></description>
+    <category>심혈관</category>
+    <pubDate>Fri, 24 Apr 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="false">phlorotannin-qa-cardio-006</guid>
+  </item>
+  <item>
+    <title>동맥경화가 진행 중이라고 했는데 되돌릴 수 있나요?</title>
+    <link>https://phlorotannin.com/qa</link>
+    <description><![CDATA[심혈관 — 동맥경화는 혈관 벽에 콜레스테롤 플라크가 쌓이는 만성 질환입니다. 완전한 역전은 어렵지만, 적극적인 LDL 콜레스테롤 저하 치료(스타틴), 혈압·혈당 조절, 항염증 식이요법으로 진행을 늦추고 일부 안정화가 가능합니다. 항산화 폴리페놀(포도씨, 녹차, 커큐민)과 오메가-3, 플로로탄닌이 혈관 내피 산화스트레스를 줄여 동맥경화 진행 억제에 기여할 수 있습니다....]]></description>
+    <category>심혈관</category>
+    <pubDate>Fri, 24 Apr 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="false">phlorotannin-qa-cardio-007</guid>
+  </item>
+  <item>
+    <title>다리 부종이 심하고 숨이 차는데 심부전 증상인가요?</title>
+    <link>https://phlorotannin.com/qa</link>
+    <description><![CDATA[심혈관 — 하지 부종과 호흡 곤란은 심부전의 대표 증상으로, 심장이 혈액을 충분히 펌프하지 못해 체액이 고이는 현상입니다. 이뇨제, ACE 억제제, 베타차단제 등의 약물 치료가 표준 관리법이며, 식염 섭취 제한과 수분 제한이 중요합니다. 코엔자임Q10은 심근의 에너지 대사를 지원하고, 타우린과 마그네슘은 심장 기능 보조에 연구되어 있습니다. 이 증상들이 새로 생겼거나...]]></description>
+    <category>심혈관</category>
+    <pubDate>Fri, 24 Apr 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="false">phlorotannin-qa-cardio-008</guid>
+  </item>
+  <item>
+    <title>저혈압인데 어지럼증이 심합니다. 원인이 무엇인가요?</title>
+    <link>https://phlorotannin.com/qa</link>
+    <description><![CDATA[심혈관 — 저혈압성 어지럼증은 뇌로 가는 혈류가 순간적으로 부족할 때 발생합니다. 기립성 저혈압(갑자기 일어설 때), 탈수, 빈혈, 심장 기능 저하가 주요 원인입니다. 충분한 수분·전해질(나트륨, 칼륨, 마그네슘) 섭취, 천천히 자세 바꾸기, 압박 스타킹 착용이 도움이 됩니다. 철분 결핍 빈혈이 원인이라면 철분 보충이 필수이며, 비타민B12·엽산 결핍도 확인이 필요합...]]></description>
+    <category>심혈관</category>
+    <pubDate>Fri, 24 Apr 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="false">phlorotannin-qa-cardio-009</guid>
+  </item>
+  <item>
+    <title>관상동맥 스텐트 시술 후 재협착을 예방하는 방법은?</title>
+    <link>https://phlorotannin.com/qa</link>
+    <description><![CDATA[심혈관 — 스텐트 시술 후 재협착 예방을 위해 항혈소판제(아스피린+클로피도그렐 이중 항혈소판 요법) 복용이 필수입니다. 이와 함께 LDL 콜레스테롤을 70mg/dL 이하로 낮추는 스타틴 치료, 금연, 혈당·혈압 조절이 병행되어야 합니다. 오메가-3는 혈소판 응집 억제와 중성지방 감소에 도움이 되고, 플로로탄닌의 혈관 내피 보호 효과가 스텐트 주변 신생내막 형성을 억제...]]></description>
+    <category>심혈관</category>
+    <pubDate>Fri, 24 Apr 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="false">phlorotannin-qa-cardio-010</guid>
+  </item>
+  <item>
+    <title>혈압을 낮추는 음식이 따로 있나요?</title>
+    <link>https://phlorotannin.com/qa</link>
+    <description><![CDATA[심혈관 — 고혈압 관리에 도움이 되는 대표적인 식품들이 있습니다. 칼륨이 풍부한 바나나·감자·시금치는 나트륨 배출을 돕고, 마그네슘이 많은 견과류·통곡물은 혈관 이완에 기여합니다. 비트에 풍부한 질산염은 산화질소(NO) 생성을 촉진해 혈관을 넓히고, 블루베리·포도 등의 안토시아닌도 혈압 강하에 도움이 됩니다. 미역·다시마 같은 해조류의 후코이단과 플로로탄닌도 혈압 조...]]></description>
+    <category>심혈관</category>
+    <pubDate>Fri, 24 Apr 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="false">phlorotannin-qa-cardio-011</guid>
+  </item>
+  <item>
+    <title>심장병 환자가 운동을 해도 되나요?</title>
+    <link>https://phlorotannin.com/qa</link>
+    <description><![CDATA[심혈관 — 심장병 환자에게 적절한 운동은 오히려 심폐 기능을 향상시키고 재발 위험을 낮춥니다. 다만 운동 강도와 종류는 질환 종류·중증도에 따라 달라야 합니다. 심장 재활 프로그램(심폐운동검사 후 맞춤 처방)이 가장 안전한 방법이며, 수영·걷기·자전거 타기 같은 유산소 운동이 권장됩니다. 코엔자임Q10, 마그네슘, 오메가-3는 운동 중 심근 에너지 효율을 지원합니다....]]></description>
+    <category>심혈관</category>
+    <pubDate>Fri, 24 Apr 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="false">phlorotannin-qa-cardio-012</guid>
+  </item>
+  <item>
+    <title>스트레스가 혈압에 영향을 주나요?</title>
+    <link>https://phlorotannin.com/qa</link>
+    <description><![CDATA[심혈관 — 스트레스는 교감신경을 활성화해 아드레날린·코르티솔을 분비시키고, 이로 인해 심박수가 높아지고 혈관이 수축해 혈압이 일시적으로 올라갑니다. 만성 스트레스는 지속적인 고혈압 위험을 높입니다. 명상·호흡 훈련·규칙적인 수면이 스트레스성 혈압 상승을 줄이는 데 효과적이고, 마그네슘은 신경계 진정에 도움이 됩니다. 아슈와간다, L-테아닌, 홍경천(로디올라) 같은 아...]]></description>
+    <category>심혈관</category>
+    <pubDate>Fri, 24 Apr 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="false">phlorotannin-qa-cardio-013</guid>
+  </item>
+  <item>
+    <title>뇌졸중 예방을 위해 어떤 검사를 받아야 하나요?</title>
+    <link>https://phlorotannin.com/qa</link>
+    <description><![CDATA[심혈관 — 뇌졸중 예방 핵심 검사로는 혈압 측정, 혈액 검사(혈당·콜레스테롤·혈액응고 기능), 심전도(심방세동 확인), 경동맥 초음파(동맥경화 확인)가 있습니다. 50세 이상이거나 고혈압·당뇨·심장병 기저 질환자는 MRI/MRA 뇌혈관 검사도 고려합니다. 오메가-3와 플로로탄닌의 항혈소판·항염증 효과가 허혈성 뇌졸중 위험 감소에 기여할 수 있다는 연구가 있습니다. 가...]]></description>
+    <category>심혈관</category>
+    <pubDate>Fri, 24 Apr 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="false">phlorotannin-qa-cardio-014</guid>
+  </item>
+  <item>
+    <title>가슴이 두근거리고 맥박이 불규칙한데 위험한가요?</title>
+    <link>https://phlorotannin.com/qa</link>
+    <description><![CDATA[심혈관 — 두근거림과 불규칙한 맥박은 부정맥의 증상일 수 있습니다. 대부분의 경우 심방 조기수축이나 심실 조기수축처럼 양성 부정맥이지만, 심방세동·빈맥처럼 치료가 필요한 경우도 있습니다. 카페인·알코올·수면 부족·전해질 불균형(마그네슘·칼륨 결핍)이 부정맥을 유발할 수 있습니다. 마그네슘 보충과 오메가-3는 심장 전기적 안정성 유지에 도움이 됩니다. 실신·호흡 곤란·...]]></description>
+    <category>심혈관</category>
+    <pubDate>Fri, 24 Apr 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="false">phlorotannin-qa-cardio-015</guid>
+  </item>
+  <item>
+    <title>코엔자임Q10이 심장 건강에 정말 도움이 되나요?</title>
+    <link>https://phlorotannin.com/qa</link>
+    <description><![CDATA[심혈관 — 코엔자임Q10(CoQ10)은 심근 세포의 미토콘드리아에서 에너지(ATP) 생산에 필수적인 조효소입니다. 스타틴 계열 약물 복용자는 CoQ10 합성이 감소해 근육 피로·심근 기능 저하가 생길 수 있어 보충이 권장됩니다. 여러 임상 연구에서 CoQ10 보충이 심부전 환자의 심장 기능 지표 개선, 운동 능력 향상, 심혈관 사건 감소에 기여함을 보고했습니다. 흡수...]]></description>
+    <category>심혈관</category>
+    <pubDate>Fri, 24 Apr 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="false">phlorotannin-qa-cardio-016</guid>
+  </item>
+  <item>
+    <title>소금을 적게 먹으면 혈압이 얼마나 낮아지나요?</title>
+    <link>https://phlorotannin.com/qa</link>
+    <description><![CDATA[심혈관 — 나트륨 섭취를 하루 2,300mg(소금 약 6g) 이하로 줄이면 혈압이 평균 5~6mmHg 낮아진다는 연구들이 있습니다. 고혈압 환자의 경우 효과가 더 커서 10mmHg 이상 감소하기도 합니다. 한국인 평균 나트륨 섭취량은 권장량의 약 2배 수준이므로 국물 줄이기, 가공식품·젓갈·찌개 섭취 줄이기가 실질적으로 도움이 됩니다. 나트륨을 줄이는 동시에 칼륨 섭...]]></description>
+    <category>심혈관</category>
+    <pubDate>Fri, 24 Apr 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="false">phlorotannin-qa-cardio-017</guid>
+  </item>
+  <item>
+    <title>달걀을 많이 먹으면 콜레스테롤이 올라가나요?</title>
+    <link>https://phlorotannin.com/qa</link>
+    <description><![CDATA[심혈관 — 과거에는 달걀 노른자의 콜레스테롤이 혈중 콜레스테롤을 높인다고 알려졌지만, 최근 연구들은 식이 콜레스테롤이 혈중 LDL에 미치는 영향이 포화지방산보다 작다는 것을 보여줍니다. 건강한 성인의 경우 하루 1~2개의 달걀 섭취는 심혈관 위험을 유의미하게 높이지 않습니다. 단, 당뇨병 환자나 이미 LDL이 높은 경우에는 주의가 필요합니다. 혈중 콜레스테롤에 더 큰...]]></description>
+    <category>심혈관</category>
+    <pubDate>Fri, 24 Apr 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="false">phlorotannin-qa-cardio-018</guid>
+  </item>
+  <item>
+    <title>오메가-3 보충제를 복용할 때 주의해야 할 점이 있나요?</title>
+    <link>https://phlorotannin.com/qa</link>
+    <description><![CDATA[심혈관 — 오메가-3(EPA/DHA)는 중성지방 감소, 혈소판 응집 억제, 항염증 효과로 심혈관 건강에 많이 활용됩니다. 주의할 점은 항혈소판제(아스피린, 클로피도그렐)나 와파린 등 항응고제와 병용 시 출혈 위험이 높아질 수 있다는 것입니다. 고용량(3g 이상/일)은 반드시 전문가 상담이 필요합니다. 산화된 오메가-3는 오히려 산화스트레스를 유발할 수 있으므로 신선도...]]></description>
+    <category>심혈관</category>
+    <pubDate>Fri, 24 Apr 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="false">phlorotannin-qa-cardio-019</guid>
+  </item>
+  <item>
+    <title>수면 부족이 심장병 위험을 높이나요?</title>
+    <link>https://phlorotannin.com/qa</link>
+    <description><![CDATA[심혈관 — 수면 부족(하루 6시간 미만)은 교감신경 과활성화, 코르티솔 증가, 염증 수치 상승을 유발해 심혈관 위험을 높입니다. 대규모 연구들에서 6시간 미만 수면자는 7~8시간 수면자보다 고혈압·심근경색·뇌졸중 발생 위험이 유의미하게 높다고 보고합니다. 반대로 9시간 이상 과수면도 심혈관 위험과 관련이 있습니다. 수면의 질을 높이기 위해 마그네슘, L-테아닌, 멜라...]]></description>
+    <category>심혈관</category>
+    <pubDate>Fri, 24 Apr 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="false">phlorotannin-qa-cardio-020</guid>
+  </item>
+  <item>
+    <title>산화질소(NO)가 혈관 건강에 왜 중요한가요?</title>
+    <link>https://phlorotannin.com/qa</link>
+    <description><![CDATA[심혈관 — 산화질소(NO)는 혈관 내피세포에서 생성되어 혈관 평활근을 이완시키고 혈압을 낮추며, 혈소판 응집과 혈관 염증을 억제하는 중요한 신호 분자입니다. L-아르기닌, L-시트룰린은 NO 생합성 기질로 혈관 기능 개선에 활용되고, 비트 주스의 질산염도 NO 전구체입니다. 플로로탄닌은 eNOS(내피 산화질소 합성효소) 활성을 촉진하는 경로가 연구되어 있어 혈관 내피...]]></description>
+    <category>심혈관</category>
+    <pubDate>Fri, 24 Apr 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="false">phlorotannin-qa-cardio-021</guid>
+  </item>
+  <item>
+    <title>손발이 항상 차고 저린데 혈액순환 문제인가요?</title>
+    <link>https://phlorotannin.com/qa</link>
+    <description><![CDATA[심혈관 — 손발 냉증과 저림은 말초 혈액순환 장애, 레이노 현상, 빈혈, 갑상선 기능 저하, 당뇨성 신경병증 등 다양한 원인이 있습니다. 레이노 현상은 추위나 스트레스에 반응해 말초 혈관이 과도하게 수축하는 질환으로, 오메가-3와 마그네슘이 혈관 평활근 이완에 도움이 됩니다. 은행잎 추출물(징코 빌로바)은 말초 혈류 개선으로 알려져 있고, 플로로탄닌의 혈관 확장 효과...]]></description>
+    <category>심혈관</category>
+    <pubDate>Fri, 24 Apr 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="false">phlorotannin-qa-cardio-022</guid>
+  </item>
+  <item>
+    <title>혈압약 복용 후 기침이 심해졌는데 약 때문인가요?</title>
+    <link>https://phlorotannin.com/qa</link>
+    <description><![CDATA[심혈관 — ACE 억제제(에날라프릴, 라미프릴 등) 계열의 혈압약은 부작용으로 마른 기침을 유발할 수 있습니다. 이는 브라디키닌이 폐에 축적되어 발생하는 현상으로, 복용자의 10~20%에서 나타납니다. 이 경우 담당 의사와 상의해 ARB(안지오텐신 수용체 차단제) 계열로 변경하면 기침이 사라집니다. ACE 억제제와 ARB 모두 신장 보호 효과가 있어 당뇨 신병증 환자...]]></description>
+    <category>심혈관</category>
+    <pubDate>Fri, 24 Apr 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="false">phlorotannin-qa-cardio-023</guid>
+  </item>
+  <item>
+    <title>커피가 심장에 나쁜가요?</title>
+    <link>https://phlorotannin.com/qa</link>
+    <description><![CDATA[심혈관 — 적당한 커피 섭취(하루 1~3잔)는 일반적인 건강인에게 심혈관 위험을 높이지 않으며, 오히려 항산화 폴리페놀 공급원으로 일부 보호 효과가 보고되기도 합니다. 그러나 심방세동·부정맥이 있는 경우, 카페인에 민감한 경우에는 섭취를 줄이는 것이 권장됩니다. 카페인은 혈압을 일시적으로 높이지만, 만성 고혈압 유발 효과는 크지 않습니다. 에스프레소보다 필터 커피가 ...]]></description>
+    <category>심혈관</category>
+    <pubDate>Fri, 24 Apr 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="false">phlorotannin-qa-cardio-024</guid>
+  </item>
+  <item>
+    <title>BNP 수치가 높게 나왔는데 심부전인가요?</title>
+    <link>https://phlorotannin.com/qa</link>
+    <description><![CDATA[심혈관 — BNP(뇌 나트륨이뇨 펩타이드)는 심장이 과부하를 받을 때 심실에서 분비되는 호르몬으로, 심부전의 대표적인 바이오마커입니다. BNP > 100 pg/mL 또는 NT-proBNP > 300 pg/mL이면 심부전 가능성이 높아 심초음파 등 추가 검사가 필요합니다. 그러나 BNP는 비만, 신장 기능 저하, 폐질환, 심방세동에서도 상승할 수 있어 단독으로 진단하지...]]></description>
+    <category>심혈관</category>
+    <pubDate>Fri, 24 Apr 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="false">phlorotannin-qa-cardio-025</guid>
+  </item>
+  <item>
+    <title>가정에서 혈압을 올바르게 측정하는 방법은?</title>
+    <link>https://phlorotannin.com/qa</link>
+    <description><![CDATA[심혈관 — 정확한 혈압 측정을 위해 측정 30분 전 카페인·담배·운동을 피하고, 등받이가 있는 의자에 5분 이상 안정 후 측정합니다. 커프는 왼쪽 팔 상완(심장 높이)에 느슨하지 않게 감고, 말하지 않은 상태에서 측정합니다. 아침 기상 후 1시간 이내(약 복용 전)와 저녁 취침 전, 하루 2회 측정이 권장됩니다. 연속 2회 측정해 평균값을 기록하고, 1~2주간의 평균...]]></description>
+    <category>심혈관</category>
+    <pubDate>Fri, 24 Apr 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="false">phlorotannin-qa-cardio-026</guid>
+  </item>
+  <item>
+    <title>나이가 들면 왜 혈압이 올라가나요?</title>
+    <link>https://phlorotannin.com/qa</link>
+    <description><![CDATA[심혈관 — 나이가 들면서 혈관 벽의 탄력 섬유(엘라스틴)가 감소하고 콜라겐이 경화되어 혈관이 딱딱해집니다(동맥 경직). 이로 인해 심장이 혈액을 내보낼 때 더 큰 압력이 필요해 수축기 혈압이 상승합니다. 동시에 혈관 내피 기능이 저하되어 산화질소(NO) 생성이 감소하고 혈관 확장 능력이 줄어듭니다. 항산화 영양소(비타민C·E, 폴리페놀), 오메가-3, 플로로탄닌은 혈...]]></description>
+    <category>심혈관</category>
+    <pubDate>Fri, 24 Apr 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="false">phlorotannin-qa-cardio-027</guid>
+  </item>
+  <item>
+    <title>부모님이 심장병이 있으면 저도 걸릴 확률이 높나요?</title>
+    <link>https://phlorotannin.com/qa</link>
+    <description><![CDATA[심혈관 — 심혈관 질환은 유전적 요인과 환경적 요인이 복합적으로 작용합니다. 부모 또는 형제자매가 남성 55세 미만, 여성 65세 미만에 심혈관 질환을 앓은 경우 가족력이 있는 것으로 보고 위험 요인으로 관리합니다. 유전적 소인이 있다면 LDL 콜레스테롤·혈압·혈당을 더 엄격하게 관리하고, 가족성 고콜레스테롤혈증(FH) 유전자 검사도 고려할 수 있습니다. 유전자 위험...]]></description>
+    <category>심혈관</category>
+    <pubDate>Fri, 24 Apr 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="false">phlorotannin-qa-cardio-028</guid>
+  </item>
+  <item>
+    <title>술을 마시면 혈압이 어떻게 되나요?</title>
+    <link>https://phlorotannin.com/qa</link>
+    <description><![CDATA[심혈관 — 과도한 음주(하루 2잔 이상)는 혈압을 높이고 심방세동·심근병증·뇌졸중 위험을 증가시킵니다. 알코올은 교감신경을 자극하고 코르티솔을 증가시켜 혈압 상승 요인이 됩니다. 소량의 적포도주가 심장에 좋다는 과거 연구들은 최근 재평가되고 있으며, 안전한 음주 한계는 없다는 의견도 늘고 있습니다. 혈압약을 복용 중이라면 알코올과의 상호작용(혈압 급강하 위험)에 주의...]]></description>
+    <category>심혈관</category>
+    <pubDate>Fri, 24 Apr 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="false">phlorotannin-qa-cardio-029</guid>
+  </item>
+  <item>
+    <title>CRP 수치가 높으면 심혈관 위험이 높아지나요?</title>
+    <link>https://phlorotannin.com/qa</link>
+    <description><![CDATA[심혈관 — C반응단백(CRP), 특히 고감도 CRP(hs-CRP)는 체내 염증 정도를 반영하는 바이오마커로, 심혈관 질환 위험 예측에 활용됩니다. hs-CRP > 3 mg/L는 심혈관 고위험군으로 분류되며, 스타틴 치료의 추가 적응증이 될 수 있습니다(JUPITER 연구). 만성 염증을 줄이기 위해 항염증 식이(지중해식), 오메가-3, 커큐민, 생강 추출물이 연구되어...]]></description>
+    <category>심혈관</category>
+    <pubDate>Fri, 24 Apr 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="false">phlorotannin-qa-cardio-030</guid>
+  </item>
+  </channel>
+</rss>

@@ -407,9 +407,9 @@ export default function QAPage() {
   return (
     <div className="pt-16 min-h-screen bg-gray-50">
       <SEOHead
-        title={`건강 Q&A ${totalAll.toLocaleString()}개`}
-        description={`플로로탄닌 관련 ${totalAll.toLocaleString()}개 건강 질문과 답변. 혈당, 혈압, 치매, 항암, 피부, 모발, 아토피, 발뒤꿈치 갈라짐 등 13개 질환 카테고리 Q&A.`}
-        keywords="플로로탄닌 Q&A, 감태 효능, 건강 질문 답변, 혈당 낮추는 식품, 혈압 낮추는 법, 치매예방 식품, 피부 건강, 아토피 치료, 발뒤꿈치 갈라짐, 탈모 예방, 모발 건강, 항산화 효과"
+        title={`전문가 Q&A ${totalAll.toLocaleString()}개 | 플로로탄닌·감태추출물 건강정보 아카이브`}
+        description={`플로로탄닌·감태추출물·해양 폴리페놀 관련 ${totalAll.toLocaleString()}개 전문가 Q&A. 항산화·염증·혈당·수면·면역·뇌 건강·암환자 가족 건강정보·병원정보까지 질환별로 정리한 종합 건강정보 데이터센터의 Q&A 아카이브입니다.`}
+        keywords="전문가 Q&A, 플로로탄닌 Q&A, 감태추출물 Q&A, 해양 폴리페놀 Q&A, 항산화, 염증, 혈당, 수면, 면역, 뇌 건강, 암환자 가족 건강정보, 병원정보 아카이브"
         canonical="https://phlorotannin.com/qa"
         jsonLd={faqJsonLd}
       />

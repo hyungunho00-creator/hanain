@@ -25,12 +25,20 @@ export default function SEOHead({
   jsonLd = null,
   lang = 'ko',
 }) {
-  const SITE_NAME = '플로로탄닌 파트너스 | Phlorotannin Partners'
-  const DEFAULT_DESC = '암·당뇨·뇌질환·만성염증 등 다양한 건강 주제의 플로로탄닌(phlorotannin) 관련 정보 아카이브. PH-100, 에콜, 비에콜 등 플로로탄닌 유도 성분 12개 질환 카테고리, 1,361개 Q&A 제공.'
-  const DEFAULT_KEYWORDS = '플로로탄닌,phlorotannin,PH-100,에콜,비에콜,ecol,bioecol,감태 폴리페놀,해양 폴리페놀,플로로탄닌 효능,당뇨약 부작용,항암,면역,노화방지'
+  // 사이트 정체성: "플로로탄닌·감태추출물 종합 건강정보 데이터센터"
+  // (구 "Phlorotannin Partners" 표현 제거 — 페이지별 고유 title 유지)
+  const SITE_NAME = '플로로탄닌·감태추출물 종합 건강정보 데이터센터'
+  const SITE_NAME_SHORT = '플로로탄닌 정보센터'
+  const DEFAULT_TITLE = '플로로탄닌·감태추출물 종합 건강정보 데이터센터 | 해양 폴리페놀 정보 허브'
+  const DEFAULT_DESC = '플로로탄닌닷컴은 감태추출물·해양 폴리페놀·플로로탄닌을 중심으로 항산화, 염증, 수면, 혈당, 면역, 장 건강, 뇌 건강, 암환자 가족 건강정보와 병원정보까지 정리하는 종합 건강정보 데이터센터입니다.'
+  const DEFAULT_KEYWORDS = '플로로탄닌,phlorotannin,감태추출물,해양 폴리페놀,갈조류 폴리페놀,항산화,염증,수면 건강정보,혈당 건강정보,면역 건강정보,장 건강,뇌 건강,암환자 가족 건강정보,당뇨 건강정보,병원정보 아카이브,건강정보 데이터센터'
+
+  // 각 페이지가 title을 줬으면 그대로 사용(중복 사이트명 부착 금지).
+  // title에 이미 ' | '가 들어있거나 페이지에서 완성형 title을 넘긴 경우 그대로 사용.
+  // title이 없으면 DEFAULT_TITLE 사용.
   const fullTitle = title
-    ? `${title} | ${SITE_NAME}`
-    : `${SITE_NAME} | 해양 폴리페놀 건강 정보 아카이브`
+    ? (title.includes(' | ') ? title : `${title} | ${SITE_NAME_SHORT}`)
+    : DEFAULT_TITLE
   const finalDesc = description || DEFAULT_DESC
   const finalKeywords = keywords ? `${keywords},${DEFAULT_KEYWORDS}` : DEFAULT_KEYWORDS
 
@@ -96,7 +104,7 @@ export default function SEOHead({
     setMeta('meta[property="og:image:height"]', '630')
     setMeta('meta[property="og:image:alt"]', `${fullTitle} - 미리보기 이미지`)
     setMeta('meta[property="og:image:type"]', 'image/png')
-    setMeta('meta[property="og:site_name"]', SITE_NAME)
+    setMeta('meta[property="og:site_name"]', SITE_NAME_SHORT)
     setMeta('meta[property="og:locale"]', 'ko_KR')
 
     // ─── Twitter Card ───

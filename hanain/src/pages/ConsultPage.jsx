@@ -129,9 +129,9 @@ export default function ConsultPage() {
   return (
     <div className="pt-16">
       <SEOHead
-        title="상담 문의"
-        description="플로로탄닌 파트너스 문의. 건강 정보와 파트너 활동에 대해 편하게 문의하세요."
-        keywords="플로로탄닌 상담, 건강 상담, 감태 건강식품 문의"
+        title="건강정보 상담 문의 | 플로로탄닌·감태추출물 정보센터"
+        description="플로로탄닌·감태추출물·해양 폴리페놀 관련 건강정보 상담 문의. 종합 건강정보 데이터센터에 항산화·염증·혈당·수면·면역·병원정보에 관해 편하게 문의하세요."
+        keywords="플로로탄닌 상담, 감태추출물 문의, 해양 폴리페놀 상담, 건강정보 상담, 병원정보 문의"
         canonical="https://phlorotannin.com/consult"
       />
       {success && (

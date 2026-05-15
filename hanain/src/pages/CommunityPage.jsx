@@ -126,9 +126,9 @@ export default function CommunityPage() {
   return (
     <>
       <SEOHead
-        title={`${currentCat.id === 'all' ? '커뮤니티' : currentCat.label + ' 게시판'} | 플로로탄닌 파트너스`}
-        description={`플로로탄닌 건강 커뮤니티. ${currentCat.description || '12개 질환별 카테고리, 회원 경험 공유, Q&A 게시판'}`}
-        keywords={currentCat.seoKeywords || '플로로탄닌 커뮤니티, 건강 정보 공유, 질환별 게시판'}
+        title={`${currentCat.id === 'all' ? '건강정보 커뮤니티' : currentCat.label + ' 커뮤니티'} | 플로로탄닌·감태추출물 건강정보 아카이브`}
+        description={`플로로탄닌·감태추출물·해양 폴리페놀 기반 건강정보 커뮤니티. ${currentCat.description || '질환별 카테고리, 회원 경험 공유, 항산화·염증·혈당·수면·면역·뇌 건강·암환자 가족 건강정보까지 정리합니다.'}`}
+        keywords={currentCat.seoKeywords || '플로로탄닌 커뮤니티, 감태추출물 커뮤니티, 건강정보 공유, 질환별 건강정보 아카이브'}
         canonical={`https://phlorotannin.com/community${currentCat.id !== 'all' ? '?category=' + currentCat.id : ''}`}
       />
 

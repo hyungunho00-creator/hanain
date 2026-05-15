@@ -91,8 +91,12 @@ export default function BlogPostPage() {
   const date     = new Date(post.created_at).toLocaleDateString('ko-KR', { year:'numeric', month:'long', day:'numeric' })
   const catColor = CAT_COLORS[post.category] || 'bg-gray-100 text-gray-700'
   const catName  = CAT_NAMES[post.category]  || post.category
-  const seoTitle = post.meta_title || post.title
-  const seoDesc  = post.meta_desc  || post.excerpt || post.title
+  // SEO 규칙: "[글 제목] | 플로로탄닌·감태추출물 건강정보"
+  const rawSeoTitle = post.meta_title || post.title
+  const seoTitle = rawSeoTitle.includes(' | ')
+    ? rawSeoTitle
+    : `${rawSeoTitle} | 플로로탄닌·감태추출물 건강정보`
+  const seoDesc  = post.meta_desc  || post.excerpt || `${post.title} — 플로로탄닌·감태추출물·해양 폴리페놀 종합 건강정보 데이터센터의 건강정보 글입니다.`
 
   // Article 구조화 데이터 (SEO 강화 버전)
   const articleJsonLd = [

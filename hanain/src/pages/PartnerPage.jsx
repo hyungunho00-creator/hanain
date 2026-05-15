@@ -278,9 +278,9 @@ export default function PartnerPage() {
   return (
     <div className="pt-16" style={{ background: CREAM }}>
       <SEOHead
-        title="파트너 참여 | 플로로탄닌 파트너스"
-        description="건강 정보를 나누고 뜻이 맞는 분들과 파트너로 함께하세요. 재구매 중심 구조, 체계적 교육, 개인 도구 지원."
-        keywords="플로로탄닌 파트너, 건강 파트너십, 건강식품 사업, 파트너 모집"
+        title="파트너 참여 안내 | 플로로탄닌·감태추출물 건강정보 파트너 모집"
+        description="플로로탄닌·감태추출물 건강정보를 함께 나눌 파트너를 모집합니다. 재구매 중심 구조, 체계적 교육 자료, 개인 도구 지원 — 종합 건강정보 데이터센터와 함께 활동하세요."
+        keywords="플로로탄닌 파트너, 감태추출물 파트너, 건강정보 파트너, 파트너 모집, 건강정보 아카이브 파트너십"
         canonical="https://phlorotannin.com/partner"
       />
 

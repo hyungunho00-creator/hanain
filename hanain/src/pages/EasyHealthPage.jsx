@@ -695,9 +695,9 @@ export default function EasyHealthPage() {
   return (
     <div className="pt-16 min-h-screen bg-gray-50">
       <SEOHead
-        title="쉬운 건강 정보"
-        description="누구나 이해하기 쉬운 건강 정보. 플로로탄닌의 혈당·혈압·체중관리·피부·수면 건강 효과를 쉽게 설명합니다."
-        keywords="쉬운 건강 정보, 플로로탄닌 쉽게, 건강상식, 혈당관리 방법, 자연 건강식품"
+        title="쉬운 플로로탄닌 건강정보 | 감태추출물·해양 폴리페놀 쉽게 이해하기"
+        description="누구나 이해하기 쉬운 플로로탄닌 건강정보. 감태추출물·해양 폴리페놀이 항산화·염증·수면·혈당·면역·장 건강·뇌 건강에 어떻게 작용하는지 쉽게 설명하는 종합 건강정보 데이터센터입니다."
+        keywords="쉬운 플로로탄닌 건강정보, 감태추출물 쉽게, 해양 폴리페놀 이해, 항산화, 염증, 수면, 혈당, 면역, 장 건강, 뇌 건강"
         canonical="https://phlorotannin.com/easy"
       />
 
