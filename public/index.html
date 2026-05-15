@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- ===== 파비콘 & 앱 아이콘 ===== -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0D1B3E" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta id="apple-app-title" name="apple-mobile-web-app-title" content="플로로탄닌" />
+
+    <!-- ===== 동적 PWA Manifest (/p/ 파트너 페이지 전용) ===== -->
+    <script>
+    (function() {
+      var path = window.location.pathname;
+      var m = path.match(/^\/p\/(\d+)/);
+      if (m) {
+        var phone = m[1];
+        // 파트너 이름은 partners.json에서 가져와야 하지만,
+        // manifest는 페이지 로드 초기에 즉시 필요하므로
+        // 먼저 기본 이름으로 manifest를 주입하고, JS 로드 후 교체한다.
+        var manifestData = {
+          name: '플로로탄닌',
+          short_name: '플로로탄닌',
+          start_url: '/p/' + phone + '?view=card',
+          display: 'standalone',
+          background_color: '#0D1B3E',
+          theme_color: '#0D1B3E',
+          orientation: 'portrait',
+          icons: [
+            { src: '/icon-192.png', sizes: '192x192', type: 'image/png', purpose: 'any maskable' },
+            { src: '/icon-512.png', sizes: '512x512', type: 'image/png', purpose: 'any maskable' }
+          ]
+        };
+        var blob = new Blob([JSON.stringify(manifestData)], { type: 'application/json' });
+        var url = URL.createObjectURL(blob);
+        var link = document.createElement('link');
+        link.rel = 'manifest';
+        link.href = url;
+        document.head.appendChild(link);
+
+        // partners.json에서 파트너 이름을 가져와 manifest & apple-title 업데이트
+        var partnersUrls = [
+          'https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/public/partners.json?t=' + Date.now(),
+          'https://phlorotannin.com/partners.json?t=' + Date.now()
+        ];
+        function tryFetch(idx) {
+          if (idx >= partnersUrls.length) return;
+          fetch(partnersUrls[idx], { cache: 'no-store' })
+            .then(function(r) { return r.ok ? r.json() : Promise.reject(); })
+            .then(function(data) {
+              var partners = data.partners || [];
+              var found = partners.find(function(p) {
+                return (p.phone || '').replace(/\D/g, '') === phone || p.slug === phone;
+              });
+              if (found && found.name) {
+                var appName = '플로로탄닌 - ' + found.name;
+                // manifest 교체
+                manifestData.name = appName;
+                manifestData.short_name = appName;
+                var blob2 = new Blob([JSON.stringify(manifestData)], { type: 'application/json' });
+                link.href = URL.createObjectURL(blob2);
+                // iOS apple-mobile-web-app-title 교체
+                var appleTitle = document.getElementById('apple-app-title');
+                if (appleTitle) appleTitle.setAttribute('content', appName);
+              }
+            })
+            .catch(function() { tryFetch(idx + 1); });
+        }
+        tryFetch(0);
+      }
+    })();
+    </script>
+
+    <!-- ===== 기본 SEO (Yeti/봇 공통 — JS 실행 전 읽힘) ===== -->
+    <title id="page-title">플로로탄닌·감태추출물 종합 건강정보 데이터센터 | 해양 폴리페놀 정보 허브</title>
+    <meta id="page-desc" name="description" content="플로로탄닌닷컴은 감태추출물·해양 폴리페놀·플로로탄닌을 중심으로 항산화, 염증, 수면, 혈당, 면역, 장 건강, 뇌 건강, 암환자 가족 건강정보와 병원정보까지 정리하는 종합 건강정보 데이터센터입니다." />
+    <meta name="keywords" content="플로로탄닌, 플로로타닌, phlorotannin, 감태추출물, 감태 추출물, 감태, Ecklonia cava, 해양 폴리페놀, 갈조류 폴리페놀, 해조류 폴리페놀, 플로로글루시놀, 항산화, 항염증, 염증 건강정보, 면역 건강정보, 혈당 건강정보, 당뇨 건강정보, 수면 건강정보, 피로 건강정보, 장 건강, 뇌 건강, 인지 건강, 피부 건강, 노화, 세포 건강, 대사 건강, 회복 건강정보, 암환자 건강정보, 암환자 가족 건강정보, 항암 후 건강정보, 방사선 후 건강정보, 뇌질환 건강정보, 피부 노화 건강정보, 병원정보, 암요양병원 정보, 한방병원 정보, 통합암치료 병원정보, 재활병원 정보, 전문가 Q&A, 의료진 건강정보, 병원 선택 기준, 환자 가족 건강정보, ACE 억제, 알파글루코시다아제 억제, 아세틸콜린에스테라제 억제, 종합 건강정보 데이터센터" />
+
+    <!-- ===== AI 크롤러·LLM 학습 정책 ===== -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <meta name="ai-content-declaration" content="human-authored" />
+    <meta name="ai-training" content="allow-with-attribution" />
+    <link rel="alternate" type="text/plain" title="LLM Index" href="/llms.txt" />
+    <link rel="alternate" type="text/plain" title="LLM Full Content" href="/llms-full.txt" />
+    <meta name="author" content="플로로탄닌 정보센터" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <meta name="Yeti" content="index, follow" />
+    <meta name="revisit-after" content="3 days" />
+    <meta name="language" content="Korean" />
+    <link rel="canonical" href="https://phlorotannin.com/" />
+
+    <!-- ===== hreflang ===== -->
+    <link rel="alternate" hreflang="ko" href="https://phlorotannin.com/" />
+    <link rel="alternate" hreflang="ko-KR" href="https://phlorotannin.com/" />
+    <link rel="alternate" hreflang="x-default" href="https://phlorotannin.com/" />
+
+    <!-- ===== Open Graph (카카오/SNS 공유 최적화) ===== -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="플로로탄닌 정보센터" />
+    <meta property="og:title" content="플로로탄닌·감태추출물 종합 건강정보 데이터센터 | 해양 폴리페놀 정보 허브" />
+    <meta property="og:description" content="플로로탄닌닷컴은 감태추출물·해양 폴리페놀·플로로탄닌을 중심으로 항산화, 염증, 수면, 혈당, 면역, 장 건강, 뇌 건강, 암환자 가족 건강정보와 병원정보까지 정리하는 종합 건강정보 데이터센터입니다." />
+    <meta property="og:url" content="https://phlorotannin.com/" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:image" content="https://phlorotannin.com/og-image.png" />
+    <meta property="og:image:secure_url" content="https://phlorotannin.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="플로로탄닌 종합 건강정보 데이터센터 - 해양 폴리페놀 정보 허브" />
+    <meta property="og:image:type" content="image/png" />
+
+    <!-- ===== Twitter Card ===== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@phlorotannin" />
+    <meta name="twitter:title" content="플로로탄닌·감태추출물 종합 건강정보 데이터센터" />
+    <meta name="twitter:description" content="플로로탄닌 → 감태추출물 → 해양 폴리페놀 → 질환별 건강정보 → 병원정보로 확장되는 종합 건강정보 데이터센터." />
+    <meta name="twitter:image" content="https://phlorotannin.com/og-image.png" />
+    <meta name="twitter:image:alt" content="플로로탄닌 종합 건강정보 데이터센터 - 건강정보 아카이브" />
+
+    <!-- ===== 네이버 서치어드바이저 소유권 확인 ===== -->
+    <meta name="naver-site-verification" content="9070e155846304f7a532561814fb3d36d458af07" />
+
+    <!-- ===== Google Search Console 소유권 확인 ===== -->
+    <meta name="google-site-verification" content="ia0nX1dfOFDCcex3AVKi2yyYHZdN1XqurS-AvIDQesg" />
+
+    <!-- ===== 네이버 Yeti봇 대응: URL+쿼리별 정적 title/description 선주입 ===== -->
+    <!-- Yeti는 JS 렌더링 없이 HTML만 읽으므로, URL별로 미리 메타를 교체 -->
+    <script>
+    (function() {
+      var path = window.location.pathname;
+      var search = window.location.search; // ?category=xxx 포함
+
+      // ── 경로별 기본 메타 (종합 건강정보 데이터센터 방향) ─────
+      var PAGE_META = {
+        '/':           { t: '플로로탄닌·감태추출물 종합 건강정보 데이터센터 | 해양 폴리페놀 정보 허브', d: '플로로탄닌닷컴은 감태추출물·해양 폴리페놀·플로로탄닌을 중심으로 항산화, 염증, 수면, 혈당, 면역, 장 건강, 뇌 건강, 암환자 가족 건강정보와 병원정보까지 정리하는 종합 건강정보 데이터센터입니다.' },
+        '/home':       { t: '플로로탄닌 건강정보 허브 | 감태추출물·해양 폴리페놀 쉽게 이해하기', d: '플로로탄닌 건강정보 허브 — 감태추출물·해양 폴리페놀을 중심으로 항산화·염증·혈당·수면·면역·뇌 건강 정보를 한곳에서 쉽게 이해할 수 있는 종합 건강정보 데이터센터입니다.' },
+        '/easy':       { t: '쉬운 플로로탄닌 건강정보 | 감태추출물·해양 폴리페놀 쉽게 이해하기', d: '누구나 이해하기 쉬운 플로로탄닌 건강정보. 감태추출물·해양 폴리페놀이 항산화·염증·수면·혈당·면역·장 건강·뇌 건강에 어떻게 작용하는지 쉽게 설명하는 종합 건강정보 데이터센터입니다.' },
+        '/qa':         { t: '질환별 건강정보 Q&A 1,361개 | 플로로탄닌 데이터센터', d: '플로로탄닌·감태추출물·해양 폴리페놀과 연결된 1,361개 질환별 건강정보 Q&A. 당뇨·고혈압·치매·암환자 가족·수면·피부 노화 등 12개 영역 아카이브.' },
+        '/phlorotannin': { t: '플로로탄닌이란? 감태추출물·해양 폴리페놀 쉽게 이해하는 건강정보 | 데이터센터', d: '플로로탄닌(phlorotannin)은 감태(Ecklonia cava)에서 추출한 해양 폴리페놀입니다. 항산화·염증·질환별 건강정보 관점에서 작용 기전, 연구 흐름, 갈조류 폴리페놀과의 관계를 쉽게 정리한 건강정보.' },
+        '/learn':      { t: '플로로탄닌 쉽게 배우기 | 감태추출물·해양 폴리페놀 질환별 건강정보', d: '플로로탄닌과 감태추출물이 항산화·염증·당뇨·수면·뇌·피부 노화 건강정보와 어떻게 연결되는지 쉽게 설명. 질환별 건강정보 진입로.' },
+        '/easy':       { t: '쉬운 건강정보 모음 | 플로로탄닌·감태추출물·질환별 건강정보', d: '암환자 가족·당뇨·고혈압·수면·면역·뇌·피부 노화 건강정보를 누구나 이해하기 쉽게 정리. 플로로탄닌·해양 폴리페놀 연구 흐름까지 연결.' },
+        '/consult':    { t: '전문가 Q&A·상담 | 플로로탄닌 종합 건강정보 데이터센터', d: '플로로탄닌·감태추출물·질환별 건강정보·병원정보 관련 궁금증을 전문가에게 직접 문의. 환자 가족이 알아야 할 정보, 병원 선택 기준 안내.' },
+        '/partner':    { t: '파트너 참여 안내 | 플로로탄닌 건강정보 데이터센터', d: '플로로탄닌과 감태추출물 건강정보를 함께 전하는 파트너 참여 안내. 교육 지원, 전자명함, 커뮤니티 제공.' },
+        '/community':  { t: '건강정보 커뮤니티 | 플로로탄닌·질환별 건강정보·병원정보 공유', d: '암환자 가족·당뇨·고혈압·수면·면역 건강정보와 병원정보 경험을 나누는 커뮤니티. 플로로탄닌·감태추출물 관련 사례 공유.' },
+        '/blog':       { t: '연구·질환별 건강정보 블로그 | 플로로탄닌 데이터센터', d: '플로로탄닌·감태추출물 최신 연구와 항산화·염증·당뇨·수면·뇌·피부 노화·암환자 가족 건강정보·병원정보까지 종합 정리한 건강정보 블로그.' },
+      };
+
+      // ── Q&A 카테고리별 메타 (질환별 건강정보 아카이브) ────────
+      var QA_CAT_META = {
+        'metabolism':            { t: '당뇨·혈당 건강정보 Q&A | 플로로탄닌·감태추출물 연결 자료', d: '당뇨 건강정보, 혈당 건강정보, 인슐린 저항성, 대사 건강 100개 Q&A. 플로로탄닌·감태추출물·해양 폴리페놀이 항산화·염증 관점에서 어떻게 연결되는지 정리.' },
+        'cancer_immune':         { t: '암환자·암환자 가족 건강정보 Q&A | 항암 후·방사선 후 건강정보', d: '암환자 건강정보, 암환자 가족 건강정보, 항암 후 건강정보, 방사선 후 건강정보 155개 Q&A. 면역·항산화·염증 관리, 통합암치료 병원정보까지 연결.' },
+        'cardiovascular':        { t: '고혈압·심혈관 건강정보 Q&A | 항산화·염증 관점 자료', d: '고혈압·심혈관 건강정보 100개 Q&A. ACE 억제, 혈관 내피 보호, 항산화·염증·플로로탄닌·해양 폴리페놀 연구 흐름 정리.' },
+        'neuro_cognitive':       { t: '뇌 건강·인지 건강·뇌질환 건강정보 Q&A | 플로로탄닌 데이터센터', d: '치매 예방, 인지 건강, 뇌질환 건강정보 130개 Q&A. AChE 억제, 뇌 염증·항산화 관점에서 플로로탄닌·감태추출물 연구 흐름 정리.' },
+        'mental_health':         { t: '수면 건강정보·피로 건강정보·스트레스 Q&A | 회복 건강정보', d: '수면 건강정보, 피로 건강정보, 스트레스·자율신경 110개 Q&A. 플로로탄닌·해양 폴리페놀 항산화·염증 관점의 회복 건강정보.' },
+        'digestive':             { t: '장 건강·간 건강·소화 건강정보 Q&A | 데이터센터', d: '장 건강, 간 건강, 소화 건강정보 100개 Q&A. 장내 마이크로바이옴·간 기능·플로로탄닌·해양 폴리페놀 항산화·염증 정리.' },
+        'musculoskeletal':       { t: '관절·골다공증·근골격 건강정보 Q&A | 노화·회복 건강정보', d: '관절염·골다공증·근육 건강정보 100개 Q&A. MMP 억제·연골 보호·노화 관점, 플로로탄닌·감태추출물·항산화 연구 흐름 정리.' },
+        'skin_hair':             { t: '피부 노화 건강정보·모발 건강 Q&A | 항산화·염증 관점', d: '피부 노화 건강정보, 모발·두피 건강 100개 Q&A. 콜라겐 합성·MMP-1·항산화·염증 관점에서 플로로탄닌·감태추출물 정리.' },
+        'respiratory':           { t: '호흡기 건강정보 Q&A | 알레르기·기관지 자료', d: '호흡기 건강정보 102개 Q&A. 기도 염증·산화스트레스·호흡기 면역 관점에서 플로로탄닌·해양 폴리페놀 연구 정리.' },
+        'infection_inflammation':{ t: '염증 건강정보·면역 건강정보 Q&A | 항염·항산화 자료', d: '염증 건강정보, 면역 건강정보 110개 Q&A. iNOS·COX-2·사이토카인 조절 관점에서 플로로탄닌·감태추출물·해양 폴리페놀 연구 흐름 정리.' },
+        'womens_health':         { t: '여성·갱년기 건강정보 Q&A | 호르몬·골밀도 자료', d: '갱년기·여성 호르몬·골밀도 건강정보 102개 Q&A. 에스트로겐 관련 염증·항산화 관점, 플로로탄닌·감태추출물 연구 흐름 정리.' },
+        'mens_health':           { t: '남성·중년·대사 건강정보 Q&A | 활력·심혈관 자료', d: '전립선·활력·중년 남성 건강정보 102개 Q&A. 산화스트레스·에너지 대사·심혈관 관점에서 플로로탄닌·해양 폴리페놀 정리.' },
+      };
+
+      var meta = PAGE_META[path] || PAGE_META['/'];
+
+      // /qa?category=xxx 대응
+      if (path === '/qa' && search) {
+        var m = search.match(/[?&]category=([^&]+)/);
+        if (m && QA_CAT_META[m[1]]) {
+          meta = QA_CAT_META[m[1]];
+        }
+      }
+
+      // /p/ 파트너 명함 페이지
+      if (path.indexOf('/p/') === 0) {
+        meta = { t: '파트너 건강정보 페이지 | 플로로탄닌·감태추출물 건강정보 데이터센터', d: '플로로탄닌·감태추출물·해양 폴리페놀 건강정보를 함께 안내하는 파트너 페이지. 항산화·염증·혈당·수면·면역·뇌 건강·암환자 가족 건강정보·병원정보를 한 곳에서 확인하세요.' };
+      }
+
+      // title 교체
+      var titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = meta.t;
+      document.title = meta.t;
+      // description 교체
+      var descEl = document.getElementById('page-desc');
+      if (descEl) descEl.setAttribute('content', meta.d);
+      // og:title / og:description 교체
+      var ogTitle = document.querySelector('meta[property="og:title"]');
+      if (ogTitle) ogTitle.setAttribute('content', meta.t);
+      var ogDesc = document.querySelector('meta[property="og:description"]');
+      if (ogDesc) ogDesc.setAttribute('content', meta.d);
+      // canonical 교체 (쿼리 포함)
+      var canonical = document.querySelector('link[rel="canonical"]');
+      if (canonical) {
+        var canonicalPath = path === '/' ? '/' : path;
+        if (path === '/qa' && search && search.indexOf('category=') !== -1) {
+          canonicalPath = path + search.replace(/&?page=\d+/g, '').replace(/&?openId=[^&]*/g, '');
+        }
+        canonical.setAttribute('href', 'https://phlorotannin.com' + canonicalPath);
+      }
+    })();
+    </script>
+
+    <!-- ===== JSON-LD 구조화 데이터 ===== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://phlorotannin.com/#organization",
+          "name": "플로로탄닌 파트너스",
+          "alternateName": ["Phlorotannin Partners", "플로로탄닌", "감태추출물", "해양 폴리페놀", "플로로탄닌 종합 건강정보 데이터센터", "질환별 건강정보 아카이브"],
+          "url": "https://phlorotannin.com",
+          "logo": {
+            "@type": "ImageObject",
+            "@id": "https://phlorotannin.com/#logo",
+            "url": "https://phlorotannin.com/og-image.png",
+            "contentUrl": "https://phlorotannin.com/og-image.png",
+            "width": 1200,
+            "height": 630,
+            "caption": "플로로탄닌 파트너스 로고"
+          },
+          "image": { "@id": "https://phlorotannin.com/#logo" },
+          "description": "플로로탄닌·감태추출물·해양 폴리페놀을 중심으로 항산화·염증·질환별 건강정보, 병원정보, 전문가 Q&A까지 확장되는 종합 건강정보 데이터센터. 암·당뇨·뇌질환·심혈관·여성건강 등 12개 질환 카테고리 1,361개 Q&A와 임상 연구 기반 건강정보 아카이브.",
+          "foundingDate": "2024",
+          "areaServed": "KR",
+          "knowsLanguage": "ko"
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://phlorotannin.com/#website",
+          "url": "https://phlorotannin.com",
+          "name": "플로로탄닌 파트너스",
+          "alternateName": "Phlorotannin Partners Health Archive",
+          "description": "플로로탄닌 → 감태추출물 → 해양 폴리페놀 → 항산화·염증 → 질환별 건강정보 → 병원정보·전문가 Q&A로 확장되는 종합 건강정보 데이터센터. 1,361개 Q&A + 임상 근거 기반 건강정보 + 병원·전문가 가이드.",
+          "publisher": { "@id": "https://phlorotannin.com/#organization" },
+          "inLanguage": "ko-KR",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://phlorotannin.com/qa?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://phlorotannin.com/#webpage",
+          "url": "https://phlorotannin.com",
+          "name": "플로로탄닌·감태추출물 종합 건강정보 데이터센터 | 해양 폴리페놀·질환별 건강정보·병원정보",
+          "description": "플로로탄닌·감태추출물·해양 폴리페놀을 중심으로 항산화·염증, 암·당뇨·뇌질환·심혈관·여성건강 등 질환별 건강정보와 병원정보·전문가 Q&A까지 한곳에서 확인하는 종합 건강정보 데이터센터. 1,361개 Q&A 제공.",
+          "isPartOf": { "@id": "https://phlorotannin.com/#website" },
+          "about": { "@id": "https://phlorotannin.com/#organization" },
+          "inLanguage": "ko-KR",
+          "dateModified": "2026-04-24",
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "홈", "item": "https://phlorotannin.com/" }
+            ]
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://phlorotannin.com/qa#faqpage",
+          "url": "https://phlorotannin.com/qa",
+          "name": "질환별 건강정보 Q&A 1,361개 | 플로로탄닌·감태추출물 종합 건강정보 데이터센터",
+          "description": "플로로탄닌·감태추출물·해양 폴리페놀 관점에서 정리한 당뇨·고혈압·치매·항암·심혈관·여성건강·정신건강·근골격·피부 등 12개 질환 카테고리 건강정보 Q&A 1,361개. 항산화·염증 기전부터 질환별 건강정보, 병원정보, 전문가 답변까지 한곳에서.",
+          "inLanguage": "ko-KR",
+          "isPartOf": { "@id": "https://phlorotannin.com/#website" },
+          "dateModified": "2026-04-27",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "플로로탄닌이란 무엇인가요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "플로로탄닌(Phlorotannin)은 감태·미역·다시마 등 갈조류에서 추출되는 해양 폴리페놀 성분입니다. 플로로글루시놀이 중합된 구조로 강력한 항산화, 항염, 혈당 조절 효과가 연구되고 있습니다."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "플로로탄닌이 혈당에 도움이 되나요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "네. 임상 연구에 따르면 플로로탄닌 섭취 후 공복 혈당이 약 27% 감소한 결과가 보고되었습니다. 알파-글루코시다아제 억제를 통해 식후 혈당 급상승을 완화하는 기전이 확인되었습니다."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "플로로탄닌은 고혈압에도 효과가 있나요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "플로로탄닌은 ACE(안지오텐신 전환효소) 억제 작용을 통해 혈압 조절에 도움이 될 수 있습니다. 동물 실험 및 일부 임상 연구에서 이완기·수축기 혈압 감소 효과가 관찰되었습니다."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "플로로탄닌이 치매 예방에 도움이 되나요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "플로로탄닌은 아세틸콜린에스테라제 억제 및 산화 스트레스 감소를 통해 인지 기능 보호에 기여할 수 있습니다. 뇌 신경 세포 보호 효과가 연구되고 있으며, 치매 예방 보조 목적으로 주목받고 있습니다."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "플로로탄닌은 항암 효과가 있나요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "플로로탄닌은 암세포 사멸 유도(아폽토시스)와 혈관신생 억제 효과가 세포 실험 및 동물 실험에서 보고되었습니다. 다만 임상 적용을 위해서는 추가 연구가 필요합니다."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "플로로탄닌을 어떻게 섭취하나요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "플로로탄닌은 감태 추출물 형태의 건강기능식품으로 섭취할 수 있습니다. 식품의약품안전처에서 인정한 기능성 원료이며, 전문 파트너를 통해 올바른 섭취 방법을 안내받을 수 있습니다."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "감태추출물 효능은 무엇인가요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "감태추출물(Ecklonia cava extract)의 핵심 활성 성분 플로로탄닌은 6가지 주요 효능이 보고됩니다. ① 항산화(DPPH 라디칼 소거), ② 혈당 조절(알파-글루코시다아제 억제), ③ 혈압 조절(ACE 억제), ④ 신경 보호(AChE·BACE-1 억제), ⑤ 항염증(NF-κB·COX-2 억제), ⑥ 항암 보조(전임상). 단일 표적이 아니라 회복 환경 전체에 작용하는 다중 기전 성분군입니다."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "감태추출물 복용법과 1일 권장량은 얼마인가요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "식품의약품안전처 인정 기준은 디에콜(Dieckol) 함량 기준 1일 90mg 이하이며, 일반 건강기능식품 제품은 1일 1~2회 1회 250~500mg 수준입니다. 혈당 목적은 식전 30분, 항산화·항염 목적은 시간 무관하게 매일 일정한 시간에 미지근한 물과 함께 섭취합니다. 폴리페놀은 누적 효과가 중요하므로 최소 3개월 이상 꾸준한 섭취가 권장됩니다."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "감태추출물 부작용과 주의사항은 무엇인가요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "식약처 인정 권장량 범위에서 보고된 부작용은 드물고 경미합니다. 일부 사례에서 위장 불편감, 가벼운 두통, 해조류 알레르기 반응이 보고되었습니다. 주의 대상: ① 임신부·수유부는 권장하지 않음, ② 갑상선 질환자(요오드 함유 가능), ③ 항응고제·아스피린 복용자(혈소판 응집 억제 가능), ④ 혈당강하제·혈압약 복용자(작용 중복 가능). 이들은 반드시 의료진과 상담 후 섭취하셔야 합니다."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "감태와 후코이단의 차이는 무엇인가요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "감태(플로로탄닌)와 후코이단은 같은 갈조류에서 유래하지만 화학적 분류가 완전히 다릅니다. 플로로탄닌은 해양 폴리페놀(플로로글루시놀 중합체)이고, 후코이단은 황산화 다당류(L-Fucose + 황산기)입니다. 작용 기전도 다릅니다 — 플로로탄닌은 항산화·혈당·혈압·신경 보호 등 다중 기전, 후코이단은 면역 조절·항응고에 주로 연구됩니다. '경쟁이 아니라 카테고리가 다르다'는 표현이 가장 정확합니다."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "감태추출물은 미역·다시마와 같은 효과인가요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "아닙니다. 미역·다시마에도 소량의 플로로탄닌이 존재하지만, 추출·농축·표준화된 감태추출물과는 활성 성분(디에콜 등) 농도가 크게 다릅니다. 미역·다시마는 주로 식이섬유·요오드·미네랄 공급원으로 분류되며, 감태추출물은 표준화된 폴리페놀 농축물로 기능성 원료로 인정받았습니다."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "감태추출물 효과는 언제부터 느낄 수 있나요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "개인차가 크지만 일반적으로 2~3개월 꾸준한 섭취 후 컨디션·수면·소화 등의 변화가 보고됩니다. 혈당·혈압·콜레스테롤 같은 수치 변화는 정기 건강검진에서 확인할 수 있습니다. 폴리페놀은 단발성보다 누적 효과가 크므로, 최소 3개월 꾸준한 섭취가 의미있는 변화를 위한 기본 기간으로 권장됩니다."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "카르노신·프테로스틸벤과 플로로탄닌은 무엇이 다른가요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "카르노신과 프테로스틸벤이 흡수 후 개별 기전 중심으로 작동하는 '정밀 조정형 공구 2개'라면, 플로로탄닌은 소화관을 거친 뒤 장-대사-환경 조성 관점에서 여러 기전이 펼쳐지는 '공구통형 해양 폴리페놀'입니다. 카르노신·프테로스틸벤은 상대적으로 단순한 구조의 정밀 조정형이고, 플로로탄닌은 다양한 분자 구조 덕분에 항산화·항염·수면·혈당·인지·대사 등 회복 환경 전체에 동시에 관여할 수 있는 다중 기전 성분군입니다."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "콜라겐과 플로로탄닌은 무엇이 다른가요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "콜라겐은 '재료(벽돌)', 플로로탄닌은 '회복 환경(시공 환경)'입니다. 콜라겐은 먹는 순간 소화 효소에 의해 펩타이드와 아미노산으로 분해되어 피부로 직배송되지 않습니다 — 몸이 필요한 곳에 다시 배치합니다. 플로로탄닌은 산화 스트레스·만성 염증·장 환경 같은 회복 환경 자체를 조성하는 폴리페놀입니다. 좋은 재료(콜라겐)도 환경(플로로탄닌)이 받쳐줘야 효율이 납니다. 함께 섭취 가능하며 보완적입니다."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "홍삼과 플로로탄닌, 함께 먹어도 되나요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "일반적으로 함께 섭취 가능합니다. 카테고리가 다릅니다. 홍삼·사포닌(진세노사이드)은 육상 트리테르페노이드 사포닌으로 활력·피로·면역 중심의 '좋은 연료' 역할이고, 플로로탄닌은 해양 폴리페놀로 산화·염증·대사 환경을 조성하는 '엔진과 도로 정비' 역할입니다. 함께 작동하면 회복 관점이 더 넓어집니다. 처방약 복용자는 의료진과 상담 후 병용 여부를 결정하세요."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "태반·줄기세포 치료를 받고 있는데 플로로탄닌이 도움될까요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "태반·줄기세포는 '재생 재료(좋은 모종)', 플로로탄닌은 '회복 환경(토양·햇빛·물)'에 해당합니다. 비싼 재생 시술의 효과가 짧게 끝나는 이유 중 하나는 작동할 회복 환경이 무너져 있기 때문입니다. 환경 조성 관점에서 폴리페놀이 보조적 의미가 있다는 보고가 있으나, 줄기세포 치료·면역억제제·특정 항암제와 병용 시 반드시 주치의와 상담 후 결정하셔야 합니다."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "비타민·오메가3를 다 챙겨 먹는데 왜 회복이 안 될까요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "기초 영양은 채웠지만 회복 환경(만성 산화·저강도 염증·장 환경·수면 질·스트레스 호르몬)은 그대로이기 때문입니다. 빈 잔에 물을 부어도 잔이 깨져 있으면 새어 나갑니다. 비타민·오메가3가 '연료·엔진오일'이라면, 플로로탄닌은 차가 다닐 '도로·운행 환경'입니다. 둘은 다른 일을 하는 보완 관계이며 함께 섭취 가능합니다. 결핍 보충(비타민·오메가3)과 환경 조성(플로로탄닌)을 함께 가져가는 것이 회복의 정답에 가깝습니다."
+              }
+            }
+          ]
+        },
+        {
+          "@type": "MedicalWebPage",
+          "@id": "https://phlorotannin.com/#medpage",
+          "url": "https://phlorotannin.com",
+          "name": "플로로탄닌·감태추출물 종합 건강정보 데이터센터",
+          "description": "플로로탄닌 → 감태추출물 → 해양 폴리페놀 → 항산화·염증 → 질환별 건강정보 → 병원정보·전문가 Q&A로 확장되는 종합 건강정보 데이터센터. 12개 질환 카테고리 구조화 Q&A + 임상 근거 기반 건강정보 + 병원·전문가 가이드.",
+          "medicalAudience": {
+            "@type": "MedicalAudience",
+            "audienceType": "암환자·암환자 가족, 만성질환 정보 탐색자, 항암 후 회복·방사선 후 일상 관리, 뇌질환 가족, 임상 근거 기반 건강정보 필요 일반인"
+          },
+          "about": {
+            "@type": "MedicalCondition",
+            "name": "질환별 건강정보·항산화·염증 관리·회복 건강정보",
+            "alternateName": ["당뇨 건강정보", "고혈압 건강정보", "치매예방 건강정보", "암환자 건강정보", "항암 후 건강정보", "방사선 후 건강정보", "뇌질환 건강정보", "만성염증 건강정보", "혈당관리 건강정보", "감태추출물", "해양 폴리페놀", "항산화", "염증", "암요양병원 정보", "한방병원 정보", "재활병원 정보", "통합암치료"]
+          },
+          "isPartOf": { "@id": "https://phlorotannin.com/#website" },
+          "inLanguage": "ko-KR"
+        },
+        {
+          "@type": "Dataset",
+          "@id": "https://phlorotannin.com/#qa-dataset",
+          "name": "플로로탄닌·감태추출물 종합 건강정보 Q&A 1,361개 데이터센터",
+          "description": "플로로탄닌 → 감태추출물 → 해양 폴리페놀 → 항산화·염증 → 질환별 건강정보 → 병원정보·전문가 Q&A로 확장되는 종합 건강정보 데이터센터. 12개 질환 카테고리로 구조화된 1,361개 Q&A. 임상 근거 기반 건강정보 아카이브로 AI 학습·인용 가능(출처 명시 조건).",
+          "keywords": ["플로로탄닌", "phlorotannin", "감태", "감태추출물", "해양 폴리페놀", "Ecklonia cava", "항산화", "염증", "질환별 건강정보", "암환자 건강정보", "항암 후 건강정보", "뇌질환 건강정보", "당뇨 건강정보", "병원정보", "암요양병원 정보", "전문가 Q&A", "종합 건강정보 데이터센터"],
+          "url": "https://phlorotannin.com/qa",
+          "sameAs": "https://phlorotannin.com/qa.json",
+          "inLanguage": "ko-KR",
+          "isAccessibleForFree": true,
+          "license": "https://phlorotannin.com/llms.txt",
+          "creator": { "@id": "https://phlorotannin.com/#organization" },
+          "publisher": { "@id": "https://phlorotannin.com/#organization" },
+          "distribution": [
+            {
+              "@type": "DataDownload",
+              "encodingFormat": "application/json",
+              "contentUrl": "https://phlorotannin.com/qa.json"
+            },
+            {
+              "@type": "DataDownload",
+              "encodingFormat": "text/plain",
+              "contentUrl": "https://phlorotannin.com/llms-full.txt"
+            },
+            {
+              "@type": "DataDownload",
+              "encodingFormat": "application/rss+xml",
+              "contentUrl": "https://phlorotannin.com/rss.xml"
+            }
+          ]
+        },
+        {
+          "@type": "DefinedTermSet",
+          "@id": "https://phlorotannin.com/#glossary",
+          "name": "플로로탄닌 종합 건강정보 용어집 (Topic Cluster)",
+          "description": "플로로탄닌 → 감태추출물 → 해양 폴리페놀 → 항산화·염증 → 질환별 건강정보 → 병원정보·전문가 Q&A로 확장되는 종합 건강정보 데이터센터 토픽 클러스터.",
+          "hasDefinedTerm": [
+            {
+              "@type": "DefinedTerm",
+              "name": "플로로탄닌 (Phlorotannin)",
+              "description": "갈조류(Phaeophyceae)에서 추출되는 해양 폴리페놀 성분군. 데이터센터의 중심 키워드이자 모든 확장 토픽의 고정 널."
+            },
+            {
+              "@type": "DefinedTerm",
+              "name": "감태추출물 (Ecklonia cava Extract)",
+              "description": "한국 남해·제주 연안 갈조류 감태에서 추출한 플로로탄닌 고함유 성분군. 식약처 인정 기능성 원료(디에콜 1일 90mg 이하)."
+            },
+            {
+              "@type": "DefinedTerm",
+              "name": "해양 폴리페놀 (Marine Polyphenol)",
+              "description": "해조류·해양 식물에서 유래한 폴리페놀 화합물군. 육상 식물 폴리페놀과 다른 구조·활성 프로필."
+            },
+            {
+              "@type": "DefinedTerm",
+              "name": "플로로글루시놀 (Phloroglucinol)",
+              "description": "플로로탄닌의 기본 단량체(C₆H₆O₃). 1,3,5-trihydroxybenzene 구조."
+            },
+            {
+              "@type": "DefinedTerm",
+              "name": "항산화 (Antioxidant)",
+              "description": "활성산소(ROS)·자유라디칼 제거 작용. 노화·세포 손상·만성질환의 교차점으로, 플로로탄닌 데이터센터의 핵심 확장 주제."
+            },
+            {
+              "@type": "DefinedTerm",
+              "name": "염증 (Inflammation)",
+              "description": "광범위 만성질환의 공통 기전. NF-κB·COX-2·TNF-α·IL-6 경로를 중심으로 질환별 건강정보 클러스터를 연결."
+            },
+            {
+              "@type": "DefinedTerm",
+              "name": "질환별 건강정보 (Disease-Specific Health Information)",
+              "description": "데이터센터 5상 클러스터. 당뇨·고혈압·치매·암·우울·여성건강·남성건강 등 12개 카테고리 구조화 건강정보."
+            },
+            {
+              "@type": "DefinedTerm",
+              "name": "병원정보 (Hospital Information)",
+              "description": "데이터센터 6상 클러스터. 암요양병원·한방병원·재활병원·통합암치료 등 환자 가족이 필요로 하는 병원·전문가 정보."
+            },
+            {
+              "@type": "DefinedTerm",
+              "name": "암환자 건강정보·암환자 가족 건강정보",
+              "description": "항암 후·방사선 후 일상 관리, 면역 회복, 가족 돌봄 정보를 포함하는 암 관련 건강정보 서브 클러스터."
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <!-- ===== 폰트 (Noto Sans KR — 한국어 최적화) ===== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- ===== 리소스 프리로드 ===== -->
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+
+    <!-- ===== Google Analytics GA4 ===== -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M14ZCFHD8K"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-M14ZCFHD8K', {
+        'send_page_view': true,
+        'cookie_flags': 'SameSite=None;Secure',
+        'anonymize_ip': true
+      });
+    </script>
+    <script type="module" crossorigin src="/assets/index-0mKgDFQ8.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/chunk-B3K2TuZy.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-zNNlZ93O.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

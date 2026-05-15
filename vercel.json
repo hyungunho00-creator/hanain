@@ -1,21 +1,26 @@
 {
-  "buildCommand": "cd hanain && npm install && npm run build",
+  "buildCommand": "cd hanain && npm install && npm run build && mkdir -p ../public && cp dist/index.html ../public/index.html",
   "outputDirectory": "hanain/dist",
+  "functions": {
+    "api/seo.js": {
+      "includeFiles": "public/**"
+    }
+  },
   "installCommand": "npm install",
   "rewrites": [
-    { "source": "/", "destination": "/api/_seo?p=/" },
-    { "source": "/home", "destination": "/api/_seo?p=/home" },
-    { "source": "/easy", "destination": "/api/_seo?p=/easy" },
-    { "source": "/phlorotannin", "destination": "/api/_seo?p=/phlorotannin" },
-    { "source": "/learn", "destination": "/api/_seo?p=/learn" },
-    { "source": "/qa", "destination": "/api/_seo?p=/qa" },
-    { "source": "/blog", "destination": "/api/_seo?p=/blog" },
-    { "source": "/blog/:slug", "destination": "/api/_seo?p=/blog/:slug" },
-    { "source": "/community", "destination": "/api/_seo?p=/community" },
-    { "source": "/consult", "destination": "/api/_seo?p=/consult" },
-    { "source": "/partner", "destination": "/api/_seo?p=/partner" },
-    { "source": "/category/:slug", "destination": "/api/_seo?p=/category/:slug" },
-    { "source": "/p/:phone", "destination": "/api/_seo?p=/p/:phone" },
+    { "source": "/", "destination": "/api/seo?p=/" },
+    { "source": "/home", "destination": "/api/seo?p=/home" },
+    { "source": "/easy", "destination": "/api/seo?p=/easy" },
+    { "source": "/phlorotannin", "destination": "/api/seo?p=/phlorotannin" },
+    { "source": "/learn", "destination": "/api/seo?p=/learn" },
+    { "source": "/qa", "destination": "/api/seo?p=/qa" },
+    { "source": "/blog", "destination": "/api/seo?p=/blog" },
+    { "source": "/blog/:slug", "destination": "/api/seo?p=/blog/:slug" },
+    { "source": "/community", "destination": "/api/seo?p=/community" },
+    { "source": "/consult", "destination": "/api/seo?p=/consult" },
+    { "source": "/partner", "destination": "/api/seo?p=/partner" },
+    { "source": "/category/:slug", "destination": "/api/seo?p=/category/:slug" },
+    { "source": "/p/:phone", "destination": "/api/seo?p=/p/:phone" },
     { "source": "/(.*)", "destination": "/index.html" }
   ],
   "headers": [
