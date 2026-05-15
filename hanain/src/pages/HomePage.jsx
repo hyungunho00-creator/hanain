@@ -132,7 +132,7 @@ export default function HomePage() {
     <div className="pt-16">
       <SEOHead
         title="플로로탄닌 건강정보 허브 | 감태추출물·해양 폴리페놀 쉽게 이해하기"
-        description="플로로탄닌 건강정보 허브 — 감태추출물·해양 폴리페놀을 중심으로 항산화·염증·혈당·수면·면역·뇌 건강 정보를 한곳에서 쉽게 이해할 수 있는 종합 건강정보 데이터센터입니다."
+        description="플로로탄닌과 감태추출물, 해양 폴리페놀의 기본 개념을 쉽게 정리한 건강정보 허브입니다. 항산화, 염증, 수면, 혈당, 면역 건강정보로 확장되는 핵심 내용을 안내합니다."
         keywords="플로로탄닌 건강정보 허브, 감태추출물 효과, 해양 폴리페놀, 항산화, 염증, 혈당 건강정보, 수면 건강정보, 면역 건강정보, 뇌 건강"
         canonical="https://phlorotannin.com/home"
         jsonLd={homeJsonLd}

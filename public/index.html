@@ -130,14 +130,17 @@
     <!-- ===== Google Search Console 소유권 확인 ===== -->
     <meta name="google-site-verification" content="ia0nX1dfOFDCcex3AVKi2yyYHZdN1XqurS-AvIDQesg" />
 
-    <!-- ===== 네이버 Yeti봇 대응: URL+쿼리별 정적 title/description 선주입 ===== -->
-    <!-- Yeti는 JS 렌더링 없이 HTML만 읽으므로, URL별로 미리 메타를 교체 -->
+    <!-- ===== (이전) 클라이언트 URL별 메타 선주입 스크립트 — 제거 =====
+         서버(Edge Function /api/seo)가 이미 경로별로 <title>, <meta description>,
+         og:*, canonical 을 주입하므로 클라이언트 인라인 스크립트가 다시 덮어쓰면
+         /home, /easy 등에서 SEOHead와 충돌하여 메인 title로 회귀하는 버그 발생.
+         SPA 라우팅 후의 title 변경은 SEOHead 컴포넌트가 담당. -->
     <script>
     (function() {
+      // 의도적으로 비활성화 — 아래 PAGE_META는 참고용으로만 보존 (실행되지 않음).
+      if (true) return;
       var path = window.location.pathname;
-      var search = window.location.search; // ?category=xxx 포함
-
-      // ── 경로별 기본 메타 (종합 건강정보 데이터센터 방향) ─────
+      var search = window.location.search;
       var PAGE_META = {
         '/':           { t: '플로로탄닌·감태추출물 종합 건강정보 데이터센터 | 해양 폴리페놀 정보 허브', d: '플로로탄닌닷컴은 감태추출물·해양 폴리페놀·플로로탄닌을 중심으로 항산화, 염증, 수면, 혈당, 면역, 장 건강, 뇌 건강, 암환자 가족 건강정보와 병원정보까지 정리하는 종합 건강정보 데이터센터입니다.' },
         '/home':       { t: '플로로탄닌 건강정보 허브 | 감태추출물·해양 폴리페놀 쉽게 이해하기', d: '플로로탄닌 건강정보 허브 — 감태추출물·해양 폴리페놀을 중심으로 항산화·염증·혈당·수면·면역·뇌 건강 정보를 한곳에서 쉽게 이해할 수 있는 종합 건강정보 데이터센터입니다.' },
@@ -543,7 +546,7 @@
         'anonymize_ip': true
       });
     </script>
-    <script type="module" crossorigin src="/assets/index-0mKgDFQ8.js"></script>
+    <script type="module" crossorigin src="/assets/index-CSOkJ38h.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/chunk-B3K2TuZy.js">
     <link rel="stylesheet" crossorigin href="/assets/index-zNNlZ93O.css">
   </head>
