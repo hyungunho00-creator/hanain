@@ -121,6 +121,35 @@ function staticMetaFor(pathname) {
       canonical: `${SITE}/blog`,
     }
   }
+  // SEO 확장 — 블로그 카테고리 랜딩 4종 (query string 기반)
+  if (pathname === '/blog?category=ingredient-comparison') {
+    return {
+      title: '성분 비교 아카이브 | 콜라겐·후코이단·베타글루칸·플로로탄닌 비교',
+      desc:  '다양한 건강성분과 플로로탄닌, 감태추출물, 해양 폴리페놀의 차이를 쉽게 비교하는 건강정보 아카이브입니다.',
+      canonical: `${SITE}/blog?category=ingredient-comparison`,
+    }
+  }
+  if (pathname === '/blog?category=disease-health-info') {
+    return {
+      title: '질환별 건강정보 | 암환자 가족·당뇨·수면·면역 정보 아카이브',
+      desc:  '암환자 가족 건강정보, 당뇨·혈당, 수면, 면역, 장 건강, 뇌 건강 등 사람들이 실제로 검색하는 건강정보를 정리합니다.',
+      canonical: `${SITE}/blog?category=disease-health-info`,
+    }
+  }
+  if (pathname === '/blog?category=hospital-info') {
+    return {
+      title: '병원정보 아카이브 | 암요양병원·한방병원·전문가 Q&A 정보',
+      desc:  '암요양병원, 한방병원, 재활병원, 전문가 Q&A 등 환자와 가족이 병원정보를 찾을 때 확인해야 할 기준을 정리합니다.',
+      canonical: `${SITE}/blog?category=hospital-info`,
+    }
+  }
+  if (pathname === '/blog?category=partner-info') {
+    return {
+      title: '파트너 개인 정보페이지 | 전자명함과 건강정보 플랫폼을 하나로 연결하는 방식',
+      desc:  'phlorotannin.com 안에서 파트너 개인 링크를 전자명함, 정보 안내, 상담 연결 페이지로 활용하는 구조를 설명합니다.',
+      canonical: `${SITE}/blog?category=partner-info`,
+    }
+  }
   if (pathname === '/community') {
     return {
       title: '건강정보 커뮤니티 | 플로로탄닌·감태추출물 건강정보 아카이브',

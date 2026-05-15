@@ -14,6 +14,11 @@ const CATEGORIES = [
   { id: 'skin',       name: '피부·모발' },
   { id: 'research',   name: '연구·임상' },
   { id: 'general',    name: '일반' },
+  // SEO 확장 — 카테고리 랜딩 4종
+  { id: 'ingredient-comparison', name: '성분 비교' },
+  { id: 'disease-health-info',   name: '질환별 건강정보' },
+  { id: 'hospital-info',         name: '병원정보' },
+  { id: 'partner-info',          name: '파트너 정보' },
 ]
 
 const CAT_COLORS = {
@@ -25,6 +30,10 @@ const CAT_COLORS = {
   skin:          'bg-pink-100 text-pink-700',
   research:      'bg-blue-100 text-blue-700',
   general:       'bg-gray-100 text-gray-700',
+  'ingredient-comparison': 'bg-teal-100 text-teal-700',
+  'disease-health-info':   'bg-amber-100 text-amber-700',
+  'hospital-info':         'bg-indigo-100 text-indigo-700',
+  'partner-info':          'bg-emerald-100 text-emerald-700',
 }
 
 // 블로그 카테고리 → question_videos category_id 매핑
@@ -38,6 +47,10 @@ const BLOG_TO_VIDEO_CAT = {
   skin:           'skin',
   research:       'research',
   general:        'general',
+  'ingredient-comparison': null,
+  'disease-health-info':   null,
+  'hospital-info':         null,
+  'partner-info':          null,
 }
 
 const SB_URL = 'https://rlfxuyeoluoeaxuujtly.supabase.co'

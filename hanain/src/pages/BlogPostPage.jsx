@@ -43,11 +43,19 @@ const CAT_COLORS = {
   skin:          'bg-pink-100 text-pink-700',
   research:      'bg-blue-100 text-blue-700',
   general:       'bg-gray-100 text-gray-700',
+  'ingredient-comparison': 'bg-teal-100 text-teal-700',
+  'disease-health-info':   'bg-amber-100 text-amber-700',
+  'hospital-info':         'bg-indigo-100 text-indigo-700',
+  'partner-info':          'bg-emerald-100 text-emerald-700',
 }
 const CAT_NAMES = {
   diabetes:'당뇨·혈당', cancer:'항암·면역', brain:'뇌·인지',
   cardiovascular:'심혈관', inflammation:'염증·면역', skin:'피부·모발',
   research:'연구·임상', general:'일반',
+  'ingredient-comparison':'성분 비교',
+  'disease-health-info':'질환별 건강정보',
+  'hospital-info':'병원정보',
+  'partner-info':'파트너 정보',
 }
 
 export default function BlogPostPage() {
