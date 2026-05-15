@@ -206,7 +206,9 @@ async function fetchPostMeta(slug) {
   try {
     const r = await fetch(
       `${url}/rest/v1/posts?slug=eq.${encodeURIComponent(slug)}&select=title,meta_title,meta_desc,excerpt&limit=1`,
-      { headers: { apikey: key, Authorization: `Bearer ${key}` } }
+      // Supabase 프로젝트 기본 노출 스키마가 'api'로 설정된 경우가 있어
+      // public 스키마의 posts 테이블에 접근하려면 Accept-Profile 헤더가 필요하다.
+      { headers: { apikey: key, Authorization: `Bearer ${key}`, 'Accept-Profile': 'public' } }
     )
     if (!r.ok) return null
     const arr = await r.json()
