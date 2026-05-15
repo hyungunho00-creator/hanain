@@ -8,6 +8,7 @@ import html2canvas from 'html2canvas'
 import { Download, Lock, Eye, EyeOff, Loader, Image, FolderLock } from 'lucide-react'
 import SEOHead from '../components/common/SEOHead'
 import jsPDF from 'jspdf'
+import { drawHandbookPages } from './handbook_renderer'
 
 /* ════════════════════════════════════════════════
    JSX 컴포넌트를 화면 밖에 실측(794×1123)으로 렌더
@@ -278,6 +279,7 @@ export default function InfoRoomPage() {
   const [downloading, setDownloading] = useState(null)
   const [imaging, setImaging]         = useState(null)
   const [preview, setPreview]         = useState(null)
+  const [handbookLoading, setHandbookLoading] = useState(false)
 
   // ── 페이지 진입 시 인앱브라우저 감지 → 즉시 크롬으로 이동
   useEffect(() => {
@@ -341,6 +343,25 @@ export default function InfoRoomPage() {
   async function captureMaterialPages(mat /*, scale = 2 */) {
     // capturePages: drawPage1/drawPage2 (Canvas 2D) — html2canvas 없이 100% 안정
     return capturePages(mat, partnerName, partnerTel, cardUrl)
+  }
+
+  /* ── 📘 파트너 교본 (40p 핸드북) PDF 다운로드 ── */
+  async function handleHandbookDownload() {
+    if (guardInApp()) return
+    setHandbookLoading(true)
+    try {
+      const canvases = await drawHandbookPages(2)
+      const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' })
+      canvases.forEach((c, i) => {
+        if (i > 0) pdf.addPage()
+        pdf.addImage(c.toDataURL('image/jpeg', 0.88), 'JPEG', 0, 0, 210, 297)
+      })
+      pdf.save(`플로로탄닌_파트너교본_${partnerName}.pdf`)
+    } catch (e) {
+      alert('교본 PDF 오류: ' + e.message)
+    } finally {
+      setHandbookLoading(false)
+    }
   }
 
   /* ── PDF 다운로드 (인쇄용) ── */
@@ -420,6 +441,63 @@ export default function InfoRoomPage() {
         <p style={{ fontSize: 14, color: '#7a5c00', fontWeight: 700, margin: 0 }}>
           💡 버튼을 누르면 잠시 생성 중… 표시 후 자동 다운로드됩니다 (약 5~10초 소요)
         </p>
+      </div>
+
+      {/* ═══ 📘 파트너 교본 (40p 핸드북) ═══ */}
+      <div style={{ maxWidth: 800, margin: '32px auto 0', padding: '0 14px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
+          <div style={{ width: 5, height: 28, background: `linear-gradient(180deg, ${GOLD}, ${NAVY})`, borderRadius: 3 }} />
+          <div>
+            <h2 style={{ fontSize: 20, fontWeight: 900, color: NAVY, margin: 0, lineHeight: 1.2 }}>📘 파트너 교본 (교육자료)</h2>
+            <p style={{ fontSize: 13, color: '#888', margin: '3px 0 0' }}>플로로탄닌 설명·응대·Q&A 40페이지 핸드북 (PDF)</p>
+          </div>
+        </div>
+        <div style={{
+          background: '#fff',
+          borderRadius: 14,
+          border: `2px solid ${GOLD}`,
+          padding: '20px 22px',
+          boxShadow: '0 4px 16px rgba(0,0,0,0.06)',
+          display: 'flex',
+          alignItems: 'center',
+          gap: 16,
+          flexWrap: 'wrap',
+        }}>
+          <div style={{ flex: '1 1 240px', minWidth: 240 }}>
+            <div style={{ fontSize: 16, fontWeight: 800, color: NAVY, marginBottom: 6 }}>
+              플로로탄닌 파트너 핸드북 · 40p
+            </div>
+            <div style={{ fontSize: 13, color: '#555', lineHeight: 1.7 }}>
+              · 의료계 종사자·고관여 고객 응대 대본<br />
+              · 자주 받는 Q&A · 표현 가이드 · 페르소나별 설명법<br />
+              · 인쇄용 A4 PDF, 약 15~25초 소요
+            </div>
+          </div>
+          <button
+            type="button"
+            onClick={handleHandbookDownload}
+            disabled={handbookLoading}
+            style={{
+              padding: '14px 22px',
+              borderRadius: 10,
+              border: 'none',
+              background: handbookLoading ? '#aaa' : `linear-gradient(135deg, ${NAVY}, #1a3a6a)`,
+              color: '#fff',
+              fontSize: 15,
+              fontWeight: 800,
+              cursor: handbookLoading ? 'wait' : 'pointer',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 8,
+              minWidth: 200,
+              justifyContent: 'center',
+            }}
+          >
+            {handbookLoading
+              ? <><Loader size={16} style={{ animation: 'spin 1s linear infinite' }} /> 생성 중…</>
+              : <><Download size={16} /> 📥 교본 PDF 다운로드</>}
+          </button>
+        </div>
       </div>
 
       {/* ═══ 제품 안내 전단지 섹션 ═══ */}
