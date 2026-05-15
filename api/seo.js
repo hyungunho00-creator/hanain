@@ -200,8 +200,11 @@ async function fetchPostMeta(slug) {
   const url = process.env.VITE_SUPABASE_URL ||
               process.env.SUPABASE_URL ||
               'https://rlfxuyeoluoeaxuujtly.supabase.co'
+  // anon key는 클라이언트 빌드에 이미 노출되는 공개 키이므로
+  // Vercel 환경변수가 미설정이어도 동작하도록 하드코드 fallback 제공.
   const key = process.env.VITE_SUPABASE_ANON_KEY ||
-              process.env.SUPABASE_ANON_KEY
+              process.env.SUPABASE_ANON_KEY ||
+              'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJsZnh1eWVvbHVvZWF4dXVqdGx5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU5NDEyNjMsImV4cCI6MjA5MTUxNzI2M30.EmygB1wZcIXM0_4KTC8Kuwh5RY3R9NgfEpuzXQswHck'
   if (!key) return null
   try {
     const r = await fetch(
