@@ -33,12 +33,10 @@ export default function SEOHead({
   const DEFAULT_DESC = '플로로탄닌닷컴은 감태추출물·해양 폴리페놀·플로로탄닌을 중심으로 항산화, 염증, 수면, 혈당, 면역, 장 건강, 뇌 건강, 암환자 가족 건강정보와 병원정보까지 정리하는 종합 건강정보 데이터센터입니다.'
   const DEFAULT_KEYWORDS = '플로로탄닌,phlorotannin,감태추출물,해양 폴리페놀,갈조류 폴리페놀,항산화,염증,수면 건강정보,혈당 건강정보,면역 건강정보,장 건강,뇌 건강,암환자 가족 건강정보,당뇨 건강정보,병원정보 아카이브,건강정보 데이터센터'
 
-  // 각 페이지가 title을 줬으면 그대로 사용(중복 사이트명 부착 금지).
-  // title에 이미 ' | '가 들어있거나 페이지에서 완성형 title을 넘긴 경우 그대로 사용.
-  // title이 없으면 DEFAULT_TITLE 사용.
-  const fullTitle = title
-    ? (title.includes(' | ') ? title : `${title} | ${SITE_NAME_SHORT}`)
-    : DEFAULT_TITLE
+  // 각 페이지가 title을 줬으면 100% 그대로 사용 (사이트명 자동 부착 금지).
+  // 봇이 보는 정적 HTML은 Edge Function(/api/_seo)이 경로별로 주입하고,
+  // 클라이언트 JS는 페이지 컴포넌트가 명시한 완성형 title을 그대로 반영한다.
+  const fullTitle = title || DEFAULT_TITLE
   const finalDesc = description || DEFAULT_DESC
   const finalKeywords = keywords ? `${keywords},${DEFAULT_KEYWORDS}` : DEFAULT_KEYWORDS
 

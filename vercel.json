@@ -1,8 +1,21 @@
 {
   "buildCommand": "cd hanain && npm install && npm run build",
   "outputDirectory": "hanain/dist",
-  "installCommand": "echo 'skip root install'",
+  "installCommand": "npm install",
   "rewrites": [
+    { "source": "/", "destination": "/api/_seo?p=/" },
+    { "source": "/home", "destination": "/api/_seo?p=/home" },
+    { "source": "/easy", "destination": "/api/_seo?p=/easy" },
+    { "source": "/phlorotannin", "destination": "/api/_seo?p=/phlorotannin" },
+    { "source": "/learn", "destination": "/api/_seo?p=/learn" },
+    { "source": "/qa", "destination": "/api/_seo?p=/qa" },
+    { "source": "/blog", "destination": "/api/_seo?p=/blog" },
+    { "source": "/blog/:slug", "destination": "/api/_seo?p=/blog/:slug" },
+    { "source": "/community", "destination": "/api/_seo?p=/community" },
+    { "source": "/consult", "destination": "/api/_seo?p=/consult" },
+    { "source": "/partner", "destination": "/api/_seo?p=/partner" },
+    { "source": "/category/:slug", "destination": "/api/_seo?p=/category/:slug" },
+    { "source": "/p/:phone", "destination": "/api/_seo?p=/p/:phone" },
     { "source": "/(.*)", "destination": "/index.html" }
   ],
   "headers": [
