@@ -19,19 +19,30 @@ function parseMarkdown(md) {
     .replace(/^### (.+)$/gm, '<h3 class="text-xl font-bold text-gray-800 mt-7 mb-3">$1</h3>')
     // h4
     .replace(/^#### (.+)$/gm, '<h4 class="text-lg font-semibold text-gray-700 mt-5 mb-2">$1</h4>')
+    // 수평선 (--- 단독 줄)
+    .replace(/^---\s*$/gm, '<hr class="my-8 border-t border-gray-200" />')
+    // 링크 [text](url) — bold/italic 보다 먼저 처리하여 url 내 *문자 보호. 외부 링크는 새 창.
+    .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (_, text, url) => {
+      const isExternal = /^https?:\/\//i.test(url) && !/^https?:\/\/(www\.)?phlorotannin\.com/i.test(url)
+      const attrs = isExternal ? ' target="_blank" rel="noopener noreferrer"' : ''
+      return `<a href="${url}"${attrs} class="text-teal-600 font-semibold underline decoration-teal-300 underline-offset-2 hover:text-teal-700 hover:decoration-teal-500">${text}</a>`
+    })
     // bold
     .replace(/\*\*(.+?)\*\*/g, '<strong class="font-bold text-gray-900">$1</strong>')
     // italic
     .replace(/\*(.+?)\*/g, '<em class="italic">$1</em>')
+    // blockquote (> 로 시작하는 한 줄)
+    .replace(/^&gt; (.+)$/gm, '<blockquote class="border-l-4 border-teal-400 bg-teal-50/50 text-gray-700 italic px-4 py-3 my-4 rounded-r-lg">$1</blockquote>')
+    .replace(/^> (.+)$/gm, '<blockquote class="border-l-4 border-teal-400 bg-teal-50/50 text-gray-700 italic px-4 py-3 my-4 rounded-r-lg">$1</blockquote>')
     // ul
     .replace(/^- (.+)$/gm, '<li class="flex gap-2 mb-1.5"><span class="text-teal-500 mt-1 flex-shrink-0">▸</span><span>$1</span></li>')
     .replace(/(<li[\s\S]+?<\/li>)/g, m => `<ul class="my-3 space-y-1">${m}</ul>`)
     // 빈 줄 → 단락
     .replace(/\n\n/g, '</p><p class="text-gray-700 leading-relaxed my-3">')
-    .replace(/^(?!<[hup])(.+)$/gm, '<p class="text-gray-700 leading-relaxed my-3">$1</p>')
+    .replace(/^(?!<[hupb]|<hr)(.+)$/gm, '<p class="text-gray-700 leading-relaxed my-3">$1</p>')
     // 중복 p 정리
     .replace(/<p[^>]*><\/p>/g, '')
-    .replace(/<p[^>]*>(<[hup])/g, '$1')
+    .replace(/<p[^>]*>(<[hupb]|<hr)/g, '$1')
 }
 
 const CAT_COLORS = {
