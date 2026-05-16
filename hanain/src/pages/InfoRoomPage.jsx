@@ -810,32 +810,34 @@ function ProductFlyerCard({ mat, partnerName, partnerTel, cardUrl }) {
         </div>
       </div>
 
-      {/* 버튼 영역 */}
-      <div style={{ borderTop: `1.5px solid ${mat.color}20`, padding: '14px 22px', background: '#fafbfc', display: 'flex', gap: 8, flexWrap: 'wrap', alignItems: 'center' }}>
+      {/* 버튼 영역 — 모바일 좁은 화면에서도 줄바꿈 시 깔끔히 정렬되도록 grid 사용 */}
+      <div style={{ borderTop: `1.5px solid ${mat.color}20`, padding: '14px 16px', background: '#fafbfc', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
+        {/* 1행: 미리보기(닫기) — 전체 폭 */}
         <button
           onClick={handlePreview}
-          style={{ display: 'flex', alignItems: 'center', gap: 5, padding: '10px 16px', borderRadius: 10, border: '2px solid #d0d8e8', background: '#fff', color: NAVY, fontSize: 14, fontWeight: 700, cursor: 'pointer' }}
+          style={{ gridColumn: '1 / -1', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 5, padding: '10px 16px', borderRadius: 10, border: '2px solid #d0d8e8', background: '#fff', color: NAVY, fontSize: 14, fontWeight: 700, cursor: 'pointer' }}
         >
           {preview ? <EyeOff size={16} /> : <Eye size={16} />}
           {preview ? '닫기' : '미리보기'}
         </button>
+        {/* 2행: 인쇄용 PDF + 공유용 이미지 — 각각 절반 폭으로 한 줄 정렬 */}
         <button
           onClick={handleDownload}
           disabled={busy}
-          style={{ display: 'flex', alignItems: 'center', gap: 7, padding: '11px 22px', borderRadius: 10, border: 'none', background: downloading ? '#999' : `linear-gradient(135deg, ${mat.color}, ${mat.color}cc)`, color: '#fff', fontSize: 14, fontWeight: 800, cursor: busy ? 'not-allowed' : 'pointer', boxShadow: downloading ? 'none' : `0 3px 14px ${mat.color}50`, minWidth: 170, justifyContent: 'center' }}
+          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, padding: '11px 8px', borderRadius: 10, border: 'none', background: downloading ? '#999' : `linear-gradient(135deg, ${mat.color}, ${mat.color}cc)`, color: '#fff', fontSize: 13, fontWeight: 800, cursor: busy ? 'not-allowed' : 'pointer', boxShadow: downloading ? 'none' : `0 3px 14px ${mat.color}50`, whiteSpace: 'nowrap' }}
         >
-          {downloading ? <><Loader size={16} style={{ animation: 'spin 1s linear infinite' }} /> 생성 중…</> : <><Download size={16} /> 📥 인쇄용 PDF</>}
+          {downloading ? <><Loader size={16} style={{ animation: 'spin 1s linear infinite' }} /> 생성 중…</> : <><Download size={16} /> 인쇄용 PDF</>}
         </button>
         <button
           onClick={handleImage}
           disabled={busy}
-          style={{ display: 'flex', alignItems: 'center', gap: 7, padding: '11px 22px', borderRadius: 10, border: 'none', background: imaging ? '#999' : 'linear-gradient(135deg, #1565C0, #1E88E5)', color: '#fff', fontSize: 14, fontWeight: 800, cursor: busy ? 'not-allowed' : 'pointer', boxShadow: imaging ? 'none' : '0 3px 14px rgba(21,101,192,0.45)', minWidth: 190, justifyContent: 'center' }}
+          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, padding: '11px 8px', borderRadius: 10, border: 'none', background: imaging ? '#999' : 'linear-gradient(135deg, #1565C0, #1E88E5)', color: '#fff', fontSize: 13, fontWeight: 800, cursor: busy ? 'not-allowed' : 'pointer', boxShadow: imaging ? 'none' : '0 3px 14px rgba(21,101,192,0.45)', whiteSpace: 'nowrap' }}
         >
-          {imaging ? <><Loader size={16} style={{ animation: 'spin 1s linear infinite' }} /> 생성 중…</> : <><Image size={16} /> 📸 공유용 이미지</>}
+          {imaging ? <><Loader size={16} style={{ animation: 'spin 1s linear infinite' }} /> 생성 중…</> : <><Image size={16} /> 공유용 이미지</>}
         </button>
       </div>
 
-      {/* 미리보기 패널 — Canvas toDataURL → img 태그 (JSX 컴포넌트 완전 제거) */}
+      {/* 미리보기 패널 — Canvas toDataURL → img 태그 (반응형 폭) */}
       {preview && (
         <div style={{ borderTop: '1.5px solid #eee', background: '#f0f2f5', padding: '16px 14px' }}>
           <p style={{ fontSize: 13, color: '#888', textAlign: 'center', marginBottom: 12 }}>
@@ -848,19 +850,17 @@ function ProductFlyerCard({ mat, partnerName, partnerTel, cardUrl }) {
             </p>
           )}
           {previewImgs && (
-            <div style={{ overflowX: 'auto' }}>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 8, width: 'fit-content' }}>
-                <img
-                  src={previewImgs.p1}
-                  alt="1페이지 미리보기"
-                  style={{ width: 300, height: 'auto', borderRadius: 4, boxShadow: '0 2px 8px rgba(0,0,0,0.12)', display: 'block' }}
-                />
-                <img
-                  src={previewImgs.p2}
-                  alt="2페이지 미리보기"
-                  style={{ width: 300, height: 'auto', borderRadius: 4, boxShadow: '0 2px 8px rgba(0,0,0,0.12)', display: 'block' }}
-                />
-              </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 10, alignItems: 'center' }}>
+              <img
+                src={previewImgs.p1}
+                alt="1페이지 미리보기"
+                style={{ width: '100%', maxWidth: 420, height: 'auto', borderRadius: 4, boxShadow: '0 2px 8px rgba(0,0,0,0.12)', display: 'block' }}
+              />
+              <img
+                src={previewImgs.p2}
+                alt="2페이지 미리보기"
+                style={{ width: '100%', maxWidth: 420, height: 'auto', borderRadius: 4, boxShadow: '0 2px 8px rgba(0,0,0,0.12)', display: 'block' }}
+              />
             </div>
           )}
         </div>
