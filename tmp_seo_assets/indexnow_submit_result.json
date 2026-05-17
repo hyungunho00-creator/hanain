@@ -1,18 +1,31 @@
 {
-  "api.indexnow.org": {
-    "http": 403,
-    "body": "{\"errorCode\":\"SiteVerificationNotCompleted\",\"message\":\"Site Verification is not completed. Please wait for some time for the verification to complete and try again.\",\"details\":null}"
+  "submitted_at_utc": "2026-05-17T22:02:34.059535Z",
+  "host": "phlorotannin.com",
+  "key": "6c13a351f7784b49b91e4da2717e6889",
+  "key_location": "https://phlorotannin.com/6c13a351f7784b49b91e4da2717e6889.txt",
+  "url_count": 203,
+  "breakdown": {
+    "static": 7,
+    "blog_posts": 178,
+    "category_pages": 18
   },
-  "bing": {
-    "http": 403,
-    "body": "{\"errorCode\":\"SiteVerificationNotCompleted\",\"message\":\"Site Verification is not completed. Please wait for some time for the verification to complete and try again.\",\"details\":null}"
+  "endpoints": {
+    "api.indexnow.org": {
+      "http": 200,
+      "body": ""
+    },
+    "bing": {
+      "http": 200,
+      "body": ""
+    },
+    "yandex": {
+      "http": 202,
+      "body": "{\n  \"success\":true\n}"
+    },
+    "naver": {
+      "http": 200,
+      "body": ""
+    }
   },
-  "yandex": {
-    "http": 202,
-    "body": "{\n  \"success\":true\n}"
-  },
-  "naver": {
-    "http": 403,
-    "body": ""
-  }
+  "pr_merged_commit": "f5594a8f1b6e3fbbdac7e7633d3f9e73f7380815"
 }
