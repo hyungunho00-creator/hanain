@@ -1,5 +1,5 @@
 {
-  "buildCommand": "cd hanain && npm install && npm run build && mkdir -p ../public && cp dist/index.html ../public/index.html",
+  "buildCommand": "cd hanain && npm install && npm run build && mkdir -p ../public && cp dist/index.html ../public/index.html && cp dist/sitemap.xml ../public/sitemap.xml && rm -f dist/sitemap.xml",
   "outputDirectory": "hanain/dist",
   "functions": {
     "api/seo.js": {
