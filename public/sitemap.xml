@@ -11,6 +11,13 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/"/>
   </url>
   <url>
+    <loc>https://phlorotannin.com/copyright</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.30</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/copyright"/>
+  </url>
+  <url>
     <loc>https://phlorotannin.com/qa</loc>
     <lastmod>2026-05-15</lastmod>
     <changefreq>daily</changefreq>

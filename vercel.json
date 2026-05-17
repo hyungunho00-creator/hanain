@@ -4,10 +4,14 @@
   "functions": {
     "api/seo.js": {
       "includeFiles": "public/**"
+    },
+    "api/sitemap.js": {
+      "includeFiles": "public/**"
     }
   },
   "installCommand": "npm install",
   "rewrites": [
+    { "source": "/sitemap.xml", "destination": "/api/sitemap" },
     { "source": "/", "destination": "/api/seo?p=/" },
     { "source": "/home", "destination": "/api/seo?p=/home" },
     { "source": "/easy", "destination": "/api/seo?p=/easy" },
