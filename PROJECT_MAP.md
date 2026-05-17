@@ -126,10 +126,11 @@
 |---|---|---|
 | `posts` | 블로그 글 (118+건, status='published'만 sitemap 노출) | ✅ 운영 중 |
 | `partners` | 파트너 명단 (slug PK = 전화번호, status='active'만 노출) | ✅ Phase 2 완료 (SQL: `supabase/phase2_partners.sql`, JSON fallback 유지) |
-| `leads` | DB 신청자 | ⏳ Phase 4에서 신설 예정 |
-| `categories` | 카테고리 메타 | ⏳ Phase 3에서 신설 예정 |
-| `pages` | 고정 페이지 | ⏳ Phase 3에서 신설 예정 |
-| `site_settings` | 사이트 설정 | ⏳ Phase 4에서 신설 예정 |
+| `categories` | 카테고리 메타 (type='blog'/'qa', 26행) | ✅ Phase 3 완료 (SQL: `supabase/phase3_categories_pages.sql`, 코드 상수 fallback 유지) |
+| `pages` | 고정 페이지 메타 (12행) | ✅ Phase 3 완료 (`/api/seo`가 페치, `staticMetaFor` fallback) |
+| `site_settings` | 사이트 전역 설정 key-value | ✅ Phase 4 완료 (관리자 토큰 보호, RLS public 미노출) |
+| `leads` | 비회원 문의/리드 | ✅ Phase 4 완료 (anon INSERT-only RLS, 어드민 조회/갱신) |
+| `question_videos` | Q&A 카테고리별 YouTube 영상 | ✅ Phase 3 RLS 보강 — anon SELECT 허용 (쓰기는 `/api/admin` 경유) |
 
 ### `posts` 테이블 주요 컬럼
 

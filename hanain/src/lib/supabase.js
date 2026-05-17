@@ -83,48 +83,91 @@ export async function toggleQaLike(id) {
   return { liked: false }
 }
 
-// ── Question Videos (service key 직접 fetch — anon RLS 우회) ──
-const _SB_URL = 'https://rlfxuyeoluoeaxuujtly.supabase.co'
-const _SVC_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJsZnh1eWVvbHVvZWF4dXVqdGx5Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NTk0MTI2MywiZXhwIjoyMDkxNTE3MjYzfQ.O0Oe3g2fv_8SUvxNfHvdxzpA6pcWVIWTscpymYr0pBI'
-const _VID_H = {
-  apikey: _SVC_KEY,
-  Authorization: `Bearer ${_SVC_KEY}`,
-  'Accept-Profile': 'public',
-  'Content-Profile': 'public',
-  'Content-Type': 'application/json',
-}
-
-async function _vidFetch(qs) {
-  try {
-    const r = await fetch(`${_SB_URL}/rest/v1/question_videos?${qs}`, { headers: _VID_H })
-    if (!r.ok) return []
-    return await r.json()
-  } catch { return [] }
-}
-
+// ── Question Videos (anon read — 2026-05 RLS 정책으로 service_role 의존 제거) ──
 export async function getVideosByCategory(categoryId, limit = 4) {
   if (!categoryId) return []
-  return _vidFetch(`category_id=eq.${categoryId}&order=sort_order.asc&limit=${limit}`)
+  const { data } = await supabase
+    .from('question_videos')
+    .select('*')
+    .eq('category_id', categoryId)
+    .order('sort_order', { ascending: true })
+    .limit(limit)
+  return data || []
 }
 
 export async function getVideosByQuestion(questionId) {
   if (!questionId) return []
-  return _vidFetch(`question_id=eq.${questionId}&order=sort_order.asc`)
+  const { data } = await supabase
+    .from('question_videos')
+    .select('*')
+    .eq('question_id', questionId)
+    .order('sort_order', { ascending: true })
+  return data || []
 }
 
 export async function getMainVideos() {
-  return _vidFetch(`is_main=eq.true&order=sort_order.asc&limit=2`)
+  const { data } = await supabase
+    .from('question_videos')
+    .select('*')
+    .eq('is_main', true)
+    .order('sort_order', { ascending: true })
+    .limit(2)
+  return data || []
 }
 
+// 쓰기 작업 (Admin 전용) — /api/admin 경유로 변경
+// AdminPage에서만 호출. 이 함수는 클라이언트에서 직접 호출하면 RLS로 실패함.
 export async function setVideoMain(id, isMain) {
   try {
-    const r = await fetch(`${_SB_URL}/rest/v1/question_videos?id=eq.${id}`, {
-      method: 'PATCH',
-      headers: { ..._VID_H, Prefer: 'return=minimal' },
-      body: JSON.stringify({ is_main: isMain }),
+    const r = await fetch('/api/admin', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        action: 'video_set_main',
+        token: sessionStorage.getItem('phl_admin_token') || '',
+        payload: { id, is_main: isMain },
+      }),
     })
-    return { error: r.ok ? null : { message: '업데이트 실패' } }
+    if (!r.ok) {
+      const t = await r.text().catch(() => '')
+      return { error: { message: `Admin API 오류 (${r.status}) ${t}` } }
+    }
+    return { error: null }
   } catch (e) { return { error: { message: e.message } } }
+}
+
+// ── Phase 3: Blog Categories (Supabase categories 테이블) ──
+export async function getBlogCategories() {
+  try {
+    const { data, error } = await supabase
+      .from('categories')
+      .select('id, name, description, meta_title, meta_desc, sort_order')
+      .eq('type', 'blog')
+      .eq('status', 'active')
+      .order('sort_order', { ascending: true })
+    if (error) return null
+    return (data || []).map(r => ({
+      id: r.id,
+      name: r.name,
+      description: r.description,
+      metaTitle: r.meta_title,
+      metaDesc: r.meta_desc,
+    }))
+  } catch { return null }
+}
+
+// ── Phase 3: Pages (고정 페이지 메타) ──
+export async function getPageBySlug(slug) {
+  try {
+    const { data, error } = await supabase
+      .from('pages')
+      .select('*')
+      .eq('slug', slug)
+      .eq('status', 'active')
+      .single()
+    if (error) return null
+    return data
+  } catch { return null }
 }
 
 // ── Blog Posts (실제 테이블: posts) ──────────────────────

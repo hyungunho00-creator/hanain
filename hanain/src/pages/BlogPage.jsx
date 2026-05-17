@@ -2,9 +2,10 @@ import { useState, useEffect } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { Calendar, Eye, ChevronRight, Search, BookOpen, PlayCircle } from 'lucide-react'
 import SEOHead from '../components/common/SEOHead'
-import { getPosts, getPostCount } from '../lib/supabase'
+import { getPosts, getPostCount, getBlogCategories, getVideosByCategory } from '../lib/supabase'
 
-const CATEGORIES = [
+// Phase 3: Supabase categories 테이블이 1순위, 아래 상수는 DB 실패 시 fallback
+const FALLBACK_CATEGORIES = [
   { id: 'all',        name: '전체' },
   { id: 'diabetes',   name: '당뇨·혈당' },
   { id: 'cancer',     name: '항암·면역' },
@@ -14,12 +15,14 @@ const CATEGORIES = [
   { id: 'skin',       name: '피부·모발' },
   { id: 'research',   name: '연구·임상' },
   { id: 'general',    name: '일반' },
-  // SEO 확장 — 카테고리 랜딩 4종
   { id: 'ingredient-comparison', name: '성분 비교' },
   { id: 'disease-health-info',   name: '질환별 건강정보' },
   { id: 'hospital-info',         name: '병원정보' },
   { id: 'partner-info',          name: '파트너 정보' },
 ]
+
+// 모듈 레벨 캐시 — BlogPage에서 DB 페치 후 갱신, PostCard 등이 같은 변수 참조
+let CATEGORIES = FALLBACK_CATEGORIES
 
 const CAT_COLORS = {
   diabetes:      'bg-orange-100 text-orange-700',
@@ -53,18 +56,10 @@ const BLOG_TO_VIDEO_CAT = {
   'partner-info':          null,
 }
 
-const SB_URL = 'https://rlfxuyeoluoeaxuujtly.supabase.co'
-const SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJsZnh1eWVvbHVvZWF4dXVqdGx5Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NTk0MTI2MywiZXhwIjoyMDkxNTE3MjYzfQ.O0Oe3g2fv_8SUvxNfHvdxzpA6pcWVIWTscpymYr0pBI'
-
+// Phase 3 보안 강화: service_role 키를 클라이언트 번들에서 제거
+// 영상 페치는 lib/supabase.js의 익명 키 + RLS(question_videos read-all)로 처리
 async function getVideosByCat(catId, limit = 3) {
-  try {
-    const res = await fetch(
-      `${SB_URL}/rest/v1/question_videos?category_id=eq.${catId}&order=sort_order.asc&limit=${limit}`,
-      { headers: { apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}`, 'Accept-Profile': 'public' } }
-    )
-    if (!res.ok) return []
-    return await res.json()
-  } catch { return [] }
+  return getVideosByCategory(catId, limit)
 }
 
 function extractYoutubeId(url) {
@@ -183,6 +178,17 @@ export default function BlogPage() {
   const [total,     setTotal]     = useState(0)
   const [loading,   setLoading]   = useState(true)
   const [searchInput, setSearchInput] = useState(searchQ)
+  const [cats, setCats] = useState(CATEGORIES)
+
+  // Phase 3: Supabase categories 테이블에서 블로그 카테고리 페치 (실패 시 fallback)
+  useEffect(() => {
+    getBlogCategories().then(list => {
+      if (list && list.length) {
+        CATEGORIES = list  // 모듈 캐시 갱신 (PostCard, CategoryVideoSection 즉시 반영)
+        setCats(list)
+      }
+    })
+  }, [])
 
   useEffect(() => {
     setLoading(true)
@@ -267,7 +273,7 @@ export default function BlogPage() {
         <div className="max-w-5xl mx-auto px-4 py-10">
           {/* 카테고리 탭 */}
           <div className="flex flex-wrap gap-2 mb-6">
-            {CATEGORIES.map(cat => (
+            {cats.map(cat => (
               <button key={cat.id}
                 onClick={() => {
                   const p = new URLSearchParams()

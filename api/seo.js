@@ -201,6 +201,45 @@ function staticMetaFor(pathname) {
 }
 
 // ─────────────────────────────────────────
+// Supabase REST 공통 헬퍼
+// ─────────────────────────────────────────
+function sbCreds() {
+  const url = process.env.VITE_SUPABASE_URL ||
+              process.env.SUPABASE_URL ||
+              'https://rlfxuyeoluoeaxuujtly.supabase.co'
+  const key = process.env.VITE_SUPABASE_ANON_KEY ||
+              process.env.SUPABASE_ANON_KEY ||
+              'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJsZnh1eWVvbHVvZWF4dXVqdGx5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU5NDEyNjMsImV4cCI6MjA5MTUxNzI2M30.EmygB1wZcIXM0_4KTC8Kuwh5RY3R9NgfEpuzXQswHck'
+  return { url, key }
+}
+
+// Phase 3: pages 테이블에서 슬러그별 메타 조회 (staticMetaFor 우선 — 운영자가 어드민에서 덮어쓸 수 있게 함)
+async function fetchPageMeta(slug) {
+  const { url, key } = sbCreds()
+  if (!key) return null
+  try {
+    const r = await fetch(
+      `${url}/rest/v1/pages?slug=eq.${encodeURIComponent(slug)}&status=eq.active&select=title,meta_title,meta_desc&limit=1`,
+      { headers: { apikey: key, Authorization: `Bearer ${key}`, 'Accept-Profile': 'public' } }
+    )
+    if (!r.ok) return null
+    const arr = await r.json()
+    const p = Array.isArray(arr) && arr[0]
+    if (!p) return null
+    const title = p.meta_title || p.title
+    const desc  = p.meta_desc || ''
+    if (!title) return null
+    return {
+      title,
+      desc,
+      canonical: `${SITE}/${slug === 'home' ? '' : slug}`,
+    }
+  } catch {
+    return null
+  }
+}
+
+// ─────────────────────────────────────────
 // /blog/{slug} → Supabase REST API
 // ─────────────────────────────────────────
 async function fetchPostMeta(slug) {
@@ -321,14 +360,32 @@ export default async function handler(req, res) {
 
     // 메타 결정
     let meta = null
+    let metaSource = 'static'
     const blogMatch = pathname.match(/^\/blog\/([^/]+)$/)
     if (blogMatch) {
       meta = await fetchPostMeta(blogMatch[1])
+      if (meta) metaSource = 'posts-table'
     }
-    if (!meta) meta = staticMetaFor(pathname)
+    // Phase 3: 고정 페이지 슬러그 매핑 (pages 테이블에 운영자가 정의한 메타가 있으면 우선)
+    if (!meta) {
+      // /home, /qa, /blog, /phlorotannin 등 짧은 경로를 slug로 직접 매핑
+      const pageSlug = pathname === '/' ? 'home' : pathname.replace(/^\//, '').split('/')[0]
+      if (pageSlug && !pageSlug.startsWith('api')) {
+        const pageMeta = await fetchPageMeta(pageSlug)
+        if (pageMeta) {
+          meta = pageMeta
+          metaSource = 'pages-table'
+        }
+      }
+    }
+    if (!meta) {
+      meta = staticMetaFor(pathname)
+      if (meta) metaSource = 'static'
+    }
     if (!meta) {
       meta = staticMetaFor('/')
       meta.canonical = `${SITE}${pathname}`
+      metaSource = 'fallback'
     }
 
     // index.html 로드 (fs)
@@ -345,6 +402,7 @@ export default async function handler(req, res) {
     res.setHeader('Cache-Control', 'public, max-age=0, s-maxage=300, stale-while-revalidate=86400')
     res.setHeader('X-SEO-Path', pathname)
     res.setHeader('X-SEO-Title', encodeURIComponent(meta.title))
+    res.setHeader('X-SEO-Source', metaSource)
     res.status(200).send(html)
   } catch (e) {
     res.setHeader('Content-Type', 'text/plain; charset=utf-8')

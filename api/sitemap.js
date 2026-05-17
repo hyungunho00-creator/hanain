@@ -3,9 +3,11 @@
 // 데이터 소스:
 //   1) Supabase posts 테이블 (status='published') — 동적
 //   2) Supabase partners 테이블 (status='active') — Phase 2, 동적 (slug = 전화번호)
-//      ↓ 실패 시 fallback
-//      Supabase Storage public/partners.json → 동일 도메인 /partners.json
-//   3) 고정 페이지 / 카테고리 URL — 코드 상수 (Phase 3에서 Supabase로 이전 예정)
+//      ↓ 실패 시 fallback: Supabase Storage public/partners.json → 동일 도메인 /partners.json
+//   3) Supabase pages 테이블 (status='active') — Phase 3, 고정 페이지
+//      ↓ 실패 시 fallback: 코드 상수 STATIC_PAGES
+//   4) Supabase categories 테이블 (status='active') — Phase 3, blog/qa 카테고리
+//      ↓ 실패 시 fallback: 코드 상수 BLOG_CATEGORIES / QA_CATEGORIES
 //
 // 안전장치:
 //   - Supabase 호출 실패 시 정적 fallback (hanain/public/sitemap.xml) 응답
@@ -160,6 +162,59 @@ async function fetchPartners() {
 }
 
 // ───────────────────────────────────────────────
+// Phase 3: pages 테이블 페치 (status='active')
+// ───────────────────────────────────────────────
+async function fetchPagesFromTable() {
+  try {
+    const url = `${SB_URL}/rest/v1/pages?select=slug,priority,changefreq,updated_at&status=eq.active&limit=200`
+    const resp = await fetch(url, {
+      headers: {
+        apikey: SB_ANON_KEY,
+        Authorization: `Bearer ${SB_ANON_KEY}`,
+        'Accept-Profile': 'public',
+      },
+    })
+    if (!resp.ok) return null
+    const rows = await resp.json()
+    if (!Array.isArray(rows) || rows.length === 0) return null
+    return rows.map(r => ({
+      path: r.slug,
+      priority: r.priority || '0.70',
+      changefreq: r.changefreq || 'monthly',
+      updatedAt: r.updated_at,
+    }))
+  } catch (e) {
+    console.error('[sitemap] pages table fetch error:', e?.message || e)
+    return null
+  }
+}
+
+// ───────────────────────────────────────────────
+// Phase 3: categories 테이블 페치 (type별, status='active')
+// ───────────────────────────────────────────────
+async function fetchCategoriesFromTable() {
+  try {
+    const url = `${SB_URL}/rest/v1/categories?select=id,type,updated_at&status=eq.active&id=neq.all&limit=200`
+    const resp = await fetch(url, {
+      headers: {
+        apikey: SB_ANON_KEY,
+        Authorization: `Bearer ${SB_ANON_KEY}`,
+        'Accept-Profile': 'public',
+      },
+    })
+    if (!resp.ok) return null
+    const rows = await resp.json()
+    if (!Array.isArray(rows) || rows.length === 0) return null
+    const blog = rows.filter(r => r.type === 'blog').map(r => r.id)
+    const qa = rows.filter(r => r.type === 'qa').map(r => r.id)
+    return { blog, qa }
+  } catch (e) {
+    console.error('[sitemap] categories table fetch error:', e?.message || e)
+    return null
+  }
+}
+
+// ───────────────────────────────────────────────
 // 정적 fallback (기존 hanain/public/sitemap.xml)
 // ───────────────────────────────────────────────
 function readStaticFallback() {
@@ -180,22 +235,26 @@ function readStaticFallback() {
 // ───────────────────────────────────────────────
 // sitemap 빌드
 // ───────────────────────────────────────────────
-function buildSitemap({ posts, partners }) {
+function buildSitemap({ posts, partners, pages, categories }) {
   const today = todayISO()
   const urls = []
 
+  const pageList = (pages && pages.length) ? pages : STATIC_PAGES
+  const blogCats = (categories && categories.blog && categories.blog.length) ? categories.blog : BLOG_CATEGORIES
+  const qaCats   = (categories && categories.qa   && categories.qa.length)   ? categories.qa   : QA_CATEGORIES
+
   // 1) 고정 페이지
-  for (const p of STATIC_PAGES) {
+  for (const p of pageList) {
     urls.push(urlBlock({
       loc: `${SITE}${p.path}`,
-      lastmod: today,
+      lastmod: (p.updatedAt || '').slice(0, 10) || today,
       changefreq: p.changefreq,
       priority: p.priority,
     }))
   }
 
   // 2) 블로그 카테고리
-  for (const c of BLOG_CATEGORIES) {
+  for (const c of blogCats) {
     urls.push(urlBlock({
       loc: `${SITE}/blog?category=${c}`,
       lastmod: today,
@@ -205,7 +264,7 @@ function buildSitemap({ posts, partners }) {
   }
 
   // 3) Q&A 카테고리
-  for (const c of QA_CATEGORIES) {
+  for (const c of qaCats) {
     urls.push(urlBlock({
       loc: `${SITE}/qa?category=${c}`,
       lastmod: today,
@@ -256,12 +315,16 @@ export default async function handler(req, res) {
   res.setHeader('Cache-Control', 'public, max-age=600, s-maxage=1800, stale-while-revalidate=3600')
 
   try {
-    const [posts, partnersResult] = await Promise.all([
+    const [posts, partnersResult, pages, categories] = await Promise.all([
       fetchPublishedPosts(),
       fetchPartners(),
+      fetchPagesFromTable(),
+      fetchCategoriesFromTable(),
     ])
     const partners = partnersResult?.list || []
     const partnersSource = partnersResult?.source || 'empty'
+    const pagesSource = pages ? 'table' : 'constant'
+    const categoriesSource = categories ? 'table' : 'constant'
 
     // posts가 비어 있으면 Supabase 장애로 판단 → 정적 fallback
     if (!posts || posts.length === 0) {
@@ -272,11 +335,13 @@ export default async function handler(req, res) {
       }
     }
 
-    const xml = buildSitemap({ posts: posts || [], partners })
+    const xml = buildSitemap({ posts: posts || [], partners, pages, categories })
     res.setHeader('X-Sitemap-Source', 'dynamic')
     res.setHeader('X-Sitemap-Posts', String((posts || []).length))
     res.setHeader('X-Sitemap-Partners', String(partners.length))
     res.setHeader('X-Sitemap-Partners-Source', partnersSource)
+    res.setHeader('X-Sitemap-Pages-Source', pagesSource)
+    res.setHeader('X-Sitemap-Categories-Source', categoriesSource)
     return res.status(200).send(xml)
   } catch (e) {
     console.error('[sitemap] fatal:', e?.message || e)

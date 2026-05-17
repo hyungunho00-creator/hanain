@@ -2,21 +2,73 @@ import { useState, useEffect } from 'react'
 import { Settings, Users, MessageSquare, BookOpen, Trash2, Save, X, Search, Download, RefreshCw, Lock, Eye, EyeOff, Copy, Check, Link2, Phone, UserPlus, Rocket, AlertCircle, CheckCircle, Loader, Globe, PlayCircle, PenSquare, ChevronDown, ChevronRight, ExternalLink, Pin, PinOff, Star, FileText, Plus, Edit3 } from 'lucide-react'
 import { supabase, setVideoMain, upsertPost, getAllPostsAdmin, deletePost } from '../lib/supabase'
 
+// Phase 4: 클라이언트 번들에서 service_role 키 완전 제거
+// 모든 어드민 쓰기 작업은 /api/admin 서버 함수를 경유한다.
 const ADMIN_PASS = import.meta.env.VITE_ADMIN_PASS || '56528206'
+const ADMIN_TOKEN_KEY = 'phl_admin_token'
 
-// question_videos 전용 - service key 직접 fetch (Exposed tables 설정 불필요)
-const SB_URL = 'https://rlfxuyeoluoeaxuujtly.supabase.co'
-const SB_SVC = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJsZnh1eWVvbHVvZWF4dXVqdGx5Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NTk0MTI2MywiZXhwIjoyMDkxNTE3MjYzfQ.O0Oe3g2fv_8SUvxNfHvdxzpA6pcWVIWTscpymYr0pBI'
-const vHeaders = {
-  'apikey': SB_SVC,
-  'Authorization': `Bearer ${SB_SVC}`,
-  'Content-Type': 'application/json',
-  'Accept-Profile': 'public',
-  'Content-Profile': 'public',
-  'Prefer': 'return=representation',
+// /api/admin 액션 호출 헬퍼 — 세션 스토리지에 저장된 토큰을 자동 첨부
+async function adminApi(action, payload) {
+  const token = sessionStorage.getItem(ADMIN_TOKEN_KEY) || ''
+  try {
+    const r = await fetch('/api/admin', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action, token, payload: payload || {} }),
+    })
+    const text = await r.text()
+    let json = null
+    try { json = text ? JSON.parse(text) : null } catch { json = { raw: text } }
+    return { ok: r.ok, status: r.status, data: (json && json.data) || null, error: (json && json.error) || null }
+  } catch (e) {
+    return { ok: false, status: 0, data: null, error: e.message }
+  }
 }
+
+// 기존 vFetch 호환 시그니처 — question_videos REST 경로 → /api/admin 액션으로 매핑
+// 옛 코드를 최소 수정으로 유지하기 위한 어댑터
 async function vFetch(path, opts = {}) {
-  const res = await fetch(`${SB_URL}/rest/v1${path}`, { ...opts, headers: { ...vHeaders, ...(opts.headers || {}) } })
+  const method = (opts.method || 'GET').toUpperCase()
+  // path 예: /question_videos?select=*&order=created_at.desc
+  // path 예: /question_videos?id=eq.xxxx
+  const isVideoPath = path.startsWith('/question_videos')
+  if (isVideoPath) {
+    if (method === 'GET') {
+      const r = await adminApi('video_list')
+      return { ok: r.ok, status: r.status, data: r.data }
+    }
+    if (method === 'POST') {
+      const row = opts.body ? JSON.parse(opts.body) : {}
+      const r = await adminApi('video_upsert', { row })
+      return { ok: r.ok, status: r.status, data: r.data ? [r.data] : [] }
+    }
+    if (method === 'PATCH') {
+      const row = opts.body ? JSON.parse(opts.body) : {}
+      const m = path.match(/id=eq\.([^&]+)/)
+      if (m) row.id = decodeURIComponent(m[1])
+      const r = await adminApi('video_upsert', { row })
+      return { ok: r.ok, status: r.status, data: r.data ? [r.data] : [] }
+    }
+    if (method === 'DELETE') {
+      const m = path.match(/id=eq\.([^&]+)/)
+      const id = m ? decodeURIComponent(m[1]) : null
+      const r = await adminApi('video_delete', { id })
+      return { ok: r.ok, status: r.status, data: null }
+    }
+  }
+  // 그 외 경로는 일반 anon 페치로 폴백 (read-only, RLS 통과 가능한 경우)
+  const SB_URL_PUB = import.meta.env.VITE_SUPABASE_URL || 'https://rlfxuyeoluoeaxuujtly.supabase.co'
+  const SB_ANON_PUB = import.meta.env.VITE_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJsZnh1eWVvbHVvZWF4dXVqdGx5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU5NDEyNjMsImV4cCI6MjA5MTUxNzI2M30.EmygB1wZcIXM0_4KTC8Kuwh5RY3R9NgfEpuzXQswHck'
+  const res = await fetch(`${SB_URL_PUB}/rest/v1${path}`, {
+    ...opts,
+    headers: {
+      apikey: SB_ANON_PUB,
+      Authorization: `Bearer ${SB_ANON_PUB}`,
+      'Content-Type': 'application/json',
+      'Accept-Profile': 'public',
+      ...(opts.headers || {}),
+    },
+  })
   const text = await res.text()
   return { ok: res.ok, status: res.status, data: text ? JSON.parse(text) : null }
 }
@@ -297,7 +349,13 @@ function LoginScreen({ onLogin }) {
   const [err, setErr] = useState(false)
   const handleLogin = (e) => {
     e.preventDefault()
-    if (pw === ADMIN_PASS) onLogin(); else setErr(true)
+    if (pw === ADMIN_PASS) {
+      // /api/admin 호출 시 사용할 어드민 토큰 저장 (서버의 ADMIN_TOKEN env와 일치해야 함)
+      // 기본값은 VITE_ADMIN_PASS와 동일 → Vercel env에서 ADMIN_TOKEN을 별도 지정하면 그것을 클라가 모름
+      // 따라서 운영자는 ADMIN_TOKEN=VITE_ADMIN_PASS 동일값으로 설정하거나, 별도 토큰 입력 폼을 사용.
+      try { sessionStorage.setItem(ADMIN_TOKEN_KEY, pw) } catch {}
+      onLogin()
+    } else setErr(true)
   }
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-6">
@@ -1816,6 +1874,9 @@ export default function AdminPage() {
     { id: 'partner_manage', label: '파트너 관리',  icon: Globe },
     { id: 'qa_answers',     label: 'Q&A 답변',     icon: PenSquare },
     { id: 'youtube',        label: 'YouTube',       icon: PlayCircle },
+    { id: 'cms_categories', label: 'CMS·카테고리', icon: BookOpen },
+    { id: 'cms_pages',      label: 'CMS·페이지',   icon: FileText },
+    { id: 'cms_leads',      label: 'CMS·리드',     icon: UserPlus },
     { id: 'submissions',    label: '상담 문의',     icon: MessageSquare, count: submissions.length },
     { id: 'partners',       label: '파트너 신청',   icon: Users,         count: partners.length },
     { id: 'stats',          label: '통계',          icon: BookOpen },
@@ -1834,7 +1895,7 @@ export default function AdminPage() {
             <button onClick={fetchData} className="flex items-center gap-2 text-gray-300 hover:text-white text-base">
               <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} /> 새로고침
             </button>
-            <button onClick={() => setIsLoggedIn(false)} className="text-gray-400 hover:text-white text-base">로그아웃</button>
+            <button onClick={() => { try { sessionStorage.removeItem(ADMIN_TOKEN_KEY) } catch {} ; setIsLoggedIn(false) }} className="text-gray-400 hover:text-white text-base">로그아웃</button>
           </div>
         </div>
       </div>
@@ -1878,6 +1939,10 @@ export default function AdminPage() {
         {activeTab === 'qa_answers' && <QAAnswerTab />}
 
         {activeTab === 'youtube' && <YouTubeManageTab />}
+
+        {activeTab === 'cms_categories' && <CmsCategoriesTab />}
+        {activeTab === 'cms_pages'      && <CmsPagesTab />}
+        {activeTab === 'cms_leads'      && <CmsLeadsTab />}
 
         {activeTab === 'submissions' && (
           <div className="bg-white rounded-2xl shadow-sm overflow-hidden">
@@ -2017,6 +2082,357 @@ export default function AdminPage() {
             </div>
           </div>
         )}
+      </div>
+    </div>
+  )
+}
+
+// ═══════════════════════════════════════════
+// Phase 4 CMS — Categories Tab
+// ═══════════════════════════════════════════
+function CmsCategoriesTab() {
+  const [items, setItems] = useState([])
+  const [loading, setLoading] = useState(false)
+  const [edit, setEdit] = useState(null)
+  const [msg, setMsg] = useState('')
+  const [tab, setTab] = useState('blog')
+
+  const load = async () => {
+    setLoading(true)
+    const r = await adminApi('category_list', {})
+    if (r.ok) setItems(r.data || [])
+    else setMsg(`로드 실패: ${r.error || r.status}`)
+    setLoading(false)
+  }
+  useEffect(() => { load() }, [])
+
+  const filtered = items.filter(i => i.type === tab)
+
+  const save = async () => {
+    if (!edit.id || !edit.type || !edit.name) { setMsg('id/type/name 필수'); return }
+    const r = await adminApi('category_upsert', { row: edit })
+    if (r.ok) { setMsg('저장됨'); setEdit(null); load() }
+    else setMsg(`실패: ${r.error}`)
+  }
+  const del = async (id) => {
+    if (!confirm(`'${id}' 카테고리를 삭제할까요?`)) return
+    const r = await adminApi('category_delete', { id })
+    if (r.ok) { setMsg('삭제됨'); load() }
+    else setMsg(`실패: ${r.error}`)
+  }
+  const newRow = (type) => setEdit({
+    id: '', type, name: '', description: '', meta_title: '', meta_desc: '', sort_order: 100, status: 'active'
+  })
+
+  return (
+    <div className="bg-white rounded-2xl shadow-sm p-5">
+      <div className="flex items-center justify-between mb-4">
+        <h2 className="text-lg font-bold text-ocean-deep">CMS · 카테고리 관리</h2>
+        <button onClick={load} className="text-sm text-gray-500 hover:text-gray-800 flex items-center gap-1.5">
+          <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} /> 새로고침
+        </button>
+      </div>
+      <div className="flex gap-2 mb-4">
+        {['blog','qa'].map(t => (
+          <button key={t} onClick={() => setTab(t)}
+            className={`px-3 py-1.5 rounded-lg text-sm font-medium ${tab === t ? 'bg-ocean-deep text-white' : 'bg-gray-100 text-gray-700'}`}>
+            {t === 'blog' ? '블로그' : 'Q&A'} ({items.filter(i => i.type === t).length})
+          </button>
+        ))}
+        <button onClick={() => newRow(tab)}
+          className="ml-auto inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium bg-cyan-hana text-white hover:opacity-90">
+          <Plus className="w-4 h-4" /> 새 카테고리
+        </button>
+      </div>
+      {msg && <p className="text-sm text-amber-700 bg-amber-50 rounded px-3 py-2 mb-3">{msg}</p>}
+
+      {edit && (
+        <div className="border-2 border-cyan-hana rounded-xl p-4 mb-4 bg-cyan-50/30">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <label className="text-sm">ID(slug, 영문 소문자/하이픈)
+              <input className="input-field mt-1" value={edit.id} onChange={e => setEdit({ ...edit, id: e.target.value })} placeholder="diabetes" />
+            </label>
+            <label className="text-sm">타입
+              <select className="input-field mt-1" value={edit.type} onChange={e => setEdit({ ...edit, type: e.target.value })}>
+                <option value="blog">blog</option><option value="qa">qa</option>
+              </select>
+            </label>
+            <label className="text-sm">이름
+              <input className="input-field mt-1" value={edit.name} onChange={e => setEdit({ ...edit, name: e.target.value })} placeholder="당뇨·혈당" />
+            </label>
+            <label className="text-sm">정렬
+              <input type="number" className="input-field mt-1" value={edit.sort_order || 100} onChange={e => setEdit({ ...edit, sort_order: parseInt(e.target.value) || 100 })} />
+            </label>
+            <label className="text-sm md:col-span-2">설명
+              <textarea className="input-field mt-1" rows={2} value={edit.description || ''} onChange={e => setEdit({ ...edit, description: e.target.value })} />
+            </label>
+            <label className="text-sm">SEO 타이틀
+              <input className="input-field mt-1" value={edit.meta_title || ''} onChange={e => setEdit({ ...edit, meta_title: e.target.value })} />
+            </label>
+            <label className="text-sm">상태
+              <select className="input-field mt-1" value={edit.status || 'active'} onChange={e => setEdit({ ...edit, status: e.target.value })}>
+                <option value="active">active</option><option value="draft">draft</option>
+              </select>
+            </label>
+            <label className="text-sm md:col-span-2">SEO 설명
+              <textarea className="input-field mt-1" rows={2} value={edit.meta_desc || ''} onChange={e => setEdit({ ...edit, meta_desc: e.target.value })} />
+            </label>
+          </div>
+          <div className="flex gap-2 mt-3">
+            <button onClick={save} className="btn-primary px-4 py-2 text-sm inline-flex items-center gap-1.5"><Save className="w-4 h-4" /> 저장</button>
+            <button onClick={() => setEdit(null)} className="px-4 py-2 text-sm rounded-lg bg-gray-100 hover:bg-gray-200 inline-flex items-center gap-1.5"><X className="w-4 h-4" /> 취소</button>
+          </div>
+        </div>
+      )}
+
+      <div className="overflow-x-auto">
+        <table className="w-full text-sm">
+          <thead>
+            <tr className="text-left text-gray-500 border-b">
+              <th className="py-2 pr-3">ID</th>
+              <th className="py-2 pr-3">이름</th>
+              <th className="py-2 pr-3">정렬</th>
+              <th className="py-2 pr-3">상태</th>
+              <th className="py-2 pr-3">작업</th>
+            </tr>
+          </thead>
+          <tbody>
+            {filtered.map(c => (
+              <tr key={c.id} className="border-b hover:bg-gray-50">
+                <td className="py-2 pr-3 font-mono text-xs">{c.id}</td>
+                <td className="py-2 pr-3">{c.name}</td>
+                <td className="py-2 pr-3">{c.sort_order}</td>
+                <td className="py-2 pr-3">
+                  <span className={`text-xs px-2 py-0.5 rounded-full ${c.status === 'active' ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-500'}`}>{c.status}</span>
+                </td>
+                <td className="py-2 pr-3">
+                  <button onClick={() => setEdit({ ...c })} className="text-cyan-700 hover:underline text-xs mr-3"><Edit3 className="w-3.5 h-3.5 inline" /> 편집</button>
+                  <button onClick={() => del(c.id)} className="text-red-600 hover:underline text-xs"><Trash2 className="w-3.5 h-3.5 inline" /> 삭제</button>
+                </td>
+              </tr>
+            ))}
+            {filtered.length === 0 && (
+              <tr><td colSpan={5} className="py-6 text-center text-gray-400 text-sm">데이터 없음</td></tr>
+            )}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  )
+}
+
+// ═══════════════════════════════════════════
+// Phase 4 CMS — Pages Tab
+// ═══════════════════════════════════════════
+function CmsPagesTab() {
+  const [items, setItems] = useState([])
+  const [loading, setLoading] = useState(false)
+  const [edit, setEdit] = useState(null)
+  const [msg, setMsg] = useState('')
+
+  const load = async () => {
+    setLoading(true)
+    const r = await adminApi('page_list', {})
+    if (r.ok) setItems(r.data || [])
+    else setMsg(`로드 실패: ${r.error || r.status}`)
+    setLoading(false)
+  }
+  useEffect(() => { load() }, [])
+
+  const save = async () => {
+    if (!edit.slug) { setMsg('slug 필수'); return }
+    const r = await adminApi('page_upsert', { row: edit })
+    if (r.ok) { setMsg('저장됨 — sitemap/SEO 캐시는 ~5분 내 반영'); setEdit(null); load() }
+    else setMsg(`실패: ${r.error}`)
+  }
+  const del = async (slug) => {
+    if (!confirm(`'${slug}' 페이지를 삭제할까요?`)) return
+    const r = await adminApi('page_delete', { slug })
+    if (r.ok) { setMsg('삭제됨'); load() }
+    else setMsg(`실패: ${r.error}`)
+  }
+  const newRow = () => setEdit({
+    slug: '', title: '', meta_title: '', meta_desc: '', body: '', sort_order: 100, status: 'active'
+  })
+
+  return (
+    <div className="bg-white rounded-2xl shadow-sm p-5">
+      <div className="flex items-center justify-between mb-4">
+        <h2 className="text-lg font-bold text-ocean-deep">CMS · 고정 페이지 관리</h2>
+        <div className="flex gap-2">
+          <button onClick={newRow} className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium bg-cyan-hana text-white hover:opacity-90">
+            <Plus className="w-4 h-4" /> 새 페이지
+          </button>
+          <button onClick={load} className="text-sm text-gray-500 hover:text-gray-800 flex items-center gap-1.5">
+            <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} /> 새로고침
+          </button>
+        </div>
+      </div>
+      <p className="text-xs text-gray-500 mb-3">
+        ⚠️ <code>slug</code>는 URL 경로(예: <code>home</code> → <code>/</code>, <code>phlorotannin</code> → <code>/phlorotannin</code>)에 매핑됩니다.
+        여기서 <code>meta_title</code>/<code>meta_desc</code>를 채우면 <code>/api/seo</code>가 코드 상수보다 우선 사용합니다.
+      </p>
+      {msg && <p className="text-sm text-amber-700 bg-amber-50 rounded px-3 py-2 mb-3">{msg}</p>}
+
+      {edit && (
+        <div className="border-2 border-cyan-hana rounded-xl p-4 mb-4 bg-cyan-50/30">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <label className="text-sm">slug(영문 소문자/하이픈)
+              <input className="input-field mt-1" value={edit.slug} onChange={e => setEdit({ ...edit, slug: e.target.value })} placeholder="home" />
+            </label>
+            <label className="text-sm">정렬
+              <input type="number" className="input-field mt-1" value={edit.sort_order || 100} onChange={e => setEdit({ ...edit, sort_order: parseInt(e.target.value) || 100 })} />
+            </label>
+            <label className="text-sm md:col-span-2">제목(내부용)
+              <input className="input-field mt-1" value={edit.title || ''} onChange={e => setEdit({ ...edit, title: e.target.value })} />
+            </label>
+            <label className="text-sm md:col-span-2">SEO 타이틀
+              <input className="input-field mt-1" value={edit.meta_title || ''} onChange={e => setEdit({ ...edit, meta_title: e.target.value })} />
+            </label>
+            <label className="text-sm md:col-span-2">SEO 설명 (160자 권장)
+              <textarea className="input-field mt-1" rows={3} value={edit.meta_desc || ''} onChange={e => setEdit({ ...edit, meta_desc: e.target.value })} />
+            </label>
+            <label className="text-sm md:col-span-2">본문 (옵션 — 현재 미사용)
+              <textarea className="input-field mt-1" rows={4} value={edit.body || ''} onChange={e => setEdit({ ...edit, body: e.target.value })} />
+            </label>
+            <label className="text-sm">상태
+              <select className="input-field mt-1" value={edit.status || 'active'} onChange={e => setEdit({ ...edit, status: e.target.value })}>
+                <option value="active">active</option><option value="draft">draft</option>
+              </select>
+            </label>
+          </div>
+          <div className="flex gap-2 mt-3">
+            <button onClick={save} className="btn-primary px-4 py-2 text-sm inline-flex items-center gap-1.5"><Save className="w-4 h-4" /> 저장</button>
+            <button onClick={() => setEdit(null)} className="px-4 py-2 text-sm rounded-lg bg-gray-100 hover:bg-gray-200 inline-flex items-center gap-1.5"><X className="w-4 h-4" /> 취소</button>
+          </div>
+        </div>
+      )}
+
+      <div className="overflow-x-auto">
+        <table className="w-full text-sm">
+          <thead>
+            <tr className="text-left text-gray-500 border-b">
+              <th className="py-2 pr-3">slug</th>
+              <th className="py-2 pr-3">SEO 타이틀</th>
+              <th className="py-2 pr-3">정렬</th>
+              <th className="py-2 pr-3">상태</th>
+              <th className="py-2 pr-3">작업</th>
+            </tr>
+          </thead>
+          <tbody>
+            {items.map(p => (
+              <tr key={p.slug} className="border-b hover:bg-gray-50">
+                <td className="py-2 pr-3 font-mono text-xs">{p.slug}</td>
+                <td className="py-2 pr-3 max-w-md truncate">{p.meta_title || p.title}</td>
+                <td className="py-2 pr-3">{p.sort_order}</td>
+                <td className="py-2 pr-3">
+                  <span className={`text-xs px-2 py-0.5 rounded-full ${p.status === 'active' ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-500'}`}>{p.status}</span>
+                </td>
+                <td className="py-2 pr-3">
+                  <button onClick={() => setEdit({ ...p })} className="text-cyan-700 hover:underline text-xs mr-3"><Edit3 className="w-3.5 h-3.5 inline" /> 편집</button>
+                  <button onClick={() => del(p.slug)} className="text-red-600 hover:underline text-xs"><Trash2 className="w-3.5 h-3.5 inline" /> 삭제</button>
+                </td>
+              </tr>
+            ))}
+            {items.length === 0 && (
+              <tr><td colSpan={5} className="py-6 text-center text-gray-400 text-sm">데이터 없음</td></tr>
+            )}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  )
+}
+
+// ═══════════════════════════════════════════
+// Phase 4 CMS — Leads Tab
+// ═══════════════════════════════════════════
+function CmsLeadsTab() {
+  const [items, setItems] = useState([])
+  const [loading, setLoading] = useState(false)
+  const [filter, setFilter] = useState('')
+  const [msg, setMsg] = useState('')
+
+  const load = async () => {
+    setLoading(true)
+    const r = await adminApi('lead_list', { status: filter })
+    if (r.ok) setItems(r.data || [])
+    else setMsg(`로드 실패: ${r.error || r.status}`)
+    setLoading(false)
+  }
+  useEffect(() => { load() /* eslint-disable-next-line */ }, [filter])
+
+  const updateStatus = async (id, status) => {
+    const r = await adminApi('lead_update_status', { id, status })
+    if (r.ok) load()
+    else setMsg(`실패: ${r.error}`)
+  }
+  const del = async (id) => {
+    if (!confirm('이 리드를 삭제할까요?')) return
+    const r = await adminApi('lead_delete', { id })
+    if (r.ok) load()
+    else setMsg(`실패: ${r.error}`)
+  }
+
+  return (
+    <div className="bg-white rounded-2xl shadow-sm p-5">
+      <div className="flex items-center justify-between mb-4">
+        <h2 className="text-lg font-bold text-ocean-deep">CMS · 리드 / 문의</h2>
+        <div className="flex items-center gap-2">
+          <select value={filter} onChange={e => setFilter(e.target.value)} className="input-field py-1.5 text-sm">
+            <option value="">전체</option>
+            <option value="new">new</option>
+            <option value="contacted">contacted</option>
+            <option value="closed">closed</option>
+          </select>
+          <button onClick={load} className="text-sm text-gray-500 hover:text-gray-800 flex items-center gap-1.5">
+            <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} /> 새로고침
+          </button>
+        </div>
+      </div>
+      {msg && <p className="text-sm text-amber-700 bg-amber-50 rounded px-3 py-2 mb-3">{msg}</p>}
+
+      <div className="overflow-x-auto">
+        <table className="w-full text-sm">
+          <thead>
+            <tr className="text-left text-gray-500 border-b">
+              <th className="py-2 pr-3">접수</th>
+              <th className="py-2 pr-3">이름</th>
+              <th className="py-2 pr-3">연락처</th>
+              <th className="py-2 pr-3">메시지</th>
+              <th className="py-2 pr-3">소스</th>
+              <th className="py-2 pr-3">상태</th>
+              <th className="py-2 pr-3">작업</th>
+            </tr>
+          </thead>
+          <tbody>
+            {items.map(l => (
+              <tr key={l.id} className="border-b hover:bg-gray-50 align-top">
+                <td className="py-2 pr-3 text-xs whitespace-nowrap">{l.created_at ? new Date(l.created_at).toLocaleString('ko-KR') : ''}</td>
+                <td className="py-2 pr-3">{l.name || '-'}</td>
+                <td className="py-2 pr-3 text-xs">
+                  <div>{l.phone || '-'}</div>
+                  <div className="text-gray-400">{l.email || ''}</div>
+                </td>
+                <td className="py-2 pr-3 max-w-xs">
+                  <div className="line-clamp-3 text-xs text-gray-700">{l.message || ''}</div>
+                </td>
+                <td className="py-2 pr-3 text-xs text-gray-500">{l.source || '-'}</td>
+                <td className="py-2 pr-3">
+                  <span className={`text-xs px-2 py-0.5 rounded-full ${l.status === 'new' ? 'bg-cyan-100 text-cyan-700' : l.status === 'contacted' ? 'bg-amber-100 text-amber-700' : 'bg-gray-100 text-gray-500'}`}>{l.status}</span>
+                </td>
+                <td className="py-2 pr-3 whitespace-nowrap">
+                  {l.status !== 'contacted' && <button onClick={() => updateStatus(l.id, 'contacted')} className="text-amber-700 hover:underline text-xs mr-2">연락중</button>}
+                  {l.status !== 'closed' && <button onClick={() => updateStatus(l.id, 'closed')} className="text-gray-700 hover:underline text-xs mr-2">완료</button>}
+                  <button onClick={() => del(l.id)} className="text-red-600 hover:underline text-xs"><Trash2 className="w-3.5 h-3.5 inline" /></button>
+                </td>
+              </tr>
+            ))}
+            {items.length === 0 && (
+              <tr><td colSpan={7} className="py-6 text-center text-gray-400 text-sm">데이터 없음</td></tr>
+            )}
+          </tbody>
+        </table>
       </div>
     </div>
   )

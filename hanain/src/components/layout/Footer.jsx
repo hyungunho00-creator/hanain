@@ -1,10 +1,41 @@
 import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 import { usePartner } from '../../context/PartnerContext'
 import { Waves, Phone, MessageCircle } from 'lucide-react'
 import RevealContact from '../common/RevealContact'
+import { getQaCategories } from '../../lib/supabase'
+
+// Phase 3: Supabase categories(type='qa') 테이블 1순위, 실패 시 아래 상수 fallback
+const FALLBACK_QA_CATS = [
+  { id: 'metabolism', name: '대사질환' },
+  { id: 'cancer_immune', name: '항암/면역' },
+  { id: 'digestive', name: '소화/간' },
+  { id: 'cardiovascular', name: '심혈관' },
+  { id: 'neuro_cognitive', name: '신경/인지' },
+  { id: 'mental_health', name: '정신건강' },
+  { id: 'respiratory', name: '호흡기' },
+  { id: 'musculoskeletal', name: '근골격' },
+  { id: 'skin', name: '피부' },
+  { id: 'hair', name: '모발/두피' },
+  { id: 'infection_inflammation', name: '감염/염증' },
+  { id: 'mens_health', name: '남성건강' },
+  { id: 'womens_health', name: '여성건강' },
+]
 
 export default function Footer() {
   const partner = usePartner()
+  const [qaCats, setQaCats] = useState(FALLBACK_QA_CATS)
+
+  useEffect(() => {
+    let cancelled = false
+    getQaCategories()
+      .then(list => {
+        if (cancelled || !list || !list.length) return
+        setQaCats(list.map(c => ({ id: c.id, name: c.name })))
+      })
+      .catch(() => {})
+    return () => { cancelled = true }
+  }, [])
 
   return (
     <footer className="bg-ocean-deep text-gray-300">
@@ -54,21 +85,7 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-semibold mb-4">건강 정보 카테고리</h3>
             <ul className="space-y-2 text-base">
-              {[
-                { id: 'metabolism', name: '대사질환' },
-                { id: 'cancer_immune', name: '항암/면역' },
-                { id: 'digestive', name: '소화/간' },
-                { id: 'cardiovascular', name: '심혈관' },
-                { id: 'neuro_cognitive', name: '신경/인지' },
-                { id: 'mental_health', name: '정신건강' },
-                { id: 'respiratory', name: '호흡기' },
-                { id: 'musculoskeletal', name: '근골격' },
-                { id: 'skin', name: '피부' },
-                { id: 'hair', name: '모발/두피' },
-                { id: 'infection_inflammation', name: '감염/염증' },
-                { id: 'mens_health', name: '남성건강' },
-                { id: 'womens_health', name: '여성건강' },
-              ].map(cat => (
+              {qaCats.map(cat => (
                 <li key={cat.id}>
                   <Link to={`/qa?category=${cat.id}`} className="hover:text-cyan-hana transition-colors">
                     {cat.name}
