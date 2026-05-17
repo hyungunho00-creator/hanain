@@ -39,16 +39,34 @@ const CATEGORY_NAMES = {
   'hypertension': '고혈압·혈관 건강정보',
   'cancer': '암환자 가족 건강정보',
   'cancer-family': '암환자 가족 건강정보',
+  'cancer_immune': '암·면역 건강정보',
   'dementia': '치매·뇌 건강정보',
   'brain': '뇌 건강정보',
+  'neuro_cognitive': '뇌·인지 건강정보',
   'skin': '피부 건강정보',
+  'skin_hair': '피부·모발 건강정보',
   'hair': '모발 건강정보',
   'sleep': '수면 건강정보',
   'immunity': '면역 건강정보',
   'inflammation': '염증 건강정보',
+  'infection_inflammation': '감염·염증 건강정보',
   'gut': '장 건강정보',
+  'digestive': '소화·장 건강정보',
   'antioxidant': '항산화 건강정보',
   'hospital': '병원정보 아카이브',
+  'hospital-info': '병원정보 아카이브',
+  'cardiovascular': '심혈관 건강정보',
+  'metabolism': '대사·체중 건강정보',
+  'musculoskeletal': '근골격 건강정보',
+  'respiratory': '호흡기 건강정보',
+  'mental_health': '정신·마음 건강정보',
+  'womens_health': '여성 건강정보',
+  'mens_health': '남성 건강정보',
+  'ingredient-comparison': '성분 비교 아카이브',
+  'disease-health-info': '질환별 건강정보',
+  'partner-info': '파트너 정보페이지',
+  'research': '연구·논문 아카이브',
+  'general': '건강정보 종합',
 }
 
 const CATEGORY_DESC = {
@@ -448,7 +466,7 @@ async function fetchPostBody(slug) {
   if (!key) return null
   try {
     const r = await fetch(
-      `${url}/rest/v1/posts?slug=eq.${encodeURIComponent(slug)}&select=title,meta_title,meta_desc,excerpt,content,category&limit=1`,
+      `${url}/rest/v1/posts?slug=eq.${encodeURIComponent(slug)}&select=id,slug,title,meta_title,meta_desc,excerpt,content,category,tags,og_image,published_at,updated_at&limit=1`,
       { headers: { apikey: key, Authorization: `Bearer ${key}`, 'Accept-Profile': 'public' } }
     )
     if (!r.ok) return null
@@ -457,21 +475,67 @@ async function fetchPostBody(slug) {
     if (!p) return null
     const title = p.meta_title || p.title || ''
     const metaDesc = p.meta_desc || p.excerpt || ''
-    let body = stripToPlainText(p.content || '')
-    // 600자 발췌 (한글 기준, 단어 경계 유지)
+    // 원본 content는 JSON-LD/FAQ 추출용으로 보존, plain body는 fallback용 600자 발췌
+    const contentRaw = String(p.content || '')
+    let body = stripToPlainText(contentRaw)
     if (body.length > 600) {
       body = body.slice(0, 600)
       const lastSpace = body.lastIndexOf(' ')
       if (lastSpace > 400) body = body.slice(0, lastSpace)
       body = body.trim() + ' …'
     }
-    // 본문이 너무 짧으면 meta_desc로 보강
     if (body.length < 80 && metaDesc) {
       body = stripToPlainText(metaDesc)
     }
-    return { title, metaDesc, body, category: p.category || '' }
+    return {
+      title,
+      metaDesc,
+      body,
+      category: p.category || '',
+      // 항목 F 확장 필드 (Article JSON-LD, Related Posts, FAQ 추출용)
+      id: p.id || null,
+      slug: p.slug || slug,
+      rawTitle: p.title || '',
+      content: contentRaw,
+      tags: Array.isArray(p.tags) ? p.tags.filter(t => t && typeof t === 'string') : [],
+      ogImage: p.og_image || '',
+      publishedAt: p.published_at || '',
+      updatedAt: p.updated_at || '',
+    }
   } catch {
     return null
+  }
+}
+
+// /blog/:slug 의 같은 카테고리 다른 글 3건 (Related Posts)
+// view_count 우선, 그 다음 최근 published_at 순으로 정렬
+async function fetchRelatedPosts(category, excludeSlug, limit = 3) {
+  if (!category || typeof category !== 'string') return []
+  const { url, key } = sbCreds()
+  if (!key) return []
+  try {
+    const params = [
+      `category=eq.${encodeURIComponent(category)}`,
+      `slug=neq.${encodeURIComponent(excludeSlug || '__none__')}`,
+      `status=eq.published`,
+      `select=slug,title,excerpt,published_at`,
+      `order=view_count.desc.nullslast,published_at.desc.nullslast`,
+      `limit=${limit}`,
+    ].join('&')
+    const r = await fetch(
+      `${url}/rest/v1/posts?${params}`,
+      { headers: { apikey: key, Authorization: `Bearer ${key}`, 'Accept-Profile': 'public' } }
+    )
+    if (!r.ok) return []
+    const arr = await r.json()
+    if (!Array.isArray(arr)) return []
+    return arr.map(p => ({
+      slug: p.slug || '',
+      title: p.title || '',
+      excerpt: p.excerpt || '',
+    })).filter(p => p.slug && p.title)
+  } catch {
+    return []
   }
 }
 
@@ -507,12 +571,186 @@ function maskPhone(phone) {
   return phone
 }
 
+// ─────────────────────────────────────────
+// 항목 F: 2차 SEO 자산화 — JSON-LD 빌더 / Related Posts / FAQ 추출
+// ─────────────────────────────────────────
+
+// 본문에서 보수적 패턴으로 Q/A 쌍 추출.
+// 매칭 패턴 (false positive 회피 위해 명시적 마커만 허용):
+//   1) "Q1. ..." / "A1. ..."  (숫자 기반)
+//   2) "**Q:** ..." / "**A:** ..."  (Markdown bold + 콜론)
+//   3) "### Q. ..." / "### A. ..."  (Markdown 헤딩)
+// 2건 이상 추출 시에만 반환. 각 Q/A는 stripToPlainText 후 400자로 cap.
+function extractFaqFromContent(content) {
+  if (!content || typeof content !== 'string') return []
+  const text = content
+  const pairs = []
+
+  // 패턴 1: Q1./A1. 형식
+  const re1 = /Q\s*([0-9]{1,2})\.\s*([\s\S]+?)\s*(?:^|\n)\s*A\s*\1\.\s*([\s\S]+?)(?=\n\s*Q\s*[0-9]{1,2}\.|\n\s*##|\n\s*---|$)/gm
+  let m
+  while ((m = re1.exec(text)) !== null && pairs.length < 10) {
+    pairs.push({ q: m[2], a: m[3] })
+  }
+
+  // 패턴 2: **Q:** / **A:**
+  if (pairs.length === 0) {
+    const re2 = /\*\*Q\s*[:：]\*\*\s*([\s\S]+?)\s*\n\s*\*\*A\s*[:：]\*\*\s*([\s\S]+?)(?=\n\s*\*\*Q\s*[:：]\*\*|\n\s*##|\n\s*---|$)/gm
+    while ((m = re2.exec(text)) !== null && pairs.length < 10) {
+      pairs.push({ q: m[1], a: m[2] })
+    }
+  }
+
+  // 패턴 3: ### Q. / ### A.
+  if (pairs.length === 0) {
+    const re3 = /^#{2,4}\s*Q[\s.:：]+([\s\S]+?)\n#{2,4}\s*A[\s.:：]+([\s\S]+?)(?=\n#{2,4}\s*Q[\s.:：]|\n#{1,4}\s|\n\s*---|$)/gm
+    while ((m = re3.exec(text)) !== null && pairs.length < 10) {
+      pairs.push({ q: m[1], a: m[2] })
+    }
+  }
+
+  if (pairs.length < 2) return []
+
+  return pairs.map(p => {
+    let q = stripToPlainText(p.q).trim()
+    let a = stripToPlainText(p.a).trim()
+    if (q.length > 200) q = q.slice(0, 200).trim() + '…'
+    if (a.length > 400) a = a.slice(0, 400).trim() + '…'
+    return { q, a }
+  }).filter(p => p.q.length >= 4 && p.a.length >= 8)
+}
+
+// JSON.stringify 결과를 <script> 내부 삽입 시 안전하게 만들기 (XSS 방지).
+function safeJsonForScript(obj) {
+  return JSON.stringify(obj)
+    .replace(/<\/script>/gi, '<\\/script>')
+    .replace(/<!--/g, '<\\!--')
+    .replace(/\u2028/g, '\\u2028')
+    .replace(/\u2029/g, '\\u2029')
+}
+
+// /blog/:slug → Article JSON-LD
+// posts 데이터를 활용하되, 의료 클레임 회피를 위해 MedicalWebPage 대신 Article 사용.
+function buildArticleJsonLd(post, pathname) {
+  if (!post || !post.rawTitle) return null
+  const canonical = `${SITE}${pathname}`
+  const image = post.ogImage
+    ? (post.ogImage.startsWith('http') ? post.ogImage : `${SITE}${post.ogImage.startsWith('/') ? '' : '/'}${post.ogImage}`)
+    : `${SITE}/og-image.png`
+
+  const ld = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: String(post.rawTitle).slice(0, 110),
+    description: post.metaDesc ? String(post.metaDesc).slice(0, 300) : undefined,
+    inLanguage: 'ko-KR',
+    isAccessibleForFree: true,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+    url: canonical,
+    image: { '@type': 'ImageObject', url: image, width: 1200, height: 630 },
+    author: {
+      '@type': 'Organization',
+      name: '플로로탄닌 파트너스',
+      url: SITE,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: '플로로탄닌·감태추출물 종합 건강정보 데이터센터',
+      url: SITE,
+      logo: { '@type': 'ImageObject', url: `${SITE}/og-image.png`, width: 1200, height: 630 },
+    },
+  }
+  if (post.publishedAt) ld.datePublished = post.publishedAt
+  if (post.updatedAt) ld.dateModified = post.updatedAt
+  if (Array.isArray(post.tags) && post.tags.length) {
+    ld.keywords = post.tags.slice(0, 12).join(', ')
+  } else if (post.category) {
+    ld.keywords = post.category
+  }
+  // undefined 값 제거
+  Object.keys(ld).forEach(k => { if (ld[k] === undefined) delete ld[k] })
+  return ld
+}
+
+// /blog/:slug → BreadcrumbList JSON-LD (Home > 블로그 > 카테고리 > 글)
+function buildBreadcrumbJsonLd(post, pathname) {
+  if (!post) return null
+  const items = [
+    { '@type': 'ListItem', position: 1, name: '홈', item: `${SITE}/` },
+    { '@type': 'ListItem', position: 2, name: '건강정보 블로그', item: `${SITE}/blog` },
+  ]
+  if (post.category) {
+    const catName = CATEGORY_NAMES[post.category] || post.category
+    // 카테고리 페이지가 라우팅으로 노출되는 4개에 한해 정확한 URL 사용, 그 외엔 /blog 로 fallback
+    const catUrlMap = {
+      'ingredient-comparison': `${SITE}/blog?category=ingredient-comparison`,
+      'disease-health-info':   `${SITE}/blog?category=disease-health-info`,
+      'hospital-info':         `${SITE}/blog?category=hospital-info`,
+      'partner-info':          `${SITE}/blog?category=partner-info`,
+    }
+    items.push({
+      '@type': 'ListItem',
+      position: 3,
+      name: catName,
+      item: catUrlMap[post.category] || `${SITE}/blog`,
+    })
+  }
+  items.push({
+    '@type': 'ListItem',
+    position: items.length + 1,
+    name: String(post.rawTitle || post.title || '').slice(0, 110),
+    item: `${SITE}${pathname}`,
+  })
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items,
+  }
+}
+
+// /blog/:slug → FAQPage JSON-LD (Q/A 패턴이 2건 이상일 때만)
+function buildFaqJsonLd(faqPairs) {
+  if (!Array.isArray(faqPairs) || faqPairs.length < 2) return null
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqPairs.map(p => ({
+      '@type': 'Question',
+      name: p.q,
+      acceptedAnswer: { '@type': 'Answer', text: p.a },
+    })),
+  }
+}
+
+// <head> 내부에 JSON-LD script 1~N개 주입. 기존 JSON-LD 손대지 않음.
+function injectJsonLd(html, jsonLdObjArray) {
+  const valid = (jsonLdObjArray || []).filter(o => o && typeof o === 'object')
+  if (!valid.length) return html
+  const scripts = valid.map(o =>
+    `<script type="application/ld+json" data-seo-jsonld>${safeJsonForScript(o)}</script>`
+  ).join('')
+  return html.replace(/<\/head>/i, `${scripts}</head>`)
+}
+
+// Related Posts 3건을 fallback body에 덧붙일 HTML 생성
+function buildRelatedPostsHtml(relatedPosts) {
+  if (!Array.isArray(relatedPosts) || relatedPosts.length === 0) return ''
+  const items = relatedPosts.map(p => {
+    const href = `/blog/${encodeURIComponent(p.slug)}`
+    const excerptShort = p.excerpt
+      ? stripToPlainText(p.excerpt).slice(0, 80).trim()
+      : ''
+    return `<li><a href="${esc(href)}">${esc(p.title)}</a>${excerptShort ? ` — ${esc(excerptShort)}` : ''}</li>`
+  }).join('')
+  return `<nav class="related-posts" aria-label="관련 글"><h2>관련 글</h2><ul>${items}</ul></nav>`
+}
+
 // fallback HTML 빌더
 function buildFallbackHtml(pathname, dynamic) {
   // 동적 경로 우선 처리
   // /blog/:slug
   if (dynamic && dynamic.kind === 'post') {
-    const { title, metaDesc, body, category } = dynamic
+    const { title, metaDesc, body, category, relatedHtml } = dynamic
     const catName = category ? (CATEGORY_NAMES[category] || category) : ''
     const inner = [
       `<h1>${esc(title)}</h1>`,
@@ -520,6 +758,8 @@ function buildFallbackHtml(pathname, dynamic) {
       metaDesc ? `<p>${esc(metaDesc)}</p>` : '',
       body ? `<p>${esc(body)}</p>` : '',
       `<p>${esc('관련 주제: 플로로탄닌, 감태추출물, 해양 폴리페놀, 갈조류 폴리페놀, Ecklonia cava, eckol, dieckol, 항산화, 염증, 면역.')}</p>`,
+      // 항목 F: Related Posts 섹션 (있을 때만)
+      relatedHtml || '',
       `<nav><a href="/blog">블로그 아카이브로</a> · <a href="/qa">전문가 Q&amp;A</a> · <a href="/phlorotannin">플로로탄닌이란</a></nav>`,
     ].filter(Boolean).join('')
     return wrapFallback(inner)
@@ -724,14 +964,63 @@ export default async function handler(req, res) {
     // ─── SSR-lite Fallback (AI 크롤러 본문 읽기 최적화) ───────────────
     // 환경변수 SSR_LITE_DISABLED=1 이면 비활성화 (롤백 토글).
     let ssrLiteApplied = 'none'
+    // 항목 F 진단 헤더용 상태값
+    let articleLdApplied = 'no'
+    let breadcrumbLdApplied = 'no'
+    let faqLdApplied = 'no'
+    let relatedPostsCount = 0
     if (process.env.SSR_LITE_DISABLED !== '1') {
       let dynamic = null
       try {
-        // /blog/:slug → 본문 발췌
+        // /blog/:slug → 본문 발췌 + 2차 SEO 자산화 (Article/Breadcrumb/FAQ JSON-LD + Related Posts)
         if (blogMatch) {
           const postBody = await fetchPostBody(blogMatch[1])
           if (postBody && (postBody.body || postBody.metaDesc)) {
             dynamic = { kind: 'post', ...postBody }
+
+            // ─── 항목 F: 2차 SEO 자산화 ───
+            // 환경변수 JSONLD_DISABLED=1 / RELATED_POSTS_DISABLED=1 로 개별 비활성화 가능.
+
+            // 1) Related Posts 3건 (같은 카테고리, 현재 글 제외)
+            if (process.env.RELATED_POSTS_DISABLED !== '1') {
+              try {
+                const related = await fetchRelatedPosts(postBody.category, postBody.slug, 3)
+                if (Array.isArray(related) && related.length) {
+                  dynamic.relatedHtml = buildRelatedPostsHtml(related)
+                  relatedPostsCount = related.length
+                }
+              } catch (rErr) {
+                // Related Posts 실패는 무시 (메인 응답 보호)
+              }
+            }
+
+            // 2) JSON-LD 생성·주입 (Article + BreadcrumbList + FAQ)
+            if (process.env.JSONLD_DISABLED !== '1') {
+              const ldArray = []
+              try {
+                const articleLd = buildArticleJsonLd(postBody, pathname)
+                if (articleLd) { ldArray.push(articleLd); articleLdApplied = 'yes' }
+
+                const breadcrumbLd = buildBreadcrumbJsonLd(postBody, pathname)
+                if (breadcrumbLd) { ldArray.push(breadcrumbLd); breadcrumbLdApplied = 'yes' }
+
+                // FAQ는 Q/A 패턴이 2건 이상일 때만
+                const faqPairs = extractFaqFromContent(postBody.content || '')
+                const faqLd = buildFaqJsonLd(faqPairs)
+                if (faqLd) { ldArray.push(faqLd); faqLdApplied = `yes:${faqPairs.length}` }
+
+                if (ldArray.length) {
+                  html = injectJsonLd(html, ldArray)
+                }
+              } catch (ldErr) {
+                // JSON-LD 실패는 메인 응답 보호
+                articleLdApplied = `error:${(ldErr && ldErr.message) || 'unknown'}`
+              }
+            } else {
+              articleLdApplied = 'disabled'
+              breadcrumbLdApplied = 'disabled'
+              faqLdApplied = 'disabled'
+            }
           }
         }
         // /p/:phone → 파트너 정보 (위에서 이미 fetch됨, 마스킹 처리된 결과 재사용)
@@ -762,6 +1051,11 @@ export default async function handler(req, res) {
     res.setHeader('X-SEO-Title', encodeURIComponent(meta.title))
     res.setHeader('X-SEO-Source', metaSource)
     res.setHeader('X-SSR-Lite', ssrLiteApplied)
+    // 항목 F 진단 헤더
+    res.setHeader('X-Article-JsonLd', articleLdApplied)
+    res.setHeader('X-Breadcrumb-JsonLd', breadcrumbLdApplied)
+    res.setHeader('X-Faq-JsonLd', faqLdApplied)
+    res.setHeader('X-Related-Posts', String(relatedPostsCount))
     res.status(200).send(html)
   } catch (e) {
     res.setHeader('Content-Type', 'text/plain; charset=utf-8')
