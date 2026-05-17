@@ -31,7 +31,7 @@
     { "source": "/copyright", "destination": "/api/seo?p=/copyright" },
     { "source": "/category/:slug", "destination": "/api/seo?p=/category/:slug" },
     { "source": "/p/:phone", "destination": "/api/seo?p=/p/:phone" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/((?!api/).*)", "destination": "/index.html" }
   ],
   "headers": [
     {
