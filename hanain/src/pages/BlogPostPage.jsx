@@ -7,9 +7,57 @@ import { getPostBySlug, getPosts } from '../lib/supabase'
 import { withRef } from '../lib/partnerRef'
 
 // 마크다운 → HTML 변환 (의존성 없이 직접 구현)
+// - GFM 표(`| col | col |` + `|---|---|` 구분선) 지원
+// - 코드블록 / 인라인코드 / h2~h4 / hr / 링크 / bold / italic / blockquote / ul / 단락
 function parseMarkdown(md) {
   if (!md) return ''
-  return md
+
+  // 0) 표 블록을 가장 먼저 추출해 placeholder로 치환 — 이후 단락/리스트 규칙이
+  //    파이프(|)나 하이픈(-)을 잘못 건드리지 못하게 함.
+  const tableStash = []
+  // 헤더 행 + 구분 행 + 본문 행 1개 이상
+  const tableRe = /(^|\n)([ \t]*\|.+\|[ \t]*\n[ \t]*\|[ \t]*:?-+:?[ \t]*(?:\|[ \t]*:?-+:?[ \t]*)+\|[ \t]*\n(?:[ \t]*\|.+\|[ \t]*(?:\n|$))+)/g
+  md = md.replace(tableRe, (_, lead, block) => {
+    const lines = block.trim().split('\n').map(l => l.trim())
+    const splitRow = (l) => {
+      let s = l.trim()
+      if (s.startsWith('|')) s = s.slice(1)
+      if (s.endsWith('|'))   s = s.slice(0, -1)
+      return s.split('|').map(c => c.trim())
+    }
+    const header  = splitRow(lines[0])
+    const aligns  = splitRow(lines[1]).map(c => {
+      const left  = c.startsWith(':')
+      const right = c.endsWith(':')
+      if (left && right) return 'center'
+      if (right)         return 'right'
+      if (left)          return 'left'
+      return ''
+    })
+    const bodyRows = lines.slice(2).map(splitRow)
+    const alignClass = a => a === 'center' ? ' text-center' : a === 'right' ? ' text-right' : ''
+    const thead = '<thead><tr class="border-b-2 border-gray-200 bg-gray-50">' +
+      header.map((c, i) =>
+        `<th class="py-3 px-4 font-semibold text-gray-700${alignClass(aligns[i])}">${c}</th>`
+      ).join('') + '</tr></thead>'
+    const tbody = '<tbody>' + bodyRows.map((row, ri) => {
+      const stripe = ri % 2 === 0 ? '' : ' bg-gray-50/40'
+      return `<tr class="border-b border-gray-100${stripe}">` +
+        row.map((c, i) =>
+          `<td class="py-3 px-4 text-gray-700${alignClass(aligns[i])}">${c}</td>`
+        ).join('') + '</tr>'
+    }).join('') + '</tbody>'
+    const html =
+      '<div class="overflow-x-auto my-6 rounded-xl border border-gray-200">' +
+        '<table class="w-full text-sm md:text-base border-collapse">' +
+          thead + tbody +
+        '</table>' +
+      '</div>'
+    tableStash.push(html)
+    return `${lead}@@MDTABLE_${tableStash.length - 1}@@`
+  })
+
+  let out = md
     // 코드블록
     .replace(/```[\s\S]*?```/g, m => `<pre class="bg-gray-900 text-green-300 rounded-xl p-4 overflow-x-auto my-4 text-sm"><code>${m.slice(3, -3).replace(/^[a-z]+\n/, '')}</code></pre>`)
     // 인라인 코드
@@ -40,10 +88,15 @@ function parseMarkdown(md) {
     .replace(/(<li[\s\S]+?<\/li>)/g, m => `<ul class="my-3 space-y-1">${m}</ul>`)
     // 빈 줄 → 단락
     .replace(/\n\n/g, '</p><p class="text-gray-700 leading-relaxed my-3">')
-    .replace(/^(?!<[hupb]|<hr)(.+)$/gm, '<p class="text-gray-700 leading-relaxed my-3">$1</p>')
+    .replace(/^(?!<[hupb]|<hr|@@MDTABLE_)(.+)$/gm, '<p class="text-gray-700 leading-relaxed my-3">$1</p>')
     // 중복 p 정리
     .replace(/<p[^>]*><\/p>/g, '')
     .replace(/<p[^>]*>(<[hupb]|<hr)/g, '$1')
+    // 표 placeholder를 감싼 잘못된 <p> 제거 + 실제 표로 복원
+    .replace(/<p[^>]*>\s*@@MDTABLE_(\d+)@@\s*<\/p>/g, (_, i) => tableStash[Number(i)])
+    .replace(/@@MDTABLE_(\d+)@@/g, (_, i) => tableStash[Number(i)])
+
+  return out
 }
 
 const CAT_COLORS = {
