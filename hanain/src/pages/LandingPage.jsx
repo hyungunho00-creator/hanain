@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { usePartner } from '../context/PartnerContext'
+import { withRef } from '../lib/partnerRef'
 import SEOHead from '../components/common/SEOHead'
 import { getMainVideos, getPosts } from '../lib/supabase'
 
@@ -177,6 +178,7 @@ const CAT_NAMES = {
   skin:'피부·모발', research:'연구·임상', general:'일반',
 }
 function BlogPreviewSection() {
+  const partner = usePartner()
   const [posts, setPosts] = useState([])
   useEffect(() => {
     getPosts({ limit: 3 }).then(({ data }) => setPosts(data || []))
@@ -191,7 +193,7 @@ function BlogPreviewSection() {
             <h2 className="text-xl font-extrabold text-gray-900">최신 연구 블로그</h2>
             <p className="text-sm text-gray-500 mt-0.5">PH-100 · 에콜 · 디에콜 임상·연구 최신 정보</p>
           </div>
-          <Link to="/blog"
+          <Link to={withRef('/blog', partner)}
             className="text-sm font-semibold text-teal-600 hover:text-teal-700 flex items-center gap-1 whitespace-nowrap">
             전체보기 →
           </Link>
@@ -202,7 +204,7 @@ function BlogPreviewSection() {
             const catName  = CAT_NAMES[post.category]  || post.category
             const date     = new Date(post.created_at).toLocaleDateString('ko-KR', { month:'long', day:'numeric' })
             return (
-              <Link key={post.id} to={`/blog/${post.slug}`}
+              <Link key={post.id} to={withRef(`/blog/${post.slug}`, partner)}
                 className="bg-white rounded-2xl border border-gray-100 p-5 hover:shadow-md hover:border-teal-200 transition-all group">
                 <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${catColor}`}>{catName}</span>
                 <h3 className="text-sm font-bold text-gray-900 mt-3 mb-2 line-clamp-2 group-hover:text-teal-600 transition-colors leading-snug">

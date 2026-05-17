@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { Calendar, Eye, ChevronRight, Search, BookOpen, PlayCircle } from 'lucide-react'
 import SEOHead from '../components/common/SEOHead'
+import { usePartner } from '../context/PartnerContext'
+import { withRef } from '../lib/partnerRef'
 import { getPosts, getPostCount, getBlogCategories, getVideosByCategory } from '../lib/supabase'
 
 // Phase 3: Supabase categories 테이블이 1순위, 아래 상수는 DB 실패 시 fallback
@@ -126,7 +128,7 @@ function CategoryVideoSection({ categoryId }) {
   )
 }
 
-function PostCard({ post }) {
+function PostCard({ post, partner }) {
   const catColor = CAT_COLORS[post.category] || 'bg-gray-100 text-gray-700'
   const catName  = CATEGORIES.find(c => c.id === post.category)?.name || post.category
   const date     = new Date(post.created_at).toLocaleDateString('ko-KR', { year:'numeric', month:'long', day:'numeric' })
@@ -147,7 +149,7 @@ function PostCard({ post }) {
           ))}
         </div>
         <h2 className="text-lg font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-teal-600 transition-colors">
-          <Link to={`/blog/${post.slug}`}>{post.title}</Link>
+          <Link to={withRef(`/blog/${post.slug}`, partner)}>{post.title}</Link>
         </h2>
         {post.excerpt && (
           <p className="text-sm text-gray-500 line-clamp-3 mb-4 leading-relaxed">{post.excerpt}</p>
@@ -159,7 +161,7 @@ function PostCard({ post }) {
               <span className="flex items-center gap-1"><Eye className="w-3.5 h-3.5" />{post.view_count}</span>
             )}
           </div>
-          <Link to={`/blog/${post.slug}`}
+          <Link to={withRef(`/blog/${post.slug}`, partner)}
             className="text-xs font-semibold text-teal-600 hover:text-teal-700 flex items-center gap-1">
             읽기 <ChevronRight className="w-3.5 h-3.5" />
           </Link>
@@ -173,6 +175,7 @@ export default function BlogPage() {
   const [searchParams, setSearchParams] = useSearchParams()
   const activeCat = searchParams.get('category') || 'all'
   const searchQ   = searchParams.get('q') || ''
+  const partner   = usePartner()
 
   const [posts,     setPosts]     = useState([])
   const [total,     setTotal]     = useState(0)
@@ -315,7 +318,7 @@ export default function BlogPage() {
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {posts.map(post => <PostCard key={post.id} post={post} />)}
+              {posts.map(post => <PostCard key={post.id} post={post} partner={partner} />)}
             </div>
           )}
         </div>

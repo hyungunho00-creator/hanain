@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { usePartner } from '../../context/PartnerContext'
+import { withRef } from '../../lib/partnerRef'
 import { Waves, Phone, MessageCircle } from 'lucide-react'
 import RevealContact from '../common/RevealContact'
 import { getQaCategories } from '../../lib/supabase'
@@ -87,7 +88,7 @@ export default function Footer() {
             <ul className="space-y-2 text-base">
               {qaCats.map(cat => (
                 <li key={cat.id}>
-                  <Link to={`/qa?category=${cat.id}`} className="hover:text-cyan-hana transition-colors">
+                  <Link to={withRef(`/qa?category=${cat.id}`, partner)} className="hover:text-cyan-hana transition-colors">
                     {cat.name}
                   </Link>
                 </li>

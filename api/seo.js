@@ -898,6 +898,25 @@ export default async function handler(req, res) {
     if (pathname === '/api/seo') pathname = '/'
     if (!pathname.startsWith('/')) pathname = '/' + pathname
 
+    // SEO 안전장치: pathname에 ?ref=... 같은 쿼리가 섞여 들어왔어도 canonical/매칭에서 제거
+    // (파트너 컨텍스트 전파용 ?ref= 파라미터는 SEO에 영향 없어야 함 — 중복 색인 방지)
+    // 단, 기존 정적 메타 매핑에서 사용하는 ?category=... 는 유지해야 하므로 ref/utm 만 제거
+    if (pathname.includes('?')) {
+      try {
+        const tmp = new URL(pathname, 'http://localhost')
+        const sp = tmp.searchParams
+        const keysToStrip = ['ref', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term']
+        let changed = false
+        for (const k of keysToStrip) {
+          if (sp.has(k)) { sp.delete(k); changed = true }
+        }
+        if (changed) {
+          const qs = sp.toString()
+          pathname = tmp.pathname + (qs ? '?' + qs : '')
+        }
+      } catch { /* 무시 */ }
+    }
+
     // 메타 결정
     let meta = null
     let metaSource = 'static'

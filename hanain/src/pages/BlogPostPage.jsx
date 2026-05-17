@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import { Calendar, Tag, Eye, ChevronRight, ArrowLeft, Share2, BookOpen, Phone, MessageCircle } from 'lucide-react'
-import { usePartner } from '../context/PartnerContext'
+import { usePartner, DEFAULT_PARTNER } from '../context/PartnerContext'
 import SEOHead from '../components/common/SEOHead'
 import { getPostBySlug, getPosts } from '../lib/supabase'
+import { withRef } from '../lib/partnerRef'
 
 // 마크다운 → HTML 변환 (의존성 없이 직접 구현)
 function parseMarkdown(md) {
@@ -91,14 +92,20 @@ export default function BlogPostPage() {
     })
   }, [slug])
 
+  // 공유 URL: 본사 이탈 방지 — 현재 활성 파트너 컨텍스트가 있으면 ?ref= 부착
+  // canonical은 SEOHead에서 별도로 ref 없는 URL로 고정 → 중복 색인 0 리스크
   const handleShare = () => {
-    const url = `https://phlorotannin.com/blog/${slug}`
+    const baseUrl = `https://phlorotannin.com/blog/${slug}`
+    const url = withRef(baseUrl, partner)
     if (navigator.share) {
       navigator.share({ title: post?.title, url })
     } else {
       navigator.clipboard.writeText(url).then(() => { setCopied(true); setTimeout(() => setCopied(false), 2000) })
     }
   }
+
+  // 본사 기본 파트너가 아닌 경우 = 손님이 파트너 추천 링크로 들어온 경우
+  const isFromPartner = partner && partner.phone && partner.phone !== DEFAULT_PARTNER.phone
 
   if (loading) return (
     <div className="min-h-screen flex items-center justify-center">
@@ -185,20 +192,44 @@ export default function BlogPostPage() {
       />
 
       <div className="min-h-screen bg-gray-50">
-        {/* 상단 네비 */}
+        {/* 상단 네비 — 내부 링크에 withRef 적용 (파트너 컨텍스트 유지) */}
         <div className="bg-white border-b border-gray-100 sticky top-16 z-10">
           <div className="max-w-3xl mx-auto px-4 py-3 flex items-center gap-2 text-sm text-gray-500">
-            <Link to="/" className="hover:text-teal-600">홈</Link>
+            <Link to={withRef('/', partner)} className="hover:text-teal-600">홈</Link>
             <ChevronRight className="w-4 h-4" />
-            <Link to="/blog" className="hover:text-teal-600">블로그</Link>
+            <Link to={withRef('/blog', partner)} className="hover:text-teal-600">블로그</Link>
             <ChevronRight className="w-4 h-4" />
             <span className="text-gray-800 font-medium line-clamp-1">{post.title}</span>
           </div>
         </div>
 
+        {/* 파트너 안내 배너 — 파트너 추천 링크로 들어온 손님에게만 노출 */}
+        {isFromPartner && (
+          <div className="bg-gradient-to-r from-amber-50 via-orange-50 to-amber-50 border-b border-amber-200">
+            <div className="max-w-3xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
+              <div className="flex items-center gap-2 text-sm">
+                <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-amber-100">
+                  <MessageCircle className="w-4 h-4 text-amber-700" />
+                </span>
+                <span className="text-gray-700">
+                  이 글은 <strong className="font-bold text-amber-800">{partner.name}</strong> 파트너가 안내드린 글입니다
+                </span>
+              </div>
+              <a
+                href={`tel:${partner.phone}`}
+                className="flex items-center gap-1 text-sm font-semibold text-amber-800 bg-amber-100 hover:bg-amber-200 px-3 py-1.5 rounded-lg transition-colors whitespace-nowrap"
+              >
+                <Phone className="w-3.5 h-3.5" />
+                <span className="hidden sm:inline">{partner.phoneDisplay}</span>
+                <span className="sm:hidden">전화</span>
+              </a>
+            </div>
+          </div>
+        )}
+
         <div className="max-w-3xl mx-auto px-4 py-10">
-          {/* 뒤로가기 */}
-          <button onClick={() => navigate('/blog')}
+          {/* 뒤로가기 — 파트너 컨텍스트 유지 */}
+          <button onClick={() => navigate(withRef('/blog', partner))}
             className="flex items-center gap-1.5 text-sm text-gray-500 hover:text-teal-600 mb-6 transition-colors">
             <ArrowLeft className="w-4 h-4" /> 블로그 목록
           </button>
@@ -244,12 +275,12 @@ export default function BlogPostPage() {
             dangerouslySetInnerHTML={{ __html: parseMarkdown(post.content) }}
           />
 
-          {/* 태그 */}
+          {/* 태그 — 내부 검색 링크에 withRef 적용 */}
           {post.tags?.length > 0 && (
             <div className="flex flex-wrap gap-2 mb-8">
               <Tag className="w-4 h-4 text-gray-400 mt-0.5" />
               {post.tags.map(t => (
-                <Link key={t} to={`/blog?q=${t}`}
+                <Link key={t} to={withRef(`/blog?q=${t}`, partner)}
                   className="text-sm text-teal-600 bg-teal-50 hover:bg-teal-100 px-3 py-1 rounded-full transition-colors">
                   #{t}
                 </Link>
@@ -257,11 +288,11 @@ export default function BlogPostPage() {
             </div>
           )}
 
-          {/* 관련 Q&A 바로가기 */}
+          {/* 관련 Q&A 바로가기 — 내부 링크에 withRef 적용 */}
           <div className="bg-gradient-to-r from-teal-50 to-cyan-50 border border-teal-100 rounded-2xl p-6 mb-6">
             <p className="text-sm font-bold text-teal-700 mb-2">📚 관련 건강 Q&A 더 보기</p>
             <p className="text-sm text-gray-600 mb-3">플로로탄닌 관련 1,361개 Q&A 아카이브에서 더 자세한 정보를 확인하세요</p>
-            <Link to={`/qa${post.category !== 'general' ? `?category=${post.category}` : ''}`}
+            <Link to={withRef(`/qa${post.category !== 'general' ? `?category=${post.category}` : ''}`, partner)}
               className="inline-flex items-center gap-1.5 bg-teal-600 text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-teal-700 transition-colors">
               <BookOpen className="w-4 h-4" /> Q&A 보러가기
             </Link>
@@ -304,13 +335,13 @@ export default function BlogPostPage() {
             </p>
           </div>
 
-          {/* 관련 글 */}
+          {/* 관련 글 — 내부 링크에 withRef 적용 (파트너 컨텍스트 유지) */}
           {related.length > 0 && (
             <div>
               <h3 className="text-lg font-bold text-gray-900 mb-4">관련 글</h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {related.map(r => (
-                  <Link key={r.id} to={`/blog/${r.slug}`}
+                  <Link key={r.id} to={withRef(`/blog/${r.slug}`, partner)}
                     className="bg-white rounded-xl border border-gray-100 p-4 hover:shadow-md hover:border-teal-200 transition-all">
                     <p className="text-sm font-semibold text-gray-800 line-clamp-2 mb-1">{r.title}</p>
                     <p className="text-xs text-gray-400">

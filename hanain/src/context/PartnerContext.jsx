@@ -25,6 +25,20 @@ function getPhoneFromPath() {
 }
 
 // ───────────────────────────────────────────
+// 1.5순위: URL ?ref=<slug> 쿼리에서 파트너 번호 추출
+// → 파트너가 블로그 글 URL을 손님에게 공유했을 때 컨텍스트 복원용
+// /p/:phone 다음, window._PARTNER_CONFIG 보다 먼저 적용
+// ───────────────────────────────────────────
+function getPhoneFromRef() {
+  try {
+    const sp = new URLSearchParams(window.location.search)
+    const r = sp.get('ref')
+    if (r && /^\d{9,11}$/.test(r)) return r
+  } catch { /* 무시 */ }
+  return null
+}
+
+// ───────────────────────────────────────────
 // 2순위: index.html에 주입된 window._PARTNER_CONFIG 읽기
 // ───────────────────────────────────────────
 function getPartnerFromWindowConfig() {
@@ -183,6 +197,29 @@ export function PartnerProvider({ children }) {
           }
           setPartner(p)
           savePartnerToSession(p)   // 이후 다른 페이지로 이동해도 유지
+        }
+      })
+      return
+    }
+
+    // ①.5 URL ?ref=<slug> (파트너가 블로그 글을 공유한 경우 컨텍스트 복원)
+    const phoneFromRef = getPhoneFromRef()
+    if (phoneFromRef) {
+      fetchPartnerByPhone(phoneFromRef).then(found => {
+        if (found) {
+          const rawPhone = found.phone?.replace(/\D/g, '') || ''
+          const fallbackDisplay = rawPhone.length === 11
+            ? `${rawPhone.slice(0,3)}-${rawPhone.slice(3,7)}-${rawPhone.slice(7)}`
+            : rawPhone
+          const p = {
+            id: found.slug,
+            name: found.name,
+            phone: rawPhone,
+            phoneDisplay: found.phoneDisplay || fallbackDisplay,
+            prefix: '',
+          }
+          setPartner(p)
+          savePartnerToSession(p)
         }
       })
       return
