@@ -779,6 +779,8 @@ function buildFallbackHtml(pathname, dynamic) {
       siteUrl ? `<p>${esc('외부 안내 페이지: ' + siteUrl)}</p>` : '',
       `<p>${esc('관련 키워드: 플로로탄닌, phlorotannin, 감태추출물, Ecklonia cava, 해양 폴리페놀, 갈조류 폴리페놀, 씨놀, Seanol, 카프, eckol, dieckol, 항산화, 염증, 면역, 수면, 장 건강, 뇌 건강.')}</p>`,
       `<nav><a href="/">홈</a> · <a href="/blog">건강정보 블로그</a> · <a href="/qa">전문가 Q&amp;A</a></nav>`,
+      // ── 플랫폼 마커 + 저작권 (파트너 페이지 봇 노출 HTML에도 동일 표시) ──
+      `<footer data-platform="phlorotannin-partner-page" data-owner="phlorotannin.com" data-signature="phlorotannin-platform-v1" data-page-type="partner-business-card">© 2026 <a href="https://phlorotannin.com/">phlorotannin.com</a> — 플로로탄닌·감태추출물 종합 건강정보 데이터센터. 본 파트너 정보페이지의 구조·연락처 노출 방식·SEO 설계는 저작권법의 보호를 받으며, <a href="https://phlorotannin.com/copyright">무단 복제·재가공·상업적 이용을 금지</a>합니다.</footer>`,
     ].filter(Boolean).join('')
     return wrapFallback(inner)
   }
@@ -818,11 +820,13 @@ function injectFallback(html, fallbackHtml) {
   if (!html.includes('data-ssr-lite-style')) {
     html = html.replace(/<\/head>/i, `${SR_ONLY_STYLE}</head>`)
   }
-  // 2) <div id="root"></div> → <div id="root">${fallbackHtml}</div>
-  //    빈 root만 정확히 매칭 (이미 내용 있으면 건드리지 않음)
+  // 2) <div id="root" ...></div> → <div id="root" ...>${fallbackHtml}</div>
+  //    • [^>]* 는 줄바꿈도 포함 (JS 정규식에서 . 이외의 부정 클래스는 \n 포함)
+  //    • data-* 속성이 여러 줄에 걸쳐 있어도 매칭됨
+  //    • 빈 root만 매칭 (이미 내용 있으면 건드리지 않음)
   html = html.replace(
-    /<div id="root"><\/div>/,
-    `<div id="root">${fallbackHtml}</div>`
+    /<div\s+id="root"([^>]*)><\/div>/,
+    `<div id="root"$1>${fallbackHtml}</div>`
   )
   return html
 }
