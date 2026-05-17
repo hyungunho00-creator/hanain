@@ -523,6 +523,11 @@ export default function BusinessCardPage() {
       />
 
       <div className="min-h-screen"
+        data-platform="phlorotannin-partner-page"
+        data-owner="phlorotannin.com"
+        data-page-type="partner-business-card"
+        data-partner-slug={partner?.slug || partner?.phone || ''}
+        data-copyright="© 2026 phlorotannin.com"
         style={{ background: `linear-gradient(160deg, ${CREAM} 0%, ${CREAM2} 50%, ${CREAM3} 100%)` }}>
 
         {/* 상단 헤더 */}
@@ -918,6 +923,17 @@ export default function BusinessCardPage() {
               저작권 및 무단복제 금지 안내 보기 →
             </a>
           </div>
+        </div>
+
+        {/* ════ 플랫폼·소유권 워터마크 (시각 표시 0, 복제 시 함께 따라가는 마커) ════ */}
+        <div
+          data-platform="phlorotannin-partner-system"
+          data-owner="phlorotannin.com"
+          data-signature="phlorotannin-platform-v1"
+          aria-hidden="true"
+          style={{ position: 'absolute', width: 1, height: 1, padding: 0, margin: -1, overflow: 'hidden', clip: 'rect(0,0,0,0)', whiteSpace: 'nowrap', border: 0 }}
+        >
+          © 2026 phlorotannin.com — phlorotannin-partner-page · 무단 복제·재가공·상업적 이용 금지
         </div>
       </div>
 

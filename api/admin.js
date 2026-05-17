@@ -3,39 +3,79 @@
 // /api/admin — 어드민 전용 CRUD 프록시
 // 클라이언트에 service_role 키를 노출하지 않기 위한 보안 게이트웨이.
 //
-// 인증:
-//   - 환경변수 ADMIN_TOKEN (또는 ADMIN_PASS — 기존 호환) 와 일치하는 토큰을 요구
-//   - body.token 또는 Authorization: Bearer <token> 헤더로 전송 가능
+// ─────────────────────────────────────────────────────────────
+// 인증 정책 (이중 체인 — 우선순위 순):
+//   1. Supabase JWT (1순위 / 권장)
+//      - 클라이언트가 supabase.auth.signInWithPassword 로 로그인 후 access_token 획득
+//      - Authorization: Bearer <access_token> 헤더로 전송
+//      - 서버가 /auth/v1/user 엔드포인트로 토큰 검증 + app_metadata.role === 'admin' 확인
+//   2. 레거시 ADMIN_TOKEN (2순위 / 호환용)
+//      - 환경변수 ADMIN_TOKEN 과 정확히 일치하는 토큰을 body.token 또는 Bearer 로 전송
+//      - JWT 검증 실패 시에만 fallback 으로 시도
+//      - ADMIN_TOKEN 미설정 시 이 경로는 자동 비활성화 (안전 기본값)
 //
 // 요청 형식:
 //   POST /api/admin
 //   Content-Type: application/json
+//   Authorization: Bearer <supabase-access-token>   // 권장
 //   {
 //     "action": "video_set_main",
-//     "token":  "...",
+//     "token":  "...",                              // 레거시 fallback 용
 //     "payload": { "id": "uuid", "is_main": true }
 //   }
 //
 // 응답:
 //   200 { ok: true, data: ... }
-//   400/401/500 { ok: false, error: "..." }
-//
-// 폴백/롤백:
-//   ADMIN_TOKEN 미설정 시 환경변수 VITE_ADMIN_PASS(빌드 임베드용)를 fallback 으로 허용.
-//   완전 미설정 시에는 401 거부 (안전 기본값).
+//   400/401/500 { ok: false, error: "..." }       // 에러 메시지는 의도적으로 축약
+// ─────────────────────────────────────────────────────────────
 
 const SB_URL = process.env.VITE_SUPABASE_URL ||
                process.env.SUPABASE_URL ||
                'https://rlfxuyeoluoeaxuujtly.supabase.co'
 
-// 반드시 서버 환경변수에서만 읽음 — 클라이언트 번들에 노출되지 않아야 함
+// service_role: 서버 환경변수에서만 읽음 — 클라이언트 번들에 노출 금지
 const SB_SVC = process.env.SUPABASE_SERVICE_ROLE_KEY ||
                process.env.SUPABASE_SERVICE_KEY ||
                ''
 
-const ADMIN_TOKEN = process.env.ADMIN_TOKEN ||
-                    process.env.VITE_ADMIN_PASS ||
-                    ''
+// anon key: JWT 검증 시 /auth/v1/user 호출에 필요 (apikey 헤더용)
+// 클라이언트 노출되어도 안전한 키 (RLS 로 보호)
+const SB_ANON = process.env.VITE_SUPABASE_ANON_KEY ||
+                process.env.SUPABASE_ANON_KEY ||
+                ''
+
+// 레거시 토큰 — JWT 도입 후 호환성 유지용. 점진적 폐기 예정.
+const ADMIN_TOKEN = process.env.ADMIN_TOKEN || ''
+
+// 디버그 모드 — 평소엔 false (에러 메시지 익명화)
+const DEBUG = process.env.ADMIN_DEBUG === '1'
+
+// ─────────────────────────────────────────
+// Supabase JWT 검증
+// /auth/v1/user 엔드포인트가 토큰 서명·만료·유효성을 모두 검증해줌
+// 응답 user.app_metadata.role === 'admin' 인 경우에만 허용
+// ─────────────────────────────────────────
+async function verifySupabaseJwt(jwt) {
+  if (!jwt || !SB_ANON) return null
+  try {
+    const r = await fetch(`${SB_URL}/auth/v1/user`, {
+      headers: {
+        apikey: SB_ANON,
+        Authorization: `Bearer ${jwt}`,
+      },
+    })
+    if (!r.ok) return null
+    const user = await r.json()
+    if (!user || !user.id) return null
+    const role = (user.app_metadata && user.app_metadata.role) ||
+                 (user.user_metadata && user.user_metadata.role) ||
+                 ''
+    if (role !== 'admin') return null
+    return user
+  } catch {
+    return null
+  }
+}
 
 function sbHeaders(extra = {}) {
   return {
@@ -105,6 +145,8 @@ function ok(res, data) {
 const HANDLERS = {
   // ─── 헬스체크 ──────────────────────────────
   async ping() {
+    // 평소엔 헬스만 반환. DEBUG 일 때만 자세한 상태 노출.
+    if (!DEBUG) return { ok: true, now: new Date().toISOString() }
     return {
       now: new Date().toISOString(),
       service_role: !!SB_SVC,
@@ -313,6 +355,11 @@ const HANDLERS = {
 }
 
 export default async function handler(req, res) {
+  // 보안 헤더 (응답에도 적용)
+  res.setHeader('X-Content-Type-Options', 'nosniff')
+  res.setHeader('Referrer-Policy', 'no-referrer')
+  res.setHeader('Cache-Control', 'no-store')
+
   // CORS — 같은 오리진만 허용 (동일 도메인 fetch)
   if (req.method === 'OPTIONS') {
     res.setHeader('Allow', 'POST')
@@ -323,31 +370,56 @@ export default async function handler(req, res) {
     return res.status(405).end()
   }
 
-  // 서버 환경변수 사전 검증
-  if (!SB_SVC) return serverError(res, 'SUPABASE_SERVICE_ROLE_KEY env not set')
-  if (!ADMIN_TOKEN) return serverError(res, 'ADMIN_TOKEN env not set')
+  // 서버 환경변수 사전 검증 — 에러 메시지는 의도적으로 축약 (env 이름 노출 금지)
+  if (!SB_SVC) return serverError(res, DEBUG ? 'SUPABASE_SERVICE_ROLE_KEY env not set' : 'server misconfigured')
 
   let body
   try { body = await readBody(req) } catch (e) { return badRequest(res, 'invalid body') }
 
-  // 토큰 검증
+  // ─── 인증: JWT(1순위) → 레거시 ADMIN_TOKEN(2순위) ───
   const auth = req.headers && (req.headers.authorization || req.headers.Authorization || '')
   const bearer = typeof auth === 'string' && auth.startsWith('Bearer ') ? auth.slice(7) : ''
-  const token = (body && body.token) || bearer || ''
-  if (!token || token !== ADMIN_TOKEN) {
-    return unauthorized(res, 'invalid admin token')
+  const bodyToken = (body && body.token) || ''
+
+  let authorized = false
+  let authMethod = ''
+  let authedUser = null
+
+  // 1순위: Supabase JWT 검증
+  if (bearer) {
+    const user = await verifySupabaseJwt(bearer)
+    if (user) {
+      authorized = true
+      authMethod = 'jwt'
+      authedUser = user
+    }
+  }
+
+  // 2순위: 레거시 ADMIN_TOKEN (env 설정 + 정확히 일치할 때만)
+  if (!authorized && ADMIN_TOKEN && bodyToken && bodyToken === ADMIN_TOKEN) {
+    authorized = true
+    authMethod = 'legacy'
+  }
+
+  if (!authorized) {
+    // 인증 실패 — 자세한 이유 노출 안 함 (공격자에게 힌트 X)
+    return unauthorized(res, 'unauthorized')
   }
 
   const action = body && body.action
   if (!action || typeof action !== 'string') return badRequest(res, 'action required')
 
   const fn = HANDLERS[action]
-  if (!fn) return badRequest(res, `unknown action: ${action}`)
+  if (!fn) return badRequest(res, 'unknown action')
 
   try {
     const data = await fn(body.payload || {})
+    // 성공 응답에는 추가 정보 안 넣음 (감사 로그는 서버 로그로)
+    if (DEBUG) console.log(`[admin] action=${action} via=${authMethod}${authedUser ? ` user=${authedUser.email}` : ''}`)
     return ok(res, data)
   } catch (e) {
-    return serverError(res, e && e.message ? e.message : 'handler error')
+    // 핸들러 내부 에러 — 메시지 익명화 (DB 구조·env 이름 누수 방지)
+    if (DEBUG) console.error('[admin] handler error:', e)
+    return serverError(res, DEBUG && e && e.message ? e.message : 'handler error')
   }
 }

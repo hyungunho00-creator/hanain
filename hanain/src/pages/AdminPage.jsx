@@ -2,37 +2,42 @@ import { useState, useEffect } from 'react'
 import { Settings, Users, MessageSquare, BookOpen, Trash2, Save, X, Search, Download, RefreshCw, Lock, Eye, EyeOff, Copy, Check, Link2, Phone, UserPlus, Rocket, AlertCircle, CheckCircle, Loader, Globe, PlayCircle, PenSquare, ChevronDown, ChevronRight, ExternalLink, Pin, PinOff, Star, FileText, Plus, Edit3 } from 'lucide-react'
 import { supabase, setVideoMain, upsertPost, getAllPostsAdmin, deletePost } from '../lib/supabase'
 
-// Phase 4: 클라이언트 번들에서 service_role 키 완전 제거
-// Phase 2-RLS (이번 라운드): 어드민 인증을 Supabase Auth(JWT)로 강화
-//   - 구조: 비밀번호 입력 → Supabase signInWithPassword → JWT 발급
-//   - /api/admin 호출 시 Authorization: Bearer <JWT> 로 전달
-//   - 서버는 JWT 검증 후 app_metadata.role==='admin' 확인 → service_role로 DB 쓰기
-//   - JWT 위조 불가 (Supabase 서명 검증) → 단순 비밀번호 비교 보다 안전
+// ─────────────────────────────────────────────────────────────
+// 어드민 인증 정책 (Phase Security Hardening)
 //
-// 구형 호환:
-//   - VITE_ADMIN_PASS를 어드민 이메일의 비밀번호로 사용 (이미 Supabase에 동일하게 설정됨)
-//   - ADMIN_TOKEN env도 fallback으로 승인 (구조 이행 중 안전망)
-const ADMIN_PASS = import.meta.env.VITE_ADMIN_PASS || '56528206'
+// 1순위: Supabase Auth (JWT) — 유일한 신뢰 경로
+//   - 비밀번호 입력 → Supabase signInWithPassword → JWT 발급
+//   - /api/admin 호출 시 Authorization: Bearer <JWT> 로 전달
+//   - 서버는 /auth/v1/user 로 JWT 검증 + app_metadata.role==='admin' 확인
+//   - JWT 위조 불가 (Supabase HMAC 서명) → 클라이언트 비교보다 안전
+//
+// 🔴 클라이언트 비밀번호 비교 코드는 제거됨
+//   - 이전 버전은 import.meta.env.VITE_ADMIN_PASS 를 클라이언트 번들에 임베드 →
+//     누구나 JS 번들 grep 으로 어드민 비번 획득 가능했음
+//   - 이제는 Supabase Auth를 거치지 않으면 어떤 클라이언트 fallback 도 없음
+//
+// 별도 외부 백엔드(BACKEND_URL)용 x-admin-key 헤더는 import.meta.env에서 직접 읽음
+//   (선택적 외부 시스템 — 사이트 핵심 기능과 분리)
+// ─────────────────────────────────────────────────────────────
 const ADMIN_EMAIL = import.meta.env.VITE_ADMIN_EMAIL || 'm2ul777@naver.com'
 const ADMIN_TOKEN_KEY = 'phl_admin_token'
 const ADMIN_JWT_KEY = 'phl_admin_jwt'  // Supabase access_token 저장
+const EXT_BACKEND_KEY = import.meta.env.VITE_BACKEND_ADMIN_KEY || '' // 외부 백엔드용 (옵션)
 
 // /api/admin 액션 호출 헬퍼
-// 1순위: Supabase JWT (sessionStorage 또는 supabase.auth.getSession())
-// 2순위 (클라이언트 자체 fallback): 옥드 토큰 (VITE_ADMIN_PASS)
+// 🔐 Supabase JWT 만 전송 (클라이언트 비밀번호 fallback 제거됨)
+// 서버는 JWT 검증 실패 시 401 — UI 에서는 로그인 화면으로 복귀
 async function adminApi(action, payload) {
-  // 1순위: 최신 Supabase 세션 토큰 시도
+  // 최신 Supabase 세션 토큰 우선
   let jwt = ''
   try {
     const { data: { session } } = await supabase.auth.getSession()
     if (session?.access_token) jwt = session.access_token
   } catch { /* 무시 */ }
-  // fallback: sessionStorage에 저장된 JWT (페이지 다시 열었을 때)
+  // sessionStorage 폴백 (페이지 새로고침 직후 등)
   if (!jwt) {
     try { jwt = sessionStorage.getItem(ADMIN_JWT_KEY) || '' } catch { /* 무시 */ }
   }
-  // 2순위: 구형 옥드 토큰 (Supabase 세션 없는 랜더링 조건 대응)
-  const legacyToken = (() => { try { return sessionStorage.getItem(ADMIN_TOKEN_KEY) || '' } catch { return '' } })()
 
   try {
     const headers = { 'Content-Type': 'application/json' }
@@ -42,7 +47,6 @@ async function adminApi(action, payload) {
       headers,
       body: JSON.stringify({
         action,
-        token: legacyToken,  // 구형 fallback (서버가 JWT 우선, 없으면 token 확인)
         payload: payload || {},
       }),
     })
@@ -146,34 +150,23 @@ function LoginScreen({ onLogin }) {
     setErr(false)
     setBusy(true)
     try {
-      // 1차: Supabase Auth로 로그인 시도 (이메일+비밀번호)
-      // → 성공 시 JWT 발급, app_metadata.role==='admin' 검증
+      // 🔐 Supabase Auth (JWT) 만 신뢰 — 클라이언트 비밀번호 비교 제거됨
       const { data, error } = await supabase.auth.signInWithPassword({
         email: ADMIN_EMAIL,
         password: pw,
       })
       if (!error && data?.session?.access_token) {
+        // JWT 자체에 app_metadata.role 이 포함되어 있고, 서버가 이를 한번 더 검증함
         try {
           sessionStorage.setItem(ADMIN_JWT_KEY, data.session.access_token)
-          sessionStorage.setItem(ADMIN_TOKEN_KEY, pw) // 구형 fallback
-        } catch {}
+        } catch { /* sessionStorage 차단 환경 — 메모리만 사용 */ }
         onLogin()
         return
       }
-      // 2차 fallback: Supabase Auth 실패 시 구형 단순 비밀번호 검증 (서버가 ADMIN_TOKEN env로 검증)
-      if (pw === ADMIN_PASS) {
-        try { sessionStorage.setItem(ADMIN_TOKEN_KEY, pw) } catch {}
-        onLogin()
-        return
-      }
+      // Supabase Auth 실패 시: 일률적으로 거부 (힌트 노출 X)
       setErr(true)
     } catch (e) {
-      // Supabase Auth 자체 장애 시의 최종 fallback
-      if (pw === ADMIN_PASS) {
-        try { sessionStorage.setItem(ADMIN_TOKEN_KEY, pw) } catch {}
-        onLogin()
-        return
-      }
+      // 네트워크 장애 / Supabase 일시 다운 — 그래도 거부 (안전 기본값)
       setErr(true)
     } finally {
       setBusy(false)
@@ -1921,10 +1914,12 @@ export default function AdminPage() {
       const localSubs  = JSON.parse(localStorage.getItem('phlorotannin_submissions') || '[]')
       const localParts = JSON.parse(localStorage.getItem('phlorotannin_partner_applications') || '[]')
       setSubmissions(localSubs); setPartners(localParts)
-      if (BACKEND_URL) {
+      // 외부 백엔드(BACKEND_URL)는 옵션 — 키 없으면 호출 자체 생략
+      // 보안: x-admin-key 는 VITE_BACKEND_ADMIN_KEY 라는 별도 키 사용 (어드민 비번 노출 회피)
+      if (BACKEND_URL && EXT_BACKEND_KEY) {
         const [subRes, partRes] = await Promise.all([
-          fetch(BACKEND_URL + '/api/admin/submissions',  { headers: { 'x-admin-key': ADMIN_PASS } }),
-          fetch(BACKEND_URL + '/api/admin/partners',     { headers: { 'x-admin-key': ADMIN_PASS } }),
+          fetch(BACKEND_URL + '/api/admin/submissions',  { headers: { 'x-admin-key': EXT_BACKEND_KEY } }),
+          fetch(BACKEND_URL + '/api/admin/partners',     { headers: { 'x-admin-key': EXT_BACKEND_KEY } }),
         ])
         if (subRes.ok)  setSubmissions(await subRes.json())
         if (partRes.ok) setPartners(await partRes.json())
@@ -1980,7 +1975,15 @@ export default function AdminPage() {
             <button onClick={fetchData} className="flex items-center gap-2 text-gray-300 hover:text-white text-base">
               <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} /> 새로고침
             </button>
-            <button onClick={() => { try { sessionStorage.removeItem(ADMIN_TOKEN_KEY) } catch {} ; setIsLoggedIn(false) }} className="text-gray-400 hover:text-white text-base">로그아웃</button>
+            <button onClick={async () => {
+              // Supabase 세션 무효화 + 로컬 캐시 전부 정리
+              try { await supabase.auth.signOut() } catch {}
+              try {
+                sessionStorage.removeItem(ADMIN_TOKEN_KEY)
+                sessionStorage.removeItem(ADMIN_JWT_KEY)
+              } catch {}
+              setIsLoggedIn(false)
+            }} className="text-gray-400 hover:text-white text-base">로그아웃</button>
           </div>
         </div>
       </div>

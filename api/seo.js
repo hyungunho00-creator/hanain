@@ -797,6 +797,8 @@ function buildFallbackHtml(pathname, dynamic) {
     def.nav && def.nav.length
       ? `<nav>${def.nav.map(href => `<a href="${esc(href)}">${esc(href)}</a>`).join(' · ')}</nav>`
       : '',
+    // ── 플랫폼 마커 + 저작권 (봇이 보는 HTML에도 동일 표시) ──
+    `<footer data-platform="phlorotannin-platform" data-owner="phlorotannin.com" data-signature="phlorotannin-platform-v1">© 2026 <a href="https://phlorotannin.com/">phlorotannin.com</a> — 플로로탄닌·감태추출물 종합 건강정보 데이터센터. 본 사이트의 콘텐츠·카테고리 구조·파트너 정보페이지 시스템·SEO 설계는 저작권법의 보호를 받으며, <a href="https://phlorotannin.com/copyright">무단 복제·재가공·상업적 이용을 금지</a>합니다.</footer>`,
   ].filter(Boolean).join('')
   return wrapFallback(inner)
 }
@@ -1070,6 +1072,10 @@ export default async function handler(req, res) {
     res.setHeader('X-SEO-Title', encodeURIComponent(meta.title))
     res.setHeader('X-SEO-Source', metaSource)
     res.setHeader('X-SSR-Lite', ssrLiteApplied)
+    // 플랫폼·저작권 추적 헤더 (응답 헤더에도 마커)
+    res.setHeader('X-Platform', 'phlorotannin-platform-v1')
+    res.setHeader('X-Owner', 'phlorotannin.com')
+    res.setHeader('X-Copyright', '(c) 2026 phlorotannin.com - all rights reserved')
     // 항목 F 진단 헤더
     res.setHeader('X-Article-JsonLd', articleLdApplied)
     res.setHeader('X-Breadcrumb-JsonLd', breadcrumbLdApplied)
