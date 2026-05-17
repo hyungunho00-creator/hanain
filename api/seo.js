@@ -171,6 +171,13 @@ function staticMetaFor(pathname) {
       canonical: `${SITE}/partner`,
     }
   }
+  if (pathname === '/copyright') {
+    return {
+      title: '저작권 및 무단복제 금지 안내 | phlorotannin.com',
+      desc:  'phlorotannin.com의 콘텐츠, 카테고리 구조, 파트너 정보페이지 시스템, 자료실, 데이터베이스 구조 및 SEO 설계의 무단 복제·재가공·상업적 이용 금지 안내입니다.',
+      canonical: `${SITE}/copyright`,
+    }
+  }
   if (pathname.startsWith('/category/')) {
     const slug = pathname.replace('/category/', '').split('/')[0]
     const name = CATEGORY_NAMES[slug] || slug

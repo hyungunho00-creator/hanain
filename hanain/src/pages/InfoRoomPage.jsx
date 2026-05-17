@@ -443,6 +443,31 @@ export default function InfoRoomPage() {
         </p>
       </div>
 
+      {/* ════ 파트너 자료실 이용 안내 (저작권/영업자산 보호) ════ */}
+      <div style={{ maxWidth: 800, margin: '24px auto 0', padding: '0 14px' }}>
+        <div style={{ background: '#fff', border: `2px solid ${GOLD}40`, borderLeft: `5px solid ${GOLD}`, borderRadius: 12, padding: '14px 18px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8 }}>
+            <Lock size={14} color={GOLD} />
+            <span style={{ fontSize: 13, fontWeight: 900, color: NAVY, letterSpacing: '0.3px' }}>
+              파트너 자료실 이용 안내
+            </span>
+          </div>
+          <p style={{ fontSize: 12.5, color: '#3b4a63', lineHeight: 1.85, margin: 0 }}>
+            본 자료실의 문서, 이미지, 전단지, 설명자료, 교육자료, 상담 스크립트, 페이지 구성안 및 영업자료는
+            phlorotannin.com 파트너 활동을 지원하기 위해 <strong style={{ color: NAVY }}>제한적으로 제공되는 자료</strong>입니다.
+            본 플랫폼 내 파트너 활동 목적에 한해 사용할 수 있으며,
+            <strong style={{ color: '#b91c1c' }}> 사전 서면 동의 없이 외부 배포·수정·재가공·유사 사이트 제작·타 조직 영업자료 활용·제3자 제공을 금지</strong>합니다.
+            다운로드 또는 열람 시 위 조건에 동의한 것으로 간주됩니다.
+          </p>
+          <a
+            href="https://phlorotannin.com/copyright"
+            style={{ display: 'inline-block', marginTop: 8, fontSize: 12, color: GOLD, fontWeight: 700, textDecoration: 'underline' }}
+          >
+            저작권 및 무단복제 금지 안내 보기 →
+          </a>
+        </div>
+      </div>
+
       {/* ═══ 📘 파트너 교본 (40p 핸드북) ═══ */}
       <div style={{ maxWidth: 800, margin: '32px auto 0', padding: '0 14px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>

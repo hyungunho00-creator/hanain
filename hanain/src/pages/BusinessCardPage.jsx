@@ -846,10 +846,38 @@ export default function BusinessCardPage() {
             홈화면 바로가기 만들기
           </button>
 
-          <p className="text-center pb-8"
+          <p className="text-center pt-2"
             style={{ fontSize: '12px', color: '#aaa', lineHeight: '1.9' }}>
             본 페이지는 건강 정보 제공 목적이며<br />특정 제품 판매와 무관합니다.
           </p>
+
+          {/* ════ 플랫폼 자산 보호 고지 ════ */}
+          <div
+            style={{
+              marginTop: 18,
+              marginBottom: 12,
+              padding: '12px 14px',
+              border: `1px solid ${GOLD}30`,
+              borderRadius: 10,
+              background: 'rgba(184,149,58,0.06)',
+            }}
+          >
+            <p style={{ fontSize: '11px', fontWeight: 800, color: GOLD2, marginBottom: 6, letterSpacing: '0.5px' }}>
+              © 2026 phlorotannin.com · 무단복제 금지
+            </p>
+            <p style={{ fontSize: '11px', color: '#bfc8d4', lineHeight: 1.75, margin: 0 }}>
+              본 페이지는 phlorotannin.com 파트너 정보페이지 시스템을 통해 제공되는 개인 정보페이지입니다.
+              페이지의 구성, 문구, 이미지, 링크 구조, 상담 연결 방식, 자료실 접근 방식, 파트너 코드 구조 및 DB 연결 흐름은
+              phlorotannin.com의 플랫폼 자산이며,
+              사전 서면 동의 없는 복제·캡처 후 재가공·유사 페이지 제작·상업적 이용·영업자료 활용을 금지합니다.
+            </p>
+            <a
+              href="https://phlorotannin.com/copyright"
+              style={{ display: 'inline-block', marginTop: 6, fontSize: '11px', color: GOLD2, textDecoration: 'underline' }}
+            >
+              저작권 및 무단복제 금지 안내 보기 →
+            </a>
+          </div>
         </div>
       </div>
 

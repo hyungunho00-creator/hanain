@@ -121,15 +121,24 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* 저작권 안내 박스 */}
-        <div className="border border-white/10 rounded-2xl bg-white/5 px-6 py-5 mt-12 mb-6">
+        {/* 저작권 안내 박스 (강화) */}
+        <div className="border border-white/10 rounded-2xl bg-white/5 px-5 md:px-6 py-5 mt-12 mb-6">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-            <div>
-              <p className="text-white text-base font-semibold mb-1">© 2025 플로로탄닌 파트너스. All rights reserved.</p>
-              <p className="text-gray-400 text-sm leading-relaxed">
-                본 사이트의 모든 콘텐츠(Q&A, 건강 정보, 이미지, 텍스트 등)는 저작권법에 의해 보호받습니다.<br />
-                무단 복제·배포·상업적 이용을 금합니다. 인용 시 반드시 출처를 명시하세요.
+            <div className="min-w-0">
+              <p className="text-white text-sm md:text-base font-semibold mb-1.5">
+                © 2026 phlorotannin.com. All rights reserved.
               </p>
+              <p className="text-gray-400 text-xs md:text-sm leading-relaxed">
+                본 사이트의 콘텐츠, 페이지 구성, 카테고리 구조, 파트너 정보페이지 시스템, 자료실,
+                데이터베이스 구조 및 SEO 설계는
+                <span className="text-gray-200 font-semibold"> 무단 복제·재가공·상업적 이용을 금지</span>합니다.
+              </p>
+              <Link
+                to="/copyright"
+                className="inline-flex items-center gap-1 mt-2 text-xs md:text-sm text-cyan-hana hover:underline"
+              >
+                저작권 및 무단복제 금지 안내 →
+              </Link>
             </div>
             <RevealContact
               type="sms"
@@ -144,10 +153,10 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-3">
-          <p className="text-sm text-gray-400">
-            © 2025 플로로탄닌 파트너스
+          <p className="text-xs md:text-sm text-gray-400">
+            © 2026 phlorotannin.com · 플로로탄닌 파트너스
           </p>
-          <p className="text-sm text-gray-400 text-center md:text-right max-w-md">
+          <p className="text-xs md:text-sm text-gray-400 text-center md:text-right max-w-md">
             본 사이트의 정보는 건강 교육 목적이며 의료 처방·진단을 대체하지 않습니다.
           </p>
         </div>

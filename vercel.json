@@ -23,6 +23,7 @@
     { "source": "/community", "destination": "/api/seo?p=/community" },
     { "source": "/consult", "destination": "/api/seo?p=/consult" },
     { "source": "/partner", "destination": "/api/seo?p=/partner" },
+    { "source": "/copyright", "destination": "/api/seo?p=/copyright" },
     { "source": "/category/:slug", "destination": "/api/seo?p=/category/:slug" },
     { "source": "/p/:phone", "destination": "/api/seo?p=/p/:phone" },
     { "source": "/(.*)", "destination": "/index.html" }
