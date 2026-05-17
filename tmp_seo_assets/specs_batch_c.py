@@ -1,0 +1,776 @@
+# -*- coding: utf-8 -*-
+"""Batch C — 10 specs (L1×4, L2×2, L3×2, L4×2)"""
+
+# 이전 배치 슬러그 (#122-161, 40개)
+PREV_BATCH_SLUGS = [
+    # v1 (122-131)
+    "phlorotannin-vs-ecklonia-cava-difference",
+    "phlorotannin-amount-comparison-supplements",
+    "phlorotannin-absorption-rate-improvement-methods",
+    "phlorotannin-vs-curcumin-anti-inflammatory",
+    "phlorotannin-clinical-trial-results-summary",
+    "phlorotannin-vs-resveratrol-antioxidant",
+    "phlorotannin-blood-sugar-effect-mechanism",
+    "phlorotannin-vs-chlorogenic-acid-comparison",
+    "phlorotannin-vs-anthocyanin-eye-health",
+    "phlorotannin-storage-stability-comparison",
+    # v2 (132-141)
+    "hba1c-prediabetes-numbers-explained-by-range",
+    "fasting-blood-sugar-numbers-100-110-meaning",
+    "night-waking-frequent-urination-causes-checklist",
+    "liver-enzyme-ast-alt-high-meaning-action",
+    "aging-blood-sugar-rising-mechanism-explained",
+    "oxidative-stress-easy-explanation-daily-life",
+    "metformin-side-effects-honest-information-overview",
+    "50s-supplements-priority-decision-guide",
+    "gamtae-extract-safety-side-effects-honest-review",
+    "health-functional-food-raw-material-approval-korea",
+    # Batch A (142-151)
+    "blood-pressure-numbers-130-140-meaning",
+    "cholesterol-ldl-hdl-numbers-explained",
+    "triglycerides-numbers-150-200-meaning",
+    "creatinine-egfr-kidney-numbers-meaning",
+    "chronic-fatigue-causes-checklist-40s-50s",
+    "morning-stiffness-causes-checklist",
+    "hair-loss-sudden-causes-checklist",
+    "inflammation-chronic-low-grade-mechanism",
+    "omega3-supplements-decision-guide",
+    "phlorotannin-vs-fucoxanthin-comparison",
+    # Batch B (152-161)
+    "vitamin-d-deficiency-numbers-symptoms-checklist",
+    "iron-deficiency-anemia-numbers-symptoms-checklist",
+    "thyroid-tsh-numbers-meaning-checklist",
+    "low-body-temperature-causes-checklist",
+    "belly-fat-waist-circumference-numbers-meaning",
+    "insulin-resistance-mechanism-easy-explanation",
+    "gut-microbiome-health-mechanism-easy-explanation",
+    "multivitamin-vs-single-supplements-decision-guide",
+    "probiotics-strain-selection-decision-guide",
+    "phlorotannin-vs-quercetin-anti-inflammatory-comparison",
+]
+
+DHI_PEERS = [
+    {"label": "혈압 130/85·140/90 의미", "slug": "blood-pressure-numbers-130-140-meaning"},
+    {"label": "콜레스테롤 LDL·HDL 의미", "slug": "cholesterol-ldl-hdl-numbers-explained"},
+    {"label": "비타민 D 부족 수치·증상", "slug": "vitamin-d-deficiency-numbers-symptoms-checklist"},
+    {"label": "철 결핍·빈혈 수치·증상", "slug": "iron-deficiency-anemia-numbers-symptoms-checklist"},
+    {"label": "갑상선 TSH 수치 의미", "slug": "thyroid-tsh-numbers-meaning-checklist"},
+    {"label": "허리둘레와 복부 비만", "slug": "belly-fat-waist-circumference-numbers-meaning"},
+    {"label": "인슐린 저항성 기전", "slug": "insulin-resistance-mechanism-easy-explanation"},
+    {"label": "장내 미생물과 건강 기전", "slug": "gut-microbiome-health-mechanism-easy-explanation"},
+    {"label": "만성 저강도 염증이란 무엇인가", "slug": "inflammation-chronic-low-grade-mechanism"},
+    {"label": "멀티비타민 vs 단일 영양제 선택", "slug": "multivitamin-vs-single-supplements-decision-guide"},
+    {"label": "프로바이오틱스 균주 선택 가이드", "slug": "probiotics-strain-selection-decision-guide"},
+    {"label": "40~50대 만성 피로 체크리스트", "slug": "chronic-fatigue-causes-checklist-40s-50s"},
+    {"label": "오메가3 영양제 선택 가이드", "slug": "omega3-supplements-decision-guide"},
+]
+IC_PEERS = [
+    {"label": "플로로탄닌 vs 푸코잔틴 비교", "slug": "phlorotannin-vs-fucoxanthin-comparison"},
+    {"label": "플로로탄닌 vs 케르세틴 항염증", "slug": "phlorotannin-vs-quercetin-anti-inflammatory-comparison"},
+    {"label": "플로로탄닌·커큐민 항염증 비교", "slug": "phlorotannin-vs-curcumin-anti-inflammatory"},
+    {"label": "플로로탄닌·레스베라트롤 항산화 비교", "slug": "phlorotannin-vs-resveratrol-antioxidant"},
+    {"label": "플로로탄닌·에클로니아 카바 차이", "slug": "phlorotannin-vs-ecklonia-cava-difference"},
+    {"label": "감태추출물 안전성·부작용 정보 정리", "slug": "gamtae-extract-safety-side-effects-honest-review"},
+]
+
+REF_DIABETES = "대한당뇨병학회 — https://www.diabetes.or.kr/general/info/info_01.php"
+REF_SNUH = "서울대학교병원 의학정보 — https://www.snuh.org/health/nMedInfo/nList.do"
+REF_AMC = "서울아산병원 질환백과 — https://www.amc.seoul.kr/asan/healthinfo/disease/diseaseSubmain.do"
+REF_MFDS = "식약처 의약품안전나라 — https://nedrug.mfds.go.kr"
+REF_PUBMED = "PubMed 검색 — https://pubmed.ncbi.nlm.nih.gov"
+
+
+SPECS = []
+
+# ─── L1 #1: 어지러움 ─────────────────────────────────────────────────
+SPECS.append({
+    "slug": "dizziness-causes-checklist-when-to-see-doctor",
+    "layer": "L1",
+    "category": "disease-health-info",
+    "title_full": "어지러움 — 흔한 원인 체크리스트와 진료 시점",
+    "meta_title_core": "어지러움 원인 체크리스트 — 진료 시점 정보",
+    "meta_desc_core": "어지러움의 흔한 원인 체크리스트와 위급 신호, 점검 포인트·진료 필요 시점을 학회·대학병원 자료 기준으로 차분히 정리합니다.",
+    "excerpt_core": "어지러움의 흔한 원인 체크리스트와 위급 신호, 점검 포인트와 진료 시점을 차분히 정리합니다.",
+    "primary_keywords": ["어지러움", "어지럼증", "원인", "체크리스트", "진료"],
+    "tags": ["어지러움", "어지럼증", "이석증", "기립성저혈압", "건강검진"],
+    "intro": (
+        "**어지러움**은 누구나 한 번쯤 경험하지만 원인이 매우 다양해 \"내가 어떤 어지러움인지\"를 구분하는 것이 중요합니다. "
+        "단순 피로일 수도, 응급 신호일 수도 있습니다. "
+        "본 글은 학회·대학병원 자료 기준으로 흔한 원인과 진료 시점을 차분히 정리합니다."
+    ),
+    "sections": [
+        {"h": "어지러움은 한 가지가 아니다", "body": (
+            "임상에서 \"어지럽다\"는 표현은 4가지 정도로 나뉩니다.\n\n"
+            "- **회전성 어지럼**(vertigo): 본인이나 주위가 돌아가는 느낌 → 전정기관·이석증·메니에르\n"
+            "- **현기증**(presyncope): 곧 쓰러질 것 같은 느낌 → 저혈압·심장\n"
+            "- **균형장애**(disequilibrium): 걸을 때 비틀거림 → 근골격·신경계\n"
+            "- **막연한 어지럼**: 멍하고 흐릿함 → 빈혈·불안·약물\n\n"
+            "원인이 달라지므로 표현을 정확히 하는 게 진료에 큰 도움이 됩니다."
+        )},
+        {"h": "흔한 원인 — 체크리스트", "body": (
+            "1. **이석증** — 머리 자세 바뀔 때 수십 초 회전성, 가장 흔함\n"
+            "2. **기립성 저혈압** — 일어설 때 핑 도는 느낌, 노인·탈수\n"
+            "3. **빈혈** — 헤모글로빈/페리틴 낮음\n"
+            "4. **저혈당** — 식간 시간이 길 때\n"
+            "5. **약 부작용** — 혈압약·이뇨제·수면제\n"
+            "6. **메니에르병** — 어지럼 + 이명/난청 동반\n"
+            "7. **편두통성 어지럼** — 두통과 함께 반복"
+        )},
+        {"h": "응급 — 즉시 진료가 필요한 신호", "body": (
+            "다음은 즉시 응급실로 가야 합니다.\n\n"
+            "- **갑작스러운 한쪽 마비·말어눌·시야 변화** (뇌졸중 가능)\n"
+            "- **심한 두통 동반**\n"
+            "- **의식 저하·실신**\n"
+            "- **흉통·심한 가슴 두근거림 동반**\n"
+            "- **걷지 못할 정도의 균형장애 갑자기**"
+        )},
+        {"h": "집에서 점검할 것", "body": (
+            "응급이 아니라면 다음을 점검합니다.\n\n"
+            "1. 누웠다 일어설 때만 발생? → 기립성 저혈압 의심\n"
+            "2. 머리 돌릴 때만 수십 초? → 이석증 가능성\n"
+            "3. 식간이 길면 발생? → 저혈당·식사 패턴\n"
+            "4. 새로 시작한 약? → 약 변경 시기와 일치 확인\n"
+            "5. 빈혈 검사 한 지 1년 이상? → 헤모글로빈·페리틴 점검"
+        )},
+        {"h": "관련 점검 자료", "body": (
+            "어지러움은 여러 수치와 연관됩니다. 같이 보면 좋은 글:\n\n"
+            "- [철 결핍·빈혈 수치·증상 체크리스트](/blog/iron-deficiency-anemia-numbers-symptoms-checklist)\n"
+            "- [혈압 130/85·140/90 의미](/blog/blood-pressure-numbers-130-140-meaning)\n"
+            "- [40~50대 만성 피로 체크리스트](/blog/chronic-fatigue-causes-checklist-40s-50s)"
+        )},
+    ],
+    "faq": [
+        {"q": "어지러움이 반복되는데 검사는 무엇부터?", "a": "혈압·혈당·빈혈·갑상선 1차 선별이 일반적입니다. 회전성이면 이비인후과 평형 검사도 권고됩니다."},
+        {"q": "이석증은 자연 호전되나요?", "a": "수일~수주 안에 호전되는 경우가 많지만, 자세 운동(에플리 술기)이 회복을 앞당긴다는 자료가 있습니다."},
+        {"q": "어지러움에 영양제가 도움되나요?", "a": "원인이 빈혈·비타민 결핍이면 도움될 수 있습니다. 다른 원인이면 직접 효과는 제한적입니다."},
+    ],
+    "refs": [REF_SNUH, REF_AMC, REF_PUBMED + "/?term=vertigo+dizziness+differential+diagnosis"],
+    "same_cat_links": [DHI_PEERS[3], DHI_PEERS[0], DHI_PEERS[11]],
+    "prev_batch_link": {"label": "철 결핍·빈혈 수치·증상", "slug": "iron-deficiency-anemia-numbers-symptoms-checklist"},
+    "ingredient_links": [],
+})
+
+# ─── L1 #2: 무릎 관절 통증 ───────────────────────────────────────────
+SPECS.append({
+    "slug": "knee-joint-pain-causes-checklist-when-to-see-doctor",
+    "layer": "L1",
+    "category": "disease-health-info",
+    "title_full": "무릎 관절 통증 — 흔한 원인 체크리스트와 진료 시점",
+    "meta_title_core": "무릎 관절 통증 원인 — 체크리스트 정보",
+    "meta_desc_core": "무릎 관절 통증의 흔한 원인 체크리스트와 위급 신호, 점검 포인트·진료가 필요한 시점을 학회·대학병원 자료 기준으로 차분히 정리합니다.",
+    "excerpt_core": "무릎 관절 통증의 흔한 원인 체크리스트와 위급 신호, 점검 포인트와 진료 시점을 차분히 정리합니다.",
+    "primary_keywords": ["무릎 통증", "관절 통증", "원인", "체크리스트", "퇴행성"],
+    "tags": ["무릎 통증", "관절", "퇴행성", "연골 손상", "건강검진"],
+    "intro": (
+        "**무릎 통증**은 40대 이후 가장 흔한 호소 중 하나입니다. 단순 사용 과다부터 연골 손상·관절염까지 원인이 다양합니다. "
+        "본 글은 학회·대학병원 자료 기준으로 흔한 원인과 점검 흐름을 차분히 정리합니다."
+    ),
+    "sections": [
+        {"h": "무릎은 어디가 아픈가 — 위치별 단서", "body": (
+            "통증 위치는 원인 추정의 중요한 단서입니다.\n\n"
+            "- **앞쪽(슬개골 주변)**: 슬개건염, 슬개대퇴증후군 (계단 내려갈 때 심함)\n"
+            "- **안쪽**: 내측 반월판·내측 측부인대\n"
+            "- **바깥쪽**: 외측 반월판·장경인대증후군 (러너 흔함)\n"
+            "- **뒤쪽**: 베이커 낭종, 햄스트링\n"
+            "- **전반적 부종**: 관절염·통풍"
+        )},
+        {"h": "흔한 원인 — 체크리스트", "body": (
+            "1. **퇴행성 관절염** — 50대 이후 가장 흔함, 아침 뻣뻣함 30분 이내\n"
+            "2. **반월판 손상** — 갑작스러운 비틀림 후, \"걸리는 느낌\"\n"
+            "3. **슬개대퇴증후군** — 앉아 있다 일어날 때, 계단\n"
+            "4. **장경인대증후군** — 러너·자전거, 바깥쪽\n"
+            "5. **류마티스 관절염** — 양쪽 대칭, 아침 뻣뻣함 1시간 이상\n"
+            "6. **통풍** — 갑작스러운 야간 통증, 붉음\n"
+            "7. **연골연화증** — 젊은 여성에 흔함"
+        )},
+        {"h": "응급·조기 진료 신호", "body": (
+            "다음은 24시간 안에 진료가 권고됩니다.\n\n"
+            "- 외상 후 체중 부하 불가\n"
+            "- 무릎이 \"펴지지 않거나 굽혀지지 않음\"\n"
+            "- 갑작스러운 심한 부종 + 발열 + 붉음 (감염성 관절염 가능)\n"
+            "- 외상 후 시각적 변형\n"
+            "- 다리 저림·감각 저하 동반"
+        )},
+        {"h": "집에서 점검할 것", "body": (
+            "응급이 아니라면 점검 흐름:\n\n"
+            "1. **언제 아픈가** — 활동 후/시작 시/밤/늘?\n"
+            "2. **양쪽인가 한쪽인가** — 양쪽은 류마티스 의심\n"
+            "3. **아침 뻣뻣함은 얼마나** — 30분 이내(퇴행성)/1시간 이상(자가면역)\n"
+            "4. **\"걸리는\" 느낌이 있나** — 반월판 단서\n"
+            "5. **체중·근력** — 체중 1kg 감량은 무릎 부담 4kg 감소"
+        )},
+        {"h": "보존적 관리 — 일반 권고", "body": (
+            "초기 단계 일반 권고:\n\n"
+            "- **체중 감량** — 가장 효과 큰 단일 변수\n"
+            "- **대퇴사두근 강화** — 통증·기능 개선 일관된 증거\n"
+            "- 무리한 계단·등산 잠시 줄이기\n"
+            "- 진통제는 단기 사용 권고\n\n"
+            "관련 정보: [아침에 몸이 뻣뻣한 이유](/blog/morning-stiffness-causes-checklist), "
+            "[허리둘레와 복부 비만](/blog/belly-fat-waist-circumference-numbers-meaning)."
+        )},
+    ],
+    "faq": [
+        {"q": "MRI를 꼭 찍어야 하나요?", "a": "1차로는 X-ray와 진찰이 일반적이며, 반월판·인대 의심 시 MRI가 권고됩니다."},
+        {"q": "글루코사민·콘드로이틴이 효과 있나요?", "a": "임상 효과는 \"제한적·일부에서 도움\" 수준입니다. 식약처 등록 정보 확인 후 보조 수단으로 고려합니다."},
+        {"q": "무릎 보호대는 도움이 되나요?", "a": "활동 시 안정감 보조에는 유용할 수 있으나, 장시간 의존은 근력 약화를 부를 수 있습니다."},
+    ],
+    "refs": [REF_SNUH, REF_AMC, REF_PUBMED + "/?term=knee+pain+osteoarthritis+management+review"],
+    "same_cat_links": [DHI_PEERS[5], DHI_PEERS[11], DHI_PEERS[8]],
+    "prev_batch_link": {"label": "아침에 몸이 뻣뻣한 이유", "slug": "morning-stiffness-causes-checklist"},
+    "ingredient_links": [],
+})
+
+# ─── L1 #3: 잦은 더부룩함 ────────────────────────────────────────────
+SPECS.append({
+    "slug": "frequent-bloating-causes-checklist-action-guide",
+    "layer": "L1",
+    "category": "disease-health-info",
+    "title_full": "자주 더부룩하고 가스가 차요 — 흔한 원인 체크리스트",
+    "meta_title_core": "더부룩함·가스 원인 — 체크리스트 정보",
+    "meta_desc_core": "자주 더부룩하고 가스가 차는 증상의 흔한 원인 체크리스트와 점검 포인트·진료가 필요한 시점을 학회·대학병원 자료 기준으로 차분히 정리합니다.",
+    "excerpt_core": "잦은 더부룩함·가스의 흔한 원인 체크리스트와 점검 포인트·진료 시점을 차분히 정리합니다.",
+    "primary_keywords": ["더부룩함", "가스", "원인", "체크리스트", "과민성 대장"],
+    "tags": ["더부룩함", "가스", "과민성 대장", "유당불내증", "건강검진"],
+    "intro": (
+        "**자주 더부룩하고 가스가 차는** 증상은 일상에서 매우 흔합니다. 식이·기능성 문제부터 일부 질환까지 원인이 다양합니다. "
+        "본 글은 학회·대학병원 자료 기준으로 흔한 원인과 점검 흐름을 차분히 정리합니다."
+    ),
+    "sections": [
+        {"h": "더부룩함은 무엇인가요", "body": (
+            "임상에서 \"bloating\"은 다음을 포괄합니다.\n\n"
+            "- 식후 위장 부위가 \"꽉 찬\" 느낌\n"
+            "- 배가 시각적으로 부풀어 보임 (distension)\n"
+            "- 가스가 자주 차고 트림·방귀 증가\n\n"
+            "원인이 위인지 장인지에 따라 접근이 달라집니다."
+        )},
+        {"h": "흔한 원인 — 체크리스트", "body": (
+            "1. **과민성 대장 증후군(IBS)** — 가장 흔함, 스트레스·식이 관련\n"
+            "2. **유당불내증** — 우유·아이스크림 후 1~3시간\n"
+            "3. **글루텐 민감성** — 빵·면 후 더부룩함\n"
+            "4. **소장 세균 과다증식(SIBO)** — 식후 30분 안에 빠르게 가스\n"
+            "5. **변비** — 대장 내 정체 → 가스 발효\n"
+            "6. **기능성 소화불량** — 위가 음식을 \"천천히\" 비움\n"
+            "7. **공기 삼킴(aerophagy)** — 빨리 먹기·껌·탄산"
+        )},
+        {"h": "진료가 권고되는 신호", "body": (
+            "다음 동반 시 진료가 권고됩니다.\n\n"
+            "- **체중 감소** (의도하지 않은)\n"
+            "- **혈변·검은 변**\n"
+            "- **밤에 깨는 통증**\n"
+            "- **50세 이후 새로 시작된 증상**\n"
+            "- **가족력 (대장암·셀리악)**\n"
+            "- **만성적 빈혈 동반**"
+        )},
+        {"h": "집에서 점검할 것 — 식이 일기", "body": (
+            "2주간 식이 일기로 패턴을 찾는 것이 1차 권고입니다.\n\n"
+            "1. **유제품** — 끊고 1주 → 호전이면 유당불내증 가능\n"
+            "2. **글루텐(빵·면)** — 끊고 1주 → 호전 여부\n"
+            "3. **FODMAP** — 양파·마늘·콩·과당 많은 과일\n"
+            "4. **탄산음료·껌**\n"
+            "5. **먹는 속도** — 천천히 30분 이상"
+        )},
+        {"h": "보존적 관리 — 일반 권고", "body": (
+            "- 식이 일기 + FODMAP 제한 (단기 4주, 영양 균형 주의)\n"
+            "- 식후 가벼운 걷기\n"
+            "- 프로바이오틱스 (균주 선택 중요)\n"
+            "- 스트레스·수면 점검\n\n"
+            "관련 정보: [장내 미생물과 건강 기전](/blog/gut-microbiome-health-mechanism-easy-explanation), "
+            "[프로바이오틱스 균주 선택 가이드](/blog/probiotics-strain-selection-decision-guide)."
+        )},
+    ],
+    "faq": [
+        {"q": "유당불내증인지 어떻게 확인하나요?", "a": "1주간 유제품 제거 후 증상 변화 관찰이 1차 권고이며, 정확한 진단은 호흡 검사가 있습니다."},
+        {"q": "프로바이오틱스가 효과 있나요?", "a": "균주에 따라 IBS·변비에서 효과가 보고됩니다. 균주 선택이 중요합니다."},
+        {"q": "탄산수도 가스를 만드나요?", "a": "탄산은 일시적으로 트림·더부룩함을 늘릴 수 있어 증상 시 줄이는 것이 권고됩니다."},
+    ],
+    "refs": [REF_SNUH, REF_AMC, REF_PUBMED + "/?term=bloating+irritable+bowel+syndrome+review"],
+    "same_cat_links": [DHI_PEERS[7], DHI_PEERS[10], DHI_PEERS[11]],
+    "prev_batch_link": {"label": "장내 미생물과 건강 기전", "slug": "gut-microbiome-health-mechanism-easy-explanation"},
+    "ingredient_links": [],
+})
+
+# ─── L1 #4: 수면의 질 ───────────────────────────────────────────────
+SPECS.append({
+    "slug": "poor-sleep-quality-causes-checklist-improvement-guide",
+    "layer": "L1",
+    "category": "disease-health-info",
+    "title_full": "수면의 질이 나빠요 — 흔한 원인 체크리스트와 개선 가이드",
+    "meta_title_core": "수면의 질 나쁨 원인 — 체크리스트 정보",
+    "meta_desc_core": "수면의 질이 나쁜 흔한 원인 체크리스트와 점검 포인트·개선 일반 권고를 학회·대학병원 자료 기준으로 차분히 정리합니다.",
+    "excerpt_core": "수면의 질이 나쁜 흔한 원인 체크리스트와 점검 포인트·개선 일반 권고를 차분히 정리합니다.",
+    "primary_keywords": ["수면", "수면의 질", "불면", "원인", "체크리스트"],
+    "tags": ["수면", "불면", "수면의 질", "수면무호흡", "건강검진"],
+    "intro": (
+        "**수면의 질이 나쁘다**는 호소는 흔하지만, 잠을 못 자는 것과 자도 개운하지 않은 것은 원인이 다릅니다. "
+        "본 글은 학회·대학병원 자료 기준으로 흔한 원인과 개선 권고를 차분히 정리합니다."
+    ),
+    "sections": [
+        {"h": "수면의 질은 무엇으로 보는가", "body": (
+            "임상에서 \"수면의 질\"은 4가지로 봅니다.\n\n"
+            "- **잠들기까지 걸리는 시간**(잠복기): 30분 초과 시 불면\n"
+            "- **밤에 깨는 횟수**: 2회 이상은 단절 수면\n"
+            "- **총 수면 시간**: 7~9시간 권고 (성인)\n"
+            "- **일어났을 때 개운함**(주관적)\n\n"
+            "수면 시간이 충분해도 개운하지 않으면 \"질\"의 문제입니다."
+        )},
+        {"h": "흔한 원인 — 체크리스트", "body": (
+            "1. **수면무호흡** — 코골이 + 낮 졸림 + 입마름\n"
+            "2. **하지불안증후군** — 잠들 무렵 다리 \"꿈틀거림\"\n"
+            "3. **카페인·알코올** — 알코올은 잠들기는 도움, 후반 수면 망가짐\n"
+            "4. **블루라이트·스크린**\n"
+            "5. **스트레스·불안·우울**\n"
+            "6. **갑상선기능항진** — TSH 낮음, 심박 빠름\n"
+            "7. **야간뇨** — 새벽 2~3회 깸\n"
+            "8. **갱년기·호르몬 변화**"
+        )},
+        {"h": "진료가 권고되는 신호", "body": (
+            "다음 동반 시 수면센터·이비인후과 등 전문 진료가 권고됩니다.\n\n"
+            "- 자다가 호흡이 멈춘다는 동반자 관찰\n"
+            "- 낮에 운전 중 졸음 위험 수준\n"
+            "- 3개월 이상 만성 불면\n"
+            "- 우울·자살 사고 동반\n"
+            "- 갱년기 야간 발한 + 깨는 빈도 급증"
+        )},
+        {"h": "집에서 점검할 것 — 수면 위생", "body": (
+            "1. **카페인** — 오후 2시 이후 끊기 (반감기 5시간)\n"
+            "2. **알코올** — 잠들기 도움이라 오해, 수면 후반 망가짐\n"
+            "3. **스크린** — 자기 1시간 전 블루라이트 차단\n"
+            "4. **방 온도** — 18~20℃ 권고\n"
+            "5. **운동** — 주 150분, 자기 3시간 전까지\n"
+            "6. **기상 시간 고정** — 주말 포함 ±30분"
+        )},
+        {"h": "보충제·약 — 일반론", "body": (
+            "- 멜라토닌은 시차·생체리듬 어긋남에 보조적 효과, 만성 불면 단독 효과는 제한적\n"
+            "- 마그네슘은 결핍 시 도움 가능\n"
+            "- 수면제는 단기 사용 권고, 만성 의존 주의\n\n"
+            "관련 정보: [야간뇨·수면 단절 원인](/blog/night-waking-frequent-urination-causes-checklist), "
+            "[갑상선 TSH 수치 의미](/blog/thyroid-tsh-numbers-meaning-checklist), "
+            "[40~50대 만성 피로 체크리스트](/blog/chronic-fatigue-causes-checklist-40s-50s)."
+        )},
+    ],
+    "faq": [
+        {"q": "총 수면 시간이 부족한 게 아닌데 왜 피곤한가요?", "a": "수면무호흡·하지불안 등 \"질\"의 문제일 수 있습니다. 코골이·낮 졸음이 동반되면 검사 권고."},
+        {"q": "멜라토닌은 매일 먹어도 되나요?", "a": "단기·시차 적응 보조로 안전하다는 자료가 많지만 만성 복용 자료는 제한적입니다."},
+        {"q": "낮잠은 도움이 되나요?", "a": "20~30분 짧은 낮잠은 도움이 되지만, 1시간 이상은 야간 수면을 망칠 수 있습니다."},
+    ],
+    "refs": [REF_SNUH, REF_AMC, REF_PUBMED + "/?term=insomnia+sleep+hygiene+review"],
+    "same_cat_links": [DHI_PEERS[11], DHI_PEERS[4], DHI_PEERS[8]],
+    "prev_batch_link": {"label": "야간뇨·수면 단절 원인 8가지", "slug": "night-waking-frequent-urination-causes-checklist"},
+    "ingredient_links": [],
+})
+
+# ─── L2 #5: 대사증후군 기전 ─────────────────────────────────────────
+SPECS.append({
+    "slug": "metabolic-syndrome-mechanism-easy-explanation",
+    "layer": "L2",
+    "category": "disease-health-info",
+    "title_full": "대사증후군이란 무엇인가요? — 기전 쉬운 설명",
+    "meta_title_core": "대사증후군 기전 쉬운 설명 — 핵심 정보",
+    "meta_desc_core": "대사증후군 5가지 진단 기준과 왜 한꺼번에 묶이는지, 인슐린 저항성·내장지방·만성 염증의 연결 기전을 PubMed 자료 기반으로 차분히 정리합니다.",
+    "excerpt_core": "대사증후군 5가지 기준과 한꺼번에 묶이는 이유, 인슐린 저항성·내장지방·염증의 연결을 차분히 정리합니다.",
+    "primary_keywords": ["대사증후군", "기전", "인슐린 저항성", "내장지방", "5가지 기준"],
+    "tags": ["대사증후군", "기전 정리", "인슐린 저항성", "내장지방", "심혈관"],
+    "intro": (
+        "건강검진 후 \"**대사증후군 의심**\" 결과를 받으면 \"이게 무엇인지\" 검색하시는 분이 많습니다. "
+        "5가지 수치가 묶여 다니는 이유는 \"하나의 뿌리\"가 있기 때문입니다. "
+        "본 글은 PubMed 리뷰 자료를 기반으로 그 기전을 차분히 정리합니다."
+    ),
+    "sections": [
+        {"h": "대사증후군 5가지 진단 기준", "body": (
+            "다음 5가지 중 **3가지 이상** 충족 시 대사증후군입니다 (한국 기준).\n\n"
+            "| 기준 | 컷오프 |\n|---|---|\n"
+            "| 허리둘레 | 남 90·여 85 cm 이상 |\n"
+            "| 공복혈당 | ≥ 100 mg/dL |\n"
+            "| 혈압 | ≥ 130/85 mmHg |\n"
+            "| 중성지방 | ≥ 150 mg/dL |\n"
+            "| HDL | 남 < 40·여 < 50 mg/dL |"
+        )},
+        {"h": "왜 \"한꺼번에\" 묶여 다니나", "body": (
+            "공통 뿌리는 **인슐린 저항성 + 내장지방 + 만성 저강도 염증**입니다.\n\n"
+            "비유: \"하나의 진앙(에피센터)에서 5개 지진이 동시에 일어난다\"\n\n"
+            "- 내장지방 증가 → 인슐린 저항성 → 공복혈당·중성지방↑, HDL↓\n"
+            "- 내장지방의 염증 물질 → 혈관 내피 기능 저하 → 혈압↑\n"
+            "- 인슐린 자체의 혈관·신장 작용 → 혈압·요산↑"
+        )},
+        {"h": "기전 — 4단계로 풀기", "body": (
+            "1. **에너지 과잉** → 지방 세포가 \"한도를 넘어\" 비대해짐\n"
+            "2. **내장지방 비대** → 지방세포에서 염증성 사이토카인 분비\n"
+            "3. **인슐린 저항성** → 혈당 처리 효율 저하, 췌장 보상 분비\n"
+            "4. **연쇄적 변화** → 간 지방 축적, 중성지방·VLDL 증가, HDL 감소, 혈압 상승\n\n"
+            "즉, 대사증후군은 \"각자 다른 5개 병\"이 아니라 **\"하나의 흐름이 만든 5개 신호\"** 입니다."
+        )},
+        {"h": "왜 위험한가 — 누적 위험", "body": (
+            "- 심혈관 질환 위험 2~3배\n"
+            "- 2형 당뇨 발생 위험 5배 이상\n"
+            "- 비알코올성 지방간 동반 빈도 매우 높음\n"
+            "- 일부 암 위험과의 연관 보고\n\n"
+            "기준 3개를 충족했다고 \"3개 병\"이 있는 것이 아니라, \"동일한 대사 흐름이 이미 진행되었다\"는 신호입니다."
+        )},
+        {"h": "되돌릴 수 있나 — 일반론", "body": (
+            "체중 5~10% 감량 + 주 150분 운동만으로도 대사증후군 기준이 정상화되는 사례가 많이 보고됩니다. "
+            "약물보다 **생활습관 교정이 1차 권고**입니다. "
+            "관련 정보: [인슐린 저항성 기전](/blog/insulin-resistance-mechanism-easy-explanation), "
+            "[허리둘레와 복부 비만](/blog/belly-fat-waist-circumference-numbers-meaning), "
+            "[중성지방 150·200·300 의미](/blog/triglycerides-numbers-150-200-meaning)."
+        )},
+    ],
+    "faq": [
+        {"q": "대사증후군은 병명인가요?", "a": "정식 \"질환\"이라기보다 \"여러 위험 신호의 묶음\"입니다. 하지만 임상적으로 매우 중요한 위험 분류입니다."},
+        {"q": "기준 2개만 충족하면 안전한가요?", "a": "안전하다기보다 \"3개 이상보다는 낫다\"는 의미입니다. 1~2개도 위험이 일반 인구보다 높습니다."},
+        {"q": "약이 필요한가요?", "a": "기준 자체로 약을 시작하지는 않으며, 각 수치(혈압·콜레스테롤·혈당)별 기준에 따라 결정합니다."},
+    ],
+    "refs": [REF_PUBMED + "/?term=metabolic+syndrome+mechanism+review", REF_DIABETES, REF_AMC],
+    "same_cat_links": [DHI_PEERS[6], DHI_PEERS[5], DHI_PEERS[8]],
+    "prev_batch_link": {"label": "인슐린 저항성 기전", "slug": "insulin-resistance-mechanism-easy-explanation"},
+    "ingredient_links": [],
+})
+
+# ─── L2 #6: 피부 노화·당화 ──────────────────────────────────────────
+SPECS.append({
+    "slug": "skin-aging-glycation-mechanism-easy-explanation",
+    "layer": "L2",
+    "category": "disease-health-info",
+    "title_full": "피부 노화와 당화(Glycation) — 기전 쉬운 설명",
+    "meta_title_core": "피부 노화·당화 기전 쉬운 설명 — 핵심 정보",
+    "meta_desc_core": "피부 노화의 주범으로 자주 언급되는 당화(glycation)와 AGEs가 어떻게 콜라겐을 손상시키는지, 작용 기전을 PubMed 자료 기반으로 차분히 정리합니다.",
+    "excerpt_core": "피부 노화의 주범으로 자주 언급되는 당화와 AGEs가 콜라겐을 어떻게 손상시키는지 기전을 차분히 정리합니다.",
+    "primary_keywords": ["당화", "glycation", "AGEs", "피부 노화", "콜라겐"],
+    "tags": ["당화", "AGEs", "피부 노화", "기전 정리", "콜라겐"],
+    "intro": (
+        "최근 피부·노화 관련 콘텐츠에서 자주 보이는 단어가 **당화(glycation)** 와 **AGEs**(최종당화산물)입니다. "
+        "\"단 음식이 피부를 늙게 한다\"는 메시지의 과학적 기전이 여기 있습니다. "
+        "본 글은 PubMed 리뷰 자료를 기반으로 그 메커니즘을 차분히 정리합니다."
+    ),
+    "sections": [
+        {"h": "당화는 무엇인가 — 비유로 시작", "body": (
+            "당화는 **\"단백질에 설탕이 달라붙어 변형되는 반응\"** 입니다.\n\n"
+            "비유: 식빵에 잼을 발라 구우면 갈색으로 변하고 딱딱해집니다(메일라드 반응). 이와 같은 반응이 체내에서 천천히 일어나는 것이 당화입니다.\n\n"
+            "- 효소 없이 일어남 (비효소적)\n"
+            "- 혈당이 높을수록 빨라짐\n"
+            "- 시간이 누적될수록 더 진행"
+        )},
+        {"h": "AGEs는 무엇인가", "body": (
+            "당화가 마지막 단계까지 진행된 결과물이 **AGEs**(Advanced Glycation End-products)입니다.\n\n"
+            "- 한 번 만들어지면 잘 제거되지 않음\n"
+            "- 콜라겐·엘라스틴 같은 \"오래 머무는\" 단백질에 누적\n"
+            "- 자체 형광을 가짐 (피부 검사로 측정 가능)"
+        )},
+        {"h": "왜 피부 노화의 \"주범\"인가", "body": (
+            "AGEs가 콜라겐에 누적되면 피부에 다음 변화가 생깁니다.\n\n"
+            "- **콜라겐이 단단하게 연결됨** → 피부 탄력 저하\n"
+            "- 손상된 콜라겐의 분해·재합성 효율 저하\n"
+            "- 자외선·산화 스트레스 손상이 가중\n"
+            "- 누렇거나 칙칙한 색조 변화\n"
+            "- 진피 두께 감소, 주름 깊어짐"
+        )},
+        {"h": "기전 — 4단계로 풀기", "body": (
+            "1. **혈당이 만성적으로 높음** (당뇨, 고당 식이)\n"
+            "2. **포도당·과당이 단백질에 결합**\n"
+            "3. **재배열 반응으로 \"슈가-단백질\" 복합체 형성**\n"
+            "4. **시간이 지나면서 AGEs로 굳어짐**\n\n"
+            "AGEs는 피부뿐 아니라 혈관·신장·수정체에도 누적되어 동맥경화·신장병·백내장의 일부 기전으로도 보고됩니다."
+        )},
+        {"h": "당화를 줄이는 일반 권고", "body": (
+            "- **혈당 안정** — 정제 탄수화물·당류 줄이기\n"
+            "- **고온 가공 줄이기** — 튀김·바비큐는 외부 AGEs도 많음\n"
+            "- 비타민 C·E·폴리페놀 등 항산화 식이 (산화 스트레스가 당화 가속)\n"
+            "- 운동 — 인슐린 감수성 개선\n\n"
+            "관련 정보: [산화 스트레스 쉬운 설명](/blog/oxidative-stress-easy-explanation-daily-life), "
+            "[나이가 들면 혈당이 오르는 이유](/blog/aging-blood-sugar-rising-mechanism-explained), "
+            "[당화혈색소 5.7·5.8·6.0 의미](/blog/hba1c-prediabetes-numbers-explained-by-range)."
+        )},
+    ],
+    "faq": [
+        {"q": "당화는 당뇨가 없으면 신경 안 써도 되나요?", "a": "당뇨가 없어도 식후 혈당이 자주 높으면 누적됩니다. 일반인도 정제 당류 관리가 권고됩니다."},
+        {"q": "당화 차단 영양제는 효과가 있나요?", "a": "동물·시험관 자료는 있지만 인체 임상 근거는 제한적입니다. \"보조 수단\" 정도로 이해하는 게 적절합니다."},
+        {"q": "측정할 수 있나요?", "a": "피부 자기형광(SAF) 측정 기기가 있지만 일반 검진에는 포함되지 않습니다. 당화혈색소가 간접 지표입니다."},
+    ],
+    "refs": [REF_PUBMED + "/?term=glycation+AGEs+skin+aging+review", REF_SNUH, REF_AMC],
+    "same_cat_links": [DHI_PEERS[6], DHI_PEERS[8], DHI_PEERS[7]],
+    "prev_batch_link": {"label": "산화 스트레스 쉬운 설명", "slug": "oxidative-stress-easy-explanation-daily-life"},
+    "ingredient_links": [],
+})
+
+# ─── L3 #7: 마그네슘 선택 ────────────────────────────────────────────
+SPECS.append({
+    "slug": "magnesium-supplements-types-decision-guide",
+    "layer": "L3",
+    "category": "disease-health-info",
+    "title_full": "마그네슘 영양제 — 종류별 선택 가이드",
+    "meta_title_core": "마그네슘 영양제 종류 선택 — 결정 정보",
+    "meta_desc_core": "마그네슘 영양제의 종류별 흡수율·용도 차이와 상황별 선택 기준, 식약처 등록 정보·라벨 점검 포인트·주의점을 차분히 정리합니다.",
+    "excerpt_core": "마그네슘 영양제 종류별 흡수율·용도 차이와 상황별 선택 기준, 식약처 정보 점검을 차분히 정리합니다.",
+    "primary_keywords": ["마그네슘", "영양제", "종류", "선택", "흡수율"],
+    "tags": ["마그네슘", "영양제", "흡수율", "선택 가이드", "건강기능식품"],
+    "intro": (
+        "마그네슘 영양제는 매장에서 \"산화 마그네슘·구연산 마그네슘·글리시네이트…\" 등 종류가 매우 많습니다. "
+        "흡수율과 용도가 다르므로 선택 기준이 필요합니다. "
+        "본 글은 식약처 등록 정보·PubMed 자료를 기준으로 종류별 차이를 차분히 정리합니다."
+    ),
+    "sections": [
+        {"h": "왜 마그네슘이 자주 부족한가", "body": (
+            "마그네슘은 300개 이상의 효소 반응에 관여하지만 한국 성인 다수가 권장량 미만으로 섭취합니다.\n\n"
+            "결핍·부족이 잘 보이는 신호:\n"
+            "- 눈꺼풀 떨림\n"
+            "- 다리 쥐(특히 밤)\n"
+            "- 피로·근육 경직\n"
+            "- 변비\n"
+            "- 잠들기 어려움\n\n"
+            "단, 위 증상은 다른 원인도 많으므로 진단보다 \"고려 항목\"입니다."
+        )},
+        {"h": "종류별 흡수율과 특징 — 한 표로 정리", "body": (
+            "| 형태 | 흡수율 | 자주 보고된 효과 |\n|---|---|---|\n"
+            "| 산화(oxide) | 낮음 (~4%) | 가장 흔함, 변비 완화 효과 |\n"
+            "| **구연산(citrate)** | 중간 | **균형 잡힌 선택, 변비에도 도움** |\n"
+            "| **글리시네이트** | 높음 | **수면·근육 이완에 자주 추천** |\n"
+            "| L-트레오네이트 | 높음 | 뇌 침투, 인지 보조 (자료 적음) |\n"
+            "| 말산(malate) | 중간 | 만성 피로 보고 (자료 적음) |\n"
+            "| 황산(sulfate, 엡솜) | 외용/완하 | 입욕·변비, 경구는 권장 안 함 |"
+        )},
+        {"h": "선택 흐름 — 상황별", "body": (
+            "1. **눈꺼풀 떨림·다리 쥐** — 글리시네이트 또는 구연산\n"
+            "2. **변비 동반** — 산화 또는 구연산\n"
+            "3. **수면 보조** — 글리시네이트 (위장 부담 적음)\n"
+            "4. **위장이 예민** — 글리시네이트, L-트레오네이트\n"
+            "5. **저렴한 일반 보충** — 구연산"
+        )},
+        {"h": "용량과 주의 — 라벨 체크포인트", "body": (
+            "- 한국 성인 권장량: 남 340 mg/일, 여 280 mg/일\n"
+            "- 보충제 상한: 350 mg/일 (식이 제외)\n"
+            "- **신장 기능 저하**: 마그네슘 보충은 의사 상담 필수\n"
+            "- 항생제(테트라사이클린·퀴놀론)와 동시 복용 시 흡수 저하 → 2시간 간격\n"
+            "- 변(설사) 변화가 잦으면 형태 변경 고려"
+        )},
+        {"h": "흔한 오해", "body": (
+            "- \"많이 먹으면 좋다\" — 설사·신장 부담 위험\n"
+            "- \"한 가지로 모든 효과\" — 종류별 차이 있음\n"
+            "- \"비싼 게 좋다\" — 흡수율 차이가 가격을 100% 정당화하지는 않음\n\n"
+            "관련 정보: [수면의 질이 나빠요](/blog/poor-sleep-quality-causes-checklist-improvement-guide), "
+            "[50대 영양제 우선순위 결정 가이드](/blog/50s-supplements-priority-decision-guide), "
+            "[멀티비타민 vs 단일 영양제 선택](/blog/multivitamin-vs-single-supplements-decision-guide)."
+        )},
+    ],
+    "faq": [
+        {"q": "마그네슘을 자기 전에 먹어야 하나요?", "a": "수면 보조 목적이면 자기 1~2시간 전이 일반 권고지만, 위장 자극이 있으면 식후도 괜찮습니다."},
+        {"q": "칼슘과 같이 먹으면 흡수가 떨어지나요?", "a": "고용량 동시 복용은 흡수 경쟁 보고가 있어 시간 분리(2시간)가 권고됩니다."},
+        {"q": "신장이 안 좋으면 먹으면 안 되나요?", "a": "마그네슘은 신장으로 배설되므로 신기능 저하 시 축적 위험이 있어 의사 상담이 필수입니다."},
+    ],
+    "refs": [REF_MFDS, REF_SNUH, REF_PUBMED + "/?term=magnesium+supplementation+bioavailability+forms"],
+    "same_cat_links": [DHI_PEERS[9], DHI_PEERS[12], DHI_PEERS[10]],
+    "prev_batch_link": {"label": "멀티비타민 vs 단일 영양제 선택", "slug": "multivitamin-vs-single-supplements-decision-guide"},
+    "ingredient_links": [],
+})
+
+# ─── L3 #8: 비타민 C 용량 ────────────────────────────────────────────
+SPECS.append({
+    "slug": "vitamin-c-dosage-decision-guide",
+    "layer": "L3",
+    "category": "disease-health-info",
+    "title_full": "비타민 C — 하루 얼마가 적당한가요?",
+    "meta_title_core": "비타민 C 용량 결정 가이드 — 핵심 정보",
+    "meta_desc_core": "비타민 C 하루 권장량과 고용량 복용의 효과·위험, 상황별 결정 기준과 식약처·학회 자료의 일반 권고·주의점을 차분히 정리합니다.",
+    "excerpt_core": "비타민 C 하루 권장량과 고용량 복용의 효과·위험, 상황별 결정 기준을 차분히 정리합니다.",
+    "primary_keywords": ["비타민 C", "용량", "고용량", "결정", "권장량"],
+    "tags": ["비타민 C", "용량", "고용량", "건강기능식품", "결정 가이드"],
+    "intro": (
+        "**비타민 C는 하루 얼마 먹어야 하나요?** 는 가장 자주 검색되는 영양제 질문입니다. "
+        "권장량(100mg)과 고용량(2,000mg 이상) 사이에 큰 차이가 있어 혼란이 큽니다. "
+        "본 글은 식약처·학회 자료를 기준으로 결정 기준을 차분히 정리합니다."
+    ),
+    "sections": [
+        {"h": "공식 권장량 — 한 표로 정리", "body": (
+            "| 기관 | 일일 권장량 |\n|---|---|\n"
+            "| 한국영양학회 (성인) | 100 mg |\n"
+            "| 한국 식약처 상한 | 2,000 mg |\n"
+            "| 미국 NIH RDA | 75~90 mg |\n"
+            "| WHO 권고 | ~ 45 mg |\n\n"
+            "권장량은 \"결핍 예방\" 기준이며, 고용량 효과를 보장하는 수치가 아닙니다."
+        )},
+        {"h": "고용량(1,000~2,000mg)의 흔한 주장 — 근거 점검", "body": (
+            "- **감기 예방·기간 단축**: 일반 인구에서 \"의미 있는 예방 효과 없음\"이 다수 자료. 기간은 8% 정도 단축 가능 보고\n"
+            "- **항산화·항노화**: 시험관·동물 자료는 있으나 임상 일관성은 부족\n"
+            "- **면역 보조**: 결핍 시 도움, 충분 상태에서는 추가 효과 제한적\n\n"
+            "즉, 고용량 자체가 \"강력한 단일 효과\"를 보장하지는 않습니다."
+        )},
+        {"h": "고용량의 위험 — 점검 포인트", "body": (
+            "- **신장결석 위험**: 2,000mg/일 이상은 옥살산 결석 위험 보고 (특히 남성·결석 병력)\n"
+            "- 위장 자극, 설사 (혈관 부담)\n"
+            "- 철 흡수 과도 증가 — 혈색소증 환자 주의\n"
+            "- 채혈검사 간섭 (혈당·요산 측정 오차 가능)"
+        )},
+        {"h": "결정 흐름 — 상황별", "body": (
+            "1. **일반 건강 유지** → 식이 위주 (과일·채소), 보충은 200~500mg/일 충분\n"
+            "2. **흡연자·임산부·노인** → 권장량의 1.5배 정도\n"
+            "3. **감기 자주 걸림** → 단기 1,000mg 시도 가능\n"
+            "4. **결석 병력·남성** → 1,000mg 이하 유지\n"
+            "5. **항암 보조 등 의료 목적** → 의사 처방 필수"
+        )},
+        {"h": "라벨 — 형태와 흡수", "body": (
+            "- **L-아스코르브산** (가장 흔함, 위장 자극 있음)\n"
+            "- **버퍼드 비타민 C**(나트륨·칼슘 아스코르베이트): 위장 부담 적음\n"
+            "- **리포소말 비타민 C**: 흡수율 높다는 광고가 많지만 임상 우위 근거는 제한적\n"
+            "- **천연 vs 합성**: 화학 구조 동일, 차이 미미\n\n"
+            "관련 정보: [멀티비타민 vs 단일 영양제 선택](/blog/multivitamin-vs-single-supplements-decision-guide), "
+            "[50대 영양제 우선순위 결정 가이드](/blog/50s-supplements-priority-decision-guide), "
+            "[한국 건강기능식품 원료 인정 절차](/blog/health-functional-food-raw-material-approval-korea)."
+        )},
+    ],
+    "faq": [
+        {"q": "비타민 C는 분복이 좋나요?", "a": "수용성이라 한 번 많이 먹어도 일정량 이상은 배설됩니다. 500mg 이상이면 분복이 흡수에 유리합니다."},
+        {"q": "공복에 먹어야 흡수가 잘 되나요?", "a": "흡수는 공복이 약간 유리하지만 위장 자극이 있으면 식후·식간이 권고됩니다."},
+        {"q": "메가도즈(고용량) 정맥 주사는 안전한가요?", "a": "의료기관 처방·관리 하에서만 사용되며, 자가 판단으로는 권장되지 않습니다."},
+    ],
+    "refs": [REF_MFDS, REF_SNUH, REF_PUBMED + "/?term=vitamin+C+dosage+supplementation+evidence"],
+    "same_cat_links": [DHI_PEERS[9], DHI_PEERS[10], DHI_PEERS[12]],
+    "prev_batch_link": {"label": "멀티비타민 vs 단일 영양제 선택", "slug": "multivitamin-vs-single-supplements-decision-guide"},
+    "ingredient_links": [],
+})
+
+# ─── L4 #9: 플로로탄닌 vs EGCG (녹차) ─────────────────────────────────
+SPECS.append({
+    "slug": "phlorotannin-vs-egcg-green-tea-antioxidant-comparison",
+    "layer": "L4",
+    "category": "ingredient-comparison",
+    "title_full": "플로로탄닌 vs EGCG(녹차 카테킨) — 항산화 효과 비교",
+    "meta_title_core": "플로로탄닌·EGCG 녹차 항산화 — 성분 비교",
+    "meta_desc_core": "해조류 폴리페놀 플로로탄닌과 녹차 카테킨 EGCG의 항산화 기전·임상 데이터·흡수율을 식약처·PubMed 자료 기준으로 차분히 정리합니다.",
+    "excerpt_core": "해조류 폴리페놀 플로로탄닌과 녹차 EGCG의 항산화 기전·임상·흡수율 차이를 차분히 정리합니다.",
+    "primary_keywords": ["플로로탄닌", "EGCG", "카테킨", "녹차", "항산화"],
+    "tags": ["플로로탄닌", "EGCG", "카테킨", "녹차", "항산화"],
+    "intro": (
+        "**플로로탄닌**(해조류 폴리페놀)과 **EGCG**(녹차의 대표 카테킨)는 항산화 후보로 자주 비교됩니다. "
+        "EGCG는 연구·식이 노출이 풍부한 반면, 플로로탄닌은 한국·동아시아 해조류 식문화에서 주목받고 있습니다. "
+        "본 글은 식약처·PubMed 자료 기준으로 두 성분의 항산화 특성을 차분히 정리합니다."
+    ),
+    "sections": [
+        {"h": "기본 프로필 — 한 표로 정리", "body": (
+            "| 항목 | 플로로탄닌 | EGCG |\n|---|---|---|\n"
+            "| 분류 | 해조류 폴리페놀 | 녹차 카테킨 |\n"
+            "| 주 원료 | 갈조류 (감태·다시마) | 녹차잎 |\n"
+            "| 구조 | 플로로글루시놀 중합체 | 폴리페놀 단량체 |\n"
+            "| 분자량 | 다양 (수백~수만 Da) | 약 458 Da |\n"
+            "| 한국 식약처 등록 | 일부 (감태추출물 등) | 녹차추출물로 등록 |"
+        )},
+        {"h": "항산화 기전 — 어디가 다른가", "body": (
+            "**EGCG:**\n"
+            "- 활성산소(ROS) 직접 소거\n"
+            "- Nrf2 경로 활성 → 내인성 항산화 효소 증가\n"
+            "- 미토콘드리아 보호 보고\n\n"
+            "**플로로탄닌:**\n"
+            "- 다중 페놀기로 ROS 소거능 강함 (in vitro)\n"
+            "- 분자량 큰 종은 효소·금속 이온과 직접 결합\n"
+            "- ORAC·DPPH 등 항산화 지표에서 EGCG 대비 강한 활성 보고\n\n"
+            "in vitro에서는 플로로탄닌이 더 강하다는 자료가 다수지만, 인체 흡수·이용률을 고려하면 단순 비교가 어렵습니다."
+        )},
+        {"h": "임상 데이터 — 인체 연구 비교", "body": (
+            "- **EGCG**: 인체 임상이 매우 풍부 — 체지방 감소·혈관 기능·인지 보조 등 (효과 크기는 작음)\n"
+            "- **플로로탄닌**: 인체 임상이 EGCG 대비 적음 — 혈당·인지·항산화 지표 중심 (소규모 RCT 다수)\n\n"
+            "EGCG는 \"근거 풍부, 효과 작음\", 플로로탄닌은 \"근거 축적 중, 가능성 있음\" 정도로 정리할 수 있습니다."
+        )},
+        {"h": "흡수율과 안전성", "body": (
+            "**EGCG:**\n"
+            "- 경구 흡수율 낮음 (1% 미만 추정)\n"
+            "- 공복 고용량은 간 손상 보고 사례 (EFSA: 800mg/일 이상 주의)\n"
+            "- 카페인 동반 (식이 녹차 대비 보충제 주의)\n\n"
+            "**플로로탄닌:**\n"
+            "- 저분자는 흡수, 고분자는 장 내 작용\n"
+            "- 카페인 없음\n"
+            "- 식약처 등록 원료(감태추출물) 기준 안전성 자료 일부 정리됨\n\n"
+            "관련 정보: [플로로탄닌·커큐민 항염증 비교](/blog/phlorotannin-vs-curcumin-anti-inflammatory), "
+            "[플로로탄닌·레스베라트롤 항산화 비교](/blog/phlorotannin-vs-resveratrol-antioxidant)."
+        )},
+        {"h": "어느 쪽을 골라야 할까 — 결정 흐름", "body": (
+            "두 성분은 \"하나가 우월\"이 아니라 **목적·식이 노출에 따라 다릅니다**.\n\n"
+            "- **녹차 음용이 일상화** → EGCG 식이 노출 충분, 별도 보충제 불필요\n"
+            "- **카페인 회피** → 플로로탄닌 보조 검토\n"
+            "- **혈당·인지 보조 관심** → 플로로탄닌 자료 점검\n"
+            "- **광범위 항산화 식이** → 둘 다 보조 식이로 활용\n\n"
+            "단, **\"단독 효능 보장\"이라는 표현은 식약처 허위·과대광고 기준에 해당**하므로 광고 문구 점검이 중요합니다."
+        )},
+    ],
+    "faq": [
+        {"q": "녹차 마시는 것과 보충제는 같나요?", "a": "보충제는 농축 EGCG로, 식이 노출과 간 부담이 달라 별도 평가가 필요합니다."},
+        {"q": "플로로탄닌은 EGCG보다 새로운 성분인가요?", "a": "성분 자체는 오래 알려졌으나 식약처 등록·임상 자료 축적은 EGCG가 더 풍부합니다."},
+        {"q": "두 성분을 같이 먹어도 되나요?", "a": "일반 식이 수준은 문제 보고가 적지만 고용량 보충제 동시 복용은 자료가 부족합니다."},
+    ],
+    "refs": [REF_MFDS, REF_PUBMED + "/?term=phlorotannin+EGCG+antioxidant+comparison", REF_PUBMED + "/?term=EGCG+green+tea+human+trial"],
+    "same_cat_links": [IC_PEERS[3], IC_PEERS[2], IC_PEERS[1]],
+    "prev_batch_link": {"label": "플로로탄닌·레스베라트롤 항산화 비교", "slug": "phlorotannin-vs-resveratrol-antioxidant"},
+    "ingredient_links": [{"label": "감태추출물 안전성·부작용 정보 정리", "slug": "gamtae-extract-safety-side-effects-honest-review"}],
+})
+
+# ─── L4 #10: 감태 vs 미역 ────────────────────────────────────────────
+SPECS.append({
+    "slug": "gamtae-vs-miyeok-seaweed-comparison",
+    "layer": "L4",
+    "category": "ingredient-comparison",
+    "title_full": "감태 vs 미역 — 같은 해조류, 무엇이 다른가요?",
+    "meta_title_core": "감태·미역 비교 — 해조류 성분 정보",
+    "meta_desc_core": "같은 갈조류로 분류되는 감태와 미역의 영양 성분·플로로탄닌 함량·식약처 등록 차이를 PubMed·식약처 자료 기준으로 차분히 정리합니다.",
+    "excerpt_core": "같은 갈조류인 감태와 미역의 영양·플로로탄닌 함량·식약처 등록 차이를 차분히 정리합니다.",
+    "primary_keywords": ["감태", "미역", "해조류", "플로로탄닌", "비교"],
+    "tags": ["감태", "미역", "갈조류", "플로로탄닌", "성분 비교"],
+    "intro": (
+        "**감태**와 **미역**은 둘 다 갈조류지만 영양 성분과 식품·기능성 활용이 다릅니다. "
+        "특히 플로로탄닌 함량과 식약처 등록 측면에서 차이가 있습니다. "
+        "본 글은 식약처·PubMed 자료 기준으로 두 해조류의 차이를 차분히 정리합니다."
+    ),
+    "sections": [
+        {"h": "기본 분류 — 같은 갈조류, 다른 종", "body": (
+            "| 항목 | 감태 | 미역 |\n|---|---|---|\n"
+            "| 학명 | Ecklonia cava | Undaria pinnatifida |\n"
+            "| 분류 | 갈조류 다시마목 | 갈조류 다시마목 |\n"
+            "| 주산지 (한국) | 제주·완도 | 전국 연안 (완도·기장) |\n"
+            "| 식문화 | 추출물 위주 (식이는 일부) | 일상 식이 광범위 (미역국 등) |\n"
+            "| 한국 식약처 | 감태추출물 (개별 인정) | 일반식품·영양 풍부 식품 |"
+        )},
+        {"h": "영양 성분 — 일반 식이 측면", "body": (
+            "**미역 (식이 100g 기준 대략):**\n"
+            "- 칼로리 매우 낮음 (~45 kcal/100g, 건조 기준은 다름)\n"
+            "- 칼슘·마그네슘 풍부\n"
+            "- 요오드 풍부 (과잉 주의)\n"
+            "- 알긴산·후코이단 등 식이섬유\n"
+            "- 비타민 K, 일부 B군\n\n"
+            "**감태 (식이 vs 추출물):**\n"
+            "- 식이 노출은 적음 (미역만큼 흔하지 않음)\n"
+            "- 추출물에서 **플로로탄닌 농축** (식이로는 어려운 농도)\n"
+            "- 알긴산·후코이단도 함유"
+        )},
+        {"h": "플로로탄닌 함량 — 핵심 차이", "body": (
+            "두 해조류 모두 플로로탄닌을 함유하지만 농도와 종이 다릅니다.\n\n"
+            "- **감태(Ecklonia cava)**: 플로로탄닌이 \"상대적으로 풍부\"하며 특히 **에클로니아 카바 특이 폴리페놀**(diphlorethohydroxycarmalol 등)이 다수 보고\n"
+            "- **미역(Undaria)**: 플로로탄닌은 함유하나 농도가 감태 대비 낮은 편 (자료에 따라 차이)\n\n"
+            "건강기능식품 원료로 등록된 것은 \"감태추출물\"이 대표적이며, 미역은 식약처 일반식품·식품 영양으로 더 자주 분류됩니다."
+        )},
+        {"h": "용도와 안전성", "body": (
+            "**미역:**\n"
+            "- 일상 식이 (미역국, 무침, 쌈)\n"
+            "- 요오드 과잉 주의 (특히 임산부·갑상선 환자)\n"
+            "- 비타민 K 풍부 → 항응고제 복용자 주의\n\n"
+            "**감태(추출물):**\n"
+            "- 건강기능식품 원료 (식약처 등록)\n"
+            "- 일상 식이보다 추출물 형태가 일반적\n"
+            "- 안전성 자료는 식약처 인정 자료가 정리되어 있음\n\n"
+            "관련 정보: [감태추출물 안전성·부작용 정보 정리](/blog/gamtae-extract-safety-side-effects-honest-review), "
+            "[한국 건강기능식품 원료 인정 절차](/blog/health-functional-food-raw-material-approval-korea)."
+        )},
+        {"h": "어떻게 활용할까 — 정리", "body": (
+            "두 해조류는 \"하나가 우월\"이 아니라 **역할이 다릅니다**.\n\n"
+            "- **일상 식이** → 미역 (저칼로리·미네랄·식이섬유)\n"
+            "- **플로로탄닌 농축 보충** → 감태추출물 (식약처 등록 제품)\n"
+            "- **요오드 관리 필요** → 미역 섭취량 점검\n"
+            "- **항응고제 복용** → 미역 섭취량 점검 (비타민 K)\n\n"
+            "관련 정보: [플로로탄닌·에클로니아 카바 차이](/blog/phlorotannin-vs-ecklonia-cava-difference), "
+            "[플로로탄닌 vs 푸코잔틴 비교](/blog/phlorotannin-vs-fucoxanthin-comparison)."
+        )},
+    ],
+    "faq": [
+        {"q": "감태와 미역을 같이 먹어도 되나요?", "a": "일상 식이 수준에서는 문제 보고가 거의 없습니다. 요오드 총량만 점검하면 됩니다."},
+        {"q": "감태를 식이로 먹으면 되지 않나요?", "a": "감태는 미역만큼 식이 노출이 흔하지 않고, 플로로탄닌 농축은 추출물이 일반적입니다."},
+        {"q": "미역국을 매일 먹으면 갑상선에 안 좋나요?", "a": "요오드 과잉은 갑상선 기능에 영향을 줄 수 있어 한국인은 \"매일 다량\"보다 \"적절히\" 권고됩니다."},
+    ],
+    "refs": [REF_MFDS, REF_PUBMED + "/?term=Ecklonia+cava+Undaria+pinnatifida+phlorotannin", REF_PUBMED + "/?term=seaweed+iodine+thyroid"],
+    "same_cat_links": [IC_PEERS[4], IC_PEERS[0], IC_PEERS[5]],
+    "prev_batch_link": {"label": "플로로탄닌·에클로니아 카바 차이", "slug": "phlorotannin-vs-ecklonia-cava-difference"},
+    "ingredient_links": [{"label": "감태추출물 안전성·부작용 정보 정리", "slug": "gamtae-extract-safety-side-effects-honest-review"}],
+})
