@@ -7,8 +7,7 @@
     },
     "api/sitemap.js": {
       "includeFiles": "public/**"
-    },
-    "api/admin.js": {}
+    }
   },
   "installCommand": "npm install",
   "rewrites": [
