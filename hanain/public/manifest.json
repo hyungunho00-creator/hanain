@@ -1,0 +1,20 @@
+{
+  "name": "플로로탄닌·감태추출물 종합 건강정보 데이터센터",
+  "short_name": "플로로탄닌",
+  "description": "플로로탄닌·감태추출물·해양 폴리페놀 종합 건강정보 데이터센터. 항산화·염증·혈당·수면·면역·뇌 건강·암환자 가족 건강정보·당뇨 건강정보·병원정보·전문가 Q&A까지 한곳에서 확인합니다.",
+  "lang": "ko-KR",
+  "dir": "ltr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0D1B3E",
+  "theme_color": "#0D1B3E",
+  "orientation": "portrait",
+  "categories": ["health", "medical", "education", "news"],
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

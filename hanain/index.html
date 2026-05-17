@@ -14,12 +14,20 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta id="apple-app-title" name="apple-mobile-web-app-title" content="플로로탄닌" />
 
-    <!-- ===== 동적 PWA Manifest (/p/ 파트너 페이지 전용) ===== -->
+    <!-- ===== PWA Manifest (정적 — 모든 일반 경로에 적용) ===== -->
+    <link id="static-manifest" rel="manifest" href="/manifest.json" />
+
+    <!-- ===== 동적 PWA Manifest (/p/ 파트너 페이지 전용 — 정적 manifest를 덮어씀) ===== -->
     <script>
     (function() {
       var path = window.location.pathname;
       var m = path.match(/^\/p\/(\d+)/);
       if (m) {
+        // 파트너 페이지에서는 정적 manifest를 제거하고 동적 manifest로 교체
+        var staticLink = document.getElementById('static-manifest');
+        if (staticLink && staticLink.parentNode) {
+          staticLink.parentNode.removeChild(staticLink);
+        }
         var phone = m[1];
         // 파트너 이름은 partners.json에서 가져와야 하지만,
         // manifest는 페이지 로드 초기에 즉시 필요하므로

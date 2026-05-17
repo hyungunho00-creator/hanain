@@ -1,5 +1,5 @@
 {
-  "buildCommand": "cd hanain && npm install && npm run build && mkdir -p ../public && cp dist/index.html ../public/index.html && cp dist/sitemap.xml ../public/sitemap.xml && rm -f dist/sitemap.xml",
+  "buildCommand": "cd hanain && npm install && npm run build && mkdir -p ../public && cp dist/index.html ../public/index.html && cp dist/sitemap.xml ../public/sitemap.xml && rm -f dist/sitemap.xml && rm -f dist/index.html",
   "outputDirectory": "hanain/dist",
   "functions": {
     "api/seo.js": {
@@ -30,7 +30,7 @@
     { "source": "/copyright", "destination": "/api/seo?p=/copyright" },
     { "source": "/category/:slug", "destination": "/api/seo?p=/category/:slug" },
     { "source": "/p/:phone", "destination": "/api/seo?p=/p/:phone" },
-    { "source": "/((?!api/).*)", "destination": "/index.html" }
+    { "source": "/((?!api/).*)", "destination": "/api/seo?p=/" }
   ],
   "headers": [
     {

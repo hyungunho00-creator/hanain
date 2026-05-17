@@ -125,21 +125,21 @@ function staticMetaFor(pathname) {
   if (pathname === '/blog?category=ingredient-comparison') {
     return {
       title: '성분 비교 아카이브 | 콜라겐·후코이단·베타글루칸·플로로탄닌 비교',
-      desc:  '다양한 건강성분과 플로로탄닌, 감태추출물, 해양 폴리페놀의 차이를 쉽게 비교하는 건강정보 아카이브입니다.',
+      desc:  '콜라겐·후코이단·베타글루칸·EPA와 플로로탄닌, 감태추출물(Ecklonia cava), 해양 폴리페놀의 작용기전·임상 근거·항산화 특성을 한 번에 비교하는 종합 건강정보 아카이브입니다.',
       canonical: `${SITE}/blog?category=ingredient-comparison`,
     }
   }
   if (pathname === '/blog?category=disease-health-info') {
     return {
       title: '질환별 건강정보 | 암환자 가족·당뇨·수면·면역 정보 아카이브',
-      desc:  '암환자 가족 건강정보, 당뇨·혈당, 수면, 면역, 장 건강, 뇌 건강 등 사람들이 실제로 검색하는 건강정보를 정리합니다.',
+      desc:  '암환자 가족 건강정보, 당뇨·혈당, 수면, 면역, 장 건강, 뇌 건강, 피부 건강, 염증·항산화 기전까지 사람들이 실제로 검색하는 12개 질환 카테고리 건강정보를 임상 근거 기반으로 정리하는 아카이브입니다.',
       canonical: `${SITE}/blog?category=disease-health-info`,
     }
   }
   if (pathname === '/blog?category=hospital-info') {
     return {
       title: '병원정보 아카이브 | 암요양병원·한방병원·전문가 Q&A 정보',
-      desc:  '암요양병원, 한방병원, 재활병원, 전문가 Q&A 등 환자와 가족이 병원정보를 찾을 때 확인해야 할 기준을 정리합니다.',
+      desc:  '암요양병원, 한방병원, 재활병원, 회복기 병원과 전문가 Q&A·진료과 비교·치료 옵션 안내 등 환자와 가족이 병원정보를 찾을 때 반드시 확인해야 할 기준과 실제 사례를 정리한 건강정보 아카이브입니다.',
       canonical: `${SITE}/blog?category=hospital-info`,
     }
   }
@@ -688,6 +688,29 @@ export default async function handler(req, res) {
       metaSource = 'fallback'
     }
 
+    // ─── 파트너 페이지 동적 메타 보강 ─────────────────────────────────
+    // /p/:phone 경로에서 partners 테이블에 파트너 정보가 있으면
+    // title을 "{name} — 플로로탄닌 정보페이지 | phlorotannin.com" 으로 갱신.
+    // SSR-lite 블록에서 동일 데이터를 재사용하도록 변수에 저장한다.
+    const partnerMatch = pathname.match(/^\/p\/([^/]+)$/)
+    let partnerBodyCached = null
+    if (partnerMatch) {
+      try {
+        partnerBodyCached = await fetchPartnerBody(partnerMatch[1])
+      } catch {
+        partnerBodyCached = null
+      }
+      if (partnerBodyCached && partnerBodyCached.name) {
+        const safeName = String(partnerBodyCached.name).trim().slice(0, 24)
+        meta = {
+          title: `${safeName} — 플로로탄닌 정보페이지 | phlorotannin.com`,
+          desc:  `${safeName} 님의 플로로탄닌·감태추출물·해양 폴리페놀 관련 건강정보 안내 페이지. 플로로탄닌 파트너스가 제공하는 종합 건강정보 데이터센터의 파트너 정보페이지입니다.`,
+          canonical: `${SITE}${pathname}`,
+        }
+        metaSource = 'partners-table'
+      }
+    }
+
     // index.html 로드 (fs)
     const indexHtml = readIndexHtml()
     if (!indexHtml) {
@@ -711,12 +734,10 @@ export default async function handler(req, res) {
             dynamic = { kind: 'post', ...postBody }
           }
         }
-        // /p/:phone → 파트너 정보 (마스킹)
-        const partnerMatch = pathname.match(/^\/p\/([^/]+)$/)
+        // /p/:phone → 파트너 정보 (위에서 이미 fetch됨, 마스킹 처리된 결과 재사용)
         if (partnerMatch) {
-          const partnerBody = await fetchPartnerBody(partnerMatch[1])
-          if (partnerBody) {
-            dynamic = { kind: 'partner', ...partnerBody }
+          if (partnerBodyCached) {
+            dynamic = { kind: 'partner', ...partnerBodyCached }
           } else {
             // 파트너 정보가 없어도 안내 fallback은 노출
             dynamic = { kind: 'partner', name: '', phoneDisplay: maskPhone(partnerMatch[1]), memo: '', siteUrl: '' }
