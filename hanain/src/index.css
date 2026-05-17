@@ -3,6 +3,12 @@
 @tailwind utilities;
 
 @layer base {
+  /* 모바일 가로 스크롤 차단: 본문 내 긴 URL/영문이 viewport 폭을 넘기지 못하게 가드 */
+  html, body {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
   body {
     font-family: 'Noto Sans KR', sans-serif;
     color: #1f2937;
@@ -92,6 +98,76 @@
 
   .category-badge {
     @apply text-xs font-semibold px-3 py-1 rounded-full;
+  }
+
+  /* ───────────────────────────────────────────────────────────────
+   * .prose-custom — 블로그 본문 (BlogPostPage)
+   * 모바일에서 긴 URL/영문/해시태그가 컨테이너 폭을 밀어내지 않게 강제 줄바꿈.
+   * parseMarkdown이 생성하는 모든 자식(p, a, code, table, li, blockquote)에 적용.
+   * ─────────────────────────────────────────────────────────────── */
+  .prose-custom {
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+  .prose-custom * {
+    min-width: 0;
+    max-width: 100%;
+  }
+  /* 텍스트 노드는 어디서든 줄바꿈 허용 (긴 URL 대응) */
+  .prose-custom p,
+  .prose-custom li,
+  .prose-custom span,
+  .prose-custom strong,
+  .prose-custom em,
+  .prose-custom blockquote,
+  .prose-custom h2,
+  .prose-custom h3,
+  .prose-custom h4 {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+  /* 링크는 가장 자주 깨지는 부분 — 명시적으로 anywhere */
+  .prose-custom a {
+    overflow-wrap: anywhere;
+    word-break: break-all;
+  }
+  /* 인라인/블록 코드는 가로 스크롤 박스 안에서 처리 */
+  .prose-custom code {
+    overflow-wrap: anywhere;
+    word-break: break-all;
+    white-space: normal;
+  }
+  .prose-custom pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+  .prose-custom pre code {
+    white-space: pre;
+    word-break: normal;
+    overflow-wrap: normal;
+  }
+  /* 이미지/임베드는 부모 폭에 맞춤 */
+  .prose-custom img,
+  .prose-custom video,
+  .prose-custom iframe {
+    max-width: 100%;
+    height: auto;
+  }
+  /* 표 셀: 줄바꿈 + 모바일에서 패딩 줄이기 */
+  .prose-custom td,
+  .prose-custom th {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+  @media (max-width: 640px) {
+    .prose-custom td,
+    .prose-custom th {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+      font-size: 0.875rem;
+    }
   }
 }
 
