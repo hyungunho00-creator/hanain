@@ -16,11 +16,51 @@ const CREAM = '#FFFDF7'
 const CREAM2 = '#FBF5E6'
 const CREAM3 = '#F5EDD2'
 
-const PARTNERS_JSON_URL = 'https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/public/partners.json'
+// Phase 2: Supabase partners 테이블 1순위, JSON fallback
+const SB_URL_FOR_PARTNERS = 'https://rlfxuyeoluoeaxuujtly.supabase.co'
+const SB_ANON_FOR_PARTNERS = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJsZnh1eWVvbHVvZWF4dXVqdGx5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU5NDEyNjMsImV4cCI6MjA5MTUxNzI2M30.EmygB1wZcIXM0_4KTC8Kuwh5RY3R9NgfEpuzXQswHck'
+const PARTNERS_JSON_URL = `${SB_URL_FOR_PARTNERS}/storage/v1/object/public/public/partners.json`
+
+// Supabase partners 테이블 row(snake_case) → camelCase 어댑터
+function adaptPartnerRow(r) {
+  if (!r) return null
+  return {
+    slug: r.slug,
+    name: r.name,
+    phone: r.phone,
+    phoneDisplay: r.phone_display,
+    siteUrl: r.site_url,
+    memo: r.memo || '',
+    createdAt: r.created_at,
+  }
+}
+
+async function fetchPartnerByPhoneFromTable(phone) {
+  try {
+    const digits = phone.replace(/\D/g, '')
+    // phone 또는 slug로 매칭 (둘 다 전화번호지만 안전 차원에서 OR)
+    const url = `${SB_URL_FOR_PARTNERS}/rest/v1/partners?select=slug,phone,name,phone_display,site_url,memo,created_at&status=eq.active&or=(phone.eq.${digits},slug.eq.${digits})&limit=1`
+    const resp = await fetch(url, {
+      headers: {
+        apikey: SB_ANON_FOR_PARTNERS,
+        Authorization: `Bearer ${SB_ANON_FOR_PARTNERS}`,
+        'Accept-Profile': 'public',
+      },
+    })
+    if (!resp.ok) return null
+    const rows = await resp.json()
+    if (!Array.isArray(rows) || rows.length === 0) return null
+    return adaptPartnerRow(rows[0])
+  } catch { return null }
+}
 
 async function fetchPartnerByPhone(phone) {
+  // 1순위: Supabase partners 테이블
+  const fromTable = await fetchPartnerByPhoneFromTable(phone)
+  if (fromTable) return fromTable
+
+  // Fallback: Storage JSON → Vercel 배포 JSON
   try {
-    // Supabase Storage → fallback: Vercel 배포 파일
     const urls = [
       `${PARTNERS_JSON_URL}?t=${Date.now()}`,
       `${MAIN_SITE}/partners.json?t=${Date.now()}`,

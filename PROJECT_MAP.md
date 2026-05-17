@@ -125,7 +125,7 @@
 | 테이블 | 용도 | 상태 |
 |---|---|---|
 | `posts` | 블로그 글 (118+건, status='published'만 sitemap 노출) | ✅ 운영 중 |
-| `partners` | 파트너 명단 | ⏳ Phase 2에서 신설 예정 (현재는 `partners.json`) |
+| `partners` | 파트너 명단 (slug PK = 전화번호, status='active'만 노출) | ✅ Phase 2 완료 (SQL: `supabase/phase2_partners.sql`, JSON fallback 유지) |
 | `leads` | DB 신청자 | ⏳ Phase 4에서 신설 예정 |
 | `categories` | 카테고리 메타 | ⏳ Phase 3에서 신설 예정 |
 | `pages` | 고정 페이지 | ⏳ Phase 3에서 신설 예정 |
@@ -152,7 +152,7 @@
 | 카테고리 SEO 메타 | `api/seo.js` 상수 | Supabase `categories` (Phase 3) |
 | 고정 페이지 본문 (예: /copyright) | 해당 `.jsx` 컴포넌트 (하드코딩) | Supabase `pages` (Phase 3) |
 | 사이트 path별 SEO 메타 | `api/seo.js` if-else | Supabase `pages` (Phase 3 일부) |
-| 파트너 명단 | `hanain/public/partners.json` | Supabase `partners` (Phase 2) |
+| 파트너 명단 | Supabase `partners` (1순위) → `hanain/public/partners.json` (fallback) | Supabase `partners` (Phase 2 완료) |
 | sitemap | `api/sitemap.js` (동적, Supabase 페치) | 동일 (이미 자동화 완료) |
 
 ---
@@ -229,11 +229,14 @@ curl -sG "https://rlfxuyeoluoeaxuujtly.supabase.co/rest/v1/posts" \
 - `vercel.json` (rewrite + buildCommand)
 - `public/sitemap.xml` (fallback 백업)
 
-### Phase 2 (대기): partners → Supabase
-- Supabase `partners` 테이블 신설
-- `BusinessCardPage.jsx`의 `fetchPartnerByPhone()` 수정
-- `api/sitemap.js`의 `fetchPartners()` 수정
-- `hanain/public/partners.json` (fallback으로 유지)
+### Phase 2 (완료): partners → Supabase
+- Supabase `partners` 테이블 신설 — `supabase/phase2_partners.sql` 참조
+  - 스키마: slug PK, phone, name, phone_display, site_url, memo, status, created_at, updated_at
+  - RLS: anon 읽기, `status='active'`만 노출
+- `BusinessCardPage.jsx` `fetchPartnerByPhone()` — 테이블 1순위 + JSON fallback
+- `api/sitemap.js` `fetchPartners()` — 테이블 1순위 + JSON fallback, `X-Sitemap-Partners-Source` 헤더 추가
+- `PartnerContext.jsx` `fetchPartnerByPhone/BySlug` — 동일하게 테이블 1순위
+- `hanain/public/partners.json` — fallback으로 유지 (Phase 2 안정화 확인 후 제거 검토)
 
 ### Phase 3 (대기): categories + pages → Supabase
 - Supabase `categories`, `pages` 테이블 신설

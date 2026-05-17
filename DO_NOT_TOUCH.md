@@ -47,7 +47,9 @@
 - ❌ `/p/:phone` 페이지의 핵심 구조 변경 금지
 - ❌ `BusinessCardPage.jsx`의 CTA(전화/문자 버튼) 구조 변경 금지
 - ❌ `PartnerContext`의 동작 방식 변경 금지
-- ❌ `partners.json` 임의 삭제 금지 (Phase 2 완료 전까지 유일한 데이터 소스)
+- ❌ `partners.json` 임의 삭제 금지 (Phase 2 완료됐지만 fallback으로 유지 필요, 안정화 확인 전까지)
+- ❌ Supabase `partners` 테이블에서 파트너 row DELETE 금지 — `status='inactive'`로 UPDATE만 허용
+- ❌ `partners` 테이블 스키마(snake_case 컬럼명) 변경 금지 — 코드 어댑터가 camelCase로 매핑하는 구조
 - ❌ 파트너 slug(전화번호) 형식 변경 금지
 
 ---

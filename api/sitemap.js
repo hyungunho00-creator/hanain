@@ -2,7 +2,9 @@
 //
 // 데이터 소스:
 //   1) Supabase posts 테이블 (status='published') — 동적
-//   2) Supabase Storage / public/partners.json — 동적 (slug = 전화번호)
+//   2) Supabase partners 테이블 (status='active') — Phase 2, 동적 (slug = 전화번호)
+//      ↓ 실패 시 fallback
+//      Supabase Storage public/partners.json → 동일 도메인 /partners.json
 //   3) 고정 페이지 / 카테고리 URL — 코드 상수 (Phase 3에서 Supabase로 이전 예정)
 //
 // 안전장치:
@@ -95,11 +97,41 @@ async function fetchPublishedPosts() {
 }
 
 // ───────────────────────────────────────────────
-// 파트너 페치
-//   1) Supabase Storage public/partners.json (Phase 2에서 partners 테이블로 이전 예정)
-//   2) 실패 시 동일 도메인 /partners.json
+// 파트너 페치 (Phase 2)
+//   1) Supabase partners 테이블 (status='active') — 1순위, snake_case 스키마
+//   2) Supabase Storage public/partners.json — fallback
+//   3) 동일 도메인 /partners.json — fallback
+//   반환 형식은 camelCase (slug, name, phone, phoneDisplay, siteUrl)로 통일 → sitemap 생성기 호환
 // ───────────────────────────────────────────────
-async function fetchPartners() {
+async function fetchPartnersFromTable() {
+  try {
+    const url = `${SB_URL}/rest/v1/partners?select=slug,phone,name,phone_display,site_url,updated_at&status=eq.active&order=created_at.desc&limit=2000`
+    const resp = await fetch(url, {
+      headers: {
+        apikey: SB_ANON_KEY,
+        Authorization: `Bearer ${SB_ANON_KEY}`,
+        'Accept-Profile': 'public',
+      },
+    })
+    if (!resp.ok) return null
+    const rows = await resp.json()
+    if (!Array.isArray(rows) || rows.length === 0) return null
+    // snake_case → camelCase 어댑팅
+    return rows.map(r => ({
+      slug: r.slug,
+      phone: r.phone,
+      name: r.name,
+      phoneDisplay: r.phone_display,
+      siteUrl: r.site_url,
+      updatedAt: r.updated_at,
+    }))
+  } catch (e) {
+    console.error('[sitemap] partners table fetch error:', e?.message || e)
+    return null
+  }
+}
+
+async function fetchPartnersFromJson() {
   const sources = [
     `${SB_URL}/storage/v1/object/public/public/partners.json`,
     `${SITE}/partners.json`,
@@ -116,6 +148,15 @@ async function fetchPartners() {
     }
   }
   return []
+}
+
+async function fetchPartners() {
+  // 1순위: Supabase partners 테이블
+  const fromTable = await fetchPartnersFromTable()
+  if (fromTable && fromTable.length) return { list: fromTable, source: 'table' }
+  // fallback: JSON
+  const fromJson = await fetchPartnersFromJson()
+  return { list: fromJson, source: fromJson.length ? 'json' : 'empty' }
 }
 
 // ───────────────────────────────────────────────
@@ -215,10 +256,12 @@ export default async function handler(req, res) {
   res.setHeader('Cache-Control', 'public, max-age=600, s-maxage=1800, stale-while-revalidate=3600')
 
   try {
-    const [posts, partners] = await Promise.all([
+    const [posts, partnersResult] = await Promise.all([
       fetchPublishedPosts(),
       fetchPartners(),
     ])
+    const partners = partnersResult?.list || []
+    const partnersSource = partnersResult?.source || 'empty'
 
     // posts가 비어 있으면 Supabase 장애로 판단 → 정적 fallback
     if (!posts || posts.length === 0) {
@@ -229,10 +272,11 @@ export default async function handler(req, res) {
       }
     }
 
-    const xml = buildSitemap({ posts: posts || [], partners: partners || [] })
+    const xml = buildSitemap({ posts: posts || [], partners })
     res.setHeader('X-Sitemap-Source', 'dynamic')
     res.setHeader('X-Sitemap-Posts', String((posts || []).length))
-    res.setHeader('X-Sitemap-Partners', String((partners || []).length))
+    res.setHeader('X-Sitemap-Partners', String(partners.length))
+    res.setHeader('X-Sitemap-Partners-Source', partnersSource)
     return res.status(200).send(xml)
   } catch (e) {
     console.error('[sitemap] fatal:', e?.message || e)

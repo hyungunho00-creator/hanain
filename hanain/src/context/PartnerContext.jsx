@@ -84,15 +84,54 @@ export function clearPartnerSession() {
 }
 
 // ───────────────────────────────────────────
-// partners.json에서 전화번호로 파트너 로드
+// Phase 2: Supabase partners 테이블 1순위 / JSON fallback
+// ───────────────────────────────────────────
+const _SB_URL_PARTNERS = 'https://rlfxuyeoluoeaxuujtly.supabase.co'
+const _SB_ANON_PARTNERS = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJsZnh1eWVvbHVvZWF4dXVqdGx5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU5NDEyNjMsImV4cCI6MjA5MTUxNzI2M30.EmygB1wZcIXM0_4KTC8Kuwh5RY3R9NgfEpuzXQswHck'
+
+function _adaptPartner(r) {
+  if (!r) return null
+  return {
+    slug: r.slug,
+    name: r.name,
+    phone: r.phone,
+    phoneDisplay: r.phone_display,
+    siteUrl: r.site_url,
+    memo: r.memo || '',
+    createdAt: r.created_at,
+  }
+}
+
+async function _fetchFromTable(filter) {
+  try {
+    const url = `${_SB_URL_PARTNERS}/rest/v1/partners?select=slug,phone,name,phone_display,site_url,memo,created_at&status=eq.active&${filter}&limit=1`
+    const resp = await fetch(url, {
+      headers: {
+        apikey: _SB_ANON_PARTNERS,
+        Authorization: `Bearer ${_SB_ANON_PARTNERS}`,
+        'Accept-Profile': 'public',
+      },
+    })
+    if (!resp.ok) return null
+    const rows = await resp.json()
+    if (!Array.isArray(rows) || rows.length === 0) return null
+    return _adaptPartner(rows[0])
+  } catch { return null }
+}
+
+// ───────────────────────────────────────────
+// 전화번호로 파트너 로드 (테이블 → JSON fallback)
 // ───────────────────────────────────────────
 async function fetchPartnerByPhone(phone) {
+  const digits = phone.replace(/\D/g, '')
+  const fromTable = await _fetchFromTable(`or=(phone.eq.${digits},slug.eq.${digits})`)
+  if (fromTable) return fromTable
+
   try {
     const MAIN_SITE = 'https://phlorotannin.com'
     const resp = await fetch(`${MAIN_SITE}/partners.json?t=${Date.now()}`, { cache: 'no-store' })
     if (!resp.ok) return null
     const data = await resp.json()
-    const digits = phone.replace(/\D/g, '')
     return (data.partners || []).find(p => p.phone?.replace(/\D/g, '') === digits) || null
   } catch {
     return null
@@ -100,9 +139,12 @@ async function fetchPartnerByPhone(phone) {
 }
 
 // ───────────────────────────────────────────
-// partners.json에서 slug로 파트너 로드
+// slug로 파트너 로드 (테이블 → JSON fallback)
 // ───────────────────────────────────────────
 async function fetchPartnerBySlug(slug) {
+  const fromTable = await _fetchFromTable(`slug=eq.${encodeURIComponent(slug)}`)
+  if (fromTable) return fromTable
+
   try {
     const MAIN_SITE = 'https://phlorotannin.com'
     const resp = await fetch(`${MAIN_SITE}/partners.json?t=${Date.now()}`, { cache: 'no-store' })

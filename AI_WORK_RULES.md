@@ -280,9 +280,16 @@ GitHub 의존을 단계적으로 줄이는 4단계 로드맵이다.
 | Phase | 내용 | 상태 |
 |---|---|---|
 | Phase 1 | sitemap.xml 동적 자동 생성 (Supabase posts 페치) | ✅ 완료 |
-| Phase 2 | 파트너 명단을 Supabase `partners` 테이블로 이전 | ⏳ 대기 |
+| Phase 2 | 파트너 명단을 Supabase `partners` 테이블로 이전 | ✅ 완료 (코드 배포 + SQL 준비, JSON fallback 유지) |
 | Phase 3 | 카테고리/고정 페이지를 Supabase로 이전 (`categories`, `pages`) | ⏳ 대기 |
 | Phase 4 | 관리자 화면(`/admin`) CMS 확장 | ⏳ 대기 |
+
+**Phase 2 운영 메모:**
+- SQL 스크립트: `supabase/phase2_partners.sql` (Supabase SQL Editor에서 실행)
+- 코드는 fallback 구조이므로 SQL 실행 전이라도 사이트는 정상 동작 (JSON 사용)
+- SQL 실행 후 운영자는 Supabase Table Editor → `partners`에서 파트너 추가/수정/비활성화 가능
+- 비활성화는 `status='inactive'`로 UPDATE (삭제 금지)
+- 검증: `curl -sI https://phlorotannin.com/sitemap.xml | grep -i "x-sitemap-partners-source"` → `table`이면 완전 마이그레이션 완료, `json`이면 fallback
 
 **다음 Phase는 사용자가 명시적으로 지시할 때만 진행한다. 단계 건너뛰기 금지.**
 
