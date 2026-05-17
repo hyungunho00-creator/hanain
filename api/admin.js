@@ -105,7 +105,13 @@ function ok(res, data) {
 const HANDLERS = {
   // ─── 헬스체크 ──────────────────────────────
   async ping() {
-    return { now: new Date().toISOString(), service_role: !!SB_SVC, admin_token: !!ADMIN_TOKEN }
+    return {
+      now: new Date().toISOString(),
+      service_role: !!SB_SVC,
+      admin_token: !!ADMIN_TOKEN,
+      anon_key: !!SB_ANON,
+      jwt_verification: !!SB_ANON,
+    }
   },
 
   // ─── Question Videos ──────────────────────

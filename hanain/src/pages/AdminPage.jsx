@@ -3,18 +3,48 @@ import { Settings, Users, MessageSquare, BookOpen, Trash2, Save, X, Search, Down
 import { supabase, setVideoMain, upsertPost, getAllPostsAdmin, deletePost } from '../lib/supabase'
 
 // Phase 4: 클라이언트 번들에서 service_role 키 완전 제거
-// 모든 어드민 쓰기 작업은 /api/admin 서버 함수를 경유한다.
+// Phase 2-RLS (이번 라운드): 어드민 인증을 Supabase Auth(JWT)로 강화
+//   - 구조: 비밀번호 입력 → Supabase signInWithPassword → JWT 발급
+//   - /api/admin 호출 시 Authorization: Bearer <JWT> 로 전달
+//   - 서버는 JWT 검증 후 app_metadata.role==='admin' 확인 → service_role로 DB 쓰기
+//   - JWT 위조 불가 (Supabase 서명 검증) → 단순 비밀번호 비교 보다 안전
+//
+// 구형 호환:
+//   - VITE_ADMIN_PASS를 어드민 이메일의 비밀번호로 사용 (이미 Supabase에 동일하게 설정됨)
+//   - ADMIN_TOKEN env도 fallback으로 승인 (구조 이행 중 안전망)
 const ADMIN_PASS = import.meta.env.VITE_ADMIN_PASS || '56528206'
+const ADMIN_EMAIL = import.meta.env.VITE_ADMIN_EMAIL || 'm2ul777@naver.com'
 const ADMIN_TOKEN_KEY = 'phl_admin_token'
+const ADMIN_JWT_KEY = 'phl_admin_jwt'  // Supabase access_token 저장
 
-// /api/admin 액션 호출 헬퍼 — 세션 스토리지에 저장된 토큰을 자동 첨부
+// /api/admin 액션 호출 헬퍼
+// 1순위: Supabase JWT (sessionStorage 또는 supabase.auth.getSession())
+// 2순위 (클라이언트 자체 fallback): 옥드 토큰 (VITE_ADMIN_PASS)
 async function adminApi(action, payload) {
-  const token = sessionStorage.getItem(ADMIN_TOKEN_KEY) || ''
+  // 1순위: 최신 Supabase 세션 토큰 시도
+  let jwt = ''
   try {
+    const { data: { session } } = await supabase.auth.getSession()
+    if (session?.access_token) jwt = session.access_token
+  } catch { /* 무시 */ }
+  // fallback: sessionStorage에 저장된 JWT (페이지 다시 열었을 때)
+  if (!jwt) {
+    try { jwt = sessionStorage.getItem(ADMIN_JWT_KEY) || '' } catch { /* 무시 */ }
+  }
+  // 2순위: 구형 옥드 토큰 (Supabase 세션 없는 랜더링 조건 대응)
+  const legacyToken = (() => { try { return sessionStorage.getItem(ADMIN_TOKEN_KEY) || '' } catch { return '' } })()
+
+  try {
+    const headers = { 'Content-Type': 'application/json' }
+    if (jwt) headers['Authorization'] = `Bearer ${jwt}`
     const r = await fetch('/api/admin', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ action, token, payload: payload || {} }),
+      headers,
+      body: JSON.stringify({
+        action,
+        token: legacyToken,  // 구형 fallback (서버가 JWT 우선, 없으면 token 확인)
+        payload: payload || {},
+      }),
     })
     const text = await r.text()
     let json = null
@@ -104,21 +134,50 @@ function isValidSlug(s) {
 
 
 // ───────────────────────────────────────────
-// 로그인 화면
+// 로그인 화면 (Phase 2-RLS: Supabase Auth 통합)
 // ───────────────────────────────────────────
 function LoginScreen({ onLogin }) {
   const [pw, setPw] = useState('')
   const [show, setShow] = useState(false)
   const [err, setErr] = useState(false)
-  const handleLogin = (e) => {
+  const [busy, setBusy] = useState(false)
+  const handleLogin = async (e) => {
     e.preventDefault()
-    if (pw === ADMIN_PASS) {
-      // /api/admin 호출 시 사용할 어드민 토큰 저장 (서버의 ADMIN_TOKEN env와 일치해야 함)
-      // 기본값은 VITE_ADMIN_PASS와 동일 → Vercel env에서 ADMIN_TOKEN을 별도 지정하면 그것을 클라가 모름
-      // 따라서 운영자는 ADMIN_TOKEN=VITE_ADMIN_PASS 동일값으로 설정하거나, 별도 토큰 입력 폼을 사용.
-      try { sessionStorage.setItem(ADMIN_TOKEN_KEY, pw) } catch {}
-      onLogin()
-    } else setErr(true)
+    setErr(false)
+    setBusy(true)
+    try {
+      // 1차: Supabase Auth로 로그인 시도 (이메일+비밀번호)
+      // → 성공 시 JWT 발급, app_metadata.role==='admin' 검증
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email: ADMIN_EMAIL,
+        password: pw,
+      })
+      if (!error && data?.session?.access_token) {
+        try {
+          sessionStorage.setItem(ADMIN_JWT_KEY, data.session.access_token)
+          sessionStorage.setItem(ADMIN_TOKEN_KEY, pw) // 구형 fallback
+        } catch {}
+        onLogin()
+        return
+      }
+      // 2차 fallback: Supabase Auth 실패 시 구형 단순 비밀번호 검증 (서버가 ADMIN_TOKEN env로 검증)
+      if (pw === ADMIN_PASS) {
+        try { sessionStorage.setItem(ADMIN_TOKEN_KEY, pw) } catch {}
+        onLogin()
+        return
+      }
+      setErr(true)
+    } catch (e) {
+      // Supabase Auth 자체 장애 시의 최종 fallback
+      if (pw === ADMIN_PASS) {
+        try { sessionStorage.setItem(ADMIN_TOKEN_KEY, pw) } catch {}
+        onLogin()
+        return
+      }
+      setErr(true)
+    } finally {
+      setBusy(false)
+    }
   }
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-6">
@@ -140,7 +199,9 @@ function LoginScreen({ onLogin }) {
             </button>
           </div>
           {err && <p className="text-red-500 text-base">비밀번호가 올바르지 않습니다.</p>}
-          <button type="submit" className="w-full btn-primary py-3">로그인</button>
+          <button type="submit" disabled={busy} className="w-full btn-primary py-3 disabled:opacity-50">
+            {busy ? '로그인 중...' : '로그인'}
+          </button>
         </form>
       </div>
     </div>
@@ -162,6 +223,29 @@ function CopyButton({ text, label = '복사' }) {
 // ───────────────────────────────────────────
 // 파트너 관리 탭
 // ───────────────────────────────────────────
+// 파트너 row 정규화 — Supabase(snake_case) / 레거시(camelCase) / partners.json 모두 통일
+function normalizePartner(raw) {
+  if (!raw) return null
+  const phone = String(raw.phone || raw.slug || '').replace(/\D/g, '')
+  const phoneDisplay = raw.phone_display || raw.phoneDisplay || formatPhone(phone)
+  const siteUrl = raw.site_url || raw.siteUrl || (phone ? `${MAIN_SITE}/p/${phone}` : '')
+  const createdAt = raw.created_at || raw.createdAt || new Date().toISOString()
+  return {
+    id: raw.id ?? phone,        // Supabase id 우선, 없으면 phone
+    slug: raw.slug || phone,
+    name: raw.name || '',
+    phone,
+    phone_display: phoneDisplay,
+    phoneDisplay,               // 화면 호환
+    site_url: siteUrl,
+    siteUrl,                    // 화면 호환
+    memo: raw.memo || '',
+    status: raw.status || 'active',
+    created_at: createdAt,
+    createdAt,                  // 화면 호환
+  }
+}
+
 function PartnerManageTab() {
   const [partners, setPartners] = useState([])
   const [search, setSearch] = useState('')
@@ -169,40 +253,48 @@ function PartnerManageTab() {
   const [form, setForm] = useState({ name: '', phone: '', memo: '' })
   const [errors, setErrors] = useState({})
   const [result, setResult] = useState(null)
+  const [loading, setLoading] = useState(false)
+  const [source, setSource] = useState('') // 'supabase' | 'json' | 'cache'
 
-  // partners.json + localStorage 모두에서 파트너 로드 (병합, 전화번호 중복 제거)
-  useEffect(() => {
-    async function loadAll() {
-      // 1) partners.json (서버)
-      let serverList = []
-      try {
-        const r = await fetch('/partners.json?t=' + Date.now(), { cache: 'no-store' })
-        if (r.ok) {
-          const d = await r.json()
-          serverList = d.partners || []
-        }
-      } catch {}
-
-      // 2) localStorage
-      const localList = JSON.parse(localStorage.getItem(PARTNERS_KEY) || '[]')
-
-      // 3) 병합 (전화번호 기준 중복 제거, 서버 우선)
-      const merged = [...serverList]
-      for (const lp of localList) {
-        const exists = merged.some(p => p.phone === lp.phone || p.slug === lp.slug)
-        if (!exists) merged.push(lp)
+  // Supabase(adminApi) 우선 → partners.json 폴백 → localStorage 캐시
+  async function loadAll() {
+    setLoading(true)
+    // 1) Supabase via /api/admin (정규화된 단일 진실원)
+    try {
+      const r = await adminApi('partner_list')
+      if (r.ok && Array.isArray(r.data)) {
+        const list = r.data.map(normalizePartner).filter(Boolean)
+        setPartners(list)
+        setSource('supabase')
+        try { localStorage.setItem(PARTNERS_KEY, JSON.stringify(list)) } catch {}
+        setLoading(false)
+        return
       }
-      setPartners(merged)
-      // localStorage도 최신화
-      localStorage.setItem(PARTNERS_KEY, JSON.stringify(merged))
-    }
-    loadAll()
-  }, [])
+    } catch {}
 
-  const saveLocal = (list) => {
-    localStorage.setItem(PARTNERS_KEY, JSON.stringify(list))
-    setPartners(list)
+    // 2) partners.json 폴백 (정적 배포본 — 읽기 전용)
+    try {
+      const r = await fetch('/partners.json?t=' + Date.now(), { cache: 'no-store' })
+      if (r.ok) {
+        const d = await r.json()
+        const list = (d.partners || []).map(normalizePartner).filter(Boolean)
+        setPartners(list)
+        setSource('json')
+        setLoading(false)
+        return
+      }
+    } catch {}
+
+    // 3) localStorage 캐시 폴백 (오프라인 미리보기 전용)
+    try {
+      const localList = JSON.parse(localStorage.getItem(PARTNERS_KEY) || '[]')
+      setPartners(localList.map(normalizePartner).filter(Boolean))
+      setSource('cache')
+    } catch {}
+    setLoading(false)
   }
+
+  useEffect(() => { loadAll() }, [])
 
   const validate = () => {
     const errs = {}
@@ -213,7 +305,7 @@ function PartnerManageTab() {
     return errs
   }
 
-  const addPartner = () => {
+  const addPartner = async () => {
     const errs = validate()
     if (Object.keys(errs).length > 0) { setErrors(errs); return }
 
@@ -221,35 +313,61 @@ function PartnerManageTab() {
     const phoneDisplay = formatPhone(digits)
     const name         = form.name.trim()
     const siteUrl      = `${MAIN_SITE}/p/${digits}`
+    const memo         = form.memo.trim()
 
-    const newPartner = {
-      slug: digits,          // 전화번호를 slug로 사용
+    // Supabase 컬럼명 (snake_case) 기준 row
+    const row = {
+      slug: digits,
       name,
       phone: digits,
-      phoneDisplay,
-      siteUrl,
-      memo: form.memo.trim(),
-      createdAt: new Date().toISOString(),
+      phone_display: phoneDisplay,
+      site_url: siteUrl,
+      memo,
+      status: 'active',
     }
 
-    const updated = [newPartner, ...partners]
-    saveLocal(updated)
+    // 1) Supabase upsert 시도
+    const r = await adminApi('partner_upsert', { row })
+    if (r.ok) {
+      await loadAll()
+      setForm({ name: '', phone: '', memo: '' })
+      setErrors({}); setShowForm(false)
+      setResult({ success: true, url: siteUrl, name })
+      return
+    }
+
+    // 2) 실패 시: 환경변수 미설정/네트워크 등 — 로컬 캐시 폴백 (읽기 전용 모드 안내)
+    const local = [normalizePartner({ ...row, created_at: new Date().toISOString() }), ...partners]
+    try { localStorage.setItem(PARTNERS_KEY, JSON.stringify(local)) } catch {}
+    setPartners(local)
     setForm({ name: '', phone: '', memo: '' })
-    setErrors({})
-    setShowForm(false)
-    setResult({ success: true, url: siteUrl, name })
+    setErrors({}); setShowForm(false)
+    setResult({
+      success: false,
+      error: `Supabase 저장 실패 (${r.status || '?'}): ${r.error || '환경변수 SUPABASE_SERVICE_ROLE_KEY 미설정 가능성. 로컬 캐시에만 임시 저장됨.'}`,
+    })
   }
 
-  const deletePartner = (slug) => {
+  const deletePartner = async (partner) => {
     if (!confirm('삭제하시겠습니까?')) return
-    saveLocal(partners.filter(p => p.slug !== slug))
+    const id = partner.id || partner.slug
+    const r = await adminApi('partner_delete', { id })
+    if (r.ok) {
+      await loadAll()
+      return
+    }
+    // 폴백: 로컬에서만 제거
+    const next = partners.filter(p => (p.id || p.slug) !== id)
+    try { localStorage.setItem(PARTNERS_KEY, JSON.stringify(next)) } catch {}
+    setPartners(next)
+    setResult({ success: false, error: `Supabase 삭제 실패 (${r.status || '?'}): ${r.error || '환경변수 미설정 가능성'}` })
   }
 
   const downloadCSV = () => {
     if (!partners.length) return
     const rows = [
       ['이름', '전화번호', '파트너URL', '메모', '등록일'],
-      ...partners.map(p => [p.name, p.phoneDisplay, p.siteUrl || '', p.memo || '', new Date(p.createdAt).toLocaleDateString('ko-KR')])
+      ...partners.map(p => [p.name, p.phone_display || p.phoneDisplay, p.site_url || p.siteUrl || '', p.memo || '', new Date(p.created_at || p.createdAt).toLocaleDateString('ko-KR')])
     ]
     const csv  = rows.map(r => r.map(v => `"${v}"`).join(',')).join('\n')
     const blob = new Blob(['\uFEFF' + csv], { type: 'text/csv;charset=utf-8;' })
@@ -258,7 +376,7 @@ function PartnerManageTab() {
   }
 
   const filtered = partners.filter(p =>
-    !search || p.name?.includes(search) || p.phoneDisplay?.includes(search) || p.memo?.includes(search)
+    !search || p.name?.includes(search) || (p.phone_display || p.phoneDisplay)?.includes(search) || p.memo?.includes(search)
   )
 
   return (
@@ -288,6 +406,26 @@ function PartnerManageTab() {
           </div>
         </div>
 
+        {/* 데이터 출처 배지 */}
+        <div className="mt-3 flex items-center gap-2 flex-wrap">
+          {source === 'supabase' && (
+            <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full flex items-center gap-1">
+              <CheckCircle className="w-3 h-3" /> Supabase 실시간 연결
+            </span>
+          )}
+          {source === 'json' && (
+            <span className="text-xs bg-amber-100 text-amber-700 px-2 py-1 rounded-full flex items-center gap-1">
+              <AlertCircle className="w-3 h-3" /> partners.json 폴백 (Supabase 미연결 — 환경변수 확인 필요)
+            </span>
+          )}
+          {source === 'cache' && (
+            <span className="text-xs bg-red-100 text-red-700 px-2 py-1 rounded-full flex items-center gap-1">
+              <AlertCircle className="w-3 h-3" /> 로컬 캐시 (오프라인 모드)
+            </span>
+          )}
+          {loading && <span className="text-xs text-gray-400">불러오는 중...</span>}
+        </div>
+
         {/* 안내 */}
         <div className="mt-4 bg-amber-50 border border-amber-200 rounded-xl p-4">
           <p className="font-semibold text-amber-800 mb-1">✨ 새로운 전자명함 시스템</p>
@@ -296,7 +434,7 @@ function PartnerManageTab() {
               '이름 + 전화번호만 입력하면 URL 즉시 발급',
               'phlorotannin.com/p/전화번호 형태의 깔끔한 URL',
               '전자명함 앞·뒷면, QR코드 자동 생성',
-              '명함 이미지 다운로드 기능 내장',
+              'Supabase DB 기반 — 모든 기기에서 실시간 동기화',
             ].map(t => (
               <div key={t} className="flex items-start gap-1.5">
                 <CheckCircle className="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-amber-500" />
@@ -409,7 +547,7 @@ function PartnerManageTab() {
         ) : (
           <div className="divide-y">
             {filtered.map((p, idx) => (
-              <div key={p.slug || idx} className="p-5 hover:bg-gray-50">
+              <div key={p.id || p.slug || idx} className="p-5 hover:bg-gray-50">
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex items-start gap-4 min-w-0">
                     <div className="w-10 h-10 bg-ocean-deep/10 rounded-xl flex items-center justify-center text-base font-bold text-ocean-deep flex-shrink-0">{idx + 1}</div>
@@ -444,7 +582,7 @@ function PartnerManageTab() {
                         <Eye className="w-4 h-4" />
                       </a>
                     )}
-                    <button onClick={() => deletePartner(p.slug)}
+                    <button onClick={() => deletePartner(p)}
                       className="text-gray-300 hover:text-red-500 p-1.5 rounded-lg hover:bg-red-50 transition-colors">
                       <Trash2 className="w-4 h-4" />
                     </button>
@@ -880,6 +1018,72 @@ const EMPTY_POST = {
   og_image:'', status:'published'
 }
 
+// ─────────────────────────────────────────────
+// SEO 미리보기 컴포넌트 (Google SERP + OG 카드)
+// ─────────────────────────────────────────────
+function SeoPreview({ title, desc, slug, ogImage }) {
+  const fullUrl = `phlorotannin.com${slug ? '/blog/' + slug : '/blog/...'}`
+  const previewTitle = (title || '제목을 입력하세요').slice(0, 60)
+  const previewDesc  = (desc  || '요약 또는 SEO 설명을 입력하세요').slice(0, 160)
+  const titleLen = (title || '').length
+  const descLen  = (desc  || '').length
+
+  return (
+    <div className="mb-6 border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-5">
+      <h4 className="text-sm font-bold text-purple-700 mb-3 flex items-center gap-2">
+        <Globe className="w-4 h-4" /> SEO 실시간 미리보기
+        <span className="text-xs font-normal text-purple-400">검색 결과 / 공유 카드</span>
+      </h4>
+
+      <div className="grid md:grid-cols-2 gap-4">
+        {/* Google SERP 카드 */}
+        <div className="bg-white rounded-xl p-4 shadow-sm">
+          <p className="text-xs text-gray-400 mb-2 font-semibold">🔍 Google 검색 결과</p>
+          <div className="text-xs text-gray-500 truncate">{fullUrl}</div>
+          <div className="text-lg text-blue-700 font-medium leading-snug mt-0.5 truncate hover:underline cursor-pointer">
+            {previewTitle}
+          </div>
+          <div className="text-sm text-gray-600 mt-1 leading-snug line-clamp-2">
+            {previewDesc}
+          </div>
+          <div className="mt-2 flex gap-3 text-xs">
+            <span className={titleLen > 60 ? 'text-red-500' : titleLen > 50 ? 'text-amber-500' : 'text-green-600'}>
+              제목 {titleLen}/60자
+            </span>
+            <span className={descLen > 160 ? 'text-red-500' : descLen > 140 ? 'text-amber-500' : 'text-green-600'}>
+              설명 {descLen}/160자
+            </span>
+          </div>
+        </div>
+
+        {/* OG 카드 (카카오톡/페이스북) */}
+        <div className="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100">
+          <p className="text-xs text-gray-400 mb-0 px-4 pt-3 font-semibold">💬 SNS 공유 카드 (카톡/페북/X)</p>
+          {ogImage ? (
+            <img src={ogImage} alt="OG" className="w-full h-32 object-cover mt-2 bg-gray-100"
+              onError={(e) => { e.target.style.display = 'none' }} />
+          ) : (
+            <div className="w-full h-32 mt-2 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center text-gray-400 text-xs">
+              대표 이미지 미설정
+            </div>
+          )}
+          <div className="p-3">
+            <div className="text-xs text-gray-400 uppercase truncate">phlorotannin.com</div>
+            <div className="text-sm font-semibold text-gray-900 leading-snug line-clamp-2 mt-0.5">
+              {previewTitle}
+            </div>
+            <div className="text-xs text-gray-500 mt-1 line-clamp-2">{previewDesc}</div>
+          </div>
+        </div>
+      </div>
+
+      <p className="text-xs text-purple-600 mt-3 leading-relaxed">
+        💡 <strong>팁:</strong> SEO 제목·설명은 비우면 본문 제목·요약이 자동 사용됩니다. og_image는 1200×630px 권장.
+      </p>
+    </div>
+  )
+}
+
 function BlogManageTab() {
   const [posts,   setPosts]   = useState([])
   const [loading, setLoading] = useState(true)
@@ -1012,7 +1216,16 @@ function BlogManageTab() {
         <input value={form.og_image} onChange={e=>setForm({...form,og_image:e.target.value})}
           placeholder="https://... (비우면 기본 이미지 사용)"
           className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-teal-400"/>
+        <p className="text-xs text-gray-400 mt-1">권장 1200×630px · 카카오톡/페이스북/X 공유 시 표시되는 카드 이미지</p>
       </div>
+
+      {/* ── SEO 미리보기 (Google SERP + OG 카드) ── */}
+      <SeoPreview
+        title={form.meta_title || form.title}
+        desc={form.meta_desc || form.excerpt}
+        slug={form.slug}
+        ogImage={form.og_image}
+      />
 
       {msg && <p className="mb-4 text-sm font-semibold text-center">{msg}</p>}
 
@@ -1579,6 +1792,115 @@ function YouTubeManageTab() {
 }
 
 // ───────────────────────────────────────────
+// 사이트 전역 SEO 설정 (Supabase site_settings)
+// ───────────────────────────────────────────
+const SITE_SEO_KEYS = [
+  { key: 'site_name',         label: '사이트 이름',           placeholder: '플로로탄닌 파트너스', help: '브라우저 탭 제목 / 공유 카드 기본값' },
+  { key: 'site_description',  label: '사이트 설명 (기본)',    placeholder: '갈조류 유래 폴리페놀 PH-100 임상 자료', help: '검색결과·OG 카드 기본 설명' },
+  { key: 'site_logo_url',     label: '로고 URL',              placeholder: 'https://phlorotannin.com/logo.png', help: '헤더 / 명함 / 이메일에 사용' },
+  { key: 'default_og_image',  label: '기본 OG 이미지 URL',    placeholder: 'https://phlorotannin.com/og-default.png', help: '글에 og_image 미설정 시 사용 · 1200×630' },
+  { key: 'ga_id',             label: 'Google Analytics ID',   placeholder: 'G-XXXXXXXXXX', help: 'gtag 자동 주입' },
+  { key: 'gsc_verify',        label: 'Search Console 검증',   placeholder: 'abc123...', help: 'google-site-verification meta' },
+  { key: 'naver_verify',      label: '네이버 검색 검증',       placeholder: 'abc123...', help: 'naver-site-verification meta' },
+  { key: 'robots_extra',      label: 'robots.txt 추가 규칙',   placeholder: 'Disallow: /admin', help: 'robots.txt 끝에 append' },
+]
+
+function SiteSeoSettings() {
+  const [values, setValues] = useState({})
+  const [loading, setLoading] = useState(false)
+  const [saving, setSaving]   = useState({})
+  const [msg, setMsg] = useState('')
+  const [unavailable, setUnavailable] = useState(false)
+
+  const load = async () => {
+    setLoading(true); setMsg('')
+    const r = await adminApi('settings_get', {})
+    if (r.ok && Array.isArray(r.data)) {
+      const map = {}
+      r.data.forEach(row => { map[row.key] = row.value })
+      setValues(map)
+      setUnavailable(false)
+    } else {
+      setUnavailable(true)
+      setMsg(`Supabase site_settings 미연결: ${r.error || r.status || 'unknown'}`)
+    }
+    setLoading(false)
+  }
+  useEffect(() => { load() }, [])
+
+  const save = async (key) => {
+    setSaving(s => ({ ...s, [key]: true }))
+    const r = await adminApi('settings_set', { key, value: values[key] ?? '' })
+    setSaving(s => ({ ...s, [key]: false }))
+    if (r.ok) setMsg(`✅ ${key} 저장 완료`)
+    else setMsg(`❌ ${key} 저장 실패: ${r.error || r.status}`)
+    setTimeout(() => setMsg(''), 2500)
+  }
+
+  return (
+    <div className="bg-white rounded-2xl shadow-sm p-6 space-y-5">
+      <div>
+        <h3 className="font-bold text-ocean-deep text-xl mb-1 flex items-center gap-2">
+          <Globe className="w-5 h-5" /> 사이트 전역 SEO 설정
+        </h3>
+        <p className="text-base text-gray-500">
+          사이트 이름·로고·기본 OG 이미지·GA ID 등 <strong>모든 페이지에 공통</strong>으로 적용되는 설정입니다.
+        </p>
+        <p className="text-xs text-gray-400 mt-1">
+          저장 위치: Supabase <code className="bg-gray-100 px-1 rounded">site_settings</code> 테이블 (key/value)
+        </p>
+      </div>
+
+      {unavailable && (
+        <div className="bg-amber-50 border border-amber-200 rounded-xl p-3 text-sm text-amber-800">
+          <strong>⚠️ Supabase 연결 안됨</strong> — Vercel 환경변수 <code>SUPABASE_SERVICE_ROLE_KEY</code> 설정 후 재배포 필요.
+          {' '}현재는 읽기 전용 미리보기만 가능합니다.
+        </div>
+      )}
+      {msg && <p className="text-sm font-semibold text-center">{msg}</p>}
+
+      <div className="space-y-3">
+        {SITE_SEO_KEYS.map(({ key, label, placeholder, help }) => (
+          <div key={key} className="grid md:grid-cols-[200px_1fr_100px] gap-2 items-start">
+            <div className="pt-2">
+              <label className="block text-sm font-semibold text-gray-700">{label}</label>
+              <p className="text-xs text-gray-400 mt-0.5">{help}</p>
+              <code className="text-[10px] text-gray-300">{key}</code>
+            </div>
+            {key === 'robots_extra' ? (
+              <textarea
+                value={values[key] || ''}
+                onChange={e => setValues(v => ({ ...v, [key]: e.target.value }))}
+                placeholder={placeholder} rows={3}
+                className="border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-teal-400 font-mono resize-y"
+              />
+            ) : (
+              <input
+                value={values[key] || ''}
+                onChange={e => setValues(v => ({ ...v, [key]: e.target.value }))}
+                placeholder={placeholder}
+                className="border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-teal-400"
+              />
+            )}
+            <button
+              onClick={() => save(key)}
+              disabled={saving[key] || unavailable}
+              className="px-3 py-2 rounded-lg text-sm font-semibold bg-ocean-deep text-white hover:bg-opacity-90 disabled:opacity-40">
+              {saving[key] ? '저장중' : '저장'}
+            </button>
+          </div>
+        ))}
+      </div>
+
+      <button onClick={load} disabled={loading}
+        className="text-sm text-gray-500 hover:text-gray-800 flex items-center gap-1.5">
+        <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} /> 새로고침
+      </button>
+    </div>
+  )
+}
+
+// ───────────────────────────────────────────
 // 메인 AdminPage
 // ───────────────────────────────────────────
 export default function AdminPage() {
@@ -1815,7 +2137,11 @@ export default function AdminPage() {
         )}
 
         {activeTab === 'settings' && (
-          <div className="max-w-2xl space-y-4">
+          <div className="max-w-3xl space-y-4">
+
+            {/* ── 사이트 전역 SEO 설정 (Supabase site_settings) ── */}
+            <SiteSeoSettings />
+
             <div className="bg-white rounded-2xl shadow-sm p-6 space-y-5">
               <div>
                 <h3 className="font-bold text-ocean-deep text-xl mb-1">이메일 알림 설정</h3>

@@ -127,7 +127,8 @@ default  본사 (01056528206)
 
 | 일자 | 변경 | 비고 |
 |---|---|---|
-| 2026-05-17 | Phase 1 좀비 코드 청소 (~290줄 제거) + 본 문서 신설 | 커밋 SHA는 commit log 참조 |
+| 2026-05-17 | Phase 2-4: Supabase Auth(JWT) + 파트너/SEO/사이트설정 어드민화 + CLONE_GUIDE 신설 | 본 PR |
+| 2026-05-17 | Phase 1 좀비 코드 청소 (~290줄 제거) + 본 문서 신설 | commit 980a9c2 |
 | 2026-05-17 | Phase G `?ref=<phone>` 공유 컨텍스트 도입 | commit 78901e6 |
 | 2026-05-16 | Phase 2 파트너 Supabase 1순위 페치 도입 | commit d501508 |
 
