@@ -285,6 +285,306 @@ function esc(s) {
     .replace(/>/g, '&gt;')
 }
 
+// ─────────────────────────────────────────
+// SSR-lite Fallback (AI 크롤러 본문 읽기 최적화)
+// ─────────────────────────────────────────
+// 목적: 빈 <div id="root"></div>에 정적 한국어 본문을 주입해
+// JS를 실행하지 않는 AI/검색 크롤러도 본문을 읽을 수 있게 한다.
+// React(createRoot)는 마운트 시 root의 자식을 **교체**하므로 사용자 화면에는 영향 없음.
+// 추가로 visually-hidden(sr-only) 스타일과 <noscript> 병행으로 안전망 구성.
+
+const SR_ONLY_STYLE = '<style data-ssr-lite-style>.sr-only-ai-fallback{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}</style>'
+
+// 11개 정적 경로용 fallback 본문 (700~1,000자 목표, 자연 문장, 의학적 단정 표현 제외)
+const SSR_LITE_BODIES = {
+  '/': {
+    h1: '플로로탄닌·감태추출물 종합 건강정보 데이터센터',
+    paras: [
+      'phlorotannin.com은 플로로탄닌(phlorotannin), 감태추출물(Ecklonia cava extract), 해양 폴리페놀(갈조류 폴리페놀, 해조류 폴리페놀)에 관한 정보를 한 곳에 정리하는 건강정보 데이터센터입니다.',
+      '플로로탄닌은 갈조류에서 발견되는 폴리페놀 계열 성분의 총칭으로, 대표 구성 분자로 eckol(에콜), dieckol(다이에콜) 등이 알려져 있습니다. 같은 감태(Ecklonia cava) 유래 해양 폴리페놀 성분군은 일부 자료에서 씨놀(Seanol)이라는 명칭으로도 언급되며, "카프"라는 표현으로 함께 검색되기도 합니다.',
+      '이 사이트는 항산화, 염증, 혈당, 당뇨, 수면, 면역, 장 건강, 뇌 건강, 피부 건강 등 여러 주제에 걸친 연구 동향과 일반 건강정보를 정리합니다. 특정 질환의 치료나 예방을 단정하는 표현은 사용하지 않고, 공개된 자료와 사람들이 실제로 검색하는 질문에 답하는 구조로 콘텐츠를 모읍니다.',
+      '메뉴는 크게 플로로탄닌 개요, 쉬운 건강정보(/easy, /learn), 블로그 아카이브(성분 비교, 질환별 건강정보, 병원정보, 파트너 정보페이지 안내), 전문가 Q&A, 파트너 개인 정보페이지(/p/:phone)로 구성됩니다.',
+      '운영 목표는 사람이 보는 브라우저뿐 아니라 ChatGPT, GPTBot, OAI-SearchBot, PerplexityBot, ClaudeBot, Googlebot, Bingbot 같은 검색·AI 도구도 본문까지 읽을 수 있는 종합 건강정보 데이터센터를 만드는 것입니다.',
+    ],
+    nav: ['/home', '/easy', '/phlorotannin', '/learn', '/blog', '/qa', '/copyright'],
+  },
+  '/home': {
+    h1: '플로로탄닌 건강정보 허브 — 감태추출물·해양 폴리페놀 쉽게 이해하기',
+    paras: [
+      '플로로탄닌(phlorotannin)은 갈조류·해조류에 풍부한 폴리페놀 계열 성분의 총칭입니다. 대표적으로 감태(Ecklonia cava)에서 추출되며, eckol, dieckol 등 다양한 분자 형태가 보고되어 있습니다.',
+      '이 페이지는 플로로탄닌, 감태추출물, 해양 폴리페놀(갈조류 폴리페놀)을 처음 접하는 분들을 위해 작성되었습니다. 항산화, 염증, 혈당, 당뇨, 수면, 면역, 장 건강, 뇌 건강, 피부 건강 같은 주제별로 관련 연구 동향과 일반 건강정보를 안내합니다.',
+      '같은 성분군이 자료에 따라 씨놀(Seanol), 카프 같은 별칭으로도 검색되기 때문에, 이 사이트는 사용자가 어떤 검색어로 들어오더라도 같은 정보 허브에 도달할 수 있도록 키워드를 폭넓게 정리합니다.',
+      '아래 메뉴에서 더 자세한 페이지로 이동할 수 있습니다.',
+    ],
+    nav: ['/easy', '/phlorotannin', '/learn', '/blog', '/qa'],
+  },
+  '/easy': {
+    h1: '쉬운 플로로탄닌 건강정보 — 감태추출물·해양 폴리페놀',
+    paras: [
+      '이 페이지는 플로로탄닌(phlorotannin), 감태추출물, 해양 폴리페놀을 어려운 용어 없이 쉽게 풀어 설명합니다. 처음 듣는 분도 부담 없이 읽을 수 있도록 비유와 간단한 문장 위주로 정리했습니다.',
+      '핵심은 다음 세 가지입니다. 첫째, 플로로탄닌은 갈조류·해조류에 들어 있는 폴리페놀입니다. 둘째, 감태(Ecklonia cava)는 그 대표 원료이고, eckol·dieckol 같은 분자가 알려져 있습니다. 셋째, 같은 성분군이 씨놀(Seanol)·카프 같은 별칭으로 불리기도 합니다.',
+      '항산화, 염증, 혈당, 수면, 면역, 장 건강, 뇌 건강, 피부 건강 같은 일상 키워드와 어떻게 연결되는지 한 줄씩 풀어드립니다. 의학적 치료·예방을 단정하지 않고, 공개된 연구 동향과 일반 건강정보 관점에서만 안내합니다.',
+    ],
+    nav: ['/home', '/phlorotannin', '/learn', '/blog', '/qa'],
+  },
+  '/phlorotannin': {
+    h1: '플로로탄닌이란? — 감태추출물·해양 폴리페놀 작용기전 정리',
+    paras: [
+      '플로로탄닌(phlorotannin)은 갈조류(brown algae)에서 발견되는 폴리페놀(polyphenol) 계열 성분의 총칭입니다. 대표 원료는 감태(Ecklonia cava)이며, eckol(에콜), dieckol(다이에콜) 같은 분자가 잘 알려져 있습니다. 같은 감태 유래 해양 폴리페놀 성분군은 일부 자료에서 씨놀(Seanol)이라는 명칭으로도 언급됩니다.',
+      '연구 자료에서 자주 다뤄지는 키워드는 항산화(antioxidant), 염증 반응, 혈당 관련 지표, 수면, 면역, 장 건강, 뇌 건강, 피부 건강 등입니다. 이 페이지는 공개된 논문·리뷰 자료에서 다뤄지는 작용기전을 일반 건강정보 수준으로 풀어 정리하며, 특정 질환의 치료나 예방을 단정하지 않습니다.',
+      '관련 분류로는 갈조류 폴리페놀, 해조류 폴리페놀, 해양 폴리페놀이 있고, 검색어로는 플로로탄닌, 플로로타닌, phlorotannin, 감태추출물, Ecklonia cava, 씨놀, Seanol, 카프 등이 함께 사용됩니다.',
+    ],
+    nav: ['/learn', '/easy', '/blog', '/qa'],
+  },
+  '/learn': {
+    h1: '플로로탄닌 쉽게 배우기 — 감태추출물·해양 폴리페놀 학습 가이드',
+    paras: [
+      '이 학습 가이드는 플로로탄닌(phlorotannin), 감태추출물, 해양 폴리페놀(갈조류 폴리페놀)의 개념과 작용기전을 단계별로 정리합니다.',
+      '1단계 개념: 플로로탄닌은 무엇이고, 감태(Ecklonia cava)와 어떻게 연결되는가. 2단계 분자: eckol, dieckol 같은 대표 분자와 별칭(씨놀, Seanol, 카프). 3단계 주제별 연결: 항산화·염증·혈당·당뇨·수면·면역·장 건강·뇌 건강·피부 건강 같은 주제와 어떤 연구가 이뤄졌는지.',
+      '의학적 효능을 단정하지 않으며, 공개된 연구 동향과 일반 건강정보 관점의 학습 자료로 사용하시기 바랍니다.',
+    ],
+    nav: ['/phlorotannin', '/easy', '/blog', '/qa'],
+  },
+  '/qa': {
+    h1: '전문가 Q&A 아카이브 — 플로로탄닌·감태추출물 건강정보',
+    paras: [
+      '전문가 Q&A는 플로로탄닌(phlorotannin), 감태추출물, 해양 폴리페놀에 관해 사람들이 실제로 묻는 질문들을 모아 정리한 아카이브입니다.',
+      '주제는 질환별 건강정보(당뇨·혈당, 암환자 가족 건강정보, 치매·뇌 건강, 수면, 면역, 장 건강, 피부 건강, 염증), 성분 비교(콜라겐·후코이단·베타글루칸 등 다른 건강성분과의 비교), 병원정보(암요양병원·한방병원·재활병원 선택 기준) 등으로 구성됩니다.',
+      '검색어로는 플로로탄닌, 플로로타닌, phlorotannin, 감태추출물, Ecklonia cava, 씨놀, Seanol, 카프, 갈조류 폴리페놀, 해조류 폴리페놀, 해양 폴리페놀이 함께 사용됩니다.',
+    ],
+    nav: ['/blog', '/phlorotannin', '/learn', '/easy'],
+  },
+  '/blog': {
+    h1: '건강정보 블로그 — 플로로탄닌·감태추출물·해양 폴리페놀 연구 아카이브',
+    paras: [
+      '건강정보 블로그는 플로로탄닌(phlorotannin), 감태추출물(Ecklonia cava), 해양 폴리페놀(갈조류 폴리페놀, 해조류 폴리페놀)의 연구 동향과 일반 건강정보를 모아 정리하는 아카이브입니다.',
+      '아카이브는 네 가지 카테고리로 구성됩니다. 1) 성분 비교 — 콜라겐, 후코이단, 베타글루칸, 오메가3 등 다양한 건강성분과 플로로탄닌·감태추출물의 차이. 2) 질환별 건강정보 — 당뇨·혈당, 암환자 가족 건강정보, 치매·뇌 건강, 수면, 면역, 장 건강, 피부 건강, 염증. 3) 병원정보 — 암요양병원, 한방병원, 재활병원, 전문가 Q&A. 4) 파트너 정보페이지 안내.',
+      '관련 검색어: 플로로탄닌, 플로로타닌, phlorotannin, 감태추출물, Ecklonia cava, 씨놀, Seanol, 카프, eckol, dieckol, 항산화, 염증, 면역.',
+    ],
+    nav: ['/blog?category=ingredient-comparison', '/blog?category=disease-health-info', '/blog?category=hospital-info', '/blog?category=partner-info'],
+  },
+  '/blog?category=ingredient-comparison': {
+    h1: '성분 비교 아카이브 — 콜라겐·후코이단·베타글루칸·플로로탄닌 비교',
+    paras: [
+      '성분 비교 아카이브는 콜라겐, 후코이단, 베타글루칸, 오메가3 같은 다양한 건강성분과 플로로탄닌(phlorotannin), 감태추출물, 해양 폴리페놀(갈조류 폴리페놀)의 차이를 일반 건강정보 관점에서 비교하는 카테고리입니다.',
+      '같은 감태(Ecklonia cava) 유래 해양 폴리페놀 성분군이 자료에 따라 씨놀(Seanol), 카프 같은 별칭으로도 언급되기 때문에, 이름이 달라도 동일 성분군인지 다른 성분인지 정리합니다.',
+      '비교 항목은 원료(육상 vs 해양), 분자 종류(eckol, dieckol 등), 항산화 관점, 염증 관점, 흡수율, 적용 범위 등입니다. 의학적 효능을 단정하지 않고 연구 동향과 일반 건강정보 위주로 안내합니다.',
+    ],
+    nav: ['/blog', '/blog?category=disease-health-info', '/blog?category=hospital-info'],
+  },
+  '/blog?category=disease-health-info': {
+    h1: '질환별 건강정보 — 암환자 가족·당뇨·수면·면역 정보 아카이브',
+    paras: [
+      '질환별 건강정보 아카이브는 사람들이 실제로 검색하는 건강 주제를 정리하는 카테고리입니다.',
+      '주요 주제: 당뇨·혈당 건강정보, 암환자 가족 건강정보, 치매·뇌 건강, 수면 건강, 면역 건강, 장 건강, 피부 건강, 항산화·염증 관련 건강정보.',
+      '각 주제는 플로로탄닌(phlorotannin), 감태추출물, 해양 폴리페놀(갈조류 폴리페놀, 해조류 폴리페놀)의 공개된 연구 동향과 어떻게 연결되는지 풀어 설명합니다. 의학적 치료·예방을 단정하지 않으며, 일반 건강정보 관점에서 안내합니다. 관련 검색어: eckol, dieckol, 씨놀, Seanol, 카프, Ecklonia cava.',
+    ],
+    nav: ['/blog', '/qa', '/blog?category=hospital-info'],
+  },
+  '/blog?category=hospital-info': {
+    h1: '병원정보 아카이브 — 암요양병원·한방병원·전문가 Q&A',
+    paras: [
+      '병원정보 아카이브는 환자와 가족이 병원을 선택할 때 확인해야 하는 정보를 정리하는 카테고리입니다.',
+      '다루는 분야: 암요양병원, 한방병원, 재활병원, 통합의학 병원, 그리고 각 분야 전문가 Q&A. 병원 선택 시 점검할 항목, 치료 외 환자·가족 건강정보(영양, 항산화, 염증, 면역, 수면, 장 건강, 뇌 건강 등)도 함께 정리합니다.',
+      '관련 키워드: 플로로탄닌, phlorotannin, 감태추출물, Ecklonia cava, 해양 폴리페놀, 갈조류 폴리페놀, 해조류 폴리페놀, 씨놀, Seanol, 카프, eckol, dieckol.',
+    ],
+    nav: ['/blog', '/qa', '/blog?category=disease-health-info'],
+  },
+  '/blog?category=partner-info': {
+    h1: '파트너 개인 정보페이지 — 전자명함과 건강정보 플랫폼을 잇는 구조',
+    paras: [
+      '파트너 정보페이지(/p/:phone)는 phlorotannin.com 안에서 파트너 개인 링크를 전자명함, 정보 안내, 상담 연결 페이지로 활용하는 구조입니다.',
+      '각 파트너는 자신의 정보페이지에서 플로로탄닌(phlorotannin), 감태추출물, 해양 폴리페놀(갈조류 폴리페놀)에 관한 건강정보를 안내하고, 방문자가 안전하게 연락할 수 있는 전화/문자 채널을 제공합니다. 개인정보 보호를 위해 전화번호 노출에는 RevealContact 흐름이 적용됩니다.',
+      '이 카테고리는 파트너 모집·운영 안내와 파트너 정보페이지 활용 방식을 정리하는 자료실 역할을 합니다. 관련 검색어: 플로로탄닌, 감태추출물, 해양 폴리페놀, 씨놀, Seanol, 카프, eckol, dieckol.',
+    ],
+    nav: ['/partner', '/blog', '/qa'],
+  },
+  '/copyright': {
+    h1: '저작권 및 무단복제 금지 안내 — phlorotannin.com',
+    paras: [
+      'phlorotannin.com의 콘텐츠, 카테고리 구조, 파트너 정보페이지 시스템, 자료실, 데이터베이스 구조 및 SEO 설계는 운영 주체의 저작물입니다.',
+      '본문 텍스트, 이미지, 카테고리 분류 체계, 파트너 페이지 URL 패턴, sitemap·robots.txt 설계, /api/seo 메타 주입 구조, 블로그·Q&A 아카이브 구조의 무단 복제, 재가공, 상업적 이용을 금지합니다.',
+      '플로로탄닌(phlorotannin), 감태추출물, 해양 폴리페놀(갈조류 폴리페놀) 관련 일반 건강정보 자체는 공개 자료이지만, 이 사이트의 표현·구성·디자인은 별도 저작권의 보호를 받습니다.',
+    ],
+    nav: ['/', '/blog', '/qa'],
+  },
+}
+
+// HTML/마크다운 → 평문 변환 (안전한 발췌용)
+function stripToPlainText(s) {
+  if (!s) return ''
+  return String(s)
+    // 1) script/style/iframe 블록 전체 제거 (보안)
+    .replace(/<script[\s\S]*?<\/script>/gi, ' ')
+    .replace(/<style[\s\S]*?<\/style>/gi, ' ')
+    .replace(/<iframe[\s\S]*?<\/iframe>/gi, ' ')
+    // 2) on* 이벤트 핸들러가 포함된 태그 통째로 제거 위험 → 그냥 모든 태그 제거
+    .replace(/<[^>]+>/g, ' ')
+    // 3) 마크다운 헤더/리스트/코드/링크/강조 마크 제거
+    .replace(/`[^`]*`/g, ' ')
+    .replace(/```[\s\S]*?```/g, ' ')
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, ' ')
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
+    .replace(/^#{1,6}\s+/gm, '')
+    .replace(/^\s*[-*+]\s+/gm, '')
+    .replace(/^\s*>\s+/gm, '')
+    .replace(/\*\*([^*]+)\*\*/g, '$1')
+    .replace(/\*([^*]+)\*/g, '$1')
+    .replace(/^---+$/gm, ' ')
+    // 4) HTML 엔티티 디코드 (간단)
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    // 5) 공백 정리
+    .replace(/\s+/g, ' ')
+    .trim()
+}
+
+// /blog/:slug → posts.content 발췌 (600자 평문)
+async function fetchPostBody(slug) {
+  const { url, key } = sbCreds()
+  if (!key) return null
+  try {
+    const r = await fetch(
+      `${url}/rest/v1/posts?slug=eq.${encodeURIComponent(slug)}&select=title,meta_title,meta_desc,excerpt,content,category&limit=1`,
+      { headers: { apikey: key, Authorization: `Bearer ${key}`, 'Accept-Profile': 'public' } }
+    )
+    if (!r.ok) return null
+    const arr = await r.json()
+    const p = Array.isArray(arr) && arr[0]
+    if (!p) return null
+    const title = p.meta_title || p.title || ''
+    const metaDesc = p.meta_desc || p.excerpt || ''
+    let body = stripToPlainText(p.content || '')
+    // 600자 발췌 (한글 기준, 단어 경계 유지)
+    if (body.length > 600) {
+      body = body.slice(0, 600)
+      const lastSpace = body.lastIndexOf(' ')
+      if (lastSpace > 400) body = body.slice(0, lastSpace)
+      body = body.trim() + ' …'
+    }
+    // 본문이 너무 짧으면 meta_desc로 보강
+    if (body.length < 80 && metaDesc) {
+      body = stripToPlainText(metaDesc)
+    }
+    return { title, metaDesc, body, category: p.category || '' }
+  } catch {
+    return null
+  }
+}
+
+// /p/:phone → partners 정보 조회 (마스킹된 형태)
+async function fetchPartnerBody(phone) {
+  const { url, key } = sbCreds()
+  if (!key) return null
+  try {
+    const r = await fetch(
+      `${url}/rest/v1/partners?slug=eq.${encodeURIComponent(phone)}&status=eq.active&select=name,phone_display,memo,site_url&limit=1`,
+      { headers: { apikey: key, Authorization: `Bearer ${key}`, 'Accept-Profile': 'public' } }
+    )
+    if (!r.ok) return null
+    const arr = await r.json()
+    const p = Array.isArray(arr) && arr[0]
+    if (!p) return null
+    return {
+      name: p.name || '',
+      phoneDisplay: maskPhone(phone),  // 검색 노출용 — 마스킹 처리
+      memo: stripToPlainText(p.memo || ''),
+      siteUrl: p.site_url || '',
+    }
+  } catch {
+    return null
+  }
+}
+
+// 전화번호 마스킹: 01012345678 → 010-****-5678
+function maskPhone(phone) {
+  const digits = String(phone || '').replace(/[^0-9]/g, '')
+  if (digits.length === 11) return `${digits.slice(0, 3)}-****-${digits.slice(7)}`
+  if (digits.length === 10) return `${digits.slice(0, 3)}-***-${digits.slice(6)}`
+  return phone
+}
+
+// fallback HTML 빌더
+function buildFallbackHtml(pathname, dynamic) {
+  // 동적 경로 우선 처리
+  // /blog/:slug
+  if (dynamic && dynamic.kind === 'post') {
+    const { title, metaDesc, body, category } = dynamic
+    const catName = category ? (CATEGORY_NAMES[category] || category) : ''
+    const inner = [
+      `<h1>${esc(title)}</h1>`,
+      catName ? `<p>${esc('카테고리: ' + catName)}</p>` : '',
+      metaDesc ? `<p>${esc(metaDesc)}</p>` : '',
+      body ? `<p>${esc(body)}</p>` : '',
+      `<p>${esc('관련 주제: 플로로탄닌, 감태추출물, 해양 폴리페놀, 갈조류 폴리페놀, Ecklonia cava, eckol, dieckol, 항산화, 염증, 면역.')}</p>`,
+      `<nav><a href="/blog">블로그 아카이브로</a> · <a href="/qa">전문가 Q&amp;A</a> · <a href="/phlorotannin">플로로탄닌이란</a></nav>`,
+    ].filter(Boolean).join('')
+    return wrapFallback(inner)
+  }
+
+  // /p/:phone
+  if (dynamic && dynamic.kind === 'partner') {
+    const { name, phoneDisplay, memo, siteUrl } = dynamic
+    const intro = name
+      ? `${name} 님은 phlorotannin.com의 파트너로, 플로로탄닌·감태추출물·해양 폴리페놀 관련 건강정보를 안내합니다.`
+      : 'phlorotannin.com 파트너 정보페이지입니다. 플로로탄닌·감태추출물·해양 폴리페놀 관련 건강정보를 안내합니다.'
+    const inner = [
+      `<h1>${esc((name ? name + ' — ' : '') + '플로로탄닌 정보페이지')}</h1>`,
+      `<p>${esc(intro)}</p>`,
+      memo ? `<p>${esc(memo)}</p>` : '',
+      phoneDisplay ? `<p>${esc('연락처 안내: ' + phoneDisplay + ' (정확한 번호는 페이지 내 RevealContact를 통해 확인하실 수 있습니다.)')}</p>` : '',
+      siteUrl ? `<p>${esc('외부 안내 페이지: ' + siteUrl)}</p>` : '',
+      `<p>${esc('관련 키워드: 플로로탄닌, phlorotannin, 감태추출물, Ecklonia cava, 해양 폴리페놀, 갈조류 폴리페놀, 씨놀, Seanol, 카프, eckol, dieckol, 항산화, 염증, 면역, 수면, 장 건강, 뇌 건강.')}</p>`,
+      `<nav><a href="/">홈</a> · <a href="/blog">건강정보 블로그</a> · <a href="/qa">전문가 Q&amp;A</a></nav>`,
+    ].filter(Boolean).join('')
+    return wrapFallback(inner)
+  }
+
+  // 정적 경로 — SSR_LITE_BODIES 매칭 (없으면 /blog 또는 / 본문으로 안전 fallback)
+  let def = SSR_LITE_BODIES[pathname]
+  if (!def) {
+    // /blog/<unknown>, /category/<x> 등 미정의 경로는 /blog 안내로 노출
+    if (pathname.startsWith('/blog')) def = SSR_LITE_BODIES['/blog']
+    else if (pathname.startsWith('/category/')) def = SSR_LITE_BODIES['/blog']
+    else def = SSR_LITE_BODIES['/']
+  }
+  const inner = [
+    `<h1>${esc(def.h1)}</h1>`,
+    ...def.paras.map(p => `<p>${esc(p)}</p>`),
+    def.nav && def.nav.length
+      ? `<nav>${def.nav.map(href => `<a href="${esc(href)}">${esc(href)}</a>`).join(' · ')}</nav>`
+      : '',
+  ].filter(Boolean).join('')
+  return wrapFallback(inner)
+}
+
+function wrapFallback(inner) {
+  // 화면에는 sr-only로 숨김 (React가 createRoot 마운트 시 어차피 교체).
+  // <noscript>에도 동일 내용 병행 — JS 비활성/크롤러용 안전망.
+  return (
+    `<main data-ssr-lite="true" class="sr-only-ai-fallback" aria-hidden="true">${inner}</main>` +
+    `<noscript><main data-ssr-lite-noscript="true">${inner}</main></noscript>`
+  )
+}
+
+function injectFallback(html, fallbackHtml) {
+  if (!fallbackHtml) return html
+  // 1) <head>에 sr-only 스타일 1회 주입 (중복 방지)
+  if (!html.includes('data-ssr-lite-style')) {
+    html = html.replace(/<\/head>/i, `${SR_ONLY_STYLE}</head>`)
+  }
+  // 2) <div id="root"></div> → <div id="root">${fallbackHtml}</div>
+  //    빈 root만 정확히 매칭 (이미 내용 있으면 건드리지 않음)
+  html = html.replace(
+    /<div id="root"><\/div>/,
+    `<div id="root">${fallbackHtml}</div>`
+  )
+  return html
+}
+
 function injectMeta(html, meta) {
   const t = esc(meta.title)
   const d = esc(meta.desc)
@@ -396,13 +696,51 @@ export default async function handler(req, res) {
       return
     }
 
-    const html = injectMeta(indexHtml, meta)
+    let html = injectMeta(indexHtml, meta)
+
+    // ─── SSR-lite Fallback (AI 크롤러 본문 읽기 최적화) ───────────────
+    // 환경변수 SSR_LITE_DISABLED=1 이면 비활성화 (롤백 토글).
+    let ssrLiteApplied = 'none'
+    if (process.env.SSR_LITE_DISABLED !== '1') {
+      let dynamic = null
+      try {
+        // /blog/:slug → 본문 발췌
+        if (blogMatch) {
+          const postBody = await fetchPostBody(blogMatch[1])
+          if (postBody && (postBody.body || postBody.metaDesc)) {
+            dynamic = { kind: 'post', ...postBody }
+          }
+        }
+        // /p/:phone → 파트너 정보 (마스킹)
+        const partnerMatch = pathname.match(/^\/p\/([^/]+)$/)
+        if (partnerMatch) {
+          const partnerBody = await fetchPartnerBody(partnerMatch[1])
+          if (partnerBody) {
+            dynamic = { kind: 'partner', ...partnerBody }
+          } else {
+            // 파트너 정보가 없어도 안내 fallback은 노출
+            dynamic = { kind: 'partner', name: '', phoneDisplay: maskPhone(partnerMatch[1]), memo: '', siteUrl: '' }
+          }
+        }
+        const fallbackHtml = buildFallbackHtml(pathname, dynamic)
+        if (fallbackHtml) {
+          html = injectFallback(html, fallbackHtml)
+          ssrLiteApplied = dynamic ? dynamic.kind : 'static'
+        }
+      } catch (e) {
+        // SSR-lite 실패는 메인 응답을 막지 않는다 (안전 fallback).
+        ssrLiteApplied = `error:${(e && e.message) || 'unknown'}`
+      }
+    } else {
+      ssrLiteApplied = 'disabled'
+    }
 
     res.setHeader('Content-Type', 'text/html; charset=utf-8')
     res.setHeader('Cache-Control', 'public, max-age=0, s-maxage=300, stale-while-revalidate=86400')
     res.setHeader('X-SEO-Path', pathname)
     res.setHeader('X-SEO-Title', encodeURIComponent(meta.title))
     res.setHeader('X-SEO-Source', metaSource)
+    res.setHeader('X-SSR-Lite', ssrLiteApplied)
     res.status(200).send(html)
   } catch (e) {
     res.setHeader('Content-Type', 'text/plain; charset=utf-8')
