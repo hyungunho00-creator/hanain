@@ -407,9 +407,9 @@ export default function QAPage() {
   return (
     <div className="pt-16 min-h-screen bg-gray-50">
       <SEOHead
-        title={`전문가 Q&A ${totalAll.toLocaleString()}개 | 플로로탄닌·감태추출물 건강정보 아카이브`}
-        description={`플로로탄닌·감태추출물·해양 폴리페놀 관련 ${totalAll.toLocaleString()}개 전문가 Q&A. 항산화·염증·혈당·수면·면역·뇌 건강·암환자 가족 건강정보·병원정보까지 질환별로 정리한 종합 건강정보 데이터센터의 Q&A 아카이브입니다.`}
-        keywords="전문가 Q&A, 플로로탄닌 Q&A, 감태추출물 Q&A, 해양 폴리페놀 Q&A, 항산화, 염증, 혈당, 수면, 면역, 뇌 건강, 암환자 가족 건강정보, 병원정보 아카이브"
+        title={`연구기반 Q&A ${totalAll.toLocaleString()}개 | 플로로탄닌·감태추출물 건강정보 아카이브`}
+        description={`플로로탄닌·감태추출물·해양 폴리페놀 관련 ${totalAll.toLocaleString()}개 연구기반 Q&A. 항산화·염증·혈당·수면·면역·뇌 건강·암환자 가족 건강정보·병원정보까지 질환별로 정리한 종합 건강정보 데이터센터의 Q&A 아카이브입니다.`}
+        keywords="연구기반 Q&A, 플로로탄닌 Q&A, 감태추출물 Q&A, 해양 폴리페놀 Q&A, 항산화, 염증, 혈당, 수면, 면역, 뇌 건강, 암환자 가족 건강정보, 병원정보 아카이브"
         canonical="https://phlorotannin.com/qa"
         jsonLd={faqJsonLd}
       />

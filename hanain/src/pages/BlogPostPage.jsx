@@ -328,6 +328,15 @@ export default function BlogPostPage() {
             dangerouslySetInnerHTML={{ __html: parseMarkdown(post.content) }}
           />
 
+          {/* [2026-05-18 신설] E-E-A-T 신호 4줄 블록 — 작성·검토 기준·업데이트·면책.
+              검색엔진/AI 평가 시 신뢰성(Trustworthiness) 신호로 활용된다. */}
+          <aside className="bg-gray-50 border border-gray-200 rounded-xl p-4 md:p-5 mb-6 text-xs md:text-sm text-gray-600 leading-relaxed">
+            <p className="mb-1"><span className="font-semibold text-gray-700">작성·편집:</span> 플로로탄닌 건강정보 데이터센터 리서치팀</p>
+            <p className="mb-1"><span className="font-semibold text-gray-700">검토 기준:</span> Europe PMC·PubMed 등재 동료심사 논문 및 공신력 있는 해외 연구 자료를 우선 인용했습니다.</p>
+            <p className="mb-1"><span className="font-semibold text-gray-700">최근 업데이트:</span> {new Date(post.updated_at || post.created_at).toLocaleDateString('ko-KR', { year:'numeric', month:'long', day:'numeric' })}</p>
+            <p className="text-gray-500"><span className="font-semibold text-gray-700">면책:</span> 본 글은 일반 건강정보 제공을 목적으로 하며 진단·치료를 대체하지 않습니다. 개별 증상은 의료진과 상담하세요.</p>
+          </aside>
+
           {/* 태그 — 내부 검색 링크에 withRef 적용 */}
           {post.tags?.length > 0 && (
             <div className="flex flex-wrap gap-2 mb-8">
