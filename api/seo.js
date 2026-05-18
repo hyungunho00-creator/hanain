@@ -806,26 +806,23 @@ function buildFallbackHtml(pathname, dynamic) {
 }
 
 function wrapFallback(inner) {
-  // [2026-05-18 수정] HTML 소스 중복 노출 제거 (검색엔진/AI 평가 시 본문 2회 반복 인식 방지).
-  //   • 기존: 시각용 sr-only fallback + <noscript> fallback → HTML 소스에 같은 <h1>/<p> 2회 노출
-  //   • 개선: <noscript> 안에만 fallback 유지 (JS 비활성/일부 크롤러는 정상 인덱싱).
-  //     일반 JS 활성 브라우저·Googlebot은 React 마운트 후의 실제 페이지를 읽으므로 영향 없음.
-  //   • 봇이 보는 정적 HTML은 페이지별 <title>/<meta>/<link rel="canonical"> 가 이미 injectMeta()로
-  //     채워지므로 SEO 핵심 신호는 그대로 유지된다.
-  return `<noscript><main data-ssr-lite-noscript="true">${inner}</main></noscript>`
+  // [2026-05-18 2차 수정] <noscript> fallback 완전 제거.
+  //   • 1차 수정에서 <noscript> 안에만 두었으나, 검색엔진/AI 텍스트 추출기는
+  //     <noscript> 내부도 인덱싱하므로 React 마운트 후 본문과 합쳐 본문이 2회로 인식되는 문제 잔존.
+  //   • 모던 Googlebot/Bingbot/AI 크롤러는 JavaScript를 실행하여 React 렌더링 결과를 읽으므로
+  //     SEO 본문 신호는 클라이언트 렌더링만으로 충분히 전달된다.
+  //   • SEO 핵심 신호(<title>, <meta name="description">, canonical, OG, JSON-LD)는
+  //     injectMeta()가 정적 HTML에 그대로 주입하므로 손실 없음.
+  //   • inner는 더 이상 출력되지 않으므로 빈 문자열을 반환한다(호출부 호환을 위해 함수 유지).
+  void inner
+  return ''
 }
 
 function injectFallback(html, fallbackHtml) {
-  if (!fallbackHtml) return html
-  // [2026-05-18] fallback이 <noscript> 안으로만 들어가므로 sr-only 스타일 주입 불필요 (제거).
-  // <div id="root" ...></div> → <div id="root" ...>${fallbackHtml}</div>
-  //   • [^>]* 는 줄바꿈도 포함 (JS 정규식에서 . 이외의 부정 클래스는 \n 포함)
-  //   • data-* 속성이 여러 줄에 걸쳐 있어도 매칭됨
-  //   • 빈 root만 매칭 (이미 내용 있으면 건드리지 않음)
-  html = html.replace(
-    /<div\s+id="root"([^>]*)><\/div>/,
-    `<div id="root"$1>${fallbackHtml}</div>`
-  )
+  // [2026-05-18 2차 수정] fallback HTML 자체를 출력하지 않으므로 root 주입도 생략.
+  //   • <div id="root"></div> 는 그대로 유지되어 React가 클라이언트에서 마운트한다.
+  //   • SEO에 필요한 메타·canonical·JSON-LD는 injectMeta()/injectJsonLd()로 별도 주입.
+  void fallbackHtml
   return html
 }
 
