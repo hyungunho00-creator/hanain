@@ -40,6 +40,7 @@ const STATIC_PAGES = [
   { path: '/partner',      priority: '0.70', changefreq: 'monthly' },
   { path: '/copyright',    priority: '0.30', changefreq: 'yearly' },
   { path: '/inforoom',     priority: '0.40', changefreq: 'monthly' },
+  { path: '/glossary',     priority: '0.75', changefreq: 'monthly' },
 ]
 
 const BLOG_CATEGORIES = [

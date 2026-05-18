@@ -76,6 +76,19 @@ function parseMarkdown(md) {
       const attrs = isExternal ? ' target="_blank" rel="noopener noreferrer"' : ''
       return `<a href="${url}"${attrs} class="text-teal-600 font-semibold underline decoration-teal-300 underline-offset-2 hover:text-teal-700 hover:decoration-teal-500">${text}</a>`
     })
+    // [2026-05-18 신설] PMID 자동 외부 링크화 (PubMed 권위 출처와 자동 연결).
+    //   • 패턴: 'PMID: 12345678' / 'PMID 12345678' / 'PMID:12345678' (대소문자 무시)
+    //   • 이미 [text](url) 형태로 링크된 PMID는 위에서 처리되어 이 단계까지 오지 않음.
+    //   • 본문 어디에 PMID가 있든 자동으로 PubMed로 연결되어 외부 인용 신호를 확보한다.
+    .replace(/\bPMID\s*[:：]?\s*(\d{6,9})\b/gi, (_, id) =>
+      `<a href="https://pubmed.ncbi.nlm.nih.gov/${id}/" target="_blank" rel="noopener noreferrer" class="text-teal-600 font-semibold underline decoration-teal-300 underline-offset-2 hover:text-teal-700 hover:decoration-teal-500">PMID: ${id}</a>`
+    )
+    // [2026-05-18 신설] DOI 자동 외부 링크화 (학술지 권위 출처 연결).
+    //   • 패턴: 'doi:10.xxxx/xxxxx' / 'DOI: 10.xxxx/xxxxx'
+    //   • DOI 형식: '10.' 으로 시작 + slash + 추가 문자열 (최소한의 안전 패턴)
+    .replace(/\b(?:doi)\s*[:：]?\s*(10\.\d{4,9}\/[-._;()/:A-Z0-9]+)/gi, (_, doi) =>
+      `<a href="https://doi.org/${doi}" target="_blank" rel="noopener noreferrer" class="text-teal-600 font-semibold underline decoration-teal-300 underline-offset-2 hover:text-teal-700 hover:decoration-teal-500">DOI: ${doi}</a>`
+    )
     // bold
     .replace(/\*\*(.+?)\*\*/g, '<strong class="font-bold text-gray-900">$1</strong>')
     // italic
@@ -334,7 +347,8 @@ export default function BlogPostPage() {
             <p className="mb-1"><span className="font-semibold text-gray-700">작성·편집:</span> 플로로탄닌 건강정보 데이터센터 리서치팀</p>
             <p className="mb-1"><span className="font-semibold text-gray-700">검토 기준:</span> Europe PMC·PubMed 등재 동료심사 논문 및 공신력 있는 해외 연구 자료를 우선 인용했습니다.</p>
             <p className="mb-1"><span className="font-semibold text-gray-700">최근 업데이트:</span> {new Date(post.updated_at || post.created_at).toLocaleDateString('ko-KR', { year:'numeric', month:'long', day:'numeric' })}</p>
-            <p className="text-gray-500"><span className="font-semibold text-gray-700">면책:</span> 본 글은 일반 건강정보 제공을 목적으로 하며 진단·치료를 대체하지 않습니다. 개별 증상은 의료진과 상담하세요.</p>
+            <p className="text-gray-500 mb-1"><span className="font-semibold text-gray-700">면책:</span> 본 글은 일반 건강정보 제공을 목적으로 하며 진단·치료를 대체하지 않습니다. 개별 증상은 의료진과 상담하세요.</p>
+            <p className="text-gray-500"><span className="font-semibold text-gray-700">용어가 어렵다면:</span> <Link to="/glossary" className="text-teal-600 underline decoration-teal-300 underline-offset-2 hover:text-teal-700">플로로탄닌 용어 사전</Link>에서 감태·디에콜·에콜·씨놀 등 주요 용어를 한곳에서 확인할 수 있습니다.</p>
           </aside>
 
           {/* 태그 — 내부 검색 링크에 withRef 적용 */}

@@ -23,6 +23,7 @@ import BlogPage from './pages/BlogPage'
 import BlogPostPage from './pages/BlogPostPage'
 import InfoRoomPage from './pages/InfoRoomPage'
 import CopyrightPage from './pages/CopyrightPage'
+import GlossaryPage from './pages/GlossaryPage'
 import ScrollToTop from './components/common/ScrollToTop'
 import { PartnerProvider } from './context/PartnerContext'
 import { AuthProvider } from './context/AuthContext'
@@ -67,6 +68,7 @@ function AppInner() {
 
             {/* 저작권 안내 */}
             <Route path="/copyright"     element={<CopyrightPage />} />
+            <Route path="/glossary"      element={<GlossaryPage />} />
           </Routes>
         </main>
         <Footer />

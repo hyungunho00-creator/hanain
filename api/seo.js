@@ -196,6 +196,13 @@ function staticMetaFor(pathname) {
       canonical: `${SITE}/copyright`,
     }
   }
+  if (pathname === '/glossary') {
+    return {
+      title: '플로로탄닌 용어 사전 | 감태·디에콜·에콜·씨놀·후코이단 한곳에서',
+      desc:  '플로로탄닌(phlorotannin), 감태(Ecklonia cava), 디에콜, 에콜, 씨놀(Seanol), 후코이단 등 해양 폴리페놀·갈조류 관련 전문 용어를 한곳에서 정리한 용어 사전. 학술명·이명·핵심 정의 제공.',
+      canonical: `${SITE}/glossary`,
+    }
+  }
   if (pathname.startsWith('/category/')) {
     const slug = pathname.replace('/category/', '').split('/')[0]
     const name = CATEGORY_NAMES[slug] || slug
