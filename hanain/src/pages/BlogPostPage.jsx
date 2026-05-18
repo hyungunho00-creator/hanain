@@ -352,11 +352,11 @@ export default function BlogPostPage() {
 
           {/* 관련 Q&A 바로가기 — 내부 링크에 withRef 적용 */}
           <div className="bg-gradient-to-r from-teal-50 to-cyan-50 border border-teal-100 rounded-2xl p-6 mb-6">
-            <p className="text-sm font-bold text-teal-700 mb-2">📚 관련 건강 Q&A 더 보기</p>
-            <p className="text-sm text-gray-600 mb-3">플로로탄닌 관련 1,361개 Q&A 아카이브에서 더 자세한 정보를 확인하세요</p>
+            <p className="text-sm font-bold text-teal-700 mb-2">📚 이 글 읽은 분들이 같이 찾아본 Q&A</p>
+            <p className="text-sm text-gray-600 mb-3">플로로탄닌 관련 1,361개 Q&A 아카이브 — <strong className="text-teal-700">무료 열람</strong>, 가입 없이 바로 확인</p>
             <Link to={withRef(`/qa${post.category !== 'general' ? `?category=${post.category}` : ''}`, partner)}
-              className="inline-flex items-center gap-1.5 bg-teal-600 text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-teal-700 transition-colors">
-              <BookOpen className="w-4 h-4" /> Q&A 보러가기
+              className="inline-flex items-center gap-1.5 bg-teal-600 text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-teal-700 transition-colors shadow-sm">
+              <BookOpen className="w-4 h-4" /> Q&A 무료로 보기
             </Link>
           </div>
 
@@ -367,33 +367,34 @@ export default function BlogPostPage() {
               style={{ background: '#B8953A25' }}>
               <MessageCircle className="w-7 h-7" style={{ color: '#D4AF5A' }} />
             </div>
-            <h3 className="text-lg font-bold text-white mb-2">
-              플로로탄닌에 대해 더 궁금한 게 있으신가요?
+            <h3 className="text-lg md:text-xl font-bold text-white mb-2 leading-snug">
+              궁금한 점, 남겨두면<br className="sm:hidden" /> <span style={{ color: '#D4AF5A' }}>무료로 정리해서 보내드립니다</span>
             </h3>
-            <p className="text-sm mb-5" style={{ color: '#a0b8d0' }}>
-              시중 제품과의 차이점, 내 건강에 맞는 선택법, 구매 방법까지<br />
-              전문가가 직접 답변드립니다
+            <p className="text-sm mb-5 leading-relaxed" style={{ color: '#cfd9e6' }}>
+              플로로탄닌 자료·시중 제품 비교·내 건강 상태별 선택 가이드까지<br />
+              <strong className="text-white">받기만 해도 정보값 ‘0원’</strong> · 받아보고 결정하셔도 늦지 않습니다
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
                 href={`tel:${partner.phone}`}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold text-sm transition-all hover:opacity-90"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold text-sm transition-all hover:opacity-90 shadow-lg"
                 style={{ background: 'linear-gradient(135deg, #B8953A, #D4AF5A)', color: '#0D1B3E' }}
               >
                 <Phone className="w-4 h-4" />
-                지금 전화 문의
+                자료 받기 (전화 1통)
               </a>
               <a
-                href={`sms:${partner.phone}?body=${encodeURIComponent(`[플로로탄닌] 블로그 글(${post.title})을 보고 문의드립니다.`)}`}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold text-sm bg-white transition-all hover:opacity-90"
+                href={`sms:${partner.phone}?body=${encodeURIComponent(`[플로로탄닌] '${post.title}' 글을 읽고 관련 자료를 받아보고 싶습니다.`)}`}
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold text-sm bg-white transition-all hover:opacity-90 shadow-lg"
                 style={{ color: '#0D1B3E' }}
               >
                 <MessageCircle className="w-4 h-4" />
-                문자로 문의
+                문자로 자료 신청
               </a>
             </div>
-            <p className="text-xs mt-4" style={{ color: '#6b8099' }}>
-              연락하면 24시간 이내 답변 드립니다
+            <p className="text-xs mt-4 leading-relaxed" style={{ color: '#a0b8d0' }}>
+              ✓ 강매 없음 &nbsp;·&nbsp; ✓ 영업 전화 없음 &nbsp;·&nbsp; ✓ 자료만 받고 끝내도 OK<br />
+              <span style={{ color: '#8fa3bd' }}>평균 답변 시간 30분 이내 · 늦어도 24시간 안에 회신</span>
             </p>
           </div>
 
