@@ -1,0 +1,562 @@
+{
+  "1_alzheimer_bace1": [
+    {
+      "pmid": "40320786",
+      "pmcid": "",
+      "doi": "10.1002/mnfr.70071",
+      "title": "Simulated Digestion and Fermentation of Polyphenols From Sargassum wightii Acts as Potential Modulator of Alzheimer's Disease",
+      "journal": "Mol Nutr Food Res",
+      "year": "2025",
+      "first_author": "Gade A"
+    },
+    {
+      "pmid": "40137277",
+      "pmcid": "PMC11943648",
+      "doi": "10.3390/md23030091",
+      "title": "The Advancements of Marine Natural Products in the Treatment of Alzheimer's Disease: A Study Based on Cell and Animal Experiments",
+      "journal": "Mar Drugs",
+      "year": "2025",
+      "first_author": "Jia C"
+    },
+    {
+      "pmid": "41710279",
+      "pmcid": "PMC12909174",
+      "doi": "10.3389/fnut.2026.1750434",
+      "title": "Phlorotannins and glycolipid metabolism: comprehensive regulatory roles mediated by the gut microbiota",
+      "journal": "Front Nutr",
+      "year": "2026",
+      "first_author": "Wu S"
+    },
+    {
+      "pmid": "41471758",
+      "pmcid": "PMC12735720",
+      "doi": "10.3390/molecules30244733",
+      "title": "Phlorotannins from Phaeophyceae: Structural Diversity, Multi-Target Bioactivity, Pharmacokinetic Barriers, and Nanodelivery System Innovation",
+      "journal": "Molecules",
+      "year": "2025",
+      "first_author": "Harasym J"
+    },
+    {
+      "pmid": "41751452",
+      "pmcid": "PMC12939525",
+      "doi": "10.3390/cimb48020190",
+      "title": "Role of Main Red Seaweed Bioactive Compounds in Modulating Redox Imbalance and Cholinergic Dysfunction: Insights from In Vitro Assays",
+      "journal": "Curr Issues Mol Biol",
+      "year": "2026",
+      "first_author": "Ferreira J"
+    },
+    {
+      "pmid": "41863963",
+      "pmcid": "PMC13022700",
+      "doi": "10.1016/j.ultsonch.2026.107821",
+      "title": "Ultrasonic-assisted extraction, purification, identification, and bioactivity evaluation of phlorotannins from Sargassum fusiforme: A comparative study of RSM and SVM-GA",
+      "journal": "Ultrason Sonochem",
+      "year": "2026",
+      "first_author": "He W"
+    }
+  ],
+  "2_covid_3clpro": [
+    {
+      "pmid": "38543114",
+      "pmcid": "PMC10975954",
+      "doi": "10.3390/ph17030328",
+      "title": "Marine-Derived Bioactive Metabolites as a Potential Therapeutic Intervention in Managing Viral Diseases: Insights from the SARS-CoV-2 In Silico and Pre-Clinical Studies",
+      "journal": "Pharmaceuticals (Basel)",
+      "year": "2024",
+      "first_author": "Okechukwu QN"
+    },
+    {
+      "pmid": "38821329",
+      "pmcid": "",
+      "doi": "10.1016/j.gene.2024.148620",
+      "title": "Deciphering inhibitory activity of marine algae Ecklonia cava phlorotannins against SARS CoV-2 main protease: A coupled in-silico docking and molecular dynamics simulation study",
+      "journal": "Gene",
+      "year": "2024",
+      "first_author": "Chakraborty A"
+    },
+    {
+      "pmid": "40206958",
+      "pmcid": "PMC11978671",
+      "doi": "10.3389/fnut.2025.1561119",
+      "title": "Recent advances of edible marine algae-derived sulfated polysaccharides in antiviral treatments: challenges vs. opportunities",
+      "journal": "Front Nutr",
+      "year": "2025",
+      "first_author": "Dong X"
+    },
+    {
+      "pmid": "41903305",
+      "pmcid": "",
+      "doi": "10.1016/j.intimp.2026.116556",
+      "title": "Molecular pharmacology of sulfated polysaccharides from Sargassum fusiforme: mechanistic insights into HIV inhibition and immune modulation- a review",
+      "journal": "Int Immunopharmacol",
+      "year": "2026",
+      "first_author": "Vijayakumar D."
+    },
+    {
+      "pmid": "35152367",
+      "pmcid": "PMC9636370",
+      "doi": "10.1007/s11030-022-10383-y",
+      "title": "Probing marine brown macroalgal phlorotannins as antiviral candidate against SARS-CoV-2: molecular docking and dynamics simulation approach",
+      "journal": "Mol Divers",
+      "year": "2022",
+      "first_author": "Gunaseelan S"
+    },
+    {
+      "pmid": "35234563",
+      "pmcid": "PMC8896193",
+      "doi": "10.1080/13880209.2022.2039215",
+      "title": "The vital role of animal, marine, and microbial natural products against COVID-19",
+      "journal": "Pharm Biol",
+      "year": "2022",
+      "first_author": "Alqathama AA"
+    }
+  ],
+  "3_melanoma_apoptosis": [
+    {
+      "pmid": "41720804",
+      "pmcid": "PMC12923595",
+      "doi": "10.1038/s41598-026-35253-7",
+      "title": "Optimization of ultrasound extraction of phlorotannin rich extract from Dictyopteris justii with tyrosinase Inhibition",
+      "journal": "Sci Rep",
+      "year": "2026",
+      "first_author": "Hernández AC"
+    },
+    {
+      "pmid": "41515317",
+      "pmcid": "PMC12786842",
+      "doi": "10.3390/molecules31010020",
+      "title": "Microalgae and Macroalgae as Advanced Sources of Tyrosinase Inhibitors",
+      "journal": "Molecules",
+      "year": "2025",
+      "first_author": "Harasym J"
+    },
+    {
+      "pmid": "41471758",
+      "pmcid": "PMC12735720",
+      "doi": "10.3390/molecules30244733",
+      "title": "Phlorotannins from Phaeophyceae: Structural Diversity, Multi-Target Bioactivity, Pharmacokinetic Barriers, and Nanodelivery System Innovation",
+      "journal": "Molecules",
+      "year": "2025",
+      "first_author": "Harasym J"
+    },
+    {
+      "pmid": "38894623",
+      "pmcid": "PMC11819485",
+      "doi": "10.1093/nutrit/nuae066",
+      "title": "Antioxidant and Anti-inflammatory Effects of Marine Phlorotannins and Bromophenols Supportive of Their Anticancer Potential",
+      "journal": "Nutr Rev",
+      "year": "2025",
+      "first_author": "Goya L"
+    },
+    {
+      "pmid": "41551603",
+      "pmcid": "PMC12809398",
+      "doi": "10.20517/evcna.2025.43",
+      "title": "Plant-derived extracellular vesicles in facial aesthetics",
+      "journal": "Extracell Vesicles Circ Nucl Acids",
+      "year": "2025",
+      "first_author": "Yang N"
+    },
+    {
+      "pmid": "41423319",
+      "pmcid": "PMC12744962",
+      "doi": "10.4014/jmb.2510.10053",
+      "title": "Bioactive Polysaccharides and Phlorotannins from &lt;i&gt;Eisenia bicyclis&lt;/i&gt; Alleviate Particulate Matter (PM)&lt;sub&gt;2.5&lt;/sub&gt;-Induced Chronic Lung Injury by Regulating Inflammatory and Fibrotic Pathways",
+      "journal": "J Microbiol Biotechnol",
+      "year": "2025",
+      "first_author": "Kim JM"
+    }
+  ],
+  "4_ace_blood_pressure": [
+    {
+      "pmid": "41809107",
+      "pmcid": "PMC12967981",
+      "doi": "10.3389/fnut.2026.1766041",
+      "title": "Secret heroes of the sea: brown macroalgae and their bioactive powers-a narrative review",
+      "journal": "Front Nutr",
+      "year": "2026",
+      "first_author": "Can B"
+    },
+    {
+      "pmid": "41471758",
+      "pmcid": "PMC12735720",
+      "doi": "10.3390/molecules30244733",
+      "title": "Phlorotannins from Phaeophyceae: Structural Diversity, Multi-Target Bioactivity, Pharmacokinetic Barriers, and Nanodelivery System Innovation",
+      "journal": "Molecules",
+      "year": "2025",
+      "first_author": "Harasym J"
+    },
+    {
+      "pmid": "39125987",
+      "pmcid": "PMC11312663",
+      "doi": "10.3390/ijms25158419",
+      "title": "Marine Polyphenols in Cardiovascular Health: Unraveling Structure-Activity Relationships, Mechanisms, and Therapeutic Implications",
+      "journal": "Int J Mol Sci",
+      "year": "2024",
+      "first_author": "Nagahawatta DP"
+    },
+    {
+      "pmid": "41892975",
+      "pmcid": "PMC13027525",
+      "doi": "10.3390/md24030116",
+      "title": "Marine Bioactive Compounds from Functional Seafoods: Pharmacological Mechanisms and Health Applications",
+      "journal": "Mar Drugs",
+      "year": "2026",
+      "first_author": "Davran Bulut S"
+    },
+    {
+      "pmid": "40863620",
+      "pmcid": "PMC12387817",
+      "doi": "10.3390/md23080303",
+      "title": "Role of Enzyme Technologies and Applied Enzymology in Valorising Seaweed Bioproducts",
+      "journal": "Mar Drugs",
+      "year": "2025",
+      "first_author": "Mabate B"
+    },
+    {
+      "pmid": "41599890",
+      "pmcid": "PMC12845018",
+      "doi": "10.3390/nu18020277",
+      "title": "Algae and Algal Protein in Human Nutrition: A Narrative Review of Health Outcomes from Clinical Studies",
+      "journal": "Nutrients",
+      "year": "2026",
+      "first_author": "Wang Z"
+    }
+  ],
+  "5_nrf2_antioxidant": [
+    {
+      "pmid": "41423319",
+      "pmcid": "PMC12744962",
+      "doi": "10.4014/jmb.2510.10053",
+      "title": "Bioactive Polysaccharides and Phlorotannins from &lt;i&gt;Eisenia bicyclis&lt;/i&gt; Alleviate Particulate Matter (PM)&lt;sub&gt;2.5&lt;/sub&gt;-Induced Chronic Lung Injury by Regulating Inflammatory and Fibrotic Pathways",
+      "journal": "J Microbiol Biotechnol",
+      "year": "2025",
+      "first_author": "Kim JM"
+    },
+    {
+      "pmid": "40405298",
+      "pmcid": "PMC12096743",
+      "doi": "10.1186/s40104-025-01210-z",
+      "title": "The ameliorative role of phlorotannin on aflatoxin B&lt;sub&gt;1&lt;/sub&gt;-induced liver oxidative stress and mitochondrial injury is related to the activation of Nrf2 and Nrf1 signaling pathways in broilers",
+      "journal": "J Anim Sci Biotechnol",
+      "year": "2025",
+      "first_author": "Ye X"
+    },
+    {
+      "pmid": "38894623",
+      "pmcid": "PMC11819485",
+      "doi": "10.1093/nutrit/nuae066",
+      "title": "Antioxidant and Anti-inflammatory Effects of Marine Phlorotannins and Bromophenols Supportive of Their Anticancer Potential",
+      "journal": "Nutr Rev",
+      "year": "2025",
+      "first_author": "Goya L"
+    },
+    {
+      "pmid": "41715893",
+      "pmcid": "PMC12927407",
+      "doi": "10.1080/13510002.2026.2629079",
+      "title": "Mitigating PM2.5-induced skin injury and aging: botanical strategies targeting redox and inflammatory pathways",
+      "journal": "Redox Rep",
+      "year": "2026",
+      "first_author": "Maunjumpon P"
+    },
+    {
+      "pmid": "39334707",
+      "pmcid": "PMC11428727",
+      "doi": "10.3390/antiox13091048",
+      "title": "Phlorotannin Alleviates Liver Injury by Regulating Redox Balance, Apoptosis, and Ferroptosis of Broilers under Heat Stress",
+      "journal": "Antioxidants (Basel)",
+      "year": "2024",
+      "first_author": "Zhao ZX"
+    },
+    {
+      "pmid": "41710279",
+      "pmcid": "PMC12909174",
+      "doi": "10.3389/fnut.2026.1750434",
+      "title": "Phlorotannins and glycolipid metabolism: comprehensive regulatory roles mediated by the gut microbiota",
+      "journal": "Front Nutr",
+      "year": "2026",
+      "first_author": "Wu S"
+    }
+  ],
+  "6_nfkb_inflammation": [
+    {
+      "pmid": "41295414",
+      "pmcid": "PMC12654633",
+      "doi": "10.3390/md23110446",
+      "title": "Marine Bioactive Components and Chronic Neuroinflammation: Focus on Neurodegenerative Disease",
+      "journal": "Mar Drugs",
+      "year": "2025",
+      "first_author": "Favari E"
+    },
+    {
+      "pmid": "41751452",
+      "pmcid": "PMC12939525",
+      "doi": "10.3390/cimb48020190",
+      "title": "Role of Main Red Seaweed Bioactive Compounds in Modulating Redox Imbalance and Cholinergic Dysfunction: Insights from In Vitro Assays",
+      "journal": "Curr Issues Mol Biol",
+      "year": "2026",
+      "first_author": "Ferreira J"
+    },
+    {
+      "pmid": "41596678",
+      "pmcid": "PMC12841852",
+      "doi": "10.3390/ijms27021032",
+      "title": "The Beneficial Effects of Marine Plant-Derived Compounds on the Musculoskeletal System",
+      "journal": "Int J Mol Sci",
+      "year": "2026",
+      "first_author": "Szabó L"
+    },
+    {
+      "pmid": "38894623",
+      "pmcid": "PMC11819485",
+      "doi": "10.1093/nutrit/nuae066",
+      "title": "Antioxidant and Anti-inflammatory Effects of Marine Phlorotannins and Bromophenols Supportive of Their Anticancer Potential",
+      "journal": "Nutr Rev",
+      "year": "2025",
+      "first_author": "Goya L"
+    },
+    {
+      "pmid": "41301898",
+      "pmcid": "PMC12650467",
+      "doi": "10.3390/biomedicines13112808",
+      "title": "Regional Variation in Antioxidant and Anti-Inflammatory Activities of the Brown Alga &lt;i&gt;Sargassum thunbergii&lt;/i&gt; and Mechanistic Role of Fucosterol in Inflammation Modulation",
+      "journal": "Biomedicines",
+      "year": "2025",
+      "first_author": "Lee SG"
+    },
+    {
+      "pmid": "39901663",
+      "pmcid": "",
+      "doi": "10.1039/d4tb01811g",
+      "title": "A phlorotannin nanoparticle-hydrogel composite for enhanced oral delivery and treatment of ulcerative colitis",
+      "journal": "J Mater Chem B",
+      "year": "2025",
+      "first_author": "Jiang W"
+    }
+  ],
+  "7_uvb_photoaging": [
+    {
+      "pmid": "41551603",
+      "pmcid": "PMC12809398",
+      "doi": "10.20517/evcna.2025.43",
+      "title": "Plant-derived extracellular vesicles in facial aesthetics",
+      "journal": "Extracell Vesicles Circ Nucl Acids",
+      "year": "2025",
+      "first_author": "Yang N"
+    },
+    {
+      "pmid": "41012480",
+      "pmcid": "PMC12473693",
+      "doi": "10.3390/pharmaceutics17091143",
+      "title": "Marine Macroalgae in Topical Formulations: Bioactive Compounds, Variability, Analytical Challenges and Skin Benefits",
+      "journal": "Pharmaceutics",
+      "year": "2025",
+      "first_author": "Bogdan C"
+    },
+    {
+      "pmid": "41590709",
+      "pmcid": "PMC12843022",
+      "doi": "10.3390/md24010012",
+      "title": "Phlorotannins from <i>Ecklonia cava</i> Regulate Dual Signaling Pathways, IL-17RA/Act1 and ERK1/2, to Suppress Ovarian Cancer Progression and Tumor-Associated Macrophage Activation",
+      "journal": "Mar Drugs",
+      "year": "2025",
+      "first_author": "Kim EH"
+    },
+    {
+      "pmid": "41132114",
+      "pmcid": "PMC13068054",
+      "doi": "10.1111/ics.70039",
+      "title": "Natural-based antioxidants in cosmeceuticals: Extraction, bioavailability and skin ageing applications",
+      "journal": "Int J Cosmet Sci",
+      "year": "2026",
+      "first_author": "Omidian H"
+    },
+    {
+      "pmid": "41715893",
+      "pmcid": "PMC12927407",
+      "doi": "10.1080/13510002.2026.2629079",
+      "title": "Mitigating PM2.5-induced skin injury and aging: botanical strategies targeting redox and inflammatory pathways",
+      "journal": "Redox Rep",
+      "year": "2026",
+      "first_author": "Maunjumpon P"
+    },
+    {
+      "pmid": "40292641",
+      "pmcid": "PMC11946782",
+      "doi": "10.3390/polym17060798",
+      "title": "Current Approaches in Cosmeceuticals: Peptides, Biotics and Marine Biopolymers",
+      "journal": "Polymers (Basel)",
+      "year": "2025",
+      "first_author": "Badilli U"
+    }
+  ],
+  "8_gut_microbiome": [
+    {
+      "pmid": "42001703",
+      "pmcid": "",
+      "doi": "10.1016/j.foodchem.2026.149214",
+      "title": "Modulation of gut microbiota and microbial metabolites during in vitro colonic fermentation of Ulva lactuca: Release and bioconversion of phlorotannins",
+      "journal": "Food Chem",
+      "year": "2026",
+      "first_author": "López-Cárdenas FG"
+    },
+    {
+      "pmid": "41710279",
+      "pmcid": "PMC12909174",
+      "doi": "10.3389/fnut.2026.1750434",
+      "title": "Phlorotannins and glycolipid metabolism: comprehensive regulatory roles mediated by the gut microbiota",
+      "journal": "Front Nutr",
+      "year": "2026",
+      "first_author": "Wu S"
+    },
+    {
+      "pmid": "41995075",
+      "pmcid": "",
+      "doi": "10.1039/d5fo05231a",
+      "title": "Polyphenols in gut barrier function across diverse natural sources: mechanisms and comparative insights in berry and seaweed-derived compounds",
+      "journal": "Food Funct",
+      "year": "2026",
+      "first_author": "Smid SD."
+    },
+    {
+      "pmid": "41374064",
+      "pmcid": "PMC12693825",
+      "doi": "10.3390/nu17233774",
+      "title": "Marine-Algal-Derived Postbiotics Modulating the Gut Microbiota-Adipose Tissue Axis in Obesity: A New Frontier",
+      "journal": "Nutrients",
+      "year": "2025",
+      "first_author": "Limijadi EKS"
+    },
+    {
+      "pmid": "41471758",
+      "pmcid": "PMC12735720",
+      "doi": "10.3390/molecules30244733",
+      "title": "Phlorotannins from Phaeophyceae: Structural Diversity, Multi-Target Bioactivity, Pharmacokinetic Barriers, and Nanodelivery System Innovation",
+      "journal": "Molecules",
+      "year": "2025",
+      "first_author": "Harasym J"
+    },
+    {
+      "pmid": "40594018",
+      "pmcid": "PMC12215609",
+      "doi": "10.1038/s41598-025-04689-8",
+      "title": "Bioactive phenolic compounds from Australian seaweeds and their impact on gut health",
+      "journal": "Sci Rep",
+      "year": "2025",
+      "first_author": "Subbiah V"
+    }
+  ],
+  "9_pcsk9_cholesterol": [
+    {
+      "pmid": "41809107",
+      "pmcid": "PMC12967981",
+      "doi": "10.3389/fnut.2026.1766041",
+      "title": "Secret heroes of the sea: brown macroalgae and their bioactive powers-a narrative review",
+      "journal": "Front Nutr",
+      "year": "2026",
+      "first_author": "Can B"
+    },
+    {
+      "pmid": "41710279",
+      "pmcid": "PMC12909174",
+      "doi": "10.3389/fnut.2026.1750434",
+      "title": "Phlorotannins and glycolipid metabolism: comprehensive regulatory roles mediated by the gut microbiota",
+      "journal": "Front Nutr",
+      "year": "2026",
+      "first_author": "Wu S"
+    },
+    {
+      "pmid": "39590803",
+      "pmcid": "PMC11595733",
+      "doi": "10.3390/md22110523",
+      "title": "Effects of Marine-Derived Components on Cardiovascular Disease Risk Factors and Gut Microbiota Diversity",
+      "journal": "Mar Drugs",
+      "year": "2024",
+      "first_author": "Lamminpää I"
+    },
+    {
+      "pmid": "41471758",
+      "pmcid": "PMC12735720",
+      "doi": "10.3390/molecules30244733",
+      "title": "Phlorotannins from Phaeophyceae: Structural Diversity, Multi-Target Bioactivity, Pharmacokinetic Barriers, and Nanodelivery System Innovation",
+      "journal": "Molecules",
+      "year": "2025",
+      "first_author": "Harasym J"
+    },
+    {
+      "pmid": "41599890",
+      "pmcid": "PMC12845018",
+      "doi": "10.3390/nu18020277",
+      "title": "Algae and Algal Protein in Human Nutrition: A Narrative Review of Health Outcomes from Clinical Studies",
+      "journal": "Nutrients",
+      "year": "2026",
+      "first_author": "Wang Z"
+    },
+    {
+      "pmid": "39449411",
+      "pmcid": "PMC11503287",
+      "doi": "10.3390/medsci12040055",
+      "title": "Novel Therapeutic Approach for Obesity: Seaweeds as an Alternative Medicine with the Latest Conventional Therapy",
+      "journal": "Med Sci (Basel)",
+      "year": "2024",
+      "first_author": "Yadav R"
+    }
+  ],
+  "10_drug_development": [
+    {
+      "pmid": "41471758",
+      "pmcid": "PMC12735720",
+      "doi": "10.3390/molecules30244733",
+      "title": "Phlorotannins from Phaeophyceae: Structural Diversity, Multi-Target Bioactivity, Pharmacokinetic Barriers, and Nanodelivery System Innovation",
+      "journal": "Molecules",
+      "year": "2025",
+      "first_author": "Harasym J"
+    },
+    {
+      "pmid": "41720804",
+      "pmcid": "PMC12923595",
+      "doi": "10.1038/s41598-026-35253-7",
+      "title": "Optimization of ultrasound extraction of phlorotannin rich extract from Dictyopteris justii with tyrosinase Inhibition",
+      "journal": "Sci Rep",
+      "year": "2026",
+      "first_author": "Hernández AC"
+    },
+    {
+      "pmid": "41378212",
+      "pmcid": "PMC12685836",
+      "doi": "10.3389/fphar.2025.1682025",
+      "title": "Harnessing marine algal polysaccharides for combination cancer therapy: pharmacological mechanisms and clinical perspectives",
+      "journal": "Front Pharmacol",
+      "year": "2025",
+      "first_author": "Zhong J"
+    },
+    {
+      "pmid": "41523268",
+      "pmcid": "PMC12789659",
+      "doi": "10.1002/fsn3.71449",
+      "title": "Efficacy and Safety of &lt;i&gt;Ecklonia cava&lt;/i&gt; Kjellman Extract Complex in Respiratory Health: A Randomized, Double-Blind, Placebo-Controlled, Multicenter Clinical Trial",
+      "journal": "Food Sci Nutr",
+      "year": "2026",
+      "first_author": "Woo SC"
+    },
+    {
+      "pmid": "41515317",
+      "pmcid": "PMC12786842",
+      "doi": "10.3390/molecules31010020",
+      "title": "Microalgae and Macroalgae as Advanced Sources of Tyrosinase Inhibitors",
+      "journal": "Molecules",
+      "year": "2025",
+      "first_author": "Harasym J"
+    },
+    {
+      "pmid": "41295414",
+      "pmcid": "PMC12654633",
+      "doi": "10.3390/md23110446",
+      "title": "Marine Bioactive Components and Chronic Neuroinflammation: Focus on Neurodegenerative Disease",
+      "journal": "Mar Drugs",
+      "year": "2025",
+      "first_author": "Favari E"
+    }
+  ]
+}
