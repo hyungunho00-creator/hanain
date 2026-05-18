@@ -70,7 +70,7 @@ const CATEGORY_NAMES = {
 }
 
 const CATEGORY_DESC = {
-  'diabetes':       '당뇨·혈당 건강정보 아카이브 — 감태추출물·플로로탄닌 정보센터. 항산화·염증·면역 관점의 혈당 건강정보와 전문가 Q&A를 정리합니다.',
+  'diabetes':       '당뇨·혈당 건강정보 아카이브 — 감태추출물·플로로탄닌 정보센터. 항산화·염증·면역 관점의 혈당 건강정보와 연구기반 Q&A를 정리합니다.',
   'hypertension':   '고혈압·혈관 건강정보 아카이브 — 플로로탄닌·감태추출물·해양 폴리페놀 정보센터. 항산화·염증·심혈관 건강정보를 한 곳에서.',
   'cancer':         '암환자 가족 건강정보 아카이브 — 항산화·면역·병원정보 중심. 플로로탄닌·감태추출물·해양 폴리페놀 관련 종합 건강정보 데이터센터.',
   'cancer-family':  '암환자 가족 건강정보 아카이브 — 항산화·면역·병원정보 중심. 플로로탄닌·감태추출물·해양 폴리페놀 관련 종합 건강정보 데이터센터.',
@@ -83,7 +83,7 @@ const CATEGORY_DESC = {
   'inflammation':   '항산화·염증 건강정보 — 플로로탄닌·해양 폴리페놀 아카이브. 감태추출물 기반 염증 건강정보 종합 데이터센터.',
   'gut':            '장 건강 정보 아카이브 — 플로로탄닌·감태추출물·해양 폴리페놀. 항산화·염증·장내 환경 건강정보 종합.',
   'antioxidant':    '항산화·염증 건강정보 — 플로로탄닌·해양 폴리페놀 아카이브. 감태추출물 기반 항산화 건강정보 종합 데이터센터.',
-  'hospital':       '병원정보 아카이브 — 암요양병원·한방병원·전문가 Q&A. 플로로탄닌·감태추출물·해양 폴리페놀 기반 종합 건강정보 데이터센터.',
+  'hospital':       '병원정보 아카이브 — 암요양병원·한방병원·연구기반 Q&A. 플로로탄닌·감태추출물·해양 폴리페놀 기반 종합 건강정보 데이터센터.',
 }
 
 // ─────────────────────────────────────────
@@ -127,8 +127,8 @@ function staticMetaFor(pathname) {
   }
   if (pathname === '/qa') {
     return {
-      title: '전문가 Q&A 아카이브 | 플로로탄닌·감태추출물 건강정보 데이터센터',
-      desc:  '플로로탄닌·감태추출물·해양 폴리페놀 관련 전문가 Q&A 아카이브. 항산화·염증·혈당·수면·면역·뇌 건강·암환자 가족 건강정보·병원정보까지 질환별로 정리한 종합 건강정보 데이터센터의 Q&A 모음입니다.',
+      title: '연구기반 Q&A 아카이브 | 플로로탄닌·감태추출물 건강정보 데이터센터',
+      desc:  '플로로탄닌·감태추출물·해양 폴리페놀 관련 연구기반 Q&A 아카이브. 항산화·염증·혈당·수면·면역·뇌 건강·암환자 가족 건강정보·병원정보까지 질환별로 정리한 종합 건강정보 데이터센터의 Q&A 모음입니다.',
       canonical: `${SITE}/qa`,
     }
   }
@@ -156,8 +156,8 @@ function staticMetaFor(pathname) {
   }
   if (pathname === '/blog?category=hospital-info') {
     return {
-      title: '병원정보 아카이브 | 암요양병원·한방병원·전문가 Q&A 정보',
-      desc:  '암요양병원, 한방병원, 재활병원, 회복기 병원과 전문가 Q&A·진료과 비교·치료 옵션 안내 등 환자와 가족이 병원정보를 찾을 때 반드시 확인해야 할 기준과 실제 사례를 정리한 건강정보 아카이브입니다.',
+      title: '병원정보 아카이브 | 암요양병원·한방병원·연구기반 Q&A 정보',
+      desc:  '암요양병원, 한방병원, 재활병원, 회복기 병원과 연구기반 Q&A·진료과 비교·치료 옵션 안내 등 환자와 가족이 병원정보를 찾을 때 반드시 확인해야 할 기준과 실제 사례를 정리한 건강정보 아카이브입니다.',
       canonical: `${SITE}/blog?category=hospital-info`,
     }
   }
@@ -200,7 +200,7 @@ function staticMetaFor(pathname) {
     const slug = pathname.replace('/category/', '').split('/')[0]
     const name = CATEGORY_NAMES[slug] || slug
     const desc = CATEGORY_DESC[slug] ||
-      `${name} 아카이브 — 플로로탄닌·감태추출물·해양 폴리페놀 기반 건강정보. 항산화·염증·면역·병원정보·전문가 Q&A까지 정리하는 종합 건강정보 데이터센터입니다.`
+      `${name} 아카이브 — 플로로탄닌·감태추출물·해양 폴리페놀 기반 건강정보. 항산화·염증·면역·병원정보·연구기반 Q&A까지 정리하는 종합 건강정보 데이터센터입니다.`
     return {
       title: `${name} | 플로로탄닌 종합 건강정보 데이터센터`,
       desc,
@@ -311,7 +311,7 @@ function esc(s) {
 // React(createRoot)는 마운트 시 root의 자식을 **교체**하므로 사용자 화면에는 영향 없음.
 // 추가로 visually-hidden(sr-only) 스타일과 <noscript> 병행으로 안전망 구성.
 
-const SR_ONLY_STYLE = '<style data-ssr-lite-style>.sr-only-ai-fallback{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}</style>'
+// [2026-05-18] SR_ONLY_STYLE 제거 — fallback이 <noscript> 안으로만 출력되므로 CSS 불필요.
 
 // 11개 정적 경로용 fallback 본문 (700~1,000자 목표, 자연 문장, 의학적 단정 표현 제외)
 const SSR_LITE_BODIES = {
@@ -321,7 +321,7 @@ const SSR_LITE_BODIES = {
       'phlorotannin.com은 플로로탄닌(phlorotannin), 감태추출물(Ecklonia cava extract), 해양 폴리페놀(갈조류 폴리페놀, 해조류 폴리페놀)에 관한 정보를 한 곳에 정리하는 건강정보 데이터센터입니다.',
       '플로로탄닌은 갈조류에서 발견되는 폴리페놀 계열 성분의 총칭으로, 대표 구성 분자로 eckol(에콜), dieckol(다이에콜) 등이 알려져 있습니다. 같은 감태(Ecklonia cava) 유래 해양 폴리페놀 성분군은 일부 자료에서 씨놀(Seanol)이라는 명칭으로도 언급되며, "카프"라는 표현으로 함께 검색되기도 합니다.',
       '이 사이트는 항산화, 염증, 혈당, 당뇨, 수면, 면역, 장 건강, 뇌 건강, 피부 건강 등 여러 주제에 걸친 연구 동향과 일반 건강정보를 정리합니다. 특정 질환의 치료나 예방을 단정하는 표현은 사용하지 않고, 공개된 자료와 사람들이 실제로 검색하는 질문에 답하는 구조로 콘텐츠를 모읍니다.',
-      '메뉴는 크게 플로로탄닌 개요, 쉬운 건강정보(/easy, /learn), 블로그 아카이브(성분 비교, 질환별 건강정보, 병원정보, 파트너 정보페이지 안내), 전문가 Q&A, 파트너 개인 정보페이지(/p/:phone)로 구성됩니다.',
+      '메뉴는 크게 플로로탄닌 개요, 쉬운 건강정보(/easy, /learn), 블로그 아카이브(성분 비교, 질환별 건강정보, 병원정보, 파트너 정보페이지 안내), 연구기반 Q&A, 파트너 개인 정보페이지(/p/:phone)로 구성됩니다.',
       '운영 목표는 사람이 보는 브라우저뿐 아니라 ChatGPT, GPTBot, OAI-SearchBot, PerplexityBot, ClaudeBot, Googlebot, Bingbot 같은 검색·AI 도구도 본문까지 읽을 수 있는 종합 건강정보 데이터센터를 만드는 것입니다.',
     ],
     nav: ['/home', '/easy', '/phlorotannin', '/learn', '/blog', '/qa', '/copyright'],
@@ -364,9 +364,9 @@ const SSR_LITE_BODIES = {
     nav: ['/phlorotannin', '/easy', '/blog', '/qa'],
   },
   '/qa': {
-    h1: '전문가 Q&A 아카이브 — 플로로탄닌·감태추출물 건강정보',
+    h1: '연구기반 Q&A 아카이브 — 플로로탄닌·감태추출물 건강정보',
     paras: [
-      '전문가 Q&A는 플로로탄닌(phlorotannin), 감태추출물, 해양 폴리페놀에 관해 사람들이 실제로 묻는 질문들을 모아 정리한 아카이브입니다.',
+      '연구기반 Q&A는 플로로탄닌(phlorotannin), 감태추출물, 해양 폴리페놀에 관해 사람들이 실제로 묻는 질문들을 모아 정리한 아카이브입니다.',
       '주제는 질환별 건강정보(당뇨·혈당, 암환자 가족 건강정보, 치매·뇌 건강, 수면, 면역, 장 건강, 피부 건강, 염증), 성분 비교(콜라겐·후코이단·베타글루칸 등 다른 건강성분과의 비교), 병원정보(암요양병원·한방병원·재활병원 선택 기준) 등으로 구성됩니다.',
       '검색어로는 플로로탄닌, 플로로타닌, phlorotannin, 감태추출물, Ecklonia cava, 씨놀, Seanol, 카프, 갈조류 폴리페놀, 해조류 폴리페놀, 해양 폴리페놀이 함께 사용됩니다.',
     ],
@@ -376,7 +376,7 @@ const SSR_LITE_BODIES = {
     h1: '건강정보 블로그 — 플로로탄닌·감태추출물·해양 폴리페놀 연구 아카이브',
     paras: [
       '건강정보 블로그는 플로로탄닌(phlorotannin), 감태추출물(Ecklonia cava), 해양 폴리페놀(갈조류 폴리페놀, 해조류 폴리페놀)의 연구 동향과 일반 건강정보를 모아 정리하는 아카이브입니다.',
-      '아카이브는 네 가지 카테고리로 구성됩니다. 1) 성분 비교 — 콜라겐, 후코이단, 베타글루칸, 오메가3 등 다양한 건강성분과 플로로탄닌·감태추출물의 차이. 2) 질환별 건강정보 — 당뇨·혈당, 암환자 가족 건강정보, 치매·뇌 건강, 수면, 면역, 장 건강, 피부 건강, 염증. 3) 병원정보 — 암요양병원, 한방병원, 재활병원, 전문가 Q&A. 4) 파트너 정보페이지 안내.',
+      '아카이브는 네 가지 카테고리로 구성됩니다. 1) 성분 비교 — 콜라겐, 후코이단, 베타글루칸, 오메가3 등 다양한 건강성분과 플로로탄닌·감태추출물의 차이. 2) 질환별 건강정보 — 당뇨·혈당, 암환자 가족 건강정보, 치매·뇌 건강, 수면, 면역, 장 건강, 피부 건강, 염증. 3) 병원정보 — 암요양병원, 한방병원, 재활병원, 연구기반 Q&A. 4) 파트너 정보페이지 안내.',
       '관련 검색어: 플로로탄닌, 플로로타닌, phlorotannin, 감태추출물, Ecklonia cava, 씨놀, Seanol, 카프, eckol, dieckol, 항산화, 염증, 면역.',
     ],
     nav: ['/blog?category=ingredient-comparison', '/blog?category=disease-health-info', '/blog?category=hospital-info', '/blog?category=partner-info'],
@@ -400,10 +400,10 @@ const SSR_LITE_BODIES = {
     nav: ['/blog', '/qa', '/blog?category=hospital-info'],
   },
   '/blog?category=hospital-info': {
-    h1: '병원정보 아카이브 — 암요양병원·한방병원·전문가 Q&A',
+    h1: '병원정보 아카이브 — 암요양병원·한방병원·연구기반 Q&A',
     paras: [
       '병원정보 아카이브는 환자와 가족이 병원을 선택할 때 확인해야 하는 정보를 정리하는 카테고리입니다.',
-      '다루는 분야: 암요양병원, 한방병원, 재활병원, 통합의학 병원, 그리고 각 분야 전문가 Q&A. 병원 선택 시 점검할 항목, 치료 외 환자·가족 건강정보(영양, 항산화, 염증, 면역, 수면, 장 건강, 뇌 건강 등)도 함께 정리합니다.',
+      '다루는 분야: 암요양병원, 한방병원, 재활병원, 통합의학 병원, 그리고 각 분야 연구기반 Q&A. 병원 선택 시 점검할 항목, 치료 외 환자·가족 건강정보(영양, 항산화, 염증, 면역, 수면, 장 건강, 뇌 건강 등)도 함께 정리합니다.',
       '관련 키워드: 플로로탄닌, phlorotannin, 감태추출물, Ecklonia cava, 해양 폴리페놀, 갈조류 폴리페놀, 해조류 폴리페놀, 씨놀, Seanol, 카프, eckol, dieckol.',
     ],
     nav: ['/blog', '/qa', '/blog?category=disease-health-info'],
@@ -760,7 +760,7 @@ function buildFallbackHtml(pathname, dynamic) {
       `<p>${esc('관련 주제: 플로로탄닌, 감태추출물, 해양 폴리페놀, 갈조류 폴리페놀, Ecklonia cava, eckol, dieckol, 항산화, 염증, 면역.')}</p>`,
       // 항목 F: Related Posts 섹션 (있을 때만)
       relatedHtml || '',
-      `<nav><a href="/blog">블로그 아카이브로</a> · <a href="/qa">전문가 Q&amp;A</a> · <a href="/phlorotannin">플로로탄닌이란</a></nav>`,
+      `<nav><a href="/blog">블로그 아카이브로</a> · <a href="/qa">연구기반 Q&amp;A</a> · <a href="/phlorotannin">플로로탄닌이란</a></nav>`,
     ].filter(Boolean).join('')
     return wrapFallback(inner)
   }
@@ -778,7 +778,7 @@ function buildFallbackHtml(pathname, dynamic) {
       phoneDisplay ? `<p>${esc('연락처 안내: ' + phoneDisplay + ' (정확한 번호는 페이지 내 RevealContact를 통해 확인하실 수 있습니다.)')}</p>` : '',
       siteUrl ? `<p>${esc('외부 안내 페이지: ' + siteUrl)}</p>` : '',
       `<p>${esc('관련 키워드: 플로로탄닌, phlorotannin, 감태추출물, Ecklonia cava, 해양 폴리페놀, 갈조류 폴리페놀, 씨놀, Seanol, 카프, eckol, dieckol, 항산화, 염증, 면역, 수면, 장 건강, 뇌 건강.')}</p>`,
-      `<nav><a href="/">홈</a> · <a href="/blog">건강정보 블로그</a> · <a href="/qa">전문가 Q&amp;A</a></nav>`,
+      `<nav><a href="/">홈</a> · <a href="/blog">건강정보 블로그</a> · <a href="/qa">연구기반 Q&amp;A</a></nav>`,
       // ── 플랫폼 마커 + 저작권 (파트너 페이지 봇 노출 HTML에도 동일 표시) ──
       `<footer data-platform="phlorotannin-partner-page" data-owner="phlorotannin.com" data-signature="phlorotannin-platform-v1" data-page-type="partner-business-card">© 2026 <a href="https://phlorotannin.com/">phlorotannin.com</a> — 플로로탄닌·감태추출물 종합 건강정보 데이터센터. 본 파트너 정보페이지의 구조·연락처 노출 방식·SEO 설계는 저작권법의 보호를 받으며, <a href="https://phlorotannin.com/copyright">무단 복제·재가공·상업적 이용을 금지</a>합니다.</footer>`,
     ].filter(Boolean).join('')
@@ -806,24 +806,22 @@ function buildFallbackHtml(pathname, dynamic) {
 }
 
 function wrapFallback(inner) {
-  // 화면에는 sr-only로 숨김 (React가 createRoot 마운트 시 어차피 교체).
-  // <noscript>에도 동일 내용 병행 — JS 비활성/크롤러용 안전망.
-  return (
-    `<main data-ssr-lite="true" class="sr-only-ai-fallback" aria-hidden="true">${inner}</main>` +
-    `<noscript><main data-ssr-lite-noscript="true">${inner}</main></noscript>`
-  )
+  // [2026-05-18 수정] HTML 소스 중복 노출 제거 (검색엔진/AI 평가 시 본문 2회 반복 인식 방지).
+  //   • 기존: 시각용 sr-only fallback + <noscript> fallback → HTML 소스에 같은 <h1>/<p> 2회 노출
+  //   • 개선: <noscript> 안에만 fallback 유지 (JS 비활성/일부 크롤러는 정상 인덱싱).
+  //     일반 JS 활성 브라우저·Googlebot은 React 마운트 후의 실제 페이지를 읽으므로 영향 없음.
+  //   • 봇이 보는 정적 HTML은 페이지별 <title>/<meta>/<link rel="canonical"> 가 이미 injectMeta()로
+  //     채워지므로 SEO 핵심 신호는 그대로 유지된다.
+  return `<noscript><main data-ssr-lite-noscript="true">${inner}</main></noscript>`
 }
 
 function injectFallback(html, fallbackHtml) {
   if (!fallbackHtml) return html
-  // 1) <head>에 sr-only 스타일 1회 주입 (중복 방지)
-  if (!html.includes('data-ssr-lite-style')) {
-    html = html.replace(/<\/head>/i, `${SR_ONLY_STYLE}</head>`)
-  }
-  // 2) <div id="root" ...></div> → <div id="root" ...>${fallbackHtml}</div>
-  //    • [^>]* 는 줄바꿈도 포함 (JS 정규식에서 . 이외의 부정 클래스는 \n 포함)
-  //    • data-* 속성이 여러 줄에 걸쳐 있어도 매칭됨
-  //    • 빈 root만 매칭 (이미 내용 있으면 건드리지 않음)
+  // [2026-05-18] fallback이 <noscript> 안으로만 들어가므로 sr-only 스타일 주입 불필요 (제거).
+  // <div id="root" ...></div> → <div id="root" ...>${fallbackHtml}</div>
+  //   • [^>]* 는 줄바꿈도 포함 (JS 정규식에서 . 이외의 부정 클래스는 \n 포함)
+  //   • data-* 속성이 여러 줄에 걸쳐 있어도 매칭됨
+  //   • 빈 root만 매칭 (이미 내용 있으면 건드리지 않음)
   html = html.replace(
     /<div\s+id="root"([^>]*)><\/div>/,
     `<div id="root"$1>${fallbackHtml}</div>`

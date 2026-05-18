@@ -1,0 +1,67 @@
+{
+  "total": 10,
+  "success": 10,
+  "fail": 0,
+  "results": [
+    {
+      "slug": "phlorotannin-alzheimer-bace1-acetylcholinesterase-mechanism-research",
+      "ok": true,
+      "id_or_code": 182,
+      "category": "분자기전 작용경로"
+    },
+    {
+      "slug": "phlorotannin-sars-cov-2-3clpro-spike-protein-antiviral-research",
+      "ok": true,
+      "id_or_code": 183,
+      "category": "신약개발 임상"
+    },
+    {
+      "slug": "phlorotannin-melanoma-tyrosinase-mitf-apoptosis-mechanism-research",
+      "ok": true,
+      "id_or_code": 184,
+      "category": "분자기전 작용경로"
+    },
+    {
+      "slug": "phlorotannin-ace-angiotensin-blood-pressure-natural-inhibitor-research",
+      "ok": true,
+      "id_or_code": 185,
+      "category": "신약개발 임상"
+    },
+    {
+      "slug": "phlorotannin-nrf2-keap1-ho1-antioxidant-pathway-research",
+      "ok": true,
+      "id_or_code": 186,
+      "category": "분자기전 작용경로"
+    },
+    {
+      "slug": "phlorotannin-nf-kb-tnf-alpha-inos-anti-inflammatory-pathway-research",
+      "ok": true,
+      "id_or_code": 187,
+      "category": "분자기전 작용경로"
+    },
+    {
+      "slug": "phlorotannin-uvb-mmp-photoaging-collagen-skin-research",
+      "ok": true,
+      "id_or_code": 188,
+      "category": "분자기전 작용경로"
+    },
+    {
+      "slug": "phlorotannin-gut-microbiome-tlr4-myd88-colitis-research",
+      "ok": true,
+      "id_or_code": 189,
+      "category": "분자기전 작용경로"
+    },
+    {
+      "slug": "phlorotannin-cholesterol-srebp-hmg-coa-lipid-metabolism-research",
+      "ok": true,
+      "id_or_code": 190,
+      "category": "분자기전 작용경로"
+    },
+    {
+      "slug": "phlorotannin-drug-development-pipeline-2024-2026-global-clinical-status",
+      "ok": true,
+      "id_or_code": 191,
+      "category": "신약개발 임상"
+    }
+  ]
+}
