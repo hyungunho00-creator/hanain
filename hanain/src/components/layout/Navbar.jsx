@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import { Waves, CreditCard, FolderLock, Eye, EyeOff } from 'lucide-react'
+import { Waves, CreditCard, FolderLock, Eye, EyeOff, ExternalLink } from 'lucide-react'
 import { usePartner } from '../../context/PartnerContext'
 
 const NAV_LINKS = [
@@ -10,6 +10,26 @@ const NAV_LINKS = [
   { path: '/blog',        label: '연구 블로그',            num: '④' },
   { path: '/partner',     label: '파트너 참여',            num: '⑤' },
   { path: '/consult',     label: '문의하기',               num: '⑥' },
+]
+
+/* 외부 커뮤니티 링크 (네이버 카페/밴드) */
+const EXTERNAL_LINKS = [
+  {
+    href:  'https://naver.me/x4lFCvwV',
+    label: '네이버 카페',
+    shortLabel: '카페 바로가기',
+    emoji: '💬',
+    desk:  'bg-green-600 hover:bg-green-500 text-white',
+    mob:   'bg-green-600 hover:bg-green-500 text-white',
+  },
+  {
+    href:  'https://band.us/n/a6aebc75vch6U',
+    label: '네이버 밴드',
+    shortLabel: '밴드 가입하기',
+    emoji: '📣',
+    desk:  'bg-sky-600 hover:bg-sky-500 text-white',
+    mob:   'bg-sky-600 hover:bg-sky-500 text-white',
+  },
 ]
 
 const GOLD  = '#B8953A'
@@ -259,6 +279,22 @@ export default function Navbar() {
                 </Link>
               ))}
 
+              {/* 데스크탑 외부 커뮤니티 링크 */}
+              {EXTERNAL_LINKS.map(ext => (
+                <a
+                  key={ext.href}
+                  href={ext.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`ml-1 flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-bold transition-all active:scale-95 whitespace-nowrap shadow-md ${ext.desk}`}
+                  title={ext.label}
+                >
+                  <span className="text-sm leading-none">{ext.emoji}</span>
+                  <span>{ext.shortLabel}</span>
+                  <ExternalLink className="w-3 h-3 flex-shrink-0 opacity-80" />
+                </a>
+              ))}
+
               {/* 데스크탑 파트너 버튼들 */}
               {isPartner && (
                 <>
@@ -387,7 +423,7 @@ export default function Navbar() {
               </p>
             </div>
 
-            <div className="px-4 pb-4 space-y-1">
+            <div className="px-4 pb-2 space-y-1">
               {NAV_LINKS.map(link => (
                 <Link
                   key={link.path}
@@ -405,6 +441,34 @@ export default function Navbar() {
                 </Link>
               ))}
             </div>
+
+            {/* 모바일 외부 커뮤니티 링크 */}
+            <div className="px-4 pb-2">
+              <p className="text-xs text-cyan-hana font-bold tracking-wide pb-2">
+                🌐 커뮤니티 바로가기
+              </p>
+              <div className="flex flex-col gap-2">
+                {EXTERNAL_LINKS.map(ext => (
+                  <a
+                    key={ext.href}
+                    href={ext.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setIsOpen(false)}
+                    className={`w-full flex items-center gap-3 px-4 py-4 rounded-xl font-bold active:scale-95 transition-transform shadow-md ${ext.mob}`}
+                  >
+                    <span className="text-xl leading-none">{ext.emoji}</span>
+                    <div className="flex-1 text-left">
+                      <p className="text-base font-extrabold m-0">{ext.label} {ext.shortLabel === '카페 바로가기' ? '바로가기' : '가입하기'}</p>
+                      <p className="text-xs opacity-80 m-0">{ext.href.replace(/^https?:\/\//, '')}</p>
+                    </div>
+                    <ExternalLink className="w-4 h-4 flex-shrink-0 opacity-90" />
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            <div className="px-4 pb-4"></div>
           </div>
         )}
       </nav>
