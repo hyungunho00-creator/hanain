@@ -59,35 +59,69 @@ export default function Footer() {
               건강 정보를 나누고, 올바른 지식으로<br />
               파트너를 연결하는 정보 커뮤니티입니다.
             </p>
-            {/* 네이버 카페 + 밴드 링크 (커뮤니티 외부 채널) */}
+            {/* 공식 채널 링크 (커뮤니티 + 영상) — SEO sameAs 신호 */}
             <div className="flex flex-wrap gap-2">
               <a
                 href="https://naver.me/x4lFCvwV"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferrer me"
                 aria-label="플로로탄닌 네이버 카페로 이동"
-                className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-green-600 hover:bg-green-500 text-white rounded-lg text-sm font-semibold transition-colors"
+                className="inline-flex items-center gap-1.5 px-3 py-2 bg-green-600 hover:bg-green-500 text-white rounded-lg text-sm font-semibold transition-colors"
               >
                 <span className="text-base">💬</span>
                 네이버 카페
-                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
               </a>
               <a
                 href="https://band.us/n/a6aebc75vch6U"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferrer me"
                 aria-label="플로로탄닌 네이버 밴드로 이동"
-                className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-sky-600 hover:bg-sky-500 text-white rounded-lg text-sm font-semibold transition-colors"
+                className="inline-flex items-center gap-1.5 px-3 py-2 bg-sky-600 hover:bg-sky-500 text-white rounded-lg text-sm font-semibold transition-colors"
               >
                 <span className="text-base">📣</span>
                 밴드
-                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
+              </a>
+              <a
+                href="https://youtube.com/@phlorotannin"
+                target="_blank"
+                rel="noopener noreferrer me"
+                aria-label="플로로탄닌 공식 유튜브 채널로 이동"
+                className="inline-flex items-center gap-1.5 px-3 py-2 bg-red-600 hover:bg-red-500 text-white rounded-lg text-sm font-semibold transition-colors"
+              >
+                <span className="text-base">▶️</span>
+                유튜브
+              </a>
+              <a
+                href="https://naver.me/5sunayUx"
+                target="_blank"
+                rel="noopener noreferrer me"
+                aria-label="플로로탄닌 네이버 클립으로 이동"
+                className="inline-flex items-center gap-1.5 px-3 py-2 bg-emerald-500 hover:bg-emerald-400 text-white rounded-lg text-sm font-semibold transition-colors"
+              >
+                <span className="text-base">🎬</span>
+                네이버 클립
               </a>
             </div>
+
+            {/* SEO: 검색엔진에 공식 채널 신호 전달 (Organization sameAs) */}
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify({
+                  '@context': 'https://schema.org',
+                  '@type': 'Organization',
+                  name: '플로로탄닌 파트너스',
+                  alternateName: 'Phlorotannin Partners',
+                  url: 'https://phlorotannin.com',
+                  sameAs: [
+                    'https://naver.me/x4lFCvwV',
+                    'https://band.us/n/a6aebc75vch6U',
+                    'https://youtube.com/@phlorotannin',
+                    'https://naver.me/5sunayUx',
+                  ],
+                }),
+              }}
+            />
           </div>
 
           {/* Quick Links */}
