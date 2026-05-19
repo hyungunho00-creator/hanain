@@ -1,0 +1,32 @@
+[
+  {
+    "slug": "rectal-cancer-phlorotannin-dieckol-radiation-chemo-support",
+    "status": "OK",
+    "id": 222
+  },
+  {
+    "slug": "testicular-cancer-phlorotannin-cisplatin-fertility-support",
+    "status": "OK",
+    "id": 223
+  },
+  {
+    "slug": "brain-tumor-glioma-phlorotannin-bbb-neuroprotection-ecklonia",
+    "status": "OK",
+    "id": 224
+  },
+  {
+    "slug": "head-neck-cancer-phlorotannin-mucositis-saliva-ecklonia",
+    "status": "OK",
+    "id": 225
+  },
+  {
+    "slug": "thyroid-cancer-phlorotannin-rai-tsh-suppression-ecklonia",
+    "status": "OK",
+    "id": 226
+  },
+  {
+    "slug": "prostate-cancer-phlorotannin-androgen-deprivation-ecklonia",
+    "status": "OK",
+    "id": 227
+  }
+]
