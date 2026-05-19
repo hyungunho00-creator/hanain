@@ -257,9 +257,9 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen bg-white font-sans">
       <SEOHead
-        title="플로로탄닌·감태추출물 종합 건강정보 데이터센터 | 해양 폴리페놀 정보 허브"
-        description="플로로탄닌닷컴은 감태추출물·해양 폴리페놀·플로로탄닌을 중심으로 항산화, 염증, 수면, 혈당, 면역, 장 건강, 뇌 건강, 암환자 가족 건강정보와 병원정보까지 정리하는 종합 건강정보 데이터센터입니다."
-        keywords="플로로탄닌, 감태추출물, 해양 폴리페놀, 항산화 건강정보, 염증 건강정보, 수면 건강정보, 혈당 건강정보, 면역 건강정보, 장 건강, 뇌 건강, 암환자 가족 건강정보, 당뇨 건강정보, 병원정보 아카이브"
+        title="플로로탄닌 효능 효과 | 감태추출물·씨놀·해양폴리페놀 정보"
+        description="플로로탄닌 효능효과, 감태추출물, 씨놀, 카프, 해양폴리페놀 관련 연구와 건강정보를 쉽게 정리한 정보 허브입니다."
+        keywords="플로로탄닌 효능, 플로로탄닌 효과, 감태추출물, 씨놀, 카프, 해양폴리페놀"
         canonical="https://phlorotannin.com/"
         jsonLd={landingJsonLd}
       />
@@ -575,7 +575,8 @@ export default function LandingPage() {
             ))}
           </div>
           <p className="text-xs text-gray-500 text-center mb-3 leading-relaxed">
-            본 사이트는 플로로탄닌 관련 건강 정보를 제공하는 정보형 플랫폼입니다.
+            본 사이트는 플로로탄닌 효능효과·감태추출물·씨놀·카프·해양폴리페놀 정보를 중심으로 정리하며,
+            혈당 건강정보와 암환자 가족 건강정보는 별도 콘텐츠에서 다룹니다.
             특정 제품의 질병 치료·예방 효능·효과를 주장하거나 보장하지 않습니다.
           </p>
           <p className="text-center text-xs text-gray-600 font-medium">
