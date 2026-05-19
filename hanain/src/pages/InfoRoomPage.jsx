@@ -436,6 +436,86 @@ export default function InfoRoomPage() {
         </div>
       </div>
 
+      {/* ═══ 🎬 본사 유튜브 강의 채널 바로가기 (최상단 강조) ═══ */}
+      <div style={{ background: 'linear-gradient(135deg, #7f1d1d 0%, #b91c1c 50%, #dc2626 100%)', borderBottom: '3px solid #fca5a5', padding: '18px 16px' }}>
+        <div style={{ maxWidth: 800, margin: '0 auto' }}>
+          <a
+            href="https://youtube.com/@thehanain_official?si=YATWl_mviAUvcrpp"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="본사 유튜브 강의 채널로 이동 (새 창)"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 14,
+              background: 'rgba(255,255,255,0.12)',
+              backdropFilter: 'blur(6px)',
+              border: '1.5px solid rgba(255,255,255,0.35)',
+              borderRadius: 14,
+              padding: '14px 18px',
+              textDecoration: 'none',
+              boxShadow: '0 4px 18px rgba(0,0,0,0.25)',
+              transition: 'transform 0.15s, background 0.15s',
+            }}
+            onMouseDown={(e) => e.currentTarget.style.transform = 'scale(0.98)'}
+            onMouseUp={(e) => e.currentTarget.style.transform = 'scale(1)'}
+            onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+          >
+            {/* YouTube 로고 박스 */}
+            <div style={{
+              flexShrink: 0,
+              width: 52, height: 52,
+              borderRadius: 12,
+              background: '#fff',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              boxShadow: '0 2px 8px rgba(0,0,0,0.3)',
+            }}>
+              <span style={{ fontSize: 28, lineHeight: 1 }}>▶️</span>
+            </div>
+
+            {/* 텍스트 */}
+            <div style={{ flex: 1, minWidth: 0 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 3 }}>
+                <span style={{
+                  fontSize: 10,
+                  fontWeight: 900,
+                  letterSpacing: '1.5px',
+                  color: '#fff',
+                  background: 'rgba(0,0,0,0.35)',
+                  padding: '2px 8px',
+                  borderRadius: 4,
+                }}>
+                  OFFICIAL YOUTUBE
+                </span>
+                <span style={{ fontSize: 11, color: '#fee2e2', fontWeight: 700 }}>
+                  본사 공식
+                </span>
+              </div>
+              <div style={{ fontSize: 16, fontWeight: 900, color: '#fff', lineHeight: 1.3, marginBottom: 2 }}>
+                🎓 본사 유튜브 강의 채널 바로가기
+              </div>
+              <div style={{ fontSize: 12, color: '#fee2e2', lineHeight: 1.5 }}>
+                전단지 다운받기 전, <strong style={{ color: '#fff' }}>본사 영상 강의</strong>로 먼저 학습하세요
+              </div>
+            </div>
+
+            {/* 화살표 */}
+            <div style={{
+              flexShrink: 0,
+              width: 36, height: 36,
+              borderRadius: '50%',
+              background: 'rgba(255,255,255,0.2)',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              border: '1.5px solid rgba(255,255,255,0.5)',
+            }}>
+              <svg width="16" height="16" fill="none" stroke="#fff" strokeWidth="3" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </div>
+          </a>
+        </div>
+      </div>
+
       {/* 안내 배너 */}
       <div style={{ background: '#fff7e6', borderBottom: '2px solid #f0d080', padding: '12px 24px', textAlign: 'center' }}>
         <p style={{ fontSize: 14, color: '#7a5c00', fontWeight: 700, margin: 0 }}>
