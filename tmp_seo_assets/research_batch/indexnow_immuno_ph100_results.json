@@ -1,0 +1,18 @@
+[
+  {
+    "endpoint": "https://api.indexnow.org/indexnow",
+    "status": 403
+  },
+  {
+    "endpoint": "https://www.bing.com/indexnow",
+    "status": 403
+  },
+  {
+    "endpoint": "https://yandex.com/indexnow",
+    "status": 202
+  },
+  {
+    "endpoint": "https://searchadvisor.naver.com/indexnow",
+    "status": 403
+  }
+]

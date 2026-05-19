@@ -245,28 +245,38 @@ export default function BlogPage() {
       />
 
       <div className="min-h-screen bg-gray-50">
-        {/* 헤더 */}
-        <div className="bg-gradient-to-br from-ocean-deep via-blue-900 to-teal-800 text-white py-14">
-          <div className="max-w-5xl mx-auto px-4 text-center">
-            <div className="flex items-center justify-center gap-2 mb-3">
-              <BookOpen className="w-6 h-6 text-cyan-300" />
-              <span className="text-cyan-300 text-sm font-semibold tracking-widest uppercase">Research Blog</span>
+        {/* 헤더 — 밝고 신선한 시안/스카이 그라데이션 + 안정감 있는 화이트 글래스 라벨 */}
+        <div className="relative bg-gradient-to-br from-sky-50 via-cyan-50 to-teal-50 border-b border-teal-100 pt-20 pb-14 md:pt-24 md:pb-16 overflow-hidden">
+          {/* 부드러운 배경 장식 */}
+          <div className="pointer-events-none absolute inset-0">
+            <div className="absolute -top-24 -left-16 w-72 h-72 bg-cyan-200/40 rounded-full blur-3xl" />
+            <div className="absolute -bottom-24 -right-10 w-80 h-80 bg-teal-200/40 rounded-full blur-3xl" />
+            <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[28rem] h-[28rem] bg-sky-100/50 rounded-full blur-3xl" />
+          </div>
+
+          <div className="relative max-w-5xl mx-auto px-4 text-center">
+            {/* 화이트 글래스모피즘 배지 — 잘림 없이 안전한 패딩 */}
+            <div className="inline-flex items-center gap-2 mb-5 px-4 py-1.5 bg-white/80 backdrop-blur-sm border border-teal-200 rounded-full shadow-sm">
+              <BookOpen className="w-4 h-4 text-teal-600" />
+              <span className="text-teal-700 text-xs font-bold tracking-[0.18em] uppercase">Research Blog</span>
             </div>
-            <h1 className="text-3xl md:text-4xl font-extrabold mb-3">
-              플로로탄닌 연구 블로그
+
+            <h1 className="text-3xl md:text-5xl font-extrabold mb-3 text-slate-800 tracking-tight">
+              플로로탄닌 <span className="bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">연구 블로그</span>
             </h1>
-            <p className="text-blue-200 text-base max-w-xl mx-auto mb-6">
+            <p className="text-slate-500 text-base md:text-lg max-w-xl mx-auto mb-7">
               PH-100 · 에콜 · 디에콜 최신 임상·연구 정보를 전달합니다
             </p>
+
             <form onSubmit={handleSearch} className="max-w-lg mx-auto flex gap-2">
               <input
                 value={searchInput}
                 onChange={e => setSearchInput(e.target.value)}
                 placeholder="키워드 검색 (예: PH-100, 당뇨, eckol)"
-                className="flex-1 px-4 py-3 rounded-xl text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                className="flex-1 px-4 py-3 rounded-xl bg-white border border-teal-200 text-slate-800 text-sm placeholder:text-slate-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent"
               />
               <button type="submit"
-                className="bg-cyan-500 hover:bg-cyan-400 text-white px-5 py-3 rounded-xl font-bold text-sm transition-colors flex items-center gap-1.5">
+                className="bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-500 hover:to-cyan-500 text-white px-5 py-3 rounded-xl font-bold text-sm transition-all shadow-sm hover:shadow-md flex items-center gap-1.5">
                 <Search className="w-4 h-4" /> 검색
               </button>
             </form>
