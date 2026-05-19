@@ -370,71 +370,69 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* 모바일 드롭다운 */}
+        {/* 모바일 드롭다운 — 화면 높이 내 스크롤 가능 + 컴팩트 레이아웃 */}
         {isOpen && (
-          <div className="md:hidden bg-ocean-deep border-t border-white/10">
+          <div
+            className="md:hidden bg-ocean-deep border-t border-white/10 overflow-y-auto overscroll-contain"
+            style={{ maxHeight: 'calc(100vh - 64px)' }}
+          >
 
-            {/* 파트너 전용 버튼들 */}
+            {/* 파트너 전용 버튼들 — 컴팩트 버전 */}
             {isPartner && (
-              <div className="px-4 pt-4 flex flex-col gap-2">
+              <div className="px-4 pt-3 flex flex-col gap-1.5">
                 {/* 전자명함 */}
                 <button
                   onClick={() => { navigate(cardPath); setIsOpen(false) }}
-                  className="w-full flex items-center gap-3 px-4 py-4 rounded-xl font-bold active:scale-95 transition-transform"
+                  className="w-full flex items-center gap-2 px-3 py-2.5 rounded-lg font-bold active:scale-95 transition-transform"
                   style={{
                     background: `linear-gradient(135deg, ${GOLD}, ${GOLD2})`,
                     color: NAVY,
-                    boxShadow: `0 4px 16px ${GOLD}50`,
+                    boxShadow: `0 2px 8px ${GOLD}40`,
                   }}
                 >
-                  <CreditCard className="w-5 h-5 flex-shrink-0" style={{ color: NAVY }} />
-                  <span style={{ fontSize: '16px', fontWeight: '900', color: NAVY }}>
-                    {partner.name} 전자명함 보러가기
+                  <CreditCard className="w-4 h-4 flex-shrink-0" style={{ color: NAVY }} />
+                  <span style={{ fontSize: '14px', fontWeight: '900', color: NAVY }}>
+                    {partner.name} 전자명함
                   </span>
                 </button>
 
                 {/* 파트너 자료실 */}
                 <button
                   onClick={handleInfoRoom}
-                  className="w-full flex items-center gap-3 px-4 py-4 rounded-xl font-bold active:scale-95 transition-transform"
+                  className="w-full flex items-center gap-2 px-3 py-2.5 rounded-lg font-bold active:scale-95 transition-transform"
                   style={{
                     background: `linear-gradient(135deg, ${TEAL}, ${TEAL2})`,
                     color: '#fff',
-                    boxShadow: '0 4px 16px rgba(10,126,140,0.4)',
+                    boxShadow: '0 2px 8px rgba(10,126,140,0.35)',
                   }}
                 >
-                  <FolderLock className="w-5 h-5 flex-shrink-0" />
-                  <div className="text-left">
-                    <p style={{ fontSize: '16px', fontWeight: '900', color: '#fff', margin: 0 }}>
-                      📂 파트너 전용 자료실
-                    </p>
-                    <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.7)', margin: 0 }}>
-                      전단지 PDF·이미지 다운로드
-                    </p>
-                  </div>
+                  <FolderLock className="w-4 h-4 flex-shrink-0" />
+                  <span style={{ fontSize: '14px', fontWeight: '900', color: '#fff' }}>
+                    📂 파트너 전용 자료실
+                  </span>
                 </button>
               </div>
             )}
 
             {/* 학습 안내 */}
-            <div className="px-4 pt-4 pb-2">
+            <div className="px-4 pt-3 pb-1">
               <p className="text-xs text-cyan-hana font-bold tracking-wide">
                 📌 아래 순서대로 학습하시면 도움이 됩니다
               </p>
             </div>
 
-            <div className="px-4 pb-2 space-y-1">
+            <div className="px-4 pb-2 space-y-0.5">
               {NAV_LINKS.map(link => (
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`flex items-center gap-3 px-4 py-3.5 rounded-xl text-base font-medium transition-colors ${
+                  className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
                     location.pathname === link.path
                       ? 'bg-cyan-hana text-white'
                       : 'text-gray-300 hover:text-white hover:bg-white/10'
                   }`}
                 >
-                  <span className="text-cyan-hana font-extrabold text-lg w-7 flex-shrink-0">
+                  <span className="text-cyan-hana font-extrabold text-base w-6 flex-shrink-0">
                     {link.num}
                   </span>
                   <span className="font-bold">{link.label}</span>
@@ -442,12 +440,12 @@ export default function Navbar() {
               ))}
             </div>
 
-            {/* 모바일 외부 커뮤니티 링크 */}
-            <div className="px-4 pb-2">
-              <p className="text-xs text-cyan-hana font-bold tracking-wide pb-2">
+            {/* 모바일 외부 커뮤니티 링크 — 컴팩트 그리드 */}
+            <div className="px-4 pb-1">
+              <p className="text-xs text-cyan-hana font-bold tracking-wide pb-1.5">
                 🌐 커뮤니티 바로가기
               </p>
-              <div className="flex flex-col gap-2">
+              <div className="grid grid-cols-2 gap-1.5">
                 {EXTERNAL_LINKS.map(ext => (
                   <a
                     key={ext.href}
@@ -455,20 +453,17 @@ export default function Navbar() {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => setIsOpen(false)}
-                    className={`w-full flex items-center gap-3 px-4 py-4 rounded-xl font-bold active:scale-95 transition-transform shadow-md ${ext.mob}`}
+                    className={`flex items-center gap-2 px-2.5 py-2 rounded-lg font-bold active:scale-95 transition-transform shadow-sm ${ext.mob}`}
                   >
-                    <span className="text-xl leading-none">{ext.emoji}</span>
-                    <div className="flex-1 text-left">
-                      <p className="text-base font-extrabold m-0">{ext.label} {ext.shortLabel === '카페 바로가기' ? '바로가기' : '가입하기'}</p>
-                      <p className="text-xs opacity-80 m-0">{ext.href.replace(/^https?:\/\//, '')}</p>
-                    </div>
-                    <ExternalLink className="w-4 h-4 flex-shrink-0 opacity-90" />
+                    <span className="text-base leading-none flex-shrink-0">{ext.emoji}</span>
+                    <span className="text-xs font-extrabold truncate flex-1 text-left">{ext.shortLabel}</span>
+                    <ExternalLink className="w-3 h-3 flex-shrink-0 opacity-90" />
                   </a>
                 ))}
               </div>
             </div>
 
-            <div className="px-4 pb-4"></div>
+            <div className="px-4 pb-3"></div>
           </div>
         )}
       </nav>
