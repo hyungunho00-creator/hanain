@@ -1,0 +1,38 @@
+{
+  "urls": [
+    "https://phlorotannin.com/blog/chemo-fever-when-emergency-room-2026",
+    "https://phlorotannin.com/blog/immunotherapy-side-effects-warning-signs-2026",
+    "https://phlorotannin.com/blog/tamoxifen-blood-clot-warning-signs-2026",
+    "https://phlorotannin.com/blog/cancer-pain-when-call-doctor-2026",
+    "https://phlorotannin.com/blog/cancer-patient-supplements-safe-list-2026",
+    "https://phlorotannin.com/blog/cancer-patient-foods-to-avoid-2026",
+    "https://phlorotannin.com/blog/breast-cancer-tamoxifen-drug-interactions-2026",
+    "https://phlorotannin.com/blog/cancer-checkup-tests-after-chemo-2026",
+    "https://phlorotannin.com/blog/chemo-vs-immunotherapy-side-effects-compare-2026",
+    "https://phlorotannin.com/blog/oral-vs-iv-chemo-differences-2026",
+    "https://phlorotannin.com/blog/2026-cancer-new-drugs-approved-korea-side-effects",
+    "https://phlorotannin.com/blog/kras-g12c-tagrisso-osimertinib-side-effects-2026",
+    "https://phlorotannin.com/blog",
+    "https://phlorotannin.com/blog?category=cancer-treatment-care",
+    "https://phlorotannin.com/blog?category=%ED%95%AD%EC%95%94%20%EC%B9%98%EB%A3%8C%20%EC%BC%80%EC%96%B4",
+    "https://phlorotannin.com/sitemap.xml"
+  ],
+  "results": {
+    "https://api.indexnow.org/IndexNow": {
+      "status": 200,
+      "body": ""
+    },
+    "https://www.bing.com/IndexNow": {
+      "status": 200,
+      "body": ""
+    },
+    "https://yandex.com/indexnow": {
+      "status": 200,
+      "body": "{\n  \"success\":true\n}"
+    },
+    "https://searchadvisor.naver.com/indexnow": {
+      "status": 200,
+      "body": ""
+    }
+  }
+}
