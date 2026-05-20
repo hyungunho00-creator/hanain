@@ -189,12 +189,18 @@ export default function BlogPage() {
   const [searchInput, setSearchInput] = useState(searchQ)
   const [cats, setCats] = useState(CATEGORIES)
 
-  // Phase 3: Supabase categories 테이블에서 블로그 카테고리 페치 (실패 시 fallback)
+  // Phase 3+: Supabase categories 테이블 + FALLBACK_CATEGORIES 머지
+  // - DB가 source of truth (sort_order 유지)
+  // - FALLBACK에만 있는 카테고리(신규 추가 직후·DB INSERT 권한 없을 때)는 뒤에 append
+  //   → 코드 신규 카테고리도 즉시 노출되어 사용자가 두 번 수정할 필요 없음 (헌법 제1조)
   useEffect(() => {
     getBlogCategories().then(list => {
       if (list && list.length) {
-        CATEGORIES = list  // 모듈 캐시 갱신 (PostCard, CategoryVideoSection 즉시 반영)
-        setCats(list)
+        const dbIds = new Set(list.map(c => c.id))
+        const extras = FALLBACK_CATEGORIES.filter(c => !dbIds.has(c.id) && c.id !== 'all')
+        const merged = extras.length ? [...list, ...extras] : list
+        CATEGORIES = merged  // 모듈 캐시 갱신 (PostCard, CategoryVideoSection 즉시 반영)
+        setCats(merged)
       }
     })
   }, [])

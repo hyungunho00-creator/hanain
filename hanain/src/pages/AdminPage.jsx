@@ -995,14 +995,16 @@ function UserQuestionsTab() {
 
 // ── 블로그 관리 탭 ─────────────────────────
 const BLOG_CATS = [
-  { id: 'general',       name: '일반' },
-  { id: 'diabetes',      name: '당뇨·혈당' },
-  { id: 'cancer',        name: '항암·면역' },
-  { id: 'brain',         name: '뇌·인지' },
-  { id: 'cardiovascular',name: '심혈관' },
-  { id: 'inflammation',  name: '염증·면역' },
-  { id: 'skin',          name: '피부·모발' },
-  { id: 'research',      name: '연구·임상' },
+  { id: 'general',            name: '일반' },
+  { id: 'diabetes',           name: '당뇨·혈당' },
+  { id: 'cancer',             name: '항암·면역' },
+  { id: 'brain',              name: '뇌·인지' },
+  { id: 'cardiovascular',     name: '심혈관' },
+  { id: 'inflammation',       name: '염증·면역' },
+  { id: 'skin',               name: '피부·모발' },
+  { id: 'research',           name: '연구·임상' },
+  { id: 'buying-guide',       name: '구매 가이드' },        // 🆕
+  { id: 'safety-precautions', name: '부작용·주의사항' },    // 🆕
 ]
 
 const EMPTY_POST = {
@@ -1328,6 +1330,8 @@ function YouTubeManageTab() {
     { id: 'skin',                  name: '📝 블로그 · 피부·모발',         group: 'blog' },
     { id: 'research',              name: '📝 블로그 · 연구·임상',         group: 'blog' },
     { id: 'general',               name: '📝 블로그 · 일반',             group: 'blog' },
+    { id: 'buying-guide',          name: '📝 블로그 · 구매 가이드',       group: 'blog' },   // 🆕
+    { id: 'safety-precautions',    name: '📝 블로그 · 부작용·주의사항',    group: 'blog' },   // 🆕
     // ── Q&A 카테고리 (DB: qa_categories) ─────────────────────────────────
     { id: 'metabolism',            name: '❓ Q&A · 대사질환',            group: 'qa' },
     { id: 'cancer_immune',         name: '❓ Q&A · 항암/면역',           group: 'qa' },
