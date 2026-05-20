@@ -380,41 +380,54 @@ export default function BlogPostPage() {
             </Link>
           </div>
 
-          {/* 플로로탄닌 직접 문의 CTA 박스 */}
-          <div className="rounded-2xl p-6 mb-8 text-center"
+          {/* ── 통일 CTA 박스 (네이비-골드 V1 톤, 문자 단일 액션) ── */}
+          {/* 리뉴얼 2026-05: "나에게 딱 맞는 정보" 컨셉, 4가지 가치 제시, 부담 단어 0 */}
+          <div className="rounded-2xl p-6 mb-8"
             style={{ background: 'linear-gradient(135deg, #0D1B3E 0%, #1a3a6a 100%)', border: '2px solid #B8953A50' }}>
             <div className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4"
               style={{ background: '#B8953A25' }}>
               <MessageCircle className="w-7 h-7" style={{ color: '#D4AF5A' }} />
             </div>
-            <h3 className="text-lg md:text-xl font-bold text-white mb-2 leading-snug">
-              궁금한 점, 남겨두면<br className="sm:hidden" /> <span style={{ color: '#D4AF5A' }}>무료로 정리해서 보내드립니다</span>
+            <h3 className="text-lg md:text-xl font-bold text-white mb-3 leading-snug text-center">
+              📋 <span style={{ color: '#D4AF5A' }}>나에게 딱 맞는 정보</span>, 무료로 보내드립니다
             </h3>
-            <p className="text-sm mb-5 leading-relaxed" style={{ color: '#cfd9e6' }}>
-              플로로탄닌 자료·시중 제품 비교·내 건강 상태별 선택 가이드까지<br />
-              <strong className="text-white">받기만 해도 정보값 ‘0원’</strong> · 받아보고 결정하셔도 늦지 않습니다
+
+            <ul className="text-sm mb-5 leading-relaxed space-y-2 max-w-md mx-auto" style={{ color: '#e5e7eb' }}>
+              <li className="flex items-start gap-2">
+                <span style={{ color: '#D4AF5A' }} className="flex-shrink-0 font-bold">✓</span>
+                <span>지금 먹는 건강식품·약, <strong className="text-white">잘 고르셨는지</strong></span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span style={{ color: '#D4AF5A' }} className="flex-shrink-0 font-bold">✓</span>
+                <span>내 몸이 <strong className="text-white">회복이 더딘 진짜 이유</strong></span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span style={{ color: '#D4AF5A' }} className="flex-shrink-0 font-bold">✓</span>
+                <span>내 몸 상태에 맞는 <strong className="text-white">식단·건강식품 고르는 법</strong></span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span style={{ color: '#D4AF5A' }} className="flex-shrink-0 font-bold">✓</span>
+                <span><strong className="text-white">질환별 알짜 건강정보</strong></span>
+              </li>
+            </ul>
+
+            <p className="text-xs mb-5 leading-relaxed text-center" style={{ color: '#a0b8d0' }}>
+              광고만 화려한 정보 말고, 진짜 도움 되는 자료만 정리해서 보내드려요.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+
+            <div className="flex justify-center">
               <a
-                href={`tel:${partner.phone}`}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold text-sm transition-all hover:opacity-90 shadow-lg"
+                href={`sms:${partner.phone}?body=${encodeURIComponent(`[맞춤 자료 신청] '${post.title}' 글을 읽고 저에게 맞는 자료 부탁드립니다. 이름: , 연락처: , 궁금한 점: `)}`}
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-bold text-base transition-all hover:opacity-90 hover:scale-[1.02] shadow-lg"
                 style={{ background: 'linear-gradient(135deg, #B8953A, #D4AF5A)', color: '#0D1B3E' }}
               >
-                <Phone className="w-4 h-4" />
-                자료 받기 (전화 1통)
-              </a>
-              <a
-                href={`sms:${partner.phone}?body=${encodeURIComponent(`[플로로탄닌] '${post.title}' 글을 읽고 관련 자료를 받아보고 싶습니다.`)}`}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold text-sm bg-white transition-all hover:opacity-90 shadow-lg"
-                style={{ color: '#0D1B3E' }}
-              >
-                <MessageCircle className="w-4 h-4" />
-                문자로 자료 신청
+                <MessageCircle className="w-5 h-5" />
+                📋 맞춤 자료 무료로 받기 (1분)
               </a>
             </div>
-            <p className="text-xs mt-4 leading-relaxed" style={{ color: '#a0b8d0' }}>
-              ✓ 강매 없음 &nbsp;·&nbsp; ✓ 영업 전화 없음 &nbsp;·&nbsp; ✓ 자료만 받고 끝내도 OK<br />
-              <span style={{ color: '#8fa3bd' }}>평균 답변 시간 30분 이내 · 늦어도 24시간 안에 회신</span>
+
+            <p className="text-xs mt-4 leading-relaxed text-center" style={{ color: '#8fa3bd' }}>
+              ※ 이름·연락처만 받습니다 · 자료는 24시간 안에 문자로 보내드려요
             </p>
           </div>
 

@@ -1,0 +1,43 @@
+{
+  "urls": [
+    "https://phlorotannin.com/blog/chemo-exercise-intensity-when-how-2026",
+    "https://phlorotannin.com/blog/after-chemo-hair-color-perm-when-2026",
+    "https://phlorotannin.com/blog/after-chemo-pregnancy-fertility-when-2026",
+    "https://phlorotannin.com/blog/chemo-travel-flight-safety-when-2026",
+    "https://phlorotannin.com/blog/chemo-flu-covid-vaccine-when-safe-2026",
+    "https://phlorotannin.com/blog/cancer-treatment-care-complete-guide-2026",
+    "https://phlorotannin.com/blog/why-phlorotannin-partners-cancer-care-2026",
+    "https://phlorotannin.com/blog/keytruda-immunotherapy-guide-2026",
+    "https://phlorotannin.com/blog/enhertu-her2-breast-cancer-2026",
+    "https://phlorotannin.com/blog/lazertinib-vs-osimertinib-egfr-2026",
+    "https://phlorotannin.com/blog/rybrevant-lazertinib-combo-egfr-2026",
+    "https://phlorotannin.com/blog/immunotherapy-irae-complete-guide-2026",
+    "https://phlorotannin.com/blog/big5-cancer-hospital-comparison-2026",
+    "https://phlorotannin.com/blog/cancer-special-care-5percent-guide-2026",
+    "https://phlorotannin.com/blog/cancer-second-opinion-when-how-2026",
+    "https://phlorotannin.com/blog",
+    "https://phlorotannin.com/blog?category=cancer-treatment-care",
+    "https://phlorotannin.com/blog?category=%ED%95%AD%EC%95%94%20%EC%B9%98%EB%A3%8C%20%EC%BC%80%EC%96%B4",
+    "https://phlorotannin.com/blog?category=hospital-info",
+    "https://phlorotannin.com/blog?category=%EB%B3%91%EC%9B%90%20%EC%A0%95%EB%B3%B4",
+    "https://phlorotannin.com/sitemap.xml"
+  ],
+  "results": {
+    "https://api.indexnow.org/IndexNow": {
+      "status": 200,
+      "body": ""
+    },
+    "https://www.bing.com/IndexNow": {
+      "status": 200,
+      "body": ""
+    },
+    "https://yandex.com/indexnow": {
+      "status": 200,
+      "body": "{\n  \"success\":true\n}"
+    },
+    "https://searchadvisor.naver.com/indexnow": {
+      "status": 200,
+      "body": ""
+    }
+  }
+}

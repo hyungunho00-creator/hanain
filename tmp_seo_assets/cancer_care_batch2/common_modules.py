@@ -12,26 +12,11 @@ UPDATE_BADGE = """<div style="background:#fef3c7;border:1px solid #fde68a;border
 </div>"""
 
 # ────────────────────────────────────────────────────────────
-# 메인 CTA 박스 (전 글 동일, 무료 상담 중심)
+# 메인 CTA — 본문 인라인 CTA는 폐지 (2026-05 리뉴얼 최종)
+# 사이트 통일을 위해 모든 블로그 글의 CTA는 BlogPostPage.jsx 페이지 레벨에서만 노출.
+# 기존 글 호환을 위해 빈 문자열만 export.
 # ────────────────────────────────────────────────────────────
-CTA_MAIN = """
-<div style="background:linear-gradient(135deg,#fdf4ff 0%,#fce7f3 100%);border:2px solid #f9a8d4;border-radius:14px;padding:22px;margin:32px 0;">
-<h3 style="color:#9d174f;font-size:18px;font-weight:700;margin:0 0 10px 0;">💬 솔직히 말씀드리면, 한 분 한 분이 다 다릅니다</h3>
-<p style="color:#831843;font-size:14px;line-height:1.7;margin:0 0 16px 0;">
-같은 약을 드셔도 부작용 양상이 사람마다 다르고, 도움이 되는 영양 관리도 달라요.<br/>
-지금 복용 중인 항암제·항호르몬제와 <strong>안전하게 함께할 수 있는지 먼저 확인</strong>하고,
-환자분 상황에 맞는 조합을 찾으시는 게 가장 빠른 길입니다.
-</p>
-<div style="display:flex;flex-wrap:wrap;gap:10px;">
-<a href="/consult" style="background:#be185d;color:white;padding:11px 20px;border-radius:8px;text-decoration:none;font-weight:600;font-size:14px;">🩺 무료 상담 신청</a>
-<a href="/qa" style="background:white;color:#be185d;border:1.5px solid #be185d;padding:11px 20px;border-radius:8px;text-decoration:none;font-weight:600;font-size:14px;">💬 같은 고민 환우 Q&A</a>
-<a href="/community/write" style="background:white;color:#be185d;border:1.5px solid #be185d;padding:11px 20px;border-radius:8px;text-decoration:none;font-weight:600;font-size:14px;">✍️ 익명 질문하기</a>
-</div>
-<p style="color:#9d174f;font-size:12px;margin:14px 0 0 0;line-height:1.5;">
-※ 상담은 무료이고 강매 없습니다. 안전성 확인부터 차근차근 도와드려요.
-</p>
-</div>
-"""
+CTA_MAIN = ""
 
 # ────────────────────────────────────────────────────────────
 # 응급신호 박스 (안전 가이드 — E-E-A-T 강화)
