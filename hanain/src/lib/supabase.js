@@ -171,17 +171,51 @@ export async function getPageBySlug(slug) {
 }
 
 // ── Blog Posts (실제 테이블: posts) ──────────────────────
-export async function getPosts({ category = null, tag = null, limit = 20, page = 1 } = {}) {
-  let q = supabase
+// 2026-05-20: `q` (검색어) 인자 추가 — 서버사이드 ILIKE 검색.
+//   기존: 클라이언트가 limit만큼만 받아 .filter() → 50개 너머의 글은 검색 누락.
+//   변경: q가 주어지면 title/excerpt/tags ILIKE를 Supabase에서 직접 처리 + limit 자동 확대.
+export async function getPosts({ category = null, tag = null, limit = 20, page = 1, q = null } = {}) {
+  // 검색 모드일 때는 전체 published 풀에서 찾을 수 있도록 limit을 충분히 키운다.
+  const effectiveLimit = q ? Math.max(limit, 500) : limit
+  let query = supabase
     .from('posts')
     .select('id,slug,title,excerpt,category,tags,og_image,created_at,view_count')
     .eq('status', 'published')
     .order('created_at', { ascending: false })
-    .range((page - 1) * limit, page * limit - 1)
-  if (category && category !== 'all') q = q.eq('category', category)
-  if (tag) q = q.contains('tags', [tag])
-  const { data, error } = await q
-  return { data: data || [], error }
+    .range((page - 1) * effectiveLimit, page * effectiveLimit - 1)
+  if (category && category !== 'all') query = query.eq('category', category)
+  if (tag) query = query.contains('tags', [tag])
+
+  // 검색어가 있으면 PostgREST의 or 필터로 title/excerpt를 ILIKE 검색.
+  // tags는 배열이라 ILIKE 직접 불가 → cs(contains) 또는 별도 처리. 여기선 title/excerpt만 서버 처리하고
+  // tags는 클라이언트에서 한 번 더 보완 필터링한다 (전체 풀이므로 안전).
+  if (q && q.trim()) {
+    const safe = q.trim().replace(/[%,()]/g, ' ')  // PostgREST 안전 이스케이프
+    query = query.or(`title.ilike.%${safe}%,excerpt.ilike.%${safe}%`)
+  }
+
+  const { data, error } = await query
+  let rows = data || []
+
+  // tags 보완 매칭 (클라이언트 사이드, 위 or 필터 결과에 누락된 tag-only 매치 글을 합치기 위해
+  //   별도 쿼리 한 번 더 실행).
+  if (q && q.trim()) {
+    const safe = q.trim()
+    const tagQuery = supabase
+      .from('posts')
+      .select('id,slug,title,excerpt,category,tags,og_image,created_at,view_count')
+      .eq('status', 'published')
+      .contains('tags', [safe])  // 정확한 태그 매치
+      .order('created_at', { ascending: false })
+      .limit(50)
+    const { data: tagData } = await tagQuery
+    if (tagData && tagData.length) {
+      const have = new Set(rows.map(r => r.id))
+      for (const r of tagData) if (!have.has(r.id)) rows.push(r)
+    }
+  }
+
+  return { data: rows, error }
 }
 
 export async function getPostBySlug(slug) {

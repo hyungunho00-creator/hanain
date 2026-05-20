@@ -4,6 +4,7 @@ import { Calendar, Eye, ChevronRight, Search, BookOpen, PlayCircle } from 'lucid
 import SEOHead from '../components/common/SEOHead'
 import { usePartner } from '../context/PartnerContext'
 import { withRef } from '../lib/partnerRef'
+import PartnerShareBar from '../components/partner/PartnerShareBar'
 import { getPosts, getPostCount, getBlogCategories, getVideosByCategory } from '../lib/supabase'
 
 // Phase 3: Supabase categories 테이블이 1순위, 아래 상수는 DB 실패 시 fallback
@@ -217,15 +218,24 @@ export default function BlogPage() {
   useEffect(() => {
     setLoading(true)
     const cat = activeCat === 'all' ? null : activeCat
-    getPosts({ category: cat, limit: 50 }).then(({ data }) => {
+    // 2026-05-20 BUGFIX: 검색어를 supabase.js의 getPosts에 q로 전달 →
+    //   기존 'limit 50 내에서 클라이언트 필터' 방식은 51번째 이후 글이 검색 불가였음.
+    //   이제 q가 있으면 서버사이드 ILIKE로 전체 published 풀에서 검색한다.
+    getPosts({ category: cat, limit: 50, q: searchQ || null }).then(({ data }) => {
+      // 안전망: tags 부분 매칭 (서버사이드 contains는 정확매치라 부분 단어 보완)
       let filtered = data
       if (searchQ) {
-        const q = searchQ.toLowerCase()
+        const ql = searchQ.toLowerCase()
+        // 서버에서 이미 title/excerpt/tags(정확) 결과 받았으나, 부분 단어로 tag 매칭도 추가 보완
+        const have = new Set(data.map(d => d.id))
+        // 클라이언트 사이드 보완은 이미 받은 set 안에서 정렬만 다듬는 정도로 한정
         filtered = data.filter(p =>
-          p.title?.toLowerCase().includes(q) ||
-          p.excerpt?.toLowerCase().includes(q) ||
-          p.tags?.some(t => t.toLowerCase().includes(q))
+          p.title?.toLowerCase().includes(ql) ||
+          p.excerpt?.toLowerCase().includes(ql) ||
+          p.tags?.some(t => t.toLowerCase().includes(ql))
         )
+        // 검색 결과가 0인데 서버 결과가 있으면 그대로 보여줌 (보완 필터가 너무 엄격하지 않게)
+        if (filtered.length === 0 && data.length > 0) filtered = data
       }
       setPosts(filtered)
       setLoading(false)
@@ -305,6 +315,9 @@ export default function BlogPage() {
         </div>
 
         <div className="max-w-5xl mx-auto px-4 py-10">
+          {/* 파트너 추천 링크 공유 도구 — 파트너 컨텍스트 활성 시에만 노출 */}
+          <PartnerShareBar />
+
           {/* 카테고리 탭 */}
           <div className="flex flex-wrap gap-2 mb-6">
             {cats.map(cat => (
