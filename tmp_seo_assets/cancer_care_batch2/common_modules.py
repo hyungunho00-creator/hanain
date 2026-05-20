@@ -12,11 +12,12 @@ UPDATE_BADGE = """<div style="background:#fef3c7;border:1px solid #fde68a;border
 </div>"""
 
 # ────────────────────────────────────────────────────────────
-# 메인 CTA — 본문 인라인 CTA는 폐지 (2026-05 리뉴얼 최종)
-# 사이트 통일을 위해 모든 블로그 글의 CTA는 BlogPostPage.jsx 페이지 레벨에서만 노출.
-# 기존 글 호환을 위해 빈 문자열만 export.
+# 메인 CTA 박스 — 리뉴얼 2026-05 V2 (사이트 통일 인라인 HTML)
+# 본문(content) 끝에 직접 박혀서 SEO 크롤러도 노출됨.
+# placeholder {{PARTNER_PHONE}}, {{POST_TITLE}}는 BlogPostPage.jsx에서 동적 치환.
+# ※ batch1/2/3 동일 (변경 시 함께 갱신)
 # ────────────────────────────────────────────────────────────
-CTA_MAIN = ""
+CTA_MAIN = '\n\n<!-- CTA_UNIFIED_V2026_05 -->\n<div style="border-radius:16px;padding:24px 22px;margin:32px 0 12px 0;background:linear-gradient(135deg,#0D1B3E 0%,#1a3a6a 100%);border:2px solid rgba(184,149,58,0.5);"><div style="width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px auto;background:rgba(184,149,58,0.15);font-size:28px;line-height:1;">💬</div><h3 style="font-size:19px;font-weight:700;color:#ffffff;margin:0 0 14px 0;line-height:1.4;text-align:center;">📋 <span style="color:#D4AF5A;">나에게 딱 맞는 정보</span>, 무료로 보내드립니다</h3><ul style="list-style:none;padding:0;margin:0 auto 20px auto;max-width:380px;color:#e5e7eb;font-size:14.5px;line-height:1.75;"><li style="display:flex;align-items:flex-start;gap:8px;margin-bottom:6px;"><span style="color:#D4AF5A;font-weight:700;flex-shrink:0;">✓</span><span>지금 먹는 건강식품·약, <strong style="color:#ffffff;">잘 고르셨는지</strong></span></li><li style="display:flex;align-items:flex-start;gap:8px;margin-bottom:6px;"><span style="color:#D4AF5A;font-weight:700;flex-shrink:0;">✓</span><span>내 몸이 <strong style="color:#ffffff;">회복이 더딘 진짜 이유</strong></span></li><li style="display:flex;align-items:flex-start;gap:8px;margin-bottom:6px;"><span style="color:#D4AF5A;font-weight:700;flex-shrink:0;">✓</span><span>내 몸 상태에 맞는 <strong style="color:#ffffff;">식단·건강식품 고르는 법</strong></span></li><li style="display:flex;align-items:flex-start;gap:8px;margin-bottom:0;"><span style="color:#D4AF5A;font-weight:700;flex-shrink:0;">✓</span><span><strong style="color:#ffffff;">질환별 알짜 건강정보</strong></span></li></ul><p style="font-size:13px;color:#a0b8d0;text-align:center;margin:0 0 20px 0;line-height:1.6;">광고만 화려한 정보 말고, 진짜 도움 되는 자료만 정리해서 보내드려요.</p><div style="text-align:center;margin:0 0 14px 0;"><a href="sms:{{PARTNER_PHONE}}?body={{POST_TITLE}}" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:12px;font-weight:700;font-size:16px;text-decoration:none;background:linear-gradient(135deg,#B8953A,#D4AF5A);color:#0D1B3E;box-shadow:0 4px 12px rgba(0,0,0,0.25);">📋 맞춤 자료 무료로 받기 (1분)</a></div><p style="font-size:12px;color:#8fa3bd;text-align:center;margin:0;line-height:1.6;">※ 이름·연락처만 받습니다 · 자료는 24시간 안에 문자로 보내드려요</p></div>\n<!-- /CTA_UNIFIED_V2026_05 -->\n'
 
 # ────────────────────────────────────────────────────────────
 # 응급신호 박스 (안전 가이드 — E-E-A-T 강화)

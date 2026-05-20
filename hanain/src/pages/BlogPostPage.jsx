@@ -101,7 +101,9 @@ function parseMarkdown(md) {
     .replace(/(<li[\s\S]+?<\/li>)/g, m => `<ul class="my-3 space-y-1">${m}</ul>`)
     // 빈 줄 → 단락
     .replace(/\n\n/g, '</p><p class="text-gray-700 leading-relaxed my-3">')
-    .replace(/^(?!<[hupb]|<hr|@@MDTABLE_)(.+)$/gm, '<p class="text-gray-700 leading-relaxed my-3">$1</p>')
+    // [2026-05 패치] negative lookahead에 <div, <a, <span, <table, <img, <strong, <em 등 추가 —
+    //   본문 끝 통일 CTA(<div style=...>) 가 잘못 <p>로 감싸지는 것을 방지한다.
+    .replace(/^(?!<[hupbasdied]|<hr|<\/|@@MDTABLE_)(.+)$/gm, '<p class="text-gray-700 leading-relaxed my-3">$1</p>')
     // 중복 p 정리
     .replace(/<p[^>]*><\/p>/g, '')
     .replace(/<p[^>]*>(<[hupb]|<hr)/g, '$1')
@@ -341,10 +343,19 @@ export default function BlogPostPage() {
             </div>
           )}
 
-          {/* 본문 */}
+          {/* 본문 — 통일 CTA placeholder 치환 (partner.phone, post.title 동적 주입) */}
           <article
             className="prose-custom bg-white rounded-2xl p-6 md:p-10 shadow-sm mb-8"
-            dangerouslySetInnerHTML={{ __html: parseMarkdown(post.content) }}
+            dangerouslySetInnerHTML={{
+              __html: parseMarkdown(post.content)
+                .replaceAll('{{PARTNER_PHONE}}', partner.phone)
+                .replaceAll(
+                  '{{POST_TITLE}}',
+                  encodeURIComponent(
+                    `[맞춤 자료 신청] '${post.title}' 글을 읽고 저에게 맞는 자료 부탁드립니다. 이름: , 연락처: , 궁금한 점: `
+                  )
+                )
+            }}
           />
 
           {/* [2026-05-18 신설] E-E-A-T 신호 4줄 블록 — 작성·검토 기준·업데이트·면책.
@@ -380,56 +391,9 @@ export default function BlogPostPage() {
             </Link>
           </div>
 
-          {/* ── 통일 CTA 박스 (네이비-골드 V1 톤, 문자 단일 액션) ── */}
-          {/* 리뉴얼 2026-05: "나에게 딱 맞는 정보" 컨셉, 4가지 가치 제시, 부담 단어 0 */}
-          <div className="rounded-2xl p-6 mb-8"
-            style={{ background: 'linear-gradient(135deg, #0D1B3E 0%, #1a3a6a 100%)', border: '2px solid #B8953A50' }}>
-            <div className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4"
-              style={{ background: '#B8953A25' }}>
-              <MessageCircle className="w-7 h-7" style={{ color: '#D4AF5A' }} />
-            </div>
-            <h3 className="text-lg md:text-xl font-bold text-white mb-3 leading-snug text-center">
-              📋 <span style={{ color: '#D4AF5A' }}>나에게 딱 맞는 정보</span>, 무료로 보내드립니다
-            </h3>
-
-            <ul className="text-sm mb-5 leading-relaxed space-y-2 max-w-md mx-auto" style={{ color: '#e5e7eb' }}>
-              <li className="flex items-start gap-2">
-                <span style={{ color: '#D4AF5A' }} className="flex-shrink-0 font-bold">✓</span>
-                <span>지금 먹는 건강식품·약, <strong className="text-white">잘 고르셨는지</strong></span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span style={{ color: '#D4AF5A' }} className="flex-shrink-0 font-bold">✓</span>
-                <span>내 몸이 <strong className="text-white">회복이 더딘 진짜 이유</strong></span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span style={{ color: '#D4AF5A' }} className="flex-shrink-0 font-bold">✓</span>
-                <span>내 몸 상태에 맞는 <strong className="text-white">식단·건강식품 고르는 법</strong></span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span style={{ color: '#D4AF5A' }} className="flex-shrink-0 font-bold">✓</span>
-                <span><strong className="text-white">질환별 알짜 건강정보</strong></span>
-              </li>
-            </ul>
-
-            <p className="text-xs mb-5 leading-relaxed text-center" style={{ color: '#a0b8d0' }}>
-              광고만 화려한 정보 말고, 진짜 도움 되는 자료만 정리해서 보내드려요.
-            </p>
-
-            <div className="flex justify-center">
-              <a
-                href={`sms:${partner.phone}?body=${encodeURIComponent(`[맞춤 자료 신청] '${post.title}' 글을 읽고 저에게 맞는 자료 부탁드립니다. 이름: , 연락처: , 궁금한 점: `)}`}
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-bold text-base transition-all hover:opacity-90 hover:scale-[1.02] shadow-lg"
-                style={{ background: 'linear-gradient(135deg, #B8953A, #D4AF5A)', color: '#0D1B3E' }}
-              >
-                <MessageCircle className="w-5 h-5" />
-                📋 맞춤 자료 무료로 받기 (1분)
-              </a>
-            </div>
-
-            <p className="text-xs mt-4 leading-relaxed text-center" style={{ color: '#8fa3bd' }}>
-              ※ 이름·연락처만 받습니다 · 자료는 24시간 안에 문자로 보내드려요
-            </p>
-          </div>
+          {/* ── 통일 CTA 박스는 본문(post.content) 끝에 인라인 HTML로 박혀 있습니다.
+                placeholder {{PARTNER_PHONE}}, {{POST_TITLE}}는 본문 dangerouslySetInnerHTML
+                직전에 치환됩니다. 페이지 레벨 중복 노출 방지를 위해 여기서는 별도 렌더링하지 않습니다. */}
 
           {/* 관련 글 — 내부 링크에 withRef 적용 (파트너 컨텍스트 유지) */}
           {related.length > 0 && (
