@@ -142,6 +142,26 @@ const CAT_NAMES = {
   'disease-health-info':'질환별 건강정보',
   'hospital-info':'병원정보',
   'partner-info':'파트너 정보',
+  // DB에 한글/언더스코어로 저장된 카테고리(이전 배치 잔재) — 매핑 누락 시 빈 alt 방지
+  metabolism:'대사', neuro_cognitive:'뇌·인지', cancer_immune:'항암·면역',
+  womens_health:'여성 건강', mental_health:'정신 건강', musculoskeletal:'근골격',
+  '분자기전 작용경로': '분자기전·작용경로',
+  '신약개발 임상': '신약개발·임상',
+}
+
+/**
+ * 글마다 다른 img alt 텍스트 생성 (SEO 동일 alt 페널티 회피).
+ * - AI 호출 없이 DB 기존 데이터(title, category)만 조합 → 토큰 비용 0
+ * - title의 '|' 앞부분만 추출 (영문 부제 제거, ':' 뒤 한글 부제는 유지 → 변별력↑)
+ * - 카테고리 한글명 + '건강정보 일러스트' 컨텍스트 추가
+ * 예시) "플로로탄닌 당뇨 임상 2b 성공: 혈당 관리 새 지평 - 당뇨·혈당 건강정보 일러스트"
+ */
+function buildImageAlt(post) {
+  if (!post) return '플로로탄닌 건강정보 일러스트'
+  const rawTitle = (post.title || '').toString().trim()
+  const core = rawTitle.split('|')[0].trim() || rawTitle
+  const catName = CAT_NAMES[post.category] || (post.category || '건강').toString()
+  return `${core} - ${catName} 건강정보 일러스트`
 }
 
 export default function BlogPostPage() {
@@ -336,10 +356,17 @@ export default function BlogPostPage() {
             </div>
           </header>
 
-          {/* 대표 이미지 */}
+          {/* 대표 이미지 — alt는 글마다 다르게 (SEO 동일 alt 페널티 회피)
+                title의 '|' 또는 ':' 앞부분만 추출 + 카테고리 한글명 + 사이트 컨텍스트로 조합.
+                AI 호출 없이 DB 기존 데이터만으로 동적 생성 (토큰 0). */}
           {post.og_image && (
             <div className="rounded-2xl overflow-hidden mb-8 shadow-sm">
-              <img src={post.og_image} alt={post.title} className="w-full" />
+              <img
+                src={post.og_image}
+                alt={buildImageAlt(post)}
+                className="w-full"
+                loading="lazy"
+              />
             </div>
           )}
 

@@ -142,11 +142,17 @@ function PostCard({ post, partner }) {
   const catName  = CATEGORIES.find(c => c.id === post.category)?.name || post.category
   const date     = new Date(post.created_at).toLocaleDateString('ko-KR', { year:'numeric', month:'long', day:'numeric' })
 
+  // SEO: 글마다 다른 alt 텍스트 (동일 alt 페널티 회피, AI 호출 없이 기존 데이터만 조합)
+  // '|' 앞부분만 추출(영문 부제 제거, ':' 뒤 한글 부제는 유지 → 변별력↑)
+  const rawTitle = (post.title || '').toString().trim()
+  const titleCore = rawTitle.split('|')[0].trim() || rawTitle
+  const imgAlt   = `${titleCore} - ${catName} 건강정보 일러스트`
+
   return (
     <article className="bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-200 overflow-hidden group">
       {post.og_image && (
         <div className="aspect-video overflow-hidden">
-          <img src={post.og_image} alt={post.title}
+          <img src={post.og_image} alt={imgAlt} loading="lazy"
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
         </div>
       )}
