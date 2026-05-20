@@ -343,18 +343,17 @@ export default function BlogPostPage() {
             </div>
           )}
 
-          {/* 본문 — 통일 CTA placeholder 치환 (partner.phone, post.title 동적 주입) */}
+          {/* 본문 — 통일 CTA placeholder 치환 (partner.phone, SMS body 동적 주입)
+                CTA 클릭 시 SMS 앱이 열리고 본문에 "자료요청 드립니다"가 미리 입력되어
+                사용자가 그대로 [전송]만 누르면 끝나도록 한다. */}
           <article
             className="prose-custom bg-white rounded-2xl p-6 md:p-10 shadow-sm mb-8"
             dangerouslySetInnerHTML={{
               __html: parseMarkdown(post.content)
                 .replaceAll('{{PARTNER_PHONE}}', partner.phone)
-                .replaceAll(
-                  '{{POST_TITLE}}',
-                  encodeURIComponent(
-                    `[맞춤 자료 신청] '${post.title}' 글을 읽고 저에게 맞는 자료 부탁드립니다. 이름: , 연락처: , 궁금한 점: `
-                  )
-                )
+                .replaceAll('{{SMS_BODY}}', encodeURIComponent('자료요청 드립니다'))
+                // [LEGACY] v1 CTA에서 사용하던 placeholder — 혹시 잔존 시 동일 치환
+                .replaceAll('{{POST_TITLE}}', encodeURIComponent('자료요청 드립니다'))
             }}
           />
 
@@ -392,7 +391,7 @@ export default function BlogPostPage() {
           </div>
 
           {/* ── 통일 CTA 박스는 본문(post.content) 끝에 인라인 HTML로 박혀 있습니다.
-                placeholder {{PARTNER_PHONE}}, {{POST_TITLE}}는 본문 dangerouslySetInnerHTML
+                placeholder {{PARTNER_PHONE}}, {{SMS_BODY}}는 본문 dangerouslySetInnerHTML
                 직전에 치환됩니다. 페이지 레벨 중복 노출 방지를 위해 여기서는 별도 렌더링하지 않습니다. */}
 
           {/* 관련 글 — 내부 링크에 withRef 적용 (파트너 컨텍스트 유지) */}
