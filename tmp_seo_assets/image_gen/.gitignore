@@ -1,0 +1,5 @@
+# 생성된 WebP 파일들은 Supabase Storage가 source of truth.
+# state.json 의 storage_url 이 진실. 로컬 캐시는 git 추적 제외.
+downloads/
+__pycache__/
+*.pyc

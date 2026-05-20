@@ -119,3 +119,63 @@ def faq_jsonld(qa_list):
         ]
     }
     return f"<script type='application/ld+json'>{json.dumps(data, ensure_ascii=False)}</script>"
+
+
+# ────────────────────────────────────────────────────────────
+# 헌법 제8조 mandate 4: 신규 글 헤더 이미지 자동 생성 훅
+# ────────────────────────────────────────────────────────────
+# 사용 예 (글 insert 직전):
+#   from common_modules import generate_post_image
+#   og_url = generate_post_image(title, category, slug)
+#   # og_url 을 posts.og_image 컬럼에 저장
+#
+# 동작:
+#   1. tmp_seo_assets/image_gen/prompt_builder.build_prompt(title, category)
+#   2. 외부 image_generation 도구 호출은 AI agent가 수행해야 하므로
+#      이 함수는 "필요 정보(prompt, expected_storage_url)"를 반환하고
+#      agent가 image_generation → pipeline.py(download/upload/patch)로 마무리.
+#   3. 이미 storage_url 이 존재하면 그것을 그대로 반환 (멱등성).
+# ────────────────────────────────────────────────────────────
+def generate_post_image(title: str, category: str, slug: str) -> dict:
+    """신규 글 헤더 이미지 생성 지시서 반환 (헌법 제8조 mandate 4).
+
+    Returns:
+        {
+          "slug": slug,
+          "expected_og_image": "https://...supabase.co/.../blog-images/{slug}.webp",
+          "prompt": "...",            # seedream v5 lite 용 v2 프롬프트
+          "model": "fal-ai/bytedance/seedream/v5/lite",
+          "aspect_ratio": "16:9",
+          "status": "exists" | "needs_generation",
+          "storage_url": <None | 기존 URL>,
+        }
+
+    Agent 실행 절차 (status=="needs_generation" 인 경우):
+      1) image_generation(model, query=prompt, aspect_ratio) → image_urls_nowatermark
+      2) save_batch_results.py 로 state.json 에 gen_url 저장
+      3) pipeline.py download && upload && patch
+    """
+    import json, os, sys
+    IMG_GEN_DIR = "/home/user/webapp/tmp_seo_assets/image_gen"
+    if IMG_GEN_DIR not in sys.path:
+        sys.path.insert(0, IMG_GEN_DIR)
+    from prompt_builder import build_prompt, PRIMARY_MODEL, PRIMARY_ASPECT_RATIO
+
+    state_path = os.path.join(IMG_GEN_DIR, "state.json")
+    storage_url = None
+    if os.path.exists(state_path):
+        with open(state_path, encoding="utf-8") as f:
+            state = json.load(f)
+        entry = state.get(slug, {})
+        storage_url = entry.get("storage_url")
+
+    expected = f"https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/{slug}.webp"
+    return {
+        "slug": slug,
+        "expected_og_image": expected,
+        "prompt": build_prompt(title, category),
+        "model": PRIMARY_MODEL,
+        "aspect_ratio": PRIMARY_ASPECT_RATIO,
+        "status": "exists" if storage_url else "needs_generation",
+        "storage_url": storage_url,
+    }

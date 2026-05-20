@@ -8,7 +8,7 @@
     "body": ""
   },
   "yandex": {
-    "http": 200,
+    "http": 202,
     "body": "{\n  \"success\":true\n}"
   },
   "naver": {

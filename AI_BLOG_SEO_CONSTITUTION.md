@@ -253,7 +253,81 @@ curl -s https://phlorotannin.com/blog | grep -c 'safety-precautions\|buying-guid
 
 ---
 
-## 📜 제8조 (헌법 개정)
+## 🖼️ 제8조 (이미지·alt 의무) — 2026-05-20 신설
+
+신규 블로그 글 발행 시 반드시 다음 3가지를 충족한다. 위반 시 발행 차단.
+
+### ✅ 의무 1. 글마다 다른 og_image 생성
+
+- **동일 og_image를 두 개 이상 글에 재사용 절대 금지** (SEO 동일 이미지 페널티 / 사용자 신뢰 손상)
+- **채택 모델**: `fal-ai/bytedance/seedream/v5/lite` (2026-05-20 파일럿 검증 후 확정)
+  - **선정 근거**: z-image/turbo는 가장 저렴(~$0.003)하지만 토픽 명확성 5/10, seedream lite는 9/10. 단가 차이 $0.007/장 × 288장 = +$2.02로 미미한 비용 증가 대비 품질·일관성 우위 결정적
+  - **변경 시**: 비용·품질 비교 + 3개 이상 파일럿 검증 후 헌법 개정 필요
+- **저장 위치**: Supabase Storage 버킷 `blog-images/`
+  - 경로 규칙: `blog-images/{slug}.webp` (slug = 글의 slug 컬럼)
+  - public 폴더 사용 금지 (git repo 비대화 방지)
+  - CDN URL은 `https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/{slug}.webp`
+- **프롬프트 표준 (필수 준수)** — v2 (2026-05-20 텍스트 누출 차단 강화):
+  - **단일 진실 소스**: `tmp_seo_assets/image_gen/prompt_builder.py`의 `build_prompt(title, category) -> str`
+  - 베이스 구조 (필수 순서):
+    1. 긍정문 우선: `wordless pictogram-only vector illustration, icon-style symbolic shapes only, completely text-free composition`
+    2. 에디토리얼 톤: `minimal flat editorial illustration for a medical health blog header`
+    3. 브랜드 팔레트: `deep navy blue #0D1B3E primary and warm muted gold #D4AF5A accent, soft pastel cream background`
+    4. 텍스트 차단 (정상문+부정문 혼용): `absolutely no text anywhere, no typography, no letters, no numbers, no Korean Hangul, no Latin alphabet, no signage, no labels, no captions, no logos, no watermarks`
+    5. 포맷: `16:9 horizontal banner` + `clean vector aesthetic similar to The New York Times health editorial illustrations`
+    6. 토픽: `depicting {KEYWORD_EN 매핑 최대 3개}, in the context of {CATEGORY_EN}`
+  - **부정 프롬프트만으로는 한글이 새어 들어옴 (v1에서 검증) → 반드시 긍정문 "wordless pictogram-only"가 앞에 와야 함**
+- **비율**: 16:9 고정 (OG 카드·블로그 카드·소셜 공유 표준)
+
+### ✅ 의무 2. alt 텍스트 글마다 다르게
+
+- **형식 고정**: `{title의 '|' 앞부분} - {카테고리 한글명} 건강정보 일러스트`
+  - 예: `"콜라겐 먹어도 피부 회복 안 되는 이유 - 피부·모발 건강정보 일러스트"`
+- **동적 생성**: `hanain/src/pages/BlogPostPage.jsx`의 `buildImageAlt(post)` 헬퍼 사용
+  - DB에 별도 `alt` 컬럼 불필요 (title+category 조합으로 unique 보장)
+  - 동일 title 두 개가 들어오면 발행 차단 (제2조 체크 6 slug 중복과 동일 수준 강제)
+- **카테고리 매핑**: `BlogPostPage.jsx`의 `CAT_NAMES`에 모든 카테고리 등록 — 누락 시 fallback이 영문 slug 노출됨 (시각적 결함)
+
+### ✅ 의무 3. 발행 후 자동 검증 (제7조 확장)
+
+발행 직후 5분 이내에 다음 2가지 추가 검증:
+
+```bash
+# 6. og_image URL이 200 응답하는지 (이미지 누락 방지)
+curl -sI "$(curl -s "...rest/v1/posts?slug=eq.<slug>&select=og_image" | jq -r '.[0].og_image')" | head -1
+
+# 7. og_image가 다른 글과 중복되지 않는지 (동일 이미지 페널티 방지)
+curl -s "...rest/v1/posts?select=slug,og_image" | python3 -c "
+import json, sys, collections
+posts = json.load(sys.stdin)
+ctr = collections.Counter(p['og_image'] for p in posts if p['og_image'])
+dup = [(url, n) for url, n in ctr.items() if n > 1]
+print(f'중복 이미지: {len(dup)}건' + (' ❌' if dup else ' ✅'))
+"
+```
+
+위 7가지 중 하나라도 실패 → **즉시 hotfix**.
+
+### ✅ 의무 4. 자동화 (인간 개입 최소화)
+
+- `tmp_seo_assets/cancer_care_batch{1,2,3}/common_modules.py` 및 향후 모든 배치 발행 스크립트에 **이미지 생성 + Storage 업로드 + og_image PATCH** 로직을 표준 함수로 포함
+- 신규 글 발행 함수 시그니처: `publish_post(title, category, content, ...) → 내부에서 자동으로 이미지 생성 → og_image 채워서 INSERT`
+- 사람이 "이미지 잊었네" 할 수 없도록 **이미지 없이 발행 시 함수 자체가 에러 발생**
+
+### 📊 비용 가이드
+
+| 모델 | 1장 가격 | 288장 비용 | 파일럿 점수 | 권장도 |
+|---|---|---|---|---|
+| fal-ai/z-image/turbo | ~$0.003 | ~$0.86 | 32/40 (토픽 5/10) | 토픽 추상화 우려, 비채택 |
+| **fal-ai/bytedance/seedream/v5/lite** | ~$0.01 | ~$2.88 | 34~37/40 (토픽 9/10) | ⭐ **채택** (2026-05-20) |
+| nano-banana-2 | ~$0.04 | ~$11.52 | 37/40 | 텍스트 필요 시만 |
+| nano-banana-pro | ~$0.04+ | ~$11.52+ | 미평가 | 사용 금지 (가성비 X) |
+
+**비용 결정 근거**: 사용자 위임 "현명하게, 미래에 도움 되게" 기준. seedream lite는 z-image 대비 +$2.02로 288개 헤더의 토픽 명확성·브랜드 일관성을 한 단계 끌어올림. 향후 1년간 페이지 노출의 시각 품질이 $2의 가치를 압도적으로 상회한다고 판단.
+
+---
+
+## 📜 제9조 (헌법 개정)
 
 이 헌법은 살아있는 문서다.
 
