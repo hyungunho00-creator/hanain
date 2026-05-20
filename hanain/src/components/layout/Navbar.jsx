@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import { Waves, CreditCard, FolderLock, Eye, EyeOff, ExternalLink } from 'lucide-react'
+import { CreditCard, FolderLock, Eye, EyeOff, ExternalLink } from 'lucide-react'
 import { usePartner } from '../../context/PartnerContext'
 
 const NAV_LINKS = [
@@ -249,11 +249,17 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between h-16">
 
-            {/* 로고 */}
-            <Link to="/" className="flex items-center gap-2 group flex-shrink-0">
-              <div className="w-9 h-9 bg-gradient-to-br from-cyan-hana to-blue-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0">
-                <Waves className="w-5 h-5 text-white" />
-              </div>
+            {/* 로고 — V1 P자 (네이비→틸 그라데이션, 골드 하이라이트 세리프 P, 2026-05 리브랜딩) */}
+            <Link to="/" className="flex items-center gap-2 group flex-shrink-0" aria-label="플로로탄닌 파트너스 홈">
+              <img
+                src="/icon-192.png?v=2"
+                alt="플로로탄닌 파트너스 로고"
+                width="36"
+                height="36"
+                className="w-9 h-9 rounded-lg shadow-md group-hover:scale-110 transition-transform flex-shrink-0 ring-1 ring-white/10"
+                loading="eager"
+                decoding="async"
+              />
               <div className="hidden sm:block">
                 <span className="text-white font-bold text-lg leading-tight block">플로로탄닌 파트너스</span>
                 <span className="text-cyan-hana text-sm leading-tight block">Phlorotannin Partners</span>
