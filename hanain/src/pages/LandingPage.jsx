@@ -167,6 +167,7 @@ const MessageCircle = () => (
 
 // ── 블로그 미리보기 섹션 ──────────────────────────────────
 const CAT_COLORS = {
+  'cancer-treatment-care':'bg-fuchsia-100 text-fuchsia-800',  // 🆕
   'buying-guide':'bg-cyan-100 text-cyan-800',                 // 🆕
   'safety-precautions':'bg-lime-100 text-lime-800',           // 🆕
   diabetes:'bg-orange-100 text-orange-700', cancer:'bg-red-100 text-red-700',
@@ -175,6 +176,7 @@ const CAT_COLORS = {
   research:'bg-blue-100 text-blue-700', general:'bg-gray-100 text-gray-700',
 }
 const CAT_NAMES = {
+  'cancer-treatment-care':'항암 치료 케어', // 🆕
   'buying-guide':'구매 가이드',          // 🆕
   'safety-precautions':'부작용·주의사항', // 🆕
   diabetes:'당뇨·혈당', cancer:'항암·면역', brain:'뇌·인지',

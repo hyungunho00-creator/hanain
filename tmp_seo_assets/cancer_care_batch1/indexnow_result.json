@@ -1,0 +1,42 @@
+{
+  "urls": [
+    "https://phlorotannin.com/blog/tamoxifen-side-effects-management-2026",
+    "https://phlorotannin.com/blog/aromatase-inhibitor-side-effects-care-2026",
+    "https://phlorotannin.com/blog/immune-checkpoint-inhibitor-side-effects-2026",
+    "https://phlorotannin.com/blog/trastuzumab-herceptin-cardiac-side-effects-2026",
+    "https://phlorotannin.com/blog/oxaliplatin-peripheral-neuropathy-care-2026",
+    "https://phlorotannin.com/blog/capecitabine-hand-foot-syndrome-care-2026",
+    "https://phlorotannin.com/blog/adc-antibody-drug-conjugate-side-effects-2026",
+    "https://phlorotannin.com/blog/targeted-therapy-skin-rash-acne-care-2026",
+    "https://phlorotannin.com/blog/chemo-immunity-low-natural-care-2026",
+    "https://phlorotannin.com/blog/cancer-fatigue-recovery-care-2026",
+    "https://phlorotannin.com/blog/chemo-neuropathy-nutrition-care-2026",
+    "https://phlorotannin.com/blog/chemo-mouth-sore-stomatitis-care-2026",
+    "https://phlorotannin.com/blog/chemo-appetite-weight-loss-care-2026",
+    "https://phlorotannin.com/blog/hormone-therapy-hot-flashes-natural-care-2026",
+    "https://phlorotannin.com/blog/cancer-patient-family-nutrition-guide-2026",
+    "https://phlorotannin.com/blog/cancer-caregiver-warning-signs-guide-2026",
+    "https://phlorotannin.com/blog",
+    "https://phlorotannin.com/blog?category=cancer-treatment-care",
+    "https://phlorotannin.com/blog?category=%ED%95%AD%EC%95%94%20%EC%B9%98%EB%A3%8C%20%EC%BC%80%EC%96%B4",
+    "https://phlorotannin.com/sitemap.xml"
+  ],
+  "results": {
+    "https://api.indexnow.org/IndexNow": {
+      "status": 200,
+      "body": ""
+    },
+    "https://www.bing.com/IndexNow": {
+      "status": 200,
+      "body": ""
+    },
+    "https://yandex.com/indexnow": {
+      "status": 202,
+      "body": "{\n  \"success\":true\n}"
+    },
+    "https://searchadvisor.naver.com/indexnow": {
+      "status": 200,
+      "body": ""
+    }
+  }
+}

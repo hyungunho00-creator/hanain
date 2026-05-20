@@ -9,6 +9,7 @@ import { getPosts, getPostCount, getBlogCategories, getVideosByCategory } from '
 // Phase 3: Supabase categories 테이블이 1순위, 아래 상수는 DB 실패 시 fallback
 const FALLBACK_CATEGORIES = [
   { id: 'all',        name: '전체' },
+  { id: 'cancer-treatment-care', name: '항암 치료 케어' }, // 🆕 항암 치료 부작용·대처·보완 (고전환)
   { id: 'buying-guide',       name: '구매 가이드' },      // 🆕 구매 의도 SEO 흡수
   { id: 'safety-precautions', name: '부작용·주의사항' },  // 🆕 안전 정보 SEO 흡수
   { id: 'diabetes',   name: '당뇨·혈당' },
@@ -29,6 +30,7 @@ const FALLBACK_CATEGORIES = [
 let CATEGORIES = FALLBACK_CATEGORIES
 
 const CAT_COLORS = {
+  'cancer-treatment-care': 'bg-fuchsia-100 text-fuchsia-800', // 🆕 자홍 = 항암 치료 케어(생명·집중)
   'buying-guide':       'bg-cyan-100 text-cyan-800',     // 🆕 시안 = 구매(신뢰·청량)
   'safety-precautions': 'bg-lime-100 text-lime-800',     // 🆕 라임 = 안전·주의(자연)
   diabetes:      'bg-orange-100 text-orange-700',
@@ -62,6 +64,7 @@ const BLOG_TO_VIDEO_CAT = {
   'partner-info':          null,
   'buying-guide':          null,  // 🆕 영상 매칭은 추후
   'safety-precautions':    null,  // 🆕 영상 매칭은 추후
+  'cancer-treatment-care': 'cancer',  // 🆕 기존 cancer 영상 재활용
 }
 
 // Phase 3 보안 강화: service_role 키를 클라이언트 번들에서 제거
