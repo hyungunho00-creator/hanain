@@ -104,30 +104,35 @@ async function getFallbackPopular(catId, limit = 5) {
     }))
 }
 
+// [2026-05-21] 질문 카드 — 카테고리 무관 통일 디자인 (cyan-hana 시그니처)
+// 과거: 카테고리별 catColor 가 순번 배지에 적용되어 카테고리마다 색이 다름 → 통일감 깨짐
+// 현재: 모든 카테고리에서 동일한 cyan-hana + ocean-deep 컬러로 통일
 function QuestionRow({ q, rank }) {
   const slug = q.slug || q.id
   return (
     <Link
       to={`/q/${slug}`}
-      className="flex items-start gap-3 p-4 rounded-xl hover:bg-gray-50 transition-colors group border border-transparent hover:border-border-hana"
+      className="flex items-start gap-3 p-4 hover:bg-gray-50/70 transition-colors group"
     >
       {rank && (
-        <span className={`shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-sm font-bold ${
-          rank <= 3 ? 'bg-cyan-hana text-white' : 'bg-gray-100 text-gray-500'
+        <span className={`shrink-0 inline-flex items-center justify-center w-7 h-7 rounded-full text-sm font-bold ring-1 ${
+          rank <= 3
+            ? 'bg-cyan-hana text-white ring-cyan-hana/30'
+            : 'bg-gray-50 text-gray-500 ring-gray-200'
         }`}>
           {rank}
         </span>
       )}
       <div className="flex-1 min-w-0">
-        <p className="text-base font-medium text-gray-800 group-hover:text-cyan-hana transition-colors leading-snug mb-1">
+        <p className="text-[15px] font-semibold text-ocean-deep group-hover:text-cyan-hana transition-colors leading-snug mb-1.5">
           {q.title}
         </p>
-        <div className="flex flex-wrap items-center gap-2 text-xs text-gray-400">
+        <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-xs text-gray-400">
           {q.tags?.slice(0, 2).map(t => (
-            <span key={t} className="bg-gray-100 px-2 py-0.5 rounded-full">#{t}</span>
+            <span key={t} className="bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full">#{t}</span>
           ))}
-          <span className="flex items-center gap-0.5"><Eye className="w-3 h-3" />{(q.view_count || 0).toLocaleString()}</span>
-          <span className="flex items-center gap-0.5"><Heart className="w-3 h-3" />{q.like_count || 0}</span>
+          <span className="flex items-center gap-1"><Eye className="w-3 h-3" />{(q.view_count || 0).toLocaleString()}</span>
+          <span className="flex items-center gap-1"><Heart className="w-3 h-3" />{q.like_count || 0}</span>
         </div>
       </div>
       <ChevronRight className="w-4 h-4 text-gray-300 group-hover:text-cyan-hana transition-colors shrink-0 mt-1" />
@@ -243,9 +248,8 @@ export default function CategoryPage() {
     </div>
   )
 
-  // [2026-05-21] 카테고리 메타데이터 통합 — banner / icon / accent 일관 적용
+  // [2026-05-21] 카테고리 메타데이터 통합 — 헤더 배너 전용 (본문 인터랙티브는 cyan-hana 통일)
   const meta = getCategoryMeta(category.id)
-  const catColor = meta.accent || category.color || '#00B4D8'
 
   // [2026-05-21 D6 보강] 구조화 데이터 — BreadcrumbList + CollectionPage + ItemList
   // 검색엔진/AI 에게 카테고리 페이지가 "Q&A 컬렉션 허브"임을 명확히 알리는 3종 세트.
@@ -331,7 +335,7 @@ export default function CategoryPage() {
           <div className="flex flex-col lg:flex-row gap-6">
             {/* ── 메인: 질문 목록 ── */}
             <main className="flex-1 min-w-0">
-              {/* 정렬 탭 */}
+              {/* [2026-05-21] 정렬 탭 — 카테고리 무관 cyan-hana 통일 (active 색 통일) */}
               <div className="flex items-center gap-2 mb-4">
                 {[
                   { key: 'popular', label: '🔥 인기순' },
@@ -341,12 +345,11 @@ export default function CategoryPage() {
                   <button
                     key={s.key}
                     onClick={() => { setSort(s.key); setPage(1) }}
-                    className={`px-3 py-1.5 rounded-xl text-sm font-medium transition-all ${
+                    className={`px-3.5 py-1.5 rounded-full text-sm font-medium transition-all ${
                       sort === s.key
-                        ? 'text-white shadow'
-                        : 'bg-white border border-border-hana text-gray-600 hover:border-cyan-hana'
+                        ? 'bg-cyan-hana text-white shadow-sm ring-1 ring-cyan-hana/40'
+                        : 'bg-white border border-gray-200 text-gray-600 hover:border-cyan-hana hover:text-cyan-hana'
                     }`}
-                    style={sort === s.key ? { backgroundColor: catColor } : {}}
                   >
                     {s.label}
                   </button>
@@ -385,22 +388,26 @@ export default function CategoryPage() {
                 )}
               </div>
 
-              {/* 페이지네이션 */}
+              {/* [2026-05-21] 페이지네이션 — cyan-hana 통일 */}
               {totalPages > 1 && (
-                <div className="flex items-center justify-center gap-2 mt-6">
+                <div className="flex items-center justify-center gap-1.5 mt-6">
                   <button onClick={() => setPage(p => Math.max(1, p - 1))} disabled={page === 1}
-                    className="px-4 py-2 rounded-xl border border-border-hana text-sm text-gray-600 hover:border-cyan-hana disabled:opacity-40 transition">이전</button>
+                    className="px-4 py-2 rounded-lg border border-gray-200 bg-white text-sm text-gray-600 hover:border-cyan-hana hover:text-cyan-hana disabled:opacity-40 disabled:hover:border-gray-200 disabled:hover:text-gray-600 transition">이전</button>
                   {[...Array(Math.min(5, totalPages))].map((_, i) => {
                     const p = Math.max(1, Math.min(page - 2, totalPages - 4)) + i
+                    const active = page === p
                     return (
                       <button key={p} onClick={() => setPage(p)}
-                        className={`w-10 h-10 rounded-xl text-sm font-medium transition ${page === p ? 'text-white' : 'border border-border-hana text-gray-600 hover:border-cyan-hana'}`}
-                        style={page === p ? { backgroundColor: catColor } : {}}
+                        className={`w-10 h-10 rounded-lg text-sm font-medium transition ${
+                          active
+                            ? 'bg-cyan-hana text-white ring-1 ring-cyan-hana/40 shadow-sm'
+                            : 'bg-white border border-gray-200 text-gray-600 hover:border-cyan-hana hover:text-cyan-hana'
+                        }`}
                       >{p}</button>
                     )
                   })}
                   <button onClick={() => setPage(p => Math.min(totalPages, p + 1))} disabled={page === totalPages}
-                    className="px-4 py-2 rounded-xl border border-border-hana text-sm text-gray-600 hover:border-cyan-hana disabled:opacity-40 transition">다음</button>
+                    className="px-4 py-2 rounded-lg border border-gray-200 bg-white text-sm text-gray-600 hover:border-cyan-hana hover:text-cyan-hana disabled:opacity-40 disabled:hover:border-gray-200 disabled:hover:text-gray-600 transition">다음</button>
                 </div>
               )}
             </main>
@@ -421,8 +428,9 @@ export default function CategoryPage() {
                         to={`/q/${q.slug || q.id}`}
                         className="flex items-start gap-2 group"
                       >
-                        <span className={`shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold mt-0.5 ${i < 3 ? 'text-white' : 'bg-gray-100 text-gray-500'}`}
-                          style={i < 3 ? { backgroundColor: catColor } : {}}>
+                        <span className={`shrink-0 inline-flex items-center justify-center w-5 h-5 rounded-full text-xs font-bold mt-0.5 ${
+                          i < 3 ? 'bg-cyan-hana text-white' : 'bg-gray-100 text-gray-500'
+                        }`}>
                           {i + 1}
                         </span>
                         <p className="text-xs text-gray-600 group-hover:text-cyan-hana transition line-clamp-2 leading-snug">{q.title}</p>
