@@ -1,0 +1,359 @@
+[
+  {
+    "path": "/category/cardiovascular",
+    "status": 200,
+    "xExtra": "yes:2",
+    "xCount": "2",
+    "scriptCount": 3,
+    "types": {
+      "Organization": 1,
+      "WebSite": 1,
+      "WebPage": 1,
+      "FAQPage": 1,
+      "MedicalWebPage": 1,
+      "Dataset": 1,
+      "DefinedTermSet": 1,
+      "BreadcrumbList": 1,
+      "CollectionPage": 1
+    },
+    "parseErrors": [],
+    "verdict": "PASS"
+  },
+  {
+    "path": "/category/metabolism",
+    "status": 200,
+    "xExtra": "yes:2",
+    "xCount": "2",
+    "scriptCount": 3,
+    "types": {
+      "Organization": 1,
+      "WebSite": 1,
+      "WebPage": 1,
+      "FAQPage": 1,
+      "MedicalWebPage": 1,
+      "Dataset": 1,
+      "DefinedTermSet": 1,
+      "BreadcrumbList": 1,
+      "CollectionPage": 1
+    },
+    "parseErrors": [],
+    "verdict": "PASS"
+  },
+  {
+    "path": "/category/cancer-immune",
+    "status": 200,
+    "xExtra": "yes:2",
+    "xCount": "2",
+    "scriptCount": 3,
+    "types": {
+      "Organization": 1,
+      "WebSite": 1,
+      "WebPage": 1,
+      "FAQPage": 1,
+      "MedicalWebPage": 1,
+      "Dataset": 1,
+      "DefinedTermSet": 1,
+      "BreadcrumbList": 1,
+      "CollectionPage": 1
+    },
+    "parseErrors": [],
+    "verdict": "PASS"
+  },
+  {
+    "path": "/category/digestive",
+    "status": 200,
+    "xExtra": "yes:2",
+    "xCount": "2",
+    "scriptCount": 3,
+    "types": {
+      "Organization": 1,
+      "WebSite": 1,
+      "WebPage": 1,
+      "FAQPage": 1,
+      "MedicalWebPage": 1,
+      "Dataset": 1,
+      "DefinedTermSet": 1,
+      "BreadcrumbList": 1,
+      "CollectionPage": 1
+    },
+    "parseErrors": [],
+    "verdict": "PASS"
+  },
+  {
+    "path": "/category/neuro-cognitive",
+    "status": 200,
+    "xExtra": "yes:2",
+    "xCount": "2",
+    "scriptCount": 3,
+    "types": {
+      "Organization": 1,
+      "WebSite": 1,
+      "WebPage": 1,
+      "FAQPage": 1,
+      "MedicalWebPage": 1,
+      "Dataset": 1,
+      "DefinedTermSet": 1,
+      "BreadcrumbList": 1,
+      "CollectionPage": 1
+    },
+    "parseErrors": [],
+    "verdict": "PASS"
+  },
+  {
+    "path": "/category/mental-health",
+    "status": 200,
+    "xExtra": "yes:2",
+    "xCount": "2",
+    "scriptCount": 3,
+    "types": {
+      "Organization": 1,
+      "WebSite": 1,
+      "WebPage": 1,
+      "FAQPage": 1,
+      "MedicalWebPage": 1,
+      "Dataset": 1,
+      "DefinedTermSet": 1,
+      "BreadcrumbList": 1,
+      "CollectionPage": 1
+    },
+    "parseErrors": [],
+    "verdict": "PASS"
+  },
+  {
+    "path": "/category/musculoskeletal",
+    "status": 200,
+    "xExtra": "yes:2",
+    "xCount": "2",
+    "scriptCount": 3,
+    "types": {
+      "Organization": 1,
+      "WebSite": 1,
+      "WebPage": 1,
+      "FAQPage": 1,
+      "MedicalWebPage": 1,
+      "Dataset": 1,
+      "DefinedTermSet": 1,
+      "BreadcrumbList": 1,
+      "CollectionPage": 1
+    },
+    "parseErrors": [],
+    "verdict": "PASS"
+  },
+  {
+    "path": "/category/skin-hair",
+    "status": 200,
+    "xExtra": "yes:2",
+    "xCount": "2",
+    "scriptCount": 3,
+    "types": {
+      "Organization": 1,
+      "WebSite": 1,
+      "WebPage": 1,
+      "FAQPage": 1,
+      "MedicalWebPage": 1,
+      "Dataset": 1,
+      "DefinedTermSet": 1,
+      "BreadcrumbList": 1,
+      "CollectionPage": 1
+    },
+    "parseErrors": [],
+    "verdict": "PASS"
+  },
+  {
+    "path": "/category/skin",
+    "status": 200,
+    "xExtra": "yes:2",
+    "xCount": "2",
+    "scriptCount": 3,
+    "types": {
+      "Organization": 1,
+      "WebSite": 1,
+      "WebPage": 1,
+      "FAQPage": 1,
+      "MedicalWebPage": 1,
+      "Dataset": 1,
+      "DefinedTermSet": 1,
+      "BreadcrumbList": 1,
+      "CollectionPage": 1
+    },
+    "parseErrors": [],
+    "verdict": "PASS"
+  },
+  {
+    "path": "/category/hair",
+    "status": 200,
+    "xExtra": "yes:2",
+    "xCount": "2",
+    "scriptCount": 3,
+    "types": {
+      "Organization": 1,
+      "WebSite": 1,
+      "WebPage": 1,
+      "FAQPage": 1,
+      "MedicalWebPage": 1,
+      "Dataset": 1,
+      "DefinedTermSet": 1,
+      "BreadcrumbList": 1,
+      "CollectionPage": 1
+    },
+    "parseErrors": [],
+    "verdict": "PASS"
+  },
+  {
+    "path": "/category/respiratory",
+    "status": 200,
+    "xExtra": "yes:2",
+    "xCount": "2",
+    "scriptCount": 3,
+    "types": {
+      "Organization": 1,
+      "WebSite": 1,
+      "WebPage": 1,
+      "FAQPage": 1,
+      "MedicalWebPage": 1,
+      "Dataset": 1,
+      "DefinedTermSet": 1,
+      "BreadcrumbList": 1,
+      "CollectionPage": 1
+    },
+    "parseErrors": [],
+    "verdict": "PASS"
+  },
+  {
+    "path": "/category/infection-inflammation",
+    "status": 200,
+    "xExtra": "yes:2",
+    "xCount": "2",
+    "scriptCount": 3,
+    "types": {
+      "Organization": 1,
+      "WebSite": 1,
+      "WebPage": 1,
+      "FAQPage": 1,
+      "MedicalWebPage": 1,
+      "Dataset": 1,
+      "DefinedTermSet": 1,
+      "BreadcrumbList": 1,
+      "CollectionPage": 1
+    },
+    "parseErrors": [],
+    "verdict": "PASS"
+  },
+  {
+    "path": "/category/womens-health",
+    "status": 200,
+    "xExtra": "yes:2",
+    "xCount": "2",
+    "scriptCount": 3,
+    "types": {
+      "Organization": 1,
+      "WebSite": 1,
+      "WebPage": 1,
+      "FAQPage": 1,
+      "MedicalWebPage": 1,
+      "Dataset": 1,
+      "DefinedTermSet": 1,
+      "BreadcrumbList": 1,
+      "CollectionPage": 1
+    },
+    "parseErrors": [],
+    "verdict": "PASS"
+  },
+  {
+    "path": "/category/mens-health",
+    "status": 200,
+    "xExtra": "yes:2",
+    "xCount": "2",
+    "scriptCount": 3,
+    "types": {
+      "Organization": 1,
+      "WebSite": 1,
+      "WebPage": 1,
+      "FAQPage": 1,
+      "MedicalWebPage": 1,
+      "Dataset": 1,
+      "DefinedTermSet": 1,
+      "BreadcrumbList": 1,
+      "CollectionPage": 1
+    },
+    "parseErrors": [],
+    "verdict": "PASS"
+  },
+  {
+    "path": "/learn",
+    "status": 200,
+    "xExtra": "yes:2",
+    "xCount": "2",
+    "scriptCount": 3,
+    "types": {
+      "Organization": 1,
+      "WebSite": 1,
+      "WebPage": 1,
+      "FAQPage": 1,
+      "MedicalWebPage": 1,
+      "Dataset": 1,
+      "DefinedTermSet": 1,
+      "BreadcrumbList": 1,
+      "LearningResource": 1
+    },
+    "parseErrors": [],
+    "verdict": "PASS"
+  },
+  {
+    "path": "/easy",
+    "status": 200,
+    "xExtra": "yes:2",
+    "xCount": "2",
+    "scriptCount": 3,
+    "types": {
+      "Organization": 1,
+      "WebSite": 1,
+      "WebPage": 1,
+      "FAQPage": 1,
+      "MedicalWebPage": 2,
+      "Dataset": 1,
+      "DefinedTermSet": 1,
+      "BreadcrumbList": 1
+    },
+    "parseErrors": [],
+    "verdict": "PASS"
+  },
+  {
+    "path": "/phlorotannin",
+    "status": 200,
+    "xExtra": "yes:2",
+    "xCount": "2",
+    "scriptCount": 3,
+    "types": {
+      "Organization": 1,
+      "WebSite": 1,
+      "WebPage": 1,
+      "FAQPage": 1,
+      "MedicalWebPage": 2,
+      "Dataset": 1,
+      "DefinedTermSet": 1,
+      "BreadcrumbList": 1
+    },
+    "parseErrors": [],
+    "verdict": "PASS"
+  },
+  {
+    "path": "/glossary",
+    "status": 200,
+    "xExtra": "yes:1",
+    "xCount": "1",
+    "scriptCount": 2,
+    "types": {
+      "Organization": 1,
+      "WebSite": 1,
+      "WebPage": 1,
+      "FAQPage": 1,
+      "MedicalWebPage": 1,
+      "Dataset": 1,
+      "DefinedTermSet": 1,
+      "BreadcrumbList": 1
+    },
+    "parseErrors": [],
+    "verdict": "PASS"
+  }
+]

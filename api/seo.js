@@ -111,6 +111,15 @@ const CATEGORY_NAMES = {
   'mental_health': '정신·마음 건강정보',
   'womens_health': '여성 건강정보',
   'mens_health': '남성 건강정보',
+  // [D7] dash-case URL slug 동의어 매핑 (CategoryPage 가 dash-case 로 라우팅됨)
+  'cancer-immune': '암·면역 건강정보',
+  'neuro-cognitive': '뇌·인지 건강정보',
+  'mental-health': '정신·마음 건강정보',
+  'skin-hair': '피부·모발 건강정보',
+  'skin-hair-care': '피부·모발 건강정보',
+  'infection-inflammation': '감염·염증 건강정보',
+  'womens-health': '여성 건강정보',
+  'mens-health': '남성 건강정보',
   'ingredient-comparison': '성분 비교 아카이브',
   'disease-health-info': '질환별 건강정보',
   'partner-info': '파트너 정보페이지',
@@ -826,6 +835,238 @@ function injectJsonLd(html, jsonLdObjArray) {
   return html.replace(/<\/head>/i, `${scripts}</head>`)
 }
 
+// ─────────────────────────────────────────────────────────────────
+// [2026-05-21 D7 보강] 카테고리·허브 페이지 서버 사이드 JSON-LD 빌더
+//   React 컴포넌트의 SEOHead 가 클라이언트 사이드에서만 JSON-LD를 추가하므로
+//   봇이 첫 fetch 받는 HTML 에는 BreadcrumbList/CollectionPage/ItemList 등이 누락된다.
+//   여기서 같은 시그널을 서버 사이드에서 그대로 만들어 inject 한다.
+// ─────────────────────────────────────────────────────────────────
+
+// URL slug(dash-case) → category_id(snake_case 정규형) 정규화
+const URL_SLUG_TO_CAT_ID = {
+  'metabolism': 'metabolism',
+  'cancer-immune': 'cancer_immune',
+  'digestive': 'digestive',
+  'cardiovascular': 'cardiovascular',
+  'neuro-cognitive': 'neuro_cognitive',
+  'mental-health': 'mental_health',
+  'musculoskeletal': 'musculoskeletal',
+  'skin-hair': 'skin_hair',
+  'skin-hair-care': 'skin_hair',
+  'skin': 'skin',
+  'hair': 'hair',
+  'respiratory': 'respiratory',
+  'infection-inflammation': 'infection_inflammation',
+  'womens-health': 'womens_health',
+  'mens-health': 'mens_health',
+}
+
+// /category/:slug → BreadcrumbList + CollectionPage JSON-LD
+// (ItemList 는 동적 fetch 비용이 커서 서버 사이드에선 생략; 클라이언트 사이드 보강에 위임)
+function buildCategoryJsonLd(pathname, name) {
+  const pageUrl = `${SITE}${pathname}`
+  const breadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": `${pageUrl}#breadcrumb`,
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "홈", "item": `${SITE}/` },
+      { "@type": "ListItem", "position": 2, "name": "건강 Q&A", "item": `${SITE}/qa` },
+      { "@type": "ListItem", "position": 3, "name": name, "item": pageUrl },
+    ]
+  }
+  const collection = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${pageUrl}#collection`,
+    "url": pageUrl,
+    "name": `${name} 건강정보 Q&A`,
+    "description": `${name} 관련 연구기반 Q&A 아카이브 — 플로로탄닌·감태추출물·해양 폴리페놀 종합 건강정보 데이터센터`,
+    "inLanguage": "ko-KR",
+    "isPartOf": {
+      "@type": "WebSite",
+      "@id": `${SITE}/#website`,
+      "url": `${SITE}/`,
+      "name": "플로로탄닌 종합 건강정보 데이터센터"
+    },
+    "breadcrumb": { "@id": `${pageUrl}#breadcrumb` },
+    "about": { "@type": "Thing", "name": name },
+  }
+  return [breadcrumb, collection]
+}
+
+// /learn → BreadcrumbList + LearningResource
+function buildLearnJsonLd() {
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": `${SITE}/learn#breadcrumb`,
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "홈", "item": `${SITE}/` },
+        { "@type": "ListItem", "position": 2, "name": "학습 가이드", "item": `${SITE}/learn` },
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "LearningResource",
+      "@id": `${SITE}/learn#resource`,
+      "url": `${SITE}/learn`,
+      "name": "플로로탄닌 쉽게 배우기 — 감태추출물·해양 폴리페놀 학습 가이드",
+      "description": "플로로탄닌·감태추출물·해양 폴리페놀의 작용기전과 건강 효과를 단계별로 학습하는 종합 가이드. 항산화·염증·혈당·수면·면역·뇌 건강 주제 포함.",
+      "inLanguage": "ko-KR",
+      "audience": { "@type": "Audience", "audienceType": "일반 성인 학습자" },
+      "educationalLevel": "Beginner to Intermediate",
+      "learningResourceType": "Guide",
+      "about": [
+        { "@type": "Thing", "name": "플로로탄닌(Phlorotannin)" },
+        { "@type": "Thing", "name": "감태추출물(Ecklonia cava extract)" },
+        { "@type": "Thing", "name": "해양 폴리페놀" },
+      ],
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": `${SITE}/#website`,
+        "url": `${SITE}/`,
+        "name": "플로로탄닌 종합 건강정보 데이터센터"
+      }
+    }
+  ]
+}
+
+// /easy → BreadcrumbList + MedicalWebPage
+function buildEasyJsonLd() {
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": `${SITE}/easy#breadcrumb`,
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "홈", "item": `${SITE}/` },
+        { "@type": "ListItem", "position": 2, "name": "쉬운 건강정보", "item": `${SITE}/easy` },
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalWebPage",
+      "@id": `${SITE}/easy#page`,
+      "url": `${SITE}/easy`,
+      "name": "쉬운 플로로탄닌 건강정보",
+      "description": "플로로탄닌·감태추출물·해양 폴리페놀을 처음 접하는 분들을 위해 항산화·염증·수면·혈당·면역 건강정보를 쉬운 언어로 정리한 허브",
+      "inLanguage": "ko-KR",
+      "audience": { "@type": "MedicalAudience", "audienceType": "Patient" },
+      "specialty": [
+        { "@type": "MedicalSpecialty", "name": "Internal Medicine" },
+        { "@type": "MedicalSpecialty", "name": "Nutrition" }
+      ],
+      "about": [
+        { "@type": "Thing", "name": "당뇨" },
+        { "@type": "Thing", "name": "고혈압" },
+        { "@type": "Thing", "name": "비만" },
+        { "@type": "Thing", "name": "치매" },
+        { "@type": "Thing", "name": "스트레스" },
+        { "@type": "Thing", "name": "피부 건강" },
+        { "@type": "Thing", "name": "관절 건강" },
+        { "@type": "Thing", "name": "암 예방" }
+      ],
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": `${SITE}/#website`,
+        "url": `${SITE}/`,
+        "name": "플로로탄닌 종합 건강정보 데이터센터"
+      }
+    }
+  ]
+}
+
+// /phlorotannin → BreadcrumbList + MedicalWebPage (이미 클라이언트에 있지만 서버 사이드에서도 동일 송신)
+function buildPhlorotanninJsonLd() {
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": `${SITE}/phlorotannin#breadcrumb`,
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "홈", "item": `${SITE}/` },
+        { "@type": "ListItem", "position": 2, "name": "플로로탄닌 소개", "item": `${SITE}/phlorotannin` },
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalWebPage",
+      "@id": `${SITE}/phlorotannin#page`,
+      "url": `${SITE}/phlorotannin`,
+      "name": "플로로탄닌(Phlorotannin)이란? - 해양 폴리페놀 과학적 근거",
+      "description": "감태·미역·다시마 등 갈조류에서 추출한 해양 폴리페놀 플로로탄닌의 6가지 과학적 작용기전",
+      "inLanguage": "ko-KR",
+      "about": {
+        "@type": "Drug",
+        "name": "플로로탄닌 (Phlorotannin)",
+        "alternateName": ["Phlorotannin", "감태추출물", "해양폴리페놀"],
+        "description": "갈조류(감태·미역·다시마)에서 추출한 해양 폴리페놀 계열 천연 소재"
+      }
+    }
+  ]
+}
+
+// /glossary → BreadcrumbList (DefinedTermSet 은 데이터 의존이 커서 클라이언트에 위임)
+function buildGlossaryJsonLd() {
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": `${SITE}/glossary#breadcrumb`,
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "홈", "item": `${SITE}/` },
+        { "@type": "ListItem", "position": 2, "name": "용어 사전", "item": `${SITE}/glossary` },
+      ]
+    }
+  ]
+}
+
+// /qa/tag/:tag → BreadcrumbList
+function buildTagJsonLd(pathname, tag) {
+  const pageUrl = `${SITE}${pathname}`
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": `${pageUrl}#breadcrumb`,
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "홈", "item": `${SITE}/` },
+        { "@type": "ListItem", "position": 2, "name": "건강 Q&A", "item": `${SITE}/qa` },
+        { "@type": "ListItem", "position": 3, "name": `#${tag}`, "item": pageUrl },
+      ]
+    }
+  ]
+}
+
+// pathname 으로부터 적절한 JSON-LD 배열을 반환 (없으면 [])
+function buildJsonLdForPath(pathname) {
+  // /category/:slug
+  if (pathname.startsWith('/category/')) {
+    const slug = pathname.replace('/category/', '').split('/')[0]
+    const catId = URL_SLUG_TO_CAT_ID[slug] || slug
+    const name = CATEGORY_NAMES[catId] || CATEGORY_NAMES[slug] || slug
+    return buildCategoryJsonLd(pathname, name)
+  }
+  // /learn
+  if (pathname === '/learn') return buildLearnJsonLd()
+  // /easy
+  if (pathname === '/easy') return buildEasyJsonLd()
+  // /phlorotannin
+  if (pathname === '/phlorotannin') return buildPhlorotanninJsonLd()
+  // /glossary
+  if (pathname === '/glossary') return buildGlossaryJsonLd()
+  // /qa/tag/:tag
+  if (pathname.startsWith('/qa/tag/')) {
+    const rawTag = pathname.replace('/qa/tag/', '').split('/')[0]
+    let tag = rawTag
+    try { tag = decodeURIComponent(rawTag) } catch { /* keep */ }
+    return buildTagJsonLd(pathname, tag)
+  }
+  return []
+}
+
 // Related Posts 3건을 fallback body에 덧붙일 HTML 생성
 function buildRelatedPostsHtml(relatedPosts) {
   if (!Array.isArray(relatedPosts) || relatedPosts.length === 0) return ''
@@ -1102,6 +1343,27 @@ export default async function handler(req, res) {
 
     let html = injectMeta(indexHtml, meta)
 
+    // ─── [2026-05-21 D7 보강] 카테고리·허브 페이지 서버 사이드 JSON-LD 주입 ─────
+    // React SEOHead 가 클라이언트 사이드에서만 JSON-LD를 추가하므로 봇의 첫 fetch HTML 에
+    // BreadcrumbList/CollectionPage/LearningResource 등이 누락된다. 동일 시그널을 서버
+    // 사이드에서도 직접 inject 해서 자바스크립트 미실행 봇/검색엔진에게도 100% 전달.
+    let extraLdApplied = 'no'
+    let extraLdCount = 0
+    if (process.env.JSONLD_DISABLED !== '1') {
+      try {
+        const extraLdArray = buildJsonLdForPath(pathname)
+        if (extraLdArray && extraLdArray.length > 0) {
+          html = injectJsonLd(html, extraLdArray)
+          extraLdCount = extraLdArray.length
+          extraLdApplied = `yes:${extraLdCount}`
+        }
+      } catch (e) {
+        extraLdApplied = `error:${(e && e.message) || 'unknown'}`
+      }
+    } else {
+      extraLdApplied = 'disabled'
+    }
+
     // ─── SSR-lite Fallback (AI 크롤러 본문 읽기 최적화) ───────────────
     // 환경변수 SSR_LITE_DISABLED=1 이면 비활성화 (롤백 토글).
     let ssrLiteApplied = 'none'
@@ -1207,6 +1469,9 @@ export default async function handler(req, res) {
     res.setHeader('X-Breadcrumb-JsonLd', breadcrumbLdApplied)
     res.setHeader('X-Faq-JsonLd', faqLdApplied)
     res.setHeader('X-Related-Posts', String(relatedPostsCount))
+    // [D7] 카테고리·허브 JSON-LD 진단
+    res.setHeader('X-Extra-JsonLd', extraLdApplied)
+    res.setHeader('X-Extra-JsonLd-Count', String(extraLdCount))
     res.status(200).send(html)
   } catch (e) {
     res.setHeader('Content-Type', 'text/plain; charset=utf-8')
