@@ -237,6 +237,78 @@
       font-size: 0.875rem;
     }
   }
+
+  /* ───────────────────────────────────────────────────────────────
+   * .blog-cta-soft — 블로그 본문 내 광고톤 CTA 박스 톤다운 (2026-05-21)
+   *   DB 컨텐츠 안의 inline-style CTA 박스(맞춤 자료 무료로 받기 등)를
+   *   전문가톤 정보 박스로 강제 다운그레이드한다.
+   *   - 화려한 그라데이션/색상 제거 → 차분한 다크 네이비
+   *   - 액센트는 cyan-hana 1색만 유지 (브랜드 일관성)
+   *   - 내부 link/button 들도 톤다운
+   * ─────────────────────────────────────────────────────────────── */
+  .prose-custom .blog-cta-soft {
+    background: linear-gradient(135deg, #0B1A2E 0%, #102540 100%) !important;
+    background-color: #0B1A2E !important;
+    background-image: none !important;
+    color: #E5EAF1 !important;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 1rem;
+    padding: 1.25rem 1.5rem !important;
+    margin: 1.5rem 0 !important;
+    text-align: left !important;
+    box-shadow: none !important;
+  }
+  .prose-custom .blog-cta-soft * {
+    color: inherit !important;
+    text-shadow: none !important;
+  }
+  .prose-custom .blog-cta-soft h1,
+  .prose-custom .blog-cta-soft h2,
+  .prose-custom .blog-cta-soft h3,
+  .prose-custom .blog-cta-soft h4,
+  .prose-custom .blog-cta-soft strong,
+  .prose-custom .blog-cta-soft b {
+    color: #FFFFFF !important;
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 0.5rem !important;
+  }
+  .prose-custom .blog-cta-soft p {
+    color: rgba(255,255,255,0.72) !important;
+    font-size: 0.875rem !important;
+    line-height: 1.6 !important;
+    margin: 0.25rem 0 !important;
+  }
+  .prose-custom .blog-cta-soft a,
+  .prose-custom .blog-cta-soft button {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.375rem !important;
+    background: rgba(0,180,216,0.12) !important;
+    background-color: rgba(0,180,216,0.12) !important;
+    background-image: none !important;
+    color: #00B4D8 !important;
+    border: 1px solid rgba(0,180,216,0.35) !important;
+    border-radius: 0.5rem !important;
+    padding: 0.5rem 0.875rem !important;
+    margin-top: 0.625rem !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+    font-size: 0.875rem !important;
+    box-shadow: none !important;
+    transition: background-color 150ms ease, color 150ms ease;
+  }
+  .prose-custom .blog-cta-soft a:hover,
+  .prose-custom .blog-cta-soft button:hover {
+    background: rgba(0,180,216,0.22) !important;
+    color: #FFFFFF !important;
+  }
+  /* 아이콘/이모지가 큰 글씨로 튀는 것 방지 */
+  .prose-custom .blog-cta-soft span[style],
+  .prose-custom .blog-cta-soft div[style] {
+    font-size: inherit !important;
+  }
 }
 
 /* Spin animation for loading */

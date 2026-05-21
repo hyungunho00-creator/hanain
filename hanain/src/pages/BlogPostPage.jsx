@@ -113,6 +113,19 @@ function parseMarkdown(md) {
     .replace(/<p[^>]*>\s*@@MDTABLE_(\d+)@@\s*<\/p>/g, (_, i) => tableStash[Number(i)])
     .replace(/@@MDTABLE_(\d+)@@/g, (_, i) => tableStash[Number(i)])
 
+  // [2026-05-21] CTA 톤다운 — 본문 안의 광고성 CTA 박스(맞춤 자료 무료로 받기 등)는
+  //   DB 컨텐츠에 inline style 로 박혀있어 직접 수정 불가. parseMarkdown 출력 후
+  //   배경 그라데이션과 화려한 색상을 무력화하여 전문가톤 정보 박스로 다운그레이드한다.
+  //   - 광고톤 핵심 패턴: linear-gradient/background-color 가 짙은 색상
+  //   - 광고톤 키워드: '무료로', '지금 받기', '맞춤 자료', '신청하기'
+  // 1) 핵심 광고톤 키워드를 가진 <div> 박스 전체에 .blog-cta-soft 클래스를 부여
+  out = out.replace(
+    /<div([^>]*?)style="([^"]*?)"([^>]*?)>([\s\S]*?(?:맞춤 자료|무료로 받|지금 받기|신청하기)[\s\S]*?)<\/div>/g,
+    (m, pre, _style, post, inner) => `<div${pre}${post} data-cta="soft" class="blog-cta-soft">${inner}</div>`
+  )
+  // 2) inline background style 잔존 시 추가 무력화 (data-cta 마커가 있으면 클래스 우선)
+  // (CSS .blog-cta-soft 가 모든 시각 속성 override)
+
   return out
 }
 
