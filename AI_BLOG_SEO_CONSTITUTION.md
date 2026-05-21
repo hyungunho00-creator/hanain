@@ -379,6 +379,18 @@ print(f'중복 이미지: {len(dup)}건' + (' ❌' if dup else ' ✅'))
 - `generate_sitemap_rss.py` 단일 진입점 (자동 tagIndex 빌드 포함)
 - 신규 Q&A 추가 → 빌드 시 자동 사이트맵 반영 → IndexNow 자동 제출
 
+**E-E-A-T 강화 규칙 (2026-05-21 — 1등 플랫폼 통합 검증 보강)**:
+1. **MedicalWebPage JSON-LD** `index.html` 정적 그래프에 포함 필수 (의료 YMYL 신호)
+   - `audience: MedicalAudience(Patient, geographicArea KR)`
+   - `specialty: MedicalSpecialty[]` (내과·내분비·종양·신경·영양)
+   - `Organization.knowsAbout: [핵심 키워드 30개]`
+2. **사이트 전역 내부링크 — 122 태그 페이지는 orphan 금지**:
+   - Footer 에 인기 태그 12개 nav 강제 (모든 페이지에서 진입점 확보)
+   - 카테고리 링크는 `/category/:slug` 정식 라우트만 사용 (canonical 정합성)
+3. **태그 페이지 description ≥ 120자** (Google CTR 최적화):
+   - `previewTags` (상위 4개 공동출현) 자동 노출 → 롱테일 키워드 매칭
+   - 1글자 태그(폐/암/장 등)는 `${decodedTag} 건강` 으로 확장 (브랜드+질환 차별화)
+
 **canonical-사이트맵 정합성 규칙 (2026-05-21 보강)**:
 1. **사이트맵 URL = canonical URL** 이어야 함 (Google Search Console 경고 차단)
 2. **쿼리스트링 기반 필터 URL** (`/qa?category=…`, `/blog?category=…`, `?q=…`, `?page=…`) 은:

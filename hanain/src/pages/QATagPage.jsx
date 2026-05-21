@@ -100,12 +100,39 @@ export default function QATagPage() {
     return { matchedQuestions: matched, tagMeta: meta }
   }, [qaData, tagIndex, decodedTag])
 
-  // SEO + JSON-LD 계산
+  // SEO + JSON-LD 계산 (헌법 제10조 의무 7 — description 120~158자, 롱테일 키워드 노출)
   const pageUrl = `https://phlorotannin.com/qa/tag/${encodeURIComponent(decodedTag)}`
-  const seoTitle = `${decodedTag} 건강 Q&A ${matchedQuestions.length}개 | 플로로탄닌·감태추출물 정보`
+
+  // 1글자 태그(폐/암/장/뇌/위/뼈/간)는 키워드 카니발리제이션 위험 → 브랜드+질환 조합으로 차별화
+  const isShortTag = decodedTag.length === 1
+  const tagDisplay = isShortTag ? `${decodedTag} 건강` : decodedTag
+
+  const seoTitle = isShortTag
+    ? `${decodedTag} 건강정보 Q&A ${matchedQuestions.length}개 | 플로로탄닌·감태추출물·해양 폴리페놀 아카이브`
+    : `${decodedTag} 건강 Q&A ${matchedQuestions.length}개 | 플로로탄닌·감태추출물 정보`
+
+  // description 풍성화 — 상위 태그 3개를 미리보기 키워드로 노출 → CTR 향상 + 롱테일 매칭
+  const previewTags = (() => {
+    if (matchedQuestions.length === 0) return []
+    const cnt = new Map()
+    for (const q of matchedQuestions.slice(0, 30)) {
+      for (const t of (q.tags || [])) {
+        const tt = (t || '').trim()
+        if (!tt || tt === decodedTag) continue
+        cnt.set(tt, (cnt.get(tt) || 0) + 1)
+      }
+    }
+    return [...cnt.entries()].sort((a, b) => b[1] - a[1]).slice(0, 4).map(([t]) => t)
+  })()
+  const previewSuffix = previewTags.length > 0
+    ? ` 주요 주제: ${previewTags.map(t => `#${t}`).join(' ')}.`
+    : ''
+
+  // "폐 건강 + 건강정보" 같은 단어 중첩 방지 — 1글자 태그는 tagDisplay에 "건강" 이미 포함됨
+  const ariaTag = isShortTag ? decodedTag : tagDisplay  // 두 번째 자리는 원어로
   const seoDesc = matchedQuestions.length > 0
-    ? `${decodedTag} 관련 ${matchedQuestions.length}개 연구기반 Q&A를 모았습니다. 플로로탄닌·감태추출물·해양 폴리페놀의 ${decodedTag} 관련 건강정보를 확인하세요.`
-    : `${decodedTag} 관련 Q&A를 찾고 있습니다.`
+    ? `${tagDisplay} 관련 ${matchedQuestions.length}개 연구기반 Q&A 모음. 플로로탄닌(phlorotannin)·감태추출물(Ecklonia cava)·해양 폴리페놀 관점에서 정리한 ${ariaTag} 아카이브.${previewSuffix} 임상 근거 기반 건강 Q&A 종합 데이터센터.`
+    : `${tagDisplay} 관련 Q&A를 준비 중입니다. 플로로탄닌·감태추출물 종합 건강정보 데이터센터.`
 
   const faqJsonLd = (() => {
     if (matchedQuestions.length === 0) return null

@@ -6,6 +6,25 @@ import { Waves, Phone, MessageCircle } from 'lucide-react'
 import RevealContact from '../common/RevealContact'
 import { getQaCategories } from '../../lib/supabase'
 
+// 카테고리 ID → /category/:slug URL 슬러그 매핑
+// (CategoryPage.jsx SLUG_TO_ID 의 역방향, 헌법 정합성)
+const CAT_ID_TO_SLUG = {
+  metabolism: 'metabolism',
+  cancer_immune: 'cancer-immune',
+  digestive: 'digestive',
+  cardiovascular: 'cardiovascular',
+  neuro_cognitive: 'neuro-cognitive',
+  mental_health: 'mental-health',
+  musculoskeletal: 'musculoskeletal',
+  skin_hair: 'skin-hair',
+  skin: 'skin-hair',
+  hair: 'skin-hair',
+  respiratory: 'respiratory',
+  infection_inflammation: 'infection-inflammation',
+  womens_health: 'womens-health',
+  mens_health: 'mens-health',
+}
+
 // Phase 3: Supabase categories(type='qa') 테이블 1순위, 실패 시 아래 상수 fallback
 const FALLBACK_QA_CATS = [
   { id: 'metabolism', name: '대사질환' },
@@ -26,6 +45,7 @@ const FALLBACK_QA_CATS = [
 export default function Footer() {
   const partner = usePartner()
   const [qaCats, setQaCats] = useState(FALLBACK_QA_CATS)
+  const [topTags, setTopTags] = useState([])
 
   useEffect(() => {
     let cancelled = false
@@ -35,6 +55,20 @@ export default function Footer() {
         setQaCats(list.map(c => ({ id: c.id, name: c.name })))
       })
       .catch(() => {})
+
+    // 인기 태그 상위 12개 로드 (정적 tagIndex.json, 헌법 제10조 — 신규 자산 활성화)
+    fetch('/tagIndex.json')
+      .then(r => r.json())
+      .then(data => {
+        if (cancelled || !data?.tags) return
+        const top = Object.entries(data.tags)
+          .sort((a, b) => b[1].count - a[1].count)
+          .slice(0, 12)
+          .map(([tag, info]) => ({ tag, count: info.count }))
+        setTopTags(top)
+      })
+      .catch(() => {})
+
     return () => { cancelled = true }
   }, [])
 
@@ -156,17 +190,20 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Q&A Categories */}
+          {/* Q&A Categories — /category/:slug 정식 라우트 (canonical 정합성, 헌법 제10조 의무 7) */}
           <div>
             <h3 className="text-white font-semibold mb-4">건강 정보 카테고리</h3>
             <ul className="space-y-2 text-base">
-              {qaCats.map(cat => (
-                <li key={cat.id}>
-                  <Link to={withRef(`/qa?category=${cat.id}`, partner)} className="hover:text-cyan-hana transition-colors">
-                    {cat.name}
-                  </Link>
-                </li>
-              ))}
+              {qaCats.map(cat => {
+                const slug = CAT_ID_TO_SLUG[cat.id] || cat.id.replace(/_/g, '-')
+                return (
+                  <li key={cat.id}>
+                    <Link to={withRef(`/category/${slug}`, partner)} className="hover:text-cyan-hana transition-colors">
+                      {cat.name}
+                    </Link>
+                  </li>
+                )
+              })}
             </ul>
           </div>
 
@@ -213,8 +250,35 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* 인기 태그 — 122개 /qa/tag/:tag 자산의 진입점 (헌법 제10조 · DO_NOT_TOUCH §3-Q SEO 정합성)
+            모든 페이지 푸터에서 노출되어 내부링크 equity 분산, orphan 방지. */}
+        {topTags.length > 0 && (
+          <nav aria-label="인기 건강 태그" className="mt-12 pt-8 border-t border-white/10">
+            <h3 className="text-white font-semibold mb-4 text-base">자주 찾는 건강 주제</h3>
+            <div className="flex flex-wrap gap-2">
+              {topTags.map(({ tag, count }) => (
+                <Link
+                  key={tag}
+                  to={withRef(`/qa/tag/${encodeURIComponent(tag)}`, partner)}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/5 hover:bg-cyan-hana/20 border border-white/10 hover:border-cyan-hana rounded-full text-sm text-gray-300 hover:text-white transition-colors"
+                  aria-label={`#${tag} 관련 ${count}개 Q&A`}
+                >
+                  <span className="text-cyan-hana">#</span>{tag}
+                  <span className="text-xs text-gray-500">{count}</span>
+                </Link>
+              ))}
+              <Link
+                to={withRef('/qa', partner)}
+                className="inline-flex items-center gap-1 px-3 py-1.5 text-sm text-cyan-hana hover:underline"
+              >
+                전체 보기 →
+              </Link>
+            </div>
+          </nav>
+        )}
+
         {/* 저작권 안내 박스 (강화) */}
-        <div className="border border-white/10 rounded-2xl bg-white/5 px-5 md:px-6 py-5 mt-12 mb-6">
+        <div className="border border-white/10 rounded-2xl bg-white/5 px-5 md:px-6 py-5 mt-8 mb-6">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
             <div className="min-w-0">
               <p className="text-white text-sm md:text-base font-semibold mb-1.5">
