@@ -147,6 +147,22 @@
   - 이유: 봇 첫 fetch HTML 에서 JSON-LD 누락 = SEO 자산화 본질 무력화 (D6 검증에서 확인된 실제 사고)
 - ✅ 비상시 비활성화는 `JSONLD_DISABLED=1` 환경변수로만 허용 (코드 삭제 금지)
 
+**Q&A 본체(/q/:slug) SSR 자산화 동결 (2026-05-21 D8 — 사용자 발견 잔존 누락)**:
+- ❌ `api/seo.js` 의 `readQaJson()` / `getQaIndex()` / `findQuestionBySlug()` / `qaSlug()` 4 함수 삭제 금지
+  - 이유: 1,361개 Q&A URL 의 카테고리·질문·답변을 봇에게 알려주는 유일한 진실원 접근 경로
+- ❌ `qaSlug()` 의 정규식 (`/[^\w\s가-힣]/g` 제거 → `/\s+/g` → `'-'` → `slice(0,60)`) 변경 금지
+  - 이유: 헌법 §3-Q 슬러그 규칙과 불일치 시 모든 매칭 실패 → 1,361 페이지 전체가 fallback으로 회귀
+- ❌ `api/seo.js` 의 `/q/:slug` 핸들러에서 `findQuestionBySlug()` 호출 분기 삭제 금지
+  - 이유: 호출 안 하면 모든 Q&A 페이지가 default OG + 글로벌 JSON-LD 만 송신 (D8 이전 사고 상태로 회귀)
+- ❌ `buildQuestionJsonLd()` 함수 삭제 금지
+  - 이유: QAPage + BreadcrumbList 가 SSR 송신되는 유일한 경로 — 삭제 시 Google Q&A rich result 자격 상실
+- ❌ `buildJsonLdForPath()` 의 `/q/:slug` 분기 제거 금지
+  - 이유: 빌더가 존재해도 디스패처에 등록 안 되면 핸들러가 호출하지 않음
+- ❌ `buildQuestionJsonLd()` 의 답변 텍스트 제어문자 제거 (`0x00-0x1F`, `0x7F`) 로직 제거 금지
+  - 이유: 응답 헤더에 비-ASCII 가 들어가 `Invalid character in header content` 500 에러 사고 (D3에서 발생 이력)
+- ❌ `qa.json` 의 카테고리 ID 들 (`metabolism`, `cancer_immune`, `digestive`, `cardiovascular`, `neuro_cognitive`, `mental_health`, `musculoskeletal`, `skin`, `hair`, `skin_hair`, `respiratory`, `infection_inflammation`, `womens_health`, `mens_health`) 을 다른 값으로 일괄 변경 금지
+  - 이유: `CAT_OG_SLUG` ↔ `CATEGORY_NAMES` ↔ qa.json category 3축 정합성 파괴 → og:image 와 카테고리명 모두 누락
+
 ---
 
 ## 4. 파트너 시스템

@@ -557,6 +557,48 @@ curl -sI -A "Mozilla/5.0 (compatible; Yeti/1.1; +https://naver.me/spd)" \
 
 **위반 시 영향**: 컬렉션·허브·태그 페이지의 모든 SEO 자산이 봇 가시성 0이 됨 → 페이지랭크가 글로벌 graph 1개에만 묶임 → 토픽 클러스터·계층 구조가 검색엔진에 전달되지 않음 → 자산화 효과 73%+ 손실.
 
+**(8) Q&A 본체(/q/:slug) SSR 자산화 (2026-05-21 D8 — 사용자 발견 잔존 누락 영역)**
+
+D7 검증 직후 사용자 지적: *"잉? 글로벌만? 이건모야? 다 자산화도 마무리한거 아니야?"* 자산화의 **본체인 1,361개 Q&A 페이지**가 봇 첫 fetch 시점에 **글로벌 메타·JSON-LD 만** 송신하고 있었음. og:image 는 전부 `qa-default.png`, JSON-LD 에 QAPage 부재, BreadcrumbList 부재 — D6의 OG 13장과 D7의 SSR 인프라가 본체 페이지에서는 무용지물이었던 상태.
+
+다음을 **불변 의무**로 한다:
+
+- **`api/seo.js` 가 `qa.json` 진실원을 콜드스타트 시 메모리 인덱스화한다**.
+  - `readQaJson()` — 4 경로 후보 (`public/qa.json`, `qa.json`, `hanain/dist/qa.json`, `hanain/public/qa.json`) 탐색 + 캐시
+  - `qaSlug(question)` — 헌법 §3-Q 동결된 슬러그 규칙(`/[^\w\s가-힣]/g` 제거 → `/\s+/g` → `'-'` → `slice(0,60)`) 정확히 재현
+  - `getQaIndex()` — 1,361건 슬러그→Question 메모리 Map
+  - `findQuestionBySlug(rawSlug)` — 원본+`decodeURIComponent` 양방향 매칭
+- **`/q/:slug` 핸들러는 매칭된 Q&A 로부터 정확한 메타를 송신한다**.
+  - title: `{질문} | {카테고리명} — 플로로탄닌·감태추출물 건강정보`
+  - desc: 답변 첫 158자 (한글 가독성 우선)
+  - ogImage: `ogImageForCategory(catId)` — 카테고리별 13종 OG 차별화
+  - 미매칭 시 안전 fallback (default OG + 슬러그 기반 readable title)
+- **`buildQuestionJsonLd(pathname, q)` SSR 빌더 필수**.
+  - 반환: `[BreadcrumbList, QAPage]`
+  - BreadcrumbList: 홈 → 건강 Q&A → 카테고리 → 질문 (4단)
+  - QAPage.mainEntity: Question with acceptedAnswer (답변+author+reviewed_at)
+  - 답변 텍스트 `0x00–0x1F` 제어문자 제거 (헤더 ASCII 사고 방지)
+- **`buildJsonLdForPath()` 디스패처에 `/q/:slug` 분기 필수**.
+
+**검증 명령** (배포 후 필수):
+```bash
+# 1,361개 중 무작위 5개 — QAPage + 카테고리 OG 차별화 동시 검증
+for slug in '고혈압약을-평생-먹어야-하나요' \
+            '당뇨약을-10년-넘게-복용-중인데-혈당이-계속-높은-이유가-무엇인가요' \
+            '여드름이-계속-나는데-어떤-식이-관리가-효과적인가요' \
+            '탈모의-원인이-정말-유전인가요-아니면-다른-요인도-있나요' \
+            '알츠하이머병과-혈관성-치매의-차이는-무엇인가요'; do
+  url="https://phlorotannin.com/q/$(python3 -c "from urllib.parse import quote; print(quote('$slug'))")"
+  echo "=== $slug ==="
+  curl -sI -A "Googlebot/2.1" "$url" | grep -i "x-extra-jsonld\|x-og-image"
+  curl -s  -A "Googlebot/2.1" "$url" | grep -oE '"@type":"QAPage"|"@type":"BreadcrumbList"' | sort -u
+done
+```
+
+기대 결과: 모든 URL 에서 `x-extra-jsonld: yes:2` + `QAPage`/`BreadcrumbList` 동시 검출 + og:image 가 카테고리별 PNG 로 차별화.
+
+**위반 시 영향**: Google Q&A 리치 결과 자격 상실, 1,361 URL의 SNS 공유 OG 가 단일 이미지로 노출, 사이트 위계 신호 부재 → 자산화 본체의 색인 신뢰도 50%+ 손실.
+
 ### ✅ 의무 8. 안전성 일괄 검증 (forbidden words)
 - 신규 Q&A 추가 시 (또는 기존 일괄 점검 시) 제4조 금지어 전수 스캔
 - 위반 발견 시 **자동 치환 사전** 적용 가능:
