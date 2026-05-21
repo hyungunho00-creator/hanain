@@ -28,6 +28,8 @@ import GlossaryPage from './pages/GlossaryPage'
 import ComparePage from './pages/ComparePage'
 import SafetyPage from './pages/SafetyPage'
 import ResearchTimelinePage from './pages/ResearchTimelinePage'
+import InsightsHubPage from './pages/InsightsHubPage'
+import InsightPostPage from './pages/InsightPostPage'
 import ScrollToTop from './components/common/ScrollToTop'
 import { PartnerProvider } from './context/PartnerContext'
 import { AuthProvider } from './context/AuthContext'
@@ -79,6 +81,10 @@ function AppInner() {
             <Route path="/compare/:slug"      element={<ComparePage />} />
             <Route path="/safety"             element={<SafetyPage />} />
             <Route path="/research-timeline"  element={<ResearchTimelinePage />} />
+
+            {/* [Phase D] 심층 인사이트 — PubMed 검증 1차 출처 기반 30+ 정적 포스트 허브 */}
+            <Route path="/insights"           element={<InsightsHubPage />} />
+            <Route path="/insights/:slug"     element={<InsightPostPage />} />
           </Routes>
         </main>
         <Footer />
