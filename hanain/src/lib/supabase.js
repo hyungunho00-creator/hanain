@@ -394,15 +394,46 @@ export async function getRelatedQuestions(questionId, limit = 5) {
   return []
 }
 
+// [2026-05-21] 사이드바 빈 카드 결함 fix:
+// - select 에 slug 컬럼이 빠져 있어 RelatedCard 의 to=/q/${q.slug} 가 undefined 였음
+// - title 필드도 빠져 q.title 이 undefined → 빈 텍스트
+// - 정규화: question → title, slug 없으면 question 기반 생성, 카테고리 메타도 일관 포맷
+//
+// 호환성: 기존 호출부가 [{id, question, category_id, views, likes}] 를 기대해도
+// 추가 필드는 무시되므로 회귀 없음. RelatedCard 가 q.title || q.question 모두 받음.
+function slugifyKo(s) {
+  return String(s || '')
+    .replace(/[^\w\s가-힣]/g, '')
+    .replace(/\s+/g, '-')
+    .slice(0, 60)
+}
+
+function normalizeQa(row) {
+  if (!row) return null
+  const title = row.title || row.question || ''
+  const slug  = row.slug || slugifyKo(title)
+  return {
+    id: row.id,
+    slug,
+    title,
+    question: title,
+    category_id: row.category_id,
+    views: row.views || 0,
+    likes: row.likes || 0,
+  }
+}
+
 export async function getSameCategory(questionId, categoryId, limit = 5) {
-  const { data } = await supabase
+  // questionId 가 null 이면 .neq('id', null) 이 됨 — Postgres 가 거짓 평가하지 않도록 가드.
+  let q = supabase
     .from('qa_questions')
-    .select('id,question,category_id,views,likes')
+    .select('id,question,slug,title,category_id,views,likes')
     .eq('category_id', categoryId)
-    .neq('id', questionId)
+  if (questionId) q = q.neq('id', questionId)
+  const { data } = await q
     .order('views', { ascending: false })
     .limit(limit)
-  return data || []
+  return (data || []).map(normalizeQa).filter(Boolean)
 }
 
 export async function incrementQuestionView(id) {

@@ -32,17 +32,29 @@ const CAT_OG_SLUG = {
 
 // qa.json fallback: Supabase에 데이터 없을 때 로컬 JSON 사용
 let QA_FALLBACK = null
-async function getFallbackQuestion(slug) {
+function slugifyKoLocal(s) {
+  return String(s || '')
+    .replace(/[^\w\s가-힣]/g, '')
+    .replace(/\s+/g, '-')
+    .slice(0, 60)
+}
+
+async function ensureQaFallback() {
   if (!QA_FALLBACK) {
     const r = await fetch('/qa.json')
     QA_FALLBACK = await r.json()
   }
-  const q = QA_FALLBACK.questions.find(q => {
-    const s = q.question.replace(/[^\w\s가-힣]/g, '').replace(/\s+/g, '-').slice(0, 60)
+  return QA_FALLBACK
+}
+
+async function getFallbackQuestion(slug) {
+  const data = await ensureQaFallback()
+  const q = data.questions.find(q => {
+    const s = slugifyKoLocal(q.question)
     return s === slug || q.id === slug
   })
   if (!q) return null
-  const cat = QA_FALLBACK.categories.find(c => c.id === q.category)
+  const cat = data.categories.find(c => c.id === q.category)
   return {
     id: q.id, slug, title: q.question, content: null,
     category_id: q.category,
@@ -52,6 +64,29 @@ async function getFallbackQuestion(slug) {
     created_at: null, _fallback: true,
     _answer: q.answer,
   }
+}
+
+// [2026-05-21] 사이드바 결함 fix — qa.json 에서 같은 카테고리 6개 직접 추출.
+// Supabase 응답과 동일한 정규화된 포맷으로 RelatedCard 에 전달.
+// 인기순(views 내림차순)으로 정렬하되 현재 질문은 제외.
+async function getFallbackSameCategory(excludeId, categoryId, limit = 6) {
+  if (!categoryId) return []
+  const data = await ensureQaFallback()
+  const cat = data.categories.find(c => c.id === categoryId)
+  const sorted = data.questions
+    .filter(q => q.category === categoryId && q.id !== excludeId)
+    .sort((a, b) => (b.views || 0) - (a.views || 0))
+    .slice(0, limit)
+  return sorted.map(q => ({
+    id: q.id,
+    slug: slugifyKoLocal(q.question),
+    title: q.question,
+    question: q.question,
+    category_id: q.category,
+    categories: cat ? { id: cat.id, name: cat.name, slug: cat.id, color: cat.color } : null,
+    views: q.views || 0,
+    likes: q.likes || 0,
+  }))
 }
 
 function getCategoryColorClass(color) {
@@ -83,14 +118,23 @@ function YouTubeEmbed({ url, title, summary }) {
   )
 }
 
+// [2026-05-21] 사이드바 빈 카드 결함 fix:
+// - title/slug 가 모두 비면 렌더 자체를 건너뜀 (빈 카드 6개 노출 방지)
+// - q.title 누락 시 q.question fallback
+// - q.slug 누락 시 question 기반 즉석 슬러그 생성 (안전망)
 function RelatedCard({ q }) {
+  if (!q) return null
+  const title = q.title || q.question
+  if (!title) return null
+  const slug = q.slug || String(title).replace(/[^\w\s가-힣]/g, '').replace(/\s+/g, '-').slice(0, 60)
+  if (!slug) return null
   const cat = q.categories
   return (
     <Link
-      to={`/q/${q.slug}`}
+      to={`/q/${slug}`}
       className="flex items-start gap-3 p-3 rounded-xl hover:bg-gray-50 transition-colors group"
     >
-      {cat && (
+      {cat && cat.name && (
         <span
           className="shrink-0 text-xs font-bold px-2 py-0.5 rounded-full text-white mt-0.5"
           style={{ backgroundColor: cat.color || '#00B4D8' }}
@@ -99,7 +143,7 @@ function RelatedCard({ q }) {
         </span>
       )}
       <p className="text-sm text-gray-700 group-hover:text-cyan-hana transition-colors line-clamp-2 leading-snug">
-        {q.title}
+        {title}
       </p>
     </Link>
   )
@@ -142,7 +186,7 @@ export default function QuestionDetailPage() {
           ? Promise.resolve(q._answer ? [{ id: 'fallback', content: q._answer, is_official: true }] : [])
           : getAnswersByQuestion(q.id),
         q._fallback ? Promise.resolve([]) : getRelatedQuestions(q.id),
-        q._fallback ? getSameCategory(null, q.category_id, 6) : getSameCategory(q.id, q.category_id, 6),
+        q._fallback ? getFallbackSameCategory(q.id, q.category_id, 6) : getSameCategory(q.id, q.category_id, 6),
         q._fallback ? Promise.resolve([]) : getVideosByQuestion(q.id),
         q._fallback ? Promise.resolve(false) : getQuestionLikeStatus(q.id),
         q._fallback ? Promise.resolve(false) : getSaveStatus(q.id),
@@ -423,28 +467,37 @@ export default function QuestionDetailPage() {
             {/* ── 사이드바 ── */}
             <aside className="lg:w-72 shrink-0 space-y-5">
 
-              {/* 같은 카테고리 질문 */}
-              {(related.length > 0 || sameCategory.length > 0) && (
-                <div className="bg-white rounded-2xl border border-border-hana p-5">
-                  <h3 className="font-bold text-ocean-deep mb-3 text-sm flex items-center gap-2">
-                    <span style={{ color: cat?.color }}>●</span>
-                    {cat?.name} 관련 질문
-                  </h3>
-                  <div className="space-y-1 divide-y divide-gray-50">
-                    {[...related, ...sameCategory].slice(0, 6).map(q => (
-                      <RelatedCard key={q.id || q.slug} q={q} />
-                    ))}
+              {/* 같은 카테고리 질문 — [2026-05-21] 결함 fix:
+                  의미있는 카드(title|question 보유)가 1개 이상일 때만 섹션 노출.
+                  과거에는 length>0 만 검사해 헤더만 있고 본문이 빈 채로 노출되는
+                  '근골격 관련 질문 — 빈 카드 6개' 결함이 있었음. */}
+              {(() => {
+                const items = [...related, ...sameCategory]
+                  .filter(q => q && (q.title || q.question))
+                  .slice(0, 6)
+                if (items.length === 0) return null
+                return (
+                  <div className="bg-white rounded-2xl border border-border-hana p-5">
+                    <h3 className="font-bold text-ocean-deep mb-3 text-sm flex items-center gap-2">
+                      <span style={{ color: cat?.color }}>●</span>
+                      {cat?.name} 관련 질문
+                    </h3>
+                    <div className="space-y-1 divide-y divide-gray-50">
+                      {items.map(q => (
+                        <RelatedCard key={q.id || q.slug} q={q} />
+                      ))}
+                    </div>
+                    {cat && (
+                      <Link
+                        to={`/category/${cat.slug}`}
+                        className="mt-3 flex items-center gap-1 text-xs text-cyan-hana hover:underline"
+                      >
+                        {cat.name} 전체 보기 <ChevronRight className="w-3 h-3" />
+                      </Link>
+                    )}
                   </div>
-                  {cat && (
-                    <Link
-                      to={`/category/${cat.slug}`}
-                      className="mt-3 flex items-center gap-1 text-xs text-cyan-hana hover:underline"
-                    >
-                      {cat.name} 전체 보기 <ChevronRight className="w-3 h-3" />
-                    </Link>
-                  )}
-                </div>
-              )}
+                )
+              })()}
 
               {/* 카테고리 바로가기 */}
               <div className="bg-white rounded-2xl border border-border-hana p-5">

@@ -89,6 +89,18 @@
 - ❌ `CAT_OG_SLUG` (QuestionDetailPage) / `CAT_ID_TO_SLUG` (Footer) / `CAT_OG_SLUG` (api/seo.js) 매핑 이탈 금지
   - 이유: 세 매핑은 `build_og_images.py` 산출물 슬러그와 1:1 정합성 유지 필수 — 봇·클라이언트 양쪽 동기화
 
+**사이드바 fallback 정합성 동결 (2026-05-21 — '근골격 관련 질문 빈 카드' 결함 fix)**:
+- ❌ `QuestionDetailPage.getFallbackSameCategory()` 헬퍼 삭제 금지
+  - 이유: 모든 사용자가 fallback 경로(`q._fallback=true`)를 타므로 (URL slug 와 Supabase id 형식 불일치 → getQuestionBySlug 실패), 사이드바도 qa.json 진실원에서 채워야 함
+- ❌ `getSameCategory()` SELECT 컬럼에서 `slug` / `title` 제거 금지
+  - 이유: 제거 시 RelatedCard 의 `to=/q/${q.slug}` 가 undefined → 사이드바 6개 카드 전부 빈 텍스트로 노출 (사용자 보고 결함)
+- ❌ `RelatedCard` 의 안전 가드 (`if (!title) return null`, `if (!slug) return null`) 제거 금지
+  - 이유: 데이터 불완전 시 빈 카드 렌더링 차단 — 헤더만 떠 있는 유령 섹션 방지
+- ❌ 사이드바 섹션 가드 `items.length === 0 return null` 완화 금지
+  - 이유: 의미있는 카드 1개 이상일 때만 "{카테고리} 관련 질문" 헤더 노출 — UX 회귀 방지
+- ❌ `qa.json` 의 `category` 필드 값을 13개 카테고리 ID 외 값으로 변경 금지
+  - 이유: getFallbackSameCategory 의 `q.category === categoryId` 매칭이 깨지면 모든 카테고리 사이드바가 빈 상태로 회귀
+
 **봇 메타 라우팅 동결 (2026-05-21 D3 보강 — 결함 #1·#2 해결 직후)**:
 - ❌ `api/seo.js` 의 `injectMeta()` 에서 `og:image` / `og:image:secure_url` / `og:image:alt` / `twitter:image` / `twitter:image:alt` 정규식 치환 5종 삭제 금지
   - 이유: 삭제 시 봇이 모든 경로에서 기본 `/og-image.png` 만 보게 됨 = 카테고리 OG 13종 신호 소멸 (D3 Bug #1)
