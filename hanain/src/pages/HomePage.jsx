@@ -9,6 +9,8 @@ import {
 } from 'lucide-react'
 import RevealContact from '../components/common/RevealContact'
 import LastReviewed from '../components/common/LastReviewed'
+// [2026-05-21] 인사이트 60편 진입 — 홈에서 최신 6편 직접 노출 (사용자 발견성↑, SEO 내부 링크 그래프 강화)
+import { INSIGHTS_LIST } from '../data/insights'
 
 const LAST_REVIEWED = '2026-05-21'
 
@@ -396,8 +398,72 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ─── Latest Insights — PMC 1차 자료 60편 중 최신 6편 직접 노출 ───
+           [2026-05-21] 사용자가 인사이트 자산을 발견할 수 있도록 홈에서 직접 진입로 제공
+           PR #16/#17 60편 자산화 → 진입로 누락 보완. 광고 톤 X, 에디토리얼 일관 톤 */}
+      <section className="py-20 md:py-24 bg-white border-t border-gray-100">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
+            <div className="max-w-2xl">
+              <div className="flex items-center gap-3 mb-5">
+                <span className="h-px w-8 bg-gray-300" aria-hidden="true" />
+                <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500">
+                  Insights · {INSIGHTS_LIST.length}
+                </span>
+              </div>
+              <h2 className="text-2xl md:text-[2.25rem] font-bold text-gray-900 tracking-tight leading-tight mb-3 break-keep">
+                심층 원료·기전 인사이트
+              </h2>
+              <p className="text-gray-600 text-[15px] leading-[1.8] break-keep">
+                PubMed·PMC·DOI 1차 자료에 기반한 {INSIGHTS_LIST.length}편 심층 가이드.
+                약물 상호작용·임산부·신장간 기능 등 안전성까지 정리합니다.
+              </p>
+            </div>
+            <Link
+              to="/insights"
+              className="inline-flex items-center gap-1.5 text-[14px] text-gray-700 hover:text-gray-900 underline underline-offset-4 decoration-gray-300 hover:decoration-gray-700 flex-shrink-0"
+            >
+              전체 보기
+              <ArrowUpRight className="w-4 h-4" strokeWidth={1.6} aria-hidden="true" />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {INSIGHTS_LIST.slice(0, 6).map((post, i) => (
+              <Link
+                key={post.slug}
+                to={`/insights/${post.slug}`}
+                className="group block bg-white rounded-lg p-6 border border-gray-200 hover:border-gray-400 transition-colors"
+              >
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-[11px] uppercase tracking-[0.16em] text-gray-500">
+                    {post.category?.replace('ingredient-', '') || 'Insight'}
+                  </span>
+                  <span className="text-[10px] font-medium text-gray-400 tabular-nums tracking-[0.16em]">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                </div>
+                <h3 className="text-[15px] font-semibold text-gray-900 mb-3 leading-snug line-clamp-2 break-keep group-hover:text-black transition-colors">
+                  {post.title}
+                </h3>
+                <p className="text-gray-600 text-[13px] line-clamp-2 leading-[1.7] break-keep mb-5">
+                  {post.description}
+                </p>
+                <div className="flex items-center justify-between text-[11px] text-gray-400 tabular-nums pt-4 border-t border-gray-100">
+                  <span>{post.readingMinutes || 8} min read</span>
+                  <span className="text-gray-700 group-hover:text-gray-900 inline-flex items-center gap-1">
+                    Read
+                    <ArrowUpRight className="w-3 h-3" strokeWidth={1.8} aria-hidden="true" />
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ─── Categories — 에디토리얼 (개수는 qa.json 기준 동적) ─── */}
-      <section className="py-20 md:py-24 bg-white">
+      <section className="py-20 md:py-24 bg-gray-50">
         <div className="max-w-6xl mx-auto px-6">
           <div className="max-w-2xl mb-12">
             <div className="flex items-center gap-3 mb-5">

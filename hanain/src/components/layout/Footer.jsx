@@ -159,6 +159,10 @@ export default function Footer() {
                 {[
                   { to: '/',             label: '홈' },
                   { to: '/qa',           label: '건강 Q&A' },
+                  // [2026-05-21] 인사이트(60편 PMC 1차 자료) + 블로그 진입 보강
+                  // 누락 시 사용자가 사이트맵에서 인사이트 페이지 발견 불가 → SEO equity 손실
+                  { to: '/insights',     label: '인사이트' },
+                  { to: '/blog',         label: '연구 블로그' },
                   { to: '/learn',        label: '쉽게 배우기' },
                   { to: '/phlorotannin', label: '플로로탄닌 소개' },
                   { to: '/partner',     label: '파트너 참여' },

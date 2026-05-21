@@ -11,6 +11,8 @@ import {
 } from 'lucide-react'
 import { StatCard, MoleculeSVG, SectionHeader, IconFeature, MechanismDiagram, SciImage, InfoStrip, TrustBar } from '../components/visual'
 import RevealContact from '../components/common/RevealContact'
+// [2026-05-21] 인사이트 60편 진입 — 메인(/) 랜딩에서 최신 6편 직접 노출
+import { INSIGHTS_LIST, INSIGHT_CATEGORIES } from '../data/insights'
 
 // ─── YouTube ID 추출 ──────────────────────────────────────────
 function extractYoutubeId(url) {
@@ -240,6 +242,79 @@ const CAT_NAMES = {
   cardiovascular:'심혈관', inflammation:'염증·면역',
   skin:'피부·모발', research:'연구·임상', general:'일반',
 }
+/* ─── Insights Preview — PMC 1차 자료 60편 중 최신 6편 직접 노출 ───
+   [2026-05-21] 사용자가 인사이트 자산을 발견할 수 있도록 메인 랜딩에서
+   진입로 제공. 헤더 메뉴 + 푸터 + Blog CTA 와 더불어 4번째 진입로 역할.
+   광고 톤 X, 에디토리얼 일관 톤 (Research Blog 섹션과 동일 패턴). */
+function InsightsPreviewSection() {
+  const partner = usePartner()
+  const posts = INSIGHTS_LIST.slice(0, 6)
+  if (posts.length === 0) return null
+  const catName = (id) => INSIGHT_CATEGORIES.find((c) => c.id === id)?.name || id
+  return (
+    <section className="py-14 px-5 bg-white border-y border-gray-100">
+      <div className="max-w-6xl mx-auto">
+        <div className="flex items-end justify-between mb-7 gap-4 flex-wrap">
+          <div>
+            <div className="flex items-center gap-3 mb-3">
+              <span className="h-px w-8 bg-gray-300" aria-hidden="true" />
+              <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500">
+                Insights · {INSIGHTS_LIST.length}편
+              </span>
+            </div>
+            <h2 className="text-2xl md:text-[1.75rem] font-bold text-gray-900 tracking-tight">
+              심층 원료·기전 인사이트
+            </h2>
+            <p className="text-[13px] text-gray-500 mt-1 break-keep">
+              PubMed·PMC·DOI 1차 자료로 검증한 플로로탄닌·NMN·후코이단·베르베린 등 핵심 원료 가이드
+            </p>
+          </div>
+          <Link
+            to={withRef('/insights', partner)}
+            className="text-[14px] text-gray-700 hover:text-gray-900 underline underline-offset-4 decoration-gray-300 hover:decoration-gray-700 whitespace-nowrap transition-colors"
+          >
+            전체 {INSIGHTS_LIST.length}편 보기
+          </Link>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {posts.map((post, i) => (
+            <Link
+              key={post.slug}
+              to={withRef(`/insights/${post.slug}`, partner)}
+              className="bg-white rounded-lg border border-gray-200 p-5 hover:border-gray-400 transition-colors group"
+            >
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-[11px] font-medium uppercase tracking-[0.14em] text-gray-500">
+                  {catName(post.category)}
+                </span>
+                <span className="text-[10px] text-gray-400 tabular-nums">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+              </div>
+              <h3 className="text-[15px] font-semibold text-gray-900 mt-2 mb-2 line-clamp-2 leading-snug break-keep group-hover:underline underline-offset-4 decoration-gray-400">
+                {post.title}
+              </h3>
+              {post.description && (
+                <p className="text-xs text-gray-500 line-clamp-2 leading-relaxed break-keep">
+                  {post.description}
+                </p>
+              )}
+              <div className="flex items-center justify-between mt-4 pt-3 border-t border-gray-100">
+                <span className="text-[11px] text-gray-400">
+                  {post.readingMinutes || 8}분 읽기
+                </span>
+                <span className="text-[11px] text-gray-700 group-hover:text-gray-900">
+                  Read →
+                </span>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function BlogPreviewSection() {
   const partner = usePartner()
   const [posts, setPosts] = useState([])
@@ -716,6 +791,8 @@ export default function LandingPage() {
       {/* ════════════════════════════════════
           CTA: 문자 문의
       ════════════════════════════════════ */}
+      {/* ════ 심층 인사이트 60편 진입로 (BlogPreview 위) ════ */}
+      <InsightsPreviewSection />
       {/* ════ 연구 블로그 최신글 ════ */}
       <BlogPreviewSection />
 
@@ -765,6 +842,8 @@ export default function LandingPage() {
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-6">
             {[
               { label: '건강 Q&A', path: '/qa' },
+              { label: '인사이트', path: '/insights' },
+              { label: '연구 블로그', path: '/blog' },
               { label: '플로로탄닌 소개', path: '/phlorotannin' },
               { label: '쉽게 배우기', path: '/learn' },
               { label: '쉬운 건강 정보', path: '/easy' },

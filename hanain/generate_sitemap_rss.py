@@ -128,78 +128,52 @@ STATIC_PAGES = [
     {"loc": "/insights",      "changefreq": "weekly",  "priority": "0.90", "lastmod": today()},
 ]
 
-INSIGHT_SLUGS = [
-    "phlorotannin-blood-pressure-mechanism",
-    "dieckol-blood-glucose-evidence",
-    "ecklonia-cava-diabetes-clinical",
-    "phlorotannin-cognitive-alzheimer",
-    "phlorotannin-skin-uv-protection",
-    "phlorotannin-anti-aging-collagen",
-    "ecklonia-cava-hair-loss-evidence",
-    "phlorotannin-inflammation-mechanism",
-    "phlorotannin-cholesterol-ldl-rct",
-    "phlorotannin-cancer-prevention-evidence",
-    "phlorotannin-best-time-to-take",
-    "phlorotannin-with-vitamin-d-omega3",
-    "phlorotannin-drug-interactions-warfarin",
-    "phlorotannin-pregnancy-breastfeeding",
-    "phlorotannin-side-effects-real",
-    "phlorotannin-quality-extraction-method",
-    "seapolynol-vs-generic-phlorotannin",
-    "phlorotannin-vs-resveratrol",
-    "phlorotannin-vs-curcumin-inflammation",
-    "phlorotannin-vs-green-tea-catechin",
-    "phlorotannin-metabolic-syndrome",
-    "phlorotannin-fatty-liver-nafld",
-    "phlorotannin-osteoarthritis-joint",
-    "phlorotannin-eye-health-amd",
-    "phlorotannin-gut-microbiome",
-    "phlorotannin-allergic-rhinitis-asthma",
-    "phlorotannin-exercise-performance",
-    "ecklonia-cava-radioprotection",
-    "phlorotannin-2026-research-frontier",
-    "phlorotannin-long-term-safety-10year",
-    # ── Phase E — 30 트렌드 원료 (2026-05-21) ──────────────
-    # A. 해양 원료 (12)
-    "ingredient-fucoidan-evidence-safety",
-    "ingredient-fucoxanthin-fat-burning",
-    "ingredient-astaxanthin-antioxidant-king",
-    "ingredient-alginate-weight-cholesterol",
-    "ingredient-laminarin-prebiotic-immune",
-    "ingredient-spirulina-lipid-immune",
-    "ingredient-chlorella-detox-immune",
-    "ingredient-beta-glucan-immune",
-    "ingredient-krill-oil-vs-fish-oil",
-    "ingredient-omega3-2026-update",
-    "ingredient-marine-collagen-peptide",
-    "ingredient-deer-velvet-peptide",
-    # B. 항노화·장수 (12)
-    "ingredient-nmn-nad-precursor",
-    "ingredient-spermidine-autophagy",
-    "ingredient-urolithin-a-mitophagy",
-    "ingredient-berberine-glucose-weight",
-    "ingredient-pqq-mitochondria",
-    "ingredient-coq10-heart-energy",
-    "ingredient-glutathione-liposomal",
-    "ingredient-quercetin-allergy-immune",
-    "ingredient-resveratrol-2026",
-    "ingredient-curcumin-bioavailable-forms",
-    "ingredient-l-theanine-stress-sleep",
-    "ingredient-magnesium-bisglycinate",
-    # C. 임상 이슈 원료 (6)
-    "ingredient-glp1-natural-adjuncts",
-    "ingredient-msm-joint-skin",
-    "ingredient-lactoferrin-iron-immune",
-    "ingredient-akkermansia-muciniphila",
-    "ingredient-vitamin-d3-k2-mk7",
-    "ingredient-quality-buying-guide-2026",
-]
-for _slug in INSIGHT_SLUGS:
+# ── Insights 포스트 자동 스캔 ──────────────────────────────
+# 하드코딩된 슬러그 리스트 대신 src/data/insights/posts/*.{js,jsx} 를
+# 실시간 스캔해서 슬러그·메타데이터를 추출. 새 포스트가 추가되면
+# 별도 수정 없이 sitemap/RSS에 자동 반영됨 (SEO 자산 확장성).
+print("📡 Insights 포스트 자동 스캔 중...")
+INSIGHTS_DIR = ROOT / "src" / "data" / "insights" / "posts"
+INSIGHT_POSTS = []  # [{slug, title, description, publishedAt, updatedAt, category}, ...]
+
+if INSIGHTS_DIR.exists():
+    # 정규식: 각 필드는 single/double quote 모두 허용
+    _re_slug   = re.compile(r"slug\s*:\s*['\"]([\w-]+)['\"]")
+    _re_title  = re.compile(r"title\s*:\s*['\"]([^'\"]+)['\"]")
+    _re_desc   = re.compile(r"description\s*:\s*['\"]([^'\"]+)['\"]")
+    _re_pub    = re.compile(r"publishedAt\s*:\s*['\"](\d{4}-\d{2}-\d{2})['\"]")
+    _re_upd    = re.compile(r"updatedAt\s*:\s*['\"](\d{4}-\d{2}-\d{2})['\"]")
+    _re_cat    = re.compile(r"category\s*:\s*['\"]([\w-]+)['\"]")
+
+    for fp in sorted(INSIGHTS_DIR.glob("*.js")) + sorted(INSIGHTS_DIR.glob("*.jsx")):
+        try:
+            txt = fp.read_text(encoding="utf-8")
+        except Exception as e:
+            print(f"  ⚠️  {fp.name} 읽기 실패: {e}")
+            continue
+        m_slug = _re_slug.search(txt)
+        if not m_slug:
+            continue
+        slug = m_slug.group(1)
+        INSIGHT_POSTS.append({
+            "slug":        slug,
+            "title":       (_re_title.search(txt).group(1) if _re_title.search(txt) else slug),
+            "description": (_re_desc.search(txt).group(1)  if _re_desc.search(txt)  else ""),
+            "publishedAt": (_re_pub.search(txt).group(1)   if _re_pub.search(txt)   else today()),
+            "updatedAt":   (_re_upd.search(txt).group(1)   if _re_upd.search(txt)   else today()),
+            "category":    (_re_cat.search(txt).group(1)   if _re_cat.search(txt)   else "general"),
+        })
+
+# publishedAt 내림차순 정렬 (RSS·UI 일관성)
+INSIGHT_POSTS.sort(key=lambda p: p.get("publishedAt", ""), reverse=True)
+print(f"  ✅ {len(INSIGHT_POSTS)}개 인사이트 자동 스캔 완료")
+
+for _post in INSIGHT_POSTS:
     STATIC_PAGES.append({
-        "loc":        f"/insights/{_slug}",
+        "loc":        f"/insights/{_post['slug']}",
         "changefreq": "monthly",
         "priority":   "0.85",
-        "lastmod":    today(),
+        "lastmod":    _post.get("updatedAt") or today(),
     })
 
 # Q&A 카테고리별 페이지 (12 → 14: skin/hair 분리분 포함)
@@ -439,6 +413,45 @@ for post in posts[:50]:  # 최신 50개
     <guid isPermaLink="true">{SITE_URL}/blog/{slug}</guid>
     <enclosure url="{og_img}" type="{og_mime}"/>
     {f'<dc:subject>{tags_str}</dc:subject>' if tags_str else ''}
+  </item>""")
+
+# Insights RSS — PMC 1차 자료 기반 심층 가이드 (최신 30편)
+# 자동 스캔된 INSIGHT_POSTS 에서 최신순으로 RSS 항목 생성
+_INSIGHT_CAT_NAMES = {
+    "mechanism":            "작용기전·근거",
+    "metabolic":            "대사·당뇨",
+    "cardiovascular":       "심혈관·혈압",
+    "neuro":                "뇌·인지",
+    "skin-hair":            "피부·모발",
+    "immune":               "면역·염증",
+    "cancer":               "항암 보조",
+    "lifestyle":            "생활·복용",
+    "safety":               "안전성·금기",
+    "comparison":           "성분 비교",
+    "research":             "연구 동향",
+    "long-term":            "장기 복용",
+    "ingredient-marine":    "해양 원료",
+    "ingredient-longevity": "항노화·장수",
+    "ingredient-clinical":  "임상 이슈 원료",
+}
+for ipost in INSIGHT_POSTS[:30]:
+    slug    = ipost.get("slug", "")
+    if not slug:
+        continue
+    title   = esc(ipost.get("title", ""))
+    desc    = esc((ipost.get("description") or "")[:300])
+    cat_id  = ipost.get("category", "research")
+    cat_nm  = esc(_INSIGHT_CAT_NAMES.get(cat_id, cat_id))
+    # publishedAt → RFC822 (00:00:00 KST)
+    pub_iso = (ipost.get("publishedAt") or today()) + "T00:00:00+09:00"
+    pub_date = fmt_rfc822(pub_iso)
+    rss_items.append(f"""  <item>
+    <title>{title}</title>
+    <link>{SITE_URL}/insights/{slug}</link>
+    <description><![CDATA[{ipost.get('description','')[:300]}]]></description>
+    <category>{cat_nm}</category>
+    <pubDate>{pub_date}</pubDate>
+    <guid isPermaLink="true">{SITE_URL}/insights/{slug}</guid>
   </item>""")
 
 # Q&A RSS (기존 qa.json에서)
