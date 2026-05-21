@@ -53,6 +53,48 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/easy"/>
   </url>
   <url>
+    <loc>https://phlorotannin.com/safety</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/safety"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/research-timeline</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/research-timeline"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/compare/phlorotannin-vs-fucoidan</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/compare/phlorotannin-vs-fucoidan"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/compare/phlorotannin-vs-beta-glucan</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/compare/phlorotannin-vs-beta-glucan"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/compare/dieckol-vs-eckol</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/compare/dieckol-vs-eckol"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/glossary</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/glossary"/>
+  </url>
+  <url>
     <loc>https://phlorotannin.com/partner</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>

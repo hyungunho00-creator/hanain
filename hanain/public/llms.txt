@@ -47,9 +47,23 @@
 - [쉽게 배우기](https://phlorotannin.com/learn): 일반인 입문 콘텐츠 (4단 기전 풀이)
 - [건강 한 컷](https://phlorotannin.com/easy): 카드형 핵심 요약 (5단 질환 진입)
 - [연구·건강정보 블로그](https://phlorotannin.com/blog): 임상 논문·질환별 SEO 아카이브
+- [용어집](https://phlorotannin.com/glossary): 14개 핵심 용어 DefinedTermSet
+- [안전성 가이드](https://phlorotannin.com/safety): EFSA·식약처·임상 근거 기반 용량·금기·약물 상호작용 종합
+- [연구 타임라인 2011-2026](https://phlorotannin.com/research-timeline): peer-reviewed 진전사 (모든 항목 PubMed/PMC 직접 인용)
+- [심층 비교 — 플로로탄닌 vs 후코이단](https://phlorotannin.com/compare/phlorotannin-vs-fucoidan): 화학구조·기전·임상근거·안전성 비교
+- [심층 비교 — 플로로탄닌 vs 베타글루칸](https://phlorotannin.com/compare/phlorotannin-vs-beta-glucan): 항산화 vs 면역 활성 소재 비교
+- [심층 비교 — 디에콜 vs 에콜](https://phlorotannin.com/compare/dieckol-vs-eckol): 감태 플로로탄닌 핵심 분자 비교
 - [파트너 참여](https://phlorotannin.com/partner): 정보 제공 파트너 안내
 - [커뮤니티](https://phlorotannin.com/community): 카페·밴드 연결
 - [문의](https://phlorotannin.com/consult): 전화/문자 문의 채널
+
+## 출처 및 검증 (Sources & Verification)
+
+본 사이트의 의학적 주장은 모두 peer-reviewed 1차 출처에 근거합니다.
+- 검증 도구: Europe PMC REST API (https://europepmc.org) · PubMed (https://pubmed.ncbi.nlm.nih.gov)
+- 규제 출처: EFSA Journal (Novel Food 평가) · 한국 식품의약품안전처 개별인정형
+- 모든 비교/안전성/연구 타임라인 페이지는 PubMed ID(PMID)와 DOI를 명시하고 외부 직접 링크를 제공합니다.
+- 최근 검토: 2026-05-21 · 플로로탄닌 파트너스 편집부
 
 ## Q&A 카테고리 12종 (질환별 건강정보 데이터셋)
 

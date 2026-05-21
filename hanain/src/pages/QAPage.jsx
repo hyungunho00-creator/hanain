@@ -4,6 +4,9 @@ import { ChevronDown, ThumbsUp, Share2, Filter, BookOpen, TrendingUp, MessageSqu
 import { usePartner } from '../context/PartnerContext'
 import SEOHead from '../components/common/SEOHead'
 import RevealContact from '../components/common/RevealContact'
+import LastReviewed from '../components/common/LastReviewed'
+
+const LAST_REVIEWED = '2026-05-21'
 
 const ITEMS_PER_PAGE = 20
 
@@ -428,17 +431,36 @@ export default function QAPage() {
         "mainEntity": items,
       }
     }
-    // 기본: 브랜드 STATIC_FAQ (메인 /qa 페이지)
+    // 기본: 브랜드 STATIC_FAQ (메인 /qa 페이지) — 공식 FAQPage + Speakable + lastReviewed
     return {
       "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "@id": "https://phlorotannin.com/qa#faqpage",
-      "url": "https://phlorotannin.com/qa",
-      "mainEntity": STATIC_FAQ.slice(0, FAQ_JSONLD_MAX_PER_PAGE).map(f => ({
-        "@type": "Question",
-        "name": f.q,
-        "acceptedAnswer": { "@type": "Answer", "text": f.a }
-      }))
+      "@graph": [
+        {
+          "@type": "FAQPage",
+          "@id": "https://phlorotannin.com/qa#faqpage",
+          "url": "https://phlorotannin.com/qa",
+          "name": "플로로탄닌·감태추출물 Q&A 아카이브",
+          "inLanguage": "ko-KR",
+          "lastReviewed": LAST_REVIEWED,
+          "reviewedBy": { "@type": "Organization", "name": "플로로탄닌 파트너스 편집부" },
+          "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": ["h1", "[data-speakable=\"true\"]"]
+          },
+          "mainEntity": STATIC_FAQ.slice(0, FAQ_JSONLD_MAX_PER_PAGE).map(f => ({
+            "@type": "Question",
+            "name": f.q,
+            "acceptedAnswer": { "@type": "Answer", "text": f.a }
+          }))
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "홈", "item": "https://phlorotannin.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Q&A 아카이브", "item": "https://phlorotannin.com/qa" }
+          ]
+        }
+      ]
     }
   })()
 
@@ -465,10 +487,13 @@ export default function QAPage() {
             <span className="h-px w-8 bg-gray-300" aria-hidden="true" />
             <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500">Health Q&amp;A Archive</span>
           </div>
-          <h1 className="text-3xl md:text-[3rem] font-bold text-gray-900 tracking-tight leading-[1.1] mb-3">건강 Q&amp;A 라이브러리</h1>
-          <p className="text-gray-600 mb-8 text-[15px] md:text-base leading-[1.7] break-keep max-w-2xl">
+          <h1 data-speakable="true" className="text-3xl md:text-[3rem] font-bold text-gray-900 tracking-tight leading-[1.1] mb-3">건강 Q&amp;A 라이브러리</h1>
+          <p data-speakable="true" className="text-gray-600 mb-3 text-[15px] md:text-base leading-[1.7] break-keep max-w-2xl">
             올바른 건강 정보, 소재별 근거 중심 해설 · <span className="text-gray-900 font-semibold tabular-nums">{totalAll.toLocaleString()}</span>개 아티클
           </p>
+          <div className="mb-8">
+            <LastReviewed date={LAST_REVIEWED} className="text-left" />
+          </div>
 
           {/* 🔍 검색창 */}
           <form onSubmit={handleSearch} className="relative max-w-2xl">

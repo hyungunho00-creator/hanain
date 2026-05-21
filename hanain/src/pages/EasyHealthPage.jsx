@@ -5,7 +5,10 @@ import { Link } from 'react-router-dom'
 import { ChevronDown, ChevronUp, MessageSquare, ArrowRight, CheckCircle, BookOpen, Leaf, AlertTriangle } from 'lucide-react'
 import RelatedQA from '../components/qa/RelatedQA'
 import RevealContact from '../components/common/RevealContact'
+import LastReviewed from '../components/common/LastReviewed'
 import { SciImage, InfoStrip } from '../components/visual'
+
+const LAST_REVIEWED = '2026-05-21'
 
 // ─── 질환별 카드 데이터 (쉬운 말로) ───────────────────────────────
 const diseases = [
@@ -698,6 +701,12 @@ export default function EasyHealthPage() {
       "name": "쉬운 플로로탄닌 건강정보",
       "description": "플로로탄닌·감태추출물·해양 폴리페놀을 처음 접하는 분들을 위해 항산화·염증·수면·혈당·면역 건강정보를 쉬운 언어로 정리한 허브",
       "inLanguage": "ko-KR",
+      "lastReviewed": LAST_REVIEWED,
+      "reviewedBy": { "@type": "Organization", "name": "플로로탄닌 파트너스 편집부" },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["h1", "[data-speakable=\"true\"]"]
+      },
       "audience": { "@type": "MedicalAudience", "audienceType": "Patient" },
       "specialty": [
         { "@type": "MedicalSpecialty", "name": "Internal Medicine" },
@@ -747,13 +756,13 @@ export default function EasyHealthPage() {
                 </span>
               </div>
 
-              <h1 className="text-4xl md:text-[3.5rem] font-bold text-gray-900 leading-[1.1] tracking-tight mb-6 break-keep">
+              <h1 data-speakable="true" className="text-4xl md:text-[3.5rem] font-bold text-gray-900 leading-[1.1] tracking-tight mb-6 break-keep">
                 우리 몸이 왜 아픈지,
                 <span className="block text-gray-500 font-normal text-2xl md:text-3xl mt-3 tracking-normal">
                   어려운 의학 용어 없이 설명드립니다.
                 </span>
               </h1>
-              <p className="text-gray-600 text-[16px] md:text-[17px] leading-[1.8] mb-8 max-w-xl break-keep">
+              <p data-speakable="true" className="text-gray-600 text-[16px] md:text-[17px] leading-[1.8] mb-8 max-w-xl break-keep">
                 중학생도 이해할 수 있도록 해조류 폴리페놀—<span className="text-gray-900 font-medium">플로로탄닌</span>이
                 각 질환에 어떻게 작용하는지 차근차근 풀어 드립니다.
               </p>
@@ -1080,6 +1089,9 @@ export default function EasyHealthPage() {
 
       {/* 저작권 */}
       <div className="py-5 bg-gray-100 border-t border-gray-200 text-center">
+        <div className="mb-3">
+          <LastReviewed date={LAST_REVIEWED} />
+        </div>
         <p className="text-sm text-gray-400">
           © 2025 플로로탄닌 파트너스 — 본 콘텐츠의 무단 복제·배포를 금합니다.
         </p>

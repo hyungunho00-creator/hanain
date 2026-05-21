@@ -25,6 +25,9 @@ import BlogPostPage from './pages/BlogPostPage'
 import InfoRoomPage from './pages/InfoRoomPage'
 import CopyrightPage from './pages/CopyrightPage'
 import GlossaryPage from './pages/GlossaryPage'
+import ComparePage from './pages/ComparePage'
+import SafetyPage from './pages/SafetyPage'
+import ResearchTimelinePage from './pages/ResearchTimelinePage'
 import ScrollToTop from './components/common/ScrollToTop'
 import { PartnerProvider } from './context/PartnerContext'
 import { AuthProvider } from './context/AuthContext'
@@ -71,6 +74,11 @@ function AppInner() {
             {/* 저작권 안내 */}
             <Route path="/copyright"     element={<CopyrightPage />} />
             <Route path="/glossary"      element={<GlossaryPage />} />
+
+            {/* [Phase B] 심층 비교 / 안전성 / 연구 타임라인 — peer-reviewed 기반 신규 자산 */}
+            <Route path="/compare/:slug"      element={<ComparePage />} />
+            <Route path="/safety"             element={<SafetyPage />} />
+            <Route path="/research-timeline"  element={<ResearchTimelinePage />} />
           </Routes>
         </main>
         <Footer />
