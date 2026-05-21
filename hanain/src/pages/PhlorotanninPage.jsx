@@ -8,6 +8,7 @@ import {
   FlaskConical, Microscope, TrendingUp, Users, CheckCircle, Phone, MessageSquare, Mail
 } from 'lucide-react'
 import RevealContact from '../components/common/RevealContact'
+import RelatedQA from '../components/qa/RelatedQA'
 
 // ─── 데이터 ───────────────────────────────────────────────
 const MECHANISMS = [
@@ -559,6 +560,18 @@ export default function PhlorotanninPage() {
               className="flex items-center gap-2 btn-secondary px-8 py-4"
             />
           </div>
+        </div>
+      </section>
+
+      {/* ── 권위 페이지 → Q&A 아카이브 동선 (헌법 제10조 의무 6) ── */}
+      <section className="py-14 bg-white border-t border-gray-100">
+        <div className="max-w-6xl mx-auto px-6">
+          <RelatedQA
+            blogTags={['플로로탄닌', '감태추출물', '디에콜', '에콜', '폴리페놀', '항산화']}
+            blogCategory="research"
+            max={6}
+            title="🔬 플로로탄닌 심층 Q&A 아카이브"
+          />
         </div>
       </section>
 

@@ -12,6 +12,24 @@ import {
 import SEOHead from '../components/common/SEOHead'
 import RelatedBlogPosts from '../components/qa/RelatedBlogPosts'
 
+// 카테고리 ID → OG 이미지 슬러그 (build_og_images.py 산출물과 1:1 매칭, 헌법 정합성)
+const CAT_OG_SLUG = {
+  metabolism: 'metabolism',
+  cancer_immune: 'cancer-immune',
+  digestive: 'digestive',
+  cardiovascular: 'cardiovascular',
+  neuro_cognitive: 'neuro-cognitive',
+  mental_health: 'mental-health',
+  musculoskeletal: 'musculoskeletal',
+  skin: 'skin-hair',
+  hair: 'skin-hair',
+  skin_hair: 'skin-hair',
+  respiratory: 'respiratory',
+  infection_inflammation: 'infection-inflammation',
+  womens_health: 'womens-health',
+  mens_health: 'mens-health',
+}
+
 // qa.json fallback: Supabase에 데이터 없을 때 로컬 JSON 사용
 let QA_FALLBACK = null
 async function getFallbackQuestion(slug) {
@@ -205,6 +223,7 @@ export default function QuestionDetailPage() {
           text: question.title,
           url: pageUrl,
           datePublished: question.created_at || new Date().toISOString(),
+          dateModified: question.reviewed_at || question.updated_at || new Date().toISOString().slice(0, 10),
           answerCount: answers.length || 1,
           upvoteCount: question.like_count || 0,
           ...(rawAnswerText ? {
@@ -213,10 +232,16 @@ export default function QuestionDetailPage() {
               text: rawAnswerText,
               url: `${pageUrl}#answer`,
               upvoteCount: 0,
-              author: { '@type': 'Organization', name: '플로로탄닌 파트너스', url: 'https://phlorotannin.com' },
+              dateCreated: question.reviewed_at || question.created_at || new Date().toISOString().slice(0, 10),
+              author: {
+                '@type': 'Organization',
+                name: question.author || '플로로탄닌·감태추출물 종합 건강정보 데이터센터 편집팀',
+                url: 'https://phlorotannin.com',
+              },
             }
           } : {}),
         },
+        ...(question.disclaimer ? { disclaimer: question.disclaimer } : {}),
       },
       {
         '@type': 'BreadcrumbList',
@@ -239,6 +264,7 @@ export default function QuestionDetailPage() {
         keywords={[cat?.name, ...(question.tags || []), '플로로탄닌', '감태추출물', '해양 폴리페놀', '건강정보 아카이브', '연구기반 Q&A'].filter(Boolean).join(', ')}
         canonical={pageUrl}
         ogType="article"
+        ogImage={`https://phlorotannin.com/og/qa-${CAT_OG_SLUG[question.category_id] || 'default'}.png`}
         jsonLd={jsonLd}
       />
 

@@ -130,6 +130,7 @@ export default function CategoryPage() {
         description={`${category.name} 건강정보 아카이브 — ${category.description || '플로로탄닌·감태추출물·해양 폴리페놀 기반 건강정보'}. 항산화·염증·면역·병원정보·연구기반 Q&A까지 정리하는 종합 건강정보 데이터센터입니다.`}
         keywords={`${category.name}, ${category.name_en || ''}, 플로로탄닌, 감태추출물, 해양 폴리페놀, 건강정보 아카이브, 종합 건강정보 데이터센터`}
         canonical={`https://phlorotannin.com/category/${slug}`}
+        ogImage={`https://phlorotannin.com/og/qa-${slug}.png`}
       />
 
       <div className="pt-16 min-h-screen bg-gray-hana">

@@ -407,6 +407,32 @@ print(f'중복 이미지: {len(dup)}건' + (' ❌' if dup else ' ✅'))
    - `pathname.startsWith('/category/')` → 카테고리 페이지 메타
    - 누락 시 fallback 메타 → SEO 가치 0 → 절대 금지
 
+### ✅ 의무 7-B. 콘텐츠 자산화 4종 (2026-05-21 — "부족한 컨텐츠 채우기" 단계)
+
+YMYL 의료 콘텐츠의 신뢰도 및 페이지랭크 흐름을 강화하기 위해 다음 4종 자산화를 **불변 의무**로 한다:
+
+**(1) 브랜드 태그 규칙 기반 부착 — `scripts/build_qa_brand_tags.py`**
+- 12개 BRAND_RULES (플로로탄닌, 감태, 항산화, 디에콜, 에콜, 폴리페놀, 항염증, 해양폴리페놀, 갈조류, 후코이단, 감태추출물, 씨놀) 정규식 매칭
+- 멱등성 보장 — 기존 태그 보존, 누락분만 추가
+- 백업 자동 생성 (`tmp_seo_assets/qa_*/qa.brand_tags_backup.<ts>.json`)
+- **재발 방지**: Q&A 일괄 추가 후 반드시 이 스크립트 실행 → tagIndex.json 재생성
+
+**(2) E-E-A-T 메타데이터 필드 5종 — `scripts/add_qa_eeat_fields.py`**
+- 모든 Q&A에 `author` / `content_type` / `reviewed_at` / `disclaimer` / `source_type` 필드 부착
+- **정직 원칙**: 의사명을 날조하지 않음 — "편집팀" + 명확한 disclaimer 사용
+- Schema.org `QAPage.mainEntity.dateModified` 및 `acceptedAnswer.author`가 이 필드를 활용
+
+**(3) 허브 페이지 → Q&A 동선 (RelatedQA 임베드)**
+- `/learn`, `/phlorotannin`, `/easy` 3개 권위 허브에 `<RelatedQA blogTags={...} max={6} />` 임베드 **필수**
+- 페이지랭크가 Q&A 1,361건 + 태그 페이지 131개로 흐르도록 함
+- CTA·저작권 영역(DO_NOT_TOUCH §3-Q)은 절대 건드리지 않음 — 그 직전에 삽입
+
+**(4) 카테고리별 OG 이미지 13장 — `scripts/build_og_images.py`**
+- 13개 Q&A 카테고리별 정적 PNG (1200×630, ~35KB)
+- 출력: `public/og/qa-<slug>.png` (slug는 Footer CAT_ID_TO_SLUG와 1:1 매칭)
+- `CategoryPage`, `QuestionDetailPage`, `QATagPage`의 `<SEOHead ogImage>`에 자동 주입
+- 폰트: NanumSquareRoundB (한글 가독성) — 시스템 폰트 변경 시 스크립트 폰트 경로 검토
+
 ### ✅ 의무 8. 안전성 일괄 검증 (forbidden words)
 - 신규 Q&A 추가 시 (또는 기존 일괄 점검 시) 제4조 금지어 전수 스캔
 - 위반 발견 시 **자동 치환 사전** 적용 가능:

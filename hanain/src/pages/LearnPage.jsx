@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { usePartner } from '../context/PartnerContext'
 import SEOHead from '../components/common/SEOHead'
+import RelatedQA from '../components/qa/RelatedQA'
 
 /* ─────────────────────────────────────────────
    색상 팔레트 & 공통 스타일
@@ -1014,6 +1015,19 @@ export default function LearnPage() {
       <DiseasesSection />
       <AgeGuideSection />
       <QuizSection />
+
+      {/* 학습 → Q&A 동선 (헌법 제10조 의무 6, 페이지랭크 흐름 보강) */}
+      <section className="py-12 bg-white border-t border-gray-100">
+        <div className="max-w-6xl mx-auto px-6">
+          <RelatedQA
+            blogTags={['플로로탄닌', '감태', '폴리페놀', '항산화', '해양폴리페놀']}
+            blogCategory="research"
+            max={6}
+            title="📚 학습한 내용과 관련된 Q&A"
+          />
+        </div>
+      </section>
+
       <CTASection />
 
       <style>{`

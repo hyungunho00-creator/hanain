@@ -191,6 +191,7 @@ export default function QATagPage() {
         keywords={`${decodedTag}, ${decodedTag} Q&A, ${decodedTag} 건강정보, 플로로탄닌, 감태추출물, 해양 폴리페놀, 연구기반 Q&A`}
         canonical={pageUrl}
         ogType="website"
+        ogImage="https://phlorotannin.com/og/qa-default.png"
         jsonLd={faqJsonLd}
       />
 

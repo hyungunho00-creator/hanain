@@ -65,13 +65,27 @@
 **SEO 정합성 동결 (2026-05-21 보강 — 사이트 전체 적용)**:
 - ❌ `/qa?category=…` / `/qa?q=…` / `/qa?page=…` 쿼리스트링 URL을 **사이트맵에 등록 금지**
   - 이유: QAPage.jsx canonical 이 `/qa` 고정 → 사이트맵-canonical 불일치 = GSC 경고
-  - 대체: `/category/:slug` (정식 카테고리) + `/qa/tag/:tag` (122개 태그) 사용
+  - 대체: `/category/:slug` (정식 카테고리) + `/qa/tag/:tag` (131개 태그) 사용
 - ❌ QAPage.jsx · BlogPage.jsx 에서 `isFilteredView` / `isBlogFiltered` 시 **`noindex` 제거 금지**
   - 이유: 동일 canonical 가진 다수 URL = 중복 콘텐츠 패널티
 - ❌ `api/seo.js` 의 `/q/`, `/qa/tag/`, `/category/` 핸들러 삭제 금지
   - 이유: 봇이 JS 미렌더링 시 빈 SPA 셸만 보게 됨 = SEO 가치 0
 - ❌ `vercel.json` rewrites 의 `tagIndex.json` exclusion 패턴 제거 금지
-  - 이유: 122 태그 페이지 전부 로드 실패
+  - 이유: 131 태그 페이지 전부 로드 실패
+
+**콘텐츠 자산화 4종 동결 (2026-05-21 보강 — "부족한 컨텐츠 채우기" 완료)**:
+- ❌ Q&A의 E-E-A-T 필드 5종 (`author`, `content_type`, `reviewed_at`, `disclaimer`, `source_type`) 삭제 금지
+  - 이유: Schema.org `QAPage.dateModified` / `acceptedAnswer.author` 가 이 필드를 직접 참조 — 삭제 시 YMYL 신뢰도 신호 소멸
+- ❌ Q&A의 브랜드 태그 10종 (플로로탄닌·감태·항산화·디에콜·에콜·폴리페놀·항염증·해양폴리페놀·갈조류·후코이단) 일괄 제거 금지
+  - 이유: 131개 태그 페이지 중 9개가 이 브랜드 키워드 기반 — 제거 시 1,216~202개 Q&A의 토픽 클러스터 붕괴
+  - 재추가 방법: `python3 scripts/build_qa_brand_tags.py --apply` (멱등성 보장)
+- ❌ `public/og/qa-<slug>.png` 13장 삭제 금지
+  - 이유: CategoryPage / QuestionDetailPage / QATagPage 의 `<SEOHead ogImage>` 가 직접 참조
+  - 재생성 방법: `python3 scripts/build_og_images.py` (Pillow + NanumSquareRoundB)
+- ❌ `/learn`, `/phlorotannin`, `/easy` 허브 페이지의 `<RelatedQA />` 컴포넌트 제거 금지
+  - 이유: 허브 → Q&A 페이지랭크 흐름 단절 시 1,361 Q&A 색인 가치 50% 이상 손실
+- ❌ `CAT_OG_SLUG` (QuestionDetailPage) / `CAT_ID_TO_SLUG` (Footer) 매핑 이탈 금지
+  - 이유: 두 매핑은 `build_og_images.py` 산출물 슬러그와 1:1 정합성 유지 필수
 
 ---
 

@@ -3,6 +3,7 @@ import { usePartner } from '../context/PartnerContext'
 import SEOHead from '../components/common/SEOHead'
 import { Link } from 'react-router-dom'
 import { ChevronDown, ChevronUp, MessageSquare, ArrowRight, CheckCircle, BookOpen } from 'lucide-react'
+import RelatedQA from '../components/qa/RelatedQA'
 
 // ─── 질환별 카드 데이터 (쉬운 말로) ───────────────────────────────
 const diseases = [
@@ -977,6 +978,18 @@ export default function EasyHealthPage() {
               💬 문자로 문의하기
             </a>
           </div>
+        </div>
+      </section>
+
+      {/* 초보자 허브 → Q&A 동선 (헌법 제10조 의무 6) */}
+      <section className="py-12 bg-white border-t border-gray-100">
+        <div className="max-w-6xl mx-auto px-6">
+          <RelatedQA
+            blogTags={['건강', '항산화', '면역', '플로로탄닌', '감태']}
+            blogCategory="general"
+            max={6}
+            title="💡 쉽게 풀어쓴 건강 Q&A"
+          />
         </div>
       </section>
 

@@ -152,13 +152,18 @@ Q&A는 현재 **Supabase 마이그레이션 대기 상태** (Phase 5 예정). �
 
 | 파일 | 용도 | 크기 |
 |---|---|---|
-| `hanain/public/qa.json` | 1,361개 Q&A 본문 (id, category, tags, question, answer, views, likes) | 2.2MB |
-| `hanain/public/tagIndex.json` | 빌드 산출물 — 태그→Q&A id 매핑 + 빈도, ≥5건 태그 122개 | ~80KB |
+| `hanain/public/qa.json` | 1,361개 Q&A 본문 (id, category, tags, question, answer, views, likes, **author, content_type, reviewed_at, disclaimer, source_type**) | 2.4MB |
+| `hanain/public/tagIndex.json` | 빌드 산출물 — 태그→Q&A id 매핑 + 빈도, ≥5건 태그 **131개** (브랜드 9 + 일반 122) | ~85KB |
+| `hanain/public/og/qa-<slug>.png` | 카테고리별 OG 이미지 13장 (1200×630, ~35KB each) | ~466KB 합계 |
 | `hanain/src/pages/QAPage.jsx` | 목록 (카테고리 탭, 검색, 페이지네이션) | 32KB |
-| `hanain/src/pages/QuestionDetailPage.jsx` | 개별 Q&A 페이지 (FAQPage JSON-LD 자동 주입) | 20KB+ |
-| `hanain/src/pages/QATagPage.jsx` | 태그별 필터 페이지 (`/qa/tag/:tag`, 신규) | TBD |
-| `scripts/build_qa_tag_index.py` | tagIndex.json 빌드 스크립트 | TBD |
-| `scripts/generate_qa_sitemap.py` | Q&A URL을 sitemap에 추가 | TBD |
+| `hanain/src/pages/QuestionDetailPage.jsx` | 개별 Q&A 페이지 (QAPage JSON-LD + E-E-A-T 메타 + 카테고리별 ogImage) | 22KB+ |
+| `hanain/src/pages/QATagPage.jsx` | 태그별 필터 페이지 (`/qa/tag/:tag`) | TBD |
+| `hanain/src/components/qa/RelatedQA.jsx` | 허브 → Q&A 페이지랭크 전파 컴포넌트 (LearnPage/PhlorotanninPage/EasyHealthPage 임베드) | TBD |
+| `hanain/scripts/build_qa_tag_index.py` | tagIndex.json 빌드 스크립트 | TBD |
+| `hanain/scripts/build_qa_brand_tags.py` | **(신규)** 12 BRAND_RULES 정규식 매칭으로 Q&A에 브랜드 태그 자동 부착 (멱등) | 5.9KB |
+| `hanain/scripts/add_qa_eeat_fields.py` | **(신규)** Q&A 전수 E-E-A-T 메타 필드 5종 주입 (멱등) | 2.6KB |
+| `hanain/scripts/build_og_images.py` | **(신규)** 카테고리별 OG PNG 13장 빌드 (Pillow + NanumSquareRoundB) | 5.0KB |
+| `hanain/generate_sitemap_rss.py` | Q&A URL을 sitemap에 추가 (총 1,812 URL) | - |
 
 ### Q&A 카테고리 (12개)
 
