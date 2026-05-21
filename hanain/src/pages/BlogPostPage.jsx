@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
-import { Calendar, Tag, Eye, ChevronRight, ArrowLeft, Share2, BookOpen, Phone, MessageCircle } from 'lucide-react'
+import { Calendar, Tag, Eye, ChevronRight, ArrowLeft, Share2, Phone, MessageCircle, ShieldCheck } from 'lucide-react'
 import { usePartner, DEFAULT_PARTNER } from '../context/PartnerContext'
 import SEOHead from '../components/common/SEOHead'
 import { getPostBySlug, getPosts } from '../lib/supabase'
@@ -407,38 +407,63 @@ export default function BlogPostPage() {
             }}
           />
 
-          {/* [2026-05-18 신설] E-E-A-T 신호 4줄 블록 — 작성·검토 기준·업데이트·면책.
-              검색엔진/AI 평가 시 신뢰성(Trustworthiness) 신호로 활용된다. */}
-          <aside className="bg-gray-50 border border-gray-200 rounded-xl p-4 md:p-5 mb-6 text-xs md:text-sm text-gray-600 leading-relaxed">
-            <p className="mb-1"><span className="font-semibold text-gray-700">작성·편집:</span> 플로로탄닌 건강정보 데이터센터 리서치팀</p>
-            <p className="mb-1"><span className="font-semibold text-gray-700">검토 기준:</span> Europe PMC·PubMed 등재 동료심사 논문 및 공신력 있는 해외 연구 자료를 우선 인용했습니다.</p>
-            <p className="mb-1"><span className="font-semibold text-gray-700">최근 업데이트:</span> {new Date(post.updated_at || post.created_at).toLocaleDateString('ko-KR', { year:'numeric', month:'long', day:'numeric' })}</p>
-            <p className="text-gray-500 mb-1"><span className="font-semibold text-gray-700">면책:</span> 본 글은 일반 건강정보 제공을 목적으로 하며 진단·치료를 대체하지 않습니다. 개별 증상은 의료진과 상담하세요.</p>
-            <p className="text-gray-500"><span className="font-semibold text-gray-700">용어가 어렵다면:</span> <Link to="/glossary" className="text-teal-600 underline decoration-teal-300 underline-offset-2 hover:text-teal-700">플로로탄닌 용어 사전</Link>에서 감태·디에콜·에콜·씨놀 등 주요 용어를 한곳에서 확인할 수 있습니다.</p>
+          {/* [2026-05-21] E-E-A-T 신호 박스 — 의학저널 톤 다크 카드로 통일
+              과거: bg-gray-50 + 작은 회색 텍스트 (옛 디자인)
+              현재: deep navy + cyan 액센트 아이콘 + 정돈된 메타 라인 */}
+          <aside className="relative overflow-hidden rounded-2xl border border-white/5 bg-[#0B1A2E] text-white p-5 md:p-6 mb-6">
+            <div className="flex items-center gap-2.5 mb-3">
+              <span className="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-cyan-hana/15 ring-1 ring-cyan-hana/30">
+                <ShieldCheck className="w-4 h-4 text-cyan-hana" strokeWidth={2.25} />
+              </span>
+              <span className="text-[11px] md:text-xs font-semibold tracking-wider uppercase text-cyan-hana">
+                리서치팀 검토 · 출처 검증 완료
+              </span>
+            </div>
+            <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-[12px] md:text-[13px] leading-relaxed">
+              <div className="flex gap-2">
+                <dt className="shrink-0 text-white/50 font-medium">작성·편집</dt>
+                <dd className="text-white/85">플로로탄닌 건강정보 데이터센터 리서치팀</dd>
+              </div>
+              <div className="flex gap-2">
+                <dt className="shrink-0 text-white/50 font-medium">최근 업데이트</dt>
+                <dd className="text-white/85">{new Date(post.updated_at || post.created_at).toLocaleDateString('ko-KR', { year:'numeric', month:'long', day:'numeric' })}</dd>
+              </div>
+              <div className="flex gap-2 sm:col-span-2">
+                <dt className="shrink-0 text-white/50 font-medium">검토 기준</dt>
+                <dd className="text-white/85">Europe PMC · PubMed 등재 동료심사 논문 우선 인용</dd>
+              </div>
+              <div className="flex gap-2 sm:col-span-2">
+                <dt className="shrink-0 text-white/50 font-medium">면책</dt>
+                <dd className="text-white/60">본 글은 일반 건강정보 제공 목적이며 진단·치료를 대체하지 않습니다. 개별 증상은 의료진과 상담하세요.</dd>
+              </div>
+              <div className="flex gap-2 sm:col-span-2">
+                <dt className="shrink-0 text-white/50 font-medium">용어 사전</dt>
+                <dd>
+                  <Link to="/glossary" className="text-cyan-hana hover:text-white underline decoration-cyan-hana/40 underline-offset-2 transition-colors">
+                    플로로탄닌 용어 사전
+                  </Link>
+                  <span className="text-white/60"> — 감태·디에콜·에콜·씨놀 등 주요 용어 한곳에서 확인</span>
+                </dd>
+              </div>
+            </dl>
           </aside>
 
-          {/* 태그 — 내부 검색 링크에 withRef 적용 */}
+          {/* [2026-05-21] 태그 — teal 칩 → 중성 gray + cyan-hana hover 통일 */}
           {post.tags?.length > 0 && (
-            <div className="flex flex-wrap gap-2 mb-8">
-              <Tag className="w-4 h-4 text-gray-400 mt-0.5" />
+            <div className="flex flex-wrap items-center gap-2 mb-8">
+              <Tag className="w-4 h-4 text-gray-400" />
               {post.tags.map(t => (
                 <Link key={t} to={withRef(`/blog?q=${t}`, partner)}
-                  className="text-sm text-teal-600 bg-teal-50 hover:bg-teal-100 px-3 py-1 rounded-full transition-colors">
+                  className="text-sm text-gray-600 bg-gray-100 hover:bg-cyan-hana hover:text-white border border-gray-200 hover:border-cyan-hana px-3 py-1 rounded-full transition-colors">
                   #{t}
                 </Link>
               ))}
             </div>
           )}
 
-          {/* 관련 Q&A 바로가기 — 내부 링크에 withRef 적용 */}
-          <div className="bg-gradient-to-r from-teal-50 to-cyan-50 border border-teal-100 rounded-2xl p-6 mb-6">
-            <p className="text-sm font-bold text-teal-700 mb-2">📚 이 글 읽은 분들이 같이 찾아본 Q&A</p>
-            <p className="text-sm text-gray-600 mb-3">플로로탄닌 관련 1,361개 Q&A 아카이브 — <strong className="text-teal-700">무료 열람</strong>, 가입 없이 바로 확인</p>
-            <Link to={withRef(`/qa${post.category !== 'general' ? `?category=${post.category}` : ''}`, partner)}
-              className="inline-flex items-center gap-1.5 bg-teal-600 text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-teal-700 transition-colors shadow-sm">
-              <BookOpen className="w-4 h-4" /> Q&A 무료로 보기
-            </Link>
-          </div>
+          {/* [2026-05-21] 광고톤 "Q&A 무료로 보기" 박스 제거 —
+              바로 아래 RelatedQA 컴포넌트가 같은 역할(관련 Q&A 노출)을 이미 수행.
+              중복 + 광고톤(무료 열람·가입 없이 바로 확인) 으로 신뢰감 훼손 우려. */}
 
           {/* 룰베이스 매칭 관련 Q&A 3개 (헌법 제10조 의무 6 — 양방향 internal linking) */}
           <RelatedQA blogTags={post.tags || []} blogCategory={post.category} max={3} title="이 글과 관련된 Q&A" />
@@ -447,22 +472,36 @@ export default function BlogPostPage() {
                 placeholder {{PARTNER_PHONE}}, {{SMS_BODY}}는 본문 dangerouslySetInnerHTML
                 직전에 치환됩니다. 페이지 레벨 중복 노출 방지를 위해 여기서는 별도 렌더링하지 않습니다. */}
 
-          {/* 관련 글 — 내부 링크에 withRef 적용 (파트너 컨텍스트 유지) */}
+          {/* [2026-05-21] 관련 글 — 카드 디자인 통일 (teal-200 hover → cyan-hana) */}
           {related.length > 0 && (
-            <div>
-              <h3 className="text-lg font-bold text-gray-900 mb-4">관련 글</h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <section className="mt-10">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-base md:text-lg font-bold text-ocean-deep">관련 글</h3>
+                <Link
+                  to={withRef('/blog', partner)}
+                  className="text-xs text-gray-400 hover:text-cyan-hana inline-flex items-center gap-0.5 transition"
+                >
+                  블로그 전체 <ChevronRight className="w-3 h-3" />
+                </Link>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                 {related.map(r => (
-                  <Link key={r.id} to={withRef(`/blog/${r.slug}`, partner)}
-                    className="bg-white rounded-xl border border-gray-100 p-4 hover:shadow-md hover:border-teal-200 transition-all">
-                    <p className="text-sm font-semibold text-gray-800 line-clamp-2 mb-1">{r.title}</p>
-                    <p className="text-xs text-gray-400">
-                      {new Date(r.created_at).toLocaleDateString('ko-KR')}
+                  <Link
+                    key={r.id}
+                    to={withRef(`/blog/${r.slug}`, partner)}
+                    className="group bg-white rounded-xl border border-gray-200 hover:border-cyan-hana hover:shadow-sm p-4 transition-all"
+                  >
+                    <p className="text-sm font-semibold text-gray-800 group-hover:text-ocean-deep line-clamp-2 leading-snug mb-2">
+                      {r.title}
                     </p>
+                    <div className="flex items-center justify-between text-[11px] text-gray-400">
+                      <span>{new Date(r.created_at).toLocaleDateString('ko-KR')}</span>
+                      <ChevronRight className="w-3.5 h-3.5 text-gray-300 group-hover:text-cyan-hana transition-colors" />
+                    </div>
                   </Link>
                 ))}
               </div>
-            </div>
+            </section>
           )}
         </div>
       </div>
