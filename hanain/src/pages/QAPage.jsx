@@ -238,6 +238,7 @@ function QACard({ qa, isOpen, onToggle, searchQuery }) {
 
 export default function QAPage() {
   const [searchParams, setSearchParams] = useSearchParams()
+  const partner = usePartner()
 
   // ✅ URL params를 직접 파생 — state 비동기 타이밍 버그 완전 제거
   const activeCategory = searchParams.get('category') || 'all'
