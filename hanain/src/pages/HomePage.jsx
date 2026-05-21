@@ -8,6 +8,9 @@ import {
   Shield, Activity, Zap, Phone
 } from 'lucide-react'
 import RevealContact from '../components/common/RevealContact'
+import LastReviewed from '../components/common/LastReviewed'
+
+const LAST_REVIEWED = '2026-05-21'
 
 
 function useCountUp(target, duration = 2000) {
@@ -151,6 +154,20 @@ export default function HomePage() {
         }
       },
       {
+        "@type": "WebPage",
+        "@id": "https://phlorotannin.com/home#webpage",
+        "url": "https://phlorotannin.com/home",
+        "name": "플로로탄닌 건강정보 허브",
+        "inLanguage": "ko-KR",
+        "isPartOf": { "@id": "https://phlorotannin.com/#website" },
+        "lastReviewed": LAST_REVIEWED,
+        "reviewedBy": { "@type": "Organization", "name": "플로로탄닌 파트너스 편집부" },
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": ["h1", "[data-speakable=\"true\"]"]
+        }
+      },
+      {
         "@type": "BreadcrumbList",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "홈", "item": "https://phlorotannin.com/" },
@@ -178,12 +195,12 @@ export default function HomePage() {
             <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500">Phlorotannin Information Hub</span>
           </div>
 
-          <h1 className="text-3xl md:text-[3.25rem] font-bold text-gray-900 tracking-tight leading-[1.15] mb-5 break-keep">
+          <h1 data-speakable="true" className="text-3xl md:text-[3.25rem] font-bold text-gray-900 tracking-tight leading-[1.15] mb-5 break-keep">
             기초 개념부터 작용 기전까지<br />
             <span className="text-gray-700">한 흐름으로 이해하는 건강 정보</span>
           </h1>
 
-          <p className="text-gray-700 text-[16px] md:text-[17px] leading-[1.8] mb-3 max-w-2xl break-keep">
+          <p data-speakable="true" className="text-gray-700 text-[16px] md:text-[17px] leading-[1.8] mb-3 max-w-2xl break-keep">
             암·당뇨·뇌질환·염증 등 다양한 이유로 찾아온 분들이 결국 같은 키워드에서 만나게 됩니다.
           </p>
           <p className="text-gray-500 text-[14px] leading-[1.8] mb-10 max-w-2xl break-keep">
@@ -583,6 +600,9 @@ export default function HomePage() {
       {/* ── 저작권 안내 — 에디토리얼 ── */}
       <section className="py-7 bg-white border-t border-gray-100">
         <div className="max-w-5xl mx-auto px-6">
+          <div className="mb-4">
+            <LastReviewed date={LAST_REVIEWED} />
+          </div>
           <div className="flex flex-col md:flex-row items-center justify-between gap-3">
             <p className="text-[12px] text-gray-500 text-center md:text-left leading-[1.7]">
               © 2026 <span className="font-medium text-gray-700">플로로탄닌 파트너스</span> · All rights reserved. · 본 사이트의 모든 콘텐츠는 저작권법에 의해 보호받습니다.

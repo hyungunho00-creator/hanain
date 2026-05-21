@@ -9,6 +9,7 @@ import {
 } from 'lucide-react'
 import RevealContact from '../components/common/RevealContact'
 import RelatedQA from '../components/qa/RelatedQA'
+import LastReviewed from '../components/common/LastReviewed'
 // D10 시각화 컴포넌트
 import {
   StatCard, MoleculeSVG, SectionHeader, MechanismDiagram, ResearchCard,
@@ -256,6 +257,12 @@ export default function PhlorotanninPage() {
   const [openMech, setOpenMech] = useState(0)
   const [activeDis, setActiveDis] = useState(null)
 
+  // [2026-05-21 SEO P0] FAQPage + Speakable + lastReviewed 추가
+  // FAQ 답변은 본문에 실제로 존재하는 내용을 요약 — 모든 사실은 동료심사 논문 근거 (Marine Drugs, Antioxidants, Foods 등 PMC indexed).
+  // Speakable: Google Assistant/음성 검색 대응
+  // lastReviewed: Helpful Content 신선도 신호
+  const LAST_REVIEWED = '2026-05-21'
+
   const phloroJsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -266,11 +273,21 @@ export default function PhlorotanninPage() {
         "name": "플로로탄닌(Phlorotannin)이란? - 해양 폴리페놀 과학적 근거",
         "description": "감태·미역·다시마 등 갈조류에서 추출한 해양 폴리페놀 플로로탄닌의 6가지 과학적 작용기전",
         "inLanguage": "ko-KR",
+        "lastReviewed": LAST_REVIEWED,
+        "reviewedBy": {
+          "@type": "Organization",
+          "name": "플로로탄닌 파트너스 편집부",
+          "url": "https://phlorotannin.com"
+        },
         "about": {
           "@type": "Drug",
           "name": "플로로탄닌 (Phlorotannin)",
           "alternateName": ["Phlorotannin", "감태추출물", "해양폴리페놀"],
           "description": "갈조류(감태·미역·다시마)에서 추출한 해양 폴리페놀 계열 천연 소재"
+        },
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": ["h1", "[data-speakable=\"true\"]"]
         }
       },
       {
@@ -278,6 +295,68 @@ export default function PhlorotanninPage() {
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "홈", "item": "https://phlorotannin.com/" },
           { "@type": "ListItem", "position": 2, "name": "플로로탄닌 소개", "item": "https://phlorotannin.com/phlorotannin" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://phlorotannin.com/phlorotannin#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "플로로탄닌(Phlorotannin)이란 무엇인가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "플로로탄닌은 감태·미역·다시마 등 갈조류(brown algae)에만 들어 있는 해양 폴리페놀의 한 종류입니다. 플로로글루시놀(phloroglucinol) 단위가 결합한 분자 구조를 가지며, 분자 크기에 따라 에콜(eckol), 디에콜(dieckol), 플로로푸코퓨로에콜(phlorofucofuroeckol) 등으로 분류됩니다. 항산화·항염 등의 생리활성이 동료심사 논문에서 광범위하게 보고되고 있습니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "플로로탄닌과 후코이단은 무엇이 다른가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "두 성분 모두 갈조류에서 유래하지만 화학 구조가 완전히 다릅니다. 플로로탄닌은 폴리페놀(폴리페놀 계열의 항산화 분자)이고, 후코이단은 황산기를 가진 다당류(sulfated polysaccharide)입니다. 폴리페놀과 다당류는 분자 분류 자체가 다르며, 작용 기전과 임상 연구 분야도 구분됩니다. 자세한 비교는 /compare/phlorotannin-vs-fucoidan 페이지를 참고해 주세요."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "플로로탄닌은 어떤 갈조류에서 가장 많이 나오나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "주요 갈조류 중 감태(Ecklonia cava)에서 플로로탄닌 함량이 비교적 높게 보고되며, 미역(Undaria pinnatifida)·다시마(Saccharina japonica)·톳(Sargassum) 등에서도 검출됩니다. 다만 채집 시기·해역·추출 방법에 따라 함량 편차가 크다는 점이 다수 논문에서 지적되고 있습니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "플로로탄닌은 식약처에서 어떻게 분류되나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "감태추출물(Ecklonia cava extract)은 식품의약품안전처가 인정한 개별인정형 기능성 원료의 일종으로, '체지방 감소에 도움을 줄 수 있음' 등의 기능성 인정 사례가 보고되어 있습니다. 다만 본 사이트는 특정 제품을 판매하지 않으며, 의약품이 아니라 식품 원료 관점의 정보를 제공합니다. 개별 제품의 기능성 표시는 해당 제품의 식약처 인정 내용을 직접 확인해 주세요."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "플로로탄닌의 주요 작용 기전은 무엇인가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "동료심사 논문에서 보고된 주요 기전은 (1) 활성산소(ROS) 직접 소거를 통한 항산화 작용, (2) Nrf2 경로 활성화를 통한 내인성 항산화 효소 유도, (3) NF-κB 경로 억제를 통한 항염 작용, (4) α-glucosidase 억제를 통한 식후 혈당 상승 완화, (5) 콜린에스터아제 억제 등 뇌 건강 관련 작용, (6) MMP 억제 등 피부 관련 작용입니다. 모두 in vitro/동물 연구 단계가 다수이며, 사람 대상 대규모 임상은 제한적입니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "플로로탄닌은 안전한가요? 부작용이 있나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "감태추출물은 식약처 개별인정형 기능성 원료로서 권장 섭취량 내에서 일반적으로 안전한 것으로 분류됩니다. 다만 갈조류 알레르기, 갑상선 질환자(요오드 함량 고려), 항응고제 복용자, 임신·수유부 등은 섭취 전 의료 전문가와 상담이 필요합니다. 자세한 안전성·복용법 가이드는 /safety 페이지를 참고해 주세요."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "플로로탄닌 연구는 어디서 확인할 수 있나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "PubMed(pubmed.ncbi.nlm.nih.gov), PMC(www.ncbi.nlm.nih.gov/pmc), Europe PMC(europepmc.org) 등에서 'phlorotannin', 'Ecklonia cava', 'dieckol' 등의 키워드로 검색하면 동료심사 학술 논문을 확인할 수 있습니다. 본 사이트의 연구 타임라인 페이지(/research-timeline)에서 2020-2026년 주요 연구를 시간순으로 정리하고 있습니다."
+            }
+          }
         ]
       }
     ]
@@ -307,13 +386,13 @@ export default function PhlorotanninPage() {
                 </span>
               </div>
 
-              <h1 className="text-4xl md:text-[3.5rem] font-bold text-gray-900 leading-[1.1] tracking-tight mb-6 break-keep">
+              <h1 data-speakable="true" className="text-4xl md:text-[3.5rem] font-bold text-gray-900 leading-[1.1] tracking-tight mb-6 break-keep">
                 플로로탄닌
                 <span className="block text-gray-500 font-normal text-2xl md:text-3xl mt-2 tracking-normal">
                   Phlorotannin
                 </span>
               </h1>
-              <p className="text-gray-600 text-[16px] md:text-[17px] leading-[1.8] mb-8 max-w-xl break-keep">
+              <p data-speakable="true" className="text-gray-600 text-[16px] md:text-[17px] leading-[1.8] mb-8 max-w-xl break-keep">
                 갈조류(미역·다시마·감태)에서만 발견되는 해양 폴리페놀.
                 단순한 항산화제를 넘어, <span className="text-gray-900 font-medium">6가지 분자 기전</span>으로
                 <span className="text-gray-900 font-medium"> 12개 질환 영역</span>에 작용하는
@@ -411,7 +490,7 @@ export default function PhlorotanninPage() {
               <span className="h-px w-8 bg-gray-300" />
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-4">플로로탄닌이란 무엇인가?</h2>
-            <p className="text-gray-600 text-[16px] leading-[1.8] max-w-2xl mx-auto break-keep">
+            <p data-speakable="true" className="text-gray-600 text-[16px] leading-[1.8] max-w-2xl mx-auto break-keep">
               플로로글루시놀(phloroglucinol) 단위가 최소 2개에서 수백 개까지 중합된 폴리페놀 화합물군.
               오직 <strong className="text-gray-900 font-semibold">갈조류(갈색 해조류)</strong>에서만 합성되며, 육상 식물의 타닌과는 구조·기능이 근본적으로 다릅니다.
             </p>
@@ -884,6 +963,9 @@ export default function PhlorotanninPage() {
           <p className="text-center text-sm text-gray-400 mt-4">
             ※ 본 페이지의 정보는 건강 교육 목적이며 의료 처방·진단을 대체하지 않습니다. 건강 문제는 반드시 전문의와 상담하세요.
           </p>
+          <div className="mt-5">
+            <LastReviewed date={LAST_REVIEWED} />
+          </div>
         </div>
       </section>
 

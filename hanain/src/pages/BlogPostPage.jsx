@@ -249,7 +249,11 @@ export default function BlogPostPage() {
         { "@type": "Thing", "name": "PH-100" },
         { "@type": "Thing", "name": "플로로탄닌" }
       ],
-      "mainEntityOfPage": { "@type": "WebPage", "@id": `https://phlorotannin.com/blog/${post.slug}` }
+      "mainEntityOfPage": { "@type": "WebPage", "@id": `https://phlorotannin.com/blog/${post.slug}` },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["h1", "[data-speakable=\"true\"]"]
+      }
     },
     {
       "@context": "https://schema.org",
@@ -339,11 +343,11 @@ export default function BlogPostPage() {
             <div className="flex items-center gap-2 mb-4">
               <span className={`text-xs font-semibold px-3 py-1 rounded-full ${catColor}`}>{catName}</span>
             </div>
-            <h1 className="text-2xl md:text-3xl font-extrabold text-gray-900 leading-tight mb-4">
+            <h1 data-speakable="true" className="text-2xl md:text-3xl font-extrabold text-gray-900 leading-tight mb-4">
               {post.title}
             </h1>
             {post.excerpt && (
-              <p className="text-lg text-gray-500 leading-relaxed mb-5 border-l-4 border-teal-400 pl-4 italic">
+              <p data-speakable="true" className="text-lg text-gray-500 leading-relaxed mb-5 border-l-4 border-teal-400 pl-4 italic">
                 {post.excerpt}
               </p>
             )}

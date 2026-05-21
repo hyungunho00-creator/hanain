@@ -3,7 +3,10 @@ import { useNavigate } from 'react-router-dom'
 import { usePartner } from '../context/PartnerContext'
 import SEOHead from '../components/common/SEOHead'
 import RelatedQA from '../components/qa/RelatedQA'
+import LastReviewed from '../components/common/LastReviewed'
 import { MoleculeSVG, SectionHeader, StatCard, SciImage } from '../components/visual'
+
+const LAST_REVIEWED = '2026-05-21'
 
 /* ─────────────────────────────────────────────
    색상 팔레트 & 공통 스타일
@@ -315,13 +318,13 @@ function IntroHero() {
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-[3.5rem] font-bold text-gray-900 leading-[1.1] tracking-tight mb-6 break-keep">
+            <h1 data-speakable="true" className="text-4xl md:text-[3.5rem] font-bold text-gray-900 leading-[1.1] tracking-tight mb-6 break-keep">
               쉽게 배우는 플로로탄닌
               <span className="block text-gray-500 font-normal text-2xl md:text-3xl mt-3 tracking-normal">
                 그림과 비유로 이해하는 바다의 폴리페놀
               </span>
             </h1>
-            <p className="text-gray-600 text-[16px] md:text-[17px] leading-[1.8] mb-8 max-w-xl break-keep">
+            <p data-speakable="true" className="text-gray-600 text-[16px] md:text-[17px] leading-[1.8] mb-8 max-w-xl break-keep">
               어려운 의학 용어 없이, <span className="text-gray-900 font-medium">중학생도 이해할 수 있는 그림과 비유</span>로
               플로로탄닌의 작용을 차근차근 풀어 드립니다.
             </p>
@@ -1067,6 +1070,12 @@ export default function LearnPage() {
       "name": "플로로탄닌 쉽게 배우기 — 감태추출물·해양 폴리페놀 학습 가이드",
       "description": "플로로탄닌·감태추출물·해양 폴리페놀의 작용기전과 건강 효과를 단계별로 학습하는 종합 가이드. 항산화·염증·혈당·수면·면역·뇌 건강 주제 포함.",
       "inLanguage": "ko-KR",
+      "lastReviewed": LAST_REVIEWED,
+      "reviewedBy": { "@type": "Organization", "name": "플로로탄닌 파트너스 편집부" },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["h1", "[data-speakable=\"true\"]"]
+      },
       "audience": { "@type": "Audience", "audienceType": "일반 성인 학습자" },
       "educationalLevel": "Beginner to Intermediate",
       "learningResourceType": "Guide",
@@ -1113,6 +1122,10 @@ export default function LearnPage() {
       </section>
 
       <CTASection />
+
+      <div className="py-6 bg-white border-t border-gray-100">
+        <LastReviewed date={LAST_REVIEWED} />
+      </div>
 
       <style>{`
         .scrollbar-hide::-webkit-scrollbar { display: none; }
