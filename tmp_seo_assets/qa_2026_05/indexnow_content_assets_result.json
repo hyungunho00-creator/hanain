@@ -1,0 +1,18 @@
+{
+  "api.indexnow.org": {
+    "status": 200,
+    "body": ""
+  },
+  "bing": {
+    "status": 200,
+    "body": ""
+  },
+  "yandex": {
+    "status": 202,
+    "body": "{\n  \"success\":true\n}"
+  },
+  "naver": {
+    "status": 200,
+    "body": ""
+  }
+}
