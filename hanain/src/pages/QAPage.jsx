@@ -7,54 +7,37 @@ import RevealContact from '../components/common/RevealContact'
 
 const ITEMS_PER_PAGE = 20
 
-// 카테고리 정의 (DB qa_categories 기준)
-const QA_CATEGORIES = [
-  { id: 'metabolism',             name: '대사질환',    emoji: '🩸' },
-  { id: 'cancer_immune',          name: '항암/면역',   emoji: '💪' },
-  { id: 'digestive',              name: '소화/간 건강', emoji: '🫁' },
-  { id: 'cardiovascular',         name: '심혈관',      emoji: '❤️' },
-  { id: 'neuro_cognitive',        name: '뇌/인지',     emoji: '🧠' },
-  { id: 'mental_health',          name: '정신건강',    emoji: '😴' },
-  { id: 'musculoskeletal',        name: '근골격',      emoji: '🦴' },
-  { id: 'skin_hair',              name: '피부/모발',   emoji: '✨' },
-  { id: 'respiratory',            name: '호흡기',      emoji: '🫀' },
-  { id: 'infection_inflammation', name: '감염/염증',   emoji: '🔥' },
-  { id: 'womens_health',          name: '여성건강',    emoji: '🌸' },
-  { id: 'mens_health',            name: '남성건강',    emoji: '💪' },
+// [2026-05-21 fix] 카테고리는 qa.json의 categories에서 동적으로 로드한다.
+// — 과거에는 12개를 하드코딩(skin_hair 통합)했으나 qa.json은 13개(skin/hair 분리)였음
+//   → '피부/모발' 탭 클릭 시 q.category === 'skin_hair' 매칭 0건 → 사용자 신고 버그.
+// 이제 qa.json categories 배열을 Source of Truth로 삼아 자동 동기화.
+// Fallback: qa.json 로드 실패 시 사용할 12개 기본 카테고리(skin/hair 분리 반영).
+const FALLBACK_QA_CATEGORIES = [
+  { id: 'metabolism',             name: '대사질환' },
+  { id: 'cancer_immune',          name: '항암/면역' },
+  { id: 'digestive',              name: '소화/간 건강' },
+  { id: 'cardiovascular',         name: '심혈관' },
+  { id: 'neuro_cognitive',        name: '뇌/인지' },
+  { id: 'mental_health',          name: '정신건강' },
+  { id: 'musculoskeletal',        name: '근골격' },
+  { id: 'skin',                   name: '피부' },
+  { id: 'hair',                   name: '모발/두피' },
+  { id: 'respiratory',            name: '호흡기' },
+  { id: 'infection_inflammation', name: '감염/염증' },
+  { id: 'womens_health',          name: '여성건강' },
+  { id: 'mens_health',            name: '남성건강' },
 ]
 
-const CAT_COLORS = {
-  metabolism:             { bg: '#0077B6' },
-  cancer_immune:          { bg: '#7C3AED' },
-  digestive:              { bg: '#059669' },
-  cardiovascular:         { bg: '#DC2626' },
-  neuro_cognitive:        { bg: '#4338CA' },
-  mental_health:          { bg: '#BE185D' },
-  musculoskeletal:        { bg: '#C2410C' },
-  skin_hair:              { bg: '#B45309' },
-  respiratory:            { bg: '#0E7490' },
-  infection_inflammation: { bg: '#0F766E' },
-  womens_health:          { bg: '#BE123C' },
-  mens_health:            { bg: '#334155' },
-}
-
+// category_id → /category/:slug URL 매핑
+// (CategoryPage.jsx SLUG_TO_ID 의 역방향. skin/hair 분리 + skin_hair 통합 모두 지원)
 const CAT_SLUG_MAP = {
   metabolism: 'metabolism', cancer_immune: 'cancer-immune',
   digestive: 'digestive', cardiovascular: 'cardiovascular',
   neuro_cognitive: 'neuro-cognitive', mental_health: 'mental-health',
   musculoskeletal: 'musculoskeletal',
-  skin_hair: 'skin-hair',
+  skin_hair: 'skin-hair', skin: 'skin', hair: 'hair',
   respiratory: 'respiratory', infection_inflammation: 'infection-inflammation',
   womens_health: 'womens-health', mens_health: 'mens-health',
-}
-
-function getCatBg(catId) {
-  return (CAT_COLORS[catId] || { bg: '#334155' }).bg
-}
-
-function getCatName(catId) {
-  const cat = QA_CATEGORIES.find(c => c.id === catId)
-  return cat ? cat.name : catId
 }
 
 function highlightText(text, query) {
@@ -99,7 +82,7 @@ function ContactCard() {
   )
 }
 
-function QACard({ qa, isOpen, onToggle, searchQuery }) {
+function QACard({ qa, isOpen, onToggle, searchQuery, categories }) {
   const partner = usePartner()
   const [liked, setLiked] = useState(false)
   const [likeCount, setLikeCount] = useState(qa.likes || 0)
@@ -129,8 +112,8 @@ function QACard({ qa, isOpen, onToggle, searchQuery }) {
 
   const references = typeof qa.answer !== 'string' ? qa.answer?.references : null
   const catId = qa.category_id || qa.category
-  const catName = getCatName(catId)
-  const catBg = getCatBg(catId)
+  // 카테고리 이름 lookup — 동적 카테고리(qa.json categories) 기준
+  const catName = (categories || []).find(c => c.id === catId)?.name || catId
 
   const diffLabel = qa.difficulty === 'basic' ? '기초' : qa.difficulty === 'intermediate' ? '중급' : qa.difficulty === 'advanced' ? '심화' : (qa.difficulty || '기초')
 
@@ -253,6 +236,7 @@ export default function QAPage() {
 
   // qa.json 기반 전체 데이터
   const [allQuestions, setAllQuestions] = useState([])
+  const [categories, setCategories] = useState(FALLBACK_QA_CATEGORIES)
   const [dataLoaded, setDataLoaded] = useState(false)
   const [catCounts, setCatCounts] = useState({})
   const [popularList, setPopularList] = useState([])
@@ -268,6 +252,13 @@ export default function QAPage() {
       .then(data => {
         const qs = data.questions || []
         setAllQuestions(qs)
+
+        // 카테고리 목록 — qa.json categories를 Source of Truth로 사용
+        // (fix 2026-05-21: 하드코딩된 skin_hair → qa.json의 skin/hair 분리 자동 반영)
+        const cats = Array.isArray(data.categories) && data.categories.length > 0
+          ? data.categories.map(c => ({ id: c.id, name: c.name }))
+          : FALLBACK_QA_CATEGORIES
+        setCategories(cats)
 
         // 카테고리별 카운트
         const counts = {}
@@ -526,7 +517,7 @@ export default function QAPage() {
             <span>전체</span>
             <span className={`text-[12px] tabular-nums ${activeCategory === 'all' ? 'text-white/70' : 'text-gray-400'}`}>{totalAll.toLocaleString()}</span>
           </button>
-          {QA_CATEGORIES.map(cat => {
+          {categories.filter(cat => (catCounts[cat.id] || 0) > 0).map(cat => {
             const isActive = activeCategory === cat.id
             return (
               <button
@@ -575,6 +566,7 @@ export default function QAPage() {
                   isOpen={openId === qa.id}
                   onToggle={() => setOpenId(openId === qa.id ? null : qa.id)}
                   searchQuery={searchQuery}
+                  categories={categories}
                 />
               ))
             )}
@@ -726,7 +718,7 @@ export default function QAPage() {
                 카테고리별 보기
               </h3>
               <ul className="space-y-0.5">
-                {QA_CATEGORIES.map(cat => {
+                {categories.filter(cat => (catCounts[cat.id] || 0) > 0).map(cat => {
                   const isActive = activeCategory === cat.id
                   return (
                     <li key={cat.id}>

@@ -47,19 +47,40 @@ function StatCounter({ value, label, suffix = '' }) {
   )
 }
 
-const categoryMeta = [
-  { id: 'metabolism',          name: '대사질환',   color: '#0077B6', icon: Activity },
-  { id: 'cancer_immune',       name: '항암/면역',   color: '#00B4D8', icon: Shield },
-  { id: 'digestive',           name: '소화/간',     color: '#2ECC71', icon: Leaf },
-  { id: 'neuro_cognitive',     name: '신경/인지',   color: '#9B59B6', icon: Brain },
-  { id: 'skin_hair',           name: '피부/모발',   color: '#E91E63', icon: Star },
-  { id: 'musculoskeletal',     name: '근골격계',    color: '#FF6B35', icon: Zap },
-  { id: 'womens_health',       name: '여성건강',    color: '#F06292', icon: Heart },
-  { id: 'mens_health',         name: '남성건강',    color: '#1976D2', icon: Users },
-  { id: 'cardiovascular',      name: '심혈관',      color: '#E53935', icon: Heart },
-  { id: 'respiratory',         name: '호흡기',      color: '#26C6DA', icon: Activity },
-  { id: 'infection_inflammation', name: '감염/염증', color: '#FFA726', icon: Shield },
-  { id: 'mental_health',       name: '정신건강',    color: '#66BB6A', icon: Brain },
+// 카테고리 ID → 아이콘 매핑 (디자인 헌법 v3: 모노톤이므로 color는 제거)
+// 이름은 qa.json categories를 Source of Truth로 사용 (skin_hair 통합 → skin/hair 분리 자동 반영)
+const CAT_ICON = {
+  metabolism:             Activity,
+  cancer_immune:          Shield,
+  digestive:              Leaf,
+  cardiovascular:         Heart,
+  neuro_cognitive:        Brain,
+  mental_health:          Brain,
+  musculoskeletal:        Zap,
+  skin:                   Star,
+  hair:                   Star,
+  skin_hair:              Star,   // 구 통합 카테고리 호환
+  respiratory:            Activity,
+  infection_inflammation: Shield,
+  womens_health:          Heart,
+  mens_health:            Users,
+}
+
+// qa.json 로드 실패/지연 시 사용할 fallback 카테고리 (13개, skin/hair 분리)
+const FALLBACK_CATEGORIES = [
+  { id: 'metabolism',             name: '대사질환' },
+  { id: 'cancer_immune',          name: '항암/면역' },
+  { id: 'digestive',              name: '소화/간 건강' },
+  { id: 'cardiovascular',         name: '심혈관' },
+  { id: 'neuro_cognitive',        name: '뇌/인지' },
+  { id: 'mental_health',          name: '정신건강' },
+  { id: 'musculoskeletal',        name: '근골격' },
+  { id: 'skin',                   name: '피부' },
+  { id: 'hair',                   name: '모발/두피' },
+  { id: 'respiratory',            name: '호흡기' },
+  { id: 'infection_inflammation', name: '감염/염증' },
+  { id: 'womens_health',          name: '여성건강' },
+  { id: 'mens_health',            name: '남성건강' },
 ]
 
 export default function HomePage() {
@@ -94,8 +115,19 @@ export default function HomePage() {
     }
   }
 
-  const getCategoryMeta = (catId) =>
-    categoryMeta.find(c => c.id === catId) || { name: '', color: '#00B4D8', icon: BookOpen }
+  // 카테고리 목록 — qa.json categories를 Source of Truth로 (skin/hair 분리 자동 반영)
+  const categoryList = (qaData.categories && qaData.categories.length > 0)
+    ? qaData.categories.map(c => ({ id: c.id, name: c.name }))
+    : FALLBACK_CATEGORIES
+
+  const getCategoryMeta = (catId) => {
+    const found = categoryList.find(c => c.id === catId)
+    return {
+      id: catId,
+      name: found?.name || '',
+      icon: CAT_ICON[catId] || BookOpen,
+    }
+  }
 
   const totalQA = (qaData.questions || []).length
 
@@ -184,7 +216,7 @@ export default function HomePage() {
                     <div className="min-w-0">
                       <span className="text-gray-800 text-[14px] block leading-snug">{s.question}</span>
                       <span className="text-[11px] uppercase tracking-[0.16em] text-gray-400 mt-1 block">
-                        {categoryMeta.find(c => c.id === s.category)?.name || ''}
+                        {categoryList.find(c => c.id === s.category)?.name || ''}
                       </span>
                     </div>
                   </button>
@@ -347,24 +379,24 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─── 12 Categories — 에디토리얼 ─── */}
+      {/* ─── Categories — 에디토리얼 (개수는 qa.json 기준 동적) ─── */}
       <section className="py-20 md:py-24 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="max-w-2xl mb-12">
             <div className="flex items-center gap-3 mb-5">
               <span className="h-px w-8 bg-gray-300" aria-hidden="true" />
-              <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500">Categories · 12</span>
+              <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500">Categories · {categoryList.length}</span>
             </div>
             <h2 className="text-2xl md:text-[2.25rem] font-bold text-gray-900 tracking-tight leading-tight mb-3 break-keep">
-              12개 건강 정보 카테고리
+              {categoryList.length}개 건강 정보 카테고리
             </h2>
             <p className="text-gray-600 text-[15px] leading-[1.8] break-keep">
               관심 있는 분야를 선택해 정보를 탐색하세요.
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-            {categoryMeta.map((cat, i) => {
-              const Icon = cat.icon
+            {categoryList.map((cat, i) => {
+              const Icon = CAT_ICON[cat.id] || BookOpen
               return (
                 <button
                   key={cat.id}
