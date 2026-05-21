@@ -1,0 +1,178 @@
+{
+  "generated_at": "2026-05-21T03:10:55.526599+00:00",
+  "mode": "report-only",
+  "violations": {
+    "scanned": 1361,
+    "absolute_violators": [],
+    "auto_replace_violators": [],
+    "context_violators": [
+      {
+        "id": "cardio-025",
+        "question": "BNP 수치가 높게 나왔는데 심부전인가요?",
+        "words": [
+          "치료제"
+        ]
+      },
+      {
+        "id": "cardio-060",
+        "question": "Lp(a) 수치가 높다고 했는데 어떻게 관리해야 하나요?",
+        "words": [
+          "치료제"
+        ]
+      },
+      {
+        "id": "meta_037",
+        "question": "비알코올성 지방간은 어떻게 치료하나요?",
+        "words": [
+          "치료제"
+        ]
+      },
+      {
+        "id": "meta_082",
+        "question": "혈당 조절 약물의 종류는 어떤 것들이 있나요?",
+        "words": [
+          "치료제"
+        ]
+      },
+      {
+        "id": "cancer-009",
+        "question": "후코이단이 항암에 도움이 될 수 있다고 보고됩니다는 게 사실인가요?",
+        "words": [
+          "효능"
+        ]
+      },
+      {
+        "id": "neuro-003",
+        "question": "뇌에 좋다는 식품들이 실제로 인지기능을 높이나요?",
+        "words": [
+          "치료제"
+        ]
+      },
+      {
+        "id": "nc_042",
+        "question": "글루타메이트(글루탐산)의 뇌에서 역할은?",
+        "words": [
+          "치료제"
+        ]
+      },
+      {
+        "id": "nc_073",
+        "question": "삼차신경통이란 무엇인가요?",
+        "words": [
+          "치료제"
+        ]
+      },
+      {
+        "id": "skin-013",
+        "question": "기미·잡티를 없애는 방법은 무엇인가요?",
+        "words": [
+          "치료제"
+        ]
+      },
+      {
+        "id": "sh_020",
+        "question": "비타민 C 세럼이 피부에 도움이 되나요?",
+        "words": [
+          "효능"
+        ]
+      },
+      {
+        "id": "wh-extra-044",
+        "question": "피임약이 여드름이나 다모증에도 효과가 있나요?",
+        "words": [
+          "치료제"
+        ]
+      },
+      {
+        "id": "mens-007",
+        "question": "머리가 빠지는 남성, 피나스테리드 말고 대안은?",
+        "words": [
+          "치료제"
+        ]
+      },
+      {
+        "id": "infect-extra-022",
+        "question": "만성 부비동염(축농증)이 낫지 않을 때 어떻게 해야 하나요?",
+        "words": [
+          "치료제"
+        ]
+      },
+      {
+        "id": "infect-extra-027",
+        "question": "만성 편도염 환자에게 프로바이오틱스가 도움이 될까요?",
+        "words": [
+          "치료제"
+        ]
+      },
+      {
+        "id": "infect-extra-035",
+        "question": "두드러기가 만성화되는 이유는 무엇인가요?",
+        "words": [
+          "치료제"
+        ]
+      },
+      {
+        "id": "infect-extra-044",
+        "question": "마늘, 생강이 정말 면역에 효과가 있나요?",
+        "words": [
+          "치료제"
+        ]
+      },
+      {
+        "id": "infect-extra-069",
+        "question": "결핵 진단 후 치료 기간이 왜 6개월이나 걸리나요?",
+        "words": [
+          "치료제"
+        ]
+      },
+      {
+        "id": "mental-extra-007",
+        "question": "번아웃(Burnout) 증후군은 우울증과 다른가요?",
+        "words": [
+          "효능"
+        ]
+      },
+      {
+        "id": "mental-extra-047",
+        "question": "심리적 탄력성(resilience)을 기르는 방법은 무엇인가요?",
+        "words": [
+          "효능"
+        ]
+      },
+      {
+        "id": "mental-005",
+        "question": "번아웃 증후군이란 무엇이고, 어떻게 회복하나요?",
+        "words": [
+          "효능"
+        ]
+      },
+      {
+        "id": "nc_107",
+        "question": "다발성 경화증(MS)의 병태생리와 질병 수정 치료제(DMT)는?",
+        "words": [
+          "효능"
+        ]
+      },
+      {
+        "id": "sh_098",
+        "question": "임신 중 피부 트러블(기미, 가려움)이 심해지는 이유는?",
+        "words": [
+          "치료제"
+        ]
+      },
+      {
+        "id": "sh_140",
+        "question": "플로로탄닌이 피부 건강에 도움이 된다는 연구가 있나요?",
+        "words": [
+          "효능"
+        ]
+      }
+    ],
+    "summary": {
+      "absolute_count": 0,
+      "auto_replace_count": 0,
+      "context_count": 23
+    }
+  },
+  "applied_changes": []
+}

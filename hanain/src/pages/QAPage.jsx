@@ -392,17 +392,65 @@ export default function QAPage() {
     { q: '플로로탄닌을 어떻게 섭취하나요?', a: '식품의약품안전처에서 인정한 감태 추출물 형태의 건강기능식품으로 섭취할 수 있습니다. 제품별 섭취 방법과 용량은 라벨을 확인하세요.' },
   ]
 
-  const faqJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "@id": "https://phlorotannin.com/qa#faqpage",
-    "url": "https://phlorotannin.com/qa",
-    "mainEntity": STATIC_FAQ.map(f => ({
-      "@type": "Question",
-      "name": f.q,
-      "acceptedAnswer": { "@type": "Answer", "text": f.a }
-    }))
-  }
+  // ──────────────────────────────────────────────────────────
+  // FAQPage JSON-LD (헌법 제10조 의무 3)
+  //   - /qa 메인: STATIC_FAQ (브랜드 핵심 FAQ 10개)
+  //   - 카테고리 필터 시: 해당 카테고리 인기 Q&A 상위 N개 (FAQ_JSONLD_MAX_PER_PAGE=10)
+  //   - 각 항목에 url 부여하여 개별 페이지(/q/:slug)로 연결 → 내부 SEO 권한 전파
+  //   - 단일 페이지 최대 10개로 제한 (구글 가이드 + 페널티 회피)
+  // ──────────────────────────────────────────────────────────
+  const FAQ_JSONLD_MAX_PER_PAGE = 10
+
+  // 슬러그 규칙 (DO_NOT_TOUCH §3-Q — 변경 금지)
+  const qaSlug = (s) =>
+    (s || '').replace(/[^\w\s가-힣]/g, '').replace(/\s+/g, '-').slice(0, 60)
+
+  // HTML 태그 제거 (answer에 <span> 등이 들어있어서 schema.org text에 raw가 들어가면 안 됨)
+  const stripHtml = (s) => (typeof s === 'string'
+    ? s.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim()
+    : '')
+
+  const faqJsonLd = (() => {
+    // 카테고리/검색 필터가 활성이면 실데이터 기반 FAQPage
+    const useDynamic = (activeCategory && activeCategory !== 'all') || (searchQuery && searchQuery.length >= 2)
+    if (useDynamic && questions.length > 0) {
+      const items = questions.slice(0, FAQ_JSONLD_MAX_PER_PAGE).map(item => {
+        const ansText = typeof item.answer === 'string'
+          ? stripHtml(item.answer)
+          : stripHtml(Object.values(item.answer || {}).join(' '))
+        const slug = qaSlug(item.question)
+        return {
+          "@type": "Question",
+          "name": item.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": ansText.slice(0, 500),
+            ...(slug ? { "url": `https://phlorotannin.com/q/${slug}` } : {}),
+          }
+        }
+      })
+      const catSuffix = activeCategory && activeCategory !== 'all' ? `#${activeCategory}` : ''
+      return {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "@id": `https://phlorotannin.com/qa${catSuffix}#faqpage`,
+        "url": `https://phlorotannin.com/qa${catSuffix}`,
+        "mainEntity": items,
+      }
+    }
+    // 기본: 브랜드 STATIC_FAQ (메인 /qa 페이지)
+    return {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "@id": "https://phlorotannin.com/qa#faqpage",
+      "url": "https://phlorotannin.com/qa",
+      "mainEntity": STATIC_FAQ.slice(0, FAQ_JSONLD_MAX_PER_PAGE).map(f => ({
+        "@type": "Question",
+        "name": f.q,
+        "acceptedAnswer": { "@type": "Answer", "text": f.a }
+      }))
+    }
+  })()
 
   return (
     <div className="pt-16 min-h-screen bg-gray-50">

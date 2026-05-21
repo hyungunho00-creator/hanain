@@ -6,3 +6,7 @@ hanain/.env
 hanain/dist/
 *.log
 .vercel
+
+
+# Q&A safety scan backup files (auto-generated, keep latest only locally)
+tmp_seo_assets/qa_*/qa.backup.*.json

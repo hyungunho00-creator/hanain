@@ -1,11 +1,23 @@
 """
 sitemap.xml + rss.xml 동적 생성 스크립트
 - 블로그 포스트 전체 자동 포함 (Supabase DB에서 실시간 조회)
+- Q&A 1,361건 + 122 태그 페이지 자동 포함 (qa.json + tagIndex.json)
 - 배포 전 항상 실행해야 구글/네이버 색인에 반영됨
 - 실행: python3 generate_sitemap_rss.py
+
+선행 조건: tagIndex.json이 최신이어야 함
+  → python3 scripts/build_qa_tag_index.py  (자동으로 먼저 실행됨)
+
+헌법 참조:
+  - AI_BLOG_SEO_CONSTITUTION.md 제10조 (Q&A 자산화 의무)
+  - DO_NOT_TOUCH.md §3-Q (Q&A 데이터 / 슬러그 변경 금지)
+  - PROJECT_MAP.md §6-Q (Q&A 정적 인프라)
 """
-import requests, json, re
+import requests, json, re, subprocess, sys
+from pathlib import Path
 from datetime import datetime, timezone
+
+ROOT = Path(__file__).resolve().parent  # hanain/
 
 SUPABASE_URL = "https://rlfxuyeoluoeaxuujtly.supabase.co"
 SERVICE_KEY  = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJsZnh1eWVvbHVvZWF4dXVqdGx5Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NTk0MTI2MywiZXhwIjoyMDkxNTE3MjYzfQ.O0Oe3g2fv_8SUvxNfHvdxzpA6pcWVIWTscpymYr0pBI"
@@ -86,16 +98,62 @@ STATIC_PAGES = [
     {"loc": "/community",     "changefreq": "weekly",  "priority": "0.65", "lastmod": today()},
 ]
 
-# Q&A 카테고리별 페이지
+# Q&A 카테고리별 페이지 (12 → 14: skin/hair 분리분 포함)
 QA_CATS = [
     "metabolism", "cancer_immune", "digestive", "cardiovascular",
     "neuro_cognitive", "mental_health", "musculoskeletal", "skin_hair",
+    "skin", "hair",
     "respiratory", "infection_inflammation", "womens_health", "mens_health"
 ]
 
 # 블로그 카테고리별 페이지
 BLOG_CATS = ["diabetes", "cancer", "brain", "cardiovascular",
              "inflammation", "skin", "research", "general"]
+
+# ── Q&A 데이터 + 태그 인덱스 로드 ─────────────────────────────
+# tagIndex.json이 stale일 수도 있으니 빌드 먼저
+print("🏷  tagIndex.json 빌드 중...")
+try:
+    subprocess.run(
+        [sys.executable, str(ROOT / "scripts" / "build_qa_tag_index.py")],
+        check=True,
+        cwd=str(ROOT),
+    )
+except subprocess.CalledProcessError as e:
+    print(f"  ⚠️  tagIndex 빌드 실패: {e} — 기존 파일로 계속 진행")
+
+qa_data = {}
+tag_index = {}
+qa_path = ROOT / "public" / "qa.json"
+tag_path = ROOT / "public" / "tagIndex.json"
+
+if qa_path.exists():
+    with open(qa_path, encoding="utf-8") as f:
+        qa_data = json.load(f)
+    print(f"  ✅ qa.json 로드: {len(qa_data.get('questions', []))}건")
+else:
+    print(f"  ⚠️  qa.json 없음: {qa_path}")
+
+if tag_path.exists():
+    with open(tag_path, encoding="utf-8") as f:
+        tag_index = json.load(f)
+    print(f"  ✅ tagIndex.json 로드: {tag_index.get('page_eligible_tags', 0)}개 태그")
+else:
+    print(f"  ⚠️  tagIndex.json 없음: {tag_path}")
+
+
+def qa_slug(question: str) -> str:
+    """Q&A 슬러그 규칙 — build_qa_tag_index.py와 동일 (DO_NOT_TOUCH §3-Q)."""
+    s = re.sub(r'[^\w\s가-힣]', '', question or '')
+    s = re.sub(r'\s+', '-', s)
+    return s[:60]
+
+
+def url_encode_tag(tag: str) -> str:
+    """URL path segment 인코딩 (한글 → percent-encoded)."""
+    import urllib.parse
+    return urllib.parse.quote(tag, safe='')
+
 
 sitemap_urls = []
 
@@ -128,6 +186,68 @@ for cat in BLOG_CATS:
     <priority>0.80</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="{SITE_URL}/blog?category={cat}"/>
   </url>""")
+
+# ════════════════════════════════════════════════════════════
+# Q&A 자산화 (헌법 제10조) — 1,361개 개별 + 122개 태그 페이지
+# ════════════════════════════════════════════════════════════
+qa_questions = qa_data.get('questions', [])
+print(f"  ❓ Q&A 개별 {len(qa_questions)}개 sitemap 추가 중...")
+
+qa_added = 0
+for q in qa_questions:
+    question_text = q.get('question') or ''
+    if not question_text:
+        continue
+    slug = qa_slug(question_text)
+    if not slug:
+        continue
+    # views 기반 priority (인기 질문은 더 높은 우선순위)
+    views = int(q.get('views') or q.get('view_count') or 0)
+    if views >= 2000:
+        priority = "0.75"
+    elif views >= 500:
+        priority = "0.70"
+    else:
+        priority = "0.65"
+    # ⚠️ Q&A 개별 페이지 라우트는 /q/:slug (App.jsx Route 정의 기준).
+    # /qa/는 목록 페이지. 이 라우팅은 DO_NOT_TOUCH.md §3-Q에 의해 변경 금지.
+    sitemap_urls.append(f"""  <url>
+    <loc>{SITE_URL}/q/{slug}</loc>
+    <lastmod>{today()}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>{priority}</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="{SITE_URL}/q/{slug}"/>
+  </url>""")
+    qa_added += 1
+
+# Q&A 태그 페이지 (≥5건 출현 태그만 — MIN_TAG_COUNT)
+tags_map = tag_index.get('tags', {})
+print(f"  🏷  Q&A 태그 페이지 {len(tags_map)}개 sitemap 추가 중...")
+
+tag_added = 0
+for tag, info in tags_map.items():
+    if not tag:
+        continue
+    count = info.get('count', 0)
+    # 태그 풍부도 기반 priority
+    if count >= 50:
+        priority = "0.85"
+    elif count >= 20:
+        priority = "0.80"
+    elif count >= 10:
+        priority = "0.75"
+    else:
+        priority = "0.70"
+    sitemap_urls.append(f"""  <url>
+    <loc>{SITE_URL}/qa/tag/{url_encode_tag(tag)}</loc>
+    <lastmod>{today()}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>{priority}</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="{SITE_URL}/qa/tag/{url_encode_tag(tag)}"/>
+  </url>""")
+    tag_added += 1
+
+print(f"  ✅ Q&A 추가: 개별 {qa_added}, 태그 {tag_added}")
 
 # 블로그 개별 포스트 (★ 핵심 — 구글/네이버 색인)
 print(f"  📄 블로그 포스트 {len(posts)}개 sitemap 추가 중...")

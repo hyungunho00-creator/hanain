@@ -10,6 +10,7 @@ import {
   toggleQuestionLike, getQuestionLikeStatus, toggleSave, getSaveStatus
 } from '../lib/supabase'
 import SEOHead from '../components/common/SEOHead'
+import RelatedBlogPosts from '../components/qa/RelatedBlogPosts'
 
 // qa.json fallback: Supabase에 데이터 없을 때 로컬 JSON 사용
 let QA_FALLBACK = null
@@ -382,6 +383,14 @@ export default function QuestionDetailPage() {
                   질문하기
                 </Link>
               </div>
+
+              {/* 관련 블로그 글 (헌법 제10조 의무 6 — 양방향 internal linking) */}
+              <RelatedBlogPosts
+                qaTags={question.tags || []}
+                qaCategory={question.category_id}
+                max={3}
+                title="이 질문과 관련된 블로그 글"
+              />
             </main>
 
             {/* ── 사이드바 ── */}

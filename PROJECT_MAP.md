@@ -144,11 +144,75 @@
 
 ---
 
+## 6-Q. Q&A 정적 인프라 (2026-05-21 신설)
+
+Q&A는 현재 **Supabase 마이그레이션 대기 상태** (Phase 5 예정). 그동안 진실원은 `qa.json`.
+
+### 파일 구조
+
+| 파일 | 용도 | 크기 |
+|---|---|---|
+| `hanain/public/qa.json` | 1,361개 Q&A 본문 (id, category, tags, question, answer, views, likes) | 2.2MB |
+| `hanain/public/tagIndex.json` | 빌드 산출물 — 태그→Q&A id 매핑 + 빈도, ≥5건 태그 122개 | ~80KB |
+| `hanain/src/pages/QAPage.jsx` | 목록 (카테고리 탭, 검색, 페이지네이션) | 32KB |
+| `hanain/src/pages/QuestionDetailPage.jsx` | 개별 Q&A 페이지 (FAQPage JSON-LD 자동 주입) | 20KB+ |
+| `hanain/src/pages/QATagPage.jsx` | 태그별 필터 페이지 (`/qa/tag/:tag`, 신규) | TBD |
+| `scripts/build_qa_tag_index.py` | tagIndex.json 빌드 스크립트 | TBD |
+| `scripts/generate_qa_sitemap.py` | Q&A URL을 sitemap에 추가 | TBD |
+
+### Q&A 카테고리 (12개)
+
+```
+metabolism, cancer_immune, digestive, cardiovascular,
+neuro_cognitive, mental_health, musculoskeletal,
+skin_hair, skin, hair, respiratory, infection_inflammation,
+womens_health, mens_health
+```
+
+### Q&A 로딩 흐름
+
+```
+브라우저 → QAPage.jsx
+  → fetch('/qa.json')        (전체 1,361건 메모리 로드)
+  → fetch('/tagIndex.json')  (태그→id 인덱스)
+  → 카테고리/검색/태그 필터링 (메모리 내)
+```
+
+### Q&A 라우팅 (DO_NOT_TOUCH §3-Q)
+
+| 경로 | 용도 | 컴포넌트 |
+|---|---|---|
+| `/qa` | 목록·검색·카테고리 탭 | `QAPage.jsx` |
+| `/q/:slug` | 개별 Q&A (단수 `q`) | `QuestionDetailPage.jsx` |
+| `/qa/tag/:tag` | 태그 필터 (신규 — Phase Q3) | `QATagPage.jsx` (신규) |
+| `/qa?category=:catId` | 카테고리 필터 (목록 페이지 내) | `QAPage.jsx` |
+
+### 슬러그 규칙 (절대 변경 금지 — DO_NOT_TOUCH §3-Q)
+
+```js
+slug = question
+  .replace(/[^\w\s가-힣]/g, '')
+  .replace(/\s+/g, '-')
+  .slice(0, 60)
+```
+
+### 헌법 상수
+
+| 상수 | 값 | 의미 | 위치 |
+|---|---|---|---|
+| `MIN_TAG_COUNT` | `5` | 태그 페이지 생성 최소 빈도 | `scripts/build_qa_tag_index.py` |
+| `FAQ_JSONLD_MAX_PER_PAGE` | `10` | 단일 페이지 FAQPage 스키마 최대 항목 | `QAPage.jsx`, `QATagPage.jsx` |
+
+---
+
 ## 7. 주요 데이터 위치 (어디서 수정해야 하나)
 
 | 수정 대상 | 현재 위치 | 미래 위치 (마이그레이션 후) |
 |---|---|---|
 | 블로그 글 본문/SEO | Supabase `posts` | Supabase `posts` |
+| Q&A 질문/답변 본문 | `hanain/public/qa.json` (1,361건, 2.2MB, 정적) | Supabase `qa_questions` (Phase 5 예정) |
+| Q&A 카테고리 정의 | `QAPage.jsx` `QA_CATEGORIES` 상수 (12개) | Supabase `qa_categories` (Phase 5) |
+| Q&A 태그 인덱스 | `hanain/public/tagIndex.json` (빌드 산출물, 122개 ≥5건 태그) | 동일 (동적 빌드) |
 | 블로그 카테고리 라벨 | `BlogPage.jsx`, `Footer.jsx` (하드코딩) | Supabase `categories` (Phase 3) |
 | 카테고리 SEO 메타 | `api/seo.js` 상수 | Supabase `categories` (Phase 3) |
 | 고정 페이지 본문 (예: /copyright) | 해당 `.jsx` 컴포넌트 (하드코딩) | Supabase `pages` (Phase 3) |

@@ -5,6 +5,7 @@ import FloatingButton from './components/common/FloatingButton'
 import LandingPage from './pages/LandingPage'
 import HomePage from './pages/HomePage'
 import QAPage from './pages/QAPage'
+import QATagPage from './pages/QATagPage'
 import PartnerPage from './pages/PartnerPage'
 import ConsultPage from './pages/ConsultPage'
 import AdminPage from './pages/AdminPage'
@@ -63,6 +64,7 @@ function AppInner() {
 
             {/* 건강 Q&A */}
             <Route path="/q/:slug"        element={<QuestionDetailPage />} />
+            <Route path="/qa/tag/:tag"    element={<QATagPage />} />
             <Route path="/question/write" element={<QuestionWritePage />} />
             <Route path="/category/:slug" element={<CategoryPage />} />
 

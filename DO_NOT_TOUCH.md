@@ -42,6 +42,27 @@
 
 ---
 
+## 3-Q. Q&A 데이터 (qa.json) — 2026-05-21 신설
+
+- ❌ `public/qa.json` 기존 1,361개 질문의 `id` 변경 금지
+- ❌ 기존 Q&A의 `question` / `answer` 임의 수정 금지 (forbidden words 자동 치환만 예외)
+- ❌ 기존 Q&A 삭제 금지 (`difficulty: "hidden"` 등 메타로 숨기는 방식만 허용)
+- ❌ Q&A 슬러그 규칙 변경 금지 — `question.replace(/[^\w\s가-힣]/g,'').replace(/\s+/g,'-').slice(0,60)`
+- ❌ `views` / `likes` 카운터 임의 조작 금지 (정상 사용자 인터랙션만 반영)
+- ❌ qa.json의 12개 카테고리 ID 변경 금지 (`metabolism`, `cancer_immune`, `digestive`, `cardiovascular`, `neuro_cognitive`, `mental_health`, `musculoskeletal`, `skin_hair`, `skin`, `hair`, `respiratory`, `infection_inflammation`, `womens_health`, `mens_health`)
+- ❌ `MIN_TAG_COUNT` 헌법 상수 (=5) 임의 변경 금지 — 헌법 제10조 의무 4 참조
+- ❌ `/q/:slug` 경로 패턴 변경 금지 (Q&A 개별 페이지 — 이미 색인된 URL 보호)
+- ❌ `/qa` 경로 패턴 변경 금지 (Q&A 목록 페이지)
+- ❌ `/qa/tag/:tag` 경로 패턴 변경 금지 (Phase Q3 이후 색인됨)
+- ❌ `/qa/category/:slug` 경로 추가/변경 시 사용자 승인 필요
+
+> **라우팅 약속**:
+> - `/qa` = 목록 (필터/검색)
+> - `/q/:slug` = 개별 Q&A 페이지 (단수 `q`, 이미 색인됨)
+> - `/qa/tag/:tag` = 태그 필터 페이지 (신규)
+
+---
+
 ## 4. 파트너 시스템
 
 - ❌ `/p/:phone` 페이지의 핵심 구조 변경 금지

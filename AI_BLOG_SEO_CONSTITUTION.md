@@ -327,6 +327,113 @@ print(f'중복 이미지: {len(dup)}건' + (' ❌' if dup else ' ✅'))
 
 ---
 
+## ❓ 제10조 (Q&A 자산화 의무) — 2026-05-21 신설
+
+### 배경
+- Q&A 데이터는 `public/qa.json`에 1,361건 (12 카테고리) 정적 보관 (Supabase 마이그레이션 대기)
+- 한 글 더 추가 안 해도 **사이트맵·JSON-LD·태그 페이지·내부 링크**만 살리면 1,000+ 신규 SEO 자산
+- LLM 토큰 0개로 가능 (제5조 준수)
+
+### ✅ 의무 1. Q&A 진실원 (Source of Truth)
+- **진실원**: `hanain/public/qa.json` (1,361건 보유, 2.2MB)
+- **스키마**: `{ id, category, difficulty, tags[], question, answer, views, likes }`
+- **수정 절차**: 직접 편집 금지 → `tmp_seo_assets/qa_*/` 하위 스크립트로 일괄 처리 후 검증된 결과만 머지
+- **DB 마이그레이션**: Phase 5에서 Supabase `qa_questions` 로 옮길 예정. 그 전까지 qa.json이 진실원.
+
+### ✅ 의무 2. 신규 Q&A 추가 전 체크리스트
+1. `id`가 기존 1,361개와 충돌 안 함 (`grep -c '"id": "<new>"' public/qa.json`)
+2. `category`가 12개 카테고리 중 하나 (QAPage.jsx `QA_CATEGORIES`)
+3. `tags[]` 배열 필수, 최소 1개, 한글로
+4. `question`은 자연 의문문 (구글 People Also Ask 노출용)
+5. `answer`는 200~500자, **제4조 금지어 0회** (자동 스캔 통과)
+6. 슬러그 충돌 검사 — 슬러그 규칙: `question.replace(/[^\w\s가-힣]/g,'').replace(/\s+/g,'-').slice(0,60)`
+7. JSON parse 검증 (`python3 -c "import json; json.load(open('qa.json'))"`)
+
+### ✅ 의무 3. FAQPage JSON-LD 자동 주입
+- `QuestionDetailPage.jsx` 매 페이지에 schema.org `FAQPage` 스키마 의무
+- `QAPage.jsx` (카테고리별 상위 10개) + 태그 페이지에도 적용
+- 구글 리치 스니펫 노출 → CTR 2~3배
+- **헌법 상수**: `FAQ_JSONLD_MAX_PER_PAGE = 10` (단일 페이지에 너무 많이 박으면 페널티 가능성)
+
+### ✅ 의무 4. 태그 페이지 자동 확장
+- **헌법 상수**: `MIN_TAG_COUNT = 5`
+- 1,361개 Q&A 태그 중 **출현 빈도 ≥5건**인 태그는 **전부 자동 페이지화**
+- 현재 122개 페이지 자동 생성 (`/qa/tag/:tag`)
+- Q&A 추가될수록 자동으로 페이지 증가 (수동 작업 0)
+- 5건 미만 태그는 페이지화 금지 (thin content SEO 페널티 방지)
+- 임계값 변경은 헌법 개정 필요 (제9조)
+
+### ✅ 의무 5. 파트너 ref 전파 (불변 강령 3과 연동)
+- Q&A 상세 페이지 / 카테고리 / 태그 페이지 내부 링크 전부 `withRef()` 거쳐서 렌더
+- "관련 블로그", "관련 Q&A", "다른 카테고리" 등 모든 internal link 대상
+- 외부 링크 (PubMed, NCBI 등)는 `withRef` 적용 안 함 (외부 사이트 오염 방지)
+
+### ✅ 의무 6. 블로그 ↔ Q&A 양방향 internal linking
+- 블로그 글 하단: "관련 Q&A 3개" 자동 표시 (태그 교집합 룰베이스)
+- Q&A 답변 하단: "관련 블로그 3개" 자동 표시 (동일 룰)
+- 매칭 규칙: 태그 1개 이상 일치 → 일치 수 내림차순 → views 내림차순
+- 매칭 0건 시: 같은 카테고리 인기글 1개 fallback
+
+### ✅ 의무 7. 사이트맵 등록
+- 1,361 Q&A 개별 URL + 122 태그 페이지 + 12 카테고리 페이지 = **1,495 URL**
+- `scripts/generate_qa_sitemap.py` 단일 진입점
+- `generate_sitemap_rss.py`(블로그)와 통합되어 최종 sitemap.xml 단일 파일 출력
+- 신규 Q&A 추가 → 빌드 시 자동 사이트맵 반영 → IndexNow 자동 제출
+
+### ✅ 의무 8. 안전성 일괄 검증 (forbidden words)
+- 신규 Q&A 추가 시 (또는 기존 일괄 점검 시) 제4조 금지어 전수 스캔
+- 위반 발견 시 **자동 치환 사전** 적용 가능:
+  ```
+  "치료한다"     → "관리에 도움 될 수 있습니다"
+  "완치"         → "개선 사례가 보고됩니다"
+  "예방한다"     → "예방에 도움이 될 수 있습니다"
+  "효과가 있다"  → "도움이 될 수 있다고 보고됩니다"
+  "약을 대신"    → "병원 치료와 병행할 수 있는 보조"
+  "만병통치"     → "다방면 관리에 도움"
+  ```
+- 자동 치환 후 결과는 `tmp_seo_assets/qa_*/safety_scan.json`에 기록
+- 단어 단순 치환으로 의미가 깨지면 사람 검토 → 수동 수정
+
+### ✅ 의무 9. Q&A 작업 산출물 보관 (제6조와 연동)
+- 모든 일괄 작업은 `tmp_seo_assets/qa_YYYY_MM/` 하위에 보관
+- 스크립트 (`build_*.py`), 데이터 (`*_data.py`), 결과 (`*_results.json`), 안전성 (`safety_scan.json`)
+- 작업 완료 후에도 보관 (회귀 발생 시 추적용)
+
+### ✅ 의무 10. 발행 후 자동 검증 (제7조 확장)
+```bash
+# 8. Q&A 개별 페이지 200 응답 (샘플 10개)
+for id in $(head -10 tmp_seo_assets/qa_2026_05/new_ids.txt); do
+  slug=$(...)
+  curl -s -o /dev/null -w "%{http_code}\n" "https://phlorotannin.com/qa/$slug"
+done
+
+# 9. 사이트맵에 신규 URL 포함
+curl -s https://phlorotannin.com/sitemap.xml | grep -c "<loc>" # 1,495 이상
+
+# 10. FAQPage JSON-LD 응답 본문 포함
+curl -s https://phlorotannin.com/qa/<sample-slug> | grep -c "FAQPage" # ≥1
+
+# 11. 태그 페이지 200 응답 (상위 5개 샘플)
+for tag in 암 당뇨 감태추출물 수면 면역; do
+  curl -s -o /dev/null -w "$tag %{http_code}\n" "https://phlorotannin.com/qa/tag/$tag"
+done
+
+# 12. 파트너 ref 전파 (이옥희 01055418595)
+curl -s "https://phlorotannin.com/p/01055418595/qa" | grep -c "ref=01055418595" # >0
+```
+
+### 📊 Q&A 자산화 비용 가이드
+| 작업 | LLM 토큰 | 시간 | ROI |
+|---|---|---|---|
+| 사이트맵 1,495 URL 추가 | **0** | 10분 | 1,495 SEO 자산 즉시 |
+| FAQPage JSON-LD 주입 | **0** | 15분 | CTR 2~3배 (리치 스니펫) |
+| 태그 페이지 122개 자동 생성 | **0** | 25분 | 122 주제 클러스터 |
+| 블로그↔Q&A 양방향 링크 | **0** | 15분 | 체류시간·PV 증대 |
+| forbidden words 일괄 스캔·치환 | **0** | 10분 | 의료법 리스크 0 |
+| **합계** | **0** | **~75분** | **1,495 신규 SEO 페이지** |
+
+---
+
 ## 📜 제9조 (헌법 개정)
 
 이 헌법은 살아있는 문서다.

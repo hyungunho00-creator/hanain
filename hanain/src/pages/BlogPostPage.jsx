@@ -6,6 +6,7 @@ import SEOHead from '../components/common/SEOHead'
 import { getPostBySlug, getPosts } from '../lib/supabase'
 import { withRef } from '../lib/partnerRef'
 import PartnerShareBar from '../components/partner/PartnerShareBar'
+import RelatedQA from '../components/qa/RelatedQA'
 
 // 마크다운 → HTML 변환 (의존성 없이 직접 구현)
 // - GFM 표(`| col | col |` + `|---|---|` 구분선) 지원
@@ -421,6 +422,9 @@ export default function BlogPostPage() {
               <BookOpen className="w-4 h-4" /> Q&A 무료로 보기
             </Link>
           </div>
+
+          {/* 룰베이스 매칭 관련 Q&A 3개 (헌법 제10조 의무 6 — 양방향 internal linking) */}
+          <RelatedQA blogTags={post.tags || []} blogCategory={post.category} max={3} title="이 글과 관련된 Q&A" />
 
           {/* ── 통일 CTA 박스는 본문(post.content) 끝에 인라인 HTML로 박혀 있습니다.
                 placeholder {{PARTNER_PHONE}}, {{SMS_BODY}}는 본문 dangerouslySetInnerHTML
