@@ -374,11 +374,26 @@ print(f'중복 이미지: {len(dup)}건' + (' ❌' if dup else ' ✅'))
 - 매칭 규칙: 태그 1개 이상 일치 → 일치 수 내림차순 → views 내림차순
 - 매칭 0건 시: 같은 카테고리 인기글 1개 fallback
 
-### ✅ 의무 7. 사이트맵 등록
-- 1,361 Q&A 개별 URL + 122 태그 페이지 + 12 카테고리 페이지 = **1,495 URL**
-- `scripts/generate_qa_sitemap.py` 단일 진입점
-- `generate_sitemap_rss.py`(블로그)와 통합되어 최종 sitemap.xml 단일 파일 출력
+### ✅ 의무 7. 사이트맵 + canonical 정합성
+- 1,361 Q&A 개별 URL + 122 태그 페이지 + 12 카테고리 페이지 + 298 블로그 + 정적 = **약 1,800 URL**
+- `generate_sitemap_rss.py` 단일 진입점 (자동 tagIndex 빌드 포함)
 - 신규 Q&A 추가 → 빌드 시 자동 사이트맵 반영 → IndexNow 자동 제출
+
+**canonical-사이트맵 정합성 규칙 (2026-05-21 보강)**:
+1. **사이트맵 URL = canonical URL** 이어야 함 (Google Search Console 경고 차단)
+2. **쿼리스트링 기반 필터 URL** (`/qa?category=…`, `/blog?category=…`, `?q=…`, `?page=…`) 은:
+   - 사이트맵에 **포함 금지**
+   - 페이지 컴포넌트에서 **`noindex` 적용** (필터 활성화 시)
+   - canonical 은 기본 경로(`/qa`, `/blog`)로 통일
+3. **정식 정적 라우트 사용**:
+   - Q&A 카테고리는 `/category/:slug` (12개)
+   - Q&A 태그는 `/qa/tag/:tag` (122개, MIN_TAG_COUNT=5)
+   - Blog 카테고리는 향후 `/blog/category/:slug` 라우트 신설 시 사이트맵 추가
+4. **봇이 빈 SPA 셸을 보지 않도록 edge SEO 함수(`api/seo.js`)에서 다음 패턴 모두 처리**:
+   - `pathname.startsWith('/q/')` → 개별 Q&A 메타
+   - `pathname.startsWith('/qa/tag/')` → 태그 페이지 메타
+   - `pathname.startsWith('/category/')` → 카테고리 페이지 메타
+   - 누락 시 fallback 메타 → SEO 가치 0 → 절대 금지
 
 ### ✅ 의무 8. 안전성 일괄 검증 (forbidden words)
 - 신규 Q&A 추가 시 (또는 기존 일괄 점검 시) 제4조 금지어 전수 스캔

@@ -265,6 +265,10 @@ export default function BlogPage() {
     }
   }
 
+  // SEO 정합성 (헌법 제10조 의무 7):
+  //   - 기본 /blog : index, follow
+  //   - /blog?category=… / /blog?q=… : 동일 canonical + noindex (중복 콘텐츠 방지)
+  const isBlogFiltered = activeCat !== 'all' || !!searchQ
   return (
     <>
       <SEOHead
@@ -272,6 +276,7 @@ export default function BlogPage() {
         description="감태추출물·해양 폴리페놀·플로로탄닌의 최신 연구와 건강정보를 정리한 블로그 아카이브. 항산화·염증·혈당·수면·면역·뇌 건강·암환자 가족 건강정보·당뇨 건강정보까지 폭넓게 다루는 종합 건강정보 데이터센터입니다."
         keywords="플로로탄닌 블로그, 감태추출물 블로그, 해양 폴리페놀 연구, 갈조류 폴리페놀, 항산화 건강정보, 염증 건강정보, 혈당 건강정보, 면역, 뇌 건강"
         canonical="https://phlorotannin.com/blog"
+        noindex={isBlogFiltered}
         jsonLd={blogJsonLd}
       />
 

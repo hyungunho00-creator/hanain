@@ -74,158 +74,88 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/community"/>
   </url>
   <url>
-    <loc>https://phlorotannin.com/qa?category=metabolism</loc>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa?category=metabolism"/>
-  </url>
-  <url>
-    <loc>https://phlorotannin.com/qa?category=cancer_immune</loc>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa?category=cancer_immune"/>
-  </url>
-  <url>
-    <loc>https://phlorotannin.com/qa?category=digestive</loc>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa?category=digestive"/>
-  </url>
-  <url>
-    <loc>https://phlorotannin.com/qa?category=cardiovascular</loc>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa?category=cardiovascular"/>
-  </url>
-  <url>
-    <loc>https://phlorotannin.com/qa?category=neuro_cognitive</loc>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa?category=neuro_cognitive"/>
-  </url>
-  <url>
-    <loc>https://phlorotannin.com/qa?category=mental_health</loc>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa?category=mental_health"/>
-  </url>
-  <url>
-    <loc>https://phlorotannin.com/qa?category=musculoskeletal</loc>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa?category=musculoskeletal"/>
-  </url>
-  <url>
-    <loc>https://phlorotannin.com/qa?category=skin_hair</loc>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa?category=skin_hair"/>
-  </url>
-  <url>
-    <loc>https://phlorotannin.com/qa?category=skin</loc>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa?category=skin"/>
-  </url>
-  <url>
-    <loc>https://phlorotannin.com/qa?category=hair</loc>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa?category=hair"/>
-  </url>
-  <url>
-    <loc>https://phlorotannin.com/qa?category=respiratory</loc>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa?category=respiratory"/>
-  </url>
-  <url>
-    <loc>https://phlorotannin.com/qa?category=infection_inflammation</loc>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa?category=infection_inflammation"/>
-  </url>
-  <url>
-    <loc>https://phlorotannin.com/qa?category=womens_health</loc>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa?category=womens_health"/>
-  </url>
-  <url>
-    <loc>https://phlorotannin.com/qa?category=mens_health</loc>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa?category=mens_health"/>
-  </url>
-  <url>
-    <loc>https://phlorotannin.com/blog?category=diabetes</loc>
+    <loc>https://phlorotannin.com/category/metabolism</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog?category=diabetes"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/category/metabolism"/>
   </url>
   <url>
-    <loc>https://phlorotannin.com/blog?category=cancer</loc>
+    <loc>https://phlorotannin.com/category/cancer-immune</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog?category=cancer"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/category/cancer-immune"/>
   </url>
   <url>
-    <loc>https://phlorotannin.com/blog?category=brain</loc>
+    <loc>https://phlorotannin.com/category/digestive</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog?category=brain"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/category/digestive"/>
   </url>
   <url>
-    <loc>https://phlorotannin.com/blog?category=cardiovascular</loc>
+    <loc>https://phlorotannin.com/category/cardiovascular</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog?category=cardiovascular"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/category/cardiovascular"/>
   </url>
   <url>
-    <loc>https://phlorotannin.com/blog?category=inflammation</loc>
+    <loc>https://phlorotannin.com/category/neuro-cognitive</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog?category=inflammation"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/category/neuro-cognitive"/>
   </url>
   <url>
-    <loc>https://phlorotannin.com/blog?category=skin</loc>
+    <loc>https://phlorotannin.com/category/mental-health</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog?category=skin"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/category/mental-health"/>
   </url>
   <url>
-    <loc>https://phlorotannin.com/blog?category=research</loc>
+    <loc>https://phlorotannin.com/category/musculoskeletal</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog?category=research"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/category/musculoskeletal"/>
   </url>
   <url>
-    <loc>https://phlorotannin.com/blog?category=general</loc>
+    <loc>https://phlorotannin.com/category/skin-hair</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog?category=general"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/category/skin-hair"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/category/respiratory</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/category/respiratory"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/category/infection-inflammation</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/category/infection-inflammation"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/category/womens-health</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/category/womens-health"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/category/mens-health</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/category/mens-health"/>
   </url>
   <url>
     <loc>https://phlorotannin.com/q/고혈압약을-평생-먹어야-하나요</loc>

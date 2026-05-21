@@ -225,6 +225,33 @@ function staticMetaFor(pathname) {
       canonical: `${SITE}${pathname}`,
     }
   }
+  // ─── Q&A 자산화 (헌법 제10조) — /q/:slug 개별 Q&A ───
+  // 슬러그 자체는 한글이라 봇이 정확한 질문 본문을 알 수 없으나, 페이지 단위 SEO가 0이 아닌
+  // safe-fallback 메타를 보장하여 noindex/빈 셸 문제 차단. 실제 질문 본문은 JS 렌더링 후
+  // QuestionDetailPage.jsx 가 SEOHead 로 덮어쓴다.
+  if (pathname.startsWith('/q/')) {
+    const rawSlug = pathname.replace('/q/', '').split('/')[0]
+    let readable = rawSlug
+    try { readable = decodeURIComponent(rawSlug) } catch { /* keep */ }
+    readable = readable.replace(/-/g, ' ').trim().slice(0, 60)
+    return {
+      title: `${readable} | 연구기반 Q&A — 플로로탄닌·감태추출물 건강정보`,
+      desc:  `${readable} 관련 연구기반 Q&A. 플로로탄닌·감태추출물·해양 폴리페놀과 관련된 질환·증상·성분·건강관리 정보를 정리한 종합 건강정보 데이터센터의 Q&A 페이지입니다.`,
+      canonical: `${SITE}${pathname}`,
+    }
+  }
+  // ─── Q&A 자산화 (헌법 제10조) — /qa/tag/:tag 태그별 Q&A 모음 ───
+  if (pathname.startsWith('/qa/tag/')) {
+    const rawTag = pathname.replace('/qa/tag/', '').split('/')[0]
+    let readable = rawTag
+    try { readable = decodeURIComponent(rawTag) } catch { /* keep */ }
+    readable = readable.trim().slice(0, 30)
+    return {
+      title: `${readable} 건강 Q&A 모음 | 플로로탄닌·감태추출물 정보센터`,
+      desc:  `${readable} 관련 연구기반 Q&A 모음. 플로로탄닌(phlorotannin)·감태추출물·해양 폴리페놀의 ${readable} 관련 건강정보를 한곳에서 확인할 수 있는 종합 건강정보 데이터센터의 태그 아카이브입니다.`,
+      canonical: `${SITE}${pathname}`,
+    }
+  }
   return null
 }
 

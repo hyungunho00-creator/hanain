@@ -167,24 +167,31 @@ for p in STATIC_PAGES:
     <xhtml:link rel="alternate" hreflang="ko" href="{SITE_URL}{p['loc']}"/>
   </url>""")
 
-# Q&A 카테고리
-for cat in QA_CATS:
-    sitemap_urls.append(f"""  <url>
-    <loc>{SITE_URL}/qa?category={cat}</loc>
-    <lastmod>{today()}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="{SITE_URL}/qa?category={cat}"/>
-  </url>""")
+# ⚠️ Q&A·블로그 카테고리 쿼리스트링 URL (/qa?category=…, /blog?category=…)
+#    → 사이트맵에서 제거됨 (2026-05-21)
+#    이유: QAPage.jsx · BlogPage.jsx 가 canonical 을 항상 /qa, /blog 로 고정하므로
+#          사이트맵 URL과 canonical 이 불일치 → Google Search Console 경고 + 인덱싱 무가치.
+#    대체: Q&A 는 14개 /category/:slug 정식 라우트 + 122개 /qa/tag/:tag 페이지가
+#          더 강력한 토픽 클러스터를 제공. 블로그는 /category/:slug 로 통합.
+#    헌법 참조: AI_BLOG_SEO_CONSTITUTION.md 제10조 의무 7 (canonical 정합성)
+#
+# (옛 코드는 git history 에 보존됨. 필요 시 commit 9558b55 참조.)
 
-# 블로그 카테고리 탭
-for cat in BLOG_CATS:
+# /category/:slug — Q&A 카테고리 페이지 (CategoryPage.jsx, App.jsx 라인 69)
+# SLUG_TO_ID 매핑 기준 — 정식 라우트, canonical 자체 URL.
+CATEGORY_SLUGS = [
+    'metabolism', 'cancer-immune', 'digestive', 'cardiovascular',
+    'neuro-cognitive', 'mental-health', 'musculoskeletal',
+    'skin-hair', 'respiratory', 'infection-inflammation',
+    'womens-health', 'mens-health',
+]
+for slug in CATEGORY_SLUGS:
     sitemap_urls.append(f"""  <url>
-    <loc>{SITE_URL}/blog?category={cat}</loc>
+    <loc>{SITE_URL}/category/{slug}</loc>
     <lastmod>{today()}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="{SITE_URL}/blog?category={cat}"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="{SITE_URL}/category/{slug}"/>
   </url>""")
 
 # ════════════════════════════════════════════════════════════

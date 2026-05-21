@@ -60,6 +60,18 @@
 > - `/qa` = 목록 (필터/검색)
 > - `/q/:slug` = 개별 Q&A 페이지 (단수 `q`, 이미 색인됨)
 > - `/qa/tag/:tag` = 태그 필터 페이지 (신규)
+> - `/category/:slug` = Q&A 카테고리 (12개, CategoryPage.jsx)
+
+**SEO 정합성 동결 (2026-05-21 보강 — 사이트 전체 적용)**:
+- ❌ `/qa?category=…` / `/qa?q=…` / `/qa?page=…` 쿼리스트링 URL을 **사이트맵에 등록 금지**
+  - 이유: QAPage.jsx canonical 이 `/qa` 고정 → 사이트맵-canonical 불일치 = GSC 경고
+  - 대체: `/category/:slug` (정식 카테고리) + `/qa/tag/:tag` (122개 태그) 사용
+- ❌ QAPage.jsx · BlogPage.jsx 에서 `isFilteredView` / `isBlogFiltered` 시 **`noindex` 제거 금지**
+  - 이유: 동일 canonical 가진 다수 URL = 중복 콘텐츠 패널티
+- ❌ `api/seo.js` 의 `/q/`, `/qa/tag/`, `/category/` 핸들러 삭제 금지
+  - 이유: 봇이 JS 미렌더링 시 빈 SPA 셸만 보게 됨 = SEO 가치 0
+- ❌ `vercel.json` rewrites 의 `tagIndex.json` exclusion 패턴 제거 금지
+  - 이유: 122 태그 페이지 전부 로드 실패
 
 ---
 

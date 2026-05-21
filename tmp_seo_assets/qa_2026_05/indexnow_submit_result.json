@@ -1,0 +1,23 @@
+{
+  "submitted_at": "2026-05-21T03:15:31.149853Z",
+  "url_count": 1813,
+  "host": "phlorotannin.com",
+  "results": {
+    "api.indexnow.org": {
+      "http": 200,
+      "body": ""
+    },
+    "bing": {
+      "http": 200,
+      "body": ""
+    },
+    "yandex": {
+      "http": 202,
+      "body": "{\n  \"success\":true\n}"
+    },
+    "naver": {
+      "http": 200,
+      "body": ""
+    }
+  }
+}
