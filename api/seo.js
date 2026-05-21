@@ -60,6 +60,71 @@ function ogImageForCategory(catSlug) {
   return `${SITE}/og/qa-default.png`
 }
 
+// ─── [2026-05-21 D8] qa.json 진실원 로드 + slug → 질문 인덱스 캐시 ─────
+// /q/:slug 봇 메타·JSON-LD 가 카테고리·정확한 질문/답변을 알려면 qa.json 1,361건을
+// 함수 콜드스타트 시 1회 읽어 메모리 인덱스화한다. 슬러그 규칙(헌법 §3-Q 동결):
+//   slug = question.replace(/[^\w\s가-힣]/g,'').replace(/\s+/g,'-').slice(0,60)
+let CACHED_QA = null
+let CACHED_QA_INDEX = null
+function qaSlug(question) {
+  if (!question) return ''
+  return String(question)
+    .replace(/[^\w\s가-힣]/g, '')
+    .replace(/\s+/g, '-')
+    .slice(0, 60)
+}
+function readQaJson() {
+  if (CACHED_QA) return CACHED_QA
+  const candidates = [
+    path.join(process.cwd(), 'public', 'qa.json'),
+    path.join(process.cwd(), 'qa.json'),
+    path.join(process.cwd(), 'hanain', 'dist', 'qa.json'),
+    path.join(process.cwd(), 'hanain', 'public', 'qa.json'),
+  ]
+  for (const p of candidates) {
+    try {
+      if (fs.existsSync(p)) {
+        const raw = fs.readFileSync(p, 'utf8')
+        CACHED_QA = JSON.parse(raw)
+        return CACHED_QA
+      }
+    } catch (e) {
+      // fall through
+    }
+  }
+  return null
+}
+function getQaIndex() {
+  if (CACHED_QA_INDEX) return CACHED_QA_INDEX
+  const qa = readQaJson()
+  if (!qa) return null
+  const questions = (qa && qa.questions) ? qa.questions : (Array.isArray(qa) ? qa : [])
+  const idx = new Map()
+  for (const q of questions) {
+    if (!q || !q.question) continue
+    const slug = qaSlug(q.question)
+    if (!slug) continue
+    // 멱등 — 동일 슬러그가 있으면 최초 등록값을 유지 (qa.json 멱등 가정)
+    if (!idx.has(slug)) idx.set(slug, q)
+  }
+  CACHED_QA_INDEX = idx
+  return idx
+}
+function findQuestionBySlug(rawSlug) {
+  const idx = getQaIndex()
+  if (!idx) return null
+  // 1차: 그대로
+  let q = idx.get(rawSlug)
+  if (q) return q
+  // 2차: decodeURIComponent 후
+  try {
+    const dec = decodeURIComponent(rawSlug)
+    q = idx.get(dec)
+    if (q) return q
+  } catch {}
+  return null
+}
+
 // 빌드 산출물 위치 — vercel은 outputDirectory(hanain/dist)를 루트에 매핑한다.
 // 함수 실행 시 process.cwd()는 Vercel 환경에서 /var/task 가 됨.
 // outputDirectory의 파일들은 /var/task에 그대로 복사되므로 'index.html' 경로로 접근.
@@ -294,8 +359,30 @@ function staticMetaFor(pathname) {
     let readable = rawSlug
     try { readable = decodeURIComponent(rawSlug) } catch { /* keep */ }
     readable = readable.replace(/-/g, ' ').trim().slice(0, 60)
-    // /q/:slug 봇 메타 — 슬러그 자체로 카테고리를 단정할 수 없으므로 default OG.
-    // QuestionDetailPage.jsx 가 클라이언트 렌더 후 CAT_OG_SLUG 매핑으로 카테고리별 OG 로 갱신.
+
+    // ─── [2026-05-21 D8] qa.json 진실원으로 정확한 메타 송신 ─────
+    // 봇 첫 fetch 시 슬러그→질문/카테고리/답변 매칭. 매칭 실패 시 안전 fallback.
+    const q = findQuestionBySlug(rawSlug)
+    if (q) {
+      const catId = q.category || ''
+      const catName = CATEGORY_NAMES[catId] || ''
+      const question = String(q.question || readable).trim()
+      const answer   = String(q.answer || '').trim()
+      // description: 답변 첫 160자 (한글 가독성)
+      const descRaw = answer.replace(/\s+/g, ' ').trim()
+      const desc = descRaw
+        ? (descRaw.length > 158 ? descRaw.slice(0, 157) + '…' : descRaw)
+        : `${question} 관련 연구기반 Q&A — 플로로탄닌·감태추출물·해양 폴리페놀과 관련된 질환·증상·성분·건강관리 정보를 정리한 종합 건강정보 데이터센터의 Q&A 페이지입니다.`
+      const titlePrefix = catName ? `${catName} | ` : ''
+      return {
+        title: `${question} | ${catName || '연구기반 Q&A'} — 플로로탄닌·감태추출물 건강정보`,
+        desc,
+        canonical: `${SITE}${pathname}`,
+        ogImage: ogImageForCategory(catId),
+        ogImageAlt: `${question} — ${catName || '연구기반 Q&A'} | 플로로탄닌·감태추출물 종합 건강정보 데이터센터`,
+      }
+    }
+    // fallback — qa.json 미매칭 (사이트맵 외 슬러그·과거 색인된 변종 등)
     return {
       title: `${readable} | 연구기반 Q&A — 플로로탄닌·감태추출물 건강정보`,
       desc:  `${readable} 관련 연구기반 Q&A. 플로로탄닌·감태추출물·해양 폴리페놀과 관련된 질환·증상·성분·건강관리 정보를 정리한 종합 건강정보 데이터센터의 Q&A 페이지입니다.`,
@@ -1023,6 +1110,76 @@ function buildGlossaryJsonLd() {
   ]
 }
 
+// ─── [2026-05-21 D8] /q/:slug → QAPage + BreadcrumbList (SSR) ─────
+// 1,361 Q&A 페이지 본체 자산화. 봇 첫 fetch HTML 에 QAPage 스키마를 포함시켜
+// Google Q&A rich result + 색인 신호 강화. qa.json 매칭 실패 시 빈 배열 반환.
+function buildQuestionJsonLd(pathname, q) {
+  if (!q || !q.question) return []
+  const pageUrl = `${SITE}${pathname}`
+  const question = String(q.question).trim()
+  const answer   = String(q.answer || '').trim()
+  const catId    = q.category || ''
+  const catName  = CATEGORY_NAMES[catId] || '건강 Q&A'
+  const ogSlug   = CAT_OG_SLUG[catId] || ''
+  // URL slug (카테고리 페이지로의 정식 링크) — dash-case
+  // skin_hair → skin-hair, neuro_cognitive → neuro-cognitive 등
+  const catUrlSlug = (ogSlug || String(catId).replace(/_/g, '-')) || 'qa'
+  const categoryUrl = `${SITE}/category/${catUrlSlug}`
+
+  // E-E-A-T 메타
+  const author = q.author || '플로로탄닌 정보센터 편집팀'
+  const reviewedAt = q.reviewed_at || q.reviewedAt || ''
+
+  // QAPage.acceptedAnswer.text: 답변 본문 (제어문자 0x00–0x1F 제거 + 길이 보존)
+  const safeAnswer = answer.replace(/[\u0000-\u001F\u007F]/g, ' ').trim()
+  const safeQuestion = question.replace(/[\u0000-\u001F\u007F]/g, ' ').trim()
+
+  const qaPage = {
+    "@context": "https://schema.org",
+    "@type": "QAPage",
+    "@id": `${pageUrl}#qapage`,
+    "url": pageUrl,
+    "inLanguage": "ko",
+    "isPartOf": { "@id": `${SITE}/#website` },
+    "breadcrumb": { "@id": `${pageUrl}#breadcrumb` },
+    "mainEntity": {
+      "@type": "Question",
+      "@id": `${pageUrl}#question`,
+      "name": safeQuestion,
+      "text": safeQuestion,
+      "answerCount": safeAnswer ? 1 : 0,
+      "author": { "@type": "Person", "name": "건강 정보 검색 사용자" },
+      ...(safeAnswer ? {
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": safeAnswer,
+          "url": pageUrl,
+          "author": { "@type": "Organization", "name": author },
+          ...(reviewedAt ? { "dateCreated": reviewedAt } : {}),
+        }
+      } : {})
+    },
+  }
+
+  const breadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": `${pageUrl}#breadcrumb`,
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "홈", "item": `${SITE}/` },
+      { "@type": "ListItem", "position": 2, "name": "건강 Q&A", "item": `${SITE}/qa` },
+      ...(catName !== '건강 Q&A' ? [
+        { "@type": "ListItem", "position": 3, "name": catName, "item": categoryUrl },
+        { "@type": "ListItem", "position": 4, "name": safeQuestion.slice(0, 80), "item": pageUrl },
+      ] : [
+        { "@type": "ListItem", "position": 3, "name": safeQuestion.slice(0, 80), "item": pageUrl },
+      ])
+    ]
+  }
+
+  return [breadcrumb, qaPage]
+}
+
 // /qa/tag/:tag → BreadcrumbList
 function buildTagJsonLd(pathname, tag) {
   const pageUrl = `${SITE}${pathname}`
@@ -1063,6 +1220,13 @@ function buildJsonLdForPath(pathname) {
     let tag = rawTag
     try { tag = decodeURIComponent(rawTag) } catch { /* keep */ }
     return buildTagJsonLd(pathname, tag)
+  }
+  // ─── [2026-05-21 D8] /q/:slug → QAPage + BreadcrumbList ─────
+  if (pathname.startsWith('/q/')) {
+    const rawSlug = pathname.replace('/q/', '').split('/')[0]
+    const q = findQuestionBySlug(rawSlug)
+    if (q) return buildQuestionJsonLd(pathname, q)
+    return []
   }
   return []
 }
