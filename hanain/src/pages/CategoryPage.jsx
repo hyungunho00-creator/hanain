@@ -104,38 +104,46 @@ async function getFallbackPopular(catId, limit = 5) {
     }))
 }
 
-// [2026-05-21] 질문 카드 — 카테고리 무관 통일 디자인 (cyan-hana 시그니처)
-// 과거: 카테고리별 catColor 가 순번 배지에 적용되어 카테고리마다 색이 다름 → 통일감 깨짐
-// 현재: 모든 카테고리에서 동일한 cyan-hana + ocean-deep 컬러로 통일
-function QuestionRow({ q, rank }) {
+// [2026-05-21] 질문 카드 — 의학저널 스타일 업그레이드
+// 변경사항: hover 시 좌측 cyan-hana 액센트 스트라이프 + subtle 엘리베이션 + 메타 라인 정제(• 구분자)
+// 카테고리 무관 통일 규칙 유지: 좌측 스트라이프·아이콘은 cyan-hana 고정 (PR #24 결정 준수)
+// 카테고리 색상은 컨테이너 상단 시그니처 라인에서만 디스크리트하게 사용
+export function QuestionRow({ q, rank }) {
   const slug = q.slug || q.id
   return (
     <Link
       to={`/q/${slug}`}
-      className="flex items-start gap-3 p-4 hover:bg-gray-50/70 transition-colors group"
+      className="relative flex items-start gap-3.5 px-4 py-4 sm:px-5 sm:py-4 hover:bg-cyan-hana/[0.03] transition-all duration-200 group"
     >
+      {/* hover 시 좌측 액센트 스트라이프 — 저널 인덱스 페이지 느낌 */}
+      <span
+        aria-hidden
+        className="absolute left-0 top-2 bottom-2 w-[3px] rounded-r-full bg-cyan-hana opacity-0 scale-y-50 group-hover:opacity-100 group-hover:scale-y-100 transition-all duration-200 origin-center"
+      />
       {rank && (
-        <span className={`shrink-0 inline-flex items-center justify-center w-7 h-7 rounded-full text-sm font-bold ring-1 ${
+        <span className={`shrink-0 inline-flex items-center justify-center w-7 h-7 rounded-full text-[13px] font-bold transition-all ${
           rank <= 3
-            ? 'bg-cyan-hana text-white ring-cyan-hana/30'
-            : 'bg-gray-50 text-gray-500 ring-gray-200'
+            ? 'bg-cyan-hana text-white shadow-sm shadow-cyan-hana/30 ring-2 ring-cyan-hana/10'
+            : 'bg-white text-gray-500 ring-1 ring-gray-200'
         }`}>
           {rank}
         </span>
       )}
       <div className="flex-1 min-w-0">
-        <p className="text-[15px] font-semibold text-ocean-deep group-hover:text-cyan-hana transition-colors leading-snug mb-1.5">
+        <p className="text-[15px] sm:text-[15.5px] font-semibold text-ocean-deep group-hover:text-cyan-hana transition-colors leading-snug mb-2 tracking-tight">
           {q.title}
         </p>
-        <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-xs text-gray-400">
+        <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[11.5px] text-gray-400">
           {q.tags?.slice(0, 2).map(t => (
-            <span key={t} className="bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full">#{t}</span>
+            <span key={t} className="bg-gray-50 text-gray-500 px-2 py-0.5 rounded-full border border-gray-100">#{t}</span>
           ))}
-          <span className="flex items-center gap-1"><Eye className="w-3 h-3" />{(q.view_count || 0).toLocaleString()}</span>
-          <span className="flex items-center gap-1"><Heart className="w-3 h-3" />{q.like_count || 0}</span>
+          {q.tags?.length > 0 && <span className="text-gray-200">·</span>}
+          <span className="flex items-center gap-1 tabular-nums"><Eye className="w-3 h-3" />{(q.view_count || 0).toLocaleString()}</span>
+          <span className="text-gray-200">·</span>
+          <span className="flex items-center gap-1 tabular-nums"><Heart className="w-3 h-3" />{q.like_count || 0}</span>
         </div>
       </div>
-      <ChevronRight className="w-4 h-4 text-gray-300 group-hover:text-cyan-hana transition-colors shrink-0 mt-1" />
+      <ChevronRight className="w-4 h-4 text-gray-300 group-hover:text-cyan-hana group-hover:translate-x-0.5 transition-all shrink-0 mt-1" />
     </Link>
   )
 }
@@ -335,8 +343,8 @@ export default function CategoryPage() {
           <div className="flex flex-col lg:flex-row gap-6">
             {/* ── 메인: 질문 목록 ── */}
             <main className="flex-1 min-w-0">
-              {/* [2026-05-21] 정렬 탭 — 카테고리 무관 cyan-hana 통일 (active 색 통일) */}
-              <div className="flex items-center gap-2 mb-4">
+              {/* [2026-05-21] 정렬 탭 — frosted container + cyan-hana 통일 active */}
+              <div className="inline-flex items-center gap-1 p-1 mb-4 bg-white border border-border-hana rounded-full shadow-sm">
                 {[
                   { key: 'popular', label: '🔥 인기순' },
                   { key: 'latest', label: '🕐 최신순' },
@@ -345,10 +353,10 @@ export default function CategoryPage() {
                   <button
                     key={s.key}
                     onClick={() => { setSort(s.key); setPage(1) }}
-                    className={`px-3.5 py-1.5 rounded-full text-sm font-medium transition-all ${
+                    className={`px-3.5 py-1.5 rounded-full text-[13px] font-medium transition-all ${
                       sort === s.key
-                        ? 'bg-cyan-hana text-white shadow-sm ring-1 ring-cyan-hana/40'
-                        : 'bg-white border border-gray-200 text-gray-600 hover:border-cyan-hana hover:text-cyan-hana'
+                        ? 'bg-cyan-hana text-white shadow-sm shadow-cyan-hana/20'
+                        : 'text-gray-500 hover:text-cyan-hana hover:bg-cyan-hana/5'
                     }`}
                   >
                     {s.label}
@@ -356,12 +364,43 @@ export default function CategoryPage() {
                 ))}
               </div>
 
-              {/* 질문 목록 */}
-              <div className="bg-white rounded-2xl border border-border-hana overflow-hidden">
+              {/* [2026-05-21] 질문 목록 — 의학저널 카드 디자인 (상단 카테고리 시그니처 라인 + 헤더 스트립 + 본문 카드) */}
+              <article className="bg-white rounded-2xl border border-border-hana overflow-hidden shadow-[0_1px_2px_rgba(11,26,46,0.04),0_8px_24px_-12px_rgba(11,26,46,0.08)]">
+                {/* 카테고리 시그니처 라인 — 헤더 배너 하단 액센트 라인과 시각 호응 */}
+                <div
+                  aria-hidden
+                  className="h-[3px] w-full"
+                  style={{
+                    background: `linear-gradient(90deg, ${meta.accent} 0%, ${meta.accent}88 35%, ${meta.accent}33 65%, transparent 100%)`,
+                  }}
+                />
+
+                {/* 저널 섹션 헤더 — Q&A 아카이브 / 총 N건 / 정렬 표시 */}
+                <header className="flex items-center justify-between gap-2 px-4 sm:px-5 py-3 bg-gradient-to-b from-gray-hana/40 to-white border-b border-gray-100">
+                  <div className="flex items-center gap-2 min-w-0">
+                    <span
+                      aria-hidden
+                      className="inline-block w-1.5 h-1.5 rounded-full shrink-0"
+                      style={{ backgroundColor: meta.accent }}
+                    />
+                    <h2 className="text-[11.5px] font-semibold text-ocean-deep tracking-[0.14em] uppercase truncate">
+                      Q&amp;A Archive
+                    </h2>
+                    {total > 0 && (
+                      <span className="text-[11.5px] text-gray-400 tabular-nums">
+                        · {total.toLocaleString()}건
+                      </span>
+                    )}
+                  </div>
+                  <span className="text-[11px] text-gray-400 hidden sm:inline tabular-nums">
+                    {page}/{Math.max(1, totalPages)} 페이지
+                  </span>
+                </header>
+
                 {loading ? (
-                  <div className="divide-y">
+                  <div className="divide-y divide-gray-50">
                     {[...Array(8)].map((_, i) => (
-                      <div key={i} className="p-4 animate-pulse flex gap-3">
+                      <div key={i} className="px-4 sm:px-5 py-4 animate-pulse flex gap-3">
                         <div className="w-7 h-7 bg-gray-100 rounded-full shrink-0" />
                         <div className="flex-1 space-y-2">
                           <div className="h-4 bg-gray-100 rounded w-3/4" />
@@ -386,7 +425,7 @@ export default function CategoryPage() {
                     ))}
                   </div>
                 )}
-              </div>
+              </article>
 
               {/* [2026-05-21] 페이지네이션 — cyan-hana 통일 */}
               {totalPages > 1 && (
