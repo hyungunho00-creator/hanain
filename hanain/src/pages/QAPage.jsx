@@ -652,13 +652,13 @@ export default function QAPage() {
                   파트너는 의료인이 아닙니다. 하지만 <span className="text-gray-900 font-semibold">같은 고민을 먼저 공부한 사람</span>으로서, 시중 제품 차이와 내게 맞는 선택 기준을 함께 정리해 드립니다.
                 </p>
                 <div className="flex flex-wrap gap-x-6 gap-y-3 items-center">
-                  <a
-                    href="/partner"
+                  <Link
+                    to="/partner"
                     className="inline-flex items-center gap-2 bg-gray-900 hover:bg-black text-white px-6 py-3 rounded-md text-[14px] font-medium transition-colors"
                   >
                     파트너와 이야기하기
                     <ArrowUpRight className="w-4 h-4" strokeWidth={1.8} aria-hidden="true" />
-                  </a>
+                  </Link>
                   <RevealContact
                     type="sms"
                     label="문자로 편하게 물어보기"

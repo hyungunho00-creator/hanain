@@ -40,3 +40,15 @@ src/data/qa_*.json
 src/data/cardio_*.json
 .vercel
 core
+
+# ===== 개발 중 캡처 산출물 (작업물, 배포 불필요) =====
+/scratch/
+*.screenshot.png
+shot-*.png
+v[0-9]*-*.png
+prod-*.png
+qa-fix-*.png
+
+# ===== Python 캐시 =====
+__pycache__/
+*.pyc
