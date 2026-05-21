@@ -483,6 +483,10 @@ CategoryPage 및 LearnPage/EasyHealthPage/PhlorotanninPage/GlossaryPage 등 **�
   - 패턴: `ensureQaFallback()` + `getFallbackCategory()` + `getFallbackQuestions()` + `getFallbackPopular()` 4종 — `QuestionDetailPage.jsx` 사이드바 fix 패턴과 동일 구조
   - skin / hair / skin_hair 3축 분리 대응: Supabase 는 `skin_hair` (100건 통합), qa.json 은 `skin` (113건) + `hair` (37건) — `ID_TO_PRIMARY_SLUG` 매핑으로 canonical URL 일관성 확보
 - **사이트맵 정합성**: `generate_sitemap_rss.py` 의 `CATEGORY_SLUGS` 는 라우팅 가능한 모든 슬러그를 포함해야 함 — 현재 14개 (`metabolism`, `cancer-immune`, `digestive`, `cardiovascular`, `neuro-cognitive`, `mental-health`, `musculoskeletal`, `skin-hair`, `skin`, `hair`, `respiratory`, `infection-inflammation`, `womens-health`, `mens-health`)
+- **sitemap 단일 진실원**: `api/sitemap.js` 는 `readStaticFallback()` (= `public/sitemap.xml` = `generate_sitemap_rss.py` 산출물) 을 **무조건 우선 응답**한다.
+  - 동적 빌드는 정적 파일 부재 시에만 비상 fallback 으로 사용
+  - 동적 빌드는 `/qa?category=` 쿼리스트링 URL 생성 + Q&A 1,361 + 태그 131 누락 → 자산화 73% 손실 위험
+  - 응답 헤더 `X-Sitemap-Source: static-primary` 필수 + `X-Sitemap-Loc-Count` 로 URL 개수 진단
 
 **검증 명령** (배포 후 필수):
 ```bash
@@ -498,6 +502,10 @@ for path in /learn /easy /phlorotannin /glossary; do
   echo "=== $path ==="
   curl -s -A "Googlebot/2.1" "https://phlorotannin.com$path" | grep -c "BreadcrumbList"
 done
+
+# sitemap 단일 진실원 응답 확인 — static-primary + 1,800+ URLs PASS
+curl -sI "https://phlorotannin.com/sitemap.xml" | grep -iE "x-sitemap-source|x-sitemap-loc-count"
+# 기대: x-sitemap-source: static-primary, x-sitemap-loc-count: 1814 (또는 그 이상)
 ```
 
 ### ✅ 의무 8. 안전성 일괄 검증 (forbidden words)

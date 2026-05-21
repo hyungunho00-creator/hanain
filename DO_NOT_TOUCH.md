@@ -126,6 +126,11 @@
   - 이유: qa.json fallback 으로만 표시되는 150건의 카테고리가 사이트맵에서 누락되면 색인 신호 0
 - ❌ `SEOHead.jsx` 의 `jsonLd` prop 처리 로직 (Array.isArray 분기) 제거 금지
   - 이유: CategoryPage 가 3종 JSON-LD 배열을 전달 — 단일 객체만 처리하도록 회귀 시 BreadcrumbList + ItemList 송신 실패
+- ❌ `api/sitemap.js` 의 `readStaticFallback() 우선 응답` 로직 (handler 진입 시 정적 파일 검사) 제거 금지 — **2026-05-21 D6 추가**
+  - 이유: 동적 빌드는 Q&A 1,361 + 태그 131 + 카테고리 정식 라우트 14 누락 → 자산화 시그널 73% 손실
+  - 단일 진실원: `generate_sitemap_rss.py` 산출물 `public/sitemap.xml` (1,814 URL)
+- ❌ `vercel.json` 의 `buildCommand` 에서 `cp dist/sitemap.xml ../public/sitemap.xml` 라인 제거 금지
+  - 이유: 빌드 산출물이 `public/sitemap.xml` 로 복사되어야 `api/sitemap.js` 가 단일 진실원으로 사용 가능
 
 ---
 

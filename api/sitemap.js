@@ -309,12 +309,29 @@ ${urls.join('\n\n')}
 
 // ───────────────────────────────────────────────
 // 핸들러
+//
+// [2026-05-21 D6 보강] 단일 진실원 우선 정책 — 정적 sitemap.xml(1,814 URL) 우선.
+//   기존 동적 빌드는 Q&A 1,361 + 태그 131 + 카테고리 정식 라우트 14 등을 누락하고
+//   /qa?category= 같은 쿼리스트링 URL을 만드는데, 이는 헌법 의무 7(canonical 일관성)
+//   및 의무 7-B-(6)(컬렉션 페이지 자산화)에 위반.
+//   generate_sitemap_rss.py 가 매 빌드 시 정확한 1,814 URL을 만들므로 그 산출물을
+//   단일 진실원으로 사용한다. 동적 빌드는 fallback (Q&A 미생성 등 비상 시) 용도로만 유지.
 // ───────────────────────────────────────────────
 export default async function handler(req, res) {
   res.setHeader('Content-Type', 'application/xml; charset=utf-8')
   // CDN 30분 캐시, 갱신은 1시간 stale-while-revalidate
   res.setHeader('Cache-Control', 'public, max-age=600, s-maxage=1800, stale-while-revalidate=3600')
 
+  // [D6] 정적 sitemap.xml 우선 — generate_sitemap_rss.py 산출물 (1,814 URL)
+  const fbStatic = readStaticFallback()
+  if (fbStatic && fbStatic.length > 1000) {
+    const locCount = (fbStatic.match(/<loc>/g) || []).length
+    res.setHeader('X-Sitemap-Source', 'static-primary')
+    res.setHeader('X-Sitemap-Loc-Count', String(locCount))
+    return res.status(200).send(fbStatic)
+  }
+
+  // 정적 파일 없을 시에만 동적 빌드 (비상 fallback)
   try {
     const [posts, partnersResult, pages, categories] = await Promise.all([
       fetchPublishedPosts(),
@@ -327,17 +344,8 @@ export default async function handler(req, res) {
     const pagesSource = pages ? 'table' : 'constant'
     const categoriesSource = categories ? 'table' : 'constant'
 
-    // posts가 비어 있으면 Supabase 장애로 판단 → 정적 fallback
-    if (!posts || posts.length === 0) {
-      const fb = readStaticFallback()
-      if (fb) {
-        res.setHeader('X-Sitemap-Source', 'static-fallback')
-        return res.status(200).send(fb)
-      }
-    }
-
     const xml = buildSitemap({ posts: posts || [], partners, pages, categories })
-    res.setHeader('X-Sitemap-Source', 'dynamic')
+    res.setHeader('X-Sitemap-Source', 'dynamic-emergency')
     res.setHeader('X-Sitemap-Posts', String((posts || []).length))
     res.setHeader('X-Sitemap-Partners', String(partners.length))
     res.setHeader('X-Sitemap-Partners-Source', partnersSource)
@@ -346,11 +354,6 @@ export default async function handler(req, res) {
     return res.status(200).send(xml)
   } catch (e) {
     console.error('[sitemap] fatal:', e?.message || e)
-    const fb = readStaticFallback()
-    if (fb) {
-      res.setHeader('X-Sitemap-Source', 'static-fallback-error')
-      return res.status(200).send(fb)
-    }
     // 최후 수단: 최소 sitemap (메인 1개만이라도)
     res.setHeader('X-Sitemap-Source', 'minimal-fallback')
     return res.status(200).send(
