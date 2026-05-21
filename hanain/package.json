@@ -7,7 +7,10 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "sitemap": "python3 generate_sitemap_rss.py",
+    "audit:links": "python3 scripts/audit_links.py",
+    "prebuild": "python3 generate_sitemap_rss.py || echo '[warn] sitemap generation skipped (python3 not found)'"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
