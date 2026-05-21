@@ -163,6 +163,30 @@
 - ❌ `qa.json` 의 카테고리 ID 들 (`metabolism`, `cancer_immune`, `digestive`, `cardiovascular`, `neuro_cognitive`, `mental_health`, `musculoskeletal`, `skin`, `hair`, `skin_hair`, `respiratory`, `infection_inflammation`, `womens_health`, `mens_health`) 을 다른 값으로 일괄 변경 금지
   - 이유: `CAT_OG_SLUG` ↔ `CATEGORY_NAMES` ↔ qa.json category 3축 정합성 파괴 → og:image 와 카테고리명 모두 누락
 
+**vercel.json 라우팅 + Article datePublished + 작성/관리 라우트 동결 (2026-05-21 D9 — 3차 검증 발견 결함)**:
+- ❌ `vercel.json` 의 봇 UA 전용 catch-all 룰 삭제·축소 금지
+  ```json
+  { "source": "/:path*", "has": [{ "type": "header", "key": "user-agent", "value": "(?i).*(googlebot|bingbot|yeti|...).*" }], "destination": "/api/seo?p=/:path*" }
+  ```
+  - 이유: 미래에 라우트 추가 시 자동 자산화의 핵심 — 삭제 시 사이트맵 외 라우트가 다시 마지막 catch-all로 흡수되어 홈으로 매핑 → canonical 자기상충 + 홈 title 누출 재발
+  - 변경 가능 범위: User-Agent 정규식에 새 봇 추가만 허용. 기존 봇 제거 금지
+- ❌ `vercel.json` 의 명시 라우트 7건 (`/inforoom`, `/p/:phone/inforoom`, `/community/post/:postId`, `/community/write`, `/community/edit/:postId`, `/question/write`, `/admin`) 삭제 금지
+  - 이유: 사용자 브라우저 + 봇 양쪽 모두 정확한 path 를 핸들러에 전달하는 안전망
+- ❌ `vercel.json` 마지막 사용자 트래픽 catch-all (`/((?!api/|og/|assets/).*) → /api/seo?p=/`) 변경 금지
+  - 이유: SPA shell 진입을 위한 사용자 브라우저 호환 — 변경 시 SPA 라우팅 깨짐
+- ❌ `api/seo.js` 의 `fetchPostBody()` SELECT 쿼리에서 `created_at` 제거 금지
+  - 이유: `published_at` NULL 인 글 110건 (36.9%) 의 Article datePublished fallback 체인 끊김 → Google Rich Results Article 자격 박탈 재발
+- ❌ `publishedAt: p.published_at || p.updated_at || p.created_at` 안전 체인 단순화 금지
+  - 이유: NULL 처리 누락 시 Schema.org Article 권장 필드 누락 → Rich Results 무효화
+- ❌ `api/seo.js` `staticMetaFor()` 의 D9 분기 7건 (`/inforoom`, `/p/:phone/inforoom`, `/community/post/`, `/community/write`, `/community/edit/`, `/question/write`, `/admin`) 삭제 금지
+  - 이유: vercel.json이 핸들러로 보내도 분기가 없으면 fallback 홈 메타 적용 → 같은 사고 재발
+- ❌ `injectMeta()` 의 `meta.robots` 갱신 블록 삭제 금지
+  - 이유: 작성/관리 페이지의 `noindex,nofollow` 송신 경로 — 제거 시 `/admin`, `/question/write` 같은 비공개 페이지가 색인됨 (헌법 5-A·CTA/관리자 노출 금지 위반)
+- ❌ `meta.robots` 갱신을 무조건 적용으로 변경 금지 (현재: `if (meta.robots)` 조건부)
+  - 이유: 모든 페이지에 강제 적용하면 의도하지 않은 noindex 누출 → 색인 누락 사고
+- ✅ 비상시 D9 라우팅 비활성화는 vercel.json 변경 없이 헤더 진단 모드로만 (`X-SEO-Path` 헤더 확인)
+  - 코드 삭제·축소 금지
+
 ---
 
 ## 4. 파트너 시스템

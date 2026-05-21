@@ -1,0 +1,247 @@
+{
+  "summary": {
+    "gap1": {
+      "pass": 8,
+      "fail": 4,
+      "total": 12
+    },
+    "gap2": {
+      "pass": 0,
+      "fail": 2,
+      "total": 2
+    },
+    "gap3": {
+      "pass": 0,
+      "fail": 4,
+      "total": 4
+    },
+    "regression": {
+      "pass": 6,
+      "fail": 2,
+      "total": 8
+    }
+  },
+  "overall": {
+    "pass": 14,
+    "fail": 12,
+    "total": 26
+  },
+  "results": {
+    "gap1": [
+      {
+        "url": "https://phlorotannin.com/blog/breast-cancer-phlorotannin-estrogen-antioxidant-overview",
+        "ua": "g",
+        "ok": true,
+        "msg": "datePublished=2026-05-19T09:35:29"
+      },
+      {
+        "url": "https://phlorotannin.com/blog/breast-cancer-phlorotannin-estrogen-antioxidant-overview",
+        "ua": "y",
+        "ok": true,
+        "msg": "datePublished=2026-05-19T09:35:29"
+      },
+      {
+        "url": "https://phlorotannin.com/blog/rectal-cancer-phlorotannin-dieckol-radiation-chemo-combo",
+        "ua": "g",
+        "ok": false,
+        "msg": "no Article"
+      },
+      {
+        "url": "https://phlorotannin.com/blog/rectal-cancer-phlorotannin-dieckol-radiation-chemo-combo",
+        "ua": "y",
+        "ok": false,
+        "msg": "no Article"
+      },
+      {
+        "url": "https://phlorotannin.com/blog/phlorotannin-drug-development-pipeline-2024-2026-guide",
+        "ua": "g",
+        "ok": false,
+        "msg": "no Article"
+      },
+      {
+        "url": "https://phlorotannin.com/blog/phlorotannin-drug-development-pipeline-2024-2026-guide",
+        "ua": "y",
+        "ok": false,
+        "msg": "no Article"
+      },
+      {
+        "url": "https://phlorotannin.com/blog/tamoxifen-side-effects-management-2026",
+        "ua": "g",
+        "ok": true,
+        "msg": "datePublished=2026-05-20T00:57:19"
+      },
+      {
+        "url": "https://phlorotannin.com/blog/tamoxifen-side-effects-management-2026",
+        "ua": "y",
+        "ok": true,
+        "msg": "datePublished=2026-05-20T00:57:19"
+      },
+      {
+        "url": "https://phlorotannin.com/blog/capecitabine-hand-foot-syndrome-care-2026",
+        "ua": "g",
+        "ok": true,
+        "msg": "datePublished=2026-05-20T00:57:22"
+      },
+      {
+        "url": "https://phlorotannin.com/blog/capecitabine-hand-foot-syndrome-care-2026",
+        "ua": "y",
+        "ok": true,
+        "msg": "datePublished=2026-05-20T00:57:22"
+      },
+      {
+        "url": "https://phlorotannin.com/blog/trastuzumab-herceptin-cardiac-side-effects-2026",
+        "ua": "g",
+        "ok": true,
+        "msg": "datePublished=2026-05-20T00:57:21"
+      },
+      {
+        "url": "https://phlorotannin.com/blog/trastuzumab-herceptin-cardiac-side-effects-2026",
+        "ua": "y",
+        "ok": true,
+        "msg": "datePublished=2026-05-20T00:57:21"
+      }
+    ],
+    "gap2": [
+      {
+        "url": "https://phlorotannin.com/inforoom",
+        "ok": false,
+        "title": "플로로탄닌 효능 효과 | 감태추출물·씨놀·해양폴리페놀 정보",
+        "canon": "https://phlorotannin.com/",
+        "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+        "issues": [
+          "title missing '정보실'",
+          "canon missing '/inforoom' (got 'https://phlorotannin.com/')",
+          "robots 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' != 'noindex,follow'"
+        ]
+      },
+      {
+        "url": "https://phlorotannin.com/p/010-1234-5678/inforoom",
+        "ok": false,
+        "title": "플로로탄닌 효능 효과 | 감태추출물·씨놀·해양폴리페놀 정보",
+        "canon": "https://phlorotannin.com/",
+        "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+        "issues": [
+          "title missing '정보실'",
+          "canon missing '/p/010-1234-5678/inforoom' (got 'https://phlorotannin.com/')",
+          "robots 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' != 'noindex,follow'"
+        ]
+      }
+    ],
+    "gap3": [
+      {
+        "url": "https://phlorotannin.com/community/post/test-post-123",
+        "ok": false,
+        "title": "플로로탄닌 효능 효과 | 감태추출물·씨놀·해양폴리페놀 정보",
+        "canon": "https://phlorotannin.com/",
+        "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+        "issues": [
+          "title missing '커뮤니티 글'",
+          "canon missing '/community/post/test-post-123' (got 'https://phlorotannin.com/')",
+          "robots 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' != 'noindex,follow'"
+        ]
+      },
+      {
+        "url": "https://phlorotannin.com/community/write",
+        "ok": false,
+        "title": "플로로탄닌 효능 효과 | 감태추출물·씨놀·해양폴리페놀 정보",
+        "canon": "https://phlorotannin.com/",
+        "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+        "issues": [
+          "title missing '작성'",
+          "canon missing '/community/write' (got 'https://phlorotannin.com/')",
+          "robots 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' != 'noindex,nofollow'"
+        ]
+      },
+      {
+        "url": "https://phlorotannin.com/question/write",
+        "ok": false,
+        "title": "플로로탄닌 효능 효과 | 감태추출물·씨놀·해양폴리페놀 정보",
+        "canon": "https://phlorotannin.com/",
+        "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+        "issues": [
+          "title missing '질문 작성'",
+          "canon missing '/question/write' (got 'https://phlorotannin.com/')",
+          "robots 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' != 'noindex,nofollow'"
+        ]
+      },
+      {
+        "url": "https://phlorotannin.com/admin",
+        "ok": false,
+        "title": "플로로탄닌 효능 효과 | 감태추출물·씨놀·해양폴리페놀 정보",
+        "canon": "https://phlorotannin.com/",
+        "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+        "issues": [
+          "title missing '관리자'",
+          "canon missing '/admin' (got 'https://phlorotannin.com/')",
+          "robots 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' != 'noindex,nofollow'"
+        ]
+      }
+    ],
+    "regression": [
+      {
+        "url": "https://phlorotannin.com/",
+        "ok": true,
+        "title_len": 32,
+        "ld": 8,
+        "canon": "https://phlorotannin.com/",
+        "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      },
+      {
+        "url": "https://phlorotannin.com/easy",
+        "ok": true,
+        "title_len": 37,
+        "ld": 10,
+        "canon": "https://phlorotannin.com/easy",
+        "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      },
+      {
+        "url": "https://phlorotannin.com/learn",
+        "ok": true,
+        "title_len": 35,
+        "ld": 10,
+        "canon": "https://phlorotannin.com/learn",
+        "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      },
+      {
+        "url": "https://phlorotannin.com/phlorotannin",
+        "ok": true,
+        "title_len": 46,
+        "ld": 10,
+        "canon": "https://phlorotannin.com/phlorotannin",
+        "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      },
+      {
+        "url": "https://phlorotannin.com/category/cardiovascular",
+        "ok": true,
+        "title_len": 30,
+        "ld": 10,
+        "canon": "https://phlorotannin.com/category/cardiovascular",
+        "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      },
+      {
+        "url": "https://phlorotannin.com/category/skin-hair",
+        "ok": true,
+        "title_len": 32,
+        "ld": 10,
+        "canon": "https://phlorotannin.com/category/skin-hair",
+        "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      },
+      {
+        "url": "https://phlorotannin.com/qa/tag/%ED%94%8C%EB%A1%9C%EB%A1%9C%ED%83%84%EB%8B%8C",
+        "ok": false,
+        "title_len": 38,
+        "ld": 9,
+        "canon": "https://phlorotannin.com/qa/tag/플로로탄닌",
+        "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      },
+      {
+        "url": "https://phlorotannin.com/q/%EB%87%8C%EC%A1%B8%EC%A4%91-%EC%98%88%EB%B0%A9%EC%9D%84-%EC%9C%84%ED%95%9C-%EC%83%9D%ED%99%9C-%EC%8A%B5%EA%B4%80%EC%9D%80",
+        "ok": false,
+        "title_len": 49,
+        "ld": 10,
+        "canon": "https://phlorotannin.com/q/뇌졸중-예방을-위한-생활-습관은",
+        "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      }
+    ]
+  }
+}

@@ -599,6 +599,53 @@ done
 
 **위반 시 영향**: Google Q&A 리치 결과 자격 상실, 1,361 URL의 SNS 공유 OG 가 단일 이미지로 노출, 사이트 위계 신호 부재 → 자산화 본체의 색인 신뢰도 50%+ 손실.
 
+**(9) 3차 검증(D9) — vercel.json 라우팅 + Article datePublished + 작성/관리 라우트 (2026-05-21 D9 — 사용자 발견 3중 잔존 누락)**
+
+D8 직후 사용자 지적: *"다시한번더 검증해"*. 검색엔진 봇 시각으로 1,814 sitemap URL + sitemap 외 라우트까지 전수 검증한 결과 **3개의 숨은 결함**을 동시에 발견:
+
+**D9-GAP-1 — /blog/:slug × 110개 Article datePublished 누락 (36.9%)**
+- 원인: Supabase `posts.published_at` 컬럼 NULL인 글이 110/298건
+- 영향: Google Rich Results Article 자격 박탈 → 풍부한 검색결과 노출 손실
+- 다음을 **불변 의무**로 한다:
+  - `fetchPostBody()` SELECT 쿼리에 `created_at` 포함
+  - `publishedAt = p.published_at || p.updated_at || p.created_at` 안전 체인
+  - `dateModified = p.updated_at || p.created_at` 안전 체인
+  - 데이터 본체 변경 금지(읽기 전용 보강)
+
+**D9-GAP-2/3 — sitemap 외 라우트 vercel.json catch-all 자기상충**
+- 원인: `vercel.json` 마지막 catch-all `{ source:'/((?!api/|og/|assets/).*)', destination:'/api/seo?p=/' }` 가 명시되지 않은 모든 경로(`/inforoom`, `/community/post/:postId`, `/admin` 등)를 `?p=/`로 흡수 → 핸들러가 항상 홈을 받고, canonical은 자기 자신 가리키지 않음
+- 영향: 사용자 진입 가능 URL에서 홈 title/desc 누출 + canonical 자기상충 → 중복 색인 위험
+- 다음을 **불변 의무**로 한다:
+  - `vercel.json rewrites`에 누락 라우트를 명시 추가: `/inforoom`, `/p/:phone/inforoom`, `/community/post/:postId`, `/community/write`, `/community/edit/:postId`, `/question/write`, `/admin`
+  - **봇 UA 전용 catch-all**: 명시 라우트 외 모든 경로에서 User-Agent가 검색/AI 봇(googlebot, yeti, bingbot, chatgpt-user, gptbot, claudebot, perplexitybot, oai-searchbot, applebot, ccbot, anthropic-ai, gemini, bytespider, amazonbot, facebookexternalhit, twitterbot, slackbot 등 22종)인 경우 실제 path를 그대로 핸들러에 전달 (`destination:'/api/seo?p=/:path*'`) — 미래 라우트 자동 자산화
+  - 사용자 트래픽 catch-all은 그대로 유지 (SPA shell 호환)
+  - `api/seo.js` `staticMetaFor()` 에 각 라우트별 분기 + 작성/관리 페이지는 `robots: 'noindex,nofollow'`, 정보실 페이지는 `robots: 'noindex,follow'` 명시
+  - `injectMeta()` 에 `meta.robots` 갱신 블록 — set된 경우에만 갱신, 그 외 index.html 기본값(`index, follow ...`) 유지
+
+**검증 명령** (배포 후 필수):
+```bash
+# datePublished fallback 동작 확인
+curl -sA "Googlebot/2.1" "https://phlorotannin.com/blog/tamoxifen-side-effects-management-2026" \
+  | grep -oE '"datePublished":"[^"]+"' | head -1
+
+# x-seo-path가 실제 경로를 받는지 (catch-all 자기상충 회귀 방지)
+for p in /inforoom /community/post/test /admin /question/write; do
+  curl -sIA "Googlebot/2.1" "https://phlorotannin.com$p" | grep -i "x-seo-path"
+done
+
+# noindex robots 노출 확인 (작성/관리 페이지)
+curl -sA "Googlebot/2.1" "https://phlorotannin.com/admin" \
+  | grep -oE '<meta name="robots" content="[^"]+"'
+```
+
+기대 결과:
+- 110개 NULL 글 모두 `datePublished` 가 ISO 8601 datetime 값 (updated_at fallback)
+- 각 라우트의 `x-seo-path` 헤더가 정확한 자기 경로 ( `/` 가 아닌 `/inforoom` 등)
+- `/admin`, `/question/write`, `/community/write` → `noindex,nofollow`
+- `/inforoom`, `/community/post/:postId` → `noindex,follow`
+
+**위반 시 영향**: Google Rich Results Article 자격 110개 글 박탈, 사용자 진입 시 홈 title 노출 + canonical 자기상충 → 중복 색인 페널티 위험. 미래 라우트 추가 시 자동 자산화 불가 → 매번 vercel.json 수동 갱신 필요(헌법 7-B 확장성 정신 위배).
+
 ### ✅ 의무 8. 안전성 일괄 검증 (forbidden words)
 - 신규 Q&A 추가 시 (또는 기존 일괄 점검 시) 제4조 금지어 전수 스캔
 - 위반 발견 시 **자동 치환 사전** 적용 가능:
