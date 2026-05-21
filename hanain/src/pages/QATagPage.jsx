@@ -13,9 +13,12 @@
 //   - DO_NOT_TOUCH.md §3-Q (라우팅·슬러그 변경 금지)
 // ───────────────────────────────────────────────────────────────
 import { useEffect, useMemo, useState } from 'react'
-import { useParams, Link, useNavigate } from 'react-router-dom'
-import { ChevronRight, ArrowLeft, Eye, Heart, Tag as TagIcon, BookOpen } from 'lucide-react'
+import { useParams, Link } from 'react-router-dom'
+import { ChevronRight, Eye, Heart, BookOpen } from 'lucide-react'
 import SEOHead from '../components/common/SEOHead'
+import CategoryHeroBanner from '../components/common/CategoryHeroBanner'
+import CategoryGrid from '../components/common/CategoryGrid'
+import { inferDominantCategory } from '../data/qaCategoryMeta'
 import { usePartner } from '../context/PartnerContext'
 import { withRef } from '../lib/partnerRef'
 
@@ -55,7 +58,6 @@ const CAT_NAMES = {
 
 export default function QATagPage() {
   const { tag: tagParam } = useParams()
-  const navigate = useNavigate()
   const partner = usePartner()
   const decodedTag = (() => {
     try {
@@ -99,6 +101,13 @@ export default function QATagPage() {
     const meta = tagIndex?.tags?.[decodedTag] || null
     return { matchedQuestions: matched, tagMeta: meta }
   }, [qaData, tagIndex, decodedTag])
+
+  // [2026-05-21] 태그 → 우세 카테고리 추론 → 통합 배너 메타 결정
+  // 같은 태그의 Q&A 들 중 가장 많이 등장한 카테고리를 시각적 시그니처로 사용
+  const dominantMeta = useMemo(
+    () => inferDominantCategory(matchedQuestions),
+    [matchedQuestions]
+  )
 
   // SEO + JSON-LD 계산 (헌법 제10조 의무 7 — description 120~158자, 롱테일 키워드 노출)
   const pageUrl = `https://phlorotannin.com/qa/tag/${encodeURIComponent(decodedTag)}`
@@ -197,31 +206,22 @@ export default function QATagPage() {
       />
 
       <div className="pt-16 min-h-screen bg-gray-50">
-        {/* 헤더 */}
-        <div className="bg-ocean-gradient py-10">
-          <div className="max-w-5xl mx-auto px-4">
-            <div className="flex items-center gap-2 text-sm text-gray-300 mb-3">
-              <button onClick={() => navigate(-1)} className="p-1 rounded hover:bg-white/10 transition" aria-label="뒤로">
-                <ArrowLeft className="w-4 h-4" />
-              </button>
-              <Link to={withRef('/qa', partner)} className="hover:text-white transition">건강 Q&A</Link>
-              <ChevronRight className="w-3 h-3" />
-              <span className="text-gray-200">#{decodedTag}</span>
-            </div>
-            <div className="flex items-center gap-3 text-white mb-3">
-              <TagIcon className="w-6 h-6 text-cyan-hana" />
-              <span className="text-cyan-hana font-medium">태그 모음</span>
-            </div>
-            <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">
-              #{decodedTag}
-            </h1>
-            <p className="text-gray-300 text-base md:text-lg">
-              {matchedQuestions.length > 0
-                ? <>{decodedTag} 관련 <strong className="text-white">{matchedQuestions.length}개</strong> 연구기반 Q&A</>
-                : `${decodedTag} 관련 Q&A를 찾을 수 없습니다`}
-            </p>
-          </div>
-        </div>
+        {/* [2026-05-21] 태그 페이지 통합 헤더 — 우세 카테고리 추론 → 의학저널 톤 배너 */}
+        <CategoryHeroBanner
+          meta={dominantMeta}
+          eyebrow="태그 모음"
+          title={`#${decodedTag}`}
+          subtitle={
+            matchedQuestions.length > 0
+              ? `${decodedTag} 관련 ${matchedQuestions.length}개 연구기반 Q&A — 플로로탄닌·감태추출물·해양 폴리페놀 임상 근거 정리`
+              : `${decodedTag} 관련 Q&A를 준비 중입니다`
+          }
+          breadcrumbs={[
+            { to: '/', label: '홈' },
+            { to: withRef('/qa', partner), label: '건강 Q&A' },
+            { label: `#${decodedTag}` },
+          ]}
+        />
 
         {/* 본문 */}
         <div className="max-w-5xl mx-auto px-4 py-8">
@@ -292,6 +292,14 @@ export default function QATagPage() {
                   partner={partner}
                 />
               )}
+
+              {/* [2026-05-21] 카테고리 둘러보기 — 태그 페이지에도 13개 통합 그리드 노출 */}
+              <div className="mt-6">
+                <CategoryGrid
+                  title="카테고리별로 둘러보기"
+                  variant="panel"
+                />
+              </div>
             </>
           )}
 

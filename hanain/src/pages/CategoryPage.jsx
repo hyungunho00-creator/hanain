@@ -3,6 +3,9 @@ import { useParams, Link, useNavigate } from 'react-router-dom'
 import { Eye, Heart, ChevronRight } from 'lucide-react'
 import { getQaCategories, getQaQuestions, getQaPopular } from '../lib/supabase'
 import SEOHead from '../components/common/SEOHead'
+import CategoryHeroBanner from '../components/common/CategoryHeroBanner'
+import CategoryGrid from '../components/common/CategoryGrid'
+import { getCategoryMeta } from '../data/qaCategoryMeta'
 
 // URL slug → category_id 매핑 (DB qa_categories 기준)
 // [2026-05-21 D6 보강] skin/hair 단독 슬러그 추가 — sitemap·qa.json 정합성 확보
@@ -240,7 +243,9 @@ export default function CategoryPage() {
     </div>
   )
 
-  const catColor = category.color || '#00B4D8'
+  // [2026-05-21] 카테고리 메타데이터 통합 — banner / icon / accent 일관 적용
+  const meta = getCategoryMeta(category.id)
+  const catColor = meta.accent || category.color || '#00B4D8'
 
   // [2026-05-21 D6 보강] 구조화 데이터 — BreadcrumbList + CollectionPage + ItemList
   // 검색엔진/AI 에게 카테고리 페이지가 "Q&A 컬렉션 허브"임을 명확히 알리는 3종 세트.
@@ -305,25 +310,22 @@ export default function CategoryPage() {
       />
 
       <div className="pt-16 min-h-screen bg-gray-hana">
-        {/* 카테고리 히어로 */}
-        <div className="text-white py-10 px-4" style={{ background: `linear-gradient(135deg, ${catColor}dd, ${catColor}99)` }}>
-          <div className="max-w-5xl mx-auto">
-            <div className="flex items-center gap-2 text-sm text-white/70 mb-3">
-              <Link to="/qa" className="hover:text-white transition">건강 Q&A</Link>
-              <ChevronRight className="w-3 h-3" />
-              <span className="text-white">{category.name}</span>
-            </div>
-            <div className="flex items-start justify-between gap-4 flex-wrap">
-              <div>
-                <h1 className="text-3xl font-bold mb-2">{category.name}</h1>
-                {category.description && (
-                  <p className="text-white/80 text-base max-w-xl">{category.description}</p>
-                )}
-                <p className="text-white/60 text-sm mt-2">총 {total.toLocaleString()}개 질문</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        {/* [2026-05-21] 의학저널 톤 통합 히어로 배너 — E-E-A-T 신뢰감 강화 */}
+        <CategoryHeroBanner
+          meta={meta}
+          eyebrow="건강 Q&A 카테고리"
+          title={category.name}
+          subtitle={
+            category.description
+              ? `${category.description}${total ? ` · 총 ${total.toLocaleString()}개 질문` : ''}`
+              : `${meta.blurb || ''}${total ? ` · 총 ${total.toLocaleString()}개 질문` : ''}`
+          }
+          breadcrumbs={[
+            { to: '/', label: '홈' },
+            { to: '/qa', label: '건강 Q&A' },
+            { label: category.name },
+          ]}
+        />
 
         <div className="max-w-5xl mx-auto px-4 py-6">
           <div className="flex flex-col lg:flex-row gap-6">
@@ -430,32 +432,13 @@ export default function CategoryPage() {
                 </div>
               )}
 
-              {/* 다른 카테고리 */}
-              <div className="bg-white rounded-2xl border border-border-hana p-5">
-                <h3 className="font-bold text-ocean-deep mb-3 text-sm">다른 카테고리</h3>
-                <div className="space-y-1.5">
-                  {[
-                    { slug: 'metabolism', name: '대사질환', color: '#3B82F6' },
-                    { slug: 'cancer-immune', name: '항암/면역', color: '#8B5CF6' },
-                    { slug: 'neuro-cognitive', name: '뇌/인지', color: '#6366F1' },
-                    { slug: 'cardiovascular', name: '심혈관', color: '#EF4444' },
-                    { slug: 'digestive', name: '소화/간', color: '#10B981' },
-                    { slug: 'mental-health', name: '정신건강', color: '#F59E0B' },
-                    { slug: 'musculoskeletal', name: '근골격', color: '#F97316' },
-                    { slug: 'skin-hair', name: '피부/모발', color: '#B45309' },
-                    { slug: 'respiratory', name: '호흡기', color: '#06B6D4' },
-                    { slug: 'infection-inflammation', name: '감염/염증', color: '#DC2626' },
-                    { slug: 'womens-health', name: '여성건강', color: '#F472B6' },
-                    { slug: 'mens-health', name: '남성건강', color: '#3B82F6' },
-                  ].filter(c => c.slug !== slug && c.slug !== (SLUG_TO_ID[slug] || slug)).map(c => (
-                    <Link key={c.slug} to={`/category/${c.slug}`}
-                      className="flex items-center gap-2 text-xs text-gray-600 hover:text-cyan-hana transition py-1">
-                      <span className="w-2 h-2 rounded-full" style={{ backgroundColor: c.color }} />
-                      {c.name}
-                    </Link>
-                  ))}
-                </div>
-              </div>
+              {/* [2026-05-21] 통합 카테고리 그리드 — 13개 카테고리 일관 디자인 */}
+              <CategoryGrid
+                title="다른 카테고리"
+                excludeId={category.id}
+                excludeSlug={slug}
+                variant="sidebar"
+              />
             </aside>
           </div>
         </div>

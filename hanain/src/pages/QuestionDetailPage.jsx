@@ -12,6 +12,7 @@ import {
 import SEOHead from '../components/common/SEOHead'
 import RelatedBlogPosts from '../components/qa/RelatedBlogPosts'
 import ReferenceList from '../components/common/ReferenceList'
+import CategoryGrid from '../components/common/CategoryGrid'
 import { REFERENCES } from '../data/references'
 
 // 카테고리 ID → OG 이미지 슬러그 (build_og_images.py 산출물과 1:1 매칭, 헌법 정합성)
@@ -499,16 +500,33 @@ export default function QuestionDetailPage() {
                 </section>
               )}
 
-              {/* 추가 질문하기 CTA */}
-              <div className="bg-gradient-to-r from-cyan-hana to-blue-500 rounded-2xl p-6 text-white text-center">
-                <h3 className="font-bold text-lg mb-2">이 답변으로 해결되지 않으셨나요?</h3>
-                <p className="text-blue-100 text-sm mb-4">직접 질문을 남겨주시면 답변해 드립니다.</p>
-                <Link
-                  to="/question/write"
-                  className="inline-block bg-white text-cyan-hana font-bold px-6 py-2.5 rounded-xl hover:bg-blue-50 transition text-sm shadow"
-                >
-                  질문하기
-                </Link>
+              {/* [2026-05-21] 추가 질문하기 — 광고톤 그라데이션 박스 → 정보톤 다크 카드 (E-E-A-T) */}
+              <div className="relative overflow-hidden rounded-2xl border border-white/5 bg-[#0B1A2E] p-6 text-white">
+                <div
+                  aria-hidden="true"
+                  className="absolute inset-0 opacity-40 pointer-events-none"
+                  style={{ background: 'radial-gradient(circle at 85% 20%, rgba(0,180,216,0.22) 0%, transparent 55%)' }}
+                />
+                <div className="relative flex items-start gap-4">
+                  <div className="shrink-0 inline-flex items-center justify-center w-10 h-10 rounded-lg bg-cyan-hana/15 ring-1 ring-cyan-hana/30">
+                    <MessageCircle className="w-5 h-5 text-cyan-hana" strokeWidth={2.25} />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-semibold text-base text-white mb-1.5">
+                      더 궁금한 점이 있으신가요?
+                    </h3>
+                    <p className="text-white/65 text-sm leading-relaxed mb-4">
+                      리서치팀이 PubMed·Europe PMC 기반으로 직접 답변해 드립니다. 회원가입 없이 익명으로 작성 가능합니다.
+                    </p>
+                    <Link
+                      to="/question/write"
+                      className="inline-flex items-center gap-1.5 bg-white/95 hover:bg-white text-ocean-deep font-semibold px-4 py-2 rounded-lg transition text-sm"
+                    >
+                      질문 등록하기
+                      <ChevronRight className="w-4 h-4" />
+                    </Link>
+                  </div>
+                </div>
               </div>
 
               {/* 관련 블로그 글 (헌법 제10조 의무 6 — 양방향 internal linking) */}
@@ -555,39 +573,24 @@ export default function QuestionDetailPage() {
                 )
               })()}
 
-              {/* 카테고리 바로가기 */}
-              <div className="bg-white rounded-2xl border border-border-hana p-5">
-                <h3 className="font-bold text-ocean-deep mb-3 text-sm">카테고리 둘러보기</h3>
-                <div className="grid grid-cols-2 gap-2">
-                  {[
-                    { slug: 'metabolism', name: '대사질환', color: '#3B82F6' },
-                    { slug: 'cancer-immune', name: '항암/면역', color: '#8B5CF6' },
-                    { slug: 'neuro-cognitive', name: '뇌/인지', color: '#6366F1' },
-                    { slug: 'cardiovascular', name: '심혈관', color: '#EF4444' },
-                    { slug: 'mental-health', name: '정신건강', color: '#F59E0B' },
-                    { slug: 'digestive', name: '소화/간', color: '#10B981' },
-                  ].map(c => (
-                    <Link
-                      key={c.slug}
-                      to={`/category/${c.slug}`}
-                      className="text-xs font-medium px-2 py-2 rounded-lg text-center text-white hover:opacity-90 transition"
-                      style={{ backgroundColor: c.color }}
-                    >
-                      {c.name}
-                    </Link>
-                  ))}
-                </div>
-                <Link to="/qa" className="mt-3 flex items-center gap-1 text-xs text-cyan-hana hover:underline">
-                  전체 Q&A 보기 <ChevronRight className="w-3 h-3" />
-                </Link>
-              </div>
+              {/* [2026-05-21] 카테고리 둘러보기 — 6개 알록달록 박스 → 13개 통합 다크 카드 */}
+              <CategoryGrid
+                title="카테고리 둘러보기"
+                excludeId={question.category_id}
+                variant="sidebar"
+              />
 
-              {/* 질문하기 유도 */}
-              <div className="bg-ocean-deep rounded-2xl p-5 text-white text-center">
-                <p className="font-bold mb-1 text-sm">궁금한 점이 있으신가요?</p>
-                <p className="text-gray-300 text-xs mb-3">회원가입 없이 바로 질문하실 수 있어요</p>
-                <Link to="/question/write" className="block bg-teal-500 text-white text-sm font-bold py-2 rounded-xl hover:bg-teal-400 transition">
-                  질문하기
+              {/* [2026-05-21] 질문하기 유도 — 정보톤 다크 카드 (CTA 중복 단순화) */}
+              <div className="relative overflow-hidden rounded-2xl border border-white/5 bg-[#0B1A2E] p-5 text-white">
+                <p className="text-[11px] font-semibold tracking-wider uppercase text-cyan-hana mb-2">리서치팀 직접 답변</p>
+                <p className="text-sm text-white/80 leading-relaxed mb-3">
+                  궁금한 건강 질문을 남겨주세요. PubMed 기반 근거를 정리해 회신합니다.
+                </p>
+                <Link
+                  to="/question/write"
+                  className="inline-flex items-center gap-1.5 text-sm font-medium text-cyan-hana hover:text-white transition"
+                >
+                  질문 등록하기 <ChevronRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
             </aside>
