@@ -7,9 +7,10 @@ import { getMainVideos, getPosts } from '../lib/supabase'
 import {
   Flame, Brain, Droplet, Shield, Heart, Sparkles,
   Scissors, Moon, Bone, Waves, FlaskConical, BookOpen,
-  MessageSquare, ChevronDown as LucideChevronDown,
+  MessageSquare, ChevronDown as LucideChevronDown, ArrowUpRight,
 } from 'lucide-react'
 import { StatCard, MoleculeSVG, SectionHeader, IconFeature, MechanismDiagram, SciImage, InfoStrip, TrustBar } from '../components/visual'
+import RevealContact from '../components/common/RevealContact'
 
 // ─── YouTube ID 추출 ──────────────────────────────────────────
 function extractYoutubeId(url) {
@@ -221,14 +222,15 @@ const MessageCircle = () => (
 )
 
 // ── 블로그 미리보기 섹션 ──────────────────────────────────
+// 헌법 v3: 카테고리 칩 무채색 통일 — uppercase tracking 텍스트만으로 시각 위계
 const CAT_COLORS = {
-  'cancer-treatment-care':'bg-fuchsia-100 text-fuchsia-800',  // 🆕
-  'buying-guide':'bg-cyan-100 text-cyan-800',                 // 🆕
-  'safety-precautions':'bg-lime-100 text-lime-800',           // 🆕
-  diabetes:'bg-orange-100 text-orange-700', cancer:'bg-red-100 text-red-700',
-  brain:'bg-purple-100 text-purple-700', cardiovascular:'bg-rose-100 text-rose-700',
-  inflammation:'bg-yellow-100 text-yellow-700', skin:'bg-pink-100 text-pink-700',
-  research:'bg-blue-100 text-blue-700', general:'bg-gray-100 text-gray-700',
+  'cancer-treatment-care':'text-gray-600',
+  'buying-guide':'text-gray-600',
+  'safety-precautions':'text-gray-600',
+  diabetes:'text-gray-600', cancer:'text-gray-600',
+  brain:'text-gray-600', cardiovascular:'text-gray-600',
+  inflammation:'text-gray-600', skin:'text-gray-600',
+  research:'text-gray-600', general:'text-gray-600',
 }
 const CAT_NAMES = {
   'cancer-treatment-care':'항암 치료 케어', // 🆕
@@ -246,17 +248,20 @@ function BlogPreviewSection() {
   }, [])
   if (posts.length === 0) return null
   return (
-    <section className="py-12 px-5 bg-gray-50">
+    <section className="py-14 px-5 bg-gray-50 border-y border-gray-200">
       <div className="max-w-4xl mx-auto">
-        <div className="flex items-center justify-between mb-6">
+        <div className="flex items-end justify-between mb-7 gap-4">
           <div>
-            <p className="text-xs font-bold text-teal-600 tracking-widest uppercase mb-1">Research Blog</p>
-            <h2 className="text-xl font-extrabold text-gray-900">최신 연구 블로그</h2>
-            <p className="text-sm text-gray-500 mt-0.5">PH-100 · 에콜 · 디에콜 임상·연구 최신 정보</p>
+            <div className="flex items-center gap-3 mb-3">
+              <span className="h-px w-8 bg-gray-300" aria-hidden="true" />
+              <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500">Research Blog</span>
+            </div>
+            <h2 className="text-2xl md:text-[1.75rem] font-bold text-gray-900 tracking-tight">최신 연구 블로그</h2>
+            <p className="text-[13px] text-gray-500 mt-1">PH-100 · 에콜 · 디에콜 임상·연구 최신 정보</p>
           </div>
           <Link to={withRef('/blog', partner)}
-            className="text-sm font-semibold text-teal-600 hover:text-teal-700 flex items-center gap-1 whitespace-nowrap">
-            전체보기 →
+            className="text-[14px] text-gray-700 hover:text-gray-900 underline underline-offset-4 decoration-gray-300 hover:decoration-gray-700 whitespace-nowrap transition-colors">
+            전체보기
           </Link>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -266,9 +271,9 @@ function BlogPreviewSection() {
             const date     = new Date(post.created_at).toLocaleDateString('ko-KR', { month:'long', day:'numeric' })
             return (
               <Link key={post.id} to={withRef(`/blog/${post.slug}`, partner)}
-                className="bg-white rounded-2xl border border-gray-100 p-5 hover:shadow-md hover:border-teal-200 transition-all group">
-                <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${catColor}`}>{catName}</span>
-                <h3 className="text-sm font-bold text-gray-900 mt-3 mb-2 line-clamp-2 group-hover:text-teal-600 transition-colors leading-snug">
+                className="bg-white rounded-lg border border-gray-200 p-5 hover:border-gray-400 transition-colors group">
+                <span className={`text-[11px] font-medium uppercase tracking-[0.14em] ${catColor}`}>{catName}</span>
+                <h3 className="text-[15px] font-semibold text-gray-900 mt-3 mb-2 line-clamp-2 leading-snug break-keep">
                   {post.title}
                 </h3>
                 {post.excerpt && (
@@ -478,32 +483,41 @@ export default function LandingPage() {
       <section className="py-12 px-5 bg-gray-50">
         <div className="max-w-3xl mx-auto">
 
-          {/* ── 처음 오신 분 안내 박스 ── */}
-          <div className="bg-amber-50 border-2 border-amber-300 rounded-2xl px-5 py-4 mb-6">
-            <p className="text-sm font-extrabold text-amber-700 mb-2">💡 처음 오신 분들께</p>
-            <p className="text-sm text-amber-800 leading-relaxed font-medium">
-              우측 상단 <strong>메뉴</strong> 버튼을 누르신 후<br />
-              아래 순서로 학습하시면 도움이 됩니다.
-            </p>
-            <div className="mt-3 space-y-1">
-              {[
-                { num: '①', label: '플로로탄닌 쉽게 배우기' },
-                { num: '②', label: '플로로탄닌 소개' },
-                { num: '③', label: '건강 Q&A' },
-              ].map(item => (
-                <div key={item.num} className="flex items-center gap-2">
-                  <span className="text-amber-600 font-extrabold text-base w-6">{item.num}</span>
-                  <span className="text-amber-900 font-bold text-sm">{item.label}</span>
-                </div>
-              ))}
+          {/* ── 처음 오신 분 안내 박스 (라이트 에디토리얼) ── */}
+          <div className="bg-white border border-gray-200 rounded-lg px-6 py-5 mb-8">
+            <div className="flex items-center gap-3 mb-3">
+              <span className="h-px w-8 bg-gray-300" aria-hidden="true" />
+              <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500">First Visit · Reading Order</span>
             </div>
+            <p className="text-[14px] text-gray-700 leading-[1.7] mb-4 break-keep">
+              우측 상단 <span className="text-gray-900 font-semibold">메뉴</span> 버튼을 누른 후, 아래 순서로 읽으시면 가장 빠르게 이해됩니다.
+            </p>
+            <ol className="space-y-2.5">
+              {[
+                { num: '01', label: '플로로탄닌 쉽게 배우기', desc: '중학생 눈높이 도입' },
+                { num: '02', label: '플로로탄닌 소개', desc: '6가지 분자 기전·근거' },
+                { num: '03', label: '건강 Q&A', desc: '소재별 1,361건 아카이브' },
+              ].map(item => (
+                <li key={item.num} className="flex items-baseline gap-4">
+                  <span className="text-[11px] font-medium text-gray-400 tabular-nums tracking-[0.16em] w-8 flex-shrink-0">{item.num}</span>
+                  <div className="min-w-0">
+                    <span className="text-[14px] font-semibold text-gray-900">{item.label}</span>
+                    <span className="text-[13px] text-gray-500 ml-2">— {item.desc}</span>
+                  </div>
+                </li>
+              ))}
+            </ol>
           </div>
 
           {/* 섹션 헤더 */}
-          <div className="text-center mb-8">
-            <p className="text-sm font-bold text-teal-600 tracking-widest uppercase mb-2">먼저 영상으로 보세요</p>
-            <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 break-keep">
-              읽기 전에 영상으로 <span className="text-teal-600">3분이면 이해됩니다</span>
+          <div className="text-center mb-10">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <span className="h-px w-8 bg-gray-300" aria-hidden="true" />
+              <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500">Watch First</span>
+              <span className="h-px w-8 bg-gray-300" aria-hidden="true" />
+            </div>
+            <h2 className="text-2xl md:text-[2rem] font-bold text-gray-900 tracking-tight break-keep leading-tight">
+              읽기 전에 영상으로 <span className="text-gray-500 font-normal">3분이면 이해됩니다</span>
             </h2>
           </div>
 
@@ -705,21 +719,39 @@ export default function LandingPage() {
       {/* ════ 연구 블로그 최신글 ════ */}
       <BlogPreviewSection />
 
-      <section className="py-12 px-5 bg-white">
+      <section className="py-16 px-5 bg-white border-y border-gray-200">
         <div className="max-w-lg mx-auto text-center">
-          <h2 className="text-xl font-extrabold text-gray-900 mb-2 break-keep">
+          <div className="flex items-center justify-center gap-3 mb-5">
+            <span className="h-px w-8 bg-gray-300" aria-hidden="true" />
+            <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500">Personal Inquiry</span>
+            <span className="h-px w-8 bg-gray-300" aria-hidden="true" />
+          </div>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight mb-3 break-keep">
             더 궁금하신 점이 있으신가요?
           </h2>
-          <p className="text-gray-500 text-sm mb-6 leading-relaxed">
+          <p className="text-gray-600 text-[15px] leading-[1.7] mb-7 break-keep">
             전화 또는 문자로 편하게 연락주세요.
           </p>
-          <a
-            href={`sms:${partner.phone}?body=${encodeURIComponent('[플로로탄닌 문의]\n')}`}
-            className="inline-flex items-center justify-center gap-2 bg-teal-600 hover:bg-teal-700 text-white px-8 py-4 rounded-xl text-base font-bold transition-colors shadow-lg shadow-teal-100"
-          >
-            📱 문자로 문의하기
-          </a>
-          <p className="mt-5 text-xs text-gray-400">
+          <div className="flex flex-wrap gap-x-6 gap-y-3 items-center justify-center">
+            <RevealContact
+              type="sms"
+              label="문자로 문의하기"
+              revealLabel={`${partner.phoneDisplay} 문자하기`}
+              phone={partner.phone}
+              displayPhone={partner.phoneDisplay}
+              smsBody="[플로로탄닌 문의] "
+              className="inline-flex items-center gap-2 bg-gray-900 hover:bg-black text-white px-6 py-3 rounded-md text-[14px] font-medium transition-colors"
+            />
+            <RevealContact
+              type="tel"
+              label="전화로 문의하기"
+              revealLabel={`${partner.phoneDisplay} 전화하기`}
+              phone={partner.phone}
+              displayPhone={partner.phoneDisplay}
+              className="inline-flex items-center gap-1.5 text-[14px] text-gray-700 hover:text-gray-900 underline underline-offset-4 decoration-gray-300 hover:decoration-gray-700 transition-colors"
+            />
+          </div>
+          <p className="mt-7 text-[12px] text-gray-400 leading-relaxed">
             본 내용은 건강 정보 제공 목적이며, 특정 제품의 질병 치료·예방 효능을 주장하지 않습니다.
           </p>
         </div>

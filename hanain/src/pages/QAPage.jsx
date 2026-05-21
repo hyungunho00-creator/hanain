@@ -65,39 +65,35 @@ function highlightText(text, query) {
 
 function ContactCard() {
   const partner = usePartner()
-  const [showPhone, setShowPhone] = useState(false)
-  const [showSms, setShowSms] = useState(false)
 
   return (
-    <div className="bg-ocean-gradient rounded-2xl p-6">
-      <MessageSquare className="w-6 h-6 text-gold-hana mb-3" />
-      <h3 className="font-bold text-white text-lg mb-2">더 궁금하신 게 있으신가요?</h3>
-      <p className="text-gray-200 text-base mb-4 leading-relaxed">
-        찾는 정보가 없거나 더 알고 싶다면<br />전화나 문자로 편하게 연락주세요.
+    <div className="bg-white border border-gray-200 rounded-lg p-6">
+      <div className="flex items-center gap-3 mb-3">
+        <span className="h-px w-6 bg-gray-300" aria-hidden="true" />
+        <span className="text-[11px] font-medium uppercase tracking-[0.16em] text-gray-500">Direct Inquiry</span>
+      </div>
+      <h3 className="font-bold text-gray-900 text-lg mb-3 tracking-tight">더 궁금하신 게 있으신가요?</h3>
+      <p className="text-gray-600 text-[14px] mb-5 leading-[1.7] break-keep">
+        찾는 정보가 없거나 더 알고 싶다면 전화나 문자로 편하게 연락주세요.
       </p>
-      <div className="space-y-2">
-        {!showPhone ? (
-          <button onClick={() => setShowPhone(true)}
-            className="flex items-center justify-center gap-2 w-full bg-cyan-hana text-white py-3 rounded-xl text-base font-semibold hover:bg-opacity-90 transition-all">
-            <Phone className="w-4 h-4" />전화 상담 번호 보기<ChevronRight className="w-4 h-4 opacity-70" />
-          </button>
-        ) : (
-          <a href={`tel:${partner.phone}`}
-            className="flex items-center justify-center gap-2 w-full bg-cyan-hana text-white py-3 rounded-xl text-base font-semibold hover:bg-opacity-90 transition-all">
-            <Phone className="w-4 h-4" />{partner.phoneDisplay} &nbsp;전화하기
-          </a>
-        )}
-        {!showSms ? (
-          <button onClick={() => setShowSms(true)}
-            className="flex items-center justify-center gap-2 w-full bg-white/10 border border-white/30 text-white py-3 rounded-xl text-base font-semibold hover:bg-white/20 transition-all">
-            <MessageSquare className="w-4 h-4" />문자 상담 번호 보기<ChevronRight className="w-4 h-4 opacity-70" />
-          </button>
-        ) : (
-          <a href={`sms:${partner.phone}?body=${encodeURIComponent('[플로로탄닌 파트너스] 건강 Q&A를 보고 문의드립니다.')}`}
-            className="flex items-center justify-center gap-2 w-full bg-white/10 border border-white/30 text-white py-3 rounded-xl text-base font-semibold hover:bg-white/20 transition-all">
-            <MessageSquare className="w-4 h-4" />{partner.phoneDisplay} &nbsp;문자 보내기
-          </a>
-        )}
+      <div className="space-y-3">
+        <RevealContact
+          type="tel"
+          label="전화 상담 번호 보기"
+          revealLabel={`${partner.phoneDisplay} 전화하기`}
+          phone={partner.phone}
+          displayPhone={partner.phoneDisplay}
+          className="flex items-center justify-center gap-2 w-full bg-gray-900 hover:bg-black text-white py-3 rounded-md text-[14px] font-medium transition-colors"
+        />
+        <RevealContact
+          type="sms"
+          label="문자 상담 번호 보기"
+          revealLabel={`${partner.phoneDisplay} 문자하기`}
+          phone={partner.phone}
+          displayPhone={partner.phoneDisplay}
+          smsBody="[플로로탄닌 파트너스] 건강 Q&A를 보고 문의드립니다."
+          className="flex items-center justify-center gap-2 w-full bg-white border border-gray-300 text-gray-700 hover:border-gray-900 hover:text-gray-900 py-3 rounded-md text-[14px] font-medium transition-colors"
+        />
       </div>
     </div>
   )
@@ -136,99 +132,100 @@ function QACard({ qa, isOpen, onToggle, searchQuery }) {
   const catName = getCatName(catId)
   const catBg = getCatBg(catId)
 
+  const diffLabel = qa.difficulty === 'basic' ? '기초' : qa.difficulty === 'intermediate' ? '중급' : qa.difficulty === 'advanced' ? '심화' : (qa.difficulty || '기초')
+
   return (
     <div
       data-id={qa.id}
-      className={`bg-white rounded-2xl shadow-sm border transition-all duration-200 overflow-hidden ${isOpen ? 'border-cyan-hana shadow-md' : 'border-gray-100 hover:border-gray-200 hover:shadow-sm'}`}
+      className={`bg-white rounded-lg border transition-colors overflow-hidden ${isOpen ? 'border-gray-900' : 'border-gray-200 hover:border-gray-400'}`}
     >
       <button onClick={onToggle} className="w-full text-left p-5 md:p-6">
         <div className="flex items-start gap-4">
           <div className="flex-1 min-w-0">
-            <div className="flex flex-wrap items-center gap-2 mb-2">
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 mb-3">
               {catId && (
                 <Link
                   to={`/category/${CAT_SLUG_MAP[catId] || catId}`}
                   onClick={e => e.stopPropagation()}
-                  className="text-sm font-bold px-2.5 py-1 rounded-full hover:opacity-80 transition-opacity"
-                  style={{ backgroundColor: catBg, color: '#ffffff' }}
+                  className="text-[11px] font-medium uppercase tracking-[0.16em] text-gray-500 hover:text-gray-900 transition-colors"
                 >
                   {catName}
                 </Link>
               )}
-              <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${
-                qa.difficulty === 'basic' || qa.difficulty === '기초' ? 'bg-green-100 text-green-700' :
-                qa.difficulty === 'intermediate' || qa.difficulty === '중급' ? 'bg-yellow-100 text-yellow-700' :
-                'bg-red-100 text-red-700'
-              }`}>
-                {qa.difficulty === 'basic' ? '기초' : qa.difficulty === 'intermediate' ? '중급' : qa.difficulty === 'advanced' ? '심화' : (qa.difficulty || '기초')}
+              <span className="text-[11px] font-medium uppercase tracking-[0.16em] text-gray-400">
+                {diffLabel}
               </span>
               {(qa.tags || []).slice(0, 3).map(tag => (
-                <span key={tag} className="text-sm text-gray-400 bg-gray-100 px-2 py-0.5 rounded-full">#{tag}</span>
+                <span key={tag} className="text-[12px] text-gray-400">#{tag}</span>
               ))}
             </div>
             <h3
-              className="font-semibold text-ocean-deep text-lg md:text-xl leading-snug"
+              className="font-semibold text-gray-900 text-lg md:text-xl leading-[1.45] break-keep"
               dangerouslySetInnerHTML={{ __html: highlightText(qa.question, searchQuery) }}
             />
-            <div className="flex items-center gap-4 mt-2 text-sm text-gray-400">
-              <span>👁 {(qa.views || qa.view_count || 0).toLocaleString()}</span>
-              <span>👍 {likeCount}</span>
+            <div className="flex items-center gap-5 mt-3 text-[12px] text-gray-400 tabular-nums">
+              <span>조회 {(qa.views || qa.view_count || 0).toLocaleString()}</span>
+              <span>도움 {likeCount}</span>
             </div>
           </div>
-          <div className={`text-cyan-hana transition-transform duration-300 flex-shrink-0 mt-1 ${isOpen ? 'rotate-180' : ''}`}>
-            <ChevronDown className="w-5 h-5" />
+          <div className={`text-gray-400 transition-transform duration-300 flex-shrink-0 mt-1 ${isOpen ? 'rotate-180 text-gray-900' : ''}`}>
+            <ChevronDown className="w-5 h-5" strokeWidth={1.8} />
           </div>
         </div>
       </button>
 
       {isOpen && (
-        <div className="border-t border-gray-100 px-5 md:px-6 py-5 bg-slate-50">
+        <div className="border-t border-gray-200 px-5 md:px-6 py-6 bg-gray-50">
           <div
-            className="text-gray-700 text-base md:text-lg leading-[1.9] whitespace-pre-line mb-5"
+            className="text-gray-700 text-[15px] md:text-base leading-[1.85] whitespace-pre-line mb-6 break-keep"
             dangerouslySetInnerHTML={{ __html: answerText }}
           />
           {references?.length > 0 && (
-            <div className="border-t border-gray-200 pt-4 mb-4">
-              <p className="text-sm font-semibold text-gray-400 uppercase tracking-wide mb-2">참고 자료</p>
-              <ul className="space-y-1">
+            <div className="border-t border-gray-200 pt-5 mb-5">
+              <p className="text-[11px] font-medium text-gray-400 uppercase tracking-[0.16em] mb-3">References</p>
+              <ul className="space-y-1.5">
                 {references.map((ref, i) => (
-                  <li key={i} className="text-sm text-gray-400 flex items-start gap-1.5">
-                    <span>[{i + 1}]</span><span>{ref}</span>
+                  <li key={i} className="text-[13px] text-gray-500 flex items-start gap-2 leading-relaxed">
+                    <span className="tabular-nums text-gray-400">[{i + 1}]</span><span>{ref}</span>
                   </li>
                 ))}
               </ul>
             </div>
           )}
-          <div className="border border-gray-200 rounded-xl bg-gray-50 px-4 py-3 mb-5 space-y-1">
-            <p className="text-sm text-gray-400 italic">
+          <div className="border-t border-gray-200 pt-5 mb-6 space-y-1">
+            <p className="text-[12px] text-gray-400 leading-relaxed">
               ※ 본 내용은 교육·정보 목적으로 제공되며 의료적 진단이나 처방을 대체하지 않습니다.
             </p>
-            <p className="text-sm text-gray-400">
+            <p className="text-[12px] text-gray-400 leading-relaxed">
               © 2025 플로로탄닌 파트너스 — 본 콘텐츠의 무단 복제·배포를 금합니다.
               더 자세한 내용이 궁금하시면 아래 [파트너 연락하기]를 이용해 주세요.
             </p>
           </div>
-          <div className="flex flex-wrap items-center gap-3">
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-3 text-[14px]">
             <button
               onClick={handleLike}
-              className={`flex items-center gap-2 px-4 py-2 rounded-full text-base font-medium transition-all ${
-                liked ? 'bg-cyan-hana text-white' : 'bg-white border border-gray-200 text-gray-600 hover:border-cyan-hana hover:text-cyan-hana'
+              className={`inline-flex items-center gap-1.5 transition-colors ${
+                liked ? 'text-gray-900 font-semibold' : 'text-gray-600 hover:text-gray-900'
               }`}
             >
-              <ThumbsUp className="w-4 h-4" />도움이 됐어요 {likeCount}
+              <ThumbsUp className="w-4 h-4" strokeWidth={1.8} />
+              도움이 됐어요 <span className="tabular-nums">{likeCount}</span>
             </button>
             <button
               onClick={handleShare}
-              className="flex items-center gap-2 px-4 py-2 rounded-full text-base font-medium bg-white border border-gray-200 text-gray-600 hover:border-cyan-hana hover:text-cyan-hana transition-all"
+              className="inline-flex items-center gap-1.5 text-gray-600 hover:text-gray-900 transition-colors"
             >
-              <Share2 className="w-4 h-4" />공유
+              <Share2 className="w-4 h-4" strokeWidth={1.8} />공유
             </button>
-            <a
-              href={`sms:${partner.phone}?body=${encodeURIComponent('안녕하세요! 플로로탄닌 파트너스 건강 Q&A를 보고 문의드립니다.')}`}
-              className="flex items-center gap-2 px-4 py-2 rounded-full text-base font-medium bg-white border border-gray-200 text-gray-600 hover:border-cyan-hana hover:text-cyan-hana transition-all"
-            >
-              <MessageSquare className="w-4 h-4" />파트너 연락하기
-            </a>
+            <RevealContact
+              type="sms"
+              label="파트너 연락하기"
+              revealLabel={`${partner.phoneDisplay} 문자하기`}
+              phone={partner.phone}
+              displayPhone={partner.phoneDisplay}
+              smsBody="안녕하세요! 플로로탄닌 파트너스 건강 Q&A를 보고 문의드립니다."
+              className="inline-flex items-center gap-1.5 text-gray-600 hover:text-gray-900 underline underline-offset-4 decoration-gray-300 hover:decoration-gray-700 transition-colors"
+            />
           </div>
         </div>
       )}
@@ -470,74 +467,82 @@ export default function QAPage() {
         jsonLd={faqJsonLd}
       />
 
-      {/* Header */}
-      <div className="bg-ocean-gradient py-12">
+      {/* Header — 라이트 에디토리얼 */}
+      <div className="bg-white border-b border-gray-100 py-14 md:py-20">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex items-center gap-3 text-white mb-4">
-            <BookOpen className="w-6 h-6 text-cyan-hana" />
-            <span className="text-cyan-hana font-medium">건강 정보 아카이브</span>
+          <div className="flex items-center gap-3 mb-5">
+            <span className="h-px w-8 bg-gray-300" aria-hidden="true" />
+            <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500">Health Q&amp;A Archive</span>
           </div>
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">건강 Q&amp;A 라이브러리</h1>
-          <p className="text-gray-300 mb-6 text-base md:text-lg">
-            올바른 건강 정보, 소재별 근거 중심 해설 · {totalAll.toLocaleString()}개 아티클
+          <h1 className="text-3xl md:text-[3rem] font-bold text-gray-900 tracking-tight leading-[1.1] mb-3">건강 Q&amp;A 라이브러리</h1>
+          <p className="text-gray-600 mb-8 text-[15px] md:text-base leading-[1.7] break-keep max-w-2xl">
+            올바른 건강 정보, 소재별 근거 중심 해설 · <span className="text-gray-900 font-semibold tabular-nums">{totalAll.toLocaleString()}</span>개 아티클
           </p>
 
           {/* 🔍 검색창 */}
           <form onSubmit={handleSearch} className="relative max-w-2xl">
-            <div className="flex items-center bg-white rounded-2xl shadow-lg overflow-hidden">
-              <Search className="w-5 h-5 text-gray-400 ml-4 flex-shrink-0" />
+            <div className="flex items-center bg-white border border-gray-300 rounded-md overflow-hidden focus-within:border-gray-900 transition-colors">
+              <Search className="w-4 h-4 text-gray-400 ml-4 flex-shrink-0" strokeWidth={1.8} />
               <input
                 ref={searchInputRef}
                 type="text"
                 value={searchInput}
                 onChange={e => setSearchInput(e.target.value)}
                 placeholder="증상·질환·성분을 검색하세요 (예: 아토피, 발뒤꿈치, 탈모)"
-                className="flex-1 px-3 py-3.5 text-base text-gray-800 outline-none placeholder-gray-400 bg-transparent"
+                className="flex-1 px-3 py-3 text-[14px] text-gray-800 outline-none placeholder-gray-400 bg-transparent"
               />
               {searchInput && (
-                <button type="button" onClick={clearSearch} className="p-2 mr-1 text-gray-400 hover:text-gray-600">
-                  <X className="w-4 h-4" />
+                <button type="button" onClick={clearSearch} className="p-2 mr-1 text-gray-400 hover:text-gray-600" aria-label="검색어 지우기">
+                  <X className="w-4 h-4" strokeWidth={1.8} />
                 </button>
               )}
               <button
                 type="submit"
-                className="bg-cyan-hana text-white px-5 py-3.5 text-base font-semibold hover:bg-opacity-90 transition-all whitespace-nowrap"
+                className="bg-gray-900 hover:bg-black text-white px-6 py-3 text-[14px] font-medium transition-colors whitespace-nowrap"
               >
                 검색
               </button>
             </div>
             {searchQuery && (
-              <p className="text-cyan-200 text-sm mt-2 ml-1">
-                「{searchQuery}」 검색 결과: {totalCount.toLocaleString()}개
+              <p className="text-[13px] text-gray-500 mt-3 ml-1 break-keep">
+                「<span className="text-gray-900 font-medium">{searchQuery}</span>」 검색 결과 <span className="text-gray-900 font-medium tabular-nums">{totalCount.toLocaleString()}</span>개
               </p>
             )}
           </form>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 py-8">
-        {/* Category tabs */}
-        <div className="flex gap-2 overflow-x-auto pb-3 mb-6 scrollbar-hide">
+      <div className="max-w-7xl mx-auto px-6 py-10">
+        {/* Category tabs — 모노 직사각, 이모지 제거, 카운트 톤다운 */}
+        <div className="flex gap-2 overflow-x-auto pb-3 mb-7 scrollbar-hide -mx-1 px-1">
           <button
             onClick={() => handleCategoryChange('all')}
-            className={`flex-shrink-0 px-4 py-2 rounded-full text-base font-medium transition-all ${
-              activeCategory === 'all' ? 'bg-ocean-deep text-white' : 'bg-white text-gray-600 hover:bg-gray-100'
+            className={`flex-shrink-0 inline-flex items-baseline gap-1.5 px-4 py-2.5 rounded-md border text-[14px] whitespace-nowrap transition-colors ${
+              activeCategory === 'all'
+                ? 'bg-gray-900 border-gray-900 text-white'
+                : 'bg-white border-gray-200 text-gray-700 hover:border-gray-400'
             }`}
           >
-            전체 ({totalAll.toLocaleString()})
+            <span>전체</span>
+            <span className={`text-[12px] tabular-nums ${activeCategory === 'all' ? 'text-white/70' : 'text-gray-400'}`}>{totalAll.toLocaleString()}</span>
           </button>
-          {QA_CATEGORIES.map(cat => (
-            <button
-              key={cat.id}
-              onClick={() => handleCategoryChange(cat.id)}
-              className={`flex-shrink-0 px-4 py-2 rounded-full text-base font-medium transition-all ${
-                activeCategory === cat.id ? 'text-white' : 'bg-white text-gray-600 hover:bg-gray-100'
-              }`}
-              style={activeCategory === cat.id ? { backgroundColor: getCatBg(cat.id), color: '#ffffff' } : {}}
-            >
-              {cat.emoji} {cat.name} ({(catCounts[cat.id] || 0).toLocaleString()})
-            </button>
-          ))}
+          {QA_CATEGORIES.map(cat => {
+            const isActive = activeCategory === cat.id
+            return (
+              <button
+                key={cat.id}
+                onClick={() => handleCategoryChange(cat.id)}
+                className={`flex-shrink-0 inline-flex items-baseline gap-1.5 px-4 py-2.5 rounded-md border text-[14px] whitespace-nowrap transition-colors ${
+                  isActive
+                    ? 'bg-gray-900 border-gray-900 text-white'
+                    : 'bg-white border-gray-200 text-gray-700 hover:border-gray-400'
+                }`}
+              >
+                <span>{cat.name}</span>
+                <span className={`text-[12px] tabular-nums ${isActive ? 'text-white/70' : 'text-gray-400'}`}>{(catCounts[cat.id] || 0).toLocaleString()}</span>
+              </button>
+            )
+          })}
         </div>
 
         <div className="grid lg:grid-cols-3 gap-6">
@@ -546,16 +551,19 @@ export default function QAPage() {
             {loading ? (
               <div className="flex items-center justify-center py-20">
                 <div className="text-center">
-                  <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-teal-600 mx-auto mb-3"></div>
+                  <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-gray-900 mx-auto mb-3"></div>
                   <p className="text-gray-400 text-sm">불러오는 중...</p>
                 </div>
               </div>
             ) : questions.length === 0 ? (
-              <div className="bg-white rounded-2xl p-16 text-center shadow-sm border border-gray-100">
-                <p className="text-gray-400 mb-1">
+              <div className="bg-white rounded-lg p-16 text-center border border-gray-200">
+                <p className="text-gray-500 mb-3 text-[14px]">
                   {searchQuery ? `「${searchQuery}」에 해당하는 정보가 없습니다.` : '해당 카테고리에 정보가 없습니다.'}
                 </p>
-                <button onClick={() => { clearSearch(); handleCategoryChange('all') }} className="text-cyan-hana text-base hover:underline mt-3">
+                <button
+                  onClick={() => { clearSearch(); handleCategoryChange('all') }}
+                  className="text-[14px] text-gray-700 hover:text-gray-900 underline underline-offset-4 decoration-gray-300 hover:decoration-gray-700 transition-colors"
+                >
                   전체 보기
                 </button>
               </div>
@@ -571,27 +579,42 @@ export default function QAPage() {
               ))
             )}
 
-            {/* Pagination */}
+            {/* Pagination — 에디토리얼 모노 */}
             {totalPages > 1 && (
-              <div className="flex justify-center gap-2 mt-8">
-                <button onClick={() => setPage(p => Math.max(1, p - 1))} disabled={page === 1}
-                  className="px-4 py-2 rounded-lg bg-white border disabled:opacity-40 hover:border-cyan-hana transition-colors text-base">
+              <nav className="flex justify-center items-center gap-1.5 mt-10" aria-label="페이지네이션">
+                <button
+                  onClick={() => setPage(p => Math.max(1, p - 1))}
+                  disabled={page === 1}
+                  className="px-4 py-2 rounded-md bg-white border border-gray-200 text-[13px] text-gray-700 disabled:opacity-30 disabled:cursor-not-allowed hover:border-gray-400 hover:text-gray-900 transition-colors"
+                >
                   이전
                 </button>
                 {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
                   const p = Math.max(1, Math.min(totalPages - 4, page - 2)) + i
+                  const active = page === p
                   return (
-                    <button key={p} onClick={() => setPage(p)}
-                      className={`w-10 h-10 rounded-lg text-base font-medium transition-all ${page === p ? 'bg-cyan-hana text-white' : 'bg-white border hover:border-cyan-hana'}`}>
+                    <button
+                      key={p}
+                      onClick={() => setPage(p)}
+                      aria-current={active ? 'page' : undefined}
+                      className={`w-10 h-10 rounded-md text-[13px] font-medium tabular-nums transition-colors ${
+                        active
+                          ? 'bg-gray-900 border border-gray-900 text-white'
+                          : 'bg-white border border-gray-200 text-gray-700 hover:border-gray-400 hover:text-gray-900'
+                      }`}
+                    >
                       {p}
                     </button>
                   )
                 })}
-                <button onClick={() => setPage(p => Math.min(totalPages, p + 1))} disabled={page === totalPages}
-                  className="px-4 py-2 rounded-lg bg-white border disabled:opacity-40 hover:border-cyan-hana transition-colors text-base">
+                <button
+                  onClick={() => setPage(p => Math.min(totalPages, p + 1))}
+                  disabled={page === totalPages}
+                  className="px-4 py-2 rounded-md bg-white border border-gray-200 text-[13px] text-gray-700 disabled:opacity-30 disabled:cursor-not-allowed hover:border-gray-400 hover:text-gray-900 transition-colors"
+                >
                   다음
                 </button>
-              </div>
+              </nav>
             )}
 
             {/* CTA Section */}
@@ -635,73 +658,93 @@ export default function QAPage() {
 
           {/* Sidebar */}
           <div className="hidden lg:block space-y-6">
-            {/* Popular questions */}
-            <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
-              <div className="flex items-center gap-2 mb-4">
-                <TrendingUp className="w-5 h-5 text-cyan-hana" />
-                <h3 className="font-semibold text-ocean-deep">많이 읽은 아티클</h3>
+            {/* Popular questions — 에디토리얼 */}
+            <div className="bg-white rounded-lg p-6 border border-gray-200">
+              <div className="flex items-center gap-3 mb-5">
+                <span className="h-px w-6 bg-gray-300" aria-hidden="true" />
+                <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500">Most Read</span>
               </div>
-              <div className="space-y-3">
+              <h3 className="text-[15px] font-semibold text-gray-900 mb-4 tracking-tight">많이 읽은 아티클</h3>
+              <ol className="space-y-3">
                 {popularList.map((qa, i) => (
-                  <button
-                    key={qa.id}
-                    onClick={() => {
-                      const catId = qa.category || qa.category_id || 'all'
-                      handleCategoryChange(catId)
-                      setPage(1)
-                      setOpenId(qa.id)
-                      setTimeout(() => {
-                        const el = document.querySelector(`[data-id="${qa.id}"]`)
-                        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' })
-                      }, 500)
-                    }}
-                    className="flex items-start gap-2 group w-full text-left"
-                  >
-                    <span className={`text-xs font-bold flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center mt-0.5 ${i < 3 ? 'bg-cyan-hana text-white' : 'bg-gray-100 text-gray-500'}`}>
-                      {i + 1}
-                    </span>
-                    <span className="text-base text-gray-600 group-hover:text-cyan-hana leading-snug line-clamp-2 transition-colors">
-                      {qa.question}
-                    </span>
-                  </button>
+                  <li key={qa.id}>
+                    <button
+                      onClick={() => {
+                        const catId = qa.category || qa.category_id || 'all'
+                        handleCategoryChange(catId)
+                        setPage(1)
+                        setOpenId(qa.id)
+                        setTimeout(() => {
+                          const el = document.querySelector(`[data-id="${qa.id}"]`)
+                          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' })
+                        }, 500)
+                      }}
+                      className="flex items-baseline gap-3 group w-full text-left"
+                    >
+                      <span className="text-[11px] font-medium text-gray-400 tabular-nums tracking-[0.16em] flex-shrink-0 w-6">
+                        {String(i + 1).padStart(2, '0')}
+                      </span>
+                      <span className="text-[13px] text-gray-700 group-hover:text-gray-900 leading-[1.6] line-clamp-2 transition-colors">
+                        {qa.question}
+                      </span>
+                    </button>
+                  </li>
                 ))}
-              </div>
+              </ol>
             </div>
 
             {/* SMS CTA */}
             <ContactCard />
 
-            {/* Partner CTA */}
-            <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
-              <h3 className="font-semibold text-ocean-deep mb-2">파트너 교육 프로그램</h3>
-              <p className="text-gray-500 text-base mb-4">이 정보를 고객에게 직접 전달하고 싶으신가요? 플로로탄닌 파트너스에서 더 많은 정보를 탐색해 보세요.</p>
-              <Link to="/partner" className="block w-full text-center py-2.5 rounded-xl border-2 border-ocean-deep text-ocean-deep text-base font-semibold hover:bg-ocean-deep hover:text-white transition-all">
+            {/* Partner CTA — 에디토리얼 */}
+            <div className="bg-white rounded-lg p-6 border border-gray-200">
+              <div className="flex items-center gap-3 mb-5">
+                <span className="h-px w-6 bg-gray-300" aria-hidden="true" />
+                <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500">Partner Program</span>
+              </div>
+              <h3 className="text-[15px] font-semibold text-gray-900 mb-2 tracking-tight">파트너 교육 프로그램</h3>
+              <p className="text-gray-600 text-[13px] leading-[1.7] mb-5 break-keep">
+                이 정보를 고객에게 직접 전달하고 싶으신가요? 플로로탄닌 파트너스에서 더 많은 정보를 탐색해 보세요.
+              </p>
+              <Link
+                to="/partner"
+                className="inline-flex items-center gap-1.5 text-[13px] text-gray-700 hover:text-gray-900 underline underline-offset-4 decoration-gray-300 hover:decoration-gray-700 transition-colors"
+              >
                 파트너 과정 알아보기
+                <ArrowUpRight className="w-3.5 h-3.5" strokeWidth={1.8} aria-hidden="true" />
               </Link>
             </div>
 
-            {/* Categories */}
-            <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
-              <h3 className="font-semibold text-ocean-deep mb-4 flex items-center gap-2">
-                <Filter className="w-4 h-4 text-cyan-hana" />
+            {/* Categories — 에디토리얼 */}
+            <div className="bg-white rounded-lg p-6 border border-gray-200">
+              <div className="flex items-center gap-3 mb-5">
+                <span className="h-px w-6 bg-gray-300" aria-hidden="true" />
+                <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500">Browse</span>
+              </div>
+              <h3 className="text-[15px] font-semibold text-gray-900 mb-4 flex items-center gap-2 tracking-tight">
+                <Filter className="w-4 h-4 text-gray-500" strokeWidth={1.6} aria-hidden="true" />
                 카테고리별 보기
               </h3>
-              <div className="space-y-1">
-                {QA_CATEGORIES.map(cat => (
-                  <div key={cat.id} className={`flex items-center justify-between px-3 py-2 rounded-lg transition-colors ${activeCategory === cat.id ? 'bg-gray-100' : 'hover:bg-gray-50'}`}>
-                    <button
-                      onClick={() => handleCategoryChange(cat.id)}
-                      className="flex items-center gap-2 flex-1 text-left"
-                    >
-                      <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: getCatBg(cat.id) }} />
-                      <span className="text-base text-gray-700">{cat.emoji} {cat.name}</span>
-                    </button>
-                    <span className="text-sm text-gray-400 bg-gray-100 px-2 py-0.5 rounded-full">
-                      {(catCounts[cat.id] || 0).toLocaleString()}
-                    </span>
-                  </div>
-                ))}
-              </div>
+              <ul className="space-y-0.5">
+                {QA_CATEGORIES.map(cat => {
+                  const isActive = activeCategory === cat.id
+                  return (
+                    <li key={cat.id}>
+                      <button
+                        onClick={() => handleCategoryChange(cat.id)}
+                        className={`flex items-center justify-between w-full px-3 py-2 rounded-md transition-colors text-left ${
+                          isActive ? 'bg-gray-900 text-white' : 'text-gray-700 hover:bg-gray-50'
+                        }`}
+                      >
+                        <span className="text-[13px]">{cat.name}</span>
+                        <span className={`text-[11px] tabular-nums ${isActive ? 'text-white/60' : 'text-gray-400'}`}>
+                          {(catCounts[cat.id] || 0).toLocaleString()}
+                        </span>
+                      </button>
+                    </li>
+                  )
+                })}
+              </ul>
             </div>
           </div>
         </div>
