@@ -319,6 +319,35 @@ export default function BlogPage() {
           {/* 파트너 추천 링크 공유 도구 — 파트너 컨텍스트 활성 시에만 노출 */}
           <PartnerShareBar />
 
+          {/* [2026-05-21] 인사이트 진입 CTA — 블로그 방문자에게 60편 심층 자산 자연 안내
+              디자인: 라이트 모노톤 위에 미세한 ocean-deep 액센트, 광고 톤 아님 */}
+          <Link
+            to={withRef('/insights', partner)}
+            className="group block mb-6 -mt-1 rounded-lg border border-gray-200 bg-white hover:border-gray-400 hover:shadow-sm transition-all"
+          >
+            <div className="flex items-center gap-4 px-5 py-4">
+              <div className="flex items-center justify-center w-10 h-10 rounded-md bg-gray-900 text-white flex-shrink-0">
+                <BookOpen className="w-4.5 h-4.5" strokeWidth={1.6} aria-hidden="true" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2 mb-0.5">
+                  <span className="text-[10px] font-medium uppercase tracking-[0.18em] text-gray-500">
+                    Insights · 60
+                  </span>
+                  <span className="text-[10px] text-gray-300">·</span>
+                  <span className="text-[10px] text-gray-500">PubMed·PMC·DOI 1차 자료 기반</span>
+                </div>
+                <p className="text-[14px] font-semibold text-gray-900 leading-snug">
+                  심층 원료 자산 60편 — 플로로탄닌·NMN·후코이단·베르베린 등 PMC 검증 가이드
+                </p>
+              </div>
+              <ChevronRight
+                className="w-4 h-4 text-gray-300 group-hover:text-gray-900 group-hover:translate-x-0.5 transition-all flex-shrink-0"
+                aria-hidden="true"
+              />
+            </div>
+          </Link>
+
           {/* 카테고리 탭 */}
           <div className="flex flex-wrap gap-2 mb-6">
             {cats.map(cat => (

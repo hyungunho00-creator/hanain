@@ -1,10 +1,11 @@
 import { useState, useEffect, useRef } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import { usePartner } from '../context/PartnerContext'
 import SEOHead from '../components/common/SEOHead'
 import RelatedQA from '../components/qa/RelatedQA'
 import LastReviewed from '../components/common/LastReviewed'
 import { MoleculeSVG, SectionHeader, StatCard, SciImage } from '../components/visual'
+import { INSIGHTS_LIST, INSIGHT_CATEGORIES } from '../data/insights'
 
 const LAST_REVIEWED = '2026-05-21'
 
@@ -1001,6 +1002,93 @@ function AgeGuideSection() {
 }
 
 /* ─────────────────────────────────────────────
+   Learn → Insights 브리지 섹션
+   학습을 마친 사용자에게 PMC 1차 자료 60편 중 카테고리별
+   대표 1편씩 4편을 큐레이션해서 다음 단계로 자연스럽게 연결.
+───────────────────────────────────────────── */
+function LearnInsightBridge() {
+  // 4개 카테고리에서 가장 최신 1편씩 추출 (작용기전 + 해양·장수·임상 원료)
+  const CURATED_CATS = ['mechanism', 'ingredient-marine', 'ingredient-longevity', 'ingredient-clinical']
+  const picks = []
+  for (const cat of CURATED_CATS) {
+    const found = INSIGHTS_LIST.find((p) => p.category === cat)
+    if (found) picks.push(found)
+  }
+  // 4개 채우지 못했으면 나머지에서 최신순으로 보충
+  if (picks.length < 4) {
+    for (const p of INSIGHTS_LIST) {
+      if (picks.length >= 4) break
+      if (!picks.find((x) => x.slug === p.slug)) picks.push(p)
+    }
+  }
+
+  const catName = (id) => INSIGHT_CATEGORIES.find((c) => c.id === id)?.name || id
+
+  return (
+    <section className="py-20 bg-gray-50 border-t border-gray-100">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="flex items-end justify-between mb-10 flex-wrap gap-4">
+          <div>
+            <div className="inline-flex items-center gap-3 mb-3">
+              <span className="h-px w-8 bg-gray-300" />
+              <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500">
+                Insights · {INSIGHTS_LIST.length}편
+              </span>
+            </div>
+            <h2 className="text-2xl md:text-[1.75rem] font-bold text-gray-900 tracking-tight leading-[1.25]">
+              심층 원료·기전 인사이트
+            </h2>
+            <p className="text-gray-600 text-[15px] leading-[1.7] mt-3 max-w-2xl break-keep">
+              학습한 작용 원리를 PMC·PubMed 1차 자료로 검증한 심층 가이드.
+              플로로탄닌·NMN·후코이단·베르베린 등 핵심 원료를 한 편씩 정리했습니다.
+            </p>
+          </div>
+          <Link
+            to="/insights"
+            className="inline-flex items-center gap-1.5 text-[13px] text-gray-700 hover:text-gray-900 underline underline-offset-4 decoration-gray-300 hover:decoration-gray-700"
+          >
+            전체 60편 보기 →
+          </Link>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          {picks.map((post, i) => (
+            <Link
+              key={post.slug}
+              to={`/insights/${post.slug}`}
+              className="group block bg-white rounded-lg p-5 border border-gray-200 hover:border-gray-400 transition-colors"
+            >
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-[10px] font-medium uppercase tracking-[0.14em] text-gray-500">
+                  {catName(post.category)}
+                </span>
+                <span className="text-[10px] text-gray-400 tabular-nums">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+              </div>
+              <h3 className="text-[15px] font-semibold text-gray-900 leading-[1.45] mb-2 line-clamp-2 group-hover:underline underline-offset-4 decoration-gray-400">
+                {post.title}
+              </h3>
+              <p className="text-[13px] text-gray-600 leading-[1.6] line-clamp-2 mb-4 break-keep">
+                {post.description}
+              </p>
+              <div className="flex items-center justify-between pt-3 border-t border-gray-100">
+                <span className="text-[11px] text-gray-500">
+                  {post.readingMinutes || 8}분 읽기
+                </span>
+                <span className="text-[11px] text-gray-700 group-hover:text-gray-900">
+                  Read →
+                </span>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+/* ─────────────────────────────────────────────
    CTA 섹션
 ───────────────────────────────────────────── */
 function CTASection() {
@@ -1017,8 +1105,8 @@ function CTASection() {
         </div>
         <h2 className="text-3xl md:text-[2.25rem] font-bold text-gray-900 tracking-tight mb-4 leading-[1.2]">학습을 마치셨습니다</h2>
         <p className="text-gray-600 text-[16px] leading-[1.8] mb-10 max-w-xl mx-auto break-keep">
-          플로로탄닌의 작용 원리를 익히셨다면, 이제 1,311개의 심층 Q&amp;A로 더 깊이 들어가거나
-          전문 파트너에게 직접 문의해보세요.
+          플로로탄닌의 작용 원리를 익히셨다면, 이제 1,391개의 심층 Q&amp;A와 60편의 원료 인사이트로
+          더 깊이 들어가거나 전문 파트너에게 직접 문의해보세요.
         </p>
 
         <div className="flex flex-wrap gap-x-6 gap-y-3 justify-center items-center">
@@ -1027,6 +1115,12 @@ function CTASection() {
             className="inline-flex items-center gap-2 bg-gray-900 hover:bg-black text-white px-6 py-3 rounded-md text-[14px] font-medium transition-colors"
           >
             전문 상담 신청
+          </button>
+          <button
+            onClick={() => navigate(`/insights`)}
+            className="inline-flex items-center gap-1.5 text-[14px] text-gray-700 hover:text-gray-900 underline underline-offset-4 decoration-gray-300 hover:decoration-gray-700"
+          >
+            인사이트 60편 보기
           </button>
           <button
             onClick={() => navigate(`/phlorotannin`)}
@@ -1108,6 +1202,12 @@ export default function LearnPage() {
       <DiseasesSection />
       <AgeGuideSection />
       <QuizSection />
+
+      {/* ─── 학습 → 인사이트 동선 (PMC 1차 자료 60편 진입로) ───
+           [2026-05-21] 학습을 마친 사용자가 자연스럽게 심층 원료 가이드로
+           이동할 수 있도록 4편을 큐레이션 노출. mechanism · ingredient-marine ·
+           ingredient-longevity · ingredient-clinical 각 1편씩 다양성 확보. */}
+      <LearnInsightBridge />
 
       {/* 학습 → Q&A 동선 (헌법 제10조 의무 6, 페이지랭크 흐름 보강) */}
       <section className="py-12 bg-white border-t border-gray-100">

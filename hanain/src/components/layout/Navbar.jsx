@@ -3,13 +3,16 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { CreditCard, FolderLock, Eye, EyeOff, ExternalLink } from 'lucide-react'
 import { usePartner } from '../../context/PartnerContext'
 
+// [2026-05-21] 인사이트 허브(60편 PMC 1차 자료 기반) 진입 메뉴 신설
+// PR #16/#17 로 60편 자산화했으나 진입로가 없어 사용자가 발견 불가했던 문제 해결
 const NAV_LINKS = [
   { path: '/easy',        label: '플로로탄닌 쉽게 배우기', num: '01' },
   { path: '/phlorotannin',label: '플로로탄닌 소개',        num: '02' },
   { path: '/qa',          label: '건강 Q&A',              num: '03' },
-  { path: '/blog',        label: '연구 블로그',            num: '04' },
-  { path: '/partner',     label: '파트너 참여',            num: '05' },
-  { path: '/consult',     label: '문의하기',               num: '06' },
+  { path: '/insights',    label: '인사이트',              num: '04' },
+  { path: '/blog',        label: '연구 블로그',            num: '05' },
+  { path: '/partner',     label: '파트너 참여',            num: '06' },
+  { path: '/consult',     label: '문의하기',               num: '07' },
 ]
 
 /* 외부 커뮤니티 링크 (네이버 카페/밴드) — 절제된 다크 톤으로 통일 */
