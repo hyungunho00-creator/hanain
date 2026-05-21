@@ -1,0 +1,53 @@
+{
+  "submitted_at": "2026-05-21T05:04:25.809356Z",
+  "url_count": 22,
+  "urls": [
+    "https://phlorotannin.com/",
+    "https://phlorotannin.com/sitemap.xml",
+    "https://phlorotannin.com/category/metabolism",
+    "https://phlorotannin.com/category/cancer-immune",
+    "https://phlorotannin.com/category/digestive",
+    "https://phlorotannin.com/category/cardiovascular",
+    "https://phlorotannin.com/category/neuro-cognitive",
+    "https://phlorotannin.com/category/mental-health",
+    "https://phlorotannin.com/category/musculoskeletal",
+    "https://phlorotannin.com/category/skin-hair",
+    "https://phlorotannin.com/category/skin",
+    "https://phlorotannin.com/category/hair",
+    "https://phlorotannin.com/category/respiratory",
+    "https://phlorotannin.com/category/infection-inflammation",
+    "https://phlorotannin.com/category/womens-health",
+    "https://phlorotannin.com/category/mens-health",
+    "https://phlorotannin.com/learn",
+    "https://phlorotannin.com/easy",
+    "https://phlorotannin.com/phlorotannin",
+    "https://phlorotannin.com/glossary",
+    "https://phlorotannin.com/qa",
+    "https://phlorotannin.com/blog"
+  ],
+  "results": [
+    {
+      "endpoint": "https://api.indexnow.org/IndexNow",
+      "status": 403,
+      "ok": false,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "endpoint": "https://www.bing.com/IndexNow",
+      "status": 403,
+      "ok": false,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "endpoint": "https://yandex.com/indexnow",
+      "status": 202,
+      "ok": true
+    },
+    {
+      "endpoint": "https://searchadvisor.naver.com/indexnow",
+      "status": 403,
+      "ok": false,
+      "error": "HTTP Error 403: Forbidden"
+    }
+  ]
+}
