@@ -9,12 +9,12 @@ import { MoleculeSVG, SectionHeader, StatCard, SciImage } from '../components/vi
    색상 팔레트 & 공통 스타일
 ───────────────────────────────────────────── */
 const PALETTE = {
-  ocean:   'from-cyan-400 to-blue-600',
-  green:   'from-emerald-400 to-teal-500',
-  orange:  'from-orange-400 to-amber-500',
-  purple:  'from-purple-400 to-violet-600',
-  red:     'from-rose-400 to-red-500',
-  pink:    'from-pink-400 to-fuchsia-500',
+  ocean:   'from-gray-700 to-gray-900',
+  green:   'from-gray-700 to-gray-900',
+  orange:  'from-gray-700 to-gray-900',
+  purple:  'from-gray-700 to-gray-900',
+  red:     'from-gray-700 to-gray-900',
+  pink:    'from-gray-700 to-gray-900',
 }
 
 /* ─────────────────────────────────────────────
@@ -25,11 +25,11 @@ const DISEASES = [
     id: 'metabolism',
     emoji: '🍬',
     label: '혈당 · 당뇨',
-    color: 'from-amber-400 to-orange-500',
-    bg: 'bg-amber-50',
-    border: 'border-amber-300',
-    textColor: 'text-amber-700',
-    badgeBg: 'bg-amber-100',
+    color: 'from-gray-700 to-gray-900',
+    bg: 'bg-gray-50',
+    border: 'border-gray-200',
+    textColor: 'text-gray-900',
+    badgeBg: 'bg-gray-100',
     title: '혈당이 롤러코스터처럼 올라가는 걸 막아줘요',
     story: '밥을 먹으면 혈당이 쑥 올라가요. 그러면 췌장에서 인슐린이 달려와 혈당을 낮춰주는데, 당뇨가 있으면 이 과정이 고장 나요.',
     mechanism: [
@@ -41,17 +41,17 @@ const DISEASES = [
     analogy: { icon: '🚦', text: '톨게이트처럼 포도당이 한꺼번에 밀려들지 못하게 조절해줘요!' },
     fact: '8주간 플로로탄닌 섭취 시 공복혈당 27% 감소 (동물실험, Kang MC 2016)',
     levelBadge: '⭐ 쉬움',
-    levelColor: 'text-green-600 bg-green-100',
+    levelColor: 'text-gray-700 bg-gray-100',
   },
   {
     id: 'cancer_immune',
     emoji: '🛡️',
     label: '면역 · 항암',
-    color: 'from-rose-400 to-red-500',
-    bg: 'bg-rose-50',
-    border: 'border-rose-300',
-    textColor: 'text-rose-700',
-    badgeBg: 'bg-rose-100',
+    color: 'from-gray-700 to-gray-900',
+    bg: 'bg-gray-50',
+    border: 'border-gray-200',
+    textColor: 'text-gray-900',
+    badgeBg: 'bg-gray-100',
     title: '우리 몸의 방패군을 강하게 만들어요',
     story: '암세포는 날마다 우리 몸 어딘가에서 생기지만, 면역세포(NK세포, T세포)가 빠르게 잡아서 없애줘요. 그런데 면역이 약해지면 암세포가 살아남아요.',
     mechanism: [
@@ -63,17 +63,17 @@ const DISEASES = [
     analogy: { icon: '🏰', text: '성(몸)의 성벽과 기사(면역세포)를 모두 강하게 만드는 마법 강화제!' },
     fact: 'TNF-α 45%, IL-6 38% 감소 — 염증 지표 대폭 개선 (Park et al. 2013)',
     levelBadge: '⭐⭐ 보통',
-    levelColor: 'text-yellow-600 bg-yellow-100',
+    levelColor: 'text-gray-700 bg-gray-100',
   },
   {
     id: 'digestive',
     emoji: '🫁',
     label: '소화 · 간 건강',
-    color: 'from-emerald-400 to-teal-500',
-    bg: 'bg-emerald-50',
-    border: 'border-emerald-300',
-    textColor: 'text-emerald-700',
-    badgeBg: 'bg-emerald-100',
+    color: 'from-gray-700 to-gray-900',
+    bg: 'bg-gray-50',
+    border: 'border-gray-200',
+    textColor: 'text-gray-900',
+    badgeBg: 'bg-gray-100',
     title: '간과 장을 청소하고 보호해요',
     story: '간은 하루 500가지 이상의 일을 하는 "몸의 공장"이에요. 술, 약, 나쁜 음식 등으로 간이 손상되면 해독 능력이 떨어져요.',
     mechanism: [
@@ -85,17 +85,17 @@ const DISEASES = [
     analogy: { icon: '🧼', text: '간에 달라붙은 때를 닦아주는 천연 세정제 같은 역할!' },
     fact: '플로로탄닌 10μM 처리 시 글루타티온 58% 증가 (Kwon MJ 2015)',
     levelBadge: '⭐ 쉬움',
-    levelColor: 'text-green-600 bg-green-100',
+    levelColor: 'text-gray-700 bg-gray-100',
   },
   {
     id: 'neuro_cognitive',
     emoji: '🧠',
     label: '뇌 · 인지 · 치매',
-    color: 'from-purple-400 to-violet-600',
-    bg: 'bg-purple-50',
-    border: 'border-purple-300',
-    textColor: 'text-purple-700',
-    badgeBg: 'bg-purple-100',
+    color: 'from-gray-700 to-gray-900',
+    bg: 'bg-gray-50',
+    border: 'border-gray-200',
+    textColor: 'text-gray-900',
+    badgeBg: 'bg-gray-100',
     title: '뇌의 청소부 역할, 기억력을 지켜요',
     story: '치매는 뇌에 베타-아밀로이드라는 단백질 쓰레기가 쌓여서 신경세포가 죽는 병이에요. 마치 컴퓨터에 찌꺼기 파일이 가득 찬 것처럼요.',
     mechanism: [
@@ -107,17 +107,17 @@ const DISEASES = [
     analogy: { icon: '🖥️', text: '뇌 컴퓨터의 청소 프로그램이자 메모리 최적화 도구!' },
     fact: '플로로탄닌의 AChE 억제 효과가 치매 약 도네페질과 유사 수준 (Kim SK 2014)',
     levelBadge: '⭐⭐ 보통',
-    levelColor: 'text-yellow-600 bg-yellow-100',
+    levelColor: 'text-gray-700 bg-gray-100',
   },
   {
     id: 'cardiovascular',
     emoji: '❤️',
     label: '혈압 · 심장',
-    color: 'from-red-400 to-rose-600',
-    bg: 'bg-red-50',
-    border: 'border-red-300',
-    textColor: 'text-red-700',
-    badgeBg: 'bg-red-100',
+    color: 'from-gray-700 to-gray-900',
+    bg: 'bg-gray-50',
+    border: 'border-gray-200',
+    textColor: 'text-gray-900',
+    badgeBg: 'bg-gray-100',
     title: '혈관을 넓히고 혈압을 낮춰요',
     story: '고혈압은 혈관 속 압력이 너무 높은 상태예요. 마치 좁은 호스에 물을 세게 틀면 터질 수 있는 것처럼 혈관이 손상돼요.',
     mechanism: [
@@ -129,17 +129,17 @@ const DISEASES = [
     analogy: { icon: '🚿', text: '좁아진 호스(혈관)를 넓혀주는 천연 배관 청소제!' },
     fact: 'ACE 억제 효과가 고혈압 약 캅토프릴과 유사 (Wijesinghe WA 2012)',
     levelBadge: '⭐⭐ 보통',
-    levelColor: 'text-yellow-600 bg-yellow-100',
+    levelColor: 'text-gray-700 bg-gray-100',
   },
   {
     id: 'mental_health',
     emoji: '😌',
     label: '스트레스 · 수면',
-    color: 'from-sky-400 to-blue-500',
-    bg: 'bg-sky-50',
-    border: 'border-sky-300',
-    textColor: 'text-sky-700',
-    badgeBg: 'bg-sky-100',
+    color: 'from-gray-700 to-gray-900',
+    bg: 'bg-gray-50',
+    border: 'border-gray-200',
+    textColor: 'text-gray-900',
+    badgeBg: 'bg-gray-100',
     title: '스트레스를 줄이고 잠을 잘 자게 해줘요',
     story: '스트레스를 받으면 코르티솔이라는 호르몬이 나와요. 오래 지속되면 뇌와 면역계 모두 망가져요.',
     mechanism: [
@@ -151,17 +151,17 @@ const DISEASES = [
     analogy: { icon: '🛋️', text: '긴장한 뇌 신경을 부드럽게 안아주는 천연 진정제!' },
     fact: '항불안 효과가 수면 개선 및 코르티솔 수치 조절과 연관 (Lee 등 2015)',
     levelBadge: '⭐ 쉬움',
-    levelColor: 'text-green-600 bg-green-100',
+    levelColor: 'text-gray-700 bg-gray-100',
   },
   {
     id: 'musculoskeletal',
     emoji: '🦴',
     label: '뼈 · 관절',
-    color: 'from-stone-400 to-amber-600',
-    bg: 'bg-stone-50',
-    border: 'border-stone-300',
-    textColor: 'text-stone-700',
-    badgeBg: 'bg-stone-100',
+    color: 'from-gray-700 to-gray-900',
+    bg: 'bg-gray-50',
+    border: 'border-gray-200',
+    textColor: 'text-gray-900',
+    badgeBg: 'bg-gray-100',
     title: '뼈와 연골을 튼튼하게 지켜줘요',
     story: '나이 들면 연골이 닳고, 뼈가 약해져요. 특히 무릎, 허리가 아프기 시작하는 게 관절염의 시작이에요.',
     mechanism: [
@@ -173,17 +173,17 @@ const DISEASES = [
     analogy: { icon: '🔧', text: '닳아가는 기계 관절에 윤활유 + 수리 키트를 동시에 제공!' },
     fact: '플로로탄닌이 파골세포 분화를 억제해 골다공증 예방 효과 (Kim YA 2014)',
     levelBadge: '⭐⭐ 보통',
-    levelColor: 'text-yellow-600 bg-yellow-100',
+    levelColor: 'text-gray-700 bg-gray-100',
   },
   {
     id: 'skin_hair',
     emoji: '✨',
     label: '피부 · 탈모',
-    color: 'from-pink-400 to-fuchsia-500',
-    bg: 'bg-pink-50',
-    border: 'border-pink-300',
-    textColor: 'text-pink-700',
-    badgeBg: 'bg-pink-100',
+    color: 'from-gray-700 to-gray-900',
+    bg: 'bg-gray-50',
+    border: 'border-gray-200',
+    textColor: 'text-gray-900',
+    badgeBg: 'bg-gray-100',
     title: '피부 노화를 늦추고 모발을 지켜요',
     story: '피부 노화의 주범은 자외선과 활성산소예요. 콜라겐이 줄어들면 주름이 생기고, 모낭이 약해지면 탈모가 시작돼요.',
     mechanism: [
@@ -195,17 +195,17 @@ const DISEASES = [
     analogy: { icon: '🌟', text: '피부에 쌓인 활성산소 쓰레기를 청소하는 천연 뷰티 케어!' },
     fact: '플로로탄닌 자외선 차단 효과 + 콜라겐 분해 억제 (Thomas NV & Kim SK 2011)',
     levelBadge: '⭐ 쉬움',
-    levelColor: 'text-green-600 bg-green-100',
+    levelColor: 'text-gray-700 bg-gray-100',
   },
   {
     id: 'respiratory',
     emoji: '🌬️',
     label: '호흡기 · 폐',
-    color: 'from-cyan-300 to-sky-500',
-    bg: 'bg-cyan-50',
-    border: 'border-cyan-300',
-    textColor: 'text-cyan-700',
-    badgeBg: 'bg-cyan-100',
+    color: 'from-gray-700 to-gray-900',
+    bg: 'bg-gray-50',
+    border: 'border-gray-200',
+    textColor: 'text-gray-900',
+    badgeBg: 'bg-gray-100',
     title: '폐와 기도의 염증을 줄여줘요',
     story: '미세먼지, 바이러스, 꽃가루가 폐에 들어오면 염증이 생겨요. 만성 염증이 지속되면 천식, COPD로 발전할 수 있어요.',
     mechanism: [
@@ -217,17 +217,17 @@ const DISEASES = [
     analogy: { icon: '🏠', text: '폐 속 집을 청소하고 환기창(기도)을 넓혀주는 관리사!' },
     fact: '플로로탄닌의 항히스타민 + 항염 효과로 알레르기성 기도 반응 완화',
     levelBadge: '⭐⭐ 보통',
-    levelColor: 'text-yellow-600 bg-yellow-100',
+    levelColor: 'text-gray-700 bg-gray-100',
   },
   {
     id: 'infection_inflammation',
     emoji: '🦠',
     label: '항균 · 항바이러스',
-    color: 'from-violet-400 to-purple-600',
-    bg: 'bg-violet-50',
-    border: 'border-violet-300',
-    textColor: 'text-violet-700',
-    badgeBg: 'bg-violet-100',
+    color: 'from-gray-700 to-gray-900',
+    bg: 'bg-gray-50',
+    border: 'border-gray-200',
+    textColor: 'text-gray-900',
+    badgeBg: 'bg-gray-100',
     title: '세균과 바이러스를 직접 차단해요',
     story: '세균은 세포벽에 구멍을 내거나, 단백질을 만들어 증식해요. 플로로탄닌은 이 과정 자체를 방해해요.',
     mechanism: [
@@ -239,17 +239,17 @@ const DISEASES = [
     analogy: { icon: '🚪', text: '세균이 들어오는 문을 잠그고, 이미 들어온 세균에 독을 뿌리는 이중 보안!' },
     fact: '황색포도상구균, 대장균 등 다양한 균주에 대한 항균 활성 확인 (Ahn 등 2004)',
     levelBadge: '⭐⭐⭐ 심화',
-    levelColor: 'text-red-600 bg-red-100',
+    levelColor: 'text-gray-900 bg-gray-200',
   },
   {
     id: 'womens_health',
     emoji: '🌸',
     label: '여성 건강',
-    color: 'from-rose-300 to-pink-500',
-    bg: 'bg-rose-50',
-    border: 'border-rose-300',
-    textColor: 'text-rose-700',
-    badgeBg: 'bg-rose-100',
+    color: 'from-gray-700 to-gray-900',
+    bg: 'bg-gray-50',
+    border: 'border-gray-200',
+    textColor: 'text-gray-900',
+    badgeBg: 'bg-gray-100',
     title: '여성 호르몬 균형과 갱년기를 도와요',
     story: '갱년기에는 에스트로겐이 급감해 홍조, 골다공증, 우울감 등이 생겨요. 플로로탄닌은 천연 에스트로겐 유사 작용을 해요.',
     mechanism: [
@@ -261,17 +261,17 @@ const DISEASES = [
     analogy: { icon: '🌺', text: '줄어든 여성 호르몬 자리를 천연 소재가 부드럽게 채워주는 역할!' },
     fact: '마린 폴리페놀의 에스트로겐 유사 활성 및 갱년기 증상 완화 연구 (Jeong 등 2013)',
     levelBadge: '⭐⭐ 보통',
-    levelColor: 'text-yellow-600 bg-yellow-100',
+    levelColor: 'text-gray-700 bg-gray-100',
   },
   {
     id: 'mens_health',
     emoji: '💪',
     label: '남성 건강',
-    color: 'from-blue-500 to-indigo-600',
-    bg: 'bg-blue-50',
-    border: 'border-blue-300',
-    textColor: 'text-blue-700',
-    badgeBg: 'bg-blue-100',
+    color: 'from-gray-700 to-gray-900',
+    bg: 'bg-gray-50',
+    border: 'border-gray-200',
+    textColor: 'text-gray-900',
+    badgeBg: 'bg-gray-100',
     title: '혈관 건강과 남성 활력을 높여줘요',
     story: '남성의 혈관 건강은 심장병과 직결돼요. 특히 PDE5 억제 작용은 혈관 이완에 중요한 역할을 해요.',
     mechanism: [
@@ -283,7 +283,7 @@ const DISEASES = [
     analogy: { icon: '⚡', text: '혈관 속 저항을 낮춰 에너지가 온몸에 자유롭게 흐르게 하는 회로 개선!' },
     fact: 'PDE5 억제 효과로 혈관 이완 — 비아그라와 유사 메커니즘의 천연 소재 (Oh 등 2010)',
     levelBadge: '⭐⭐⭐ 심화',
-    levelColor: 'text-red-600 bg-red-100',
+    levelColor: 'text-gray-900 bg-gray-200',
   },
 ]
 
@@ -381,17 +381,26 @@ function WhatIsSection() {
   ]
 
   return (
-    <div className="bg-white py-10 px-4">
-      <div className="max-w-2xl mx-auto">
-        <div className="text-center mb-8">
-          <span className="text-4xl">🔎</span>
-          <h2 className="text-2xl font-black text-gray-800 mt-2">플로로탄닌이 뭔가요?</h2>
-          <p className="text-gray-500 mt-2 text-base">바다 식물의 천연 방어 물질을 우리 몸에 활용해요</p>
+    <div className="bg-white py-16 md:py-20 px-4 border-t border-gray-100">
+      <div className="max-w-3xl mx-auto">
+        {/* 에디토리얼 헤더 */}
+        <div className="mb-10">
+          <div className="flex items-center gap-3 mb-4">
+            <span className="h-px w-8 bg-gray-300" aria-hidden="true" />
+            <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500">What is Phlorotannin</span>
+          </div>
+          <h2 className="text-2xl md:text-[2.25rem] font-bold text-gray-900 tracking-tight leading-tight mb-3 break-keep">
+            플로로탄닌이 뭔가요?
+          </h2>
+          <p className="text-gray-600 text-[15px] leading-[1.8] break-keep">
+            바다 식물의 천연 방어 물질을 우리 몸에 활용합니다.
+          </p>
         </div>
 
-        {/* 시각적 설명: 바다 → 해조류 → 추출 → 우리 몸 */}
-        <div className="bg-gradient-to-r from-cyan-50 to-blue-50 rounded-3xl p-5 mb-7 border border-cyan-200">
-          <div className="flex items-center justify-between gap-1 text-center flex-wrap">
+        {/* Flow — 모노 가로 흐름 */}
+        <div className="bg-gray-50 rounded-lg p-6 mb-10 border border-gray-200">
+          <div className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500 mb-5">Flow · 추출에서 활용까지</div>
+          <div className="flex items-center justify-between gap-2 text-center flex-wrap">
             {[
               { emoji: '🌊', label: '제주 바다' },
               { emoji: '→', label: '' },
@@ -403,39 +412,51 @@ function WhatIsSection() {
               { emoji: '→', label: '' },
               { emoji: '💪', label: '우리 몸 보호' },
             ].map((item, i) => (
-              <div key={i} className={item.emoji === '→' ? 'text-cyan-400 text-xl font-bold' : 'flex flex-col items-center gap-1'}>
-                <span className="text-2xl">{item.emoji}</span>
-                {item.label && <span className="text-sm text-gray-600 font-medium">{item.label}</span>}
+              <div key={i} className={item.emoji === '→' ? 'text-gray-400 text-[14px] font-normal' : 'flex flex-col items-center gap-1.5'}>
+                <span className="text-[20px]" aria-hidden="true">{item.emoji}</span>
+                {item.label && <span className="text-[11px] text-gray-600 font-medium">{item.label}</span>}
               </div>
             ))}
           </div>
         </div>
 
-        <div className="grid gap-4">
-          {items.map(item => (
-            <div key={item.title} className="flex gap-4 items-start bg-gray-50 rounded-2xl p-4 border border-gray-100">
-              <span className="text-3xl flex-shrink-0">{item.icon}</span>
-              <div>
-                <div className="font-bold text-gray-800 mb-1">{item.title}</div>
-                <div className="text-gray-600 text-base leading-relaxed">{item.desc}</div>
+        {/* Items — 에디토리얼 리스트 */}
+        <ol className="space-y-6 mb-10">
+          {items.map((item, i) => (
+            <li key={item.title} className="flex items-baseline gap-4 pb-5 border-b border-gray-100 last:border-0 last:pb-0">
+              <span className="text-[11px] font-medium text-gray-400 tabular-nums tracking-[0.18em] flex-shrink-0 w-8">
+                {String(i + 1).padStart(2, '0')}
+              </span>
+              <div className="flex-1 min-w-0">
+                <div className="text-[15px] font-semibold text-gray-900 tracking-tight mb-1.5">{item.title}</div>
+                <p className="text-gray-600 text-[14px] leading-[1.75] break-keep">{item.desc}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+
+        {/* vs 비교 — Stripe spec 스타일 */}
+        <div className="bg-white border border-gray-200 rounded-lg p-7">
+          <div className="flex items-center gap-3 mb-5">
+            <span className="h-px w-6 bg-gray-300" aria-hidden="true" />
+            <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500">Comparison · 육지 vs 바다</span>
+          </div>
+          <div className="grid grid-cols-2 gap-px bg-gray-200 rounded-md overflow-hidden">
+            <div className="bg-white p-5">
+              <div className="text-[11px] uppercase tracking-[0.16em] text-gray-400 mb-3">육지 폴리페놀</div>
+              <div className="text-[15px] font-semibold text-gray-900 mb-2">포도 · 녹차</div>
+              <div className="text-[12px] text-gray-500 leading-[1.7]">
+                항산화력 <span className="tabular-nums font-medium text-gray-700">1×</span><br/>
+                지용성 · 흡수 보통
               </div>
             </div>
-          ))}
-        </div>
-
-        {/* vs 비교 카드 */}
-        <div className="mt-6 bg-gradient-to-r from-gray-50 to-cyan-50 rounded-3xl p-5 border border-cyan-200">
-          <div className="text-center font-black text-gray-700 mb-4 text-base">🏆 육지 폴리페놀 vs 바다 플로로탄닌</div>
-          <div className="grid grid-cols-2 gap-3 text-base">
-            <div className="bg-white rounded-2xl p-3 text-center border border-gray-200">
-              <div className="text-2xl mb-1">🍇</div>
-              <div className="font-bold text-gray-600">포도·녹차</div>
-              <div className="text-gray-400 text-sm mt-1">항산화력 1x<br/>지용성 → 흡수 보통</div>
-            </div>
-            <div className="bg-cyan-500 rounded-2xl p-3 text-center text-white border-2 border-cyan-400 shadow-lg">
-              <div className="text-2xl mb-1">🌊</div>
-              <div className="font-bold">플로로탄닌</div>
-              <div className="text-cyan-100 text-sm mt-1">항산화력 8~10x<br/>수용성 → 흡수 우수</div>
+            <div className="bg-gray-900 p-5">
+              <div className="text-[11px] uppercase tracking-[0.16em] text-white/60 mb-3">바다 폴리페놀</div>
+              <div className="text-[15px] font-semibold text-white mb-2">플로로탄닌</div>
+              <div className="text-[12px] text-white/70 leading-[1.7]">
+                항산화력 <span className="tabular-nums font-medium text-white">8–10×</span><br/>
+                수용성 · 흡수 우수
+              </div>
             </div>
           </div>
         </div>
@@ -456,100 +477,90 @@ function DiseaseCard({ disease, isOpen, onToggle }) {
     }
   }, [isOpen])
 
+  // 레벨 텍스트 (이모지 ⭐ 제거)
+  const levelText = disease.levelBadge.replace(/⭐+\s*/g, '').trim()
+
   return (
-    <div ref={ref} className={`rounded-3xl border-2 ${disease.border} overflow-hidden shadow-sm transition-all duration-300 ${isOpen ? 'shadow-lg' : ''}`}>
-      {/* 카드 헤더 (클릭하면 열림) */}
+    <div
+      ref={ref}
+      className={`bg-white rounded-lg border overflow-hidden transition-colors ${isOpen ? 'border-gray-900' : 'border-gray-200 hover:border-gray-400'}`}
+    >
+      {/* 카드 헤더 — 라이트 에디토리얼 */}
       <button
         onClick={onToggle}
-        className={`w-full p-5 flex items-center gap-4 ${disease.bg} transition-all duration-200 active:scale-98`}
+        className="w-full px-6 py-5 flex items-start gap-5 text-left bg-white"
+        aria-expanded={isOpen}
       >
-        <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${disease.color} flex items-center justify-center text-3xl flex-shrink-0 shadow-md`}>
+        {/* 좌측 인덱스 + 이모지 (작게, 채도 낮춤) */}
+        <div className="flex-shrink-0 w-10 h-10 rounded-md bg-gray-100 border border-gray-200 flex items-center justify-center text-[18px]" aria-hidden="true">
           {disease.emoji}
         </div>
-        <div className="flex-1 text-left">
-          <div className="flex items-center gap-2 flex-wrap">
-            <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${disease.levelColor}`}>
-              {disease.levelBadge}
-            </span>
+
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center gap-3 mb-2">
+            <span className="text-[10px] font-medium uppercase tracking-[0.18em] text-gray-400">{levelText}</span>
           </div>
-          <div className={`font-black text-lg mt-1 ${disease.textColor}`}>{disease.label}</div>
-          <div className="text-gray-500 text-sm mt-0.5 line-clamp-1">{disease.title}</div>
+          <div className="text-[15px] font-semibold text-gray-900 tracking-tight">{disease.label}</div>
+          <div className="text-gray-600 text-[13px] mt-1 line-clamp-1 leading-[1.6]">{disease.title}</div>
         </div>
-        <div className={`text-gray-400 text-xl transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>▼</div>
+
+        {/* 아이콘 화살표 — 모노 */}
+        <div className={`flex-shrink-0 text-gray-400 text-[14px] transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} aria-hidden="true">
+          ▾
+        </div>
       </button>
 
-      {/* 펼쳐지는 내용 */}
+      {/* 펼쳐지는 내용 — 라이트 에디토리얼 */}
       {isOpen && (
-        <div className="bg-white px-4 pb-6 pt-4">
+        <div className="px-6 pb-7 pt-2 border-t border-gray-100">
           {/* 도입 스토리 */}
-          <div className={`${disease.bg} rounded-2xl p-4 mb-5 border ${disease.border}`}>
-            <div className="flex gap-3 items-start">
-              <span className="text-2xl">📖</span>
-              <div>
-                <div className="font-bold text-gray-700 mb-1 text-base">먼저 이해해봐요</div>
-                <p className="text-gray-600 text-base leading-relaxed">{disease.story}</p>
-              </div>
+          <div className="bg-gray-50 rounded-md p-5 mb-6 border border-gray-100">
+            <div className="flex items-center gap-3 mb-3">
+              <span className="h-px w-6 bg-gray-300" aria-hidden="true" />
+              <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500">Story · 먼저 이해해봐요</span>
             </div>
+            <p className="text-gray-700 text-[14px] leading-[1.8] break-keep">{disease.story}</p>
           </div>
 
           {/* 메커니즘 스텝 */}
-          <div className="mb-5">
-            <div className="font-bold text-gray-700 mb-3 text-base flex items-center gap-2">
-              <span className="text-xl">⚙️</span> 플로로탄닌이 어떻게 작동하나요?
+          <div className="mb-6">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="h-px w-6 bg-gray-300" aria-hidden="true" />
+              <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500">Mechanism · 작동 원리</span>
             </div>
-            <div className="space-y-3">
+            <ol className="space-y-4">
               {disease.mechanism.map((m, idx) => (
-                <div key={idx} className="flex gap-3 items-start">
-                  {/* 스텝 번호 */}
-                  <div className={`w-8 h-8 rounded-full bg-gradient-to-br ${disease.color} text-white text-sm font-black flex items-center justify-center flex-shrink-0 shadow`}>
-                    {m.step}
+                <li key={idx} className="flex items-start gap-4">
+                  <span className="flex-shrink-0 text-[11px] font-medium text-gray-400 tabular-nums tracking-[0.18em] w-8 pt-1">
+                    {String(m.step).padStart(2, '0')}
+                  </span>
+                  <div className="flex-1 min-w-0 pb-4 border-b border-gray-100 last:border-0 last:pb-0">
+                    <div className="text-[14px] font-semibold text-gray-900 tracking-tight mb-1.5">{m.title}</div>
+                    <p className="text-gray-600 text-[13px] leading-[1.75] break-keep">{m.desc}</p>
                   </div>
-                  {/* 내용 */}
-                  <div className="flex-1 bg-gray-50 rounded-2xl p-3 border border-gray-100">
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="text-xl">{m.icon}</span>
-                      <span className="font-bold text-gray-700 text-base">{m.title}</span>
-                    </div>
-                    <p className="text-gray-500 text-sm leading-relaxed">{m.desc}</p>
-                  </div>
-                  {/* 화살표 (마지막 제외) */}
-                  {idx < disease.mechanism.length - 1 && (
-                    <div className="absolute left-[52px] text-gray-300 text-base" style={{ display: 'none' }} />
-                  )}
-                </div>
+                </li>
               ))}
-              {/* 연결선 시각화 */}
-              <div className="flex items-center gap-2 mt-2 ml-1">
-                {disease.mechanism.map((_, idx) => (
-                  <div key={idx} className="flex items-center">
-                    <div className={`w-5 h-5 rounded-full bg-gradient-to-br ${disease.color} opacity-80`} />
-                    {idx < disease.mechanism.length - 1 && (
-                      <div className={`h-0.5 w-6 bg-gradient-to-r ${disease.color} opacity-40`} />
-                    )}
-                  </div>
-                ))}
-                <span className="text-sm text-gray-400 ml-1">작동 흐름</span>
-              </div>
-            </div>
+            </ol>
           </div>
 
           {/* 쉬운 비유 */}
-          <div className="bg-yellow-50 border-2 border-yellow-200 rounded-2xl p-4 mb-4">
-            <div className="flex gap-3 items-center">
-              <span className="text-3xl">{disease.analogy.icon}</span>
-              <div>
-                <div className="text-sm font-bold text-yellow-700 mb-1">💡 쉽게 말하면?</div>
-                <p className="text-gray-700 text-base font-medium leading-relaxed">{disease.analogy.text}</p>
-              </div>
+          <div className="bg-white border border-gray-200 rounded-md p-5 mb-4">
+            <div className="flex items-center gap-3 mb-2">
+              <span className="h-px w-6 bg-gray-300" aria-hidden="true" />
+              <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500">Analogy · 쉽게 말하면</span>
             </div>
+            <p className="text-gray-800 text-[14px] leading-[1.75] font-medium break-keep">
+              {disease.analogy.text}
+            </p>
           </div>
 
-          {/* 연구 근거 */}
-          <div className="bg-blue-50 border border-blue-200 rounded-2xl p-3 flex gap-3 items-start">
-            <span className="text-xl flex-shrink-0">🔬</span>
-            <div>
-              <div className="text-sm font-bold text-blue-700 mb-0.5">연구 결과</div>
-              <p className="text-blue-600 text-sm leading-relaxed">{disease.fact}</p>
+          {/* 연구 근거 — Stripe 스타일 spec */}
+          <div className="bg-white border border-gray-200 rounded-md p-5">
+            <div className="flex items-baseline justify-between gap-4">
+              <div className="min-w-0">
+                <div className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500 mb-2">Research Evidence</div>
+                <p className="text-gray-700 text-[13px] leading-[1.75] break-keep">{disease.fact}</p>
+              </div>
             </div>
           </div>
         </div>
@@ -628,10 +639,10 @@ function MechanismInfographic() {
   const mechs = [
     {
       icon: '🔥',
-      color: 'from-red-400 to-orange-500',
-      bg: 'bg-red-50',
-      border: 'border-red-200',
-      textColor: 'text-red-700',
+      color: 'from-gray-700 to-gray-900',
+      bg: 'bg-gray-50',
+      border: 'border-gray-200',
+      textColor: 'text-gray-900',
       title: 'NF-κB 차단',
       subtitle: '염증 스위치를 꺼요',
       simple: '몸속 불 끄기',
@@ -640,10 +651,10 @@ function MechanismInfographic() {
     },
     {
       icon: '⚡',
-      color: 'from-amber-400 to-yellow-500',
-      bg: 'bg-amber-50',
-      border: 'border-amber-200',
-      textColor: 'text-amber-700',
+      color: 'from-gray-700 to-gray-900',
+      bg: 'bg-gray-50',
+      border: 'border-gray-200',
+      textColor: 'text-gray-900',
       title: 'AMPK 활성화',
       subtitle: '에너지 스위치를 켜요',
       simple: '세포 배터리 충전',
@@ -652,10 +663,10 @@ function MechanismInfographic() {
     },
     {
       icon: '🛡️',
-      color: 'from-emerald-400 to-teal-500',
-      bg: 'bg-emerald-50',
-      border: 'border-emerald-200',
-      textColor: 'text-emerald-700',
+      color: 'from-gray-700 to-gray-900',
+      bg: 'bg-gray-50',
+      border: 'border-gray-200',
+      textColor: 'text-gray-900',
       title: 'Nrf2 활성화',
       subtitle: '항산화 방어막을 펴요',
       simple: '몸속 녹 방지',
@@ -664,10 +675,10 @@ function MechanismInfographic() {
     },
     {
       icon: '❤️',
-      color: 'from-pink-400 to-rose-500',
-      bg: 'bg-pink-50',
-      border: 'border-pink-200',
-      textColor: 'text-pink-700',
+      color: 'from-gray-700 to-gray-900',
+      bg: 'bg-gray-50',
+      border: 'border-gray-200',
+      textColor: 'text-gray-900',
       title: 'ACE·PDE5 억제',
       subtitle: '혈관을 넓혀요',
       simple: '혈관 배관 청소',
@@ -677,42 +688,52 @@ function MechanismInfographic() {
   ]
 
   return (
-    <div className="bg-white py-10 px-4">
-      <div className="max-w-2xl mx-auto">
-        <div className="text-center mb-8">
-          <span className="text-4xl">🧬</span>
-          <h2 className="text-2xl font-black text-gray-800 mt-2">4가지 핵심 작동 원리</h2>
-          <p className="text-gray-500 text-base mt-2">전문 용어가 어렵다면 <strong>"쉽게 말하면"</strong>만 읽어도 돼요!</p>
+    <div className="bg-white py-16 md:py-20 px-4 border-t border-gray-100">
+      <div className="max-w-3xl mx-auto">
+        {/* 에디토리얼 헤더 */}
+        <div className="mb-10">
+          <div className="flex items-center gap-3 mb-4">
+            <span className="h-px w-8 bg-gray-300" aria-hidden="true" />
+            <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500">Mechanism · 4대 작동 원리</span>
+          </div>
+          <h2 className="text-2xl md:text-[2.25rem] font-bold text-gray-900 tracking-tight leading-tight mb-3 break-keep">
+            4가지 핵심 작동 원리
+          </h2>
+          <p className="text-gray-600 text-[15px] leading-[1.8] break-keep">
+            전문 용어가 어렵다면 <span className="text-gray-900 font-medium">"쉽게 말하면"</span>만 읽어도 됩니다.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {mechs.map((m, i) => (
-            <div key={i} className={`rounded-3xl border-2 ${m.border} ${m.bg} p-5 relative overflow-hidden`}>
-              {/* 배경 번호 */}
-              <div className="absolute top-2 right-3 text-6xl font-black text-black/5 select-none">{i + 1}</div>
-
-              <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${m.color} flex items-center justify-center text-2xl mb-3 shadow-md`}>
-                {m.icon}
+            <article key={i} className="bg-white rounded-lg border border-gray-200 p-6 hover:border-gray-400 transition-colors">
+              <div className="flex items-baseline justify-between mb-5 pb-4 border-b border-gray-100">
+                <span className="text-[18px]" aria-hidden="true">{m.icon}</span>
+                <span className="text-[11px] font-medium text-gray-400 tabular-nums tracking-[0.18em]">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
               </div>
 
-              {/* 쉬운 말 뱃지 */}
-              <span className={`text-xs font-black ${m.textColor} ${m.bg} border ${m.border} px-3 py-1 rounded-full inline-block mb-2`}>
-                💡 {m.simple}
-              </span>
+              <div className="text-[10px] font-medium uppercase tracking-[0.18em] text-gray-400 mb-2">
+                {m.simple}
+              </div>
 
-              <h3 className={`font-black text-lg ${m.textColor}`}>{m.title}</h3>
-              <p className="text-gray-500 text-sm mb-3">{m.subtitle}</p>
-              <p className="text-gray-600 text-sm leading-relaxed mb-3">{m.desc}</p>
+              <h3 className="text-[17px] font-semibold text-gray-900 tracking-tight mb-1">{m.title}</h3>
+              <p className="text-gray-500 text-[13px] mb-4">{m.subtitle}</p>
+              <p className="text-gray-700 text-[13px] leading-[1.75] mb-5 break-keep">{m.desc}</p>
 
               {/* 관련 질환 태그 */}
-              <div className="flex flex-wrap gap-1">
-                {m.related.map(r => (
-                  <span key={r} className="text-sm bg-white/80 border border-gray-200 text-gray-500 px-2 py-0.5 rounded-full">
-                    {r}
-                  </span>
-                ))}
+              <div className="pt-4 border-t border-gray-100">
+                <div className="text-[10px] uppercase tracking-[0.16em] text-gray-400 mb-2">Related</div>
+                <div className="flex flex-wrap gap-1.5">
+                  {m.related.map(r => (
+                    <span key={r} className="text-[11px] text-gray-700 border border-gray-200 px-2 py-0.5 rounded-md">
+                      {r}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>
@@ -831,8 +852,8 @@ function QuizSection() {
               {q.opts.map((opt, idx) => {
                 let style = 'bg-white border-gray-200 text-gray-700 hover:border-gray-400'
                 if (selected !== null) {
-                  if (idx === q.ans) style = 'bg-emerald-50 border-emerald-400 text-emerald-800 font-semibold'
-                  else if (idx === selected && idx !== q.ans) style = 'bg-red-50 border-red-400 text-red-800'
+                  if (idx === q.ans) style = 'bg-gray-900 border-gray-900 text-white font-semibold'
+                  else if (idx === selected && idx !== q.ans) style = 'bg-gray-50 border-gray-400 text-gray-500 line-through'
                   else style = 'bg-white border-gray-200 text-gray-400'
                 }
                 return (
@@ -850,7 +871,7 @@ function QuizSection() {
             {/* 정답 설명 */}
             {selected !== null && (
               <div className={`rounded-md p-4 mb-4 text-[14px] leading-relaxed border ${
-                selected === q.ans ? 'bg-emerald-50 text-emerald-800 border-emerald-200' : 'bg-gray-50 text-gray-700 border-gray-200'
+                selected === q.ans ? 'bg-gray-900 text-white border-gray-900' : 'bg-gray-50 text-gray-700 border-gray-200'
               }`}>
                 <span className="font-semibold mr-1">{selected === q.ans ? '정답.' : '해설.'}</span>{q.exp}
               </div>
@@ -879,10 +900,10 @@ function AgeGuideSection() {
     {
       emoji: '👦',
       age: '청소년·학생',
-      color: 'from-cyan-400 to-blue-500',
-      bg: 'bg-cyan-50',
-      border: 'border-cyan-200',
-      textColor: 'text-cyan-700',
+      color: 'from-gray-700 to-gray-900',
+      bg: 'bg-gray-50',
+      border: 'border-gray-200',
+      textColor: 'text-gray-900',
       focus: ['집중력·기억력', '피부·아토피', '스트레스'],
       tip: '공부할 때 집중력과 스트레스 관리에 특히 좋아요. 뇌 속 AChE를 억제해 기억력을 도와줘요!',
       icon: '🧠',
@@ -890,10 +911,10 @@ function AgeGuideSection() {
     {
       emoji: '👩',
       age: '30~40대 여성',
-      color: 'from-pink-400 to-rose-500',
-      bg: 'bg-pink-50',
-      border: 'border-pink-200',
-      textColor: 'text-pink-700',
+      color: 'from-gray-700 to-gray-900',
+      bg: 'bg-gray-50',
+      border: 'border-gray-200',
+      textColor: 'text-gray-900',
       focus: ['피부 노화', '체중 관리', '여성 건강'],
       tip: '콜라겐 분해 효소(MMP-1)를 억제해 피부 탄력을 지키고, AMPK 활성화로 지방 분해를 도와요!',
       icon: '✨',
@@ -901,10 +922,10 @@ function AgeGuideSection() {
     {
       emoji: '👨',
       age: '40~50대 남성',
-      color: 'from-blue-500 to-indigo-600',
-      bg: 'bg-blue-50',
-      border: 'border-blue-200',
-      textColor: 'text-blue-700',
+      color: 'from-gray-700 to-gray-900',
+      bg: 'bg-gray-50',
+      border: 'border-gray-200',
+      textColor: 'text-gray-900',
       focus: ['혈압·혈당', '혈관 건강', '활력'],
       tip: 'ACE 억제로 혈압을 낮추고, 혈당 조절 + 혈관 건강 개선으로 중년 건강 관리에 탁월해요!',
       icon: '💪',
@@ -912,10 +933,10 @@ function AgeGuideSection() {
     {
       emoji: '👴👵',
       age: '60대 이상 어르신',
-      color: 'from-amber-400 to-orange-500',
-      bg: 'bg-amber-50',
-      border: 'border-amber-200',
-      textColor: 'text-amber-700',
+      color: 'from-gray-700 to-gray-900',
+      bg: 'bg-gray-50',
+      border: 'border-gray-200',
+      textColor: 'text-gray-900',
       focus: ['치매 예방', '뼈·관절', '혈압·혈당'],
       tip: '뇌 보호, 관절 연골 보호, 혈압·혈당 관리 — 어르신에게 가장 중요한 3가지를 모두 도와줘요!',
       icon: '🌿',
@@ -923,42 +944,52 @@ function AgeGuideSection() {
   ]
 
   return (
-    <div className="bg-white py-10 px-4">
-      <div className="max-w-2xl mx-auto">
-        <div className="text-center mb-8">
-          <span className="text-4xl">👥</span>
-          <h2 className="text-2xl font-black text-gray-800 mt-2">연령별 활용 포인트</h2>
-          <p className="text-gray-500 text-base mt-2">나에게 맞는 활용 방법을 찾아보세요</p>
+    <div className="bg-gray-50 py-16 md:py-20 px-4 border-t border-gray-100">
+      <div className="max-w-3xl mx-auto">
+        {/* 에디토리얼 헤더 */}
+        <div className="mb-10">
+          <div className="flex items-center gap-3 mb-4">
+            <span className="h-px w-8 bg-gray-300" aria-hidden="true" />
+            <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500">Age Guide · 연령별 활용</span>
+          </div>
+          <h2 className="text-2xl md:text-[2.25rem] font-bold text-gray-900 tracking-tight leading-tight mb-3 break-keep">
+            연령별 활용 포인트
+          </h2>
+          <p className="text-gray-600 text-[15px] leading-[1.8] break-keep">
+            나에게 맞는 활용 방법을 찾아보세요.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {guides.map((g, i) => (
-            <div key={i} className={`rounded-3xl border-2 ${g.border} ${g.bg} p-5`}>
-              <div className="flex items-center gap-3 mb-3">
-                <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${g.color} flex items-center justify-center text-2xl shadow-md`}>
-                  {g.emoji}
+            <article key={i} className="bg-white rounded-lg border border-gray-200 p-6 hover:border-gray-400 transition-colors">
+              <div className="flex items-baseline justify-between mb-4 pb-4 border-b border-gray-100">
+                <div className="flex items-baseline gap-3 min-w-0">
+                  <span className="text-[18px]" aria-hidden="true">{g.emoji}</span>
+                  <div className="min-w-0">
+                    <div className="text-[10px] font-medium uppercase tracking-[0.18em] text-gray-400 mb-1">Age Group</div>
+                    <div className="text-[15px] font-semibold text-gray-900 tracking-tight">{g.age}</div>
+                  </div>
                 </div>
-                <div>
-                  <div className={`font-black ${g.textColor}`}>{g.age}</div>
-                  <div className="text-gray-500 text-sm">핵심 관심사</div>
+                <span className="text-[11px] font-medium text-gray-400 tabular-nums tracking-[0.18em]">{String(i + 1).padStart(2, '0')}</span>
+              </div>
+
+              <div className="mb-4">
+                <div className="text-[11px] uppercase tracking-[0.16em] text-gray-400 mb-2">Focus</div>
+                <div className="flex flex-wrap gap-1.5">
+                  {g.focus.map(f => (
+                    <span key={f} className="text-[11px] text-gray-700 border border-gray-200 px-2 py-1 rounded-md">
+                      {f}
+                    </span>
+                  ))}
                 </div>
               </div>
 
-              <div className="flex flex-wrap gap-1 mb-3">
-                {g.focus.map(f => (
-                  <span key={f} className={`text-xs font-bold px-3 py-1 rounded-full bg-white border ${g.border} ${g.textColor}`}>
-                    {f}
-                  </span>
-                ))}
+              <div className="pt-4 border-t border-gray-100">
+                <div className="text-[11px] uppercase tracking-[0.16em] text-gray-400 mb-2">Tip</div>
+                <p className="text-gray-700 text-[13px] leading-[1.75] break-keep">{g.tip}</p>
               </div>
-
-              <div className="bg-white/70 rounded-2xl p-3 border border-white">
-                <div className="flex gap-2 items-start">
-                  <span className="text-xl">{g.icon}</span>
-                  <p className="text-gray-600 text-sm leading-relaxed">{g.tip}</p>
-                </div>
-              </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>
