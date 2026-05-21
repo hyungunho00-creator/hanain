@@ -2,11 +2,11 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { MessageCircle, X, Phone, Calendar, ChevronUp } from 'lucide-react'
 import { usePartner } from '../../context/PartnerContext'
+import RevealContact from './RevealContact'
 
 export default function FloatingButton() {
   const partner = usePartner()
   const [isOpen, setIsOpen] = useState(false)
-  const [showPhone, setShowPhone] = useState(false)
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -20,34 +20,24 @@ export default function FloatingButton() {
           <Link
             to="/consult"
             onClick={() => setIsOpen(false)}
-            className="flex items-center gap-2 bg-white text-ocean-deep px-4 py-2.5 rounded-full shadow-lg hover:shadow-xl transition-all text-sm font-medium"
+            className="flex items-center gap-2 bg-white text-gray-900 border border-gray-200 px-4 py-2.5 rounded-md hover:border-gray-400 transition-colors text-sm font-medium"
           >
-            <Calendar className="w-4 h-4 text-cyan-hana" />
+            <Calendar className="w-4 h-4 text-gray-500" />
             상담 신청
           </Link>
-          {!showPhone ? (
-            <button
-              onClick={() => setShowPhone(true)}
-              className="flex items-center gap-2 bg-white text-ocean-deep px-4 py-2.5 rounded-full shadow-lg hover:shadow-xl transition-all text-sm font-medium"
-            >
-              <Phone className="w-4 h-4 text-green-500" />
-              전화 연결
-            </button>
-          ) : (
-            <a
-              href={`tel:${partner.phone}`}
-              className="flex items-center gap-2 bg-green-500 text-white px-4 py-2.5 rounded-full shadow-lg hover:shadow-xl transition-all text-sm font-medium"
-            >
-              <Phone className="w-4 h-4" />
-              {partner.phoneDisplay}
-            </a>
-          )}
+          <RevealContact
+            type="tel"
+            label="전화 연결"
+            phone={partner.phone}
+            displayPhone={partner.phoneDisplay}
+            className="flex items-center gap-2 bg-white text-gray-900 border border-gray-200 px-4 py-2.5 rounded-md hover:border-gray-400 transition-colors text-sm font-medium"
+          />
           <Link
             to="/partner"
             onClick={() => setIsOpen(false)}
-            className="flex items-center gap-2 bg-white text-ocean-deep px-4 py-2.5 rounded-full shadow-lg hover:shadow-xl transition-all text-sm font-medium"
+            className="flex items-center gap-2 bg-white text-gray-900 border border-gray-200 px-4 py-2.5 rounded-md hover:border-gray-400 transition-colors text-sm font-medium"
           >
-            <MessageCircle className="w-4 h-4 text-gold-hana" />
+            <MessageCircle className="w-4 h-4 text-gray-500" />
             파트너 신청
           </Link>
         </div>
@@ -57,7 +47,8 @@ export default function FloatingButton() {
         {/* Scroll to top */}
         <button
           onClick={scrollToTop}
-          className="w-12 h-12 bg-white text-ocean-deep rounded-full shadow-lg hover:shadow-xl transition-all flex items-center justify-center hover:-translate-y-0.5"
+          aria-label="맨 위로 이동"
+          className="w-12 h-12 bg-white text-gray-700 border border-gray-200 rounded-full hover:border-gray-400 transition-colors flex items-center justify-center"
         >
           <ChevronUp className="w-5 h-5" />
         </button>
@@ -65,15 +56,16 @@ export default function FloatingButton() {
         {/* Main button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className={`w-14 h-14 rounded-full shadow-lg transition-all flex items-center justify-center hover:-translate-y-0.5 ${
+          aria-label={isOpen ? '메뉴 닫기' : '메뉴 열기'}
+          className={`w-14 h-14 rounded-full transition-colors flex items-center justify-center ${
             isOpen
-              ? 'bg-gray-600 hover:bg-gray-700'
-              : 'bg-gradient-to-br from-cyan-hana to-blue-600 animate-pulse-glow'
+              ? 'bg-white text-gray-900 border border-gray-300 hover:border-gray-500'
+              : 'bg-gray-900 hover:bg-black text-white'
           }`}
         >
           {isOpen
-            ? <X className="w-6 h-6 text-white" />
-            : <MessageCircle className="w-6 h-6 text-white" />
+            ? <X className="w-6 h-6" />
+            : <MessageCircle className="w-6 h-6" />
           }
         </button>
       </div>

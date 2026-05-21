@@ -24,22 +24,22 @@ function PostCard({ post }) {
   return (
     <Link
       to={`/community/post/${post.id}`}
-      className="block bg-white rounded-2xl border border-border-hana hover:border-cyan-hana hover:shadow-lg transition-all duration-200 p-5 group"
+      className="block bg-white rounded-lg border border-gray-200 hover:border-gray-400 transition-colors duration-200 p-5 group"
     >
       <div className="flex items-start gap-3 mb-3">
-        {/* 카테고리 배지 */}
-        <span className={`shrink-0 text-xs font-bold px-2.5 py-1 rounded-full text-white ${cat.color}`}>
-          {cat.emoji} {cat.label}
+        {/* 카테고리 배지 — 모노 */}
+        <span className="shrink-0 text-[11px] font-medium px-2.5 py-1 rounded-md bg-gray-100 text-gray-700">
+          {cat.label}
         </span>
       </div>
 
-      <h3 className="text-base font-semibold text-ocean-deep group-hover:text-cyan-hana transition-colors mb-2 line-clamp-2 leading-snug">
+      <h3 className="text-base font-semibold text-gray-900 group-hover:text-gray-700 transition-colors mb-2 line-clamp-2 leading-snug">
         {post.title}
       </h3>
 
       <div className="flex items-center justify-between mt-3 text-sm text-gray-500">
         <div className="flex items-center gap-2">
-          <div className="w-6 h-6 rounded-full bg-gradient-to-br from-cyan-hana to-blue-500 flex items-center justify-center text-white text-xs font-bold">
+          <div className="w-6 h-6 rounded-full bg-gray-900 flex items-center justify-center text-white text-xs font-bold">
             {authorName.charAt(0)}
           </div>
           <span>{authorName}</span>
@@ -132,22 +132,26 @@ export default function CommunityPage() {
         canonical={`https://phlorotannin.com/community${currentCat.id !== 'all' ? '?category=' + currentCat.id : ''}`}
       />
 
-      <div className="pt-16 min-h-screen bg-gray-hana">
-        {/* 히어로 헤더 */}
-        <div className="bg-ocean-deep text-white py-10 px-4">
+      <div className="pt-16 min-h-screen bg-gray-50">
+        {/* 히어로 헤더 — 라이트 에디토리얼 */}
+        <div className="bg-white border-b border-gray-200 py-10 px-4">
           <div className="max-w-5xl mx-auto">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="h-px w-8 bg-gray-300" />
+              <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500">Community</span>
+            </div>
             <div className="flex items-center justify-between mb-4">
               <div>
-                <h1 className="text-2xl md:text-3xl font-bold mb-1">
-                  💬 건강 커뮤니티
+                <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">
+                  건강 커뮤니티
                 </h1>
-                <p className="text-gray-300 text-sm md:text-base">
+                <p className="text-gray-500 text-sm md:text-base">
                   플로로탄닌과 함께하는 건강 이야기 · {totalCount.toLocaleString()}개 게시글
                 </p>
               </div>
               <Link
                   to="/community/write"
-                  className="flex items-center gap-2 bg-cyan-hana text-white px-4 py-2.5 rounded-xl font-semibold hover:bg-opacity-90 transition-all text-sm shadow-lg"
+                  className="flex items-center gap-2 bg-gray-900 hover:bg-black text-white px-4 py-2.5 rounded-md font-medium transition-colors text-sm"
                 >
                   <PenSquare className="w-4 h-4" />
                   글쓰기
@@ -162,11 +166,11 @@ export default function CommunityPage() {
                 value={inputValue}
                 onChange={e => setInputValue(e.target.value)}
                 placeholder="게시글 검색..."
-                className="w-full bg-white/10 backdrop-blur border border-white/20 rounded-xl pl-12 pr-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-cyan-hana focus:bg-white/15 transition-all text-base"
+                className="w-full bg-white border border-gray-300 rounded-md pl-12 pr-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent text-base"
               />
               <button
                 type="submit"
-                className="absolute right-3 top-1/2 -translate-y-1/2 bg-cyan-hana text-white px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-opacity-90 transition"
+                className="absolute right-3 top-1/2 -translate-y-1/2 bg-gray-900 hover:bg-black text-white px-3 py-1.5 rounded-md text-sm font-medium transition-colors"
               >
                 검색
               </button>
@@ -178,52 +182,53 @@ export default function CommunityPage() {
           <div className="flex flex-col lg:flex-row gap-6">
             {/* 사이드바: 카테고리 목록 */}
             <aside className="lg:w-56 shrink-0">
-              <div className="bg-white rounded-2xl border border-border-hana p-4 sticky top-20">
-                <h2 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-3 px-1">카테고리</h2>
-                <nav className="space-y-1">
+              <div className="bg-white rounded-lg border border-gray-200 p-4 sticky top-20">
+                <div className="flex items-center gap-3 mb-3 px-1">
+                  <span className="h-px w-6 bg-gray-300" />
+                  <h2 className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500">Categories</h2>
+                </div>
+                <nav className="space-y-0.5">
                   {/* 전체 */}
                   <button
                     onClick={() => handleCategoryChange('all')}
-                    className={`w-full text-left px-3 py-2.5 rounded-xl text-sm font-medium transition-all flex items-center justify-between ${
+                    className={`w-full text-left px-3 py-2 rounded-md text-sm transition-colors flex items-center justify-between ${
                       activeCategory === 'all'
-                        ? 'bg-ocean-deep text-white'
+                        ? 'bg-gray-900 text-white font-medium'
                         : 'text-gray-700 hover:bg-gray-50'
                     }`}
                   >
-                    <span>📋 전체 게시글</span>
+                    <span>전체 게시글</span>
                     {activeCategory === 'all' && <ChevronRight className="w-4 h-4" />}
                   </button>
 
-                  {/* 구분선: 질환별 */}
-                  <p className="text-xs text-gray-400 px-3 pt-2 pb-1 font-semibold">질환별 게시판</p>
+                  <p className="text-[11px] text-gray-400 px-3 pt-3 pb-1 font-medium uppercase tracking-[0.16em]">질환별 게시판</p>
                   {activeCats.filter(c => !['review','question','free'].includes(c.id)).map(cat => (
                     <button
                       key={cat.id}
                       onClick={() => handleCategoryChange(cat.id)}
-                      className={`w-full text-left px-3 py-2 rounded-xl text-sm transition-all flex items-center justify-between ${
+                      className={`w-full text-left px-3 py-2 rounded-md text-sm transition-colors flex items-center justify-between ${
                         activeCategory === cat.id
-                          ? `${cat.color} text-white font-semibold`
+                          ? 'bg-gray-900 text-white font-medium'
                           : 'text-gray-700 hover:bg-gray-50'
                       }`}
                     >
-                      <span>{cat.emoji} {cat.label}</span>
+                      <span>{cat.label}</span>
                       {activeCategory === cat.id && <ChevronRight className="w-3.5 h-3.5" />}
                     </button>
                   ))}
 
-                  {/* 구분선: 기타 */}
-                  <p className="text-xs text-gray-400 px-3 pt-2 pb-1 font-semibold">커뮤니티</p>
+                  <p className="text-[11px] text-gray-400 px-3 pt-3 pb-1 font-medium uppercase tracking-[0.16em]">커뮤니티</p>
                   {activeCats.filter(c => ['review','question','free'].includes(c.id)).map(cat => (
                     <button
                       key={cat.id}
                       onClick={() => handleCategoryChange(cat.id)}
-                      className={`w-full text-left px-3 py-2 rounded-xl text-sm transition-all flex items-center justify-between ${
+                      className={`w-full text-left px-3 py-2 rounded-md text-sm transition-colors flex items-center justify-between ${
                         activeCategory === cat.id
-                          ? `${cat.color} text-white font-semibold`
+                          ? 'bg-gray-900 text-white font-medium'
                           : 'text-gray-700 hover:bg-gray-50'
                       }`}
                     >
-                      <span>{cat.emoji} {cat.label}</span>
+                      <span>{cat.label}</span>
                       {activeCategory === cat.id && <ChevronRight className="w-3.5 h-3.5" />}
                     </button>
                   ))}
@@ -236,9 +241,8 @@ export default function CommunityPage() {
               {/* 현재 카테고리 헤더 */}
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-2">
-                  <span className={`text-2xl`}>{currentCat.emoji}</span>
                   <div>
-                    <h2 className="text-lg font-bold text-ocean-deep">{currentCat.label === '전체' ? '전체 게시글' : currentCat.label + ' 게시판'}</h2>
+                    <h2 className="text-lg font-bold text-gray-900">{currentCat.label === '전체' ? '전체 게시글' : currentCat.label + ' 게시판'}</h2>
                     {currentCat.description && (
                       <p className="text-xs text-gray-500">{currentCat.description}</p>
                     )}
@@ -249,13 +253,13 @@ export default function CommunityPage() {
 
               {/* 검색 결과 표시 */}
               {searchQuery && (
-                <div className="bg-cyan-50 border border-cyan-200 rounded-xl px-4 py-3 mb-4 flex items-center justify-between">
-                  <span className="text-cyan-700 text-sm">
+                <div className="bg-gray-50 border border-gray-200 rounded-md px-4 py-3 mb-4 flex items-center justify-between">
+                  <span className="text-gray-700 text-sm">
                     <strong>"{searchQuery}"</strong> 검색 결과 {totalCount}개
                   </span>
                   <button
                     onClick={() => { setSearchQuery(''); setInputValue(''); setPage(1) }}
-                    className="text-cyan-600 text-sm hover:underline"
+                    className="text-gray-900 text-sm underline underline-offset-4 decoration-gray-300 hover:decoration-gray-700"
                   >
                     초기화
                   </button>
@@ -266,7 +270,7 @@ export default function CommunityPage() {
               {loading ? (
                 <div className="space-y-3">
                   {[...Array(6)].map((_, i) => (
-                    <div key={i} className="bg-white rounded-2xl border border-border-hana p-5 animate-pulse">
+                    <div key={i} className="bg-white rounded-lg border border-gray-200 p-5 animate-pulse">
                       <div className="h-4 bg-gray-200 rounded w-1/4 mb-3" />
                       <div className="h-5 bg-gray-200 rounded w-3/4 mb-2" />
                       <div className="h-4 bg-gray-100 rounded w-1/2" />
@@ -274,11 +278,10 @@ export default function CommunityPage() {
                   ))}
                 </div>
               ) : posts.length === 0 ? (
-                <div className="bg-white rounded-2xl border border-border-hana p-12 text-center">
-                  <div className="text-5xl mb-4">📝</div>
-                  <p className="text-gray-500 text-lg mb-2">아직 게시글이 없습니다</p>
-                  <p className="text-gray-400 text-sm mb-6">첫 번째 글을 작성해보세요!</p>
-                    <Link to="/community/write" className="inline-flex items-center gap-2 bg-cyan-hana text-white px-5 py-2.5 rounded-xl font-semibold hover:bg-opacity-90 transition-all text-sm">
+                <div className="bg-white rounded-lg border border-gray-200 p-12 text-center">
+                  <p className="text-gray-700 text-lg font-medium mb-2">아직 게시글이 없습니다</p>
+                  <p className="text-gray-400 text-sm mb-6">첫 번째 글을 작성해보세요</p>
+                    <Link to="/community/write" className="inline-flex items-center gap-2 bg-gray-900 hover:bg-black text-white px-5 py-2.5 rounded-md font-medium transition-colors text-sm">
                       <PenSquare className="w-4 h-4" /> 글쓰기
                     </Link>
                 </div>
@@ -296,7 +299,7 @@ export default function CommunityPage() {
                   <button
                     onClick={() => setPage(p => Math.max(1, p - 1))}
                     disabled={page === 1}
-                    className="px-4 py-2 rounded-xl border border-border-hana text-sm font-medium text-gray-600 hover:border-cyan-hana hover:text-cyan-hana disabled:opacity-40 disabled:cursor-not-allowed transition"
+                    className="px-4 py-2 rounded-md border border-gray-300 text-sm font-medium text-gray-700 hover:border-gray-900 hover:text-gray-900 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
                   >
                     이전
                   </button>
@@ -306,10 +309,10 @@ export default function CommunityPage() {
                       <button
                         key={p}
                         onClick={() => setPage(p)}
-                        className={`w-10 h-10 rounded-xl text-sm font-medium transition ${
+                        className={`w-10 h-10 rounded-md text-sm font-medium transition-colors tabular-nums ${
                           page === p
-                            ? 'bg-cyan-hana text-white'
-                            : 'border border-border-hana text-gray-600 hover:border-cyan-hana hover:text-cyan-hana'
+                            ? 'bg-gray-900 text-white'
+                            : 'border border-gray-300 text-gray-700 hover:border-gray-900 hover:text-gray-900'
                         }`}
                       >
                         {p}
@@ -319,7 +322,7 @@ export default function CommunityPage() {
                   <button
                     onClick={() => setPage(p => Math.min(totalPages, p + 1))}
                     disabled={page === totalPages}
-                    className="px-4 py-2 rounded-xl border border-border-hana text-sm font-medium text-gray-600 hover:border-cyan-hana hover:text-cyan-hana disabled:opacity-40 disabled:cursor-not-allowed transition"
+                    className="px-4 py-2 rounded-md border border-gray-300 text-sm font-medium text-gray-700 hover:border-gray-900 hover:text-gray-900 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
                   >
                     다음
                   </button>

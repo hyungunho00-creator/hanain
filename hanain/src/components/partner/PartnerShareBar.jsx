@@ -123,7 +123,7 @@ export default function PartnerShareBar() {
           className="inline-flex items-center gap-1 text-gray-600 hover:text-gray-900 hover:bg-white border border-gray-200 hover:border-gray-300 rounded-md px-2.5 py-1.5 text-xs font-medium transition-colors"
         >
           {copied ? (
-            <><CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" /><span className="hidden sm:inline">복사됨</span></>
+            <><CheckCircle2 className="w-3.5 h-3.5 text-gray-900" /><span className="hidden sm:inline">복사됨</span></>
           ) : (
             <><Copy className="w-3.5 h-3.5" /><span className="hidden sm:inline">링크</span></>
           )}

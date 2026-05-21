@@ -22,7 +22,7 @@ import {
 const MECHANISMS = [
   {
     icon: Shield,
-    color: 'from-blue-600 to-cyan-500',
+    color: 'from-gray-700 to-gray-900',
     title: 'NF-κB 경로 억제 → 만성 염증 차단',
     subtitle: '항염증 핵심 기전',
     steps: [
@@ -44,7 +44,7 @@ NF-κB는 평소 IκB 단백질에 결합해 억제되어 있다가, 산화 스�
   },
   {
     icon: Activity,
-    color: 'from-emerald-600 to-teal-500',
+    color: 'from-gray-700 to-gray-900',
     title: 'AMPK 활성화 → 에너지 대사 정상화',
     subtitle: '혈당·지방·비만 조절',
     steps: [
@@ -66,7 +66,7 @@ NF-κB는 평소 IκB 단백질에 결합해 억제되어 있다가, 산화 스�
   },
   {
     icon: Brain,
-    color: 'from-purple-600 to-indigo-500',
+    color: 'from-gray-700 to-gray-900',
     title: 'Nrf2 활성화 → 내인성 항산화 방어막',
     subtitle: '산화 스트레스·노화 억제',
     steps: [
@@ -88,7 +88,7 @@ NF-κB는 평소 IκB 단백질에 결합해 억제되어 있다가, 산화 스�
   },
   {
     icon: Heart,
-    color: 'from-rose-600 to-pink-500',
+    color: 'from-gray-700 to-gray-900',
     title: 'ACE·PDE5 억제 → 혈압·혈관 건강',
     subtitle: '심혈관 보호',
     steps: [
@@ -110,7 +110,7 @@ NF-κB는 평소 IκB 단백질에 결합해 억제되어 있다가, 산화 스�
   },
   {
     icon: Zap,
-    color: 'from-amber-600 to-orange-500',
+    color: 'from-gray-700 to-gray-900',
     title: 'AChE 억제 → 인지기능·기억 보호',
     subtitle: '뇌신경 보호·치매 예방',
     steps: [
@@ -132,7 +132,7 @@ NF-κB는 평소 IκB 단백질에 결합해 억제되어 있다가, 산화 스�
   },
   {
     icon: Leaf,
-    color: 'from-green-600 to-lime-500',
+    color: 'from-gray-700 to-gray-900',
     title: 'MMPs 억제 → 피부·관절 보호',
     subtitle: '콜라겐 보호·피부 탄력',
     steps: [

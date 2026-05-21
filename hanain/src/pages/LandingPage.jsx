@@ -45,7 +45,7 @@ const BENEFIT_CARDS = [
   {
     emoji: '🔥',
     lucideIcon: Flame,
-    accent: 'from-coral-500 to-red-500',
+    accent: 'from-gray-700 to-gray-900',
     title: '염증 억제',
     short: '만성 염증을 줄이는 핵심 기전',
     analogy: '🚒 불 끄는 소방관처럼 몸속 염증 신호를 꺼줘요',
@@ -87,7 +87,7 @@ const BENEFIT_CARDS = [
   {
     emoji: '🩸',
     lucideIcon: Droplet,
-    accent: 'from-emerald-fresh to-teal-500',
+    accent: 'from-gray-700 to-gray-900',
     title: '혈당 조절',
     short: '당뇨·대사 관련 정보와 연결',
     analogy: '🚦 당이 혈액으로 들어오는 문을 천천히 열리게 해요',

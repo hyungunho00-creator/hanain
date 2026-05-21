@@ -50,10 +50,10 @@ function SuccessModal({ formData, phone, onClose }) {
   return (
     <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
       <div className="bg-white rounded-3xl p-8 max-w-md w-full text-center shadow-2xl">
-        <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-          <CheckCircle className="w-10 h-10 text-green-500" />
+        <div className="w-20 h-20 bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-4">
+          <CheckCircle className="w-10 h-10 text-white" />
         </div>
-        <h3 className="text-2xl font-bold text-ocean-deep mb-3">준비 완료!</h3>
+        <h3 className="text-2xl font-bold text-gray-900 mb-3">준비 완료!</h3>
         <p className="text-gray-700 mb-2 font-medium">
           아래 버튼을 누르면 문자 앱이 열리면서<br />
           상담 내용이 자동으로 입력됩니다.
@@ -146,16 +146,17 @@ export default function ConsultPage() {
       )}
 
       {/* Header */}
-      <div className="bg-ocean-gradient py-16 text-white">
+      <div className="bg-white border-b border-gray-200 py-16">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex items-center gap-2 text-cyan-hana text-base font-medium mb-4">
-            <MessageSquare className="w-4 h-4" />
-            상담 신청
+          <div className="flex items-center gap-3 mb-6">
+            <span className="h-px w-8 bg-gray-300" />
+            <MessageSquare className="w-4 h-4 text-gray-400" />
+            <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500">Consultation</span>
           </div>
-          <h1 className="text-4xl font-bold text-white mb-4">상담 신청하기</h1>
-          <p className="text-gray-200 text-xl max-w-xl leading-relaxed">
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">상담 신청하기</h1>
+          <p className="text-gray-600 text-xl max-w-xl leading-relaxed">
             아래 정보를 입력하고{' '}
-            <strong className="text-gold-hana">상담 신청 문자 보내기</strong>를 누르면<br />
+            <strong className="text-gray-900">상담 신청 문자 보내기</strong>를 누르면<br />
             작성한 내용이 문자로 자동 입력됩니다.
           </p>
         </div>
@@ -166,8 +167,8 @@ export default function ConsultPage() {
 
           {/* Left info */}
           <div className="space-y-6">
-            <div className="card">
-              <h3 className="font-bold text-ocean-deep mb-4">연락처 안내</h3>
+            <div className="bg-white rounded-lg p-6 border border-gray-200">
+              <h3 className="font-bold text-gray-900 mb-4">연락처 안내</h3>
               <div className="space-y-4">
                 {[
                   { icon: Phone, title: '전화 상담', desc: '평일 09:00 – 18:00\n번호 확인 후 연결' },
@@ -176,11 +177,11 @@ export default function ConsultPage() {
                   { icon: Calendar, title: '상담 주제', desc: '건강 정보 / 자연 소재\n파트너 활동 안내' },
                 ].map(item => (
                   <div key={item.title} className="flex gap-3">
-                    <div className="w-10 h-10 bg-cyan-hana/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <item.icon className="w-5 h-5 text-cyan-hana" />
+                    <div className="w-10 h-10 bg-gray-100 rounded-md flex items-center justify-center flex-shrink-0">
+                      <item.icon className="w-5 h-5 text-gray-700" />
                     </div>
                     <div>
-                      <div className="font-medium text-ocean-deep text-base">{item.title}</div>
+                      <div className="font-semibold text-gray-900 text-base">{item.title}</div>
                       <div className="text-sm text-gray-600 whitespace-pre-line">{item.desc}</div>
                     </div>
                   </div>
@@ -189,15 +190,18 @@ export default function ConsultPage() {
             </div>
 
             {/* 문의 방법 */}
-            <div className="card bg-cyan-hana/5 border border-cyan-hana/20">
-              <h4 className="font-bold text-ocean-deep mb-3 text-base">📞 바로 연락하기</h4>
+            <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
+              <div className="flex items-center gap-3 mb-3">
+                <Phone className="w-4 h-4 text-gray-400" />
+                <h4 className="font-bold text-gray-900 text-base">바로 연락하기</h4>
+              </div>
               <div className="space-y-3">
                 <RevealContact
                   type="tel"
                   label="전화 상담 번호 확인"
                   phone={PHONE_NUMBER}
                   displayPhone={PHONE_DISPLAY}
-                  className="w-full bg-white rounded-xl p-3 border border-gray-100 hover:border-cyan-hana hover:shadow-sm transition-all text-base font-semibold text-ocean-deep"
+                  className="w-full bg-white rounded-md p-3 border border-gray-200 hover:border-gray-400 transition-colors text-base font-semibold text-gray-900"
                 />
                 <RevealContact
                   type="sms"
@@ -205,13 +209,17 @@ export default function ConsultPage() {
                   phone={PHONE_NUMBER}
                   displayPhone={PHONE_DISPLAY}
                   smsBody="[플로로탄닌 파트너스] 상담 문의드립니다."
-                  className="w-full bg-white rounded-xl p-3 border border-gray-100 hover:border-cyan-hana hover:shadow-sm transition-all text-base font-semibold text-ocean-deep"
+                  className="w-full bg-white rounded-md p-3 border border-gray-200 hover:border-gray-400 transition-colors text-base font-semibold text-gray-900"
                 />
               </div>
             </div>
 
-            <div className="bg-gold-hana/10 border border-gold-hana/30 rounded-2xl p-5">
-              <div className="font-semibold text-ocean-deep mb-2">💡 상담 전 참고사항</div>
+            <div className="bg-gray-50 border border-gray-200 rounded-lg p-5">
+              <div className="flex items-center gap-3 mb-3">
+                <span className="h-px w-8 bg-gray-300" />
+                <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500">Tips</span>
+              </div>
+              <div className="font-semibold text-gray-900 mb-2">상담 전 참고사항</div>
               <ul className="text-base text-gray-700 space-y-1.5">
                 <li>• 현재 복용 중인 약물 목록 준비</li>
                 <li>• 주요 건강 검사 결과 (혈액검사 등)</li>
@@ -224,18 +232,18 @@ export default function ConsultPage() {
           {/* Form area */}
           <div className="lg:col-span-2">
             {/* 안내 배너 */}
-            <div className="bg-cyan-50 border border-cyan-200 rounded-2xl p-4 mb-6 flex items-start gap-3">
-              <MessageSquare className="w-5 h-5 text-cyan-600 mt-0.5 flex-shrink-0" />
+            <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-6 flex items-start gap-3">
+              <MessageSquare className="w-5 h-5 text-gray-500 mt-0.5 flex-shrink-0" />
               <div>
-                <div className="text-base font-bold text-cyan-800">이렇게 진행됩니다</div>
-                <div className="text-base text-cyan-700 mt-1 leading-relaxed">
+                <div className="text-base font-bold text-gray-900">이렇게 진행됩니다</div>
+                <div className="text-base text-gray-600 mt-1 leading-relaxed">
                   ① 아래 양식 작성 → ② <strong>상담 신청 문자 보내기</strong> 클릭 → ③ 문자 앱이 열리면 <strong>전송</strong> 버튼 클릭
                 </div>
               </div>
             </div>
 
-            <form onSubmit={onSubmit} className="card space-y-5">
-              <h3 className="font-bold text-ocean-deep text-xl">상담 신청서</h3>
+            <form onSubmit={onSubmit} className="bg-white rounded-lg p-6 border border-gray-200 space-y-5">
+              <h3 className="font-bold text-gray-900 text-xl">상담 신청서</h3>
 
               <div className="grid md:grid-cols-2 gap-5">
                 <div>
@@ -247,7 +255,7 @@ export default function ConsultPage() {
                     className="input-field"
                     placeholder="홍길동"
                   />
-                  {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
+                  {errors.name && <p className="text-gray-900 text-sm mt-1 font-medium">{errors.name}</p>}
                 </div>
                 <div>
                   <label className="block text-base font-medium text-gray-800 mb-1.5">내 연락처 *</label>
@@ -259,7 +267,7 @@ export default function ConsultPage() {
                     placeholder="010-0000-0000"
                     type="tel"
                   />
-                  {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
+                  {errors.phone && <p className="text-gray-900 text-sm mt-1 font-medium">{errors.phone}</p>}
                 </div>
               </div>
 
@@ -276,7 +284,7 @@ export default function ConsultPage() {
                     <option key={cat} value={cat}>{cat}</option>
                   ))}
                 </select>
-                {errors.category && <p className="text-red-500 text-sm mt-1">{errors.category}</p>}
+                {errors.category && <p className="text-gray-900 text-sm mt-1 font-medium">{errors.category}</p>}
               </div>
 
               <div>
@@ -315,18 +323,18 @@ export default function ConsultPage() {
                   name="privacyAgreed"
                   checked={formData.privacyAgreed}
                   onChange={handleChange}
-                  className="mt-1 accent-cyan-hana w-4 h-4"
+                  className="mt-1 accent-gray-900 w-4 h-4"
                 />
                 <label className="text-base text-gray-700">
                   <span className="font-medium">개인정보 수집 및 이용에 동의합니다.</span> (필수) 수집된 정보는 상담 목적으로만 사용됩니다.
                 </label>
               </div>
-              {errors.privacyAgreed && <p className="text-red-500 text-sm">{errors.privacyAgreed}</p>}
+              {errors.privacyAgreed && <p className="text-gray-900 text-sm font-medium">{errors.privacyAgreed}</p>}
 
               {/* 제출 버튼 */}
               <button
                 type="submit"
-                className="w-full bg-ocean-deep text-white py-4 rounded-2xl font-bold text-lg flex items-center justify-center gap-3 hover:bg-opacity-90 transition-all hover:shadow-lg hover:-translate-y-0.5"
+                className="w-full bg-gray-900 hover:bg-black text-white py-4 rounded-md font-semibold text-lg flex items-center justify-center gap-3 transition-colors"
               >
                 <MessageSquare className="w-5 h-5" />
                 상담 신청 문자 보내기
@@ -347,7 +355,7 @@ export default function ConsultPage() {
                 revealLabel={`${PHONE_DISPLAY} 전화하기`}
                 phone={PHONE_NUMBER}
                 displayPhone={PHONE_DISPLAY}
-                className="p-4 bg-cyan-hana text-white rounded-2xl font-semibold hover:bg-opacity-90 transition-all hover:shadow-md w-full"
+                className="p-4 bg-gray-900 hover:bg-black text-white rounded-md font-semibold transition-colors w-full"
               />
               <RevealContact
                 type="sms"
@@ -356,7 +364,7 @@ export default function ConsultPage() {
                 phone={PHONE_NUMBER}
                 displayPhone={PHONE_DISPLAY}
                 smsBody="[플로로탄닌 파트너스] 상담 문의드립니다."
-                className="p-4 bg-white border-2 border-ocean-deep text-ocean-deep rounded-2xl font-semibold hover:bg-ocean-deep hover:text-white transition-all hover:shadow-md w-full"
+                className="p-4 bg-white border border-gray-300 text-gray-900 hover:border-gray-900 rounded-md font-semibold transition-colors w-full"
               />
             </div>
 

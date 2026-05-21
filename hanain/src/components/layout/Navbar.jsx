@@ -242,7 +242,7 @@ export default function Navbar() {
       )}
 
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-ocean-deep shadow-lg' : 'bg-ocean-deep/95 backdrop-blur-sm'
+        scrolled ? 'bg-gray-900 shadow-sm' : 'bg-gray-900/95 backdrop-blur-sm'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between h-16">
@@ -382,7 +382,7 @@ export default function Navbar() {
         {/* 모바일 드롭다운 — 화면 높이 내 스크롤 가능 + 컴팩트 레이아웃 */}
         {isOpen && (
           <div
-            className="md:hidden bg-ocean-deep border-t border-white/10 overflow-y-auto overscroll-contain"
+            className="md:hidden bg-gray-900 border-t border-white/10 overflow-y-auto overscroll-contain"
             style={{ maxHeight: 'calc(100vh - 64px)' }}
           >
 

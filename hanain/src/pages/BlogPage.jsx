@@ -30,22 +30,23 @@ const FALLBACK_CATEGORIES = [
 // 모듈 레벨 캐시 — BlogPage에서 DB 페치 후 갱신, PostCard 등이 같은 변수 참조
 let CATEGORIES = FALLBACK_CATEGORIES
 
+// 카테고리 라벨: 단일 모노 톤(헌법 v3 — 1색 액센트 원칙). 카테고리별 시각 구분은 카드 hover/border로 위임
 const CAT_COLORS = {
-  'cancer-treatment-care': 'bg-fuchsia-100 text-fuchsia-800', // 🆕 자홍 = 항암 치료 케어(생명·집중)
-  'buying-guide':       'bg-cyan-100 text-cyan-800',     // 🆕 시안 = 구매(신뢰·청량)
-  'safety-precautions': 'bg-lime-100 text-lime-800',     // 🆕 라임 = 안전·주의(자연)
-  diabetes:      'bg-orange-100 text-orange-700',
-  cancer:        'bg-red-100 text-red-700',
-  brain:         'bg-purple-100 text-purple-700',
-  cardiovascular:'bg-rose-100 text-rose-700',
-  inflammation:  'bg-yellow-100 text-yellow-700',
-  skin:          'bg-pink-100 text-pink-700',
-  research:      'bg-blue-100 text-blue-700',
+  'cancer-treatment-care': 'bg-gray-900 text-white',
+  'buying-guide':       'bg-gray-100 text-gray-700',
+  'safety-precautions': 'bg-gray-100 text-gray-700',
+  diabetes:      'bg-gray-100 text-gray-700',
+  cancer:        'bg-gray-100 text-gray-700',
+  brain:         'bg-gray-100 text-gray-700',
+  cardiovascular:'bg-gray-100 text-gray-700',
+  inflammation:  'bg-gray-100 text-gray-700',
+  skin:          'bg-gray-100 text-gray-700',
+  research:      'bg-gray-100 text-gray-700',
   general:       'bg-gray-100 text-gray-700',
-  'ingredient-comparison': 'bg-teal-100 text-teal-700',
-  'disease-health-info':   'bg-amber-100 text-amber-700',
-  'hospital-info':         'bg-indigo-100 text-indigo-700',
-  'partner-info':          'bg-emerald-100 text-emerald-700',
+  'ingredient-comparison': 'bg-gray-100 text-gray-700',
+  'disease-health-info':   'bg-gray-100 text-gray-700',
+  'hospital-info':         'bg-gray-100 text-gray-700',
+  'partner-info':          'bg-gray-100 text-gray-700',
 }
 
 // 블로그 카테고리 → question_videos category_id 매핑
@@ -92,20 +93,22 @@ function CategoryVideoSection({ categoryId }) {
   if (!loaded || videos.length === 0) return null
 
   return (
-    <div className="mb-8 bg-gradient-to-br from-teal-50 to-cyan-50 rounded-2xl p-5 border border-teal-100">
-      <div className="flex items-center gap-2 mb-4">
-        <PlayCircle className="w-5 h-5 text-teal-600" />
-        <h2 className="font-bold text-teal-800 text-base">
-          {CATEGORIES.find(c => c.id === categoryId)?.name} 관련 영상
+    <div className="mb-8 bg-gray-50 rounded-lg p-5 border border-gray-200">
+      <div className="flex items-center gap-3 mb-4">
+        <span className="h-px w-8 bg-gray-300" />
+        <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500">Related Videos</span>
+        <PlayCircle className="w-4 h-4 text-gray-500" />
+        <h2 className="font-semibold text-gray-900 text-[15px]">
+          {CATEGORIES.find(c => c.id === categoryId)?.name}
         </h2>
-        <span className="text-xs text-teal-500 bg-teal-100 px-2 py-0.5 rounded-full">{videos.length}개</span>
+        <span className="text-[11px] tabular-nums text-gray-500">· {videos.length}</span>
       </div>
       <div className={`grid gap-4 ${videos.length === 1 ? 'grid-cols-1 max-w-lg' : videos.length === 2 ? 'grid-cols-1 sm:grid-cols-2' : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'}`}>
         {videos.map(v => {
           const vid = extractYoutubeId(v.youtube_url)
           return (
             <a key={v.id} href={v.youtube_url} target="_blank" rel="noopener noreferrer"
-              className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all group border border-teal-100">
+              className="bg-white rounded-lg overflow-hidden transition-colors group border border-gray-200 hover:border-gray-400">
               {vid && (
                 <div className="aspect-video overflow-hidden relative">
                   <img
@@ -113,8 +116,8 @@ function CategoryVideoSection({ categoryId }) {
                     alt={v.video_title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                  <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition">
-                    <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center shadow-lg">
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/25 group-hover:bg-black/40 transition">
+                    <div className="w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center">
                       <svg className="w-5 h-5 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M8 5v14l11-7z"/>
                       </svg>
@@ -123,7 +126,7 @@ function CategoryVideoSection({ categoryId }) {
                 </div>
               )}
               <div className="p-3">
-                <p className="text-sm font-semibold text-gray-800 line-clamp-2 group-hover:text-teal-600 transition-colors leading-snug">
+                <p className="text-sm font-semibold text-gray-900 line-clamp-2 group-hover:text-gray-700 transition-colors leading-snug">
                   {v.video_title}
                 </p>
                 {v.video_summary && (
@@ -164,7 +167,7 @@ function PostCard({ post, partner }) {
             <span key={t} className="text-xs text-gray-400 bg-gray-50 px-2 py-0.5 rounded-full">#{t}</span>
           ))}
         </div>
-        <h2 className="text-lg font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-teal-600 transition-colors">
+        <h2 className="text-lg font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-gray-700 transition-colors">
           <Link to={withRef(`/blog/${post.slug}`, partner)}>{post.title}</Link>
         </h2>
         {post.excerpt && (
@@ -178,7 +181,7 @@ function PostCard({ post, partner }) {
             )}
           </div>
           <Link to={withRef(`/blog/${post.slug}`, partner)}
-            className="text-xs font-semibold text-teal-600 hover:text-teal-700 flex items-center gap-1">
+            className="text-xs font-semibold text-gray-700 hover:text-gray-900 underline underline-offset-4 decoration-gray-300 hover:decoration-gray-700 flex items-center gap-1">
             읽기 <ChevronRight className="w-3.5 h-3.5" />
           </Link>
         </div>
@@ -281,38 +284,31 @@ export default function BlogPage() {
       />
 
       <div className="min-h-screen bg-gray-50">
-        {/* 헤더 — 밝고 신선한 시안/스카이 그라데이션 + 안정감 있는 화이트 글래스 라벨 */}
-        <div className="relative bg-gradient-to-br from-sky-50 via-cyan-50 to-teal-50 border-b border-teal-100 pt-20 pb-14 md:pt-24 md:pb-16 overflow-hidden">
-          {/* 부드러운 배경 장식 */}
-          <div className="pointer-events-none absolute inset-0">
-            <div className="absolute -top-24 -left-16 w-72 h-72 bg-cyan-200/40 rounded-full blur-3xl" />
-            <div className="absolute -bottom-24 -right-10 w-80 h-80 bg-teal-200/40 rounded-full blur-3xl" />
-            <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[28rem] h-[28rem] bg-sky-100/50 rounded-full blur-3xl" />
-          </div>
-
-          <div className="relative max-w-5xl mx-auto px-4 text-center">
-            {/* 화이트 글래스모피즘 배지 — 잘림 없이 안전한 패딩 */}
-            <div className="inline-flex items-center gap-2 mb-5 px-4 py-1.5 bg-white/80 backdrop-blur-sm border border-teal-200 rounded-full shadow-sm">
-              <BookOpen className="w-4 h-4 text-teal-600" />
-              <span className="text-teal-700 text-xs font-bold tracking-[0.18em] uppercase">Research Blog</span>
+        {/* 헤더 — 라이트 에디토리얼 (헌법 v3) */}
+        <div className="bg-white border-b border-gray-200 pt-20 pb-14 md:pt-24 md:pb-16">
+          <div className="max-w-5xl mx-auto px-4">
+            <div className="flex items-center gap-3 mb-6">
+              <span className="h-px w-8 bg-gray-300" />
+              <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500">Research Blog</span>
+              <BookOpen className="w-4 h-4 text-gray-400" />
             </div>
 
-            <h1 className="text-3xl md:text-5xl font-extrabold mb-3 text-slate-800 tracking-tight">
-              플로로탄닌 <span className="bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">연구 블로그</span>
+            <h1 className="text-3xl md:text-5xl font-bold mb-3 text-gray-900 tracking-tight">
+              플로로탄닌 연구 블로그
             </h1>
-            <p className="text-slate-500 text-base md:text-lg max-w-xl mx-auto mb-7">
+            <p className="text-gray-500 text-base md:text-lg max-w-xl mb-8">
               PH-100 · 에콜 · 디에콜 최신 임상·연구 정보를 전달합니다
             </p>
 
-            <form onSubmit={handleSearch} className="max-w-lg mx-auto flex gap-2">
+            <form onSubmit={handleSearch} className="max-w-lg flex gap-2">
               <input
                 value={searchInput}
                 onChange={e => setSearchInput(e.target.value)}
                 placeholder="키워드 검색 (예: PH-100, 당뇨, eckol)"
-                className="flex-1 px-4 py-3 rounded-xl bg-white border border-teal-200 text-slate-800 text-sm placeholder:text-slate-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent"
+                className="flex-1 px-4 py-3 rounded-md bg-white border border-gray-300 text-gray-900 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent"
               />
               <button type="submit"
-                className="bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-500 hover:to-cyan-500 text-white px-5 py-3 rounded-xl font-bold text-sm transition-all shadow-sm hover:shadow-md flex items-center gap-1.5">
+                className="bg-gray-900 hover:bg-black text-white px-6 py-3 rounded-md text-[14px] font-medium transition-colors flex items-center gap-2">
                 <Search className="w-4 h-4" /> 검색
               </button>
             </form>
@@ -332,10 +328,10 @@ export default function BlogPage() {
                   if (cat.id !== 'all') p.set('category', cat.id)
                   setSearchParams(p)
                 }}
-                className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${
+                className={`px-4 py-2 rounded-md text-[13px] font-medium transition-colors ${
                   activeCat === cat.id
-                    ? 'bg-teal-600 text-white shadow-sm'
-                    : 'bg-white text-gray-600 border border-gray-200 hover:border-teal-400 hover:text-teal-600'
+                    ? 'bg-gray-900 text-white'
+                    : 'bg-white text-gray-700 border border-gray-200 hover:border-gray-400 hover:text-gray-900'
                 }`}>
                 {cat.name}
               </button>
@@ -357,7 +353,7 @@ export default function BlogPage() {
           {/* 글 목록 */}
           {loading ? (
             <div className="flex justify-center py-20">
-              <div className="w-10 h-10 border-4 border-teal-500 border-t-transparent rounded-full animate-spin" />
+              <div className="w-10 h-10 border-2 border-gray-300 border-t-gray-900 rounded-full animate-spin" />
             </div>
           ) : posts.length === 0 ? (
             <div className="text-center py-20 text-gray-400">

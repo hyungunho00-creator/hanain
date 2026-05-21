@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { ShieldAlert, ChevronRight, Mail, Phone } from 'lucide-react'
 import { usePartner } from '../context/PartnerContext'
 import SEOHead from '../components/common/SEOHead'
+import RevealContact from '../components/common/RevealContact'
 
 export default function CopyrightPage() {
   const partner = usePartner()
@@ -19,7 +20,7 @@ export default function CopyrightPage() {
         {/* breadcrumb */}
         <div className="bg-white border-b border-gray-100 sticky top-16 z-10">
           <div className="max-w-3xl mx-auto px-4 py-3 flex items-center gap-2 text-sm text-gray-500">
-            <Link to="/" className="hover:text-teal-600">홈</Link>
+            <Link to="/" className="hover:text-gray-900">홈</Link>
             <ChevronRight className="w-4 h-4" />
             <span className="text-gray-800 font-medium">저작권 및 무단복제 금지 안내</span>
           </div>
@@ -28,9 +29,10 @@ export default function CopyrightPage() {
         <div className="max-w-3xl mx-auto px-4 py-10">
           {/* Hero */}
           <header className="mb-8">
-            <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 text-amber-800 text-xs font-bold px-3 py-1.5 rounded-full mb-4">
-              <ShieldAlert className="w-3.5 h-3.5" />
-              LEGAL NOTICE
+            <div className="flex items-center gap-3 mb-4">
+              <span className="h-px w-8 bg-gray-300" />
+              <ShieldAlert className="w-3.5 h-3.5 text-gray-500" />
+              <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500">Legal Notice</span>
             </div>
             <h1 className="text-2xl md:text-3xl font-extrabold text-gray-900 leading-tight mb-3">
               phlorotannin.com<br className="md:hidden" /> 저작권 및 무단복제 금지 안내
@@ -76,7 +78,7 @@ export default function CopyrightPage() {
                   '상담 연결 방식 및 파트너 코드 구조',
                 ].map((item, i) => (
                   <li key={i} className="flex gap-2">
-                    <span className="text-teal-500 mt-1.5 flex-shrink-0">▸</span>
+                    <span className="text-gray-400 mt-1.5 flex-shrink-0">▸</span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -91,15 +93,15 @@ export default function CopyrightPage() {
               <p className="text-[15px] md:text-base text-gray-700 leading-[1.85] mb-3">
                 사전 서면 동의 없이 본 사이트의 전부 또는 일부를 다음과 같이 사용하는 것을 금지합니다.
               </p>
-              <div className="bg-red-50 border border-red-200 rounded-xl p-4 md:p-5">
-                <ul className="grid grid-cols-2 md:grid-cols-3 gap-2 text-sm text-red-800">
+              <div className="bg-gray-50 border border-gray-300 rounded-md p-4 md:p-5">
+                <ul className="grid grid-cols-2 md:grid-cols-3 gap-2">
                   {[
                     '복제', '캡처', '전재', '수정',
                     '편집', '배포', '재가공', '상업적 이용',
                     '유사 서비스 제작', '제3자 제공', '영업자료 활용', 'AI 학습자료 활용',
                     '크롤링', '데이터 수집', '유사 페이지 제작',
                   ].map(act => (
-                    <span key={act} className="bg-white text-red-700 font-semibold px-2.5 py-1 rounded-md text-center text-xs md:text-sm border border-red-100">
+                    <span key={act} className="bg-white text-gray-900 font-semibold px-2.5 py-1 rounded-md text-center text-xs md:text-sm border border-gray-300">
                       {act}
                     </span>
                   ))}
@@ -116,7 +118,7 @@ export default function CopyrightPage() {
                 위반 시 <strong className="text-gray-900">저작권법</strong>,
                 <strong className="text-gray-900"> 부정경쟁방지 및 영업비밀보호에 관한 법률</strong>,
                 <strong className="text-gray-900"> 개인정보보호법</strong> 등 관련 법령에 따라
-                <strong className="text-red-700"> 게시중단 요청, 손해배상 청구, 형사 고소</strong> 등
+                <strong className="text-gray-900"> 게시중단 요청, 손해배상 청구, 형사 고소</strong> 등
                 필요한 법적 조치를 취할 수 있습니다.
               </p>
             </section>
@@ -130,18 +132,22 @@ export default function CopyrightPage() {
                 본 사이트의 자료를 활용하고자 하는 경우 <strong>반드시 사전 서면 동의</strong>를 받아야 합니다.
                 아래 연락처로 사용 목적·범위·기간을 명시하여 문의 주시기 바랍니다.
               </p>
-              <div className="bg-teal-50 border border-teal-100 rounded-xl p-4 md:p-5 space-y-2">
+              <div className="bg-gray-50 border border-gray-200 rounded-md p-4 md:p-5 space-y-2">
                 <div className="flex items-center gap-3 text-sm md:text-base text-gray-800">
-                  <Phone className="w-4 h-4 text-teal-600 flex-shrink-0" />
+                  <Phone className="w-4 h-4 text-gray-500 flex-shrink-0" />
                   <span className="font-semibold">전화</span>
-                  <a href={`tel:${partner.phone}`} className="text-teal-700 hover:underline">
-                    {partner.phoneDisplay}
-                  </a>
+                  <RevealContact
+                    type="tel"
+                    label="전화 상담 신청"
+                    phone={partner.phone}
+                    displayPhone={partner.phoneDisplay}
+                    className="text-gray-900 underline underline-offset-4 decoration-gray-300 hover:decoration-gray-700"
+                  />
                 </div>
                 <div className="flex items-center gap-3 text-sm md:text-base text-gray-800">
-                  <Mail className="w-4 h-4 text-teal-600 flex-shrink-0" />
+                  <Mail className="w-4 h-4 text-gray-500 flex-shrink-0" />
                   <span className="font-semibold">문의</span>
-                  <Link to="/consult" className="text-teal-700 hover:underline">
+                  <Link to="/consult" className="text-gray-900 underline underline-offset-4 decoration-gray-300 hover:decoration-gray-700">
                     /consult 문의 페이지
                   </Link>
                 </div>
@@ -158,7 +164,7 @@ export default function CopyrightPage() {
           </article>
 
           <div className="mt-6 text-center">
-            <Link to="/" className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-teal-600 transition-colors">
+            <Link to="/" className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-gray-900 transition-colors">
               <ChevronRight className="w-4 h-4 rotate-180" />
               메인으로 돌아가기
             </Link>
