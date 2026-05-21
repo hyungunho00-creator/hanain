@@ -53,6 +53,28 @@ def fmt_rfc822(dt_str):
     except:
         return datetime.now(timezone.utc).strftime("%a, %d %b %Y %H:%M:%S +0000")
 
+# enclosure MIME 매핑 — 확장자 기반 동적 결정
+# GSC가 MIME 불일치를 오류로 잡는 것을 방지 (RSS 2.0 spec + Atom enclosure 검증 통과)
+_MIME_BY_EXT = {
+    "webp": "image/webp",
+    "png":  "image/png",
+    "jpg":  "image/jpeg",
+    "jpeg": "image/jpeg",
+    "gif":  "image/gif",
+    "svg":  "image/svg+xml",
+    "avif": "image/avif",
+}
+
+def mime_for_url(url: str) -> str:
+    """이미지 URL의 확장자로 MIME 타입을 결정 (fallback: image/png)"""
+    try:
+        # 쿼리스트링/프래그먼트 제거 후 마지막 확장자
+        clean = (url or "").split("?", 1)[0].split("#", 1)[0]
+        ext = clean.rsplit(".", 1)[-1].lower() if "." in clean else ""
+        return _MIME_BY_EXT.get(ext, "image/png")
+    except Exception:
+        return "image/png"
+
 def today():
     return datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
@@ -316,7 +338,9 @@ for post in posts[:50]:  # 최신 50개
     excerpt = esc(post.get("excerpt", "")[:300])
     cat_id  = post.get("category", "general")
     cat_name = esc(CAT_NAMES.get(cat_id, cat_id))
-    og_img  = esc(post.get("og_image") or f"{SITE_URL}/og-image.png")
+    raw_og  = post.get("og_image") or f"{SITE_URL}/og-image.png"
+    og_img  = esc(raw_og)
+    og_mime = mime_for_url(raw_og)  # 확장자 기반 MIME (webp/png/jpeg 자동 매핑)
     pub_date = fmt_rfc822(post.get("created_at", ""))
     tags    = post.get("tags") or []
     tags_str = ", ".join(esc(t) for t in tags[:5])
@@ -331,7 +355,7 @@ for post in posts[:50]:  # 최신 50개
     <category>{cat_name}</category>
     <pubDate>{pub_date}</pubDate>
     <guid isPermaLink="true">{SITE_URL}/blog/{slug}</guid>
-    <enclosure url="{og_img}" type="image/png"/>
+    <enclosure url="{og_img}" type="{og_mime}"/>
     {f'<dc:subject>{tags_str}</dc:subject>' if tags_str else ''}
   </item>""")
 
