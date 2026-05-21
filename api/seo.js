@@ -301,6 +301,62 @@ function staticMetaFor(pathname) {
       canonical: `${SITE}/community`,
     }
   }
+  // ─── [2026-05-21 D9] 누락 라우트 메타·canonical 보강 ─────
+  // 이전엔 fallback이 홈 메타로 떨어져 canonical 자기상충(중복 색인 위험) + 홈 title 노출.
+  // sitemap에는 미포함(noindex 의도)이나 외부 공유/실제 진입 가능 → canonical은 자기 자신을
+  // 가리키고 home title 누출은 차단. /question/write·/admin·/community/post 등 작성/관리
+  // 페이지는 noindex 의도 영역이라 robots 메타에 noindex,nofollow 신호도 함께 송신한다.
+  if (pathname === '/inforoom') {
+    return {
+      title: '정보실 | 플로로탄닌·감태추출물 자료 안내',
+      desc:  '플로로탄닌·감태추출물·해양 폴리페놀 관련 자료 안내. 종합 건강정보 데이터센터에서 제공하는 일반 정보실 페이지입니다.',
+      canonical: `${SITE}/inforoom`,
+      robots: 'noindex,follow',
+    }
+  }
+  if (pathname.match(/^\/p\/[^/]+\/inforoom$/)) {
+    const m = pathname.match(/^\/p\/([^/]+)\/inforoom$/)
+    const phone = m ? m[1] : ''
+    return {
+      title: `정보실 | ${phone} 파트너 · 플로로탄닌 정보페이지`,
+      desc:  '플로로탄닌·감태추출물·해양 폴리페놀 관련 자료 안내(파트너 컨텍스트). 종합 건강정보 데이터센터의 파트너 정보실 페이지입니다.',
+      canonical: `${SITE}/p/${phone}/inforoom`,
+      robots: 'noindex,follow',
+    }
+  }
+  if (pathname.startsWith('/community/post/')) {
+    const postId = pathname.replace('/community/post/', '').split('/')[0]
+    return {
+      title: '커뮤니티 글 | 플로로탄닌·감태추출물 건강정보 커뮤니티',
+      desc:  '플로로탄닌·감태추출물·해양 폴리페놀 건강정보 커뮤니티의 사용자 작성 게시글 페이지입니다.',
+      canonical: `${SITE}/community/post/${postId}`,
+      robots: 'noindex,follow',
+    }
+  }
+  if (pathname === '/community/write' || pathname.startsWith('/community/edit/')) {
+    return {
+      title: '커뮤니티 글 작성 | 플로로탄닌·감태추출물 건강정보',
+      desc:  '플로로탄닌·감태추출물·해양 폴리페놀 건강정보 커뮤니티의 게시글 작성 페이지입니다.',
+      canonical: `${SITE}${pathname}`,
+      robots: 'noindex,nofollow',
+    }
+  }
+  if (pathname === '/question/write') {
+    return {
+      title: '질문 작성 | 연구기반 Q&A — 플로로탄닌·감태추출물 건강정보',
+      desc:  '플로로탄닌·감태추출물·해양 폴리페놀 관련 연구기반 Q&A의 질문 작성 페이지입니다.',
+      canonical: `${SITE}/question/write`,
+      robots: 'noindex,nofollow',
+    }
+  }
+  if (pathname === '/admin') {
+    return {
+      title: '관리자 | phlorotannin.com',
+      desc:  '플로로탄닌 종합 건강정보 데이터센터 관리자 페이지입니다.',
+      canonical: `${SITE}/admin`,
+      robots: 'noindex,nofollow',
+    }
+  }
   if (pathname === '/consult') {
     return {
       title: '건강정보 상담 문의 | 플로로탄닌·감태추출물 정보센터',
@@ -656,7 +712,7 @@ async function fetchPostBody(slug) {
   if (!key) return null
   try {
     const r = await fetch(
-      `${url}/rest/v1/posts?slug=eq.${encodeURIComponent(slug)}&select=id,slug,title,meta_title,meta_desc,excerpt,content,category,tags,og_image,published_at,updated_at&limit=1`,
+      `${url}/rest/v1/posts?slug=eq.${encodeURIComponent(slug)}&select=id,slug,title,meta_title,meta_desc,excerpt,content,category,tags,og_image,published_at,updated_at,created_at&limit=1`,
       { headers: { apikey: key, Authorization: `Bearer ${key}`, 'Accept-Profile': 'public' } }
     )
     if (!r.ok) return null
@@ -689,8 +745,12 @@ async function fetchPostBody(slug) {
       content: contentRaw,
       tags: Array.isArray(p.tags) ? p.tags.filter(t => t && typeof t === 'string') : [],
       ogImage: p.og_image || '',
-      publishedAt: p.published_at || '',
-      updatedAt: p.updated_at || '',
+      // ─── [2026-05-21 D9] datePublished SEO 안전 fallback ─────
+      // published_at 이 NULL 인 글이 36.9% (110/298) 존재. Schema.org Article
+      // 권장 필드 누락 시 Google Rich Results Article 자격 박탈되므로
+      // updated_at → created_at 순으로 안전 대체. 데이터 본체 변경 없음.
+      publishedAt: p.published_at || p.updated_at || p.created_at || '',
+      updatedAt: p.updated_at || p.created_at || '',
     }
   } catch {
     return null
@@ -1359,6 +1419,19 @@ function injectMeta(html, meta) {
     /<link rel="canonical" href="[^"]*"\s*\/?>/,
     `<link rel="canonical" href="${c}" />`
   )
+
+  // ─── [2026-05-21 D9] robots 메타 라우트별 갱신 ─────
+  // /admin, /question/write, /community/post, /inforoom 등 noindex 의도 라우트에서만
+  // meta.robots 가 셋되며, 그 외 페이지는 index.html 기본값 (index, follow ...) 유지.
+  // 의도하지 않은 noindex 누출 방지: meta.robots 가 없으면 index.html 그대로.
+  if (meta.robots) {
+    const r = esc(meta.robots)
+    // index.html에는 동일 메타가 2회 중복 출현하므로 replace_all로 전부 갱신
+    html = html.replace(
+      /<meta name="robots" content="[^"]*"\s*\/?>/g,
+      `<meta name="robots" content="${r}" />`
+    )
+  }
 
   // og
   html = html.replace(
