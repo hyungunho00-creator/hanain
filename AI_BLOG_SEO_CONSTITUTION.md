@@ -508,6 +508,55 @@ curl -sI "https://phlorotannin.com/sitemap.xml" | grep -iE "x-sitemap-source|x-s
 # 기대: x-sitemap-source: static-primary, x-sitemap-loc-count: 1814 (또는 그 이상)
 ```
 
+**(7) SSR JSON-LD 주입 의무 — `api/seo.js` 서버 사이드 (2026-05-21 D7 보강 — "검색엔진 관점 신뢰 회복" 단계)**
+
+**근본 원인 발견**: D6 단계에서 React Helmet 으로 추가한 JSON-LD 는 모두 **CSR(클라이언트 사이드 렌더링)** 이므로 검색엔진 봇이 **첫 fetch 시점에 받는 HTML 에는 존재하지 않는다**. 1,361 Q&A·14 카테고리·4 허브 페이지의 모든 컬렉션·시맨틱 JSON-LD 가 봇 시각으로 *불가시* 상태였음. 이는 SEO 자산화의 본질을 무력화시킨다.
+
+이를 방지하기 위해 다음을 **불변 의무**로 한다:
+
+- **카테고리/허브/태그 페이지의 JSON-LD 는 반드시 `api/seo.js` 에서 서버 사이드 주입한다**.
+  - 라우트별 빌더 함수 필수:
+    - `buildCategoryJsonLd(pathname, name)` → `[BreadcrumbList, CollectionPage]`
+    - `buildLearnJsonLd()` → `[BreadcrumbList, LearningResource]`
+    - `buildEasyJsonLd()` → `[BreadcrumbList, MedicalWebPage(MedicalAudience/Patient)]`
+    - `buildPhlorotanninJsonLd()` → `[BreadcrumbList, MedicalWebPage]`
+    - `buildGlossaryJsonLd()` → `[BreadcrumbList]` (DefinedTermSet 은 글로벌 graph 중복 회피)
+    - `buildTagJsonLd(pathname, tag)` → `[BreadcrumbList]`
+  - `buildJsonLdForPath(pathname)` 디스패처가 URL 패턴별로 올바른 빌더를 호출한다.
+- **핸들러 흐름 의무**: `injectMeta(indexHtml, meta)` 직후 `injectJsonLd(html, extraLdArray)` 를 호출하여 `</head>` 앞에 추가 JSON-LD 를 주입한다.
+- **진단 헤더 필수**: 응답 헤더에 다음 2종을 출력하여 회귀 추적을 가능케 한다.
+  - `X-Extra-JsonLd: yes:N` / `no` / `error:<message>`
+  - `X-Extra-JsonLd-Count: N`
+- **안전 스위치**: 환경변수 `JSONLD_DISABLED=1` 로 비상시 비활성화 가능 (수동 롤백 없이도 차단할 수 있어야 한다).
+- **URL slug ↔ 카테고리 ID 매핑 단일화**: `URL_SLUG_TO_CAT_ID` (api/seo.js) 가 `metabolism`, `cancer-immune`, `digestive`, `cardiovascular`, `neuro-cognitive`, `mental-health`, `musculoskeletal`, `skin-hair`, `skin-hair-care`, `skin`, `hair`, `respiratory`, `infection-inflammation`, `womens-health`, `mens-health` 15개 키를 모두 포함해야 함.
+- **`CATEGORY_NAMES` dash-case 키 의무**: URL 슬러그가 dash-case(예: `cancer-immune`, `mental-health`)인 경우 `CATEGORY_NAMES` 도 dash-case 키로 카테고리명을 제공해야 함. snake_case 만 등록되어 있으면 SSR 메타에 카테고리명이 빠진다.
+- **JSON.parse 무결성**: 주입되는 모든 JSON-LD 는 빌드 시점에 직렬화되어 `JSON.parse()` 가 통과해야 한다 (제어문자 0x00–0x1F 제거, 따옴표 escape 보장).
+
+**클라이언트 사이드(React Helmet) JSON-LD 는 보조 신호로만 허용**: 봇 시각에서는 SSR 주입분이 권위 신호이고, Helmet 주입분은 사용자 인터랙션 직후의 보충 신호다. **검색엔진 자산화의 1차 근거는 항상 `curl -A "Googlebot/2.1" {url}` 의 응답 HTML 이다**.
+
+**검증 명령** (배포 후 필수):
+```bash
+# 14 카테고리 SSR JSON-LD 주입 확인 — X-Extra-JsonLd: yes:2 + types 에 CollectionPage 포함 PASS
+for slug in cardiovascular metabolism cancer-immune skin-hair skin hair mental-health; do
+  echo "=== /category/$slug ==="
+  curl -sI -A "Googlebot/2.1" "https://phlorotannin.com/category/$slug" | grep -i "x-extra-jsonld"
+  curl -s  -A "Googlebot/2.1" "https://phlorotannin.com/category/$slug" \
+    | grep -oE '"@type":"(BreadcrumbList|CollectionPage|LearningResource|MedicalWebPage)"' | sort -u
+done
+
+# 허브 4 페이지 JSON-LD 주입 확인
+for path in /learn /easy /phlorotannin /glossary; do
+  echo "=== $path ==="
+  curl -sI -A "Googlebot/2.1" "https://phlorotannin.com$path" | grep -i "x-extra-jsonld"
+done
+
+# Yeti(네이버) UA 도 동일하게 응답하는지 확인
+curl -sI -A "Mozilla/5.0 (compatible; Yeti/1.1; +https://naver.me/spd)" \
+  "https://phlorotannin.com/category/cardiovascular" | grep -i "x-extra-jsonld"
+```
+
+**위반 시 영향**: 컬렉션·허브·태그 페이지의 모든 SEO 자산이 봇 가시성 0이 됨 → 페이지랭크가 글로벌 graph 1개에만 묶임 → 토픽 클러스터·계층 구조가 검색엔진에 전달되지 않음 → 자산화 효과 73%+ 손실.
+
 ### ✅ 의무 8. 안전성 일괄 검증 (forbidden words)
 - 신규 Q&A 추가 시 (또는 기존 일괄 점검 시) 제4조 금지어 전수 스캔
 - 위반 발견 시 **자동 치환 사전** 적용 가능:

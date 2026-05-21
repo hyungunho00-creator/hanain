@@ -132,6 +132,21 @@
 - ❌ `vercel.json` 의 `buildCommand` 에서 `cp dist/sitemap.xml ../public/sitemap.xml` 라인 제거 금지
   - 이유: 빌드 산출물이 `public/sitemap.xml` 로 복사되어야 `api/sitemap.js` 가 단일 진실원으로 사용 가능
 
+**SSR JSON-LD 동결 (2026-05-21 D7 — '검색엔진 관점 신뢰 회복' 단계)**:
+- ❌ `api/seo.js` 의 `buildJsonLdForPath()` 디스패처 삭제·축소 금지
+  - 이유: 카테고리·허브·태그 페이지의 JSON-LD 가 봇 첫 fetch 시점에 HTML 에 포함되는 **유일한 경로**. 제거 시 검색엔진 시각에서 14 카테고리·4 허브·131 태그 페이지의 컬렉션/시맨틱 구조가 전부 비가시 상태로 회귀.
+- ❌ `api/seo.js` 의 7종 빌더 함수 삭제 금지: `buildCategoryJsonLd`, `buildLearnJsonLd`, `buildEasyJsonLd`, `buildPhlorotanninJsonLd`, `buildGlossaryJsonLd`, `buildTagJsonLd`, `buildJsonLdForPath`
+- ❌ `api/seo.js` 의 핸들러 내 SSR JSON-LD 주입 블록 (`injectMeta()` 직후 `buildJsonLdForPath(pathname)` → `injectJsonLd(html, extraLdArray)` 호출) 제거 금지
+  - 이유: 빌더 함수가 존재해도 핸들러가 호출하지 않으면 HTML 에 주입되지 않음 — 검증 결과 38/47 → 1/47 회귀
+- ❌ `api/seo.js` 의 `URL_SLUG_TO_CAT_ID` 매핑에서 15개 키 (`metabolism`, `cancer-immune`, `digestive`, `cardiovascular`, `neuro-cognitive`, `mental-health`, `musculoskeletal`, `skin-hair`, `skin-hair-care`, `skin`, `hair`, `respiratory`, `infection-inflammation`, `womens-health`, `mens-health`) 누락 금지
+  - 이유: URL 슬러그 → category id 변환 실패 시 카테고리명 누락 → CollectionPage.name 이 빈 문자열로 송신
+- ❌ `api/seo.js` 의 `CATEGORY_NAMES` 에서 dash-case 키 8종 (`cancer-immune`, `neuro-cognitive`, `mental-health`, `skin-hair`, `skin-hair-care`, `infection-inflammation`, `womens-health`, `mens-health`) 제거 금지 — **D7 추가**
+  - 이유: URL 슬러그가 dash-case 인데 CATEGORY_NAMES 가 snake_case 만 가지면 SSR 메타·JSON-LD 양쪽에서 카테고리명이 빠짐
+- ❌ 응답 헤더 `X-Extra-JsonLd`, `X-Extra-JsonLd-Count` 제거 금지 — 회귀 감지 진단 신호
+- ❌ React Helmet 의 JSON-LD 주입(CSR) 만 사용하고 SSR 주입을 비활성화하는 변경 금지
+  - 이유: 봇 첫 fetch HTML 에서 JSON-LD 누락 = SEO 자산화 본질 무력화 (D6 검증에서 확인된 실제 사고)
+- ✅ 비상시 비활성화는 `JSONLD_DISABLED=1` 환경변수로만 허용 (코드 삭제 금지)
+
 ---
 
 ## 4. 파트너 시스템

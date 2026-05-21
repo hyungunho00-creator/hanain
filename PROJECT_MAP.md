@@ -164,7 +164,7 @@ Q&A는 현재 **Supabase 마이그레이션 대기 상태** (Phase 5 예정). �
 | `hanain/scripts/add_qa_eeat_fields.py` | **(신규)** Q&A 전수 E-E-A-T 메타 필드 5종 주입 (멱등) | 2.6KB |
 | `hanain/scripts/refine_qa_authors.py` | **(신규)** author 필드를 13개 카테고리 분과 편집데스크명으로 세분화 (멱등) | 4.1KB |
 | `hanain/scripts/build_og_images.py` | **(신규)** 카테고리별 OG PNG 13장 빌드 (Pillow + NanumSquareRoundB) | 5.0KB |
-| `api/seo.js` | **(D3+D6 보강)** 봇 메타 주입 함수 — `CAT_OG_SLUG` (snake+dash 양방향 키) + `staticMetaFor()` ogImage 필드 + `injectMeta()` og:image 5종 정규식 + `X-OG-Image` 진단 헤더 | 1.1k lines |
+| `api/seo.js` | **(D3+D6+D7 보강)** 봇 메타 주입 함수 — `CAT_OG_SLUG` (snake+dash 양방향 키) + `staticMetaFor()` ogImage 필드 + `injectMeta()` og:image 5종 정규식 + `X-OG-Image` 진단 헤더 + **D7: SSR JSON-LD 주입 7종 빌더** (`buildCategoryJsonLd`/`buildLearnJsonLd`/`buildEasyJsonLd`/`buildPhlorotanninJsonLd`/`buildGlossaryJsonLd`/`buildTagJsonLd`/`buildJsonLdForPath`) + `URL_SLUG_TO_CAT_ID` 15키 매핑 + `CATEGORY_NAMES` dash-case 키 8종 + `X-Extra-JsonLd` / `X-Extra-JsonLd-Count` 진단 헤더 | 1.4k lines |
 | `vercel.json` (root) | **(D3 보강)** `/q/:slug`, `/qa/tag/:tag`, `/glossary` 명시적 rewrites + catch-all 의 `og/` 제외 | - |
 | `hanain/generate_sitemap_rss.py` | **(D6 보강)** Q&A URL sitemap (총 1,814 URL) — CATEGORY_SLUGS 에 `skin`, `hair` 추가 → 14개 카테고리 | - |
 | `hanain/src/pages/CategoryPage.jsx` | **(D6 보강)** qa.json fallback 4종 (`ensureQaFallback`/`getFallbackCategory`/`getFallbackQuestions`/`getFallbackPopular`) + JSON-LD 3종 (`BreadcrumbList`/`CollectionPage`/`ItemList`) | 19.4KB |
