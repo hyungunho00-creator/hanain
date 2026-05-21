@@ -12,3 +12,4 @@ hanain/dist/
 tmp_seo_assets/qa_*/qa.backup.*.json
 tmp_seo_assets/qa_*/qa.brand_tags_backup.*.json
 tmp_seo_assets/qa_*/qa.eeat_backup.*.json
+tmp_seo_assets/qa_*/qa.authors_backup.*.json

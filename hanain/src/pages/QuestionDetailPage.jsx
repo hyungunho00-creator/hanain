@@ -265,6 +265,7 @@ export default function QuestionDetailPage() {
         canonical={pageUrl}
         ogType="article"
         ogImage={`https://phlorotannin.com/og/qa-${CAT_OG_SLUG[question.category_id] || 'default'}.png`}
+        ogImageAlt={`${cat?.name || '건강정보'} Q&A: ${question.title} — 플로로탄닌·감태추출물 종합 건강정보 데이터센터`}
         jsonLd={jsonLd}
       />
 

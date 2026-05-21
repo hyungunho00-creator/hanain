@@ -1,0 +1,22 @@
+{
+  "total": 1361,
+  "updated": 1361,
+  "kept_custom": 0,
+  "kept_default_no_cat": 0,
+  "already_desk": 0,
+  "by_category": {
+    "cardiovascular": 100,
+    "metabolism": 100,
+    "cancer_immune": 155,
+    "digestive": 100,
+    "neuro_cognitive": 130,
+    "skin": 113,
+    "hair": 37,
+    "musculoskeletal": 100,
+    "womens_health": 102,
+    "mens_health": 102,
+    "respiratory": 102,
+    "infection_inflammation": 110,
+    "mental_health": 110
+  }
+}

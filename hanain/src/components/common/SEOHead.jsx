@@ -21,6 +21,7 @@ export default function SEOHead({
   canonical,
   ogType = 'website',
   ogImage = 'https://phlorotannin.com/og-image.png',
+  ogImageAlt = null,   // 호출부에서 카테고리별 차별화 가능 (없으면 title 기반 자동 fallback)
   noindex = false,
   jsonLd = null,
   lang = 'ko',
@@ -96,11 +97,13 @@ export default function SEOHead({
     setMeta('meta[property="og:description"]', finalDesc)
     setMeta('meta[property="og:type"]', ogType)
     if (canonical) setMeta('meta[property="og:url"]', canonical)
+    // og:image:alt — 호출부 prop 우선, 없으면 title 기반 fallback (헌법 제10조 의무 7-B-4)
+    const finalImageAlt = ogImageAlt || `${fullTitle} - 미리보기 이미지`
     setMeta('meta[property="og:image"]', ogImage)
     setMeta('meta[property="og:image:secure_url"]', ogImage)
     setMeta('meta[property="og:image:width"]', '1200')
     setMeta('meta[property="og:image:height"]', '630')
-    setMeta('meta[property="og:image:alt"]', `${fullTitle} - 미리보기 이미지`)
+    setMeta('meta[property="og:image:alt"]', finalImageAlt)
     setMeta('meta[property="og:image:type"]', 'image/png')
     setMeta('meta[property="og:site_name"]', SITE_NAME_SHORT)
     setMeta('meta[property="og:locale"]', 'ko_KR')
@@ -110,7 +113,7 @@ export default function SEOHead({
     setMeta('meta[name="twitter:title"]', fullTitle)
     setMeta('meta[name="twitter:description"]', finalDesc)
     setMeta('meta[name="twitter:image"]', ogImage)
-    setMeta('meta[name="twitter:image:alt"]', `${fullTitle} - 미리보기 이미지`)
+    setMeta('meta[name="twitter:image:alt"]', finalImageAlt)
 
     // ─── canonical link ───
     if (canonical) {
@@ -145,7 +148,7 @@ export default function SEOHead({
         page_path: canonical ? new URL(canonical).pathname : window.location.pathname,
       })
     }
-  }, [fullTitle, finalDesc, finalKeywords, canonical, ogImage, noindex, ogType, jsonLd, lang])
+  }, [fullTitle, finalDesc, finalKeywords, canonical, ogImage, ogImageAlt, noindex, ogType, jsonLd, lang])
 
   return null
 }

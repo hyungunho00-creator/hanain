@@ -417,10 +417,15 @@ YMYL 의료 콘텐츠의 신뢰도 및 페이지랭크 흐름을 강화하기 �
 - 백업 자동 생성 (`tmp_seo_assets/qa_*/qa.brand_tags_backup.<ts>.json`)
 - **재발 방지**: Q&A 일괄 추가 후 반드시 이 스크립트 실행 → tagIndex.json 재생성
 
-**(2) E-E-A-T 메타데이터 필드 5종 — `scripts/add_qa_eeat_fields.py`**
+**(2) E-E-A-T 메타데이터 필드 5종 — `scripts/add_qa_eeat_fields.py` + `scripts/refine_qa_authors.py`**
 - 모든 Q&A에 `author` / `content_type` / `reviewed_at` / `disclaimer` / `source_type` 필드 부착
 - **정직 원칙**: 의사명을 날조하지 않음 — "편집팀" + 명확한 disclaimer 사용
+- **author 카테고리별 세분화 (2단계)**: 13개 분과 편집데스크명 (예: "플로로탄닌 정보센터 · 심혈관 편집데스크")로 차별화
+  - 실존 의사명 날조 금지, 단 편집부서 명시는 조직 구조로서 허용
+  - 모든 데스크는 동일한 disclaimer 유지
+  - `refine_qa_authors.py` 멱등 — 이미 데스크명 적용된 Q&A는 건너뜀, 커스텀 author 는 보존
 - Schema.org `QAPage.mainEntity.dateModified` 및 `acceptedAnswer.author`가 이 필드를 활용
+- og:image:alt 카테고리별 차별화 — SEOHead `ogImageAlt` prop (CategoryPage/QuestionDetail/QATagPage)
 
 **(3) 허브 페이지 → Q&A 동선 (RelatedQA 임베드)**
 - `/learn`, `/phlorotannin`, `/easy` 3개 권위 허브에 `<RelatedQA blogTags={...} max={6} />` 임베드 **필수**

@@ -76,6 +76,8 @@
 **콘텐츠 자산화 4종 동결 (2026-05-21 보강 — "부족한 컨텐츠 채우기" 완료)**:
 - ❌ Q&A의 E-E-A-T 필드 5종 (`author`, `content_type`, `reviewed_at`, `disclaimer`, `source_type`) 삭제 금지
   - 이유: Schema.org `QAPage.dateModified` / `acceptedAnswer.author` 가 이 필드를 직접 참조 — 삭제 시 YMYL 신뢰도 신호 소멸
+  - author는 13개 카테고리별 분과 편집데스크명으로 세분화됨 (`refine_qa_authors.py` 산출물) — 단일값으로 되돌리는 일괄 변경 금지
+- ❌ `SEOHead.jsx` 의 `ogImageAlt` prop 제거 금지 — og:image:alt 카테고리별 차별화 신호 소실
 - ❌ Q&A의 브랜드 태그 10종 (플로로탄닌·감태·항산화·디에콜·에콜·폴리페놀·항염증·해양폴리페놀·갈조류·후코이단) 일괄 제거 금지
   - 이유: 131개 태그 페이지 중 9개가 이 브랜드 키워드 기반 — 제거 시 1,216~202개 Q&A의 토픽 클러스터 붕괴
   - 재추가 방법: `python3 scripts/build_qa_brand_tags.py --apply` (멱등성 보장)

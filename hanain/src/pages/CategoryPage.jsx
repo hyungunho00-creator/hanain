@@ -131,6 +131,7 @@ export default function CategoryPage() {
         keywords={`${category.name}, ${category.name_en || ''}, 플로로탄닌, 감태추출물, 해양 폴리페놀, 건강정보 아카이브, 종합 건강정보 데이터센터`}
         canonical={`https://phlorotannin.com/category/${slug}`}
         ogImage={`https://phlorotannin.com/og/qa-${slug}.png`}
+        ogImageAlt={`${category.name} Q&A 아카이브 미리보기 — 플로로탄닌·감태추출물 기반 1,361건 건강정보, 13개 카테고리, 131개 태그 페이지`}
       />
 
       <div className="pt-16 min-h-screen bg-gray-hana">

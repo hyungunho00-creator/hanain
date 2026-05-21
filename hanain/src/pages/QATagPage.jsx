@@ -192,6 +192,7 @@ export default function QATagPage() {
         canonical={pageUrl}
         ogType="website"
         ogImage="https://phlorotannin.com/og/qa-default.png"
+        ogImageAlt={`${decodedTag} 태그 Q&A 모음 — 플로로탄닌·감태추출물 종합 건강정보 데이터센터, ${decodedTag} 관련 전문 답변 아카이브`}
         jsonLd={faqJsonLd}
       />
 
