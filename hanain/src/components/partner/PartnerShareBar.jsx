@@ -1,22 +1,19 @@
 // ───────────────────────────────────────────────────────────────
 // hanain/src/components/partner/PartnerShareBar.jsx
-// 파트너 영업 보조 — 추천 링크 공유 도구.
+// 중립 톤 공유 위젯 — 손님 친화 디자인.
 //
-// 동작:
+// 디자인 원칙:
+//   - 화면에는 파트너 이름·전화·"추천" 단어 등 네트워크 느낌 표기 절대 없음.
+//   - 평범한 블로그 "공유" 버튼처럼 보임 ("최신 정보 공유 가능합니다").
+//   - 내부적으로는 클릭 시 자동으로 ?ref=<phone>가 부착된 링크가 복사/전송됨.
+//
+// 백그라운드 인프라:
 //   1) 파트너 컨텍스트가 활성(본사 기본 아님)이면 노출.
-//   2) 표시: "나의 추천 링크" + 자동 부착된 ref URL preview + [복사][카카오톡][문자]
-//   3) 추가 안전망: 진입 후 주소창 URL을 ?ref=<phone> 으로 silent 동기화
-//      → 사용자가 브라우저 주소창을 직접 복사해도 ref가 유지되어 본사로 새지 않음.
+//   2) 진입 시 주소창 URL을 ?ref=<phone>으로 silent 동기화 (history.replaceState).
+//      → 손님이 브라우저 주소창을 직접 복사해도 ref가 유지되어 본사로 새지 않음.
 //
-// 사용처:
-//   - BlogPage  (목록 상단)
-//   - BlogPostPage (글 상단)
-//   - 향후 QAPage, GlossaryPage 등에도 동일하게 삽입 가능.
-//
-// 외부 의존성:
-//   - usePartner() : 현재 컨텍스트 파트너 ({ name, phone, phoneDisplay })
-//   - DEFAULT_PARTNER : 본사 기본 파트너
-//   - withRef() : 내부 URL에 ?ref= 부착
+// 사용처: BlogPage (목록 상단), BlogPostPage (글 상단).
+// 외부 의존성: usePartner(), DEFAULT_PARTNER, withRef().
 // ───────────────────────────────────────────────────────────────
 import { useEffect, useState } from 'react'
 import { useLocation, useNavigate, useSearchParams } from 'react-router-dom'
@@ -24,7 +21,7 @@ import { Copy, MessageCircle, Share2, CheckCircle2 } from 'lucide-react'
 import { usePartner, DEFAULT_PARTNER } from '../../context/PartnerContext'
 import { withRef } from '../../lib/partnerRef'
 
-export default function PartnerShareBar({ compact = false }) {
+export default function PartnerShareBar() {
   const partner = usePartner()
   const location = useLocation()
   const navigate = useNavigate()
@@ -103,68 +100,54 @@ export default function PartnerShareBar({ compact = false }) {
   // 파트너 컨텍스트 없으면 표시 안 함 (본사 모드)
   if (!isPartner) return null
 
-  const shareUrl = getShareUrl()
-
-  if (compact) {
-    return (
-      <div className="bg-gradient-to-r from-teal-50 to-cyan-50 border border-teal-200 rounded-xl p-3 mb-4 flex items-center gap-2 text-sm">
-        <span className="font-semibold text-teal-800 whitespace-nowrap">
-          📎 내 추천 링크
-        </span>
-        <span className="flex-1 truncate text-gray-600 text-xs font-mono">
-          {shareUrl.replace('https://', '')}
-        </span>
-        <button onClick={handleCopy}
-          className="flex items-center gap-1 bg-teal-600 hover:bg-teal-700 text-white px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors">
-          {copied ? <><CheckCircle2 className="w-3.5 h-3.5" /> 복사됨</> : <><Copy className="w-3.5 h-3.5" /> 복사</>}
-        </button>
-      </div>
-    )
-  }
+  // ─────────────────────────────────────────────────────────
+  // 중립 디자인:
+  //   - 파트너 이름·전화·"추천" 등 네트워크 느낌 단어 전부 제거
+  //   - 정보성 톤("최신 정보 공유 가능합니다")
+  //   - 손님이 봐도 그냥 평범한 블로그 공유 위젯처럼 보임
+  //   - 내부적으로는 여전히 ?ref=<phone> 자동 부착 (handleCopy/SMS/Share)
+  // ─────────────────────────────────────────────────────────
+  const hasWebShare = typeof navigator !== 'undefined' && typeof navigator.share === 'function'
 
   return (
-    <div className="bg-gradient-to-br from-teal-50 via-cyan-50 to-blue-50 border-2 border-teal-200 rounded-2xl p-4 md:p-5 mb-6 shadow-sm">
-      <div className="flex items-start gap-3 mb-3">
-        <div className="bg-teal-600 text-white rounded-full w-9 h-9 flex items-center justify-center flex-shrink-0">
-          <Share2 className="w-4.5 h-4.5" />
-        </div>
-        <div className="flex-1 min-w-0">
-          <div className="text-sm md:text-base font-bold text-teal-900 mb-0.5">
-            {partner.name} 님의 추천 링크
-          </div>
-          <div className="text-xs text-teal-700">
-            이 페이지를 공유하시면 <strong>{partner.name}</strong> 파트너 추천으로 연결됩니다.
-          </div>
-        </div>
+    <div className="flex items-center justify-between gap-3 border border-gray-200 bg-gray-50 rounded-lg px-3 py-2 mb-5">
+      <div className="flex items-center gap-2 text-sm text-gray-600 min-w-0">
+        <Share2 className="w-4 h-4 text-gray-500 flex-shrink-0" />
+        <span className="truncate">최신 정보 공유 가능합니다</span>
       </div>
-
-      <div className="bg-white rounded-lg border border-teal-200 px-3 py-2 mb-3 overflow-hidden">
-        <div className="text-[11px] text-gray-400 mb-0.5">아래 주소가 자동 전달됩니다</div>
-        <div className="font-mono text-xs md:text-sm text-gray-700 truncate">
-          {shareUrl.replace('https://', '')}
-        </div>
-      </div>
-
-      <div className="flex flex-wrap gap-2">
-        <button onClick={handleCopy}
-          className="flex-1 min-w-[100px] flex items-center justify-center gap-1.5 bg-teal-600 hover:bg-teal-700 text-white px-3 py-2 rounded-lg text-sm font-semibold transition-colors">
-          {copied ? <><CheckCircle2 className="w-4 h-4" /> 복사됨!</> : <><Copy className="w-4 h-4" /> 링크 복사</>}
+      <div className="flex items-center gap-1 flex-shrink-0">
+        <button
+          onClick={handleCopy}
+          aria-label="링크 복사"
+          title="링크 복사"
+          className="inline-flex items-center gap-1 text-gray-600 hover:text-gray-900 hover:bg-white border border-gray-200 hover:border-gray-300 rounded-md px-2.5 py-1.5 text-xs font-medium transition-colors"
+        >
+          {copied ? (
+            <><CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" /><span className="hidden sm:inline">복사됨</span></>
+          ) : (
+            <><Copy className="w-3.5 h-3.5" /><span className="hidden sm:inline">링크</span></>
+          )}
         </button>
-        <button onClick={handleSMS}
-          className="flex-1 min-w-[100px] flex items-center justify-center gap-1.5 bg-white hover:bg-gray-50 border border-gray-300 text-gray-700 px-3 py-2 rounded-lg text-sm font-semibold transition-colors">
-          <MessageCircle className="w-4 h-4" /> 문자로 보내기
+        <button
+          onClick={handleSMS}
+          aria-label="문자로 보내기"
+          title="문자로 보내기"
+          className="inline-flex items-center gap-1 text-gray-600 hover:text-gray-900 hover:bg-white border border-gray-200 hover:border-gray-300 rounded-md px-2.5 py-1.5 text-xs font-medium transition-colors"
+        >
+          <MessageCircle className="w-3.5 h-3.5" />
+          <span className="hidden sm:inline">문자</span>
         </button>
-        {typeof navigator !== 'undefined' && navigator.share && (
-          <button onClick={handleWebShare}
-            className="flex-1 min-w-[100px] flex items-center justify-center gap-1.5 bg-white hover:bg-gray-50 border border-gray-300 text-gray-700 px-3 py-2 rounded-lg text-sm font-semibold transition-colors">
-            <Share2 className="w-4 h-4" /> 카카오톡·기타
+        {hasWebShare && (
+          <button
+            onClick={handleWebShare}
+            aria-label="공유"
+            title="공유"
+            className="inline-flex items-center gap-1 text-gray-600 hover:text-gray-900 hover:bg-white border border-gray-200 hover:border-gray-300 rounded-md px-2.5 py-1.5 text-xs font-medium transition-colors"
+          >
+            <Share2 className="w-3.5 h-3.5" />
+            <span className="hidden sm:inline">공유</span>
           </button>
         )}
-      </div>
-
-      <div className="mt-3 text-[11px] text-teal-700 leading-relaxed">
-        ✅ 링크에 자동으로 <code className="bg-teal-100 px-1 rounded">?ref={partner.phone}</code>가 부착되어,
-        손님이 어디서 보든 <strong>{partner.name}</strong> 파트너로 연결됩니다.
       </div>
     </div>
   )
