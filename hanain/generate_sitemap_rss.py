@@ -179,10 +179,13 @@ for p in STATIC_PAGES:
 
 # /category/:slug — Q&A 카테고리 페이지 (CategoryPage.jsx, App.jsx 라인 69)
 # SLUG_TO_ID 매핑 기준 — 정식 라우트, canonical 자체 URL.
+# [2026-05-21 D6 보강] /category/skin, /category/hair 추가 — qa.json 은 113+37 분리, fallback 우선.
+# skin-hair 는 통합 카테고리 (Supabase 100건), skin/hair 는 qa.json fallback (총 150건) 분리 라우트.
 CATEGORY_SLUGS = [
     'metabolism', 'cancer-immune', 'digestive', 'cardiovascular',
     'neuro-cognitive', 'mental-health', 'musculoskeletal',
-    'skin-hair', 'respiratory', 'infection-inflammation',
+    'skin-hair', 'skin', 'hair',
+    'respiratory', 'infection-inflammation',
     'womens-health', 'mens-health',
 ]
 for slug in CATEGORY_SLUGS:

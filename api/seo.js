@@ -15,10 +15,15 @@ const SITE = 'https://phlorotannin.com'
 const DEFAULT_OG_IMAGE = `${SITE}/og-image.png`
 const DEFAULT_OG_IMAGE_ALT = '플로로탄닌 종합 건강정보 데이터센터 - 해양 폴리페놀 정보 허브'
 
-// 카테고리 슬러그(snake_case) → OG 이미지 슬러그(dash-case) 매핑
+// 카테고리 슬러그 → OG 이미지 슬러그(dash-case) 매핑
 // public/og/qa-<slug>.png 파일과 동기화 — 13종 + default
 // 새 카테고리 추가 시 build_og_images.py 실행 후 본 매핑도 함께 갱신할 것
+//
+// [2026-05-21 D6 보강] URL slug(dash-case) ↔ category_id(snake_case) 양방향 키 등록.
+// CategoryPage 는 dash-case URL 로 진입하지만, 일부 호출은 category_id 로도 들어옴.
+// 동일 OG 이미지로 안전 매핑되도록 양쪽 표기를 모두 키로 보유.
 const CAT_OG_SLUG = {
+  // snake_case (category_id)
   metabolism:             'metabolism',
   cancer_immune:          'cancer-immune',
   cancer:                 'cancer-immune',
@@ -38,6 +43,15 @@ const CAT_OG_SLUG = {
   immunity:               'infection-inflammation',
   womens_health:          'womens-health',
   mens_health:            'mens-health',
+  // dash-case (URL slug — /category/<slug>)
+  'cancer-immune':          'cancer-immune',
+  'neuro-cognitive':        'neuro-cognitive',
+  'mental-health':          'mental-health',
+  'skin-hair':              'skin-hair',
+  'skin-hair-care':         'skin-hair',
+  'infection-inflammation': 'infection-inflammation',
+  'womens-health':          'womens-health',
+  'mens-health':            'mens-health',
 }
 
 function ogImageForCategory(catSlug) {

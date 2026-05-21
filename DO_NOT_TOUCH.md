@@ -110,6 +110,22 @@
   - 이유: 제외 안 하면 `/og/qa-*.png` 13장이 api/seo.js 로 들어가 HTML 응답 = 봇이 OG 이미지 로드 실패
 - ❌ `api/seo.js` 의 `CAT_OG_SLUG` / `ogImageForCategory()` 헬퍼 삭제 금지
   - 이유: `staticMetaFor('/category/:slug')` 가 카테고리별 OG 이미지를 결정하는 단일 진실원
+- ❌ `api/seo.js` 의 `CAT_OG_SLUG` 에서 dash-case 키 (`cancer-immune`, `neuro-cognitive`, `mental-health`, `skin-hair`, `skin-hair-care`, `infection-inflammation`, `womens-health`, `mens-health`) 제거 금지 — **2026-05-21 D6 추가**
+  - 이유: URL 슬러그(dash-case)로 들어오는 핸들러 호출에서 OG 매핑 실패 → `qa-default.png` 회귀
+
+**컬렉션·허브 페이지 JSON-LD 동결 (2026-05-21 D6 — '자산화 부족분 보완' 단계)**:
+- ❌ `CategoryPage.jsx` 의 `breadcrumbLd` / `collectionLd` / `itemListLd` JSON-LD 3종 삭제 금지
+  - 이유: 카테고리 페이지가 검색엔진/AI 에게 "Q&A 컬렉션 허브"임을 알리는 유일한 시그널 (헌법 의무 7-B-(6))
+- ❌ `CategoryPage.jsx` 의 `ensureQaFallback` / `getFallbackCategory` / `getFallbackQuestions` / `getFallbackPopular` 4종 fallback 함수 삭제 금지
+  - 이유: Supabase 장애 시 컨텐츠 표시 + JSON-LD 송신이 끊김 — 1,361 Q&A 컬렉션 페이지 모두 빈 페이지 회귀
+- ❌ `CategoryPage.jsx` 의 `SLUG_TO_ID` 에서 `'skin': 'skin'`, `'hair': 'hair'` 키 제거 금지
+  - 이유: qa.json 은 skin(113) / hair(37) 분리, Supabase 는 skin_hair(100) 통합 — 두 축 모두 지원해야 함
+- ❌ `LearnPage.jsx` `learnJsonLd`, `EasyHealthPage.jsx` `easyJsonLd`, `GlossaryPage.jsx` `jsonLd` (BreadcrumbList + DefinedTermSet 2종), `PhlorotanninPage.jsx` `phloroJsonLd` 삭제/축소 금지
+  - 이유: 4개 허브 페이지의 BreadcrumbList 가 사이트 위계 신호의 단일 진실원
+- ❌ `generate_sitemap_rss.py` 의 `CATEGORY_SLUGS` 배열에서 `'skin'`, `'hair'` 슬러그 제거 금지
+  - 이유: qa.json fallback 으로만 표시되는 150건의 카테고리가 사이트맵에서 누락되면 색인 신호 0
+- ❌ `SEOHead.jsx` 의 `jsonLd` prop 처리 로직 (Array.isArray 분기) 제거 금지
+  - 이유: CategoryPage 가 3종 JSON-LD 배열을 전달 — 단일 객체만 처리하도록 회귀 시 BreadcrumbList + ItemList 송신 실패
 
 ---
 

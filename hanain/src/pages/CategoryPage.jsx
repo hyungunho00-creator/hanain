@@ -5,17 +5,101 @@ import { getQaCategories, getQaQuestions, getQaPopular } from '../lib/supabase'
 import SEOHead from '../components/common/SEOHead'
 
 // URL slug → category_id 매핑 (DB qa_categories 기준)
+// [2026-05-21 D6 보강] skin/hair 단독 슬러그 추가 — sitemap·qa.json 정합성 확보
 const SLUG_TO_ID = {
   'metabolism': 'metabolism', 'cancer-immune': 'cancer_immune',
   'digestive': 'digestive', 'cardiovascular': 'cardiovascular',
   'neuro-cognitive': 'neuro_cognitive', 'mental-health': 'mental_health',
   'musculoskeletal': 'musculoskeletal',
   'skin-hair': 'skin_hair', 'skin-hair-care': 'skin_hair',
+  'skin': 'skin', 'hair': 'hair',
   'respiratory': 'respiratory', 'infection-inflammation': 'infection_inflammation',
   'womens-health': 'womens_health', 'mens-health': 'mens_health',
 }
 
+// category_id → URL slug 역매핑 (Supabase skin_hair → qa.json skin/hair 분리 대응)
+// 우선순위가 높은 dash-case 슬러그를 canonical 로 사용
+const ID_TO_PRIMARY_SLUG = {
+  metabolism: 'metabolism', cancer_immune: 'cancer-immune',
+  digestive: 'digestive', cardiovascular: 'cardiovascular',
+  neuro_cognitive: 'neuro-cognitive', mental_health: 'mental-health',
+  musculoskeletal: 'musculoskeletal',
+  skin_hair: 'skin-hair', skin: 'skin', hair: 'hair',
+  respiratory: 'respiratory', infection_inflammation: 'infection-inflammation',
+  womens_health: 'womens-health', mens_health: 'mens-health',
+}
+
 const PAGE_SIZE = 20
+
+// [2026-05-21 D6 보강] qa.json fallback — Supabase 장애 시에도 콘텐츠 노출 유지
+// QuestionDetailPage.jsx 의 ensureQaFallback / getFallback* 패턴을 카테고리 페이지에 동일 적용.
+let QA_FALLBACK = null
+function slugifyKoLocal(s) {
+  return String(s || '').replace(/[^\w\s가-힣]/g, '').replace(/\s+/g, '-').slice(0, 60)
+}
+async function ensureQaFallback() {
+  if (!QA_FALLBACK) {
+    try {
+      const r = await fetch('/qa.json')
+      QA_FALLBACK = await r.json()
+    } catch {
+      QA_FALLBACK = { categories: [], questions: [] }
+    }
+  }
+  return QA_FALLBACK
+}
+async function getFallbackCategory(catId) {
+  const data = await ensureQaFallback()
+  const cat = data.categories.find(c => c.id === catId)
+  if (!cat) return null
+  const total = data.questions.filter(q => q.category === catId).length
+  return {
+    id: cat.id, name: cat.name, name_en: cat.name_en || '',
+    description: cat.description || '',
+    color: cat.color || '#00B4D8',
+    icon: cat.icon || '',
+    _fallback: true,
+    _total: total,
+  }
+}
+async function getFallbackQuestions(catId, { page = 1, limit = PAGE_SIZE, sort = 'popular' } = {}) {
+  const data = await ensureQaFallback()
+  let arr = data.questions.filter(q => q.category === catId)
+  if (sort === 'latest') {
+    arr = arr.sort((a, b) => String(b.created_at || b.id).localeCompare(String(a.created_at || a.id)))
+  } else if (sort === 'likes') {
+    arr = arr.sort((a, b) => (b.likes || 0) - (a.likes || 0))
+  } else {
+    arr = arr.sort((a, b) => (b.views || 0) - (a.views || 0))
+  }
+  const start = (page - 1) * limit
+  const slice = arr.slice(start, start + limit)
+  return {
+    data: slice.map(q => ({
+      id: q.id,
+      slug: slugifyKoLocal(q.question),
+      title: q.question,
+      category_id: q.category,
+      tags: q.tags || [],
+      view_count: q.views || 0,
+      like_count: q.likes || 0,
+      difficulty: q.difficulty,
+    })),
+    count: arr.length,
+  }
+}
+async function getFallbackPopular(catId, limit = 5) {
+  const data = await ensureQaFallback()
+  return data.questions
+    .filter(q => q.category === catId)
+    .sort((a, b) => (b.views || 0) - (a.views || 0))
+    .slice(0, limit)
+    .map(q => ({
+      id: q.id,
+      slug: slugifyKoLocal(q.question),
+      title: q.question,
+    }))
+}
 
 function QuestionRow({ q, rank }) {
   const slug = q.slug || q.id
@@ -66,8 +150,17 @@ export default function CategoryPage() {
   useEffect(() => {
     async function loadCat() {
       const catId = SLUG_TO_ID[slug] || slug
-      const cats = await getQaCategories()
-      const cat = cats.find(c => c.id === catId)
+      let cat = null
+      try {
+        const cats = await getQaCategories()
+        cat = cats.find(c => c.id === catId)
+      } catch {
+        cat = null
+      }
+      // [2026-05-21 D6] Supabase 미스 또는 qa.json-only 카테고리(skin/hair)는 fallback 시도
+      if (!cat) {
+        cat = await getFallbackCategory(catId)
+      }
       if (!cat) { setNotFound(true); setLoading(false); return }
       setCategory(cat)
     }
@@ -77,15 +170,28 @@ export default function CategoryPage() {
   const loadQuestions = useCallback(async () => {
     if (!category) return
     setLoading(true)
-    const result = await getQaQuestions({ categoryId: category.id, page, limit: PAGE_SIZE, sort })
+    let result = { data: [], count: 0 }
+    // skin / hair 는 Supabase 에 없으므로 fallback 강제
+    const fallbackOnly = category._fallback || category.id === 'skin' || category.id === 'hair'
+    if (!fallbackOnly) {
+      try {
+        result = await getQaQuestions({ categoryId: category.id, page, limit: PAGE_SIZE, sort })
+      } catch {
+        result = { data: [], count: 0 }
+      }
+    }
+    // Supabase 응답이 비어 있으면 qa.json 으로 보강
+    if (!result.data || result.data.length === 0) {
+      result = await getFallbackQuestions(category.id, { page, limit: PAGE_SIZE, sort })
+    }
     setQuestions(result.data.map(q => ({
       id: q.id,
-      slug: q.question.replace(/[^\w\s가-힣]/g, '').replace(/\s+/g, '-').slice(0, 60),
-      title: q.question,
+      slug: q.slug || slugifyKoLocal(q.question || q.title),
+      title: q.question || q.title,
       category_id: q.category_id,
       tags: q.tags || [],
-      view_count: q.views || 0,
-      like_count: q.likes || 0,
+      view_count: q.views || q.view_count || 0,
+      like_count: q.likes || q.like_count || 0,
       difficulty: q.difficulty,
     })))
     setTotal(result.count || 0)
@@ -97,11 +203,24 @@ export default function CategoryPage() {
   useEffect(() => {
     if (!category) return
     async function loadExtras() {
-      const pop = await getQaPopular(category.id, 5)
+      let pop = []
+      const fallbackOnly = category._fallback || category.id === 'skin' || category.id === 'hair'
+      if (!fallbackOnly) {
+        try {
+          pop = await getQaPopular(category.id, 5)
+        } catch {
+          pop = []
+        }
+      }
+      if (!pop || pop.length === 0) {
+        const fp = await getFallbackPopular(category.id, 5)
+        setPopular(fp)
+        return
+      }
       setPopular(pop.map(q => ({
         id: q.id,
-        slug: q.question.replace(/[^\w\s가-힣]/g, '').replace(/\s+/g, '-').slice(0, 60),
-        title: q.question,
+        slug: slugifyKoLocal(q.question || q.title),
+        title: q.question || q.title,
       })))
     }
     loadExtras()
@@ -123,15 +242,66 @@ export default function CategoryPage() {
 
   const catColor = category.color || '#00B4D8'
 
+  // [2026-05-21 D6 보강] 구조화 데이터 — BreadcrumbList + CollectionPage + ItemList
+  // 검색엔진/AI 에게 카테고리 페이지가 "Q&A 컬렉션 허브"임을 명확히 알리는 3종 세트.
+  // 빌더 패턴으로 빈 데이터 대응 (questions 미로드 시 ItemList 제외).
+  const pageUrl = `https://phlorotannin.com/category/${slug}`
+  const primarySlug = ID_TO_PRIMARY_SLUG[category.id] || slug
+  const canonicalUrl = `https://phlorotannin.com/category/${primarySlug}`
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": `${pageUrl}#breadcrumb`,
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "홈", "item": "https://phlorotannin.com/" },
+      { "@type": "ListItem", "position": 2, "name": "건강 Q&A", "item": "https://phlorotannin.com/qa" },
+      { "@type": "ListItem", "position": 3, "name": category.name, "item": canonicalUrl },
+    ]
+  }
+  const itemListLd = (questions && questions.length > 0) ? {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": `${pageUrl}#itemlist`,
+    "name": `${category.name} 인기 질문`,
+    "numberOfItems": Math.min(questions.length, 10),
+    "itemListOrder": "https://schema.org/ItemListOrderDescending",
+    "itemListElement": questions.slice(0, 10).map((q, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "url": `https://phlorotannin.com/q/${q.slug || q.id}`,
+      "name": q.title,
+    })),
+  } : null
+  const collectionLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${pageUrl}#collection`,
+    "url": canonicalUrl,
+    "name": `${category.name} 건강정보 Q&A`,
+    "description": `${category.name} 관련 연구기반 Q&A 아카이브 — 플로로탄닌·감태추출물·해양 폴리페놀 종합 건강정보 데이터센터`,
+    "inLanguage": "ko-KR",
+    "isPartOf": {
+      "@type": "WebSite",
+      "@id": "https://phlorotannin.com/#website",
+      "url": "https://phlorotannin.com/",
+      "name": "플로로탄닌 종합 건강정보 데이터센터"
+    },
+    "breadcrumb": { "@id": `${pageUrl}#breadcrumb` },
+    ...(itemListLd ? { "mainEntity": { "@id": `${pageUrl}#itemlist` } } : {}),
+    ...(total ? { "about": { "@type": "Thing", "name": category.name } } : {}),
+  }
+  const jsonLd = itemListLd ? [breadcrumbLd, collectionLd, itemListLd] : [breadcrumbLd, collectionLd]
+
   return (
     <>
       <SEOHead
         title={`${category.name} | 플로로탄닌 종합 건강정보 데이터센터`}
         description={`${category.name} 건강정보 아카이브 — ${category.description || '플로로탄닌·감태추출물·해양 폴리페놀 기반 건강정보'}. 항산화·염증·면역·병원정보·연구기반 Q&A까지 정리하는 종합 건강정보 데이터센터입니다.`}
         keywords={`${category.name}, ${category.name_en || ''}, 플로로탄닌, 감태추출물, 해양 폴리페놀, 건강정보 아카이브, 종합 건강정보 데이터센터`}
-        canonical={`https://phlorotannin.com/category/${slug}`}
-        ogImage={`https://phlorotannin.com/og/qa-${slug}.png`}
+        canonical={canonicalUrl}
+        ogImage={`https://phlorotannin.com/og/qa-${primarySlug}.png`}
         ogImageAlt={`${category.name} Q&A 아카이브 미리보기 — 플로로탄닌·감태추출물 기반 1,361건 건강정보, 13개 카테고리, 131개 태그 페이지`}
+        jsonLd={jsonLd}
       />
 
       <div className="pt-16 min-h-screen bg-gray-hana">

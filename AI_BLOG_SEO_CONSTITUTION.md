@@ -462,6 +462,44 @@ done
 curl -sI -A "Googlebot/2.1" "https://phlorotannin.com/qa/tag/플로로탄닌" | grep -i "x-seo-path"
 ```
 
+**(6) 컬렉션·허브 페이지 JSON-LD 자산화 (2026-05-21 D6 보강 — "자산화 부족분 보완" 단계)**
+
+CategoryPage 및 LearnPage/EasyHealthPage/PhlorotanninPage/GlossaryPage 등 **컬렉션·허브 페이지는 BreadcrumbList 를 반드시 출력해야 한다**. 검색엔진/AI 가 사이트 위계(hierarchy) 와 토픽 클러스터를 정확히 인식할 수 있게 하기 위함이다.
+
+- **모든 비-종단 페이지 BreadcrumbList 의무**: `홈 → {허브명} → {세부}` 3단 이상 명확화
+  - 적용 페이지: `/category/:slug`, `/learn`, `/easy`, `/phlorotannin`, `/glossary`, `/qa/tag/:tag` (`/qa`, `/blog` 는 자체 ItemList/CollectionPage 가 이를 대체)
+  - `@id` 명명 규칙: `${pageUrl}#breadcrumb` — JSON-LD 그래프 참조용
+- **카테고리 페이지 (`/category/:slug`) 3종 JSON-LD 의무**: BreadcrumbList + CollectionPage + ItemList
+  - `CollectionPage.breadcrumb` 가 `#breadcrumb` 를 `@id` 참조
+  - `CollectionPage.mainEntity` 가 `#itemlist` 를 `@id` 참조
+  - `ItemList.itemListElement` 는 인기순 상위 10개 Q&A — `position`/`url`/`name` 3종 필수
+  - 데이터 미로드 시 ItemList 는 제외 (빈 ItemList 송신 금지)
+- **학습/허브 페이지 시맨틱 타입 의무**:
+  - `/learn` → `LearningResource` (audience: 일반 성인 학습자, learningResourceType: Guide)
+  - `/easy` → `MedicalWebPage` (audience: MedicalAudience/Patient, specialty: Nutrition + Internal Medicine)
+  - `/phlorotannin` → `MedicalWebPage` (기존 유지)
+  - `/glossary` → `DefinedTermSet` (기존) + BreadcrumbList (신규)
+- **qa.json fallback 의무 (컬렉션 페이지)**: CategoryPage 는 Supabase 응답 실패/빈배열 시 반드시 `/qa.json` 으로 fallback 해야 한다. Supabase 장애 시에도 컨텐츠 표시 + JSON-LD 송신이 끊기지 않도록 함.
+  - 패턴: `ensureQaFallback()` + `getFallbackCategory()` + `getFallbackQuestions()` + `getFallbackPopular()` 4종 — `QuestionDetailPage.jsx` 사이드바 fix 패턴과 동일 구조
+  - skin / hair / skin_hair 3축 분리 대응: Supabase 는 `skin_hair` (100건 통합), qa.json 은 `skin` (113건) + `hair` (37건) — `ID_TO_PRIMARY_SLUG` 매핑으로 canonical URL 일관성 확보
+- **사이트맵 정합성**: `generate_sitemap_rss.py` 의 `CATEGORY_SLUGS` 는 라우팅 가능한 모든 슬러그를 포함해야 함 — 현재 14개 (`metabolism`, `cancer-immune`, `digestive`, `cardiovascular`, `neuro-cognitive`, `mental-health`, `musculoskeletal`, `skin-hair`, `skin`, `hair`, `respiratory`, `infection-inflammation`, `womens-health`, `mens-health`)
+
+**검증 명령** (배포 후 필수):
+```bash
+# 카테고리 페이지 JSON-LD 3종 존재 확인
+for slug in metabolism skin hair skin-hair cancer-immune; do
+  echo "=== /category/$slug ==="
+  curl -s -A "Googlebot/2.1" "https://phlorotannin.com/category/$slug" \
+    | grep -oE '"@type":"(BreadcrumbList|CollectionPage|ItemList|LearningResource|MedicalWebPage|DefinedTermSet)"' | sort -u
+done
+
+# 허브 페이지 BreadcrumbList 의무 확인
+for path in /learn /easy /phlorotannin /glossary; do
+  echo "=== $path ==="
+  curl -s -A "Googlebot/2.1" "https://phlorotannin.com$path" | grep -c "BreadcrumbList"
+done
+```
+
 ### ✅ 의무 8. 안전성 일괄 검증 (forbidden words)
 - 신규 Q&A 추가 시 (또는 기존 일괄 점검 시) 제4조 금지어 전수 스캔
 - 위반 발견 시 **자동 치환 사전** 적용 가능:

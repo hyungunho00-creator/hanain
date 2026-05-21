@@ -130,6 +130,20 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/category/skin-hair"/>
   </url>
   <url>
+    <loc>https://phlorotannin.com/category/skin</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/category/skin"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/category/hair</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/category/hair"/>
+  </url>
+  <url>
     <loc>https://phlorotannin.com/category/respiratory</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>weekly</changefreq>

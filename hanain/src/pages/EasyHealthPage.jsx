@@ -693,6 +693,50 @@ export default function EasyHealthPage() {
         return f?.ids?.includes(d.id)
       })
 
+  // [2026-05-21 D6 보강] 구조화 데이터 — BreadcrumbList + MedicalWebPage
+  // 일반인 친화 건강정보 허브임을 검색엔진/AI 에게 명확히 알림.
+  const easyJsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": "https://phlorotannin.com/easy#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "홈", "item": "https://phlorotannin.com/" },
+        { "@type": "ListItem", "position": 2, "name": "쉬운 건강정보", "item": "https://phlorotannin.com/easy" },
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalWebPage",
+      "@id": "https://phlorotannin.com/easy#page",
+      "url": "https://phlorotannin.com/easy",
+      "name": "쉬운 플로로탄닌 건강정보",
+      "description": "플로로탄닌·감태추출물·해양 폴리페놀을 처음 접하는 분들을 위해 항산화·염증·수면·혈당·면역 건강정보를 쉬운 언어로 정리한 허브",
+      "inLanguage": "ko-KR",
+      "audience": { "@type": "MedicalAudience", "audienceType": "Patient" },
+      "specialty": [
+        { "@type": "MedicalSpecialty", "name": "Internal Medicine" },
+        { "@type": "MedicalSpecialty", "name": "Nutrition" }
+      ],
+      "about": [
+        { "@type": "Thing", "name": "당뇨" },
+        { "@type": "Thing", "name": "고혈압" },
+        { "@type": "Thing", "name": "비만" },
+        { "@type": "Thing", "name": "치매" },
+        { "@type": "Thing", "name": "스트레스" },
+        { "@type": "Thing", "name": "피부 건강" },
+        { "@type": "Thing", "name": "관절 건강" },
+        { "@type": "Thing", "name": "암 예방" }
+      ],
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://phlorotannin.com/#website",
+        "url": "https://phlorotannin.com/",
+        "name": "플로로탄닌 종합 건강정보 데이터센터"
+      }
+    }
+  ]
+
   return (
     <div className="pt-16 min-h-screen bg-gray-50">
       <SEOHead
@@ -700,6 +744,7 @@ export default function EasyHealthPage() {
         description="플로로탄닌, 감태추출물, 해양 폴리페놀을 처음 접하는 분들을 위해 항산화, 염증, 수면, 혈당, 면역 건강정보를 쉬운 언어로 정리한 페이지입니다."
         keywords="쉬운 플로로탄닌 건강정보, 감태추출물 쉽게, 해양 폴리페놀 이해, 항산화, 염증, 수면, 혈당, 면역, 장 건강, 뇌 건강"
         canonical="https://phlorotannin.com/easy"
+        jsonLd={easyJsonLd}
       />
 
       {/* ── 히어로 ── */}

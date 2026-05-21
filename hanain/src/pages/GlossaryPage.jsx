@@ -40,13 +40,25 @@ export default function GlossaryPage() {
   // SEO 메타: 검색 키워드를 alias 까지 모두 포함
   const allKeywords = GLOSSARY.flatMap(g => [g.term, ...g.alias.split(' · ').map(s => s.trim())]).join(', ')
 
-  // 구조화 데이터: DefinedTerm 집합 — 검색엔진/AI 가 용어 사전임을 명확히 인식하도록
+  // 구조화 데이터: DefinedTerm 집합 + BreadcrumbList
+  // [2026-05-21 D6 보강] BreadcrumbList 추가 — 사이트 위계 명확화
   const jsonLd = [
     {
       '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      '@id': 'https://phlorotannin.com/glossary#breadcrumb',
+      'itemListElement': [
+        { '@type': 'ListItem', 'position': 1, 'name': '홈', 'item': 'https://phlorotannin.com/' },
+        { '@type': 'ListItem', 'position': 2, 'name': '용어 사전', 'item': 'https://phlorotannin.com/glossary' },
+      ]
+    },
+    {
+      '@context': 'https://schema.org',
       '@type': 'DefinedTermSet',
+      '@id': 'https://phlorotannin.com/glossary#termset',
       'name': '플로로탄닌·해양 폴리페놀 용어 사전',
       'url': 'https://phlorotannin.com/glossary',
+      'inLanguage': 'ko-KR',
       'hasDefinedTerm': GLOSSARY.map(g => ({
         '@type': 'DefinedTerm',
         '@id': `https://phlorotannin.com/glossary#${g.id}`,

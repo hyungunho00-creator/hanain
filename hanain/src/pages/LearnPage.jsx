@@ -1001,6 +1001,43 @@ function CTASection() {
 ───────────────────────────────────────────── */
 export default function LearnPage() {
 
+  // [2026-05-21 D6 보강] 구조화 데이터 — BreadcrumbList + LearningResource
+  // 학습 허브 페이지임을 검색엔진/AI 에게 명확히 알림.
+  const learnJsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": "https://phlorotannin.com/learn#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "홈", "item": "https://phlorotannin.com/" },
+        { "@type": "ListItem", "position": 2, "name": "학습 가이드", "item": "https://phlorotannin.com/learn" },
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "LearningResource",
+      "@id": "https://phlorotannin.com/learn#resource",
+      "url": "https://phlorotannin.com/learn",
+      "name": "플로로탄닌 쉽게 배우기 — 감태추출물·해양 폴리페놀 학습 가이드",
+      "description": "플로로탄닌·감태추출물·해양 폴리페놀의 작용기전과 건강 효과를 단계별로 학습하는 종합 가이드. 항산화·염증·혈당·수면·면역·뇌 건강 주제 포함.",
+      "inLanguage": "ko-KR",
+      "audience": { "@type": "Audience", "audienceType": "일반 성인 학습자" },
+      "educationalLevel": "Beginner to Intermediate",
+      "learningResourceType": "Guide",
+      "about": [
+        { "@type": "Thing", "name": "플로로탄닌(Phlorotannin)" },
+        { "@type": "Thing", "name": "감태추출물(Ecklonia cava extract)" },
+        { "@type": "Thing", "name": "해양 폴리페놀" },
+      ],
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://phlorotannin.com/#website",
+        "url": "https://phlorotannin.com/",
+        "name": "플로로탄닌 종합 건강정보 데이터센터"
+      }
+    }
+  ]
+
   return (
     <div className="pt-16">
       <SEOHead
@@ -1008,6 +1045,7 @@ export default function LearnPage() {
         description="플로로탄닌·감태추출물·해양 폴리페놀의 작용기전과 건강 효과를 단계별로 쉽게 학습하는 가이드. 항산화·염증·혈당·수면·면역·뇌 건강까지 일반인이 이해할 수 있도록 정리한 건강정보 아카이브."
         keywords="플로로탄닌 학습, 감태추출물 공부, 해양 폴리페놀 배우기, 갈조류 폴리페놀, 항산화 학습, 염증 학습, 혈당 건강정보"
         canonical="https://phlorotannin.com/learn"
+        jsonLd={learnJsonLd}
       />
       <IntroHero />
       <WhatIsSection />

@@ -164,17 +164,32 @@ Q&A는 현재 **Supabase 마이그레이션 대기 상태** (Phase 5 예정). �
 | `hanain/scripts/add_qa_eeat_fields.py` | **(신규)** Q&A 전수 E-E-A-T 메타 필드 5종 주입 (멱등) | 2.6KB |
 | `hanain/scripts/refine_qa_authors.py` | **(신규)** author 필드를 13개 카테고리 분과 편집데스크명으로 세분화 (멱등) | 4.1KB |
 | `hanain/scripts/build_og_images.py` | **(신규)** 카테고리별 OG PNG 13장 빌드 (Pillow + NanumSquareRoundB) | 5.0KB |
-| `api/seo.js` | **(D3 보강)** 봇 메타 주입 함수 — `CAT_OG_SLUG` 매핑 + `staticMetaFor()` ogImage 필드 + `injectMeta()` og:image 5종 정규식 + `X-OG-Image` 진단 헤더 | 1.1k lines |
+| `api/seo.js` | **(D3+D6 보강)** 봇 메타 주입 함수 — `CAT_OG_SLUG` (snake+dash 양방향 키) + `staticMetaFor()` ogImage 필드 + `injectMeta()` og:image 5종 정규식 + `X-OG-Image` 진단 헤더 | 1.1k lines |
 | `vercel.json` (root) | **(D3 보강)** `/q/:slug`, `/qa/tag/:tag`, `/glossary` 명시적 rewrites + catch-all 의 `og/` 제외 | - |
-| `hanain/generate_sitemap_rss.py` | Q&A URL을 sitemap에 추가 (총 1,812 URL) | - |
+| `hanain/generate_sitemap_rss.py` | **(D6 보강)** Q&A URL sitemap (총 1,814 URL) — CATEGORY_SLUGS 에 `skin`, `hair` 추가 → 14개 카테고리 | - |
+| `hanain/src/pages/CategoryPage.jsx` | **(D6 보강)** qa.json fallback 4종 (`ensureQaFallback`/`getFallbackCategory`/`getFallbackQuestions`/`getFallbackPopular`) + JSON-LD 3종 (`BreadcrumbList`/`CollectionPage`/`ItemList`) | 19.4KB |
+| `hanain/src/pages/LearnPage.jsx` | **(D6 보강)** `learnJsonLd` 2종 (`BreadcrumbList` + `LearningResource`) | 1041 lines |
+| `hanain/src/pages/EasyHealthPage.jsx` | **(D6 보강)** `easyJsonLd` 2종 (`BreadcrumbList` + `MedicalWebPage` with MedicalAudience/Patient + specialty) | 1004 lines |
+| `hanain/src/pages/GlossaryPage.jsx` | **(D6 보강)** `jsonLd` 2종 (`BreadcrumbList` + 기존 `DefinedTermSet`) | 156 lines |
+| `hanain/src/pages/PhlorotanninPage.jsx` | (기존) `phloroJsonLd` 2종 (`MedicalWebPage` + `BreadcrumbList`) | 608 lines |
 
-### Q&A 카테고리 (12개)
+### Q&A 카테고리 (14개 routable slug, 13 qa.json IDs + 1 Supabase-only)
 
 ```
-metabolism, cancer_immune, digestive, cardiovascular,
-neuro_cognitive, mental_health, musculoskeletal,
-skin_hair, skin, hair, respiratory, infection_inflammation,
-womens_health, mens_health
+URL slug (dash-case, sitemap 등록):
+metabolism, cancer-immune, digestive, cardiovascular,
+neuro-cognitive, mental-health, musculoskeletal,
+skin-hair, skin, hair, respiratory, infection-inflammation,
+womens-health, mens-health
+
+데이터 소스:
+- qa.json (1,361건): metabolism, cancer_immune, digestive, cardiovascular,
+  neuro_cognitive, mental_health, musculoskeletal,
+  skin(113), hair(37), respiratory, infection_inflammation,
+  womens_health, mens_health  [13 IDs]
+- Supabase qa_categories (14 IDs): 위 13개 + skin_hair (skin+hair 통합 100건)
+- skin-hair URL → Supabase skin_hair (통합 뷰)
+- skin / hair URL → qa.json fallback (분리 뷰)
 ```
 
 ### Q&A 로딩 흐름
