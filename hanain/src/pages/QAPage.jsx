@@ -60,7 +60,7 @@ function getCatName(catId) {
 function highlightText(text, query) {
   if (!query || query.length < 2) return text
   const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi')
-  return text.replace(regex, '<mark class="bg-yellow-100 text-yellow-800 rounded px-0.5">$1</mark>')
+  return text.replace(regex, '<mark class="bg-gray-900 text-white rounded px-0.5">$1</mark>')
 }
 
 function ContactCard() {

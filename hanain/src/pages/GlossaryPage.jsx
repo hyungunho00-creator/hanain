@@ -85,13 +85,13 @@ export default function GlossaryPage() {
         <div className="bg-white border-b border-gray-100">
           <div className="max-w-4xl mx-auto px-4 py-8">
             <nav className="flex items-center gap-1 text-xs text-gray-400 mb-3">
-              <Link to="/" className="hover:text-teal-600">홈</Link>
+              <Link to="/" className="hover:text-gray-900">홈</Link>
               <ChevronRight className="w-3 h-3" />
               <span className="text-gray-700 font-medium">용어 사전</span>
             </nav>
             <div className="flex items-start gap-3">
-              <div className="w-12 h-12 rounded-xl bg-teal-50 flex items-center justify-center flex-shrink-0">
-                <BookOpen className="w-6 h-6 text-teal-600" />
+              <div className="w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0">
+                <BookOpen className="w-6 h-6 text-gray-700" />
               </div>
               <div>
                 <h1 className="text-2xl md:text-3xl font-extrabold text-gray-900 leading-tight mb-1">
@@ -99,7 +99,7 @@ export default function GlossaryPage() {
                 </h1>
                 <p className="text-sm text-gray-500 leading-relaxed">
                   감태·해양 폴리페놀·갈조류 관련 전문 용어를 한곳에 정리한 레퍼런스.<br className="hidden md:block" />
-                  본문 인용은 <code className="bg-gray-100 text-teal-700 px-1.5 py-0.5 rounded text-xs">/glossary#용어id</code> 형식으로 직접 연결할 수 있습니다.
+                  본문 인용은 <code className="bg-gray-100 text-gray-900 px-1.5 py-0.5 rounded text-xs">/glossary#용어id</code> 형식으로 직접 연결할 수 있습니다.
                 </p>
               </div>
             </div>
@@ -115,7 +115,7 @@ export default function GlossaryPage() {
             <div className="flex flex-wrap gap-2">
               {GLOSSARY.sort((a, b) => a.term.localeCompare(b.term, 'ko')).map(g => (
                 <a key={g.id} href={`#${g.id}`}
-                  className="text-xs bg-teal-50 text-teal-700 hover:bg-teal-100 px-2.5 py-1 rounded-md transition-colors">
+                  className="text-xs bg-gray-100 text-gray-700 hover:bg-gray-200 hover:text-gray-900 px-2.5 py-1 rounded-md transition-colors">
                   {g.term}
                 </a>
               ))}
@@ -156,10 +156,10 @@ export default function GlossaryPage() {
 
           {/* 관련 페이지 */}
           <div className="mt-6 flex flex-wrap gap-2 text-sm">
-            <Link to="/phlorotannin" className="bg-white border border-gray-200 hover:border-teal-400 hover:text-teal-700 px-3 py-1.5 rounded-lg transition-colors">플로로탄닌이란?</Link>
-            <Link to="/easy" className="bg-white border border-gray-200 hover:border-teal-400 hover:text-teal-700 px-3 py-1.5 rounded-lg transition-colors">쉬운 건강정보</Link>
-            <Link to="/blog" className="bg-white border border-gray-200 hover:border-teal-400 hover:text-teal-700 px-3 py-1.5 rounded-lg transition-colors">건강정보 블로그</Link>
-            <Link to="/qa" className="bg-white border border-gray-200 hover:border-teal-400 hover:text-teal-700 px-3 py-1.5 rounded-lg transition-colors">연구기반 Q&A</Link>
+            <Link to="/phlorotannin" className="bg-white border border-gray-200 hover:border-gray-400 hover:text-gray-900 px-3 py-1.5 rounded-md transition-colors">플로로탄닌이란?</Link>
+            <Link to="/easy" className="bg-white border border-gray-200 hover:border-gray-400 hover:text-gray-900 px-3 py-1.5 rounded-md transition-colors">쉬운 건강정보</Link>
+            <Link to="/blog" className="bg-white border border-gray-200 hover:border-gray-400 hover:text-gray-900 px-3 py-1.5 rounded-md transition-colors">건강정보 블로그</Link>
+            <Link to="/qa" className="bg-white border border-gray-200 hover:border-gray-400 hover:text-gray-900 px-3 py-1.5 rounded-md transition-colors">연구기반 Q&A</Link>
           </div>
         </div>
       </div>

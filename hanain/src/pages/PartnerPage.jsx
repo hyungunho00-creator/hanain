@@ -503,10 +503,10 @@ export default function PartnerPage() {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-yellow-500"
+                  className="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-gray-900"
                   placeholder="홍길동"
                 />
-                {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
+                {errors.name && <p className="text-gray-900 text-xs mt-1 font-medium">{errors.name}</p>}
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1.5">연락처 *</label>
@@ -514,11 +514,11 @@ export default function PartnerPage() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-yellow-500"
+                  className="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-gray-900"
                   placeholder="010-0000-0000"
                   type="tel"
                 />
-                {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone}</p>}
+                {errors.phone && <p className="text-gray-900 text-xs mt-1 font-medium">{errors.phone}</p>}
               </div>
             </div>
 
@@ -530,7 +530,7 @@ export default function PartnerPage() {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-yellow-500"
+                className="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-gray-900"
                 placeholder="example@email.com"
                 type="email"
               />
@@ -542,7 +542,7 @@ export default function PartnerPage() {
                 name="job"
                 value={formData.job}
                 onChange={handleChange}
-                className="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-yellow-500"
+                className="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-gray-900"
                 placeholder="예: 간호사, 약사, 주부, 자영업 등"
               />
             </div>
@@ -580,7 +580,7 @@ export default function PartnerPage() {
                 value={formData.message}
                 onChange={handleChange}
                 rows={3}
-                className="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-yellow-500 resize-none"
+                className="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-gray-900 resize-none"
                 placeholder="파트너 활동 관련 궁금한 점을 자유롭게 적어주세요."
               />
             </div>
@@ -598,7 +598,7 @@ export default function PartnerPage() {
                 <span className="font-medium">개인정보 수집 및 이용에 동의합니다.</span> (필수)
               </label>
             </div>
-            {errors.privacyAgreed && <p className="text-red-500 text-xs">{errors.privacyAgreed}</p>}
+            {errors.privacyAgreed && <p className="text-gray-900 text-xs font-medium">{errors.privacyAgreed}</p>}
 
             <button
               type="submit"
