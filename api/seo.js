@@ -1174,11 +1174,15 @@ export default async function handler(req, res) {
 
     res.setHeader('Content-Type', 'text/html; charset=utf-8')
     res.setHeader('Cache-Control', 'public, max-age=0, s-maxage=300, stale-while-revalidate=86400')
-    res.setHeader('X-SEO-Path', pathname)
+    // [2026-05-21 D4 회귀 fix] HTTP 헤더는 ASCII 만 허용 — 한글 슬러그가 들어간
+    // /qa/tag/플로로탄닌 같은 경로에서 500 (Invalid character in header content) 발생.
+    // pathname / ogImage 모두 encodeURIComponent 로 안전화. 본문(HTML) 의 메타·canonical 은
+    // injectMeta() 가 그대로 한글 처리하므로 SEO 신호에 영향 없음.
+    res.setHeader('X-SEO-Path', encodeURI(pathname))
     res.setHeader('X-SEO-Title', encodeURIComponent(meta.title))
     res.setHeader('X-SEO-Source', metaSource)
     // [2026-05-21] og:image 차별화 진단용 (카테고리 OG 도달 여부 확인)
-    res.setHeader('X-OG-Image', meta.ogImage || DEFAULT_OG_IMAGE)
+    res.setHeader('X-OG-Image', encodeURI(meta.ogImage || DEFAULT_OG_IMAGE))
     res.setHeader('X-SSR-Lite', ssrLiteApplied)
     // 플랫폼·저작권 추적 헤더 (응답 헤더에도 마커)
     res.setHeader('X-Platform', 'phlorotannin-platform-v1')
