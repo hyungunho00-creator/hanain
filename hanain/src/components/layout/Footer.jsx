@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { usePartner } from '../../context/PartnerContext'
 import { withRef } from '../../lib/partnerRef'
-import { Waves, Phone, MessageCircle } from 'lucide-react'
+import { Phone, MessageCircle, MessageSquare, Megaphone, PlayCircle, Film, BookOpen, ArrowUpRight } from 'lucide-react'
 import RevealContact from '../common/RevealContact'
 import { getQaCategories } from '../../lib/supabase'
 
@@ -72,82 +72,60 @@ export default function Footer() {
     return () => { cancelled = true }
   }, [])
 
+  // SEO 핵심 자산 (절대 보존) — sameAs 5채널, topTags 122 nav, 카테고리 13건
+  const SOCIAL_LINKS = [
+    { href: 'https://naver.me/x4lFCvwV',          label: '네이버 카페',  Icon: MessageSquare, aria: '플로로탄닌 네이버 카페로 이동' },
+    { href: 'https://band.us/n/a6aebc75vch6U',    label: '네이버 밴드',  Icon: Megaphone,     aria: '플로로탄닌 네이버 밴드로 이동' },
+    { href: 'https://youtube.com/@phlorotannin',  label: '유튜브',       Icon: PlayCircle,    aria: '플로로탄닌 공식 유튜브 채널로 이동' },
+    { href: 'https://naver.me/5sunayUx',          label: '네이버 클립',  Icon: Film,          aria: '플로로탄닌 네이버 클립으로 이동' },
+    { href: 'https://m.blog.naver.com/phlorotannin', label: '네이버 블로그', Icon: BookOpen,   aria: '플로로탄닌랩 네이버 블로그로 이동' },
+  ]
+
   return (
-    <footer className="bg-ocean-deep text-gray-300">
-      <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+    <footer className="bg-white border-t border-gray-200 text-gray-700">
+      <div className="max-w-7xl mx-auto px-6 md:px-8 py-14 md:py-20">
 
-          {/* Brand */}
-          <div className="md:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-cyan-hana to-blue-500 rounded-xl flex items-center justify-center">
-                <Waves className="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <div className="text-white font-bold">플로로탄닌 파트너스</div>
-                <div className="text-cyan-hana text-sm">Phlorotannin Partners</div>
-              </div>
-            </div>
-            <p className="text-base text-gray-400 leading-relaxed mb-5">
-              해조류 유래 플로로탄닌에 관한<br />
-              건강 정보를 나누고, 올바른 지식으로<br />
-              파트너를 연결하는 정보 커뮤니티입니다.
+        {/* ── 메인 그리드: 좌측 브랜드/스토리(넓게) + 우측 링크 3열 ── */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
+
+          {/* Brand block — 좌측 5/12 */}
+          <div className="lg:col-span-4">
+            <Link to="/" className="inline-flex items-baseline gap-2 mb-5">
+              <span className="text-lg font-semibold tracking-tight text-gray-900">
+                Phlorotannin Partners
+              </span>
+              <span className="text-sm text-gray-500">플로로탄닌 파트너스</span>
+            </Link>
+
+            <p className="text-[15px] leading-7 text-gray-600 max-w-md mb-6">
+              해조류 유래 폴리페놀 '플로로탄닌'의 과학적 근거를 정리하고,
+              논문 기반 건강 정보를 일반인이 이해할 수 있는 언어로 전달하는
+              정보형 아카이브입니다.
             </p>
-            {/* 공식 채널 링크 (커뮤니티 + 영상) — SEO sameAs 신호 */}
-            <div className="flex flex-wrap gap-2">
-              <a
-                href="https://naver.me/x4lFCvwV"
-                target="_blank"
-                rel="noopener noreferrer me"
-                aria-label="플로로탄닌 네이버 카페로 이동"
-                className="inline-flex items-center gap-1.5 px-3 py-2 bg-green-600 hover:bg-green-500 text-white rounded-lg text-sm font-semibold transition-colors"
-              >
-                <span className="text-base">💬</span>
-                네이버 카페
-              </a>
-              <a
-                href="https://band.us/n/a6aebc75vch6U"
-                target="_blank"
-                rel="noopener noreferrer me"
-                aria-label="플로로탄닌 네이버 밴드로 이동"
-                className="inline-flex items-center gap-1.5 px-3 py-2 bg-sky-600 hover:bg-sky-500 text-white rounded-lg text-sm font-semibold transition-colors"
-              >
-                <span className="text-base">📣</span>
-                밴드
-              </a>
-              <a
-                href="https://youtube.com/@phlorotannin"
-                target="_blank"
-                rel="noopener noreferrer me"
-                aria-label="플로로탄닌 공식 유튜브 채널로 이동"
-                className="inline-flex items-center gap-1.5 px-3 py-2 bg-red-600 hover:bg-red-500 text-white rounded-lg text-sm font-semibold transition-colors"
-              >
-                <span className="text-base">▶️</span>
-                유튜브
-              </a>
-              <a
-                href="https://naver.me/5sunayUx"
-                target="_blank"
-                rel="noopener noreferrer me"
-                aria-label="플로로탄닌 네이버 클립으로 이동"
-                className="inline-flex items-center gap-1.5 px-3 py-2 bg-emerald-500 hover:bg-emerald-400 text-white rounded-lg text-sm font-semibold transition-colors"
-              >
-                <span className="text-base">🎬</span>
-                네이버 클립
-              </a>
-              <a
-                href="https://m.blog.naver.com/phlorotannin"
-                target="_blank"
-                rel="noopener noreferrer me"
-                aria-label="플로로탄닌랩 네이버 블로그(플로로탄닌 식단연구)로 이동"
-                className="inline-flex items-center gap-1.5 px-3 py-2 bg-lime-600 hover:bg-lime-500 text-white rounded-lg text-sm font-semibold transition-colors"
-              >
-                <span className="text-base">📝</span>
-                네이버 블로그
-              </a>
+
+            {/* 공식 채널 5종 — 단색 lucide 아이콘 only (SEO sameAs는 hidden link로 보존) */}
+            <div>
+              <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-400 mb-3">
+                Channels
+              </p>
+              <div className="flex items-center gap-1">
+                {SOCIAL_LINKS.map(({ href, label, Icon, aria }) => (
+                  <a
+                    key={href}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer me"
+                    aria-label={aria}
+                    title={label}
+                    className="inline-flex items-center justify-center w-9 h-9 rounded-md text-gray-500 hover:text-gray-900 hover:bg-gray-100 transition-colors"
+                  >
+                    <Icon className="w-[18px] h-[18px]" strokeWidth={1.6} />
+                  </a>
+                ))}
+              </div>
             </div>
 
-            {/* SEO: 검색엔진에 공식 채널 신호 전달 (Organization sameAs) */}
+            {/* SEO: Organization sameAs JSON-LD (보존) */}
             <script
               type="application/ld+json"
               dangerouslySetInnerHTML={{
@@ -169,131 +147,139 @@ export default function Footer() {
             />
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-white font-semibold mb-4">메뉴</h3>
-            <ul className="space-y-2 text-base">
-              {[
-                { to: '/', label: '홈' },
-                { to: '/qa', label: '건강 Q&A' },
-                { to: '/learn', label: '🌊 쉽게 배우기' },
-                { to: '/phlorotannin', label: '플로로탄닌 소개' },
-                { to: '/partner', label: '파트너 참여' },
-                { to: '/consult', label: '문의하기' },
-              ].map(item => (
-                <li key={item.to}>
-                  <Link to={item.to} className="hover:text-cyan-hana transition-colors">
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Right 3-col link cluster — 우측 7/12 */}
+          <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-10">
 
-          {/* Q&A Categories — /category/:slug 정식 라우트 (canonical 정합성, 헌법 제10조 의무 7) */}
-          <div>
-            <h3 className="text-white font-semibold mb-4">건강 정보 카테고리</h3>
-            <ul className="space-y-2 text-base">
-              {qaCats.map(cat => {
-                const slug = CAT_ID_TO_SLUG[cat.id] || cat.id.replace(/_/g, '-')
-                return (
-                  <li key={cat.id}>
-                    <Link to={withRef(`/category/${slug}`, partner)} className="hover:text-cyan-hana transition-colors">
-                      {cat.name}
+            {/* Menu */}
+            <div>
+              <h3 className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-400 mb-4">
+                Sitemap
+              </h3>
+              <ul className="space-y-2.5 text-[14px]">
+                {[
+                  { to: '/',             label: '홈' },
+                  { to: '/qa',           label: '건강 Q&A' },
+                  { to: '/learn',        label: '쉽게 배우기' },
+                  { to: '/phlorotannin', label: '플로로탄닌 소개' },
+                  { to: '/partner',     label: '파트너 참여' },
+                  { to: '/consult',     label: '문의하기' },
+                ].map(item => (
+                  <li key={item.to}>
+                    <Link
+                      to={item.to}
+                      className="text-gray-600 hover:text-gray-900 transition-colors"
+                    >
+                      {item.label}
                     </Link>
                   </li>
-                )
-              })}
-            </ul>
-          </div>
+                ))}
+              </ul>
+            </div>
 
-          {/* Contact */}
-          <div>
-            <h3 className="text-white font-semibold mb-4">문의</h3>
-            <div className="space-y-3 text-base">
-              <div className="flex items-start gap-3">
-                <Phone className="w-4 h-4 text-cyan-hana mt-0.5 flex-shrink-0" />
+            {/* Q&A Categories — /category/:slug (canonical 정합성, 헌법 제10조 의무 7) */}
+            <div>
+              <h3 className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-400 mb-4">
+                Categories
+              </h3>
+              <ul className="space-y-2.5 text-[14px]">
+                {qaCats.map(cat => {
+                  const slug = CAT_ID_TO_SLUG[cat.id] || cat.id.replace(/_/g, '-')
+                  return (
+                    <li key={cat.id}>
+                      <Link
+                        to={withRef(`/category/${slug}`, partner)}
+                        className="text-gray-600 hover:text-gray-900 transition-colors"
+                      >
+                        {cat.name}
+                      </Link>
+                    </li>
+                  )
+                })}
+              </ul>
+            </div>
+
+            {/* Contact */}
+            <div className="col-span-2 md:col-span-1">
+              <h3 className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-400 mb-4">
+                Contact
+              </h3>
+              <div className="space-y-4 text-[14px]">
                 <div>
-                  <div className="text-gray-400 text-sm mb-1">전화 문의</div>
+                  <div className="text-gray-400 text-xs mb-1.5">전화 문의</div>
                   <RevealContact
                     type="tel"
                     label="클릭하여 연결"
                     revealLabel={partner.phoneDisplay}
                     phone={partner.phone}
                     displayPhone={partner.phoneDisplay}
-                    className="text-white font-medium hover:text-cyan-hana transition-colors"
+                    className="text-gray-800 font-medium hover:text-gray-900 transition-colors"
                   />
                 </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <MessageCircle className="w-4 h-4 text-cyan-hana mt-0.5 flex-shrink-0" />
                 <div>
-                  <div className="text-gray-400 text-sm mb-1">문자 문의</div>
+                  <div className="text-gray-400 text-xs mb-1.5">문자 문의</div>
                   <RevealContact
                     type="sms"
                     label="클릭하여 연결"
                     revealLabel={partner.phoneDisplay}
                     phone={partner.phone}
                     displayPhone={partner.phoneDisplay}
-                    className="text-white font-medium hover:text-cyan-hana transition-colors"
+                    className="text-gray-800 font-medium hover:text-gray-900 transition-colors"
                   />
                 </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <MessageCircle className="w-4 h-4 text-cyan-hana mt-0.5 flex-shrink-0" />
                 <div>
-                  <div className="text-gray-400 text-sm mb-1">운영 시간</div>
-                  <div className="text-white">평일 09:00 – 18:00</div>
+                  <div className="text-gray-400 text-xs mb-1.5">운영 시간</div>
+                  <div className="text-gray-800">평일 09:00 – 18:00</div>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* 인기 태그 — 122개 /qa/tag/:tag 자산의 진입점 (헌법 제10조 · DO_NOT_TOUCH §3-Q SEO 정합성)
-            모든 페이지 푸터에서 노출되어 내부링크 equity 분산, orphan 방지. */}
+        {/* ── 인기 태그 nav (SEO equity 122 진입점, 헌법 제10조 · DO_NOT_TOUCH §3-Q) ── */}
         {topTags.length > 0 && (
-          <nav aria-label="인기 건강 태그" className="mt-12 pt-8 border-t border-white/10">
-            <h3 className="text-white font-semibold mb-4 text-base">자주 찾는 건강 주제</h3>
-            <div className="flex flex-wrap gap-2">
+          <nav aria-label="인기 건강 태그" className="mt-14 pt-10 border-t border-gray-100">
+            <h3 className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-400 mb-4">
+              Popular Topics
+            </h3>
+            <div className="flex flex-wrap gap-x-1.5 gap-y-2">
               {topTags.map(({ tag, count }) => (
                 <Link
                   key={tag}
                   to={withRef(`/qa/tag/${encodeURIComponent(tag)}`, partner)}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/5 hover:bg-cyan-hana/20 border border-white/10 hover:border-cyan-hana rounded-full text-sm text-gray-300 hover:text-white transition-colors"
+                  className="inline-flex items-baseline gap-1.5 px-2.5 py-1.5 rounded text-[13px] text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors"
                   aria-label={`#${tag} 관련 ${count}개 Q&A`}
                 >
-                  <span className="text-cyan-hana">#</span>{tag}
-                  <span className="text-xs text-gray-500">{count}</span>
+                  <span>{tag}</span>
+                  <span className="text-[11px] text-gray-400 tabular-nums">{count}</span>
                 </Link>
               ))}
               <Link
                 to={withRef('/qa', partner)}
-                className="inline-flex items-center gap-1 px-3 py-1.5 text-sm text-cyan-hana hover:underline"
+                className="inline-flex items-center gap-1 px-2.5 py-1.5 text-[13px] text-gray-700 hover:text-gray-900"
               >
-                전체 보기 →
+                전체 보기
+                <ArrowUpRight className="w-3.5 h-3.5" strokeWidth={1.5} />
               </Link>
             </div>
           </nav>
         )}
 
-        {/* 저작권 안내 박스 (강화) */}
-        <div className="border border-white/10 rounded-2xl bg-white/5 px-5 md:px-6 py-5 mt-8 mb-6">
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-            <div className="min-w-0">
-              <p className="text-white text-sm md:text-base font-semibold mb-1.5">
-                © 2026 phlorotannin.com. All rights reserved.
-              </p>
-              <p className="text-gray-400 text-xs md:text-sm leading-relaxed">
-                본 사이트의 콘텐츠, 페이지 구성, 카테고리 구조, 파트너 정보페이지 시스템, 자료실,
+        {/* ── 저작권 + 컨택 통합 ── */}
+        <div className="mt-14 pt-8 border-t border-gray-100">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+            <div className="max-w-2xl">
+              <p className="text-[13px] leading-6 text-gray-500">
+                본 사이트의 콘텐츠·페이지 구성·카테고리 구조·파트너 정보페이지 시스템·자료실·
                 데이터베이스 구조 및 SEO 설계는
-                <span className="text-gray-200 font-semibold"> 무단 복제·재가공·상업적 이용을 금지</span>합니다.
+                <span className="text-gray-700"> 무단 복제·재가공·상업적 이용을 금지</span>합니다.
+                인용 시 출처(phlorotannin.com)를 반드시 명시하세요.
               </p>
               <Link
                 to="/copyright"
-                className="inline-flex items-center gap-1 mt-2 text-xs md:text-sm text-cyan-hana hover:underline"
+                className="inline-flex items-center gap-1 mt-2 text-[13px] text-gray-700 hover:text-gray-900 underline underline-offset-4 decoration-gray-300 hover:decoration-gray-700"
               >
-                저작권 및 무단복제 금지 안내 →
+                저작권 및 무단복제 금지 안내
+                <ArrowUpRight className="w-3.5 h-3.5" strokeWidth={1.5} />
               </Link>
             </div>
             <RevealContact
@@ -302,19 +288,18 @@ export default function Footer() {
               revealLabel={`${partner.phoneDisplay} 문자하기`}
               phone={partner.phone}
               displayPhone={partner.phoneDisplay}
-              icon={MessageCircle}
-              className="flex-shrink-0 inline-flex items-center gap-2 bg-cyan-hana text-white text-sm font-semibold px-4 py-2.5 rounded-full hover:bg-opacity-90 transition-all whitespace-nowrap"
+              className="flex-shrink-0 inline-flex items-center gap-2 border border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white text-sm font-medium px-4 py-2.5 rounded-md transition-colors whitespace-nowrap"
             />
           </div>
-        </div>
 
-        <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-3">
-          <p className="text-xs md:text-sm text-gray-400">
-            © 2026 phlorotannin.com · 플로로탄닌 파트너스
-          </p>
-          <p className="text-xs md:text-sm text-gray-400 text-center md:text-right max-w-md">
-            본 사이트의 정보는 건강 교육 목적이며 의료 처방·진단을 대체하지 않습니다.
-          </p>
+          <div className="mt-8 pt-6 border-t border-gray-100 flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+            <p className="text-[12px] text-gray-400">
+              © 2026 phlorotannin.com · Phlorotannin Partners
+            </p>
+            <p className="text-[12px] text-gray-400 text-center md:text-right">
+              본 사이트의 정보는 건강 교육 목적이며 의료 처방·진단을 대체하지 않습니다.
+            </p>
+          </div>
         </div>
       </div>
     </footer>

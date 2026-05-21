@@ -2,8 +2,10 @@ import { useState, useEffect } from 'react'
 import { usePartner } from '../context/PartnerContext'
 import SEOHead from '../components/common/SEOHead'
 import { Link } from 'react-router-dom'
-import { ChevronDown, ChevronUp, MessageSquare, ArrowRight, CheckCircle, BookOpen } from 'lucide-react'
+import { ChevronDown, ChevronUp, MessageSquare, ArrowRight, CheckCircle, BookOpen, Leaf, AlertTriangle } from 'lucide-react'
 import RelatedQA from '../components/qa/RelatedQA'
+import RevealContact from '../components/common/RevealContact'
+import { SciImage, InfoStrip } from '../components/visual'
 
 // ─── 질환별 카드 데이터 (쉬운 말로) ───────────────────────────────
 const diseases = [
@@ -183,97 +185,80 @@ function DiseaseCard({ d }) {
 
   return (
     <div
-      className="rounded-3xl overflow-hidden shadow-sm border-2 transition-all duration-300"
-      style={{ borderColor: open ? d.color : '#e5e7eb', backgroundColor: open ? d.bgLight : '#ffffff' }}
+      className={`rounded-lg overflow-hidden border bg-white transition-colors duration-200 ${
+        open ? 'border-gray-900' : 'border-gray-200 hover:border-gray-400'
+      }`}
     >
       {/* 헤더 (항상 보임) */}
       <button
         onClick={() => setOpen(!open)}
         className="w-full text-left p-5 flex items-center gap-4"
+        aria-expanded={open}
       >
         <div
-          className="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl flex-shrink-0 shadow-sm"
-          style={{ backgroundColor: d.bgLight }}
+          className={`w-12 h-12 rounded-md border flex items-center justify-center flex-shrink-0 ${
+            open ? 'bg-gray-900 border-gray-900 text-white' : 'bg-gray-50 border-gray-200 text-gray-700'
+          }`}
         >
-          {d.emoji}
+          <span className="text-2xl leading-none" aria-hidden="true">{d.emoji}</span>
         </div>
-        <div className="flex-1">
-          <div
-            className="text-sm font-bold px-2.5 py-1 rounded-full inline-block mb-1"
-            style={{ backgroundColor: d.color + '20', color: d.color }}
-          >
+        <div className="flex-1 min-w-0">
+          <div className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500 mb-1">
             {d.name}
           </div>
-          <p className="font-bold text-gray-800 text-lg leading-tight">{d.tagline}</p>
+          <p className="font-bold text-gray-900 text-[15px] md:text-base leading-snug tracking-tight break-keep">{d.tagline}</p>
         </div>
-        <div
-          className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0"
-          style={{ backgroundColor: d.color + '15' }}
-        >
+        <div className="w-8 h-8 rounded-md border border-gray-200 bg-white flex items-center justify-center flex-shrink-0">
           {open
-            ? <ChevronUp className="w-4 h-4" style={{ color: d.color }} />
-            : <ChevronDown className="w-4 h-4" style={{ color: d.color }} />
+            ? <ChevronUp className="w-4 h-4 text-gray-700" strokeWidth={1.6} />
+            : <ChevronDown className="w-4 h-4 text-gray-700" strokeWidth={1.6} />
           }
         </div>
       </button>
 
       {/* 펼쳐지는 내용 */}
       {open && (
-        <div className="px-5 pb-6 space-y-4">
+        <div className="px-5 pb-6 space-y-3 border-t border-gray-100 pt-5">
           {/* 쉬운 설명 */}
-          <div className="bg-white rounded-2xl p-4 border border-gray-100">
-            <p className="text-base font-bold text-gray-500 mb-2">📖 쉽게 설명하면</p>
-            <p className="text-gray-800 text-base leading-relaxed">{d.simple}</p>
+          <div>
+            <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500 mb-2">쉽게 설명하면</p>
+            <p className="text-gray-800 text-[15px] leading-[1.8] break-keep">{d.simple}</p>
             <p className="text-gray-500 text-sm mt-2 italic">→ {d.what}</p>
           </div>
 
           {/* 증상 체크 */}
-          <div className="bg-white rounded-2xl p-4 border border-gray-100">
-            <p className="text-base font-bold text-gray-500 mb-3">🩺 이런 증상이 있다면?</p>
+          <div className="pt-4 border-t border-gray-100">
+            <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500 mb-3">이런 증상이 있다면</p>
             <div className="grid grid-cols-2 gap-2">
               {d.symptom.map((s, i) => (
                 <div key={i} className="flex items-center gap-2">
-                  <span className="text-lg">⚠️</span>
-                  <span className="text-base text-gray-700">{s}</span>
+                  <span className="text-gray-400 text-sm tabular-nums">·</span>
+                  <span className="text-[14px] text-gray-700 leading-snug">{s}</span>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* 플로로탄닌이 어떻게 도움? */}
-          <div
-            className="rounded-2xl p-4"
-            style={{ backgroundColor: d.color + '10', border: `1.5px solid ${d.color}30` }}
-          >
-            <p className="text-base font-bold mb-2" style={{ color: d.color }}>🌊 플로로탄닌이 어떻게 도움이 되나요?</p>
-            <p className="text-gray-800 text-base leading-relaxed mb-3">{d.howHelps}</p>
-            <div
-              className="rounded-xl px-4 py-2.5 text-base font-semibold"
-              style={{ backgroundColor: d.color + '15', color: d.color }}
-            >
-              {d.analogy}
+          {/* 플로로탄닌이 어떻게 도움? — 강조 박스, 모노크롬 */}
+          <div className="pt-4 border-t border-gray-100">
+            <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500 mb-2">플로로탄닌의 작용</p>
+            <p className="text-gray-800 text-[15px] leading-[1.8] mb-3 break-keep">{d.howHelps}</p>
+            <div className="rounded-md px-4 py-2.5 text-[14px] font-medium bg-gray-50 border border-gray-200 text-gray-800">
+              비유: {d.analogy}
             </div>
           </div>
 
           {/* 연구 근거 */}
-          <div className="bg-white rounded-2xl p-4 border border-gray-100 flex items-start gap-3">
-            <span className="text-xl flex-shrink-0">🔬</span>
-            <div>
-              <p className="text-sm font-bold text-gray-400 mb-1">연구 근거</p>
-              <p className="text-base text-gray-700">{d.evidence}</p>
-            </div>
+          <div className="pt-4 border-t border-gray-100">
+            <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500 mb-2">연구 근거</p>
+            <p className="text-[14px] text-gray-700 leading-relaxed break-keep">{d.evidence}</p>
           </div>
 
           {/* 생활 팁 */}
-          <div className="bg-amber-50 rounded-2xl p-4 border border-amber-100 flex items-start gap-3">
-            <span className="text-xl flex-shrink-0">💡</span>
-            <div>
-              <p className="text-sm font-bold text-amber-600 mb-1">함께 하면 더 좋은 생활 습관</p>
-              <p className="text-base text-gray-700">{d.tip}</p>
-            </div>
+          <div className="pt-4 border-t border-gray-100">
+            <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500 mb-2">함께 하면 좋은 생활 습관</p>
+            <p className="text-[14px] text-gray-700 leading-relaxed break-keep">{d.tip}</p>
           </div>
-
-
         </div>
       )}
     </div>
@@ -747,80 +732,121 @@ export default function EasyHealthPage() {
         jsonLd={easyJsonLd}
       />
 
-      {/* ── 히어로 ── */}
-      <section className="bg-gradient-to-br from-cyan-500 via-blue-600 to-indigo-700 py-16 md:py-24 relative overflow-hidden">
-        {/* 배경 장식 */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-10 left-10 text-6xl opacity-10 animate-bounce">🌊</div>
-          <div className="absolute top-20 right-20 text-5xl opacity-10 animate-bounce" style={{ animationDelay: '0.5s' }}>🌿</div>
-          <div className="absolute bottom-10 left-1/4 text-4xl opacity-10 animate-bounce" style={{ animationDelay: '1s' }}>✨</div>
-          <div className="absolute bottom-20 right-10 text-5xl opacity-10 animate-bounce" style={{ animationDelay: '1.5s' }}>💊</div>
-        </div>
-
-        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-          <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm border border-white/30 text-white px-5 py-2 rounded-full text-base font-medium mb-6">
-            🌊 바다가 준 선물 · 쉽게 알아보기
-          </div>
-          <h1 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
-            우리 몸이 왜 아픈지<br />
-            <span className="text-yellow-300">쉽게 알아봐요!</span>
-          </h1>
-          <p className="text-blue-100 text-lg md:text-xl leading-relaxed mb-8 max-w-2xl mx-auto">
-            어려운 의학 용어 없이,<br className="md:hidden" /> 중학생도 이해할 수 있게 설명해 드려요.<br />
-            플로로탄닌이 각 질환에 어떻게 도움이 되는지 함께 알아봐요 😊
-          </p>
-
-          {/* 핵심 포인트 3개 */}
-          <div className="grid grid-cols-3 gap-3 max-w-xl mx-auto mb-8">
-            {[
-              { emoji: '📖', text: '쉬운 말로' },
-              { emoji: '🎨', text: '그림처럼 설명' },
-              { emoji: '🔬', text: '과학적 근거' },
-            ].map((item, i) => (
-              <div key={i} className="bg-white/20 backdrop-blur-sm rounded-2xl py-3 px-2">
-                <div className="text-2xl mb-1">{item.emoji}</div>
-                <div className="text-white text-sm font-bold">{item.text}</div>
+      {/* ── 히어로 (라이트 저널 톤) ── */}
+      <section className="bg-white py-16 md:py-24 border-b border-gray-100 relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none hidden" aria-hidden="true" />
+        <div className="max-w-6xl mx-auto px-6 relative z-10">
+          <div className="grid md:grid-cols-[1.2fr_1fr] gap-10 md:gap-14 items-center">
+            {/* 좌측 텍스트 */}
+            <div>
+              {/* 에디토리얼 라벨 */}
+              <div className="flex items-center gap-3 mb-7">
+                <span className="h-px w-8 bg-gray-300" />
+                <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500">
+                  Easy Health · 쉽게 읽는 건강정보
+                </span>
               </div>
-            ))}
-          </div>
 
-          <a href="#diseases" className="inline-flex items-center gap-2 bg-yellow-400 text-gray-900 px-8 py-4 rounded-full font-black text-lg hover:bg-yellow-300 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
-            바로 알아보기 👇
-          </a>
+              <h1 className="text-4xl md:text-[3.5rem] font-bold text-gray-900 leading-[1.1] tracking-tight mb-6 break-keep">
+                우리 몸이 왜 아픈지,
+                <span className="block text-gray-500 font-normal text-2xl md:text-3xl mt-3 tracking-normal">
+                  어려운 의학 용어 없이 설명드립니다.
+                </span>
+              </h1>
+              <p className="text-gray-600 text-[16px] md:text-[17px] leading-[1.8] mb-8 max-w-xl break-keep">
+                중학생도 이해할 수 있도록 해조류 폴리페놀—<span className="text-gray-900 font-medium">플로로탄닌</span>이
+                각 질환에 어떻게 작용하는지 차근차근 풀어 드립니다.
+              </p>
+
+              {/* 핵심 포인트 3개 — 쿨한 스펙처럼 */}
+              <dl className="grid grid-cols-3 gap-x-6 gap-y-1 max-w-md mb-9">
+                {[
+                  { label: '설명 수준', value: '중학생 눈높이' },
+                  { label: '시각 자료', value: '도표 · 비유' },
+                  { label: '내용 근거', value: 'SCI 논문' },
+                ].map((item, i) => (
+                  <div key={i}>
+                    <dt className="text-[11px] font-medium uppercase tracking-[0.16em] text-gray-400 mb-1">{item.label}</dt>
+                    <dd className="text-[14px] font-semibold text-gray-900">{item.value}</dd>
+                  </div>
+                ))}
+              </dl>
+
+              <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+                <a href="#diseases" className="group inline-flex items-center gap-2 bg-gray-900 hover:bg-black text-white px-6 py-3 rounded-md text-[14px] font-medium transition-colors">
+                  질환별 설명 보기
+                  <ChevronDown className="w-4 h-4 transition-transform group-hover:translate-y-0.5" strokeWidth={1.8} />
+                </a>
+                <Link to="/phlorotannin" className="inline-flex items-center gap-1 text-[14px] text-gray-700 hover:text-gray-900 underline underline-offset-4 decoration-gray-300 hover:decoration-gray-700">
+                  논문·기전 상세
+                </Link>
+              </div>
+            </div>
+
+            {/* 우측 이미지 — 감태 표본 */}
+            <div className="hidden md:block relative">
+              <SciImage
+                name="kelp-specimen"
+                alt="감태(Ecklonia cava) 식물 표본"
+                aspect="4/3"
+                priority
+                rounded="2xl"
+              />
+              {/* 종명 칩 — 모노크롬 */}
+              <div className="absolute -bottom-5 -left-5 bg-white rounded-md px-4 py-3 border border-gray-200 flex items-center gap-3">
+                <div className="w-9 h-9 rounded-md bg-gray-50 border border-gray-200 flex items-center justify-center">
+                  <Leaf className="w-4 h-4 text-gray-700" strokeWidth={1.6} />
+                </div>
+                <div className="leading-tight">
+                  <div className="text-[11px] text-gray-500 font-medium uppercase tracking-wide">한반도 자생 종</div>
+                  <div className="text-sm font-bold text-gray-900">감태 · Ecklonia cava</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* ── 플로로탄닌이 뭔지 4컷 ── */}
-      <section className="py-14 bg-white">
+      <section className="py-16 bg-gray-50 border-y border-gray-200">
         <div className="max-w-5xl mx-auto px-6">
-          <div className="text-center mb-10">
-            <span className="text-3xl">🌊</span>
-            <h2 className="text-2xl md:text-3xl font-black text-gray-800 mt-2 mb-2">플로로탄닌이 뭔가요?</h2>
-            <p className="text-gray-500">4가지 핵심만 알면 됩니다!</p>
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center justify-center gap-3 mb-4">
+              <span className="h-px w-8 bg-gray-300" />
+              <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500">Quick Primer</span>
+              <span className="h-px w-8 bg-gray-300" />
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-3">플로로탄닌이 무엇인가요?</h2>
+            <p className="text-gray-600 text-[16px]">4가지 핵심만 알면 충분합니다.</p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {basicCards.map((c, i) => (
-              <div key={i} className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-3xl p-6 text-center border border-cyan-100 hover:shadow-md transition-all hover:-translate-y-1">
-                <div className="text-4xl mb-3">{c.emoji}</div>
-                <h3 className="font-black text-gray-800 mb-2 text-lg">{c.title}</h3>
-                <p className="text-gray-600 text-base leading-relaxed">{c.desc}</p>
+              <div key={i} className="bg-white rounded-lg p-6 border border-gray-200 hover:border-gray-400 transition-colors">
+                <div className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-400 mb-3 tabular-nums">{String(i+1).padStart(2,'0')}</div>
+                <h3 className="font-bold text-gray-900 mb-2 text-lg tracking-tight">{c.title}</h3>
+                <p className="text-gray-600 text-[15px] leading-relaxed break-keep">{c.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── 비교표 ── */}
-      <section className="py-10 bg-gray-50">
+      {/* ── 비교표 — 모노크롬 ── */}
+      <section className="py-14 bg-white">
         <div className="max-w-3xl mx-auto px-6">
-          <h2 className="text-xl md:text-2xl font-black text-gray-800 text-center mb-6">
-            🌱 육지 vs 🌊 바다 폴리페놀 차이
-          </h2>
-          <div className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden">
-            <div className="grid grid-cols-3 bg-gray-50 border-b border-gray-100">
-              <div className="p-3 text-sm font-bold text-gray-400 text-center">항목</div>
-              <div className="p-3 text-base font-black text-center text-green-700 bg-green-50">🌱 육지<br/>(녹차·포도)</div>
-              <div className="p-3 text-base font-black text-center text-blue-700 bg-blue-50">🌊 바다<br/>(플로로탄닌)</div>
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center justify-center gap-3 mb-3">
+              <span className="h-px w-8 bg-gray-300" />
+              <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500">Land vs Sea</span>
+              <span className="h-px w-8 bg-gray-300" />
+            </div>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight">육지 폴리페놀과 해양 플로로탄닌의 차이</h2>
+          </div>
+          <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
+            <div className="grid grid-cols-3 border-b border-gray-200 bg-gray-50">
+              <div className="p-3 text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500 text-center">항목</div>
+              <div className="p-3 text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500 text-center border-l border-gray-200">육지 (녹차·포도)</div>
+              <div className="p-3 text-[11px] font-medium uppercase tracking-[0.18em] text-gray-900 text-center border-l border-gray-200">바다 (플로로탄닌)</div>
             </div>
             {[
               ['발견 장소', '육상 식물', '해조류(미역·감태)'],
@@ -829,10 +855,10 @@ export default function EasyHealthPage() {
               ['주요 작용', '항산화 중심', '6가지 기전 복합'],
               ['특이점', '식품으로 친숙', '해양 기원 독특함'],
             ].map(([label, land, sea], i) => (
-              <div key={i} className={`grid grid-cols-3 border-b border-gray-50 ${i % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'}`}>
-                <div className="p-3 text-sm font-bold text-gray-500 flex items-center justify-center text-center">{label}</div>
-                <div className="p-3 text-sm text-gray-600 flex items-center justify-center text-center border-x border-gray-100">{land}</div>
-                <div className="p-3 text-sm font-semibold text-blue-700 flex items-center justify-center text-center">{sea}</div>
+              <div key={i} className={`grid grid-cols-3 border-b border-gray-100 last:border-b-0 ${i % 2 === 0 ? 'bg-white' : 'bg-gray-50/40'}`}>
+                <div className="p-3 text-sm font-medium text-gray-700 flex items-center justify-center text-center">{label}</div>
+                <div className="p-3 text-sm text-gray-500 flex items-center justify-center text-center border-l border-gray-100">{land}</div>
+                <div className="p-3 text-sm font-semibold text-gray-900 flex items-center justify-center text-center border-l border-gray-100">{sea}</div>
               </div>
             ))}
           </div>
@@ -840,27 +866,31 @@ export default function EasyHealthPage() {
       </section>
 
       {/* ── 질환별 카드 ── */}
-      <section id="diseases" className="py-14 bg-white">
+      <section id="diseases" className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-6">
-          <div className="text-center mb-8">
-            <span className="text-3xl">🩺</span>
-            <h2 className="text-2xl md:text-3xl font-black text-gray-800 mt-2 mb-2">질환별로 알아보기</h2>
-            <p className="text-gray-500 text-base">궁금한 질환을 클릭하면 자세한 설명이 펼쳐져요!</p>
+          <div className="text-center mb-10">
+            <div className="inline-flex items-center justify-center gap-3 mb-4">
+              <span className="h-px w-8 bg-gray-300" />
+              <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500">Conditions</span>
+              <span className="h-px w-8 bg-gray-300" />
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-3">질환별 알아보기</h2>
+            <p className="text-gray-600 text-[16px]">궁금한 질환을 클릭하면 자세한 설명이 열립니다.</p>
           </div>
 
-          {/* 필터 탭 */}
-          <div className="flex gap-2 overflow-x-auto pb-3 mb-6 scrollbar-hide justify-center flex-wrap">
+          {/* 필터 탭 — 모노크롬 */}
+          <div className="flex gap-2 overflow-x-auto pb-3 mb-8 scrollbar-hide justify-center flex-wrap">
             {filters.map(f => (
               <button
                 key={f.id}
                 onClick={() => setActiveFilter(f.id)}
-                className={`flex-shrink-0 flex items-center gap-1.5 px-4 py-2 rounded-full text-base font-bold transition-all ${
+                className={`flex-shrink-0 inline-flex items-center px-4 py-2 rounded-md text-[14px] font-medium transition-colors border ${
                   activeFilter === f.id
-                    ? 'bg-cyan-500 text-white shadow-md'
-                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                    ? 'bg-gray-900 border-gray-900 text-white'
+                    : 'bg-white border-gray-200 text-gray-700 hover:border-gray-400'
                 }`}
               >
-                <span>{f.emoji}</span> {f.label}
+                {f.label}
               </button>
             ))}
           </div>
@@ -874,53 +904,52 @@ export default function EasyHealthPage() {
         </div>
       </section>
 
-      {/* ── 몸 속 작용 흐름 ── */}
-      <section className="py-14 bg-gradient-to-br from-slate-800 to-slate-900">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="text-center mb-10">
-            <span className="text-3xl">⚙️</span>
-            <h2 className="text-2xl md:text-3xl font-black text-white mt-2 mb-2">몸 속에서 어떻게 작동할까요?</h2>
-            <p className="text-gray-400 text-base">복잡하지 않아요, 딱 이것만 기억하세요!</p>
+      {/* ── 몸 속 작용 흐름 (라이트 타임라인) ── */}
+      <section className="py-16 bg-gray-50 border-y border-gray-200">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center justify-center gap-3 mb-4">
+              <span className="h-px w-8 bg-gray-300" />
+              <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500">In-Body Flow</span>
+              <span className="h-px w-8 bg-gray-300" />
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-3">몸 속에서 어떻게 작동하나요?</h2>
+            <p className="text-gray-600 text-[16px]">복잡하지 않습니다. 네 단계만 기억하세요.</p>
           </div>
 
-          {/* 흐름도 */}
-          <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-0">
+          {/* 4-step 수평 레이아웃 — 모노크롬 카드 */}
+          <ol className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { emoji: '🌊', label: '감태·미역 섭취', sub: '플로로탄닌 흡수', color: 'from-cyan-500 to-blue-600' },
-              { emoji: '🔬', label: '몸 속 순환', sub: '혈액 타고 이동', color: 'from-blue-500 to-indigo-600' },
-              { emoji: '🧬', label: '표적 효소 차단', sub: '나쁜 반응 억제', color: 'from-indigo-500 to-purple-600' },
-              { emoji: '✅', label: '건강 유지', sub: '염증↓ 산화↓', color: 'from-purple-500 to-pink-500' },
+              { label: '감태 · 미역 섭취', sub: '플로로탄닌 희석 흡수' },
+              { label: '혈액 순환', sub: '전신 조직 도달' },
+              { label: '표적 효소 조절', sub: '나쁜 반응 억제' },
+              { label: '건강 유지', sub: '염증 · 산화 감소' },
             ].map((step, i) => (
-              <div key={i} className="flex md:flex-row flex-col items-center gap-2 md:gap-0">
-                <div className={`bg-gradient-to-br ${step.color} rounded-2xl p-5 text-center w-36 shadow-lg`}>
-                  <div className="text-3xl mb-2">{step.emoji}</div>
-                  <div className="text-white font-black text-base">{step.label}</div>
-                  <div className="text-white/70 text-sm mt-1">{step.sub}</div>
-                </div>
-                {i < 3 && (
-                  <div className="text-gray-400 text-2xl md:mx-2 rotate-90 md:rotate-0">→</div>
-                )}
-              </div>
+              <li key={i} className="bg-white rounded-lg p-5 border border-gray-200">
+                <div className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-400 mb-3 tabular-nums">Step {String(i+1).padStart(2,'0')}</div>
+                <div className="font-bold text-gray-900 text-[15px] tracking-tight mb-1">{step.label}</div>
+                <div className="text-gray-600 text-sm leading-relaxed">{step.sub}</div>
+              </li>
             ))}
-          </div>
+          </ol>
 
-          {/* 6가지 기전 요약 */}
-          <div className="mt-10 grid grid-cols-2 md:grid-cols-3 gap-3">
+          {/* 6가지 기전 요약 — 모노크롬 텍스트 */}
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             {[
-              { emoji: '🔥', text: '염증 억제 (NF-κB 차단)' },
-              { emoji: '⚡', text: '에너지 대사 (AMPK 활성화)' },
-              { emoji: '🛡️', text: '항산화 (Nrf2 활성화)' },
-              { emoji: '❤️', text: '혈압 조절 (ACE 억제)' },
-              { emoji: '🧠', text: '인지 보호 (AChE 억제)' },
-              { emoji: '💪', text: '연골 보호 (MMP 억제)' },
+              { num: '01', text: '염증 억제 (NF-κB 차단)' },
+              { num: '02', text: '에너지 대사 (AMPK 활성화)' },
+              { num: '03', text: '항산화 (Nrf2 활성화)' },
+              { num: '04', text: '혈압 조절 (ACE 억제)' },
+              { num: '05', text: '인지 보호 (AChE 억제)' },
+              { num: '06', text: '연골 보호 (MMP 억제)' },
             ].map((item, i) => (
-              <div key={i} className="bg-white/10 backdrop-blur-sm rounded-2xl p-3.5 flex items-center gap-3">
-                <span className="text-xl">{item.emoji}</span>
-                <span className="text-white text-sm font-semibold leading-snug">{item.text}</span>
+              <div key={i} className="bg-white border border-gray-200 rounded-md px-4 py-3 flex items-center gap-3">
+                <span className="text-[11px] font-medium text-gray-400 tabular-nums tracking-wider">{item.num}</span>
+                <span className="text-gray-800 text-sm font-medium leading-snug">{item.text}</span>
               </div>
             ))}
           </div>
-          <p className="text-center text-gray-500 text-sm mt-4">※ 어려운 영어 이름은 몰라도 돼요. 6가지 방법으로 몸을 지킨다는 것만 기억하세요!</p>
+          <p className="text-center text-gray-500 text-sm mt-6">· 용어는 머릿속에 둘 필요 없습니다. "여섯 가지 방법으로 몸을 지킨다" — 그것만 기억하세요.</p>
         </div>
       </section>
 
@@ -944,15 +973,18 @@ export default function EasyHealthPage() {
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-10">
-            <div className="inline-flex items-center gap-2 bg-indigo-50 border border-indigo-200 text-indigo-700 px-4 py-2 rounded-full text-sm font-bold mb-4">
-              <BookOpen className="w-4 h-4" /> 논문 기반 심화 정보
+            <div className="inline-flex items-center justify-center gap-3 mb-4">
+              <span className="h-px w-8 bg-gray-300" />
+              <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500 inline-flex items-center gap-1.5">
+                <BookOpen className="w-3.5 h-3.5" strokeWidth={1.8} /> Research Library
+              </span>
+              <span className="h-px w-8 bg-gray-300" />
             </div>
-            <h2 className="text-2xl md:text-3xl font-black text-gray-800 mb-3">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-3">
               건강 고민별 플로로탄닌 연구 자료
             </h2>
-            <p className="text-gray-500 text-base leading-relaxed max-w-2xl mx-auto">
-              위의 쉬운 설명이 마음에 드셨나요?<br />
-              각 건강 고민별로 <strong>실제 연구 내용</strong>을 더 깊이 알아보세요.
+            <p className="text-gray-600 text-[16px] leading-[1.8] max-w-2xl mx-auto break-keep">
+              위의 쉬운 설명이 도움이 되셨다면, 각 건강 고민별로 <strong className="text-gray-900 font-semibold">실제 연구 내용</strong>을 더 깊이 살펴보세요.
             </p>
           </div>
 
@@ -962,25 +994,27 @@ export default function EasyHealthPage() {
             ))}
           </div>
 
-          <div className="mt-8 bg-blue-50 rounded-2xl p-5 border border-blue-100 text-center">
-            <p className="text-blue-800 text-sm font-semibold">
-              🔬 위 내용은 학술 연구 자료를 바탕으로 작성된 교육 정보입니다.<br />
+          <div className="mt-8 bg-gray-50 rounded-md p-5 border border-gray-200 text-center">
+            <p className="text-gray-700 text-sm leading-relaxed">
+              · 위 내용은 학술 연구 자료를 바탕으로 작성된 교육 정보입니다.<br />
               의료적 진단·치료를 대체하지 않으며, 건강 문제는 반드시 전문 의사와 상담하세요.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ── 주의사항 ── */}
-      <section className="py-8 bg-amber-50 border-y border-amber-100">
+      {/* ── 주의사항 — 모노크롬 ── */}
+      <section className="py-8 bg-white border-y border-gray-200">
         <div className="max-w-3xl mx-auto px-6">
-          <div className="flex items-start gap-3">
-            <span className="text-2xl flex-shrink-0">⚠️</span>
+          <div className="flex items-start gap-4">
+            <div className="w-9 h-9 rounded-md border border-gray-300 bg-gray-50 flex items-center justify-center flex-shrink-0">
+              <AlertTriangle className="w-4 h-4 text-gray-700" strokeWidth={1.6} />
+            </div>
             <div>
-              <p className="font-bold text-amber-800 mb-1 text-base">꼭 읽어주세요</p>
-              <p className="text-amber-700 text-base leading-relaxed">
-                이 페이지의 내용은 <strong>교육·정보 제공 목적</strong>이며, 의료적 진단이나 치료를 대체하지 않습니다.
-                건강 문제가 있으시면 반드시 <strong>전문 의사</strong>와 상담하세요.
+              <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500 mb-2">Disclaimer</p>
+              <p className="text-gray-700 text-[15px] leading-[1.8] break-keep">
+                이 페이지의 내용은 <strong className="text-gray-900 font-semibold">교육·정보 제공 목적</strong>이며, 의료적 진단이나 치료를 대체하지 않습니다.
+                건강 문제가 있으시면 반드시 <strong className="text-gray-900 font-semibold">전문 의사</strong>와 상담하세요.
                 플로로탄닌은 현재 활발히 연구 중인 소재로, 일부 결과는 동물·세포 실험 수준입니다.
               </p>
             </div>
@@ -988,40 +1022,46 @@ export default function EasyHealthPage() {
         </div>
       </section>
 
-      {/* ── CTA ── */}
-      <section className="py-16 bg-gradient-to-br from-cyan-500 to-blue-700">
+      {/* ── CTA (라이트) ── */}
+      <section className="py-20 bg-white border-y border-gray-200">
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <h2 className="text-2xl md:text-3xl font-black text-white mb-4">
-            더 자세히 알고 싶으신가요? 😊
+          <div className="inline-flex items-center justify-center gap-3 mb-5">
+            <span className="h-px w-8 bg-gray-300" />
+            <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500">Next Step</span>
+            <span className="h-px w-8 bg-gray-300" />
+          </div>
+          <h2 className="text-3xl md:text-[2.5rem] font-bold text-gray-900 tracking-tight mb-4 leading-[1.2]">
+            더 자세히 알고 싶으신가요?
           </h2>
-          <p className="text-blue-100 mb-8 leading-relaxed">
-            전문 파트너가 쉽게 설명해 드려요.<br />
-            전화나 문자로 편하게 연락주세요!
+          <p className="text-gray-600 text-[16px] md:text-[17px] leading-[1.8] mb-10 max-w-xl mx-auto break-keep">
+            전문 파트너가 질환·체질·생활습관에 따라 설명드립니다.
+            전화·문자로 편하게 연락주세요.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-wrap gap-x-6 gap-y-3 justify-center items-center">
             <Link
               to="/consult"
-              className="flex items-center justify-center gap-2 bg-yellow-400 text-gray-900 px-8 py-4 rounded-full font-black text-lg hover:bg-yellow-300 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
+              className="inline-flex items-center gap-2 bg-gray-900 hover:bg-black text-white px-6 py-3 rounded-md text-[14px] font-medium transition-colors"
             >
-              <MessageSquare className="w-5 h-5" />
-              전문가에게 문의하기
+              <MessageSquare className="w-4 h-4" strokeWidth={1.8} />
+              전문가 상담 신청
             </Link>
-          </div>
-
-          {/* 빠른 연락 */}
-          <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
-            <a
-              href={`tel:${partner.phone}`}
-              className="flex items-center justify-center gap-2 bg-white/20 border border-white/40 text-white px-6 py-3 rounded-full text-base font-bold hover:bg-white/30 transition-all"
-            >
-              📞 전화 상담 번호 보기
-            </a>
-            <a
-              href={`sms:${partner.phone}?body=${encodeURIComponent('[플로로탄닌 문의] ')}`}
-              className="flex items-center justify-center gap-2 bg-white/20 border border-white/40 text-white px-6 py-3 rounded-full text-base font-bold hover:bg-white/30 transition-all"
-            >
-              💬 문자로 문의하기
-            </a>
+            <RevealContact
+              type="tel"
+              label="전화 상담 번호 보기"
+              revealLabel={`${partner.phoneDisplay} 전화하기`}
+              phone={partner.phone}
+              displayPhone={partner.phoneDisplay}
+              className="inline-flex items-center gap-1.5 text-[14px] text-gray-700 hover:text-gray-900 underline underline-offset-4 decoration-gray-300 hover:decoration-gray-700"
+            />
+            <RevealContact
+              type="sms"
+              label="문자로 문의"
+              revealLabel={`${partner.phoneDisplay} 문자하기`}
+              phone={partner.phone}
+              displayPhone={partner.phoneDisplay}
+              smsBody="[플로로탄닌 문의] "
+              className="inline-flex items-center gap-1.5 text-[14px] text-gray-700 hover:text-gray-900 underline underline-offset-4 decoration-gray-300 hover:decoration-gray-700"
+            />
           </div>
         </div>
       </section>

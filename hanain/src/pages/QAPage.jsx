@@ -1,8 +1,9 @@
 import { useState, useEffect, useRef, useMemo } from 'react'
 import { useSearchParams, Link } from 'react-router-dom'
-import { ChevronDown, ThumbsUp, Share2, Filter, BookOpen, TrendingUp, MessageSquare, Phone, ChevronRight, Search, X } from 'lucide-react'
+import { ChevronDown, ThumbsUp, Share2, Filter, BookOpen, TrendingUp, MessageSquare, Phone, ChevronRight, Search, X, ArrowUpRight } from 'lucide-react'
 import { usePartner } from '../context/PartnerContext'
 import SEOHead from '../components/common/SEOHead'
+import RevealContact from '../components/common/RevealContact'
 
 const ITEMS_PER_PAGE = 20
 
@@ -593,32 +594,39 @@ export default function QAPage() {
             )}
 
             {/* CTA Section */}
-            <div className="mt-12 rounded-2xl overflow-hidden bg-gradient-to-br from-[#0a1628] to-[#0e2a4a] text-white p-8 shadow-lg">
+            <div className="mt-12 rounded-lg overflow-hidden bg-white border border-gray-200 p-8 md:p-10">
               <div className="max-w-2xl">
-                <p className="text-cyan-300 text-sm font-semibold uppercase tracking-widest mb-3">이 내용, 나에게도 해당될까요?</p>
-                <h2 className="text-2xl font-bold mb-4 leading-snug">
+                <div className="flex items-center gap-3 mb-5">
+                  <span className="h-px w-8 bg-gray-300" aria-hidden="true" />
+                  <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500">Personalized Guidance</span>
+                </div>
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight mb-5 leading-snug break-keep">
                   같은 고민을 먼저 겪은 사람에게<br />
                   직접 물어보세요
                 </h2>
-                <p className="text-gray-300 text-base mb-2 leading-relaxed">
-                  글로 읽는 것과 내 상황에 적용하는 건 다릅니다. 나이·복용 중인 약·생활 습관에 따라 같은 성분도 접근법이 달라지거든요.
+                <p className="text-gray-600 text-[15px] leading-[1.8] mb-3 break-keep">
+                  글로 읽는 것과 내 상황에 적용하는 건 다릅니다. 나이·복용 중인 약·생활 습관에 따라 같은 성분도 접근법이 달라집니다.
                 </p>
-                <p className="text-gray-300 text-base mb-6 leading-relaxed">
-                  파트너는 의료인이 아닙니다. 하지만 <span className="text-white font-semibold">같은 고민을 먼저 공부한 사람</span>으로서, 시중 제품 차이와 내게 맞는 선택 기준을 함께 정리해 드립니다.
+                <p className="text-gray-600 text-[15px] leading-[1.8] mb-7 break-keep">
+                  파트너는 의료인이 아닙니다. 하지만 <span className="text-gray-900 font-semibold">같은 고민을 먼저 공부한 사람</span>으로서, 시중 제품 차이와 내게 맞는 선택 기준을 함께 정리해 드립니다.
                 </p>
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-x-6 gap-y-3 items-center">
                   <a
                     href="/partner"
-                    className="inline-flex items-center gap-2 bg-cyan-400 hover:bg-cyan-300 text-[#0a1628] font-bold px-6 py-3 rounded-xl transition-all text-base shadow"
+                    className="inline-flex items-center gap-2 bg-gray-900 hover:bg-black text-white px-6 py-3 rounded-md text-[14px] font-medium transition-colors"
                   >
-                    파트너와 이야기하기 →
+                    파트너와 이야기하기
+                    <ArrowUpRight className="w-4 h-4" strokeWidth={1.8} aria-hidden="true" />
                   </a>
-                  <a
-                    href={`sms:010-5652-8206?body=${encodeURIComponent('안녕하세요, Q&A 보다가 제 상황이랑 비슷한 것 같아서요. 좀 더 여쭤봐도 될까요?')}`}
-                    className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3 rounded-xl transition-all text-base border border-white/20"
-                  >
-                    문자로 편하게 물어보기
-                  </a>
+                  <RevealContact
+                    type="sms"
+                    label="문자로 편하게 물어보기"
+                    revealLabel={`${partner.phoneDisplay} 문자하기`}
+                    phone={partner.phone}
+                    displayPhone={partner.phoneDisplay}
+                    smsBody="안녕하세요, Q&A 보다가 제 상황이랑 비슷한 것 같아서요. 좀 더 여쭤봐도 될까요?"
+                    className="inline-flex items-center gap-1.5 text-[14px] text-gray-700 hover:text-gray-900 underline underline-offset-4 decoration-gray-300 hover:decoration-gray-700 transition-colors"
+                  />
                 </div>
               </div>
             </div>

@@ -7,6 +7,7 @@ export default {
   theme: {
     extend: {
       colors: {
+        // 기존 토큰 (D9 이전 호환 유지 — 절대 삭제 금지)
         'ocean-deep': '#0A1628',
         'ocean-mid': '#1a3a5c',
         'ocean-light': '#2a5480',
@@ -14,6 +15,21 @@ export default {
         'gold-hana': '#F0A500',
         'gray-hana': '#f8fafc',
         'border-hana': '#e2e8f0',
+        // D10 추가: 밝은 연구실 느낌 보조 팔레트 ("신뢰가는 밝은 느낌")
+        'lab-50':  '#F5FBFD', // 거의 흰색 + 미세 시안
+        'lab-100': '#E6F6FA', // 밝은 시안 배경
+        'lab-200': '#CAF0F8', // 부드러운 시안 (테두리)
+        'lab-300': '#90E0EF', // 중간 시안 (액센트)
+        'lab-400': '#48CAE4', // 진한 시안 (호버)
+        'lab-500': '#00B4D8', // 메인 시안 (= cyan-hana)
+        'lab-600': '#0096C7', // 진한 시안 (active)
+        'lab-700': '#0077B6', // 짙은 블루
+        'lab-800': '#023E8A', // 매우 짙은 블루
+        'lab-900': '#03045E', // 거의 검정 블루
+        'sand-50':  '#FFFBF5', // 따뜻한 화이트
+        'sand-100': '#FFF4E6', // 따뜻한 액센트
+        'coral-500': '#FF6B6B', // 임상 수치 강조 (염증 등)
+        'emerald-fresh': '#10B981', // 긍정 수치 강조
       },
       fontFamily: {
         sans: ['Noto Sans KR', 'sans-serif'],
@@ -61,7 +77,18 @@ export default {
         'ocean-gradient': 'linear-gradient(135deg, #0A1628 0%, #1a3a5c 50%, #0A1628 100%)',
         'cyan-gradient': 'linear-gradient(135deg, #00B4D8, #0077B6)',
         'gold-gradient': 'linear-gradient(135deg, #F0A500, #E07B00)',
-      }
+        // D10 추가: 밝은 연구실 느낌 그라데이션
+        'lab-gradient': 'linear-gradient(135deg, #F5FBFD 0%, #E6F6FA 50%, #CAF0F8 100%)',
+        'lab-soft-gradient': 'linear-gradient(180deg, #FFFFFF 0%, #F5FBFD 100%)',
+        'lab-hero-gradient': 'radial-gradient(ellipse at top right, #CAF0F8 0%, transparent 60%), radial-gradient(ellipse at bottom left, #E6F6FA 0%, transparent 50%), #FFFFFF',
+      },
+      boxShadow: {
+        // D10 추가: 부드러운 연구실 카드 그림자
+        'lab': '0 1px 3px 0 rgba(0, 119, 182, 0.06), 0 1px 2px -1px rgba(0, 119, 182, 0.04)',
+        'lab-md': '0 4px 12px -2px rgba(0, 119, 182, 0.08), 0 2px 4px -1px rgba(0, 119, 182, 0.04)',
+        'lab-lg': '0 12px 30px -8px rgba(0, 119, 182, 0.12), 0 6px 12px -4px rgba(0, 119, 182, 0.06)',
+        'lab-glow': '0 0 0 1px rgba(0, 180, 216, 0.1), 0 8px 24px -8px rgba(0, 180, 216, 0.25)',
+      },
     },
   },
   plugins: [],

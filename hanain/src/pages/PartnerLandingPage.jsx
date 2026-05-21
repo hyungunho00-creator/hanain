@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
 import { Phone, MessageSquare, BookOpen, Leaf, ChevronRight, Shield, Brain, Heart, Zap, Users, CheckCircle, AlertCircle } from 'lucide-react'
 import SEOHead from '../components/common/SEOHead'
+import RevealContact from '../components/common/RevealContact'
 import { savePartnerToSession } from '../context/PartnerContext'
 
 const MAIN_SITE = 'https://phlorotannin.com'
@@ -116,18 +117,25 @@ export default function PartnerLandingPage() {
               1,311개 Q&A 정보를 함께 확인해 드립니다.
             </p>
 
-            {/* CTA 버튼 */}
+            {/* CTA 버튼 — 번호 평문 노출 방지 (RevealContact 클릭 후 노출) */}
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <a href={tel}
-                className="flex items-center justify-center gap-2 bg-white text-emerald-800 px-6 py-4 rounded-2xl text-base font-bold shadow-lg active:scale-95 transition-transform">
-                <Phone className="w-5 h-5" />
-                {partner.phoneDisplay} 전화 연결
-              </a>
-              <a href={sms}
-                className="flex items-center justify-center gap-2 bg-emerald-600 border-2 border-emerald-400 text-white px-6 py-4 rounded-2xl text-base font-semibold active:scale-95 transition-transform">
-                <MessageSquare className="w-5 h-5" />
-                문자로 문의하기
-              </a>
+              <RevealContact
+                type="tel"
+                label="전화 상담 연결"
+                revealLabel={`${partner.phoneDisplay} 전화 연결`}
+                phone={partner.phone}
+                displayPhone={partner.phoneDisplay}
+                className="bg-white text-emerald-800 px-6 py-4 rounded-2xl text-base font-bold shadow-lg active:scale-95 transition-transform"
+              />
+              <RevealContact
+                type="sms"
+                label="문자로 문의하기"
+                revealLabel={`${partner.phoneDisplay} 문자하기`}
+                phone={partner.phone}
+                displayPhone={partner.phoneDisplay}
+                smsBody={`[${partner.name}] 상담 문의드립니다.`}
+                className="bg-emerald-600 border-2 border-emerald-400 text-white px-6 py-4 rounded-2xl text-base font-semibold active:scale-95 transition-transform"
+              />
             </div>
           </div>
         </div>

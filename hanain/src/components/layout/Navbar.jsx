@@ -4,31 +4,29 @@ import { CreditCard, FolderLock, Eye, EyeOff, ExternalLink } from 'lucide-react'
 import { usePartner } from '../../context/PartnerContext'
 
 const NAV_LINKS = [
-  { path: '/easy',        label: '플로로탄닌 쉽게 배우기', num: '①' },
-  { path: '/phlorotannin',label: '플로로탄닌 소개',        num: '②' },
-  { path: '/qa',          label: '건강 Q&A',              num: '③' },
-  { path: '/blog',        label: '연구 블로그',            num: '④' },
-  { path: '/partner',     label: '파트너 참여',            num: '⑤' },
-  { path: '/consult',     label: '문의하기',               num: '⑥' },
+  { path: '/easy',        label: '플로로탄닌 쉽게 배우기', num: '01' },
+  { path: '/phlorotannin',label: '플로로탄닌 소개',        num: '02' },
+  { path: '/qa',          label: '건강 Q&A',              num: '03' },
+  { path: '/blog',        label: '연구 블로그',            num: '04' },
+  { path: '/partner',     label: '파트너 참여',            num: '05' },
+  { path: '/consult',     label: '문의하기',               num: '06' },
 ]
 
-/* 외부 커뮤니티 링크 (네이버 카페/밴드) */
+/* 외부 커뮤니티 링크 (네이버 카페/밴드) — 절제된 다크 톤으로 통일 */
 const EXTERNAL_LINKS = [
   {
     href:  'https://naver.me/x4lFCvwV',
     label: '네이버 카페',
-    shortLabel: '카페 바로가기',
-    emoji: '💬',
-    desk:  'bg-green-600 hover:bg-green-500 text-white',
-    mob:   'bg-green-600 hover:bg-green-500 text-white',
+    shortLabel: '네이버 카페',
+    desk:  'bg-white/5 hover:bg-white/10 text-white border border-white/15',
+    mob:   'bg-white/5 hover:bg-white/10 text-white border border-white/15',
   },
   {
     href:  'https://band.us/n/a6aebc75vch6U',
     label: '네이버 밴드',
-    shortLabel: '밴드 가입하기',
-    emoji: '📣',
-    desk:  'bg-sky-600 hover:bg-sky-500 text-white',
-    mob:   'bg-sky-600 hover:bg-sky-500 text-white',
+    shortLabel: '네이버 밴드',
+    desk:  'bg-white/5 hover:bg-white/10 text-white border border-white/15',
+    mob:   'bg-white/5 hover:bg-white/10 text-white border border-white/15',
   },
 ]
 
@@ -262,42 +260,47 @@ export default function Navbar() {
               />
               <div className="hidden sm:block">
                 <span className="text-white font-bold text-lg leading-tight block">플로로탄닌 파트너스</span>
-                <span className="text-cyan-hana text-sm leading-tight block">Phlorotannin Partners</span>
+                <span className="text-white/50 text-xs leading-tight block tracking-wide">Phlorotannin Partners</span>
               </div>
               <div className="block sm:hidden">
                 <span className="text-white font-bold text-base leading-tight block">플로로탄닌</span>
               </div>
             </Link>
 
-            {/* 데스크탑 메뉴 */}
+            {/* 데스크탑 메뉴 — 절제된 톤 */}
             <div className="hidden md:flex items-center gap-1">
-              {NAV_LINKS.map(link => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-                    location.pathname === link.path
-                      ? 'bg-cyan-hana text-white'
-                      : 'text-gray-300 hover:text-white hover:bg-white/10'
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {NAV_LINKS.map(link => {
+                const active = location.pathname === link.path
+                return (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    className={`relative px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                      active
+                        ? 'text-white'
+                        : 'text-white/60 hover:text-white'
+                    }`}
+                  >
+                    {link.label}
+                    {active && (
+                      <span className="absolute left-3 right-3 -bottom-px h-px bg-white/60" />
+                    )}
+                  </Link>
+                )
+              })}
 
-              {/* 데스크탑 외부 커뮤니티 링크 */}
+              {/* 데스크탑 외부 커뮤니티 링크 — 절제된 톤 */}
               {EXTERNAL_LINKS.map(ext => (
                 <a
                   key={ext.href}
                   href={ext.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`ml-1 flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-bold transition-all active:scale-95 whitespace-nowrap shadow-md ${ext.desk}`}
+                  className={`ml-1 flex items-center gap-1.5 px-3 py-2 rounded-md text-xs font-medium transition-colors whitespace-nowrap ${ext.desk}`}
                   title={ext.label}
                 >
-                  <span className="text-sm leading-none">{ext.emoji}</span>
                   <span>{ext.shortLabel}</span>
-                  <ExternalLink className="w-3 h-3 flex-shrink-0 opacity-80" />
+                  <ExternalLink className="w-3 h-3 flex-shrink-0 opacity-60" />
                 </a>
               ))}
 
@@ -420,38 +423,43 @@ export default function Navbar() {
               </div>
             )}
 
-            {/* 학습 안내 */}
-            <div className="px-4 pt-3 pb-1">
-              <p className="text-xs text-cyan-hana font-bold tracking-wide">
-                📌 아래 순서대로 학습하시면 도움이 됩니다
+            {/* 섹션 라벨 — 절제된 톤 */}
+            <div className="px-4 pt-4 pb-2">
+              <p className="text-[10px] text-white/40 font-medium uppercase tracking-[0.18em]">
+                Contents
               </p>
             </div>
 
-            <div className="px-4 pb-2 space-y-0.5">
-              {NAV_LINKS.map(link => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
-                    location.pathname === link.path
-                      ? 'bg-cyan-hana text-white'
-                      : 'text-gray-300 hover:text-white hover:bg-white/10'
-                  }`}
-                >
-                  <span className="text-cyan-hana font-extrabold text-base w-6 flex-shrink-0">
-                    {link.num}
-                  </span>
-                  <span className="font-bold">{link.label}</span>
-                </Link>
-              ))}
+            <div className="px-4 pb-3 space-y-px">
+              {NAV_LINKS.map(link => {
+                const active = location.pathname === link.path
+                return (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    className={`flex items-center gap-4 px-3 py-3 rounded-md text-sm transition-colors border-l-2 ${
+                      active
+                        ? 'border-white/70 text-white bg-white/5'
+                        : 'border-transparent text-white/70 hover:text-white hover:bg-white/[0.04]'
+                    }`}
+                  >
+                    <span className={`font-mono text-xs tracking-wider flex-shrink-0 ${
+                      active ? 'text-white/80' : 'text-white/30'
+                    }`}>
+                      {link.num}
+                    </span>
+                    <span className="font-medium">{link.label}</span>
+                  </Link>
+                )
+              })}
             </div>
 
-            {/* 모바일 외부 커뮤니티 링크 — 컴팩트 그리드 */}
-            <div className="px-4 pb-1">
-              <p className="text-xs text-cyan-hana font-bold tracking-wide pb-1.5">
-                🌐 커뮤니티 바로가기
+            {/* 외부 커뮤니티 — 절제된 다크 톤, 통일 */}
+            <div className="px-4 pt-2 pb-1 border-t border-white/5">
+              <p className="text-[10px] text-white/40 font-medium uppercase tracking-[0.18em] pt-3 pb-2">
+                Community
               </p>
-              <div className="grid grid-cols-2 gap-1.5">
+              <div className="grid grid-cols-2 gap-2">
                 {EXTERNAL_LINKS.map(ext => (
                   <a
                     key={ext.href}
@@ -459,17 +467,16 @@ export default function Navbar() {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => setIsOpen(false)}
-                    className={`flex items-center gap-2 px-2.5 py-2 rounded-lg font-bold active:scale-95 transition-transform shadow-sm ${ext.mob}`}
+                    className={`flex items-center justify-between gap-2 px-3 py-2.5 rounded-md text-xs transition-colors ${ext.mob}`}
                   >
-                    <span className="text-base leading-none flex-shrink-0">{ext.emoji}</span>
-                    <span className="text-xs font-extrabold truncate flex-1 text-left">{ext.shortLabel}</span>
-                    <ExternalLink className="w-3 h-3 flex-shrink-0 opacity-90" />
+                    <span className="font-medium truncate">{ext.shortLabel}</span>
+                    <ExternalLink className="w-3 h-3 flex-shrink-0 opacity-50" />
                   </a>
                 ))}
               </div>
             </div>
 
-            <div className="px-4 pb-3"></div>
+            <div className="px-4 pb-4"></div>
           </div>
         )}
       </nav>
