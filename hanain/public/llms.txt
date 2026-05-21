@@ -48,7 +48,7 @@
 - [건강 한 컷](https://phlorotannin.com/easy): 카드형 핵심 요약 (5단 질환 진입)
 - [연구·건강정보 블로그](https://phlorotannin.com/blog): 임상 논문·질환별 SEO 아카이브
 - [용어집](https://phlorotannin.com/glossary): 14개 핵심 용어 DefinedTermSet
-- [인사이트 허브 (Insights)](https://phlorotannin.com/insights): 30편 SEO 자산 포스트 — 임상·기전·안전성·비교 통합 아카이브
+- [인사이트 허브 (Insights)](https://phlorotannin.com/insights): 60편 SEO 자산 포스트 — 임상·기전·안전성·비교 + 30 트렌드 원료 통합 아카이브
 
 ## Insights — 30편 SEO 자산 포스트 (Phase D)
 
@@ -97,6 +97,47 @@
 
 ### 연구 동향 (Research Frontier)
 - [2026 연구 프론티어 — 6 키워드](https://phlorotannin.com/insights/phlorotannin-2026-research-frontier)
+
+## Insights — 30 트렌드 원료 (Phase E, 2026-05-21)
+
+본 섹션은 2026년 최신 이슈 건강기능식품 원료 30종에 대한 효능·안전성 인사이트 포스트입니다. 각 글은 PubMed/PMC/DOI/EFSA 1차 자료를 인라인 인용하며, MedicalWebPage + Article + Speakable + FAQPage + citation[] JSON-LD를 포함합니다.
+
+### A. 해양 원료 (Marine Ingredients)
+- [후코이단 — 임상 근거와 안전성](https://phlorotannin.com/insights/ingredient-fucoidan-evidence-safety)
+- [후코잔틴 — 체지방 갈색화](https://phlorotannin.com/insights/ingredient-fucoxanthin-fat-burning)
+- [아스타잔틴 — 항산화 원료의 왕](https://phlorotannin.com/insights/ingredient-astaxanthin-antioxidant-king)
+- [알긴산 — 체중·콜레스테롤](https://phlorotannin.com/insights/ingredient-alginate-weight-cholesterol)
+- [라미나린 — 프리바이오틱 면역](https://phlorotannin.com/insights/ingredient-laminarin-prebiotic-immune)
+- [스피루리나 — 지질·면역](https://phlorotannin.com/insights/ingredient-spirulina-lipid-immune)
+- [클로렐라 — 디톡스·면역](https://phlorotannin.com/insights/ingredient-chlorella-detox-immune)
+- [베타글루칸 — 면역 트레이닝](https://phlorotannin.com/insights/ingredient-beta-glucan-immune)
+- [크릴오일 vs 피쉬오일](https://phlorotannin.com/insights/ingredient-krill-oil-vs-fish-oil)
+- [오메가-3 — 2026 업데이트](https://phlorotannin.com/insights/ingredient-omega3-2026-update)
+- [마린콜라겐 — 펩타이드 흡수](https://phlorotannin.com/insights/ingredient-marine-collagen-peptide)
+- [녹용 — 펩타이드와 회복](https://phlorotannin.com/insights/ingredient-deer-velvet-peptide)
+
+### B. 항노화·장수 (Longevity Ingredients)
+- [NMN — NAD+ 전구체](https://phlorotannin.com/insights/ingredient-nmn-nad-precursor)
+- [스퍼미딘 — 자가포식 유도](https://phlorotannin.com/insights/ingredient-spermidine-autophagy)
+- [우로리틴 A — 미토파지](https://phlorotannin.com/insights/ingredient-urolithin-a-mitophagy)
+- [베르베린 — 혈당·체중](https://phlorotannin.com/insights/ingredient-berberine-glucose-weight)
+- [PQQ — 미토콘드리아 신생](https://phlorotannin.com/insights/ingredient-pqq-mitochondria)
+- [CoQ10 — 심장·에너지](https://phlorotannin.com/insights/ingredient-coq10-heart-energy)
+- [리포좀 글루타치온](https://phlorotannin.com/insights/ingredient-glutathione-liposomal)
+- [케르세틴 — 알레르기·면역](https://phlorotannin.com/insights/ingredient-quercetin-allergy-immune)
+- [레스베라트롤 — 2026 정리](https://phlorotannin.com/insights/ingredient-resveratrol-2026)
+- [커큐민 — 흡수율 제형 비교](https://phlorotannin.com/insights/ingredient-curcumin-bioavailable-forms)
+- [L-테아닌 — 스트레스·수면](https://phlorotannin.com/insights/ingredient-l-theanine-stress-sleep)
+- [마그네슘 — 바이글리시네이트](https://phlorotannin.com/insights/ingredient-magnesium-bisglycinate)
+
+### C. 임상 이슈 원료 (Clinical Hot Issues)
+- [GLP-1 천연 보조 원료](https://phlorotannin.com/insights/ingredient-glp1-natural-adjuncts)
+- [MSM — 관절·피부](https://phlorotannin.com/insights/ingredient-msm-joint-skin)
+- [락토페린 — 철분·면역](https://phlorotannin.com/insights/ingredient-lactoferrin-iron-immune)
+- [아커만시아 — 차세대 프로바이오틱](https://phlorotannin.com/insights/ingredient-akkermansia-muciniphila)
+- [비타민 D3 + K2 (MK-7)](https://phlorotannin.com/insights/ingredient-vitamin-d3-k2-mk7)
+- [건강기능식품 품질·구매 가이드 2026](https://phlorotannin.com/insights/ingredient-quality-buying-guide-2026)
+
 - [안전성 가이드](https://phlorotannin.com/safety): EFSA·식약처·임상 근거 기반 용량·금기·약물 상호작용 종합
 - [연구 타임라인 2011-2026](https://phlorotannin.com/research-timeline): peer-reviewed 진전사 (모든 항목 PubMed/PMC 직접 인용)
 - [심층 비교 — 플로로탄닌 vs 후코이단](https://phlorotannin.com/compare/phlorotannin-vs-fucoidan): 화학구조·기전·임상근거·안전성 비교

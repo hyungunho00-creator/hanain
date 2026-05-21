@@ -80,4 +80,8 @@ export const INSIGHT_CATEGORIES = [
   { id: 'comparison',   name: '성분 비교',      desc: '레스베라트롤·커큐민·녹차 비교' },
   { id: 'research',     name: '연구 동향',      desc: '최신 PubMed 트렌드' },
   { id: 'long-term',    name: '장기 복용',      desc: '안전성·축적·내성' },
+  // ── Phase E — 트렌드 건강식품 원료 SEO 자산화 (2026-05) ──
+  { id: 'ingredient-marine',    name: '해양 원료',      desc: '후코이단·후코잔틴·아스타잔틴·해조류' },
+  { id: 'ingredient-longevity', name: '항노화·장수',    desc: 'NMN·스퍼미딘·우로리틴 A·PQQ·CoQ10' },
+  { id: 'ingredient-clinical',  name: '임상 이슈 원료', desc: '베르베린·콜라겐·MSM·락토페린·프로바이오틱' },
 ]

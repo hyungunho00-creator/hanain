@@ -159,6 +159,40 @@ INSIGHT_SLUGS = [
     "ecklonia-cava-radioprotection",
     "phlorotannin-2026-research-frontier",
     "phlorotannin-long-term-safety-10year",
+    # ── Phase E — 30 트렌드 원료 (2026-05-21) ──────────────
+    # A. 해양 원료 (12)
+    "ingredient-fucoidan-evidence-safety",
+    "ingredient-fucoxanthin-fat-burning",
+    "ingredient-astaxanthin-antioxidant-king",
+    "ingredient-alginate-weight-cholesterol",
+    "ingredient-laminarin-prebiotic-immune",
+    "ingredient-spirulina-lipid-immune",
+    "ingredient-chlorella-detox-immune",
+    "ingredient-beta-glucan-immune",
+    "ingredient-krill-oil-vs-fish-oil",
+    "ingredient-omega3-2026-update",
+    "ingredient-marine-collagen-peptide",
+    "ingredient-deer-velvet-peptide",
+    # B. 항노화·장수 (12)
+    "ingredient-nmn-nad-precursor",
+    "ingredient-spermidine-autophagy",
+    "ingredient-urolithin-a-mitophagy",
+    "ingredient-berberine-glucose-weight",
+    "ingredient-pqq-mitochondria",
+    "ingredient-coq10-heart-energy",
+    "ingredient-glutathione-liposomal",
+    "ingredient-quercetin-allergy-immune",
+    "ingredient-resveratrol-2026",
+    "ingredient-curcumin-bioavailable-forms",
+    "ingredient-l-theanine-stress-sleep",
+    "ingredient-magnesium-bisglycinate",
+    # C. 임상 이슈 원료 (6)
+    "ingredient-glp1-natural-adjuncts",
+    "ingredient-msm-joint-skin",
+    "ingredient-lactoferrin-iron-immune",
+    "ingredient-akkermansia-muciniphila",
+    "ingredient-vitamin-d3-k2-mk7",
+    "ingredient-quality-buying-guide-2026",
 ]
 for _slug in INSIGHT_SLUGS:
     STATIC_PAGES.append({
