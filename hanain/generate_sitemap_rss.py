@@ -124,7 +124,49 @@ STATIC_PAGES = [
     {"loc": "/partner",       "changefreq": "monthly", "priority": "0.75", "lastmod": today()},
     {"loc": "/consult",       "changefreq": "monthly", "priority": "0.70", "lastmod": today()},
     {"loc": "/community",     "changefreq": "weekly",  "priority": "0.65", "lastmod": today()},
+    # ── Insights hub + 30 SEO 자산 포스트 ──────────────────────
+    {"loc": "/insights",      "changefreq": "weekly",  "priority": "0.90", "lastmod": today()},
 ]
+
+INSIGHT_SLUGS = [
+    "phlorotannin-blood-pressure-mechanism",
+    "dieckol-blood-glucose-evidence",
+    "ecklonia-cava-diabetes-clinical",
+    "phlorotannin-cognitive-alzheimer",
+    "phlorotannin-skin-uv-protection",
+    "phlorotannin-anti-aging-collagen",
+    "ecklonia-cava-hair-loss-evidence",
+    "phlorotannin-inflammation-mechanism",
+    "phlorotannin-cholesterol-ldl-rct",
+    "phlorotannin-cancer-prevention-evidence",
+    "phlorotannin-best-time-to-take",
+    "phlorotannin-with-vitamin-d-omega3",
+    "phlorotannin-drug-interactions-warfarin",
+    "phlorotannin-pregnancy-breastfeeding",
+    "phlorotannin-side-effects-real",
+    "phlorotannin-quality-extraction-method",
+    "seapolynol-vs-generic-phlorotannin",
+    "phlorotannin-vs-resveratrol",
+    "phlorotannin-vs-curcumin-inflammation",
+    "phlorotannin-vs-green-tea-catechin",
+    "phlorotannin-metabolic-syndrome",
+    "phlorotannin-fatty-liver-nafld",
+    "phlorotannin-osteoarthritis-joint",
+    "phlorotannin-eye-health-amd",
+    "phlorotannin-gut-microbiome",
+    "phlorotannin-allergic-rhinitis-asthma",
+    "phlorotannin-exercise-performance",
+    "ecklonia-cava-radioprotection",
+    "phlorotannin-2026-research-frontier",
+    "phlorotannin-long-term-safety-10year",
+]
+for _slug in INSIGHT_SLUGS:
+    STATIC_PAGES.append({
+        "loc":        f"/insights/{_slug}",
+        "changefreq": "monthly",
+        "priority":   "0.85",
+        "lastmod":    today(),
+    })
 
 # Q&A 카테고리별 페이지 (12 → 14: skin/hair 분리분 포함)
 QA_CATS = [

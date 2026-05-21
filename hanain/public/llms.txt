@@ -48,6 +48,55 @@
 - [건강 한 컷](https://phlorotannin.com/easy): 카드형 핵심 요약 (5단 질환 진입)
 - [연구·건강정보 블로그](https://phlorotannin.com/blog): 임상 논문·질환별 SEO 아카이브
 - [용어집](https://phlorotannin.com/glossary): 14개 핵심 용어 DefinedTermSet
+- [인사이트 허브 (Insights)](https://phlorotannin.com/insights): 30편 SEO 자산 포스트 — 임상·기전·안전성·비교 통합 아카이브
+
+## Insights — 30편 SEO 자산 포스트 (Phase D)
+
+본 섹션은 2026-05-21 발행된 30편의 SEO·EEAT 강화 인사이트 포스트입니다. 각 글은 PubMed/PMC/DOI 검증 1차 자료를 인라인 인용하며, Article + MedicalWebPage + Speakable + FAQPage + BreadcrumbList JSON-LD를 포함합니다.
+
+### 심혈관·대사 (Cardiovascular & Metabolic)
+- [혈압 강하 기전](https://phlorotannin.com/insights/phlorotannin-blood-pressure-mechanism)
+- [디에콜과 혈당 — 임상 근거](https://phlorotannin.com/insights/dieckol-blood-glucose-evidence)
+- [감태와 당뇨 — 임상 데이터 종합](https://phlorotannin.com/insights/ecklonia-cava-diabetes-clinical)
+- [LDL 콜레스테롤 — RCT 근거](https://phlorotannin.com/insights/phlorotannin-cholesterol-ldl-rct)
+- [대사증후군 통합 관리](https://phlorotannin.com/insights/phlorotannin-metabolic-syndrome)
+- [비알코올성 지방간(NAFLD)](https://phlorotannin.com/insights/phlorotannin-fatty-liver-nafld)
+
+### 뇌·인지·면역 (Neuro & Immune)
+- [인지·알츠하이머 가능성](https://phlorotannin.com/insights/phlorotannin-cognitive-alzheimer)
+- [염증 분자 기전](https://phlorotannin.com/insights/phlorotannin-inflammation-mechanism)
+- [알레르기·천식 — CHI3L1/IL-17](https://phlorotannin.com/insights/phlorotannin-allergic-rhinitis-asthma)
+- [장내미생물 매개 작용](https://phlorotannin.com/insights/phlorotannin-gut-microbiome)
+
+### 피부·노화 (Skin & Aging)
+- [UV 피부 보호](https://phlorotannin.com/insights/phlorotannin-skin-uv-protection)
+- [항노화·콜라겐](https://phlorotannin.com/insights/phlorotannin-anti-aging-collagen)
+- [탈모 — 임상 근거 점검](https://phlorotannin.com/insights/ecklonia-cava-hair-loss-evidence)
+- [눈 건강·황반변성(AMD)](https://phlorotannin.com/insights/phlorotannin-eye-health-amd)
+- [관절·골관절염](https://phlorotannin.com/insights/phlorotannin-osteoarthritis-joint)
+
+### 암·방사선 (Cancer & Radioprotection)
+- [암 예방 — 근거 정리](https://phlorotannin.com/insights/phlorotannin-cancer-prevention-evidence)
+- [감태 방사선 보호 연구](https://phlorotannin.com/insights/ecklonia-cava-radioprotection)
+
+### 안전성·실용 (Safety & Practical)
+- [최적 복용 타이밍](https://phlorotannin.com/insights/phlorotannin-best-time-to-take)
+- [비타민 D·오메가-3 병용](https://phlorotannin.com/insights/phlorotannin-with-vitamin-d-omega3)
+- [와파린·약물 상호작용](https://phlorotannin.com/insights/phlorotannin-drug-interactions-warfarin)
+- [임신·수유](https://phlorotannin.com/insights/phlorotannin-pregnancy-breastfeeding)
+- [실제 부작용 보고](https://phlorotannin.com/insights/phlorotannin-side-effects-real)
+- [장기(10년) 안전성](https://phlorotannin.com/insights/phlorotannin-long-term-safety-10year)
+- [운동수행능력](https://phlorotannin.com/insights/phlorotannin-exercise-performance)
+
+### 품질·비교 (Quality & Comparison)
+- [추출법·품질지표](https://phlorotannin.com/insights/phlorotannin-quality-extraction-method)
+- [Seapolynol vs 일반 플로로탄닌](https://phlorotannin.com/insights/seapolynol-vs-generic-phlorotannin)
+- [vs 레스베라트롤](https://phlorotannin.com/insights/phlorotannin-vs-resveratrol)
+- [vs 커큐민 — 항염](https://phlorotannin.com/insights/phlorotannin-vs-curcumin-inflammation)
+- [vs 녹차 카테킨](https://phlorotannin.com/insights/phlorotannin-vs-green-tea-catechin)
+
+### 연구 동향 (Research Frontier)
+- [2026 연구 프론티어 — 6 키워드](https://phlorotannin.com/insights/phlorotannin-2026-research-frontier)
 - [안전성 가이드](https://phlorotannin.com/safety): EFSA·식약처·임상 근거 기반 용량·금기·약물 상호작용 종합
 - [연구 타임라인 2011-2026](https://phlorotannin.com/research-timeline): peer-reviewed 진전사 (모든 항목 PubMed/PMC 직접 인용)
 - [심층 비교 — 플로로탄닌 vs 후코이단](https://phlorotannin.com/compare/phlorotannin-vs-fucoidan): 화학구조·기전·임상근거·안전성 비교
