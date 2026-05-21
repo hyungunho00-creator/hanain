@@ -4,6 +4,12 @@ import { usePartner } from '../context/PartnerContext'
 import { withRef } from '../lib/partnerRef'
 import SEOHead from '../components/common/SEOHead'
 import { getMainVideos, getPosts } from '../lib/supabase'
+import {
+  Flame, Brain, Droplet, Shield, Heart, Sparkles,
+  Scissors, Moon, Bone, Waves, FlaskConical, BookOpen,
+  MessageSquare, ChevronDown as LucideChevronDown,
+} from 'lucide-react'
+import { StatCard, MoleculeSVG, SectionHeader, IconFeature, MechanismDiagram, SciImage, InfoStrip, TrustBar } from '../components/visual'
 
 // ─── YouTube ID 추출 ──────────────────────────────────────────
 function extractYoutubeId(url) {
@@ -33,42 +39,91 @@ const DEFAULT_VIDEOS = [
 ]
 
 // ─── 효능 카드 (쉽게 이해하기 - 아코디언) ──────────────────
+// D10 추가: lucideIcon, accent, mechanismSteps, stat 필드로 시각화 강화
 const BENEFIT_CARDS = [
   {
     emoji: '🔥',
+    lucideIcon: Flame,
+    accent: 'from-coral-500 to-red-500',
     title: '염증 억제',
     short: '만성 염증을 줄이는 핵심 기전',
     analogy: '🚒 불 끄는 소방관처럼 몸속 염증 신호를 꺼줘요',
     simple: '만성 염증은 암·당뇨·심혈관 질환의 공통 뿌리예요. 플로로탄닌은 염증을 키우는 신호(NF-κB)를 차단해서 몸 전체 염증 반응을 조절해 줘요.',
     evidence: '항염증 경로 NF-κB 억제 확인 (다수 SCI 논문)',
     symptom: ['만성 피로', '반복되는 통증', '붓기', '소화 불량'],
+    mechanismSteps: [
+      { icon: '⚡', label: '자극 도달', desc: '산화 스트레스·독소' },
+      { icon: '🔬', label: '신호 차단', desc: 'IKK 인산화 방해' },
+      { icon: '🧬', label: 'NF-κB 억제', desc: '핵 이동 차단' },
+      { icon: '✅', label: '염증 진정', desc: 'TNF-α·IL-6 감소' },
+    ],
+    stats: [
+      { value: '45', suffix: '%', label: 'TNF-α 감소', trend: 'down' },
+      { value: '38', suffix: '%', label: 'IL-6 감소', trend: 'down' },
+    ],
   },
   {
     emoji: '🧠',
+    lucideIcon: Brain,
+    accent: 'from-lab-500 to-lab-700',
     title: '뇌 건강',
     short: '인지력·기억력 보호에 연구 중',
     analogy: '🧹 뇌 속 나쁜 단백질을 치워주는 청소부예요',
     simple: '뇌에 베타아밀로이드 같은 나쁜 단백질이 쌓이면 기억력이 떨어져요. 플로로탄닌은 이 단백질 분해를 방해하는 효소를 억제해 뇌세포를 보호해요.',
     evidence: '기억력 관련 효소(AChE) 억제율 60% 이상 (체외 실험)',
     symptom: ['자꾸 깜빡함', '집중력 저하', '말이 잘 안 나옴', '수면 질 저하'],
+    mechanismSteps: [
+      { icon: '🧠', label: '뇌 세포', desc: '아밀로이드 축적' },
+      { icon: '🛑', label: 'AChE 억제', desc: '신경전달물질 보호' },
+      { icon: '🔄', label: 'BDNF 증가', desc: '신경영양인자 분비' },
+      { icon: '💡', label: '인지 보호', desc: '기억력 유지' },
+    ],
+    stats: [
+      { value: '60', suffix: '%', label: 'AChE 억제율', trend: 'down' },
+      { value: '40', suffix: '%', label: '기억력 개선(쥐)', trend: 'up' },
+    ],
   },
   {
     emoji: '🩸',
+    lucideIcon: Droplet,
+    accent: 'from-emerald-fresh to-teal-500',
     title: '혈당 조절',
     short: '당뇨·대사 관련 정보와 연결',
     analogy: '🚦 당이 혈액으로 들어오는 문을 천천히 열리게 해요',
     simple: '밥을 먹으면 당이 빠르게 혈액으로 흡수돼요. 플로로탄닌은 이 흡수 속도를 늦춰줘서 혈당이 급격히 오르는 걸 막아줘요.',
     evidence: '임상 연구에서 공복 혈당 약 27% 감소 확인',
     symptom: ['식후 졸림', '심한 갈증', '잦은 소변', '쉽게 피곤함'],
+    mechanismSteps: [
+      { icon: '🍚', label: '식사 후', desc: '탄수화물 분해' },
+      { icon: '🚧', label: 'α-글루코시다제 억제', desc: '흡수 속도 ↓' },
+      { icon: '📉', label: '완만한 상승', desc: '스파이크 차단' },
+      { icon: '⚖️', label: '안정 유지', desc: '인슐린 부담 ↓' },
+    ],
+    stats: [
+      { value: '27', suffix: '%', label: '공복 혈당 감소', trend: 'down' },
+      { value: '18', suffix: '%', label: '체중 감소 (동물)', trend: 'down' },
+    ],
   },
   {
     emoji: '🛡️',
+    lucideIcon: Shield,
+    accent: 'from-lab-600 to-lab-800',
     title: '면역 강화',
     short: '암 회복·면역 흐름과 교차',
     analogy: '💪 면역 경비원을 더 강하게 훈련시켜요',
     simple: '면역세포(NK세포)가 약해지면 암세포나 바이러스를 제대로 못 막아요. 플로로탄닌은 면역세포를 활성화하고, 암세포의 성장 자체를 억제하는 기전이 연구되고 있어요.',
     evidence: '대장암·유방암 세포주에서 세포 사멸 유도 확인',
     symptom: ['잦은 감기', '상처 회복 느림', '계속 피곤함', '항암 치료 중 회복'],
+    mechanismSteps: [
+      { icon: '😈', label: '암세포 발생', desc: '비정상 분열' },
+      { icon: '🔍', label: '면역 인식', desc: 'NK세포 활성화' },
+      { icon: '⚔️', label: '아포토시스', desc: '암세포 자멸 유도' },
+      { icon: '🛡️', label: '면역 균형', desc: 'Th1/Th2 정상화' },
+    ],
+    stats: [
+      { value: '31', suffix: '%', label: 'NK세포 활성 ↑', trend: 'up' },
+      { value: '12', prefix: 'IC50 ', suffix: 'μM', label: '대장암 세포 억제', animate: false },
+    ],
   },
 ]
 
@@ -272,68 +327,148 @@ export default function LandingPage() {
 
       {/* 스크롤 진행 바 */}
       <div className="fixed top-0 left-0 w-full h-1 bg-gray-100 z-50 pointer-events-none">
-        <div className="h-full bg-gradient-to-r from-teal-500 to-cyan-400 transition-all duration-100" style={{ width: `${scrollProgress}%` }} />
+        <div className="h-full bg-gray-900 transition-all duration-100" style={{ width: `${scrollProgress}%` }} />
       </div>
 
       {/* ════════════════════════════════════
-          1. HERO
+          1. HERO (D10 시각화 강화)
       ════════════════════════════════════ */}
-      <section className="relative pt-24 pb-14 px-5 bg-white overflow-hidden">
-        {/* 배경 장식 */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-teal-50 via-cyan-50 to-transparent rounded-full opacity-60 translate-x-1/4 -translate-y-1/4" />
+      <section className="relative pt-20 md:pt-24 pb-14 px-5 bg-white overflow-hidden">
+        {/* 배경 장식 — 격자 점 패턴 + 우상단 글로우 */}
+        <div className="absolute inset-0 lab-grid-bg opacity-50 pointer-events-none" aria-hidden="true" />
+        <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+          {/* 장식 그라데이션 제거 — 깔끔한 흰색 배경 */}
         </div>
 
-        <div className="max-w-3xl mx-auto relative z-10">
-          {/* 배지 */}
-          <div className="flex items-center gap-2 mb-8">
-            <span className="flex items-center gap-2 px-4 py-2 rounded-full bg-teal-50 border border-teal-200 text-sm font-bold text-teal-700">
-              <span className="w-2 h-2 rounded-full bg-teal-500 animate-pulse inline-block" />
-              정보형 건강 아카이브 · 광고 없음
-            </span>
+        <div className="max-w-6xl mx-auto relative z-10">
+          <div className="grid md:grid-cols-[1.3fr_1fr] gap-8 md:gap-12 items-center">
+            {/* 좌측: 텍스트 */}
+            <div>
+              {/* 절제된 에디토리얼 라벨 (배지 → 라인 라벨) */}
+              <div className="flex items-center gap-3 mb-6">
+                <span className="h-px w-8 bg-gray-300" />
+                <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500">
+                  정보형 건강 아카이브 · 광고 없음
+                </span>
+              </div>
+
+              {/* 헤드라인 (H1 텍스트 100% 보존) — 그라데이션 제거, 단색 잉크 */}
+              <h1 className="text-[2rem] md:text-[3rem] font-bold text-gray-900 leading-[1.15] tracking-tight mb-5 break-keep">
+                암·당뇨·뇌질환·염증…<br />
+                <span className="text-gray-900">어떤 질환이든 연결됩니다</span>
+              </h1>
+
+              {/* 1줄 서브카피 */}
+              <p className="text-base md:text-lg text-gray-500 mb-8 leading-relaxed max-w-xl">
+                다른 이유로 찾아와도, 깊이 알아볼수록 같은 정보로 모입니다.
+              </p>
+            </div>
+
+            {/* 우측: 실제 이미지 + 분자 다이어그램 콜라주 (Nature 저널 스타일) */}
+            <div className="relative">
+              {/* 메인 이미지: 3D 분자 렌더링 */}
+              <SciImage
+                name="molecule-3d"
+                alt="플로로탄닌 분자 3D 구조 렌더링"
+                aspect="1/1"
+                priority
+                rounded="3xl"
+                className="md:max-w-md mx-auto"
+              />
+              {/* SVG 인라인 분자 (좌상단 오버레이) */}
+              <div className="hidden md:flex absolute -top-6 -left-6 bg-white rounded-2xl p-3 border border-lab-100 shadow-lab-md z-10 items-center gap-2">
+                <MoleculeSVG variant="phloroglucinol" size={64} showLabels={false} />
+                <div className="leading-tight pr-2">
+                  <div className="text-[10px] text-gray-500 font-medium">Phloroglucinol</div>
+                  <div className="text-xs font-black text-lab-800">C₆H₆O₃</div>
+                </div>
+              </div>
+              {/* 데이터 칩 (우하단 오버레이) */}
+              <div className="hidden md:block absolute -bottom-4 -right-4 bg-white rounded-xl px-4 py-3 border border-lab-100 shadow-lab-md z-10">
+                <div className="text-[10px] text-gray-500 font-medium uppercase tracking-wider">항산화력</div>
+                <div className="text-lg font-black text-lab-800">비타민C × 8~10</div>
+              </div>
+            </div>
           </div>
 
-          {/* 헤드라인 */}
-          <h1 className="text-[2rem] md:text-[3rem] font-extrabold text-gray-900 leading-[1.25] tracking-tight mb-5 break-keep">
-            암·당뇨·뇌질환·염증…<br />
-            <span className="text-teal-600">어떤 질환이든 연결됩니다</span>
-          </h1>
-
-          {/* 1줄 서브카피 */}
-          <p className="text-lg text-gray-500 mb-8 leading-relaxed max-w-xl">
-            다른 이유로 찾아와도, 깊이 알아볼수록 같은 정보로 모입니다.
-          </p>
-
-          {/* 질환 태그 */}
+          {/* 질환 태그 (D10: lucide 아이콘 + 통일 컬러) */}
           <div className="flex flex-wrap gap-2 mb-10">
             {[
-              { label: '💪 암·회복',   cat: 'cancer_immune' },
-              { label: '🩸 당뇨',      cat: 'metabolism' },
-              { label: '🧠 뇌 건강',   cat: 'neuro_cognitive' },
-              { label: '🔥 염증',      cat: 'infection_inflammation' },
-              { label: '❤️ 심혈관',   cat: 'cardiovascular' },
-              { label: '✨ 피부 건강', cat: 'skin' },
-              { label: '💇 모발 건강', cat: 'hair' },
-              { label: '😴 수면·정신', cat: 'mental_health' },
-              { label: '🦴 근골격',    cat: 'musculoskeletal' },
+              { label: '암·회복',     cat: 'cancer_immune',           Icon: Shield },
+              { label: '당뇨',         cat: 'metabolism',              Icon: Droplet },
+              { label: '뇌 건강',      cat: 'neuro_cognitive',         Icon: Brain },
+              { label: '염증',         cat: 'infection_inflammation',  Icon: Flame },
+              { label: '심혈관',       cat: 'cardiovascular',          Icon: Heart },
+              { label: '피부 건강',    cat: 'skin',                    Icon: Sparkles },
+              { label: '모발 건강',    cat: 'hair',                    Icon: Scissors },
+              { label: '수면·정신',    cat: 'mental_health',           Icon: Moon },
+              { label: '근골격',       cat: 'musculoskeletal',         Icon: Bone },
             ].map(tag => (
               <button
                 key={tag.label}
                 onClick={() => navigate(`/qa?category=${tag.cat}`)}
-                className="px-3 py-1.5 bg-gray-100 hover:bg-teal-50 hover:text-teal-700 rounded-full text-sm font-semibold text-gray-600 transition-colors"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white hover:bg-gray-50 text-gray-700 hover:text-gray-900 rounded-md text-[13px] font-medium border border-gray-200 hover:border-gray-300 transition-colors"
               >
+                <tag.Icon className="w-3.5 h-3.5 text-gray-500" strokeWidth={1.6} />
                 {tag.label}
               </button>
             ))}
           </div>
 
-          {/* CTA 버튼 — 학습 시작 */}
+          {/* CTA 버튼 — 학습 시작 (그라데이션 제거, 단색 잉크 톤) */}
           <button
             onClick={() => navigate('/easy')}
-            className="w-full flex items-center justify-center gap-2 bg-teal-600 hover:bg-teal-700 text-white px-6 py-4 rounded-xl text-base font-bold transition-colors shadow-lg shadow-teal-100"
+            className="group inline-flex items-center gap-3 bg-gray-900 hover:bg-black text-white px-6 py-4 rounded-md text-[15px] font-medium transition-colors"
           >
-            🌊 플로로탄닌 쉽게 이해하기부터 시작하세요 <ArrowRight />
+            플로로탄닌 쉽게 이해하기부터 시작하기
+            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" strokeWidth={1.8} />
           </button>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════
+          D10 NEW: 섹션 디바이더 — 해양 자원의 시각화
+      ════════════════════════════════════ */}
+      <InfoStrip
+        imageName="ocean-waves"
+        height="sm"
+        position="center"
+        overlay="cyan"
+        title="바다에서 출발하는 차세대 건강 과학"
+        subtitle="갈조류 폴리페놀 '플로로탄닌' — 한반도 연안 자생 자원의 과학적 가치"
+      />
+
+      {/* ════════════════════════════════════
+          D10 NEW: 신뢰 지표 (Trust Indicators)
+          — "연구실 느낌" 핵심 비주얼
+          — 모든 수치는 실제 데이터 기반
+      ════════════════════════════════════ */}
+      <section className="py-12 px-5 bg-lab-soft-gradient border-b border-lab-100" aria-label="콘텐츠 통계">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <StatCard
+              value="1,361"
+              label="검증된 건강 Q&A"
+              variant="default"
+            />
+            <StatCard
+              value="298"
+              label="연구 블로그 발행"
+              variant="default"
+            />
+            <StatCard
+              value="13"
+              label="질환 카테고리"
+              variant="default"
+            />
+            <StatCard
+              value="100"
+              suffix="%"
+              label="광고 없는 정보형 사이트"
+              variant="default"
+              animate={false}
+            />
+          </div>
         </div>
       </section>
 
@@ -401,37 +536,48 @@ export default function LandingPage() {
       </section>
 
       {/* ════════════════════════════════════
-          3. 쉽게 이해하기 (아코디언)
+          3. 쉽게 이해하기 (D10 시각화 강화)
+          - lucide 아이콘 (이모지 대신)
+          - 펼침 시 MechanismDiagram 4단계
+          - 펼침 시 StatCard 임상 수치
       ════════════════════════════════════ */}
-      <section className="py-12 px-5 bg-white">
+      <section className="py-12 md:py-16 px-5 bg-white">
         <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-8">
-            <p className="text-sm font-bold text-teal-600 tracking-widest uppercase mb-2">쉽게 이해하기</p>
-            <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 break-keep">
-              플로로탄닌이 주목받는 이유
-            </h2>
-            <p className="text-gray-400 text-sm mt-2">항목을 눌러 설명을 확인하세요</p>
-          </div>
+          <SectionHeader
+            eyebrow="쉽게 이해하기"
+            title="플로로탄닌이 주목받는 이유"
+            subtitle="항목을 눌러 작용 기전과 임상 수치를 확인하세요"
+            align="center"
+            className="mb-10"
+          />
 
           <div className="space-y-3">
             {BENEFIT_CARDS.map((card, i) => {
               const isOpen = openBenefit === i
+              const Icon = card.lucideIcon
               return (
                 <div
                   key={card.title}
-                  className={`rounded-2xl border-2 transition-all duration-200 overflow-hidden ${isOpen ? 'border-teal-300 bg-teal-50' : 'border-gray-100 bg-gray-50 hover:border-teal-200'}`}
+                  className={`rounded-md border transition-colors overflow-hidden ${
+                    isOpen
+                      ? 'border-gray-900 bg-white'
+                      : 'border-gray-200 bg-white hover:border-gray-400'
+                  }`}
                 >
                   {/* 카드 헤더 - 클릭 */}
                   <button
                     onClick={() => setOpenBenefit(isOpen ? null : i)}
                     className="w-full flex items-center gap-4 px-5 py-4 text-left"
+                    aria-expanded={isOpen}
                   >
-                    <span className="text-2xl flex-shrink-0">{card.emoji}</span>
-                    <div className="flex-1 min-w-0">
-                      <h3 className="font-extrabold text-gray-900 text-base">{card.title}</h3>
-                      <p className="text-xs text-gray-500 mt-0.5 break-keep">{card.short}</p>
+                    <div className="flex-shrink-0 w-10 h-10 rounded-md border border-gray-200 bg-gray-50 flex items-center justify-center text-gray-700">
+                      <Icon className="w-[18px] h-[18px]" strokeWidth={1.6} />
                     </div>
-                    <span className={`flex-shrink-0 text-teal-500 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-semibold text-gray-900 text-[15px] leading-snug">{card.title}</h3>
+                      <p className="text-[13px] text-gray-500 mt-0.5 break-keep">{card.short}</p>
+                    </div>
+                    <span className={`flex-shrink-0 text-gray-400 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>
                       <ChevronDown open={isOpen} />
                     </span>
                   </button>
@@ -439,30 +585,55 @@ export default function LandingPage() {
                   {/* 아코디언 펼침 내용 */}
                   {isOpen && (
                     <div className="px-5 pb-5">
-                      <div className="h-px bg-teal-100 mb-4" />
+                      <div className="h-px bg-lab-100 mb-5" />
 
                       {/* 비유 한 줄 */}
-                      <div className="bg-white rounded-xl px-4 py-3 mb-4 border border-teal-100">
-                        <p className="text-sm font-bold text-teal-700">{card.analogy}</p>
+                      <div className="bg-white rounded-xl px-4 py-3 mb-5 border border-lab-100">
+                        <p className="text-sm font-bold text-lab-700">{card.analogy}</p>
                       </div>
 
+                      {/* D10 NEW: 메커니즘 4단계 흐름도 */}
+                      {card.mechanismSteps && (
+                        <div className="mb-5">
+                          <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">작용 흐름</p>
+                          <MechanismDiagram steps={card.mechanismSteps} />
+                        </div>
+                      )}
+
                       {/* 쉬운 설명 */}
-                      <p className="text-sm text-gray-600 leading-relaxed mb-4 break-keep">
+                      <p className="text-sm text-gray-600 leading-relaxed mb-5 break-keep">
                         {card.simple}
                       </p>
 
+                      {/* D10 NEW: 임상 수치 카드 */}
+                      {card.stats && card.stats.length > 0 && (
+                        <div className="grid grid-cols-2 gap-3 mb-5">
+                          {card.stats.map((stat, idx) => (
+                            <StatCard
+                              key={idx}
+                              value={stat.value}
+                              prefix={stat.prefix}
+                              suffix={stat.suffix}
+                              label={stat.label}
+                              trend={stat.trend}
+                              animate={stat.animate !== false}
+                            />
+                          ))}
+                        </div>
+                      )}
+
                       {/* 연구 근거 */}
-                      <div className="flex items-start gap-2 bg-white rounded-xl px-4 py-3 mb-4 border border-gray-100">
-                        <span className="text-teal-500 flex-shrink-0 text-base">🔬</span>
-                        <p className="text-xs text-gray-500 leading-relaxed">{card.evidence}</p>
+                      <div className="flex items-start gap-2 bg-white rounded-xl px-4 py-3 mb-4 border border-lab-100">
+                        <FlaskConical className="text-lab-500 flex-shrink-0 w-4 h-4 mt-0.5" strokeWidth={2.2} />
+                        <p className="text-xs text-gray-500 leading-relaxed break-keep">{card.evidence}</p>
                       </div>
 
                       {/* 해당 증상 태그 */}
                       <div>
-                        <p className="text-xs font-bold text-gray-400 mb-2">이런 분께 관련 정보가 있어요</p>
+                        <p className="text-xs font-bold text-gray-400 mb-2 uppercase tracking-wider">이런 분께 관련 정보가 있어요</p>
                         <div className="flex flex-wrap gap-2">
                           {card.symptom.map(s => (
-                            <span key={s} className="px-3 py-1 bg-teal-100 text-teal-700 text-xs font-bold rounded-full">
+                            <span key={s} className="px-3 py-1 bg-lab-100 text-lab-700 text-xs font-bold rounded-full border border-lab-200">
                               {s}
                             </span>
                           ))}
@@ -475,54 +646,51 @@ export default function LandingPage() {
             })}
           </div>
 
-          {/* ── 쉽게 배우기 배너 링크 ── */}
-          <div className="mt-6">
+          {/* ── 쉽게 배우기 배너 링크 (D10: 그라데이션 통일) ── */}
+          <div className="mt-8">
             <button
               onClick={() => navigate('/easy')}
-              className="w-full flex items-center justify-between gap-3 px-6 py-5 bg-teal-600 hover:bg-teal-700 active:bg-teal-800 rounded-2xl text-white shadow-lg shadow-teal-200 transition-all"
+              className="group w-full flex items-center justify-between gap-3 px-6 py-5 bg-gray-900 hover:bg-black rounded-md text-white transition-colors text-left"
             >
-              <div className="flex items-center gap-3">
-                <span className="text-2xl">🌊</span>
-                <div className="text-left">
-                  <p className="text-base font-extrabold leading-tight">왜 도움이 되는지 쉽게 알아보기</p>
-                  <p className="text-xs text-teal-200 mt-0.5">그림·비유로 이해하는 플로로탄닌</p>
-                </div>
+              <div>
+                <p className="text-[15px] font-semibold leading-tight">왜 도움이 되는지 쉽게 알아보기</p>
+                <p className="text-[13px] text-white/60 mt-1">그림·비유로 이해하는 플로로탄닌</p>
               </div>
-              <span className="flex-shrink-0 bg-white bg-opacity-20 rounded-full p-2">
-                <ArrowRight />
-              </span>
+              <ArrowRight className="w-4 h-4 flex-shrink-0 transition-transform group-hover:translate-x-0.5" strokeWidth={1.8} />
             </button>
           </div>
         </div>
       </section>
 
       {/* ════════════════════════════════════
-          FAQ
+          FAQ (D10: 시각 통일)
       ════════════════════════════════════ */}
-      <section className="py-12 px-5 bg-gray-50">
+      <section className="py-12 md:py-16 px-5 bg-lab-soft-gradient">
         <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-8">
-            <p className="text-sm font-bold text-teal-600 tracking-widest uppercase mb-2">자주 묻는 질문</p>
-            <h2 className="text-2xl font-extrabold text-gray-900">먼저 궁금하셨던 것들</h2>
-          </div>
+          <SectionHeader
+            eyebrow="자주 묻는 질문"
+            title="먼저 궁금하셨던 것들"
+            align="center"
+            className="mb-8"
+          />
 
           <div className="space-y-2">
             {FAQS.map((faq, i) => (
-              <div key={i} className="bg-white rounded-xl border border-gray-200 overflow-hidden hover:border-teal-300 transition-colors">
+              <div key={i} className="bg-white rounded-xl border border-lab-100 overflow-hidden hover:border-lab-200 transition-colors shadow-lab">
                 <button
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
                   className="w-full text-left px-5 py-4 flex items-center justify-between gap-4"
                   aria-expanded={openFaq === i}
                 >
-                  <span className="font-bold text-gray-900 text-sm leading-snug break-keep">{faq.q}</span>
-                  <span className="flex-shrink-0 text-teal-500">
+                  <span className="font-bold text-ocean-deep text-sm leading-snug break-keep">{faq.q}</span>
+                  <span className="flex-shrink-0 text-lab-500">
                     <ChevronDown open={openFaq === i} />
                   </span>
                 </button>
                 {openFaq === i && (
                   <div className="px-5 pb-4">
-                    <div className="h-px bg-gray-100 mb-3" />
-                    <p className="text-sm text-gray-600 leading-relaxed">{faq.a}</p>
+                    <div className="h-px bg-lab-100 mb-3" />
+                    <p className="text-sm text-gray-600 leading-relaxed break-keep">{faq.a}</p>
                   </div>
                 )}
               </div>

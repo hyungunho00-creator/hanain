@@ -100,6 +100,74 @@
     @apply text-xs font-semibold px-3 py-1 rounded-full;
   }
 
+  /* ═══════════════════════════════════════════════════════════════
+   * D10 시각화 자산화 — Lab 디자인 시스템 (밝은 연구실 느낌)
+   * 모든 클래스는 새 컴포넌트에서만 사용 — 기존 페이지 무영향
+   * ═══════════════════════════════════════════════════════════════ */
+  .lab-card {
+    @apply bg-white rounded-2xl border border-lab-100 shadow-lab p-6 transition-all duration-300 hover:shadow-lab-md hover:border-lab-200;
+  }
+  .lab-card-glow {
+    @apply bg-white rounded-2xl border border-lab-100 shadow-lab-glow p-6 transition-all duration-300;
+  }
+  .lab-badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-lab-50 text-lab-700 border border-lab-100;
+  }
+  .lab-badge-solid {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-lab-500 text-white;
+  }
+  .lab-stat-value {
+    @apply text-3xl md:text-4xl font-extrabold text-lab-700 tabular-nums tracking-tight;
+  }
+  .lab-stat-label {
+    @apply text-sm font-medium text-gray-500 mt-1;
+  }
+  .lab-section-eyebrow {
+    @apply inline-block text-xs font-bold text-lab-600 tracking-[0.2em] uppercase;
+  }
+  .lab-section-title {
+    @apply text-2xl md:text-4xl font-extrabold text-ocean-deep leading-tight tracking-tight;
+  }
+  .lab-section-subtitle {
+    @apply text-base md:text-lg text-gray-500 leading-relaxed mt-3 max-w-2xl;
+  }
+  /* 표 같은 데이터 행 — 임상 수치 정렬용 */
+  .lab-data-row {
+    @apply flex items-baseline justify-between gap-4 py-3 border-b border-lab-100 last:border-b-0;
+  }
+  /* 그리드 점 패턴 (배경용) */
+  .lab-grid-bg {
+    background-image: radial-gradient(circle, rgba(0, 180, 216, 0.08) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+}
+
+@layer utilities {
+  /* a11y: 사용자가 모션 줄이기 선호 시 모든 데코 애니메이션 정지 */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-wave,
+    .animate-float,
+    .animate-fade-in-up,
+    .animate-pulse-glow,
+    .animate-count-up,
+    .animate-pulse {
+      animation: none !important;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+  /* SVG 인라인 다이어그램 컬러 토큰 (다크/라이트 무관 일관성) */
+  .stroke-lab    { stroke: #00B4D8; }
+  .stroke-lab-dark { stroke: #0077B6; }
+  .fill-lab      { fill: #00B4D8; }
+  .fill-lab-soft { fill: #CAF0F8; }
+}
+
+@layer components {
   /* ───────────────────────────────────────────────────────────────
    * .prose-custom — 블로그 본문 (BlogPostPage)
    * 모바일에서 긴 URL/영문/해시태그가 컨테이너 폭을 밀어내지 않게 강제 줄바꿈.

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { usePartner } from '../context/PartnerContext'
 import SEOHead from '../components/common/SEOHead'
 import RelatedQA from '../components/qa/RelatedQA'
+import { MoleculeSVG, SectionHeader, StatCard, SciImage } from '../components/visual'
 
 /* ─────────────────────────────────────────────
    색상 팔레트 & 공통 스타일
@@ -301,57 +302,68 @@ function IntroHero() {
   )
 
   return (
-    <div className="relative overflow-hidden bg-gradient-to-b from-blue-900 via-cyan-800 to-teal-700 text-white py-14 px-4">
-      {/* 물방울 애니메이션 */}
-      {bubbles.map(b => (
-        <div
-          key={b.id}
-          className="absolute rounded-full bg-white/10 animate-bounce"
-          style={{
-            left: `${b.x}%`,
-            bottom: '-10px',
-            width: b.size,
-            height: b.size,
-            animationDuration: `${b.dur}s`,
-            animationDelay: `${b.delay}s`,
-          }}
-        />
-      ))}
-
-      <div className="relative z-10 max-w-2xl mx-auto text-center">
-        {/* 메인 아이콘 */}
-        <div className="text-7xl mb-4 drop-shadow-lg animate-pulse">🌊</div>
-        <h1 className="text-3xl sm:text-4xl font-black mb-3 leading-tight">
-          쉽게 배우는<br />
-          <span className="text-cyan-300">플로로탄닌</span>
-        </h1>
-        <p className="text-cyan-100 text-lg sm:text-xl mb-6 leading-relaxed">
-          어려운 의학 용어 없이<br />
-          <strong className="text-white">그림과 이야기</strong>로 이해하는<br />
-          바다의 슈퍼 영양소
-        </p>
-
-        {/* 대상자 뱃지 */}
-        <div className="flex flex-wrap justify-center gap-2 mb-8">
-          {['👦 중학생도', '👴 어르신도', '👩 초보자도', '🎯 쉽게 이해!'].map(t => (
-            <span key={t} className="bg-white/20 backdrop-blur-sm text-white text-base font-bold px-4 py-2 rounded-full border border-white/30">
-              {t}
-            </span>
-          ))}
-        </div>
-
-        {/* 통계 */}
-        <div className="grid grid-cols-3 gap-3 max-w-sm mx-auto">
-          {[
-            { num: '12가지', label: '질환 설명' },
-            { num: '그림', label: '직관적 설명' },
-            { num: '비유', label: '쉬운 이해' },
-          ].map(s => (
-            <div key={s.label} className="bg-white/15 rounded-2xl py-3 px-2 border border-white/20">
-              <div className="text-xl font-black text-cyan-300">{s.num}</div>
-              <div className="text-sm text-cyan-100 mt-1">{s.label}</div>
+    <div className="relative overflow-hidden bg-white py-16 md:py-24 px-4 border-b border-gray-100">
+      <div className="relative z-10 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-[1.2fr_1fr] gap-10 md:gap-14 items-center">
+          {/* 좌측: 텍스트 */}
+          <div>
+            {/* 에디토리얼 라벨 */}
+            <div className="flex items-center gap-3 mb-7">
+              <span className="h-px w-8 bg-gray-300" />
+              <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500">
+                Learn · 그림과 이야기로 배우기
+              </span>
             </div>
-          ))}
+
+            <h1 className="text-4xl md:text-[3.5rem] font-bold text-gray-900 leading-[1.1] tracking-tight mb-6 break-keep">
+              쉽게 배우는 플로로탄닌
+              <span className="block text-gray-500 font-normal text-2xl md:text-3xl mt-3 tracking-normal">
+                그림과 비유로 이해하는 바다의 폴리페놀
+              </span>
+            </h1>
+            <p className="text-gray-600 text-[16px] md:text-[17px] leading-[1.8] mb-8 max-w-xl break-keep">
+              어려운 의학 용어 없이, <span className="text-gray-900 font-medium">중학생도 이해할 수 있는 그림과 비유</span>로
+              플로로탄닌의 작용을 차근차근 풀어 드립니다.
+            </p>
+
+            {/* 대상자 — 모노크롬 인라인 */}
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 mb-9 text-[13px] text-gray-600">
+              {['중학생', '어르신', '초보자', '누구나'].map(t => (
+                <span key={t} className="inline-flex items-center gap-2">
+                  <span className="text-gray-400">·</span> {t}도 쉽게
+                </span>
+              ))}
+            </div>
+
+            {/* 통계 — Stripe-style spec */}
+            <dl className="grid grid-cols-3 gap-x-6 gap-y-1 max-w-md">
+              {[
+                { label: '설명 범위', value: '12가지 질환' },
+                { label: '표현 방식', value: '직관적 그림' },
+                { label: '이해 도구', value: '쉬운 비유' },
+              ].map(s => (
+                <div key={s.label}>
+                  <dt className="text-[11px] font-medium uppercase tracking-[0.16em] text-gray-400 mb-1">{s.label}</dt>
+                  <dd className="text-[14px] font-semibold text-gray-900">{s.value}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+
+          {/* 우측: 이미지 */}
+          <div className="hidden md:block relative">
+            <SciImage
+              name="flatlay-extract"
+              alt="감태 추출물 플랫레이"
+              aspect="4/3"
+              priority
+              rounded="2xl"
+            />
+            <div className="absolute -bottom-5 -right-5 bg-white rounded-md px-4 py-3 border border-gray-200">
+              <div className="text-[11px] text-gray-500 font-medium uppercase tracking-wider">갈조류 추출</div>
+              <div className="text-base font-bold text-gray-900">고순도 폴리페놀</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -582,10 +594,10 @@ function DiseasesSection() {
             <button
               key={f.id}
               onClick={() => setFilter(f.id)}
-              className={`flex-shrink-0 px-4 py-2 rounded-full text-base font-bold transition-all ${
+              className={`flex-shrink-0 px-4 py-2 rounded-md text-[14px] font-medium transition-colors border ${
                 filter === f.id
-                  ? 'bg-cyan-500 text-white shadow-md'
-                  : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-100'
+                  ? 'bg-gray-900 border-gray-900 text-white'
+                  : 'bg-white text-gray-700 border-gray-200 hover:border-gray-400'
               }`}
             >
               {f.label}
@@ -770,65 +782,64 @@ function QuizSection() {
   }
 
   return (
-    <div className="bg-gradient-to-b from-violet-50 to-purple-50 py-10 px-4">
+    <div className="bg-gray-50 border-y border-gray-200 py-14 px-4">
       <div className="max-w-2xl mx-auto">
-        <div className="text-center mb-8">
-          <span className="text-4xl">🎯</span>
-          <h2 className="text-2xl font-black text-gray-800 mt-2">이해도 확인 퀴즈</h2>
-          <p className="text-gray-500 text-base mt-2">배운 내용을 확인해봐요!</p>
+        <div className="text-center mb-10">
+          <div className="inline-flex items-center justify-center gap-3 mb-4">
+            <span className="h-px w-8 bg-gray-300" />
+            <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500">Comprehension Check</span>
+            <span className="h-px w-8 bg-gray-300" />
+          </div>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight">이해도 확인 퀴즈</h2>
+          <p className="text-gray-600 text-[15px] mt-3">배운 내용을 짧게 확인합니다.</p>
         </div>
 
         {done ? (
           // 결과 화면
-          <div className="bg-white rounded-3xl p-8 text-center shadow-lg border-2 border-purple-200">
-            <div className="text-7xl mb-4">
-              {score >= 3 ? '🏆' : score >= 2 ? '🥈' : '📚'}
-            </div>
-            <h3 className="text-2xl font-black text-gray-800 mb-2">
-              {score}점 / {QUIZ.length}점
+          <div className="bg-white rounded-lg p-8 text-center border border-gray-200">
+            <div className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-400 mb-3">Result</div>
+            <h3 className="text-3xl font-bold text-gray-900 mb-3 tabular-nums tracking-tight">
+              {score} / {QUIZ.length}
             </h3>
-            <p className="text-gray-500 mb-6">
-              {score === QUIZ.length ? '완벽해요! 플로로탄닌 전문가 🎉' :
-               score >= 3 ? '잘하셨어요! 조금 더 공부하면 완벽!' :
-               '다시 읽고 도전해보세요!'}
+            <p className="text-gray-600 text-[15px] mb-7 leading-relaxed">
+              {score === QUIZ.length ? '완벽합니다 — 플로로탄닌 핵심을 모두 이해하셨네요.' :
+               score >= 3 ? '잘하셨습니다. 조금만 더 보시면 완벽해집니다.' :
+               '다시 한 번 읽고 도전해보세요.'}
             </p>
-            <div className="flex flex-col gap-3">
-              <button onClick={reset} className="bg-purple-500 text-white font-bold py-3 px-8 rounded-full hover:bg-purple-600 transition-colors">
-                🔄 다시 도전
-              </button>
-
-            </div>
+            <button onClick={reset} className="inline-flex items-center gap-2 bg-gray-900 hover:bg-black text-white px-6 py-3 rounded-md text-[14px] font-medium transition-colors">
+              다시 도전
+            </button>
           </div>
         ) : (
-          <div className="bg-white rounded-3xl p-6 shadow-lg border-2 border-purple-200">
+          <div className="bg-white rounded-lg p-6 border border-gray-200">
             {/* 진행 바 */}
             <div className="flex gap-2 mb-5">
               {QUIZ.map((_, i) => (
                 <div
                   key={i}
-                  className={`flex-1 h-2 rounded-full transition-all duration-300 ${
-                    i < cur ? 'bg-purple-500' : i === cur ? 'bg-purple-300' : 'bg-gray-200'
+                  className={`flex-1 h-1 rounded-full transition-colors ${
+                    i < cur ? 'bg-gray-900' : i === cur ? 'bg-gray-500' : 'bg-gray-200'
                   }`}
                 />
               ))}
             </div>
 
-            <div className="text-sm text-gray-400 mb-2">문제 {cur + 1} / {QUIZ.length}</div>
-            <h3 className="text-lg font-bold text-gray-800 mb-5 leading-relaxed">{q.q}</h3>
+            <div className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-400 mb-2 tabular-nums">Question {cur + 1} / {QUIZ.length}</div>
+            <h3 className="text-lg font-bold text-gray-900 mb-5 leading-snug tracking-tight">{q.q}</h3>
 
-            <div className="space-y-3 mb-5">
+            <div className="space-y-2 mb-5">
               {q.opts.map((opt, idx) => {
-                let style = 'bg-gray-50 border-gray-200 text-gray-700 hover:bg-gray-100'
+                let style = 'bg-white border-gray-200 text-gray-700 hover:border-gray-400'
                 if (selected !== null) {
-                  if (idx === q.ans) style = 'bg-green-100 border-green-400 text-green-700 font-bold'
-                  else if (idx === selected && idx !== q.ans) style = 'bg-red-100 border-red-400 text-red-700'
-                  else style = 'bg-gray-50 border-gray-200 text-gray-400'
+                  if (idx === q.ans) style = 'bg-emerald-50 border-emerald-400 text-emerald-800 font-semibold'
+                  else if (idx === selected && idx !== q.ans) style = 'bg-red-50 border-red-400 text-red-800'
+                  else style = 'bg-white border-gray-200 text-gray-400'
                 }
                 return (
                   <button
                     key={idx}
                     onClick={() => handleSelect(idx)}
-                    className={`w-full text-left px-4 py-3 rounded-2xl border-2 text-base transition-all duration-200 ${style}`}
+                    className={`w-full text-left px-4 py-3 rounded-md border text-[15px] transition-colors duration-200 ${style}`}
                   >
                     {opt}
                   </button>
@@ -838,19 +849,19 @@ function QuizSection() {
 
             {/* 정답 설명 */}
             {selected !== null && (
-              <div className={`rounded-2xl p-4 mb-4 text-base leading-relaxed ${
-                selected === q.ans ? 'bg-green-50 text-green-700 border border-green-200' : 'bg-orange-50 text-orange-700 border border-orange-200'
+              <div className={`rounded-md p-4 mb-4 text-[14px] leading-relaxed border ${
+                selected === q.ans ? 'bg-emerald-50 text-emerald-800 border-emerald-200' : 'bg-gray-50 text-gray-700 border-gray-200'
               }`}>
-                {selected === q.ans ? '✅ ' : '💡 '}{q.exp}
+                <span className="font-semibold mr-1">{selected === q.ans ? '정답.' : '해설.'}</span>{q.exp}
               </div>
             )}
 
             {selected !== null && (
               <button
                 onClick={handleNext}
-                className="w-full py-3 rounded-2xl bg-gradient-to-r from-purple-500 to-violet-600 text-white font-bold hover:opacity-90 transition-opacity"
+                className="w-full py-3 rounded-md bg-gray-900 hover:bg-black text-white font-medium text-[14px] transition-colors"
               >
-                {cur < QUIZ.length - 1 ? '다음 문제 →' : '결과 보기 🎉'}
+                {cur < QUIZ.length - 1 ? '다음 문제' : '결과 보기'}
               </button>
             )}
           </div>
@@ -963,32 +974,36 @@ function CTASection() {
   const partner = usePartner()
 
   return (
-    <div className="bg-gradient-to-b from-blue-900 via-cyan-800 to-teal-700 py-12 px-4 text-white">
+    <div className="bg-white border-y border-gray-200 py-20 px-4">
       <div className="max-w-2xl mx-auto text-center">
-        <div className="text-5xl mb-4">🎉</div>
-        <h2 className="text-2xl font-black mb-3">플로로탄닌 학습 완료!</h2>
-        <p className="text-cyan-200 text-base mb-8 leading-relaxed">
-          이제 플로로탄닌이 어떻게 우리 몸을 지키는지 이해하셨나요?<br />
-          더 궁금한 게 있다면 1,311개 Q&A를 탐색해보세요!
+        <div className="inline-flex items-center justify-center gap-3 mb-5">
+          <span className="h-px w-8 bg-gray-300" />
+          <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500">Next Step</span>
+          <span className="h-px w-8 bg-gray-300" />
+        </div>
+        <h2 className="text-3xl md:text-[2.25rem] font-bold text-gray-900 tracking-tight mb-4 leading-[1.2]">학습을 마치셨습니다</h2>
+        <p className="text-gray-600 text-[16px] leading-[1.8] mb-10 max-w-xl mx-auto break-keep">
+          플로로탄닌의 작용 원리를 익히셨다면, 이제 1,311개의 심층 Q&amp;A로 더 깊이 들어가거나
+          전문 파트너에게 직접 문의해보세요.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-md mx-auto">
-          <button
-            onClick={() => navigate(`/phlorotannin`)}
-            className="bg-white/20 text-white font-bold py-4 px-4 rounded-2xl hover:bg-white/30 transition-colors border border-white/30 text-base"
-          >
-            🔬 전문 자료 보기
-          </button>
+        <div className="flex flex-wrap gap-x-6 gap-y-3 justify-center items-center">
           <button
             onClick={() => navigate(`/consult`)}
-            className="bg-cyan-400 text-white font-bold py-4 px-4 rounded-2xl hover:bg-cyan-300 transition-colors shadow-lg text-base"
+            className="inline-flex items-center gap-2 bg-gray-900 hover:bg-black text-white px-6 py-3 rounded-md text-[14px] font-medium transition-colors"
           >
-            💬 전문 상담 신청
+            전문 상담 신청
+          </button>
+          <button
+            onClick={() => navigate(`/phlorotannin`)}
+            className="inline-flex items-center gap-1.5 text-[14px] text-gray-700 hover:text-gray-900 underline underline-offset-4 decoration-gray-300 hover:decoration-gray-700"
+          >
+            전문 자료 보기
           </button>
         </div>
 
-        <p className="text-cyan-300 text-sm mt-8">
-          ⚠️ 본 내용은 교육 목적의 건강 정보이며 의학적 진단·치료를 대체하지 않습니다.<br />
+        <p className="text-gray-400 text-[12px] mt-10 leading-relaxed">
+          · 본 내용은 교육 목적의 건강 정보이며 의학적 진단·치료를 대체하지 않습니다.<br />
           © 2025 플로로탄닌 파트너스
         </p>
       </div>
