@@ -11,6 +11,8 @@ import {
 } from '../lib/supabase'
 import SEOHead from '../components/common/SEOHead'
 import RelatedBlogPosts from '../components/qa/RelatedBlogPosts'
+import ReferenceList from '../components/common/ReferenceList'
+import { REFERENCES } from '../data/references'
 
 // 카테고리 ID → OG 이미지 슬러그 (build_og_images.py 산출물과 1:1 매칭, 헌법 정합성)
 const CAT_OG_SLUG = {
@@ -63,6 +65,11 @@ async function getFallbackQuestion(slug) {
     difficulty: q.difficulty, visibility: 'public', author_type: 'self',
     created_at: null, _fallback: true,
     _answer: q.answer,
+    // E-E-A-T 강화 [2026-05-21]: PubMed 등재 1차 출처 referenceId 배열 (Europe PMC 검증)
+    references_pmid: Array.isArray(q.references_pmid) ? q.references_pmid : [],
+    references_text: Array.isArray(q.references) ? q.references : [],
+    reviewed_at: q.reviewed_at || null,
+    source_type: q.source_type || null,
   }
 }
 
@@ -249,6 +256,21 @@ export default function QuestionDetailPage() {
         : `${question.title}에 대한 전문 답변입니다.`)
   const seoDesc = rawAnswerText.slice(0, 150)
 
+  // E-E-A-T 강화 [2026-05-21]: PubMed referenceId → schema.org Citation 변환
+  // Google 의 의료·과학 페이지 신뢰도 평가에 1차 출처 명시 (Europe PMC / PubMed 검증)
+  const answerCitations = (question.references_pmid || [])
+    .map(id => REFERENCES[id])
+    .filter(Boolean)
+    .map(r => ({
+      '@type': 'ScholarlyArticle',
+      name: r.title,
+      author: r.authors,
+      datePublished: String(r.year || ''),
+      ...(r.journal ? { isPartOf: { '@type': 'Periodical', name: r.journal } } : {}),
+      ...(r.pmid ? { sameAs: `https://pubmed.ncbi.nlm.nih.gov/${r.pmid}/` } : {}),
+      ...(r.doi ? { identifier: `doi:${r.doi}` } : {}),
+    }))
+
   // JSON-LD 구조화 데이터 (QAPage + BreadcrumbList)
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -282,6 +304,8 @@ export default function QuestionDetailPage() {
                 name: question.author || '플로로탄닌·감태추출물 종합 건강정보 데이터센터 편집팀',
                 url: 'https://phlorotannin.com',
               },
+              // E-E-A-T: 1차 출처 (peer-reviewed, Europe PMC / PubMed 검증)
+              ...(answerCitations.length > 0 ? { citation: answerCitations } : {}),
             }
           } : {}),
         },
@@ -424,6 +448,38 @@ export default function QuestionDetailPage() {
                     <p className="mt-4 text-xs text-gray-400 border-t border-gray-100 pt-3">
                       ※ 이 정보는 참고용이며 의료 진단을 대체하지 않습니다. 건강 문제는 반드시 전문의와 상담하세요.
                     </p>
+                  </div>
+                </section>
+              )}
+
+              {/* 참고문헌 (peer-reviewed, Europe PMC / PubMed 검증)
+                  [2026-05-21] E-E-A-T 강화 — 1,391건 전체에 1차 출처 referenceId 매핑 */}
+              {question.references_pmid && question.references_pmid.length > 0 && (
+                <section className="bg-white rounded-2xl border border-border-hana overflow-hidden">
+                  <div className="px-6 pt-6 pb-2">
+                    <ReferenceList
+                      ids={question.references_pmid}
+                      title="참고문헌 (peer-reviewed)"
+                    />
+                  </div>
+                </section>
+              )}
+
+              {/* 보조 출처 (가이드라인·진료지침 등 PubMed 비등재) */}
+              {question.references_text && question.references_text.length > 0 && (
+                <section className="bg-white rounded-2xl border border-border-hana overflow-hidden">
+                  <div className="px-6 py-5">
+                    <h3 className="text-[13px] font-semibold uppercase tracking-[0.14em] text-gray-700 mb-3">
+                      보조 출처 (가이드라인·진료지침)
+                    </h3>
+                    <ul className="space-y-2 text-[13px] text-gray-700">
+                      {question.references_text.map((t, i) => (
+                        <li key={i} className="flex gap-3">
+                          <span className="flex-shrink-0 w-6 text-[12px] text-gray-400 tabular-nums">[{i + 1}]</span>
+                          <span>{t}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </section>
               )}
