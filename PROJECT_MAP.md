@@ -162,7 +162,10 @@ Q&A는 현재 **Supabase 마이그레이션 대기 상태** (Phase 5 예정). �
 | `hanain/scripts/build_qa_tag_index.py` | tagIndex.json 빌드 스크립트 | TBD |
 | `hanain/scripts/build_qa_brand_tags.py` | **(신규)** 12 BRAND_RULES 정규식 매칭으로 Q&A에 브랜드 태그 자동 부착 (멱등) | 5.9KB |
 | `hanain/scripts/add_qa_eeat_fields.py` | **(신규)** Q&A 전수 E-E-A-T 메타 필드 5종 주입 (멱등) | 2.6KB |
+| `hanain/scripts/refine_qa_authors.py` | **(신규)** author 필드를 13개 카테고리 분과 편집데스크명으로 세분화 (멱등) | 4.1KB |
 | `hanain/scripts/build_og_images.py` | **(신규)** 카테고리별 OG PNG 13장 빌드 (Pillow + NanumSquareRoundB) | 5.0KB |
+| `api/seo.js` | **(D3 보강)** 봇 메타 주입 함수 — `CAT_OG_SLUG` 매핑 + `staticMetaFor()` ogImage 필드 + `injectMeta()` og:image 5종 정규식 + `X-OG-Image` 진단 헤더 | 1.1k lines |
+| `vercel.json` (root) | **(D3 보강)** `/q/:slug`, `/qa/tag/:tag`, `/glossary` 명시적 rewrites + catch-all 의 `og/` 제외 | - |
 | `hanain/generate_sitemap_rss.py` | Q&A URL을 sitemap에 추가 (총 1,812 URL) | - |
 
 ### Q&A 카테고리 (12개)

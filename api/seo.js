@@ -11,6 +11,41 @@ import path from 'path'
 
 const SITE = 'https://phlorotannin.com'
 
+// 기본 OG 이미지 (모든 응답 fallback)
+const DEFAULT_OG_IMAGE = `${SITE}/og-image.png`
+const DEFAULT_OG_IMAGE_ALT = '플로로탄닌 종합 건강정보 데이터센터 - 해양 폴리페놀 정보 허브'
+
+// 카테고리 슬러그(snake_case) → OG 이미지 슬러그(dash-case) 매핑
+// public/og/qa-<slug>.png 파일과 동기화 — 13종 + default
+// 새 카테고리 추가 시 build_og_images.py 실행 후 본 매핑도 함께 갱신할 것
+const CAT_OG_SLUG = {
+  metabolism:             'metabolism',
+  cancer_immune:          'cancer-immune',
+  cancer:                 'cancer-immune',
+  digestive:              'digestive',
+  cardiovascular:         'cardiovascular',
+  neuro_cognitive:        'neuro-cognitive',
+  dementia:               'neuro-cognitive',
+  brain:                  'neuro-cognitive',
+  mental_health:          'mental-health',
+  musculoskeletal:        'musculoskeletal',
+  skin:                   'skin-hair',
+  hair:                   'skin-hair',
+  skin_hair:              'skin-hair',
+  respiratory:            'respiratory',
+  infection_inflammation: 'infection-inflammation',
+  inflammation:           'infection-inflammation',
+  immunity:               'infection-inflammation',
+  womens_health:          'womens-health',
+  mens_health:            'mens-health',
+}
+
+function ogImageForCategory(catSlug) {
+  const og = CAT_OG_SLUG[catSlug]
+  if (og) return `${SITE}/og/qa-${og}.png`
+  return `${SITE}/og/qa-default.png`
+}
+
 // 빌드 산출물 위치 — vercel은 outputDirectory(hanain/dist)를 루트에 매핑한다.
 // 함수 실행 시 process.cwd()는 Vercel 환경에서 /var/task 가 됨.
 // outputDirectory의 파일들은 /var/task에 그대로 복사되므로 'index.html' 경로로 접근.
@@ -215,6 +250,8 @@ function staticMetaFor(pathname) {
       title: `${name} | 플로로탄닌 종합 건강정보 데이터센터`,
       desc,
       canonical: `${SITE}${pathname}`,
+      ogImage: ogImageForCategory(slug),
+      ogImageAlt: `${name} Q&A 아카이브 미리보기 — 플로로탄닌·감태추출물 기반 종합 건강정보 데이터센터`,
     }
   }
   if (pathname.startsWith('/p/')) {
@@ -234,10 +271,14 @@ function staticMetaFor(pathname) {
     let readable = rawSlug
     try { readable = decodeURIComponent(rawSlug) } catch { /* keep */ }
     readable = readable.replace(/-/g, ' ').trim().slice(0, 60)
+    // /q/:slug 봇 메타 — 슬러그 자체로 카테고리를 단정할 수 없으므로 default OG.
+    // QuestionDetailPage.jsx 가 클라이언트 렌더 후 CAT_OG_SLUG 매핑으로 카테고리별 OG 로 갱신.
     return {
       title: `${readable} | 연구기반 Q&A — 플로로탄닌·감태추출물 건강정보`,
       desc:  `${readable} 관련 연구기반 Q&A. 플로로탄닌·감태추출물·해양 폴리페놀과 관련된 질환·증상·성분·건강관리 정보를 정리한 종합 건강정보 데이터센터의 Q&A 페이지입니다.`,
       canonical: `${SITE}${pathname}`,
+      ogImage: `${SITE}/og/qa-default.png`,
+      ogImageAlt: `${readable} — 연구기반 Q&A 미리보기 | 플로로탄닌·감태추출물 종합 건강정보 데이터센터`,
     }
   }
   // ─── Q&A 자산화 (헌법 제10조) — /qa/tag/:tag 태그별 Q&A 모음 ───
@@ -250,6 +291,8 @@ function staticMetaFor(pathname) {
       title: `${readable} 건강 Q&A 모음 | 플로로탄닌·감태추출물 정보센터`,
       desc:  `${readable} 관련 연구기반 Q&A 모음. 플로로탄닌(phlorotannin)·감태추출물·해양 폴리페놀의 ${readable} 관련 건강정보를 한곳에서 확인할 수 있는 종합 건강정보 데이터센터의 태그 아카이브입니다.`,
       canonical: `${SITE}${pathname}`,
+      ogImage: `${SITE}/og/qa-default.png`,
+      ogImageAlt: `${readable} 태그 Q&A 아카이브 — 플로로탄닌·감태추출물 종합 건강정보 데이터센터`,
     }
   }
   return null
@@ -867,6 +910,11 @@ function injectMeta(html, meta) {
   const t = esc(meta.title)
   const d = esc(meta.desc)
   const c = esc(meta.canonical)
+  // [2026-05-21] og:image / og:image:alt / twitter:image / twitter:image:alt 까지
+  // 라우트별로 갱신. 카테고리 OG (public/og/qa-<slug>.png) 가 봇에 정확히 도달하도록 함.
+  // 메타에 ogImage 가 없으면 기본 OG (/og-image.png) 유지 — 안전 fallback.
+  const ogImage    = esc(meta.ogImage    || DEFAULT_OG_IMAGE)
+  const ogImageAlt = esc(meta.ogImageAlt || DEFAULT_OG_IMAGE_ALT)
 
   // <title id="page-title">...</title>
   html = html.replace(
@@ -906,6 +954,19 @@ function injectMeta(html, meta) {
     /<meta property="og:url" content="[^"]*"\s*\/?>/,
     `<meta property="og:url" content="${c}" />`
   )
+  // [2026-05-21] og:image 5종 — 라우트별 카테고리 OG 차별화
+  html = html.replace(
+    /<meta property="og:image" content="[^"]*"\s*\/?>/,
+    `<meta property="og:image" content="${ogImage}" />`
+  )
+  html = html.replace(
+    /<meta property="og:image:secure_url" content="[^"]*"\s*\/?>/,
+    `<meta property="og:image:secure_url" content="${ogImage}" />`
+  )
+  html = html.replace(
+    /<meta property="og:image:alt" content="[^"]*"\s*\/?>/,
+    `<meta property="og:image:alt" content="${ogImageAlt}" />`
+  )
 
   // twitter
   html = html.replace(
@@ -915,6 +976,15 @@ function injectMeta(html, meta) {
   html = html.replace(
     /<meta name="twitter:description" content="[^"]*"\s*\/?>/,
     `<meta name="twitter:description" content="${d}" />`
+  )
+  // [2026-05-21] twitter:image / twitter:image:alt 도 동시 갱신
+  html = html.replace(
+    /<meta name="twitter:image" content="[^"]*"\s*\/?>/,
+    `<meta name="twitter:image" content="${ogImage}" />`
+  )
+  html = html.replace(
+    /<meta name="twitter:image:alt" content="[^"]*"\s*\/?>/,
+    `<meta name="twitter:image:alt" content="${ogImageAlt}" />`
   )
 
   return html
@@ -1107,6 +1177,8 @@ export default async function handler(req, res) {
     res.setHeader('X-SEO-Path', pathname)
     res.setHeader('X-SEO-Title', encodeURIComponent(meta.title))
     res.setHeader('X-SEO-Source', metaSource)
+    // [2026-05-21] og:image 차별화 진단용 (카테고리 OG 도달 여부 확인)
+    res.setHeader('X-OG-Image', meta.ogImage || DEFAULT_OG_IMAGE)
     res.setHeader('X-SSR-Lite', ssrLiteApplied)
     // 플랫폼·저작권 추적 헤더 (응답 헤더에도 마커)
     res.setHeader('X-Platform', 'phlorotannin-platform-v1')

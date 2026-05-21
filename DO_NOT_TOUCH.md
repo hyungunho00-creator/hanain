@@ -86,8 +86,18 @@
   - 재생성 방법: `python3 scripts/build_og_images.py` (Pillow + NanumSquareRoundB)
 - ❌ `/learn`, `/phlorotannin`, `/easy` 허브 페이지의 `<RelatedQA />` 컴포넌트 제거 금지
   - 이유: 허브 → Q&A 페이지랭크 흐름 단절 시 1,361 Q&A 색인 가치 50% 이상 손실
-- ❌ `CAT_OG_SLUG` (QuestionDetailPage) / `CAT_ID_TO_SLUG` (Footer) 매핑 이탈 금지
-  - 이유: 두 매핑은 `build_og_images.py` 산출물 슬러그와 1:1 정합성 유지 필수
+- ❌ `CAT_OG_SLUG` (QuestionDetailPage) / `CAT_ID_TO_SLUG` (Footer) / `CAT_OG_SLUG` (api/seo.js) 매핑 이탈 금지
+  - 이유: 세 매핑은 `build_og_images.py` 산출물 슬러그와 1:1 정합성 유지 필수 — 봇·클라이언트 양쪽 동기화
+
+**봇 메타 라우팅 동결 (2026-05-21 D3 보강 — 결함 #1·#2 해결 직후)**:
+- ❌ `api/seo.js` 의 `injectMeta()` 에서 `og:image` / `og:image:secure_url` / `og:image:alt` / `twitter:image` / `twitter:image:alt` 정규식 치환 5종 삭제 금지
+  - 이유: 삭제 시 봇이 모든 경로에서 기본 `/og-image.png` 만 보게 됨 = 카테고리 OG 13종 신호 소멸 (D3 Bug #1)
+- ❌ 루트 `vercel.json` 의 명시적 rewrites — `/q/:slug`, `/qa/tag/:tag`, `/glossary` 삭제 금지
+  - 이유: 삭제 시 catch-all `/((?!api/|og/|assets/).*)` 에 걸려 `p=/` 로 들어가 홈 메타가 노출됨 (D3 Bug #2 — `x-seo-path: /` 회귀)
+- ❌ 루트 `vercel.json` catch-all 의 `og/` 제외 패턴 제거 금지
+  - 이유: 제외 안 하면 `/og/qa-*.png` 13장이 api/seo.js 로 들어가 HTML 응답 = 봇이 OG 이미지 로드 실패
+- ❌ `api/seo.js` 의 `CAT_OG_SLUG` / `ogImageForCategory()` 헬퍼 삭제 금지
+  - 이유: `staticMetaFor('/category/:slug')` 가 카테고리별 OG 이미지를 결정하는 단일 진실원
 
 ---
 

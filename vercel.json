@@ -30,7 +30,10 @@
     { "source": "/copyright", "destination": "/api/seo?p=/copyright" },
     { "source": "/category/:slug", "destination": "/api/seo?p=/category/:slug" },
     { "source": "/p/:phone", "destination": "/api/seo?p=/p/:phone" },
-    { "source": "/((?!api/).*)", "destination": "/api/seo?p=/" }
+    { "source": "/q/:slug", "destination": "/api/seo?p=/q/:slug" },
+    { "source": "/qa/tag/:tag", "destination": "/api/seo?p=/qa/tag/:tag" },
+    { "source": "/glossary", "destination": "/api/seo?p=/glossary" },
+    { "source": "/((?!api/|og/|assets/).*)", "destination": "/api/seo?p=/" }
   ],
   "headers": [
     {

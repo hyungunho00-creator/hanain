@@ -438,6 +438,30 @@ YMYL 의료 콘텐츠의 신뢰도 및 페이지랭크 흐름을 강화하기 �
 - `CategoryPage`, `QuestionDetailPage`, `QATagPage`의 `<SEOHead ogImage>`에 자동 주입
 - 폰트: NanumSquareRoundB (한글 가독성) — 시스템 폰트 변경 시 스크립트 폰트 경로 검토
 
+**(5) 봇 메타 차별화 — `api/seo.js` 서버 사이드 주입 (2026-05-21 D3 보강)**
+
+클라이언트 JS 렌더링 전(=구글봇 첫 fetch 시점)에도 카테고리별 OG 가 정확히 전달되도록 다음 5종을 **불변 의무**로 한다:
+
+- **루트 `vercel.json` 명시적 rewrites 필수**: `/q/:slug`, `/qa/tag/:tag`, `/category/:slug`, `/glossary` 등 **모든 Q&A SEO 자산 경로는 catch-all 이전에 명시적 rewrite 등록 필수**
+  - 누락 시 catch-all `/((?!api/|og/|assets/).*)` 에 걸려 `p=/` 로 들어가 홈 메타가 응답됨 = 1,361 Q&A + 131 태그 페이지 봇 메타 전부 홈으로 회귀
+  - catch-all 의 제외 패턴은 `api/`, `og/`, `assets/` 3종 필수 (OG 이미지가 HTML 응답으로 변환되는 사고 방지)
+- **`staticMetaFor()` 반환값에 `ogImage`/`ogImageAlt` 필드 포함**: `/category/:slug`, `/q/:slug`, `/qa/tag/:tag` 핸들러는 카테고리 OG 슬러그를 결정해서 메타 객체에 포함시켜야 한다.
+- **`injectMeta()` 의 5종 정규식 치환 필수**: `og:image` / `og:image:secure_url` / `og:image:alt` / `twitter:image` / `twitter:image:alt` — 누락 시 봇은 라우트와 무관하게 기본 `/og-image.png` 만 본다.
+- **`CAT_OG_SLUG` (api/seo.js) ↔ `CAT_OG_SLUG` (QuestionDetailPage.jsx) ↔ `CAT_ID_TO_SLUG` (Footer) 3축 동기화**: snake_case 카테고리 ID → dash-case OG 슬러그 매핑은 세 곳에서 동일해야 한다.
+- **진단 헤더 `X-OG-Image` 출력 의무**: handler() 응답 헤더에 실제 적용된 OG URL을 노출 — 회귀 추적용.
+
+**검증 명령** (배포 후 필수):
+```bash
+# 카테고리별 OG 차별화 확인 — x-og-image 헤더 값이 카테고리별로 달라야 PASS
+for slug in cardiovascular metabolism cancer_immune skin_hair; do
+  echo "=== /category/$slug ==="
+  curl -sI -A "Googlebot/2.1" "https://phlorotannin.com/category/$slug" | grep -i "x-og-image\|x-seo-path"
+done
+
+# /qa/tag/, /q/ 도 x-seo-path 가 / 가 아닌 실제 경로여야 PASS
+curl -sI -A "Googlebot/2.1" "https://phlorotannin.com/qa/tag/플로로탄닌" | grep -i "x-seo-path"
+```
+
 ### ✅ 의무 8. 안전성 일괄 검증 (forbidden words)
 - 신규 Q&A 추가 시 (또는 기존 일괄 점검 시) 제4조 금지어 전수 스캔
 - 위반 발견 시 **자동 치환 사전** 적용 가능:
