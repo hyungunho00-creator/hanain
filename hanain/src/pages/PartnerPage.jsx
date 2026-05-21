@@ -9,10 +9,13 @@ import {
 import RevealContact from '../components/common/RevealContact'
 
 // ── 색상 ───────────────────────────────────────────────
-const NAVY  = '#0D1B3E'
-const GOLD  = '#B8953A'
-const GOLD2 = '#D4AF5A'
-const CREAM = '#FFFDF7'
+// [2026-05-21] 사이트 전역 통일 — deep navy + cyan-hana 시그니처 (카테고리 배너와 동일 톤)
+// 과거: NAVY(#0D1B3E) + GOLD(#B8953A) 별도 브랜드 → 사이트와 시각적 단절
+// 현재: 사이트 표준 톤으로 통일하여 모든 페이지 디자인 언어 일치
+const NAVY  = '#0B1A2E'   // 사이트 표준 deep navy (CategoryHeroBanner와 동일)
+const GOLD  = '#00B4D8'   // cyan-hana (사이트 액센트로 통일)
+const GOLD2 = '#22D3EE'   // cyan-400 (호버/하이라이트 보조 톤)
+const CREAM = '#F7FAFC'   // 화이트 톤 배경
 
 // ── 파트너 혜택 ──────────────────────────────────────
 const BENEFITS = [
@@ -215,7 +218,7 @@ function SmsModal({ formData, partnerPhone, onClose }) {
           <a
             href={smsLink}
             className="w-full py-4 flex items-center justify-center gap-2 text-lg font-bold rounded-2xl"
-            style={{ background: `linear-gradient(135deg, ${NAVY}, #1a3a6a)`, color: '#fff' }}
+            style={{ background: `linear-gradient(135deg, ${NAVY}, #102540)`, color: '#fff' }}
           >
             <MessageSquare className="w-5 h-5" />
             문자 앱 열고 전송하기
@@ -295,34 +298,52 @@ export default function PartnerPage() {
         />
       )}
 
-      {/* ── Hero ──────────────────────────────────────── */}
-      <div className="py-20 px-6 text-center"
-        style={{ background: `linear-gradient(160deg, ${NAVY} 0%, #1a3a6a 100%)`, borderBottom: `3px solid ${GOLD}` }}>
-        <p style={{ fontSize: '11px', color: GOLD, letterSpacing: '4px', fontWeight: '700', marginBottom: '12px' }}>
-          PHLOROTANNIN PARTNERS
-        </p>
-        <h1 className="text-4xl md:text-5xl font-bold mb-5 leading-tight" style={{ color: '#fff' }}>
-          건강을 다루는 사람이라면<br />
-          <span style={{ color: GOLD2 }}>전문성이 더 깊어지는</span><br />
-          파트너십입니다
-        </h1>
-        <p className="text-lg max-w-xl mx-auto leading-relaxed" style={{ color: '#a0b8d0' }}>
-          힐링센터·피부샵·건강식품·온라인 활동까지 —<br />
-          이미 건강 관련 일을 하고 있다면 자연스럽게 연결됩니다.
-        </p>
-        <a
-          href="#apply"
-          className="inline-flex items-center gap-2 mt-8 px-8 py-4 rounded-2xl font-bold text-lg"
-          style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLD2})`, color: NAVY }}
-        >
-          파트너 신청하기 →
-        </a>
+      {/* ── Hero — [2026-05-21] 사이트 통일 톤 (deep navy + cyan-hana 시그니처) ── */}
+      <div className="relative overflow-hidden py-20 px-6 text-center"
+        style={{ background: `linear-gradient(160deg, ${NAVY} 0%, #102540 100%)` }}>
+        {/* 카테고리 배너와 동일한 시그니처 빛 효과 */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 opacity-40 pointer-events-none"
+          style={{ background: 'radial-gradient(ellipse at 50% 0%, rgba(0,180,216,0.22) 0%, transparent 60%)' }}
+        />
+        <div className="relative">
+          <p style={{ fontSize: '11px', color: GOLD, letterSpacing: '4px', fontWeight: '700', marginBottom: '12px' }}>
+            PHLOROTANNIN PARTNERS
+          </p>
+          <h1 className="text-4xl md:text-5xl font-bold mb-5 leading-tight" style={{ color: '#fff' }}>
+            건강을 다루는 사람이라면<br />
+            <span style={{ color: GOLD2 }}>전문성이 더 깊어지는</span><br />
+            파트너십입니다
+          </h1>
+          <p className="text-base md:text-lg max-w-xl mx-auto leading-relaxed" style={{ color: 'rgba(255,255,255,0.72)' }}>
+            힐링센터·피부샵·건강식품·온라인 활동까지 —<br />
+            이미 건강 관련 일을 하고 있다면 자연스럽게 연결됩니다.
+          </p>
+          <a
+            href="#apply"
+            className="inline-flex items-center gap-2 mt-8 px-8 py-3.5 rounded-xl font-semibold text-base md:text-lg transition-colors"
+            style={{
+              backgroundColor: GOLD,
+              color: '#FFFFFF',
+              boxShadow: '0 8px 24px rgba(0,180,216,0.25)',
+            }}
+            onMouseEnter={e => { e.currentTarget.style.backgroundColor = GOLD2 }}
+            onMouseLeave={e => { e.currentTarget.style.backgroundColor = GOLD }}
+          >
+            파트너 신청하기 →
+          </a>
+          {/* E-E-A-T 트러스트 라인 — 사이트 다른 페이지와 동일 패턴 */}
+          <p className="mt-6 text-[11px] md:text-xs" style={{ color: 'rgba(255,255,255,0.5)' }}>
+            리서치팀 직접 응대 · 회원가입 없이 신청 · 24시간 내 답변
+          </p>
+        </div>
       </div>
 
-      {/* ── 파트너 소개 영상 ───────────────────────────── */}
-      <section className="py-12 px-4" style={{ background: '#0d1f3c' }}>
+      {/* ── 파트너 소개 영상 — [2026-05-21] 사이트 통일 톤 ── */}
+      <section className="py-12 px-4" style={{ background: '#102540' }}>
         <div className="max-w-3xl mx-auto text-center">
-          <p style={{ fontSize: '11px', color: '#C9A84C', letterSpacing: '3px', fontWeight: '700', marginBottom: '8px' }}>
+          <p style={{ fontSize: '11px', color: GOLD, letterSpacing: '3px', fontWeight: '700', marginBottom: '8px' }}>
             PARTNER INTRO VIDEO
           </p>
           <h2 className="text-2xl font-bold mb-6" style={{ color: '#fff' }}>
@@ -364,7 +385,7 @@ export default function PartnerPage() {
             ))}
           </div>
           <div className="mt-6 rounded-2xl p-5 text-center"
-            style={{ background: `linear-gradient(135deg, ${NAVY}, #1a3a6a)`, border: `2px solid ${GOLD}50` }}>
+            style={{ background: `linear-gradient(135deg, ${NAVY}, #102540)`, border: `2px solid ${GOLD}50` }}>
             <p style={{ fontSize: '14px', color: GOLD2, fontStyle: 'italic' }}>
               "이 시장은 늦게 보면 평범한 시장이고, 빨리 보면 선점 가능한 시장입니다."
             </p>
@@ -603,7 +624,7 @@ export default function PartnerPage() {
             <button
               type="submit"
               className="w-full py-4 flex items-center justify-center gap-3 rounded-2xl font-bold text-lg"
-              style={{ background: `linear-gradient(135deg, ${NAVY}, #1a3a6a)`, color: '#fff' }}
+              style={{ background: `linear-gradient(135deg, ${NAVY}, #102540)`, color: '#fff' }}
             >
               <MessageSquare className="w-5 h-5" />
               파트너 신청 문자 보내기
