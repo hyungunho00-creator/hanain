@@ -33,6 +33,14 @@
     { "source": "/q/:slug", "destination": "/api/seo?p=/q/:slug" },
     { "source": "/qa/tag/:tag", "destination": "/api/seo?p=/qa/tag/:tag" },
     { "source": "/glossary", "destination": "/api/seo?p=/glossary" },
+    { "source": "/inforoom", "destination": "/api/seo?p=/inforoom" },
+    { "source": "/p/:phone/inforoom", "destination": "/api/seo?p=/p/:phone/inforoom" },
+    { "source": "/community/post/:postId", "destination": "/api/seo?p=/community/post/:postId" },
+    { "source": "/community/write", "destination": "/api/seo?p=/community/write" },
+    { "source": "/community/edit/:postId", "destination": "/api/seo?p=/community/edit/:postId" },
+    { "source": "/question/write", "destination": "/api/seo?p=/question/write" },
+    { "source": "/admin", "destination": "/api/seo?p=/admin" },
+    { "source": "/:path*", "has": [{ "type": "header", "key": "user-agent", "value": "(?i).*(googlebot|bingbot|yeti|naverbot|daumoa|yandexbot|baiduspider|applebot|facebookexternalhit|twitterbot|slackbot|telegrambot|linkedinbot|chatgpt-user|gptbot|oai-searchbot|perplexitybot|claudebot|claude-web|ccbot|anthropic-ai|google-extended|bytespider|amazonbot).*" }], "destination": "/api/seo?p=/:path*" },
     { "source": "/((?!api/|og/|assets/).*)", "destination": "/api/seo?p=/" }
   ],
   "headers": [
