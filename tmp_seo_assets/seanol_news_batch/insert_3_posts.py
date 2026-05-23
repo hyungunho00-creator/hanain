@@ -31,7 +31,7 @@ NOW = datetime.now(timezone.utc).isoformat()
 BANNER = """<!-- <!-- RESEARCH_2026_V1 --> -->
 <!-- SAFETY_BANNER_V1_2026_05 -->
 <div style="background:#fef3c7;border-left:4px solid #f59e0b;border-radius:8px;padding:14px 18px;margin:0 0 22px 0;font-size:13.5px;color:#78350f;line-height:1.75;">
-<strong>📚 본 글은 산업·임상 등록 정보 정리입니다 — 치료 정보가 아닙니다</strong><br/>
+<strong>본 글은 산업·임상 등록 정보 정리입니다 — 치료 정보가 아닙니다</strong><br/>
 · 본 글은 <strong>ClinicalTrials.gov 임상 등록 정보, PMC·PubMed 학술 리뷰, 국내외 언론 보도</strong>를 1차 출처로 정리한 산업 동향 자료입니다.<br/>
 · 특정 제품의 효능을 단정하거나, 의약품의 치료 효과를 약속하지 않습니다.<br/>
 · 플로로탄닌·디에콜·에콜·감태추출물·씨놀(Seanol)은 <strong>건강기능식품 또는 연구 단계의 천연 화합물</strong>이며, 항암제·당뇨약·항우울제 등 의약품을 대체할 수 없습니다.<br/>
@@ -42,32 +42,10 @@ BANNER = """<!-- <!-- RESEARCH_2026_V1 --> -->
 """
 
 # ─────────────────────────────────────────────────────────────
-# TRUST_FOOTER — 헌법 제11조 (블로그 본문 풋터 통일 표준)
-# 모든 신규 글에 자동 부착, 마커로 중복 방지
+# TRUST_FOOTER_V2 — 헌법 제11조 (시니어 의학저널 톤, 이모지 ZERO)
+# 모든 신규 글에 자동 부착, TRUST_FOOTER_V2 마커로 중복 방지
 # ─────────────────────────────────────────────────────────────
-TRUST_FOOTER = """
-
-<!-- TRUST_FOOTER_V1 -->
-<h2>함께 읽으면 좋은 글</h2>
-<ul>
-<li><a href="/blog/ecklonia-cava-phlorotannin-overview">감태(Ecklonia cava)·플로로탄닌 정리</a></li>
-<li><a href="/blog/dieckol-molecular-mechanism-overview">디에콜(Dieckol) 분자 작용 정리</a></li>
-<li><a href="/blog/seanol-standardized-extract-overview">씨놀(Seanol) 표준화 추출물 정리</a></li>
-<li><a href="/blog?category=research">연구 동향 카테고리 전체 보기</a></li>
-<li><a href="/easy">쉬운 건강정보로 보기</a></li>
-</ul>
-
-<div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:14px 16px;margin:24px 0 0 0;font-size:12px;color:#64748b;line-height:1.7;">
-<strong>📖 참고 문헌 데이터베이스</strong><br/>
-본 글에서 인용된 연구·임상은 다음 데이터베이스에서 직접 검색·확인하실 수 있습니다:<br/>
-· <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener" style="color:#475569;">PubMed</a> — 'phlorotannin', 'dieckol', 'Ecklonia cava', 'eckol', 'Seanol' 등 키워드 검색<br/>
-· <a href="https://www.ncbi.nlm.nih.gov/pmc/" target="_blank" rel="noopener" style="color:#475569;">PMC Free Articles</a> — 전문(Full text) 무료 열람 가능 (예: PMC12735720)<br/>
-· <a href="https://clinicaltrials.gov/" target="_blank" rel="noopener" style="color:#475569;">ClinicalTrials.gov</a> — 임상시험 등록 정보 (예: NCT04141241)<br/>
-· <a href="https://www.frontiersin.org/" target="_blank" rel="noopener" style="color:#475569;">Frontiers Open Access</a> — 영양·뇌과학·약리 분야 종설 다수<br/>
-· <a href="https://www.sciencedirect.com/" target="_blank" rel="noopener" style="color:#475569;">ScienceDirect</a> — Elsevier 저널 검색<br/>
-※ 학술 문헌·임상 등록 정보의 결과는 일반적 연구 동향이며, 개인의 효능을 보장하지 않습니다.
-</div>
-"""
+TRUST_FOOTER = '\n\n<!-- TRUST_FOOTER_V2 -->\n<h2>함께 읽으면 좋은 글</h2>\n<ul>\n<li><a href="/blog/ecklonia-cava-phlorotannin-overview">감태(Ecklonia cava)·플로로탄닌 정리</a></li>\n<li><a href="/blog/dieckol-molecular-mechanism-overview">디에콜(Dieckol) 분자 작용 정리</a></li>\n<li><a href="/blog/seanol-standardized-extract-overview">씨놀(Seanol) 표준화 추출물 정리</a></li>\n<li><a href="/blog?category=research">연구 동향 카테고리 전체 보기</a></li>\n<li><a href="/easy">쉬운 건강정보로 보기</a></li>\n</ul>\n\n<div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:14px 16px;margin:24px 0 0 0;font-size:12px;color:#64748b;line-height:1.7;">\n<strong>참고 문헌 데이터베이스</strong><br/>\n본 글에서 인용된 연구·임상은 다음 데이터베이스에서 직접 검색·확인하실 수 있습니다:<br/>\n· <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener" style="color:#475569;">PubMed</a> — \'phlorotannin\', \'dieckol\', \'Ecklonia cava\', \'eckol\', \'Seanol\' 등 키워드 검색<br/>\n· <a href="https://www.ncbi.nlm.nih.gov/pmc/" target="_blank" rel="noopener" style="color:#475569;">PMC Free Articles</a> — 전문(Full text) 무료 열람 가능 (예: PMC12735720)<br/>\n· <a href="https://clinicaltrials.gov/" target="_blank" rel="noopener" style="color:#475569;">ClinicalTrials.gov</a> — 임상시험 등록 정보 (예: NCT04141241)<br/>\n· <a href="https://www.frontiersin.org/" target="_blank" rel="noopener" style="color:#475569;">Frontiers Open Access</a> — 영양·뇌과학·약리 분야 종설 다수<br/>\n· <a href="https://www.sciencedirect.com/" target="_blank" rel="noopener" style="color:#475569;">ScienceDirect</a> — Elsevier 저널 검색<br/>\n※ 학술 문헌·임상 등록 정보의 결과는 일반적 연구 동향이며, 개인의 효능을 보장하지 않습니다.\n</div>\n'
 
 # ─────────────────────────────────────────────────────────────
 # Blog 1: Seanol 글로벌 인증 현황 정리
@@ -119,7 +97,7 @@ CONTENT_1 = BANNER + """이 글은 갈조류(감태, Ecklonia cava) 유래 해�
 
 > 출처: CRS News 2024 ([m.crs-news.com/35059](http://m.crs-news.com/35059)) — 이행우 박사 인터뷰
 
-⚠️ 식약처 개별인정형 표기는 **"도움을 줄 수 있음"** 까지가 정확한 표현입니다. "혈당이 떨어진다", "콜레스테롤이 낮아진다"는 단정 표현은 식약처 표시광고 가이드라인에서 허용하지 않습니다.
+※ 식약처 개별인정형 표기는 **"도움을 줄 수 있음"** 까지가 정확한 표현입니다. "혈당이 떨어진다", "콜레스테롤이 낮아진다"는 단정 표현은 식약처 표시광고 가이드라인에서 허용하지 않습니다.
 
 ---
 
@@ -127,14 +105,14 @@ CONTENT_1 = BANNER + """이 글은 갈조류(감태, Ecklonia cava) 유래 해�
 
 ```
 2001 ─ ㈜보타메디(Botamedi) 설립 (서울 강남구 테헤란로 본사 / 제주 의학센터)
-2008 ─ 🇺🇸 미국 FDA NDI 인증
+2008 ─ 미국 FDA NDI 인증
        (New Dietary Ingredient — 미국 식이 보충제 원료 안전성 통보)
        ─ 갈조류 폴리페놀 소재로는 초기 인증 사례
-2015 ─ 🇰🇷 식약처 임상 2A상 IND 승인 (관련 신약 후보 PH-100)
+2015 ─ 식약처 임상 2A상 IND 승인 (관련 신약 후보 PH-100)
        ※ PH-100 임상은 별도 글 참고
-2018 ─ 🇪🇺 EU Novel Food Ingredient(NFI) 승인
+2018 ─ EU Novel Food Ingredient(NFI) 승인
        ─ 유럽 28개국 판매 가능 신규 식품 원료 등록
-2019 ─ 🇰🇷 식약처 개별인정형 건강기능식품 원료
+2019 ─ 식약처 개별인정형 건강기능식품 원료
        ─ 식후 혈당 / 혈중 콜레스테롤 (도움을 줄 수 있음)
 ```
 
@@ -142,9 +120,9 @@ CONTENT_1 = BANNER + """이 글은 갈조류(감태, Ecklonia cava) 유래 해�
 
 ## 6. 자주 헷갈리는 부분 — "인증"의 정확한 의미
 
-- ✅ NDI / NFI / 개별인정형은 **"안전성·기능성 사전 심사를 통과한 식이 원료"** 라는 의미
-- ❌ "FDA가 효과를 인증했다", "EU가 치료제로 인정했다"는 표현은 **사실이 아님** (식이 보충제·식품 원료 인증은 의약품 인증과 다름)
-- ✅ 의약품으로서의 효능·효과를 평가하려면 별도의 **임상시험 + 식약처/FDA 신약 허가 절차**가 필요 (PH-100이 이 단계)
+- NDI / NFI / 개별인정형은 **"안전성·기능성 사전 심사를 통과한 식이 원료"** 라는 의미
+- (주의) "FDA가 효과를 인증했다", "EU가 치료제로 인정했다"는 표현은 **사실이 아님** (식이 보충제·식품 원료 인증은 의약품 인증과 다름)
+- 의약품으로서의 효능·효과를 평가하려면 별도의 **임상시험 + 식약처/FDA 신약 허가 절차**가 필요 (PH-100이 이 단계)
 
 > 본 글의 모든 수치·표현은 위에 명시한 1차 언론 보도 그대로 옮긴 것이며, 효능을 단정하거나 의약품 효과를 약속하지 않습니다.
 
@@ -152,9 +130,9 @@ CONTENT_1 = BANNER + """이 글은 갈조류(감태, Ecklonia cava) 유래 해�
 
 ## 7. 함께 보면 좋은 글 3선
 
-- 📌 [Hydrated-Seanol® 초신선 기술이란 — 갈조류 폴리페놀이 식품 신선도에 작용하는 원리](/blog/hydrated-seanol-ultra-freshness-technology-explained)
-- 📌 [PH-100·PH-733·PH-300 — 감태 플로로탄닌 기반 신약 파이프라인 정리](/blog/seanol-drug-pipeline-ph100-ph733-ph300-2026)
-- 📌 [연구·임상 아카이브 — 플로로탄닌 글로벌 학술 동향](/blog?category=research)
+- [Hydrated-Seanol® 초신선 기술이란 — 갈조류 폴리페놀이 식품 신선도에 작용하는 원리](/blog/hydrated-seanol-ultra-freshness-technology-explained)
+- [PH-100·PH-733·PH-300 — 감태 플로로탄닌 기반 신약 파이프라인 정리](/blog/seanol-drug-pipeline-ph100-ph733-ph300-2026)
+- [연구·임상 아카이브 — 플로로탄닌 글로벌 학술 동향](/blog?category=research)
 
 ---
 
@@ -194,7 +172,7 @@ Hydrated-Seanol®은 갈조류 감태(Ecklonia cava) 유래 해양 폴리페놀 
 
 > 출처: 뉴스후플러스 보도 그대로
 
-⚠️ 본 글은 식품 보존 기술 동향 정리이며, **개인의 건강 효능을 약속하지 않습니다.** "초신선"은 식품 신선도 유지 산업 용어로 사용된 표현입니다.
+※ 본 글은 식품 보존 기술 동향 정리이며, **개인의 건강 효능을 약속하지 않습니다.** "초신선"은 식품 신선도 유지 산업 용어로 사용된 표현입니다.
 
 ---
 
@@ -208,7 +186,7 @@ Hydrated-Seanol®은 갈조류 감태(Ecklonia cava) 유래 해양 폴리페놀 
 
 > 출처: PMC ([pmc.ncbi.nlm.nih.gov/articles/PMC12735720/](https://pmc.ncbi.nlm.nih.gov/articles/PMC12735720/)) — 2025 학술 리뷰
 
-⚠️ 위 내용은 **소재 분야의 학술 검토 단계** 정보이며, Hydrated-Seanol® 제품 자체의 효능을 단정한 것이 아닙니다.
+※ 위 내용은 **소재 분야의 학술 검토 단계** 정보이며, Hydrated-Seanol® 제품 자체의 효능을 단정한 것이 아닙니다.
 
 ---
 
@@ -240,17 +218,17 @@ Hydrated-Seanol®은 갈조류 감태(Ecklonia cava) 유래 해양 폴리페놀 
 
 ## 6. 정직한 한계 — 이 기술이 의약품 효과를 의미하지 않는 이유
 
-- ❌ Hydrated-Seanol®은 **식품 보존·식재료 신선도 기술** 맥락에서 보도된 표현이며, 의약품으로서의 치료 효능과는 다른 영역입니다.
-- ❌ "세포 대사 안정화"라는 표현은 **개발사 측 기술 설명**이지, 임상시험으로 확립된 의약품 효능이 아닙니다.
-- ✅ 의약품 효능을 평가하려면 **임상시험 + 규제 허가**가 필요하며, 동일 원료(감태 플로로탄닌)를 사용한 의약품 후보(PH-100)는 별도 임상 단계에서 평가 중입니다.
+- (주의) Hydrated-Seanol®은 **식품 보존·식재료 신선도 기술** 맥락에서 보도된 표현이며, 의약품으로서의 치료 효능과는 다른 영역입니다.
+- (주의) "세포 대사 안정화"라는 표현은 **개발사 측 기술 설명**이지, 임상시험으로 확립된 의약품 효능이 아닙니다.
+- 의약품 효능을 평가하려면 **임상시험 + 규제 허가**가 필요하며, 동일 원료(감태 플로로탄닌)를 사용한 의약품 후보(PH-100)는 별도 임상 단계에서 평가 중입니다.
 
 ---
 
 ## 7. 함께 보면 좋은 글 3선
 
-- 📌 [씨놀(Seanol) 글로벌 인증 정리 — FDA NDI · EU NFI · 식약처 개별인정형](/blog/seanol-global-certifications-fda-ndi-eu-nfi-mfds-2026-update)
-- 📌 [PH-100·PH-733·PH-300 — 감태 플로로탄닌 기반 신약 파이프라인 정리](/blog/seanol-drug-pipeline-ph100-ph733-ph300-2026)
-- 📌 [연구·임상 아카이브 — 플로로탄닌 글로벌 학술 동향](/blog?category=research)
+- [씨놀(Seanol) 글로벌 인증 정리 — FDA NDI · EU NFI · 식약처 개별인정형](/blog/seanol-global-certifications-fda-ndi-eu-nfi-mfds-2026-update)
+- [PH-100·PH-733·PH-300 — 감태 플로로탄닌 기반 신약 파이프라인 정리](/blog/seanol-drug-pipeline-ph100-ph733-ph300-2026)
+- [연구·임상 아카이브 — 플로로탄닌 글로벌 학술 동향](/blog?category=research)
 
 ---
 
@@ -276,7 +254,7 @@ CONTENT_3 = BANNER + """이 글은 갈조류 감태(Ecklonia cava) 플로로탄�
 
 > 출처: ClinicalTrials.gov ([NCT04141241](https://clinicaltrials.gov/study/NCT04141241)), 메디게이트뉴스 ([medigatenews.com/news/2090928717](https://www.medigatenews.com/news/2090928717))
 
-⚠️ "임상 등록 = 의약품 허가"가 아닙니다. 임상시험 단계 후보물질이며, 시판 허가는 별도 절차입니다.
+※ "임상 등록 = 의약품 허가"가 아닙니다. 임상시험 단계 후보물질이며, 시판 허가는 별도 절차입니다.
 
 ---
 
@@ -357,7 +335,7 @@ CONTENT_3 = BANNER + """이 글은 갈조류 감태(Ecklonia cava) 플로로탄�
 
 > 출처: 매경헬스 ([mkhealth.co.kr/?idxno=44731](https://www.mkhealth.co.kr/news/articleView.html?idxno=44731)), 서울경제 ([sedaily.com/article/12450126](https://www.sedaily.com/article/12450126))
 
-⚠️ 위 내용은 **2019년 학회 발표 시점**의 보도 정보이며, 시판 허가가 아닙니다. 의약품 시판을 위해서는 **Phase IIb / Phase III + 식약처/FDA 신약 허가 절차**가 필요합니다.
+※ 위 내용은 **2019년 학회 발표 시점**의 보도 정보이며, 시판 허가가 아닙니다. 의약품 시판을 위해서는 **Phase IIb / Phase III + 식약처/FDA 신약 허가 절차**가 필요합니다.
 
 ---
 
@@ -376,7 +354,7 @@ PH-733은 **2022년 4월 메디게이트뉴스 보도** 시점에 보타메디 �
 
 > 출처: 메디게이트뉴스 2022-04-13 ([medigatenews.com/news/2090928717](https://www.medigatenews.com/news/2090928717))
 
-⚠️ "전임상"은 동물·세포 실험 단계로, **사람 대상 임상시험에 진입하기 전 단계**입니다. 임상시험 진입은 별도의 IND 승인이 필요합니다.
+※ "전임상"은 동물·세포 실험 단계로, **사람 대상 임상시험에 진입하기 전 단계**입니다. 임상시험 진입은 별도의 IND 승인이 필요합니다.
 
 ---
 
@@ -405,7 +383,7 @@ PH-733은 **2022년 4월 메디게이트뉴스 보도** 시점에 보타메디 �
 
 > 출처: PMC12735720 ([pmc.ncbi.nlm.nih.gov/articles/PMC12735720/](https://pmc.ncbi.nlm.nih.gov/articles/PMC12735720/)) — 2025 종합 리뷰
 
-⚠️ 학술 리뷰에서의 인용은 **임상 등록 사실의 학술적 확인**이지, 의약품 시판 허가가 아닙니다.
+※ 학술 리뷰에서의 인용은 **임상 등록 사실의 학술적 확인**이지, 의약품 시판 허가가 아닙니다.
 
 ---
 
@@ -422,19 +400,19 @@ PH-733은 **2022년 4월 메디게이트뉴스 보도** 시점에 보타메디 �
 
 ## 7. 정리
 
-- ✅ **PH-100**: ClinicalTrials.gov **NCT04141241** Phase IIa **Completed** — Sponsor: Bota Bio Co., Ltd. / 적응증: T2DM + 심혈관 합병증 / 1차 평가지표: hs-CRP / 12주 RCT
-- ✅ **PH-733**: 전임상 / 신경퇴행성 질환 (보타메디 파이프라인)
-- ✅ **PH-300**: 전임상 / 전신 염증 (보타메디 파이프라인)
-- ✅ Phase I에서 **100~1600 mg 안전성 확립**, Phase IIa는 hs-CRP 평가지표 중심
-- ⚠️ 시판 의약품이 아니며, 임상시험 단계 후보물질로서의 **공개 등록 정보 정리**입니다
+- **PH-100**: ClinicalTrials.gov **NCT04141241** Phase IIa **Completed** — Sponsor: Bota Bio Co., Ltd. / 적응증: T2DM + 심혈관 합병증 / 1차 평가지표: hs-CRP / 12주 RCT
+- **PH-733**: 전임상 / 신경퇴행성 질환 (보타메디 파이프라인)
+- **PH-300**: 전임상 / 전신 염증 (보타메디 파이프라인)
+- Phase I에서 **100~1600 mg 안전성 확립**, Phase IIa는 hs-CRP 평가지표 중심
+- ※ 시판 의약품이 아니며, 임상시험 단계 후보물질로서의 **공개 등록 정보 정리**입니다
 
 ---
 
 ## 8. 함께 보면 좋은 글 3선
 
-- 📌 [씨놀(Seanol) 글로벌 인증 정리 — FDA NDI · EU NFI · 식약처 개별인정형](/blog/seanol-global-certifications-fda-ndi-eu-nfi-mfds-2026-update)
-- 📌 [Hydrated-Seanol® 초신선 기술이란 — 갈조류 폴리페놀이 식품 신선도에 작용하는 원리](/blog/hydrated-seanol-ultra-freshness-technology-explained)
-- 📌 [연구·임상 아카이브 — 플로로탄닌 글로벌 학술 동향](/blog?category=research)
+- [씨놀(Seanol) 글로벌 인증 정리 — FDA NDI · EU NFI · 식약처 개별인정형](/blog/seanol-global-certifications-fda-ndi-eu-nfi-mfds-2026-update)
+- [Hydrated-Seanol® 초신선 기술이란 — 갈조류 폴리페놀이 식품 신선도에 작용하는 원리](/blog/hydrated-seanol-ultra-freshness-technology-explained)
+- [연구·임상 아카이브 — 플로로탄닌 글로벌 학술 동향](/blog?category=research)
 
 ---
 

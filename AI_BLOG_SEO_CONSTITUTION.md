@@ -733,25 +733,67 @@ curl -s "https://phlorotannin.com/p/01055418595/qa" | grep -c "ref=01055418595" 
 
 ---
 
-## 🛡️ 제11조 (블로그 본문 풋터 통일 표준) — 2026-05-23 신설
+## 제11조 (블로그 본문 풋터 통일 표준) — 2026-05-23 신설 / 2026-05-23 1차 개정
 
 ### 신설 계기
-신규 발행한 3건(id=302/303/304, seanol 인증·하이드레이티드·신약 파이프라인)이 기존 리서치 글의 신뢰 풋터(시리즈 링크 + 참고 문헌 데이터베이스 박스)를 빠뜨려 디자인 일관성·E-E-A-T 신호가 깨짐. 사용자가 스크린샷으로 직접 지적 → 즉시 헌법화.
+신규 발행한 3건(id=302/303/304)이 기존 리서치 글의 신뢰 풋터(시리즈 링크 + 참고 문헌 데이터베이스 박스)를 빠뜨려 디자인 일관성·E-E-A-T 신호가 깨짐. 사용자가 스크린샷으로 직접 지적.
+
+### 1차 개정 계기 (같은 날)
+제11조 1차 작성 시 풋터 박스 헤딩에 `📖` 이모지, 검토 배지 설명에 `🛡️` 이모지를 명시 → **헌법 안에서 시니어 의학저널 디자인 원칙을 직접 위반**. 본문 3건에도 `📚 / 📌 / ✅ / ❌ / 🇺🇸 / 🇰🇷 / 🇪🇺 / ⚠️` 이모지가 산재되어 의약 정보 블로그가 아닌 마케팅 카드처럼 보임. 즉시 전면 개정.
+
+### 11-0. 시니어 디자인 원칙 (모든 블로그 본문의 source of truth — 2026-05-21 의학저널 톤)
+
+**원칙 1: 본문에 이모지·이모티콘·이모지형 픽토그램 사용 절대 금지**
+- 금지 목록(grep 차단 대상):
+  - 책/도서: `📚 📖 📕 📗 📘 📙 📓 📔 📑 📒`
+  - 체크/표시: `✅ ❌ ⚠️ ⚡ ✔️ ✖️ ☑️ ⭕ 🔴 🟢 🟡 🔵`
+  - 손 모양·신체: `👉 👇 👆 👍 👎 ✋ 🙌 🙏`
+  - 화살표 이모지(`▶️ ⬅️ ➡️ ⬆️ ⬇️ 🔼 🔽`) — 단순 텍스트 `→ ← ↑ ↓ ▶ ◀` 는 허용
+  - 핀/별/하이라이트: `📌 📍 ⭐ 🌟 ✨ 💡 🔔 🔥 💯`
+  - 방패/보안: `🛡️ 🛡 🔒 🔓 🔑`
+  - 국기 전체: `🇺🇸 🇰🇷 🇪🇺 🇯🇵 🇨🇳 🇬🇧 🇩🇪 🇫🇷 🇨🇦 🇦🇺` 등 모든 ISO 국기
+  - 의료 이모지: `💊 💉 🩺 🏥 🧬 🦠`
+- 표현 대체:
+  - `📚 본 글은 …` → `본 글은 …` (제거)
+  - `🇺🇸 미국 FDA` → `미국 FDA` (국가명 텍스트만)
+  - `✅ NDI는 …` → 텍스트 강조 또는 단순 ▶ 사용
+  - `❌ … 사실이 아님` → `(주의)` 또는 `※` 사용
+  - `📌 관련글` → 일반 `<li>`
+  - `📖 참고 문헌 데이터베이스` → `참고 문헌 데이터베이스` (이모지 없음)
+
+**원칙 2: 본문(`<article>` 안)에 다크 배경 박스 직접 금지**
+- 다크 네이비(`#0B1A2E`, `#0b1a2e`, `bg-[#0B1A2E]`, `bg-slate-900`, `bg-gray-900` 등)는 **페이지 컴포넌트(`BlogPostPage.jsx`)가 자동 렌더링하는 검토 배지 1곳에서만** 사용
+- 본문 마크다운/HTML에서 직접 다크 박스를 만들면 안 됨
+- 인증 타임라인 등은 마크다운 표(`|`) 또는 회색 톤 코드블록(`<pre>`)이 아닌, 일반 `<table>` 또는 정의 리스트(`<dl>`)로 작성
+  - 코드 블록(`)으로 감싸면 BlogPostPage가 다크 처리하므로 텍스트 정보는 코드 블록 사용 금지
+- 허용 박스 색상 팔레트:
+  - 안전 안내(노란 톤): `background:#fef3c7; border-left:4px solid #f59e0b; color:#78350f` (수치 변경 금지)
+  - 참고 문헌 박스(중성 회색): `background:#f8fafc; border:1px solid #e2e8f0; color:#64748b`
+  - 인용/포인트 박스(연한 청록): `background:#ecfeff; border-left:3px solid #06b6d4; color:#155e75`
+
+**원칙 3: 섹션 번호·헤딩 톤**
+- `## 1. 제목` 식 인라인 숫자 번호 허용 (의학저널 표준), 단 이모지 결합 금지
+- 강조는 `<strong>`, 인용은 `<blockquote>` — 글로벌 디자인 토큰 유지
+
+**원칙 4: 헌법 자체도 이 원칙을 따른다**
+- 헌법 문서 안에서 새 표준을 설명할 때 예시 코드에 이모지를 포함시키지 말 것 (실수 재발 방지)
+- 헌법 헤딩에 한정해 식별용 이모지(`🚨 🛑 ⚡ 📋 🗂 🧪 🖼 ❓ 📜 📌`)는 허용 — 본문 블로그 글 표준과는 분리
+- 단, 블로그 글의 풋터·배지·본문 어디에도 이모지가 들어가서는 안 됨
 
 ### 11-1. 풋터 3구성요소 (모든 research/health/efficacy 카테고리 블로그 글에 의무)
 
-**① 본문 끝 시리즈 링크 (HTML `<ul>` 또는 마크다운)**
-- 글 주제별 관련 시리즈 3~4개를 본문 최하단에 명시
+**(1) 본문 끝 시리즈 링크 — 텍스트만**
+- 글 주제별 관련 시리즈 3~4개를 본문 최하단에 명시 (이모지 없음)
 - 최소 포함 링크 2개 (앵커 텍스트는 한글 자연어):
   - `<a href="/blog?category=research">연구 동향 카테고리 전체 보기</a>`
   - `<a href="/easy">쉬운 건강정보로 보기</a>`
-- 글의 주제 슬러그가 있다면 함께 묶기 (예: `dieckol-molecular-mechanism-overview`, `seanol-standardized-extract-overview`, `ecklonia-cava-phlorotannin-overview`)
+- 마크업: 일반 `<ul><li>` 또는 마크다운 `-` (핀·별·체크 픽토그램 금지)
 
-**② 📖 참고 문헌 데이터베이스 박스 (의무 HTML)**
+**(2) 참고 문헌 데이터베이스 박스 (의무 HTML)**
 
 ```html
 <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:14px 16px;margin:24px 0 0 0;font-size:12px;color:#64748b;line-height:1.7;">
-<strong>📖 참고 문헌 데이터베이스</strong><br/>
+<strong>참고 문헌 데이터베이스</strong><br/>
 본 글에서 인용된 연구는 다음 데이터베이스에서 직접 검색·확인하실 수 있습니다:<br/>
 · <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener" style="color:#475569;">PubMed</a> — 'phlorotannin', 'dieckol', 'Ecklonia cava', 'eckol' 등 키워드 검색<br/>
 · <a href="https://www.ncbi.nlm.nih.gov/pmc/" target="_blank" rel="noopener" style="color:#475569;">PMC Free Articles</a> — 전문(Full text) 무료 열람 가능<br/>
@@ -762,37 +804,51 @@ curl -s "https://phlorotannin.com/p/01055418595/qa" | grep -c "ref=01055418595" 
 ```
 
 - 키워드 부분(`'phlorotannin', 'dieckol'…`)은 글 주제에 맞춰 조정 가능
-- 박스 스타일(배경/테두리/타이포)은 유지 — 의학저널 톤 통일
-- 마커 주석 의무: `<!-- TRUST_FOOTER_V1 -->` (재실행 시 중복 삽입 방지)
+- 헤딩에 이모지 절대 금지 (`📖` ❌ → `참고 문헌 데이터베이스` ✅)
+- 박스 색상·테두리 수치 변경 금지 (시니어 회색 톤)
+- 마커 주석 의무: `<!-- TRUST_FOOTER_V2 -->` (V1은 이모지 포함이라 폐기, V2부터 클린)
 
-**③ 🛡️ 다크 검토 배지 ("리서치팀 검토 · 출처 검증 완료")**
-- 본문에 직접 작성 ❌ → `BlogPostPage.jsx` 컴포넌트가 모든 글 하단에 자동 렌더링 ✅
-- 검토 배지가 표시되려면 글이 정상 published 상태여야 함 (DB 컬럼 추가 불필요)
-- 신규 자산화·디자인 변경 시 BlogPostPage.jsx 413~445라인의 다크 카드 보존 필수
+**(3) 검토 배지 ("리서치팀 검토 · 출처 검증 완료")**
+- 본문에 직접 작성 금지 — `BlogPostPage.jsx`(413~445라인)가 모든 글 하단에 자동 렌더링
+- 본문 마크다운에 `🛡️` 이모지나 "리서치팀 검토" 텍스트를 직접 쓰면 중복 표시되므로 금지
+- 검토 배지의 다크 네이비 배경은 페이지 컴포넌트 한 곳만 사용 — 본문 박스를 다크로 만들지 말 것 (원칙 2 참조)
 
-### 11-2. 발행 전 풋터 체크 3단계
+### 11-2. 발행 전 풋터·디자인 체크 5단계 (grep 자동화)
 
 ```bash
-# (1) 본문에 시리즈 링크 존재 확인
-grep -o "연구 동향 카테고리 전체 보기\|쉬운 건강정보로 보기" content_var
+# (1) 이모지 grep — 0건이어야 함
+python3 -c "
+import re, sys
+с = open(sys.argv[1]).read()
+banned = ['📚','📖','📕','📗','📘','📙','✅','❌','⚠️','📌','📍','⭐','🌟','💡','🛡️','🛡',
+          '🇺🇸','🇰🇷','🇪🇺','🇯🇵','🇨🇳','🇬🇧','💊','💉','🩺','🏥','🧬',
+          '👉','👇','👆','👍','🔔','🔥']
+hits = [(e, с.count(e)) for e in banned if с.count(e) > 0]
+print('VIOLATIONS:', hits if hits else 'NONE')
+" content.txt
 
-# (2) TRUST_FOOTER_V1 마커 존재 확인
-grep -o "TRUST_FOOTER_V1" content_var
+# (2) 다크 박스 grep — 본문엔 0건이어야 함
+grep -E "background:?\s*#0[bB]1[aA]2[eE]|bg-\[#0[bB]1[aA]2[eE]\]|bg-slate-900|bg-gray-900" content.txt
 
-# (3) 참고 문헌 박스 4개 DB 링크 모두 존재
-grep -o "pubmed.ncbi\|ncbi.nlm.nih.gov/pmc\|frontiersin.org\|sciencedirect.com" content_var | wc -l   # → 4
+# (3) 시리즈 링크 존재
+grep -o "연구 동향 카테고리 전체 보기\|쉬운 건강정보로 보기" content.txt
+
+# (4) TRUST_FOOTER_V2 마커
+grep -o "TRUST_FOOTER_V2" content.txt
+
+# (5) 참고 문헌 박스 4개 DB 링크
+grep -oE "pubmed.ncbi|ncbi.nlm.nih.gov/pmc|frontiersin.org|sciencedirect.com" content.txt | sort -u | wc -l   # → 4
 ```
 
 ### 11-3. 기존 글 마이그레이션 규칙
-- 풋터 미보유 글 발견 시 즉시 PATCH (slug 기준 `?slug=eq.<slug>`)
-- PATCH 본문: `content + TRUST_FOOTER` (이어붙이기, 본문 치환 ❌)
-- `<!-- TRUST_FOOTER_V1 -->` 마커 grep으로 중복 방지
-- 한 번에 batch 처리 (제5조 효율성 원칙)
+- 위반 글 발견 시 즉시 PATCH (slug 기준 `?slug=eq.<slug>`)
+- 처리 순서: (a) 이모지/국기/⚠️ 제거 → (b) 다크 박스 → 회색 박스 또는 일반 표로 다운그레이드 → (c) V1 풋터 → V2 풋터 교체
+- V1 마커가 있는 경우 V1 블록 통째로 잘라내고 V2 풋터로 대체
 
 ### 11-4. 영구 자산화 — 인서트 스크립트 템플릿 하드닝
-- 모든 신규 INSERT 스크립트(`insert_*.py`, `build_and_insert.py`)는 최상단에 `TRUST_FOOTER` 상수 의무
-- content 빌드 함수 마지막 단계에서 `+ TRUST_FOOTER` 자동 부착
-- 향후 풋터 디자인 변경 시 이 한 곳만 수정 → 모든 신규 글 자동 반영
+- 모든 신규 INSERT 스크립트(`insert_*.py`, `build_and_insert.py`)는 최상단에 `TRUST_FOOTER_V2` 상수 의무 + 발행 전 grep 체크 의무
+- content 빌드 마지막 단계에서 11-2의 5단계 grep을 자동 실행하고 위반 1건이라도 있으면 raise → INSERT 중단
+- 향후 디자인 변경 시 헌법 11-0 / 11-1을 먼저 갱신한 뒤 V3 마커로 업그레이드
 
 ---
 
