@@ -42,6 +42,34 @@ BANNER = """<!-- <!-- RESEARCH_2026_V1 --> -->
 """
 
 # ─────────────────────────────────────────────────────────────
+# TRUST_FOOTER — 헌법 제11조 (블로그 본문 풋터 통일 표준)
+# 모든 신규 글에 자동 부착, 마커로 중복 방지
+# ─────────────────────────────────────────────────────────────
+TRUST_FOOTER = """
+
+<!-- TRUST_FOOTER_V1 -->
+<h2>함께 읽으면 좋은 글</h2>
+<ul>
+<li><a href="/blog/ecklonia-cava-phlorotannin-overview">감태(Ecklonia cava)·플로로탄닌 정리</a></li>
+<li><a href="/blog/dieckol-molecular-mechanism-overview">디에콜(Dieckol) 분자 작용 정리</a></li>
+<li><a href="/blog/seanol-standardized-extract-overview">씨놀(Seanol) 표준화 추출물 정리</a></li>
+<li><a href="/blog?category=research">연구 동향 카테고리 전체 보기</a></li>
+<li><a href="/easy">쉬운 건강정보로 보기</a></li>
+</ul>
+
+<div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:14px 16px;margin:24px 0 0 0;font-size:12px;color:#64748b;line-height:1.7;">
+<strong>📖 참고 문헌 데이터베이스</strong><br/>
+본 글에서 인용된 연구·임상은 다음 데이터베이스에서 직접 검색·확인하실 수 있습니다:<br/>
+· <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener" style="color:#475569;">PubMed</a> — 'phlorotannin', 'dieckol', 'Ecklonia cava', 'eckol', 'Seanol' 등 키워드 검색<br/>
+· <a href="https://www.ncbi.nlm.nih.gov/pmc/" target="_blank" rel="noopener" style="color:#475569;">PMC Free Articles</a> — 전문(Full text) 무료 열람 가능 (예: PMC12735720)<br/>
+· <a href="https://clinicaltrials.gov/" target="_blank" rel="noopener" style="color:#475569;">ClinicalTrials.gov</a> — 임상시험 등록 정보 (예: NCT04141241)<br/>
+· <a href="https://www.frontiersin.org/" target="_blank" rel="noopener" style="color:#475569;">Frontiers Open Access</a> — 영양·뇌과학·약리 분야 종설 다수<br/>
+· <a href="https://www.sciencedirect.com/" target="_blank" rel="noopener" style="color:#475569;">ScienceDirect</a> — Elsevier 저널 검색<br/>
+※ 학술 문헌·임상 등록 정보의 결과는 일반적 연구 동향이며, 개인의 효능을 보장하지 않습니다.
+</div>
+"""
+
+# ─────────────────────────────────────────────────────────────
 # Blog 1: Seanol 글로벌 인증 현황 정리
 # ─────────────────────────────────────────────────────────────
 CONTENT_1 = BANNER + """이 글은 갈조류(감태, Ecklonia cava) 유래 해양 폴리페놀 소재인 **씨놀(Seanol)** 의 국내외 규제 인증 현황을 — 효능 광고가 아니라 — **규제기관 등록 사실 그대로** 정리합니다. CRS News, 대한뉴스, 뉴스후플러스 등 국내 언론 보도를 1차 출처로 사용했습니다.
@@ -133,7 +161,7 @@ CONTENT_1 = BANNER + """이 글은 갈조류(감태, Ecklonia cava) 유래 해�
 phlorotannin.com은 플로로탄닌·감태추출물·해양 폴리페놀 정보뿐 아니라, 산업·임상 등록 단계의 공개 정보를 1차 출처 그대로 정리하는 건강정보 데이터센터입니다.
 
 > 본 글은 산업 동향 정리 목적의 콘텐츠이며, 개인의 진단·치료·처방을 대체하지 않습니다. (정보 출처: CRS News, 대한뉴스, 뉴스후플러스, 식품의약품안전처 개별인정형 데이터베이스)
-"""
+""" + TRUST_FOOTER
 
 # ─────────────────────────────────────────────────────────────
 # Blog 2: Hydrated-Seanol® 초신선 기술
@@ -229,7 +257,7 @@ Hydrated-Seanol®은 갈조류 감태(Ecklonia cava) 유래 해양 폴리페놀 
 phlorotannin.com은 산업·기술·임상 등록 정보를 1차 출처 그대로 정리하는 건강정보 데이터센터입니다.
 
 > 본 글은 산업 동향 정리 목적이며, 개인의 진단·치료·처방을 대체하지 않습니다. (정보 출처: 뉴스후플러스, CRS News, 대한뉴스, PMC12735720 학술 리뷰)
-"""
+""" + TRUST_FOOTER
 
 # ─────────────────────────────────────────────────────────────
 # Blog 3: PH-100·PH-733·PH-300 신약 파이프라인 (핵심)
@@ -413,7 +441,7 @@ PH-733은 **2022년 4월 메디게이트뉴스 보도** 시점에 보타메디 �
 phlorotannin.com은 임상시험 등록 정보, 학술 리뷰, 국내외 언론 보도를 1차 출처 그대로 정리하는 건강정보 데이터센터입니다.
 
 > 본 글은 공개된 임상 등록·학술 리뷰·언론 보도 기준 산업 동향 정리이며, 개인의 진단·치료·처방을 대체하지 않습니다. (정보 출처: ClinicalTrials.gov NCT04141241, PMC12735720, 메디게이트뉴스, 매경헬스, 서울경제, CRS News, 대한뉴스)
-"""
+""" + TRUST_FOOTER
 
 # ─────────────────────────────────────────────────────────────
 # 메타 — meta_title ≤ 40자, meta_desc ≤ 80자 (한글 기준)

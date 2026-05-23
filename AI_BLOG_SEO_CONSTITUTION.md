@@ -733,6 +733,69 @@ curl -s "https://phlorotannin.com/p/01055418595/qa" | grep -c "ref=01055418595" 
 
 ---
 
+## 🛡️ 제11조 (블로그 본문 풋터 통일 표준) — 2026-05-23 신설
+
+### 신설 계기
+신규 발행한 3건(id=302/303/304, seanol 인증·하이드레이티드·신약 파이프라인)이 기존 리서치 글의 신뢰 풋터(시리즈 링크 + 참고 문헌 데이터베이스 박스)를 빠뜨려 디자인 일관성·E-E-A-T 신호가 깨짐. 사용자가 스크린샷으로 직접 지적 → 즉시 헌법화.
+
+### 11-1. 풋터 3구성요소 (모든 research/health/efficacy 카테고리 블로그 글에 의무)
+
+**① 본문 끝 시리즈 링크 (HTML `<ul>` 또는 마크다운)**
+- 글 주제별 관련 시리즈 3~4개를 본문 최하단에 명시
+- 최소 포함 링크 2개 (앵커 텍스트는 한글 자연어):
+  - `<a href="/blog?category=research">연구 동향 카테고리 전체 보기</a>`
+  - `<a href="/easy">쉬운 건강정보로 보기</a>`
+- 글의 주제 슬러그가 있다면 함께 묶기 (예: `dieckol-molecular-mechanism-overview`, `seanol-standardized-extract-overview`, `ecklonia-cava-phlorotannin-overview`)
+
+**② 📖 참고 문헌 데이터베이스 박스 (의무 HTML)**
+
+```html
+<div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:14px 16px;margin:24px 0 0 0;font-size:12px;color:#64748b;line-height:1.7;">
+<strong>📖 참고 문헌 데이터베이스</strong><br/>
+본 글에서 인용된 연구는 다음 데이터베이스에서 직접 검색·확인하실 수 있습니다:<br/>
+· <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener" style="color:#475569;">PubMed</a> — 'phlorotannin', 'dieckol', 'Ecklonia cava', 'eckol' 등 키워드 검색<br/>
+· <a href="https://www.ncbi.nlm.nih.gov/pmc/" target="_blank" rel="noopener" style="color:#475569;">PMC Free Articles</a> — 전문(Full text) 무료 열람 가능<br/>
+· <a href="https://www.frontiersin.org/" target="_blank" rel="noopener" style="color:#475569;">Frontiers Open Access</a> — 영양·뇌과학·약리 분야 종설 다수<br/>
+· <a href="https://www.sciencedirect.com/" target="_blank" rel="noopener" style="color:#475569;">ScienceDirect</a> — Elsevier 저널 검색<br/>
+※ 학술 문헌의 결과는 일반적 연구 동향이며, 개인의 효능을 보장하지 않습니다.
+</div>
+```
+
+- 키워드 부분(`'phlorotannin', 'dieckol'…`)은 글 주제에 맞춰 조정 가능
+- 박스 스타일(배경/테두리/타이포)은 유지 — 의학저널 톤 통일
+- 마커 주석 의무: `<!-- TRUST_FOOTER_V1 -->` (재실행 시 중복 삽입 방지)
+
+**③ 🛡️ 다크 검토 배지 ("리서치팀 검토 · 출처 검증 완료")**
+- 본문에 직접 작성 ❌ → `BlogPostPage.jsx` 컴포넌트가 모든 글 하단에 자동 렌더링 ✅
+- 검토 배지가 표시되려면 글이 정상 published 상태여야 함 (DB 컬럼 추가 불필요)
+- 신규 자산화·디자인 변경 시 BlogPostPage.jsx 413~445라인의 다크 카드 보존 필수
+
+### 11-2. 발행 전 풋터 체크 3단계
+
+```bash
+# (1) 본문에 시리즈 링크 존재 확인
+grep -o "연구 동향 카테고리 전체 보기\|쉬운 건강정보로 보기" content_var
+
+# (2) TRUST_FOOTER_V1 마커 존재 확인
+grep -o "TRUST_FOOTER_V1" content_var
+
+# (3) 참고 문헌 박스 4개 DB 링크 모두 존재
+grep -o "pubmed.ncbi\|ncbi.nlm.nih.gov/pmc\|frontiersin.org\|sciencedirect.com" content_var | wc -l   # → 4
+```
+
+### 11-3. 기존 글 마이그레이션 규칙
+- 풋터 미보유 글 발견 시 즉시 PATCH (slug 기준 `?slug=eq.<slug>`)
+- PATCH 본문: `content + TRUST_FOOTER` (이어붙이기, 본문 치환 ❌)
+- `<!-- TRUST_FOOTER_V1 -->` 마커 grep으로 중복 방지
+- 한 번에 batch 처리 (제5조 효율성 원칙)
+
+### 11-4. 영구 자산화 — 인서트 스크립트 템플릿 하드닝
+- 모든 신규 INSERT 스크립트(`insert_*.py`, `build_and_insert.py`)는 최상단에 `TRUST_FOOTER` 상수 의무
+- content 빌드 함수 마지막 단계에서 `+ TRUST_FOOTER` 자동 부착
+- 향후 풋터 디자인 변경 시 이 한 곳만 수정 → 모든 신규 글 자동 반영
+
+---
+
 ## 📜 제9조 (헌법 개정)
 
 이 헌법은 살아있는 문서다.
