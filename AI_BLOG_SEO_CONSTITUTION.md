@@ -813,9 +813,21 @@ curl -s "https://phlorotannin.com/p/01055418595/qa" | grep -c "ref=01055418595" 
 - 본문 마크다운에 `🛡️` 이모지나 "리서치팀 검토" 텍스트를 직접 쓰면 중복 표시되므로 금지
 - 검토 배지의 다크 네이비 배경은 페이지 컴포넌트 한 곳만 사용 — 본문 박스를 다크로 만들지 말 것 (원칙 2 참조)
 
-### 11-2. 발행 전 풋터·디자인 체크 5단계 (grep 자동화)
+### 11-2. 발행 전 풋터·디자인 체크 5+2단계 (grep 자동화)
+
+> **2026-05-23 추가 (사용자 스크린샷 'X' 보고로 신설)**: nested HTML comment(`<!-- <!-- X --> -->`)는
+> markdown 파서가 첫 짝만 닫고 남은 `-->`를 본문 텍스트로 노출시킴. 발행 전 반드시 grep.
 
 ```bash
+# (0) nested comment grep — 0건이어야 함 (markdown 파서 깨짐 방지)
+python3 -c "
+import re, sys
+c = open(sys.argv[1]).read()
+nested = re.findall(r'<!--\s*<!--', c)
+lone = re.findall(r'^\s*-->\s*\$', c, re.M)
+print('NESTED:', len(nested), 'LONE_ARROW:', len(lone))
+" content.txt
+
 # (1) 이모지 grep — 0건이어야 함
 python3 -c "
 import re, sys

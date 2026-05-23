@@ -1,0 +1,32 @@
+{
+  "timestamp": "2026-05-23T06:36:08.552403+00:00",
+  "results": [
+    {
+      "id": 302,
+      "slug": "seanol-global-certifications-fda-ndi-eu-nfi-mfds-2026-update",
+      "status": "ok",
+      "http": 200,
+      "nested_fixed": 1,
+      "still_nested": 0,
+      "lone_arrow": 0
+    },
+    {
+      "id": 303,
+      "slug": "hydrated-seanol-ultra-freshness-technology-explained",
+      "status": "ok",
+      "http": 200,
+      "nested_fixed": 1,
+      "still_nested": 0,
+      "lone_arrow": 0
+    },
+    {
+      "id": 304,
+      "slug": "seanol-drug-pipeline-ph100-ph733-ph300-2026",
+      "status": "ok",
+      "http": 200,
+      "nested_fixed": 1,
+      "still_nested": 0,
+      "lone_arrow": 0
+    }
+  ]
+}

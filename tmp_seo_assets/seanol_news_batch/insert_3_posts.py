@@ -28,7 +28,7 @@ NOW = datetime.now(timezone.utc).isoformat()
 # ─────────────────────────────────────────────────────────────
 # 공통 SAFETY BANNER (research 카테고리 기존 글 패턴 그대로)
 # ─────────────────────────────────────────────────────────────
-BANNER = """<!-- <!-- RESEARCH_2026_V1 --> -->
+BANNER = """<!-- RESEARCH_2026_V1 -->
 <!-- SAFETY_BANNER_V1_2026_05 -->
 <div style="background:#fef3c7;border-left:4px solid #f59e0b;border-radius:8px;padding:14px 18px;margin:0 0 22px 0;font-size:13.5px;color:#78350f;line-height:1.75;">
 <strong>본 글은 산업·임상 등록 정보 정리입니다 — 치료 정보가 아닙니다</strong><br/>
