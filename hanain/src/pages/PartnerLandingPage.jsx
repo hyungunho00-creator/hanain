@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
-import { Phone, MessageSquare, BookOpen, Leaf, ChevronRight, Shield, Brain, Heart, Zap, Users, CheckCircle, AlertCircle } from 'lucide-react'
+import { Phone, MessageSquare, BookOpen, Leaf, ChevronRight, Shield, Brain, Heart, Zap, Users, CheckCircle, AlertCircle, ShieldPlus, Droplets, Flame } from 'lucide-react'
 import SEOHead from '../components/common/SEOHead'
 import RevealContact from '../components/common/RevealContact'
 import { savePartnerToSession } from '../context/PartnerContext'
@@ -20,12 +20,13 @@ async function fetchPartner(slug) {
 }
 
 // 카테고리 카드 데이터
+// [2026-05-24] 헌법 11-0 시니어 디자인 — 이모지 → lucide-react 아이콘
 const CATEGORIES = [
-  { emoji: '🦀', label: '암 회복 식단',      path: '/qa?category=cancer',     color: 'bg-rose-50 border-rose-200 text-rose-700' },
-  { emoji: '🩺', label: '당뇨 혈당 관리',    path: '/qa?category=diabetes',   color: 'bg-amber-50 border-amber-200 text-amber-700' },
-  { emoji: '🧠', label: '뇌 건강·치매 예방', path: '/qa?category=brain',      color: 'bg-violet-50 border-violet-200 text-violet-700' },
-  { emoji: '🔥', label: '염증·피로 회복',    path: '/qa?category=inflammation', color: 'bg-orange-50 border-orange-200 text-orange-700' },
-  { emoji: '🌿', label: '플로로탄닌이란?',   path: '/phlorotannin',           color: 'bg-emerald-50 border-emerald-200 text-emerald-700' },
+  { icon: ShieldPlus, label: '암 회복 식단',      path: '/qa?category=cancer',       color: 'bg-rose-50 border-rose-200 text-rose-700' },
+  { icon: Droplets,   label: '당뇨 혈당 관리',    path: '/qa?category=diabetes',     color: 'bg-amber-50 border-amber-200 text-amber-700' },
+  { icon: Brain,      label: '뇌 건강·치매 예방', path: '/qa?category=brain',        color: 'bg-violet-50 border-violet-200 text-violet-700' },
+  { icon: Flame,      label: '염증·피로 회복',    path: '/qa?category=inflammation', color: 'bg-orange-50 border-orange-200 text-orange-700' },
+  { icon: Leaf,       label: '플로로탄닌이란?',   path: '/phlorotannin',             color: 'bg-emerald-50 border-emerald-200 text-emerald-700' },
 ]
 
 export default function PartnerLandingPage() {
@@ -39,7 +40,8 @@ export default function PartnerLandingPage() {
     if (!slug) { setNotFound(true); setLoading(false); return }
     fetchPartner(slug).then(p => {
       if (p) {
-        // 파트너 정보 세션에 저장 후 메인으로 리다이렉트
+        // ── [2026-05-24] 헌법 제12조 SPA 라우팅 표준 ──
+        // /p/:slug 도 동일하게 개인화 페이지로 진입(메인 추방 금지)
         const rawPhone = p.phone?.replace(/\D/g, '') || slug
         const fallbackDisplay = rawPhone.length === 11
           ? `${rawPhone.slice(0,3)}-${rawPhone.slice(3,7)}-${rawPhone.slice(7)}`
@@ -51,7 +53,8 @@ export default function PartnerLandingPage() {
           phoneDisplay: p.phoneDisplay || fallbackDisplay,
           prefix: '',
         })
-        navigate('/', { replace: true })
+        setPartner(p)
+        setLoading(false)
       } else {
         setNotFound(true)
         setLoading(false)
@@ -145,16 +148,19 @@ export default function PartnerLandingPage() {
           <div className="bg-white rounded-2xl shadow-md p-5 mb-5">
             <h2 className="text-lg font-bold text-gray-800 mb-4">어떤 정보를 찾고 계신가요?</h2>
             <div className="grid grid-cols-2 gap-3">
-              {CATEGORIES.map(cat => (
-                <button
-                  key={cat.label}
-                  onClick={() => navigate(cat.path)}
-                  className={`flex items-center gap-2 px-4 py-3 rounded-xl border text-base font-semibold text-left active:scale-95 transition-transform ${cat.color}`}
-                >
-                  <span className="text-xl">{cat.emoji}</span>
-                  <span>{cat.label}</span>
-                </button>
-              ))}
+              {CATEGORIES.map(cat => {
+                const Icon = cat.icon
+                return (
+                  <button
+                    key={cat.label}
+                    onClick={() => navigate(cat.path)}
+                    className={`flex items-center gap-2 px-4 py-3 rounded-xl border text-base font-semibold text-left active:scale-95 transition-transform ${cat.color}`}
+                  >
+                    <Icon size={20} strokeWidth={1.8} />
+                    <span>{cat.label}</span>
+                  </button>
+                )
+              })}
             </div>
           </div>
 

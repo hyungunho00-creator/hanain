@@ -5,7 +5,16 @@ import { usePartner } from '../context/PartnerContext'
 import { QRCodeCanvas } from 'qrcode.react'
 import QRCode from 'qrcode'
 import html2canvas from 'html2canvas'
-import { Download, Lock, Eye, EyeOff, Loader, Image, FolderLock } from 'lucide-react'
+import {
+  Download, Lock, Eye, EyeOff, Loader, Image, FolderLock,
+  // ── [2026-05-24] 헌법 11-0 시니어 디자인 — 전단지/섹션 아이콘
+  Folder, FileText, Lightbulb, Pin, AlertTriangle, Clock,
+  PlayCircle, GraduationCap, BookOpen, Package, Star,
+  Ribbon, Sprout, FlaskConical, Dumbbell, Flower2, Award,
+  ShieldPlus, Pill, RefreshCw, Sparkles, Scale, Dna,
+  Shield, Waves, Droplet, Brain, Heart, Flame, Microscope,
+  Activity,
+} from 'lucide-react'
 import SEOHead from '../components/common/SEOHead'
 import jsPDF from 'jspdf'
 import { drawHandbookPages } from './handbook_renderer'
@@ -126,8 +135,8 @@ function LockScreen({ onUnlock }) {
           }}>
             <FolderLock size={32} color={GOLD} />
           </div>
-          <p style={{ fontSize: 20, fontWeight: 900, color: '#fff', margin: '0 0 8px' }}>
-            🔒 파트너 전용 자료실
+          <p style={{ fontSize: 20, fontWeight: 900, color: '#fff', margin: '0 0 8px', display: 'inline-flex', alignItems: 'center', gap: 8, justifyContent: 'center' }}>
+            <Lock size={18} color={GOLD} /> 파트너 전용 자료실
           </p>
           <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.65)', margin: 0, lineHeight: 1.75 }}>
             파트너 전용 공간입니다.<br />
@@ -166,8 +175,8 @@ function LockScreen({ onUnlock }) {
           </div>
 
           {error && (
-            <p style={{ fontSize: 13, color: '#ef4444', margin: '0 0 12px', fontWeight: 700 }}>
-              ⚠️ {error}
+            <p style={{ fontSize: 13, color: '#ef4444', margin: '0 0 12px', fontWeight: 700, display: 'flex', alignItems: 'center', gap: 6 }}>
+              <AlertTriangle size={14} /> {error}
             </p>
           )}
 
@@ -214,56 +223,57 @@ const GOLD2 = '#D4AF5A'
 /* ─── 전단지 카탈로그 ─── */
 
 /* 성기능 전용 2종 */
+// [2026-05-24] 헌법 11-0 시니어 디자인 — icon 필드를 lucide 컴포넌트로 변환
 const MATERIALS_SEXUAL = [
-  { id:'sexual_male',   icon:'💪', badge:'남성활력',  badgeColor:'#1D4ED8', title:'남성 활력·성기능 전단지',   subtitle:'테스토스테론·혈관·전립선이 걱정되는 남성께', desc:'eNOS 혈관 확장·테스토스테론 보호·전립선 염증 차단·혈류 개선으로 남성 활력의 근원 기전을 정리했습니다.', pages:'A4 2장', category:'sexual_male',   color:'#1D4ED8' },
-  { id:'sexual_female', icon:'🌸', badge:'여성활력',  badgeColor:'#BE185D', title:'여성 활력·갱년기 전단지',   subtitle:'갱년기·호르몬 변화·성기능 저하가 걱정되는 여성께', desc:'에스트로겐 보호·혈관 탄성 회복·골반 혈류 개선·만성 염증 차단으로 여성 활력 회복 기전을 정리했습니다.', pages:'A4 2장', category:'sexual_female', color:'#BE185D' },
+  { id:'sexual_male',   icon:Dumbbell, badge:'남성활력',  badgeColor:'#1D4ED8', title:'남성 활력·성기능 전단지',   subtitle:'테스토스테론·혈관·전립선이 걱정되는 남성께', desc:'eNOS 혈관 확장·테스토스테론 보호·전립선 염증 차단·혈류 개선으로 남성 활력의 근원 기전을 정리했습니다.', pages:'A4 2장', category:'sexual_male',   color:'#1D4ED8' },
+  { id:'sexual_female', icon:Flower2,  badge:'여성활력',  badgeColor:'#BE185D', title:'여성 활력·갱년기 전단지',   subtitle:'갱년기·호르몬 변화·성기능 저하가 걱정되는 여성께', desc:'에스트로겐 보호·혈관 탄성 회복·골반 혈류 개선·만성 염증 차단으로 여성 활력 회복 기전을 정리했습니다.', pages:'A4 2장', category:'sexual_female', color:'#BE185D' },
 ]
 
 /* 암 전용 3종 */
 const MATERIALS_CANCER = [
-  { id:'cancer_all',     icon:'🎗️', badge:'모든암통합', badgeColor:'#7C2D12', title:'모든 암 통합 전단지 — 암은 하나의 몸에서 온다', subtitle:'암 종류 무관, 모든 암에 공통 적용되는 핵심 원리', desc:'어떤 암이든 뿌리는 하나 — 산화·염증·면역저하·혈관신생. 플로로탄닌이 이 4가지를 동시에 차단하는 원리를 정리했습니다.', pages:'A4 2장', category:'cancer_all',     color:'#7C2D12' },
-  { id:'cancer_combo_1', icon:'🔰', badge:'암예방',     badgeColor:'#059669', title:'암 예방·세포 보호 전단지',    subtitle:'암 가족력·예방이 최우선인 분께 드리세요',  desc:'활성산소 차단·Nrf2 세포방어·NK세포 강화·암세포 선택 제거 4중 기전으로 암 예방 원리를 정리했습니다.',  pages:'A4 2장', category:'cancer_combo_1', color:'#059669' },
-  { id:'cancer_combo_2', icon:'💊', badge:'항암보조',   badgeColor:'#0F766E', title:'항암 치료 중·후 면역 보조 전단지', subtitle:'항암 치료 중이거나 치료 후 회복 중인 분께', desc:'Nrf2 정상세포 보호·NK세포 유지·아포토시스 보조·항산화로 치료 중 면역을 지키는 기전을 정리했습니다.', pages:'A4 2장', category:'cancer_combo_2', color:'#0F766E' },
+  { id:'cancer_all',     icon:Ribbon,     badge:'모든암통합', badgeColor:'#7C2D12', title:'모든 암 통합 전단지 — 암은 하나의 몸에서 온다', subtitle:'암 종류 무관, 모든 암에 공통 적용되는 핵심 원리', desc:'어떤 암이든 뿌리는 하나 — 산화·염증·면역저하·혈관신생. 플로로탄닌이 이 4가지를 동시에 차단하는 원리를 정리했습니다.', pages:'A4 2장', category:'cancer_all',     color:'#7C2D12' },
+  { id:'cancer_combo_1', icon:ShieldPlus, badge:'암예방',     badgeColor:'#059669', title:'암 예방·세포 보호 전단지',    subtitle:'암 가족력·예방이 최우선인 분께 드리세요',  desc:'활성산소 차단·Nrf2 세포방어·NK세포 강화·암세포 선택 제거 4중 기전으로 암 예방 원리를 정리했습니다.',  pages:'A4 2장', category:'cancer_combo_1', color:'#059669' },
+  { id:'cancer_combo_2', icon:Pill,       badge:'항암보조',   badgeColor:'#0F766E', title:'항암 치료 중·후 면역 보조 전단지', subtitle:'항암 치료 중이거나 치료 후 회복 중인 분께', desc:'Nrf2 정상세포 보호·NK세포 유지·아포토시스 보조·항산화로 치료 중 면역을 지키는 기전을 정리했습니다.', pages:'A4 2장', category:'cancer_combo_2', color:'#0F766E' },
 ]
 
 /* 회복 전용 2종 */
 const MATERIALS_RECOVERY = [
-  { id:'recovery_1', icon:'🔄', badge:'전신회복',  badgeColor:'#1D4ED8', title:'전신 회복 전단지 — 몸은 하나의 시스템',  subtitle:'여러 성분 써도 낫지 않는 분, 전신 회복이 목표인 분께', desc:'혈당→혈관→뇌→면역→장→피부 6개 시스템 연결 동시 회복. 부분 치료가 아닌 전체 시스템 회복 원리.', pages:'A4 2장', category:'recovery_1', color:'#1D4ED8' },
-  { id:'recovery_2', icon:'🌱', badge:'노화역행',  badgeColor:'#7C3AED', title:'노화 역행·세포 재생 전단지',              subtitle:'세포부터 젊어지고 싶은 분, 안티에이징이 목표인 분께',  desc:'Nrf2 미토콘드리아 복원·자가포식 지원·Inflammaging 차단으로 세포 스스로 회복하는 능력을 되살립니다.',  pages:'A4 2장', category:'recovery_2', color:'#7C3AED' },
+  { id:'recovery_1', icon:RefreshCw, badge:'전신회복',  badgeColor:'#1D4ED8', title:'전신 회복 전단지 — 몸은 하나의 시스템',  subtitle:'여러 성분 써도 낫지 않는 분, 전신 회복이 목표인 분께', desc:'혈당→혈관→뇌→면역→장→피부 6개 시스템 연결 동시 회복. 부분 치료가 아닌 전체 시스템 회복 원리.', pages:'A4 2장', category:'recovery_1', color:'#1D4ED8' },
+  { id:'recovery_2', icon:Sprout,    badge:'노화역행',  badgeColor:'#7C3AED', title:'노화 역행·세포 재생 전단지',              subtitle:'세포부터 젊어지고 싶은 분, 안티에이징이 목표인 분께',  desc:'Nrf2 미토콘드리아 복원·자가포식 지원·Inflammaging 차단으로 세포 스스로 회복하는 능력을 되살립니다.',  pages:'A4 2장', category:'recovery_2', color:'#7C3AED' },
 ]
 
 /* 제품 안내 전단지 */
 const MATERIALS_PRODUCT = [
-  { id:'product_flyer', icon:'📦', badge:'제품안내', badgeColor:'#008299', title:'플로로탄닌 특강 + 제품 3종 안내 전단지', subtitle:'딜-리버-런스K · 만나스웰 드롭 · 세조아', desc:'앞면: 플로로탄닌 강의 핵심 요약 (5대 기전·분자구조·회복의 정의) / 뒷면: 딜-리버-런스K·만나스웰 드롭·세조아 3종 제품 상세 정보.', pages:'A4 2장', category:'product_flyer', color:'#008299' },
+  { id:'product_flyer', icon:Package, badge:'제품안내', badgeColor:'#008299', title:'플로로탄닌 특강 + 제품 3종 안내 전단지', subtitle:'딜-리버-런스K · 만나스웰 드롭 · 세조아', desc:'앞면: 플로로탄닌 강의 핵심 요약 (5대 기전·분자구조·회복의 정의) / 뒷면: 딜-리버-런스K·만나스웰 드롭·세조아 3종 제품 상세 정보.', pages:'A4 2장', category:'product_flyer', color:'#008299' },
 ]
 
 /* 통합 전단지 5종 */
 const MATERIALS_COMBO = [
-  { id:'combo_all',    icon:'🌟', badge:'통합ALL',  badgeColor:'#0A7E8C', title:'전체 통합 전단지',          subtitle:'처음 만나는 모든 분께 드리는 핵심 자료', desc:'혈당·혈관·뇌·면역·피부·장 6대 시스템을 한 번에 잡는 플로로탄닌 다중 기전 총정리.',              pages:'A4 2장', category:'combo_all',    color:'#0A7E8C' },
-  { id:'combo_meta',   icon:'⚖️', badge:'대사',     badgeColor:'#DC2626', title:'혈당·심혈관 통합 전단지',   subtitle:'대사증후군·혈당+혈압이 동시에 걱정되는 분께', desc:'혈당·혈압·콜레스테롤·혈관 내피를 동시에 잡는 대사증후군 통합 기전을 정리했습니다.',           pages:'A4 2장', category:'combo_meta',   color:'#DC2626' },
-  { id:'combo_neuro',  icon:'🧬', badge:'뇌·염증',  badgeColor:'#7C3AED', title:'뇌·염증 통합 전단지',       subtitle:'만성 염증과 치매·수면이 동시에 걱정되는 분께', desc:'전신 염증 이중 차단 + 뇌 보호 + 수면 개선을 동시에 해결하는 통합 기전을 정리했습니다.',       pages:'A4 2장', category:'combo_neuro',  color:'#7C3AED' },
-  { id:'combo_immune', icon:'🔰', badge:'면역·장',  badgeColor:'#10B981', title:'면역·장건강 통합 전단지',   subtitle:'면역력 저하와 소화·장 건강이 동시에 걱정되는 분께', desc:'장내 유익균 3.2배 + 장벽 강화 + NK세포 활성으로 장-면역 축 전체를 회복합니다.',            pages:'A4 2장', category:'combo_immune', color:'#10B981' },
-  { id:'combo_beauty', icon:'💫', badge:'뷰티',     badgeColor:'#EC4899', title:'피부·종합 통합 전단지',     subtitle:'피부샵·에스테틱·뷰티 고객께 드리세요',   desc:'MMP 억제·티로시나제 억제·5α-환원효소 억제로 주름·기미·탈모를 동시에 케어합니다.',             pages:'A4 2장', category:'combo_beauty', color:'#EC4899' },
+  { id:'combo_all',    icon:Star,         badge:'통합ALL',  badgeColor:'#0A7E8C', title:'전체 통합 전단지',          subtitle:'처음 만나는 모든 분께 드리는 핵심 자료', desc:'혈당·혈관·뇌·면역·피부·장 6대 시스템을 한 번에 잡는 플로로탄닌 다중 기전 총정리.',              pages:'A4 2장', category:'combo_all',    color:'#0A7E8C' },
+  { id:'combo_meta',   icon:Scale,        badge:'대사',     badgeColor:'#DC2626', title:'혈당·심혈관 통합 전단지',   subtitle:'대사증후군·혈당+혈압이 동시에 걱정되는 분께', desc:'혈당·혈압·콜레스테롤·혈관 내피를 동시에 잡는 대사증후군 통합 기전을 정리했습니다.',           pages:'A4 2장', category:'combo_meta',   color:'#DC2626' },
+  { id:'combo_neuro',  icon:Dna,          badge:'뇌·염증',  badgeColor:'#7C3AED', title:'뇌·염증 통합 전단지',       subtitle:'만성 염증과 치매·수면이 동시에 걱정되는 분께', desc:'전신 염증 이중 차단 + 뇌 보호 + 수면 개선을 동시에 해결하는 통합 기전을 정리했습니다.',       pages:'A4 2장', category:'combo_neuro',  color:'#7C3AED' },
+  { id:'combo_immune', icon:ShieldPlus,   badge:'면역·장',  badgeColor:'#10B981', title:'면역·장건강 통합 전단지',   subtitle:'면역력 저하와 소화·장 건강이 동시에 걱정되는 분께', desc:'장내 유익균 3.2배 + 장벽 강화 + NK세포 활성으로 장-면역 축 전체를 회복합니다.',            pages:'A4 2장', category:'combo_immune', color:'#10B981' },
+  { id:'combo_beauty', icon:Sparkles,     badge:'뷰티',     badgeColor:'#EC4899', title:'피부·종합 통합 전단지',     subtitle:'피부샵·에스테틱·뷰티 고객께 드리세요',   desc:'MMP 억제·티로시나제 억제·5α-환원효소 억제로 주름·기미·탈모를 동시에 케어합니다.',             pages:'A4 2장', category:'combo_beauty', color:'#EC4899' },
 ]
 
 /* 질환별 기본 8종 */
 const MATERIALS_SINGLE = [
-  { id:'basic',          icon:'🌊', badge:'BASIC',  badgeColor:'#0A7E8C', title:'플로로탄닌 기초 전단지',       subtitle:'처음 만나는 분께 드리는 입문 자료',     desc:'플로로탄닌 5대 핵심 기전, 기존 성분과의 차이, 몸 전체 시스템 회복 원리를 담았습니다.',          pages:'A4 2장', category:'basic',          color:'#0A7E8C' },
-  { id:'basic_2',        icon:'🌊', badge:'BASIC②', badgeColor:'#0A7E8C', title:'플로로탄닌 기초 전단지 ②',    subtitle:'35억 년 진화 스토리 — 성분을 따지는 분께', desc:'35억 년 바다의 진화, Nrf2 세포 방어, 해조류 성분 비교를 통해 플로로탄닌의 본질을 정리했습니다.', pages:'A4 2장', category:'basic_2',        color:'#0A7E8C' },
-  { id:'diabetes',       icon:'🩸', badge:'혈당①',  badgeColor:'#DC2626', title:'혈당·당뇨 케어 전단지 ①',     subtitle:'혈당 걱정되는 분께 드리세요',           desc:'α-글루코시다제 억제, 인슐린 저항성 개선, 식후 혈당 조절 3중 기전과 빠른 체감 효과를 정리했습니다.', pages:'A4 2장', category:'diabetes',       color:'#DC2626' },
-  { id:'diabetes_2',     icon:'🩸', badge:'혈당②',  badgeColor:'#DC2626', title:'혈당·당뇨 케어 전단지 ②',     subtitle:'당뇨 합병증 예방이 걱정되는 분께',      desc:'AGEs 억제, 망막·신장·신경 합병증 예방 기전을 집중 정리. 혈당약 복용 중인 분께 드리세요.',       pages:'A4 2장', category:'diabetes_2',     color:'#DC2626' },
-  { id:'brain',          icon:'🧠', badge:'뇌①',    badgeColor:'#7C3AED', title:'뇌 건강·수면 전단지 ①',       subtitle:'건망증·불면증 걱정되는 분께',           desc:'BACE1 억제, 베타아밀로이드 차단, GABA 수면 개선 기전과 관리 후 체감 변화 타임라인을 정리했습니다.',      pages:'A4 2장', category:'brain',          color:'#7C3AED' },
-  { id:'brain_2',        icon:'🧠', badge:'뇌②',    badgeColor:'#7C3AED', title:'뇌 건강·수면 전단지 ②',       subtitle:'수면 개선과 치매 예방에 집중',          desc:'글림파틱 청소, GABA 자연 이완, 수면 중 독소 배출 극대화 기전을 수면 중심으로 정리했습니다.',       pages:'A4 2장', category:'brain_2',        color:'#7C3AED' },
-  { id:'cardiovascular', icon:'❤️', badge:'심혈관①', badgeColor:'#E05050', title:'심혈관·혈압 전단지 ①',        subtitle:'혈압·콜레스테롤 걱정되는 분께',         desc:'ACE 억제, eNOS/NO 경로, LDL 산화 차단, 혈관 내피 보호 4중 기전을 임상 데이터와 정리했습니다.',      pages:'A4 2장', category:'cardiovascular', color:'#E05050' },
-  { id:'cardiovascular_2',icon:'❤️',badge:'심혈관②', badgeColor:'#E05050', title:'심혈관·혈압 전단지 ②',       subtitle:'동맥경화·혈관 재생에 집중',             desc:'eNOS 62% 활성, LDL 산화 차단, ICAM-1 억제로 혈관 내부 플라크를 직접 막는 기전을 정리했습니다.',  pages:'A4 2장', category:'cardiovascular_2',color:'#E05050' },
-  { id:'inflammation',   icon:'🔥', badge:'염증①',  badgeColor:'#F97316', title:'만성염증·관절 전단지 ①',      subtitle:'몸이 늘 아프고 피곤한 분께',           desc:'NF-κB·NLRP3 이중 차단, CRP 감소, 관절 연골 보호 기전과 빠른 통증 완화 효과를 정리했습니다.',       pages:'A4 2장', category:'inflammation',   color:'#F97316' },
-  { id:'inflammation_2', icon:'🔥', badge:'염증②',  badgeColor:'#F97316', title:'만성염증·관절 전단지 ②',      subtitle:'류마티스·자가면역 질환에 집중',         desc:'NLRP3 인플라마솜 억제, 연골 구조 보호, 자가면역 선택적 차단 기전을 집중 정리했습니다.',            pages:'A4 2장', category:'inflammation_2', color:'#F97316' },
-  { id:'skin',           icon:'✨', badge:'피부①',  badgeColor:'#EC4899', title:'피부·탈모 케어 전단지 ①',     subtitle:'피부샵·힐링센터 고객께 드리세요',       desc:'MMP-1 억제 주름 방지, 티로시나제 억제 미백, 5α-환원효소 억제 탈모 완화 3중 기전을 정리했습니다.',   pages:'A4 2장', category:'skin',           color:'#EC4899' },
-  { id:'skin_2',         icon:'✨', badge:'피부②',  badgeColor:'#EC4899', title:'피부·탈모 케어 전단지 ②',     subtitle:'갱년기·호르몬 피부 노화에 집중',        desc:'DHT·MMP·멜라닌 호르몬성 3대 노화 경로 동시 차단. 폐경 전후 급격한 피부 변화에 드리세요.',           pages:'A4 2장', category:'skin_2',         color:'#EC4899' },
-  { id:'cancer',         icon:'🛡️', badge:'면역①',  badgeColor:'#10B981', title:'면역·항산화 전단지 ①',        subtitle:'몸의 방어력을 높이고 싶은 분께',       desc:'NK세포 활성, Nrf2 경로, 암세포 선택적 아포토시스 유도, 10~15배 항산화 기전을 정리했습니다.',        pages:'A4 2장', category:'cancer',         color:'#10B981' },
-  { id:'cancer_2',       icon:'🛡️', badge:'면역②',  badgeColor:'#10B981', title:'면역·항산화 전단지 ②',        subtitle:'항암 치료 중·후 면역 관리에 집중',      desc:'항암 치료 중 NK세포 유지, Nrf2 정상세포 보호, VEGF 억제 항암 보조 기전을 집중 정리했습니다.',       pages:'A4 2장', category:'cancer_2',       color:'#10B981' },
-  { id:'gut',            icon:'🦠', badge:'장건강①', badgeColor:'#06B6D4', title:'장건강·마이크로바이옴 전단지 ①', subtitle:'소화·장 건강 걱정되는 분께',         desc:'Akkermansia 3.2배 증식, 장 누수 개선, LPS 억제로 장-전신 염증을 뿌리째 차단하는 기전을 정리했습니다.', pages:'A4 2장', category:'gut',            color:'#06B6D4' },
-  { id:'gut_2',          icon:'🦠', badge:'장건강②', badgeColor:'#06B6D4', title:'장건강·마이크로바이옴 전단지 ②', subtitle:'장-뇌 축·우울·불안에 집중',          desc:'세로토닌 90%는 장에서. 장-뇌 축 염증 차단, GABA 이중 경로, 우울·불안 개선 기전을 정리했습니다.',   pages:'A4 2장', category:'gut_2',          color:'#06B6D4' },
+  { id:'basic',          icon:Waves,     badge:'BASIC',  badgeColor:'#0A7E8C', title:'플로로탄닌 기초 전단지',       subtitle:'처음 만나는 분께 드리는 입문 자료',     desc:'플로로탄닌 5대 핵심 기전, 기존 성분과의 차이, 몸 전체 시스템 회복 원리를 담았습니다.',          pages:'A4 2장', category:'basic',          color:'#0A7E8C' },
+  { id:'basic_2',        icon:Waves,     badge:'BASIC②', badgeColor:'#0A7E8C', title:'플로로탄닌 기초 전단지 ②',    subtitle:'35억 년 진화 스토리 — 성분을 따지는 분께', desc:'35억 년 바다의 진화, Nrf2 세포 방어, 해조류 성분 비교를 통해 플로로탄닌의 본질을 정리했습니다.', pages:'A4 2장', category:'basic_2',        color:'#0A7E8C' },
+  { id:'diabetes',       icon:Droplet,   badge:'혈당①',  badgeColor:'#DC2626', title:'혈당·당뇨 케어 전단지 ①',     subtitle:'혈당 걱정되는 분께 드리세요',           desc:'α-글루코시다제 억제, 인슐린 저항성 개선, 식후 혈당 조절 3중 기전과 빠른 체감 효과를 정리했습니다.', pages:'A4 2장', category:'diabetes',       color:'#DC2626' },
+  { id:'diabetes_2',     icon:Droplet,   badge:'혈당②',  badgeColor:'#DC2626', title:'혈당·당뇨 케어 전단지 ②',     subtitle:'당뇨 합병증 예방이 걱정되는 분께',      desc:'AGEs 억제, 망막·신장·신경 합병증 예방 기전을 집중 정리. 혈당약 복용 중인 분께 드리세요.',       pages:'A4 2장', category:'diabetes_2',     color:'#DC2626' },
+  { id:'brain',          icon:Brain,     badge:'뇌①',    badgeColor:'#7C3AED', title:'뇌 건강·수면 전단지 ①',       subtitle:'건망증·불면증 걱정되는 분께',           desc:'BACE1 억제, 베타아밀로이드 차단, GABA 수면 개선 기전과 관리 후 체감 변화 타임라인을 정리했습니다.',      pages:'A4 2장', category:'brain',          color:'#7C3AED' },
+  { id:'brain_2',        icon:Brain,     badge:'뇌②',    badgeColor:'#7C3AED', title:'뇌 건강·수면 전단지 ②',       subtitle:'수면 개선과 치매 예방에 집중',          desc:'글림파틱 청소, GABA 자연 이완, 수면 중 독소 배출 극대화 기전을 수면 중심으로 정리했습니다.',       pages:'A4 2장', category:'brain_2',        color:'#7C3AED' },
+  { id:'cardiovascular', icon:Heart,     badge:'심혈관①', badgeColor:'#E05050', title:'심혈관·혈압 전단지 ①',        subtitle:'혈압·콜레스테롤 걱정되는 분께',         desc:'ACE 억제, eNOS/NO 경로, LDL 산화 차단, 혈관 내피 보호 4중 기전을 임상 데이터와 정리했습니다.',      pages:'A4 2장', category:'cardiovascular', color:'#E05050' },
+  { id:'cardiovascular_2',icon:Heart,    badge:'심혈관②', badgeColor:'#E05050', title:'심혈관·혈압 전단지 ②',       subtitle:'동맥경화·혈관 재생에 집중',             desc:'eNOS 62% 활성, LDL 산화 차단, ICAM-1 억제로 혈관 내부 플라크를 직접 막는 기전을 정리했습니다.',  pages:'A4 2장', category:'cardiovascular_2',color:'#E05050' },
+  { id:'inflammation',   icon:Flame,     badge:'염증①',  badgeColor:'#F97316', title:'만성염증·관절 전단지 ①',      subtitle:'몸이 늘 아프고 피곤한 분께',           desc:'NF-κB·NLRP3 이중 차단, CRP 감소, 관절 연골 보호 기전과 빠른 통증 완화 효과를 정리했습니다.',       pages:'A4 2장', category:'inflammation',   color:'#F97316' },
+  { id:'inflammation_2', icon:Flame,     badge:'염증②',  badgeColor:'#F97316', title:'만성염증·관절 전단지 ②',      subtitle:'류마티스·자가면역 질환에 집중',         desc:'NLRP3 인플라마솜 억제, 연골 구조 보호, 자가면역 선택적 차단 기전을 집중 정리했습니다.',            pages:'A4 2장', category:'inflammation_2', color:'#F97316' },
+  { id:'skin',           icon:Sparkles,  badge:'피부①',  badgeColor:'#EC4899', title:'피부·탈모 케어 전단지 ①',     subtitle:'피부샵·힐링센터 고객께 드리세요',       desc:'MMP-1 억제 주름 방지, 티로시나제 억제 미백, 5α-환원효소 억제 탈모 완화 3중 기전을 정리했습니다.',   pages:'A4 2장', category:'skin',           color:'#EC4899' },
+  { id:'skin_2',         icon:Sparkles,  badge:'피부②',  badgeColor:'#EC4899', title:'피부·탈모 케어 전단지 ②',     subtitle:'갱년기·호르몬 피부 노화에 집중',        desc:'DHT·MMP·멜라닌 호르몬성 3대 노화 경로 동시 차단. 폐경 전후 급격한 피부 변화에 드리세요.',           pages:'A4 2장', category:'skin_2',         color:'#EC4899' },
+  { id:'cancer',         icon:Shield,    badge:'면역①',  badgeColor:'#10B981', title:'면역·항산화 전단지 ①',        subtitle:'몸의 방어력을 높이고 싶은 분께',       desc:'NK세포 활성, Nrf2 경로, 암세포 선택적 아포토시스 유도, 10~15배 항산화 기전을 정리했습니다.',        pages:'A4 2장', category:'cancer',         color:'#10B981' },
+  { id:'cancer_2',       icon:Shield,    badge:'면역②',  badgeColor:'#10B981', title:'면역·항산화 전단지 ②',        subtitle:'항암 치료 중·후 면역 관리에 집중',      desc:'항암 치료 중 NK세포 유지, Nrf2 정상세포 보호, VEGF 억제 항암 보조 기전을 집중 정리했습니다.',       pages:'A4 2장', category:'cancer_2',       color:'#10B981' },
+  { id:'gut',            icon:Microscope,badge:'장건강①', badgeColor:'#06B6D4', title:'장건강·마이크로바이옴 전단지 ①', subtitle:'소화·장 건강 걱정되는 분께',         desc:'Akkermansia 3.2배 증식, 장 누수 개선, LPS 억제로 장-전신 염증을 뿌리째 차단하는 기전을 정리했습니다.', pages:'A4 2장', category:'gut',            color:'#06B6D4' },
+  { id:'gut_2',          icon:Microscope,badge:'장건강②', badgeColor:'#06B6D4', title:'장건강·마이크로바이옴 전단지 ②', subtitle:'장-뇌 축·우울·불안에 집중',          desc:'세로토닌 90%는 장에서. 장-뇌 축 염증 차단, GABA 이중 경로, 우울·불안 개선 기전을 정리했습니다.',   pages:'A4 2장', category:'gut_2',          color:'#06B6D4' },
 ]
 
 const MATERIALS = [...MATERIALS_PRODUCT, ...MATERIALS_SEXUAL, ...MATERIALS_CANCER, ...MATERIALS_RECOVERY, ...MATERIALS_COMBO, ...MATERIALS_SINGLE]
@@ -345,7 +355,7 @@ export default function InfoRoomPage() {
     return capturePages(mat, partnerName, partnerTel, cardUrl)
   }
 
-  /* ── 📘 파트너 교본 (40p 핸드북) PDF 다운로드 ── */
+  /* ── 파트너 교본 (40p 핸드북) PDF 다운로드 ── */
   async function handleHandbookDownload() {
     if (guardInApp()) return
     setHandbookLoading(true)
@@ -425,10 +435,12 @@ export default function InfoRoomPage() {
           <Lock size={14} color={GOLD} />
           <span style={{ fontSize: 11, color: GOLD, letterSpacing: '3px', fontWeight: 800 }}>PARTNER ONLY — 파트너 전용 자료실</span>
         </div>
-        <h1 style={{ fontSize: 32, fontWeight: 900, color: '#fff', marginBottom: 10, lineHeight: 1.2 }}>📂 파트너 정보방</h1>
+        <h1 style={{ fontSize: 32, fontWeight: 900, color: '#fff', marginBottom: 10, lineHeight: 1.2, display: 'inline-flex', alignItems: 'center', gap: 12 }}>
+          <Folder size={28} strokeWidth={1.8} color={GOLD2} /> 파트너 정보방
+        </h1>
         <p style={{ fontSize: 15, color: '#b0c8e0', lineHeight: 1.9, maxWidth: 560, margin: '0 auto 16px' }}>
-          <strong style={{ color: GOLD2 }}>📥 인쇄용 PDF</strong> — 파트너님 QR코드·연락처가 자동 삽입됩니다<br />
-          <strong style={{ color: GOLD2 }}>📸 공유용 이미지</strong> — 전단지 2장(PNG)을 저장해 카카오톡으로 전송하세요
+          <strong style={{ color: GOLD2 }}>인쇄용 PDF</strong> — 파트너님 QR코드·연락처가 자동 삽입됩니다<br />
+          <strong style={{ color: GOLD2 }}>공유용 이미지</strong> — 전단지 2장(PNG)을 저장해 카카오톡으로 전송하세요
         </p>
         <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, padding: '9px 22px', borderRadius: 99, background: 'rgba(184,149,58,0.18)', border: `1.5px solid rgba(184,149,58,0.5)` }}>
           <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#4ADE80', boxShadow: '0 0 6px #4ADE80' }} />
@@ -436,7 +448,7 @@ export default function InfoRoomPage() {
         </div>
       </div>
 
-      {/* ═══ 🎬 본사 유튜브 강의 채널 바로가기 (최상단 강조) ═══ */}
+      {/* ═══ 본사 유튜브 강의 채널 바로가기 (최상단 강조) ═══ */}
       <div style={{ background: 'linear-gradient(135deg, #7f1d1d 0%, #b91c1c 50%, #dc2626 100%)', borderBottom: '3px solid #fca5a5', padding: '18px 16px' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
           <a
@@ -470,7 +482,7 @@ export default function InfoRoomPage() {
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               boxShadow: '0 2px 8px rgba(0,0,0,0.3)',
             }}>
-              <span style={{ fontSize: 28, lineHeight: 1 }}>▶️</span>
+              <PlayCircle size={32} color="#dc2626" strokeWidth={2} fill="#fff" />
             </div>
 
             {/* 텍스트 */}
@@ -491,8 +503,8 @@ export default function InfoRoomPage() {
                   본사 공식
                 </span>
               </div>
-              <div style={{ fontSize: 16, fontWeight: 900, color: '#fff', lineHeight: 1.3, marginBottom: 2 }}>
-                🎓 본사 유튜브 강의 채널 바로가기
+              <div style={{ fontSize: 16, fontWeight: 900, color: '#fff', lineHeight: 1.3, marginBottom: 2, display: 'inline-flex', alignItems: 'center', gap: 8 }}>
+                <GraduationCap size={18} strokeWidth={1.8} /> 본사 유튜브 강의 채널 바로가기
               </div>
               <div style={{ fontSize: 12, color: '#fee2e2', lineHeight: 1.5 }}>
                 전단지 다운받기 전, <strong style={{ color: '#fff' }}>본사 영상 강의</strong>로 먼저 학습하세요
@@ -518,8 +530,8 @@ export default function InfoRoomPage() {
 
       {/* 안내 배너 */}
       <div style={{ background: '#fff7e6', borderBottom: '2px solid #f0d080', padding: '12px 24px', textAlign: 'center' }}>
-        <p style={{ fontSize: 14, color: '#7a5c00', fontWeight: 700, margin: 0 }}>
-          💡 버튼을 누르면 잠시 생성 중… 표시 후 자동 다운로드됩니다 (약 5~10초 소요)
+        <p style={{ fontSize: 14, color: '#7a5c00', fontWeight: 700, margin: 0, display: 'inline-flex', alignItems: 'center', gap: 6, justifyContent: 'center' }}>
+          <Lightbulb size={14} /> 버튼을 누르면 잠시 생성 중… 표시 후 자동 다운로드됩니다 (약 5~10초 소요)
         </p>
       </div>
 
@@ -548,12 +560,12 @@ export default function InfoRoomPage() {
         </div>
       </div>
 
-      {/* ═══ 📘 파트너 교본 (40p 핸드북) ═══ */}
+      {/* ═══ 파트너 교본 (40p 핸드북) ═══ */}
       <div style={{ maxWidth: 800, margin: '32px auto 0', padding: '0 14px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
           <div style={{ width: 5, height: 28, background: `linear-gradient(180deg, ${GOLD}, ${NAVY})`, borderRadius: 3 }} />
           <div>
-            <h2 style={{ fontSize: 20, fontWeight: 900, color: NAVY, margin: 0, lineHeight: 1.2 }}>📘 파트너 교본 (교육자료)</h2>
+            <h2 style={{ fontSize: 20, fontWeight: 900, color: NAVY, margin: 0, lineHeight: 1.2, display: 'inline-flex', alignItems: 'center', gap: 8 }}><BookOpen size={20} strokeWidth={1.8} color={GOLD} /> 파트너 교본 (교육자료)</h2>
             <p style={{ fontSize: 13, color: '#888', margin: '3px 0 0' }}>플로로탄닌 설명·응대·Q&A 40페이지 핸드북 (PDF)</p>
           </div>
         </div>
@@ -600,7 +612,7 @@ export default function InfoRoomPage() {
           >
             {handbookLoading
               ? <><Loader size={16} style={{ animation: 'spin 1s linear infinite' }} /> 생성 중…</>
-              : <><Download size={16} /> 📥 교본 PDF 다운로드</>}
+              : <><Download size={16} /> 교본 PDF 다운로드</>}
           </button>
         </div>
       </div>
@@ -610,7 +622,7 @@ export default function InfoRoomPage() {
         <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
           <div style={{ width: 5, height: 28, background: 'linear-gradient(180deg, #008299, #00829988)', borderRadius: 3 }} />
           <div>
-            <h2 style={{ fontSize: 20, fontWeight: 900, color: NAVY, margin: 0, lineHeight: 1.2 }}>📦 제품 안내 전단지</h2>
+            <h2 style={{ fontSize: 20, fontWeight: 900, color: NAVY, margin: 0, lineHeight: 1.2, display: 'inline-flex', alignItems: 'center', gap: 8 }}><Package size={20} strokeWidth={1.8} color="#008299" /> 제품 안내 전단지</h2>
             <p style={{ fontSize: 13, color: '#888', margin: '3px 0 0' }}>딜-리버-런스K · 만나스웰 드롭 · 세조아 + 플로로탄닌 강의 핵심 요약</p>
           </div>
         </div>
@@ -627,7 +639,7 @@ export default function InfoRoomPage() {
         <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
           <div style={{ width: 5, height: 28, background: `linear-gradient(180deg, ${GOLD}, ${GOLD}88)`, borderRadius: 3 }} />
           <div>
-            <h2 style={{ fontSize: 20, fontWeight: 900, color: NAVY, margin: 0, lineHeight: 1.2 }}>🌟 통합 전단지 — 5종</h2>
+            <h2 style={{ fontSize: 20, fontWeight: 900, color: NAVY, margin: 0, lineHeight: 1.2, display: 'inline-flex', alignItems: 'center', gap: 8 }}><Star size={20} strokeWidth={1.8} color={GOLD} /> 통합 전단지 — 5종</h2>
             <p style={{ fontSize: 13, color: '#888', margin: '3px 0 0' }}>여러 질환을 함께 케어하는 분, 처음 만나는 분, 뷰티·대사 동반 고객께 드리세요</p>
           </div>
         </div>
@@ -655,7 +667,7 @@ export default function InfoRoomPage() {
         <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
           <div style={{ width: 5, height: 28, background: 'linear-gradient(180deg, #059669, #0F766E)', borderRadius: 3 }} />
           <div>
-            <h2 style={{ fontSize: 20, fontWeight: 900, color: NAVY, margin: 0, lineHeight: 1.2 }}>🎗️ 암 전용 전단지 — 2종</h2>
+            <h2 style={{ fontSize: 20, fontWeight: 900, color: NAVY, margin: 0, lineHeight: 1.2, display: 'inline-flex', alignItems: 'center', gap: 8 }}><Ribbon size={20} strokeWidth={1.8} color="#7C2D12" /> 암 전용 전단지 — 2종</h2>
             <p style={{ fontSize: 13, color: '#888', margin: '3px 0 0' }}>암 예방이 목표인 분 · 항암 치료 중이거나 치료 후 회복 중인 분께 드리세요</p>
           </div>
         </div>
@@ -683,7 +695,7 @@ export default function InfoRoomPage() {
         <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
           <div style={{ width: 5, height: 28, background: 'linear-gradient(180deg, #1D4ED8, #7C3AED)', borderRadius: 3 }} />
           <div>
-            <h2 style={{ fontSize: 20, fontWeight: 900, color: NAVY, margin: 0, lineHeight: 1.2 }}>🌱 회복 전용 전단지 — 2종</h2>
+            <h2 style={{ fontSize: 20, fontWeight: 900, color: NAVY, margin: 0, lineHeight: 1.2, display: 'inline-flex', alignItems: 'center', gap: 8 }}><Sprout size={20} strokeWidth={1.8} color="#1D4ED8" /> 회복 전용 전단지 — 2종</h2>
             <p style={{ fontSize: 13, color: '#888', margin: '3px 0 0' }}>우리 몸은 하나다 · 결국 회복이다 — 전신 회복·노화 역행이 목표인 분께 드리세요</p>
           </div>
         </div>
@@ -712,28 +724,30 @@ export default function InfoRoomPage() {
         <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
           <div style={{ width: 5, height: 28, background: `linear-gradient(180deg, #1565C0, #1E88E5)`, borderRadius: 3 }} />
           <div>
-            <h2 style={{ fontSize: 20, fontWeight: 900, color: NAVY, margin: 0, lineHeight: 1.2 }}>🔬 질환별 전단지 — 8종 × 각 2가지</h2>
+            <h2 style={{ fontSize: 20, fontWeight: 900, color: NAVY, margin: 0, lineHeight: 1.2, display: 'inline-flex', alignItems: 'center', gap: 8 }}><FlaskConical size={20} strokeWidth={1.8} color="#1565C0" /> 질환별 전단지 — 8종 × 각 2가지</h2>
             <p style={{ fontSize: 13, color: '#888', margin: '3px 0 0' }}>각 질환에 특화된 전단지 · ①번과 ②번은 같은 질환의 다른 각도입니다</p>
           </div>
         </div>
 
         {/* 질환별 2개씩 그룹핑 */}
         {[
-          { label: '🌊 기초·전체', color: '#0A7E8C', ids: ['basic', 'basic_2'] },
-          { label: '🩸 혈당·당뇨', color: '#DC2626', ids: ['diabetes', 'diabetes_2'] },
-          { label: '🧠 뇌·수면',   color: '#7C3AED', ids: ['brain', 'brain_2'] },
-          { label: '❤️ 심혈관·혈압', color: '#E05050', ids: ['cardiovascular', 'cardiovascular_2'] },
-          { label: '🔥 만성염증·관절', color: '#F97316', ids: ['inflammation', 'inflammation_2'] },
-          { label: '✨ 피부·탈모', color: '#EC4899', ids: ['skin', 'skin_2'] },
-          { label: '🛡️ 면역·항암', color: '#10B981', ids: ['cancer', 'cancer_2'] },
-          { label: '🦠 장건강·마이크로바이옴', color: '#06B6D4', ids: ['gut', 'gut_2'] },
+          { icon: Waves,       label: '기초·전체',          color: '#0A7E8C', ids: ['basic', 'basic_2'] },
+          { icon: Droplet,     label: '혈당·당뇨',          color: '#DC2626', ids: ['diabetes', 'diabetes_2'] },
+          { icon: Brain,       label: '뇌·수면',            color: '#7C3AED', ids: ['brain', 'brain_2'] },
+          { icon: Heart,       label: '심혈관·혈압',        color: '#E05050', ids: ['cardiovascular', 'cardiovascular_2'] },
+          { icon: Flame,       label: '만성염증·관절',      color: '#F97316', ids: ['inflammation', 'inflammation_2'] },
+          { icon: Sparkles,    label: '피부·탈모',          color: '#EC4899', ids: ['skin', 'skin_2'] },
+          { icon: Shield,      label: '면역·항암',          color: '#10B981', ids: ['cancer', 'cancer_2'] },
+          { icon: Microscope,  label: '장건강·마이크로바이옴', color: '#06B6D4', ids: ['gut', 'gut_2'] },
         ].map(group => {
           const mats = group.ids.map(id => MATERIALS_SINGLE.find(m => m.id === id)).filter(Boolean)
+          const GroupIcon = group.icon
           return (
             <div key={group.label} style={{ marginBottom: 24 }}>
               {/* 그룹 레이블 */}
               <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 10 }}>
                 <div style={{ width: 3, height: 18, background: group.color, borderRadius: 2 }} />
+                <GroupIcon size={15} strokeWidth={1.8} style={{ color: group.color }} />
                 <span style={{ fontSize: 15, fontWeight: 800, color: group.color }}>{group.label}</span>
                 <span style={{ fontSize: 12, color: '#bbb', fontWeight: 600 }}>— 2종</span>
               </div>
@@ -764,7 +778,7 @@ export default function InfoRoomPage() {
         <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
           <div style={{ width: 5, height: 28, background: 'linear-gradient(180deg, #1D4ED8, #BE185D)', borderRadius: 3 }} />
           <div>
-            <h2 style={{ fontSize: 20, fontWeight: 900, color: NAVY, margin: 0, lineHeight: 1.2 }}>💪 성기능·활력 전단지 — 2종</h2>
+            <h2 style={{ fontSize: 20, fontWeight: 900, color: NAVY, margin: 0, lineHeight: 1.2, display: 'inline-flex', alignItems: 'center', gap: 8 }}><Dumbbell size={20} strokeWidth={1.8} color="#1D4ED8" /> 성기능·활력 전단지 — 2종</h2>
             <p style={{ fontSize: 13, color: '#888', margin: '3px 0 0' }}>남성 활력·전립선 / 여성 갱년기·호르몬 — 혈관·호르몬·염증을 근원부터 회복합니다</p>
           </div>
         </div>
@@ -790,17 +804,18 @@ export default function InfoRoomPage() {
       {/* 사용 안내 */}
       <div style={{ maxWidth: 800, margin: '0 auto 80px', padding: '0 14px' }}>
         <div style={{ background: '#fff', borderRadius: 14, border: '1.5px solid #e0e8f0', padding: '20px 24px' }}>
-          <h3 style={{ fontSize: 18, fontWeight: 800, color: NAVY, marginBottom: 14 }}>📌 사용 안내</h3>
+          <h3 style={{ fontSize: 18, fontWeight: 800, color: NAVY, marginBottom: 14, display: 'inline-flex', alignItems: 'center', gap: 8 }}><Pin size={16} strokeWidth={1.8} color={GOLD} /> 사용 안내</h3>
           {[
-            ['📥 인쇄용 PDF 다운받기', '버튼을 누르면 파트너님 QR코드가 삽입된 A4 전단지 PDF가 저장됩니다. 편의점·문구점에서 출력하세요.'],
-            ['📸 공유용 이미지 다운받기', '버튼을 누르면 전단지 1페이지·2페이지 PNG 이미지 2장이 저장됩니다. 카카오톡·문자로 고객에게 바로 전송하세요.'],
-            ['⏱ 생성 시간', '버튼 클릭 후 5~10초 소요됩니다. "생성 중…" 표시가 사라지면 완료입니다.'],
-            ['⚠️ 주의', '이 자료는 교육 목적의 연구 정보입니다. 질병 치료·예방 효능을 보증하지 않습니다.'],
-          ].map(([t, d]) => (
-            <div key={t} style={{ display: 'flex', gap: 12, marginBottom: 10, alignItems: 'flex-start' }}>
+            { Icon: Download,       title: '인쇄용 PDF 다운받기',     desc: '버튼을 누르면 파트너님 QR코드가 삽입된 A4 전단지 PDF가 저장됩니다. 편의점·문구점에서 출력하세요.' },
+            { Icon: Image,          title: '공유용 이미지 다운받기',  desc: '버튼을 누르면 전단지 1페이지·2페이지 PNG 이미지 2장이 저장됩니다. 카카오톡·문자로 고객에게 바로 전송하세요.' },
+            { Icon: Clock,          title: '생성 시간',               desc: '버튼 클릭 후 5~10초 소요됩니다. "생성 중…" 표시가 사라지면 완료입니다.' },
+            { Icon: AlertTriangle,  title: '주의',                    desc: '이 자료는 교육 목적의 연구 정보입니다. 질병 치료·예방 효능을 보증하지 않습니다.' },
+          ].map(({ Icon, title, desc }) => (
+            <div key={title} style={{ display: 'flex', gap: 12, marginBottom: 10, alignItems: 'flex-start' }}>
+              <Icon size={16} strokeWidth={1.8} style={{ color: GOLD, marginTop: 2, flexShrink: 0 }} />
               <div>
-                <p style={{ fontSize: 15, fontWeight: 800, color: NAVY, margin: '0 0 2px' }}>{t}</p>
-                <p style={{ fontSize: 14, color: '#555', margin: 0, lineHeight: 1.6 }}>{d}</p>
+                <p style={{ fontSize: 15, fontWeight: 800, color: NAVY, margin: '0 0 2px' }}>{title}</p>
+                <p style={{ fontSize: 14, color: '#555', margin: 0, lineHeight: 1.6 }}>{desc}</p>
               </div>
             </div>
           ))}
@@ -901,8 +916,8 @@ function ProductFlyerCard({ mat, partnerName, partnerTel, cardUrl }) {
 
       {/* 카드 헤더 */}
       <div style={{ padding: '20px 22px 16px', display: 'flex', alignItems: 'flex-start', gap: 16 }}>
-        <div style={{ width: 58, height: 58, borderRadius: 16, flexShrink: 0, background: `${mat.color}15`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 28, border: `2px solid ${mat.color}30` }}>
-          {mat.icon}
+        <div style={{ width: 58, height: 58, borderRadius: 16, flexShrink: 0, background: `${mat.color}15`, display: 'flex', alignItems: 'center', justifyContent: 'center', border: `2px solid ${mat.color}30` }}>
+          {(() => { const Icon = mat.icon; return <Icon size={28} strokeWidth={1.8} style={{ color: mat.color }} /> })()}
         </div>
         <div style={{ flex: 1 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 5, flexWrap: 'wrap' }}>
@@ -1001,8 +1016,8 @@ function MaterialCard({ mat, partnerName, partnerTel, cardUrl, downloading, imag
 
       {/* 카드 헤더 */}
       <div style={{ padding: '20px 22px 16px', display: 'flex', alignItems: 'flex-start', gap: 16 }}>
-        <div style={{ width: 58, height: 58, borderRadius: 16, flexShrink: 0, background: `${mat.color}15`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 28, border: `2px solid ${mat.color}30` }}>
-          {mat.icon}
+        <div style={{ width: 58, height: 58, borderRadius: 16, flexShrink: 0, background: `${mat.color}15`, display: 'flex', alignItems: 'center', justifyContent: 'center', border: `2px solid ${mat.color}30` }}>
+          {(() => { const Icon = mat.icon; return <Icon size={28} strokeWidth={1.8} style={{ color: mat.color }} /> })()}
         </div>
         <div style={{ flex: 1 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 5, flexWrap: 'wrap' }}>
@@ -1027,7 +1042,7 @@ function MaterialCard({ mat, partnerName, partnerTel, cardUrl, downloading, imag
           {isPreviewing ? '닫기' : '미리보기'}
         </button>
 
-        {/* 📥 인쇄용 PDF */}
+        {/* 인쇄용 PDF */}
         <button
           onClick={onDownload}
           disabled={busy}
@@ -1043,10 +1058,10 @@ function MaterialCard({ mat, partnerName, partnerTel, cardUrl, downloading, imag
         >
           {isDown
             ? <><Loader size={16} style={{ animation: 'spin 1s linear infinite' }} /> 생성 중…</>
-            : <><Download size={16} /> 📥 인쇄용 PDF</>}
+            : <><Download size={16} /> 인쇄용 PDF</>}
         </button>
 
-        {/* 📸 공유용 이미지 */}
+        {/* 공유용 이미지 */}
         <button
           onClick={onImage}
           disabled={busy}
@@ -1062,7 +1077,7 @@ function MaterialCard({ mat, partnerName, partnerTel, cardUrl, downloading, imag
         >
           {isImaging
             ? <><Loader size={16} style={{ animation: 'spin 1s linear infinite' }} /> 생성 중…</>
-            : <><Image size={16} /> 📸 공유용 이미지</>}
+            : <><Image size={16} /> 공유용 이미지</>}
         </button>
       </div>
 
@@ -1999,7 +2014,7 @@ function PdfPage1({ mat, id }) {
       {/* 브랜드 바 */}
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14, paddingBottom: 10, borderBottom: `3px solid ${mat.color}` }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <span style={{ fontSize: 22 }}>{mat.icon}</span>
+          {(() => { const Icon = mat.icon; return <Icon size={22} strokeWidth={1.8} style={{ color: mat.color }} /> })()}
           <span style={{ fontSize: 14, fontWeight: 900, color: mat.color, letterSpacing: '2px' }}>PHLOROTANNIN PARTNERS</span>
         </div>
         <span style={{ fontSize: 12, fontWeight: 800, padding: '3px 12px', borderRadius: 99, background: mat.color, color: '#fff' }}>{mat.badge}</span>
@@ -2079,7 +2094,7 @@ function PdfPage2({ mat, name, tel, url, id, qrDataUrl }) {
       {/* 브랜드 바 */}
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14, paddingBottom: 10, borderBottom: `3px solid ${mat.color}` }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <span style={{ fontSize: 22 }}>{mat.icon}</span>
+          {(() => { const Icon = mat.icon; return <Icon size={22} strokeWidth={1.8} style={{ color: mat.color }} /> })()}
           <span style={{ fontSize: 14, fontWeight: 900, color: mat.color, letterSpacing: '2px' }}>PHLOROTANNIN PARTNERS</span>
         </div>
         <span style={{ fontSize: 12, color: '#999', fontWeight: 700 }}>2 / 2</span>
@@ -2799,7 +2814,7 @@ async function drawPage1(mat, scale = 2) {
   ctx.strokeStyle = col; ctx.lineWidth = 3
   ctx.beginPath(); ctx.moveTo(pad, y + 28); ctx.lineTo(W - pad, y + 28); ctx.stroke()
   ctx.font = 'bold 18px sans-serif'; ctx.fillStyle = col; ctx.textBaseline = 'middle'
-  ctx.fillText(`${mat.icon}  PHLOROTANNIN PARTNERS`, pad, y + 13)
+  ctx.fillText('PHLOROTANNIN PARTNERS', pad, y + 13)
   // 배지
   const badge = mat.badge
   ctx.font = 'bold 15px sans-serif'
@@ -2951,7 +2966,7 @@ async function drawPage2(mat, partnerName, partnerTel, qrImg, scale = 2) {
   ctx.strokeStyle = col; ctx.lineWidth = 3
   ctx.beginPath(); ctx.moveTo(pad, y + 28); ctx.lineTo(W - pad, y + 28); ctx.stroke()
   ctx.font = 'bold 18px sans-serif'; ctx.fillStyle = col; ctx.textBaseline = 'middle'
-  ctx.fillText(`${mat.icon}  PHLOROTANNIN PARTNERS`, pad, y + 13)
+  ctx.fillText('PHLOROTANNIN PARTNERS', pad, y + 13)
   ctx.font = 'bold 15px sans-serif'; ctx.fillStyle = '#999'; ctx.textAlign = 'right'
   ctx.fillText('2 / 2', W - pad, y + 13)
   ctx.textAlign = 'left'

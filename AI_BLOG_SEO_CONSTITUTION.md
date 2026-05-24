@@ -864,6 +864,70 @@ grep -oE "pubmed.ncbi|ncbi.nlm.nih.gov/pmc|frontiersin.org|sciencedirect.com" co
 
 ---
 
+## 📜 제11-0조 V2 (보강 — 2026-05-24)
+
+**규칙 5 — UI 컴포넌트(React JSX)도 동일하게 적용**
+
+- 시니어 디자인 원칙은 마크다운 블로그뿐 아니라 **React 페이지/컴포넌트(.jsx, .tsx)에도 그대로 적용**된다.
+- JSX 안의 이모지는 시각적 신뢰를 떨어뜨린다. 모든 이모지는 **`lucide-react` 아이콘**으로 교체.
+  - 예: `📈` → `<TrendingUp />`, `🌊` → `<Waves />`, `🩺` → `<Stethoscope />`, `🎗️` → `<Ribbon />`
+- 데이터 배열의 `emoji` / `icon: '🔥'` 같은 문자열 필드는 **lucide 컴포넌트 참조**로 변경하고 렌더 시 `<Icon size={...} />`로 표시.
+- 카드/배너의 large emoji는 **40~48px 라운드 박스 안 24px lucide 아이콘**으로 (브랜드 컬러 +14% 알파 배경).
+- 단, 활자 부호(✆ ✦ ✕ ✓ → ⋮)는 시니어 디자인 OK (이모지 아님).
+- 검증 grep:
+  ```bash
+  python3 -c "import re,sys; [print(f'{f}:{i}: {l.strip()}') \
+    for f in sys.argv[1:] for i,l in enumerate(open(f,encoding='utf-8'),1) \
+    if re.search(r'[\U0001F300-\U0001FAFF\U00002600-\U000027BF]', l)]" \
+    hanain/src/pages/*.jsx hanain/src/components/**/*.jsx
+  ```
+
+---
+
+## 📜 제12조 (SPA 라우팅 표준 — `/p/:phone`, `/p/:slug` 절대 진입 보장)
+
+**배경**:
+업그레이드 때마다 반복 발생한 회귀 — `/p/01056528206` URL을 브라우저에 직접 입력하거나 복사·공유했을 때,
+사용자가 명함(개인화) 페이지가 아닌 **메인 .com 페이지로 추방**되는 치명적 버그.
+
+**근본 원인** (2026-05-24 진단):
+- `BusinessCardPage.jsx`, `PartnerLandingPage.jsx` 내부 `useEffect`가
+  `?view=card` 쿼리 파라미터가 없을 때 `navigate('/', { replace: true })`로 메인으로 리다이렉트.
+- 이는 카카오톡·문자·DM 등 외부에서 URL을 받은 사용자가 명함을 절대 볼 수 없는 구조.
+
+**헌법 표준**:
+
+1. **`/p/:phone`, `/p/:slug` 등 개인화 경로는 무조건 해당 컴포넌트로 진입**한다.
+   - 파트너 데이터 로드 성공 → 즉시 명함/랜딩 페이지 렌더.
+   - 로드 실패 → 에러 메시지 또는 NotFound 페이지. **메인(`/`)으로 추방 금지**.
+
+2. **금지 패턴** (코드 리뷰 시 자동 차단):
+   ```js
+   // ❌ 금지
+   navigate('/', { replace: true })
+   navigate('/main')
+   window.location.href = '/'
+   // ↑ /p/:phone, /p/:slug 등 개인화 경로 컴포넌트 안에서는 절대 금지
+   ```
+
+3. **`?view=card` 같은 쿼리 게이트 사용 금지**: 진입 조건으로 쓰면 URL 복사·공유 시 게이트 누락으로 회귀.
+   파라미터는 PWA 부가 동작 신호(예: 자동 저장)에만 사용.
+
+4. **Vercel SPA rewrites는 유지**: `vercel.json`의 `{ "source": "/(.*)", "destination": "/" }`는 build asset 충돌을 피하도록 정확해야 함.
+
+**검증 grep** (commit/PR 전 필수):
+```bash
+# 개인화 페이지에서 메인 추방 패턴 검색
+grep -nE "navigate\\(['\"]/['\"]" hanain/src/pages/BusinessCardPage.jsx hanain/src/pages/PartnerLandingPage.jsx \
+  | grep -v "// 사용 가능" \
+  && echo "❌ 헌법 12조 위반: /p/:phone 컴포넌트에서 메인 리다이렉트 발견" \
+  || echo "✅ 헌법 12조 통과"
+```
+
+**위반 시**: 즉시 fix 커밋 + PR. 이 조항은 **업그레이드마다 동일 회귀가 반복되어 사용자 신뢰가 직접 손상되는 영역**이므로 **최우선 우선순위**.
+
+---
+
 ## 📜 제9조 (헌법 개정)
 
 이 헌법은 살아있는 문서다.

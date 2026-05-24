@@ -5,6 +5,8 @@ import {
   Users, Award, TrendingUp, BookOpen, CheckCircle,
   ChevronDown, ChevronUp, Send, Star, MessageSquare,
   Phone, ShieldCheck, Repeat, Target, Zap,
+  Waves, RefreshCw, Clock, Sparkles, Leaf, Activity,
+  Smartphone, Handshake, BarChart3, Repeat2,
 } from 'lucide-react'
 import RevealContact from '../components/common/RevealContact'
 
@@ -46,24 +48,25 @@ const BENEFITS = [
 ]
 
 // ── 왜 지금인가 ──────────────────────────────────────
+// [2026-05-24] 헌법 11-0 시니어 디자인 — 이모지 제거, lucide-react 아이콘으로 교체
 const WHY_NOW = [
   {
-    emoji: '📈',
+    icon: TrendingUp,
     title: '실버시장이 매일 커집니다',
     desc: '대한민국 고령화 속도는 세계 최고. 불과 11년 후 인구 3명 중 1명이 노인 인구입니다. 건강기능식품 시장은 국내 5조 9천억 원 규모, 국민 10명 중 8명 이상이 구매합니다.',
   },
   {
-    emoji: '🌊',
+    icon: Waves,
     title: '플로로탄닌은 설명 자산입니다',
     desc: '감태 같은 갈조류에서 추출한 해조류 유래 폴리페놀. 잠, 회복, 피로, 인지, 대사, 심혈관, 염증, 근육까지 — 한 성분으로 수십 가지 건강 이야기를 이어갈 수 있는 구조입니다.',
   },
   {
-    emoji: '🔄',
+    icon: RefreshCw,
     title: '재구매가 관계를 만듭니다',
     desc: '건강은 한 번 사고 끝나는 시장이 아닙니다. 효과를 경험한 사람이 다시 찾고, 주변에 소개합니다. 신뢰 기반의 반복 구조입니다.',
   },
   {
-    emoji: '⏰',
+    icon: Clock,
     title: '지금이 가장 빠른 진입 시점',
     desc: '이미 포화된 시장에서 새로 시작하면 불리한 싸움입니다. 우리는 아직 선점 가능한 포지션에 있습니다.',
   },
@@ -71,36 +74,36 @@ const WHY_NOW = [
 
 // ── 이런 분들과 함께합니다 ────────────────────────
 const WHO_FIT = [
-  { emoji: '💆', title: '힐링센터 · 웰니스샵', desc: '고객에게 건강 정보를 전하는 일을 이미 하고 계신 분. 플로로탄닌은 설명 자산이 됩니다.' },
-  { emoji: '✨', title: '피부샵 · 마사지샵', desc: '피부·관절·회복에 관심 있는 고객층을 이미 보유한 분. 자연스럽게 연결되는 이야기입니다.' },
-  { emoji: '🌿', title: '건강식품 사업자', desc: '온·오프라인에서 건강 관련 제품을 이미 다루고 있는 분. 성분 하나가 전체 라인업을 강화합니다.' },
-  { emoji: '🏃', title: '운동·피트니스 관련', desc: '근육 회복, 에너지 대사, 항염에 관심 있는 고객과 일하는 분. 과학적 근거가 신뢰를 높입니다.' },
-  { emoji: '📱', title: '온라인 콘텐츠 활동가', desc: '블로그·SNS·유튜브로 건강 정보를 나누는 분. 1,361개 Q&A가 콘텐츠 소재가 됩니다.' },
-  { emoji: '🤝', title: '건강에 관심 많은 누구나', desc: '전문 경력 없어도 괜찮습니다. 주변 사람에게 좋은 정보를 먼저 전하는 것에서 시작됩니다.' },
+  { icon: Sparkles,   title: '힐링센터 · 웰니스샵',  desc: '고객에게 건강 정보를 전하는 일을 이미 하고 계신 분. 플로로탄닌은 설명 자산이 됩니다.' },
+  { icon: Star,       title: '피부샵 · 마사지샵',    desc: '피부·관절·회복에 관심 있는 고객층을 이미 보유한 분. 자연스럽게 연결되는 이야기입니다.' },
+  { icon: Leaf,       title: '건강식품 사업자',      desc: '온·오프라인에서 건강 관련 제품을 이미 다루고 있는 분. 성분 하나가 전체 라인업을 강화합니다.' },
+  { icon: Activity,   title: '운동·피트니스 관련',   desc: '근육 회복, 에너지 대사, 항염에 관심 있는 고객과 일하는 분. 과학적 근거가 신뢰를 높입니다.' },
+  { icon: Smartphone, title: '온라인 콘텐츠 활동가', desc: '블로그·SNS·유튜브로 건강 정보를 나누는 분. 1,361개 Q&A가 콘텐츠 소재가 됩니다.' },
+  { icon: Handshake,  title: '건강에 관심 많은 누구나', desc: '전문 경력 없어도 괜찮습니다. 주변 사람에게 좋은 정보를 먼저 전하는 것에서 시작됩니다.' },
 ]
 
 // ── 시장성 ───────────────────────────────────────
 const MARKET_GROWTH = [
   {
-    icon: '📊',
+    icon: BarChart3,
     title: '국내 건강기능식품 시장 5조 9천억',
     desc: '연평균 8% 이상 성장 중. 고령화·건강 관심 증가로 시장 자체가 커지는 구조입니다.',
     highlight: '연 8% 이상 성장',
   },
   {
-    icon: '🌿',
+    icon: Leaf,
     title: '플로로탄닌 — 아직 선점 가능한 성분',
     desc: '홍삼·오메가3는 이미 포화. 플로로탄닌은 SCI 논문이 쏟아지는 신흥 성분. 지금이 콘텐츠 선점 시점입니다.',
     highlight: '블루오션 성분',
   },
   {
-    icon: '🔁',
+    icon: Repeat2,
     title: '신뢰가 쌓이는 재구매 구조',
     desc: '효과를 경험한 사람이 다시 찾습니다. 관계 중심으로 움직이는 건강 시장의 특성입니다.',
     highlight: '관계 기반 구조',
   },
   {
-    icon: '📱',
+    icon: Smartphone,
     title: '온·오프라인 어디서든',
     desc: '매장 방문 고객에게도, 온라인 팔로워에게도. 채널을 가리지 않고 전문성을 연결할 수 있습니다.',
     highlight: '채널 무관 활동',
@@ -375,14 +378,20 @@ export default function PartnerPage() {
             시장 자체가 커지고 있습니다. 지금이 선점 가능한 포지션입니다.
           </p>
           <div className="grid md:grid-cols-2 gap-5">
-            {WHY_NOW.map((item, i) => (
-              <div key={i} className="rounded-2xl p-6 bg-white"
-                style={{ border: `1.5px solid ${GOLD}30`, boxShadow: `0 2px 16px ${GOLD}10` }}>
-                <div className="text-3xl mb-3">{item.emoji}</div>
-                <h3 className="text-lg font-bold mb-2" style={{ color: NAVY }}>{item.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
+            {WHY_NOW.map((item, i) => {
+              const Icon = item.icon
+              return (
+                <div key={i} className="rounded-2xl p-6 bg-white"
+                  style={{ border: `1.5px solid ${GOLD}30`, boxShadow: `0 2px 16px ${GOLD}10` }}>
+                  <div className="inline-flex items-center justify-center mb-4 rounded-xl"
+                    style={{ width: 48, height: 48, background: `${GOLD}14`, border: `1px solid ${GOLD}30` }}>
+                    <Icon size={24} strokeWidth={1.8} style={{ color: GOLD }} />
+                  </div>
+                  <h3 className="text-lg font-bold mb-2" style={{ color: NAVY }}>{item.title}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+                </div>
+              )
+            })}
           </div>
           <div className="mt-6 rounded-2xl p-5 text-center"
             style={{ background: `linear-gradient(135deg, ${NAVY}, #102540)`, border: `2px solid ${GOLD}50` }}>
@@ -400,14 +409,20 @@ export default function PartnerPage() {
           <h2 className="text-3xl font-bold text-center mb-3" style={{ color: NAVY }}>이런 분들과 함께합니다</h2>
           <p className="text-center text-gray-500 mb-10 text-sm">건강과 관련된 일을 하고 있다면, 이미 절반은 준비된 겁니다</p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {WHO_FIT.map((item, i) => (
-              <div key={i} className="rounded-2xl bg-white p-6"
-                style={{ border: `1.5px solid ${GOLD}25`, boxShadow: `0 2px 16px ${GOLD}08` }}>
-                <div className="text-3xl mb-3">{item.emoji}</div>
-                <h3 className="font-bold mb-2" style={{ color: NAVY }}>{item.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
+            {WHO_FIT.map((item, i) => {
+              const Icon = item.icon
+              return (
+                <div key={i} className="rounded-2xl bg-white p-6"
+                  style={{ border: `1.5px solid ${GOLD}25`, boxShadow: `0 2px 16px ${GOLD}08` }}>
+                  <div className="inline-flex items-center justify-center mb-4 rounded-xl"
+                    style={{ width: 44, height: 44, background: `${GOLD}12`, border: `1px solid ${GOLD}28` }}>
+                    <Icon size={22} strokeWidth={1.8} style={{ color: GOLD }} />
+                  </div>
+                  <h3 className="font-bold mb-2" style={{ color: NAVY }}>{item.title}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+                </div>
+              )
+            })}
           </div>
         </div>
       </section>
@@ -419,16 +434,22 @@ export default function PartnerPage() {
           <h2 className="text-3xl font-bold text-center mb-3" style={{ color: NAVY }}>왜 지금 플로로탄닌인가</h2>
           <p className="text-center text-gray-500 mb-10 text-sm">성장하는 시장에서 선점 가능한 성분</p>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-            {MARKET_GROWTH.map((item, i) => (
-              <div key={i} className="rounded-2xl p-6"
-                style={{ border: `1.5px solid ${GOLD}25`, background: `${GOLD}06` }}>
-                <div className="text-3xl mb-3">{item.icon}</div>
-                <div className="inline-block text-xs font-bold px-2 py-0.5 rounded-full mb-2"
-                  style={{ background: `${GOLD}18`, color: GOLD }}>{item.highlight}</div>
-                <h3 className="font-bold text-sm mb-2" style={{ color: NAVY }}>{item.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
+            {MARKET_GROWTH.map((item, i) => {
+              const Icon = item.icon
+              return (
+                <div key={i} className="rounded-2xl p-6"
+                  style={{ border: `1.5px solid ${GOLD}25`, background: `${GOLD}06` }}>
+                  <div className="inline-flex items-center justify-center mb-4 rounded-xl"
+                    style={{ width: 44, height: 44, background: `${GOLD}14`, border: `1px solid ${GOLD}30` }}>
+                    <Icon size={22} strokeWidth={1.8} style={{ color: GOLD }} />
+                  </div>
+                  <div className="inline-block text-xs font-bold px-2 py-0.5 rounded-full mb-2"
+                    style={{ background: `${GOLD}18`, color: GOLD }}>{item.highlight}</div>
+                  <h3 className="font-bold text-sm mb-2" style={{ color: NAVY }}>{item.title}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
+                </div>
+              )
+            })}
           </div>
         </div>
       </section>
