@@ -377,14 +377,12 @@ export default function BusinessCardPage() {
           prefix: '',
         })
 
-        if (viewCard) {
-          // ?view=card 파라미터 있음 → 명함 버튼 클릭이므로 명함 페이지 표시
-          setPartner(p)
-          setLoading(false)
-        } else {
-          // 파라미터 없음 → 처음 파트너 링크 접속이므로 메인으로 리다이렉트
-          navigate('/', { replace: true })
-        }
+        // ── [2026-05-24] 헌법 제12조 SPA 라우팅 표준 ──
+        // /p/:phone 은 무조건 명함(개인화) 페이지로 진입.
+        // 과거: ?view=card 파라미터 없으면 navigate('/')로 메인 추방 → URL 복사·공유 시 명함이 안 뜨는 치명적 회귀
+        // 현재: 파트너 데이터 로드되면 항상 명함 페이지 렌더. viewCard 파라미터는 더 이상 진입 게이트가 아님(PWA 부가 로직 신호용으로만 유지)
+        setPartner(p)
+        setLoading(false)
       } else {
         setNotFound(true)
         setLoading(false)
@@ -964,14 +962,14 @@ export default function BusinessCardPage() {
                   <p style={{ fontSize: '14px', fontWeight: '900', color: '#fff', marginBottom: '2px' }}>
                     우상단 <span style={{ color: GOLD2 }}>⋮</span> 누르고 →  <span style={{ color: GOLD2 }}>"홈 화면에 추가"</span> 누르세요
                   </p>
-                  <p style={{ fontSize: '12px', color: `${GOLD2}` }}>그러면 바로가기가 만들어져요 📱</p>
+                  <p style={{ fontSize: '12px', color: `${GOLD2}` }}>그러면 바로가기가 만들어져요</p>
                 </>
               ) : (
                 <>
                   <p style={{ fontSize: '14px', fontWeight: '900', color: '#fff', marginBottom: '2px' }}>
-                    하단 <span style={{ color: GOLD2 }}>⬆️ 공유</span> 누르고 → <span style={{ color: GOLD2 }}>"홈 화면에 추가"</span> 누르세요
+                    하단 <span style={{ color: GOLD2 }}>공유</span> 누르고 → <span style={{ color: GOLD2 }}>"홈 화면에 추가"</span> 누르세요
                   </p>
-                  <p style={{ fontSize: '12px', color: `${GOLD2}` }}>그러면 바로가기가 만들어져요 📱</p>
+                  <p style={{ fontSize: '12px', color: `${GOLD2}` }}>그러면 바로가기가 만들어져요</p>
                 </>
               )}
             </div>
