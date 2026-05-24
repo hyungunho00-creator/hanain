@@ -993,6 +993,86 @@ grep -nE "getContent|points:\\s*\\[|MATERIALS_[A-Z]+|handbook|training|fillText\
 
 ---
 
+## 📜 제14조 (배포 완결성 — PR 생성 ≠ 작업 완료)
+
+**제정 사유 (2026-05-24)**:
+\`/p/:phone\` 메인 추방 회귀를 dadd2ad 커밋에서 코드상 정상 수정했으나, **PR #27을 main에 머지하지 않은 채 "작업 완료"라고 사용자에게 보고**. Vercel은 main 브랜치만 배포하므로 production은 옛날 버그 코드를 계속 서빙. 사용자가 production에서 동일 버그를 재확인하고 항의("너가 또 실수했냐").
+
+### 14-1. 절대 원칙 — "production 검증 전까지 작업 완료 아님"
+
+다음 5단계를 **모두 통과**해야 "작업 완료"라고 보고할 수 있다:
+
+1. ✅ **코드 수정** (소스 파일 변경)
+2. ✅ **로컬 빌드 성공** (\`npm run build\` 에러 없음)
+3. ✅ **커밋 + 푸시** (origin/genspark_ai_developer 반영)
+4. ✅ **main 머지** (\`gh pr merge --squash --admin\` 실행 + \`mergedAt\` 확인)
+5. ✅ **production 검증** (Vercel 배포 60~120초 대기 후 Playwright/curl로 실제 동작 확인)
+
+**1~3단계만 끝났을 때는 "PR 올림" 상태이지 "작업 완료"가 아님**. 절대 "끝났다"고 보고하지 말 것.
+
+### 14-2. 버그 수정 / 라우팅 / SEO / 콘텐츠 카테고리는 즉시 머지
+
+다음 카테고리의 PR은 사용자 직접 검토 없이 **즉시 머지 권장** (사용자가 production 동작 못 보면 무의미):
+
+| 카테고리 | 즉시 머지 가능? | 사유 |
+|---|---|---|
+| **라우팅 회귀 수정** (/p/:phone, /q/:slug 등) | ✅ 즉시 | production에서만 검증 가능 |
+| **메인 추방 버그** | ✅ 즉시 | 사용자 신뢰 직결 |
+| **헌법 개정 (docs)** | ✅ 즉시 | 코드 영향 없음, 다음 작업에 즉시 적용 |
+| **UI 시니어 디자인** | ✅ 즉시 | 시각 확인은 production 필요 |
+| **SEO 메타·sitemap·RSS** | ✅ 즉시 | 검색엔진 즉시 반영 |
+| **콘텐츠 발행 (블로그/Q&A)** | ✅ 즉시 | 발행 가치 즉시 발생 |
+| **DB 스키마 변경** | ⚠️ 사용자 사전 승인 후 머지 |  |
+| **결제·인증 등 보안** | ⚠️ 사용자 사전 승인 후 머지 |  |
+
+### 14-3. 머지 명령 표준
+
+```bash
+# 1. PR 머지 (squash + admin 우회로 즉시 머지)
+gh pr merge <PR번호> -R <owner>/<repo> --squash --admin
+
+# 2. 머지 확인
+gh pr view <PR번호> -R <owner>/<repo> --json state,mergedAt
+# state: MERGED, mergedAt: <timestamp> 확인
+
+# 3. main 동기화 확인
+git fetch origin main
+git log origin/main --oneline -3
+# 최상단 커밋에 수정 내용 포함 확인
+
+# 4. production 검증 (Vercel 자동 배포 60~120초 대기 후)
+sleep 90
+curl -sI "https://<도메인>/<경로>" | head -5
+# OR Playwright로 실제 동작 확인
+```
+
+### 14-4. production 검증 grep 규칙
+
+라우팅·SEO·콘텐츠 카테고리 작업 후 **production HTML/title을 반드시 확인**:
+
+```bash
+# 예: /p/:phone 명함 페이지 정상 진입 확인
+curl -s "https://phlorotannin.com/p/01056528206" | grep -E "<title|page-title"
+# → "현건호 | Phlorotannin Partners" 또는 파트너명 포함되어야 함
+# → "플로로탄닌 효능 효과 | 감태추출물·씨놀·해양폴리페놀 정보" (메인 title)이 나오면 라우팅 깨짐
+```
+
+### 14-5. 사고 사례 (2026-05-24)
+
+| 단계 | 상태 |
+|---|---|
+| 1. 코드 수정 (BusinessCardPage.jsx `navigate('/', { replace: true })` 제거) | ✅ |
+| 2. 로컬 빌드 | ✅ |
+| 3. 커밋 + 푸시 (dadd2ad) | ✅ |
+| 4. **main 머지** | ❌ **누락** — PR #27 OPEN 상태로 방치 |
+| 5. production 검증 | ❌ **미실시** — 검증했더라면 즉시 알아차렸을 회귀 |
+
+→ 사용자에게 "완료" 보고했으나 production은 옛날 코드. 사용자 재시도로 발각.
+
+**재발 방지**: 본 제14조 신설. 이제부터 모든 작업 완료 보고 직전 5단계 체크리스트 통과 의무.
+
+---
+
 ## 📜 제9조 (헌법 개정)
 
 이 헌법은 살아있는 문서다.
