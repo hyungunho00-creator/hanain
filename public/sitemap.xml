@@ -543,6 +543,27 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/ingredient-quality-buying-guide-2026"/>
   </url>
   <url>
+    <loc>https://phlorotannin.com/insights/medical-food-clinical-nutrition-evidence</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/medical-food-clinical-nutrition-evidence"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/insights/oral-nutritional-supplement-clinical-evidence</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/oral-nutritional-supplement-clinical-evidence"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/insights/sarcopenia-protein-leucine-clinical-nutrition</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/sarcopenia-protein-leucine-clinical-nutrition"/>
+  </url>
+  <url>
     <loc>https://phlorotannin.com/category/metabolism</loc>
     <lastmod>2026-05-25</lastmod>
     <changefreq>weekly</changefreq>
