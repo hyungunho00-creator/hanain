@@ -1,0 +1,40 @@
+{
+  "payload": {
+    "host": "phlorotannin.com",
+    "key": "6c13a351f7784b49b91e4da2717e6889",
+    "keyLocation": "https://phlorotannin.com/6c13a351f7784b49b91e4da2717e6889.txt",
+    "urlList": [
+      "https://phlorotannin.com/blog/fortimel-compact-protein-flavors-how-to-drink-guide",
+      "https://phlorotannin.com/blog/nutricia-brand-history-medical-nutrition-portfolio",
+      "https://phlorotannin.com/blog/meulssori-patient-meal-delivery-service-introduction",
+      "https://phlorotannin.com/blog/fortimel-meulssori-recovery-meal-protein-combo-guide",
+      "https://phlorotannin.com/blog",
+      "https://phlorotannin.com/blog?category=cancer-treatment-care",
+      "https://phlorotannin.com/blog?category=research",
+      "https://phlorotannin.com/sitemap.xml",
+      "https://phlorotannin.com/rss.xml"
+    ]
+  },
+  "results": [
+    {
+      "endpoint": "https://api.indexnow.org/IndexNow",
+      "status": 200,
+      "body": ""
+    },
+    {
+      "endpoint": "https://www.bing.com/IndexNow",
+      "status": 200,
+      "body": ""
+    },
+    {
+      "endpoint": "https://yandex.com/indexnow",
+      "status": 202,
+      "body": "{\n  \"success\":true\n}"
+    },
+    {
+      "endpoint": "https://searchadvisor.naver.com/indexnow",
+      "status": 200,
+      "body": ""
+    }
+  ]
+}
