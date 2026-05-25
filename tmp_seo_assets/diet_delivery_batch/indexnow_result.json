@@ -1,0 +1,33 @@
+{
+  "urls": [
+    "https://phlorotannin.com/blog/cancer-patient-diet-delivery-protein-fiber-guide",
+    "https://phlorotannin.com/blog/chemotherapy-side-effects-diet-guide-nausea-anorexia-mucositis",
+    "https://phlorotannin.com/blog/diabetes-patient-diet-delivery-fiber-protein-low-gi-guide",
+    "https://phlorotannin.com/blog/blood-sugar-spike-prevention-type2-gestational-diabetes-meal",
+    "https://phlorotannin.com/blog/nutricia-fortimel-medical-food-korea-market-trend-2025",
+    "https://phlorotannin.com/blog/fortimel-compact-protein-cancer-surgery-clinical-evidence-2025",
+    "https://phlorotannin.com/blog/elderly-sarcopenia-nutrition-fortimel-high-protein-ons-2025-guide",
+    "https://phlorotannin.com/blog",
+    "https://phlorotannin.com/blog?category=cancer-treatment-care",
+    "https://phlorotannin.com/blog?category=diabetes",
+    "https://phlorotannin.com/sitemap.xml"
+  ],
+  "results": {
+    "https://api.indexnow.org/IndexNow": {
+      "status": 200,
+      "body": ""
+    },
+    "https://www.bing.com/IndexNow": {
+      "status": 203,
+      "body": "OK"
+    },
+    "https://yandex.com/indexnow": {
+      "status": 202,
+      "body": "{\n  \"success\":true\n}"
+    },
+    "https://searchadvisor.naver.com/indexnow": {
+      "status": 200,
+      "body": ""
+    }
+  }
+}
