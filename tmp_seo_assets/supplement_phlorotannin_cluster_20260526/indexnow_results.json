@@ -1,0 +1,30 @@
+{
+  "urls": [
+    "https://phlorotannin.com/blog/phlorotannin-omega3-marine-polyphenol-combination-guide",
+    "https://phlorotannin.com/blog/phlorotannin-vitamin-d-immune-inflammation-checklist",
+    "https://phlorotannin.com/blog/phlorotannin-probiotics-gut-microbiome-polyphenol-guide",
+    "https://phlorotannin.com/blog/phlorotannin-coq10-mitochondria-antioxidant-comparison",
+    "https://phlorotannin.com/blog/phlorotannin-red-ginseng-immunity-fatigue-research-guide",
+    "https://phlorotannin.com/blog/phlorotannin-lutein-astaxanthin-eye-antioxidant-stack",
+    "https://phlorotannin.com/insights/supplement-stack-checklist-phlorotannin-omega3-vitamin-d",
+    "https://phlorotannin.com/insights/phlorotannin-supplement-clinical-evidence-map-2026"
+  ],
+  "endpoints": {
+    "https://api.indexnow.org/indexnow": {
+      "status": 200,
+      "body": ""
+    },
+    "https://www.bing.com/indexnow": {
+      "status": 200,
+      "body": ""
+    },
+    "https://yandex.com/indexnow": {
+      "status": 202,
+      "body": "{\n  \"success\":true\n}"
+    },
+    "https://searchadvisor.naver.com/indexnow": {
+      "status": 200,
+      "body": ""
+    }
+  }
+}

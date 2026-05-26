@@ -1,0 +1,187 @@
+{
+  "db": [
+    {
+      "id": 329,
+      "slug": "phlorotannin-omega3-marine-polyphenol-combination-guide",
+      "title": "플로로탄닌과 오메가3: 해양 성분을 함께 볼 때 체크할 5가지",
+      "status": "published",
+      "category": "ingredient-comparison",
+      "og_image": "https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/phlorotannin-omega3-marine-polyphenol-combination-guide.webp",
+      "published_at": "2026-05-26T13:08:10.322572+00:00"
+    },
+    {
+      "id": 330,
+      "slug": "phlorotannin-vitamin-d-immune-inflammation-checklist",
+      "title": "플로로탄닌과 비타민D: 면역·염증 관점에서 나눠 보는 기준",
+      "status": "published",
+      "category": "ingredient-comparison",
+      "og_image": "https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/phlorotannin-vitamin-d-immune-inflammation-checklist.webp",
+      "published_at": "2026-05-26T13:08:10.322572+00:00"
+    },
+    {
+      "id": 331,
+      "slug": "phlorotannin-probiotics-gut-microbiome-polyphenol-guide",
+      "title": "플로로탄닌과 프로바이오틱스: 장내미생물·폴리페놀 연결고리",
+      "status": "published",
+      "category": "ingredient-comparison",
+      "og_image": "https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/phlorotannin-probiotics-gut-microbiome-polyphenol-guide.webp",
+      "published_at": "2026-05-26T13:08:10.322572+00:00"
+    },
+    {
+      "id": 332,
+      "slug": "phlorotannin-coq10-mitochondria-antioxidant-comparison",
+      "title": "플로로탄닌과 코엔자임Q10: 항산화·미토콘드리아 소재 비교",
+      "status": "published",
+      "category": "ingredient-comparison",
+      "og_image": "https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/phlorotannin-coq10-mitochondria-antioxidant-comparison.webp",
+      "published_at": "2026-05-26T13:08:10.322572+00:00"
+    },
+    {
+      "id": 333,
+      "slug": "phlorotannin-red-ginseng-immunity-fatigue-research-guide",
+      "title": "플로로탄닌과 홍삼: 면역·피로 소재를 함께 볼 때 주의점",
+      "status": "published",
+      "category": "ingredient-comparison",
+      "og_image": "https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/phlorotannin-red-ginseng-immunity-fatigue-research-guide.webp",
+      "published_at": "2026-05-26T13:08:10.322572+00:00"
+    },
+    {
+      "id": 334,
+      "slug": "phlorotannin-lutein-astaxanthin-eye-antioxidant-stack",
+      "title": "플로로탄닌과 루테인·아스타잔틴: 눈·피부 항산화 소재 비교",
+      "status": "published",
+      "category": "ingredient-comparison",
+      "og_image": "https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/phlorotannin-lutein-astaxanthin-eye-antioxidant-stack.webp",
+      "published_at": "2026-05-26T13:08:10.322572+00:00"
+    }
+  ],
+  "images": [
+    {
+      "slug": "phlorotannin-omega3-marine-polyphenol-combination-guide",
+      "status": 200,
+      "content_type": "image/webp"
+    },
+    {
+      "slug": "phlorotannin-vitamin-d-immune-inflammation-checklist",
+      "status": 200,
+      "content_type": "image/webp"
+    },
+    {
+      "slug": "phlorotannin-probiotics-gut-microbiome-polyphenol-guide",
+      "status": 200,
+      "content_type": "image/webp"
+    },
+    {
+      "slug": "phlorotannin-coq10-mitochondria-antioxidant-comparison",
+      "status": 200,
+      "content_type": "image/webp"
+    },
+    {
+      "slug": "phlorotannin-red-ginseng-immunity-fatigue-research-guide",
+      "status": 200,
+      "content_type": "image/webp"
+    },
+    {
+      "slug": "phlorotannin-lutein-astaxanthin-eye-antioxidant-stack",
+      "status": 200,
+      "content_type": "image/webp"
+    }
+  ],
+  "pages": [
+    {
+      "slug": "phlorotannin-omega3-marine-polyphenol-combination-guide",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_og_image": true,
+      "has_webp_type": true,
+      "title_seen": true
+    },
+    {
+      "slug": "phlorotannin-vitamin-d-immune-inflammation-checklist",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_og_image": true,
+      "has_webp_type": true,
+      "title_seen": true
+    },
+    {
+      "slug": "phlorotannin-probiotics-gut-microbiome-polyphenol-guide",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_og_image": true,
+      "has_webp_type": true,
+      "title_seen": true
+    },
+    {
+      "slug": "phlorotannin-coq10-mitochondria-antioxidant-comparison",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_og_image": true,
+      "has_webp_type": true,
+      "title_seen": true
+    },
+    {
+      "slug": "phlorotannin-red-ginseng-immunity-fatigue-research-guide",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_og_image": true,
+      "has_webp_type": true,
+      "title_seen": true
+    },
+    {
+      "slug": "phlorotannin-lutein-astaxanthin-eye-antioxidant-stack",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_og_image": true,
+      "has_webp_type": true,
+      "title_seen": true
+    }
+  ],
+  "insights": [
+    {
+      "slug": "supplement-stack-checklist-phlorotannin-omega3-vitamin-d",
+      "status": 200,
+      "html_has_bundle": true
+    },
+    {
+      "slug": "phlorotannin-supplement-clinical-evidence-map-2026",
+      "status": 200,
+      "html_has_bundle": true
+    }
+  ],
+  "sitemap_status": 200,
+  "sitemap": [
+    {
+      "url": "/blog/phlorotannin-omega3-marine-polyphenol-combination-guide",
+      "present": true
+    },
+    {
+      "url": "/blog/phlorotannin-vitamin-d-immune-inflammation-checklist",
+      "present": true
+    },
+    {
+      "url": "/blog/phlorotannin-probiotics-gut-microbiome-polyphenol-guide",
+      "present": true
+    },
+    {
+      "url": "/blog/phlorotannin-coq10-mitochondria-antioxidant-comparison",
+      "present": true
+    },
+    {
+      "url": "/blog/phlorotannin-red-ginseng-immunity-fatigue-research-guide",
+      "present": true
+    },
+    {
+      "url": "/blog/phlorotannin-lutein-astaxanthin-eye-antioxidant-stack",
+      "present": true
+    },
+    {
+      "url": "/insights/supplement-stack-checklist-phlorotannin-omega3-vitamin-d",
+      "present": true
+    },
+    {
+      "url": "/insights/phlorotannin-supplement-clinical-evidence-map-2026",
+      "present": true
+    }
+  ]
+}
