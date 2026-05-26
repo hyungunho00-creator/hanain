@@ -1,0 +1,40 @@
+{
+  "batch": "nutricia_fortimel_cluster_20260526",
+  "date": "2026-05-26",
+  "inserted_posts": [
+    {
+      "id": 316,
+      "slug": "what-is-fortimel-medical-nutrition-guide",
+      "title": "포티멜이란? — 환자용 영양보충음료를 처음 찾는 분을 위한 안내"
+    },
+    {
+      "id": 317,
+      "slug": "fortimel-product-types-comparison-guide",
+      "title": "포티멜 종류 비교 — 컴팩트 프로틴부터 제품군 선택 기준까지"
+    },
+    {
+      "id": 318,
+      "slug": "fortimel-buying-checklist-medical-food-guide",
+      "title": "포티멜 구매 전 확인사항 — 정식 유통·영양표시·보관 체크리스트"
+    },
+    {
+      "id": 319,
+      "slug": "what-is-nutricia-danone-medical-nutrition-guide",
+      "title": "뉴트리시아란? — 다논 의료영양 브랜드를 처음 검색하는 분을 위한 정리"
+    },
+    {
+      "id": 320,
+      "slug": "nutricia-product-portfolio-fortimel-aptamil-neocate-guide",
+      "title": "뉴트리시아 제품군 정리 — 포티멜·압타밀·네오케이트는 어떻게 다른가"
+    }
+  ],
+  "updated_existing_posts": [
+    "fortimel-compact-protein-flavors-how-to-drink-guide",
+    "nutricia-brand-history-medical-nutrition-portfolio"
+  ],
+  "notes": [
+    "New posts were inserted as published rows in public.posts.",
+    "Existing posts were only appended with INTERNAL_LINKS_FORTIMEL_NUTRICIA_CLUSTER_20260526 blocks.",
+    "Existing slugs, titles, canonical paths, and URL patterns were not changed."
+  ]
+}
