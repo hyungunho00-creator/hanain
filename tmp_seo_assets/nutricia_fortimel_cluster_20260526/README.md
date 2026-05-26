@@ -40,6 +40,7 @@ Generated asset manifest:
 
 - `image_fix_manifest.json`
 - `image_fix_upload_results.json`
+- `image_fix_indexnow_result.json`
 
 ## Rollback
 
