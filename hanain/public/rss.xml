@@ -8,7 +8,7 @@
     <link>https://phlorotannin.com</link>
     <description>감태 추출 해양 폴리페놀 플로로탄닌(Phlorotannin) 전문 건강 정보. 당뇨·항암·뇌건강·심혈관·염증 최신 블로그 &amp; Q&amp;A 아카이브.</description>
     <language>ko</language>
-    <lastBuildDate>Mon, 25 May 2026 13:41:25 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 26 May 2026 11:44:47 +0000</lastBuildDate>
     <atom:link href="https://phlorotannin.com/rss.xml" rel="self" type="application/rss+xml"/>
     <copyright>© 2026 플로로탄닌 파트너스</copyright>
     <category>건강/의학</category>
@@ -20,14 +20,134 @@
     </image>
 
   <item>
-    <title>포티멜 컴팩트 프로틴 — 맛 종류와 맛있게 마시는 법</title>
-    <link>https://phlorotannin.com/blog/fortimel-compact-protein-flavors-how-to-drink-guide</link>
-    <description><![CDATA[포티멜 컴팩트 프로틴의 맛 종류·맛있게 마시는 요령·하루 섭취 타이밍을 일상 언어로 정리한 실용 가이드입니다.]]></description>
-    <category>cancer-treatment-care</category>
-    <pubDate>Mon, 25 May 2026 13:17:41 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/fortimel-compact-protein-flavors-how-to-drink-guide</guid>
-    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/fortimel-flavors-how-to-drink.webp" type="image/webp"/>
-    <dc:subject>포티멜, 포티멜 컴팩트 프로틴, 포티멜 맛, 영양보충음료, 환자식단</dc:subject>
+    <title>암환자식단배달 주문 전 체크리스트: 단백질·저염·위생 기준</title>
+    <link>https://phlorotannin.com/blog/cancer-patient-meal-delivery-checklist-before-order</link>
+    <description><![CDATA[암환자식단배달을 고르기 전 단백질, 나트륨, 위생, 보관, 알레르기, 상담 정보를 확인하는 실전 체크리스트입니다.]]></description>
+    <category>항암·면역</category>
+    <pubDate>Tue, 26 May 2026 11:43:50 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/cancer-patient-meal-delivery-checklist-before-order</guid>
+    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/cancer-patient-meal-delivery-checklist-before-order.webp" type="image/webp"/>
+    <dc:subject>암환자식단배달, 암환자 식단, 환자식 배달, 항암 식사, 보호자 체크리스트</dc:subject>
+  </item>
+  <item>
+    <title>항암 중 식욕부진 식단배달: 못 드시는 날 메뉴 조정법</title>
+    <link>https://phlorotannin.com/blog/cancer-patient-meal-delivery-appetite-loss-menu-guide</link>
+    <description><![CDATA[항암 중 식욕부진이 있을 때 식단배달 메뉴를 부드럽게, 작게, 단백질 중심으로 조정하는 방법을 정리했습니다.]]></description>
+    <category>항암·면역</category>
+    <pubDate>Tue, 26 May 2026 11:43:50 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/cancer-patient-meal-delivery-appetite-loss-menu-guide</guid>
+    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/cancer-patient-meal-delivery-appetite-loss-menu-guide.webp" type="image/webp"/>
+    <dc:subject>항암 식욕부진, 암환자식단배달, 구내염 식단, 메스꺼움 식단, 환자식</dc:subject>
+  </item>
+  <item>
+    <title>암환자 보호자 식단 기록법: 식사량·못 먹는 음식·문의 메모</title>
+    <link>https://phlorotannin.com/blog/caregiver-cancer-meal-delivery-prep-record-guide</link>
+    <description><![CDATA[암환자 보호자가 식단배달이나 상담 전에 정리하면 좋은 식사량, 부작용, 못 먹는 음식, 주문 메모 예시를 정리했습니다.]]></description>
+    <category>항암·면역</category>
+    <pubDate>Tue, 26 May 2026 11:43:50 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/caregiver-cancer-meal-delivery-prep-record-guide</guid>
+    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/caregiver-cancer-meal-delivery-prep-record-guide.webp" type="image/webp"/>
+    <dc:subject>암환자 보호자, 식단 기록, 암환자식단배달, 환자식 문의, 식사량 기록</dc:subject>
+  </item>
+  <item>
+    <title>암환자 도시락·반찬·영양보충음료: 함께 쓰는 기준</title>
+    <link>https://phlorotannin.com/blog/cancer-meal-delivery-bento-side-dish-ons-combo</link>
+    <description><![CDATA[암환자 도시락, 환자식 반찬, 영양보충음료를 각각 언제 쓰면 좋은지 역할을 나눠 정리했습니다.]]></description>
+    <category>항암·면역</category>
+    <pubDate>Tue, 26 May 2026 11:43:50 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/cancer-meal-delivery-bento-side-dish-ons-combo</guid>
+    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/cancer-meal-delivery-bento-side-dish-ons-combo.webp" type="image/webp"/>
+    <dc:subject>암환자 도시락, 환자식 반찬, 영양보충음료, 포티멜, 암환자식단배달</dc:subject>
+  </item>
+  <item>
+    <title>당뇨환자식단배달 선택 기준: 탄수화물·단백질·섬유질</title>
+    <link>https://phlorotannin.com/blog/diabetes-patient-meal-delivery-checklist-carb-protein-fiber</link>
+    <description><![CDATA[당뇨환자식단배달을 고를 때 탄수화물 양, 단백질, 섬유질, 나트륨, 간식 구성을 확인하는 기준을 정리했습니다.]]></description>
+    <category>당뇨·혈당</category>
+    <pubDate>Tue, 26 May 2026 11:43:50 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/diabetes-patient-meal-delivery-checklist-carb-protein-fiber</guid>
+    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/diabetes-patient-meal-delivery-checklist-carb-protein-fiber.webp" type="image/webp"/>
+    <dc:subject>당뇨환자식단배달, 당뇨 식단, 탄수화물 관리, 섬유질, 혈당관리</dc:subject>
+  </item>
+  <item>
+    <title>혈당 스파이크 줄이는 도시락 구성: 밥 양보다 순서와 조합</title>
+    <link>https://phlorotannin.com/blog/diabetes-meal-delivery-blood-sugar-spike-lunchbox-guide</link>
+    <description><![CDATA[혈당 스파이크를 줄이기 위해 도시락에서 밥 양만 보지 말고 채소, 단백질, 식사 순서, 식후 움직임을 함께 확인해야 합니다.]]></description>
+    <category>당뇨·혈당</category>
+    <pubDate>Tue, 26 May 2026 11:43:50 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/diabetes-meal-delivery-blood-sugar-spike-lunchbox-guide</guid>
+    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/diabetes-meal-delivery-blood-sugar-spike-lunchbox-guide.webp" type="image/webp"/>
+    <dc:subject>혈당 스파이크, 당뇨 도시락, 당뇨환자식단배달, 식사 순서, 저당 식단</dc:subject>
+  </item>
+  <item>
+    <title>당뇨 반찬 정기배송: 저당만 보고 고르면 안 되는 이유</title>
+    <link>https://phlorotannin.com/blog/diabetes-side-dish-delivery-low-sugar-sodium-guide</link>
+    <description><![CDATA[당뇨 반찬 정기배송은 저당뿐 아니라 나트륨, 단백질, 식이섬유, 소스, 밥을 부르는 맛까지 함께 봐야 합니다.]]></description>
+    <category>당뇨·혈당</category>
+    <pubDate>Tue, 26 May 2026 11:43:50 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/diabetes-side-dish-delivery-low-sugar-sodium-guide</guid>
+    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/diabetes-side-dish-delivery-low-sugar-sodium-guide.webp" type="image/webp"/>
+    <dc:subject>당뇨 반찬, 당뇨환자식단배달, 저당 반찬, 나트륨, 정기배송</dc:subject>
+  </item>
+  <item>
+    <title>당뇨와 고혈압·신장질환이 함께 있을 때 식단배달 주의점</title>
+    <link>https://phlorotannin.com/blog/diabetes-meal-delivery-hypertension-kidney-caution</link>
+    <description><![CDATA[당뇨에 고혈압이나 신장질환이 함께 있을 때 식단배달에서 탄수화물, 단백질, 나트륨, 칼륨을 어떻게 조심해야 하는지 정리했습니다.]]></description>
+    <category>당뇨·혈당</category>
+    <pubDate>Tue, 26 May 2026 11:43:50 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/diabetes-meal-delivery-hypertension-kidney-caution</guid>
+    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/diabetes-meal-delivery-hypertension-kidney-caution.webp" type="image/webp"/>
+    <dc:subject>당뇨 고혈압, 당뇨 신장질환, 당뇨환자식단배달, 나트륨 제한, 칼륨</dc:subject>
+  </item>
+  <item>
+    <title>뉴트리시아란? — 다논 의료영양 브랜드를 처음 검색하는 분을 위한 정리</title>
+    <link>https://phlorotannin.com/blog/what-is-nutricia-danone-medical-nutrition-guide</link>
+    <description><![CDATA[뉴트리시아의 공식 표기, 다논 그룹 내 위치, 의료영양 브랜드로서의 역할과 포티멜과의 관계를 쉽게 정리했습니다.]]></description>
+    <category>연구·임상</category>
+    <pubDate>Tue, 26 May 2026 09:44:31 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/what-is-nutricia-danone-medical-nutrition-guide</guid>
+    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/what-is-nutricia-danone-medical-nutrition-guide.webp" type="image/webp"/>
+    <dc:subject>뉴트리시아, Nutricia, 뉴트로시아, 뉴드로시아, 다논</dc:subject>
+  </item>
+  <item>
+    <title>포티멜이란? — 환자용 영양보충음료를 처음 찾는 분을 위한 안내</title>
+    <link>https://phlorotannin.com/blog/what-is-fortimel-medical-nutrition-guide</link>
+    <description><![CDATA[포티멜의 정체, 경구영양보충제(ONS)의 의미, 포티멜을 확인할 때 봐야 할 영양표시와 상담 기준을 정리했습니다.]]></description>
+    <category>연구·임상</category>
+    <pubDate>Tue, 26 May 2026 09:44:31 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/what-is-fortimel-medical-nutrition-guide</guid>
+    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/what-is-fortimel-medical-nutrition-guide.webp" type="image/webp"/>
+    <dc:subject>포티멜, Fortimel, 경구영양보충제, ONS, 메디푸드</dc:subject>
+  </item>
+  <item>
+    <title>포티멜 종류 비교 — 컴팩트 프로틴부터 제품군 선택 기준까지</title>
+    <link>https://phlorotannin.com/blog/fortimel-product-types-comparison-guide</link>
+    <description><![CDATA[포티멜 제품군을 이름만으로 고르기 어렵다면 단백질, 열량, 부피, 섭취 목적 기준으로 비교해 보세요.]]></description>
+    <category>연구·임상</category>
+    <pubDate>Tue, 26 May 2026 09:44:31 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/fortimel-product-types-comparison-guide</guid>
+    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/fortimel-product-types-comparison-guide.webp" type="image/webp"/>
+    <dc:subject>포티멜 종류, 포티멜 컴팩트 프로틴, Fortimel Compact Protein, 경구영양보충제, ONS</dc:subject>
+  </item>
+  <item>
+    <title>포티멜 구매 전 확인사항 — 정식 유통·영양표시·보관 체크리스트</title>
+    <link>https://phlorotannin.com/blog/fortimel-buying-checklist-medical-food-guide</link>
+    <description><![CDATA[포티멜을 구매하기 전 정식 유통, 제품명, 영양성분, 알레르기, 유통기한, 보관 조건을 확인하는 방법을 정리했습니다.]]></description>
+    <category>disease-health-info</category>
+    <pubDate>Tue, 26 May 2026 09:44:31 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/fortimel-buying-checklist-medical-food-guide</guid>
+    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/fortimel-buying-checklist-medical-food-guide.webp" type="image/webp"/>
+    <dc:subject>포티멜 구매, 포티멜 가격, 포티멜 체크리스트, 영양보충음료, 메디푸드</dc:subject>
+  </item>
+  <item>
+    <title>뉴트리시아 제품군 정리 — 포티멜·압타밀·네오케이트는 어떻게 다른가</title>
+    <link>https://phlorotannin.com/blog/nutricia-product-portfolio-fortimel-aptamil-neocate-guide</link>
+    <description><![CDATA[뉴트리시아 제품군을 성인 의료영양, 영유아 영양, 알레르기·대사질환 특수영양으로 나누어 정리했습니다.]]></description>
+    <category>연구·임상</category>
+    <pubDate>Tue, 26 May 2026 09:44:31 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/nutricia-product-portfolio-fortimel-aptamil-neocate-guide</guid>
+    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/nutricia-product-portfolio-fortimel-aptamil-neocate-guide.webp" type="image/webp"/>
+    <dc:subject>뉴트리시아 제품, Nutricia products, 포티멜, 압타밀, 네오케이트</dc:subject>
   </item>
   <item>
     <title>맛있으리 환자식 정기배송 — 메뉴 구성과 이용 가이드</title>
@@ -40,16 +160,6 @@
     <dc:subject>맛있으리, 환자식 정기배송, 환자식단배달, 회복기 반찬, 환자 도시락</dc:subject>
   </item>
   <item>
-    <title>뉴트리시아 브랜드 이야기 — 125년 의료영양 전문성과 제품군 정리</title>
-    <link>https://phlorotannin.com/blog/nutricia-brand-history-medical-nutrition-portfolio</link>
-    <description><![CDATA[뉴트리시아의 125년 역사와 다논 그룹 의료영양 사업부, 포티멜·압타밀 등 주요 제품군을 일반인이 이해하기 쉽게 정리했습니다.]]></description>
-    <category>연구·임상</category>
-    <pubDate>Mon, 25 May 2026 13:17:41 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/nutricia-brand-history-medical-nutrition-portfolio</guid>
-    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/nutricia-brand-history.webp" type="image/webp"/>
-    <dc:subject>뉴트리시아, Nutricia, 다논 그룹, 포티멜, 압타밀</dc:subject>
-  </item>
-  <item>
     <title>회복기 환자 식단 — 포티멜과 환자식 반찬을 함께 활용하는 법</title>
     <link>https://phlorotannin.com/blog/fortimel-meulssori-recovery-meal-protein-combo-guide</link>
     <description><![CDATA[수술 후·항암 후 회복기에 영양 보충 음료와 환자식 반찬을 함께 활용하는 실전 하루 식단 예시 가이드입니다.]]></description>
@@ -58,6 +168,26 @@
     <guid isPermaLink="true">https://phlorotannin.com/blog/fortimel-meulssori-recovery-meal-protein-combo-guide</guid>
     <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/fortimel-meulssori-combo.webp" type="image/webp"/>
     <dc:subject>회복기 식단, 포티멜, 맛있으리, 환자식 조합, 단백질 보충</dc:subject>
+  </item>
+  <item>
+    <title>포티멜 컴팩트 프로틴 — 맛 종류와 맛있게 마시는 법</title>
+    <link>https://phlorotannin.com/blog/fortimel-compact-protein-flavors-how-to-drink-guide</link>
+    <description><![CDATA[포티멜 컴팩트 프로틴의 맛 종류·맛있게 마시는 요령·하루 섭취 타이밍을 일상 언어로 정리한 실용 가이드입니다.]]></description>
+    <category>cancer-treatment-care</category>
+    <pubDate>Mon, 25 May 2026 13:17:41 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/fortimel-compact-protein-flavors-how-to-drink-guide</guid>
+    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/fortimel-flavors-how-to-drink.webp" type="image/webp"/>
+    <dc:subject>포티멜, 포티멜 컴팩트 프로틴, 포티멜 맛, 영양보충음료, 환자식단</dc:subject>
+  </item>
+  <item>
+    <title>뉴트리시아 브랜드 이야기 — 125년 의료영양 전문성과 제품군 정리</title>
+    <link>https://phlorotannin.com/blog/nutricia-brand-history-medical-nutrition-portfolio</link>
+    <description><![CDATA[뉴트리시아의 125년 역사와 다논 그룹 의료영양 사업부, 포티멜·압타밀 등 주요 제품군을 일반인이 이해하기 쉽게 정리했습니다.]]></description>
+    <category>연구·임상</category>
+    <pubDate>Mon, 25 May 2026 13:17:41 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/nutricia-brand-history-medical-nutrition-portfolio</guid>
+    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/nutricia-brand-history.webp" type="image/webp"/>
+    <dc:subject>뉴트리시아, Nutricia, 다논 그룹, 포티멜, 압타밀</dc:subject>
   </item>
   <item>
     <title>암환자 식단 배달 — 단백질·섬유질 가이드와 활용법 정리</title>
@@ -390,141 +520,11 @@
     <dc:subject>항암후임신, 가임력보존, 난자동결, 정자동결, 호르몬치료</dc:subject>
   </item>
   <item>
-    <title>항암 후 염색·펌 — 언제부터 가능한가요? [재성장 시점 가이드]</title>
-    <link>https://phlorotannin.com/blog/after-chemo-hair-color-perm-when-2026</link>
-    <description><![CDATA[항암 끝나고 머리 자라기 시작하면 염색·펌이 너무 하고 싶죠. 언제부터 안전한지 정리했습니다.]]></description>
-    <category>cancer-treatment-care</category>
-    <pubDate>Wed, 20 May 2026 03:10:03 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/after-chemo-hair-color-perm-when-2026</guid>
-    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/after-chemo-hair-color-perm-when-2026.webp" type="image/webp"/>
-    <dc:subject>항암후염색, 펌, 두피관리, 머리재성장, 항암후관리</dc:subject>
-  </item>
-  <item>
-    <title>항암 중 운동 — 어디까지 해도 되나요? [강도·시점 가이드 2026]</title>
-    <link>https://phlorotannin.com/blog/chemo-exercise-intensity-when-how-2026</link>
-    <description><![CDATA["항암 중인데 운동해도 될까요?" — 가족분들이 많이 묻는 질문입니다. 결론: 대부분은 적절한 강도라면 운동이 권장 됩니다. 미국·유럽 가이드라인(ACSM, ESMO)도 "주 150분 중강도 운동"을 항암 중에도 권장해요. 단, 강도와 타이밍이 중요합니다.]]></description>
-    <category>cancer-treatment-care</category>
-    <pubDate>Wed, 20 May 2026 03:10:03 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/chemo-exercise-intensity-when-how-2026</guid>
-    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/chemo-exercise-intensity-when-how-2026.webp" type="image/webp"/>
-    <dc:subject>항암운동, 운동강도, 걷기, 근력운동, 호중구</dc:subject>
-  </item>
-  <item>
-    <title>KRAS·EGFR 신규 표적치료 부작용 관리 [2026 최신]</title>
-    <link>https://phlorotannin.com/blog/kras-g12c-tagrisso-osimertinib-side-effects-2026</link>
-    <description><![CDATA[폐암 표적치료가 빠르게 발전하고 있어요. EGFR(타그리소·렉라자) → KRAS G12C(루마크라스·크라자티) → MET·HER2 etc. 신약마다 부작용이 다른데, 최근 2년 임상 데이터 기반으로 정리했습니다.]]></description>
-    <category>cancer-treatment-care</category>
-    <pubDate>Wed, 20 May 2026 01:38:31 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/kras-g12c-tagrisso-osimertinib-side-effects-2026</guid>
-    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/kras-g12c-tagrisso-osimertinib-side-effects-2026.webp" type="image/webp"/>
-    <dc:subject>타그리소, 렉라자, 소토라시브, KRAS, EGFR</dc:subject>
-  </item>
-  <item>
-    <title>2025~2026 국내 승인 항암 신약 부작용 정리 [최신]</title>
-    <link>https://phlorotannin.com/blog/2026-cancer-new-drugs-approved-korea-side-effects</link>
-    <description><![CDATA[최근 2~3년간 항암 신약 승인이 가속화되고 있어요. 2024년부터 2026년 5월까지 국내 식약처 승인되었거나 임상에서 자주 사용되는 신약들 — 어떤 부작용을 알아두면 좋을지 정리했습니다.]]></description>
-    <category>cancer-treatment-care</category>
-    <pubDate>Wed, 20 May 2026 01:38:31 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/2026-cancer-new-drugs-approved-korea-side-effects</guid>
-    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/2026-cancer-new-drugs-approved-korea-side-effects.webp" type="image/webp"/>
-    <dc:subject>2026신약, ADC, 이중특이성, 최신항암, 승인약물</dc:subject>
-  </item>
-  <item>
-    <title>먹는 항암제 vs 주사 항암제 — 차이·장단점 [2026]</title>
-    <link>https://phlorotannin.com/blog/oral-vs-iv-chemo-differences-2026</link>
-    <description><![CDATA[먹는 항암제(젤로다·이레사 등)와 주사 항암제의 차이, 부작용, 복용 주의사항 정리했습니다.]]></description>
-    <category>cancer-treatment-care</category>
-    <pubDate>Wed, 20 May 2026 01:38:30 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/oral-vs-iv-chemo-differences-2026</guid>
-    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/oral-vs-iv-chemo-differences-2026.webp" type="image/webp"/>
-    <dc:subject>경구항암제, 주사항암제, 비교, 복약, 순응도</dc:subject>
-  </item>
-  <item>
-    <title>항암제 vs 면역항암제 — 부작용 비교 솔직 가이드 [2026]</title>
-    <link>https://phlorotannin.com/blog/chemo-vs-immunotherapy-side-effects-compare-2026</link>
-    <description><![CDATA['면역항암제는 부작용 없다'는 오해 정리. 일반 항암과 면역항암 부작용 솔직히 비교했습니다.]]></description>
-    <category>cancer-treatment-care</category>
-    <pubDate>Wed, 20 May 2026 01:38:30 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/chemo-vs-immunotherapy-side-effects-compare-2026</guid>
-    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/chemo-vs-immunotherapy-side-effects-compare-2026.webp" type="image/webp"/>
-    <dc:subject>항암비교, 면역항암제, 부작용, 결정, 선택</dc:subject>
-  </item>
-  <item>
-    <title>항암 후 꼭 받아야 할 추적 검사 체크리스트 [2026]</title>
-    <link>https://phlorotannin.com/blog/cancer-checkup-tests-after-chemo-2026</link>
-    <description><![CDATA[항암 끝났다고 끝이 아니에요. 1년·3년·5년 추적 검사 챙기시면 재발 조기 발견 가능합니다.]]></description>
-    <category>cancer-treatment-care</category>
-    <pubDate>Wed, 20 May 2026 01:38:29 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/cancer-checkup-tests-after-chemo-2026</guid>
-    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/cancer-checkup-tests-after-chemo-2026.webp" type="image/webp"/>
-    <dc:subject>항암후, 추적검사, 재발관리, 서바이버, 체크리스트</dc:subject>
-  </item>
-  <item>
-    <title>타목시펜 — 함께 먹으면 안 되는 약·식품 [2026 최신]</title>
-    <link>https://phlorotannin.com/blog/breast-cancer-tamoxifen-drug-interactions-2026</link>
-    <description><![CDATA[타목시펜은 간 효소 CYP2D6 에 의해 활성형(엔독시펜)으로 변환되어야 작용해요. 그래서 CYP2D6를 막는 약과 함께 먹으면 효과가 떨어집니다. 솔직히 진료실에서 가장 자주 놓치는 부분이라 — 정리했습니다.]]></description>
-    <category>cancer-treatment-care</category>
-    <pubDate>Wed, 20 May 2026 01:38:29 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/breast-cancer-tamoxifen-drug-interactions-2026</guid>
-    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/breast-cancer-tamoxifen-drug-interactions-2026.webp" type="image/webp"/>
-    <dc:subject>타목시펜, 상호작용, SSRI, CYP2D6, 유방암</dc:subject>
-  </item>
-  <item>
-    <title>항암 중 피해야 할 음식 TOP 15 — 솔직 식이 가이드 [2026]</title>
-    <link>https://phlorotannin.com/blog/cancer-patient-foods-to-avoid-2026</link>
-    <description><![CDATA[항암 중에는 평소 안전했던 음식도 위험할 수 있어요. 꼭 피해야 할 음식 15가지 정리했습니다.]]></description>
-    <category>cancer-treatment-care</category>
-    <pubDate>Wed, 20 May 2026 01:38:28 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/cancer-patient-foods-to-avoid-2026</guid>
-    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/cancer-patient-foods-to-avoid-2026.webp" type="image/webp"/>
-    <dc:subject>항암음식, 피해야할음식, 식이가이드, 감염예방, 체크리스트</dc:subject>
-  </item>
-  <item>
-    <title>항암 중 먹어도 되는 영양제 — 안전 화이트리스트 [2026 최신]</title>
-    <link>https://phlorotannin.com/blog/cancer-patient-supplements-safe-list-2026</link>
-    <description><![CDATA[항암 받으시면서 '이거 먹어도 되나' 매번 고민되시죠. 안전한 것·피할 것·의사 상담 필요한 것 정리.]]></description>
-    <category>cancer-treatment-care</category>
-    <pubDate>Wed, 20 May 2026 01:38:28 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/cancer-patient-supplements-safe-list-2026</guid>
-    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/cancer-patient-supplements-safe-list-2026.webp" type="image/webp"/>
-    <dc:subject>항암영양제, 비타민, 화이트리스트, 상호작용, 안전</dc:subject>
-  </item>
-  <item>
-    <title>암 통증 — 언제 의사 부르고 언제 응급실? 솔직 판단법 [2026]</title>
-    <link>https://phlorotannin.com/blog/cancer-pain-when-call-doctor-2026</link>
-    <description><![CDATA[암 통증, 참다가 응급실 가시는 분 많아요. 어떤 통증이 즉시 행동인지 명확히 정리했습니다.]]></description>
-    <category>cancer-treatment-care</category>
-    <pubDate>Wed, 20 May 2026 01:38:27 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/cancer-pain-when-call-doctor-2026</guid>
-    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/cancer-pain-when-call-doctor-2026.webp" type="image/webp"/>
-    <dc:subject>암통증, 진통제, 응급, 외래, 마약성진통제</dc:subject>
-  </item>
-  <item>
-    <title>타목시펜 혈전 위험신호 — 다리 부종·호흡곤란 즉시 행동법 [2026]</title>
-    <link>https://phlorotannin.com/blog/tamoxifen-blood-clot-warning-signs-2026</link>
-    <description><![CDATA[타목시펜은 효과 좋지만 혈전 위험을 2~3배 높입니다. 어떤 신호가 즉시 응급실 행인지 정리했습니다.]]></description>
-    <category>cancer-treatment-care</category>
-    <pubDate>Wed, 20 May 2026 01:38:26 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/tamoxifen-blood-clot-warning-signs-2026</guid>
-    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/tamoxifen-blood-clot-warning-signs-2026.webp" type="image/webp"/>
-    <dc:subject>타목시펜, 혈전, DVT, 폐색전, 유방암</dc:subject>
-  </item>
-  <item>
-    <title>면역항암제 응급신호 — 키트루다·옵디보 부작용 즉시 행동법 [2026]</title>
-    <link>https://phlorotannin.com/blog/immunotherapy-side-effects-warning-signs-2026</link>
-    <description><![CDATA[면역항암제는 일반 항암제와 부작용 양상이 완전히 달라요. 어떤 증상이 즉시 병원행인지 정리했습니다.]]></description>
-    <category>cancer-treatment-care</category>
-    <pubDate>Wed, 20 May 2026 01:38:25 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/immunotherapy-side-effects-warning-signs-2026</guid>
-    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/immunotherapy-side-effects-warning-signs-2026.webp" type="image/webp"/>
-    <dc:subject>면역항암제, irAE, 응급신호, 키트루다, 옵디보</dc:subject>
-  </item>
-  <item>
     <title>플로로탄닌 혈압 작용 기전 — ACE 억제와 혈관 내피 회복 근거</title>
     <link>https://phlorotannin.com/insights/phlorotannin-blood-pressure-mechanism</link>
     <description><![CDATA[갈조류 폴리페놀 플로로탄닌이 혈압을 낮추는 분자 기전(ACE 억제·NO 생산·산화스트레스 감소)을 2025 메타분석과 2026 종합 리뷰로 정리합니다.]]></description>
     <category>심혈관·혈압</category>
-    <pubDate>Mon, 25 May 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 26 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-blood-pressure-mechanism</guid>
   </item>
   <item>
@@ -532,7 +532,7 @@
     <link>https://phlorotannin.com/insights/dieckol-blood-glucose-evidence</link>
     <description><![CDATA[디에콜(Dieckol)이 식후 혈당과 인슐린 감수성에 미치는 영향을 α-glucosidase·α-amylase 억제, GLUT4 발현, 장내 미생물 기전으로 정리합니다.]]></description>
     <category>대사·당뇨</category>
-    <pubDate>Mon, 25 May 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 26 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/dieckol-blood-glucose-evidence</guid>
   </item>
   <item>
@@ -540,7 +540,7 @@
     <link>https://phlorotannin.com/insights/ecklonia-cava-diabetes-clinical</link>
     <description><![CDATA[감태(Ecklonia cava) 추출물의 인간 당뇨·전당뇨 임상 연구 현황을 약동학·대사체학·복합 제형 RCT를 중심으로 정리합니다.]]></description>
     <category>대사·당뇨</category>
-    <pubDate>Mon, 25 May 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 26 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/ecklonia-cava-diabetes-clinical</guid>
   </item>
   <item>
@@ -548,7 +548,7 @@
     <link>https://phlorotannin.com/insights/phlorotannin-cognitive-alzheimer</link>
     <description><![CDATA[플로로탄닌의 알츠하이머 예방·진행 둔화 가능성을 Aβ 응집 차단·AChE 억제·신경염증 완화 세 축으로 정리합니다 (2024 인지 RCT·2024 narrative review).]]></description>
     <category>뇌·인지</category>
-    <pubDate>Mon, 25 May 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 26 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-cognitive-alzheimer</guid>
   </item>
   <item>
@@ -556,7 +556,7 @@
     <link>https://phlorotannin.com/insights/phlorotannin-skin-uv-protection</link>
     <description><![CDATA[감태 플로로탄닌이 자외선 유발 피부 손상에 작용하는 메커니즘 — IL-17R 염증 억제, MMP 감소, 콜라겐 합성 촉진을 2025년 Marine Drugs 연구 기반으로 정리합니다.]]></description>
     <category>피부·모발</category>
-    <pubDate>Mon, 25 May 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 26 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-skin-uv-protection</guid>
   </item>
   <item>
@@ -564,7 +564,7 @@
     <link>https://phlorotannin.com/insights/phlorotannin-anti-aging-collagen</link>
     <description><![CDATA[플로로탄닌이 노화 과정에서 어떻게 작용하는지 — 산화스트레스 소거·콜라겐 신호·만성 저등급 염증의 세 축을 검증 출처와 함께 정리합니다.]]></description>
     <category>피부·모발</category>
-    <pubDate>Mon, 25 May 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 26 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-anti-aging-collagen</guid>
   </item>
   <item>
@@ -572,7 +572,7 @@
     <link>https://phlorotannin.com/insights/ecklonia-cava-hair-loss-evidence</link>
     <description><![CDATA[감태(Ecklonia cava)와 탈모·모발 건강 — 어디까지가 검증된 기전이고 어디부터 마케팅인지 PubMed 검증 출처로 정리합니다.]]></description>
     <category>피부·모발</category>
-    <pubDate>Mon, 25 May 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 26 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/ecklonia-cava-hair-loss-evidence</guid>
   </item>
   <item>
@@ -580,7 +580,7 @@
     <link>https://phlorotannin.com/insights/phlorotannin-inflammation-mechanism</link>
     <description><![CDATA[플로로탄닌이 만성 염증 경로(NF-κB·iNOS·COX-2·IL-17)에 어떻게 작용하는지 검증된 PMID와 함께 정리합니다.]]></description>
     <category>면역·염증</category>
-    <pubDate>Mon, 25 May 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 26 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-inflammation-mechanism</guid>
   </item>
   <item>
@@ -588,7 +588,7 @@
     <link>https://phlorotannin.com/insights/phlorotannin-cholesterol-ldl-rct</link>
     <description><![CDATA[플로로탄닌이 LDL 콜레스테롤·총 콜레스테롤·중성지방에 미치는 효과를 인간 파일럿 RCT와 전임상·종합 리뷰로 정리합니다.]]></description>
     <category>심혈관·혈압</category>
-    <pubDate>Mon, 25 May 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 26 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-cholesterol-ldl-rct</guid>
   </item>
   <item>
@@ -596,7 +596,7 @@
     <link>https://phlorotannin.com/insights/phlorotannin-cancer-prevention-evidence</link>
     <description><![CDATA[플로로탄닌(특히 디에콜)의 항암 근거 — MCF-7 유방암 이동 억제, 항암제 심장독성 완화 등 전임상 데이터와 그 한계를 정직하게 정리합니다.]]></description>
     <category>항암 보조</category>
-    <pubDate>Mon, 25 May 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 26 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-cancer-prevention-evidence</guid>
   </item>
   <item>
@@ -604,7 +604,7 @@
     <link>https://phlorotannin.com/insights/phlorotannin-best-time-to-take</link>
     <description><![CDATA[플로로탄닌의 복용 시점(공복·식전·식사 동반·식후·취침 전)을 표적(혈당·지질·항산화·수면)에 따라 분리해 정리합니다.]]></description>
     <category>생활·복용</category>
-    <pubDate>Mon, 25 May 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 26 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-best-time-to-take</guid>
   </item>
   <item>
@@ -612,7 +612,7 @@
     <link>https://phlorotannin.com/insights/phlorotannin-with-vitamin-d-omega3</link>
     <description><![CDATA[플로로탄닌과 비타민 D, 오메가 3의 표적·기전 차이를 정리하고, 병용 시 합리적 시점·주의사항을 안내합니다.]]></description>
     <category>생활·복용</category>
-    <pubDate>Mon, 25 May 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 26 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-with-vitamin-d-omega3</guid>
   </item>
   <item>
@@ -620,7 +620,7 @@
     <link>https://phlorotannin.com/insights/phlorotannin-drug-interactions-warfarin</link>
     <description><![CDATA[플로로탄닌과 와파린·DOAC·아스피린·당뇨약·갑상선 약물 사이의 잠재 상호작용을 출처 기반으로 정리합니다.]]></description>
     <category>안전성·금기</category>
-    <pubDate>Mon, 25 May 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 26 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-drug-interactions-warfarin</guid>
   </item>
   <item>
@@ -628,7 +628,7 @@
     <link>https://phlorotannin.com/insights/phlorotannin-pregnancy-breastfeeding</link>
     <description><![CDATA[임산부·수유부의 플로로탄닌 섭취 — EFSA Novel Food 평가는 어떤 입장이고, 왜 데이터 부족이 곧 회피 권장으로 이어지는지 정리합니다.]]></description>
     <category>안전성·금기</category>
-    <pubDate>Mon, 25 May 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 26 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-pregnancy-breastfeeding</guid>
   </item>
   <item>
@@ -636,7 +636,7 @@
     <link>https://phlorotannin.com/insights/phlorotannin-side-effects-real</link>
     <description><![CDATA[EFSA Novel Food 평가와 임상 약동학 연구를 바탕으로, 플로로탄닌에서 실제 보고된 부작용과 떠도는 잘못된 정보를 구분합니다.]]></description>
     <category>안전성·금기</category>
-    <pubDate>Mon, 25 May 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 26 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-side-effects-real</guid>
   </item>
   <item>
@@ -644,7 +644,7 @@
     <link>https://phlorotannin.com/insights/phlorotannin-quality-extraction-method</link>
     <description><![CDATA[감태 추출물 제품의 품질을 판단하는 핵심 — 디에콜·플로로글루시놀 정량(HPLC), 식약처 개별인정형 기준, 표시·표준화의 의미를 정리합니다.]]></description>
     <category>생활·복용</category>
-    <pubDate>Mon, 25 May 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 26 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-quality-extraction-method</guid>
   </item>
   <item>
@@ -652,7 +652,7 @@
     <link>https://phlorotannin.com/insights/seapolynol-vs-generic-phlorotannin</link>
     <description><![CDATA[표준화 추출물 Seapolynol™과 비표준화 갈조류 추출물의 차이 — EFSA Novel Food 평가, 약동학 데이터, 임상 RCT 기준으로 정리합니다.]]></description>
     <category>성분 비교</category>
-    <pubDate>Mon, 25 May 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 26 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/seapolynol-vs-generic-phlorotannin</guid>
   </item>
   <item>
@@ -660,7 +660,7 @@
     <link>https://phlorotannin.com/insights/phlorotannin-vs-resveratrol</link>
     <description><![CDATA[두 폴리페놀의 핵심 표적(SIRT1·AMPK·NF-κB)과 인간 데이터, 생체이용률 차이를 출처 기반으로 비교합니다.]]></description>
     <category>성분 비교</category>
-    <pubDate>Mon, 25 May 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 26 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-vs-resveratrol</guid>
   </item>
   <item>
@@ -668,7 +668,7 @@
     <link>https://phlorotannin.com/insights/phlorotannin-vs-curcumin-inflammation</link>
     <description><![CDATA[대표적 항염 천연 폴리페놀인 플로로탄닌과 커큐민의 표적·생체이용률·임상 활용 차이를 비교합니다.]]></description>
     <category>성분 비교</category>
-    <pubDate>Mon, 25 May 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 26 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-vs-curcumin-inflammation</guid>
   </item>
   <item>
@@ -676,7 +676,7 @@
     <link>https://phlorotannin.com/insights/phlorotannin-vs-green-tea-catechin</link>
     <description><![CDATA[갈조류 플로로탄닌과 녹차 EGCG(에피갈로카테킨갈레이트)의 표적·임상 데이터·복용 전략 차이를 정리합니다.]]></description>
     <category>성분 비교</category>
-    <pubDate>Mon, 25 May 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 26 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-vs-green-tea-catechin</guid>
   </item>
   <item>
@@ -684,7 +684,7 @@
     <link>https://phlorotannin.com/insights/phlorotannin-metabolic-syndrome</link>
     <description><![CDATA[허리둘레·혈압·공복혈당·중성지방·HDL 5요인으로 정의되는 대사증후군에 플로로탄닌이 어떻게 다중으로 작용하는지 정리합니다.]]></description>
     <category>대사·당뇨</category>
-    <pubDate>Mon, 25 May 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 26 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-metabolic-syndrome</guid>
   </item>
   <item>
@@ -692,7 +692,7 @@
     <link>https://phlorotannin.com/insights/phlorotannin-fatty-liver-nafld</link>
     <description><![CDATA[플로로탄닌이 비알코올성 지방간(NAFLD/MASLD)에 작용할 수 있는 기전 — 장-간 축, 지질 대사 조절, 항산화·항염 — 을 최신 출처로 정리합니다.]]></description>
     <category>대사·당뇨</category>
-    <pubDate>Mon, 25 May 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 26 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-fatty-liver-nafld</guid>
   </item>
   <item>
@@ -700,7 +700,7 @@
     <link>https://phlorotannin.com/insights/phlorotannin-osteoarthritis-joint</link>
     <description><![CDATA[플로로탄닌이 골관절염·관절 건강에 가질 수 있는 보조 작용 — MMP 억제·NF-κB 진정·콜라겐 지원의 세 축을 2026 근골격 리뷰로 정리합니다.]]></description>
     <category>면역·염증</category>
-    <pubDate>Mon, 25 May 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 26 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-osteoarthritis-joint</guid>
   </item>
   <item>
@@ -708,7 +708,7 @@
     <link>https://phlorotannin.com/insights/phlorotannin-eye-health-amd</link>
     <description><![CDATA[플로로탄닌이 가질 수 있는 시력 보호·황반변성(AMD) 보조 가능성 — 망막 산화스트레스, 신경보호 기전, 해양 유래 신경퇴행 보호 전략을 정리합니다.]]></description>
     <category>뇌·인지</category>
-    <pubDate>Mon, 25 May 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 26 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-eye-health-amd</guid>
   </item>
   <item>
@@ -716,7 +716,7 @@
     <link>https://phlorotannin.com/insights/phlorotannin-gut-microbiome</link>
     <description><![CDATA[플로로탄닌이 장내 미생물군과 대사체를 어떻게 조절하는지 — 2026년 발효 연구와 종합 모델로 정리합니다.]]></description>
     <category>대사·당뇨</category>
-    <pubDate>Mon, 25 May 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 26 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-gut-microbiome</guid>
   </item>
   <item>
@@ -724,7 +724,7 @@
     <link>https://phlorotannin.com/insights/phlorotannin-allergic-rhinitis-asthma</link>
     <description><![CDATA[디에콜이 CHI3L1을 통해 알레르기·기도 염증을 진정시킬 수 있다는 2025년 연구를 중심으로 알레르기 영역의 가능성을 정리합니다.]]></description>
     <category>면역·염증</category>
-    <pubDate>Mon, 25 May 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 26 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-allergic-rhinitis-asthma</guid>
   </item>
   <item>
@@ -732,7 +732,7 @@
     <link>https://phlorotannin.com/insights/phlorotannin-exercise-performance</link>
     <description><![CDATA[플로로탄닌이 운동 후 산화 스트레스·근육 손상·피로 회복에 미치는 영향에 대한 2026년 근골격계 리뷰와 약동학 데이터를 검토합니다.]]></description>
     <category>생활·복용</category>
-    <pubDate>Mon, 25 May 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 26 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-exercise-performance</guid>
   </item>
   <item>
@@ -740,7 +740,7 @@
     <link>https://phlorotannin.com/insights/ecklonia-cava-radioprotection</link>
     <description><![CDATA[플로로탄닌의 방사선 유발 산화 손상 완화 가능성에 대한 전임상 근거를 정리합니다. 임상 적용은 아직 멉니다.]]></description>
     <category>항암 보조</category>
-    <pubDate>Mon, 25 May 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 26 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/ecklonia-cava-radioprotection</guid>
   </item>
   <item>
@@ -748,7 +748,7 @@
     <link>https://phlorotannin.com/insights/phlorotannin-2026-research-frontier</link>
     <description><![CDATA[2025–2026년 발표된 플로로탄닌·감태 핵심 연구들을 정리해 다음 5년의 방향성을 6가지 키워드로 요약합니다.]]></description>
     <category>연구 동향</category>
-    <pubDate>Mon, 25 May 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 26 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-2026-research-frontier</guid>
   </item>
   <item>
@@ -756,7 +756,7 @@
     <link>https://phlorotannin.com/insights/phlorotannin-long-term-safety-10year</link>
     <description><![CDATA[EFSA 노블푸드 평가·국내 임상 약동학·요중 대사체 추적·2026 내러티브 리뷰까지 — 플로로탄닌 장기 섭취 안전성의 현 위치를 정리합니다.]]></description>
     <category>장기 복용</category>
-    <pubDate>Mon, 25 May 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 26 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-long-term-safety-10year</guid>
   </item>
   <item>
