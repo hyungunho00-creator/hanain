@@ -1,0 +1,42 @@
+{
+  "payload": {
+    "host": "phlorotannin.com",
+    "key": "6c13a351f7784b49b91e4da2717e6889",
+    "keyLocation": "https://phlorotannin.com/6c13a351f7784b49b91e4da2717e6889.txt",
+    "urlList": [
+      "https://phlorotannin.com/blog/what-is-fortimel-medical-nutrition-guide",
+      "https://phlorotannin.com/blog/fortimel-product-types-comparison-guide",
+      "https://phlorotannin.com/blog/fortimel-buying-checklist-medical-food-guide",
+      "https://phlorotannin.com/blog/what-is-nutricia-danone-medical-nutrition-guide",
+      "https://phlorotannin.com/blog/nutricia-product-portfolio-fortimel-aptamil-neocate-guide",
+      "https://phlorotannin.com/blog",
+      "https://phlorotannin.com/blog?category=research",
+      "https://phlorotannin.com/blog?category=disease-health-info",
+      "https://phlorotannin.com/sitemap.xml",
+      "https://phlorotannin.com/rss.xml"
+    ]
+  },
+  "results": [
+    {
+      "endpoint": "https://api.indexnow.org/IndexNow",
+      "status": 200,
+      "body": ""
+    },
+    {
+      "endpoint": "https://www.bing.com/IndexNow",
+      "status": 200,
+      "body": ""
+    },
+    {
+      "endpoint": "https://yandex.com/indexnow",
+      "status": 202,
+      "body": "{\n  \"success\":true\n}"
+    },
+    {
+      "endpoint": "https://searchadvisor.naver.com/indexnow",
+      "status": 200,
+      "body": ""
+    }
+  ],
+  "submitted_at": "2026-05-26T09:54:33.937Z"
+}
