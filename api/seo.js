@@ -192,6 +192,22 @@ const CATEGORY_NAMES = {
   'general': '건강정보 종합',
 }
 
+function imageTypeFromUrl(url) {
+  const clean = String(url || '').split('?')[0].toLowerCase()
+  if (clean.endsWith('.webp')) return 'image/webp'
+  if (clean.endsWith('.jpg') || clean.endsWith('.jpeg')) return 'image/jpeg'
+  if (clean.endsWith('.gif')) return 'image/gif'
+  return 'image/png'
+}
+
+function buildBlogImageAlt(post) {
+  if (!post) return DEFAULT_OG_IMAGE_ALT
+  const rawTitle = (post.title || post.rawTitle || post.meta_title || '').toString().trim()
+  const core = rawTitle.split('|')[0].trim() || rawTitle || '플로로탄닌 건강정보'
+  const catName = CATEGORY_NAMES[post.category] || (post.category || '건강정보').toString()
+  return `${core} - ${catName} 건강정보 일러스트`
+}
+
 const CATEGORY_DESC = {
   'diabetes':       '당뇨·혈당 건강정보 아카이브 — 감태추출물·플로로탄닌 정보센터. 항산화·염증·면역 관점의 혈당 건강정보와 연구기반 Q&A를 정리합니다.',
   'hypertension':   '고혈압·혈관 건강정보 아카이브 — 플로로탄닌·감태추출물·해양 폴리페놀 정보센터. 항산화·염증·심혈관 건강정보를 한 곳에서.',
@@ -518,7 +534,7 @@ async function fetchPostMeta(slug) {
   if (!key) return null
   try {
     const r = await fetch(
-      `${url}/rest/v1/posts?slug=eq.${encodeURIComponent(slug)}&select=title,meta_title,meta_desc,excerpt&limit=1`,
+      `${url}/rest/v1/posts?slug=eq.${encodeURIComponent(slug)}&select=title,meta_title,meta_desc,excerpt,category,og_image&limit=1`,
       // Supabase 프로젝트 기본 노출 스키마가 'api'로 설정된 경우가 있어
       // public 스키마의 posts 테이블에 접근하려면 Accept-Profile 헤더가 필요하다.
       { headers: { apikey: key, Authorization: `Bearer ${key}`, 'Accept-Profile': 'public' } }
@@ -535,7 +551,13 @@ async function fetchPostMeta(slug) {
     if (desc.length > 140) desc = desc.slice(0, 137) + '...'
     desc = `${desc} (플로로탄닌·감태추출물·해양 폴리페놀 건강정보)`
     if (desc.length > 300) desc = desc.slice(0, 300)
-    return { title, desc, canonical: `${SITE}/blog/${slug}` }
+    return {
+      title,
+      desc,
+      canonical: `${SITE}/blog/${slug}`,
+      ogImage: p.og_image || '',
+      ogImageAlt: buildBlogImageAlt(p),
+    }
   } catch {
     return null
   }
@@ -1394,6 +1416,7 @@ function injectMeta(html, meta) {
   // 메타에 ogImage 가 없으면 기본 OG (/og-image.png) 유지 — 안전 fallback.
   const ogImage    = esc(meta.ogImage    || DEFAULT_OG_IMAGE)
   const ogImageAlt = esc(meta.ogImageAlt || DEFAULT_OG_IMAGE_ALT)
+  const ogImageType = esc(imageTypeFromUrl(meta.ogImage || DEFAULT_OG_IMAGE))
 
   // <title id="page-title">...</title>
   html = html.replace(
@@ -1458,6 +1481,10 @@ function injectMeta(html, meta) {
   html = html.replace(
     /<meta property="og:image:alt" content="[^"]*"\s*\/?>/,
     `<meta property="og:image:alt" content="${ogImageAlt}" />`
+  )
+  html = html.replace(
+    /<meta property="og:image:type" content="[^"]*"\s*\/?>/,
+    `<meta property="og:image:type" content="${ogImageType}" />`
   )
 
   // twitter

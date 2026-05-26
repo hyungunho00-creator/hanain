@@ -78,6 +78,16 @@
 - AWS/GCP/기타 API 키
 - Postgres 직접 연결 문자열
 
+### 🔴 스크립트 하드코딩 금지 (2026-05-26 강화)
+- 배치 발행, 이미지 업로드, 점검 스크립트도 예외 없이 `SUPABASE_SERVICE_ROLE_KEY` 또는 `SUPABASE_SERVICE_KEY` 환경변수만 사용한다.
+- service_role 키를 `.py`, `.js`, `.md`, `.json`, `.sql` 파일에 직접 저장하지 않는다.
+- 과거 파일에서 키 하드코딩을 발견하면 새 작업에 복사하지 말고, 즉시 보고한 뒤 Supabase Dashboard에서 키 rotation을 권고한다.
+- 커밋 전 점검:
+  ```bash
+  rg -n "service_role|SUPABASE_SERVICE|eyJhbGci|sb_secret|sbp_" -g "!node_modules" -g "!dist"
+  ```
+  단, `service_role`이라는 설명 문구 자체는 허용되지만 실제 토큰 문자열은 0건이어야 한다.
+
 ### 검증 방법 (배포 직후 매번 수동 점검 권장)
 ```bash
 BUNDLE_URL="https://phlorotannin.com/assets/index-XXXXXXX.js"

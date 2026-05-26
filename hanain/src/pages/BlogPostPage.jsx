@@ -301,6 +301,7 @@ export default function BlogPostPage() {
         canonical={`https://phlorotannin.com/blog/${post.slug}`}
         ogType="article"
         ogImage={post.og_image || "https://phlorotannin.com/og-image.png"}
+        ogImageAlt={buildImageAlt(post)}
         jsonLd={articleJsonLd}
       />
 

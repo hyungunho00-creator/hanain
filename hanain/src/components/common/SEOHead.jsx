@@ -40,6 +40,13 @@ export default function SEOHead({
   const fullTitle = title || DEFAULT_TITLE
   const finalDesc = description || DEFAULT_DESC
   const finalKeywords = keywords ? `${keywords},${DEFAULT_KEYWORDS}` : DEFAULT_KEYWORDS
+  const imageType = (() => {
+    const clean = String(ogImage || '').split('?')[0].toLowerCase()
+    if (clean.endsWith('.webp')) return 'image/webp'
+    if (clean.endsWith('.jpg') || clean.endsWith('.jpeg')) return 'image/jpeg'
+    if (clean.endsWith('.gif')) return 'image/gif'
+    return 'image/png'
+  })()
 
   useEffect(() => {
     // ─── title ───
@@ -104,7 +111,7 @@ export default function SEOHead({
     setMeta('meta[property="og:image:width"]', '1200')
     setMeta('meta[property="og:image:height"]', '630')
     setMeta('meta[property="og:image:alt"]', finalImageAlt)
-    setMeta('meta[property="og:image:type"]', 'image/png')
+    setMeta('meta[property="og:image:type"]', imageType)
     setMeta('meta[property="og:site_name"]', SITE_NAME_SHORT)
     setMeta('meta[property="og:locale"]', 'ko_KR')
 
@@ -148,7 +155,7 @@ export default function SEOHead({
         page_path: canonical ? new URL(canonical).pathname : window.location.pathname,
       })
     }
-  }, [fullTitle, finalDesc, finalKeywords, canonical, ogImage, ogImageAlt, noindex, ogType, jsonLd, lang])
+  }, [fullTitle, finalDesc, finalKeywords, canonical, ogImage, ogImageAlt, noindex, ogType, jsonLd, lang, imageType])
 
   return null
 }

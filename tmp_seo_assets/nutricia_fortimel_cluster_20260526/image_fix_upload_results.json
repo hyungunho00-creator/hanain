@@ -1,0 +1,42 @@
+[
+  {
+    "remote": "what-is-fortimel-medical-nutrition-guide.webp",
+    "public_url": "https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/what-is-fortimel-medical-nutrition-guide.webp",
+    "status": "ok",
+    "http": 200,
+    "bytes": 26348,
+    "response": "{\"Key\":\"blog-images/what-is-fortimel-medical-nutrition-guide.webp\",\"Id\":\"25730757-840c-45da-a65b-7c3092b02422\"}"
+  },
+  {
+    "remote": "fortimel-product-types-comparison-guide.webp",
+    "public_url": "https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/fortimel-product-types-comparison-guide.webp",
+    "status": "ok",
+    "http": 200,
+    "bytes": 29306,
+    "response": "{\"Key\":\"blog-images/fortimel-product-types-comparison-guide.webp\",\"Id\":\"9c8b47ec-7bbd-4d3a-b1b4-3139775e64b8\"}"
+  },
+  {
+    "remote": "fortimel-buying-checklist-medical-food-guide.webp",
+    "public_url": "https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/fortimel-buying-checklist-medical-food-guide.webp",
+    "status": "ok",
+    "http": 200,
+    "bytes": 20618,
+    "response": "{\"Key\":\"blog-images/fortimel-buying-checklist-medical-food-guide.webp\",\"Id\":\"658dc435-b3ab-4925-aaf5-377c5a87d9d8\"}"
+  },
+  {
+    "remote": "what-is-nutricia-danone-medical-nutrition-guide.webp",
+    "public_url": "https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/what-is-nutricia-danone-medical-nutrition-guide.webp",
+    "status": "ok",
+    "http": 200,
+    "bytes": 44576,
+    "response": "{\"Key\":\"blog-images/what-is-nutricia-danone-medical-nutrition-guide.webp\",\"Id\":\"f099f6ba-8585-46f4-94d9-9e3725be945b\"}"
+  },
+  {
+    "remote": "nutricia-product-portfolio-fortimel-aptamil-neocate-guide.webp",
+    "public_url": "https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/nutricia-product-portfolio-fortimel-aptamil-neocate-guide.webp",
+    "status": "ok",
+    "http": 200,
+    "bytes": 41878,
+    "response": "{\"Key\":\"blog-images/nutricia-product-portfolio-fortimel-aptamil-neocate-guide.webp\",\"Id\":\"95d50609-44ac-4441-9224-94db1797fcbe\"}"
+  }
+]

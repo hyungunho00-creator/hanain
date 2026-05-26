@@ -286,9 +286,20 @@ curl -s https://phlorotannin.com/blog | grep -c 'safety-precautions\|buying-guid
 
 ---
 
-## 🖼️ 제8조 (이미지·alt 의무) — 2026-05-20 신설
+## 🖼️ 제8조 (이미지·alt 의무) — 2026-05-20 신설 / 2026-05-26 강화
 
-신규 블로그 글 발행 시 반드시 다음 3가지를 충족한다. 위반 시 발행 차단.
+신규 블로그 글 발행 시 반드시 다음 의무를 충족한다. 위반 시 발행 차단.
+
+### ✅ 의무 0. 이미지-본문 정합성 사전 판정
+
+- `og_image`는 **그 글의 검색 의도·본문 주제·카테고리와 1:1로 대응**해야 한다.
+- 기존 이미지의 임시 재사용, "나중에 바꾸기", 비슷해 보이는 범용 건강 이미지 사용은 발행 금지.
+- 이미지 생성·업로드가 실패하면 글 발행을 멈춘다. 본문만 먼저 공개하지 않는다.
+- 최종 반영 전 사람/AI가 반드시 육안 검수한다:
+  - 이미지 안에 한글·영문·숫자·로고·워터마크가 없는가
+  - 제목의 핵심 대상이 시각 요소로 보이는가
+  - 같은 배치 안에서 구도·상징이 충분히 다른가
+  - 의료·브랜드 오해를 부르는 실제 로고/상표/제품 패키지 모사가 없는가
 
 ### ✅ 의무 1. 글마다 다른 og_image 생성
 
@@ -296,6 +307,11 @@ curl -s https://phlorotannin.com/blog | grep -c 'safety-precautions\|buying-guid
 - **채택 모델**: `fal-ai/bytedance/seedream/v5/lite` (2026-05-20 파일럿 검증 후 확정)
   - **선정 근거**: z-image/turbo는 가장 저렴(~$0.003)하지만 토픽 명확성 5/10, seedream lite는 9/10. 단가 차이 $0.007/장 × 288장 = +$2.02로 미미한 비용 증가 대비 품질·일관성 우위 결정적
   - **변경 시**: 비용·품질 비교 + 3개 이상 파일럿 검증 후 헌법 개정 필요
+- **결정론적 벡터/WebP fallback 허용 조건** (2026-05-26):
+  - 이미지 생성 API 또는 모델 접근이 불안정할 때만 허용.
+  - PIL/SVG/Canvas 등 코드 기반으로 직접 그리되, 출력은 반드시 `1200x630` WebP.
+  - 위 의무 0의 육안 검수와 아래 자동 검증을 통과해야 한다.
+  - fallback 사용 사실과 생성 스크립트를 `tmp_seo_assets/<batch>/README.md`에 남긴다.
 - **저장 위치**: Supabase Storage 버킷 `blog-images/`
   - 경로 규칙: `blog-images/{slug}.webp` (slug = 글의 slug 컬럼)
   - public 폴더 사용 금지 (git repo 비대화 방지)
@@ -320,6 +336,11 @@ curl -s https://phlorotannin.com/blog | grep -c 'safety-precautions\|buying-guid
   - DB에 별도 `alt` 컬럼 불필요 (title+category 조합으로 unique 보장)
   - 동일 title 두 개가 들어오면 발행 차단 (제2조 체크 6 slug 중복과 동일 수준 강제)
 - **카테고리 매핑**: `BlogPostPage.jsx`의 `CAT_NAMES`에 모든 카테고리 등록 — 누락 시 fallback이 영문 slug 노출됨 (시각적 결함)
+- **서버 메타 의무** (2026-05-26):
+  - `api/seo.js`의 `/blog/:slug` 메타 조회는 `og_image`, `category`를 함께 가져와야 한다.
+  - `og:image`, `og:image:secure_url`, `og:image:alt`, `twitter:image`, `twitter:image:alt`, `og:image:type`이 실제 글 이미지와 일치해야 한다.
+  - WebP 이미지면 `og:image:type`은 `image/webp`여야 한다.
+  - 클라이언트 `SEOHead` 호출부도 `ogImageAlt={buildImageAlt(post)}`를 넘겨야 한다.
 
 ### ✅ 의무 3. 발행 후 자동 검증 (제7조 확장)
 
@@ -337,15 +358,23 @@ ctr = collections.Counter(p['og_image'] for p in posts if p['og_image'])
 dup = [(url, n) for url, n in ctr.items() if n > 1]
 print(f'중복 이미지: {len(dup)}건' + (' ❌' if dup else ' ✅'))
 "
+
+# 8. Googlebot 첫 HTML이 글별 og:image / og:image:alt / image type을 받는지
+curl -sI -A "Googlebot/2.1" "https://phlorotannin.com/blog/<slug>" \
+  | grep -i "x-og-image\|x-seo-path"
+curl -s -A "Googlebot/2.1" "https://phlorotannin.com/blog/<slug>" \
+  | grep -E "og:image|og:image:alt|og:image:type|twitter:image"
 ```
 
-위 7가지 중 하나라도 실패 → **즉시 hotfix**.
+위 8가지 중 하나라도 실패 → **즉시 hotfix**.
 
 ### ✅ 의무 4. 자동화 (인간 개입 최소화)
 
 - `tmp_seo_assets/cancer_care_batch{1,2,3}/common_modules.py` 및 향후 모든 배치 발행 스크립트에 **이미지 생성 + Storage 업로드 + og_image PATCH** 로직을 표준 함수로 포함
 - 신규 글 발행 함수 시그니처: `publish_post(title, category, content, ...) → 내부에서 자동으로 이미지 생성 → og_image 채워서 INSERT`
 - 사람이 "이미지 잊었네" 할 수 없도록 **이미지 없이 발행 시 함수 자체가 에러 발생**
+- Storage 업로드 스크립트는 `SUPABASE_SERVICE_ROLE_KEY` 또는 `SUPABASE_SERVICE_KEY` 환경변수만 사용한다.
+- service_role 키를 파이썬/자바스크립트/마크다운/JSON 파일에 직접 적으면 즉시 보안 hotfix 대상이다. 발견 즉시 보고하고 키 rotation을 권고한다.
 
 ### 📊 비용 가이드
 
