@@ -1,0 +1,32 @@
+{
+  "urls": [
+    "https://phlorotannin.com/blog/cancer-patient-meal-delivery-checklist-before-order",
+    "https://phlorotannin.com/blog/cancer-patient-meal-delivery-appetite-loss-menu-guide",
+    "https://phlorotannin.com/blog/caregiver-cancer-meal-delivery-prep-record-guide",
+    "https://phlorotannin.com/blog/cancer-meal-delivery-bento-side-dish-ons-combo",
+    "https://phlorotannin.com/blog/diabetes-patient-meal-delivery-checklist-carb-protein-fiber",
+    "https://phlorotannin.com/blog/diabetes-meal-delivery-blood-sugar-spike-lunchbox-guide",
+    "https://phlorotannin.com/blog/diabetes-side-dish-delivery-low-sugar-sodium-guide",
+    "https://phlorotannin.com/blog/diabetes-meal-delivery-hypertension-kidney-caution",
+    "https://phlorotannin.com/insights/patient-meal-delivery-inquiry-info-checklist",
+    "https://phlorotannin.com/insights/meulssori-patient-meal-delivery-order-memo-examples"
+  ],
+  "endpoints": {
+    "https://api.indexnow.org/indexnow": {
+      "status": 200,
+      "body": ""
+    },
+    "https://www.bing.com/indexnow": {
+      "status": 200,
+      "body": ""
+    },
+    "https://yandex.com/indexnow": {
+      "status": 200,
+      "body": "{\n  \"success\":true\n}"
+    },
+    "https://searchadvisor.naver.com/indexnow": {
+      "status": 200,
+      "body": ""
+    }
+  }
+}

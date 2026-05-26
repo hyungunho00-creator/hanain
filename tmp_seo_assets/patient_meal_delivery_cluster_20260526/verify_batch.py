@@ -74,7 +74,7 @@ def main():
                 "x_seo_source": headers.get("X-Seo-Source"),
                 "has_og_image": image in html,
                 "has_webp_type": 'property="og:image:type" content="image/webp"' in html,
-                "title_seen": bool(re.search(r"<title(?:\\s[^>]*)?>.+?</title>", html, re.S)),
+                "title_seen": bool(re.search(r"<title(?:\s[^>]*)?>.+?</title>", html, re.S)),
             })
         except Exception as exc:
             results["pages"].append({"slug": slug, "error": str(exc)})
