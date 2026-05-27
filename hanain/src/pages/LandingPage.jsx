@@ -11,7 +11,7 @@ import {
 } from 'lucide-react'
 import { StatCard, MoleculeSVG, SectionHeader, IconFeature, MechanismDiagram, SciImage, InfoStrip, TrustBar } from '../components/visual'
 import RevealContact from '../components/common/RevealContact'
-// [2026-05-21] 인사이트 60편 진입 — 메인(/) 랜딩에서 최신 6편 직접 노출
+// [2026-05-21] 인사이트 진입 — 메인(/) 랜딩에서 최신 6편 직접 노출
 import { INSIGHTS_LIST, INSIGHT_CATEGORIES } from '../data/insights'
 
 // ─── YouTube ID 추출 ──────────────────────────────────────────
@@ -235,6 +235,7 @@ const CAT_COLORS = {
   research:'text-gray-600', general:'text-gray-600',
   'ingredient-comparison':'text-gray-600',
   'disease-health-info':'text-gray-600',
+  'exercise-recovery':'text-gray-600',
   'hospital-info':'text-gray-600',
   'partner-info':'text-gray-600',
   '분자기전 작용경로':'text-gray-600',
@@ -255,6 +256,7 @@ const CAT_NAMES = {
   skin:'피부·모발', research:'연구·임상', general:'일반',
   'ingredient-comparison':'성분 비교',
   'disease-health-info':'질환별 건강정보',
+  'exercise-recovery':'운동·재활 루틴',
   'hospital-info':'병원정보',
   'partner-info':'파트너 정보',
   '분자기전 작용경로':'분자기전·작용경로',
@@ -266,7 +268,7 @@ const CAT_NAMES = {
   musculoskeletal:'근골격 건강',
   womens_health:'여성 건강',
 }
-/* ─── Insights Preview — PMC 1차 자료 60편 중 최신 6편 직접 노출 ───
+/* ─── Insights Preview — PMC 1차 자료 중 최신 6편 직접 노출 ───
    [2026-05-21] 사용자가 인사이트 자산을 발견할 수 있도록 메인 랜딩에서
    진입로 제공. 헤더 메뉴 + 푸터 + Blog CTA 와 더불어 4번째 진입로 역할.
    광고 톤 X, 에디토리얼 일관 톤 (Research Blog 섹션과 동일 패턴). */
@@ -815,7 +817,7 @@ export default function LandingPage() {
       {/* ════════════════════════════════════
           CTA: 문자 문의
       ════════════════════════════════════ */}
-      {/* ════ 심층 인사이트 60편 진입로 (BlogPreview 위) ════ */}
+      {/* ════ 심층 인사이트 진입로 (BlogPreview 위) ════ */}
       <InsightsPreviewSection />
       {/* ════ 연구 블로그 최신글 ════ */}
       <BlogPreviewSection />

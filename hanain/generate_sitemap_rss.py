@@ -102,6 +102,7 @@ CAT_NAMES = {
     "general":       "일반",
     "ingredient-comparison": "성분 비교",
     "disease-health-info":   "질환별 건강정보",
+    "exercise-recovery":      "운동·재활 루틴",
     "hospital-info":         "병원정보",
     "partner-info":          "파트너 정보",
     "cancer-treatment-care": "항암 치료 케어",

@@ -8,7 +8,7 @@
     <link>https://phlorotannin.com</link>
     <description>감태 추출 해양 폴리페놀 플로로탄닌(Phlorotannin) 전문 건강 정보. 당뇨·항암·뇌건강·심혈관·염증 최신 블로그 &amp; Q&amp;A 아카이브.</description>
     <language>ko</language>
-    <lastBuildDate>Wed, 27 May 2026 01:38:44 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 27 May 2026 02:10:26 +0000</lastBuildDate>
     <atom:link href="https://phlorotannin.com/rss.xml" rel="self" type="application/rss+xml"/>
     <copyright>© 2026 플로로탄닌 파트너스</copyright>
     <category>건강/의학</category>
@@ -19,6 +19,86 @@
       <link>https://phlorotannin.com</link>
     </image>
 
+  <item>
+    <title>암환자 운동법: 걷기·근력·스트레칭을 언제 어떻게 시작할까</title>
+    <link>https://phlorotannin.com/blog/cancer-patient-exercise-guide-walking-strength-stretching</link>
+    <description><![CDATA[암환자와 보호자가 많이 묻는 걷기, 근력운동, 스트레칭 시작 기준과 운동 전 중단 신호를 정리했습니다.]]></description>
+    <category>운동·재활 루틴</category>
+    <pubDate>Wed, 27 May 2026 02:07:00 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/cancer-patient-exercise-guide-walking-strength-stretching</guid>
+    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/cancer-patient-exercise-guide-walking-strength-stretching.webp" type="image/webp"/>
+    <dc:subject>암환자 운동법, 항암 운동, 암 재활, 걷기, 근력운동</dc:subject>
+  </item>
+  <item>
+    <title>항암치료 중 운동: 피로·말초신경병증 있을 때 체크리스트</title>
+    <link>https://phlorotannin.com/blog/chemotherapy-exercise-fatigue-neuropathy-safety-checklist</link>
+    <description><![CDATA[항암치료 중 피로, 말초신경병증, 빈혈, 감염 위험이 있을 때 운동 강도와 중단 기준을 쉽게 정리했습니다.]]></description>
+    <category>운동·재활 루틴</category>
+    <pubDate>Wed, 27 May 2026 02:07:00 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/chemotherapy-exercise-fatigue-neuropathy-safety-checklist</guid>
+    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/chemotherapy-exercise-fatigue-neuropathy-safety-checklist.webp" type="image/webp"/>
+    <dc:subject>항암치료 중 운동, 항암 피로, 말초신경병증, 암 재활, 암환자 운동</dc:subject>
+  </item>
+  <item>
+    <title>당뇨 운동법: 식후 걷기와 근력운동을 같이 해야 하는 이유</title>
+    <link>https://phlorotannin.com/blog/diabetes-exercise-after-meal-walking-resistance-guide</link>
+    <description><![CDATA[당뇨 운동법을 식후 걷기, 근력운동, 저혈당 주의, 혈당 기록 방식으로 나눠 현실적으로 정리했습니다.]]></description>
+    <category>당뇨·혈당</category>
+    <pubDate>Wed, 27 May 2026 02:07:00 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/diabetes-exercise-after-meal-walking-resistance-guide</guid>
+    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/diabetes-exercise-after-meal-walking-resistance-guide.webp" type="image/webp"/>
+    <dc:subject>당뇨 운동법, 식후 걷기, 근력운동, 혈당 스파이크, 당뇨 식단</dc:subject>
+  </item>
+  <item>
+    <title>근감소증 운동법: 단백질·ONS·환자식과 함께 보는 회복 루틴</title>
+    <link>https://phlorotannin.com/blog/sarcopenia-rehabilitation-protein-exercise-ons-guide</link>
+    <description><![CDATA[근감소증 운동법을 의자 스쿼트, 밴드 운동, 단백질 분배, ONS와 환자식 활용 기준으로 정리했습니다.]]></description>
+    <category>운동·재활 루틴</category>
+    <pubDate>Wed, 27 May 2026 02:07:00 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/sarcopenia-rehabilitation-protein-exercise-ons-guide</guid>
+    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/sarcopenia-rehabilitation-protein-exercise-ons-guide.webp" type="image/webp"/>
+    <dc:subject>근감소증 운동법, 단백질, ONS, 포티멜, 환자식</dc:subject>
+  </item>
+  <item>
+    <title>암 재활병원 선택 기준: 항암 후 회복기 가족이 보는 체크리스트</title>
+    <link>https://phlorotannin.com/blog/cancer-rehabilitation-hospital-selection-checklist</link>
+    <description><![CDATA[암 재활병원과 암요양병원을 찾는 가족이 의료진, 운동, 영양, 감염관리, 응급연계 기준을 확인하는 방법입니다.]]></description>
+    <category>병원정보</category>
+    <pubDate>Wed, 27 May 2026 02:07:00 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/cancer-rehabilitation-hospital-selection-checklist</guid>
+    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/cancer-rehabilitation-hospital-selection-checklist.webp" type="image/webp"/>
+    <dc:subject>암 재활병원, 암요양병원, 항암 후 회복, 병원 선택, 암환자 영양</dc:subject>
+  </item>
+  <item>
+    <title>암 병원 정보 찾기: 수도권 대형병원과 지역 암센터를 비교할 때</title>
+    <link>https://phlorotannin.com/blog/cancer-care-hospital-seoul-regional-decision-guide</link>
+    <description><![CDATA[암 병원 정보를 찾을 때 수도권 대형병원, 지역 암센터, 회복기 병원을 어떤 기준으로 나눠 볼지 정리했습니다.]]></description>
+    <category>병원정보</category>
+    <pubDate>Wed, 27 May 2026 02:07:00 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/cancer-care-hospital-seoul-regional-decision-guide</guid>
+    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/cancer-care-hospital-seoul-regional-decision-guide.webp" type="image/webp"/>
+    <dc:subject>암 병원 정보, 수도권 암병원, 지역 암센터, 암요양병원, 병원 선택</dc:subject>
+  </item>
+  <item>
+    <title>당뇨 교육 병원 찾기: 영양상담·운동교육·합병증 검사를 확인하세요</title>
+    <link>https://phlorotannin.com/blog/diabetes-education-hospital-nutrition-counseling-checklist</link>
+    <description><![CDATA[당뇨 교육 병원을 찾을 때 영양상담, 운동교육, 혈당 기록, 합병증 검사, 약물 상담 기준을 정리했습니다.]]></description>
+    <category>병원정보</category>
+    <pubDate>Wed, 27 May 2026 02:07:00 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/diabetes-education-hospital-nutrition-counseling-checklist</guid>
+    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/diabetes-education-hospital-nutrition-counseling-checklist.webp" type="image/webp"/>
+    <dc:subject>당뇨 교육 병원, 당뇨 영양상담, 당뇨 운동교육, 혈당 관리, 합병증 검사</dc:subject>
+  </item>
+  <item>
+    <title>병원 진료 전 질문 리스트: 보호자가 미리 적어가야 할 12가지</title>
+    <link>https://phlorotannin.com/blog/hospital-visit-preparation-questions-caregiver-checklist</link>
+    <description><![CDATA[암, 당뇨, 회복기 진료 전 보호자가 증상, 식사, 운동, 약, 병원 연계 질문을 정리하는 체크리스트입니다.]]></description>
+    <category>병원정보</category>
+    <pubDate>Wed, 27 May 2026 02:07:00 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/hospital-visit-preparation-questions-caregiver-checklist</guid>
+    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/hospital-visit-preparation-questions-caregiver-checklist.webp" type="image/webp"/>
+    <dc:subject>병원 질문 리스트, 보호자 체크리스트, 진료 준비, 암환자 보호자, 당뇨 병원</dc:subject>
+  </item>
   <item>
     <title>저속노화 영양제 키워드 2026: 혈당·수면·단백질·장건강</title>
     <link>https://phlorotannin.com/blog/slow-aging-health-functional-food-2026-keyword-map</link>
@@ -438,86 +518,6 @@
     <guid isPermaLink="true">https://phlorotannin.com/blog/nutricia-fortimel-medical-food-korea-market-trend-2025</guid>
     <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/blog1-medical-food-market.webp" type="image/webp"/>
     <dc:subject>뉴트리시아 포티멜, 메디푸드, 특수의료용도식품, ONS, 환자영양</dc:subject>
-  </item>
-  <item>
-    <title>노인 근감소증 영양 보충 — 포티멜 등 고단백 ONS 2025년 가이드</title>
-    <link>https://phlorotannin.com/blog/elderly-sarcopenia-nutrition-fortimel-high-protein-ons-2025-guide</link>
-    <description><![CDATA[JKMA 2024, Korean J Geriatr Gerontol 2025, PMC12367323/PMC12288929 등 1차 출처로 정리한 노인 근감소증 영양 가이드.]]></description>
-    <category>연구·임상</category>
-    <pubDate>Sun, 24 May 2026 14:04:27 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/elderly-sarcopenia-nutrition-fortimel-high-protein-ons-2025-guide</guid>
-    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/blog3-sarcopenia-nutrition.webp" type="image/webp"/>
-    <dc:subject>근감소증, 사르코페니아, 노인 영양, 고단백 ONS, 포티멜</dc:subject>
-  </item>
-  <item>
-    <title>포티멜 컴팩트 프로틴 — 암환자·수술환자 ONS 임상 근거 2025년 정리</title>
-    <link>https://phlorotannin.com/blog/fortimel-compact-protein-cancer-surgery-clinical-evidence-2025</link>
-    <description><![CDATA[Fortimel Compact Protein 사양(125ml·18g 단백질·306kcal)과 ESPEN 2025·Frontiers 2025·NCT03501290 등 1차 임상 근거를 정리합니다.]]></description>
-    <category>연구·임상</category>
-    <pubDate>Sun, 24 May 2026 14:04:27 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/fortimel-compact-protein-cancer-surgery-clinical-evidence-2025</guid>
-    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/blog2-clinical-evidence.webp" type="image/webp"/>
-    <dc:subject>포티멜 컴팩트 프로틴, Fortimel Compact Protein, 암환자 영양, 수술 영양, ESPEN</dc:subject>
-  </item>
-  <item>
-    <title>씨놀(Seanol) 글로벌 인증 정리 — FDA NDI · EU NFI · 식약처 개별인정형 (2026 업데이트)</title>
-    <link>https://phlorotannin.com/blog/seanol-global-certifications-fda-ndi-eu-nfi-mfds-2026-update</link>
-    <description><![CDATA[갈조류 감태 유래 해양 폴리페놀 '씨놀(Seanol)'의 미국 FDA NDI(2008), EU Novel Food Ingredient(2018), 식약처 개별인정형 2종 등 글로벌 규제 인증 현황을 — 효능 광고가 아니라 — 등록 사실 그대로 정리한 산업 동향 자료입니다.]]></description>
-    <category>연구·임상</category>
-    <pubDate>Sat, 23 May 2026 05:24:32 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/seanol-global-certifications-fda-ndi-eu-nfi-mfds-2026-update</guid>
-    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/seanol-global-certifications-fda-ndi-eu-nfi-mfds-2026.webp" type="image/webp"/>
-    <dc:subject>씨놀, Seanol, FDA NDI, EU NFI, 식약처 개별인정형</dc:subject>
-  </item>
-  <item>
-    <title>Hydrated-Seanol® 초신선 기술이란 — 갈조류 폴리페놀이 식품 신선도에 작용하는 원리와 산업 적용</title>
-    <link>https://phlorotannin.com/blog/hydrated-seanol-ultra-freshness-technology-explained</link>
-    <description><![CDATA[㈜더하나인이 사업화 중인 Hydrated-Seanol® 초신선 기술의 작동 원리, 식품 보존 분야 적용 사례, R&D 투자 규모를 뉴스후플러스·CRS News·대한뉴스 보도 1차 출처로 정리한 산업 동향 자료입니다.]]></description>
-    <category>연구·임상</category>
-    <pubDate>Sat, 23 May 2026 05:24:32 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/hydrated-seanol-ultra-freshness-technology-explained</guid>
-    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/hydrated-seanol-ultra-freshness-technology.webp" type="image/webp"/>
-    <dc:subject>Hydrated-Seanol, 초신선, 식품 보존, 갈조류, 감태</dc:subject>
-  </item>
-  <item>
-    <title>PH-100·PH-733·PH-300 — 감태 플로로탄닌 기반 신약 파이프라인 정리 (NCT04141241 Phase IIa Completed)</title>
-    <link>https://phlorotannin.com/blog/seanol-drug-pipeline-ph100-ph733-ph300-2026</link>
-    <description><![CDATA[보타메디(Bota Bio) 계열 감태 플로로탄닌 신약 후보 PH-100(NCT04141241 Phase IIa Completed), PH-733(전임상 신경퇴행성), PH-300(전임상 염증)의 임상·전임상 등록 정보를 ClinicalTrials.gov + PMC12735720 + 국내 언론 보도 1차 출처로 정리.]]></description>
-    <category>연구·임상</category>
-    <pubDate>Sat, 23 May 2026 05:24:32 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/seanol-drug-pipeline-ph100-ph733-ph300-2026</guid>
-    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/seanol-drug-pipeline-ph100-ph733-ph300.webp" type="image/webp"/>
-    <dc:subject>PH-100, PH-733, PH-300, NCT04141241, 보타메디</dc:subject>
-  </item>
-  <item>
-    <title>플로로탄닌·LL-37 펩타이드 당뇨 상처 미세환경 연구 (PMC)</title>
-    <link>https://phlorotannin.com/blog/phlorotannin-2026-ll37-diabetic-wound-research</link>
-    <description><![CDATA[중국 (Chinese research group) · PMC11847560 / International Journal of Biological Macromolecules(2025 후반 ~ 2026)에 게재된 당뇨성 상처 미세환경·항균 펩타이드 조합 연구를 한국어 독자가 쉽게 이해할 수 있도록 정리했습니다. 플로로탄닌·플로로탄닌 분자 작용·한계·정직한 평가…]]></description>
-    <category>연구·임상</category>
-    <pubDate>Wed, 20 May 2026 13:11:07 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/phlorotannin-2026-ll37-diabetic-wound-research</guid>
-    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/phlorotannin-ph100-prediabetes-improvement-study.webp" type="image/webp"/>
-    <dc:subject>플로로탄닌, LL-37, 당뇨 상처, 항균 연구, 하이드로젤</dc:subject>
-  </item>
-  <item>
-    <title>플로로탄닌 분자 계열 치료적 잠재력 종설 (Wiley CBDV)</title>
-    <link>https://phlorotannin.com/blog/phlorotannin-2026-marine-derived-polyphenols-therapy-wiley</link>
-    <description><![CDATA[유럽·미국 공동 · Chemistry & Biodiversity (Wiley, CBDV)(2025-08 / 2026 갱신)에 게재된 플로로푸코퓨로에콜·디에콜·에콜·플로로글루시놀 분자 계열 종합 연구를 한국어 독자가 쉽게 이해할 수 있도록 정리했습니다. 플로로탄닌·플로로탄닌 분자 작용·한계·정직한 평가를 함께 담았습니다.]]></description>
-    <category>연구·임상</category>
-    <pubDate>Wed, 20 May 2026 13:11:05 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/phlorotannin-2026-marine-derived-polyphenols-therapy-wiley</guid>
-    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/marine-polyphenol-antioxidant-research-why-attention.webp" type="image/webp"/>
-    <dc:subject>플로로탄닌, 디에콜, 에콜, 플로로푸코퓨로에콜, 분자 약리</dc:subject>
-  </item>
-  <item>
-    <title>플로로탄닌과 장내 미생물·비만 연구 (2026 2월 Frontiers)</title>
-    <link>https://phlorotannin.com/blog/phlorotannin-2026-gut-microbiota-obesity-frontiers</link>
-    <description><![CDATA[중국·유럽 공동 · Frontiers in Nutrition (2026)(2026-02-03)에 게재된 장내 미생물·비만·당뇨 조절 연구를 한국어 독자가 쉽게 이해할 수 있도록 정리했습니다. 플로로탄닌·플로로탄닌 분자 작용·한계·정직한 평가를 함께 담았습니다.]]></description>
-    <category>연구·임상</category>
-    <pubDate>Wed, 20 May 2026 13:11:04 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/phlorotannin-2026-gut-microbiota-obesity-frontiers</guid>
-    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/phlorotannin-ph100-prediabetes-improvement-study.webp" type="image/webp"/>
-    <dc:subject>플로로탄닌, 장내 미생물, 비만 연구, 당뇨 연구, Frontiers</dc:subject>
   </item>
   <item>
     <title>플로로탄닌 혈압 작용 기전 — ACE 억제와 혈관 내피 회복 근거</title>

@@ -47,7 +47,7 @@ const BLOG_CATEGORIES = [
   'general', 'diabetes', 'cancer', 'brain', 'cardiovascular',
   'inflammation', 'skin', 'research',
   'ingredient-comparison', 'disease-health-info',
-  'hospital-info', 'partner-info',
+  'exercise-recovery', 'hospital-info', 'partner-info',
 ]
 
 const QA_CATEGORIES = [

@@ -1003,7 +1003,7 @@ function AgeGuideSection() {
 
 /* ─────────────────────────────────────────────
    Learn → Insights 브리지 섹션
-   학습을 마친 사용자에게 PMC 1차 자료 60편 중 카테고리별
+   학습을 마친 사용자에게 PMC 1차 자료 중 카테고리별
    대표 1편씩 4편을 큐레이션해서 다음 단계로 자연스럽게 연결.
 ───────────────────────────────────────────── */
 function LearnInsightBridge() {
@@ -1047,7 +1047,7 @@ function LearnInsightBridge() {
             to="/insights"
             className="inline-flex items-center gap-1.5 text-[13px] text-gray-700 hover:text-gray-900 underline underline-offset-4 decoration-gray-300 hover:decoration-gray-700"
           >
-            전체 60편 보기 →
+            전체 {INSIGHTS_LIST.length}편 보기 →
           </Link>
         </div>
 
@@ -1105,7 +1105,7 @@ function CTASection() {
         </div>
         <h2 className="text-3xl md:text-[2.25rem] font-bold text-gray-900 tracking-tight mb-4 leading-[1.2]">학습을 마치셨습니다</h2>
         <p className="text-gray-600 text-[16px] leading-[1.8] mb-10 max-w-xl mx-auto break-keep">
-          플로로탄닌의 작용 원리를 익히셨다면, 이제 1,391개의 심층 Q&amp;A와 60편의 원료 인사이트로
+          플로로탄닌의 작용 원리를 익히셨다면, 이제 1,391개의 심층 Q&amp;A와 {INSIGHTS_LIST.length}편의 원료 인사이트로
           더 깊이 들어가거나 전문 파트너에게 직접 문의해보세요.
         </p>
 
@@ -1120,7 +1120,7 @@ function CTASection() {
             onClick={() => navigate(`/insights`)}
             className="inline-flex items-center gap-1.5 text-[14px] text-gray-700 hover:text-gray-900 underline underline-offset-4 decoration-gray-300 hover:decoration-gray-700"
           >
-            인사이트 60편 보기
+            인사이트 {INSIGHTS_LIST.length}편 보기
           </button>
           <button
             onClick={() => navigate(`/phlorotannin`)}
@@ -1203,7 +1203,7 @@ export default function LearnPage() {
       <AgeGuideSection />
       <QuizSection />
 
-      {/* ─── 학습 → 인사이트 동선 (PMC 1차 자료 60편 진입로) ───
+      {/* ─── 학습 → 인사이트 동선 (PMC 1차 자료 진입로) ───
            [2026-05-21] 학습을 마친 사용자가 자연스럽게 심층 원료 가이드로
            이동할 수 있도록 4편을 큐레이션 노출. mechanism · ingredient-marine ·
            ingredient-longevity · ingredient-clinical 각 1편씩 다양성 확보. */}

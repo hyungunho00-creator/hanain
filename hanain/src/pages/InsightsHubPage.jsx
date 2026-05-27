@@ -44,7 +44,7 @@ export default function InsightsHubPage() {
         url: canonical,
         name: '플로로탄닌 심층 인사이트',
         description:
-          '플로로탄닌·감태(Ecklonia cava) 추출물과 30 트렌드 건강식품 원료에 대한 PubMed·PMC·EFSA·식약처 검증 1차 출처 기반 심층 콘텐츠. 작용기전·임상 근거·복용·안전성·비교·부작용·약물상호작용을 한곳에 정리한 60+ 포스트.',
+          `플로로탄닌·감태(Ecklonia cava) 추출물과 트렌드 건강식품 원료에 대한 PubMed·PMC·EFSA·식약처 검증 1차 출처 기반 심층 콘텐츠 ${INSIGHTS_LIST.length}편. 작용기전·임상 근거·복용·안전성·비교·부작용·약물상호작용을 한곳에 정리했습니다.`,
         inLanguage: 'ko-KR',
         lastReviewed: new Date().toISOString().slice(0, 10),
         about: {
@@ -80,8 +80,8 @@ export default function InsightsHubPage() {
   return (
     <>
       <SEOHead
-        title="플로로탄닌·건강식품 원료 심층 인사이트 | PubMed·EFSA 1차 출처 60+ 포스트"
-        description="플로로탄닌·감태(Ecklonia cava) 추출물과 NMN·후코이단·베르베린·CoQ10·GLP-1 천연 보조 등 60편 심층 콘텐츠. PubMed·PMC·EFSA·식약처 1차 출처 기반 작용기전·임상 근거·안전성·약물상호작용 종합 아카이브."
+        title={`플로로탄닌·건강식품 원료 심층 인사이트 | PubMed·EFSA 1차 출처 ${INSIGHTS_LIST.length}편`}
+        description={`플로로탄닌·감태(Ecklonia cava) 추출물과 NMN·후코이단·베르베린·CoQ10·GLP-1 천연 보조 등 ${INSIGHTS_LIST.length}편 심층 콘텐츠. PubMed·PMC·EFSA·식약처 1차 출처 기반 작용기전·임상 근거·안전성·약물상호작용 종합 아카이브.`}
         keywords="플로로탄닌,감태추출물,phlorotannin,Ecklonia cava,Seapolynol,심층 인사이트,근거 기반 건강정보"
         canonical={canonical}
         jsonLd={jsonLd}

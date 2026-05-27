@@ -620,6 +620,20 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/slow-aging-checklist-meal-supplement-routine"/>
   </url>
   <url>
+    <loc>https://phlorotannin.com/insights/exercise-recovery-keyword-map-cancer-diabetes-sarcopenia</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/exercise-recovery-keyword-map-cancer-diabetes-sarcopenia"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/insights/hospital-info-search-checklist-cancer-diabetes-rehab</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/hospital-info-search-checklist-cancer-diabetes-rehab"/>
+  </url>
+  <url>
     <loc>https://phlorotannin.com/category/metabolism</loc>
     <lastmod>2026-05-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -11391,6 +11405,94 @@
     <changefreq>weekly</changefreq>
     <priority>0.70</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa/tag/%ED%9D%A1%EC%97%B0"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/cancer-patient-exercise-guide-walking-strength-stretching</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/cancer-patient-exercise-guide-walking-strength-stretching"/>
+    <image:image>
+      <image:loc>https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/cancer-patient-exercise-guide-walking-strength-stretching.webp</image:loc>
+      <image:title>암환자 운동법: 걷기·근력·스트레칭을 언제 어떻게 시작할까</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/chemotherapy-exercise-fatigue-neuropathy-safety-checklist</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/chemotherapy-exercise-fatigue-neuropathy-safety-checklist"/>
+    <image:image>
+      <image:loc>https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/chemotherapy-exercise-fatigue-neuropathy-safety-checklist.webp</image:loc>
+      <image:title>항암치료 중 운동: 피로·말초신경병증 있을 때 체크리스트</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/diabetes-exercise-after-meal-walking-resistance-guide</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/diabetes-exercise-after-meal-walking-resistance-guide"/>
+    <image:image>
+      <image:loc>https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/diabetes-exercise-after-meal-walking-resistance-guide.webp</image:loc>
+      <image:title>당뇨 운동법: 식후 걷기와 근력운동을 같이 해야 하는 이유</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/sarcopenia-rehabilitation-protein-exercise-ons-guide</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/sarcopenia-rehabilitation-protein-exercise-ons-guide"/>
+    <image:image>
+      <image:loc>https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/sarcopenia-rehabilitation-protein-exercise-ons-guide.webp</image:loc>
+      <image:title>근감소증 운동법: 단백질·ONS·환자식과 함께 보는 회복 루틴</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/cancer-rehabilitation-hospital-selection-checklist</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/cancer-rehabilitation-hospital-selection-checklist"/>
+    <image:image>
+      <image:loc>https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/cancer-rehabilitation-hospital-selection-checklist.webp</image:loc>
+      <image:title>암 재활병원 선택 기준: 항암 후 회복기 가족이 보는 체크리스트</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/cancer-care-hospital-seoul-regional-decision-guide</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/cancer-care-hospital-seoul-regional-decision-guide"/>
+    <image:image>
+      <image:loc>https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/cancer-care-hospital-seoul-regional-decision-guide.webp</image:loc>
+      <image:title>암 병원 정보 찾기: 수도권 대형병원과 지역 암센터를 비교할 때</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/diabetes-education-hospital-nutrition-counseling-checklist</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/diabetes-education-hospital-nutrition-counseling-checklist"/>
+    <image:image>
+      <image:loc>https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/diabetes-education-hospital-nutrition-counseling-checklist.webp</image:loc>
+      <image:title>당뇨 교육 병원 찾기: 영양상담·운동교육·합병증 검사를 확인하세요</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/hospital-visit-preparation-questions-caregiver-checklist</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/hospital-visit-preparation-questions-caregiver-checklist"/>
+    <image:image>
+      <image:loc>https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/hospital-visit-preparation-questions-caregiver-checklist.webp</image:loc>
+      <image:title>병원 진료 전 질문 리스트: 보호자가 미리 적어가야 할 12가지</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://phlorotannin.com/blog/slow-aging-health-functional-food-2026-keyword-map</loc>

@@ -1,0 +1,53 @@
+{
+  "skipped": [
+    {
+      "id": 349,
+      "slug": "cancer-patient-exercise-guide-walking-strength-stretching",
+      "title": "암환자 운동법: 걷기·근력·스트레칭을 언제 어떻게 시작할까",
+      "status": "published"
+    },
+    {
+      "id": 350,
+      "slug": "chemotherapy-exercise-fatigue-neuropathy-safety-checklist",
+      "title": "항암치료 중 운동: 피로·말초신경병증 있을 때 체크리스트",
+      "status": "published"
+    },
+    {
+      "id": 351,
+      "slug": "diabetes-exercise-after-meal-walking-resistance-guide",
+      "title": "당뇨 운동법: 식후 걷기와 근력운동을 같이 해야 하는 이유",
+      "status": "published"
+    },
+    {
+      "id": 352,
+      "slug": "sarcopenia-rehabilitation-protein-exercise-ons-guide",
+      "title": "근감소증 운동법: 단백질·ONS·환자식과 함께 보는 회복 루틴",
+      "status": "published"
+    },
+    {
+      "id": 353,
+      "slug": "cancer-rehabilitation-hospital-selection-checklist",
+      "title": "암 재활병원 선택 기준: 항암 후 회복기 가족이 보는 체크리스트",
+      "status": "published"
+    },
+    {
+      "id": 354,
+      "slug": "cancer-care-hospital-seoul-regional-decision-guide",
+      "title": "암 병원 정보 찾기: 수도권 대형병원과 지역 암센터를 비교할 때",
+      "status": "published"
+    },
+    {
+      "id": 355,
+      "slug": "diabetes-education-hospital-nutrition-counseling-checklist",
+      "title": "당뇨 교육 병원 찾기: 영양상담·운동교육·합병증 검사를 확인하세요",
+      "status": "published"
+    },
+    {
+      "id": 356,
+      "slug": "hospital-visit-preparation-questions-caregiver-checklist",
+      "title": "병원 진료 전 질문 리스트: 보호자가 미리 적어가야 할 12가지",
+      "status": "published"
+    }
+  ],
+  "inserted": []
+}

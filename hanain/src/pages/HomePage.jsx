@@ -9,7 +9,7 @@ import {
 } from 'lucide-react'
 import RevealContact from '../components/common/RevealContact'
 import LastReviewed from '../components/common/LastReviewed'
-// [2026-05-21] 인사이트 60편 진입 — 홈에서 최신 6편 직접 노출 (사용자 발견성↑, SEO 내부 링크 그래프 강화)
+// [2026-05-21] 인사이트 진입 — 홈에서 최신 6편 직접 노출 (사용자 발견성↑, SEO 내부 링크 그래프 강화)
 import { INSIGHTS_LIST } from '../data/insights'
 
 const LAST_REVIEWED = '2026-05-21'
@@ -398,9 +398,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─── Latest Insights — PMC 1차 자료 60편 중 최신 6편 직접 노출 ───
+      {/* ─── Latest Insights — PMC 1차 자료 중 최신 6편 직접 노출 ───
            [2026-05-21] 사용자가 인사이트 자산을 발견할 수 있도록 홈에서 직접 진입로 제공
-           PR #16/#17 60편 자산화 → 진입로 누락 보완. 광고 톤 X, 에디토리얼 일관 톤 */}
+           인사이트 자산화 → 진입로 누락 보완. 광고 톤 X, 에디토리얼 일관 톤 */}
       <section className="py-20 md:py-24 bg-white border-t border-gray-100">
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">

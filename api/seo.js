@@ -187,6 +187,7 @@ const CATEGORY_NAMES = {
   'mens-health': '남성 건강정보',
   'ingredient-comparison': '성분 비교 아카이브',
   'disease-health-info': '질환별 건강정보',
+  'exercise-recovery': '운동·재활 루틴',
   'partner-info': '파트너 정보페이지',
   'cancer-treatment-care': '항암 치료 케어',
   'buying-guide': '구매 가이드',
@@ -299,6 +300,13 @@ function staticMetaFor(pathname) {
       title: '질환별 건강정보 | 암환자 가족·당뇨·수면·면역 정보 아카이브',
       desc:  '암환자 가족 건강정보, 당뇨·혈당, 수면, 면역, 장 건강, 뇌 건강, 피부 건강, 염증·항산화 기전까지 사람들이 실제로 검색하는 12개 질환 카테고리 건강정보를 임상 근거 기반으로 정리하는 아카이브입니다.',
       canonical: `${SITE}/blog?category=disease-health-info`,
+    }
+  }
+  if (pathname === '/blog?category=exercise-recovery') {
+    return {
+      title: '운동·재활 루틴 | 암환자 운동법·당뇨 운동법·근감소증 회복',
+      desc:  '암환자 운동법, 항암치료 중 운동, 당뇨 식후 걷기, 근감소증 근력운동, 회복기 재활 루틴을 안전 체크리스트와 근거 기반 건강정보로 정리한 아카이브입니다.',
+      canonical: `${SITE}/blog?category=exercise-recovery`,
     }
   }
   if (pathname === '/blog?category=hospital-info') {
@@ -649,10 +657,10 @@ const SSR_LITE_BODIES = {
     h1: '건강정보 블로그 — 플로로탄닌·감태추출물·해양 폴리페놀 연구 아카이브',
     paras: [
       '건강정보 블로그는 플로로탄닌(phlorotannin), 감태추출물(Ecklonia cava), 해양 폴리페놀(갈조류 폴리페놀, 해조류 폴리페놀)의 연구 동향과 일반 건강정보를 모아 정리하는 아카이브입니다.',
-      '아카이브는 네 가지 카테고리로 구성됩니다. 1) 성분 비교 — 콜라겐, 후코이단, 베타글루칸, 오메가3 등 다양한 건강성분과 플로로탄닌·감태추출물의 차이. 2) 질환별 건강정보 — 당뇨·혈당, 암환자 가족 건강정보, 치매·뇌 건강, 수면, 면역, 장 건강, 피부 건강, 염증. 3) 병원정보 — 암요양병원, 한방병원, 재활병원, 연구기반 Q&A. 4) 파트너 정보페이지 안내.',
+      '아카이브는 다섯 가지 카테고리로 구성됩니다. 1) 성분 비교 — 콜라겐, 후코이단, 베타글루칸, 오메가3 등 다양한 건강성분과 플로로탄닌·감태추출물의 차이. 2) 질환별 건강정보 — 당뇨·혈당, 암환자 가족 건강정보, 치매·뇌 건강, 수면, 면역, 장 건강, 피부 건강, 염증. 3) 운동·재활 루틴 — 암환자 운동법, 당뇨 운동법, 근감소증 회복. 4) 병원정보 — 암요양병원, 한방병원, 재활병원, 연구기반 Q&A. 5) 파트너 정보페이지 안내.',
       '관련 검색어: 플로로탄닌, 플로로타닌, phlorotannin, 감태추출물, Ecklonia cava, 씨놀, Seanol, 카프, eckol, dieckol, 항산화, 염증, 면역.',
     ],
-    nav: ['/blog?category=ingredient-comparison', '/blog?category=disease-health-info', '/blog?category=hospital-info', '/blog?category=partner-info'],
+    nav: ['/blog?category=ingredient-comparison', '/blog?category=disease-health-info', '/blog?category=exercise-recovery', '/blog?category=hospital-info', '/blog?category=partner-info'],
   },
   '/blog?category=ingredient-comparison': {
     h1: '성분 비교 아카이브 — 콜라겐·후코이단·베타글루칸·플로로탄닌 비교',
@@ -661,7 +669,7 @@ const SSR_LITE_BODIES = {
       '같은 감태(Ecklonia cava) 유래 해양 폴리페놀 성분군이 자료에 따라 씨놀(Seanol), 카프 같은 별칭으로도 언급되기 때문에, 이름이 달라도 동일 성분군인지 다른 성분인지 정리합니다.',
       '비교 항목은 원료(육상 vs 해양), 분자 종류(eckol, dieckol 등), 항산화 관점, 염증 관점, 흡수율, 적용 범위 등입니다. 의학적 효능을 단정하지 않고 연구 동향과 일반 건강정보 위주로 안내합니다.',
     ],
-    nav: ['/blog', '/blog?category=disease-health-info', '/blog?category=hospital-info'],
+    nav: ['/blog', '/blog?category=disease-health-info', '/blog?category=exercise-recovery', '/blog?category=hospital-info'],
   },
   '/blog?category=disease-health-info': {
     h1: '질환별 건강정보 — 암환자 가족·당뇨·수면·면역 정보 아카이브',
@@ -670,7 +678,16 @@ const SSR_LITE_BODIES = {
       '주요 주제: 당뇨·혈당 건강정보, 암환자 가족 건강정보, 치매·뇌 건강, 수면 건강, 면역 건강, 장 건강, 피부 건강, 항산화·염증 관련 건강정보.',
       '각 주제는 플로로탄닌(phlorotannin), 감태추출물, 해양 폴리페놀(갈조류 폴리페놀, 해조류 폴리페놀)의 공개된 연구 동향과 어떻게 연결되는지 풀어 설명합니다. 의학적 치료·예방을 단정하지 않으며, 일반 건강정보 관점에서 안내합니다. 관련 검색어: eckol, dieckol, 씨놀, Seanol, 카프, Ecklonia cava.',
     ],
-    nav: ['/blog', '/qa', '/blog?category=hospital-info'],
+    nav: ['/blog', '/qa', '/blog?category=exercise-recovery', '/blog?category=hospital-info'],
+  },
+  '/blog?category=exercise-recovery': {
+    h1: '운동·재활 루틴 — 암환자 운동법·당뇨 운동법·근감소증 회복',
+    paras: [
+      '운동·재활 루틴 아카이브는 환자와 가족이 실제로 검색하는 운동법을 안전 기준과 함께 정리하는 카테고리입니다.',
+      '주요 주제: 암환자 운동법, 항암치료 중 운동, 당뇨 식후 걷기, 근감소증 근력운동, 회복기 단백질·ONS·환자식 연계. 질환별 금기와 의료진 상담이 필요한 신호를 함께 안내합니다.',
+      '관련 검색어: 암환자 운동, 항암 운동, 당뇨 운동법, 식후 걷기, 근감소증 운동, 회복기 재활, 단백질, 포티멜, ONS, 플로로탄닌, 감태추출물.',
+    ],
+    nav: ['/blog', '/blog?category=disease-health-info', '/blog?category=hospital-info'],
   },
   '/blog?category=hospital-info': {
     h1: '병원정보 아카이브 — 암요양병원·한방병원·연구기반 Q&A',
@@ -962,6 +979,7 @@ function buildBreadcrumbJsonLd(post, pathname) {
     const catUrlMap = {
       'ingredient-comparison': `${SITE}/blog?category=ingredient-comparison`,
       'disease-health-info':   `${SITE}/blog?category=disease-health-info`,
+      'exercise-recovery':      `${SITE}/blog?category=exercise-recovery`,
       'hospital-info':         `${SITE}/blog?category=hospital-info`,
       'partner-info':          `${SITE}/blog?category=partner-info`,
     }

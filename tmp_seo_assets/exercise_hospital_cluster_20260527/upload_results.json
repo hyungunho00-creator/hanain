@@ -1,0 +1,50 @@
+[
+  {
+    "remote": "cancer-patient-exercise-guide-walking-strength-stretching.webp",
+    "status": "ok",
+    "http": 200,
+    "bytes": 13038
+  },
+  {
+    "remote": "chemotherapy-exercise-fatigue-neuropathy-safety-checklist.webp",
+    "status": "ok",
+    "http": 200,
+    "bytes": 13928
+  },
+  {
+    "remote": "diabetes-exercise-after-meal-walking-resistance-guide.webp",
+    "status": "ok",
+    "http": 200,
+    "bytes": 12242
+  },
+  {
+    "remote": "sarcopenia-rehabilitation-protein-exercise-ons-guide.webp",
+    "status": "ok",
+    "http": 200,
+    "bytes": 14234
+  },
+  {
+    "remote": "cancer-rehabilitation-hospital-selection-checklist.webp",
+    "status": "ok",
+    "http": 200,
+    "bytes": 8556
+  },
+  {
+    "remote": "cancer-care-hospital-seoul-regional-decision-guide.webp",
+    "status": "ok",
+    "http": 200,
+    "bytes": 10980
+  },
+  {
+    "remote": "diabetes-education-hospital-nutrition-counseling-checklist.webp",
+    "status": "ok",
+    "http": 200,
+    "bytes": 11706
+  },
+  {
+    "remote": "hospital-visit-preparation-questions-caregiver-checklist.webp",
+    "status": "ok",
+    "http": 200,
+    "bytes": 11066
+  }
+]

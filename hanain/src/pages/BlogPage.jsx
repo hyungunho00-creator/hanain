@@ -6,6 +6,7 @@ import { usePartner } from '../context/PartnerContext'
 import { withRef } from '../lib/partnerRef'
 import PartnerShareBar from '../components/partner/PartnerShareBar'
 import { getPosts, getPostCount, getBlogCategories, getVideosByCategory } from '../lib/supabase'
+import { INSIGHTS_LIST } from '../data/insights'
 
 // Phase 3: Supabase categories 테이블이 1순위, 아래 상수는 DB 실패 시 fallback
 const FALLBACK_CATEGORIES = [
@@ -23,6 +24,7 @@ const FALLBACK_CATEGORIES = [
   { id: 'general',    name: '일반' },
   { id: 'ingredient-comparison', name: '성분 비교' },
   { id: 'disease-health-info',   name: '질환별 건강정보' },
+  { id: 'exercise-recovery',      name: '운동·재활 루틴' },
   { id: 'hospital-info',         name: '병원정보' },
   { id: 'partner-info',          name: '파트너 정보' },
   { id: '분자기전 작용경로',     name: '분자기전·작용경로' },
@@ -53,6 +55,7 @@ const CAT_COLORS = {
   general:       'bg-gray-100 text-gray-700',
   'ingredient-comparison': 'bg-gray-100 text-gray-700',
   'disease-health-info':   'bg-gray-100 text-gray-700',
+  'exercise-recovery':      'bg-gray-100 text-gray-700',
   'hospital-info':         'bg-gray-100 text-gray-700',
   'partner-info':          'bg-gray-100 text-gray-700',
   '분자기전 작용경로': 'bg-gray-100 text-gray-700',
@@ -78,6 +81,7 @@ const BLOG_TO_VIDEO_CAT = {
   general:        'general',
   'ingredient-comparison': null,
   'disease-health-info':   null,
+  'exercise-recovery':      null,
   'hospital-info':         null,
   'partner-info':          null,
   'buying-guide':          null,  // 🆕 영상 매칭은 추후
@@ -343,7 +347,7 @@ export default function BlogPage() {
           {/* 파트너 추천 링크 공유 도구 — 파트너 컨텍스트 활성 시에만 노출 */}
           <PartnerShareBar />
 
-          {/* [2026-05-21] 인사이트 진입 CTA — 블로그 방문자에게 60편 심층 자산 자연 안내
+          {/* [2026-05-21] 인사이트 진입 CTA — 블로그 방문자에게 심층 자산 자연 안내
               디자인: 라이트 모노톤 위에 미세한 ocean-deep 액센트, 광고 톤 아님 */}
           <Link
             to={withRef('/insights', partner)}
@@ -356,13 +360,13 @@ export default function BlogPage() {
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 mb-0.5">
                   <span className="text-[10px] font-medium uppercase tracking-[0.18em] text-gray-500">
-                    Insights · 60
+                    Insights · {INSIGHTS_LIST.length}
                   </span>
                   <span className="text-[10px] text-gray-300">·</span>
                   <span className="text-[10px] text-gray-500">PubMed·PMC·DOI 1차 자료 기반</span>
                 </div>
                 <p className="text-[14px] font-semibold text-gray-900 leading-snug">
-                  심층 원료 자산 60편 — 플로로탄닌·NMN·후코이단·베르베린 등 PMC 검증 가이드
+                  심층 원료 자산 {INSIGHTS_LIST.length}편 — 플로로탄닌·NMN·후코이단·베르베린 등 PMC 검증 가이드
                 </p>
               </div>
               <ChevronRight
