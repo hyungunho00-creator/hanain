@@ -48,10 +48,39 @@ def db_rows():
     return json.loads(body) if status == 200 else []
 
 
+def db_content_checks():
+    if not KEY:
+        return []
+    forbidden = ["\ud3ec\ud2f0\uba5c", "Fort" + "imel", "fort" + "imel"]
+    slugs = ",".join(p["slug"] for p in POSTS)
+    params = urllib.parse.urlencode({
+        "slug": f"in.({slugs})",
+        "select": "id,slug,content",
+    })
+    status, _, body = fetch(
+        f"{SB}/rest/v1/posts?{params}",
+        headers={"apikey": KEY, "Authorization": f"Bearer {KEY}", "Accept-Profile": "public"},
+    )
+    rows = json.loads(body) if status == 200 else []
+    checks = []
+    for row in rows:
+        content = row.get("content") or ""
+        checks.append({
+            "id": row.get("id"),
+            "slug": row.get("slug"),
+            "has_cta_marker": "MEULSSORI_PHLOROTANNIN_CTA_V1" in content,
+            "has_meulssori": "맛있으리" in content,
+            "has_phlorotannin": "플로로탄닌" in content,
+            "has_forbidden": any(token in content for token in forbidden),
+            "content_length": len(content),
+        })
+    return checks
+
+
 def main():
     forbidden = ["\ud3ec\ud2f0\uba5c", "Fort" + "imel", "fort" + "imel"]
     sitemap_status, _, sitemap = fetch(f"{SITE}/sitemap.xml")
-    results = {"db": db_rows(), "images": [], "pages": [], "sitemap_status": sitemap_status, "sitemap": []}
+    results = {"db": db_rows(), "db_content": db_content_checks(), "images": [], "pages": [], "sitemap_status": sitemap_status, "sitemap": []}
     for post in POSTS:
         slug = post["slug"]
         image = post["og_image"]
@@ -79,6 +108,8 @@ def main():
     OUT.write_text(json.dumps(results, ensure_ascii=False, indent=2), encoding="utf-8")
     print(json.dumps(results, ensure_ascii=False, indent=2))
     if any(p.get("status") != 200 or p.get("has_forbidden") for p in results["pages"]):
+        raise SystemExit(1)
+    if any((not c.get("has_cta_marker")) or c.get("has_forbidden") for c in results["db_content"]):
         raise SystemExit(1)
 
 

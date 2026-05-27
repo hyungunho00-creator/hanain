@@ -1,0 +1,40 @@
+{
+  "urls": [
+    "https://phlorotannin.com/blog/jongkundang-health-dr-care-special-medical-food-keyword-map",
+    "https://phlorotannin.com/blog/dr-care-dangcoach-zero-diabetes-drink-label-guide",
+    "https://phlorotannin.com/blog/diabetes-medical-nutrition-drink-zero-sugar-carb-protein-fiber",
+    "https://phlorotannin.com/blog/diabetes-drink-meulssori-meal-routine-checklist",
+    "https://phlorotannin.com/blog/dr-care-cancercoach-cancer-patient-drink-label-guide",
+    "https://phlorotannin.com/blog/cancer-patient-nutrition-drink-appetite-nausea-swallowing-guide",
+    "https://phlorotannin.com/blog/cancer-diabetes-drink-choice-checklist",
+    "https://phlorotannin.com/blog/special-medical-purpose-food-label-guide-korea",
+    "https://phlorotannin.com/blog/patient-drink-vs-protein-drink-difference",
+    "https://phlorotannin.com/blog/jongkundang-health-dr-care-buying-checklist-meulssori",
+    "https://phlorotannin.com/blog?category=diabetes",
+    "https://phlorotannin.com/blog?category=cancer-treatment-care",
+    "https://phlorotannin.com/blog?category=buying-guide",
+    "https://phlorotannin.com/sitemap.xml"
+  ],
+  "results": [
+    {
+      "endpoint": "https://api.indexnow.org/indexnow",
+      "status": 200,
+      "body": ""
+    },
+    {
+      "endpoint": "https://www.bing.com/indexnow",
+      "status": 200,
+      "body": ""
+    },
+    {
+      "endpoint": "https://yandex.com/indexnow",
+      "status": 202,
+      "body": "{\n  \"success\":true\n}"
+    },
+    {
+      "endpoint": "naver",
+      "status": 200,
+      "body": ""
+    }
+  ]
+}
