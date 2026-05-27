@@ -48,7 +48,7 @@ export default function InsightsHubPage() {
         inLanguage: 'ko-KR',
         lastReviewed: new Date().toISOString().slice(0, 10),
         about: {
-          '@type': 'Drug',
+          '@type': 'Thing',
           name: '플로로탄닌 (Phlorotannin)',
           alternateName: ['감태 추출물', 'Ecklonia cava polyphenol', 'Seapolynol™'],
         },

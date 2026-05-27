@@ -58,7 +58,7 @@ export default function InsightLayout({ post, related = [] }) {
           url: SITE,
         },
         about: {
-          '@type': 'Drug',
+          '@type': 'Thing',
           name: '플로로탄닌 (Phlorotannin)',
           alternateName: ['감태 추출물', 'Ecklonia cava polyphenol', 'Seapolynol™'],
         },

@@ -1,4 +1,4 @@
-import { useState , useEffect } from 'react'
+import { useState } from 'react'
 import { usePartner } from '../context/PartnerContext'
 import SEOHead from '../components/common/SEOHead'
 import { Link, useNavigate } from 'react-router-dom'
@@ -280,7 +280,7 @@ export default function PhlorotanninPage() {
           "url": "https://phlorotannin.com"
         },
         "about": {
-          "@type": "Drug",
+          "@type": "Thing",
           "name": "플로로탄닌 (Phlorotannin)",
           "alternateName": ["Phlorotannin", "감태추출물", "해양폴리페놀"],
           "description": "갈조류(감태·미역·다시마)에서 추출한 해양 폴리페놀 계열 천연 소재"

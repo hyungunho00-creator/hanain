@@ -134,7 +134,7 @@ export default function SafetyPage() {
         ],
         audience: { '@type': 'MedicalAudience', audienceType: 'Patient' },
         about: [
-          { '@type': 'Drug', name: '플로로탄닌', alternateName: 'Phlorotannin' },
+          { '@type': 'Thing', name: '플로로탄닌', alternateName: 'Phlorotannin' },
           { '@type': 'Thing', name: '감태추출물', alternateName: 'Ecklonia cava extract' },
         ],
       },

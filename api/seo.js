@@ -1231,7 +1231,7 @@ function buildPhlorotanninJsonLd() {
       "description": "감태·미역·다시마 등 갈조류에서 추출한 해양 폴리페놀 플로로탄닌의 6가지 과학적 작용기전",
       "inLanguage": "ko-KR",
       "about": {
-        "@type": "Drug",
+        "@type": "Thing",
         "name": "플로로탄닌 (Phlorotannin)",
         "alternateName": ["Phlorotannin", "감태추출물", "해양폴리페놀"],
         "description": "갈조류(감태·미역·다시마)에서 추출한 해양 폴리페놀 계열 천연 소재"

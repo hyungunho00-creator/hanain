@@ -1263,6 +1263,9 @@ curl -s "https://phlorotannin.com/p/01056528206" | grep -E "<title|page-title"
    - 검색 결과 반영: Google/Naver가 재크롤링 후 반영하므로 IndexNow·sitemap 제출까지 완료하고, 노출 변화는 Search Console 기준으로 추적한다.
 5. 신뢰성 1등 목표는 장식 문구가 아니라 반복 가능한 구조로 만든다.
    - 작성·편집 주체, 최근 업데이트, 면책, 참고자료, 구조화데이터 citation, 이미지 alt, 출처 검증 로그를 매 배치마다 남긴다.
+6. 실제 판매 페이지가 아닌 건강정보·원료 설명 페이지에는 `Product`, `Drug` 계열 구조화 데이터를 쓰지 않는다.
+   - 가격, 재고, 리뷰, 평점이 사용자에게 실제로 보이고 검증 가능한 경우에만 `offers`, `review`, `aggregateRating`을 포함한 제품 스키마를 허용한다.
+   - 플로로탄닌·감태추출물 같은 정보성 소재 엔티티는 기본적으로 `Thing`, `DefinedTerm`, `MedicalWebPage`, `Article` 조합으로 표현한다.
 
 ---
 
