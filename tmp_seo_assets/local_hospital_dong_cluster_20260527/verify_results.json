@@ -1,0 +1,610 @@
+{
+  "db_count": 30,
+  "images": [
+    {
+      "slug": "yeoksam-dong-internal-medicine-checklist",
+      "status": 200,
+      "content_type": "image/webp"
+    },
+    {
+      "slug": "samsung-dong-internal-medicine-checklist",
+      "status": 200,
+      "content_type": "image/webp"
+    },
+    {
+      "slug": "seocho-dong-internal-medicine-checklist",
+      "status": 200,
+      "content_type": "image/webp"
+    },
+    {
+      "slug": "jamsil-dong-internal-medicine-checklist",
+      "status": 200,
+      "content_type": "image/webp"
+    },
+    {
+      "slug": "yeouido-internal-medicine-checklist",
+      "status": 200,
+      "content_type": "image/webp"
+    },
+    {
+      "slug": "gongdeok-dong-internal-medicine-checklist",
+      "status": 200,
+      "content_type": "image/webp"
+    },
+    {
+      "slug": "seongsu-dong-internal-medicine-checklist",
+      "status": 200,
+      "content_type": "image/webp"
+    },
+    {
+      "slug": "mok-dong-internal-medicine-checklist",
+      "status": 200,
+      "content_type": "image/webp"
+    },
+    {
+      "slug": "sangam-dong-internal-medicine-checklist",
+      "status": 200,
+      "content_type": "image/webp"
+    },
+    {
+      "slug": "nowon-station-internal-medicine-checklist",
+      "status": 200,
+      "content_type": "image/webp"
+    },
+    {
+      "slug": "sillim-dong-internal-medicine-checklist",
+      "status": 200,
+      "content_type": "image/webp"
+    },
+    {
+      "slug": "guro-digital-complex-internal-medicine-checklist",
+      "status": 200,
+      "content_type": "image/webp"
+    },
+    {
+      "slug": "pangyo-internal-medicine-checklist",
+      "status": 200,
+      "content_type": "image/webp"
+    },
+    {
+      "slug": "jeongja-dong-internal-medicine-checklist",
+      "status": 200,
+      "content_type": "image/webp"
+    },
+    {
+      "slug": "sunae-dong-internal-medicine-checklist",
+      "status": 200,
+      "content_type": "image/webp"
+    },
+    {
+      "slug": "gwanggyo-internal-medicine-checklist",
+      "status": 200,
+      "content_type": "image/webp"
+    },
+    {
+      "slug": "yeongtong-dong-internal-medicine-checklist",
+      "status": 200,
+      "content_type": "image/webp"
+    },
+    {
+      "slug": "dongtan-internal-medicine-checklist",
+      "status": 200,
+      "content_type": "image/webp"
+    },
+    {
+      "slug": "madu-dong-internal-medicine-checklist",
+      "status": 200,
+      "content_type": "image/webp"
+    },
+    {
+      "slug": "baekseok-dong-internal-medicine-checklist",
+      "status": 200,
+      "content_type": "image/webp"
+    },
+    {
+      "slug": "songdo-internal-medicine-checklist",
+      "status": 200,
+      "content_type": "image/webp"
+    },
+    {
+      "slug": "bupyeong-internal-medicine-checklist",
+      "status": 200,
+      "content_type": "image/webp"
+    },
+    {
+      "slug": "haeundae-udong-internal-medicine-checklist",
+      "status": 200,
+      "content_type": "image/webp"
+    },
+    {
+      "slug": "busan-seomyeon-internal-medicine-checklist",
+      "status": 200,
+      "content_type": "image/webp"
+    },
+    {
+      "slug": "daegu-beomeo-dong-internal-medicine-checklist",
+      "status": 200,
+      "content_type": "image/webp"
+    },
+    {
+      "slug": "daejeon-dunsan-dong-internal-medicine-checklist",
+      "status": 200,
+      "content_type": "image/webp"
+    },
+    {
+      "slug": "gwangju-sangmu-district-internal-medicine-checklist",
+      "status": 200,
+      "content_type": "image/webp"
+    },
+    {
+      "slug": "sejong-naseong-dong-internal-medicine-checklist",
+      "status": 200,
+      "content_type": "image/webp"
+    },
+    {
+      "slug": "changwon-sangnam-dong-internal-medicine-checklist",
+      "status": 200,
+      "content_type": "image/webp"
+    },
+    {
+      "slug": "cheonan-buldang-dong-internal-medicine-checklist",
+      "status": 200,
+      "content_type": "image/webp"
+    }
+  ],
+  "pages": [
+    {
+      "slug": "yeoksam-dong-internal-medicine-checklist",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_og_image": true,
+      "has_article_jsonld": true,
+      "has_citation": true,
+      "has_is_based_on": true,
+      "has_product_schema": false,
+      "has_drug_schema": false
+    },
+    {
+      "slug": "samsung-dong-internal-medicine-checklist",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_og_image": true,
+      "has_article_jsonld": true,
+      "has_citation": true,
+      "has_is_based_on": true,
+      "has_product_schema": false,
+      "has_drug_schema": false
+    },
+    {
+      "slug": "seocho-dong-internal-medicine-checklist",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_og_image": true,
+      "has_article_jsonld": true,
+      "has_citation": true,
+      "has_is_based_on": true,
+      "has_product_schema": false,
+      "has_drug_schema": false
+    },
+    {
+      "slug": "jamsil-dong-internal-medicine-checklist",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_og_image": true,
+      "has_article_jsonld": true,
+      "has_citation": true,
+      "has_is_based_on": true,
+      "has_product_schema": false,
+      "has_drug_schema": false
+    },
+    {
+      "slug": "yeouido-internal-medicine-checklist",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_og_image": true,
+      "has_article_jsonld": true,
+      "has_citation": true,
+      "has_is_based_on": true,
+      "has_product_schema": false,
+      "has_drug_schema": false
+    },
+    {
+      "slug": "gongdeok-dong-internal-medicine-checklist",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_og_image": true,
+      "has_article_jsonld": true,
+      "has_citation": true,
+      "has_is_based_on": true,
+      "has_product_schema": false,
+      "has_drug_schema": false
+    },
+    {
+      "slug": "seongsu-dong-internal-medicine-checklist",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_og_image": true,
+      "has_article_jsonld": true,
+      "has_citation": true,
+      "has_is_based_on": true,
+      "has_product_schema": false,
+      "has_drug_schema": false
+    },
+    {
+      "slug": "mok-dong-internal-medicine-checklist",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_og_image": true,
+      "has_article_jsonld": true,
+      "has_citation": true,
+      "has_is_based_on": true,
+      "has_product_schema": false,
+      "has_drug_schema": false
+    },
+    {
+      "slug": "sangam-dong-internal-medicine-checklist",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_og_image": true,
+      "has_article_jsonld": true,
+      "has_citation": true,
+      "has_is_based_on": true,
+      "has_product_schema": false,
+      "has_drug_schema": false
+    },
+    {
+      "slug": "nowon-station-internal-medicine-checklist",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_og_image": true,
+      "has_article_jsonld": true,
+      "has_citation": true,
+      "has_is_based_on": true,
+      "has_product_schema": false,
+      "has_drug_schema": false
+    },
+    {
+      "slug": "sillim-dong-internal-medicine-checklist",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_og_image": true,
+      "has_article_jsonld": true,
+      "has_citation": true,
+      "has_is_based_on": true,
+      "has_product_schema": false,
+      "has_drug_schema": false
+    },
+    {
+      "slug": "guro-digital-complex-internal-medicine-checklist",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_og_image": true,
+      "has_article_jsonld": true,
+      "has_citation": true,
+      "has_is_based_on": true,
+      "has_product_schema": false,
+      "has_drug_schema": false
+    },
+    {
+      "slug": "pangyo-internal-medicine-checklist",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_og_image": true,
+      "has_article_jsonld": true,
+      "has_citation": true,
+      "has_is_based_on": true,
+      "has_product_schema": false,
+      "has_drug_schema": false
+    },
+    {
+      "slug": "jeongja-dong-internal-medicine-checklist",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_og_image": true,
+      "has_article_jsonld": true,
+      "has_citation": true,
+      "has_is_based_on": true,
+      "has_product_schema": false,
+      "has_drug_schema": false
+    },
+    {
+      "slug": "sunae-dong-internal-medicine-checklist",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_og_image": true,
+      "has_article_jsonld": true,
+      "has_citation": true,
+      "has_is_based_on": true,
+      "has_product_schema": false,
+      "has_drug_schema": false
+    },
+    {
+      "slug": "gwanggyo-internal-medicine-checklist",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_og_image": true,
+      "has_article_jsonld": true,
+      "has_citation": true,
+      "has_is_based_on": true,
+      "has_product_schema": false,
+      "has_drug_schema": false
+    },
+    {
+      "slug": "yeongtong-dong-internal-medicine-checklist",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_og_image": true,
+      "has_article_jsonld": true,
+      "has_citation": true,
+      "has_is_based_on": true,
+      "has_product_schema": false,
+      "has_drug_schema": false
+    },
+    {
+      "slug": "dongtan-internal-medicine-checklist",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_og_image": true,
+      "has_article_jsonld": true,
+      "has_citation": true,
+      "has_is_based_on": true,
+      "has_product_schema": false,
+      "has_drug_schema": false
+    },
+    {
+      "slug": "madu-dong-internal-medicine-checklist",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_og_image": true,
+      "has_article_jsonld": true,
+      "has_citation": true,
+      "has_is_based_on": true,
+      "has_product_schema": false,
+      "has_drug_schema": false
+    },
+    {
+      "slug": "baekseok-dong-internal-medicine-checklist",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_og_image": true,
+      "has_article_jsonld": true,
+      "has_citation": true,
+      "has_is_based_on": true,
+      "has_product_schema": false,
+      "has_drug_schema": false
+    },
+    {
+      "slug": "songdo-internal-medicine-checklist",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_og_image": true,
+      "has_article_jsonld": true,
+      "has_citation": true,
+      "has_is_based_on": true,
+      "has_product_schema": false,
+      "has_drug_schema": false
+    },
+    {
+      "slug": "bupyeong-internal-medicine-checklist",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_og_image": true,
+      "has_article_jsonld": true,
+      "has_citation": true,
+      "has_is_based_on": true,
+      "has_product_schema": false,
+      "has_drug_schema": false
+    },
+    {
+      "slug": "haeundae-udong-internal-medicine-checklist",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_og_image": true,
+      "has_article_jsonld": true,
+      "has_citation": true,
+      "has_is_based_on": true,
+      "has_product_schema": false,
+      "has_drug_schema": false
+    },
+    {
+      "slug": "busan-seomyeon-internal-medicine-checklist",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_og_image": true,
+      "has_article_jsonld": true,
+      "has_citation": true,
+      "has_is_based_on": true,
+      "has_product_schema": false,
+      "has_drug_schema": false
+    },
+    {
+      "slug": "daegu-beomeo-dong-internal-medicine-checklist",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_og_image": true,
+      "has_article_jsonld": true,
+      "has_citation": true,
+      "has_is_based_on": true,
+      "has_product_schema": false,
+      "has_drug_schema": false
+    },
+    {
+      "slug": "daejeon-dunsan-dong-internal-medicine-checklist",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_og_image": true,
+      "has_article_jsonld": true,
+      "has_citation": true,
+      "has_is_based_on": true,
+      "has_product_schema": false,
+      "has_drug_schema": false
+    },
+    {
+      "slug": "gwangju-sangmu-district-internal-medicine-checklist",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_og_image": true,
+      "has_article_jsonld": true,
+      "has_citation": true,
+      "has_is_based_on": true,
+      "has_product_schema": false,
+      "has_drug_schema": false
+    },
+    {
+      "slug": "sejong-naseong-dong-internal-medicine-checklist",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_og_image": true,
+      "has_article_jsonld": true,
+      "has_citation": true,
+      "has_is_based_on": true,
+      "has_product_schema": false,
+      "has_drug_schema": false
+    },
+    {
+      "slug": "changwon-sangnam-dong-internal-medicine-checklist",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_og_image": true,
+      "has_article_jsonld": true,
+      "has_citation": true,
+      "has_is_based_on": true,
+      "has_product_schema": false,
+      "has_drug_schema": false
+    },
+    {
+      "slug": "cheonan-buldang-dong-internal-medicine-checklist",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_og_image": true,
+      "has_article_jsonld": true,
+      "has_citation": true,
+      "has_is_based_on": true,
+      "has_product_schema": false,
+      "has_drug_schema": false
+    }
+  ],
+  "sitemap_status": 200,
+  "sitemap": [
+    {
+      "url": "/blog/yeoksam-dong-internal-medicine-checklist",
+      "present": true
+    },
+    {
+      "url": "/blog/samsung-dong-internal-medicine-checklist",
+      "present": true
+    },
+    {
+      "url": "/blog/seocho-dong-internal-medicine-checklist",
+      "present": true
+    },
+    {
+      "url": "/blog/jamsil-dong-internal-medicine-checklist",
+      "present": true
+    },
+    {
+      "url": "/blog/yeouido-internal-medicine-checklist",
+      "present": true
+    },
+    {
+      "url": "/blog/gongdeok-dong-internal-medicine-checklist",
+      "present": true
+    },
+    {
+      "url": "/blog/seongsu-dong-internal-medicine-checklist",
+      "present": true
+    },
+    {
+      "url": "/blog/mok-dong-internal-medicine-checklist",
+      "present": true
+    },
+    {
+      "url": "/blog/sangam-dong-internal-medicine-checklist",
+      "present": true
+    },
+    {
+      "url": "/blog/nowon-station-internal-medicine-checklist",
+      "present": true
+    },
+    {
+      "url": "/blog/sillim-dong-internal-medicine-checklist",
+      "present": true
+    },
+    {
+      "url": "/blog/guro-digital-complex-internal-medicine-checklist",
+      "present": true
+    },
+    {
+      "url": "/blog/pangyo-internal-medicine-checklist",
+      "present": true
+    },
+    {
+      "url": "/blog/jeongja-dong-internal-medicine-checklist",
+      "present": true
+    },
+    {
+      "url": "/blog/sunae-dong-internal-medicine-checklist",
+      "present": true
+    },
+    {
+      "url": "/blog/gwanggyo-internal-medicine-checklist",
+      "present": true
+    },
+    {
+      "url": "/blog/yeongtong-dong-internal-medicine-checklist",
+      "present": true
+    },
+    {
+      "url": "/blog/dongtan-internal-medicine-checklist",
+      "present": true
+    },
+    {
+      "url": "/blog/madu-dong-internal-medicine-checklist",
+      "present": true
+    },
+    {
+      "url": "/blog/baekseok-dong-internal-medicine-checklist",
+      "present": true
+    },
+    {
+      "url": "/blog/songdo-internal-medicine-checklist",
+      "present": true
+    },
+    {
+      "url": "/blog/bupyeong-internal-medicine-checklist",
+      "present": true
+    },
+    {
+      "url": "/blog/haeundae-udong-internal-medicine-checklist",
+      "present": true
+    },
+    {
+      "url": "/blog/busan-seomyeon-internal-medicine-checklist",
+      "present": true
+    },
+    {
+      "url": "/blog/daegu-beomeo-dong-internal-medicine-checklist",
+      "present": true
+    },
+    {
+      "url": "/blog/daejeon-dunsan-dong-internal-medicine-checklist",
+      "present": true
+    },
+    {
+      "url": "/blog/gwangju-sangmu-district-internal-medicine-checklist",
+      "present": true
+    },
+    {
+      "url": "/blog/sejong-naseong-dong-internal-medicine-checklist",
+      "present": true
+    },
+    {
+      "url": "/blog/changwon-sangnam-dong-internal-medicine-checklist",
+      "present": true
+    },
+    {
+      "url": "/blog/cheonan-buldang-dong-internal-medicine-checklist",
+      "present": true
+    }
+  ]
+}

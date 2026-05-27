@@ -1,0 +1,52 @@
+{
+  "urls": [
+    "https://phlorotannin.com/blog/yeoksam-dong-internal-medicine-checklist",
+    "https://phlorotannin.com/blog/samsung-dong-internal-medicine-checklist",
+    "https://phlorotannin.com/blog/seocho-dong-internal-medicine-checklist",
+    "https://phlorotannin.com/blog/jamsil-dong-internal-medicine-checklist",
+    "https://phlorotannin.com/blog/yeouido-internal-medicine-checklist",
+    "https://phlorotannin.com/blog/gongdeok-dong-internal-medicine-checklist",
+    "https://phlorotannin.com/blog/seongsu-dong-internal-medicine-checklist",
+    "https://phlorotannin.com/blog/mok-dong-internal-medicine-checklist",
+    "https://phlorotannin.com/blog/sangam-dong-internal-medicine-checklist",
+    "https://phlorotannin.com/blog/nowon-station-internal-medicine-checklist",
+    "https://phlorotannin.com/blog/sillim-dong-internal-medicine-checklist",
+    "https://phlorotannin.com/blog/guro-digital-complex-internal-medicine-checklist",
+    "https://phlorotannin.com/blog/pangyo-internal-medicine-checklist",
+    "https://phlorotannin.com/blog/jeongja-dong-internal-medicine-checklist",
+    "https://phlorotannin.com/blog/sunae-dong-internal-medicine-checklist",
+    "https://phlorotannin.com/blog/gwanggyo-internal-medicine-checklist",
+    "https://phlorotannin.com/blog/yeongtong-dong-internal-medicine-checklist",
+    "https://phlorotannin.com/blog/dongtan-internal-medicine-checklist",
+    "https://phlorotannin.com/blog/madu-dong-internal-medicine-checklist",
+    "https://phlorotannin.com/blog/baekseok-dong-internal-medicine-checklist",
+    "https://phlorotannin.com/blog/songdo-internal-medicine-checklist",
+    "https://phlorotannin.com/blog/bupyeong-internal-medicine-checklist",
+    "https://phlorotannin.com/blog/haeundae-udong-internal-medicine-checklist",
+    "https://phlorotannin.com/blog/busan-seomyeon-internal-medicine-checklist",
+    "https://phlorotannin.com/blog/daegu-beomeo-dong-internal-medicine-checklist",
+    "https://phlorotannin.com/blog/daejeon-dunsan-dong-internal-medicine-checklist",
+    "https://phlorotannin.com/blog/gwangju-sangmu-district-internal-medicine-checklist",
+    "https://phlorotannin.com/blog/sejong-naseong-dong-internal-medicine-checklist",
+    "https://phlorotannin.com/blog/changwon-sangnam-dong-internal-medicine-checklist",
+    "https://phlorotannin.com/blog/cheonan-buldang-dong-internal-medicine-checklist"
+  ],
+  "endpoints": {
+    "https://api.indexnow.org/indexnow": {
+      "status": 200,
+      "body": ""
+    },
+    "https://www.bing.com/indexnow": {
+      "status": 200,
+      "body": ""
+    },
+    "https://yandex.com/indexnow": {
+      "status": 202,
+      "body": "{\n  \"success\":true\n}"
+    },
+    "https://searchadvisor.naver.com/indexnow": {
+      "status": 200,
+      "body": ""
+    }
+  }
+}
