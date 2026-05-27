@@ -1,0 +1,15 @@
+{
+  "target_count": 2,
+  "updated": [
+    {
+      "id": 325,
+      "slug": "diabetes-patient-meal-delivery-checklist-carb-protein-fiber",
+      "http": 200
+    },
+    {
+      "id": 326,
+      "slug": "diabetes-meal-delivery-blood-sugar-spike-lunchbox-guide",
+      "http": 200
+    }
+  ]
+}

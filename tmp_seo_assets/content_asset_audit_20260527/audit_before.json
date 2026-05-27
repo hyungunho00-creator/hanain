@@ -1,0 +1,3838 @@
+{
+  "total": 353,
+  "counts": {
+    "weak_refs": 187,
+    "weak_cta": 316,
+    "short": 14
+  },
+  "issue_count": 331,
+  "issues": [
+    {
+      "id": 1,
+      "slug": "phlorotannin-diabetes-clinical-trial-2b-success-blood-sugar-management",
+      "title": "플로로탄닌 당뇨 임상 2b 성공: 혈당 관리 새 지평 | Phlorotannin Diabetes Trial",
+      "category": "diabetes",
+      "plain_len": 5969,
+      "meta_len": 123,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 2,
+      "slug": "phlorotannin-diabetes-ph100-blood-sugar-control-mechanism",
+      "title": "플로로탄닌 당뇨 임상 2b 성공: PH-100 혈당 조절 | Phlorotannin Diabetes",
+      "category": "diabetes",
+      "plain_len": 5174,
+      "meta_len": 126,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 3,
+      "slug": "phlorotannin-diabetes-treatment-clinical-trials-update",
+      "title": "플로로탄닌 당뇨병 치료 임상시험 최신 결과 | Phlorotannin Diabetes Clinical Trial Update",
+      "category": "diabetes",
+      "plain_len": 5866,
+      "meta_len": 126,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 4,
+      "slug": "ecklonia-cava-extract-blood-sugar-phlorotannin-eckol",
+      "title": "감태 추출물 혈당 낮추는 원리 | Ecklonia Cava Extract Blood Sugar Control",
+      "category": "diabetes",
+      "plain_len": 4420,
+      "meta_len": 126,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 5,
+      "slug": "phlorotannin-ph100-prediabetes-improvement-study",
+      "title": "PH-100 플로로탄닌: 당뇨 전단계 개선 효과 연구 | Phlorotannin Prediabetes Study",
+      "category": "diabetes",
+      "plain_len": 4440,
+      "meta_len": 126,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 7,
+      "slug": "cancer-patients-red-ginseng-interaction-phlorotannin-alternative",
+      "title": "암환자가 홍삼 먹어도 될까? 항암 중 건강기능식품 주의사항",
+      "category": "cancer",
+      "plain_len": 3521,
+      "meta_len": 123,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 8,
+      "slug": "colorectal-cancer-prevention-diet-phlorotannin-polyphenol",
+      "title": "대장암 예방에 좋은 음식과 성분 — 식이 폴리페놀의 역할",
+      "category": "cancer",
+      "plain_len": 3401,
+      "meta_len": 110,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 9,
+      "slug": "liver-cancer-fatty-liver-progression-natural-protection",
+      "title": "지방간에서 간암까지 — 진행을 막는 자연 성분들",
+      "category": "cancer",
+      "plain_len": 2886,
+      "meta_len": 125,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 10,
+      "slug": "breast-cancer-estrogen-diet-phlorotannin-marine-polyphenol",
+      "title": "유방암과 에스트로겐 — 호르몬 관련 암에서 식이 관리가 중요한 이유",
+      "category": "cancer",
+      "plain_len": 3281,
+      "meta_len": 112,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 11,
+      "slug": "anticancer-immunity-nk-cell-activation-phlorotannin",
+      "title": "NK세포가 암을 잡는 원리 — 자연 면역력을 키우는 방법",
+      "category": "cancer",
+      "plain_len": 2870,
+      "meta_len": 122,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 12,
+      "slug": "dementia-prevention-early-warning-signs-natural-support",
+      "title": "치매 초기 증상 10가지 — 혹시 나도? 조기 발견이 핵심인 이유",
+      "category": "brain",
+      "plain_len": 3072,
+      "meta_len": 117,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 13,
+      "slug": "brain-fog-chronic-fatigue-cognitive-decline-phlorotannin",
+      "title": "브레인 포그(Brain Fog) — 머리가 안 돌아가는 느낌, 그냥 두면 안 되는 이유",
+      "category": "brain",
+      "plain_len": 2902,
+      "meta_len": 127,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 14,
+      "slug": "sleep-disorder-insomnia-brain-health-phlorotannin-gaba",
+      "title": "수면장애와 뇌 건강 — 잠 못 자면 치매 위험이 높아진다",
+      "category": "brain",
+      "plain_len": 2891,
+      "meta_len": 118,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 15,
+      "slug": "adhd-adult-concentration-natural-approach-phlorotannin",
+      "title": "성인 ADHD와 집중력 저하 — 약 없이 개선할 수 있을까?",
+      "category": "brain",
+      "plain_len": 2804,
+      "meta_len": 119,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 16,
+      "slug": "stroke-prevention-cerebrovascular-health-phlorotannin",
+      "title": "뇌졸중 전조 증상과 예방 — 골든타임 3시간의 중요성",
+      "category": "brain",
+      "plain_len": 2790,
+      "meta_len": 115,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 17,
+      "slug": "high-blood-pressure-medication-side-effects-natural-alternative",
+      "title": "고혈압약 부작용 정리 — 오래 먹어도 괜찮을까?",
+      "category": "cardiovascular",
+      "plain_len": 1915,
+      "meta_len": 128,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 18,
+      "slug": "cholesterol-statin-side-effects-coq10-phlorotannin",
+      "title": "스타틴(고지혈증약) 부작용과 CoQ10 — 근육통의 진짜 원인",
+      "category": "cardiovascular",
+      "plain_len": 2927,
+      "meta_len": 113,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 19,
+      "slug": "arteriosclerosis-inflammation-vascular-age-phlorotannin",
+      "title": "혈관 나이가 실제 나이보다 10년 늙었다 — 동맥경화 되돌릴 수 있나",
+      "category": "cardiovascular",
+      "plain_len": 2801,
+      "meta_len": 123,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 20,
+      "slug": "heart-palpitation-arrhythmia-natural-management-magnesium",
+      "title": "두근거림·부정맥 — 심장이 불규칙하게 뛸 때 놓치면 안 되는 신호",
+      "category": "cardiovascular",
+      "plain_len": 2774,
+      "meta_len": 115,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 21,
+      "slug": "metabolic-syndrome-waist-circumference-cardiovascular-risk",
+      "title": "대사증후군 — 허리둘레 하나로 심혈관 위험을 예측한다",
+      "category": "cardiovascular",
+      "plain_len": 2850,
+      "meta_len": 122,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 22,
+      "slug": "chronic-inflammation-silent-disease-natural-management",
+      "title": "만성 염증 — 암, 당뇨, 치매의 공통 뿌리를 끊는 법",
+      "category": "inflammation",
+      "plain_len": 2901,
+      "meta_len": 124,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 23,
+      "slug": "rheumatoid-arthritis-joint-pain-natural-relief-phlorotannin",
+      "title": "류마티스 관절염 약 부작용 — 면역억제제 없이 관절 염증 관리할 수 있나",
+      "category": "inflammation",
+      "plain_len": 3193,
+      "meta_len": 124,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 24,
+      "slug": "nsaid-painkillers-stomach-kidney-side-effects-alternative",
+      "title": "진통제(소염제) 장기 복용 부작용 — 위장·신장을 지키면서 통증 관리하는 법",
+      "category": "inflammation",
+      "plain_len": 2799,
+      "meta_len": 111,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 25,
+      "slug": "atopy-eczema-skin-inflammation-gut-microbiome-phlorotannin",
+      "title": "아토피 피부염 — 장(腸)을 고치면 피부가 좋아지는 이유",
+      "category": "inflammation",
+      "plain_len": 2816,
+      "meta_len": 114,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 26,
+      "slug": "covid-long-covid-chronic-fatigue-immune-recovery-phlorotannin",
+      "title": "코로나 후유증(롱코비드) — 면역 회복이 더딜 때 도움이 되는 성분들",
+      "category": "inflammation",
+      "plain_len": 2748,
+      "meta_len": 113,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 27,
+      "slug": "hair-loss-cause-type-natural-treatment-phlorotannin",
+      "title": "탈모 원인별 완전 정리 — 어떤 탈모인지 알아야 치료도 된다",
+      "category": "skin",
+      "plain_len": 2816,
+      "meta_len": 113,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 28,
+      "slug": "skin-aging-collagen-antioxidant-phlorotannin-marine-cosmetic",
+      "title": "피부 노화를 늦추는 성분 비교 — 레티놀, 비타민C, 플로로탄닌",
+      "category": "skin",
+      "plain_len": 3266,
+      "meta_len": 113,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 29,
+      "slug": "acne-hormonal-adult-gut-skin-phlorotannin",
+      "title": "성인 여드름 — 10대랑 왜 다른가, 호르몬과 장 문제가 핵심",
+      "category": "skin",
+      "plain_len": 2896,
+      "meta_len": 112,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 30,
+      "slug": "dry-skin-barrier-ceramide-omega3-phlorotannin-moisture",
+      "title": "피부 장벽이 무너지면? — 건조, 예민, 가려움의 진짜 원인",
+      "category": "skin",
+      "plain_len": 2839,
+      "meta_len": 126,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 31,
+      "slug": "psoriasis-autoimmune-skin-natural-treatment-phlorotannin",
+      "title": "건선(Psoriasis) — 자가면역 피부 질환, 재발 없이 관리하는 법",
+      "category": "skin",
+      "plain_len": 2801,
+      "meta_len": 122,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 32,
+      "slug": "phlorotannin-ph100-clinical-research-summary-2024",
+      "title": "PH-100 임상 연구 정리 — 플로로탄닌 표준화 추출물이 다른 이유",
+      "category": "research",
+      "plain_len": 2865,
+      "meta_len": 113,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 33,
+      "slug": "phlorotannin-vs-quercetin-resveratrol-polyphenol-comparison",
+      "title": "플로로탄닌 vs 퀘르세틴 vs 레스베라트롤 — 폴리페놀 비교 완전 분석",
+      "category": "research",
+      "plain_len": 3021,
+      "meta_len": 123,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 34,
+      "slug": "ecklonia-cava-seaweed-phlorotannin-extraction-bioavailability",
+      "title": "감태(Ecklonia cava)란? — 플로로탄닌의 원료와 추출 기술",
+      "category": "research",
+      "plain_len": 3006,
+      "meta_len": 123,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 35,
+      "slug": "phlorotannin-diabetes-blood-sugar-mechanism-alpha-glucosidase",
+      "title": "플로로탄닌이 혈당을 낮추는 메커니즘 — 당뇨약과 어떻게 다른가",
+      "category": "research",
+      "plain_len": 3172,
+      "meta_len": 124,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 36,
+      "slug": "phlorotannin-sleep-gaba-receptor-clinical-study-korea",
+      "title": "플로로탄닌과 수면 — GABA 수용체 연구와 국내 임상 결과",
+      "category": "research",
+      "plain_len": 2651,
+      "meta_len": 129,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 37,
+      "slug": "calcium-channel-blocker-amlodipine-side-effects-edema-headache-facial-flushing-g",
+      "title": "칼슘채널차단제(암로디핀) 부작용: 부종·두통·안면홍조 상세 가이드 Calcium Channel Blocker (Amlodipine) Side Effects: Edema, Headache, Facial Flushing",
+      "category": "cardiovascular",
+      "plain_len": 8735,
+      "meta_len": 121,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 38,
+      "slug": "resveratrol-benefits-anti-aging-cardiovascular-anti-cancer-brain-health-grape-sk",
+      "title": "레스베라트롤 효능: 항노화·심혈관·항암·뇌 건강 (Resveratrol Benefits: Anti-Aging, Cardiovascular, Anti-Cancer, Brain Health)",
+      "category": "general",
+      "plain_len": 5983,
+      "meta_len": 126,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 39,
+      "slug": "ppi-long-term-side-effects-magnesium-b12-kidney-deficiency-risk",
+      "title": "PPI 장기 복용 부작용: 마그네슘, B12, 신장 위험 (PPI Long-Term Side Effects: Magnesium, B12, Kidney Risks)",
+      "category": "general",
+      "plain_len": 8329,
+      "meta_len": 126,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 40,
+      "slug": "coq10-side-effects-gastrointestinal-hypotension-blood-thinning-anticoagulant-cau",
+      "title": "CoQ10 부작용: 위장 장애, 혈압 저하, 혈액 희석 주의 (CoQ10 Side Effects: GI Upset, Hypotension, Blood Thinning Caution)",
+      "category": "cardiovascular",
+      "plain_len": 6577,
+      "meta_len": 121,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 41,
+      "slug": "natural-remedies-period-pain-pms-magnesium-omega3-vitamin-b6-curcumin-phlorotann",
+      "title": "생리통·PMS 자연치료: 마그네슘·오메가3·비타민B6·커큐민 (Natural Remedies for Period Pain & PMS)",
+      "category": "general",
+      "plain_len": 6223,
+      "meta_len": 113,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 42,
+      "slug": "nac-n-acetylcysteine-benefits-antioxidant-liver-lung-mental-health-guide",
+      "title": "NAC(N-아세틸시스테인) 효능: 항산화·간 보호·폐·정신건강 완벽 가이드 (N-Acetylcysteine Benefits: Antioxidant, Liver, Lung, Mental Health)",
+      "category": "general",
+      "plain_len": 6767,
+      "meta_len": 126,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 43,
+      "slug": "pre-workout-energy-boosters-caffeine-beta-alanine-citrulline-vs-phlorotannin",
+      "title": "운동 전 에너지 부스터: 카페인, 베타알라닌, 시트룰린 vs 플로로탄닌 | Pre-Workout Boosters",
+      "category": "general",
+      "plain_len": 6739,
+      "meta_len": 126,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 44,
+      "slug": "manseong-sinjang-jilhwan-ckd-yeongyang-gwanri-danbaekjil-in-kallyum-jojeol-sinja",
+      "title": "만성 신장 질환(CKD) 영양 관리: 단백질·인·칼륨 조절 가이드 (CKD Nutrition Management: Protein, Phosphorus, Potassium Control Guide)",
+      "category": "general",
+      "plain_len": 9614,
+      "meta_len": 126,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 45,
+      "slug": "prebiotics-probiotics-synbiotics-gut-health-difference-choice-phlorotannin",
+      "title": "프리바이오틱스 vs 프로바이오틱스 vs 신바이오틱스: 장 건강을 위한 선택의 차이 (Prebiotics vs Probiotics vs Synbiotics: The Difference for Gut Health)",
+      "category": "general",
+      "plain_len": 6965,
+      "meta_len": 126,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 46,
+      "slug": "turmeric-curcumin-side-effects-gastrointestinal-blood-thinning-gallstone-caution",
+      "title": "강황 부작용: 위장 장애, 혈액 희석, 담석 주의 Curcumin Side Effects: GI, Blood Thinning, Gallstone Caution",
+      "category": "inflammation",
+      "plain_len": 6471,
+      "meta_len": 126,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 47,
+      "slug": "type-2-diabetes-natural-treatment-phlorotannin-berberine-cinnamon-dietary-therap",
+      "title": "제2형 당뇨병 자연치료: 플로로탄닌, 베르베린, 계피, 식이요법 (Type 2 Diabetes Natural Treatment)",
+      "category": "diabetes",
+      "plain_len": 7468,
+      "meta_len": 126,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 48,
+      "slug": "omega-3-phlorotannin-synergy-anti-inflammatory-blood-sugar-cardiovascular-health",
+      "title": "오메가3 + 플로로탄닌 병용: 항염·혈당·심혈관 시너지 Omega-3 + Phlorotannin: Anti-inflammatory, Blood Sugar, Cardiovascular Synergy",
+      "category": "general",
+      "plain_len": 6872,
+      "meta_len": 126,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 49,
+      "slug": "phlorotannin-health-guide-phloro-01",
+      "title": "당뇨 전단계(공복혈당장애)에서 식단으로 되돌리기: 과학이 검증한 6가지 핵심 전략",
+      "category": "diabetes",
+      "plain_len": 5951,
+      "meta_len": 123,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 50,
+      "slug": "phlorotannin-health-guide-phloro-02",
+      "title": "인슐린 저항성이란? 원인·증상·개선법 총정리 — 당뇨·비만·지방간의 공통 뿌리",
+      "category": "diabetes",
+      "plain_len": 5187,
+      "meta_len": 121,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 51,
+      "slug": "phlorotannin-health-guide-phloro-03",
+      "title": "항암 치료 중 면역력 유지하는 법: 영양·식품·생활습관 종합 가이드",
+      "category": "cancer",
+      "plain_len": 4735,
+      "meta_len": 117,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 52,
+      "slug": "phlorotannin-health-guide-phloro-04",
+      "title": "암 예방 식단: WHO가 권고하는 10가지 수칙과 항암 성분 완전 분석",
+      "category": "cancer",
+      "plain_len": 5385,
+      "meta_len": 121,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 53,
+      "slug": "phlorotannin-health-guide-phloro-05",
+      "title": "50대부터 시작하는 치매 예방: 뇌 건강 지키는 7가지 과학적 습관",
+      "category": "brain",
+      "plain_len": 5630,
+      "meta_len": 123,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 54,
+      "slug": "phlorotannin-health-guide-phloro-06",
+      "title": "수면 부족이 뇌에 미치는 영향: 인지·기억·감정 조절까지 — 신경과학 완전 해설",
+      "category": "brain",
+      "plain_len": 4914,
+      "meta_len": 128,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 55,
+      "slug": "phlorotannin-health-guide-phloro-07",
+      "title": "고혈압 약 없이 낮추는 법: 생활습관 개입의 임상 근거와 실천 전략",
+      "category": "cardiovascular",
+      "plain_len": 5133,
+      "meta_len": 111,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 56,
+      "slug": "phlorotannin-health-guide-phloro-08",
+      "title": "LDL 콜레스테롤 낮추는 식품 TOP 7과 피해야 할 것 — 심장내과 근거 완전 정리",
+      "category": "cardiovascular",
+      "plain_len": 5200,
+      "meta_len": 113,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 57,
+      "slug": "phlorotannin-health-guide-phloro-09",
+      "title": "만성 염증이 모든 병의 뿌리인 이유: C반응단백(CRP)과 생활습관의 과학",
+      "category": "inflammation",
+      "plain_len": 5300,
+      "meta_len": 115,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 58,
+      "slug": "phlorotannin-health-guide-phloro-10",
+      "title": "류마티스 관절염 vs. 퇴행성 관절염: 차이점과 각각의 관리법 완전 비교",
+      "category": "inflammation",
+      "plain_len": 5067,
+      "meta_len": 110,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 59,
+      "slug": "phlorotannin-health-guide-phloro-11",
+      "title": "탈모 원인 5가지와 유형별 해결 전략: 영양부터 두피 케어까지 완전 가이드",
+      "category": "skin",
+      "plain_len": 4806,
+      "meta_len": 114,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 60,
+      "slug": "phlorotannin-health-guide-phloro-12",
+      "title": "피부 노화를 늦추는 항산화 성분 TOP 5: 레티놀·비타민C·플로로탄닌의 과학",
+      "category": "skin",
+      "plain_len": 5655,
+      "meta_len": 123,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 61,
+      "slug": "sci-20242025-7-phloro-13",
+      "title": "플로로탄닌 SCI 핵심 논문 총정리 2020~2025: 건강 효과별 최신 연구 7편",
+      "category": "research",
+      "plain_len": 6198,
+      "meta_len": 128,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 62,
+      "slug": "phlorotannin-health-guide-phloro-14",
+      "title": "플로로탄닌 흡수율 높이는 방법: 생체이용률을 결정하는 5가지 인자",
+      "category": "research",
+      "plain_len": 5038,
+      "meta_len": 119,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 63,
+      "slug": "phlorotannin-health-guide-phloro-15",
+      "title": "마그네슘 결핍: 현대인 70%가 부족한 미네랄과 보충법 완전 가이드",
+      "category": "general",
+      "plain_len": 4674,
+      "meta_len": 121,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 64,
+      "slug": "phlorotannin-health-guide-phloro-16",
+      "title": "장 건강 완전 가이드: 과민성 장 증후군부터 마이크로바이옴까지 — 현대 장 과학 총정리",
+      "category": "general",
+      "plain_len": 5581,
+      "meta_len": 117,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 65,
+      "slug": "gamtae-extract-phlorotannin-structure-not-name",
+      "title": "감태추출물, 이름 말고 구조를 보셔야 합니다 — 해양 폴리페놀 플로로탄닌의 진짜 이야기",
+      "category": "general",
+      "plain_len": 4545,
+      "meta_len": 126,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 66,
+      "slug": "gamtae-extract-blood-sugar-management-phlorotannin",
+      "title": "혈당약 먹는데 혈당이 안 잡히는 이유 — 감태추출물이 혈당 관리에 다르게 접근하는 방식",
+      "category": "diabetes",
+      "plain_len": 4271,
+      "meta_len": 112,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 67,
+      "slug": "gamtae-extract-sleep-brain-recovery-phlorotannin",
+      "title": "자고 일어나도 피곤한 분들께 — 감태추출물 플로로탄닌과 수면의 질·뇌 회복의 과학",
+      "category": "brain",
+      "plain_len": 3864,
+      "meta_len": 113,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 68,
+      "slug": "gamtae-extract-blood-pressure-vascular-recovery-phlorotannin",
+      "title": "혈압약 20년째인데 혈관은 나아지고 있을까요 — 감태추출물 플로로탄닌의 혈관 회복 기전",
+      "category": "cardiovascular",
+      "plain_len": 3398,
+      "meta_len": 124,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 69,
+      "slug": "gamtae-extract-chronic-inflammation-joint-phlorotannin",
+      "title": "온몸이 찌뿌둥한데 염증 수치는 정상이라고요 — 감태추출물이 만성 염증에 접근하는 방식",
+      "category": "inflammation",
+      "plain_len": 3477,
+      "meta_len": 126,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 70,
+      "slug": "gamtae-extract-skin-recovery-collagen-phlorotannin",
+      "title": "비싼 콜라겐 먹어도 피부가 그대로인 이유 — 감태추출물이 피부 회복에 접근하는 다른 방식",
+      "category": "skin",
+      "plain_len": 3846,
+      "meta_len": 125,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 71,
+      "slug": "gamtae-extract-immune-recovery-cancer-phlorotannin",
+      "title": "항암 치료 중 몸이 너무 힘드신 분들께 — 감태추출물 플로로탄닌이 면역 회복에 활용되는 이유",
+      "category": "cancer",
+      "plain_len": 3769,
+      "meta_len": 116,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 72,
+      "slug": "gamtae-extract-phlorotannin-science-marine-polyphenol-research",
+      "title": "감태추출물 플로로탄닌 — 바다에서 버티며 만든 성분이 사람 몸에 필요한 과학적 이유",
+      "category": "research",
+      "plain_len": 3854,
+      "meta_len": 126,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 73,
+      "slug": "gamtae-extract-phlorotannin-natural-health-benefits-guide",
+      "title": "감태추출물의 모든 것: 감태 폴리페놀 플로로탄닌의 6대 효능 총정리 | 자연이 준 회복 선물",
+      "category": "general",
+      "plain_len": 5999,
+      "meta_len": 114,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 74,
+      "slug": "gamtae-phlorotannin-vs-general-health-supplements-difference",
+      "title": "감태가 일반 건강식품과 다른 진짜 이유 | 감태추출물 플로로탄닌 다중 기전의 비밀",
+      "category": "research",
+      "plain_len": 5689,
+      "meta_len": 126,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 75,
+      "slug": "gamtae-extract-recovery-environment-stories-real-experience",
+      "title": "감태추출물, 진짜 효과 있을까? | 실제 회복 환경을 만든 사람들의 이야기 + 감태 활용 가이드",
+      "category": "general",
+      "plain_len": 5729,
+      "meta_len": 126,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 76,
+      "slug": "gamtae-extract-6-clinical-effects-evidence",
+      "title": "감태추출물 효능 6가지 — 임상 근거로 보는 작용 기전 완벽 정리",
+      "category": "research",
+      "plain_len": 5065,
+      "meta_len": 126,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 77,
+      "slug": "gamtae-extract-side-effects-dosage-safety-guide",
+      "title": "감태추출물 부작용·복용법·주의사항 — 안전하게 먹는 법 (2025 가이드)",
+      "category": "general",
+      "plain_len": 4557,
+      "meta_len": 121,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 78,
+      "slug": "gamtae-vs-fucoidan-vs-seaweed-comparison-guide",
+      "title": "감태 vs 후코이단 vs 미역 — 무엇이 다른가? 해조류 건강 성분 완벽 비교",
+      "category": "research",
+      "plain_len": 5369,
+      "meta_len": 114,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 79,
+      "slug": "carnosine-pterostilbene-vs-phlorotannin-toolbox-comparison",
+      "title": "카르노신·프테로스틸벤 vs 플로로탄닌 — 정밀 공구 2개 vs 공구통, 회복 환경이 다른 이유",
+      "category": "research",
+      "plain_len": 5151,
+      "meta_len": 123,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 80,
+      "slug": "collagen-albumin-vs-phlorotannin-material-vs-environment",
+      "title": "콜라겐·알부민 vs 플로로탄닌 — '재료'를 먹을 것인가, '회복 환경'을 만들 것인가",
+      "category": "general",
+      "plain_len": 5038,
+      "meta_len": 120,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 81,
+      "slug": "red-ginseng-saponin-vs-phlorotannin-land-vs-marine-polyphenol",
+      "title": "홍삼·사포닌 vs 플로로탄닌 — 육상 vs 해양, 한국인을 위한 두 회복 관점의 차이",
+      "category": "research",
+      "plain_len": 4266,
+      "meta_len": 126,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 82,
+      "slug": "placenta-stemcell-vs-phlorotannin-regeneration-vs-environment",
+      "title": "태반·줄기세포 vs 플로로탄닌 — 재생 재료와 회복 환경, 무엇이 먼저인가",
+      "category": "research",
+      "plain_len": 4314,
+      "meta_len": 126,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 83,
+      "slug": "vitamin-omega3-vs-phlorotannin-basic-vs-environment",
+      "title": "비타민·오메가3 vs 플로로탄닌 — 기초 영양은 채웠는데 왜 회복이 안 될까",
+      "category": "general",
+      "plain_len": 4734,
+      "meta_len": 111,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 84,
+      "slug": "post-meal-blood-sugar-spike-5-practical-tips",
+      "title": "식후혈당 낮추는법 — 식후 혈당 스파이크 잡는 5가지 실전 방법",
+      "category": "metabolism",
+      "plain_len": 2810,
+      "meta_len": 120,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 85,
+      "slug": "hba1c-lower-naturally-borderline-to-normal",
+      "title": "당화혈색소(HbA1c) 낮추는법 — 6.5 경계선에서 정상으로 되돌리는 12주 가이드",
+      "category": "metabolism",
+      "plain_len": 2680,
+      "meta_len": 128,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 86,
+      "slug": "insulin-resistance-self-check-recovery-environment",
+      "title": "인슐린 저항성 자가진단 7가지 + 회복 환경 만들기",
+      "category": "metabolism",
+      "plain_len": 2628,
+      "meta_len": 127,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 87,
+      "slug": "high-blood-pressure-lower-naturally-before-medication",
+      "title": "고혈압 낮추는법 자연 — 약 시작 전 단계에서 혈압 잡는 환경 만들기",
+      "category": "cardiovascular",
+      "plain_len": 2644,
+      "meta_len": 121,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 88,
+      "slug": "ldl-cholesterol-triglyceride-lower-food-guide",
+      "title": "콜레스테롤·LDL·중성지방 낮추는법 — 동시에 잡는 식단과 회복 환경",
+      "category": "cardiovascular",
+      "plain_len": 2329,
+      "meta_len": 127,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 89,
+      "slug": "blood-vessel-cleaning-foods-endothelium-recovery",
+      "title": "혈관청소 음식 10가지 — 혈관 내피를 회복시키는 진짜 음식들",
+      "category": "cardiovascular",
+      "plain_len": 2476,
+      "meta_len": 125,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 90,
+      "slug": "dementia-early-symptoms-vs-forgetfulness-9-signs",
+      "title": "치매 초기증상 vs 건망증 — 9가지 구분 신호와 가족이 챙겨야 할 신호",
+      "category": "neuro_cognitive",
+      "plain_len": 2526,
+      "meta_len": 118,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 91,
+      "slug": "brain-health-supplement-5-criteria",
+      "title": "뇌건강 영양제 고르는 5가지 기준 — 광고에 안 속는 법",
+      "category": "neuro_cognitive",
+      "plain_len": 2269,
+      "meta_len": 122,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 92,
+      "slug": "cognitive-function-improvement-40s-onwards",
+      "title": "인지기능 개선 — 40대부터 시작하는 인지력 관리 5단계",
+      "category": "neuro_cognitive",
+      "plain_len": 2299,
+      "meta_len": 118,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 93,
+      "slug": "chemotherapy-side-effects-recovery-environment",
+      "title": "항암치료 부작용 완화 — 회복 환경 만들기 가이드",
+      "category": "cancer_immune",
+      "plain_len": 2527,
+      "meta_len": 125,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 94,
+      "slug": "immunity-boost-balance-not-strengthen",
+      "title": "면역력 높이는법 — 강화가 아니라 '균형'이 핵심인 이유",
+      "category": "cancer_immune",
+      "plain_len": 2372,
+      "meta_len": 120,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 95,
+      "slug": "nk-cell-activation-natural-killer-management",
+      "title": "NK세포 활성화 — 자연살해세포 관리법과 회복 환경",
+      "category": "cancer_immune",
+      "plain_len": 2375,
+      "meta_len": 122,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 96,
+      "slug": "menopause-7-symptoms-complete-guide",
+      "title": "갱년기 증상 완화 — 7대 증상별 회복 환경 만들기",
+      "category": "womens_health",
+      "plain_len": 2214,
+      "meta_len": 123,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 97,
+      "slug": "hot-flashes-night-sweats-relief-environment",
+      "title": "안면홍조·열감 잡는법 — 갱년기 핫플래시 회복 환경",
+      "category": "womens_health",
+      "plain_len": 2235,
+      "meta_len": 112,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 98,
+      "slug": "post-menopause-bone-health-osteoporosis-prevention",
+      "title": "폐경 후 뼈 건강 — 골다공증 예방 5단계 환경 만들기",
+      "category": "womens_health",
+      "plain_len": 2367,
+      "meta_len": 129,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 99,
+      "slug": "insomnia-natural-treatment-without-sleeping-pills",
+      "title": "불면증 자연치료 — 수면제 없이 잠드는 회복 환경 만들기",
+      "category": "mental_health",
+      "plain_len": 2438,
+      "meta_len": 117,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 100,
+      "slug": "chronic-fatigue-why-still-tired-after-sleeping",
+      "title": "만성피로 회복 — 자도 자도 피곤한 진짜 이유 5가지",
+      "category": "mental_health",
+      "plain_len": 2302,
+      "meta_len": 127,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 101,
+      "slug": "autonomic-nervous-system-dysfunction-recovery",
+      "title": "자율신경실조증 — 검사는 정상인데 아픈 이유, 회복 5단계",
+      "category": "mental_health",
+      "plain_len": 2158,
+      "meta_len": 127,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 102,
+      "slug": "knee-pain-relief-senior-recovery-environment",
+      "title": "무릎통증 완화 — 시니어 무릎 회복 환경 만들기",
+      "category": "musculoskeletal",
+      "plain_len": 2302,
+      "meta_len": 112,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 103,
+      "slug": "osteoporosis-prevention-delay-bone-loss",
+      "title": "골다공증 예방 — 뼈 빠지는 시기를 늦추는 7가지 환경",
+      "category": "musculoskeletal",
+      "plain_len": 2212,
+      "meta_len": 119,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 104,
+      "slug": "spinal-stenosis-leg-numbness-recovery-perspective",
+      "title": "척추관협착증 — 허리·다리 저림의 회복 관점과 환경 만들기",
+      "category": "musculoskeletal",
+      "plain_len": 2303,
+      "meta_len": 118,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 105,
+      "slug": "fucoidan-vs-phlorotannin-difference",
+      "title": "후코이단과 플로로탄닌 차이 — 해조류 성분이라고 다 같은 것은 아닙니다",
+      "category": "ingredient-comparison",
+      "plain_len": 3882,
+      "meta_len": 117,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 106,
+      "slug": "beta-glucan-vs-phlorotannin-comparison",
+      "title": "베타글루칸과 플로로탄닌 비교 — 다당류와 폴리페놀의 차이",
+      "category": "ingredient-comparison",
+      "plain_len": 3616,
+      "meta_len": 112,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 107,
+      "slug": "resveratrol-pterostilbene-phlorotannin-comparison",
+      "title": "레스베라트롤·프테로스틸벤·플로로탄닌 비교 — 폴리페놀의 세 가지 얼굴",
+      "category": "ingredient-comparison",
+      "plain_len": 3509,
+      "meta_len": 124,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 108,
+      "slug": "cancer-family-antioxidant-search-criteria",
+      "title": "암환자 가족이 항산화 정보를 검색할 때 꼭 알아야 할 기준",
+      "category": "disease-health-info",
+      "plain_len": 3846,
+      "meta_len": 123,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 109,
+      "slug": "diabetes-blood-sugar-lifestyle-vs-single-ingredient",
+      "title": "당뇨·혈당 건강정보에서 단일 성분보다 생활 전체를 봐야 하는 이유",
+      "category": "disease-health-info",
+      "plain_len": 3931,
+      "meta_len": 111,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 110,
+      "slug": "cancer-family-hospital-info-search-criteria",
+      "title": "암환자 가족이 병원정보를 찾을 때 먼저 확인해야 할 기준",
+      "category": "hospital-info",
+      "plain_len": 3976,
+      "meta_len": 112,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 111,
+      "slug": "expert-qa-vs-search-importance",
+      "title": "전문가 Q&A가 검색보다 중요한 이유",
+      "category": "hospital-info",
+      "plain_len": 3777,
+      "meta_len": 110,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 112,
+      "slug": "partner-info-page-explained",
+      "title": "파트너 개인 정보페이지란? 전자명함과 건강정보 플랫폼을 하나로 연결하는 방식",
+      "category": "partner-info",
+      "plain_len": 3736,
+      "meta_len": 110,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 113,
+      "slug": "collagen-vs-phlorotannin-skin-comparison",
+      "title": "콜라겐과 플로로탄닌 비교 — 피부 회복에 접근하는 두 가지 방식",
+      "category": "ingredient-comparison",
+      "plain_len": 3770,
+      "meta_len": 122,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 114,
+      "slug": "cancer-recovery-hospital-vs-korean-medicine-hospital",
+      "title": "암요양병원과 한방병원 차이 — 가족이 알아야 할 병원 선택 기준",
+      "category": "hospital-info",
+      "plain_len": 4203,
+      "meta_len": 112,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 115,
+      "slug": "sleep-inflammation-health-info-phlorotannin",
+      "title": "수면과 염증 건강정보 — 감태추출물과 플로로탄닌이 함께 검색되는 이유",
+      "category": "disease-health-info",
+      "plain_len": 3903,
+      "meta_len": 113,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 116,
+      "slug": "gut-immune-health-info-marine-polyphenol",
+      "title": "장 건강과 면역 건강정보 — 해양 폴리페놀 연구가 연결되는 지점",
+      "category": "disease-health-info",
+      "plain_len": 3915,
+      "meta_len": 110,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 117,
+      "slug": "rehab-recovery-general-hospital-differences",
+      "title": "재활병원·요양병원·종합병원 차이 — 환자 상태에 맞는 단계별 병원 선택",
+      "category": "hospital-info",
+      "plain_len": 3855,
+      "meta_len": 112,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 118,
+      "slug": "sleep-health-info-search-criteria",
+      "title": "수면 건강정보를 검색할 때 점검할 5가지 — 광고와 정보를 가르는 기준",
+      "category": "disease-health-info",
+      "plain_len": 3895,
+      "meta_len": 128,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 119,
+      "slug": "hantavirus-hantaan-difference-recent-issue-explained",
+      "title": "한타바이러스와 한탄바이러스 차이, 지금 왜 다시 검색되고 있을까?",
+      "category": "disease-health-info",
+      "plain_len": 5729,
+      "meta_len": 122,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 122,
+      "slug": "marine-polyphenol-phlorotannin-research-timeline-2020-2025",
+      "title": "해양 폴리페놀·플로로탄닌 연구 흐름 2020-2025 — 감태추출물이 주목받은 5년",
+      "category": "research",
+      "plain_len": 2706,
+      "meta_len": 116,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 123,
+      "slug": "seanol-cinol-phlorotannin-relationship-marine-polyphenol",
+      "title": "씨놀(Seanol)은 무엇인가? — 플로로탄닌과의 관계 정리",
+      "category": "ingredient-comparison",
+      "plain_len": 2801,
+      "meta_len": 128,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 124,
+      "slug": "capf-marine-polyphenol-raw-material-structure-explained",
+      "title": "카프(CAF)란 무엇인가 — 해양 폴리페놀 원료 구조 이해",
+      "category": "ingredient-comparison",
+      "plain_len": 2814,
+      "meta_len": 110,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 125,
+      "slug": "phlorotannin-fucoidan-deep-comparison-structure-mechanism",
+      "title": "플로로탄닌과 후코이단 차이 심층 정리 — 구조·기전·연구 비교",
+      "category": "ingredient-comparison",
+      "plain_len": 2513,
+      "meta_len": 118,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 126,
+      "slug": "marine-polyphenol-antioxidant-research-why-attention",
+      "title": "해양 폴리페놀은 왜 항산화 연구에서 주목받는가 — 플로로탄닌 관점",
+      "category": "research",
+      "plain_len": 2817,
+      "meta_len": 116,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 127,
+      "slug": "alpha-glucosidase-vs-alpha-amylase-phlorotannin-blood-sugar",
+      "title": "알파글루코시다아제 vs 알파아밀라아제 — 플로로탄닌이 혈당에 접근하는 두 기전",
+      "category": "research",
+      "plain_len": 2770,
+      "meta_len": 112,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 128,
+      "slug": "seanol-vs-general-polyphenol-difference-explained",
+      "title": "씨놀과 일반 폴리페놀의 차이점 — 해양 폴리페놀 관점 정리",
+      "category": "ingredient-comparison",
+      "plain_len": 2760,
+      "meta_len": 114,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 129,
+      "slug": "health-functional-food-ingredients-top7-2026-phlorotannin-comparison",
+      "title": "요즘 주목받는 건강기능식품 원료 TOP 7 — 플로로탄닌·후코이단·콜라겐·NMN 등 비교",
+      "category": "ingredient-comparison",
+      "plain_len": 3437,
+      "meta_len": 121,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 130,
+      "slug": "phlorotannin-collagen-molecular-structure-absorption-difference",
+      "title": "플로로탄닌과 콜라겐은 어떻게 다른가 — 분자 구조와 흡수 경로 정리",
+      "category": "ingredient-comparison",
+      "plain_len": 2923,
+      "meta_len": 113,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 131,
+      "slug": "gamtae-extract-sleep-skin-blood-sugar-common-axis-oxidative-stress",
+      "title": "감태추출물이 수면·피부·혈당에 함께 언급되는 이유 — 산화 스트레스라는 공통 축",
+      "category": "disease-health-info",
+      "plain_len": 3170,
+      "meta_len": 110,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 132,
+      "slug": "hba1c-prediabetes-numbers-explained-by-range",
+      "title": "당화혈색소 5.7·5.8·6.0이면 위험한가요? — 수치 구간별 의미 정리",
+      "category": "disease-health-info",
+      "plain_len": 3223,
+      "meta_len": 122,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 133,
+      "slug": "fasting-blood-sugar-numbers-100-110-meaning",
+      "title": "공복혈당 100·110·120 — 어디서부터 걱정해야 하나요?",
+      "category": "disease-health-info",
+      "plain_len": 3211,
+      "meta_len": 117,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 134,
+      "slug": "night-waking-frequent-urination-causes-checklist",
+      "title": "자다가 깨는 이유 — 야간뇨·수면 단절의 흔한 원인 체크리스트",
+      "category": "disease-health-info",
+      "plain_len": 2937,
+      "meta_len": 113,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 135,
+      "slug": "liver-enzyme-ast-alt-high-meaning-action",
+      "title": "건강검진 간수치 AST·ALT 높음 — 어디서부터 봐야 하나요?",
+      "category": "disease-health-info",
+      "plain_len": 3242,
+      "meta_len": 117,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 136,
+      "slug": "aging-blood-sugar-rising-mechanism-explained",
+      "title": "나이가 들면 왜 혈당이 오르나요? — 인슐린 감수성·기전 정보 정리",
+      "category": "disease-health-info",
+      "plain_len": 3542,
+      "meta_len": 113,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 137,
+      "slug": "oxidative-stress-easy-explanation-daily-life",
+      "title": "산화 스트레스란 무엇인가요? — 일상 비유로 쉽게 풀어쓴 가이드",
+      "category": "disease-health-info",
+      "plain_len": 3507,
+      "meta_len": 110,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 138,
+      "slug": "metformin-side-effects-honest-information-overview",
+      "title": "메트포르민 부작용 정보 정리 — 흔한 증상·드문 증상·체크 포인트",
+      "category": "disease-health-info",
+      "plain_len": 3538,
+      "meta_len": 110,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 139,
+      "slug": "50s-supplements-priority-decision-guide",
+      "title": "50대 영양제 무엇부터 — 우선순위 결정 가이드",
+      "category": "disease-health-info",
+      "plain_len": 3437,
+      "meta_len": 110,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 140,
+      "slug": "gamtae-extract-safety-side-effects-honest-review",
+      "title": "감태추출물 부작용·안전성 — 정직하게 정리한 정보 가이드",
+      "category": "ingredient-comparison",
+      "plain_len": 3973,
+      "meta_len": 112,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 141,
+      "slug": "health-functional-food-raw-material-approval-korea",
+      "title": "한국 건강기능식품 원료 인정 절차 — 식약처 인증의 의미 정리",
+      "category": "disease-health-info",
+      "plain_len": 3856,
+      "meta_len": 110,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 142,
+      "slug": "blood-pressure-numbers-130-140-meaning",
+      "title": "혈압 130/85·140/90 — 어디서부터 고혈압인가요?",
+      "category": "disease-health-info",
+      "plain_len": 2301,
+      "meta_len": 114,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 143,
+      "slug": "cholesterol-ldl-hdl-numbers-explained",
+      "title": "콜레스테롤 LDL·HDL 수치 — 어디까지가 정상인가요?",
+      "category": "disease-health-info",
+      "plain_len": 3362,
+      "meta_len": 119,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 144,
+      "slug": "triglycerides-numbers-150-200-meaning",
+      "title": "중성지방 150·200·300 — 어디서부터 위험한가요?",
+      "category": "disease-health-info",
+      "plain_len": 2503,
+      "meta_len": 116,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 145,
+      "slug": "creatinine-egfr-kidney-numbers-meaning",
+      "title": "크레아티닌·eGFR 신장 수치 — 어디서부터 신경 써야 하나요?",
+      "category": "disease-health-info",
+      "plain_len": 2823,
+      "meta_len": 116,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 146,
+      "slug": "chronic-fatigue-causes-checklist-40s-50s",
+      "title": "40~50대 만성 피로 — 흔한 원인 체크리스트",
+      "category": "disease-health-info",
+      "plain_len": 2324,
+      "meta_len": 113,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 147,
+      "slug": "morning-stiffness-causes-checklist",
+      "title": "아침에 몸이 뻣뻣한 이유 — 흔한 원인 체크리스트",
+      "category": "disease-health-info",
+      "plain_len": 2250,
+      "meta_len": 113,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 148,
+      "slug": "hair-loss-sudden-causes-checklist",
+      "title": "갑작스러운 탈모 — 흔한 원인 체크리스트",
+      "category": "disease-health-info",
+      "plain_len": 2239,
+      "meta_len": 111,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 149,
+      "slug": "inflammation-chronic-low-grade-mechanism",
+      "title": "만성 저강도 염증이란 무엇인가요? — 기전 쉬운 설명",
+      "category": "disease-health-info",
+      "plain_len": 2603,
+      "meta_len": 112,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 150,
+      "slug": "omega3-supplements-decision-guide",
+      "title": "오메가3 영양제 — 어떤 걸 골라야 하나요?",
+      "category": "disease-health-info",
+      "plain_len": 2578,
+      "meta_len": 116,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 151,
+      "slug": "phlorotannin-vs-fucoxanthin-comparison",
+      "title": "플로로탄닌 vs 푸코잔틴 — 같은 해조류 성분, 무엇이 다른가?",
+      "category": "ingredient-comparison",
+      "plain_len": 2339,
+      "meta_len": 112,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 152,
+      "slug": "vitamin-d-deficiency-numbers-symptoms-checklist",
+      "title": "비타민 D 부족 — 수치 기준과 흔한 증상 체크리스트",
+      "category": "disease-health-info",
+      "plain_len": 2071,
+      "meta_len": 119,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 153,
+      "slug": "iron-deficiency-anemia-numbers-symptoms-checklist",
+      "title": "철 결핍·빈혈 — 수치 기준과 흔한 증상 체크리스트",
+      "category": "disease-health-info",
+      "plain_len": 2554,
+      "meta_len": 117,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 154,
+      "slug": "thyroid-tsh-numbers-meaning-checklist",
+      "title": "갑상선 TSH 수치 — 어디서부터 이상인가요?",
+      "category": "disease-health-info",
+      "plain_len": 2166,
+      "meta_len": 119,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 155,
+      "slug": "low-body-temperature-causes-checklist",
+      "title": "체온이 35도대로 낮아요 — 흔한 원인 체크리스트",
+      "category": "disease-health-info",
+      "plain_len": 1991,
+      "meta_len": 113,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 156,
+      "slug": "belly-fat-waist-circumference-numbers-meaning",
+      "title": "허리둘레와 복부 비만 — 어디서부터 위험한가요?",
+      "category": "disease-health-info",
+      "plain_len": 2462,
+      "meta_len": 113,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 157,
+      "slug": "insulin-resistance-mechanism-easy-explanation",
+      "title": "인슐린 저항성이란 무엇인가요? — 기전 쉬운 설명",
+      "category": "disease-health-info",
+      "plain_len": 2589,
+      "meta_len": 111,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 158,
+      "slug": "gut-microbiome-health-mechanism-easy-explanation",
+      "title": "장내 미생물이 건강에 미치는 영향 — 기전 쉬운 설명",
+      "category": "disease-health-info",
+      "plain_len": 2513,
+      "meta_len": 113,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 159,
+      "slug": "multivitamin-vs-single-supplements-decision-guide",
+      "title": "멀티비타민 vs 단일 영양제 — 무엇을 골라야 하나요?",
+      "category": "disease-health-info",
+      "plain_len": 2398,
+      "meta_len": 115,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 160,
+      "slug": "probiotics-strain-selection-decision-guide",
+      "title": "프로바이오틱스 — 균주별 선택 가이드",
+      "category": "disease-health-info",
+      "plain_len": 2450,
+      "meta_len": 114,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 161,
+      "slug": "phlorotannin-vs-quercetin-anti-inflammatory-comparison",
+      "title": "플로로탄닌 vs 케르세틴 — 항염증 효과 비교",
+      "category": "ingredient-comparison",
+      "plain_len": 2587,
+      "meta_len": 116,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 162,
+      "slug": "dizziness-causes-checklist-when-to-see-doctor",
+      "title": "어지러움 — 흔한 원인 체크리스트와 진료 시점",
+      "category": "disease-health-info",
+      "plain_len": 2558,
+      "meta_len": 114,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 163,
+      "slug": "knee-joint-pain-causes-checklist-when-to-see-doctor",
+      "title": "무릎 관절 통증 — 흔한 원인 체크리스트와 진료 시점",
+      "category": "disease-health-info",
+      "plain_len": 2453,
+      "meta_len": 110,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 164,
+      "slug": "frequent-bloating-causes-checklist-action-guide",
+      "title": "자주 더부룩하고 가스가 차요 — 흔한 원인 체크리스트",
+      "category": "disease-health-info",
+      "plain_len": 2382,
+      "meta_len": 113,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 165,
+      "slug": "poor-sleep-quality-causes-checklist-improvement-guide",
+      "title": "수면의 질이 나빠요 — 흔한 원인 체크리스트와 개선 가이드",
+      "category": "disease-health-info",
+      "plain_len": 2463,
+      "meta_len": 111,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 166,
+      "slug": "metabolic-syndrome-mechanism-easy-explanation",
+      "title": "대사증후군이란 무엇인가요? — 기전 쉬운 설명",
+      "category": "disease-health-info",
+      "plain_len": 2454,
+      "meta_len": 116,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 167,
+      "slug": "skin-aging-glycation-mechanism-easy-explanation",
+      "title": "피부 노화와 당화(Glycation) — 기전 쉬운 설명",
+      "category": "disease-health-info",
+      "plain_len": 2546,
+      "meta_len": 116,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 168,
+      "slug": "magnesium-supplements-types-decision-guide",
+      "title": "마그네슘 영양제 — 종류별 선택 가이드",
+      "category": "disease-health-info",
+      "plain_len": 2395,
+      "meta_len": 112,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 169,
+      "slug": "vitamin-c-dosage-decision-guide",
+      "title": "비타민 C — 하루 얼마가 적당한가요?",
+      "category": "disease-health-info",
+      "plain_len": 2359,
+      "meta_len": 113,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 170,
+      "slug": "phlorotannin-vs-egcg-green-tea-antioxidant-comparison",
+      "title": "플로로탄닌 vs EGCG(녹차 카테킨) — 항산화 효과 비교",
+      "category": "ingredient-comparison",
+      "plain_len": 2630,
+      "meta_len": 112,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 171,
+      "slug": "gamtae-vs-miyeok-seaweed-comparison",
+      "title": "감태 vs 미역 — 같은 해조류, 무엇이 다른가요?",
+      "category": "ingredient-comparison",
+      "plain_len": 2742,
+      "meta_len": 111,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 172,
+      "slug": "eye-strain-digital-fatigue-causes-checklist",
+      "title": "디지털 눈 피로 — 흔한 원인 체크리스트와 점검 포인트",
+      "category": "disease-health-info",
+      "plain_len": 2493,
+      "meta_len": 116,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 173,
+      "slug": "mild-memory-decline-causes-checklist-when-to-worry",
+      "title": "경미한 기억력 저하 — 흔한 원인 체크리스트와 걱정해야 할 시점",
+      "category": "disease-health-info",
+      "plain_len": 2497,
+      "meta_len": 115,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 174,
+      "slug": "hand-foot-numbness-causes-checklist-when-to-see-doctor",
+      "title": "손발 저림 — 흔한 원인 체크리스트와 진료 시점",
+      "category": "disease-health-info",
+      "plain_len": 2529,
+      "meta_len": 117,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 175,
+      "slug": "frequent-colds-low-immunity-causes-checklist",
+      "title": "감기가 자주 걸려요 — 면역력 점검 체크리스트",
+      "category": "disease-health-info",
+      "plain_len": 2513,
+      "meta_len": 118,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 176,
+      "slug": "autophagy-aging-mechanism-easy-explanation",
+      "title": "자가포식(Autophagy)과 노화 — 기전 쉬운 설명",
+      "category": "disease-health-info",
+      "plain_len": 2608,
+      "meta_len": 111,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 177,
+      "slug": "telomere-aging-mechanism-easy-explanation",
+      "title": "텔로미어와 노화 — 기전 쉬운 설명",
+      "category": "disease-health-info",
+      "plain_len": 2702,
+      "meta_len": 116,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 178,
+      "slug": "coq10-supplements-types-decision-guide",
+      "title": "코엔자임Q10 — 형태별·상황별 선택 가이드",
+      "category": "disease-health-info",
+      "plain_len": 2358,
+      "meta_len": 115,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 179,
+      "slug": "collagen-peptide-supplements-decision-guide",
+      "title": "콜라겐 펩타이드 — 분자량·상황별 선택 가이드",
+      "category": "disease-health-info",
+      "plain_len": 2705,
+      "meta_len": 114,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 180,
+      "slug": "phlorotannin-anti-aging-mechanism-summary",
+      "title": "플로로탄닌 — 항노화 작용 기전 종합 정리",
+      "category": "ingredient-comparison",
+      "plain_len": 2836,
+      "meta_len": 113,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 181,
+      "slug": "marine-polyphenol-vs-land-polyphenol-comparison",
+      "title": "해양 폴리페놀 vs 육상 폴리페놀 — 무엇이 다른가요?",
+      "category": "ingredient-comparison",
+      "plain_len": 3010,
+      "meta_len": 120,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 182,
+      "slug": "phlorotannin-alzheimer-bace1-acetylcholinesterase-mechanism-research",
+      "title": "플로로탄닌과 알츠하이머: BACE1·아세틸콜린에스터라제 이중 억제 기전 (해외 연구 정리)",
+      "category": "분자기전 작용경로",
+      "plain_len": 3223,
+      "meta_len": 112,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 183,
+      "slug": "phlorotannin-sars-cov-2-3clpro-spike-protein-antiviral-research",
+      "title": "플로로탄닌 항바이러스 연구: SARS-CoV-2 3CLpro·스파이크 단백질 결합 차단 (해외 연구)",
+      "category": "신약개발 임상",
+      "plain_len": 3114,
+      "meta_len": 129,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 184,
+      "slug": "phlorotannin-melanoma-tyrosinase-mitf-apoptosis-mechanism-research",
+      "title": "플로로탄닌 항암 기전: 흑색종 티로시나제·MITF·세포자멸사 유도 연구 (해외 논문)",
+      "category": "분자기전 작용경로",
+      "plain_len": 2955,
+      "meta_len": 117,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 185,
+      "slug": "phlorotannin-ace-angiotensin-blood-pressure-natural-inhibitor-research",
+      "title": "플로로탄닌 ACE 억제 연구: 천연 안지오텐신 전환효소 저해제로서의 가능성 (해외 논문)",
+      "category": "신약개발 임상",
+      "plain_len": 3054,
+      "meta_len": 124,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 186,
+      "slug": "phlorotannin-nrf2-keap1-ho1-antioxidant-pathway-research",
+      "title": "플로로탄닌과 Nrf2/Keap1 경로: 세포 항산화 방어 시스템 활성화 (해외 연구)",
+      "category": "분자기전 작용경로",
+      "plain_len": 3034,
+      "meta_len": 118,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 187,
+      "slug": "phlorotannin-nf-kb-tnf-alpha-inos-anti-inflammatory-pathway-research",
+      "title": "플로로탄닌 항염 기전: NF-κB·TNF-α·iNOS 경로 차단 연구 (해외 논문)",
+      "category": "분자기전 작용경로",
+      "plain_len": 3068,
+      "meta_len": 127,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 188,
+      "slug": "phlorotannin-uvb-mmp-photoaging-collagen-skin-research",
+      "title": "플로로탄닌 광노화 연구: UVB·MMP-1·콜라겐 분해 억제 기전 (해외 논문)",
+      "category": "분자기전 작용경로",
+      "plain_len": 3036,
+      "meta_len": 143,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 189,
+      "slug": "phlorotannin-gut-microbiome-tlr4-myd88-colitis-research",
+      "title": "플로로탄닌 장 염증 기전: TLR4/MyD88·장내 미생물 조절 연구 (해외 논문)",
+      "category": "분자기전 작용경로",
+      "plain_len": 3032,
+      "meta_len": 115,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 190,
+      "slug": "phlorotannin-cholesterol-srebp-hmg-coa-lipid-metabolism-research",
+      "title": "플로로탄닌과 콜레스테롤·SREBP·HMG-CoA: 지질대사 신약 타깃 연구 (해외 논문)",
+      "category": "분자기전 작용경로",
+      "plain_len": 3185,
+      "meta_len": 129,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 191,
+      "slug": "phlorotannin-drug-development-pipeline-2024-2026-global-clinical-status",
+      "title": "플로로탄닌 신약개발 파이프라인 2024-2026: 글로벌 임상·전임상 현황 정리",
+      "category": "신약개발 임상",
+      "plain_len": 3399,
+      "meta_len": 111,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 192,
+      "slug": "phlorotannin-efficacy-complete-guide-2026",
+      "title": "플로로탄닌 효능 총정리 — 항산화·항염·혈관 건강·뇌 건강 4가지 핵심 작용 (2026)",
+      "category": "general",
+      "plain_len": 2568,
+      "meta_len": 100,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 193,
+      "slug": "gamtae-side-effects-safety-complete-guide",
+      "title": "감태 부작용·안전성 완벽 정리 — 요오드·갑상선·약물 상호작용 체크",
+      "category": "disease-health-info",
+      "plain_len": 1899,
+      "meta_len": 96,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 194,
+      "slug": "phlorotannin-dosage-timing-how-to-take-guide",
+      "title": "플로로탄닌 복용법 — 하루 권장량·복용 시간·흡수율 높이는 법 완벽 정리",
+      "category": "disease-health-info",
+      "plain_len": 3352,
+      "meta_len": 91,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 195,
+      "slug": "gamtae-miyeok-dasima-phlorotannin-comparison",
+      "title": "감태 vs 미역 vs 다시마 — 플로로탄닌 함량·효능 차이 완벽 비교",
+      "category": "ingredient-comparison",
+      "plain_len": 3576,
+      "meta_len": 93,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 196,
+      "slug": "phlorotannin-supplement-how-to-choose-checklist",
+      "title": "플로로탄닌 영양제 고르는 법 — 함량·인증·원료·가격 체크리스트",
+      "category": "ingredient-comparison",
+      "plain_len": 4167,
+      "meta_len": 108,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 197,
+      "slug": "dieckol-dpp4-inhibitor-glp1-natural-2025-research",
+      "title": "디에콜의 DPP-IV 억제 — 2025 MDPI 최신 연구가 밝힌 '천연 GLP-1 부스터'",
+      "category": "diabetes",
+      "plain_len": 2558,
+      "meta_len": 93,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 198,
+      "slug": "ag-dieckol-rct-postprandial-glucose-insulin-resistance",
+      "title": "AG-디에콜 이중맹검 RCT — 식후 혈당과 인슐린 저항성, 실제 인간 데이터",
+      "category": "diabetes",
+      "plain_len": 2361,
+      "meta_len": 84,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 199,
+      "slug": "alpha-glucosidase-inhibitor-comparison-acarbose-dieckol-pffa",
+      "title": "α-글루코시다아제 억제제 비교 — 아카보스 vs 디에콜 vs 플로로푸코푸로에콜A",
+      "category": "diabetes",
+      "plain_len": 2300,
+      "meta_len": 83,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 200,
+      "slug": "marine-plants-diabetes-management-2026-sciencedirect-review",
+      "title": "2026 ScienceDirect 리뷰 — 당뇨 관리에서 해양식물의 미개척 잠재력",
+      "category": "diabetes",
+      "plain_len": 2388,
+      "meta_len": 87,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 201,
+      "slug": "dieckol-ampk-glut2-hepg2-insulin-resistance-mechanism",
+      "title": "디에콜의 AMPK·GLUT2 분자기전 — HepG2 세포에서 포도당 흡수 109% 회복",
+      "category": "분자기전 작용경로",
+      "plain_len": 2265,
+      "meta_len": 91,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 202,
+      "slug": "phlorotannin-natural-drug-fda-ema-approval-pathway",
+      "title": "천연물 의약품으로서 플로로탄닌 — FDA·EMA 신약 승인 경로 분석",
+      "category": "신약개발 임상",
+      "plain_len": 2672,
+      "meta_len": 89,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 203,
+      "slug": "phlorotannin-glycolipid-metabolism-2025-pmc-review",
+      "title": "PMC 2025 종합 리뷰 — 플로로탄닌과 당지질 대사 (지방간·대사증후군까지)",
+      "category": "diabetes",
+      "plain_len": 2234,
+      "meta_len": 83,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 204,
+      "slug": "phlorofucofuroeckol-a-pffa-postprandial-glucose-next-generation",
+      "title": "Phlorofucofuroeckol A (PFF-A) — 차세대 플로로탄닌, 식후 혈당 관리의 새 스타",
+      "category": "diabetes",
+      "plain_len": 2430,
+      "meta_len": 89,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 205,
+      "slug": "natural-diabetes-supplements-comparison-berberine-cinnamon-bittermelon-fucoidan-dieckol",
+      "title": "천연 당뇨 보조 5종 비교 — 베르베린·계피·여주·푸코이단·디에콜",
+      "category": "ingredient-comparison",
+      "plain_len": 2180,
+      "meta_len": 81,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 206,
+      "slug": "prediabetes-ecklonia-cava-extract-6-months-fasting-glucose-hba1c",
+      "title": "당뇨 전단계(공복혈당 100~125)에서 감태추출물 6개월 — 실제 임상 수치 변화",
+      "category": "diabetes",
+      "plain_len": 2230,
+      "meta_len": 94,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 207,
+      "slug": "deliverance-uk-ecklonia-cava-seanol-liver-supplement-analysis",
+      "title": "영국 디리버런스(De-Liver-Ance) 전격 분석 — 감태 추출물·씨놀(Seanol) 간 영양제",
+      "category": "disease-health-info",
+      "plain_len": 4744,
+      "meta_len": 111,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 208,
+      "slug": "deliverance-vogue-uk-hangover-supplement-seanol-mechanism",
+      "title": "Vogue UK가 인정한 숙취 해소제 — 디리버런스 씨놀(Seanol) 폴리페놀의 작용 원리",
+      "category": "disease-health-info",
+      "plain_len": 3684,
+      "meta_len": 113,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 209,
+      "slug": "equilibrium-labs-uk-deliverance-20-years-rnd-ecklonia-cava",
+      "title": "Equilibrium Labs (영국) 20년 R&D — 디리버런스 한·양방 융합 처방의 비밀",
+      "category": "research",
+      "plain_len": 3913,
+      "meta_len": 111,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 210,
+      "slug": "global-liver-supplement-comparison-deliverance-uk-vs-korea-ecklonia-vs-milk-thistle",
+      "title": "글로벌 간 영양제 비교 — 디리버런스(영국 씨놀) vs 한국 감태(씨놀·카프) vs 밀크씨슬",
+      "category": "ingredient-comparison",
+      "plain_len": 3989,
+      "meta_len": 92,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 211,
+      "slug": "deliverance-90x-antioxidant-blueberry-claim-factcheck-seanol-polyphenol",
+      "title": "디리버런스 '블루베리의 90배 항산화' — 씨놀(Seanol)·카프 항산화력 팩트체크",
+      "category": "general",
+      "plain_len": 4129,
+      "meta_len": 100,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 212,
+      "slug": "phlorotannin-cancer-support-supplement-overview-2026",
+      "title": "암 환자가 요즘 감태·플로로탄닌을 찾는 이유 — 항암 보조 영양 종합 가이드",
+      "category": "cancer",
+      "plain_len": 3304,
+      "meta_len": 119,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 213,
+      "slug": "esophageal-cancer-ecklonia-cava-phlorotannin-research",
+      "title": "식도암과 감태 추출물 — 플로로탄닌·디에콜 해외 연구 정리",
+      "category": "cancer",
+      "plain_len": 2180,
+      "meta_len": 80,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 214,
+      "slug": "bile-duct-cancer-cholangiocarcinoma-phlorotannin-natural-support",
+      "title": "담도암(담관암)과 플로로탄닌 — 간 보호·항산화 보조 영양 정리",
+      "category": "cancer",
+      "plain_len": 2331,
+      "meta_len": 107,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 215,
+      "slug": "liver-cancer-hcc-ecklonia-cava-dieckol-research",
+      "title": "간암(HCC)과 감태 추출물 — 디에콜·씨놀(Seanol) 항산화 연구 정리",
+      "category": "cancer",
+      "plain_len": 2480,
+      "meta_len": 120,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 216,
+      "slug": "colorectal-cancer-phlorotannin-pffa-colon-research",
+      "title": "대장암과 플로로탄닌 — PFFA·디에콜·감태 추출물 in vitro 연구 정리",
+      "category": "cancer",
+      "plain_len": 2363,
+      "meta_len": 116,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 217,
+      "slug": "stomach-cancer-gastric-ecklonia-cava-h-pylori-phlorotannin",
+      "title": "위암과 감태 추출물 — H. pylori·산화 스트레스·플로로탄닌 보조 영양",
+      "category": "cancer",
+      "plain_len": 2337,
+      "meta_len": 114,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 218,
+      "slug": "lung-cancer-phlorotannin-antioxidant-inflammation-research",
+      "title": "폐암과 플로로탄닌 — 항산화·항염 측면의 감태 추출물 연구",
+      "category": "cancer",
+      "plain_len": 2133,
+      "meta_len": 119,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 219,
+      "slug": "pancreatic-cancer-ecklonia-cava-dieckol-natural-support",
+      "title": "췌장암과 감태 추출물 — 디에콜·씨놀(Seanol) 기초 연구 흐름",
+      "category": "cancer",
+      "plain_len": 2399,
+      "meta_len": 124,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 220,
+      "slug": "breast-cancer-phlorotannin-estrogen-antioxidant-overview",
+      "title": "유방암과 플로로탄닌 — 감태 추출물·디에콜 항산화 연구 정리",
+      "category": "cancer",
+      "plain_len": 2326,
+      "meta_len": 114,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 221,
+      "slug": "cancer-patient-quality-of-life-fatigue-immunity-ecklonia-cava",
+      "title": "암 환자 삶의 질 — 피로·면역·식욕에 감태·플로로탄닌이 거론되는 이유",
+      "category": "cancer",
+      "plain_len": 2562,
+      "meta_len": 127,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 222,
+      "slug": "rectal-cancer-phlorotannin-dieckol-radiation-chemo-support",
+      "title": "직장암과 플로로탄닌 — 항암방사선치료 중 점막·항산화 보조 영양",
+      "category": "cancer",
+      "plain_len": 2569,
+      "meta_len": 130,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 223,
+      "slug": "testicular-cancer-phlorotannin-cisplatin-fertility-support",
+      "title": "고환암과 플로로탄닌 — 시스플라틴 부작용·생식 건강 보조 영양",
+      "category": "cancer",
+      "plain_len": 2736,
+      "meta_len": 138,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 224,
+      "slug": "brain-tumor-glioma-phlorotannin-bbb-neuroprotection-ecklonia",
+      "title": "뇌종양과 플로로탄닌 — BBB·신경 보호·감태 추출물 연구 정리",
+      "category": "cancer",
+      "plain_len": 2693,
+      "meta_len": 124,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 225,
+      "slug": "head-neck-cancer-phlorotannin-mucositis-saliva-ecklonia",
+      "title": "두경부암과 플로로탄닌 — 점막염·구강건조·항산화 보조 영양",
+      "category": "cancer",
+      "plain_len": 2685,
+      "meta_len": 126,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 226,
+      "slug": "thyroid-cancer-phlorotannin-rai-tsh-suppression-ecklonia",
+      "title": "갑상선암과 플로로탄닌 — 방사성요오드·갑상선호르몬 보조 영양",
+      "category": "cancer",
+      "plain_len": 2824,
+      "meta_len": 124,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 227,
+      "slug": "prostate-cancer-phlorotannin-androgen-deprivation-ecklonia",
+      "title": "전립선암과 플로로탄닌 — 호르몬 치료·골 건강·항산화 보조 영양",
+      "category": "cancer",
+      "plain_len": 2881,
+      "meta_len": 125,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 228,
+      "slug": "phlorotannin-nk-cell-natural-killer-cancer-immunity-ecklonia",
+      "title": "플로로탄닌과 NK세포 — 자연살해세포 활성·암 면역 보조 영양 입문",
+      "category": "cancer",
+      "plain_len": 2481,
+      "meta_len": 148,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 229,
+      "slug": "phlorotannin-chemotherapy-neutropenia-bone-marrow-immune-recovery",
+      "title": "항암 화학요법 중 호중구 감소·골수억제 — 면역 회복 보조 영양 정리",
+      "category": "cancer",
+      "plain_len": 2525,
+      "meta_len": 83,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 230,
+      "slug": "phlorotannin-t-cell-pd1-pdl1-checkpoint-cancer-immunity",
+      "title": "T세포·면역체크포인트(PD-1/PD-L1) 관점에서의 해양 폴리페놀 연구 정리",
+      "category": "cancer",
+      "plain_len": 2535,
+      "meta_len": 138,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 231,
+      "slug": "phlorotannin-il6-tnf-alpha-chronic-inflammation-cancer-kpp-deliverance",
+      "title": "항암 치료 중 만성 염증·IL-6/TNF-α — 카프(KPP)·딜리버런스·씨놀 보조 영양 정리",
+      "category": "cancer",
+      "plain_len": 2213,
+      "meta_len": 131,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 232,
+      "slug": "phlorotannin-tumor-microenvironment-ros-oxidative-stress-dieckol-research",
+      "title": "종양미세환경(TME) 산화스트레스·ROS — 디에콜 항산화 보조 영양 정리",
+      "category": "cancer",
+      "plain_len": 2216,
+      "meta_len": 155,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 233,
+      "slug": "fucoidan-vs-phlorotannin-cancer-immunity-comparison-ecklonia-seanol",
+      "title": "후코이단 vs 플로로탄닌 — 암 환자 면역 보조 영양 비교 정리",
+      "category": "cancer",
+      "plain_len": 4358,
+      "meta_len": 127,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 234,
+      "slug": "checkpoint-inhibitor-keytruda-opdivo-nutritional-support-phlorotannin-deliverance",
+      "title": "면역항암제(키트루다·옵디보) 환자 영양 보조 가이드 — 플로로탄닌·딜리버런스",
+      "category": "cancer",
+      "plain_len": 2283,
+      "meta_len": 132,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 235,
+      "slug": "cancer-survivor-recurrence-fear-long-term-immune-nutrition-phlorotannin",
+      "title": "암 재발 두려움·생존자 면역 관리 — 장기 보조 영양 전략 정리",
+      "category": "cancer",
+      "plain_len": 2353,
+      "meta_len": 130,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 236,
+      "slug": "ph-100-phlorotannin-extract-brand-introduction-diabetes-blood-sugar",
+      "title": "PH-100이란 무엇인가 — 표준화 플로로탄닌 추출물 브랜드 입문 (당뇨 보조 영양)",
+      "category": "diabetes",
+      "plain_len": 2835,
+      "meta_len": 158,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 237,
+      "slug": "ph-100-vs-gamtae-powder-standardized-extract-comparison-bcs",
+      "title": "PH-100 vs 일반 감태 분말 — 표준화·함량·BCS 차이 정리",
+      "category": "diabetes",
+      "plain_len": 2448,
+      "meta_len": 112,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 238,
+      "slug": "ph-100-metformin-combination-safety-synergy-diabetes-phlorotannin",
+      "title": "PH-100 + 메트포르민 병용 — 안전성·시너지 가능성 정리",
+      "category": "diabetes",
+      "plain_len": 2721,
+      "meta_len": 113,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 239,
+      "slug": "ph-100-timing-before-after-meal-postprandial-glucose-phlorotannin",
+      "title": "PH-100 복용 타이밍 — 식전·식후·식사 직전 식후혈당 관점 정리",
+      "category": "diabetes",
+      "plain_len": 2645,
+      "meta_len": 125,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 240,
+      "slug": "ph-100-clinical-data-rct-meta-analysis-phlorotannin-diabetes-summary",
+      "title": "PH-100 임상 데이터 한눈에 — RCT·메타분석 모음 (당뇨 보조 영양 정리)",
+      "category": "diabetes",
+      "plain_len": 2867,
+      "meta_len": 149,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 241,
+      "slug": "phlorotannin-buying-guide-7-checks-before-purchase",
+      "title": "플로로탄닌 사기 전 꼭 확인할 7가지 — 99%가 모르는 진짜 체크포인트",
+      "category": "buying-guide",
+      "plain_len": 3343,
+      "meta_len": 86,
+      "markers": [
+        "weak_refs"
+      ]
+    },
+    {
+      "id": 242,
+      "slug": "ecklonia-cava-extract-vs-powder-90pct-confuse",
+      "title": "감태추출물 vs 감태분말 — 90%가 헷갈리는 표기의 진실",
+      "category": "buying-guide",
+      "plain_len": 3558,
+      "meta_len": 119,
+      "markers": [
+        "weak_refs"
+      ]
+    },
+    {
+      "id": 243,
+      "slug": "seanol-buying-guide-what-to-check-before-purchase",
+      "title": "씨놀(Seanol) 사기 전 꼭 알아야 할 4가지 — 가격이 답이 아닙니다",
+      "category": "buying-guide",
+      "plain_len": 3108,
+      "meta_len": 99,
+      "markers": [
+        "weak_refs"
+      ]
+    },
+    {
+      "id": 244,
+      "slug": "kpp-korean-phlorotannin-polyphenol-buying-guide",
+      "title": "카프(KPP) 구매 가이드 — 한국형 플로로탄닌 폴리페놀, 어떻게 골라야 하나",
+      "category": "buying-guide",
+      "plain_len": 3465,
+      "meta_len": 112,
+      "markers": [
+        "weak_refs"
+      ]
+    },
+    {
+      "id": 245,
+      "slug": "phlorotannin-supplement-label-reading-guide",
+      "title": "플로로탄닌 영양제 성분표 읽는 법 — 진짜 함량을 보는 법",
+      "category": "buying-guide",
+      "plain_len": 3130,
+      "meta_len": 94,
+      "markers": [
+        "weak_refs"
+      ]
+    },
+    {
+      "id": 246,
+      "slug": "phlorotannin-dosage-individual-difference-1pill-vs-10pills",
+      "title": "하루 1알? 하루 10알? — 플로로탄닌 복용량이 사람마다 다른 5가지 이유",
+      "category": "buying-guide",
+      "plain_len": 2082,
+      "meta_len": 117,
+      "markers": [
+        "weak_refs"
+      ]
+    },
+    {
+      "id": 247,
+      "slug": "phlorotannin-side-effects-drug-interactions-honest-guide",
+      "title": "플로로탄닌·감태추출물 부작용·금기약물 총정리 — 솔직한 가이드",
+      "category": "safety-precautions",
+      "plain_len": 2338,
+      "meta_len": 102,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 248,
+      "slug": "phlorotannin-warfarin-thyroid-pregnancy-special-cases",
+      "title": "와파린·갑상선·임산부 — 플로로탄닌, 이런 분은 꼭 확인하세요",
+      "category": "safety-precautions",
+      "plain_len": 2409,
+      "meta_len": 85,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 249,
+      "slug": "tamoxifen-side-effects-management-2026",
+      "title": "타목시펜 부작용·관리법 — 안면홍조부터 자궁내막까지 솔직 가이드 [2026 최신]",
+      "category": "cancer-treatment-care",
+      "plain_len": 2515,
+      "meta_len": 82,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 250,
+      "slug": "aromatase-inhibitor-side-effects-care-2026",
+      "title": "아로마타제 억제제(레트로졸·아나스트로졸) 부작용 — 관절통·골다공증 관리 [2026 최신]",
+      "category": "cancer-treatment-care",
+      "plain_len": 2414,
+      "meta_len": 84,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 251,
+      "slug": "immune-checkpoint-inhibitor-side-effects-2026",
+      "title": "면역항암제(키트루다·옵디보) 부작용 — 면역관련 이상반응 솔직 가이드 [2026 최신]",
+      "category": "cancer-treatment-care",
+      "plain_len": 2431,
+      "meta_len": 83,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 252,
+      "slug": "trastuzumab-herceptin-cardiac-side-effects-2026",
+      "title": "트라스투주맙(허셉틴) 심장 부작용 — 심장 기능 보호 가이드 [2026 최신]",
+      "category": "cancer-treatment-care",
+      "plain_len": 2231,
+      "meta_len": 80,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 253,
+      "slug": "oxaliplatin-peripheral-neuropathy-care-2026",
+      "title": "옥살리플라틴 손발저림(말초신경병증) — 회복과 예방 관리 [2026 최신]",
+      "category": "cancer-treatment-care",
+      "plain_len": 2242,
+      "meta_len": 97,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 254,
+      "slug": "capecitabine-hand-foot-syndrome-care-2026",
+      "title": "카페시타빈(젤로다) 손발증후군 — 피부 관리 솔직 가이드 [2026 최신]",
+      "category": "cancer-treatment-care",
+      "plain_len": 2061,
+      "meta_len": 144,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 255,
+      "slug": "adc-antibody-drug-conjugate-side-effects-2026",
+      "title": "ADC 항체약물접합체 신약 부작용 — 엔허투·트로델비 [2026 최신]",
+      "category": "cancer-treatment-care",
+      "plain_len": 2142,
+      "meta_len": 87,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 256,
+      "slug": "targeted-therapy-skin-rash-acne-care-2026",
+      "title": "표적치료제 피부 부작용 — 여드름성 발진·가려움 관리 [2026 최신]",
+      "category": "cancer-treatment-care",
+      "plain_len": 2093,
+      "meta_len": 150,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 257,
+      "slug": "chemo-immunity-low-natural-care-2026",
+      "title": "항암 중 면역력 떨어질 때 — 안전한 영양 관리 솔직 가이드 [2026 최신]",
+      "category": "cancer-treatment-care",
+      "plain_len": 2365,
+      "meta_len": 144,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 258,
+      "slug": "cancer-fatigue-recovery-care-2026",
+      "title": "항암 후 만성피로 — 회복기 에너지 관리 가이드 [2026 최신]",
+      "category": "cancer-treatment-care",
+      "plain_len": 2163,
+      "meta_len": 157,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 259,
+      "slug": "chemo-neuropathy-nutrition-care-2026",
+      "title": "항암 손발저림 영양 관리 — 신경 회복 영양소 가이드 [2026 최신]",
+      "category": "cancer-treatment-care",
+      "plain_len": 2314,
+      "meta_len": 155,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 260,
+      "slug": "chemo-mouth-sore-stomatitis-care-2026",
+      "title": "항암 구내염 관리 — 입속이 헐었을 때 안전한 케어 [2026 최신]",
+      "category": "cancer-treatment-care",
+      "plain_len": 2227,
+      "meta_len": 120,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 261,
+      "slug": "chemo-appetite-weight-loss-care-2026",
+      "title": "항암 식욕부진·체중감소 — 한 입이라도 더 드시는 법 [2026 최신]",
+      "category": "cancer-treatment-care",
+      "plain_len": 2266,
+      "meta_len": 126,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 262,
+      "slug": "hormone-therapy-hot-flashes-natural-care-2026",
+      "title": "항호르몬치료 안면홍조 — 잠 못 자는 밤 줄이는 자연 관리 [2026 최신]",
+      "category": "cancer-treatment-care",
+      "plain_len": 2217,
+      "meta_len": 133,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 263,
+      "slug": "cancer-patient-family-nutrition-guide-2026",
+      "title": "암 환자 가족이 챙겨드릴 영양 가이드 — 보호자가 꼭 알아야 할 것 [2026 최신]",
+      "category": "cancer-treatment-care",
+      "plain_len": 2299,
+      "meta_len": 133,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 264,
+      "slug": "cancer-caregiver-warning-signs-guide-2026",
+      "title": "항암 중 보호자가 알아야 할 응급신호 12가지 — 미루지 마세요 [2026 최신]",
+      "category": "cancer-treatment-care",
+      "plain_len": 2457,
+      "meta_len": 141,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 265,
+      "slug": "chemo-fever-when-emergency-room-2026",
+      "title": "항암 발열 38도 — 언제 응급실 가야 하나요? [2026 최신]",
+      "category": "cancer-treatment-care",
+      "plain_len": 3142,
+      "meta_len": 125,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 266,
+      "slug": "immunotherapy-side-effects-warning-signs-2026",
+      "title": "면역항암제 응급신호 — 키트루다·옵디보 부작용 즉시 행동법 [2026]",
+      "category": "cancer-treatment-care",
+      "plain_len": 3186,
+      "meta_len": 118,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 267,
+      "slug": "tamoxifen-blood-clot-warning-signs-2026",
+      "title": "타목시펜 혈전 위험신호 — 다리 부종·호흡곤란 즉시 행동법 [2026]",
+      "category": "cancer-treatment-care",
+      "plain_len": 3055,
+      "meta_len": 108,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 268,
+      "slug": "cancer-pain-when-call-doctor-2026",
+      "title": "암 통증 — 언제 의사 부르고 언제 응급실? 솔직 판단법 [2026]",
+      "category": "cancer-treatment-care",
+      "plain_len": 2975,
+      "meta_len": 107,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 269,
+      "slug": "cancer-patient-supplements-safe-list-2026",
+      "title": "항암 중 먹어도 되는 영양제 — 안전 화이트리스트 [2026 최신]",
+      "category": "cancer-treatment-care",
+      "plain_len": 3331,
+      "meta_len": 131,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 270,
+      "slug": "cancer-patient-foods-to-avoid-2026",
+      "title": "항암 중 피해야 할 음식 TOP 15 — 솔직 식이 가이드 [2026]",
+      "category": "cancer-treatment-care",
+      "plain_len": 3050,
+      "meta_len": 106,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 271,
+      "slug": "breast-cancer-tamoxifen-drug-interactions-2026",
+      "title": "타목시펜 — 함께 먹으면 안 되는 약·식품 [2026 최신]",
+      "category": "cancer-treatment-care",
+      "plain_len": 3199,
+      "meta_len": 117,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 272,
+      "slug": "cancer-checkup-tests-after-chemo-2026",
+      "title": "항암 후 꼭 받아야 할 추적 검사 체크리스트 [2026]",
+      "category": "cancer-treatment-care",
+      "plain_len": 3087,
+      "meta_len": 138,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 273,
+      "slug": "chemo-vs-immunotherapy-side-effects-compare-2026",
+      "title": "항암제 vs 면역항암제 — 부작용 비교 솔직 가이드 [2026]",
+      "category": "cancer-treatment-care",
+      "plain_len": 2879,
+      "meta_len": 111,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 274,
+      "slug": "oral-vs-iv-chemo-differences-2026",
+      "title": "먹는 항암제 vs 주사 항암제 — 차이·장단점 [2026]",
+      "category": "cancer-treatment-care",
+      "plain_len": 3022,
+      "meta_len": 102,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 275,
+      "slug": "2026-cancer-new-drugs-approved-korea-side-effects",
+      "title": "2025~2026 국내 승인 항암 신약 부작용 정리 [최신]",
+      "category": "cancer-treatment-care",
+      "plain_len": 3223,
+      "meta_len": 106,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 276,
+      "slug": "kras-g12c-tagrisso-osimertinib-side-effects-2026",
+      "title": "KRAS·EGFR 신규 표적치료 부작용 관리 [2026 최신]",
+      "category": "cancer-treatment-care",
+      "plain_len": 3059,
+      "meta_len": 118,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 277,
+      "slug": "chemo-exercise-intensity-when-how-2026",
+      "title": "항암 중 운동 — 어디까지 해도 되나요? [강도·시점 가이드 2026]",
+      "category": "cancer-treatment-care",
+      "plain_len": 3207,
+      "meta_len": 143,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 278,
+      "slug": "after-chemo-hair-color-perm-when-2026",
+      "title": "항암 후 염색·펌 — 언제부터 가능한가요? [재성장 시점 가이드]",
+      "category": "cancer-treatment-care",
+      "plain_len": 3199,
+      "meta_len": 137,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 279,
+      "slug": "after-chemo-pregnancy-fertility-when-2026",
+      "title": "항암 후 임신·가임력 — 언제부터 시도해도 될까요? [2026]",
+      "category": "cancer-treatment-care",
+      "plain_len": 3385,
+      "meta_len": 130,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 280,
+      "slug": "chemo-travel-flight-safety-when-2026",
+      "title": "항암 중 여행·비행 — 언제 가능한가요? [국내·해외 가이드 2026]",
+      "category": "cancer-treatment-care",
+      "plain_len": 3371,
+      "meta_len": 123,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 281,
+      "slug": "chemo-flu-covid-vaccine-when-safe-2026",
+      "title": "항암 중 독감·코로나 백신 — 맞아도 되나요? [시점·종류 2026]",
+      "category": "cancer-treatment-care",
+      "plain_len": 3136,
+      "meta_len": 97,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 282,
+      "slug": "cancer-treatment-care-complete-guide-2026",
+      "title": "2026 항암 케어 완전 가이드 — 진단부터 회복기까지 한 페이지 정리",
+      "category": "cancer-treatment-care",
+      "plain_len": 3162,
+      "meta_len": 101,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 283,
+      "slug": "why-phlorotannin-partners-cancer-care-2026",
+      "title": "왜 플로로탄닌 파트너스가 항암 케어에 집중하나요? — 브랜드 이야기",
+      "category": "cancer-treatment-care",
+      "plain_len": 3509,
+      "meta_len": 131,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 284,
+      "slug": "keytruda-immunotherapy-guide-2026",
+      "title": "키트루다(펨브롤리주맙) 완전 가이드 — 적응증·부작용·식단 [2026]",
+      "category": "cancer-treatment-care",
+      "plain_len": 3721,
+      "meta_len": 148,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 285,
+      "slug": "enhertu-her2-breast-cancer-2026",
+      "title": "엔허투(트라스투주맙 데룩스테칸) — HER2 유방암·위암 신약 가이드 [2026]",
+      "category": "cancer-treatment-care",
+      "plain_len": 3438,
+      "meta_len": 114,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 286,
+      "slug": "lazertinib-vs-osimertinib-egfr-2026",
+      "title": "렉라자(레이저티닙) vs 타그리소(오시머티닙) — EGFR 폐암 비교 [2026]",
+      "category": "cancer-treatment-care",
+      "plain_len": 3662,
+      "meta_len": 155,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 287,
+      "slug": "rybrevant-lazertinib-combo-egfr-2026",
+      "title": "리브리반트+렉라자 병용 — EGFR 폐암 1차 표준 옵션 가이드 [2026]",
+      "category": "cancer-treatment-care",
+      "plain_len": 3311,
+      "meta_len": 121,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 288,
+      "slug": "immunotherapy-irae-complete-guide-2026",
+      "title": "면역항암제 irAE 통합 가이드 — 장기별 응급·외래 판단 [2026]",
+      "category": "cancer-treatment-care",
+      "plain_len": 3453,
+      "meta_len": 121,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 289,
+      "slug": "big5-cancer-hospital-comparison-2026",
+      "title": "빅5 암 병원 비교 — 어디로 갈까? [서울대·삼성·아산·세브란스·서울성모 2026]",
+      "category": "hospital-info",
+      "plain_len": 3446,
+      "meta_len": 117,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 290,
+      "slug": "cancer-special-care-5percent-guide-2026",
+      "title": "산정특례 5% 완전 가이드 — 신청·기간·적용 범위 [2026 최신]",
+      "category": "hospital-info",
+      "plain_len": 3473,
+      "meta_len": 103,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 291,
+      "slug": "cancer-second-opinion-when-how-2026",
+      "title": "2차 의견(Second Opinion) 받는 법 — 언제·어디서·무엇을 묻나 [2026]",
+      "category": "hospital-info",
+      "plain_len": 3579,
+      "meta_len": 159,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 292,
+      "slug": "dieckol-2026-depression-glucocorticoid-research-trend",
+      "title": "디에콜과 스트레스성 우울 유사 행동 연구 (2026 1월 PubMed)",
+      "category": "research",
+      "plain_len": 3279,
+      "meta_len": 140,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 293,
+      "slug": "phlorotannin-2026-cognitive-samp8-synaptic-plasticity",
+      "title": "플로로탄닌 보충과 노화 모델 인지 연구 (2026 3월 SAMP8 마우스)",
+      "category": "research",
+      "plain_len": 3165,
+      "meta_len": 120,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 294,
+      "slug": "phlorotannin-2026-glycolipid-metabolism-frontiers",
+      "title": "플로로탄닌·디에콜과 당지질 대사 연구 (2026 2월 Frontiers)",
+      "category": "research",
+      "plain_len": 3254,
+      "meta_len": 138,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 295,
+      "slug": "phlorotannin-2026-gastrointestinal-stability-bioavailability",
+      "title": "플로로탄닌 위장관 안정성·생체이용률 개선 연구 (2026 1월 PMC)",
+      "category": "research",
+      "plain_len": 3107,
+      "meta_len": 122,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 296,
+      "slug": "fucoidan-phlorotannin-2026-oceans-medicine-review",
+      "title": "갈조류 푸코이단·플로로탄닌 항염·항산화 연구 종설 (2026 1월)",
+      "category": "research",
+      "plain_len": 3098,
+      "meta_len": 147,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 297,
+      "slug": "marine-algae-2026-anti-inflammatory-bioactive-review",
+      "title": "감태·Ascophyllum 등 해양 조류 항염 활성 연구 (2026 2월)",
+      "category": "research",
+      "plain_len": 3135,
+      "meta_len": 160,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 298,
+      "slug": "seaweed-bioactives-2026-functional-foods-trends",
+      "title": "해조 유래 기능성 식품 트렌드 연구 (2026 Trends in Food Science)",
+      "category": "research",
+      "plain_len": 3078,
+      "meta_len": 145,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 299,
+      "slug": "phlorotannin-2026-gut-microbiota-obesity-frontiers",
+      "title": "플로로탄닌과 장내 미생물·비만 연구 (2026 2월 Frontiers)",
+      "category": "research",
+      "plain_len": 3039,
+      "meta_len": 110,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 300,
+      "slug": "phlorotannin-2026-marine-derived-polyphenols-therapy-wiley",
+      "title": "플로로탄닌 분자 계열 치료적 잠재력 종설 (Wiley CBDV)",
+      "category": "research",
+      "plain_len": 3235,
+      "meta_len": 160,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 301,
+      "slug": "phlorotannin-2026-ll37-diabetic-wound-research",
+      "title": "플로로탄닌·LL-37 펩타이드 당뇨 상처 미세환경 연구 (PMC)",
+      "category": "research",
+      "plain_len": 3241,
+      "meta_len": 160,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 302,
+      "slug": "seanol-global-certifications-fda-ndi-eu-nfi-mfds-2026-update",
+      "title": "씨놀(Seanol) 글로벌 인증 정리 — FDA NDI · EU NFI · 식약처 개별인정형 (2026 업데이트)",
+      "category": "research",
+      "plain_len": 4067,
+      "meta_len": 60,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 303,
+      "slug": "hydrated-seanol-ultra-freshness-technology-explained",
+      "title": "Hydrated-Seanol® 초신선 기술이란 — 갈조류 폴리페놀이 식품 신선도에 작용하는 원리와 산업 적용",
+      "category": "research",
+      "plain_len": 3963,
+      "meta_len": 51,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 304,
+      "slug": "seanol-drug-pipeline-ph100-ph733-ph300-2026",
+      "title": "PH-100·PH-733·PH-300 — 감태 플로로탄닌 기반 신약 파이프라인 정리 (NCT04141241 Phase IIa Completed)",
+      "category": "research",
+      "plain_len": 7126,
+      "meta_len": 59,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 305,
+      "slug": "nutricia-fortimel-medical-food-korea-market-trend-2025",
+      "title": "뉴트리시아 포티멜과 메디푸드 — 2025 한국 시장 동향과 환자 영양 패러다임",
+      "category": "research",
+      "plain_len": 6264,
+      "meta_len": 50,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 306,
+      "slug": "fortimel-compact-protein-cancer-surgery-clinical-evidence-2025",
+      "title": "포티멜 컴팩트 프로틴 — 암환자·수술환자 ONS 임상 근거 2025년 정리",
+      "category": "research",
+      "plain_len": 6796,
+      "meta_len": 51,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 307,
+      "slug": "elderly-sarcopenia-nutrition-fortimel-high-protein-ons-2025-guide",
+      "title": "노인 근감소증 영양 보충 — 포티멜 등 고단백 ONS 2025년 가이드",
+      "category": "research",
+      "plain_len": 6111,
+      "meta_len": 52,
+      "markers": [
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 308,
+      "slug": "cancer-patient-diet-delivery-protein-fiber-guide",
+      "title": "암환자 식단 배달 — 단백질·섬유질 가이드와 활용법 정리",
+      "category": "cancer-treatment-care",
+      "plain_len": 2848,
+      "meta_len": 49,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 309,
+      "slug": "chemotherapy-side-effects-diet-guide-nausea-anorexia-mucositis",
+      "title": "항암 부작용별 식단 가이드 — 메스꺼움·식욕부진·구내염 대응",
+      "category": "cancer-treatment-care",
+      "plain_len": 2460,
+      "meta_len": 56,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 310,
+      "slug": "diabetes-patient-diet-delivery-fiber-protein-low-gi-guide",
+      "title": "당뇨환자 식단 배달 — 섬유질·단백질·저당 식단 가이드",
+      "category": "diabetes",
+      "plain_len": 2807,
+      "meta_len": 49,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 311,
+      "slug": "blood-sugar-spike-prevention-type2-gestational-diabetes-meal",
+      "title": "혈당 스파이크 막는 식사법 — 2형 당뇨·임신성 당뇨 식단 차이",
+      "category": "diabetes",
+      "plain_len": 2660,
+      "meta_len": 52,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 312,
+      "slug": "fortimel-compact-protein-flavors-how-to-drink-guide",
+      "title": "포티멜 컴팩트 프로틴 — 맛 종류와 맛있게 마시는 법",
+      "category": "cancer-treatment-care",
+      "plain_len": 3024,
+      "meta_len": 64,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 313,
+      "slug": "nutricia-brand-history-medical-nutrition-portfolio",
+      "title": "뉴트리시아 브랜드 이야기 — 125년 의료영양 전문성과 제품군 정리",
+      "category": "research",
+      "plain_len": 3371,
+      "meta_len": 60,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 314,
+      "slug": "meulssori-patient-meal-delivery-service-introduction",
+      "title": "맛있으리 환자식 정기배송 — 메뉴 구성과 이용 가이드",
+      "category": "cancer-treatment-care",
+      "plain_len": 2590,
+      "meta_len": 65,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 315,
+      "slug": "fortimel-meulssori-recovery-meal-protein-combo-guide",
+      "title": "회복기 환자 식단 — 포티멜과 환자식 반찬을 함께 활용하는 법",
+      "category": "cancer-treatment-care",
+      "plain_len": 2686,
+      "meta_len": 60,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 316,
+      "slug": "what-is-fortimel-medical-nutrition-guide",
+      "title": "포티멜이란? — 환자용 영양보충음료를 처음 찾는 분을 위한 안내",
+      "category": "research",
+      "plain_len": 2679,
+      "meta_len": 52,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 317,
+      "slug": "fortimel-product-types-comparison-guide",
+      "title": "포티멜 종류 비교 — 컴팩트 프로틴부터 제품군 선택 기준까지",
+      "category": "research",
+      "plain_len": 2670,
+      "meta_len": 55,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 318,
+      "slug": "fortimel-buying-checklist-medical-food-guide",
+      "title": "포티멜 구매 전 확인사항 — 정식 유통·영양표시·보관 체크리스트",
+      "category": "disease-health-info",
+      "plain_len": 2655,
+      "meta_len": 53,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 319,
+      "slug": "what-is-nutricia-danone-medical-nutrition-guide",
+      "title": "뉴트리시아란? — 다논 의료영양 브랜드를 처음 검색하는 분을 위한 정리",
+      "category": "research",
+      "plain_len": 2451,
+      "meta_len": 53,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 320,
+      "slug": "nutricia-product-portfolio-fortimel-aptamil-neocate-guide",
+      "title": "뉴트리시아 제품군 정리 — 포티멜·압타밀·네오케이트는 어떻게 다른가",
+      "category": "research",
+      "plain_len": 2368,
+      "meta_len": 50,
+      "markers": [
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 321,
+      "slug": "cancer-patient-meal-delivery-checklist-before-order",
+      "title": "암환자식단배달 주문 전 체크리스트: 단백질·저염·위생 기준",
+      "category": "cancer",
+      "plain_len": 1730,
+      "meta_len": 52,
+      "markers": [
+        "short",
+        "weak_refs"
+      ]
+    },
+    {
+      "id": 322,
+      "slug": "cancer-patient-meal-delivery-appetite-loss-menu-guide",
+      "title": "항암 중 식욕부진 식단배달: 못 드시는 날 메뉴 조정법",
+      "category": "cancer",
+      "plain_len": 1396,
+      "meta_len": 51,
+      "markers": [
+        "short",
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 323,
+      "slug": "caregiver-cancer-meal-delivery-prep-record-guide",
+      "title": "암환자 보호자 식단 기록법: 식사량·못 먹는 음식·문의 메모",
+      "category": "cancer",
+      "plain_len": 1591,
+      "meta_len": 52,
+      "markers": [
+        "short",
+        "weak_refs"
+      ]
+    },
+    {
+      "id": 324,
+      "slug": "cancer-meal-delivery-bento-side-dish-ons-combo",
+      "title": "암환자 도시락·반찬·영양보충음료: 함께 쓰는 기준",
+      "category": "cancer",
+      "plain_len": 1316,
+      "meta_len": 49,
+      "markers": [
+        "short",
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 325,
+      "slug": "diabetes-patient-meal-delivery-checklist-carb-protein-fiber",
+      "title": "당뇨환자식단배달 선택 기준: 탄수화물·단백질·섬유질",
+      "category": "diabetes",
+      "plain_len": 1247,
+      "meta_len": 50,
+      "markers": [
+        "short",
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 326,
+      "slug": "diabetes-meal-delivery-blood-sugar-spike-lunchbox-guide",
+      "title": "혈당 스파이크 줄이는 도시락 구성: 밥 양보다 순서와 조합",
+      "category": "diabetes",
+      "plain_len": 1266,
+      "meta_len": 54,
+      "markers": [
+        "short",
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 327,
+      "slug": "diabetes-side-dish-delivery-low-sugar-sodium-guide",
+      "title": "당뇨 반찬 정기배송: 저당만 보고 고르면 안 되는 이유",
+      "category": "diabetes",
+      "plain_len": 1289,
+      "meta_len": 52,
+      "markers": [
+        "short",
+        "weak_refs",
+        "weak_cta"
+      ]
+    },
+    {
+      "id": 328,
+      "slug": "diabetes-meal-delivery-hypertension-kidney-caution",
+      "title": "당뇨와 고혈압·신장질환이 함께 있을 때 식단배달 주의점",
+      "category": "diabetes",
+      "plain_len": 1325,
+      "meta_len": 53,
+      "markers": [
+        "short",
+        "weak_refs"
+      ]
+    },
+    {
+      "id": 345,
+      "slug": "slow-aging-sleep-routine-gamtae-theanine-magnesium",
+      "title": "저속노화 수면 루틴: 감태·테아닌·마그네슘보다 먼저 볼 것",
+      "category": "disease-health-info",
+      "plain_len": 1757,
+      "meta_len": 48,
+      "markers": [
+        "short"
+      ]
+    },
+    {
+      "id": 346,
+      "slug": "slow-aging-protein-sarcopenia-ons-meal-delivery",
+      "title": "저속노화 단백질 전략: 근감소증·ONS·환자식까지 연결하기",
+      "category": "disease-health-info",
+      "plain_len": 1703,
+      "meta_len": 52,
+      "markers": [
+        "short"
+      ]
+    },
+    {
+      "id": 347,
+      "slug": "slow-aging-gut-microbiome-polyphenol-fiber-guide",
+      "title": "저속노화 장건강: 식이섬유·폴리페놀·프로바이오틱스 순서",
+      "category": "disease-health-info",
+      "plain_len": 1780,
+      "meta_len": 49,
+      "markers": [
+        "short"
+      ]
+    },
+    {
+      "id": 352,
+      "slug": "sarcopenia-rehabilitation-protein-exercise-ons-guide",
+      "title": "근감소증 운동법: 단백질·ONS·환자식과 함께 보는 회복 루틴",
+      "category": "exercise-recovery",
+      "plain_len": 1736,
+      "meta_len": 54,
+      "markers": [
+        "short"
+      ]
+    },
+    {
+      "id": 354,
+      "slug": "cancer-care-hospital-seoul-regional-decision-guide",
+      "title": "암 병원 정보 찾기: 수도권 대형병원과 지역 암센터를 비교할 때",
+      "category": "hospital-info",
+      "plain_len": 1754,
+      "meta_len": 53,
+      "markers": [
+        "short"
+      ]
+    },
+    {
+      "id": 355,
+      "slug": "diabetes-education-hospital-nutrition-counseling-checklist",
+      "title": "당뇨 교육 병원 찾기: 영양상담·운동교육·합병증 검사를 확인하세요",
+      "category": "hospital-info",
+      "plain_len": 1758,
+      "meta_len": 54,
+      "markers": [
+        "short"
+      ]
+    }
+  ]
+}

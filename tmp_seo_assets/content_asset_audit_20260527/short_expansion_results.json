@@ -1,0 +1,78 @@
+{
+  "target_count": 12,
+  "updated": [
+    {
+      "id": 322,
+      "slug": "cancer-patient-meal-delivery-appetite-loss-menu-guide",
+      "http": 200,
+      "returned": 1
+    },
+    {
+      "id": 324,
+      "slug": "cancer-meal-delivery-bento-side-dish-ons-combo",
+      "http": 200,
+      "returned": 1
+    },
+    {
+      "id": 325,
+      "slug": "diabetes-patient-meal-delivery-checklist-carb-protein-fiber",
+      "http": 200,
+      "returned": 1
+    },
+    {
+      "id": 326,
+      "slug": "diabetes-meal-delivery-blood-sugar-spike-lunchbox-guide",
+      "http": 200,
+      "returned": 1
+    },
+    {
+      "id": 327,
+      "slug": "diabetes-side-dish-delivery-low-sugar-sodium-guide",
+      "http": 200,
+      "returned": 1
+    },
+    {
+      "id": 328,
+      "slug": "diabetes-meal-delivery-hypertension-kidney-caution",
+      "http": 200,
+      "returned": 1
+    },
+    {
+      "id": 345,
+      "slug": "slow-aging-sleep-routine-gamtae-theanine-magnesium",
+      "http": 200,
+      "returned": 1
+    },
+    {
+      "id": 346,
+      "slug": "slow-aging-protein-sarcopenia-ons-meal-delivery",
+      "http": 200,
+      "returned": 1
+    },
+    {
+      "id": 347,
+      "slug": "slow-aging-gut-microbiome-polyphenol-fiber-guide",
+      "http": 200,
+      "returned": 1
+    },
+    {
+      "id": 352,
+      "slug": "sarcopenia-rehabilitation-protein-exercise-ons-guide",
+      "http": 200,
+      "returned": 1
+    },
+    {
+      "id": 354,
+      "slug": "cancer-care-hospital-seoul-regional-decision-guide",
+      "http": 200,
+      "returned": 1
+    },
+    {
+      "id": 355,
+      "slug": "diabetes-education-hospital-nutrition-counseling-checklist",
+      "http": 200,
+      "returned": 1
+    }
+  ],
+  "errors": []
+}
