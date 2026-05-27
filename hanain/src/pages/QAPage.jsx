@@ -85,7 +85,7 @@ function ContactCard() {
   )
 }
 
-function QACard({ qa, isOpen, onToggle, searchQuery, categories }) {
+function QACard({ qa, itemKey, isOpen, onToggle, searchQuery, categories }) {
   const partner = usePartner()
   const [liked, setLiked] = useState(false)
   const [likeCount, setLikeCount] = useState(qa.likes || 0)
@@ -122,7 +122,7 @@ function QACard({ qa, isOpen, onToggle, searchQuery, categories }) {
 
   return (
     <div
-      data-id={qa.id}
+      data-id={itemKey || qa.id}
       className={`bg-white rounded-lg border transition-colors overflow-hidden ${isOpen ? 'border-gray-900' : 'border-gray-200 hover:border-gray-400'}`}
     >
       <button onClick={onToggle} className="w-full text-left p-5 md:p-6">
@@ -584,16 +584,20 @@ export default function QAPage() {
                 </button>
               </div>
             ) : (
-              questions.map(qa => (
-                <QACard
-                  key={qa.id}
-                  qa={qa}
-                  isOpen={openId === qa.id}
-                  onToggle={() => setOpenId(openId === qa.id ? null : qa.id)}
-                  searchQuery={searchQuery}
-                  categories={categories}
-                />
-              ))
+              questions.map((qa, index) => {
+                const itemKey = `${qa.id || 'qa'}-${qaSlug(qa.question) || index}`
+                return (
+                  <QACard
+                    key={itemKey}
+                    itemKey={itemKey}
+                    qa={qa}
+                    isOpen={openId === itemKey || openId === qa.id}
+                    onToggle={() => setOpenId((openId === itemKey || openId === qa.id) ? null : itemKey)}
+                    searchQuery={searchQuery}
+                    categories={categories}
+                  />
+                )
+              })
             )}
 
             {/* Pagination — 에디토리얼 모노 */}
@@ -683,16 +687,18 @@ export default function QAPage() {
               </div>
               <h3 className="text-[15px] font-semibold text-gray-900 mb-4 tracking-tight">많이 읽은 아티클</h3>
               <ol className="space-y-3">
-                {popularList.map((qa, i) => (
-                  <li key={qa.id}>
+                {popularList.map((qa, i) => {
+                  const itemKey = `${qa.id || 'qa'}-${qaSlug(qa.question) || i}`
+                  return (
+                  <li key={itemKey}>
                     <button
                       onClick={() => {
                         const catId = qa.category || qa.category_id || 'all'
                         handleCategoryChange(catId)
                         setPage(1)
-                        setOpenId(qa.id)
+                        setOpenId(itemKey)
                         setTimeout(() => {
-                          const el = document.querySelector(`[data-id="${qa.id}"]`)
+                          const el = document.querySelector(`[data-id="${itemKey}"]`)
                           if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' })
                         }, 500)
                       }}
@@ -706,7 +712,8 @@ export default function QAPage() {
                       </span>
                     </button>
                   </li>
-                ))}
+                  )
+                })}
               </ol>
             </div>
 

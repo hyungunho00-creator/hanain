@@ -557,8 +557,8 @@ export default function QuestionDetailPage() {
                       {cat?.name} 관련 질문
                     </h3>
                     <div className="space-y-1 divide-y divide-gray-50">
-                      {items.map(q => (
-                        <RelatedCard key={q.id || q.slug} q={q} />
+                      {items.map((q, i) => (
+                        <RelatedCard key={`${q.id || 'qa'}-${q.slug || q.title || q.question || i}`} q={q} />
                       ))}
                     </div>
                     {cat && (

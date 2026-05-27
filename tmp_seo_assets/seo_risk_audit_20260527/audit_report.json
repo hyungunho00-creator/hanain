@@ -1,0 +1,79 @@
+{
+  "generatedAt": "2026-05-27T14:46:17.393Z",
+  "qa": {
+    "total": 1641,
+    "newHospital": 50,
+    "duplicateIds": [
+      {
+        "key": "mens-001",
+        "count": 2
+      },
+      {
+        "key": "mens-002",
+        "count": 2
+      },
+      {
+        "key": "mens-003",
+        "count": 2
+      },
+      {
+        "key": "mens-004",
+        "count": 2
+      },
+      {
+        "key": "mens-005",
+        "count": 2
+      },
+      {
+        "key": "mens-006",
+        "count": 2
+      },
+      {
+        "key": "mens-007",
+        "count": 2
+      },
+      {
+        "key": "mens-008",
+        "count": 2
+      },
+      {
+        "key": "mens-009",
+        "count": 2
+      },
+      {
+        "key": "mens-010",
+        "count": 2
+      }
+    ],
+    "duplicateQuestionSlugs": [],
+    "newHospitalMissingEeAt": [],
+    "newHospitalMissingTags": []
+  },
+  "insights": {
+    "totalFiles": 123,
+    "newHospitalFiles": 50,
+    "newHospitalMissingReferenceIds": [],
+    "newHospitalMissingFaqs": [],
+    "categoryRegistered": true
+  },
+  "indexAssets": {
+    "sitemapUrlCount": 2375,
+    "rssItemCount": 120,
+    "newQuestionUrlsInSitemap": 50,
+    "newInsightUrlsInSitemap": 50,
+    "tagIndexTerms": 1900,
+    "tagIndexEligibleTerms": 187
+  },
+  "structuredData": {
+    "productSchemaHits": []
+  },
+  "riskText": {
+    "infoRoomHits": [],
+    "fortimelHits": []
+  },
+  "status": {
+    "newHospitalAssetsHealthy": true,
+    "riskTextClean": true,
+    "productSchemaClean": true
+  }
+}

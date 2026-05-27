@@ -91,7 +91,7 @@ export default function RelatedQA({ blogTags = [], blogCategory = null, max = 3,
           const slug = qaSlug(q.question)
           const views = q.views || q.view_count || 0
           return (
-            <li key={q.id}>
+            <li key={`${q.id || 'qa'}-${slug}`}>
               <Link
                 to={withRef(`/q/${slug}`, partner)}
                 className="flex items-start justify-between gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 transition-colors group"

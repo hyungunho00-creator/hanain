@@ -1,0 +1,860 @@
+{
+  "generatedAt": "2026-05-27T14:36:32.236Z",
+  "postFiles": 50,
+  "changedPosts": 50,
+  "qaHospitalAnswersRewritten": 50,
+  "remainingReaderRiskTerms": {},
+  "postResults": [
+    {
+      "file": "74-local-internal-medicine-first-visit-supplement-memo.jsx",
+      "changed": true,
+      "beforeHits": {
+        "검색 의도": 1,
+        "병원 이름보다": 1,
+        "치료 목적 표현": 1,
+        "광고성 병원 추천": 1,
+        "맛있으리 식단 상담이나 플로로탄닌 문의": 1,
+        "병원정보 글의 CTA": 1,
+        "CTA는": 2,
+        "CTA로만": 1,
+        "기록 정리를 돕는 CTA": 1,
+        "제품 권유가 아니라 상담 준비의 다음 단계": 1
+      },
+      "afterHits": {}
+    },
+    {
+      "file": "75-health-checkup-abnormal-result-hospital-guide-vitamin-d.jsx",
+      "changed": true,
+      "beforeHits": {
+        "검색 의도": 1,
+        "병원 이름보다": 1,
+        "치료 목적 표현": 1,
+        "광고성 병원 추천": 1,
+        "맛있으리 식단 상담이나 플로로탄닌 문의": 1,
+        "병원정보 글의 CTA": 1,
+        "CTA는": 2,
+        "CTA로만": 1,
+        "기록 정리를 돕는 CTA": 1,
+        "제품 권유가 아니라 상담 준비의 다음 단계": 1
+      },
+      "afterHits": {}
+    },
+    {
+      "file": "76-diabetes-clinic-a1c-consult-berberine-caution.jsx",
+      "changed": true,
+      "beforeHits": {
+        "검색 의도": 1,
+        "병원 이름보다": 1,
+        "치료 목적 표현": 1,
+        "광고성 병원 추천": 1,
+        "맛있으리 식단 상담이나 플로로탄닌 문의": 1,
+        "병원정보 글의 CTA": 1,
+        "CTA는": 2,
+        "CTA로만": 1,
+        "기록 정리를 돕는 CTA": 1,
+        "제품 권유가 아니라 상담 준비의 다음 단계": 1
+      },
+      "afterHits": {}
+    },
+    {
+      "file": "77-hypertension-hospital-home-bp-magnesium-omega3.jsx",
+      "changed": true,
+      "beforeHits": {
+        "검색 의도": 1,
+        "병원 이름보다": 1,
+        "치료 목적 표현": 1,
+        "광고성 병원 추천": 1,
+        "맛있으리 식단 상담이나 플로로탄닌 문의": 1,
+        "병원정보 글의 CTA": 1,
+        "CTA는": 2,
+        "CTA로만": 1,
+        "기록 정리를 돕는 CTA": 1,
+        "제품 권유가 아니라 상담 준비의 다음 단계": 1
+      },
+      "afterHits": {}
+    },
+    {
+      "file": "78-dyslipidemia-clinic-omega3-coq10-statin-memo.jsx",
+      "changed": true,
+      "beforeHits": {
+        "검색 의도": 1,
+        "병원 이름보다": 1,
+        "치료 목적 표현": 1,
+        "광고성 병원 추천": 1,
+        "맛있으리 식단 상담이나 플로로탄닌 문의": 1,
+        "병원정보 글의 CTA": 1,
+        "CTA는": 2,
+        "CTA로만": 1,
+        "기록 정리를 돕는 CTA": 1,
+        "제품 권유가 아니라 상담 준비의 다음 단계": 1
+      },
+      "afterHits": {}
+    },
+    {
+      "file": "79-liver-enzyme-hospital-silymarin-supplement-disclosure.jsx",
+      "changed": true,
+      "beforeHits": {
+        "검색 의도": 1,
+        "병원 이름보다": 1,
+        "치료 목적 표현": 1,
+        "광고성 병원 추천": 1,
+        "맛있으리 식단 상담이나 플로로탄닌 문의": 1,
+        "병원정보 글의 CTA": 1,
+        "CTA는": 2,
+        "CTA로만": 1,
+        "기록 정리를 돕는 CTA": 1,
+        "제품 권유가 아니라 상담 준비의 다음 단계": 1
+      },
+      "afterHits": {}
+    },
+    {
+      "file": "80-kidney-function-egfr-protein-creatine-hospital.jsx",
+      "changed": true,
+      "beforeHits": {
+        "검색 의도": 1,
+        "병원 이름보다": 1,
+        "치료 목적 표현": 1,
+        "광고성 병원 추천": 1,
+        "맛있으리 식단 상담이나 플로로탄닌 문의": 1,
+        "병원정보 글의 CTA": 1,
+        "CTA는": 2,
+        "CTA로만": 1,
+        "기록 정리를 돕는 CTA": 1,
+        "제품 권유가 아니라 상담 준비의 다음 단계": 1
+      },
+      "afterHits": {}
+    },
+    {
+      "file": "81-thyroid-clinic-iodine-selenium-supplement-memo.jsx",
+      "changed": true,
+      "beforeHits": {
+        "검색 의도": 1,
+        "병원 이름보다": 1,
+        "치료 목적 표현": 1,
+        "광고성 병원 추천": 1,
+        "맛있으리 식단 상담이나 플로로탄닌 문의": 1,
+        "병원정보 글의 CTA": 1,
+        "CTA는": 2,
+        "CTA로만": 1,
+        "기록 정리를 돕는 CTA": 1,
+        "제품 권유가 아니라 상담 준비의 다음 단계": 1
+      },
+      "afterHits": {}
+    },
+    {
+      "file": "82-anemia-clinic-iron-lactoferrin-ferritin-guide.jsx",
+      "changed": true,
+      "beforeHits": {
+        "검색 의도": 1,
+        "병원 이름보다": 1,
+        "치료 목적 표현": 1,
+        "광고성 병원 추천": 1,
+        "맛있으리 식단 상담이나 플로로탄닌 문의": 1,
+        "병원정보 글의 CTA": 1,
+        "CTA는": 2,
+        "CTA로만": 1,
+        "기록 정리를 돕는 CTA": 1,
+        "제품 권유가 아니라 상담 준비의 다음 단계": 1
+      },
+      "afterHits": {}
+    },
+    {
+      "file": "83-gastroenterology-probiotics-stomach-bowel-symptom-memo.jsx",
+      "changed": true,
+      "beforeHits": {
+        "검색 의도": 1,
+        "병원 이름보다": 1,
+        "치료 목적 표현": 1,
+        "광고성 병원 추천": 1,
+        "맛있으리 식단 상담이나 플로로탄닌 문의": 1,
+        "병원정보 글의 CTA": 1,
+        "CTA는": 2,
+        "CTA로만": 1,
+        "기록 정리를 돕는 CTA": 1,
+        "제품 권유가 아니라 상담 준비의 다음 단계": 1
+      },
+      "afterHits": {}
+    },
+    {
+      "file": "84-reflux-clinic-alginate-caffeine-meal-timing.jsx",
+      "changed": true,
+      "beforeHits": {
+        "검색 의도": 1,
+        "병원 이름보다": 1,
+        "치료 목적 표현": 1,
+        "광고성 병원 추천": 1,
+        "맛있으리 식단 상담이나 플로로탄닌 문의": 1,
+        "병원정보 글의 CTA": 1,
+        "CTA는": 2,
+        "CTA로만": 1,
+        "기록 정리를 돕는 CTA": 1,
+        "제품 권유가 아니라 상담 준비의 다음 단계": 1
+      },
+      "afterHits": {}
+    },
+    {
+      "file": "85-colonoscopy-hospital-fiber-psyllium-prep-checklist.jsx",
+      "changed": true,
+      "beforeHits": {
+        "검색 의도": 1,
+        "병원 이름보다": 1,
+        "치료 목적 표현": 1,
+        "광고성 병원 추천": 1,
+        "맛있으리 식단 상담이나 플로로탄닌 문의": 1,
+        "병원정보 글의 CTA": 1,
+        "CTA는": 2,
+        "CTA로만": 1,
+        "기록 정리를 돕는 CTA": 1,
+        "제품 권유가 아니라 상담 준비의 다음 단계": 1
+      },
+      "afterHits": {}
+    },
+    {
+      "file": "86-gallbladder-pancreas-pain-hospital-supplement-check.jsx",
+      "changed": true,
+      "beforeHits": {
+        "검색 의도": 1,
+        "병원 이름보다": 1,
+        "치료 목적 표현": 1,
+        "광고성 병원 추천": 1,
+        "맛있으리 식단 상담이나 플로로탄닌 문의": 1,
+        "병원정보 글의 CTA": 1,
+        "CTA는": 2,
+        "CTA로만": 1,
+        "기록 정리를 돕는 CTA": 1,
+        "제품 권유가 아니라 상담 준비의 다음 단계": 1
+      },
+      "afterHits": {}
+    },
+    {
+      "file": "87-cancer-treatment-hospital-nutrition-protein-leucine.jsx",
+      "changed": true,
+      "beforeHits": {
+        "검색 의도": 1,
+        "병원 이름보다": 1,
+        "치료 목적 표현": 1,
+        "광고성 병원 추천": 1,
+        "맛있으리 식단 상담이나 플로로탄닌 문의": 1,
+        "병원정보 글의 CTA": 1,
+        "CTA는": 2,
+        "CTA로만": 1,
+        "기록 정리를 돕는 CTA": 1,
+        "제품 권유가 아니라 상담 준비의 다음 단계": 1
+      },
+      "afterHits": {}
+    },
+    {
+      "file": "88-cancer-rehab-hospital-vitamin-d-omega3-checklist.jsx",
+      "changed": true,
+      "beforeHits": {
+        "검색 의도": 1,
+        "검색자": 2,
+        "병원 이름보다": 1,
+        "치료 목적 표현": 1,
+        "광고성 병원 추천": 1,
+        "맛있으리 식단 상담이나 플로로탄닌 문의": 1,
+        "병원정보 글의 CTA": 1,
+        "CTA는": 2,
+        "CTA로만": 1,
+        "기록 정리를 돕는 CTA": 1,
+        "제품 권유가 아니라 상담 준비의 다음 단계": 1
+      },
+      "afterHits": {}
+    },
+    {
+      "file": "89-chemotherapy-supplement-disclosure-curcumin-quercetin.jsx",
+      "changed": true,
+      "beforeHits": {
+        "검색 의도": 1,
+        "병원 이름보다": 1,
+        "치료 목적 표현": 1,
+        "광고성 병원 추천": 1,
+        "맛있으리 식단 상담이나 플로로탄닌 문의": 1,
+        "병원정보 글의 CTA": 1,
+        "CTA는": 2,
+        "CTA로만": 1,
+        "기록 정리를 돕는 CTA": 1,
+        "제품 권유가 아니라 상담 준비의 다음 단계": 1
+      },
+      "afterHits": {}
+    },
+    {
+      "file": "90-radiation-therapy-nutrition-oral-care-hospital.jsx",
+      "changed": true,
+      "beforeHits": {
+        "검색 의도": 1,
+        "병원 이름보다": 1,
+        "치료 목적 표현": 1,
+        "광고성 병원 추천": 1,
+        "맛있으리 식단 상담이나 플로로탄닌 문의": 1,
+        "병원정보 글의 CTA": 1,
+        "CTA는": 2,
+        "CTA로만": 1,
+        "기록 정리를 돕는 CTA": 1,
+        "제품 권유가 아니라 상담 준비의 다음 단계": 1
+      },
+      "afterHits": {}
+    },
+    {
+      "file": "91-palliative-care-pain-clinic-nutrition-supplement.jsx",
+      "changed": true,
+      "beforeHits": {
+        "검색 의도": 1,
+        "병원 이름보다": 1,
+        "치료 목적 표현": 1,
+        "광고성 병원 추천": 1,
+        "맛있으리 식단 상담이나 플로로탄닌 문의": 1,
+        "병원정보 글의 CTA": 1,
+        "CTA는": 2,
+        "CTA로만": 1,
+        "기록 정리를 돕는 CTA": 1,
+        "제품 권유가 아니라 상담 준비의 다음 단계": 1
+      },
+      "afterHits": {}
+    },
+    {
+      "file": "92-sarcopenia-rehab-hospital-protein-vitamin-d.jsx",
+      "changed": true,
+      "beforeHits": {
+        "검색 의도": 1,
+        "병원 이름보다": 1,
+        "치료 목적 표현": 1,
+        "광고성 병원 추천": 1,
+        "맛있으리 식단 상담이나 플로로탄닌 문의": 1,
+        "병원정보 글의 CTA": 1,
+        "CTA는": 2,
+        "CTA로만": 1,
+        "기록 정리를 돕는 CTA": 1,
+        "제품 권유가 아니라 상담 준비의 다음 단계": 1
+      },
+      "afterHits": {}
+    },
+    {
+      "file": "93-knee-arthritis-orthopedics-msm-collagen-guide.jsx",
+      "changed": true,
+      "beforeHits": {
+        "검색 의도": 1,
+        "병원 이름보다": 1,
+        "치료 목적 표현": 1,
+        "광고성 병원 추천": 1,
+        "맛있으리 식단 상담이나 플로로탄닌 문의": 1,
+        "병원정보 글의 CTA": 1,
+        "CTA는": 2,
+        "CTA로만": 1,
+        "기록 정리를 돕는 CTA": 1,
+        "제품 권유가 아니라 상담 준비의 다음 단계": 1
+      },
+      "afterHits": {}
+    },
+    {
+      "file": "94-osteoporosis-clinic-vitamin-d-k2-calcium-check.jsx",
+      "changed": true,
+      "beforeHits": {
+        "검색 의도": 1,
+        "병원 이름보다": 1,
+        "치료 목적 표현": 1,
+        "광고성 병원 추천": 1,
+        "맛있으리 식단 상담이나 플로로탄닌 문의": 1,
+        "병원정보 글의 CTA": 1,
+        "CTA는": 2,
+        "CTA로만": 1,
+        "기록 정리를 돕는 CTA": 1,
+        "제품 권유가 아니라 상담 준비의 다음 단계": 1
+      },
+      "afterHits": {}
+    },
+    {
+      "file": "95-back-pain-rehab-hospital-magnesium-redflags.jsx",
+      "changed": true,
+      "beforeHits": {
+        "검색 의도": 1,
+        "병원 이름보다": 1,
+        "치료 목적 표현": 1,
+        "광고성 병원 추천": 1,
+        "맛있으리 식단 상담이나 플로로탄닌 문의": 1,
+        "병원정보 글의 CTA": 1,
+        "CTA는": 2,
+        "CTA로만": 1,
+        "기록 정리를 돕는 CTA": 1,
+        "제품 권유가 아니라 상담 준비의 다음 단계": 1
+      },
+      "afterHits": {}
+    },
+    {
+      "file": "96-stroke-rehab-hospital-omega3-protein-caregiver.jsx",
+      "changed": true,
+      "beforeHits": {
+        "검색 의도": 1,
+        "병원 이름보다": 1,
+        "치료 목적 표현": 1,
+        "광고성 병원 추천": 1,
+        "맛있으리 식단 상담이나 플로로탄닌 문의": 1,
+        "병원정보 글의 CTA": 1,
+        "CTA는": 2,
+        "CTA로만": 1,
+        "기록 정리를 돕는 CTA": 1,
+        "제품 권유가 아니라 상담 준비의 다음 단계": 1
+      },
+      "afterHits": {}
+    },
+    {
+      "file": "97-memory-clinic-pqq-omega3-medication-review.jsx",
+      "changed": true,
+      "beforeHits": {
+        "검색 의도": 1,
+        "병원 이름보다": 1,
+        "치료 목적 표현": 1,
+        "광고성 병원 추천": 1,
+        "맛있으리 식단 상담이나 플로로탄닌 문의": 1,
+        "병원정보 글의 CTA": 1,
+        "CTA는": 2,
+        "CTA로만": 1,
+        "기록 정리를 돕는 CTA": 1,
+        "제품 권유가 아니라 상담 준비의 다음 단계": 1
+      },
+      "afterHits": {}
+    },
+    {
+      "file": "98-sleep-clinic-theanine-magnesium-gamtae-check.jsx",
+      "changed": true,
+      "beforeHits": {
+        "검색 의도": 1,
+        "병원 이름보다": 1,
+        "치료 목적 표현": 1,
+        "광고성 병원 추천": 1,
+        "맛있으리 식단 상담이나 플로로탄닌 문의": 1,
+        "병원정보 글의 CTA": 1,
+        "CTA는": 2,
+        "CTA로만": 1,
+        "기록 정리를 돕는 CTA": 1,
+        "제품 권유가 아니라 상담 준비의 다음 단계": 1
+      },
+      "afterHits": {}
+    },
+    {
+      "file": "99-anxiety-depression-clinic-omega3-theanine-caution.jsx",
+      "changed": true,
+      "beforeHits": {
+        "검색 의도": 1,
+        "병원 이름보다": 1,
+        "치료 목적 표현": 1,
+        "광고성 병원 추천": 1,
+        "맛있으리 식단 상담이나 플로로탄닌 문의": 1,
+        "병원정보 글의 CTA": 1,
+        "CTA는": 2,
+        "CTA로만": 1,
+        "기록 정리를 돕는 CTA": 1,
+        "제품 권유가 아니라 상담 준비의 다음 단계": 1
+      },
+      "afterHits": {}
+    },
+    {
+      "file": "100-allergic-rhinitis-ent-quercetin-probiotics.jsx",
+      "changed": true,
+      "beforeHits": {
+        "검색 의도": 1,
+        "병원 이름보다": 1,
+        "치료 목적 표현": 1,
+        "광고성 병원 추천": 1,
+        "맛있으리 식단 상담이나 플로로탄닌 문의": 1,
+        "병원정보 글의 CTA": 1,
+        "CTA는": 2,
+        "CTA로만": 1,
+        "기록 정리를 돕는 CTA": 1,
+        "제품 권유가 아니라 상담 준비의 다음 단계": 1
+      },
+      "afterHits": {}
+    },
+    {
+      "file": "101-asthma-pulmonology-vitamin-d-omega3-check.jsx",
+      "changed": true,
+      "beforeHits": {
+        "검색 의도": 1,
+        "병원 이름보다": 1,
+        "치료 목적 표현": 1,
+        "광고성 병원 추천": 1,
+        "맛있으리 식단 상담이나 플로로탄닌 문의": 1,
+        "병원정보 글의 CTA": 1,
+        "CTA는": 2,
+        "CTA로만": 1,
+        "기록 정리를 돕는 CTA": 1,
+        "제품 권유가 아니라 상담 준비의 다음 단계": 1
+      },
+      "afterHits": {}
+    },
+    {
+      "file": "102-chronic-cough-hospital-reflux-allergy-supplement.jsx",
+      "changed": true,
+      "beforeHits": {
+        "검색 의도": 1,
+        "병원 이름보다": 1,
+        "치료 목적 표현": 1,
+        "광고성 병원 추천": 1,
+        "맛있으리 식단 상담이나 플로로탄닌 문의": 1,
+        "병원정보 글의 CTA": 1,
+        "CTA는": 2,
+        "CTA로만": 1,
+        "기록 정리를 돕는 CTA": 1,
+        "제품 권유가 아니라 상담 준비의 다음 단계": 1
+      },
+      "afterHits": {}
+    },
+    {
+      "file": "103-dermatology-collagen-astaxanthin-skin-check.jsx",
+      "changed": true,
+      "beforeHits": {
+        "검색 의도": 1,
+        "병원 이름보다": 1,
+        "치료 목적 표현": 1,
+        "광고성 병원 추천": 1,
+        "맛있으리 식단 상담이나 플로로탄닌 문의": 1,
+        "병원정보 글의 CTA": 1,
+        "CTA는": 2,
+        "CTA로만": 1,
+        "기록 정리를 돕는 CTA": 1,
+        "제품 권유가 아니라 상담 준비의 다음 단계": 1
+      },
+      "afterHits": {}
+    },
+    {
+      "file": "104-hair-loss-clinic-iron-vitamin-d-zinc-check.jsx",
+      "changed": true,
+      "beforeHits": {
+        "검색 의도": 1,
+        "병원 이름보다": 1,
+        "치료 목적 표현": 1,
+        "광고성 병원 추천": 1,
+        "맛있으리 식단 상담이나 플로로탄닌 문의": 1,
+        "병원정보 글의 CTA": 1,
+        "CTA는": 2,
+        "CTA로만": 1,
+        "기록 정리를 돕는 CTA": 1,
+        "제품 권유가 아니라 상담 준비의 다음 단계": 1
+      },
+      "afterHits": {}
+    },
+    {
+      "file": "105-menopause-clinic-vitamin-d-omega3-meal-routine.jsx",
+      "changed": true,
+      "beforeHits": {
+        "검색 의도": 1,
+        "병원 이름보다": 1,
+        "치료 목적 표현": 1,
+        "광고성 병원 추천": 1,
+        "맛있으리 식단 상담이나 플로로탄닌 문의": 1,
+        "병원정보 글의 CTA": 1,
+        "CTA는": 2,
+        "CTA로만": 1,
+        "기록 정리를 돕는 CTA": 1,
+        "제품 권유가 아니라 상담 준비의 다음 단계": 1
+      },
+      "afterHits": {}
+    },
+    {
+      "file": "106-pregnancy-clinic-folate-iron-omega3-safety.jsx",
+      "changed": true,
+      "beforeHits": {
+        "검색 의도": 1,
+        "병원 이름보다": 1,
+        "치료 목적 표현": 1,
+        "광고성 병원 추천": 1,
+        "맛있으리 식단 상담이나 플로로탄닌 문의": 1,
+        "병원정보 글의 CTA": 1,
+        "CTA는": 2,
+        "CTA로만": 1,
+        "기록 정리를 돕는 CTA": 1,
+        "제품 권유가 아니라 상담 준비의 다음 단계": 1
+      },
+      "afterHits": {}
+    },
+    {
+      "file": "107-prostate-urology-saw-palmetto-zinc-memo.jsx",
+      "changed": true,
+      "beforeHits": {
+        "검색 의도": 1,
+        "병원 이름보다": 1,
+        "치료 목적 표현": 1,
+        "광고성 병원 추천": 1,
+        "맛있으리 식단 상담이나 플로로탄닌 문의": 1,
+        "병원정보 글의 CTA": 1,
+        "CTA는": 2,
+        "CTA로만": 1,
+        "기록 정리를 돕는 CTA": 1,
+        "제품 권유가 아니라 상담 준비의 다음 단계": 1
+      },
+      "afterHits": {}
+    },
+    {
+      "file": "108-urinary-frequency-urology-caffeine-water-check.jsx",
+      "changed": true,
+      "beforeHits": {
+        "검색 의도": 1,
+        "병원 이름보다": 1,
+        "치료 목적 표현": 1,
+        "광고성 병원 추천": 1,
+        "맛있으리 식단 상담이나 플로로탄닌 문의": 1,
+        "병원정보 글의 CTA": 1,
+        "CTA는": 2,
+        "CTA로만": 1,
+        "기록 정리를 돕는 CTA": 1,
+        "제품 권유가 아니라 상담 준비의 다음 단계": 1
+      },
+      "afterHits": {}
+    },
+    {
+      "file": "109-obesity-clinic-glp1-natural-adjuncts-safety.jsx",
+      "changed": true,
+      "beforeHits": {
+        "검색 의도": 1,
+        "병원 이름보다": 1,
+        "치료 목적 표현": 1,
+        "광고성 병원 추천": 1,
+        "맛있으리 식단 상담이나 플로로탄닌 문의": 1,
+        "병원정보 글의 CTA": 1,
+        "CTA는": 2,
+        "CTA로만": 1,
+        "기록 정리를 돕는 CTA": 1,
+        "제품 권유가 아니라 상담 준비의 다음 단계": 1
+      },
+      "afterHits": {}
+    },
+    {
+      "file": "110-gout-rheumatology-vitamin-c-diet-supplement.jsx",
+      "changed": true,
+      "beforeHits": {
+        "검색 의도": 1,
+        "병원 이름보다": 1,
+        "치료 목적 표현": 1,
+        "광고성 병원 추천": 1,
+        "맛있으리 식단 상담이나 플로로탄닌 문의": 1,
+        "병원정보 글의 CTA": 1,
+        "CTA는": 2,
+        "CTA로만": 1,
+        "기록 정리를 돕는 CTA": 1,
+        "제품 권유가 아니라 상담 준비의 다음 단계": 1
+      },
+      "afterHits": {}
+    },
+    {
+      "file": "111-autoimmune-rheumatology-omega3-vitamin-d-memo.jsx",
+      "changed": true,
+      "beforeHits": {
+        "검색 의도": 1,
+        "병원 이름보다": 1,
+        "치료 목적 표현": 1,
+        "광고성 병원 추천": 1,
+        "맛있으리 식단 상담이나 플로로탄닌 문의": 1,
+        "병원정보 글의 CTA": 1,
+        "CTA는": 2,
+        "CTA로만": 1,
+        "기록 정리를 돕는 CTA": 1,
+        "제품 권유가 아니라 상담 준비의 다음 단계": 1
+      },
+      "afterHits": {}
+    },
+    {
+      "file": "112-dental-oral-dry-mouth-nutrition-hospital.jsx",
+      "changed": true,
+      "beforeHits": {
+        "검색 의도": 1,
+        "병원 이름보다": 1,
+        "치료 목적 표현": 1,
+        "광고성 병원 추천": 1,
+        "맛있으리 식단 상담이나 플로로탄닌 문의": 1,
+        "병원정보 글의 CTA": 1,
+        "CTA는": 2,
+        "CTA로만": 1,
+        "기록 정리를 돕는 CTA": 1,
+        "제품 권유가 아니라 상담 준비의 다음 단계": 1
+      },
+      "afterHits": {}
+    },
+    {
+      "file": "113-eye-clinic-lutein-astaxanthin-amd-check.jsx",
+      "changed": true,
+      "beforeHits": {
+        "검색 의도": 1,
+        "병원 이름보다": 1,
+        "치료 목적 표현": 1,
+        "광고성 병원 추천": 1,
+        "맛있으리 식단 상담이나 플로로탄닌 문의": 1,
+        "병원정보 글의 CTA": 1,
+        "CTA는": 2,
+        "CTA로만": 1,
+        "기록 정리를 돕는 CTA": 1,
+        "제품 권유가 아니라 상담 준비의 다음 단계": 1
+      },
+      "afterHits": {}
+    },
+    {
+      "file": "114-dizziness-ent-neurology-magnesium-check.jsx",
+      "changed": true,
+      "beforeHits": {
+        "검색 의도": 1,
+        "병원 이름보다": 1,
+        "치료 목적 표현": 1,
+        "광고성 병원 추천": 1,
+        "맛있으리 식단 상담이나 플로로탄닌 문의": 1,
+        "병원정보 글의 CTA": 1,
+        "CTA는": 2,
+        "CTA로만": 1,
+        "기록 정리를 돕는 CTA": 1,
+        "제품 권유가 아니라 상담 준비의 다음 단계": 1
+      },
+      "afterHits": {}
+    },
+    {
+      "file": "115-vaccine-travel-clinic-immune-supplement-check.jsx",
+      "changed": true,
+      "beforeHits": {
+        "검색 의도": 1,
+        "병원 이름보다": 1,
+        "치료 목적 표현": 1,
+        "광고성 병원 추천": 1,
+        "맛있으리 식단 상담이나 플로로탄닌 문의": 1,
+        "병원정보 글의 CTA": 1,
+        "CTA는": 2,
+        "CTA로만": 1,
+        "기록 정리를 돕는 CTA": 1,
+        "제품 권유가 아니라 상담 준비의 다음 단계": 1
+      },
+      "afterHits": {}
+    },
+    {
+      "file": "116-emergency-red-flags-chest-stroke-hospital.jsx",
+      "changed": true,
+      "beforeHits": {
+        "검색 의도": 1,
+        "병원 이름보다": 1,
+        "치료 목적 표현": 1,
+        "광고성 병원 추천": 1,
+        "맛있으리 식단 상담이나 플로로탄닌 문의": 1,
+        "병원정보 글의 CTA": 1,
+        "CTA는": 2,
+        "CTA로만": 1,
+        "기록 정리를 돕는 CTA": 1,
+        "제품 권유가 아니라 상담 준비의 다음 단계": 1
+      },
+      "afterHits": {}
+    },
+    {
+      "file": "117-fever-infection-clinic-vitamin-c-zinc-caution.jsx",
+      "changed": true,
+      "beforeHits": {
+        "검색 의도": 1,
+        "병원 이름보다": 1,
+        "치료 목적 표현": 1,
+        "광고성 병원 추천": 1,
+        "맛있으리 식단 상담이나 플로로탄닌 문의": 1,
+        "병원정보 글의 CTA": 1,
+        "CTA는": 2,
+        "CTA로만": 1,
+        "기록 정리를 돕는 CTA": 1,
+        "제품 권유가 아니라 상담 준비의 다음 단계": 1
+      },
+      "afterHits": {}
+    },
+    {
+      "file": "118-polypharmacy-hospital-supplement-list-pharmacist.jsx",
+      "changed": true,
+      "beforeHits": {
+        "검색 의도": 1,
+        "병원 이름보다": 1,
+        "치료 목적 표현": 1,
+        "광고성 병원 추천": 1,
+        "맛있으리 식단 상담이나 플로로탄닌 문의": 1,
+        "병원정보 글의 CTA": 1,
+        "CTA는": 2,
+        "CTA로만": 1,
+        "기록 정리를 돕는 CTA": 1,
+        "제품 권유가 아니라 상담 준비의 다음 단계": 1
+      },
+      "afterHits": {}
+    },
+    {
+      "file": "119-anticoagulant-clinic-omega3-curcumin-supplement.jsx",
+      "changed": true,
+      "beforeHits": {
+        "검색 의도": 1,
+        "병원 이름보다": 1,
+        "치료 목적 표현": 1,
+        "광고성 병원 추천": 1,
+        "맛있으리 식단 상담이나 플로로탄닌 문의": 1,
+        "병원정보 글의 CTA": 1,
+        "CTA는": 2,
+        "CTA로만": 1,
+        "기록 정리를 돕는 CTA": 1,
+        "제품 권유가 아니라 상담 준비의 다음 단계": 1
+      },
+      "afterHits": {}
+    },
+    {
+      "file": "120-surgery-preop-supplement-stop-checklist.jsx",
+      "changed": true,
+      "beforeHits": {
+        "검색 의도": 1,
+        "병원 이름보다": 1,
+        "치료 목적 표현": 1,
+        "광고성 병원 추천": 1,
+        "맛있으리 식단 상담이나 플로로탄닌 문의": 1,
+        "병원정보 글의 CTA": 1,
+        "CTA는": 2,
+        "CTA로만": 1,
+        "기록 정리를 돕는 CTA": 1,
+        "제품 권유가 아니라 상담 준비의 다음 단계": 1
+      },
+      "afterHits": {}
+    },
+    {
+      "file": "121-geriatric-hospital-frailty-protein-vitamin-d.jsx",
+      "changed": true,
+      "beforeHits": {
+        "검색 의도": 1,
+        "병원 이름보다": 1,
+        "치료 목적 표현": 1,
+        "광고성 병원 추천": 1,
+        "맛있으리 식단 상담이나 플로로탄닌 문의": 1,
+        "병원정보 글의 CTA": 1,
+        "CTA는": 2,
+        "CTA로만": 1,
+        "기록 정리를 돕는 CTA": 1,
+        "제품 권유가 아니라 상담 준비의 다음 단계": 1
+      },
+      "afterHits": {}
+    },
+    {
+      "file": "122-caregiver-hospital-memo-meulssori-patient-meal.jsx",
+      "changed": true,
+      "beforeHits": {
+        "검색 의도": 1,
+        "병원 이름보다": 1,
+        "치료 목적 표현": 1,
+        "광고성 병원 추천": 1,
+        "맛있으리 식단 상담이나 플로로탄닌 문의": 1,
+        "병원정보 글의 CTA": 1,
+        "CTA는": 2,
+        "CTA로만": 1,
+        "기록 정리를 돕는 CTA": 1,
+        "제품 권유가 아니라 상담 준비의 다음 단계": 1
+      },
+      "afterHits": {}
+    },
+    {
+      "file": "123-local-hospital-search-map-review-checklist-ingredient.jsx",
+      "changed": true,
+      "beforeHits": {
+        "검색 의도": 1,
+        "병원 이름보다": 1,
+        "치료 목적 표현": 1,
+        "광고성 병원 추천": 1,
+        "맛있으리 식단 상담이나 플로로탄닌 문의": 1,
+        "병원정보 글의 CTA": 1,
+        "CTA는": 2,
+        "CTA로만": 1,
+        "기록 정리를 돕는 CTA": 1,
+        "제품 권유가 아니라 상담 준비의 다음 단계": 1
+      },
+      "afterHits": {}
+    }
+  ]
+}

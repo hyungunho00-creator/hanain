@@ -68,7 +68,7 @@ const WHY_NOW = [
   {
     icon: Clock,
     title: '지금이 가장 빠른 진입 시점',
-    desc: '이미 포화된 시장에서 새로 시작하면 불리한 싸움입니다. 우리는 아직 선점 가능한 포지션에 있습니다.',
+    desc: '이미 포화된 시장에서 새로 시작하면 불리합니다. 우리는 아직 성장 여지가 큰 포지션에 있습니다.',
   },
 ]
 
@@ -92,8 +92,8 @@ const MARKET_GROWTH = [
   },
   {
     icon: Leaf,
-    title: '플로로탄닌 — 아직 선점 가능한 성분',
-    desc: '홍삼·오메가3는 이미 포화. 플로로탄닌은 SCI 논문이 쏟아지는 신흥 성분. 지금이 콘텐츠 선점 시점입니다.',
+    title: '플로로탄닌 — 아직 성장 여지가 큰 성분',
+    desc: '홍삼·오메가3는 이미 포화된 영역입니다. 플로로탄닌은 SCI 논문이 계속 늘어나는 신흥 성분이라 교육 콘텐츠로 풀어낼 여지가 큽니다.',
     highlight: '블루오션 성분',
   },
   {
@@ -375,7 +375,7 @@ export default function PartnerPage() {
             왜 지금 기회가 보이는가
           </h2>
           <p className="text-center text-gray-500 mb-10" style={{ fontSize: '15px' }}>
-            시장 자체가 커지고 있습니다. 지금이 선점 가능한 포지션입니다.
+            시장 자체가 커지고 있습니다. 아직 성장 여지가 큰 포지션입니다.
           </p>
           <div className="grid md:grid-cols-2 gap-5">
             {WHY_NOW.map((item, i) => {
@@ -396,7 +396,7 @@ export default function PartnerPage() {
           <div className="mt-6 rounded-2xl p-5 text-center"
             style={{ background: `linear-gradient(135deg, ${NAVY}, #102540)`, border: `2px solid ${GOLD}50` }}>
             <p style={{ fontSize: '14px', color: GOLD2, fontStyle: 'italic' }}>
-              "이 시장은 늦게 보면 평범한 시장이고, 빨리 보면 선점 가능한 시장입니다."
+              "이 시장은 늦게 보면 평범한 시장이고, 제대로 보면 성장 여지가 보이는 시장입니다."
             </p>
           </div>
         </div>
@@ -432,7 +432,7 @@ export default function PartnerPage() {
         <div className="max-w-5xl mx-auto">
           <p style={{ fontSize: '11px', color: GOLD, letterSpacing: '3px', fontWeight: '700', textAlign: 'center', marginBottom: '8px' }}>MARKET</p>
           <h2 className="text-3xl font-bold text-center mb-3" style={{ color: NAVY }}>왜 지금 플로로탄닌인가</h2>
-          <p className="text-center text-gray-500 mb-10 text-sm">성장하는 시장에서 선점 가능한 성분</p>
+          <p className="text-center text-gray-500 mb-10 text-sm">성장하는 시장에서 아직 설명할 여지가 큰 성분</p>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
             {MARKET_GROWTH.map((item, i) => {
               const Icon = item.icon

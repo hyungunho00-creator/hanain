@@ -130,7 +130,7 @@ export default {
         <RelLink to="/insights/phlorotannin-cancer-prevention-mechanism">플로로탄닌 항암 보조 기전</RelLink>.
       </P>
 
-      {/* 단일 활자 CTA — 본문 끝에서 1회만 */}
+      {/* 본문 말미 단일 안내문 */}
       <p
         style={{
           margin: '32px 0 8px',

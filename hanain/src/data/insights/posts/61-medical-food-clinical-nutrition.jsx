@@ -131,7 +131,7 @@ export default {
         <RelLink to="/insights/ingredient-quality-buying-guide-2026">원료 구매 가이드</RelLink>.
       </P>
 
-      {/* 단일 활자 CTA (인사이트 톤 — 본문 흐름 끝에서 단 1회만, sponsored 명시) */}
+      {/* 본문 말미 단일 안내문 (sponsored 명시) */}
       <p
         style={{
           margin: '32px 0 8px',

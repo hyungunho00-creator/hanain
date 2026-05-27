@@ -146,7 +146,7 @@ export default {
         <RelLink to="/insights/medical-food-clinical-nutrition-evidence">메디컬 푸드 임상 근거</RelLink>.
       </P>
 
-      {/* 단일 활자 CTA — 본문 끝에서 1회만 */}
+      {/* 본문 말미 단일 안내문 */}
       <p
         style={{
           margin: '32px 0 8px',
