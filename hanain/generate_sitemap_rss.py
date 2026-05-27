@@ -104,6 +104,17 @@ CAT_NAMES = {
     "disease-health-info":   "질환별 건강정보",
     "hospital-info":         "병원정보",
     "partner-info":          "파트너 정보",
+    "cancer-treatment-care": "항암 치료 케어",
+    "buying-guide":          "구매 가이드",
+    "safety-precautions":    "부작용·주의사항",
+    "분자기전 작용경로":     "분자기전·작용경로",
+    "신약개발 임상":         "신약개발·임상",
+    "metabolism":            "대사 건강",
+    "cancer_immune":         "암·면역 건강",
+    "neuro_cognitive":       "뇌·인지 건강",
+    "mental_health":         "정신·수면 건강",
+    "musculoskeletal":       "근골격 건강",
+    "womens_health":         "여성 건강",
 }
 
 # ════════════════════════════════════════════════════════════

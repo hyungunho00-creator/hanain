@@ -233,6 +233,18 @@ const CAT_COLORS = {
   brain:'text-gray-600', cardiovascular:'text-gray-600',
   inflammation:'text-gray-600', skin:'text-gray-600',
   research:'text-gray-600', general:'text-gray-600',
+  'ingredient-comparison':'text-gray-600',
+  'disease-health-info':'text-gray-600',
+  'hospital-info':'text-gray-600',
+  'partner-info':'text-gray-600',
+  '분자기전 작용경로':'text-gray-600',
+  '신약개발 임상':'text-gray-600',
+  metabolism:'text-gray-600',
+  cancer_immune:'text-gray-600',
+  neuro_cognitive:'text-gray-600',
+  mental_health:'text-gray-600',
+  musculoskeletal:'text-gray-600',
+  womens_health:'text-gray-600',
 }
 const CAT_NAMES = {
   'cancer-treatment-care':'항암 치료 케어', // 🆕
@@ -241,6 +253,18 @@ const CAT_NAMES = {
   diabetes:'당뇨·혈당', cancer:'항암·면역', brain:'뇌·인지',
   cardiovascular:'심혈관', inflammation:'염증·면역',
   skin:'피부·모발', research:'연구·임상', general:'일반',
+  'ingredient-comparison':'성분 비교',
+  'disease-health-info':'질환별 건강정보',
+  'hospital-info':'병원정보',
+  'partner-info':'파트너 정보',
+  '분자기전 작용경로':'분자기전·작용경로',
+  '신약개발 임상':'신약개발·임상',
+  metabolism:'대사 건강',
+  cancer_immune:'암·면역 건강',
+  neuro_cognitive:'뇌·인지 건강',
+  mental_health:'정신·수면 건강',
+  musculoskeletal:'근골격 건강',
+  womens_health:'여성 건강',
 }
 /* ─── Insights Preview — PMC 1차 자료 60편 중 최신 6편 직접 노출 ───
    [2026-05-21] 사용자가 인사이트 자산을 발견할 수 있도록 메인 랜딩에서

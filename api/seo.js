@@ -188,6 +188,11 @@ const CATEGORY_NAMES = {
   'ingredient-comparison': '성분 비교 아카이브',
   'disease-health-info': '질환별 건강정보',
   'partner-info': '파트너 정보페이지',
+  'cancer-treatment-care': '항암 치료 케어',
+  'buying-guide': '구매 가이드',
+  'safety-precautions': '부작용·주의사항',
+  '분자기전 작용경로': '분자기전·작용경로',
+  '신약개발 임상': '신약개발·임상',
   'research': '연구·논문 아카이브',
   'general': '건강정보 종합',
 }

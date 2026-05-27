@@ -25,6 +25,14 @@ const FALLBACK_CATEGORIES = [
   { id: 'disease-health-info',   name: '질환별 건강정보' },
   { id: 'hospital-info',         name: '병원정보' },
   { id: 'partner-info',          name: '파트너 정보' },
+  { id: '분자기전 작용경로',     name: '분자기전·작용경로' },
+  { id: '신약개발 임상',         name: '신약개발·임상' },
+  { id: 'metabolism',            name: '대사 건강' },
+  { id: 'cancer_immune',         name: '암·면역 건강' },
+  { id: 'neuro_cognitive',       name: '뇌·인지 건강' },
+  { id: 'mental_health',         name: '정신·수면 건강' },
+  { id: 'musculoskeletal',       name: '근골격 건강' },
+  { id: 'womens_health',         name: '여성 건강' },
 ]
 
 // 모듈 레벨 캐시 — BlogPage에서 DB 페치 후 갱신, PostCard 등이 같은 변수 참조
@@ -47,6 +55,14 @@ const CAT_COLORS = {
   'disease-health-info':   'bg-gray-100 text-gray-700',
   'hospital-info':         'bg-gray-100 text-gray-700',
   'partner-info':          'bg-gray-100 text-gray-700',
+  '분자기전 작용경로': 'bg-gray-100 text-gray-700',
+  '신약개발 임상': 'bg-gray-100 text-gray-700',
+  metabolism: 'bg-gray-100 text-gray-700',
+  cancer_immune: 'bg-gray-100 text-gray-700',
+  neuro_cognitive: 'bg-gray-100 text-gray-700',
+  mental_health: 'bg-gray-100 text-gray-700',
+  musculoskeletal: 'bg-gray-100 text-gray-700',
+  womens_health: 'bg-gray-100 text-gray-700',
 }
 
 // 블로그 카테고리 → question_videos category_id 매핑
@@ -67,6 +83,14 @@ const BLOG_TO_VIDEO_CAT = {
   'buying-guide':          null,  // 🆕 영상 매칭은 추후
   'safety-precautions':    null,  // 🆕 영상 매칭은 추후
   'cancer-treatment-care': 'cancer',  // 🆕 기존 cancer 영상 재활용
+  '분자기전 작용경로': 'research',
+  '신약개발 임상': 'research',
+  metabolism: 'diabetes',
+  cancer_immune: 'cancer',
+  neuro_cognitive: 'brain',
+  mental_health: 'brain',
+  musculoskeletal: null,
+  womens_health: null,
 }
 
 // Phase 3 보안 강화: service_role 키를 클라이언트 번들에서 제거
