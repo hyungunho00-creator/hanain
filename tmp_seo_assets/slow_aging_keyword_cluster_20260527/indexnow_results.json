@@ -1,0 +1,30 @@
+{
+  "urls": [
+    "https://phlorotannin.com/blog/slow-aging-health-functional-food-2026-keyword-map",
+    "https://phlorotannin.com/blog/slow-aging-blood-sugar-spike-meal-sequence-guide",
+    "https://phlorotannin.com/blog/slow-aging-sleep-routine-gamtae-theanine-magnesium",
+    "https://phlorotannin.com/blog/slow-aging-protein-sarcopenia-ons-meal-delivery",
+    "https://phlorotannin.com/blog/slow-aging-gut-microbiome-polyphenol-fiber-guide",
+    "https://phlorotannin.com/blog/slow-aging-antioxidant-polyphenol-phlorotannin-guide",
+    "https://phlorotannin.com/insights/slow-aging-keyword-roadmap-blood-sugar-sleep-protein",
+    "https://phlorotannin.com/insights/slow-aging-checklist-meal-supplement-routine"
+  ],
+  "endpoints": {
+    "https://api.indexnow.org/indexnow": {
+      "status": 200,
+      "body": ""
+    },
+    "https://www.bing.com/indexnow": {
+      "status": 200,
+      "body": ""
+    },
+    "https://yandex.com/indexnow": {
+      "status": 202,
+      "body": "{\n  \"success\":true\n}"
+    },
+    "https://searchadvisor.naver.com/indexnow": {
+      "status": 200,
+      "body": ""
+    }
+  }
+}

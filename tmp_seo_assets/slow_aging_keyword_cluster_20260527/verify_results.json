@@ -1,0 +1,187 @@
+{
+  "db": [
+    {
+      "id": 343,
+      "slug": "slow-aging-health-functional-food-2026-keyword-map",
+      "title": "저속노화 영양제 키워드 2026: 혈당·수면·단백질·장건강",
+      "status": "published",
+      "category": "general",
+      "og_image": "https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/slow-aging-health-functional-food-2026-keyword-map.webp",
+      "published_at": "2026-05-27T01:38:21.118885+00:00"
+    },
+    {
+      "id": 344,
+      "slug": "slow-aging-blood-sugar-spike-meal-sequence-guide",
+      "title": "저속노화와 혈당 스파이크: 밥 양보다 먼저 볼 식사 순서",
+      "status": "published",
+      "category": "diabetes",
+      "og_image": "https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/slow-aging-blood-sugar-spike-meal-sequence-guide.webp",
+      "published_at": "2026-05-27T01:38:21.118885+00:00"
+    },
+    {
+      "id": 345,
+      "slug": "slow-aging-sleep-routine-gamtae-theanine-magnesium",
+      "title": "저속노화 수면 루틴: 감태·테아닌·마그네슘보다 먼저 볼 것",
+      "status": "published",
+      "category": "disease-health-info",
+      "og_image": "https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/slow-aging-sleep-routine-gamtae-theanine-magnesium.webp",
+      "published_at": "2026-05-27T01:38:21.118885+00:00"
+    },
+    {
+      "id": 346,
+      "slug": "slow-aging-protein-sarcopenia-ons-meal-delivery",
+      "title": "저속노화 단백질 전략: 근감소증·ONS·환자식까지 연결하기",
+      "status": "published",
+      "category": "disease-health-info",
+      "og_image": "https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/slow-aging-protein-sarcopenia-ons-meal-delivery.webp",
+      "published_at": "2026-05-27T01:38:21.118885+00:00"
+    },
+    {
+      "id": 347,
+      "slug": "slow-aging-gut-microbiome-polyphenol-fiber-guide",
+      "title": "저속노화 장건강: 식이섬유·폴리페놀·프로바이오틱스 순서",
+      "status": "published",
+      "category": "disease-health-info",
+      "og_image": "https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/slow-aging-gut-microbiome-polyphenol-fiber-guide.webp",
+      "published_at": "2026-05-27T01:38:21.118885+00:00"
+    },
+    {
+      "id": 348,
+      "slug": "slow-aging-antioxidant-polyphenol-phlorotannin-guide",
+      "title": "저속노화 항산화 성분 비교: 플로로탄닌·커큐민·레스베라트롤",
+      "status": "published",
+      "category": "ingredient-comparison",
+      "og_image": "https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/slow-aging-antioxidant-polyphenol-phlorotannin-guide.webp",
+      "published_at": "2026-05-27T01:38:21.118885+00:00"
+    }
+  ],
+  "images": [
+    {
+      "slug": "slow-aging-health-functional-food-2026-keyword-map",
+      "status": 200,
+      "content_type": "image/webp"
+    },
+    {
+      "slug": "slow-aging-blood-sugar-spike-meal-sequence-guide",
+      "status": 200,
+      "content_type": "image/webp"
+    },
+    {
+      "slug": "slow-aging-sleep-routine-gamtae-theanine-magnesium",
+      "status": 200,
+      "content_type": "image/webp"
+    },
+    {
+      "slug": "slow-aging-protein-sarcopenia-ons-meal-delivery",
+      "status": 200,
+      "content_type": "image/webp"
+    },
+    {
+      "slug": "slow-aging-gut-microbiome-polyphenol-fiber-guide",
+      "status": 200,
+      "content_type": "image/webp"
+    },
+    {
+      "slug": "slow-aging-antioxidant-polyphenol-phlorotannin-guide",
+      "status": 200,
+      "content_type": "image/webp"
+    }
+  ],
+  "pages": [
+    {
+      "slug": "slow-aging-health-functional-food-2026-keyword-map",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_og_image": true,
+      "has_webp_type": true,
+      "title_seen": true
+    },
+    {
+      "slug": "slow-aging-blood-sugar-spike-meal-sequence-guide",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_og_image": true,
+      "has_webp_type": true,
+      "title_seen": true
+    },
+    {
+      "slug": "slow-aging-sleep-routine-gamtae-theanine-magnesium",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_og_image": true,
+      "has_webp_type": true,
+      "title_seen": true
+    },
+    {
+      "slug": "slow-aging-protein-sarcopenia-ons-meal-delivery",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_og_image": true,
+      "has_webp_type": true,
+      "title_seen": true
+    },
+    {
+      "slug": "slow-aging-gut-microbiome-polyphenol-fiber-guide",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_og_image": true,
+      "has_webp_type": true,
+      "title_seen": true
+    },
+    {
+      "slug": "slow-aging-antioxidant-polyphenol-phlorotannin-guide",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_og_image": true,
+      "has_webp_type": true,
+      "title_seen": true
+    }
+  ],
+  "insights": [
+    {
+      "slug": "slow-aging-keyword-roadmap-blood-sugar-sleep-protein",
+      "status": 200,
+      "html_has_bundle": true
+    },
+    {
+      "slug": "slow-aging-checklist-meal-supplement-routine",
+      "status": 200,
+      "html_has_bundle": true
+    }
+  ],
+  "sitemap_status": 200,
+  "sitemap": [
+    {
+      "url": "/blog/slow-aging-health-functional-food-2026-keyword-map",
+      "present": true
+    },
+    {
+      "url": "/blog/slow-aging-blood-sugar-spike-meal-sequence-guide",
+      "present": true
+    },
+    {
+      "url": "/blog/slow-aging-sleep-routine-gamtae-theanine-magnesium",
+      "present": true
+    },
+    {
+      "url": "/blog/slow-aging-protein-sarcopenia-ons-meal-delivery",
+      "present": true
+    },
+    {
+      "url": "/blog/slow-aging-gut-microbiome-polyphenol-fiber-guide",
+      "present": true
+    },
+    {
+      "url": "/blog/slow-aging-antioxidant-polyphenol-phlorotannin-guide",
+      "present": true
+    },
+    {
+      "url": "/insights/slow-aging-keyword-roadmap-blood-sugar-sleep-protein",
+      "present": true
+    },
+    {
+      "url": "/insights/slow-aging-checklist-meal-supplement-routine",
+      "present": true
+    }
+  ]
+}
