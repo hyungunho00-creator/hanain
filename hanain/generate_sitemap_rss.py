@@ -476,24 +476,39 @@ for ipost in INSIGHT_POSTS[:30]:
     <guid isPermaLink="true">{SITE_URL}/insights/{slug}</guid>
   </item>""")
 
-# Q&A RSS (기존 qa.json에서)
+# Q&A RSS (qa.json에서 최신 검수 질문을 개별 /q/:slug 항목으로 노출)
 try:
     with open("public/qa.json", encoding="utf-8") as f:
         qa_data = json.load(f)
     qa_cats_map = {c["id"]: c["name"] for c in qa_data.get("categories", [])}
-    for q in qa_data.get("questions", [])[:30]:
+    qa_questions_for_rss = sorted(
+        qa_data.get("questions", []),
+        key=lambda q: (q.get("reviewed_at") or q.get("created_at") or "", q.get("id", "")),
+        reverse=True,
+    )
+    qa_rss_added = 0
+    for q in qa_questions_for_rss[:40]:
         qid  = q.get("id", "")
-        qtitle = esc(q.get("question", ""))
+        question = q.get("question", "")
+        slug = qa_slug(question)
+        if not slug:
+            continue
+        qtitle = esc(question)
         qcat = esc(qa_cats_map.get(q.get("category",""), "건강정보"))
-        qans = esc((q.get("answer","") or "")[:200])
+        qans_raw = (q.get("answer","") or "")[:260]
+        qans_raw = qans_raw.replace("]]>", "]]&gt;")
+        reviewed_at = q.get("reviewed_at") or today()
+        pub_date = fmt_rfc822(f"{reviewed_at}T00:00:00+09:00")
         rss_items.append(f"""  <item>
     <title>{qtitle}</title>
-    <link>{SITE_URL}/qa</link>
-    <description><![CDATA[{qcat} — {q.get('answer','')[:200]}...]]></description>
+    <link>{SITE_URL}/q/{slug}</link>
+    <description><![CDATA[{qcat} · {qans_raw}...]]></description>
     <category>{qcat}</category>
-    <pubDate>Fri, 24 Apr 2026 00:00:00 +0900</pubDate>
-    <guid isPermaLink="false">phlorotannin-qa-{qid}</guid>
+    <pubDate>{pub_date}</pubDate>
+    <guid isPermaLink="true">{SITE_URL}/q/{slug}</guid>
   </item>""")
+        qa_rss_added += 1
+    print(f"  ✅ Q&A RSS 항목 {qa_rss_added}개 추가")
 except Exception as e:
     print(f"  ⚠ qa.json 읽기 실패 (무시): {e}")
 
