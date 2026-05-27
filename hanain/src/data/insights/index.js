@@ -84,4 +84,5 @@ export const INSIGHT_CATEGORIES = [
   { id: 'ingredient-marine',    name: '해양 원료',      desc: '후코이단·후코잔틴·아스타잔틴·해조류' },
   { id: 'ingredient-longevity', name: '항노화·장수',    desc: 'NMN·스퍼미딘·우로리틴 A·PQQ·CoQ10' },
   { id: 'ingredient-clinical',  name: '임상 이슈 원료', desc: '베르베린·콜라겐·MSM·락토페린·프로바이오틱' },
+  { id: 'hospital-care',        name: '병원·진료준비',  desc: '병원 검색·진료과 선택·검사·복용약·건강식품 상담' },
 ]

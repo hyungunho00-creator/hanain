@@ -7,7 +7,7 @@
       "color": "#3B82F6",
       "icon": "Activity",
       "description": "당뇨, 비만, 지방간, 이상지질혈증 등 대사 관련 질환",
-      "count": 133
+      "count": 139
     },
     {
       "id": "cancer_immune",
@@ -16,7 +16,7 @@
       "color": "#8B5CF6",
       "icon": "Shield",
       "description": "암 예방, 항암 치료 지원, 면역력 강화",
-      "count": 188
+      "count": 194
     },
     {
       "id": "digestive",
@@ -25,7 +25,7 @@
       "color": "#10B981",
       "icon": "Zap",
       "description": "위장, 간, 장 건강 및 소화 기능",
-      "count": 122
+      "count": 128
     },
     {
       "id": "cardiovascular",
@@ -34,7 +34,7 @@
       "color": "#EF4444",
       "icon": "Heart",
       "description": "고혈압, 동맥경화, 심부전 등 심혈관 질환",
-      "count": 122
+      "count": 128
     },
     {
       "id": "neuro_cognitive",
@@ -43,7 +43,7 @@
       "color": "#6366F1",
       "icon": "Brain",
       "description": "치매, 파킨슨, 인지 기능, 두통",
-      "count": 146
+      "count": 150
     },
     {
       "id": "mental_health",
@@ -52,7 +52,7 @@
       "color": "#EC4899",
       "icon": "Smile",
       "description": "우울증, 불안장애, 수면장애, 스트레스",
-      "count": 125
+      "count": 128
     },
     {
       "id": "musculoskeletal",
@@ -61,7 +61,7 @@
       "color": "#F97316",
       "icon": "Bone",
       "description": "관절염, 골다공증, 근육 건강, 요통",
-      "count": 119
+      "count": 124
     },
     {
       "id": "skin",
@@ -70,7 +70,7 @@
       "color": "#F59E0B",
       "icon": "Sparkles",
       "description": "아토피, 기미, 여드름, 건조피부, 발뒤꿈치갈라짐 등 피부 건강",
-      "count": 127
+      "count": 128
     },
     {
       "id": "hair",
@@ -79,7 +79,7 @@
       "color": "#8B5CF6",
       "icon": "Scissors",
       "description": "탈모, 두피 가려움, 비듬, 모발 건강",
-      "count": 45
+      "count": 46
     },
     {
       "id": "respiratory",
@@ -88,7 +88,7 @@
       "color": "#06B6D4",
       "icon": "Wind",
       "description": "천식, COPD, 폐 건강, 기관지염",
-      "count": 115
+      "count": 118
     },
     {
       "id": "infection_inflammation",
@@ -97,7 +97,7 @@
       "color": "#14B8A6",
       "icon": "AlertTriangle",
       "description": "바이러스, 세균 감염, 만성 염증",
-      "count": 124
+      "count": 128
     },
     {
       "id": "womens_health",
@@ -106,7 +106,7 @@
       "color": "#F43F5E",
       "icon": "Heart",
       "description": "갱년기, 호르몬, 자궁 건강, 임신",
-      "count": 114
+      "count": 117
     },
     {
       "id": "mens_health",
@@ -115,7 +115,7 @@
       "color": "#64748B",
       "icon": "User",
       "description": "전립선, 남성호르몬, 성기능, 탈모",
-      "count": 111
+      "count": 113
     }
   ],
   "questions": [
@@ -54017,6 +54017,1906 @@
       "references": [
         "질병관리청 국가건강정보포털: 남성·비뇨기 건강정보",
         "국민건강보험 건강검진 정보"
+      ]
+    },
+    {
+      "id": "qa-hospital-20260527-001",
+      "category": "metabolism",
+      "difficulty": "basic",
+      "tags": [
+        "병원정보",
+        "진료준비",
+        "내과",
+        "감태 플로로탄닌",
+        "건강식품원료",
+        "SEO-QA-HOSPITAL-20260527"
+      ],
+      "question": "동네 내과 갈 때 건강기능식품도 적어 가야 하나요?",
+      "answer": "동네 내과 갈 때 건강기능식품도 적어 가야 하나요?라는 질문은 내과·가정의학과 검색에서 자주 나옵니다. 먼저 병원 이름을 고르기 전에 증상 시작일, 악화되는 상황, 최근 검사 수치, 처방약, 일반의약품, 건강식품원료 복용 목록을 한 장으로 정리하세요. 특히 감태 플로로탄닌처럼 건강식품원료가 포함된 경우에는 효과를 기대한다는 말보다 제품명, 1일 섭취량, 시작 날짜, 같이 먹는 약을 말하는 편이 안전합니다. 피로, 혈압·혈당 걱정, 소화 불편처럼 원인이 넓은 증상이 있다면 내과·가정의학과에서 원인을 좁히는 검사를 우선 확인하고, 식사량이나 체중 변화가 있으면 맛있으리 식단 상담처럼 식사 기록을 정리해 가는 방식이 도움이 됩니다. 흉통, 호흡곤란, 한쪽 마비, 의식저하가 있으면 진료 예약보다 응급 평가가 먼저입니다. 본 정보는 병원 선택을 대신하지 않으며, 진단·치료·약물 조정은 담당 의료진과 결정해야 합니다.",
+      "views": 0,
+      "likes": 0,
+      "author": "플로로탄닌 정보센터 · 병원정보 Q&A 편집데스크",
+      "content_type": "informational",
+      "reviewed_at": "2026-05-27",
+      "disclaimer": "본 정보는 일반 건강정보 안내이며 의료 전문가의 진단·치료를 대체하지 않습니다.",
+      "source_type": "official_guideline_editorial",
+      "related_insights": [
+        "local-internal-medicine-first-visit-supplement-memo",
+        "hospital-info-search-checklist-cancer-diabetes-rehab",
+        "ingredient-quality-buying-guide-2026"
+      ],
+      "references_pmid": [
+        "shrestha-2021-review",
+        "choi-2017-ecklonia-review",
+        "shin-2024-pharmacokinetics"
+      ],
+      "references": [
+        "질병관리청 국가건강정보포털",
+        "국민건강보험 건강검진·검진기관 정보",
+        "국가암정보센터",
+        "식품안전나라 건강기능식품 정보"
+      ]
+    },
+    {
+      "id": "qa-hospital-20260527-002",
+      "category": "cardiovascular",
+      "difficulty": "basic",
+      "tags": [
+        "병원정보",
+        "진료준비",
+        "검진센터",
+        "비타민 D",
+        "건강식품원료",
+        "SEO-QA-HOSPITAL-20260527"
+      ],
+      "question": "건강검진에서 이상소견이 나오면 어느 병원부터 가야 하나요?",
+      "answer": "건강검진에서 이상소견이 나오면 어느 병원부터 가야 하나요?라는 질문은 검진센터·내과 검색에서 자주 나옵니다. 먼저 병원 이름을 고르기 전에 증상 시작일, 악화되는 상황, 최근 검사 수치, 처방약, 일반의약품, 건강식품원료 복용 목록을 한 장으로 정리하세요. 특히 비타민 D처럼 건강식품원료가 포함된 경우에는 효과를 기대한다는 말보다 제품명, 1일 섭취량, 시작 날짜, 같이 먹는 약을 말하는 편이 안전합니다. 혈압, 혈당, 간수치, 콜레스테롤, 비타민 D 부족 등 검진표 이상이 있다면 검진센터·내과에서 원인을 좁히는 검사를 우선 확인하고, 식사량이나 체중 변화가 있으면 맛있으리 식단 상담처럼 식사 기록을 정리해 가는 방식이 도움이 됩니다. 검진표에 즉시 진료 또는 정밀검사 권고가 있으면 예약을 미루지 않는 것이 좋습니다. 본 정보는 병원 선택을 대신하지 않으며, 진단·치료·약물 조정은 담당 의료진과 결정해야 합니다.",
+      "views": 0,
+      "likes": 0,
+      "author": "플로로탄닌 정보센터 · 병원정보 Q&A 편집데스크",
+      "content_type": "informational",
+      "reviewed_at": "2026-05-27",
+      "disclaimer": "본 정보는 일반 건강정보 안내이며 의료 전문가의 진단·치료를 대체하지 않습니다.",
+      "source_type": "official_guideline_editorial",
+      "related_insights": [
+        "health-checkup-abnormal-result-hospital-guide-vitamin-d",
+        "hospital-info-search-checklist-cancer-diabetes-rehab",
+        "ingredient-quality-buying-guide-2026"
+      ],
+      "references_pmid": [
+        "pludowski-2017-vitamind-review",
+        "maresz-2015-vitk-bone",
+        "shrestha-2021-review"
+      ],
+      "references": [
+        "질병관리청 국가건강정보포털",
+        "국민건강보험 건강검진·검진기관 정보",
+        "국가암정보센터",
+        "식품안전나라 건강기능식품 정보"
+      ]
+    },
+    {
+      "id": "qa-hospital-20260527-003",
+      "category": "metabolism",
+      "difficulty": "basic",
+      "tags": [
+        "병원정보",
+        "진료준비",
+        "내분비내과",
+        "베르베린",
+        "건강식품원료",
+        "SEO-QA-HOSPITAL-20260527"
+      ],
+      "question": "당화혈색소가 높으면 베르베린을 먹기 전에 병원 상담이 필요한가요?",
+      "answer": "당화혈색소가 높으면 베르베린을 먹기 전에 병원 상담이 필요한가요?라는 질문은 내분비내과·당뇨교육 클리닉 검색에서 자주 나옵니다. 먼저 병원 이름을 고르기 전에 증상 시작일, 악화되는 상황, 최근 검사 수치, 처방약, 일반의약품, 건강식품원료 복용 목록을 한 장으로 정리하세요. 특히 베르베린처럼 건강식품원료가 포함된 경우에는 효과를 기대한다는 말보다 제품명, 1일 섭취량, 시작 날짜, 같이 먹는 약을 말하는 편이 안전합니다. 공복혈당 상승, 식후혈당 변동, 당화혈색소 상승이 있다면 내분비내과·당뇨교육 클리닉에서 원인을 좁히는 검사를 우선 확인하고, 식사량이나 체중 변화가 있으면 맛있으리 식단 상담처럼 식사 기록을 정리해 가는 방식이 도움이 됩니다. 다음·다뇨·체중감소가 빠르게 동반되거나 혈당이 매우 높으면 지체하지 말고 진료가 필요합니다. 본 정보는 병원 선택을 대신하지 않으며, 진단·치료·약물 조정은 담당 의료진과 결정해야 합니다.",
+      "views": 0,
+      "likes": 0,
+      "author": "플로로탄닌 정보센터 · 병원정보 Q&A 편집데스크",
+      "content_type": "informational",
+      "reviewed_at": "2026-05-27",
+      "disclaimer": "본 정보는 일반 건강정보 안내이며 의료 전문가의 진단·치료를 대체하지 않습니다.",
+      "source_type": "official_guideline_editorial",
+      "related_insights": [
+        "diabetes-clinic-a1c-consult-berberine-caution",
+        "hospital-info-search-checklist-cancer-diabetes-rehab",
+        "ingredient-quality-buying-guide-2026"
+      ],
+      "references_pmid": [
+        "yin-2008-berberine-glucose",
+        "lan-2015-berberine-meta",
+        "zhang-2010-berberine-lipid"
+      ],
+      "references": [
+        "질병관리청 국가건강정보포털",
+        "국민건강보험 건강검진·검진기관 정보",
+        "국가암정보센터",
+        "식품안전나라 건강기능식품 정보"
+      ]
+    },
+    {
+      "id": "qa-hospital-20260527-004",
+      "category": "cardiovascular",
+      "difficulty": "basic",
+      "tags": [
+        "병원정보",
+        "진료준비",
+        "내과",
+        "마그네슘",
+        "건강식품원료",
+        "SEO-QA-HOSPITAL-20260527"
+      ],
+      "question": "혈압이 높게 나오면 집혈압 기록을 가져가야 하나요?",
+      "answer": "혈압이 높게 나오면 집혈압 기록을 가져가야 하나요?라는 질문은 내과·심장내과 검색에서 자주 나옵니다. 먼저 병원 이름을 고르기 전에 증상 시작일, 악화되는 상황, 최근 검사 수치, 처방약, 일반의약품, 건강식품원료 복용 목록을 한 장으로 정리하세요. 특히 마그네슘처럼 건강식품원료가 포함된 경우에는 효과를 기대한다는 말보다 제품명, 1일 섭취량, 시작 날짜, 같이 먹는 약을 말하는 편이 안전합니다. 가정혈압 상승, 두통, 어지럼, 검진 혈압 이상이 있다면 내과·심장내과에서 원인을 좁히는 검사를 우선 확인하고, 식사량이나 체중 변화가 있으면 맛있으리 식단 상담처럼 식사 기록을 정리해 가는 방식이 도움이 됩니다. 가슴통증, 호흡곤란, 신경학적 이상, 매우 높은 혈압이 동반되면 응급 평가가 필요합니다. 본 정보는 병원 선택을 대신하지 않으며, 진단·치료·약물 조정은 담당 의료진과 결정해야 합니다.",
+      "views": 0,
+      "likes": 0,
+      "author": "플로로탄닌 정보센터 · 병원정보 Q&A 편집데스크",
+      "content_type": "informational",
+      "reviewed_at": "2026-05-27",
+      "disclaimer": "본 정보는 일반 건강정보 안내이며 의료 전문가의 진단·치료를 대체하지 않습니다.",
+      "source_type": "official_guideline_editorial",
+      "related_insights": [
+        "hypertension-hospital-home-bp-magnesium-omega3",
+        "hospital-info-search-checklist-cancer-diabetes-rehab",
+        "ingredient-quality-buying-guide-2026"
+      ],
+      "references_pmid": [
+        "boyle-2017-magnesium-review",
+        "shrestha-2021-review",
+        "pradhan-2022-bioactive"
+      ],
+      "references": [
+        "질병관리청 국가건강정보포털",
+        "국민건강보험 건강검진·검진기관 정보",
+        "국가암정보센터",
+        "식품안전나라 건강기능식품 정보"
+      ]
+    },
+    {
+      "id": "qa-hospital-20260527-005",
+      "category": "cardiovascular",
+      "difficulty": "basic",
+      "tags": [
+        "병원정보",
+        "진료준비",
+        "내과",
+        "오메가3",
+        "건강식품원료",
+        "SEO-QA-HOSPITAL-20260527"
+      ],
+      "question": "콜레스테롤이 높으면 오메가3와 코큐텐을 같이 물어봐도 되나요?",
+      "answer": "콜레스테롤이 높으면 오메가3와 코큐텐을 같이 물어봐도 되나요?라는 질문은 내과·심장내과 검색에서 자주 나옵니다. 먼저 병원 이름을 고르기 전에 증상 시작일, 악화되는 상황, 최근 검사 수치, 처방약, 일반의약품, 건강식품원료 복용 목록을 한 장으로 정리하세요. 특히 오메가3처럼 건강식품원료가 포함된 경우에는 효과를 기대한다는 말보다 제품명, 1일 섭취량, 시작 날짜, 같이 먹는 약을 말하는 편이 안전합니다. LDL 상승, 중성지방 상승, 스타틴 복용 또는 시작 고민이 있다면 내과·심장내과에서 원인을 좁히는 검사를 우선 확인하고, 식사량이나 체중 변화가 있으면 맛있으리 식단 상담처럼 식사 기록을 정리해 가는 방식이 도움이 됩니다. 흉통이나 운동 시 숨참이 새로 생기면 단순 보충제 상담으로 넘기지 않아야 합니다. 본 정보는 병원 선택을 대신하지 않으며, 진단·치료·약물 조정은 담당 의료진과 결정해야 합니다.",
+      "views": 0,
+      "likes": 0,
+      "author": "플로로탄닌 정보센터 · 병원정보 Q&A 편집데스크",
+      "content_type": "informational",
+      "reviewed_at": "2026-05-27",
+      "disclaimer": "본 정보는 일반 건강정보 안내이며 의료 전문가의 진단·치료를 대체하지 않습니다.",
+      "source_type": "official_guideline_editorial",
+      "related_insights": [
+        "dyslipidemia-clinic-omega3-coq10-statin-memo",
+        "hospital-info-search-checklist-cancer-diabetes-rehab",
+        "ingredient-quality-buying-guide-2026"
+      ],
+      "references_pmid": [
+        "aung-2018-omega3-cvd",
+        "mar-poly-2024-cardio",
+        "shrestha-2021-review"
+      ],
+      "references": [
+        "질병관리청 국가건강정보포털",
+        "국민건강보험 건강검진·검진기관 정보",
+        "국가암정보센터",
+        "식품안전나라 건강기능식품 정보"
+      ]
+    },
+    {
+      "id": "qa-hospital-20260527-006",
+      "category": "digestive",
+      "difficulty": "basic",
+      "tags": [
+        "병원정보",
+        "진료준비",
+        "소화기내과",
+        "감태 플로로탄닌",
+        "건강식품원료",
+        "SEO-QA-HOSPITAL-20260527"
+      ],
+      "question": "간수치가 높으면 먹는 건강식품을 전부 말해야 하나요?",
+      "answer": "간수치가 높으면 먹는 건강식품을 전부 말해야 하나요?라는 질문은 소화기내과·간클리닉 검색에서 자주 나옵니다. 먼저 병원 이름을 고르기 전에 증상 시작일, 악화되는 상황, 최근 검사 수치, 처방약, 일반의약품, 건강식품원료 복용 목록을 한 장으로 정리하세요. 특히 감태 플로로탄닌처럼 건강식품원료가 포함된 경우에는 효과를 기대한다는 말보다 제품명, 1일 섭취량, 시작 날짜, 같이 먹는 약을 말하는 편이 안전합니다. AST·ALT·감마GTP 상승, 지방간 의심, 피로이 있다면 소화기내과·간클리닉에서 원인을 좁히는 검사를 우선 확인하고, 식사량이나 체중 변화가 있으면 맛있으리 식단 상담처럼 식사 기록을 정리해 가는 방식이 도움이 됩니다. 황달, 짙은 소변, 심한 우상복부 통증, 발열이 있으면 빠른 진료가 필요합니다. 본 정보는 병원 선택을 대신하지 않으며, 진단·치료·약물 조정은 담당 의료진과 결정해야 합니다.",
+      "views": 0,
+      "likes": 0,
+      "author": "플로로탄닌 정보센터 · 병원정보 Q&A 편집데스크",
+      "content_type": "informational",
+      "reviewed_at": "2026-05-27",
+      "disclaimer": "본 정보는 일반 건강정보 안내이며 의료 전문가의 진단·치료를 대체하지 않습니다.",
+      "source_type": "official_guideline_editorial",
+      "related_insights": [
+        "liver-enzyme-hospital-silymarin-supplement-disclosure",
+        "hospital-info-search-checklist-cancer-diabetes-rehab",
+        "ingredient-quality-buying-guide-2026"
+      ],
+      "references_pmid": [
+        "shrestha-2021-review",
+        "choi-2017-ecklonia-review",
+        "shin-2024-pharmacokinetics"
+      ],
+      "references": [
+        "질병관리청 국가건강정보포털",
+        "국민건강보험 건강검진·검진기관 정보",
+        "국가암정보센터",
+        "식품안전나라 건강기능식품 정보"
+      ]
+    },
+    {
+      "id": "qa-hospital-20260527-007",
+      "category": "metabolism",
+      "difficulty": "basic",
+      "tags": [
+        "병원정보",
+        "진료준비",
+        "신장내과",
+        "단백질·류신",
+        "건강식품원료",
+        "SEO-QA-HOSPITAL-20260527"
+      ],
+      "question": "신장수치가 낮으면 단백질 보충제를 중단해야 하나요?",
+      "answer": "신장수치가 낮으면 단백질 보충제를 중단해야 하나요?라는 질문은 신장내과 검색에서 자주 나옵니다. 먼저 병원 이름을 고르기 전에 증상 시작일, 악화되는 상황, 최근 검사 수치, 처방약, 일반의약품, 건강식품원료 복용 목록을 한 장으로 정리하세요. 특히 단백질·류신처럼 건강식품원료가 포함된 경우에는 효과를 기대한다는 말보다 제품명, 1일 섭취량, 시작 날짜, 같이 먹는 약을 말하는 편이 안전합니다. eGFR 저하, 크레아티닌 상승, 단백뇨이 있다면 신장내과에서 원인을 좁히는 검사를 우선 확인하고, 식사량이나 체중 변화가 있으면 맛있으리 식단 상담처럼 식사 기록을 정리해 가는 방식이 도움이 됩니다. 붓기, 소변량 감소, 호흡곤란, 갑작스러운 체중증가가 있으면 빠른 평가가 필요합니다. 본 정보는 병원 선택을 대신하지 않으며, 진단·치료·약물 조정은 담당 의료진과 결정해야 합니다.",
+      "views": 0,
+      "likes": 0,
+      "author": "플로로탄닌 정보센터 · 병원정보 Q&A 편집데스크",
+      "content_type": "informational",
+      "reviewed_at": "2026-05-27",
+      "disclaimer": "본 정보는 일반 건강정보 안내이며 의료 전문가의 진단·치료를 대체하지 않습니다.",
+      "source_type": "official_guideline_editorial",
+      "related_insights": [
+        "kidney-function-egfr-protein-creatine-hospital",
+        "hospital-info-search-checklist-cancer-diabetes-rehab",
+        "ingredient-quality-buying-guide-2026"
+      ],
+      "references_pmid": [
+        "leon-lopez-2019-marine-collagen",
+        "szabo-2026-musculoskeletal",
+        "pludowski-2017-vitamind-review"
+      ],
+      "references": [
+        "질병관리청 국가건강정보포털",
+        "국민건강보험 건강검진·검진기관 정보",
+        "국가암정보센터",
+        "식품안전나라 건강기능식품 정보"
+      ]
+    },
+    {
+      "id": "qa-hospital-20260527-008",
+      "category": "metabolism",
+      "difficulty": "basic",
+      "tags": [
+        "병원정보",
+        "진료준비",
+        "내분비내과",
+        "비타민 D",
+        "건강식품원료",
+        "SEO-QA-HOSPITAL-20260527"
+      ],
+      "question": "갑상선 수치가 이상하면 요오드나 셀레늄을 먹어도 되나요?",
+      "answer": "갑상선 수치가 이상하면 요오드나 셀레늄을 먹어도 되나요?라는 질문은 내분비내과 검색에서 자주 나옵니다. 먼저 병원 이름을 고르기 전에 증상 시작일, 악화되는 상황, 최근 검사 수치, 처방약, 일반의약품, 건강식품원료 복용 목록을 한 장으로 정리하세요. 특히 비타민 D처럼 건강식품원료가 포함된 경우에는 효과를 기대한다는 말보다 제품명, 1일 섭취량, 시작 날짜, 같이 먹는 약을 말하는 편이 안전합니다. 피로, 체중변화, 두근거림, 추위·더위 민감이 있다면 내분비내과에서 원인을 좁히는 검사를 우선 확인하고, 식사량이나 체중 변화가 있으면 맛있으리 식단 상담처럼 식사 기록을 정리해 가는 방식이 도움이 됩니다. 심한 두근거림, 흉통, 의식저하, 급격한 목 부종이 있으면 빠른 진료가 필요합니다. 본 정보는 병원 선택을 대신하지 않으며, 진단·치료·약물 조정은 담당 의료진과 결정해야 합니다.",
+      "views": 0,
+      "likes": 0,
+      "author": "플로로탄닌 정보센터 · 병원정보 Q&A 편집데스크",
+      "content_type": "informational",
+      "reviewed_at": "2026-05-27",
+      "disclaimer": "본 정보는 일반 건강정보 안내이며 의료 전문가의 진단·치료를 대체하지 않습니다.",
+      "source_type": "official_guideline_editorial",
+      "related_insights": [
+        "thyroid-clinic-iodine-selenium-supplement-memo",
+        "hospital-info-search-checklist-cancer-diabetes-rehab",
+        "ingredient-quality-buying-guide-2026"
+      ],
+      "references_pmid": [
+        "pludowski-2017-vitamind-review",
+        "maresz-2015-vitk-bone",
+        "shrestha-2021-review"
+      ],
+      "references": [
+        "질병관리청 국가건강정보포털",
+        "국민건강보험 건강검진·검진기관 정보",
+        "국가암정보센터",
+        "식품안전나라 건강기능식품 정보"
+      ]
+    },
+    {
+      "id": "qa-hospital-20260527-009",
+      "category": "womens_health",
+      "difficulty": "basic",
+      "tags": [
+        "병원정보",
+        "진료준비",
+        "내과",
+        "락토페린",
+        "건강식품원료",
+        "SEO-QA-HOSPITAL-20260527"
+      ],
+      "question": "빈혈이면 철분이나 락토페린을 바로 먹어도 되나요?",
+      "answer": "빈혈이면 철분이나 락토페린을 바로 먹어도 되나요?라는 질문은 내과·혈액내과·산부인과 검색에서 자주 나옵니다. 먼저 병원 이름을 고르기 전에 증상 시작일, 악화되는 상황, 최근 검사 수치, 처방약, 일반의약품, 건강식품원료 복용 목록을 한 장으로 정리하세요. 특히 락토페린처럼 건강식품원료가 포함된 경우에는 효과를 기대한다는 말보다 제품명, 1일 섭취량, 시작 날짜, 같이 먹는 약을 말하는 편이 안전합니다. 어지럼, 피로, 창백함, 숨참, 페리틴 저하이 있다면 내과·혈액내과·산부인과에서 원인을 좁히는 검사를 우선 확인하고, 식사량이나 체중 변화가 있으면 맛있으리 식단 상담처럼 식사 기록을 정리해 가는 방식이 도움이 됩니다. 흑변, 혈변, 심한 생리과다, 호흡곤란이 있으면 원인 평가가 우선입니다. 본 정보는 병원 선택을 대신하지 않으며, 진단·치료·약물 조정은 담당 의료진과 결정해야 합니다.",
+      "views": 0,
+      "likes": 0,
+      "author": "플로로탄닌 정보센터 · 병원정보 Q&A 편집데스크",
+      "content_type": "informational",
+      "reviewed_at": "2026-05-27",
+      "disclaimer": "본 정보는 일반 건강정보 안내이며 의료 전문가의 진단·치료를 대체하지 않습니다.",
+      "source_type": "official_guideline_editorial",
+      "related_insights": [
+        "anemia-clinic-iron-lactoferrin-ferritin-guide",
+        "hospital-info-search-checklist-cancer-diabetes-rehab",
+        "ingredient-quality-buying-guide-2026"
+      ],
+      "references_pmid": [
+        "lonnerdal-2021-lactoferrin",
+        "shrestha-2021-review",
+        "pradhan-2022-bioactive"
+      ],
+      "references": [
+        "질병관리청 국가건강정보포털",
+        "국민건강보험 건강검진·검진기관 정보",
+        "국가암정보센터",
+        "식품안전나라 건강기능식품 정보"
+      ]
+    },
+    {
+      "id": "qa-hospital-20260527-010",
+      "category": "digestive",
+      "difficulty": "basic",
+      "tags": [
+        "병원정보",
+        "진료준비",
+        "소화기내과",
+        "프로바이오틱스",
+        "건강식품원료",
+        "SEO-QA-HOSPITAL-20260527"
+      ],
+      "question": "장 증상이 있을 때 프로바이오틱스 복용을 병원에 말해야 하나요?",
+      "answer": "장 증상이 있을 때 프로바이오틱스 복용을 병원에 말해야 하나요?라는 질문은 소화기내과 검색에서 자주 나옵니다. 먼저 병원 이름을 고르기 전에 증상 시작일, 악화되는 상황, 최근 검사 수치, 처방약, 일반의약품, 건강식품원료 복용 목록을 한 장으로 정리하세요. 특히 프로바이오틱스처럼 건강식품원료가 포함된 경우에는 효과를 기대한다는 말보다 제품명, 1일 섭취량, 시작 날짜, 같이 먹는 약을 말하는 편이 안전합니다. 복통, 설사, 변비, 더부룩함, 특정 음식 후 악화이 있다면 소화기내과에서 원인을 좁히는 검사를 우선 확인하고, 식사량이나 체중 변화가 있으면 맛있으리 식단 상담처럼 식사 기록을 정리해 가는 방식이 도움이 됩니다. 혈변, 체중감소, 야간 설사, 발열, 빈혈이 있으면 정밀 평가가 필요합니다. 본 정보는 병원 선택을 대신하지 않으며, 진단·치료·약물 조정은 담당 의료진과 결정해야 합니다.",
+      "views": 0,
+      "likes": 0,
+      "author": "플로로탄닌 정보센터 · 병원정보 Q&A 편집데스크",
+      "content_type": "informational",
+      "reviewed_at": "2026-05-27",
+      "disclaimer": "본 정보는 일반 건강정보 안내이며 의료 전문가의 진단·치료를 대체하지 않습니다.",
+      "source_type": "official_guideline_editorial",
+      "related_insights": [
+        "gastroenterology-probiotics-stomach-bowel-symptom-memo",
+        "hospital-info-search-checklist-cancer-diabetes-rehab",
+        "ingredient-quality-buying-guide-2026"
+      ],
+      "references_pmid": [
+        "depommier-2019-akkermansia",
+        "lopez-2026-gut-microbiota",
+        "shrestha-2021-review"
+      ],
+      "references": [
+        "질병관리청 국가건강정보포털",
+        "국민건강보험 건강검진·검진기관 정보",
+        "국가암정보센터",
+        "식품안전나라 건강기능식품 정보"
+      ]
+    },
+    {
+      "id": "qa-hospital-20260527-011",
+      "category": "digestive",
+      "difficulty": "basic",
+      "tags": [
+        "병원정보",
+        "진료준비",
+        "소화기내과",
+        "식이섬유",
+        "건강식품원료",
+        "SEO-QA-HOSPITAL-20260527"
+      ],
+      "question": "역류 증상이 있으면 알긴산 제품과 식사시간을 같이 기록해야 하나요?",
+      "answer": "역류 증상이 있으면 알긴산 제품과 식사시간을 같이 기록해야 하나요?라는 질문은 소화기내과 검색에서 자주 나옵니다. 먼저 병원 이름을 고르기 전에 증상 시작일, 악화되는 상황, 최근 검사 수치, 처방약, 일반의약품, 건강식품원료 복용 목록을 한 장으로 정리하세요. 특히 식이섬유처럼 건강식품원료가 포함된 경우에는 효과를 기대한다는 말보다 제품명, 1일 섭취량, 시작 날짜, 같이 먹는 약을 말하는 편이 안전합니다. 속쓰림, 신물, 목 이물감, 야간 기침이 있다면 소화기내과에서 원인을 좁히는 검사를 우선 확인하고, 식사량이나 체중 변화가 있으면 맛있으리 식단 상담처럼 식사 기록을 정리해 가는 방식이 도움이 됩니다. 삼킴곤란, 흑변, 체중감소, 토혈이 있으면 빠르게 진료를 받아야 합니다. 본 정보는 병원 선택을 대신하지 않으며, 진단·치료·약물 조정은 담당 의료진과 결정해야 합니다.",
+      "views": 0,
+      "likes": 0,
+      "author": "플로로탄닌 정보센터 · 병원정보 Q&A 편집데스크",
+      "content_type": "informational",
+      "reviewed_at": "2026-05-27",
+      "disclaimer": "본 정보는 일반 건강정보 안내이며 의료 전문가의 진단·치료를 대체하지 않습니다.",
+      "source_type": "official_guideline_editorial",
+      "related_insights": [
+        "reflux-clinic-alginate-caffeine-meal-timing",
+        "hospital-info-search-checklist-cancer-diabetes-rehab",
+        "ingredient-quality-buying-guide-2026"
+      ],
+      "references_pmid": [
+        "brown-2014-seaweed-alginate",
+        "larussa-2017-laminarin-fiber",
+        "lopez-2026-gut-microbiota"
+      ],
+      "references": [
+        "질병관리청 국가건강정보포털",
+        "국민건강보험 건강검진·검진기관 정보",
+        "국가암정보센터",
+        "식품안전나라 건강기능식품 정보"
+      ]
+    },
+    {
+      "id": "qa-hospital-20260527-012",
+      "category": "digestive",
+      "difficulty": "basic",
+      "tags": [
+        "병원정보",
+        "진료준비",
+        "소화기내과",
+        "식이섬유",
+        "건강식품원료",
+        "SEO-QA-HOSPITAL-20260527"
+      ],
+      "question": "대장내시경 전 식이섬유 보충제는 어떻게 해야 하나요?",
+      "answer": "대장내시경 전 식이섬유 보충제는 어떻게 해야 하나요?라는 질문은 소화기내과·검진센터 검색에서 자주 나옵니다. 먼저 병원 이름을 고르기 전에 증상 시작일, 악화되는 상황, 최근 검사 수치, 처방약, 일반의약품, 건강식품원료 복용 목록을 한 장으로 정리하세요. 특히 식이섬유처럼 건강식품원료가 포함된 경우에는 효과를 기대한다는 말보다 제품명, 1일 섭취량, 시작 날짜, 같이 먹는 약을 말하는 편이 안전합니다. 대장내시경 예약, 변비, 대장암 검진 준비이 있다면 소화기내과·검진센터에서 원인을 좁히는 검사를 우선 확인하고, 식사량이나 체중 변화가 있으면 맛있으리 식단 상담처럼 식사 기록을 정리해 가는 방식이 도움이 됩니다. 혈변이나 원인 모를 체중감소가 있으면 검진이 아니라 진료로 접근해야 합니다. 본 정보는 병원 선택을 대신하지 않으며, 진단·치료·약물 조정은 담당 의료진과 결정해야 합니다.",
+      "views": 0,
+      "likes": 0,
+      "author": "플로로탄닌 정보센터 · 병원정보 Q&A 편집데스크",
+      "content_type": "informational",
+      "reviewed_at": "2026-05-27",
+      "disclaimer": "본 정보는 일반 건강정보 안내이며 의료 전문가의 진단·치료를 대체하지 않습니다.",
+      "source_type": "official_guideline_editorial",
+      "related_insights": [
+        "colonoscopy-hospital-fiber-psyllium-prep-checklist",
+        "hospital-info-search-checklist-cancer-diabetes-rehab",
+        "ingredient-quality-buying-guide-2026"
+      ],
+      "references_pmid": [
+        "brown-2014-seaweed-alginate",
+        "larussa-2017-laminarin-fiber",
+        "lopez-2026-gut-microbiota"
+      ],
+      "references": [
+        "질병관리청 국가건강정보포털",
+        "국민건강보험 건강검진·검진기관 정보",
+        "국가암정보센터",
+        "식품안전나라 건강기능식품 정보"
+      ]
+    },
+    {
+      "id": "qa-hospital-20260527-013",
+      "category": "digestive",
+      "difficulty": "basic",
+      "tags": [
+        "병원정보",
+        "진료준비",
+        "소화기내과",
+        "오메가3",
+        "건강식품원료",
+        "SEO-QA-HOSPITAL-20260527"
+      ],
+      "question": "오른쪽 윗배가 아프면 어느 병원으로 가야 하나요?",
+      "answer": "오른쪽 윗배가 아프면 어느 병원으로 가야 하나요?라는 질문은 소화기내과·응급의학과 검색에서 자주 나옵니다. 먼저 병원 이름을 고르기 전에 증상 시작일, 악화되는 상황, 최근 검사 수치, 처방약, 일반의약품, 건강식품원료 복용 목록을 한 장으로 정리하세요. 특히 오메가3처럼 건강식품원료가 포함된 경우에는 효과를 기대한다는 말보다 제품명, 1일 섭취량, 시작 날짜, 같이 먹는 약을 말하는 편이 안전합니다. 오른쪽 윗배 통증, 기름진 음식 후 통증, 구역감이 있다면 소화기내과·응급의학과에서 원인을 좁히는 검사를 우선 확인하고, 식사량이나 체중 변화가 있으면 맛있으리 식단 상담처럼 식사 기록을 정리해 가는 방식이 도움이 됩니다. 발열, 황달, 지속되는 심한 통증, 반복 구토가 있으면 응급 평가가 필요합니다. 본 정보는 병원 선택을 대신하지 않으며, 진단·치료·약물 조정은 담당 의료진과 결정해야 합니다.",
+      "views": 0,
+      "likes": 0,
+      "author": "플로로탄닌 정보센터 · 병원정보 Q&A 편집데스크",
+      "content_type": "informational",
+      "reviewed_at": "2026-05-27",
+      "disclaimer": "본 정보는 일반 건강정보 안내이며 의료 전문가의 진단·치료를 대체하지 않습니다.",
+      "source_type": "official_guideline_editorial",
+      "related_insights": [
+        "gallbladder-pancreas-pain-hospital-supplement-check",
+        "hospital-info-search-checklist-cancer-diabetes-rehab",
+        "ingredient-quality-buying-guide-2026"
+      ],
+      "references_pmid": [
+        "aung-2018-omega3-cvd",
+        "mar-poly-2024-cardio",
+        "shrestha-2021-review"
+      ],
+      "references": [
+        "질병관리청 국가건강정보포털",
+        "국민건강보험 건강검진·검진기관 정보",
+        "국가암정보센터",
+        "식품안전나라 건강기능식품 정보"
+      ]
+    },
+    {
+      "id": "qa-hospital-20260527-014",
+      "category": "cancer_immune",
+      "difficulty": "basic",
+      "tags": [
+        "병원정보",
+        "진료준비",
+        "종양내과",
+        "단백질·류신",
+        "건강식품원료",
+        "SEO-QA-HOSPITAL-20260527"
+      ],
+      "question": "암 치료 중 단백질 보충이나 환자식단을 병원에 어떻게 말해야 하나요?",
+      "answer": "암 치료 중 단백질 보충이나 환자식단을 병원에 어떻게 말해야 하나요?라는 질문은 종양내과·영양상담 검색에서 자주 나옵니다. 먼저 병원 이름을 고르기 전에 증상 시작일, 악화되는 상황, 최근 검사 수치, 처방약, 일반의약품, 건강식품원료 복용 목록을 한 장으로 정리하세요. 특히 단백질·류신처럼 건강식품원료가 포함된 경우에는 효과를 기대한다는 말보다 제품명, 1일 섭취량, 시작 날짜, 같이 먹는 약을 말하는 편이 안전합니다. 식욕저하, 체중감소, 근감소 우려, 항암 중 식사 어려움이 있다면 종양내과·영양상담에서 원인을 좁히는 검사를 우선 확인하고, 식사량이나 체중 변화가 있으면 맛있으리 식단 상담처럼 식사 기록을 정리해 가는 방식이 도움이 됩니다. 먹지 못하는 기간이 길거나 탈수, 발열, 급격한 체중감소가 있으면 진료 일정 조정이 필요합니다. 본 정보는 병원 선택을 대신하지 않으며, 진단·치료·약물 조정은 담당 의료진과 결정해야 합니다.",
+      "views": 0,
+      "likes": 0,
+      "author": "플로로탄닌 정보센터 · 병원정보 Q&A 편집데스크",
+      "content_type": "informational",
+      "reviewed_at": "2026-05-27",
+      "disclaimer": "본 정보는 일반 건강정보 안내이며 의료 전문가의 진단·치료를 대체하지 않습니다.",
+      "source_type": "official_guideline_editorial",
+      "related_insights": [
+        "cancer-treatment-hospital-nutrition-protein-leucine",
+        "hospital-info-search-checklist-cancer-diabetes-rehab",
+        "ingredient-quality-buying-guide-2026"
+      ],
+      "references_pmid": [
+        "leon-lopez-2019-marine-collagen",
+        "szabo-2026-musculoskeletal",
+        "pludowski-2017-vitamind-review"
+      ],
+      "references": [
+        "질병관리청 국가건강정보포털",
+        "국민건강보험 건강검진·검진기관 정보",
+        "국가암정보센터",
+        "식품안전나라 건강기능식품 정보"
+      ]
+    },
+    {
+      "id": "qa-hospital-20260527-015",
+      "category": "cancer_immune",
+      "difficulty": "basic",
+      "tags": [
+        "병원정보",
+        "진료준비",
+        "암재활",
+        "비타민 D",
+        "건강식품원료",
+        "SEO-QA-HOSPITAL-20260527"
+      ],
+      "question": "암재활병원 상담에서 어떤 질문을 먼저 해야 하나요?",
+      "answer": "암재활병원 상담에서 어떤 질문을 먼저 해야 하나요?라는 질문은 암재활·재활의학과 검색에서 자주 나옵니다. 먼저 병원 이름을 고르기 전에 증상 시작일, 악화되는 상황, 최근 검사 수치, 처방약, 일반의약품, 건강식품원료 복용 목록을 한 장으로 정리하세요. 특히 비타민 D처럼 건강식품원료가 포함된 경우에는 효과를 기대한다는 말보다 제품명, 1일 섭취량, 시작 날짜, 같이 먹는 약을 말하는 편이 안전합니다. 피로, 근력저하, 통증, 식사량 저하이 있다면 암재활·재활의학과에서 원인을 좁히는 검사를 우선 확인하고, 식사량이나 체중 변화가 있으면 맛있으리 식단 상담처럼 식사 기록을 정리해 가는 방식이 도움이 됩니다. 새로운 통증, 호흡곤란, 신경학적 이상은 재활 전 담당 진료과 확인이 우선입니다. 본 정보는 병원 선택을 대신하지 않으며, 진단·치료·약물 조정은 담당 의료진과 결정해야 합니다.",
+      "views": 0,
+      "likes": 0,
+      "author": "플로로탄닌 정보센터 · 병원정보 Q&A 편집데스크",
+      "content_type": "informational",
+      "reviewed_at": "2026-05-27",
+      "disclaimer": "본 정보는 일반 건강정보 안내이며 의료 전문가의 진단·치료를 대체하지 않습니다.",
+      "source_type": "official_guideline_editorial",
+      "related_insights": [
+        "cancer-rehab-hospital-vitamin-d-omega3-checklist",
+        "hospital-info-search-checklist-cancer-diabetes-rehab",
+        "ingredient-quality-buying-guide-2026"
+      ],
+      "references_pmid": [
+        "pludowski-2017-vitamind-review",
+        "maresz-2015-vitk-bone",
+        "shrestha-2021-review"
+      ],
+      "references": [
+        "질병관리청 국가건강정보포털",
+        "국민건강보험 건강검진·검진기관 정보",
+        "국가암정보센터",
+        "식품안전나라 건강기능식품 정보"
+      ]
+    },
+    {
+      "id": "qa-hospital-20260527-016",
+      "category": "cancer_immune",
+      "difficulty": "basic",
+      "tags": [
+        "병원정보",
+        "진료준비",
+        "종양내과",
+        "커큐민",
+        "건강식품원료",
+        "SEO-QA-HOSPITAL-20260527"
+      ],
+      "question": "항암 치료 중 커큐민이나 퀘르세틴도 의료진에게 말해야 하나요?",
+      "answer": "항암 치료 중 커큐민이나 퀘르세틴도 의료진에게 말해야 하나요?라는 질문은 종양내과 검색에서 자주 나옵니다. 먼저 병원 이름을 고르기 전에 증상 시작일, 악화되는 상황, 최근 검사 수치, 처방약, 일반의약품, 건강식품원료 복용 목록을 한 장으로 정리하세요. 특히 커큐민처럼 건강식품원료가 포함된 경우에는 효과를 기대한다는 말보다 제품명, 1일 섭취량, 시작 날짜, 같이 먹는 약을 말하는 편이 안전합니다. 항암 치료 중, 여러 건강식품 병용, 피로·염증 걱정이 있다면 종양내과에서 원인을 좁히는 검사를 우선 확인하고, 식사량이나 체중 변화가 있으면 맛있으리 식단 상담처럼 식사 기록을 정리해 가는 방식이 도움이 됩니다. 발열, 심한 설사, 출혈, 호흡곤란은 보충제 상담보다 즉시 연락이 우선입니다. 본 정보는 병원 선택을 대신하지 않으며, 진단·치료·약물 조정은 담당 의료진과 결정해야 합니다.",
+      "views": 0,
+      "likes": 0,
+      "author": "플로로탄닌 정보센터 · 병원정보 Q&A 편집데스크",
+      "content_type": "informational",
+      "reviewed_at": "2026-05-27",
+      "disclaimer": "본 정보는 일반 건강정보 안내이며 의료 전문가의 진단·치료를 대체하지 않습니다.",
+      "source_type": "official_guideline_editorial",
+      "related_insights": [
+        "chemotherapy-supplement-disclosure-curcumin-quercetin",
+        "hospital-info-search-checklist-cancer-diabetes-rehab",
+        "ingredient-quality-buying-guide-2026"
+      ],
+      "references_pmid": [
+        "hewlings-2017-curcumin-review",
+        "shrestha-2021-review",
+        "pradhan-2022-bioactive"
+      ],
+      "references": [
+        "질병관리청 국가건강정보포털",
+        "국민건강보험 건강검진·검진기관 정보",
+        "국가암정보센터",
+        "식품안전나라 건강기능식품 정보"
+      ]
+    },
+    {
+      "id": "qa-hospital-20260527-017",
+      "category": "cancer_immune",
+      "difficulty": "basic",
+      "tags": [
+        "병원정보",
+        "진료준비",
+        "방사선종양학과",
+        "감태 플로로탄닌",
+        "건강식품원료",
+        "SEO-QA-HOSPITAL-20260527"
+      ],
+      "question": "방사선 치료 중 입맛 변화와 보충제는 어디에 상담하나요?",
+      "answer": "방사선 치료 중 입맛 변화와 보충제는 어디에 상담하나요?라는 질문은 방사선종양학과·영양상담 검색에서 자주 나옵니다. 먼저 병원 이름을 고르기 전에 증상 시작일, 악화되는 상황, 최근 검사 수치, 처방약, 일반의약품, 건강식품원료 복용 목록을 한 장으로 정리하세요. 특히 감태 플로로탄닌처럼 건강식품원료가 포함된 경우에는 효과를 기대한다는 말보다 제품명, 1일 섭취량, 시작 날짜, 같이 먹는 약을 말하는 편이 안전합니다. 입마름, 삼킴불편, 피부 자극, 식사량 감소이 있다면 방사선종양학과·영양상담에서 원인을 좁히는 검사를 우선 확인하고, 식사량이나 체중 변화가 있으면 맛있으리 식단 상담처럼 식사 기록을 정리해 가는 방식이 도움이 됩니다. 삼키기 어려워 물도 못 마시거나 고열이 있으면 빠르게 병원에 연락해야 합니다. 본 정보는 병원 선택을 대신하지 않으며, 진단·치료·약물 조정은 담당 의료진과 결정해야 합니다.",
+      "views": 0,
+      "likes": 0,
+      "author": "플로로탄닌 정보센터 · 병원정보 Q&A 편집데스크",
+      "content_type": "informational",
+      "reviewed_at": "2026-05-27",
+      "disclaimer": "본 정보는 일반 건강정보 안내이며 의료 전문가의 진단·치료를 대체하지 않습니다.",
+      "source_type": "official_guideline_editorial",
+      "related_insights": [
+        "radiation-therapy-nutrition-oral-care-hospital",
+        "hospital-info-search-checklist-cancer-diabetes-rehab",
+        "ingredient-quality-buying-guide-2026"
+      ],
+      "references_pmid": [
+        "shrestha-2021-review",
+        "choi-2017-ecklonia-review",
+        "shin-2024-pharmacokinetics"
+      ],
+      "references": [
+        "질병관리청 국가건강정보포털",
+        "국민건강보험 건강검진·검진기관 정보",
+        "국가암정보센터",
+        "식품안전나라 건강기능식품 정보"
+      ]
+    },
+    {
+      "id": "qa-hospital-20260527-018",
+      "category": "cancer_immune",
+      "difficulty": "basic",
+      "tags": [
+        "병원정보",
+        "진료준비",
+        "완화의료",
+        "마그네슘",
+        "건강식품원료",
+        "SEO-QA-HOSPITAL-20260527"
+      ],
+      "question": "통증클리닉에 갈 때 건강식품도 적어 가야 하나요?",
+      "answer": "통증클리닉에 갈 때 건강식품도 적어 가야 하나요?라는 질문은 완화의료·통증클리닉 검색에서 자주 나옵니다. 먼저 병원 이름을 고르기 전에 증상 시작일, 악화되는 상황, 최근 검사 수치, 처방약, 일반의약품, 건강식품원료 복용 목록을 한 장으로 정리하세요. 특히 마그네슘처럼 건강식품원료가 포함된 경우에는 효과를 기대한다는 말보다 제품명, 1일 섭취량, 시작 날짜, 같이 먹는 약을 말하는 편이 안전합니다. 암성통증, 만성통증, 수면불편, 변비이 있다면 완화의료·통증클리닉에서 원인을 좁히는 검사를 우선 확인하고, 식사량이나 체중 변화가 있으면 맛있으리 식단 상담처럼 식사 기록을 정리해 가는 방식이 도움이 됩니다. 갑작스러운 마비, 의식 변화, 조절되지 않는 통증은 즉시 병원 연락이 필요합니다. 본 정보는 병원 선택을 대신하지 않으며, 진단·치료·약물 조정은 담당 의료진과 결정해야 합니다.",
+      "views": 0,
+      "likes": 0,
+      "author": "플로로탄닌 정보센터 · 병원정보 Q&A 편집데스크",
+      "content_type": "informational",
+      "reviewed_at": "2026-05-27",
+      "disclaimer": "본 정보는 일반 건강정보 안내이며 의료 전문가의 진단·치료를 대체하지 않습니다.",
+      "source_type": "official_guideline_editorial",
+      "related_insights": [
+        "palliative-care-pain-clinic-nutrition-supplement",
+        "hospital-info-search-checklist-cancer-diabetes-rehab",
+        "ingredient-quality-buying-guide-2026"
+      ],
+      "references_pmid": [
+        "boyle-2017-magnesium-review",
+        "shrestha-2021-review",
+        "pradhan-2022-bioactive"
+      ],
+      "references": [
+        "질병관리청 국가건강정보포털",
+        "국민건강보험 건강검진·검진기관 정보",
+        "국가암정보센터",
+        "식품안전나라 건강기능식품 정보"
+      ]
+    },
+    {
+      "id": "qa-hospital-20260527-019",
+      "category": "musculoskeletal",
+      "difficulty": "basic",
+      "tags": [
+        "병원정보",
+        "진료준비",
+        "재활의학과",
+        "단백질·류신",
+        "건강식품원료",
+        "SEO-QA-HOSPITAL-20260527"
+      ],
+      "question": "근감소증이 걱정되면 재활의학과에서 무엇을 확인하나요?",
+      "answer": "근감소증이 걱정되면 재활의학과에서 무엇을 확인하나요?라는 질문은 재활의학과·노년내과 검색에서 자주 나옵니다. 먼저 병원 이름을 고르기 전에 증상 시작일, 악화되는 상황, 최근 검사 수치, 처방약, 일반의약품, 건강식품원료 복용 목록을 한 장으로 정리하세요. 특히 단백질·류신처럼 건강식품원료가 포함된 경우에는 효과를 기대한다는 말보다 제품명, 1일 섭취량, 시작 날짜, 같이 먹는 약을 말하는 편이 안전합니다. 악력저하, 보행속도 저하, 체중감소, 낙상이 있다면 재활의학과·노년내과에서 원인을 좁히는 검사를 우선 확인하고, 식사량이나 체중 변화가 있으면 맛있으리 식단 상담처럼 식사 기록을 정리해 가는 방식이 도움이 됩니다. 갑작스러운 한쪽 힘빠짐이나 보행장애는 신경계 응급 신호일 수 있습니다. 본 정보는 병원 선택을 대신하지 않으며, 진단·치료·약물 조정은 담당 의료진과 결정해야 합니다.",
+      "views": 0,
+      "likes": 0,
+      "author": "플로로탄닌 정보센터 · 병원정보 Q&A 편집데스크",
+      "content_type": "informational",
+      "reviewed_at": "2026-05-27",
+      "disclaimer": "본 정보는 일반 건강정보 안내이며 의료 전문가의 진단·치료를 대체하지 않습니다.",
+      "source_type": "official_guideline_editorial",
+      "related_insights": [
+        "sarcopenia-rehab-hospital-protein-vitamin-d",
+        "hospital-info-search-checklist-cancer-diabetes-rehab",
+        "ingredient-quality-buying-guide-2026"
+      ],
+      "references_pmid": [
+        "leon-lopez-2019-marine-collagen",
+        "szabo-2026-musculoskeletal",
+        "pludowski-2017-vitamind-review"
+      ],
+      "references": [
+        "질병관리청 국가건강정보포털",
+        "국민건강보험 건강검진·검진기관 정보",
+        "국가암정보센터",
+        "식품안전나라 건강기능식품 정보"
+      ]
+    },
+    {
+      "id": "qa-hospital-20260527-020",
+      "category": "musculoskeletal",
+      "difficulty": "basic",
+      "tags": [
+        "병원정보",
+        "진료준비",
+        "정형외과",
+        "MSM",
+        "건강식품원료",
+        "SEO-QA-HOSPITAL-20260527"
+      ],
+      "question": "무릎이 아프면 MSM이나 콜라겐보다 병원 검사가 먼저인가요?",
+      "answer": "무릎이 아프면 MSM이나 콜라겐보다 병원 검사가 먼저인가요?라는 질문은 정형외과·재활의학과 검색에서 자주 나옵니다. 먼저 병원 이름을 고르기 전에 증상 시작일, 악화되는 상황, 최근 검사 수치, 처방약, 일반의약품, 건강식품원료 복용 목록을 한 장으로 정리하세요. 특히 MSM처럼 건강식품원료가 포함된 경우에는 효과를 기대한다는 말보다 제품명, 1일 섭취량, 시작 날짜, 같이 먹는 약을 말하는 편이 안전합니다. 무릎 통증, 계단 통증, 붓기, 운동 후 악화이 있다면 정형외과·재활의학과에서 원인을 좁히는 검사를 우선 확인하고, 식사량이나 체중 변화가 있으면 맛있으리 식단 상담처럼 식사 기록을 정리해 가는 방식이 도움이 됩니다. 열감이 심한 관절부종, 외상 후 체중부하 불가, 발열은 빠른 평가가 필요합니다. 본 정보는 병원 선택을 대신하지 않으며, 진단·치료·약물 조정은 담당 의료진과 결정해야 합니다.",
+      "views": 0,
+      "likes": 0,
+      "author": "플로로탄닌 정보센터 · 병원정보 Q&A 편집데스크",
+      "content_type": "informational",
+      "reviewed_at": "2026-05-27",
+      "disclaimer": "본 정보는 일반 건강정보 안내이며 의료 전문가의 진단·치료를 대체하지 않습니다.",
+      "source_type": "official_guideline_editorial",
+      "related_insights": [
+        "knee-arthritis-orthopedics-msm-collagen-guide",
+        "hospital-info-search-checklist-cancer-diabetes-rehab",
+        "ingredient-quality-buying-guide-2026"
+      ],
+      "references_pmid": [
+        "kim-2018-msm-arthritis",
+        "szabo-2026-musculoskeletal",
+        "shrestha-2021-review"
+      ],
+      "references": [
+        "질병관리청 국가건강정보포털",
+        "국민건강보험 건강검진·검진기관 정보",
+        "국가암정보센터",
+        "식품안전나라 건강기능식품 정보"
+      ]
+    },
+    {
+      "id": "qa-hospital-20260527-021",
+      "category": "musculoskeletal",
+      "difficulty": "basic",
+      "tags": [
+        "병원정보",
+        "진료준비",
+        "정형외과",
+        "비타민 D",
+        "건강식품원료",
+        "SEO-QA-HOSPITAL-20260527"
+      ],
+      "question": "골다공증이면 비타민D와 K2를 병원에 물어봐야 하나요?",
+      "answer": "골다공증이면 비타민D와 K2를 병원에 물어봐야 하나요?라는 질문은 정형외과·내분비내과 검색에서 자주 나옵니다. 먼저 병원 이름을 고르기 전에 증상 시작일, 악화되는 상황, 최근 검사 수치, 처방약, 일반의약품, 건강식품원료 복용 목록을 한 장으로 정리하세요. 특히 비타민 D처럼 건강식품원료가 포함된 경우에는 효과를 기대한다는 말보다 제품명, 1일 섭취량, 시작 날짜, 같이 먹는 약을 말하는 편이 안전합니다. 골밀도 저하, 폐경 후 골절 걱정, 비타민 D 부족이 있다면 정형외과·내분비내과에서 원인을 좁히는 검사를 우선 확인하고, 식사량이나 체중 변화가 있으면 맛있으리 식단 상담처럼 식사 기록을 정리해 가는 방식이 도움이 됩니다. 가벼운 충격 후 통증이 지속되면 압박골절 등 평가가 필요합니다. 본 정보는 병원 선택을 대신하지 않으며, 진단·치료·약물 조정은 담당 의료진과 결정해야 합니다.",
+      "views": 0,
+      "likes": 0,
+      "author": "플로로탄닌 정보센터 · 병원정보 Q&A 편집데스크",
+      "content_type": "informational",
+      "reviewed_at": "2026-05-27",
+      "disclaimer": "본 정보는 일반 건강정보 안내이며 의료 전문가의 진단·치료를 대체하지 않습니다.",
+      "source_type": "official_guideline_editorial",
+      "related_insights": [
+        "osteoporosis-clinic-vitamin-d-k2-calcium-check",
+        "hospital-info-search-checklist-cancer-diabetes-rehab",
+        "ingredient-quality-buying-guide-2026"
+      ],
+      "references_pmid": [
+        "pludowski-2017-vitamind-review",
+        "maresz-2015-vitk-bone",
+        "shrestha-2021-review"
+      ],
+      "references": [
+        "질병관리청 국가건강정보포털",
+        "국민건강보험 건강검진·검진기관 정보",
+        "국가암정보센터",
+        "식품안전나라 건강기능식품 정보"
+      ]
+    },
+    {
+      "id": "qa-hospital-20260527-022",
+      "category": "musculoskeletal",
+      "difficulty": "basic",
+      "tags": [
+        "병원정보",
+        "진료준비",
+        "재활의학과",
+        "마그네슘",
+        "건강식품원료",
+        "SEO-QA-HOSPITAL-20260527"
+      ],
+      "question": "허리통증이 있을 때 재활의학과와 정형외과 중 어디로 가나요?",
+      "answer": "허리통증이 있을 때 재활의학과와 정형외과 중 어디로 가나요?라는 질문은 재활의학과·정형외과 검색에서 자주 나옵니다. 먼저 병원 이름을 고르기 전에 증상 시작일, 악화되는 상황, 최근 검사 수치, 처방약, 일반의약품, 건강식품원료 복용 목록을 한 장으로 정리하세요. 특히 마그네슘처럼 건강식품원료가 포함된 경우에는 효과를 기대한다는 말보다 제품명, 1일 섭취량, 시작 날짜, 같이 먹는 약을 말하는 편이 안전합니다. 요통, 다리 저림, 오래 앉으면 악화이 있다면 재활의학과·정형외과에서 원인을 좁히는 검사를 우선 확인하고, 식사량이나 체중 변화가 있으면 맛있으리 식단 상담처럼 식사 기록을 정리해 가는 방식이 도움이 됩니다. 대소변 장애, 회음부 감각저하, 진행성 근력저하는 즉시 평가가 필요합니다. 본 정보는 병원 선택을 대신하지 않으며, 진단·치료·약물 조정은 담당 의료진과 결정해야 합니다.",
+      "views": 0,
+      "likes": 0,
+      "author": "플로로탄닌 정보센터 · 병원정보 Q&A 편집데스크",
+      "content_type": "informational",
+      "reviewed_at": "2026-05-27",
+      "disclaimer": "본 정보는 일반 건강정보 안내이며 의료 전문가의 진단·치료를 대체하지 않습니다.",
+      "source_type": "official_guideline_editorial",
+      "related_insights": [
+        "back-pain-rehab-hospital-magnesium-redflags",
+        "hospital-info-search-checklist-cancer-diabetes-rehab",
+        "ingredient-quality-buying-guide-2026"
+      ],
+      "references_pmid": [
+        "boyle-2017-magnesium-review",
+        "shrestha-2021-review",
+        "pradhan-2022-bioactive"
+      ],
+      "references": [
+        "질병관리청 국가건강정보포털",
+        "국민건강보험 건강검진·검진기관 정보",
+        "국가암정보센터",
+        "식품안전나라 건강기능식품 정보"
+      ]
+    },
+    {
+      "id": "qa-hospital-20260527-023",
+      "category": "neuro_cognitive",
+      "difficulty": "basic",
+      "tags": [
+        "병원정보",
+        "진료준비",
+        "재활의학과",
+        "오메가3",
+        "건강식품원료",
+        "SEO-QA-HOSPITAL-20260527"
+      ],
+      "question": "뇌졸중 후 재활병원 상담에서 식사와 보충제를 어떻게 묻나요?",
+      "answer": "뇌졸중 후 재활병원 상담에서 식사와 보충제를 어떻게 묻나요?라는 질문은 재활의학과·신경과 검색에서 자주 나옵니다. 먼저 병원 이름을 고르기 전에 증상 시작일, 악화되는 상황, 최근 검사 수치, 처방약, 일반의약품, 건강식품원료 복용 목록을 한 장으로 정리하세요. 특히 오메가3처럼 건강식품원료가 포함된 경우에는 효과를 기대한다는 말보다 제품명, 1일 섭취량, 시작 날짜, 같이 먹는 약을 말하는 편이 안전합니다. 마비 후 재활, 삼킴 문제, 체중감소, 피로이 있다면 재활의학과·신경과에서 원인을 좁히는 검사를 우선 확인하고, 식사량이나 체중 변화가 있으면 맛있으리 식단 상담처럼 식사 기록을 정리해 가는 방식이 도움이 됩니다. 새로운 마비, 말 어눌함, 시야장애는 즉시 응급 평가가 필요합니다. 본 정보는 병원 선택을 대신하지 않으며, 진단·치료·약물 조정은 담당 의료진과 결정해야 합니다.",
+      "views": 0,
+      "likes": 0,
+      "author": "플로로탄닌 정보센터 · 병원정보 Q&A 편집데스크",
+      "content_type": "informational",
+      "reviewed_at": "2026-05-27",
+      "disclaimer": "본 정보는 일반 건강정보 안내이며 의료 전문가의 진단·치료를 대체하지 않습니다.",
+      "source_type": "official_guideline_editorial",
+      "related_insights": [
+        "stroke-rehab-hospital-omega3-protein-caregiver",
+        "hospital-info-search-checklist-cancer-diabetes-rehab",
+        "ingredient-quality-buying-guide-2026"
+      ],
+      "references_pmid": [
+        "aung-2018-omega3-cvd",
+        "mar-poly-2024-cardio",
+        "shrestha-2021-review"
+      ],
+      "references": [
+        "질병관리청 국가건강정보포털",
+        "국민건강보험 건강검진·검진기관 정보",
+        "국가암정보센터",
+        "식품안전나라 건강기능식품 정보"
+      ]
+    },
+    {
+      "id": "qa-hospital-20260527-024",
+      "category": "neuro_cognitive",
+      "difficulty": "basic",
+      "tags": [
+        "병원정보",
+        "진료준비",
+        "신경과",
+        "코엔자임Q10",
+        "건강식품원료",
+        "SEO-QA-HOSPITAL-20260527"
+      ],
+      "question": "기억력이 떨어지면 건강식품보다 기억클리닉 상담이 먼저인가요?",
+      "answer": "기억력이 떨어지면 건강식품보다 기억클리닉 상담이 먼저인가요?라는 질문은 신경과·정신건강의학과 검색에서 자주 나옵니다. 먼저 병원 이름을 고르기 전에 증상 시작일, 악화되는 상황, 최근 검사 수치, 처방약, 일반의약품, 건강식품원료 복용 목록을 한 장으로 정리하세요. 특히 코엔자임Q10처럼 건강식품원료가 포함된 경우에는 효과를 기대한다는 말보다 제품명, 1일 섭취량, 시작 날짜, 같이 먹는 약을 말하는 편이 안전합니다. 깜빡함, 길 찾기 어려움, 수면 부족, 우울감이 있다면 신경과·정신건강의학과에서 원인을 좁히는 검사를 우선 확인하고, 식사량이나 체중 변화가 있으면 맛있으리 식단 상담처럼 식사 기록을 정리해 가는 방식이 도움이 됩니다. 갑작스러운 혼돈이나 한쪽 마비가 동반되면 응급 평가가 필요합니다. 본 정보는 병원 선택을 대신하지 않으며, 진단·치료·약물 조정은 담당 의료진과 결정해야 합니다.",
+      "views": 0,
+      "likes": 0,
+      "author": "플로로탄닌 정보센터 · 병원정보 Q&A 편집데스크",
+      "content_type": "informational",
+      "reviewed_at": "2026-05-27",
+      "disclaimer": "본 정보는 일반 건강정보 안내이며 의료 전문가의 진단·치료를 대체하지 않습니다.",
+      "source_type": "official_guideline_editorial",
+      "related_insights": [
+        "memory-clinic-pqq-omega3-medication-review",
+        "hospital-info-search-checklist-cancer-diabetes-rehab",
+        "ingredient-quality-buying-guide-2026"
+      ],
+      "references_pmid": [
+        "hernandez-camacho-2018-coq10",
+        "mortensen-2014-coq10-qsymbio",
+        "mar-poly-2024-cardio"
+      ],
+      "references": [
+        "질병관리청 국가건강정보포털",
+        "국민건강보험 건강검진·검진기관 정보",
+        "국가암정보센터",
+        "식품안전나라 건강기능식품 정보"
+      ]
+    },
+    {
+      "id": "qa-hospital-20260527-025",
+      "category": "mental_health",
+      "difficulty": "basic",
+      "tags": [
+        "병원정보",
+        "진료준비",
+        "수면클리닉",
+        "L-테아닌",
+        "건강식품원료",
+        "SEO-QA-HOSPITAL-20260527"
+      ],
+      "question": "잠이 안 오면 수면제 전 건강식품 복용기록도 필요하나요?",
+      "answer": "잠이 안 오면 수면제 전 건강식품 복용기록도 필요하나요?라는 질문은 수면클리닉·정신건강의학과 검색에서 자주 나옵니다. 먼저 병원 이름을 고르기 전에 증상 시작일, 악화되는 상황, 최근 검사 수치, 처방약, 일반의약품, 건강식품원료 복용 목록을 한 장으로 정리하세요. 특히 L-테아닌처럼 건강식품원료가 포함된 경우에는 효과를 기대한다는 말보다 제품명, 1일 섭취량, 시작 날짜, 같이 먹는 약을 말하는 편이 안전합니다. 입면곤란, 자주 깸, 코골이, 낮졸림이 있다면 수면클리닉·정신건강의학과에서 원인을 좁히는 검사를 우선 확인하고, 식사량이나 체중 변화가 있으면 맛있으리 식단 상담처럼 식사 기록을 정리해 가는 방식이 도움이 됩니다. 수면 중 숨멎음, 심한 주간졸림, 우울·자살사고가 있으면 전문 진료가 필요합니다. 본 정보는 병원 선택을 대신하지 않으며, 진단·치료·약물 조정은 담당 의료진과 결정해야 합니다.",
+      "views": 0,
+      "likes": 0,
+      "author": "플로로탄닌 정보센터 · 병원정보 Q&A 편집데스크",
+      "content_type": "informational",
+      "reviewed_at": "2026-05-27",
+      "disclaimer": "본 정보는 일반 건강정보 안내이며 의료 전문가의 진단·치료를 대체하지 않습니다.",
+      "source_type": "official_guideline_editorial",
+      "related_insights": [
+        "sleep-clinic-theanine-magnesium-gamtae-check",
+        "hospital-info-search-checklist-cancer-diabetes-rehab",
+        "ingredient-quality-buying-guide-2026"
+      ],
+      "references_pmid": [
+        "williams-2020-theanine-stress",
+        "shrestha-2021-review",
+        "pradhan-2022-bioactive"
+      ],
+      "references": [
+        "질병관리청 국가건강정보포털",
+        "국민건강보험 건강검진·검진기관 정보",
+        "국가암정보센터",
+        "식품안전나라 건강기능식품 정보"
+      ]
+    },
+    {
+      "id": "qa-hospital-20260527-026",
+      "category": "mental_health",
+      "difficulty": "basic",
+      "tags": [
+        "병원정보",
+        "진료준비",
+        "정신건강의학과",
+        "오메가3",
+        "건강식품원료",
+        "SEO-QA-HOSPITAL-20260527"
+      ],
+      "question": "불안할 때 오메가3나 테아닌을 먹는다고 병원에 말해야 하나요?",
+      "answer": "불안할 때 오메가3나 테아닌을 먹는다고 병원에 말해야 하나요?라는 질문은 정신건강의학과 검색에서 자주 나옵니다. 먼저 병원 이름을 고르기 전에 증상 시작일, 악화되는 상황, 최근 검사 수치, 처방약, 일반의약품, 건강식품원료 복용 목록을 한 장으로 정리하세요. 특히 오메가3처럼 건강식품원료가 포함된 경우에는 효과를 기대한다는 말보다 제품명, 1일 섭취량, 시작 날짜, 같이 먹는 약을 말하는 편이 안전합니다. 불안, 우울감, 공황, 수면저하이 있다면 정신건강의학과에서 원인을 좁히는 검사를 우선 확인하고, 식사량이나 체중 변화가 있으면 맛있으리 식단 상담처럼 식사 기록을 정리해 가는 방식이 도움이 됩니다. 자해 생각, 현실검증 저하, 극심한 불면은 빠르게 도움을 받아야 합니다. 본 정보는 병원 선택을 대신하지 않으며, 진단·치료·약물 조정은 담당 의료진과 결정해야 합니다.",
+      "views": 0,
+      "likes": 0,
+      "author": "플로로탄닌 정보센터 · 병원정보 Q&A 편집데스크",
+      "content_type": "informational",
+      "reviewed_at": "2026-05-27",
+      "disclaimer": "본 정보는 일반 건강정보 안내이며 의료 전문가의 진단·치료를 대체하지 않습니다.",
+      "source_type": "official_guideline_editorial",
+      "related_insights": [
+        "anxiety-depression-clinic-omega3-theanine-caution",
+        "hospital-info-search-checklist-cancer-diabetes-rehab",
+        "ingredient-quality-buying-guide-2026"
+      ],
+      "references_pmid": [
+        "aung-2018-omega3-cvd",
+        "mar-poly-2024-cardio",
+        "shrestha-2021-review"
+      ],
+      "references": [
+        "질병관리청 국가건강정보포털",
+        "국민건강보험 건강검진·검진기관 정보",
+        "국가암정보센터",
+        "식품안전나라 건강기능식품 정보"
+      ]
+    },
+    {
+      "id": "qa-hospital-20260527-027",
+      "category": "respiratory",
+      "difficulty": "basic",
+      "tags": [
+        "병원정보",
+        "진료준비",
+        "이비인후과",
+        "퀘르세틴",
+        "건강식품원료",
+        "SEO-QA-HOSPITAL-20260527"
+      ],
+      "question": "비염이 심하면 퀘르세틴이나 프로바이오틱스도 말해야 하나요?",
+      "answer": "비염이 심하면 퀘르세틴이나 프로바이오틱스도 말해야 하나요?라는 질문은 이비인후과·알레르기내과 검색에서 자주 나옵니다. 먼저 병원 이름을 고르기 전에 증상 시작일, 악화되는 상황, 최근 검사 수치, 처방약, 일반의약품, 건강식품원료 복용 목록을 한 장으로 정리하세요. 특히 퀘르세틴처럼 건강식품원료가 포함된 경우에는 효과를 기대한다는 말보다 제품명, 1일 섭취량, 시작 날짜, 같이 먹는 약을 말하는 편이 안전합니다. 재채기, 콧물, 코막힘, 눈가려움이 있다면 이비인후과·알레르기내과에서 원인을 좁히는 검사를 우선 확인하고, 식사량이나 체중 변화가 있으면 맛있으리 식단 상담처럼 식사 기록을 정리해 가는 방식이 도움이 됩니다. 호흡곤란, 천명, 입술부종이 있으면 알레르기 응급 가능성을 고려해야 합니다. 본 정보는 병원 선택을 대신하지 않으며, 진단·치료·약물 조정은 담당 의료진과 결정해야 합니다.",
+      "views": 0,
+      "likes": 0,
+      "author": "플로로탄닌 정보센터 · 병원정보 Q&A 편집데스크",
+      "content_type": "informational",
+      "reviewed_at": "2026-05-27",
+      "disclaimer": "본 정보는 일반 건강정보 안내이며 의료 전문가의 진단·치료를 대체하지 않습니다.",
+      "source_type": "official_guideline_editorial",
+      "related_insights": [
+        "allergic-rhinitis-ent-quercetin-probiotics",
+        "hospital-info-search-checklist-cancer-diabetes-rehab",
+        "ingredient-quality-buying-guide-2026"
+      ],
+      "references_pmid": [
+        "li-2016-quercetin-bp-meta",
+        "shrestha-2021-review",
+        "pradhan-2022-bioactive"
+      ],
+      "references": [
+        "질병관리청 국가건강정보포털",
+        "국민건강보험 건강검진·검진기관 정보",
+        "국가암정보센터",
+        "식품안전나라 건강기능식품 정보"
+      ]
+    },
+    {
+      "id": "qa-hospital-20260527-028",
+      "category": "respiratory",
+      "difficulty": "basic",
+      "tags": [
+        "병원정보",
+        "진료준비",
+        "호흡기내과",
+        "비타민 D",
+        "건강식품원료",
+        "SEO-QA-HOSPITAL-20260527"
+      ],
+      "question": "천식이 있으면 비타민D나 오메가3보다 흡입제 상담이 먼저인가요?",
+      "answer": "천식이 있으면 비타민D나 오메가3보다 흡입제 상담이 먼저인가요?라는 질문은 호흡기내과·알레르기내과 검색에서 자주 나옵니다. 먼저 병원 이름을 고르기 전에 증상 시작일, 악화되는 상황, 최근 검사 수치, 처방약, 일반의약품, 건강식품원료 복용 목록을 한 장으로 정리하세요. 특히 비타민 D처럼 건강식품원료가 포함된 경우에는 효과를 기대한다는 말보다 제품명, 1일 섭취량, 시작 날짜, 같이 먹는 약을 말하는 편이 안전합니다. 쌕쌕거림, 기침, 운동 시 숨참, 야간 증상이 있다면 호흡기내과·알레르기내과에서 원인을 좁히는 검사를 우선 확인하고, 식사량이나 체중 변화가 있으면 맛있으리 식단 상담처럼 식사 기록을 정리해 가는 방식이 도움이 됩니다. 말하기 힘든 호흡곤란, 입술 청색증, 흡입제 반응 부족은 응급 평가가 필요합니다. 본 정보는 병원 선택을 대신하지 않으며, 진단·치료·약물 조정은 담당 의료진과 결정해야 합니다.",
+      "views": 0,
+      "likes": 0,
+      "author": "플로로탄닌 정보센터 · 병원정보 Q&A 편집데스크",
+      "content_type": "informational",
+      "reviewed_at": "2026-05-27",
+      "disclaimer": "본 정보는 일반 건강정보 안내이며 의료 전문가의 진단·치료를 대체하지 않습니다.",
+      "source_type": "official_guideline_editorial",
+      "related_insights": [
+        "asthma-pulmonology-vitamin-d-omega3-check",
+        "hospital-info-search-checklist-cancer-diabetes-rehab",
+        "ingredient-quality-buying-guide-2026"
+      ],
+      "references_pmid": [
+        "pludowski-2017-vitamind-review",
+        "maresz-2015-vitk-bone",
+        "shrestha-2021-review"
+      ],
+      "references": [
+        "질병관리청 국가건강정보포털",
+        "국민건강보험 건강검진·검진기관 정보",
+        "국가암정보센터",
+        "식품안전나라 건강기능식품 정보"
+      ]
+    },
+    {
+      "id": "qa-hospital-20260527-029",
+      "category": "respiratory",
+      "difficulty": "basic",
+      "tags": [
+        "병원정보",
+        "진료준비",
+        "호흡기내과",
+        "프로바이오틱스",
+        "건강식품원료",
+        "SEO-QA-HOSPITAL-20260527"
+      ],
+      "question": "기침이 오래가면 어느 병원부터 가야 하나요?",
+      "answer": "기침이 오래가면 어느 병원부터 가야 하나요?라는 질문은 호흡기내과·이비인후과 검색에서 자주 나옵니다. 먼저 병원 이름을 고르기 전에 증상 시작일, 악화되는 상황, 최근 검사 수치, 처방약, 일반의약품, 건강식품원료 복용 목록을 한 장으로 정리하세요. 특히 프로바이오틱스처럼 건강식품원료가 포함된 경우에는 효과를 기대한다는 말보다 제품명, 1일 섭취량, 시작 날짜, 같이 먹는 약을 말하는 편이 안전합니다. 8주 이상 기침, 목 이물감, 가래, 역류 증상이 있다면 호흡기내과·이비인후과에서 원인을 좁히는 검사를 우선 확인하고, 식사량이나 체중 변화가 있으면 맛있으리 식단 상담처럼 식사 기록을 정리해 가는 방식이 도움이 됩니다. 객혈, 체중감소, 고열, 숨참이 있으면 빠르게 진료가 필요합니다. 본 정보는 병원 선택을 대신하지 않으며, 진단·치료·약물 조정은 담당 의료진과 결정해야 합니다.",
+      "views": 0,
+      "likes": 0,
+      "author": "플로로탄닌 정보센터 · 병원정보 Q&A 편집데스크",
+      "content_type": "informational",
+      "reviewed_at": "2026-05-27",
+      "disclaimer": "본 정보는 일반 건강정보 안내이며 의료 전문가의 진단·치료를 대체하지 않습니다.",
+      "source_type": "official_guideline_editorial",
+      "related_insights": [
+        "chronic-cough-hospital-reflux-allergy-supplement",
+        "hospital-info-search-checklist-cancer-diabetes-rehab",
+        "ingredient-quality-buying-guide-2026"
+      ],
+      "references_pmid": [
+        "depommier-2019-akkermansia",
+        "lopez-2026-gut-microbiota",
+        "shrestha-2021-review"
+      ],
+      "references": [
+        "질병관리청 국가건강정보포털",
+        "국민건강보험 건강검진·검진기관 정보",
+        "국가암정보센터",
+        "식품안전나라 건강기능식품 정보"
+      ]
+    },
+    {
+      "id": "qa-hospital-20260527-030",
+      "category": "skin",
+      "difficulty": "basic",
+      "tags": [
+        "병원정보",
+        "진료준비",
+        "피부과",
+        "콜라겐",
+        "건강식품원료",
+        "SEO-QA-HOSPITAL-20260527"
+      ],
+      "question": "피부 트러블로 피부과 갈 때 먹는 콜라겐도 말해야 하나요?",
+      "answer": "피부 트러블로 피부과 갈 때 먹는 콜라겐도 말해야 하나요?라는 질문은 피부과 검색에서 자주 나옵니다. 먼저 병원 이름을 고르기 전에 증상 시작일, 악화되는 상황, 최근 검사 수치, 처방약, 일반의약품, 건강식품원료 복용 목록을 한 장으로 정리하세요. 특히 콜라겐처럼 건강식품원료가 포함된 경우에는 효과를 기대한다는 말보다 제품명, 1일 섭취량, 시작 날짜, 같이 먹는 약을 말하는 편이 안전합니다. 발진, 가려움, 여드름, 색소침착, 건조이 있다면 피부과에서 원인을 좁히는 검사를 우선 확인하고, 식사량이나 체중 변화가 있으면 맛있으리 식단 상담처럼 식사 기록을 정리해 가는 방식이 도움이 됩니다. 빠르게 번지는 발진, 물집, 호흡곤란, 고열이 동반되면 즉시 평가가 필요합니다. 본 정보는 병원 선택을 대신하지 않으며, 진단·치료·약물 조정은 담당 의료진과 결정해야 합니다.",
+      "views": 0,
+      "likes": 0,
+      "author": "플로로탄닌 정보센터 · 병원정보 Q&A 편집데스크",
+      "content_type": "informational",
+      "reviewed_at": "2026-05-27",
+      "disclaimer": "본 정보는 일반 건강정보 안내이며 의료 전문가의 진단·치료를 대체하지 않습니다.",
+      "source_type": "official_guideline_editorial",
+      "related_insights": [
+        "dermatology-collagen-astaxanthin-skin-check",
+        "hospital-info-search-checklist-cancer-diabetes-rehab",
+        "ingredient-quality-buying-guide-2026"
+      ],
+      "references_pmid": [
+        "leon-lopez-2019-marine-collagen",
+        "choi-2014-collagen-skin",
+        "kim-2025-collagen-il17"
+      ],
+      "references": [
+        "질병관리청 국가건강정보포털",
+        "국민건강보험 건강검진·검진기관 정보",
+        "국가암정보센터",
+        "식품안전나라 건강기능식품 정보"
+      ]
+    },
+    {
+      "id": "qa-hospital-20260527-031",
+      "category": "hair",
+      "difficulty": "basic",
+      "tags": [
+        "병원정보",
+        "진료준비",
+        "피부과",
+        "비타민 D",
+        "건강식품원료",
+        "SEO-QA-HOSPITAL-20260527"
+      ],
+      "question": "탈모가 있으면 비타민D나 철분 검사를 같이 물어봐도 되나요?",
+      "answer": "탈모가 있으면 비타민D나 철분 검사를 같이 물어봐도 되나요?라는 질문은 피부과·탈모클리닉 검색에서 자주 나옵니다. 먼저 병원 이름을 고르기 전에 증상 시작일, 악화되는 상황, 최근 검사 수치, 처방약, 일반의약품, 건강식품원료 복용 목록을 한 장으로 정리하세요. 특히 비타민 D처럼 건강식품원료가 포함된 경우에는 효과를 기대한다는 말보다 제품명, 1일 섭취량, 시작 날짜, 같이 먹는 약을 말하는 편이 안전합니다. 모발 가늘어짐, 원형탈모, 산후탈모, 두피 가려움이 있다면 피부과·탈모클리닉에서 원인을 좁히는 검사를 우선 확인하고, 식사량이나 체중 변화가 있으면 맛있으리 식단 상담처럼 식사 기록을 정리해 가는 방식이 도움이 됩니다. 갑작스러운 원형 탈모나 염증성 두피 병변은 조기 진료가 좋습니다. 본 정보는 병원 선택을 대신하지 않으며, 진단·치료·약물 조정은 담당 의료진과 결정해야 합니다.",
+      "views": 0,
+      "likes": 0,
+      "author": "플로로탄닌 정보센터 · 병원정보 Q&A 편집데스크",
+      "content_type": "informational",
+      "reviewed_at": "2026-05-27",
+      "disclaimer": "본 정보는 일반 건강정보 안내이며 의료 전문가의 진단·치료를 대체하지 않습니다.",
+      "source_type": "official_guideline_editorial",
+      "related_insights": [
+        "hair-loss-clinic-iron-vitamin-d-zinc-check",
+        "hospital-info-search-checklist-cancer-diabetes-rehab",
+        "ingredient-quality-buying-guide-2026"
+      ],
+      "references_pmid": [
+        "pludowski-2017-vitamind-review",
+        "maresz-2015-vitk-bone",
+        "shrestha-2021-review"
+      ],
+      "references": [
+        "질병관리청 국가건강정보포털",
+        "국민건강보험 건강검진·검진기관 정보",
+        "국가암정보센터",
+        "식품안전나라 건강기능식품 정보"
+      ]
+    },
+    {
+      "id": "qa-hospital-20260527-032",
+      "category": "womens_health",
+      "difficulty": "basic",
+      "tags": [
+        "병원정보",
+        "진료준비",
+        "산부인과",
+        "비타민 D",
+        "건강식품원료",
+        "SEO-QA-HOSPITAL-20260527"
+      ],
+      "question": "갱년기 증상은 산부인과와 내과 중 어디로 가야 하나요?",
+      "answer": "갱년기 증상은 산부인과와 내과 중 어디로 가야 하나요?라는 질문은 산부인과·내과 검색에서 자주 나옵니다. 먼저 병원 이름을 고르기 전에 증상 시작일, 악화되는 상황, 최근 검사 수치, 처방약, 일반의약품, 건강식품원료 복용 목록을 한 장으로 정리하세요. 특히 비타민 D처럼 건강식품원료가 포함된 경우에는 효과를 기대한다는 말보다 제품명, 1일 섭취량, 시작 날짜, 같이 먹는 약을 말하는 편이 안전합니다. 안면홍조, 수면불편, 골밀도 걱정, 체중증가이 있다면 산부인과·내과에서 원인을 좁히는 검사를 우선 확인하고, 식사량이나 체중 변화가 있으면 맛있으리 식단 상담처럼 식사 기록을 정리해 가는 방식이 도움이 됩니다. 비정상 질출혈이나 흉통, 갑작스러운 호흡곤란은 바로 진료가 필요합니다. 본 정보는 병원 선택을 대신하지 않으며, 진단·치료·약물 조정은 담당 의료진과 결정해야 합니다.",
+      "views": 0,
+      "likes": 0,
+      "author": "플로로탄닌 정보센터 · 병원정보 Q&A 편집데스크",
+      "content_type": "informational",
+      "reviewed_at": "2026-05-27",
+      "disclaimer": "본 정보는 일반 건강정보 안내이며 의료 전문가의 진단·치료를 대체하지 않습니다.",
+      "source_type": "official_guideline_editorial",
+      "related_insights": [
+        "menopause-clinic-vitamin-d-omega3-meal-routine",
+        "hospital-info-search-checklist-cancer-diabetes-rehab",
+        "ingredient-quality-buying-guide-2026"
+      ],
+      "references_pmid": [
+        "pludowski-2017-vitamind-review",
+        "maresz-2015-vitk-bone",
+        "shrestha-2021-review"
+      ],
+      "references": [
+        "질병관리청 국가건강정보포털",
+        "국민건강보험 건강검진·검진기관 정보",
+        "국가암정보센터",
+        "식품안전나라 건강기능식품 정보"
+      ]
+    },
+    {
+      "id": "qa-hospital-20260527-033",
+      "category": "womens_health",
+      "difficulty": "basic",
+      "tags": [
+        "병원정보",
+        "진료준비",
+        "산부인과",
+        "오메가3",
+        "건강식품원료",
+        "SEO-QA-HOSPITAL-20260527"
+      ],
+      "question": "임신 중 건강기능식품은 산부인과에 모두 말해야 하나요?",
+      "answer": "임신 중 건강기능식품은 산부인과에 모두 말해야 하나요?라는 질문은 산부인과 검색에서 자주 나옵니다. 먼저 병원 이름을 고르기 전에 증상 시작일, 악화되는 상황, 최근 검사 수치, 처방약, 일반의약품, 건강식품원료 복용 목록을 한 장으로 정리하세요. 특히 오메가3처럼 건강식품원료가 포함된 경우에는 효과를 기대한다는 말보다 제품명, 1일 섭취량, 시작 날짜, 같이 먹는 약을 말하는 편이 안전합니다. 임신 준비, 임신 초기, 빈혈, 입덧, 영양제 선택이 있다면 산부인과에서 원인을 좁히는 검사를 우선 확인하고, 식사량이나 체중 변화가 있으면 맛있으리 식단 상담처럼 식사 기록을 정리해 가는 방식이 도움이 됩니다. 출혈, 심한 복통, 고혈압 증상, 태동 감소는 즉시 의료진 연락이 필요합니다. 본 정보는 병원 선택을 대신하지 않으며, 진단·치료·약물 조정은 담당 의료진과 결정해야 합니다.",
+      "views": 0,
+      "likes": 0,
+      "author": "플로로탄닌 정보센터 · 병원정보 Q&A 편집데스크",
+      "content_type": "informational",
+      "reviewed_at": "2026-05-27",
+      "disclaimer": "본 정보는 일반 건강정보 안내이며 의료 전문가의 진단·치료를 대체하지 않습니다.",
+      "source_type": "official_guideline_editorial",
+      "related_insights": [
+        "pregnancy-clinic-folate-iron-omega3-safety",
+        "hospital-info-search-checklist-cancer-diabetes-rehab",
+        "ingredient-quality-buying-guide-2026"
+      ],
+      "references_pmid": [
+        "aung-2018-omega3-cvd",
+        "mar-poly-2024-cardio",
+        "shrestha-2021-review"
+      ],
+      "references": [
+        "질병관리청 국가건강정보포털",
+        "국민건강보험 건강검진·검진기관 정보",
+        "국가암정보센터",
+        "식품안전나라 건강기능식품 정보"
+      ]
+    },
+    {
+      "id": "qa-hospital-20260527-034",
+      "category": "mens_health",
+      "difficulty": "basic",
+      "tags": [
+        "병원정보",
+        "진료준비",
+        "비뇨의학과",
+        "감태 플로로탄닌",
+        "건강식품원료",
+        "SEO-QA-HOSPITAL-20260527"
+      ],
+      "question": "소변이 자주 마려우면 쏘팔메토를 먹기 전에 병원에 가야 하나요?",
+      "answer": "소변이 자주 마려우면 쏘팔메토를 먹기 전에 병원에 가야 하나요?라는 질문은 비뇨의학과 검색에서 자주 나옵니다. 먼저 병원 이름을 고르기 전에 증상 시작일, 악화되는 상황, 최근 검사 수치, 처방약, 일반의약품, 건강식품원료 복용 목록을 한 장으로 정리하세요. 특히 감태 플로로탄닌처럼 건강식품원료가 포함된 경우에는 효과를 기대한다는 말보다 제품명, 1일 섭취량, 시작 날짜, 같이 먹는 약을 말하는 편이 안전합니다. 야간뇨, 빈뇨, 약한 소변줄기, 잔뇨감이 있다면 비뇨의학과에서 원인을 좁히는 검사를 우선 확인하고, 식사량이나 체중 변화가 있으면 맛있으리 식단 상담처럼 식사 기록을 정리해 가는 방식이 도움이 됩니다. 소변이 전혀 안 나오거나 혈뇨, 발열, 심한 통증이 있으면 빠른 평가가 필요합니다. 본 정보는 병원 선택을 대신하지 않으며, 진단·치료·약물 조정은 담당 의료진과 결정해야 합니다.",
+      "views": 0,
+      "likes": 0,
+      "author": "플로로탄닌 정보센터 · 병원정보 Q&A 편집데스크",
+      "content_type": "informational",
+      "reviewed_at": "2026-05-27",
+      "disclaimer": "본 정보는 일반 건강정보 안내이며 의료 전문가의 진단·치료를 대체하지 않습니다.",
+      "source_type": "official_guideline_editorial",
+      "related_insights": [
+        "prostate-urology-saw-palmetto-zinc-memo",
+        "hospital-info-search-checklist-cancer-diabetes-rehab",
+        "ingredient-quality-buying-guide-2026"
+      ],
+      "references_pmid": [
+        "shrestha-2021-review",
+        "choi-2017-ecklonia-review",
+        "shin-2024-pharmacokinetics"
+      ],
+      "references": [
+        "질병관리청 국가건강정보포털",
+        "국민건강보험 건강검진·검진기관 정보",
+        "국가암정보센터",
+        "식품안전나라 건강기능식품 정보"
+      ]
+    },
+    {
+      "id": "qa-hospital-20260527-035",
+      "category": "mens_health",
+      "difficulty": "basic",
+      "tags": [
+        "병원정보",
+        "진료준비",
+        "비뇨의학과",
+        "마그네슘",
+        "건강식품원료",
+        "SEO-QA-HOSPITAL-20260527"
+      ],
+      "question": "밤에 소변 때문에 깨면 물만 줄이면 되나요?",
+      "answer": "밤에 소변 때문에 깨면 물만 줄이면 되나요?라는 질문은 비뇨의학과·내과 검색에서 자주 나옵니다. 먼저 병원 이름을 고르기 전에 증상 시작일, 악화되는 상황, 최근 검사 수치, 처방약, 일반의약품, 건강식품원료 복용 목록을 한 장으로 정리하세요. 특히 마그네슘처럼 건강식품원료가 포함된 경우에는 효과를 기대한다는 말보다 제품명, 1일 섭취량, 시작 날짜, 같이 먹는 약을 말하는 편이 안전합니다. 야간뇨, 수면분절, 갈증, 빈뇨이 있다면 비뇨의학과·내과에서 원인을 좁히는 검사를 우선 확인하고, 식사량이나 체중 변화가 있으면 맛있으리 식단 상담처럼 식사 기록을 정리해 가는 방식이 도움이 됩니다. 혈뇨, 통증, 발열, 소변 정체가 있으면 빠른 진료가 필요합니다. 본 정보는 병원 선택을 대신하지 않으며, 진단·치료·약물 조정은 담당 의료진과 결정해야 합니다.",
+      "views": 0,
+      "likes": 0,
+      "author": "플로로탄닌 정보센터 · 병원정보 Q&A 편집데스크",
+      "content_type": "informational",
+      "reviewed_at": "2026-05-27",
+      "disclaimer": "본 정보는 일반 건강정보 안내이며 의료 전문가의 진단·치료를 대체하지 않습니다.",
+      "source_type": "official_guideline_editorial",
+      "related_insights": [
+        "urinary-frequency-urology-caffeine-water-check",
+        "hospital-info-search-checklist-cancer-diabetes-rehab",
+        "ingredient-quality-buying-guide-2026"
+      ],
+      "references_pmid": [
+        "boyle-2017-magnesium-review",
+        "shrestha-2021-review",
+        "pradhan-2022-bioactive"
+      ],
+      "references": [
+        "질병관리청 국가건강정보포털",
+        "국민건강보험 건강검진·검진기관 정보",
+        "국가암정보센터",
+        "식품안전나라 건강기능식품 정보"
+      ]
+    },
+    {
+      "id": "qa-hospital-20260527-036",
+      "category": "metabolism",
+      "difficulty": "basic",
+      "tags": [
+        "병원정보",
+        "진료준비",
+        "비만클리닉",
+        "베르베린",
+        "건강식품원료",
+        "SEO-QA-HOSPITAL-20260527"
+      ],
+      "question": "비만클리닉 가기 전 GLP-1 관련 건강식품을 먹어도 되나요?",
+      "answer": "비만클리닉 가기 전 GLP-1 관련 건강식품을 먹어도 되나요?라는 질문은 비만클리닉·내분비내과 검색에서 자주 나옵니다. 먼저 병원 이름을 고르기 전에 증상 시작일, 악화되는 상황, 최근 검사 수치, 처방약, 일반의약품, 건강식품원료 복용 목록을 한 장으로 정리하세요. 특히 베르베린처럼 건강식품원료가 포함된 경우에는 효과를 기대한다는 말보다 제품명, 1일 섭취량, 시작 날짜, 같이 먹는 약을 말하는 편이 안전합니다. 복부비만, 체중증가, 혈당·지질 이상이 있다면 비만클리닉·내분비내과에서 원인을 좁히는 검사를 우선 확인하고, 식사량이나 체중 변화가 있으면 맛있으리 식단 상담처럼 식사 기록을 정리해 가는 방식이 도움이 됩니다. 급격한 체중감소, 심한 구토, 복통은 원인 평가가 필요합니다. 본 정보는 병원 선택을 대신하지 않으며, 진단·치료·약물 조정은 담당 의료진과 결정해야 합니다.",
+      "views": 0,
+      "likes": 0,
+      "author": "플로로탄닌 정보센터 · 병원정보 Q&A 편집데스크",
+      "content_type": "informational",
+      "reviewed_at": "2026-05-27",
+      "disclaimer": "본 정보는 일반 건강정보 안내이며 의료 전문가의 진단·치료를 대체하지 않습니다.",
+      "source_type": "official_guideline_editorial",
+      "related_insights": [
+        "obesity-clinic-glp1-natural-adjuncts-safety",
+        "hospital-info-search-checklist-cancer-diabetes-rehab",
+        "ingredient-quality-buying-guide-2026"
+      ],
+      "references_pmid": [
+        "yin-2008-berberine-glucose",
+        "lan-2015-berberine-meta",
+        "zhang-2010-berberine-lipid"
+      ],
+      "references": [
+        "질병관리청 국가건강정보포털",
+        "국민건강보험 건강검진·검진기관 정보",
+        "국가암정보센터",
+        "식품안전나라 건강기능식품 정보"
+      ]
+    },
+    {
+      "id": "qa-hospital-20260527-037",
+      "category": "infection_inflammation",
+      "difficulty": "basic",
+      "tags": [
+        "병원정보",
+        "진료준비",
+        "류마티스내과",
+        "비타민 D",
+        "건강식품원료",
+        "SEO-QA-HOSPITAL-20260527"
+      ],
+      "question": "통풍이 있으면 비타민C나 식단을 어떻게 상담하나요?",
+      "answer": "통풍이 있으면 비타민C나 식단을 어떻게 상담하나요?라는 질문은 류마티스내과·내과 검색에서 자주 나옵니다. 먼저 병원 이름을 고르기 전에 증상 시작일, 악화되는 상황, 최근 검사 수치, 처방약, 일반의약품, 건강식품원료 복용 목록을 한 장으로 정리하세요. 특히 비타민 D처럼 건강식품원료가 포함된 경우에는 효과를 기대한다는 말보다 제품명, 1일 섭취량, 시작 날짜, 같이 먹는 약을 말하는 편이 안전합니다. 엄지발가락 통증, 관절 붓기, 요산 상승이 있다면 류마티스내과·내과에서 원인을 좁히는 검사를 우선 확인하고, 식사량이나 체중 변화가 있으면 맛있으리 식단 상담처럼 식사 기록을 정리해 가는 방식이 도움이 됩니다. 발열을 동반한 관절부종은 감염성 관절염과 구분이 필요합니다. 본 정보는 병원 선택을 대신하지 않으며, 진단·치료·약물 조정은 담당 의료진과 결정해야 합니다.",
+      "views": 0,
+      "likes": 0,
+      "author": "플로로탄닌 정보센터 · 병원정보 Q&A 편집데스크",
+      "content_type": "informational",
+      "reviewed_at": "2026-05-27",
+      "disclaimer": "본 정보는 일반 건강정보 안내이며 의료 전문가의 진단·치료를 대체하지 않습니다.",
+      "source_type": "official_guideline_editorial",
+      "related_insights": [
+        "gout-rheumatology-vitamin-c-diet-supplement",
+        "hospital-info-search-checklist-cancer-diabetes-rehab",
+        "ingredient-quality-buying-guide-2026"
+      ],
+      "references_pmid": [
+        "pludowski-2017-vitamind-review",
+        "maresz-2015-vitk-bone",
+        "shrestha-2021-review"
+      ],
+      "references": [
+        "질병관리청 국가건강정보포털",
+        "국민건강보험 건강검진·검진기관 정보",
+        "국가암정보센터",
+        "식품안전나라 건강기능식품 정보"
+      ]
+    },
+    {
+      "id": "qa-hospital-20260527-038",
+      "category": "infection_inflammation",
+      "difficulty": "basic",
+      "tags": [
+        "병원정보",
+        "진료준비",
+        "류마티스내과",
+        "오메가3",
+        "건강식품원료",
+        "SEO-QA-HOSPITAL-20260527"
+      ],
+      "question": "자가면역질환이 있으면 건강식품을 모두 말해야 하나요?",
+      "answer": "자가면역질환이 있으면 건강식품을 모두 말해야 하나요?라는 질문은 류마티스내과 검색에서 자주 나옵니다. 먼저 병원 이름을 고르기 전에 증상 시작일, 악화되는 상황, 최근 검사 수치, 처방약, 일반의약품, 건강식품원료 복용 목록을 한 장으로 정리하세요. 특히 오메가3처럼 건강식품원료가 포함된 경우에는 효과를 기대한다는 말보다 제품명, 1일 섭취량, 시작 날짜, 같이 먹는 약을 말하는 편이 안전합니다. 관절통, 피로, 발진, 구강궤양, 면역억제제 복용이 있다면 류마티스내과에서 원인을 좁히는 검사를 우선 확인하고, 식사량이나 체중 변화가 있으면 맛있으리 식단 상담처럼 식사 기록을 정리해 가는 방식이 도움이 됩니다. 고열, 호흡곤란, 심한 감염 의심 증상은 즉시 의료진과 상의해야 합니다. 본 정보는 병원 선택을 대신하지 않으며, 진단·치료·약물 조정은 담당 의료진과 결정해야 합니다.",
+      "views": 0,
+      "likes": 0,
+      "author": "플로로탄닌 정보센터 · 병원정보 Q&A 편집데스크",
+      "content_type": "informational",
+      "reviewed_at": "2026-05-27",
+      "disclaimer": "본 정보는 일반 건강정보 안내이며 의료 전문가의 진단·치료를 대체하지 않습니다.",
+      "source_type": "official_guideline_editorial",
+      "related_insights": [
+        "autoimmune-rheumatology-omega3-vitamin-d-memo",
+        "hospital-info-search-checklist-cancer-diabetes-rehab",
+        "ingredient-quality-buying-guide-2026"
+      ],
+      "references_pmid": [
+        "aung-2018-omega3-cvd",
+        "mar-poly-2024-cardio",
+        "shrestha-2021-review"
+      ],
+      "references": [
+        "질병관리청 국가건강정보포털",
+        "국민건강보험 건강검진·검진기관 정보",
+        "국가암정보센터",
+        "식품안전나라 건강기능식품 정보"
+      ]
+    },
+    {
+      "id": "qa-hospital-20260527-039",
+      "category": "digestive",
+      "difficulty": "basic",
+      "tags": [
+        "병원정보",
+        "진료준비",
+        "치과",
+        "락토페린",
+        "건강식품원료",
+        "SEO-QA-HOSPITAL-20260527"
+      ],
+      "question": "입이 마르고 헐면 치과와 이비인후과 중 어디로 가나요?",
+      "answer": "입이 마르고 헐면 치과와 이비인후과 중 어디로 가나요?라는 질문은 치과·이비인후과 검색에서 자주 나옵니다. 먼저 병원 이름을 고르기 전에 증상 시작일, 악화되는 상황, 최근 검사 수치, 처방약, 일반의약품, 건강식품원료 복용 목록을 한 장으로 정리하세요. 특히 락토페린처럼 건강식품원료가 포함된 경우에는 효과를 기대한다는 말보다 제품명, 1일 섭취량, 시작 날짜, 같이 먹는 약을 말하는 편이 안전합니다. 구강건조, 구내염, 입맛 변화, 삼킴불편이 있다면 치과·이비인후과에서 원인을 좁히는 검사를 우선 확인하고, 식사량이나 체중 변화가 있으면 맛있으리 식단 상담처럼 식사 기록을 정리해 가는 방식이 도움이 됩니다. 삼키기 어렵거나 고열, 면역저하 상태의 구강감염은 빠른 진료가 필요합니다. 본 정보는 병원 선택을 대신하지 않으며, 진단·치료·약물 조정은 담당 의료진과 결정해야 합니다.",
+      "views": 0,
+      "likes": 0,
+      "author": "플로로탄닌 정보센터 · 병원정보 Q&A 편집데스크",
+      "content_type": "informational",
+      "reviewed_at": "2026-05-27",
+      "disclaimer": "본 정보는 일반 건강정보 안내이며 의료 전문가의 진단·치료를 대체하지 않습니다.",
+      "source_type": "official_guideline_editorial",
+      "related_insights": [
+        "dental-oral-dry-mouth-nutrition-hospital",
+        "hospital-info-search-checklist-cancer-diabetes-rehab",
+        "ingredient-quality-buying-guide-2026"
+      ],
+      "references_pmid": [
+        "lonnerdal-2021-lactoferrin",
+        "shrestha-2021-review",
+        "pradhan-2022-bioactive"
+      ],
+      "references": [
+        "질병관리청 국가건강정보포털",
+        "국민건강보험 건강검진·검진기관 정보",
+        "국가암정보센터",
+        "식품안전나라 건강기능식품 정보"
+      ]
+    },
+    {
+      "id": "qa-hospital-20260527-040",
+      "category": "neuro_cognitive",
+      "difficulty": "basic",
+      "tags": [
+        "병원정보",
+        "진료준비",
+        "안과",
+        "루테인·아스타잔틴",
+        "건강식품원료",
+        "SEO-QA-HOSPITAL-20260527"
+      ],
+      "question": "눈이 침침하면 루테인보다 안과 검사가 먼저인가요?",
+      "answer": "눈이 침침하면 루테인보다 안과 검사가 먼저인가요?라는 질문은 안과 검색에서 자주 나옵니다. 먼저 병원 이름을 고르기 전에 증상 시작일, 악화되는 상황, 최근 검사 수치, 처방약, 일반의약품, 건강식품원료 복용 목록을 한 장으로 정리하세요. 특히 루테인·아스타잔틴처럼 건강식품원료가 포함된 경우에는 효과를 기대한다는 말보다 제품명, 1일 섭취량, 시작 날짜, 같이 먹는 약을 말하는 편이 안전합니다. 시야 흐림, 눈부심, 황반변성 가족력, 건조감이 있다면 안과에서 원인을 좁히는 검사를 우선 확인하고, 식사량이나 체중 변화가 있으면 맛있으리 식단 상담처럼 식사 기록을 정리해 가는 방식이 도움이 됩니다. 갑작스러운 시야장애, 번쩍임, 검은 그림자는 즉시 안과 평가가 필요합니다. 본 정보는 병원 선택을 대신하지 않으며, 진단·치료·약물 조정은 담당 의료진과 결정해야 합니다.",
+      "views": 0,
+      "likes": 0,
+      "author": "플로로탄닌 정보센터 · 병원정보 Q&A 편집데스크",
+      "content_type": "informational",
+      "reviewed_at": "2026-05-27",
+      "disclaimer": "본 정보는 일반 건강정보 안내이며 의료 전문가의 진단·치료를 대체하지 않습니다.",
+      "source_type": "official_guideline_editorial",
+      "related_insights": [
+        "eye-clinic-lutein-astaxanthin-amd-check",
+        "hospital-info-search-checklist-cancer-diabetes-rehab",
+        "ingredient-quality-buying-guide-2026"
+      ],
+      "references_pmid": [
+        "fakhri-2018-astaxanthin-review",
+        "efsa-2023-astaxanthin-novel",
+        "shrestha-2021-review"
+      ],
+      "references": [
+        "질병관리청 국가건강정보포털",
+        "국민건강보험 건강검진·검진기관 정보",
+        "국가암정보센터",
+        "식품안전나라 건강기능식품 정보"
+      ]
+    },
+    {
+      "id": "qa-hospital-20260527-041",
+      "category": "neuro_cognitive",
+      "difficulty": "basic",
+      "tags": [
+        "병원정보",
+        "진료준비",
+        "이비인후과",
+        "마그네슘",
+        "건강식품원료",
+        "SEO-QA-HOSPITAL-20260527"
+      ],
+      "question": "어지럼은 이비인후과와 신경과 중 어디로 가야 하나요?",
+      "answer": "어지럼은 이비인후과와 신경과 중 어디로 가야 하나요?라는 질문은 이비인후과·신경과 검색에서 자주 나옵니다. 먼저 병원 이름을 고르기 전에 증상 시작일, 악화되는 상황, 최근 검사 수치, 처방약, 일반의약품, 건강식품원료 복용 목록을 한 장으로 정리하세요. 특히 마그네슘처럼 건강식품원료가 포함된 경우에는 효과를 기대한다는 말보다 제품명, 1일 섭취량, 시작 날짜, 같이 먹는 약을 말하는 편이 안전합니다. 빙빙 도는 어지럼, 균형장애, 귀먹먹함, 두통이 있다면 이비인후과·신경과에서 원인을 좁히는 검사를 우선 확인하고, 식사량이나 체중 변화가 있으면 맛있으리 식단 상담처럼 식사 기록을 정리해 가는 방식이 도움이 됩니다. 말 어눌함, 한쪽 마비, 심한 두통, 복시가 동반되면 응급 평가가 필요합니다. 본 정보는 병원 선택을 대신하지 않으며, 진단·치료·약물 조정은 담당 의료진과 결정해야 합니다.",
+      "views": 0,
+      "likes": 0,
+      "author": "플로로탄닌 정보센터 · 병원정보 Q&A 편집데스크",
+      "content_type": "informational",
+      "reviewed_at": "2026-05-27",
+      "disclaimer": "본 정보는 일반 건강정보 안내이며 의료 전문가의 진단·치료를 대체하지 않습니다.",
+      "source_type": "official_guideline_editorial",
+      "related_insights": [
+        "dizziness-ent-neurology-magnesium-check",
+        "hospital-info-search-checklist-cancer-diabetes-rehab",
+        "ingredient-quality-buying-guide-2026"
+      ],
+      "references_pmid": [
+        "boyle-2017-magnesium-review",
+        "shrestha-2021-review",
+        "pradhan-2022-bioactive"
+      ],
+      "references": [
+        "질병관리청 국가건강정보포털",
+        "국민건강보험 건강검진·검진기관 정보",
+        "국가암정보센터",
+        "식품안전나라 건강기능식품 정보"
+      ]
+    },
+    {
+      "id": "qa-hospital-20260527-042",
+      "category": "infection_inflammation",
+      "difficulty": "basic",
+      "tags": [
+        "병원정보",
+        "진료준비",
+        "감염내과",
+        "프로바이오틱스",
+        "건강식품원료",
+        "SEO-QA-HOSPITAL-20260527"
+      ],
+      "question": "예방접종 전후 건강기능식품을 먹어도 되는지 물어봐야 하나요?",
+      "answer": "예방접종 전후 건강기능식품을 먹어도 되는지 물어봐야 하나요?라는 질문은 감염내과·여행클리닉 검색에서 자주 나옵니다. 먼저 병원 이름을 고르기 전에 증상 시작일, 악화되는 상황, 최근 검사 수치, 처방약, 일반의약품, 건강식품원료 복용 목록을 한 장으로 정리하세요. 특히 프로바이오틱스처럼 건강식품원료가 포함된 경우에는 효과를 기대한다는 말보다 제품명, 1일 섭취량, 시작 날짜, 같이 먹는 약을 말하는 편이 안전합니다. 여행 전 접종, 면역저하, 만성질환, 약물복용이 있다면 감염내과·여행클리닉에서 원인을 좁히는 검사를 우선 확인하고, 식사량이나 체중 변화가 있으면 맛있으리 식단 상담처럼 식사 기록을 정리해 가는 방식이 도움이 됩니다. 접종 후 호흡곤란, 전신 두드러기, 고열 지속은 의료진 상담이 필요합니다. 본 정보는 병원 선택을 대신하지 않으며, 진단·치료·약물 조정은 담당 의료진과 결정해야 합니다.",
+      "views": 0,
+      "likes": 0,
+      "author": "플로로탄닌 정보센터 · 병원정보 Q&A 편집데스크",
+      "content_type": "informational",
+      "reviewed_at": "2026-05-27",
+      "disclaimer": "본 정보는 일반 건강정보 안내이며 의료 전문가의 진단·치료를 대체하지 않습니다.",
+      "source_type": "official_guideline_editorial",
+      "related_insights": [
+        "vaccine-travel-clinic-immune-supplement-check",
+        "hospital-info-search-checklist-cancer-diabetes-rehab",
+        "ingredient-quality-buying-guide-2026"
+      ],
+      "references_pmid": [
+        "depommier-2019-akkermansia",
+        "lopez-2026-gut-microbiota",
+        "shrestha-2021-review"
+      ],
+      "references": [
+        "질병관리청 국가건강정보포털",
+        "국민건강보험 건강검진·검진기관 정보",
+        "국가암정보센터",
+        "식품안전나라 건강기능식품 정보"
+      ]
+    },
+    {
+      "id": "qa-hospital-20260527-043",
+      "category": "cardiovascular",
+      "difficulty": "basic",
+      "tags": [
+        "병원정보",
+        "진료준비",
+        "응급의학과",
+        "감태 플로로탄닌",
+        "건강식품원료",
+        "SEO-QA-HOSPITAL-20260527"
+      ],
+      "question": "어떤 증상은 병원 검색보다 응급실이 먼저인가요?",
+      "answer": "어떤 증상은 병원 검색보다 응급실이 먼저인가요?라는 질문은 응급의학과 검색에서 자주 나옵니다. 먼저 병원 이름을 고르기 전에 증상 시작일, 악화되는 상황, 최근 검사 수치, 처방약, 일반의약품, 건강식품원료 복용 목록을 한 장으로 정리하세요. 특히 감태 플로로탄닌처럼 건강식품원료가 포함된 경우에는 효과를 기대한다는 말보다 제품명, 1일 섭취량, 시작 날짜, 같이 먹는 약을 말하는 편이 안전합니다. 흉통, 호흡곤란, 마비, 의식저하, 심한 복통이 있다면 응급의학과에서 원인을 좁히는 검사를 우선 확인하고, 식사량이나 체중 변화가 있으면 맛있으리 식단 상담처럼 식사 기록을 정리해 가는 방식이 도움이 됩니다. 응급 신호가 있으면 건강식품이나 예약 검색보다 119 또는 응급실 판단이 우선입니다. 본 정보는 병원 선택을 대신하지 않으며, 진단·치료·약물 조정은 담당 의료진과 결정해야 합니다.",
+      "views": 0,
+      "likes": 0,
+      "author": "플로로탄닌 정보센터 · 병원정보 Q&A 편집데스크",
+      "content_type": "informational",
+      "reviewed_at": "2026-05-27",
+      "disclaimer": "본 정보는 일반 건강정보 안내이며 의료 전문가의 진단·치료를 대체하지 않습니다.",
+      "source_type": "official_guideline_editorial",
+      "related_insights": [
+        "emergency-red-flags-chest-stroke-hospital",
+        "hospital-info-search-checklist-cancer-diabetes-rehab",
+        "ingredient-quality-buying-guide-2026"
+      ],
+      "references_pmid": [
+        "shrestha-2021-review",
+        "choi-2017-ecklonia-review",
+        "shin-2024-pharmacokinetics"
+      ],
+      "references": [
+        "질병관리청 국가건강정보포털",
+        "국민건강보험 건강검진·검진기관 정보",
+        "국가암정보센터",
+        "식품안전나라 건강기능식품 정보"
+      ]
+    },
+    {
+      "id": "qa-hospital-20260527-044",
+      "category": "infection_inflammation",
+      "difficulty": "basic",
+      "tags": [
+        "병원정보",
+        "진료준비",
+        "내과",
+        "락토페린",
+        "건강식품원료",
+        "SEO-QA-HOSPITAL-20260527"
+      ],
+      "question": "열이 날 때 비타민C나 아연을 먹고 지켜봐도 되나요?",
+      "answer": "열이 날 때 비타민C나 아연을 먹고 지켜봐도 되나요?라는 질문은 내과·감염내과 검색에서 자주 나옵니다. 먼저 병원 이름을 고르기 전에 증상 시작일, 악화되는 상황, 최근 검사 수치, 처방약, 일반의약품, 건강식품원료 복용 목록을 한 장으로 정리하세요. 특히 락토페린처럼 건강식품원료가 포함된 경우에는 효과를 기대한다는 말보다 제품명, 1일 섭취량, 시작 날짜, 같이 먹는 약을 말하는 편이 안전합니다. 발열, 인후통, 기침, 근육통, 면역저하이 있다면 내과·감염내과에서 원인을 좁히는 검사를 우선 확인하고, 식사량이나 체중 변화가 있으면 맛있으리 식단 상담처럼 식사 기록을 정리해 가는 방식이 도움이 됩니다. 고열 지속, 호흡곤란, 의식저하, 면역저하자는 빠른 진료가 필요합니다. 본 정보는 병원 선택을 대신하지 않으며, 진단·치료·약물 조정은 담당 의료진과 결정해야 합니다.",
+      "views": 0,
+      "likes": 0,
+      "author": "플로로탄닌 정보센터 · 병원정보 Q&A 편집데스크",
+      "content_type": "informational",
+      "reviewed_at": "2026-05-27",
+      "disclaimer": "본 정보는 일반 건강정보 안내이며 의료 전문가의 진단·치료를 대체하지 않습니다.",
+      "source_type": "official_guideline_editorial",
+      "related_insights": [
+        "fever-infection-clinic-vitamin-c-zinc-caution",
+        "hospital-info-search-checklist-cancer-diabetes-rehab",
+        "ingredient-quality-buying-guide-2026"
+      ],
+      "references_pmid": [
+        "lonnerdal-2021-lactoferrin",
+        "shrestha-2021-review",
+        "pradhan-2022-bioactive"
+      ],
+      "references": [
+        "질병관리청 국가건강정보포털",
+        "국민건강보험 건강검진·검진기관 정보",
+        "국가암정보센터",
+        "식품안전나라 건강기능식품 정보"
+      ]
+    },
+    {
+      "id": "qa-hospital-20260527-045",
+      "category": "mental_health",
+      "difficulty": "basic",
+      "tags": [
+        "병원정보",
+        "진료준비",
+        "주치의",
+        "감태 플로로탄닌",
+        "건강식품원료",
+        "SEO-QA-HOSPITAL-20260527"
+      ],
+      "question": "약을 여러 개 먹으면 건강식품 목록을 어떻게 정리하나요?",
+      "answer": "약을 여러 개 먹으면 건강식품 목록을 어떻게 정리하나요?라는 질문은 주치의·약사상담 검색에서 자주 나옵니다. 먼저 병원 이름을 고르기 전에 증상 시작일, 악화되는 상황, 최근 검사 수치, 처방약, 일반의약품, 건강식품원료 복용 목록을 한 장으로 정리하세요. 특히 감태 플로로탄닌처럼 건강식품원료가 포함된 경우에는 효과를 기대한다는 말보다 제품명, 1일 섭취량, 시작 날짜, 같이 먹는 약을 말하는 편이 안전합니다. 다약제 복용, 여러 병원 진료, 건강식품 병용이 있다면 주치의·약사상담에서 원인을 좁히는 검사를 우선 확인하고, 식사량이나 체중 변화가 있으면 맛있으리 식단 상담처럼 식사 기록을 정리해 가는 방식이 도움이 됩니다. 어지럼, 낙상, 출혈, 심한 졸림이 새로 생기면 약물 관련 평가가 필요합니다. 본 정보는 병원 선택을 대신하지 않으며, 진단·치료·약물 조정은 담당 의료진과 결정해야 합니다.",
+      "views": 0,
+      "likes": 0,
+      "author": "플로로탄닌 정보센터 · 병원정보 Q&A 편집데스크",
+      "content_type": "informational",
+      "reviewed_at": "2026-05-27",
+      "disclaimer": "본 정보는 일반 건강정보 안내이며 의료 전문가의 진단·치료를 대체하지 않습니다.",
+      "source_type": "official_guideline_editorial",
+      "related_insights": [
+        "polypharmacy-hospital-supplement-list-pharmacist",
+        "hospital-info-search-checklist-cancer-diabetes-rehab",
+        "ingredient-quality-buying-guide-2026"
+      ],
+      "references_pmid": [
+        "shrestha-2021-review",
+        "choi-2017-ecklonia-review",
+        "shin-2024-pharmacokinetics"
+      ],
+      "references": [
+        "질병관리청 국가건강정보포털",
+        "국민건강보험 건강검진·검진기관 정보",
+        "국가암정보센터",
+        "식품안전나라 건강기능식품 정보"
+      ]
+    },
+    {
+      "id": "qa-hospital-20260527-046",
+      "category": "cardiovascular",
+      "difficulty": "basic",
+      "tags": [
+        "병원정보",
+        "진료준비",
+        "심장내과",
+        "오메가3",
+        "건강식품원료",
+        "SEO-QA-HOSPITAL-20260527"
+      ],
+      "question": "항응고제를 먹으면 오메가3나 커큐민도 병원에 말해야 하나요?",
+      "answer": "항응고제를 먹으면 오메가3나 커큐민도 병원에 말해야 하나요?라는 질문은 심장내과·항응고클리닉 검색에서 자주 나옵니다. 먼저 병원 이름을 고르기 전에 증상 시작일, 악화되는 상황, 최근 검사 수치, 처방약, 일반의약품, 건강식품원료 복용 목록을 한 장으로 정리하세요. 특히 오메가3처럼 건강식품원료가 포함된 경우에는 효과를 기대한다는 말보다 제품명, 1일 섭취량, 시작 날짜, 같이 먹는 약을 말하는 편이 안전합니다. 와파린·DOAC 복용, 멍, 코피, 시술 예정이 있다면 심장내과·항응고클리닉에서 원인을 좁히는 검사를 우선 확인하고, 식사량이나 체중 변화가 있으면 맛있으리 식단 상담처럼 식사 기록을 정리해 가는 방식이 도움이 됩니다. 검은변, 토혈, 멈추지 않는 출혈은 즉시 진료가 필요합니다. 본 정보는 병원 선택을 대신하지 않으며, 진단·치료·약물 조정은 담당 의료진과 결정해야 합니다.",
+      "views": 0,
+      "likes": 0,
+      "author": "플로로탄닌 정보센터 · 병원정보 Q&A 편집데스크",
+      "content_type": "informational",
+      "reviewed_at": "2026-05-27",
+      "disclaimer": "본 정보는 일반 건강정보 안내이며 의료 전문가의 진단·치료를 대체하지 않습니다.",
+      "source_type": "official_guideline_editorial",
+      "related_insights": [
+        "anticoagulant-clinic-omega3-curcumin-supplement",
+        "hospital-info-search-checklist-cancer-diabetes-rehab",
+        "ingredient-quality-buying-guide-2026"
+      ],
+      "references_pmid": [
+        "aung-2018-omega3-cvd",
+        "mar-poly-2024-cardio",
+        "shrestha-2021-review"
+      ],
+      "references": [
+        "질병관리청 국가건강정보포털",
+        "국민건강보험 건강검진·검진기관 정보",
+        "국가암정보센터",
+        "식품안전나라 건강기능식품 정보"
+      ]
+    },
+    {
+      "id": "qa-hospital-20260527-047",
+      "category": "cardiovascular",
+      "difficulty": "basic",
+      "tags": [
+        "병원정보",
+        "진료준비",
+        "수술 전 평가",
+        "커큐민",
+        "건강식품원료",
+        "SEO-QA-HOSPITAL-20260527"
+      ],
+      "question": "수술 전 건강기능식품은 언제 중단해야 하나요?",
+      "answer": "수술 전 건강기능식품은 언제 중단해야 하나요?라는 질문은 수술 전 평가·마취통증의학과 검색에서 자주 나옵니다. 먼저 병원 이름을 고르기 전에 증상 시작일, 악화되는 상황, 최근 검사 수치, 처방약, 일반의약품, 건강식품원료 복용 목록을 한 장으로 정리하세요. 특히 커큐민처럼 건강식품원료가 포함된 경우에는 효과를 기대한다는 말보다 제품명, 1일 섭취량, 시작 날짜, 같이 먹는 약을 말하는 편이 안전합니다. 수술 예정, 시술 예정, 항응고제·진통제 복용이 있다면 수술 전 평가·마취통증의학과에서 원인을 좁히는 검사를 우선 확인하고, 식사량이나 체중 변화가 있으면 맛있으리 식단 상담처럼 식사 기록을 정리해 가는 방식이 도움이 됩니다. 수술 전 임의 중단도 위험할 수 있어 담당 의료진 지시에 맞춰야 합니다. 본 정보는 병원 선택을 대신하지 않으며, 진단·치료·약물 조정은 담당 의료진과 결정해야 합니다.",
+      "views": 0,
+      "likes": 0,
+      "author": "플로로탄닌 정보센터 · 병원정보 Q&A 편집데스크",
+      "content_type": "informational",
+      "reviewed_at": "2026-05-27",
+      "disclaimer": "본 정보는 일반 건강정보 안내이며 의료 전문가의 진단·치료를 대체하지 않습니다.",
+      "source_type": "official_guideline_editorial",
+      "related_insights": [
+        "surgery-preop-supplement-stop-checklist",
+        "hospital-info-search-checklist-cancer-diabetes-rehab",
+        "ingredient-quality-buying-guide-2026"
+      ],
+      "references_pmid": [
+        "hewlings-2017-curcumin-review",
+        "shrestha-2021-review",
+        "pradhan-2022-bioactive"
+      ],
+      "references": [
+        "질병관리청 국가건강정보포털",
+        "국민건강보험 건강검진·검진기관 정보",
+        "국가암정보센터",
+        "식품안전나라 건강기능식품 정보"
+      ]
+    },
+    {
+      "id": "qa-hospital-20260527-048",
+      "category": "musculoskeletal",
+      "difficulty": "basic",
+      "tags": [
+        "병원정보",
+        "진료준비",
+        "노년내과",
+        "단백질·류신",
+        "건강식품원료",
+        "SEO-QA-HOSPITAL-20260527"
+      ],
+      "question": "부모님이 기력이 없으면 어느 병원에서 영양상담을 받을 수 있나요?",
+      "answer": "부모님이 기력이 없으면 어느 병원에서 영양상담을 받을 수 있나요?라는 질문은 노년내과·가정의학과 검색에서 자주 나옵니다. 먼저 병원 이름을 고르기 전에 증상 시작일, 악화되는 상황, 최근 검사 수치, 처방약, 일반의약품, 건강식품원료 복용 목록을 한 장으로 정리하세요. 특히 단백질·류신처럼 건강식품원료가 포함된 경우에는 효과를 기대한다는 말보다 제품명, 1일 섭취량, 시작 날짜, 같이 먹는 약을 말하는 편이 안전합니다. 기력저하, 식사량 감소, 낙상, 체중감소이 있다면 노년내과·가정의학과에서 원인을 좁히는 검사를 우선 확인하고, 식사량이나 체중 변화가 있으면 맛있으리 식단 상담처럼 식사 기록을 정리해 가는 방식이 도움이 됩니다. 갑작스러운 혼돈, 탈수, 발열, 호흡곤란은 빠른 진료가 필요합니다. 본 정보는 병원 선택을 대신하지 않으며, 진단·치료·약물 조정은 담당 의료진과 결정해야 합니다.",
+      "views": 0,
+      "likes": 0,
+      "author": "플로로탄닌 정보센터 · 병원정보 Q&A 편집데스크",
+      "content_type": "informational",
+      "reviewed_at": "2026-05-27",
+      "disclaimer": "본 정보는 일반 건강정보 안내이며 의료 전문가의 진단·치료를 대체하지 않습니다.",
+      "source_type": "official_guideline_editorial",
+      "related_insights": [
+        "geriatric-hospital-frailty-protein-vitamin-d",
+        "hospital-info-search-checklist-cancer-diabetes-rehab",
+        "ingredient-quality-buying-guide-2026"
+      ],
+      "references_pmid": [
+        "leon-lopez-2019-marine-collagen",
+        "szabo-2026-musculoskeletal",
+        "pludowski-2017-vitamind-review"
+      ],
+      "references": [
+        "질병관리청 국가건강정보포털",
+        "국민건강보험 건강검진·검진기관 정보",
+        "국가암정보센터",
+        "식품안전나라 건강기능식품 정보"
+      ]
+    },
+    {
+      "id": "qa-hospital-20260527-049",
+      "category": "cancer_immune",
+      "difficulty": "basic",
+      "tags": [
+        "병원정보",
+        "진료준비",
+        "주치의",
+        "단백질·류신",
+        "건강식품원료",
+        "SEO-QA-HOSPITAL-20260527"
+      ],
+      "question": "보호자가 병원 갈 때 식사기록을 어떻게 가져가면 좋나요?",
+      "answer": "보호자가 병원 갈 때 식사기록을 어떻게 가져가면 좋나요?라는 질문은 주치의·영양상담 검색에서 자주 나옵니다. 먼저 병원 이름을 고르기 전에 증상 시작일, 악화되는 상황, 최근 검사 수치, 처방약, 일반의약품, 건강식품원료 복용 목록을 한 장으로 정리하세요. 특히 단백질·류신처럼 건강식품원료가 포함된 경우에는 효과를 기대한다는 말보다 제품명, 1일 섭취량, 시작 날짜, 같이 먹는 약을 말하는 편이 안전합니다. 식사량 감소, 체중변화, 환자식단 고민, 상담 준비이 있다면 주치의·영양상담에서 원인을 좁히는 검사를 우선 확인하고, 식사량이나 체중 변화가 있으면 맛있으리 식단 상담처럼 식사 기록을 정리해 가는 방식이 도움이 됩니다. 환자가 거의 먹지 못하거나 탈수·발열이 있으면 식단 문의보다 진료 연락이 먼저입니다. 본 정보는 병원 선택을 대신하지 않으며, 진단·치료·약물 조정은 담당 의료진과 결정해야 합니다.",
+      "views": 0,
+      "likes": 0,
+      "author": "플로로탄닌 정보센터 · 병원정보 Q&A 편집데스크",
+      "content_type": "informational",
+      "reviewed_at": "2026-05-27",
+      "disclaimer": "본 정보는 일반 건강정보 안내이며 의료 전문가의 진단·치료를 대체하지 않습니다.",
+      "source_type": "official_guideline_editorial",
+      "related_insights": [
+        "caregiver-hospital-memo-meulssori-patient-meal",
+        "hospital-info-search-checklist-cancer-diabetes-rehab",
+        "ingredient-quality-buying-guide-2026"
+      ],
+      "references_pmid": [
+        "leon-lopez-2019-marine-collagen",
+        "szabo-2026-musculoskeletal",
+        "pludowski-2017-vitamind-review"
+      ],
+      "references": [
+        "질병관리청 국가건강정보포털",
+        "국민건강보험 건강검진·검진기관 정보",
+        "국가암정보센터",
+        "식품안전나라 건강기능식품 정보"
+      ]
+    },
+    {
+      "id": "qa-hospital-20260527-050",
+      "category": "metabolism",
+      "difficulty": "basic",
+      "tags": [
+        "병원정보",
+        "진료준비",
+        "동네의원",
+        "감태 플로로탄닌",
+        "건강식품원료",
+        "SEO-QA-HOSPITAL-20260527"
+      ],
+      "question": "동네 병원 검색할 때 리뷰보다 먼저 볼 기준은 무엇인가요?",
+      "answer": "동네 병원 검색할 때 리뷰보다 먼저 볼 기준은 무엇인가요?라는 질문은 동네의원·전문클리닉 검색에서 자주 나옵니다. 먼저 병원 이름을 고르기 전에 증상 시작일, 악화되는 상황, 최근 검사 수치, 처방약, 일반의약품, 건강식품원료 복용 목록을 한 장으로 정리하세요. 특히 감태 플로로탄닌처럼 건강식품원료가 포함된 경우에는 효과를 기대한다는 말보다 제품명, 1일 섭취량, 시작 날짜, 같이 먹는 약을 말하는 편이 안전합니다. 어디동 내과, 어디동 피부과, 어디동 재활의학과 검색이 있다면 동네의원·전문클리닉에서 원인을 좁히는 검사를 우선 확인하고, 식사량이나 체중 변화가 있으면 맛있으리 식단 상담처럼 식사 기록을 정리해 가는 방식이 도움이 됩니다. 응급 신호가 있으면 가까운 병원 리뷰 비교보다 응급 대응이 우선입니다. 본 정보는 병원 선택을 대신하지 않으며, 진단·치료·약물 조정은 담당 의료진과 결정해야 합니다.",
+      "views": 0,
+      "likes": 0,
+      "author": "플로로탄닌 정보센터 · 병원정보 Q&A 편집데스크",
+      "content_type": "informational",
+      "reviewed_at": "2026-05-27",
+      "disclaimer": "본 정보는 일반 건강정보 안내이며 의료 전문가의 진단·치료를 대체하지 않습니다.",
+      "source_type": "official_guideline_editorial",
+      "related_insights": [
+        "local-hospital-search-map-review-checklist-ingredient",
+        "hospital-info-search-checklist-cancer-diabetes-rehab",
+        "ingredient-quality-buying-guide-2026"
+      ],
+      "references_pmid": [
+        "shrestha-2021-review",
+        "choi-2017-ecklonia-review",
+        "shin-2024-pharmacokinetics"
+      ],
+      "references": [
+        "질병관리청 국가건강정보포털",
+        "국민건강보험 건강검진·검진기관 정보",
+        "국가암정보센터",
+        "식품안전나라 건강기능식품 정보"
       ]
     }
   ]

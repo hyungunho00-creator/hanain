@@ -455,6 +455,7 @@ _INSIGHT_CAT_NAMES = {
     "ingredient-marine":    "해양 원료",
     "ingredient-longevity": "항노화·장수",
     "ingredient-clinical":  "임상 이슈 원료",
+    "hospital-care":        "병원·진료준비",
 }
 for ipost in INSIGHT_POSTS[:30]:
     slug    = ipost.get("slug", "")
