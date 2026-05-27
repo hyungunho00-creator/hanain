@@ -1,0 +1,11 @@
+{
+  "method": "supabase_mcp_execute_sql",
+  "inserted_or_updated": 30,
+  "category": "hospital-info",
+  "status": "published",
+  "min_content_length": 4153,
+  "max_content_length": 4253,
+  "visible_sources": 30,
+  "cta_ok": 30,
+  "forbidden_hits": 0
+}

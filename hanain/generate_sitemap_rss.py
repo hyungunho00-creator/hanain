@@ -21,7 +21,12 @@ from datetime import datetime, timezone
 ROOT = Path(__file__).resolve().parent  # hanain/
 
 SUPABASE_URL = "https://rlfxuyeoluoeaxuujtly.supabase.co"
-SERVICE_KEY = os.environ.get("SUPABASE_SERVICE_ROLE_KEY") or os.environ.get("SUPABASE_SERVICE_KEY")
+SERVICE_KEY = (
+    os.environ.get("SUPABASE_SERVICE_ROLE_KEY")
+    or os.environ.get("SUPABASE_SERVICE_KEY")
+    or os.environ.get("SUPABASE_ANON_KEY")
+    or os.environ.get("VITE_SUPABASE_ANON_KEY")
+)
 SITE_URL     = "https://phlorotannin.com"
 HEADERS      = {
     "apikey":          SERVICE_KEY,
