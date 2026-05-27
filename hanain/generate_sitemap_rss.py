@@ -100,6 +100,10 @@ CAT_NAMES = {
     "skin":          "피부·모발",
     "research":      "연구·임상",
     "general":       "일반",
+    "ingredient-comparison": "성분 비교",
+    "disease-health-info":   "질환별 건강정보",
+    "hospital-info":         "병원정보",
+    "partner-info":          "파트너 정보",
 }
 
 # ════════════════════════════════════════════════════════════
