@@ -1,0 +1,39 @@
+{
+  "urls": [
+    "https://phlorotannin.com/blog/cancer-patient-exercise-guide-walking-strength-stretching",
+    "https://phlorotannin.com/blog/chemotherapy-exercise-fatigue-neuropathy-safety-checklist",
+    "https://phlorotannin.com/blog/diabetes-exercise-after-meal-walking-resistance-guide",
+    "https://phlorotannin.com/blog/sarcopenia-rehabilitation-protein-exercise-ons-guide",
+    "https://phlorotannin.com/blog/cancer-rehabilitation-hospital-selection-checklist",
+    "https://phlorotannin.com/blog/cancer-care-hospital-seoul-regional-decision-guide",
+    "https://phlorotannin.com/blog/diabetes-education-hospital-nutrition-counseling-checklist",
+    "https://phlorotannin.com/blog/hospital-visit-preparation-questions-caregiver-checklist",
+    "https://phlorotannin.com/insights/exercise-recovery-keyword-map-cancer-diabetes-sarcopenia",
+    "https://phlorotannin.com/insights/hospital-info-search-checklist-cancer-diabetes-rehab",
+    "https://phlorotannin.com/blog?category=exercise-recovery",
+    "https://phlorotannin.com/blog?category=hospital-info",
+    "https://phlorotannin.com/sitemap.xml"
+  ],
+  "results": [
+    {
+      "endpoint": "https://api.indexnow.org/indexnow",
+      "status": 200,
+      "body": ""
+    },
+    {
+      "endpoint": "https://www.bing.com/indexnow",
+      "status": 200,
+      "body": ""
+    },
+    {
+      "endpoint": "https://yandex.com/indexnow",
+      "status": 202,
+      "body": "{\n  \"success\":true\n}"
+    },
+    {
+      "endpoint": "naver",
+      "status": 200,
+      "body": ""
+    }
+  ]
+}
