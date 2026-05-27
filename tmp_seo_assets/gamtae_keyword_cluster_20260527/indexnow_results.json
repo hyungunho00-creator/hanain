@@ -1,0 +1,32 @@
+{
+  "urls": [
+    "https://phlorotannin.com/blog/gamtae-benefits-search-before-check-food-vs-extract",
+    "https://phlorotannin.com/blog/gamtae-sleep-supplement-dieckol-quality-guide",
+    "https://phlorotannin.com/blog/gamtae-dieckol-phlorotannin-label-reading-guide",
+    "https://phlorotannin.com/blog/gamtae-iodine-thyroid-dasima-difference",
+    "https://phlorotannin.com/blog/gamtae-how-to-eat-raw-dried-powder-capsule",
+    "https://phlorotannin.com/blog/gamtae-price-difference-extract-standardization-guide",
+    "https://phlorotannin.com/blog/gamtae-tea-powder-pill-review-checklist",
+    "https://phlorotannin.com/blog/gamtae-sleep-ingredients-comparison-lactium-gaba-theanine",
+    "https://phlorotannin.com/insights/gamtae-keyword-map-sleep-dieckol-side-effects",
+    "https://phlorotannin.com/insights/gamtae-purchase-checklist-extract-powder-capsule"
+  ],
+  "endpoints": {
+    "https://api.indexnow.org/indexnow": {
+      "status": 200,
+      "body": ""
+    },
+    "https://www.bing.com/indexnow": {
+      "status": 200,
+      "body": ""
+    },
+    "https://yandex.com/indexnow": {
+      "status": 202,
+      "body": "{\n  \"success\":true\n}"
+    },
+    "https://searchadvisor.naver.com/indexnow": {
+      "status": 200,
+      "body": ""
+    }
+  }
+}

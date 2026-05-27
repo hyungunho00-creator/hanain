@@ -1,0 +1,239 @@
+{
+  "db": [
+    {
+      "id": 335,
+      "slug": "gamtae-benefits-search-before-check-food-vs-extract",
+      "title": "감태 효능 검색 전 확인할 것: 음식 감태와 감태추출물 차이",
+      "status": "published",
+      "category": "ingredient-comparison",
+      "og_image": "https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/gamtae-benefits-search-before-check-food-vs-extract.webp",
+      "published_at": "2026-05-27T00:41:28.612932+00:00"
+    },
+    {
+      "id": 336,
+      "slug": "gamtae-sleep-supplement-dieckol-quality-guide",
+      "title": "감태 수면영양제 고르는 법: 디에콜·수면의 질·표준화",
+      "status": "published",
+      "category": "disease-health-info",
+      "og_image": "https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/gamtae-sleep-supplement-dieckol-quality-guide.webp",
+      "published_at": "2026-05-27T00:41:28.612932+00:00"
+    },
+    {
+      "id": 337,
+      "slug": "gamtae-dieckol-phlorotannin-label-reading-guide",
+      "title": "감태 디에콜이란? 플로로탄닌 성분표 읽는 법",
+      "status": "published",
+      "category": "ingredient-comparison",
+      "og_image": "https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/gamtae-dieckol-phlorotannin-label-reading-guide.webp",
+      "published_at": "2026-05-27T00:41:28.612932+00:00"
+    },
+    {
+      "id": 338,
+      "slug": "gamtae-iodine-thyroid-dasima-difference",
+      "title": "감태 요오드·갑상선 걱정: 다시마와 헷갈리지 말아야 할 점",
+      "status": "published",
+      "category": "disease-health-info",
+      "og_image": "https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/gamtae-iodine-thyroid-dasima-difference.webp",
+      "published_at": "2026-05-27T00:41:28.612932+00:00"
+    },
+    {
+      "id": 339,
+      "slug": "gamtae-how-to-eat-raw-dried-powder-capsule",
+      "title": "감태 먹는법: 생감태·건감태·분말·환·캡슐 차이",
+      "status": "published",
+      "category": "general",
+      "og_image": "https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/gamtae-how-to-eat-raw-dried-powder-capsule.webp",
+      "published_at": "2026-05-27T00:41:28.612932+00:00"
+    },
+    {
+      "id": 340,
+      "slug": "gamtae-price-difference-extract-standardization-guide",
+      "title": "감태 가격 차이 이유: 원물·추출물·표준화·인증 기준",
+      "status": "published",
+      "category": "ingredient-comparison",
+      "og_image": "https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/gamtae-price-difference-extract-standardization-guide.webp",
+      "published_at": "2026-05-27T00:41:28.612932+00:00"
+    },
+    {
+      "id": 341,
+      "slug": "gamtae-tea-powder-pill-review-checklist",
+      "title": "감태 차·분말·환 후기 보기 전 확인할 6가지",
+      "status": "published",
+      "category": "general",
+      "og_image": "https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/gamtae-tea-powder-pill-review-checklist.webp",
+      "published_at": "2026-05-27T00:41:28.612932+00:00"
+    },
+    {
+      "id": 342,
+      "slug": "gamtae-sleep-ingredients-comparison-lactium-gaba-theanine",
+      "title": "감태와 수면 원료 비교: 락티움·GABA·테아닌과 다른 점",
+      "status": "published",
+      "category": "ingredient-comparison",
+      "og_image": "https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/gamtae-sleep-ingredients-comparison-lactium-gaba-theanine.webp",
+      "published_at": "2026-05-27T00:41:28.612932+00:00"
+    }
+  ],
+  "images": [
+    {
+      "slug": "gamtae-benefits-search-before-check-food-vs-extract",
+      "status": 200,
+      "content_type": "image/webp"
+    },
+    {
+      "slug": "gamtae-sleep-supplement-dieckol-quality-guide",
+      "status": 200,
+      "content_type": "image/webp"
+    },
+    {
+      "slug": "gamtae-dieckol-phlorotannin-label-reading-guide",
+      "status": 200,
+      "content_type": "image/webp"
+    },
+    {
+      "slug": "gamtae-iodine-thyroid-dasima-difference",
+      "status": 200,
+      "content_type": "image/webp"
+    },
+    {
+      "slug": "gamtae-how-to-eat-raw-dried-powder-capsule",
+      "status": 200,
+      "content_type": "image/webp"
+    },
+    {
+      "slug": "gamtae-price-difference-extract-standardization-guide",
+      "status": 200,
+      "content_type": "image/webp"
+    },
+    {
+      "slug": "gamtae-tea-powder-pill-review-checklist",
+      "status": 200,
+      "content_type": "image/webp"
+    },
+    {
+      "slug": "gamtae-sleep-ingredients-comparison-lactium-gaba-theanine",
+      "status": 200,
+      "content_type": "image/webp"
+    }
+  ],
+  "pages": [
+    {
+      "slug": "gamtae-benefits-search-before-check-food-vs-extract",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_og_image": true,
+      "has_webp_type": true,
+      "title_seen": true
+    },
+    {
+      "slug": "gamtae-sleep-supplement-dieckol-quality-guide",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_og_image": true,
+      "has_webp_type": true,
+      "title_seen": true
+    },
+    {
+      "slug": "gamtae-dieckol-phlorotannin-label-reading-guide",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_og_image": true,
+      "has_webp_type": true,
+      "title_seen": true
+    },
+    {
+      "slug": "gamtae-iodine-thyroid-dasima-difference",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_og_image": true,
+      "has_webp_type": true,
+      "title_seen": true
+    },
+    {
+      "slug": "gamtae-how-to-eat-raw-dried-powder-capsule",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_og_image": true,
+      "has_webp_type": true,
+      "title_seen": true
+    },
+    {
+      "slug": "gamtae-price-difference-extract-standardization-guide",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_og_image": true,
+      "has_webp_type": true,
+      "title_seen": true
+    },
+    {
+      "slug": "gamtae-tea-powder-pill-review-checklist",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_og_image": true,
+      "has_webp_type": true,
+      "title_seen": true
+    },
+    {
+      "slug": "gamtae-sleep-ingredients-comparison-lactium-gaba-theanine",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_og_image": true,
+      "has_webp_type": true,
+      "title_seen": true
+    }
+  ],
+  "insights": [
+    {
+      "slug": "gamtae-keyword-map-sleep-dieckol-side-effects",
+      "status": 200,
+      "html_has_bundle": true
+    },
+    {
+      "slug": "gamtae-purchase-checklist-extract-powder-capsule",
+      "status": 200,
+      "html_has_bundle": true
+    }
+  ],
+  "sitemap_status": 200,
+  "sitemap": [
+    {
+      "url": "/blog/gamtae-benefits-search-before-check-food-vs-extract",
+      "present": true
+    },
+    {
+      "url": "/blog/gamtae-sleep-supplement-dieckol-quality-guide",
+      "present": true
+    },
+    {
+      "url": "/blog/gamtae-dieckol-phlorotannin-label-reading-guide",
+      "present": true
+    },
+    {
+      "url": "/blog/gamtae-iodine-thyroid-dasima-difference",
+      "present": true
+    },
+    {
+      "url": "/blog/gamtae-how-to-eat-raw-dried-powder-capsule",
+      "present": true
+    },
+    {
+      "url": "/blog/gamtae-price-difference-extract-standardization-guide",
+      "present": true
+    },
+    {
+      "url": "/blog/gamtae-tea-powder-pill-review-checklist",
+      "present": true
+    },
+    {
+      "url": "/blog/gamtae-sleep-ingredients-comparison-lactium-gaba-theanine",
+      "present": true
+    },
+    {
+      "url": "/insights/gamtae-keyword-map-sleep-dieckol-side-effects",
+      "present": true
+    },
+    {
+      "url": "/insights/gamtae-purchase-checklist-extract-powder-capsule",
+      "present": true
+    }
+  ]
+}
