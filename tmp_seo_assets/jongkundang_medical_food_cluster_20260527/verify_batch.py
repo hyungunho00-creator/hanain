@@ -99,6 +99,7 @@ def main():
                 "x_seo_source": headers.get("X-Seo-Source"),
                 "has_og_image": image in html,
                 "has_webp_type": 'property="og:image:type" content="image/webp"' in html,
+                "has_jsonld_citation": '"citation"' in html and '"isBasedOn"' in html,
                 "has_title": bool(re.search(r"<title(?:\s[^>]*)?>.+?</title>", html, re.S)),
                 "has_forbidden": any(token in html for token in forbidden),
                 "has_meulssori": "맛있으리" in html,
@@ -109,7 +110,7 @@ def main():
         results["sitemap"].append({"url": f"/blog/{slug}", "present": f"/blog/{slug}" in sitemap})
     OUT.write_text(json.dumps(results, ensure_ascii=False, indent=2), encoding="utf-8")
     print(json.dumps(results, ensure_ascii=False, indent=2))
-    if any(p.get("status") != 200 or p.get("has_forbidden") for p in results["pages"]):
+    if any(p.get("status") != 200 or p.get("has_forbidden") or not p.get("has_jsonld_citation") for p in results["pages"]):
         raise SystemExit(1)
     if any((not c.get("has_cta_marker")) or (not c.get("has_references")) or c.get("reference_links", 0) < 1 or c.get("has_forbidden") for c in results["db_content"]):
         raise SystemExit(1)

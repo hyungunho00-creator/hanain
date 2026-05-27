@@ -1242,6 +1242,29 @@ curl -s "https://phlorotannin.com/p/01056528206" | grep -E "<title|page-title"
 
 ---
 
+## 제22조 (YMYL 출처·신뢰성 SEO 구조화 규칙) — 2026-05-27 신설
+
+건강, 질환, 환자식, 특수의료용도식품, 병원정보처럼 YMYL 민감도가 있는 글은 독자 눈에 보이는 출처와 검색엔진이 읽는 구조화데이터 출처를 모두 갖춰야 한다.
+
+1. 본문 하단에 반드시 `## 참고자료` 섹션을 둔다.
+   - 최소 2개 이상의 공식·공공·학회·논문 링크를 넣는다.
+   - 제품 글은 공식 제품 페이지와 공공/학회 기준을 함께 넣는다.
+   - 출처 없는 주장, 출처 없는 최신 임상 언급, 출처 없는 수치 표현은 금지한다.
+2. `/api/seo`의 Article JSON-LD에는 `citation`과 `isBasedOn`을 자동 주입한다.
+   - 내부 링크, CTA, phlorotannin.com 링크는 citation에서 제외한다.
+   - 외부 공식·공공·학회·논문 링크만 CreativeWork로 넣는다.
+3. 검증은 화면과 HTML을 모두 본다.
+   - DB 본문: `## 참고자료`, 외부 링크 수, CTA marker, 금지어.
+   - 운영 HTML: `<title>`, canonical, og:image, `Article` JSON-LD, `"citation"`, `"isBasedOn"`.
+   - Googlebot User-Agent로 200 응답과 `X-Seo-Source: posts-table`을 확인한다.
+4. "SEO 반영"은 두 단계로 보고한다.
+   - 즉시 반영: 운영 HTML과 구조화데이터에 반영됐는지.
+   - 검색 결과 반영: Google/Naver가 재크롤링 후 반영하므로 IndexNow·sitemap 제출까지 완료하고, 노출 변화는 Search Console 기준으로 추적한다.
+5. 신뢰성 1등 목표는 장식 문구가 아니라 반복 가능한 구조로 만든다.
+   - 작성·편집 주체, 최근 업데이트, 면책, 참고자료, 구조화데이터 citation, 이미지 alt, 출처 검증 로그를 매 배치마다 남긴다.
+
+---
+
 ## 📜 제9조 (헌법 개정)
 
 이 헌법은 살아있는 문서다.

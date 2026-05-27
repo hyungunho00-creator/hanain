@@ -961,6 +961,11 @@ function buildArticleJsonLd(post, pathname) {
   } else if (post.category) {
     ld.keywords = post.category
   }
+  const citations = extractCitationsFromContent(post.content || '')
+  if (citations.length) {
+    ld.citation = citations
+    ld.isBasedOn = citations
+  }
   // undefined 값 제거
   Object.keys(ld).forEach(k => { if (ld[k] === undefined) delete ld[k] })
   return ld
@@ -1015,6 +1020,41 @@ function buildFaqJsonLd(faqPairs) {
       acceptedAnswer: { '@type': 'Answer', text: p.a },
     })),
   }
+}
+
+// /blog/:slug → 본문 참고자료 링크를 Article JSON-LD citation/isBasedOn 으로 승격.
+// YMYL 글은 화면 하단 출처만으로 부족하므로 검색엔진이 읽는 구조화데이터에도
+// 공식·공공·학회 출처를 명시한다. 내부 링크와 CTA 링크는 제외한다.
+function extractCitationsFromContent(content) {
+  if (!content || typeof content !== 'string') return []
+  const seen = new Set()
+  const citations = []
+  const add = (name, url) => {
+    if (!url || !/^https?:\/\//i.test(url)) return
+    if (/^https?:\/\/(www\.)?phlorotannin\.com/i.test(url)) return
+    const normalized = url.replace(/[.,;)\]]+$/g, '')
+    if (seen.has(normalized)) return
+    seen.add(normalized)
+    citations.push({
+      '@type': 'CreativeWork',
+      name: stripToPlainText(name || normalized).slice(0, 160),
+      url: normalized,
+    })
+  }
+
+  // Markdown links: [label](https://...)
+  const markdownRe = /\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g
+  let m
+  while ((m = markdownRe.exec(content)) !== null && citations.length < 12) {
+    add(m[1], m[2])
+  }
+
+  // Plain URLs fallback
+  const urlRe = /https?:\/\/[^\s<>"')]+/g
+  while ((m = urlRe.exec(content)) !== null && citations.length < 12) {
+    add(m[0], m[0])
+  }
+  return citations
 }
 
 // <head> 내부에 JSON-LD script 1~N개 주입. 기존 JSON-LD 손대지 않음.
