@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "sitemap": "python3 generate_sitemap_rss.py",
     "audit:links": "python3 scripts/audit_links.py",
-    "prebuild": "python3 generate_sitemap_rss.py || echo '[warn] sitemap generation skipped (python3 not found)'"
+    "prebuild": "node scripts/prebuild.cjs"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",

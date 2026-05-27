@@ -80,14 +80,14 @@ export default {
         먹지 못하는 기간이 길거나 탈수, 발열, 급격한 체중감소가 있으면 진료 일정 조정이 필요합니다.
       </Callout>
 
-      <H2 id="questions">진료실에서 바로 쓸 질문</H2>
+      <H2 id="questions">진료실에서 놓치기 쉬운 확인 질문</H2>
       <UL
         items={[
-          '이 증상은 어느 검사로 원인을 좁혀야 하나요?',
-          '지금 수치에서 추적 관찰과 약물 치료의 기준은 무엇인가요?',
-          '제가 먹는 건강식품원료 중 중단하거나 간격을 둬야 할 것이 있나요?',
-          '식사량 감소나 체중 변화가 있을 때 영양상담을 언제 요청해야 하나요?',
-          '다음 방문 전 어떤 기록을 가져오면 판단이 쉬워지나요?',
+          '이 증상이 응급 신호인지, 며칠 안에 재진해야 하는 기준은 무엇인가요?',
+          '검사를 한다면 피검사·소변검사·영상검사 중 무엇이 우선이고 결과는 언제 다시 확인하나요?',
+          '현재 복용 중인 약·영양제·건강기능식품 중 중단하거나 시간 간격을 둬야 하는 것이 있나요?',
+          '식사량 감소, 체중 변화, 혈당·혈압 변화 중 어느 지점부터 영양상담이나 추가 진료가 필요한가요?',
+          '다음 방문 전 기록할 항목과 병원에 바로 연락해야 할 증상은 무엇인가요?',
         ]}
       />
 
@@ -121,7 +121,7 @@ export default {
          · 
         <RelLink to="/insights/ingredient-quality-buying-guide-2026">건강식품원료 확인 체크리스트</RelLink>
          · 
-        <RelLink to="/insights/patient-meal-delivery-inquiry-info-checklist">환자식단 문의 전 정리표</RelLink>
+        <RelLink to="/insights/patient-meal-delivery-inquiry-info-checklist">식사 기록 정리표</RelLink>
       </P>
     </>
   ),
