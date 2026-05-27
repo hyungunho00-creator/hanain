@@ -20,6 +20,7 @@ CTA 종류:
 
 멱등성: <!-- NAVER_CTA_INLINE_V2 --> 마커 이미 존재 시 skip.
 """
+import os
 import json
 import re
 import urllib.request
@@ -27,7 +28,7 @@ import urllib.error
 from datetime import datetime, timezone
 
 SB = "https://rlfxuyeoluoeaxuujtly.supabase.co"
-KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJsZnh1eWVvbHVvZWF4dXVqdGx5Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NTk0MTI2MywiZXhwIjoyMDkxNTE3MjYzfQ.O0Oe3g2fv_8SUvxNfHvdxzpA6pcWVIWTscpymYr0pBI"
+KEY = os.environ.get("SUPABASE_SERVICE_ROLE_KEY") or os.environ.get("SUPABASE_SERVICE_KEY")
 
 # ─────────────────────────────────────────────────────────────
 # CTA 마크업 (시니어 디자이너 스타일 — 단일 라인 인쇄물 각주)

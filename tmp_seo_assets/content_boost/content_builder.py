@@ -7,6 +7,7 @@
   - 각 글 4000-6000자 목표.
   - FAQ는 FAQPage JSON-LD도 함께 생성 (리치 스니펫).
 """
+import os
 import json, urllib.request, re, sys
 from pathlib import Path
 
@@ -14,7 +15,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from content_data import POSTS_DATA
 
 SB = "https://rlfxuyeoluoeaxuujtly.supabase.co"
-SK = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJsZnh1eWVvbHVvZWF4dXVqdGx5Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NTk0MTI2MywiZXhwIjoyMDkxNTE3MjYzfQ.O0Oe3g2fv_8SUvxNfHvdxzpA6pcWVIWTscpymYr0pBI"
+SK = os.environ.get("SUPABASE_SERVICE_ROLE_KEY") or os.environ.get("SUPABASE_SERVICE_KEY")
 
 HEADERS_GET = {"Authorization": f"Bearer {SK}", "apikey": SK, "Accept-Profile": "public"}
 HEADERS_PATCH = {**HEADERS_GET, "Content-Type": "application/json", "Content-Profile": "public", "Prefer": "return=minimal"}

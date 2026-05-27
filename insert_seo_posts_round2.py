@@ -15,11 +15,12 @@
 
 모든 글은 1차 8개와 동일한 품질 기준(7개) 자동 충족하도록 구성.
 """
+import os
 import json, urllib.request, urllib.error
 from datetime import datetime, timezone
 
 SB_URL = "https://rlfxuyeoluoeaxuujtly.supabase.co"
-SB_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJsZnh1eWVvbHVvZWF4dXVqdGx5Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NTk0MTI2MywiZXhwIjoyMDkxNTE3MjYzfQ.O0Oe3g2fv_8SUvxNfHvdxzpA6pcWVIWTscpymYr0pBI"
+SB_KEY = os.environ.get("SUPABASE_SERVICE_ROLE_KEY") or os.environ.get("SUPABASE_SERVICE_KEY")
 NOW = datetime.now(timezone.utc).isoformat()
 
 

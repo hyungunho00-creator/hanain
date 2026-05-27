@@ -13,6 +13,7 @@ sitemap.xml + rss.xml 동적 생성 스크립트
   - DO_NOT_TOUCH.md §3-Q (Q&A 데이터 / 슬러그 변경 금지)
   - PROJECT_MAP.md §6-Q (Q&A 정적 인프라)
 """
+import os
 import requests, json, re, subprocess, sys
 from pathlib import Path
 from datetime import datetime, timezone
@@ -20,7 +21,7 @@ from datetime import datetime, timezone
 ROOT = Path(__file__).resolve().parent  # hanain/
 
 SUPABASE_URL = "https://rlfxuyeoluoeaxuujtly.supabase.co"
-SERVICE_KEY  = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJsZnh1eWVvbHVvZWF4dXVqdGx5Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NTk0MTI2MywiZXhwIjoyMDkxNTE3MjYzfQ.O0Oe3g2fv_8SUvxNfHvdxzpA6pcWVIWTscpymYr0pBI"
+SERVICE_KEY = os.environ.get("SUPABASE_SERVICE_ROLE_KEY") or os.environ.get("SUPABASE_SERVICE_KEY")
 SITE_URL     = "https://phlorotannin.com"
 HEADERS      = {
     "apikey":          SERVICE_KEY,

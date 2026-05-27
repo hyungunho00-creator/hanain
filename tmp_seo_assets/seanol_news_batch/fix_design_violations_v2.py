@@ -12,13 +12,14 @@
 멱등성: TRUST_FOOTER_V2 마커 있으면 skip
 검증: 11-2의 5단계 grep을 PATCH 후 자동 실행, 위반 있으면 FAIL 표시
 """
+import os
 import json
 import re
 import urllib.request
 from datetime import datetime, timezone
 
 SB = "https://rlfxuyeoluoeaxuujtly.supabase.co"
-KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJsZnh1eWVvbHVvZWF4dXVqdGx5Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NTk0MTI2MywiZXhwIjoyMDkxNTE3MjYzfQ.O0Oe3g2fv_8SUvxNfHvdxzpA6pcWVIWTscpymYr0pBI"
+KEY = os.environ.get("SUPABASE_SERVICE_ROLE_KEY") or os.environ.get("SUPABASE_SERVICE_KEY")
 NOW = datetime.now(timezone.utc).isoformat()
 
 SLUGS = [

@@ -7,11 +7,12 @@
 - 다른 카테고리로 내부링크 자연 삽입
 - 하단 "관련 글 3선" 표준 블록 통일
 """
+import os
 import json, urllib.request, urllib.error
 from datetime import datetime, timezone
 
 SB_URL = "https://rlfxuyeoluoeaxuujtly.supabase.co"
-SB_KEY_SERVICE = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJsZnh1eWVvbHVvZWF4dXVqdGx5Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NTk0MTI2MywiZXhwIjoyMDkxNTE3MjYzfQ.O0Oe3g2fv_8SUvxNfHvdxzpA6pcWVIWTscpymYr0pBI"
+SB_KEY_SERVICE = os.environ.get("SUPABASE_SERVICE_ROLE_KEY") or os.environ.get("SUPABASE_SERVICE_KEY")
 NOW = datetime.now(timezone.utc).isoformat()
 
 # 표준 관련글 푸터 — 카테고리별로 다름

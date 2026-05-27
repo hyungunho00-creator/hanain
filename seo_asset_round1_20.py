@@ -12,11 +12,12 @@
 
 PATCH 헤더에 Content-Profile: public 필수 (default schema가 api라서).
 """
+import os
 import urllib.request, json
 from datetime import datetime, timezone
 
 SB = "https://rlfxuyeoluoeaxuujtly.supabase.co"
-KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJsZnh1eWVvbHVvZWF4dXVqdGx5Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NTk0MTI2MywiZXhwIjoyMDkxNTE3MjYzfQ.O0Oe3g2fv_8SUvxNfHvdxzpA6pcWVIWTscpymYr0pBI"
+KEY = os.environ.get("SUPABASE_SERVICE_ROLE_KEY") or os.environ.get("SUPABASE_SERVICE_KEY")
 
 FOOTER_DISCLAIMER = "> 본 글은 일반 건강정보 제공을 위한 콘텐츠이며, 개인의 진단·치료·처방을 대체하지 않습니다."
 META_TAIL = "(일반 건강정보 제공 목적)"

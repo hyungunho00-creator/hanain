@@ -5,11 +5,12 @@
 - 플로로탄닌 효능 연결 X (정체성 문장 1줄만 마지막에)
 - 사용자 지시 9개 섹션 구조 그대로
 """
+import os
 import json, urllib.request
 from datetime import datetime, timezone
 
 SB = "https://rlfxuyeoluoeaxuujtly.supabase.co"
-KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJsZnh1eWVvbHVvZWF4dXVqdGx5Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NTk0MTI2MywiZXhwIjoyMDkxNTE3MjYzfQ.O0Oe3g2fv_8SUvxNfHvdxzpA6pcWVIWTscpymYr0pBI"
+KEY = os.environ.get("SUPABASE_SERVICE_ROLE_KEY") or os.environ.get("SUPABASE_SERVICE_KEY")
 NOW = datetime.now(timezone.utc).isoformat()
 
 CONTENT = """이 글은 최근 다시 검색이 늘고 있는 한타바이러스(Hantavirus)와 한탄바이러스(Hantaan virus)의 차이, 감염 경로, 증상, 사람 간 전염 가능성, 그리고 남미 크루즈선 MV Hondius 관련 최근 이슈를 쉽게 정리한 시사성 건강정보입니다. 공포 조장이 아니라, 검색하신 분들이 정확한 정보를 가져갈 수 있도록 객관 자료(WHO·Reuters 보도) 중심으로 정리합니다.

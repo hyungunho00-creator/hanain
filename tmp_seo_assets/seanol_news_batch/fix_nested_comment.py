@@ -12,13 +12,14 @@
   - 추가로 잔존 `-->` 단독 출현, 빈 줄 정리
   - 검증 grep 강화 (헌법 11-2에 추가)
 """
+import os
 import json
 import re
 import urllib.request
 from datetime import datetime, timezone
 
 SB = "https://rlfxuyeoluoeaxuujtly.supabase.co"
-KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJsZnh1eWVvbHVvZWF4dXVqdGx5Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NTk0MTI2MywiZXhwIjoyMDkxNTE3MjYzfQ.O0Oe3g2fv_8SUvxNfHvdxzpA6pcWVIWTscpymYr0pBI"
+KEY = os.environ.get("SUPABASE_SERVICE_ROLE_KEY") or os.environ.get("SUPABASE_SERVICE_KEY")
 NOW = datetime.now(timezone.utc).isoformat()
 
 SLUGS = [

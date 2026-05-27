@@ -8,11 +8,12 @@
   - status='draft' → 'published' 전환.
   - 0 AI 토큰. 룰베이스 + 표준 면책문.
 """
+import os
 import json, urllib.request, re
 from pathlib import Path
 
 SB = "https://rlfxuyeoluoeaxuujtly.supabase.co"
-SK = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJsZnh1eWVvbHVvZWF4dXVqdGx5Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NTk0MTI2MywiZXhwIjoyMDkxNTE3MjYzfQ.O0Oe3g2fv_8SUvxNfHvdxzpA6pcWVIWTscpymYr0pBI"
+SK = os.environ.get("SUPABASE_SERVICE_ROLE_KEY") or os.environ.get("SUPABASE_SERVICE_KEY")
 
 HEADERS = {
     "Authorization": f"Bearer {SK}",

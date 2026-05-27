@@ -1,11 +1,12 @@
 """
 Supabase Management API로 SQL 직접 실행
 """
+import os
 import requests, json
 
 SUPABASE_URL = "https://rlfxuyeoluoeaxuujtly.supabase.co"
 PROJECT_REF  = "rlfxuyeoluoeaxuujtly"
-SERVICE_KEY  = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJsZnh1eWVvbHVvZWF4dXVqdGx5Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NTk0MTI2MywiZXhwIjoyMDkxNTE3MjYzfQ.O0Oe3g2fv_8SUvxNfHvdxzpA6pcWVIWTscpymYr0pBI"
+SERVICE_KEY = os.environ.get("SUPABASE_SERVICE_ROLE_KEY") or os.environ.get("SUPABASE_SERVICE_KEY")
 
 headers = {
     "apikey": SERVICE_KEY,

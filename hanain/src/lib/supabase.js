@@ -70,17 +70,15 @@ export async function getQaPopular(categoryId = null, limit = 10) {
 }
 
 export async function incrementQaView(id) {
-  const { data } = await supabase.from('qa_questions').select('views').eq('id', id).single()
-  if (data) await supabase.from('qa_questions').update({ views: (data.views || 0) + 1 }).eq('id', id)
+  if (!id) return
+  await supabase.rpc('increment_qa_view', { question_id: id }).catch(() => {})
 }
 
 export async function toggleQaLike(id) {
-  const { data } = await supabase.from('qa_questions').select('likes').eq('id', id).single()
-  if (data) {
-    await supabase.from('qa_questions').update({ likes: (data.likes || 0) + 1 }).eq('id', id)
-    return { liked: true }
-  }
-  return { liked: false }
+  if (!id) return { liked: false }
+  const { error } = await supabase.rpc('increment_qa_like', { question_id: id })
+  if (error) return { liked: false, error }
+  return { liked: true }
 }
 
 // ── Question Videos (anon read — 2026-05 RLS 정책으로 service_role 의존 제거) ──
@@ -240,17 +238,41 @@ export async function incrementPostView(slug) {
 }
 
 export async function upsertPost(post) {
-  const { data, error } = await supabase
-    .from('posts')
-    .upsert(post, { onConflict: 'slug' })
-    .select()
-    .single()
-  return { data, error }
+  try {
+    const r = await fetch('/api/admin', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        action: 'post_upsert',
+        token: sessionStorage.getItem('phl_admin_token') || '',
+        payload: { row: post },
+      }),
+    })
+    const data = await r.json().catch(() => null)
+    if (!r.ok) return { data: null, error: { message: data?.error || `Admin API error (${r.status})` } }
+    return { data: data?.data || data, error: null }
+  } catch (e) {
+    return { data: null, error: { message: e.message } }
+  }
 }
 
 export async function deletePost(id) {
-  const { error } = await supabase.from('posts').delete().eq('id', id)
-  return { error }
+  try {
+    const r = await fetch('/api/admin', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        action: 'post_delete',
+        token: sessionStorage.getItem('phl_admin_token') || '',
+        payload: { id },
+      }),
+    })
+    const data = await r.json().catch(() => null)
+    if (!r.ok) return { error: { message: data?.error || `Admin API error (${r.status})` } }
+    return { error: null }
+  } catch (e) {
+    return { error: { message: e.message } }
+  }
 }
 
 export async function getAllPostsAdmin() {
@@ -385,12 +407,12 @@ export async function getQuestionBySlug(slugOrId) {
 }
 
 // qa_questions에 answers 없음 → 빈 배열 반환 (하위 호환)
-export async function getAnswersByQuestion(_questionId) {
+export async function getAnswersByQuestion() {
   return []
 }
 
 // 관련 질문 (같은 카테고리)
-export async function getRelatedQuestions(questionId, limit = 5) {
+export async function getRelatedQuestions() {
   return []
 }
 
@@ -444,15 +466,15 @@ export async function toggleQuestionLike(id) {
   return toggleQaLike(id)
 }
 
-export async function getQuestionLikeStatus(_id) {
+export async function getQuestionLikeStatus() {
   return false
 }
 
-export async function toggleSave(_questionId) {
+export async function toggleSave() {
   return { saved: false }
 }
 
-export async function getSaveStatus(_questionId) {
+export async function getSaveStatus() {
   return false
 }
 

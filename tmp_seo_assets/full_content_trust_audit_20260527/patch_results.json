@@ -1,0 +1,3253 @@
+{
+  "total": 363,
+  "updated": [
+    {
+      "id": 1,
+      "slug": "phlorotannin-diabetes-clinical-trial-2b-success-blood-sugar-management",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 2,
+      "slug": "phlorotannin-diabetes-ph100-blood-sugar-control-mechanism",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 3,
+      "slug": "phlorotannin-diabetes-treatment-clinical-trials-update",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 4,
+      "slug": "ecklonia-cava-extract-blood-sugar-phlorotannin-eckol",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 5,
+      "slug": "phlorotannin-ph100-prediabetes-improvement-study",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 7,
+      "slug": "cancer-patients-red-ginseng-interaction-phlorotannin-alternative",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 8,
+      "slug": "colorectal-cancer-prevention-diet-phlorotannin-polyphenol",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 9,
+      "slug": "liver-cancer-fatty-liver-progression-natural-protection",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 10,
+      "slug": "breast-cancer-estrogen-diet-phlorotannin-marine-polyphenol",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 11,
+      "slug": "anticancer-immunity-nk-cell-activation-phlorotannin",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 12,
+      "slug": "dementia-prevention-early-warning-signs-natural-support",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 13,
+      "slug": "brain-fog-chronic-fatigue-cognitive-decline-phlorotannin",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 14,
+      "slug": "sleep-disorder-insomnia-brain-health-phlorotannin-gaba",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 15,
+      "slug": "adhd-adult-concentration-natural-approach-phlorotannin",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 16,
+      "slug": "stroke-prevention-cerebrovascular-health-phlorotannin",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 17,
+      "slug": "high-blood-pressure-medication-side-effects-natural-alternative",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 18,
+      "slug": "cholesterol-statin-side-effects-coq10-phlorotannin",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 19,
+      "slug": "arteriosclerosis-inflammation-vascular-age-phlorotannin",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 20,
+      "slug": "heart-palpitation-arrhythmia-natural-management-magnesium",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 21,
+      "slug": "metabolic-syndrome-waist-circumference-cardiovascular-risk",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 22,
+      "slug": "chronic-inflammation-silent-disease-natural-management",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 23,
+      "slug": "rheumatoid-arthritis-joint-pain-natural-relief-phlorotannin",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 24,
+      "slug": "nsaid-painkillers-stomach-kidney-side-effects-alternative",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 25,
+      "slug": "atopy-eczema-skin-inflammation-gut-microbiome-phlorotannin",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 26,
+      "slug": "covid-long-covid-chronic-fatigue-immune-recovery-phlorotannin",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 27,
+      "slug": "hair-loss-cause-type-natural-treatment-phlorotannin",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 28,
+      "slug": "skin-aging-collagen-antioxidant-phlorotannin-marine-cosmetic",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 29,
+      "slug": "acne-hormonal-adult-gut-skin-phlorotannin",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 30,
+      "slug": "dry-skin-barrier-ceramide-omega3-phlorotannin-moisture",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 31,
+      "slug": "psoriasis-autoimmune-skin-natural-treatment-phlorotannin",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 32,
+      "slug": "phlorotannin-ph100-clinical-research-summary-2024",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 33,
+      "slug": "phlorotannin-vs-quercetin-resveratrol-polyphenol-comparison",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 34,
+      "slug": "ecklonia-cava-seaweed-phlorotannin-extraction-bioavailability",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 35,
+      "slug": "phlorotannin-diabetes-blood-sugar-mechanism-alpha-glucosidase",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 36,
+      "slug": "phlorotannin-sleep-gaba-receptor-clinical-study-korea",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 37,
+      "slug": "calcium-channel-blocker-amlodipine-side-effects-edema-headache-facial-flushing-g",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 38,
+      "slug": "resveratrol-benefits-anti-aging-cardiovascular-anti-cancer-brain-health-grape-sk",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 39,
+      "slug": "ppi-long-term-side-effects-magnesium-b12-kidney-deficiency-risk",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 40,
+      "slug": "coq10-side-effects-gastrointestinal-hypotension-blood-thinning-anticoagulant-cau",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 41,
+      "slug": "natural-remedies-period-pain-pms-magnesium-omega3-vitamin-b6-curcumin-phlorotann",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 42,
+      "slug": "nac-n-acetylcysteine-benefits-antioxidant-liver-lung-mental-health-guide",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 43,
+      "slug": "pre-workout-energy-boosters-caffeine-beta-alanine-citrulline-vs-phlorotannin",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 44,
+      "slug": "manseong-sinjang-jilhwan-ckd-yeongyang-gwanri-danbaekjil-in-kallyum-jojeol-sinja",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 45,
+      "slug": "prebiotics-probiotics-synbiotics-gut-health-difference-choice-phlorotannin",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 46,
+      "slug": "turmeric-curcumin-side-effects-gastrointestinal-blood-thinning-gallstone-caution",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 47,
+      "slug": "type-2-diabetes-natural-treatment-phlorotannin-berberine-cinnamon-dietary-therap",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 48,
+      "slug": "omega-3-phlorotannin-synergy-anti-inflammatory-blood-sugar-cardiovascular-health",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 49,
+      "slug": "phlorotannin-health-guide-phloro-01",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 50,
+      "slug": "phlorotannin-health-guide-phloro-02",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 51,
+      "slug": "phlorotannin-health-guide-phloro-03",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 52,
+      "slug": "phlorotannin-health-guide-phloro-04",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 53,
+      "slug": "phlorotannin-health-guide-phloro-05",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 54,
+      "slug": "phlorotannin-health-guide-phloro-06",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 55,
+      "slug": "phlorotannin-health-guide-phloro-07",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 56,
+      "slug": "phlorotannin-health-guide-phloro-08",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 57,
+      "slug": "phlorotannin-health-guide-phloro-09",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 58,
+      "slug": "phlorotannin-health-guide-phloro-10",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 59,
+      "slug": "phlorotannin-health-guide-phloro-11",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 60,
+      "slug": "phlorotannin-health-guide-phloro-12",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 61,
+      "slug": "sci-20242025-7-phloro-13",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 62,
+      "slug": "phlorotannin-health-guide-phloro-14",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 63,
+      "slug": "phlorotannin-health-guide-phloro-15",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 64,
+      "slug": "phlorotannin-health-guide-phloro-16",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 65,
+      "slug": "gamtae-extract-phlorotannin-structure-not-name",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 66,
+      "slug": "gamtae-extract-blood-sugar-management-phlorotannin",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 67,
+      "slug": "gamtae-extract-sleep-brain-recovery-phlorotannin",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 68,
+      "slug": "gamtae-extract-blood-pressure-vascular-recovery-phlorotannin",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 69,
+      "slug": "gamtae-extract-chronic-inflammation-joint-phlorotannin",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 70,
+      "slug": "gamtae-extract-skin-recovery-collagen-phlorotannin",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 71,
+      "slug": "gamtae-extract-immune-recovery-cancer-phlorotannin",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 72,
+      "slug": "gamtae-extract-phlorotannin-science-marine-polyphenol-research",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 73,
+      "slug": "gamtae-extract-phlorotannin-natural-health-benefits-guide",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_extra_sources"
+      ]
+    },
+    {
+      "id": 74,
+      "slug": "gamtae-phlorotannin-vs-general-health-supplements-difference",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_extra_sources"
+      ]
+    },
+    {
+      "id": 75,
+      "slug": "gamtae-extract-recovery-environment-stories-real-experience",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_extra_sources"
+      ]
+    },
+    {
+      "id": 76,
+      "slug": "gamtae-extract-6-clinical-effects-evidence",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 77,
+      "slug": "gamtae-extract-side-effects-dosage-safety-guide",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 78,
+      "slug": "gamtae-vs-fucoidan-vs-seaweed-comparison-guide",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 79,
+      "slug": "carnosine-pterostilbene-vs-phlorotannin-toolbox-comparison",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 80,
+      "slug": "collagen-albumin-vs-phlorotannin-material-vs-environment",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 81,
+      "slug": "red-ginseng-saponin-vs-phlorotannin-land-vs-marine-polyphenol",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 82,
+      "slug": "placenta-stemcell-vs-phlorotannin-regeneration-vs-environment",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 83,
+      "slug": "vitamin-omega3-vs-phlorotannin-basic-vs-environment",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 84,
+      "slug": "post-meal-blood-sugar-spike-5-practical-tips",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 85,
+      "slug": "hba1c-lower-naturally-borderline-to-normal",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 86,
+      "slug": "insulin-resistance-self-check-recovery-environment",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 87,
+      "slug": "high-blood-pressure-lower-naturally-before-medication",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 88,
+      "slug": "ldl-cholesterol-triglyceride-lower-food-guide",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 89,
+      "slug": "blood-vessel-cleaning-foods-endothelium-recovery",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 90,
+      "slug": "dementia-early-symptoms-vs-forgetfulness-9-signs",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 91,
+      "slug": "brain-health-supplement-5-criteria",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 92,
+      "slug": "cognitive-function-improvement-40s-onwards",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 93,
+      "slug": "chemotherapy-side-effects-recovery-environment",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 94,
+      "slug": "immunity-boost-balance-not-strengthen",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 95,
+      "slug": "nk-cell-activation-natural-killer-management",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 96,
+      "slug": "menopause-7-symptoms-complete-guide",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 97,
+      "slug": "hot-flashes-night-sweats-relief-environment",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 98,
+      "slug": "post-menopause-bone-health-osteoporosis-prevention",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 99,
+      "slug": "insomnia-natural-treatment-without-sleeping-pills",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 100,
+      "slug": "chronic-fatigue-why-still-tired-after-sleeping",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 101,
+      "slug": "autonomic-nervous-system-dysfunction-recovery",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 102,
+      "slug": "knee-pain-relief-senior-recovery-environment",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 103,
+      "slug": "osteoporosis-prevention-delay-bone-loss",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 104,
+      "slug": "spinal-stenosis-leg-numbness-recovery-perspective",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 105,
+      "slug": "fucoidan-vs-phlorotannin-difference",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 106,
+      "slug": "beta-glucan-vs-phlorotannin-comparison",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 107,
+      "slug": "resveratrol-pterostilbene-phlorotannin-comparison",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 108,
+      "slug": "cancer-family-antioxidant-search-criteria",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 109,
+      "slug": "diabetes-blood-sugar-lifestyle-vs-single-ingredient",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 110,
+      "slug": "cancer-family-hospital-info-search-criteria",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 111,
+      "slug": "expert-qa-vs-search-importance",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 112,
+      "slug": "partner-info-page-explained",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 113,
+      "slug": "collagen-vs-phlorotannin-skin-comparison",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 114,
+      "slug": "cancer-recovery-hospital-vs-korean-medicine-hospital",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 115,
+      "slug": "sleep-inflammation-health-info-phlorotannin",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 116,
+      "slug": "gut-immune-health-info-marine-polyphenol",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 117,
+      "slug": "rehab-recovery-general-hospital-differences",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 118,
+      "slug": "sleep-health-info-search-criteria",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 119,
+      "slug": "hantavirus-hantaan-difference-recent-issue-explained",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 122,
+      "slug": "marine-polyphenol-phlorotannin-research-timeline-2020-2025",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 123,
+      "slug": "seanol-cinol-phlorotannin-relationship-marine-polyphenol",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 124,
+      "slug": "capf-marine-polyphenol-raw-material-structure-explained",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 125,
+      "slug": "phlorotannin-fucoidan-deep-comparison-structure-mechanism",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 126,
+      "slug": "marine-polyphenol-antioxidant-research-why-attention",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 127,
+      "slug": "alpha-glucosidase-vs-alpha-amylase-phlorotannin-blood-sugar",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 128,
+      "slug": "seanol-vs-general-polyphenol-difference-explained",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 129,
+      "slug": "health-functional-food-ingredients-top7-2026-phlorotannin-comparison",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 130,
+      "slug": "phlorotannin-collagen-molecular-structure-absorption-difference",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 131,
+      "slug": "gamtae-extract-sleep-skin-blood-sugar-common-axis-oxidative-stress",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 132,
+      "slug": "hba1c-prediabetes-numbers-explained-by-range",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 133,
+      "slug": "fasting-blood-sugar-numbers-100-110-meaning",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 134,
+      "slug": "night-waking-frequent-urination-causes-checklist",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 135,
+      "slug": "liver-enzyme-ast-alt-high-meaning-action",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 136,
+      "slug": "aging-blood-sugar-rising-mechanism-explained",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 137,
+      "slug": "oxidative-stress-easy-explanation-daily-life",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 138,
+      "slug": "metformin-side-effects-honest-information-overview",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 139,
+      "slug": "50s-supplements-priority-decision-guide",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 140,
+      "slug": "gamtae-extract-safety-side-effects-honest-review",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 141,
+      "slug": "health-functional-food-raw-material-approval-korea",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 142,
+      "slug": "blood-pressure-numbers-130-140-meaning",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 143,
+      "slug": "cholesterol-ldl-hdl-numbers-explained",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 144,
+      "slug": "triglycerides-numbers-150-200-meaning",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 145,
+      "slug": "creatinine-egfr-kidney-numbers-meaning",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 146,
+      "slug": "chronic-fatigue-causes-checklist-40s-50s",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 147,
+      "slug": "morning-stiffness-causes-checklist",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 148,
+      "slug": "hair-loss-sudden-causes-checklist",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 149,
+      "slug": "inflammation-chronic-low-grade-mechanism",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 150,
+      "slug": "omega3-supplements-decision-guide",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 151,
+      "slug": "phlorotannin-vs-fucoxanthin-comparison",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 152,
+      "slug": "vitamin-d-deficiency-numbers-symptoms-checklist",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 153,
+      "slug": "iron-deficiency-anemia-numbers-symptoms-checklist",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 154,
+      "slug": "thyroid-tsh-numbers-meaning-checklist",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 155,
+      "slug": "low-body-temperature-causes-checklist",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 156,
+      "slug": "belly-fat-waist-circumference-numbers-meaning",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 157,
+      "slug": "insulin-resistance-mechanism-easy-explanation",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 158,
+      "slug": "gut-microbiome-health-mechanism-easy-explanation",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 159,
+      "slug": "multivitamin-vs-single-supplements-decision-guide",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 160,
+      "slug": "probiotics-strain-selection-decision-guide",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 161,
+      "slug": "phlorotannin-vs-quercetin-anti-inflammatory-comparison",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 162,
+      "slug": "dizziness-causes-checklist-when-to-see-doctor",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 163,
+      "slug": "knee-joint-pain-causes-checklist-when-to-see-doctor",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 164,
+      "slug": "frequent-bloating-causes-checklist-action-guide",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 165,
+      "slug": "poor-sleep-quality-causes-checklist-improvement-guide",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 166,
+      "slug": "metabolic-syndrome-mechanism-easy-explanation",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 167,
+      "slug": "skin-aging-glycation-mechanism-easy-explanation",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 168,
+      "slug": "magnesium-supplements-types-decision-guide",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 169,
+      "slug": "vitamin-c-dosage-decision-guide",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 170,
+      "slug": "phlorotannin-vs-egcg-green-tea-antioxidant-comparison",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 171,
+      "slug": "gamtae-vs-miyeok-seaweed-comparison",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 172,
+      "slug": "eye-strain-digital-fatigue-causes-checklist",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 173,
+      "slug": "mild-memory-decline-causes-checklist-when-to-worry",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 174,
+      "slug": "hand-foot-numbness-causes-checklist-when-to-see-doctor",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 175,
+      "slug": "frequent-colds-low-immunity-causes-checklist",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 176,
+      "slug": "autophagy-aging-mechanism-easy-explanation",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 177,
+      "slug": "telomere-aging-mechanism-easy-explanation",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 178,
+      "slug": "coq10-supplements-types-decision-guide",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 179,
+      "slug": "collagen-peptide-supplements-decision-guide",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 180,
+      "slug": "phlorotannin-anti-aging-mechanism-summary",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 181,
+      "slug": "marine-polyphenol-vs-land-polyphenol-comparison",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 182,
+      "slug": "phlorotannin-alzheimer-bace1-acetylcholinesterase-mechanism-research",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_extra_sources"
+      ]
+    },
+    {
+      "id": 183,
+      "slug": "phlorotannin-sars-cov-2-3clpro-spike-protein-antiviral-research",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_extra_sources"
+      ]
+    },
+    {
+      "id": 184,
+      "slug": "phlorotannin-melanoma-tyrosinase-mitf-apoptosis-mechanism-research",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_extra_sources"
+      ]
+    },
+    {
+      "id": 185,
+      "slug": "phlorotannin-ace-angiotensin-blood-pressure-natural-inhibitor-research",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_extra_sources"
+      ]
+    },
+    {
+      "id": 186,
+      "slug": "phlorotannin-nrf2-keap1-ho1-antioxidant-pathway-research",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_extra_sources"
+      ]
+    },
+    {
+      "id": 187,
+      "slug": "phlorotannin-nf-kb-tnf-alpha-inos-anti-inflammatory-pathway-research",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_extra_sources"
+      ]
+    },
+    {
+      "id": 188,
+      "slug": "phlorotannin-uvb-mmp-photoaging-collagen-skin-research",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_extra_sources"
+      ]
+    },
+    {
+      "id": 189,
+      "slug": "phlorotannin-gut-microbiome-tlr4-myd88-colitis-research",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_extra_sources"
+      ]
+    },
+    {
+      "id": 190,
+      "slug": "phlorotannin-cholesterol-srebp-hmg-coa-lipid-metabolism-research",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_extra_sources"
+      ]
+    },
+    {
+      "id": 191,
+      "slug": "phlorotannin-drug-development-pipeline-2024-2026-global-clinical-status",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_extra_sources"
+      ]
+    },
+    {
+      "id": 192,
+      "slug": "phlorotannin-efficacy-complete-guide-2026",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 193,
+      "slug": "gamtae-side-effects-safety-complete-guide",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 194,
+      "slug": "phlorotannin-dosage-timing-how-to-take-guide",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 195,
+      "slug": "gamtae-miyeok-dasima-phlorotannin-comparison",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 196,
+      "slug": "phlorotannin-supplement-how-to-choose-checklist",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 197,
+      "slug": "dieckol-dpp4-inhibitor-glp1-natural-2025-research",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 198,
+      "slug": "ag-dieckol-rct-postprandial-glucose-insulin-resistance",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 199,
+      "slug": "alpha-glucosidase-inhibitor-comparison-acarbose-dieckol-pffa",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 200,
+      "slug": "marine-plants-diabetes-management-2026-sciencedirect-review",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 201,
+      "slug": "dieckol-ampk-glut2-hepg2-insulin-resistance-mechanism",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 202,
+      "slug": "phlorotannin-natural-drug-fda-ema-approval-pathway",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 203,
+      "slug": "phlorotannin-glycolipid-metabolism-2025-pmc-review",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 204,
+      "slug": "phlorofucofuroeckol-a-pffa-postprandial-glucose-next-generation",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 205,
+      "slug": "natural-diabetes-supplements-comparison-berberine-cinnamon-bittermelon-fucoidan-dieckol",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 206,
+      "slug": "prediabetes-ecklonia-cava-extract-6-months-fasting-glucose-hba1c",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 207,
+      "slug": "deliverance-uk-ecklonia-cava-seanol-liver-supplement-analysis",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 208,
+      "slug": "deliverance-vogue-uk-hangover-supplement-seanol-mechanism",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 209,
+      "slug": "equilibrium-labs-uk-deliverance-20-years-rnd-ecklonia-cava",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 210,
+      "slug": "global-liver-supplement-comparison-deliverance-uk-vs-korea-ecklonia-vs-milk-thistle",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 211,
+      "slug": "deliverance-90x-antioxidant-blueberry-claim-factcheck-seanol-polyphenol",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 212,
+      "slug": "phlorotannin-cancer-support-supplement-overview-2026",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 213,
+      "slug": "esophageal-cancer-ecklonia-cava-phlorotannin-research",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 214,
+      "slug": "bile-duct-cancer-cholangiocarcinoma-phlorotannin-natural-support",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 215,
+      "slug": "liver-cancer-hcc-ecklonia-cava-dieckol-research",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 216,
+      "slug": "colorectal-cancer-phlorotannin-pffa-colon-research",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 217,
+      "slug": "stomach-cancer-gastric-ecklonia-cava-h-pylori-phlorotannin",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 218,
+      "slug": "lung-cancer-phlorotannin-antioxidant-inflammation-research",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 219,
+      "slug": "pancreatic-cancer-ecklonia-cava-dieckol-natural-support",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 220,
+      "slug": "breast-cancer-phlorotannin-estrogen-antioxidant-overview",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 221,
+      "slug": "cancer-patient-quality-of-life-fatigue-immunity-ecklonia-cava",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 222,
+      "slug": "rectal-cancer-phlorotannin-dieckol-radiation-chemo-support",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 223,
+      "slug": "testicular-cancer-phlorotannin-cisplatin-fertility-support",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 224,
+      "slug": "brain-tumor-glioma-phlorotannin-bbb-neuroprotection-ecklonia",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 225,
+      "slug": "head-neck-cancer-phlorotannin-mucositis-saliva-ecklonia",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 226,
+      "slug": "thyroid-cancer-phlorotannin-rai-tsh-suppression-ecklonia",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 227,
+      "slug": "prostate-cancer-phlorotannin-androgen-deprivation-ecklonia",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 228,
+      "slug": "phlorotannin-nk-cell-natural-killer-cancer-immunity-ecklonia",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 229,
+      "slug": "phlorotannin-chemotherapy-neutropenia-bone-marrow-immune-recovery",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 230,
+      "slug": "phlorotannin-t-cell-pd1-pdl1-checkpoint-cancer-immunity",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 231,
+      "slug": "phlorotannin-il6-tnf-alpha-chronic-inflammation-cancer-kpp-deliverance",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 232,
+      "slug": "phlorotannin-tumor-microenvironment-ros-oxidative-stress-dieckol-research",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 233,
+      "slug": "fucoidan-vs-phlorotannin-cancer-immunity-comparison-ecklonia-seanol",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 234,
+      "slug": "checkpoint-inhibitor-keytruda-opdivo-nutritional-support-phlorotannin-deliverance",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 235,
+      "slug": "cancer-survivor-recurrence-fear-long-term-immune-nutrition-phlorotannin",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 236,
+      "slug": "ph-100-phlorotannin-extract-brand-introduction-diabetes-blood-sugar",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 237,
+      "slug": "ph-100-vs-gamtae-powder-standardized-extract-comparison-bcs",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 238,
+      "slug": "ph-100-metformin-combination-safety-synergy-diabetes-phlorotannin",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 239,
+      "slug": "ph-100-timing-before-after-meal-postprandial-glucose-phlorotannin",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 240,
+      "slug": "ph-100-clinical-data-rct-meta-analysis-phlorotannin-diabetes-summary",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 241,
+      "slug": "phlorotannin-buying-guide-7-checks-before-purchase",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 242,
+      "slug": "ecklonia-cava-extract-vs-powder-90pct-confuse",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 243,
+      "slug": "seanol-buying-guide-what-to-check-before-purchase",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 244,
+      "slug": "kpp-korean-phlorotannin-polyphenol-buying-guide",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 245,
+      "slug": "phlorotannin-supplement-label-reading-guide",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 246,
+      "slug": "phlorotannin-dosage-individual-difference-1pill-vs-10pills",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 247,
+      "slug": "phlorotannin-side-effects-drug-interactions-honest-guide",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 248,
+      "slug": "phlorotannin-warfarin-thyroid-pregnancy-special-cases",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 249,
+      "slug": "tamoxifen-side-effects-management-2026",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 250,
+      "slug": "aromatase-inhibitor-side-effects-care-2026",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 251,
+      "slug": "immune-checkpoint-inhibitor-side-effects-2026",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 252,
+      "slug": "trastuzumab-herceptin-cardiac-side-effects-2026",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 253,
+      "slug": "oxaliplatin-peripheral-neuropathy-care-2026",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 254,
+      "slug": "capecitabine-hand-foot-syndrome-care-2026",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 255,
+      "slug": "adc-antibody-drug-conjugate-side-effects-2026",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 256,
+      "slug": "targeted-therapy-skin-rash-acne-care-2026",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 257,
+      "slug": "chemo-immunity-low-natural-care-2026",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 258,
+      "slug": "cancer-fatigue-recovery-care-2026",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 259,
+      "slug": "chemo-neuropathy-nutrition-care-2026",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 260,
+      "slug": "chemo-mouth-sore-stomatitis-care-2026",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 261,
+      "slug": "chemo-appetite-weight-loss-care-2026",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 262,
+      "slug": "hormone-therapy-hot-flashes-natural-care-2026",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 263,
+      "slug": "cancer-patient-family-nutrition-guide-2026",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 264,
+      "slug": "cancer-caregiver-warning-signs-guide-2026",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 265,
+      "slug": "chemo-fever-when-emergency-room-2026",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 266,
+      "slug": "immunotherapy-side-effects-warning-signs-2026",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 267,
+      "slug": "tamoxifen-blood-clot-warning-signs-2026",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 268,
+      "slug": "cancer-pain-when-call-doctor-2026",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 269,
+      "slug": "cancer-patient-supplements-safe-list-2026",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 270,
+      "slug": "cancer-patient-foods-to-avoid-2026",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 271,
+      "slug": "breast-cancer-tamoxifen-drug-interactions-2026",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 272,
+      "slug": "cancer-checkup-tests-after-chemo-2026",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 273,
+      "slug": "chemo-vs-immunotherapy-side-effects-compare-2026",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 274,
+      "slug": "oral-vs-iv-chemo-differences-2026",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 275,
+      "slug": "2026-cancer-new-drugs-approved-korea-side-effects",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 276,
+      "slug": "kras-g12c-tagrisso-osimertinib-side-effects-2026",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 277,
+      "slug": "chemo-exercise-intensity-when-how-2026",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 278,
+      "slug": "after-chemo-hair-color-perm-when-2026",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 279,
+      "slug": "after-chemo-pregnancy-fertility-when-2026",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 280,
+      "slug": "chemo-travel-flight-safety-when-2026",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 281,
+      "slug": "chemo-flu-covid-vaccine-when-safe-2026",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 282,
+      "slug": "cancer-treatment-care-complete-guide-2026",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 283,
+      "slug": "why-phlorotannin-partners-cancer-care-2026",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 284,
+      "slug": "keytruda-immunotherapy-guide-2026",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 285,
+      "slug": "enhertu-her2-breast-cancer-2026",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 286,
+      "slug": "lazertinib-vs-osimertinib-egfr-2026",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 287,
+      "slug": "rybrevant-lazertinib-combo-egfr-2026",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 288,
+      "slug": "immunotherapy-irae-complete-guide-2026",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 289,
+      "slug": "big5-cancer-hospital-comparison-2026",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 290,
+      "slug": "cancer-special-care-5percent-guide-2026",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 291,
+      "slug": "cancer-second-opinion-when-how-2026",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_visible_references"
+      ]
+    },
+    {
+      "id": 292,
+      "slug": "dieckol-2026-depression-glucocorticoid-research-trend",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 293,
+      "slug": "phlorotannin-2026-cognitive-samp8-synaptic-plasticity",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 294,
+      "slug": "phlorotannin-2026-glycolipid-metabolism-frontiers",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 295,
+      "slug": "phlorotannin-2026-gastrointestinal-stability-bioavailability",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 296,
+      "slug": "fucoidan-phlorotannin-2026-oceans-medicine-review",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 297,
+      "slug": "marine-algae-2026-anti-inflammatory-bioactive-review",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 298,
+      "slug": "seaweed-bioactives-2026-functional-foods-trends",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 299,
+      "slug": "phlorotannin-2026-gut-microbiota-obesity-frontiers",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 300,
+      "slug": "phlorotannin-2026-marine-derived-polyphenols-therapy-wiley",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 301,
+      "slug": "phlorotannin-2026-ll37-diabetic-wound-research",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 308,
+      "slug": "cancer-patient-diet-delivery-protein-fiber-guide",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 309,
+      "slug": "chemotherapy-side-effects-diet-guide-nausea-anorexia-mucositis",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_extra_sources"
+      ]
+    },
+    {
+      "id": 310,
+      "slug": "diabetes-patient-diet-delivery-fiber-protein-low-gi-guide",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 311,
+      "slug": "blood-sugar-spike-prevention-type2-gestational-diabetes-meal",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_extra_sources"
+      ]
+    },
+    {
+      "id": 312,
+      "slug": "fortimel-compact-protein-flavors-how-to-drink-guide",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_extra_sources"
+      ]
+    },
+    {
+      "id": 313,
+      "slug": "nutricia-brand-history-medical-nutrition-portfolio",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 314,
+      "slug": "meulssori-patient-meal-delivery-service-introduction",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_extra_sources"
+      ]
+    },
+    {
+      "id": 315,
+      "slug": "fortimel-meulssori-recovery-meal-protein-combo-guide",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_extra_sources"
+      ]
+    },
+    {
+      "id": 316,
+      "slug": "what-is-fortimel-medical-nutrition-guide",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 317,
+      "slug": "fortimel-product-types-comparison-guide",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 318,
+      "slug": "fortimel-buying-checklist-medical-food-guide",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 319,
+      "slug": "what-is-nutricia-danone-medical-nutrition-guide",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 320,
+      "slug": "nutricia-product-portfolio-fortimel-aptamil-neocate-guide",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 321,
+      "slug": "cancer-patient-meal-delivery-checklist-before-order",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 323,
+      "slug": "caregiver-cancer-meal-delivery-prep-record-guide",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta"
+      ]
+    },
+    {
+      "id": 352,
+      "slug": "sarcopenia-rehabilitation-protein-exercise-ons-guide",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "added_extra_sources"
+      ]
+    },
+    {
+      "id": 354,
+      "slug": "cancer-care-hospital-seoul-regional-decision-guide",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "added_extra_sources"
+      ]
+    },
+    {
+      "id": 364,
+      "slug": "special-medical-purpose-food-label-guide-korea",
+      "status": 200,
+      "returned": 1,
+      "actions": [
+        "replaced_old_cta",
+        "added_extra_sources"
+      ]
+    }
+  ],
+  "skipped": [
+    {
+      "id": 302,
+      "slug": "seanol-global-certifications-fda-ndi-eu-nfi-mfds-2026-update"
+    },
+    {
+      "id": 303,
+      "slug": "hydrated-seanol-ultra-freshness-technology-explained"
+    },
+    {
+      "id": 304,
+      "slug": "seanol-drug-pipeline-ph100-ph733-ph300-2026"
+    },
+    {
+      "id": 305,
+      "slug": "nutricia-fortimel-medical-food-korea-market-trend-2025"
+    },
+    {
+      "id": 306,
+      "slug": "fortimel-compact-protein-cancer-surgery-clinical-evidence-2025"
+    },
+    {
+      "id": 307,
+      "slug": "elderly-sarcopenia-nutrition-fortimel-high-protein-ons-2025-guide"
+    },
+    {
+      "id": 322,
+      "slug": "cancer-patient-meal-delivery-appetite-loss-menu-guide"
+    },
+    {
+      "id": 324,
+      "slug": "cancer-meal-delivery-bento-side-dish-ons-combo"
+    },
+    {
+      "id": 325,
+      "slug": "diabetes-patient-meal-delivery-checklist-carb-protein-fiber"
+    },
+    {
+      "id": 326,
+      "slug": "diabetes-meal-delivery-blood-sugar-spike-lunchbox-guide"
+    },
+    {
+      "id": 327,
+      "slug": "diabetes-side-dish-delivery-low-sugar-sodium-guide"
+    },
+    {
+      "id": 328,
+      "slug": "diabetes-meal-delivery-hypertension-kidney-caution"
+    },
+    {
+      "id": 329,
+      "slug": "phlorotannin-omega3-marine-polyphenol-combination-guide"
+    },
+    {
+      "id": 330,
+      "slug": "phlorotannin-vitamin-d-immune-inflammation-checklist"
+    },
+    {
+      "id": 331,
+      "slug": "phlorotannin-probiotics-gut-microbiome-polyphenol-guide"
+    },
+    {
+      "id": 332,
+      "slug": "phlorotannin-coq10-mitochondria-antioxidant-comparison"
+    },
+    {
+      "id": 333,
+      "slug": "phlorotannin-red-ginseng-immunity-fatigue-research-guide"
+    },
+    {
+      "id": 334,
+      "slug": "phlorotannin-lutein-astaxanthin-eye-antioxidant-stack"
+    },
+    {
+      "id": 335,
+      "slug": "gamtae-benefits-search-before-check-food-vs-extract"
+    },
+    {
+      "id": 336,
+      "slug": "gamtae-sleep-supplement-dieckol-quality-guide"
+    },
+    {
+      "id": 337,
+      "slug": "gamtae-dieckol-phlorotannin-label-reading-guide"
+    },
+    {
+      "id": 338,
+      "slug": "gamtae-iodine-thyroid-dasima-difference"
+    },
+    {
+      "id": 339,
+      "slug": "gamtae-how-to-eat-raw-dried-powder-capsule"
+    },
+    {
+      "id": 340,
+      "slug": "gamtae-price-difference-extract-standardization-guide"
+    },
+    {
+      "id": 341,
+      "slug": "gamtae-tea-powder-pill-review-checklist"
+    },
+    {
+      "id": 342,
+      "slug": "gamtae-sleep-ingredients-comparison-lactium-gaba-theanine"
+    },
+    {
+      "id": 343,
+      "slug": "slow-aging-health-functional-food-2026-keyword-map"
+    },
+    {
+      "id": 344,
+      "slug": "slow-aging-blood-sugar-spike-meal-sequence-guide"
+    },
+    {
+      "id": 345,
+      "slug": "slow-aging-sleep-routine-gamtae-theanine-magnesium"
+    },
+    {
+      "id": 346,
+      "slug": "slow-aging-protein-sarcopenia-ons-meal-delivery"
+    },
+    {
+      "id": 347,
+      "slug": "slow-aging-gut-microbiome-polyphenol-fiber-guide"
+    },
+    {
+      "id": 348,
+      "slug": "slow-aging-antioxidant-polyphenol-phlorotannin-guide"
+    },
+    {
+      "id": 349,
+      "slug": "cancer-patient-exercise-guide-walking-strength-stretching"
+    },
+    {
+      "id": 350,
+      "slug": "chemotherapy-exercise-fatigue-neuropathy-safety-checklist"
+    },
+    {
+      "id": 351,
+      "slug": "diabetes-exercise-after-meal-walking-resistance-guide"
+    },
+    {
+      "id": 353,
+      "slug": "cancer-rehabilitation-hospital-selection-checklist"
+    },
+    {
+      "id": 355,
+      "slug": "diabetes-education-hospital-nutrition-counseling-checklist"
+    },
+    {
+      "id": 356,
+      "slug": "hospital-visit-preparation-questions-caregiver-checklist"
+    },
+    {
+      "id": 357,
+      "slug": "jongkundang-health-dr-care-special-medical-food-keyword-map"
+    },
+    {
+      "id": 358,
+      "slug": "dr-care-dangcoach-zero-diabetes-drink-label-guide"
+    },
+    {
+      "id": 359,
+      "slug": "diabetes-medical-nutrition-drink-zero-sugar-carb-protein-fiber"
+    },
+    {
+      "id": 360,
+      "slug": "diabetes-drink-meulssori-meal-routine-checklist"
+    },
+    {
+      "id": 361,
+      "slug": "dr-care-cancercoach-cancer-patient-drink-label-guide"
+    },
+    {
+      "id": 362,
+      "slug": "cancer-patient-nutrition-drink-appetite-nausea-swallowing-guide"
+    },
+    {
+      "id": 363,
+      "slug": "cancer-diabetes-drink-choice-checklist"
+    },
+    {
+      "id": 365,
+      "slug": "patient-drink-vs-protein-drink-difference"
+    },
+    {
+      "id": 366,
+      "slug": "jongkundang-health-dr-care-buying-checklist-meulssori"
+    }
+  ],
+  "errors": []
+}

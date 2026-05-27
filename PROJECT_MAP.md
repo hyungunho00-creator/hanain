@@ -124,7 +124,7 @@
 
 | 테이블 | 용도 | 상태 |
 |---|---|---|
-| `posts` | 블로그 글 (118+건, status='published'만 sitemap 노출) | ✅ 운영 중 |
+| `posts` | 블로그 글 (363건, status='published'만 sitemap 노출) | ✅ 운영 중 — public은 published SELECT만, 쓰기는 `/api/admin` 또는 service_role 전용 |
 | `partners` | 파트너 명단 (slug PK = 전화번호, status='active'만 노출) | ✅ Phase 2 완료 (SQL: `supabase/phase2_partners.sql`, JSON fallback 유지) |
 | `categories` | 카테고리 메타 (type='blog'/'qa', 26행) | ✅ Phase 3 완료 (SQL: `supabase/phase3_categories_pages.sql`, 코드 상수 fallback 유지) |
 | `pages` | 고정 페이지 메타 (12행) | ✅ Phase 3 완료 (`/api/seo`가 페치, `staticMetaFor` fallback) |

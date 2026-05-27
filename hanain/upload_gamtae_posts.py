@@ -3,11 +3,12 @@
 컨셉: 이름 말고 구조, 회복 스토리, 사먹고 싶게, 연락처 남기고 싶게
 """
 
+import os
 import json, requests
 from datetime import datetime, timezone
 
 SUPABASE_URL = "https://rlfxuyeoluoeaxuujtly.supabase.co"
-SERVICE_KEY  = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJsZnh1eWVvbHVvZWF4dXVqdGx5Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NTk0MTI2MywiZXhwIjoyMDkxNTE3MjYzfQ.O0Oe3g2fv_8SUvxNfHvdxzpA6pcWVIWTscpymYr0pBI"
+SERVICE_KEY = os.environ.get("SUPABASE_SERVICE_ROLE_KEY") or os.environ.get("SUPABASE_SERVICE_KEY")
 
 SB_HEADERS = {
     "apikey":          SERVICE_KEY,

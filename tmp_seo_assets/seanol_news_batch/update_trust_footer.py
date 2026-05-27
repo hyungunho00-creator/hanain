@@ -7,13 +7,14 @@
 처리: 본문 끝에 TRUST_FOOTER(시리즈 링크 + 참고 문헌 데이터베이스 박스) PATCH
 중복 방지: <!-- TRUST_FOOTER_V1 --> 마커로 grep, 이미 있으면 skip
 """
+import os
 import json
 import urllib.request
 import urllib.error
 from datetime import datetime, timezone
 
 SB = "https://rlfxuyeoluoeaxuujtly.supabase.co"
-KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJsZnh1eWVvbHVvZWF4dXVqdGx5Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NTk0MTI2MywiZXhwIjoyMDkxNTE3MjYzfQ.O0Oe3g2fv_8SUvxNfHvdxzpA6pcWVIWTscpymYr0pBI"
+KEY = os.environ.get("SUPABASE_SERVICE_ROLE_KEY") or os.environ.get("SUPABASE_SERVICE_KEY")
 
 NOW = datetime.now(timezone.utc).isoformat()
 SLUGS = [

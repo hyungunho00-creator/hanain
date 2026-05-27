@@ -15,11 +15,12 @@
   - category가 너무 일반적(general) → +1 (재분류 가치)
   - 콜라겐/후코이단/베타글루칸은 사이트 자산 비어있음 → 글이 존재하면 +5
 """
+import os
 import urllib.request, json, re
 from collections import defaultdict
 
 SB = "https://rlfxuyeoluoeaxuujtly.supabase.co"
-KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJsZnh1eWVvbHVvZWF4dXVqdGx5Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NTk0MTI2MywiZXhwIjoyMDkxNTE3MjYzfQ.O0Oe3g2fv_8SUvxNfHvdxzpA6pcWVIWTscpymYr0pBI"
+KEY = os.environ.get("SUPABASE_SERVICE_ROLE_KEY") or os.environ.get("SUPABASE_SERVICE_KEY")
 
 req = urllib.request.Request(
     f"{SB}/rest/v1/posts?select=id,slug,title,category,meta_title,meta_desc,excerpt&id=lte.104&order=id.asc",

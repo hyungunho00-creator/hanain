@@ -1,11 +1,12 @@
 """
 카테고리별 2개씩 16개 블로그 포스트 직접 작성 & Supabase 업로드
 """
+import os
 import requests, json, re
 from datetime import datetime, timezone
 
 SB  = 'https://rlfxuyeoluoeaxuujtly.supabase.co'
-KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJsZnh1eWVvbHVvZWF4dXVqdGx5Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NTk0MTI2MywiZXhwIjoyMDkxNTE3MjYzfQ.O0Oe3g2fv_8SUvxNfHvdxzpA6pcWVIWTscpymYr0pBI'
+KEY = os.environ.get("SUPABASE_SERVICE_ROLE_KEY") or os.environ.get("SUPABASE_SERVICE_KEY")
 H   = {
     'apikey': KEY, 'Authorization': f'Bearer {KEY}',
     'Content-Type': 'application/json',

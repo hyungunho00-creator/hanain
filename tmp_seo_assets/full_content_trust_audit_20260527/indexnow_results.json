@@ -1,0 +1,22 @@
+{
+  "url_count": 363,
+  "keyLocation": "https://phlorotannin.com/6c13a351f7784b49b91e4da2717e6889.txt",
+  "results": {
+    "https://api.indexnow.org/indexnow": {
+      "status": 200,
+      "body": ""
+    },
+    "https://www.bing.com/indexnow": {
+      "status": 200,
+      "body": ""
+    },
+    "https://yandex.com/indexnow": {
+      "status": 202,
+      "body": "{\n  \"success\":true\n}"
+    },
+    "https://searchadvisor.naver.com/indexnow": {
+      "status": 200,
+      "body": ""
+    }
+  }
+}

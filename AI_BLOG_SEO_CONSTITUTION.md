@@ -33,10 +33,11 @@ curl -H "apikey: $ANON" -H "Authorization: Bearer $ANON" -H "Accept-Profile: pub
 - 없으면 **카테고리부터 INSERT** (글보다 카테고리가 먼저)
 - BlogPage.jsx의 `FALLBACK_CATEGORIES`는 **DB 페치 실패 시 fallback**일 뿐, source of truth가 아니다
 
-### ✅ 체크 2. RLS 정책으로 INSERT 가능 여부 확인
+### ✅ 체크 2. RLS 정책으로 쓰기 경로 확인
 - `categories` 테이블 INSERT는 **anon key로 401** (RLS) → service_role 필요 또는 Admin UI 사용
-- `posts` 테이블 INSERT는 **anon key로 OK** (현재 정책상)
-- 401이 떴는데 우회하지 말 것. 사용자에게 방안을 제시하고 승인 받기
+- `posts` 테이블 INSERT/UPDATE/DELETE도 **anon key 직접 쓰기 금지**. 공개 방문자는 published SELECT만 허용한다.
+- 블로그 글 쓰기는 `/api/admin` 관리자 API, Supabase MCP, 또는 서버 전용 service_role 환경변수 경로만 사용한다.
+- 401/0 rows가 떴는데 우회하지 말 것. 사용자에게 방안을 제시하고 승인 받기
 
 ### ✅ 체크 3. 카테고리 정의 중복 위치 전수 검색
 ```bash
@@ -155,7 +156,7 @@ curl -H "apikey: $ANON" -H "Authorization: Bearer $ANON" -H "Accept-Profile: pub
         ↓
 [8] slug 중복 검사 (체크리스트 6)
         ↓
-[9] posts 테이블 INSERT (anon key OK)
+[9] posts 테이블 INSERT/UPDATE (`/api/admin` 또는 service_role 전용 경로)
         ↓
 [10] npm run build (SUCCESS 확인)
         ↓
@@ -1273,6 +1274,26 @@ curl -s "https://phlorotannin.com/p/01056528206" | grep -E "<title|page-title"
 - **금지어/금지 카테고리/금지 패턴 발견 시**: 제4조에 등록
 - **새로운 중복 위치 발견 시**: 제2조 체크 3 표에 추가
 - **개정 시**: 사용자에게 보고 → 승인 후 commit
+
+---
+
+## 제23조 (기존 글 전체 보강과 공개 쓰기 금지 규칙) — 2026-05-27 신설
+
+기존 발행 글도 신규 글과 같은 기준으로 관리한다. 과거에 발행된 글이라는 이유로 출처, CTA, 이미지, 구조화 데이터, 보안 기준을 낮추지 않는다.
+
+1. 모든 published 글은 눈에 보이는 `## 참고자료` 섹션을 가진다.
+   - 단순 링크 개수가 아니라 공식·공공·학술 출처를 최소 2개 이상 둔다.
+   - `band.us`, `naver.me` 같은 공유·단축·커뮤니티 링크는 신뢰 출처 개수에 넣지 않는다.
+2. 모든 CTA는 맛있으리 식단관리와 플로로탄닌 건강정보 기준으로 통일한다.
+   - 특정 외부 제품 구매 유도, 포티멜 중심 CTA, 과거 광고형 버튼은 신규·기존 글 모두에서 제거한다.
+   - 기존 포티멜 색인 글은 삭제하지 않고 정보성 아카이브로 유지하되, 구매 유도는 하지 않는다.
+3. Supabase 공개 테이블은 public 쓰기 정책을 금지한다.
+   - `posts`는 published SELECT만 공개하고, INSERT/UPDATE/DELETE는 서버 관리자 API 또는 service_role 전용 경로만 허용한다.
+   - `qa_categories`, `qa_questions` 같은 기준 데이터도 public SELECT만 허용하고, 조회수·좋아요처럼 필요한 쓰기는 제한된 RPC/API로만 처리한다.
+   - 문의 제출처럼 public INSERT가 필요한 테이블은 `WITH CHECK (true)`를 금지하고, 상태·필수값·길이 제한을 둔다.
+   - RLS 정책 이름이 service role이어도 `to public`이면 위반이다. 발견 즉시 마이그레이션으로 닫는다.
+4. 전체 보강 작업은 증거 파일을 남긴다.
+   - before audit, patch result, after audit, live Googlebot HTML 검증 결과를 `tmp_seo_assets/<batch>/` 아래에 저장한다.
 
 ---
 

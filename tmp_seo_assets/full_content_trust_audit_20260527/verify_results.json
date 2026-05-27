@@ -1,0 +1,52 @@
+{
+  "total": 363,
+  "issue_count": 0,
+  "issues": [],
+  "live": [
+    {
+      "slug": "phlorotannin-diabetes-clinical-trial-2b-success-blood-sugar-management",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_article": true,
+      "has_citation": true,
+      "has_is_based_on": true,
+      "has_og_image_alt": true
+    },
+    {
+      "slug": "sarcopenia-rehabilitation-protein-exercise-ons-guide",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_article": true,
+      "has_citation": true,
+      "has_is_based_on": true,
+      "has_og_image_alt": true
+    },
+    {
+      "slug": "cancer-care-hospital-seoul-regional-decision-guide",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_article": true,
+      "has_citation": true,
+      "has_is_based_on": true,
+      "has_og_image_alt": true
+    },
+    {
+      "slug": "special-medical-purpose-food-label-guide-korea",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_article": true,
+      "has_citation": true,
+      "has_is_based_on": true,
+      "has_og_image_alt": true
+    },
+    {
+      "slug": "dr-care-dangcoach-zero-diabetes-drink-label-guide",
+      "status": 200,
+      "x_seo_source": "posts-table",
+      "has_article": true,
+      "has_citation": true,
+      "has_is_based_on": true,
+      "has_og_image_alt": true
+    }
+  ]
+}

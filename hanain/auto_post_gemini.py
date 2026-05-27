@@ -16,8 +16,7 @@ from datetime import datetime, timezone
 
 # ── 환경변수 ─────────────────────────────────────────────────
 SUPABASE_URL   = os.environ.get("SUPABASE_URL",  "https://rlfxuyeoluoeaxuujtly.supabase.co")
-SERVICE_KEY    = os.environ.get("SUPABASE_SERVICE_KEY",
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJsZnh1eWVvbHVvZWF4dXVqdGx5Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NTk0MTI2MywiZXhwIjoyMDkxNTE3MjYzfQ.O0Oe3g2fv_8SUvxNfHvdxzpA6pcWVIWTscpymYr0pBI")
+SERVICE_KEY = os.environ.get("SUPABASE_SERVICE_ROLE_KEY") or os.environ.get("SUPABASE_SERVICE_KEY")
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "AIzaSyA9K81_bi84wkXM52_vdwVTR6m6y-nrqV0")
 GEMINI_MODEL   = "gemini-2.5-flash"
 SITE_URL       = "https://phlorotannin.com"

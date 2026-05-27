@@ -4,13 +4,14 @@ SEO 확장용 초기 글 8개를 Supabase posts 테이블에 INSERT.
 - 카테고리: ingredient-comparison, disease-health-info, hospital-info, partner-info
 - service_role key 사용 (anon은 INSERT 권한 없을 수 있음)
 """
+import os
 import json
 import urllib.request
 import urllib.error
 from datetime import datetime, timezone
 
 SB_URL = "https://rlfxuyeoluoeaxuujtly.supabase.co"
-SB_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJsZnh1eWVvbHVvZWF4dXVqdGx5Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NTk0MTI2MywiZXhwIjoyMDkxNTE3MjYzfQ.O0Oe3g2fv_8SUvxNfHvdxzpA6pcWVIWTscpymYr0pBI"
+SB_KEY = os.environ.get("SUPABASE_SERVICE_ROLE_KEY") or os.environ.get("SUPABASE_SERVICE_KEY")
 
 NOW = datetime.now(timezone.utc).isoformat()
 

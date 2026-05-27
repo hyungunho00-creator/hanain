@@ -1,0 +1,495 @@
+{
+  "total": 363,
+  "issue_count": 31,
+  "counts": {
+    "fortimel_mentions": 25,
+    "meta_title_len_review": 6
+  },
+  "issues": [
+    {
+      "id": 305,
+      "slug": "nutricia-fortimel-medical-food-korea-market-trend-2025",
+      "title": "뉴트리시아 포티멜과 메디푸드 — 2025 한국 시장 동향과 환자 영양 패러다임",
+      "category": "research",
+      "markers": [
+        "fortimel_mentions"
+      ],
+      "source_domains": [
+        "assets.kpmg.com",
+        "clinicaltrials.gov",
+        "espen.org",
+        "frontiersin.org",
+        "futuremarketinsights.com",
+        "grandviewresearch.com",
+        "naver.me",
+        "ncbi.nlm.nih.gov",
+        "nutricia.com",
+        "phwr.org",
+        "pmc.ncbi.nlm.nih.gov",
+        "pubmed.ncbi.nlm.nih.gov",
+        "yna.co.kr"
+      ]
+    },
+    {
+      "id": 306,
+      "slug": "fortimel-compact-protein-cancer-surgery-clinical-evidence-2025",
+      "title": "포티멜 컴팩트 프로틴 — 암환자·수술환자 ONS 임상 근거 2025년 정리",
+      "category": "research",
+      "markers": [
+        "fortimel_mentions"
+      ],
+      "source_domains": [
+        "clinicaltrials.gov",
+        "espen.org",
+        "frontiersin.org",
+        "mdpi.com",
+        "naver.me",
+        "ncbi.nlm.nih.gov",
+        "nutricia.com",
+        "pmc.ncbi.nlm.nih.gov",
+        "pubmed.ncbi.nlm.nih.gov",
+        "sciencedirect.com"
+      ]
+    },
+    {
+      "id": 307,
+      "slug": "elderly-sarcopenia-nutrition-fortimel-high-protein-ons-2025-guide",
+      "title": "노인 근감소증 영양 보충 — 포티멜 등 고단백 ONS 2025년 가이드",
+      "category": "research",
+      "markers": [
+        "fortimel_mentions"
+      ],
+      "source_domains": [
+        "clinicaltrials.gov",
+        "ekjcg.org",
+        "espen.org",
+        "frontiersin.org",
+        "jkma.org",
+        "mdpi.com",
+        "naver.me",
+        "ncbi.nlm.nih.gov",
+        "nutricia.com",
+        "onlinelibrary.wiley.com",
+        "phwr.org",
+        "pmc.ncbi.nlm.nih.gov",
+        "pubmed.ncbi.nlm.nih.gov"
+      ]
+    },
+    {
+      "id": 308,
+      "slug": "cancer-patient-diet-delivery-protein-fiber-guide",
+      "title": "암환자 식단 배달 — 단백질·섬유질 가이드와 활용법 정리",
+      "category": "cancer-treatment-care",
+      "markers": [
+        "fortimel_mentions"
+      ],
+      "source_domains": [
+        "espen.org",
+        "naver.me"
+      ]
+    },
+    {
+      "id": 309,
+      "slug": "chemotherapy-side-effects-diet-guide-nausea-anorexia-mucositis",
+      "title": "항암 부작용별 식단 가이드 — 메스꺼움·식욕부진·구내염 대응",
+      "category": "cancer-treatment-care",
+      "markers": [
+        "fortimel_mentions"
+      ],
+      "source_domains": [
+        "cancer.gov",
+        "diabetesjournals.org",
+        "espen.org",
+        "naver.me",
+        "professional.diabetes.org"
+      ]
+    },
+    {
+      "id": 310,
+      "slug": "diabetes-patient-diet-delivery-fiber-protein-low-gi-guide",
+      "title": "당뇨환자 식단 배달 — 섬유질·단백질·저당 식단 가이드",
+      "category": "diabetes",
+      "markers": [
+        "fortimel_mentions"
+      ],
+      "source_domains": [
+        "diabetes.or.kr",
+        "naver.me"
+      ]
+    },
+    {
+      "id": 311,
+      "slug": "blood-sugar-spike-prevention-type2-gestational-diabetes-meal",
+      "title": "혈당 스파이크 막는 식사법 — 2형 당뇨·임신성 당뇨 식단 차이",
+      "category": "diabetes",
+      "markers": [
+        "fortimel_mentions"
+      ],
+      "source_domains": [
+        "diabetesjournals.org",
+        "naver.me",
+        "professional.diabetes.org"
+      ]
+    },
+    {
+      "id": 312,
+      "slug": "fortimel-compact-protein-flavors-how-to-drink-guide",
+      "title": "포티멜 컴팩트 프로틴 — 맛 종류와 맛있게 마시는 법",
+      "category": "cancer-treatment-care",
+      "markers": [
+        "fortimel_mentions"
+      ],
+      "source_domains": [
+        "cancer.gov",
+        "diabetesjournals.org",
+        "espen.org",
+        "foodsafetykorea.go.kr",
+        "law.go.kr",
+        "naver.me",
+        "professional.diabetes.org"
+      ]
+    },
+    {
+      "id": 313,
+      "slug": "nutricia-brand-history-medical-nutrition-portfolio",
+      "title": "뉴트리시아 브랜드 이야기 — 125년 의료영양 전문성과 제품군 정리",
+      "category": "research",
+      "markers": [
+        "fortimel_mentions"
+      ],
+      "source_domains": [
+        "naver.me",
+        "nutricia.com"
+      ]
+    },
+    {
+      "id": 314,
+      "slug": "meulssori-patient-meal-delivery-service-introduction",
+      "title": "맛있으리 환자식 정기배송 — 메뉴 구성과 이용 가이드",
+      "category": "cancer-treatment-care",
+      "markers": [
+        "fortimel_mentions"
+      ],
+      "source_domains": [
+        "cancer.gov",
+        "diabetesjournals.org",
+        "espen.org",
+        "naver.me",
+        "professional.diabetes.org"
+      ]
+    },
+    {
+      "id": 315,
+      "slug": "fortimel-meulssori-recovery-meal-protein-combo-guide",
+      "title": "회복기 환자 식단 — 포티멜과 환자식 반찬을 함께 활용하는 법",
+      "category": "cancer-treatment-care",
+      "markers": [
+        "fortimel_mentions"
+      ],
+      "source_domains": [
+        "cancer.gov",
+        "diabetesjournals.org",
+        "espen.org",
+        "naver.me",
+        "professional.diabetes.org"
+      ]
+    },
+    {
+      "id": 316,
+      "slug": "what-is-fortimel-medical-nutrition-guide",
+      "title": "포티멜이란? — 환자용 영양보충음료를 처음 찾는 분을 위한 안내",
+      "category": "research",
+      "markers": [
+        "fortimel_mentions"
+      ],
+      "source_domains": [
+        "naver.me",
+        "nutricia.com"
+      ]
+    },
+    {
+      "id": 317,
+      "slug": "fortimel-product-types-comparison-guide",
+      "title": "포티멜 종류 비교 — 컴팩트 프로틴부터 제품군 선택 기준까지",
+      "category": "research",
+      "markers": [
+        "fortimel_mentions"
+      ],
+      "source_domains": [
+        "naver.me",
+        "nutricia.com"
+      ]
+    },
+    {
+      "id": 318,
+      "slug": "fortimel-buying-checklist-medical-food-guide",
+      "title": "포티멜 구매 전 확인사항 — 정식 유통·영양표시·보관 체크리스트",
+      "category": "disease-health-info",
+      "markers": [
+        "fortimel_mentions"
+      ],
+      "source_domains": [
+        "naver.me",
+        "nutricia.com"
+      ]
+    },
+    {
+      "id": 319,
+      "slug": "what-is-nutricia-danone-medical-nutrition-guide",
+      "title": "뉴트리시아란? — 다논 의료영양 브랜드를 처음 검색하는 분을 위한 정리",
+      "category": "research",
+      "markers": [
+        "fortimel_mentions"
+      ],
+      "source_domains": [
+        "naver.me",
+        "nutricia.com"
+      ]
+    },
+    {
+      "id": 320,
+      "slug": "nutricia-product-portfolio-fortimel-aptamil-neocate-guide",
+      "title": "뉴트리시아 제품군 정리 — 포티멜·압타밀·네오케이트는 어떻게 다른가",
+      "category": "research",
+      "markers": [
+        "fortimel_mentions"
+      ],
+      "source_domains": [
+        "naver.me",
+        "nutricia.com"
+      ]
+    },
+    {
+      "id": 321,
+      "slug": "cancer-patient-meal-delivery-checklist-before-order",
+      "title": "암환자식단배달 주문 전 체크리스트: 단백질·저염·위생 기준",
+      "category": "cancer",
+      "markers": [
+        "fortimel_mentions"
+      ],
+      "source_domains": [
+        "cancer.go.kr",
+        "diabetes.or.kr",
+        "foodsafetykorea.go.kr",
+        "naver.me"
+      ]
+    },
+    {
+      "id": 322,
+      "slug": "cancer-patient-meal-delivery-appetite-loss-menu-guide",
+      "title": "항암 중 식욕부진 식단배달: 못 드시는 날 메뉴 조정법",
+      "category": "cancer",
+      "markers": [
+        "fortimel_mentions"
+      ],
+      "source_domains": [
+        "cancer.go.kr",
+        "diabetes.or.kr",
+        "foodsafetykorea.go.kr",
+        "naver.me"
+      ]
+    },
+    {
+      "id": 324,
+      "slug": "cancer-meal-delivery-bento-side-dish-ons-combo",
+      "title": "암환자 도시락·반찬·영양보충음료: 함께 쓰는 기준",
+      "category": "cancer",
+      "markers": [
+        "fortimel_mentions"
+      ],
+      "source_domains": [
+        "cancer.go.kr",
+        "diabetes.or.kr",
+        "foodsafetykorea.go.kr",
+        "naver.me"
+      ]
+    },
+    {
+      "id": 325,
+      "slug": "diabetes-patient-meal-delivery-checklist-carb-protein-fiber",
+      "title": "당뇨환자식단배달 선택 기준: 탄수화물·단백질·섬유질",
+      "category": "diabetes",
+      "markers": [
+        "fortimel_mentions"
+      ],
+      "source_domains": [
+        "cancer.go.kr",
+        "diabetes.or.kr",
+        "foodsafetykorea.go.kr",
+        "naver.me"
+      ]
+    },
+    {
+      "id": 328,
+      "slug": "diabetes-meal-delivery-hypertension-kidney-caution",
+      "title": "당뇨와 고혈압·신장질환이 함께 있을 때 식단배달 주의점",
+      "category": "diabetes",
+      "markers": [
+        "fortimel_mentions"
+      ],
+      "source_domains": [
+        "cancer.go.kr",
+        "diabetes.or.kr",
+        "foodsafetykorea.go.kr",
+        "naver.me"
+      ]
+    },
+    {
+      "id": 330,
+      "slug": "phlorotannin-vitamin-d-immune-inflammation-checklist",
+      "title": "플로로탄닌과 비타민D: 면역·염증 관점에서 나눠 보는 기준",
+      "category": "ingredient-comparison",
+      "markers": [
+        "meta_title_len_review"
+      ],
+      "source_domains": [
+        "frontiersin.org",
+        "ncbi.nlm.nih.gov",
+        "pubmed.ncbi.nlm.nih.gov",
+        "sciencedirect.com"
+      ]
+    },
+    {
+      "id": 331,
+      "slug": "phlorotannin-probiotics-gut-microbiome-polyphenol-guide",
+      "title": "플로로탄닌과 프로바이오틱스: 장내미생물·폴리페놀 연결고리",
+      "category": "ingredient-comparison",
+      "markers": [
+        "meta_title_len_review"
+      ],
+      "source_domains": [
+        "frontiersin.org",
+        "ncbi.nlm.nih.gov",
+        "pubmed.ncbi.nlm.nih.gov",
+        "sciencedirect.com"
+      ]
+    },
+    {
+      "id": 333,
+      "slug": "phlorotannin-red-ginseng-immunity-fatigue-research-guide",
+      "title": "플로로탄닌과 홍삼: 면역·피로 소재를 함께 볼 때 주의점",
+      "category": "ingredient-comparison",
+      "markers": [
+        "meta_title_len_review"
+      ],
+      "source_domains": [
+        "efsa.europa.eu",
+        "frontiersin.org",
+        "ncbi.nlm.nih.gov",
+        "pubmed.ncbi.nlm.nih.gov",
+        "sciencedirect.com"
+      ]
+    },
+    {
+      "id": 334,
+      "slug": "phlorotannin-lutein-astaxanthin-eye-antioxidant-stack",
+      "title": "플로로탄닌과 루테인·아스타잔틴: 눈·피부 항산화 소재 비교",
+      "category": "ingredient-comparison",
+      "markers": [
+        "meta_title_len_review"
+      ],
+      "source_domains": [
+        "efsa.europa.eu",
+        "frontiersin.org",
+        "ncbi.nlm.nih.gov",
+        "pubmed.ncbi.nlm.nih.gov",
+        "sciencedirect.com"
+      ]
+    },
+    {
+      "id": 337,
+      "slug": "gamtae-dieckol-phlorotannin-label-reading-guide",
+      "title": "감태 디에콜이란? 플로로탄닌 성분표 읽는 법",
+      "category": "ingredient-comparison",
+      "markers": [
+        "meta_title_len_review"
+      ],
+      "source_domains": [
+        "efsa.europa.eu",
+        "frontiersin.org",
+        "ncbi.nlm.nih.gov",
+        "pubmed.ncbi.nlm.nih.gov",
+        "sciencedirect.com"
+      ]
+    },
+    {
+      "id": 343,
+      "slug": "slow-aging-health-functional-food-2026-keyword-map",
+      "title": "저속노화 영양제 키워드 2026: 혈당·수면·단백질·장건강",
+      "category": "general",
+      "markers": [
+        "fortimel_mentions"
+      ],
+      "source_domains": [
+        "foodpe.or.kr",
+        "frontiersin.org",
+        "ncbi.nlm.nih.gov",
+        "pubmed.ncbi.nlm.nih.gov",
+        "sciencedirect.com"
+      ]
+    },
+    {
+      "id": 346,
+      "slug": "slow-aging-protein-sarcopenia-ons-meal-delivery",
+      "title": "저속노화 단백질 전략: 근감소증·ONS·환자식까지 연결하기",
+      "category": "disease-health-info",
+      "markers": [
+        "fortimel_mentions"
+      ],
+      "source_domains": [
+        "frontiersin.org",
+        "ncbi.nlm.nih.gov",
+        "pubmed.ncbi.nlm.nih.gov",
+        "sciencedirect.com"
+      ]
+    },
+    {
+      "id": 349,
+      "slug": "cancer-patient-exercise-guide-walking-strength-stretching",
+      "title": "암환자 운동법: 걷기·근력·스트레칭을 언제 어떻게 시작할까",
+      "category": "exercise-recovery",
+      "markers": [
+        "fortimel_mentions"
+      ],
+      "source_domains": [
+        "acsm.org",
+        "oncolink.org",
+        "pubmed.ncbi.nlm.nih.gov"
+      ]
+    },
+    {
+      "id": 352,
+      "slug": "sarcopenia-rehabilitation-protein-exercise-ons-guide",
+      "title": "근감소증 운동법: 단백질·ONS·환자식과 함께 보는 회복 루틴",
+      "category": "exercise-recovery",
+      "markers": [
+        "fortimel_mentions"
+      ],
+      "source_domains": [
+        "2022.espen.org",
+        "cancer.gov",
+        "diabetesjournals.org",
+        "espen.org",
+        "foodsafetykorea.go.kr",
+        "law.go.kr",
+        "pmc.ncbi.nlm.nih.gov",
+        "professional.diabetes.org",
+        "pubmed.ncbi.nlm.nih.gov",
+        "who.int"
+      ]
+    },
+    {
+      "id": 360,
+      "slug": "diabetes-drink-meulssori-meal-routine-checklist",
+      "title": "당뇨음료와 맛있으리 식단: 식사 대용이 아니라 루틴으로 쓰는 법",
+      "category": "diabetes",
+      "markers": [
+        "meta_title_len_review"
+      ],
+      "source_domains": [
+        "foodsafetykorea.go.kr",
+        "professional.diabetes.org"
+      ]
+    }
+  ]
+}

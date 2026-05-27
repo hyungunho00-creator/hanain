@@ -3,10 +3,11 @@
 1차 SEO 자산화 작업 — 샘플 3개 (id 70, 71, 66) 변경 전/후 미리보기.
 실제 DB는 건드리지 않음. 콘솔 출력만.
 """
+import os
 import urllib.request, json, re, textwrap
 
 SB = "https://rlfxuyeoluoeaxuujtly.supabase.co"
-KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJsZnh1eWVvbHVvZWF4dXVqdGx5Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NTk0MTI2MywiZXhwIjoyMDkxNTE3MjYzfQ.O0Oe3g2fv_8SUvxNfHvdxzpA6pcWVIWTscpymYr0pBI"
+KEY = os.environ.get("SUPABASE_SERVICE_ROLE_KEY") or os.environ.get("SUPABASE_SERVICE_KEY")
 
 def fetch(ids):
     q = ",".join(map(str, ids))
