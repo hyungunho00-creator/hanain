@@ -148,7 +148,7 @@ export default {
           rel="nofollow noopener sponsored"
           style={{ color: '#0D1B3E', textDecoration: 'none', fontSize: 15, letterSpacing: '0.02em' }}
         >
-          건강을 위한 단백질 관리, 포티멜
+          맛있으리 식단관리와 플로로탄닌 정보
           <span style={{ color: '#B8953A', fontFamily: 'Georgia, serif', marginLeft: 6 }}>&rarr;</span>
         </a>
       </p>

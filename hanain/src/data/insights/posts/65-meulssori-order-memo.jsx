@@ -27,7 +27,7 @@ export default {
       a: '길 필요는 없습니다. 환자가 못 먹는 음식, 필요한 식감, 제한해야 할 양념, 질환별 주의사항 네 가지만 짧게 적으면 충분합니다.',
     },
     {
-      q: '맛있으리 환자식은 포티멜과 같이 써도 되나요?',
+      q: '맛있으리 환자식은 ONS와 같이 써도 되나요?',
       a: '식사량이 부족한 회복기에는 환자식 반찬과 경구영양보충제를 함께 검토할 수 있습니다. 다만 당뇨·신장질환이 있으면 제품 성분을 의료진과 확인하는 것이 안전합니다.',
     },
   ],
@@ -82,19 +82,19 @@ export default {
         caption="정기배송은 첫 주문보다 반복 조정이 더 중요합니다."
       />
 
-      <H2 id="combo">포티멜과 함께 쓸 때</H2>
+      <H2 id="combo">ONS와 함께 쓸 때</H2>
       <P>
         식사량이 줄어 반찬만으로 단백질과 열량이 부족한 날에는 경구영양보충제를 함께 검토할 수 있습니다.
         다만 보충음료는 식사를 대체하는 도구가 아니라 부족분을 좁히는 도구입니다.
       </P>
       <P>
-        당뇨, 신장질환, 삼킴 문제가 있는 분은 포티멜 같은 제품도 성분표를 확인하고 의료진과 상의한 뒤
+        당뇨, 신장질환, 삼킴 문제가 있는 분은 ONS 제품도 성분표를 확인하고 의료진과 상의한 뒤
         활용하는 것이 안전합니다.
       </P>
 
       <Hr />
       <P>
-        함께 읽기: <RelLink to="/blog/fortimel-meulssori-recovery-meal-protein-combo-guide">포티멜과 환자식 반찬을 함께 활용하는 법</RelLink>
+        함께 읽기: <RelLink to="/blog/cancer-meal-delivery-bento-side-dish-ons-combo">환자식 반찬과 영양 보충 음료를 함께 보는 법</RelLink>
         {' '}·{' '}
         <RelLink to="/blog/cancer-meal-delivery-bento-side-dish-ons-combo">암환자 도시락·반찬·영양보충음료 기준</RelLink>
         {' '}·{' '}
@@ -124,4 +124,3 @@ export default {
     </>
   ),
 }
-
