@@ -1,0 +1,22 @@
+{
+  "fixed_at": "2026-05-27T15:03:42.102Z",
+  "insight_files_touched": 52,
+  "qa_total": 1641,
+  "qa_answers_with_meal_record_phrase": 31,
+  "qa_answers_with_neutral_ingredient_phrase": 35,
+  "qa_internal_seo_tags_remaining": 0,
+  "qa_tasty_tags_remaining": 1,
+  "tag_index": {
+    "total_unique_tags": 1898,
+    "page_eligible_tags": 184,
+    "has_internal_seo_tag": false
+  },
+  "bad_pattern_hits": {
+    "hanain/public/qa.json": [],
+    "hanain/public/tagIndex.json": [],
+    "hanain/public/rss.xml": [],
+    "hanain/public/sitemap.xml": [],
+    "public/rss.xml": [],
+    "public/sitemap.xml": []
+  }
+}
