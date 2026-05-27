@@ -48,6 +48,14 @@ def source_links(*keys):
     return "\n".join(f'- [{SOURCES[k]["label"]}]({SOURCES[k]["url"]})' for k in keys)
 
 
+def references_block(*keys):
+    return """## 참고자료
+
+아래 자료는 본문 작성 시 확인한 공식·공공·학회 자료입니다. 제품명은 검색자가 성분표를 확인할 때 필요한 사실 확인용으로만 언급했습니다.
+
+""" + source_links(*keys)
+
+
 SAFETY = """<!-- MEDICAL_FOOD_SAFETY_V1 -->
 <div style="background:#fff7ed;border-left:4px solid #f59e0b;border-radius:8px;padding:14px 18px;margin:0 0 22px 0;font-size:13.5px;color:#7c2d12;line-height:1.75;">
 <strong>본 글은 일반 건강정보입니다.</strong><br/>
@@ -121,6 +129,7 @@ POSTS = [
             """## 짧은 결론
 
 종근당건강 닥터케어 글은 제품명 선점만 노리면 얕아집니다. 특수의료용도식품의 정의, 당뇨음료 성분표, 암환자 음료 활용 상황, 맛있으리 식단관리 CTA를 각각 분리해야 중복 SEO를 피하면서도 정보성이 살아납니다.""",
+            references_block("ckd_dangcoach", "ckd_cancercoach", "food_safety"),
         ),
     },
     {
@@ -164,6 +173,7 @@ ADA의 2026 Standards of Care는 당뇨 관리에서 영양, 신체활동, 약�
             """## 짧은 결론
 
 닥터케어 당코치제로 같은 당뇨음료는 "제로" 문구보다 식사 위치와 혈당 기록이 핵심입니다. 맛있으리 식단 메모와 함께 보면 음료, 반찬, 탄수화물 배치를 한 번에 정리할 수 있습니다.""",
+            references_block("ckd_dangcoach", "ada_2026", "ada_hospital"),
         ),
     },
     {
@@ -200,6 +210,7 @@ ADA의 2026 Standards of Care는 당뇨 관리에서 영양, 신체활동, 약�
             """## 짧은 결론
 
 당뇨환자 음료는 당류 0g만으로 판단하지 않습니다. 총 탄수화물, 단백질, 식이섬유, 식사 위치, 혈당 기록을 함께 봐야 내 몸에 맞는 선택이 됩니다.""",
+            references_block("ckd_dangcoach", "food_safety", "ada_2026"),
         ),
     },
     {
@@ -241,6 +252,7 @@ ADA의 2026 Standards of Care는 당뇨 관리에서 영양, 신체활동, 약�
             """## 짧은 결론
 
 당뇨음료는 "매일 마실까 말까"보다 "오늘 식사의 어느 자리에 넣을까"가 중요합니다. 맛있으리 식단 메모에 음료 사용 시간과 혈당 기록을 함께 남기면 조정이 쉬워집니다.""" + cta("diabetes-meulssori-routine"),
+            references_block("ada_2026", "food_safety"),
         ),
     },
     {
@@ -280,6 +292,7 @@ NCI는 암과 치료가 맛, 냄새, 식욕, 섭취량, 흡수에 영향을 줄 
             """## 짧은 결론
 
 닥터케어 캔서코치 같은 암환자용 음료는 열량과 단백질만 볼 것이 아니라 오심, 삼킴, 입안 통증, 혈당, 치료 단계까지 함께 봐야 합니다.""",
+            references_block("ckd_cancercoach", "nci_patient", "nci_hp", "espen_cancer"),
         ),
     },
     {
@@ -319,6 +332,7 @@ NCI는 암 치료 중 식욕과 섭취가 떨어질 때 고단백·고열량 식
             """## 짧은 결론
 
 암환자 영양음료는 제품의 좋고 나쁨보다 증상과 맞는지가 핵심입니다. 식욕부진, 오심, 삼킴, 설사·변비 기록을 남기면 의료진 상담과 맛있으리 식단 조정이 더 구체적이 됩니다.""",
+            references_block("nci_patient", "nci_hp", "food_safety"),
         ),
     },
     {
@@ -362,6 +376,7 @@ ADA 2026은 당뇨 관리에서 영양, 약물, 신체활동, 동반질환을 �
             """## 짧은 결론
 
 암환자이면서 당뇨가 있으면 한쪽 기준만으로 음료를 고르기 어렵습니다. 열량·단백질 부족과 혈당 반응을 같은 기록표에 놓고 의료진·임상영양사와 확인하는 것이 안전합니다.""",
+            references_block("ckd_cancercoach", "ckd_dangcoach", "ada_2026", "ada_hospital", "nci_hp", "espen_cancer"),
         ),
     },
     {
@@ -404,6 +419,7 @@ ADA 2026은 당뇨 관리에서 영양, 약물, 신체활동, 동반질환을 �
             """## 짧은 결론
 
 특수의료용도식품 표시는 "아무 환자에게나 좋은 음료"라는 뜻이 아닙니다. 특정 영양 요구를 고려한 식품이라는 뜻이며, 내 식사와 질환 상태에 맞춰 확인해야 합니다.""",
+            references_block("food_safety"),
         ),
     },
     {
@@ -443,6 +459,7 @@ ADA 2026은 당뇨 관리에서 영양, 약물, 신체활동, 동반질환을 �
             """## 짧은 결론
 
 환자용 음료와 일반 단백질음료는 목적이 다릅니다. 질환, 치료 단계, 혈당, 식사량, 삼킴 문제를 함께 봐야 안전하고 현실적인 선택이 됩니다.""",
+            references_block("ckd_dangcoach", "ada_2026", "nci_patient", "ckd_cancercoach"),
         ),
     },
     {
@@ -482,6 +499,7 @@ ADA 2026은 당뇨 관리에서 영양, 약물, 신체활동, 동반질환을 �
             """## 짧은 결론
 
 종근당건강 닥터케어 구매 전에는 제품명보다 목적을 먼저 정하세요. 당뇨음료인지, 암환자 음료인지, 식사 공백을 메우려는 것인지, 맛있으리 식단과 같이 조정할 것인지가 판단의 중심입니다.""",
+            references_block("ckd_dangcoach", "ckd_cancercoach", "food_safety", "ada_2026", "nci_hp", "espen_cancer"),
         ),
     },
 ]

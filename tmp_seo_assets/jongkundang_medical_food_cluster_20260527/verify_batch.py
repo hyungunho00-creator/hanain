@@ -69,6 +69,8 @@ def db_content_checks():
             "id": row.get("id"),
             "slug": row.get("slug"),
             "has_cta_marker": "MEULSSORI_PHLOROTANNIN_CTA_V1" in content,
+            "has_references": "## 참고자료" in content,
+            "reference_links": content.count("](http"),
             "has_meulssori": "맛있으리" in content,
             "has_phlorotannin": "플로로탄닌" in content,
             "has_forbidden": any(token in content for token in forbidden),
@@ -109,7 +111,7 @@ def main():
     print(json.dumps(results, ensure_ascii=False, indent=2))
     if any(p.get("status") != 200 or p.get("has_forbidden") for p in results["pages"]):
         raise SystemExit(1)
-    if any((not c.get("has_cta_marker")) or c.get("has_forbidden") for c in results["db_content"]):
+    if any((not c.get("has_cta_marker")) or (not c.get("has_references")) or c.get("reference_links", 0) < 1 or c.get("has_forbidden") for c in results["db_content"]):
         raise SystemExit(1)
 
 

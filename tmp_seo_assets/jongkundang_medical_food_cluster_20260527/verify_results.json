@@ -1,57 +1,12 @@
 {
   "db": [
     {
-      "id": 357,
-      "slug": "jongkundang-health-dr-care-special-medical-food-keyword-map",
-      "title": "종근당건강 닥터케어 키워드 지도: 특수의료용도식품·당뇨음료·암환자음료",
-      "status": "published",
-      "category": "buying-guide",
-      "og_image": "https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/jongkundang-health-dr-care-special-medical-food-keyword-map.webp",
-      "published_at": null
-    },
-    {
-      "id": 358,
-      "slug": "dr-care-dangcoach-zero-diabetes-drink-label-guide",
-      "title": "닥터케어 당코치제로: 종근당건강 당뇨음료 성분표에서 먼저 볼 것",
-      "status": "published",
-      "category": "diabetes",
-      "og_image": "https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/dr-care-dangcoach-zero-diabetes-drink-label-guide.webp",
-      "published_at": null
-    },
-    {
       "id": 359,
       "slug": "diabetes-medical-nutrition-drink-zero-sugar-carb-protein-fiber",
       "title": "당뇨환자 음료 고르는 법: 당류 0g보다 탄수화물·단백질·식이섬유",
       "status": "published",
       "category": "diabetes",
       "og_image": "https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/diabetes-medical-nutrition-drink-zero-sugar-carb-protein-fiber.webp",
-      "published_at": null
-    },
-    {
-      "id": 360,
-      "slug": "diabetes-drink-meulssori-meal-routine-checklist",
-      "title": "당뇨음료와 맛있으리 식단: 식사 대용이 아니라 루틴으로 쓰는 법",
-      "status": "published",
-      "category": "diabetes",
-      "og_image": "https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/diabetes-drink-meulssori-meal-routine-checklist.webp",
-      "published_at": null
-    },
-    {
-      "id": 361,
-      "slug": "dr-care-cancercoach-cancer-patient-drink-label-guide",
-      "title": "닥터케어 캔서코치: 종근당건강 암환자 음료 성분표 읽는 법",
-      "status": "published",
-      "category": "cancer-treatment-care",
-      "og_image": "https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/dr-care-cancercoach-cancer-patient-drink-label-guide.webp",
-      "published_at": null
-    },
-    {
-      "id": 362,
-      "slug": "cancer-patient-nutrition-drink-appetite-nausea-swallowing-guide",
-      "title": "암환자 영양음료 고르는 법: 식욕부진·오심·삼킴 문제별 체크",
-      "status": "published",
-      "category": "cancer-treatment-care",
-      "og_image": "https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/cancer-patient-nutrition-drink-appetite-nausea-swallowing-guide.webp",
       "published_at": null
     },
     {
@@ -89,98 +44,163 @@
       "category": "buying-guide",
       "og_image": "https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/jongkundang-health-dr-care-buying-checklist-meulssori.webp",
       "published_at": null
-    }
-  ],
-  "db_content": [
+    },
     {
       "id": 357,
       "slug": "jongkundang-health-dr-care-special-medical-food-keyword-map",
-      "has_cta_marker": true,
-      "has_meulssori": true,
-      "has_phlorotannin": true,
-      "has_forbidden": false,
-      "content_length": 2925
-    },
-    {
-      "id": 358,
-      "slug": "dr-care-dangcoach-zero-diabetes-drink-label-guide",
-      "has_cta_marker": true,
-      "has_meulssori": true,
-      "has_phlorotannin": true,
-      "has_forbidden": false,
-      "content_length": 2836
-    },
-    {
-      "id": 359,
-      "slug": "diabetes-medical-nutrition-drink-zero-sugar-carb-protein-fiber",
-      "has_cta_marker": true,
-      "has_meulssori": true,
-      "has_phlorotannin": true,
-      "has_forbidden": false,
-      "content_length": 2675
+      "title": "종근당건강 닥터케어 키워드 지도: 특수의료용도식품·당뇨음료·암환자음료",
+      "status": "published",
+      "category": "buying-guide",
+      "og_image": "https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/jongkundang-health-dr-care-special-medical-food-keyword-map.webp",
+      "published_at": null
     },
     {
       "id": 360,
       "slug": "diabetes-drink-meulssori-meal-routine-checklist",
-      "has_cta_marker": true,
-      "has_meulssori": true,
-      "has_phlorotannin": true,
-      "has_forbidden": false,
-      "content_length": 2890
+      "title": "당뇨음료와 맛있으리 식단: 식사 대용이 아니라 루틴으로 쓰는 법",
+      "status": "published",
+      "category": "diabetes",
+      "og_image": "https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/diabetes-drink-meulssori-meal-routine-checklist.webp",
+      "published_at": null
+    },
+    {
+      "id": 358,
+      "slug": "dr-care-dangcoach-zero-diabetes-drink-label-guide",
+      "title": "닥터케어 당코치제로: 종근당건강 당뇨음료 성분표에서 먼저 볼 것",
+      "status": "published",
+      "category": "diabetes",
+      "og_image": "https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/dr-care-dangcoach-zero-diabetes-drink-label-guide.webp",
+      "published_at": null
     },
     {
       "id": 361,
       "slug": "dr-care-cancercoach-cancer-patient-drink-label-guide",
-      "has_cta_marker": true,
-      "has_meulssori": true,
-      "has_phlorotannin": true,
-      "has_forbidden": false,
-      "content_length": 2935
+      "title": "닥터케어 캔서코치: 종근당건강 암환자 음료 성분표 읽는 법",
+      "status": "published",
+      "category": "cancer-treatment-care",
+      "og_image": "https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/dr-care-cancercoach-cancer-patient-drink-label-guide.webp",
+      "published_at": null
     },
     {
       "id": 362,
       "slug": "cancer-patient-nutrition-drink-appetite-nausea-swallowing-guide",
+      "title": "암환자 영양음료 고르는 법: 식욕부진·오심·삼킴 문제별 체크",
+      "status": "published",
+      "category": "cancer-treatment-care",
+      "og_image": "https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/cancer-patient-nutrition-drink-appetite-nausea-swallowing-guide.webp",
+      "published_at": null
+    }
+  ],
+  "db_content": [
+    {
+      "id": 359,
+      "slug": "diabetes-medical-nutrition-drink-zero-sugar-carb-protein-fiber",
       "has_cta_marker": true,
+      "has_references": true,
+      "reference_links": 6,
       "has_meulssori": true,
       "has_phlorotannin": true,
       "has_forbidden": false,
-      "content_length": 2735
+      "content_length": 3132
     },
     {
       "id": 363,
       "slug": "cancer-diabetes-drink-choice-checklist",
       "has_cta_marker": true,
+      "has_references": true,
+      "reference_links": 12,
       "has_meulssori": true,
       "has_phlorotannin": true,
       "has_forbidden": false,
-      "content_length": 3109
+      "content_length": 4028
     },
     {
       "id": 364,
       "slug": "special-medical-purpose-food-label-guide-korea",
       "has_cta_marker": true,
+      "has_references": true,
+      "reference_links": 2,
       "has_meulssori": true,
       "has_phlorotannin": true,
       "has_forbidden": false,
-      "content_length": 2772
+      "content_length": 2982
     },
     {
       "id": 365,
       "slug": "patient-drink-vs-protein-drink-difference",
       "has_cta_marker": true,
+      "has_references": true,
+      "reference_links": 8,
       "has_meulssori": true,
       "has_phlorotannin": true,
       "has_forbidden": false,
-      "content_length": 2873
+      "content_length": 3435
     },
     {
       "id": 366,
       "slug": "jongkundang-health-dr-care-buying-checklist-meulssori",
       "has_cta_marker": true,
+      "has_references": true,
+      "reference_links": 12,
       "has_meulssori": true,
       "has_phlorotannin": true,
       "has_forbidden": false,
-      "content_length": 3132
+      "content_length": 4006
+    },
+    {
+      "id": 357,
+      "slug": "jongkundang-health-dr-care-special-medical-food-keyword-map",
+      "has_cta_marker": true,
+      "has_references": true,
+      "reference_links": 6,
+      "has_meulssori": true,
+      "has_phlorotannin": true,
+      "has_forbidden": false,
+      "content_length": 3382
+    },
+    {
+      "id": 360,
+      "slug": "diabetes-drink-meulssori-meal-routine-checklist",
+      "has_cta_marker": true,
+      "has_references": true,
+      "reference_links": 4,
+      "has_meulssori": true,
+      "has_phlorotannin": true,
+      "has_forbidden": false,
+      "content_length": 3223
+    },
+    {
+      "id": 358,
+      "slug": "dr-care-dangcoach-zero-diabetes-drink-label-guide",
+      "has_cta_marker": true,
+      "has_references": true,
+      "reference_links": 6,
+      "has_meulssori": true,
+      "has_phlorotannin": true,
+      "has_forbidden": false,
+      "content_length": 3338
+    },
+    {
+      "id": 361,
+      "slug": "dr-care-cancercoach-cancer-patient-drink-label-guide",
+      "has_cta_marker": true,
+      "has_references": true,
+      "reference_links": 8,
+      "has_meulssori": true,
+      "has_phlorotannin": true,
+      "has_forbidden": false,
+      "content_length": 3544
+    },
+    {
+      "id": 362,
+      "slug": "cancer-patient-nutrition-drink-appetite-nausea-swallowing-guide",
+      "has_cta_marker": true,
+      "has_references": true,
+      "reference_links": 6,
+      "has_meulssori": true,
+      "has_phlorotannin": true,
+      "has_forbidden": false,
+      "content_length": 3177
     }
   ],
   "images": [
