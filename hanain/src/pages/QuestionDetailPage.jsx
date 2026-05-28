@@ -50,6 +50,15 @@ async function ensureQaFallback() {
   return QA_FALLBACK
 }
 
+function toQuestionSlug(value) {
+  return String(value || '')
+    .replace(/[^\w\s\uAC00-\uD7A3-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '')
+    .slice(0, 60)
+}
+
 async function getFallbackQuestion(slug) {
   const data = await ensureQaFallback()
   const q = data.questions.find(q => {
@@ -59,7 +68,7 @@ async function getFallbackQuestion(slug) {
   if (!q) return null
   const cat = data.categories.find(c => c.id === q.category)
   return {
-    id: q.id, slug, title: q.question, content: null,
+    id: q.id, slug: toQuestionSlug(q.question) || slug, title: q.question, content: null,
     category_id: q.category,
     categories: cat ? { id: cat.id, name: cat.name, slug: cat.id, color: cat.color, icon: cat.icon } : null,
     tags: q.tags || [], view_count: q.views || 0, like_count: q.likes || 0,
@@ -87,7 +96,7 @@ async function getFallbackSameCategory(excludeId, categoryId, limit = 6) {
     .slice(0, limit)
   return sorted.map(q => ({
     id: q.id,
-    slug: slugifyKoLocal(q.question),
+    slug: toQuestionSlug(q.question),
     title: q.question,
     question: q.question,
     category_id: q.category,
@@ -207,6 +216,15 @@ export default function QuestionDetailPage() {
     load()
   }, [slug])
 
+  useEffect(() => {
+    if (!question) return
+    const preferred = toQuestionSlug(question.title || question.question)
+    if (!preferred) return
+    if (slug !== preferred) {
+      navigate(`/q/${preferred}`, { replace: true })
+    }
+  }, [question, slug, navigate])
+
   async function handleLike() {
     const prev = liked
     setLiked(!prev); setLikeCount(c => prev ? c - 1 : c + 1)
@@ -242,7 +260,8 @@ export default function QuestionDetailPage() {
 
   const difficultyLabel = { basic: '기초', intermediate: '중급', advanced: '심화' }[question.difficulty] || '기초'
   const authorTypeLabel = { self: '본인', family: '가족', caregiver: '보호자' }[question.author_type] || ''
-  const pageUrl = `https://phlorotannin.com/q/${slug}`
+  const preferredSlug = toQuestionSlug(question.title || question.question || slug) || slug
+  const pageUrl = `https://phlorotannin.com/q/${preferredSlug}`
   const rawAnswerText = officialAnswer
     ? officialAnswer.content.replace(/<[^>]+>/g, '').slice(0, 300)
     : (typeof question._answer === 'string'

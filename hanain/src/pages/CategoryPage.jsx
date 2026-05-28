@@ -52,6 +52,14 @@ async function ensureQaFallback() {
   }
   return QA_FALLBACK
 }
+function toQuestionSlug(s) {
+  return String(s || '')
+    .replace(/[^\w\s\uAC00-\uD7A3-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '')
+    .slice(0, 60)
+}
 async function getFallbackCategory(catId) {
   const data = await ensureQaFallback()
   const cat = data.categories.find(c => c.id === catId)
@@ -107,7 +115,7 @@ async function getFallbackPopular(catId, limit = 5) {
 
 // 질문 카드 — Q&A 공통 목록 스타일
 export function QuestionRow({ q, rank }) {
-  const slug = q.slug || q.id
+  const slug = toQuestionSlug(q.title || q.question) || q.slug || q.id
   return (
     <Link
       to={`/q/${slug}`}
@@ -200,7 +208,7 @@ export default function CategoryPage() {
     }
     setQuestions(result.data.map(q => ({
       id: q.id,
-      slug: q.slug || slugifyKoLocal(q.question || q.title),
+      slug: toQuestionSlug(q.question || q.title) || q.slug || q.id,
       title: q.question || q.title,
       category_id: q.category_id,
       tags: q.tags || [],
@@ -233,7 +241,7 @@ export default function CategoryPage() {
       }
       setPopular(pop.map(q => ({
         id: q.id,
-        slug: slugifyKoLocal(q.question || q.title),
+        slug: toQuestionSlug(q.question || q.title) || q.slug || q.id,
         title: q.question || q.title,
       })))
     }
