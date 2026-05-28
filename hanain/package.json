@@ -8,8 +8,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "sitemap": "python3 generate_sitemap_rss.py",
-    "audit:links": "python3 scripts/audit_links.py",
+    "sitemap": "node scripts/run_python.cjs generate_sitemap_rss.py",
+    "audit:links": "node scripts/run_python.cjs scripts/audit_links.py",
     "prebuild": "node scripts/prebuild.cjs"
   },
   "dependencies": {

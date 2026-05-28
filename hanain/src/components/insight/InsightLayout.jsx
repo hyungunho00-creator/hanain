@@ -107,6 +107,8 @@ export default function InsightLayout({ post, related = [] }) {
         keywords={post.keywords}
         canonical={canonical}
         ogType="article"
+        ogImage={post.heroImage || 'https://phlorotannin.com/og-image.png'}
+        ogImageAlt={post.heroAlt || post.title}
         jsonLd={jsonLd}
       />
 
@@ -153,6 +155,19 @@ export default function InsightLayout({ post, related = [] }) {
             {refs.length > 0 && <span>참고문헌 {refs.length}건 (PubMed/PMC 검증)</span>}
           </div>
         </header>
+
+        {post.heroImage && (
+          <figure className="max-w-3xl mx-auto px-4 sm:px-6 mb-8">
+            <div className="overflow-hidden rounded-lg border border-gray-200 bg-gray-50">
+              <img
+                src={post.heroImage}
+                alt={post.heroAlt || post.title}
+                className="w-full aspect-[1200/630] object-cover"
+                loading="eager"
+              />
+            </div>
+          </figure>
+        )}
 
         {/* TL;DR */}
         {post.tldr && post.tldr.length > 0 && (

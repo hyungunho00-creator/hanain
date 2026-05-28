@@ -1,4 +1,8 @@
 import { createClient } from '@supabase/supabase-js'
+import {
+  LOCAL_FUNCTIONAL_INGREDIENT_POSTS,
+  getLocalFunctionalIngredientPost,
+} from '../data/localFunctionalIngredientPosts'
 
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || 'https://rlfxuyeoluoeaxuujtly.supabase.co'
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJsZnh1eWVvbHVvZWF4dXVqdGx5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU5NDEyNjMsImV4cCI6MjA5MTUxNzI2M30.EmygB1wZcIXM0_4KTC8Kuwh5RY3R9NgfEpuzXQswHck'
@@ -169,6 +173,35 @@ export async function getPageBySlug(slug) {
 }
 
 // ── Blog Posts (실제 테이블: posts) ──────────────────────
+function matchesLocalPost(post, { category = null, tag = null, q = null } = {}) {
+  if (category && category !== 'all' && post.category !== category) return false
+  if (tag && !(post.tags || []).includes(tag)) return false
+  if (q && q.trim()) {
+    const needle = q.trim().toLowerCase()
+    return (
+      post.title?.toLowerCase().includes(needle) ||
+      post.excerpt?.toLowerCase().includes(needle) ||
+      post.content?.toLowerCase().includes(needle) ||
+      (post.tags || []).some((t) => t.toLowerCase().includes(needle))
+    )
+  }
+  return true
+}
+
+function mergeLocalPosts(rows, options = {}) {
+  const limit = options.limit || 20
+  const page = options.page || 1
+  const localRows = LOCAL_FUNCTIONAL_INGREDIENT_POSTS.filter((post) => matchesLocalPost(post, options))
+
+  const bySlug = new Map()
+  for (const post of localRows) bySlug.set(post.slug, post)
+  for (const post of rows || []) if (!bySlug.has(post.slug)) bySlug.set(post.slug, post)
+
+  return Array.from(bySlug.values())
+    .sort((a, b) => String(b.created_at || '').localeCompare(String(a.created_at || '')))
+    .slice((page - 1) * limit, page * limit)
+}
+
 // 2026-05-20: `q` (검색어) 인자 추가 — 서버사이드 ILIKE 검색.
 //   기존: 클라이언트가 limit만큼만 받아 .filter() → 50개 너머의 글은 검색 누락.
 //   변경: q가 주어지면 title/excerpt/tags ILIKE를 Supabase에서 직접 처리 + limit 자동 확대.
@@ -213,10 +246,16 @@ export async function getPosts({ category = null, tag = null, limit = 20, page =
     }
   }
 
-  return { data: rows, error }
+  return {
+    data: mergeLocalPosts(rows, { category, tag, limit: effectiveLimit, page, q }),
+    error,
+  }
 }
 
 export async function getPostBySlug(slug) {
+  const local = getLocalFunctionalIngredientPost(slug)
+  if (local) return { data: local, error: null }
+
   const { data, error } = await supabase
     .from('posts')
     .select('*')
@@ -230,7 +269,8 @@ export async function getPostCount(category = null) {
   let q = supabase.from('posts').select('id', { count: 'exact', head: true }).eq('status', 'published')
   if (category && category !== 'all') q = q.eq('category', category)
   const { count } = await q
-  return count || 0
+  const localCount = LOCAL_FUNCTIONAL_INGREDIENT_POSTS.filter((post) => matchesLocalPost(post, { category })).length
+  return (count || 0) + localCount
 }
 
 export async function incrementPostView(slug) {

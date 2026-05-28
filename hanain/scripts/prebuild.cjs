@@ -11,12 +11,21 @@ function run(command, args) {
   });
 }
 
+function runPython(args) {
+  return run(process.execPath, [path.join('scripts', 'run_python.cjs'), ...args]);
+}
+
 const audit = run(process.execPath, [path.join('scripts', 'audit_reader_content.cjs')]);
 if (audit.error || audit.status !== 0) {
   process.exit(audit.status || 1);
 }
 
-const sitemap = run('python3', ['generate_sitemap_rss.py']);
+const sitemap = runPython(['generate_sitemap_rss.py']);
 if (sitemap.error || sitemap.status !== 0) {
-  console.log('[warn] sitemap generation skipped (python3 not found)');
+  console.log('[warn] sitemap generation skipped (python not found)');
+}
+
+const staticRoutes = run(process.execPath, [path.join('scripts', 'update_static_routes.mjs')]);
+if (staticRoutes.error || staticRoutes.status !== 0) {
+  process.exit(staticRoutes.status || 1);
 }

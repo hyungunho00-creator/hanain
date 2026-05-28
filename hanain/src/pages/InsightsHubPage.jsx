@@ -188,32 +188,44 @@ export default function InsightsHubPage() {
                   <li key={p.slug}>
                     <Link
                       to={`/insights/${p.slug}`}
-                      className="group block h-full rounded-lg border border-gray-200 p-5 hover:border-gray-400 hover:shadow-sm transition bg-white"
+                      className="group block h-full overflow-hidden rounded-lg border border-gray-200 hover:border-gray-400 hover:shadow-sm transition bg-white"
                     >
-                      <div className="flex items-center gap-2 mb-2 text-xs text-gray-500">
-                        <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-gray-100 text-gray-700 border border-gray-200">
-                          {cat?.name || p.category}
-                        </span>
-                        <span>{p.publishedAt}</span>
-                      </div>
-                      <h2 className="text-[15px] font-semibold text-gray-900 leading-snug group-hover:underline underline-offset-2">
-                        {p.title}
-                      </h2>
-                      {p.description && (
-                        <p className="mt-2 text-[13px] text-gray-600 line-clamp-3 leading-relaxed">
-                          {p.description}
-                        </p>
+                      {p.heroImage && (
+                        <div className="aspect-[1200/630] bg-gray-50 border-b border-gray-100 overflow-hidden">
+                          <img
+                            src={p.heroImage}
+                            alt={p.heroAlt || p.title}
+                            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                            loading="lazy"
+                          />
+                        </div>
                       )}
-                      <div className="mt-3 flex flex-wrap gap-1.5">
-                        {(p.tags || []).slice(0, 3).map((t) => (
-                          <span key={t} className="text-[11px] text-gray-500 bg-gray-50 px-1.5 py-0.5 rounded border border-gray-100">
-                            #{t}
+                      <div className="p-5">
+                        <div className="flex items-center gap-2 mb-2 text-xs text-gray-500">
+                          <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-gray-100 text-gray-700 border border-gray-200">
+                            {cat?.name || p.category}
                           </span>
-                        ))}
-                      </div>
-                      <div className="mt-3 text-[11px] text-gray-400">
-                        참고문헌 {(p.referenceIds || []).length}건
-                        {p.readingMinutes ? ` · ${p.readingMinutes}분` : ''}
+                          <span>{p.publishedAt}</span>
+                        </div>
+                        <h2 className="text-[15px] font-semibold text-gray-900 leading-snug group-hover:underline underline-offset-2">
+                          {p.title}
+                        </h2>
+                        {p.description && (
+                          <p className="mt-2 text-[13px] text-gray-600 line-clamp-3 leading-relaxed">
+                            {p.description}
+                          </p>
+                        )}
+                        <div className="mt-3 flex flex-wrap gap-1.5">
+                          {(p.tags || []).slice(0, 3).map((t) => (
+                            <span key={t} className="text-[11px] text-gray-500 bg-gray-50 px-1.5 py-0.5 rounded border border-gray-100">
+                              #{t}
+                            </span>
+                          ))}
+                        </div>
+                        <div className="mt-3 text-[11px] text-gray-400">
+                          참고문헌 {(p.referenceIds || []).length}건
+                          {p.readingMinutes ? ` · ${p.readingMinutes}분` : ''}
+                        </div>
                       </div>
                     </Link>
                   </li>
