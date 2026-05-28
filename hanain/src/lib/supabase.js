@@ -7,6 +7,10 @@ import {
   LOCAL_CATEGORY_BLOG_POSTS,
   getLocalCategoryBlogPost,
 } from '../data/localCategoryBlogPosts'
+import {
+  LOCAL_SEO_EXPANSION_POSTS,
+  getLocalSeoExpansionPost,
+} from '../data/localSeoExpansionPosts'
 
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || 'https://rlfxuyeoluoeaxuujtly.supabase.co'
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJsZnh1eWVvbHVvZWF4dXVqdGx5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU5NDEyNjMsImV4cCI6MjA5MTUxNzI2M30.EmygB1wZcIXM0_4KTC8Kuwh5RY3R9NgfEpuzXQswHck'
@@ -18,6 +22,7 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
 const LOCAL_BLOG_POSTS = [
   ...LOCAL_FUNCTIONAL_INGREDIENT_POSTS,
   ...LOCAL_CATEGORY_BLOG_POSTS,
+  ...LOCAL_SEO_EXPANSION_POSTS,
 ]
 
 const SEARCH_TERM_GROUPS = [
@@ -363,7 +368,10 @@ export async function getPosts({ category = null, tag = null, limit = 20, page =
 }
 
 export async function getPostBySlug(slug) {
-  const local = getLocalFunctionalIngredientPost(slug) || getLocalCategoryBlogPost(slug)
+  const local =
+    getLocalFunctionalIngredientPost(slug) ||
+    getLocalCategoryBlogPost(slug) ||
+    getLocalSeoExpansionPost(slug)
   if (local) return { data: local, error: null }
 
   const { data, error } = await supabase

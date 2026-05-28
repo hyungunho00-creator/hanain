@@ -134,6 +134,7 @@ const CAT_COLORS = {
   'buying-guide':       'bg-cyan-100 text-cyan-800',     //  구매 가이드 — 시안
   'safety-precautions': 'bg-lime-100 text-lime-800',     //  부작용·주의사항 — 라임
   diabetes:      'bg-orange-100 text-orange-700',
+  digestive:     'bg-emerald-100 text-emerald-700',
   cancer:        'bg-red-100 text-red-700',
   brain:         'bg-purple-100 text-purple-700',
   cardiovascular:'bg-rose-100 text-rose-700',
@@ -146,12 +147,15 @@ const CAT_COLORS = {
   'exercise-recovery':      'bg-slate-100 text-slate-700',
   'hospital-info':         'bg-indigo-100 text-indigo-700',
   'partner-info':          'bg-emerald-100 text-emerald-700',
+  respiratory:'bg-cyan-100 text-cyan-700',
+  infection_inflammation:'bg-teal-100 text-teal-700',
+  mens_health:'bg-slate-100 text-slate-700',
 }
 const CAT_NAMES = {
   'cancer-treatment-care': '항암 치료 케어',  // 
   'buying-guide':       '구매 가이드',        // 
   'safety-precautions': '부작용·주의사항',    // 
-  diabetes:'당뇨·혈당', cancer:'항암·면역', brain:'뇌·인지',
+  diabetes:'당뇨·혈당', digestive:'소화·간', cancer:'항암·면역', brain:'뇌·인지',
   cardiovascular:'심혈관', inflammation:'염증·면역', skin:'피부·모발',
   research:'연구·임상', general:'일반',
   'ingredient-comparison':'성분 비교',
@@ -162,6 +166,7 @@ const CAT_NAMES = {
   // DB에 한글/언더스코어로 저장된 카테고리(이전 배치 잔재) — 매핑 누락 시 빈 alt 방지
   metabolism:'대사', neuro_cognitive:'뇌·인지', cancer_immune:'항암·면역',
   womens_health:'여성 건강', mental_health:'정신 건강', musculoskeletal:'근골격',
+  respiratory:'호흡기', infection_inflammation:'감염·염증', mens_health:'남성 건강',
   '분자기전 작용경로': '분자기전·작용경로',
   '신약개발 임상': '신약개발·임상',
 }

@@ -3,6 +3,7 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { LOCAL_FUNCTIONAL_INGREDIENT_POSTS } from '../src/data/localFunctionalIngredientPosts.js'
 import { LOCAL_CATEGORY_BLOG_POSTS } from '../src/data/localCategoryBlogPosts.js'
+import { LOCAL_SEO_EXPANSION_POSTS } from '../src/data/localSeoExpansionPosts.js'
 import { FUNCTIONAL_INGREDIENT_CONFIGS } from '../src/data/insights/functionalIngredientConfigs.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -66,7 +67,11 @@ function rssItemXml(post) {
 
 function updateSitemap() {
   let xml = fs.readFileSync(sitemapPath, 'utf8')
-  const localBlogPosts = [...LOCAL_FUNCTIONAL_INGREDIENT_POSTS, ...LOCAL_CATEGORY_BLOG_POSTS]
+  const localBlogPosts = [
+    ...LOCAL_FUNCTIONAL_INGREDIENT_POSTS,
+    ...LOCAL_CATEGORY_BLOG_POSTS,
+    ...LOCAL_SEO_EXPANSION_POSTS,
+  ]
   const routes = [
     ...localBlogPosts.map((post) => ({
       loc: `/blog/${post.slug}`,
@@ -96,7 +101,11 @@ function updateSitemap() {
 
 function updateRss() {
   let xml = fs.readFileSync(rssPath, 'utf8')
-  const localBlogPosts = [...LOCAL_FUNCTIONAL_INGREDIENT_POSTS, ...LOCAL_CATEGORY_BLOG_POSTS]
+  const localBlogPosts = [
+    ...LOCAL_FUNCTIONAL_INGREDIENT_POSTS,
+    ...LOCAL_CATEGORY_BLOG_POSTS,
+    ...LOCAL_SEO_EXPANSION_POSTS,
+  ]
     .slice()
     .sort((a, b) => String(b.created_at || '').localeCompare(String(a.created_at || '')))
 

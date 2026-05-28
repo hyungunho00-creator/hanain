@@ -15,6 +15,7 @@ const FALLBACK_CATEGORIES = [
   { id: 'buying-guide',       name: '구매 가이드' },      //  구매 의도 SEO 흡수
   { id: 'safety-precautions', name: '부작용·주의사항' },  //  안전 정보 SEO 흡수
   { id: 'diabetes',   name: '당뇨·혈당' },
+  { id: 'digestive',  name: '소화·간' },
   { id: 'cancer',     name: '항암·면역' },
   { id: 'brain',      name: '뇌·인지' },
   { id: 'cardiovascular', name: '심혈관' },
@@ -34,6 +35,9 @@ const FALLBACK_CATEGORIES = [
   { id: 'neuro_cognitive',       name: '뇌·인지 건강' },
   { id: 'mental_health',         name: '정신·수면 건강' },
   { id: 'musculoskeletal',       name: '근골격 건강' },
+  { id: 'respiratory',           name: '호흡기 건강' },
+  { id: 'infection_inflammation',name: '감염·염증 건강' },
+  { id: 'mens_health',           name: '남성 건강' },
   { id: 'womens_health',         name: '여성 건강' },
 ]
 
@@ -47,6 +51,7 @@ const CAT_COLORS = {
   'buying-guide':       'bg-gray-100 text-gray-700',
   'safety-precautions': 'bg-gray-100 text-gray-700',
   diabetes:      'bg-gray-100 text-gray-700',
+  digestive:     'bg-gray-100 text-gray-700',
   cancer:        'bg-gray-100 text-gray-700',
   brain:         'bg-gray-100 text-gray-700',
   cardiovascular:'bg-gray-100 text-gray-700',
@@ -66,6 +71,9 @@ const CAT_COLORS = {
   neuro_cognitive: 'bg-gray-100 text-gray-700',
   mental_health: 'bg-gray-100 text-gray-700',
   musculoskeletal: 'bg-gray-100 text-gray-700',
+  respiratory: 'bg-gray-100 text-gray-700',
+  infection_inflammation: 'bg-gray-100 text-gray-700',
+  mens_health: 'bg-gray-100 text-gray-700',
   womens_health: 'bg-gray-100 text-gray-700',
 }
 
@@ -73,6 +81,7 @@ const CAT_COLORS = {
 // 어드민에서 등록 시 블로그 카테고리 ID를 그대로 사용
 const BLOG_TO_VIDEO_CAT = {
   diabetes:       'diabetes',
+  digestive:      null,
   cancer:         'cancer',
   brain:          'brain',
   cardiovascular: 'cardiovascular',
@@ -95,6 +104,9 @@ const BLOG_TO_VIDEO_CAT = {
   neuro_cognitive: 'brain',
   mental_health: 'brain',
   musculoskeletal: null,
+  respiratory: null,
+  infection_inflammation: null,
+  mens_health: null,
   womens_health: null,
 }
 

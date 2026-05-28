@@ -12,6 +12,7 @@
     "audit:links": "node scripts/run_python.cjs scripts/audit_links.py",
     "audit:qa": "node scripts/run_python.cjs scripts/qa_quality_audit.py --min-chars 2000 --fail-on high",
     "qa:constitution": "node scripts/qa_constitution_upgrade.mjs",
+    "seo:expand": "node scripts/expand_existing_seo_assets.mjs",
     "seo:indexnow": "node scripts/submit_indexnow.mjs",
     "prebuild": "node scripts/prebuild.cjs"
   },
