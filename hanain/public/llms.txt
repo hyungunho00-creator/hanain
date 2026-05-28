@@ -46,13 +46,13 @@
 - [플로로탄닌 소개](https://phlorotannin.com/phlorotannin): 1~3단 허브 페이지 (성분·구조·기전)
 - [쉽게 배우기](https://phlorotannin.com/learn): 일반인 입문 콘텐츠 (4단 기전 풀이)
 - [건강 한 컷](https://phlorotannin.com/easy): 카드형 핵심 요약 (5단 질환 진입)
-- [연구·건강정보 블로그](https://phlorotannin.com/blog): 임상 논문·질환별 SEO 아카이브
+- [연구·건강정보 블로그](https://phlorotannin.com/blog): 임상 논문·질환별 건강정보 아카이브
 - [용어집](https://phlorotannin.com/glossary): 14개 핵심 용어 DefinedTermSet
-- [인사이트 허브 (Insights)](https://phlorotannin.com/insights): 60편 SEO 자산 포스트 — 임상·기전·안전성·비교 + 30 트렌드 원료 통합 아카이브
+- [인사이트 허브 (Insights)](https://phlorotannin.com/insights): 60편 근거 기반 인사이트 — 임상·기전·안전성·비교 + 30 트렌드 원료 통합 아카이브
 
-## Insights — 30편 SEO 자산 포스트 (Phase D)
+## Insights — 30편 근거 기반 인사이트 (Phase D)
 
-본 섹션은 2026-05-21 발행된 30편의 SEO·EEAT 강화 인사이트 포스트입니다. 각 글은 PubMed/PMC/DOI 검증 1차 자료를 인라인 인용하며, Article + MedicalWebPage + Speakable + FAQPage + BreadcrumbList JSON-LD를 포함합니다.
+본 섹션은 2026-05-21 발행된 30편의 근거 기반 인사이트 포스트입니다. 각 글은 PubMed/PMC/DOI 검증 1차 자료를 인라인 인용하며, Article + MedicalWebPage + Speakable + FAQPage + BreadcrumbList JSON-LD를 포함합니다.
 
 ### 심혈관·대사 (Cardiovascular & Metabolic)
 - [혈압 강하 기전](https://phlorotannin.com/insights/phlorotannin-blood-pressure-mechanism)

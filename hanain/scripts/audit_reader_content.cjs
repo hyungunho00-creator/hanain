@@ -36,6 +36,8 @@ addFile(path.join(root, 'src', 'data', 'qa.json'));
 addFile(path.join(root, 'public', 'qa.json'));
 addFile(path.join(root, 'public', 'rss.xml'));
 addFile(path.join(root, 'public', 'sitemap.xml'));
+addFile(path.join(root, 'public', 'llms.txt'));
+addFile(path.join(root, 'public', 'llms-full.txt'));
 
 const findings = [];
 
