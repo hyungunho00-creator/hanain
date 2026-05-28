@@ -27,8 +27,8 @@ const CAT_ID_TO_SLUG = {
 
 // Phase 3: Supabase categories(type='qa') 테이블 1순위, 실패 시 아래 상수 fallback
 const FALLBACK_QA_CATS = [
-  { id: 'metabolism', name: '대사질환' },
-  { id: 'cancer_immune', name: '항암/면역' },
+  { id: 'metabolism', name: '대사 건강' },
+  { id: 'cancer_immune', name: '세포·면역' },
   { id: 'digestive', name: '소화/간' },
   { id: 'cardiovascular', name: '심혈관' },
   { id: 'neuro_cognitive', name: '신경/인지' },
@@ -109,19 +109,22 @@ export default function Footer() {
                 Channels
               </p>
               <div className="flex items-center gap-1">
-                {SOCIAL_LINKS.map(({ href, label, Icon, aria }) => (
-                  <a
-                    key={href}
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer me"
-                    aria-label={aria}
-                    title={label}
-                    className="inline-flex items-center justify-center w-9 h-9 rounded-md text-gray-500 hover:text-gray-900 hover:bg-gray-100 transition-colors"
-                  >
-                    <Icon className="w-[18px] h-[18px]" strokeWidth={1.6} />
-                  </a>
-                ))}
+                {SOCIAL_LINKS.map((link) => {
+                  const SocialIcon = link.Icon
+                  return (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer me"
+                      aria-label={link.aria}
+                      title={link.label}
+                      className="inline-flex items-center justify-center w-9 h-9 rounded-md text-gray-500 hover:text-gray-900 hover:bg-gray-100 transition-colors"
+                    >
+                      <SocialIcon className="w-[18px] h-[18px]" strokeWidth={1.6} />
+                    </a>
+                  )
+                })}
               </div>
             </div>
 
@@ -233,11 +236,11 @@ export default function Footer() {
                 <div className="pt-1 space-y-2.5">
                   <RevealContact
                     type="sms"
-                    label="플로로탄닌 구매·가격 정보 문의"
+                    label="플로로탄닌 자료·상담 문의"
                     revealLabel={`${partner.phoneDisplay} 문자하기`}
                     phone={partner.phone}
                     displayPhone={partner.phoneDisplay}
-                    smsBody="[플로로탄닌 구매·가격 정보 문의] 제품과 가격 정보를 안내받고 싶습니다."
+                    smsBody="[플로로탄닌 자료/상담 문의] 플로로탄닌 정보와 상담 안내를 받고 싶습니다."
                     className="w-full border border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white px-3.5 py-2.5 rounded-md text-[13px] font-medium transition-colors"
                   />
                   <Link
@@ -245,7 +248,7 @@ export default function Footer() {
                     className="flex items-center justify-center gap-2 w-full border border-gray-200 bg-white text-gray-700 hover:border-gray-900 hover:text-gray-900 px-3.5 py-2.5 rounded-md text-[13px] font-medium transition-colors"
                   >
                     <Utensils className="w-4 h-4 flex-shrink-0" strokeWidth={1.8} aria-hidden="true" />
-                    <span>우리 맛있으리 식단 보러가기</span>
+                    <span>건강한 반찬 정보 보기</span>
                     <ArrowUpRight className="w-3.5 h-3.5 flex-shrink-0" strokeWidth={1.8} aria-hidden="true" />
                   </Link>
                 </div>

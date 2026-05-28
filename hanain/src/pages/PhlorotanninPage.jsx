@@ -36,7 +36,7 @@ const MECHANISMS = [
       { value: '45', suffix: '%', label: 'TNF-α 감소', trend: 'down' },
       { value: '38', suffix: '%', label: 'IL-6 감소', trend: 'down' },
     ],
-    body: `만성 염증은 암·당뇨·심혈관질환·치매 등 거의 모든 만성질환의 공통 뿌리입니다. 플로로탄닌은 세포 내 핵전사인자 NF-κB(Nuclear Factor kappa B)의 활성화를 직접 차단합니다.
+    body: `만성 염증 반응은 대사·혈관·인지 건강 연구에서 자주 함께 다뤄지는 공통 경로입니다. 플로로탄닌은 세포 내 핵전사인자 NF-κB(Nuclear Factor kappa B)의 활성 조절 가능성이 연구되어 왔습니다.
 
 NF-κB는 평소 IκB 단백질에 결합해 억제되어 있다가, 산화 스트레스·세균 독소·과도한 지방산 등의 자극을 받으면 IKK 복합체가 IκB를 인산화·분해하여 NF-κB를 핵 안으로 이동시킵니다. 핵 안에서 NF-κB는 TNF-α·IL-6·IL-1β·COX-2 등 수십 종의 염증 유전자를 한꺼번에 켭니다.
 
@@ -58,7 +58,7 @@ NF-κB는 평소 IκB 단백질에 결합해 억제되어 있다가, 산화 스�
       { value: '27', suffix: '%', label: '공복혈당 감소', trend: 'down' },
       { value: '18', suffix: '%', label: '체중 감소 (8주)', trend: 'down' },
     ],
-    body: `AMPK(AMP-activated protein kinase)는 세포의 에너지 센서로, 에너지가 부족할 때 켜져 포도당 흡수·지방산 산화를 촉진하고 지방 합성·글루코스 신생을 억제합니다. 당뇨·비만 치료제인 메트포르민도 AMPK를 활성화해 혈당을 낮춥니다.
+    body: `AMPK(AMP-activated protein kinase)는 세포의 에너지 센서로, 에너지가 부족할 때 켜져 포도당 흡수·지방산 산화를 촉진하고 지방 합성·글루코스 신생을 조절합니다. 이 경로는 대사 건강 연구에서 중요하게 다뤄집니다.
 
 플로로탄닌은 α-글루코시다제(탄수화물 분해 효소)를 경쟁적으로 억제해 식후 혈당 급상승을 막고, 동시에 AMPK를 인산화(활성화)시켜 골격근 세포의 GLUT4 수용체를 세포막으로 이동시킵니다. GLUT4가 세포막에 많아질수록 포도당이 혈액에서 근육으로 빠르게 들어갑니다.
 
@@ -84,7 +84,7 @@ NF-κB는 평소 IκB 단백질에 결합해 억제되어 있다가, 산화 스�
 
 플로로탄닌(특히 디에클로니아 카바의 디에콜, 플로로글루시놀 6량체)은 Keap1 C273·C288 시스테인과 공유결합성 부가체를 형성, Nrf2 해리를 유도합니다. 세포 실험에서 플로로탄닌 10μM 처리 시 HO-1 발현 3.2배, 글루타치온 수준 58% 증가가 보고되었습니다.
 
-이 경로는 자외선 손상 피부 세포 보호, 신경세포 아포토시스 억제, 인슐린 분비 β세포 보호 등 폭넓게 관여해 노화·암·신경퇴행성 질환 예방에 직결됩니다.`,
+이 경로는 자외선 손상 피부 세포, 신경세포, 인슐린 분비 β세포 등 다양한 세포 보호 연구에서 함께 검토되며, 건강관리 관점의 기초 자료로 활용됩니다.`,
     refs: ['Kwon MJ et al. (2015). Phlorotannins activate Nrf2/HO-1 pathway. Mar. Drugs 13:3744-3761.', 'Fernando IP et al. (2018). Marine phlorotannins: Nrf2 activators. Nutrients 10:568.'],
   },
   {
@@ -102,18 +102,18 @@ NF-κB는 평소 IκB 단백질에 결합해 억제되어 있다가, 산화 스�
       { value: '2.7', prefix: 'IC50 ', suffix: 'μg/mL', label: 'ACE 억제 (≒캡토프릴)', animate: false },
       { value: '8', suffix: 'mmHg', label: '수축기 혈압 ↓ (12주)', trend: 'down' },
     ],
-    body: `안지오텐신 전환효소(ACE)는 혈관 수축을 일으키는 안지오텐신 Ⅱ를 만드는 효소입니다. 고혈압 치료에 쓰이는 ACE 억제제(예: 에나프릴, 리시노프릴)는 바로 이 효소를 막아 혈압을 낮춥니다. 플로로탄닌도 유사한 방식으로 ACE 활성 부위의 Zn²⁺ 이온과 결합해 효소를 경쟁적으로 억제합니다.
+    body: `안지오텐신 전환효소(ACE)는 혈관 수축 신호와 관련된 안지오텐신 Ⅱ 생성에 관여하는 효소입니다. 일부 플로로탄닌 성분은 ACE 활성 부위의 Zn²⁺ 이온과 결합하는 방식이 실험 연구에서 관찰되었습니다.
 
 감태 유래 플로로탄닌(IC50 = 2.7 μg/mL)은 양성 대조군 캡토프릴(IC50 = 1.9 μg/mL)과 비슷한 수준의 ACE 억제 능력을 보였습니다(Wijesekara et al., 2010, Bioresour. Technol.).
 
-또한 플로로탄닌은 내피세포에서 eNOS(내피 산화질소 합성효소) 발현을 증가시켜 NO(산화질소) 생성을 촉진합니다. NO는 혈관 평활근 이완→혈관 확장→혈압 감소를 유도하며, 동시에 혈소판 응집 억제와 항동맥경화 효과도 냅니다.`,
+또한 플로로탄닌은 내피세포에서 eNOS(내피 산화질소 합성효소) 발현과 NO(산화질소) 생성 경로와의 관련성이 연구되었습니다. 이 내용은 혈관 건강을 이해하기 위한 연구 자료이며, 의료적 효능을 의미하지 않습니다.`,
     refs: ['Wijesekara I et al. (2010). ACE inhibitory activity of phlorotannins. Bioresour. Technol. 101:5541-5547.', 'Sugiura Y et al. (2006). Radical scavenging and ACE inhibitory activities of phlorotannins. Biosci. Biotechnol. Biochem. 70:2816.'],
   },
   {
     icon: Zap,
     color: 'from-gray-700 to-gray-900',
     title: 'AChE 억제 → 인지기능·기억 보호',
-    subtitle: '뇌신경 보호·치매 예방',
+    subtitle: '뇌신경 건강 연구',
     steps: [
       { label: '뇌세포 활성', desc: '아세틸콜린 분비' },
       { label: 'AChE 효소 결합', desc: '활성 부위 차단' },
@@ -122,9 +122,9 @@ NF-κB는 평소 IκB 단백질에 결합해 억제되어 있다가, 산화 스�
     ],
     statHighlights: [
       { value: '60', suffix: '%', label: 'AChE 억제율', trend: 'down' },
-      { value: '40', suffix: '%', label: '기억력 개선(쥐)', trend: 'up' },
+      { value: '40', suffix: '%', label: '기억 과제 변화(쥐)', trend: 'up' },
     ],
-    body: `알츠하이머 치매의 주요 메커니즘 중 하나는 아세틸콜린에스테라제(AChE)의 과활성으로 기억·학습에 필수적인 신경전달물질 아세틸콜린(ACh)이 빠르게 분해되는 것입니다. 알츠하이머 치료제 도네페질(아리셉트)도 AChE 억제제입니다.
+    body: `인지 건강 연구에서 자주 다뤄지는 메커니즘 중 하나는 아세틸콜린에스테라제(AChE) 활성과 신경전달물질 아세틸콜린(ACh)의 분해 속도입니다. 플로로탄닌 성분은 이 경로와의 관련성이 실험 연구에서 검토되어 왔습니다.
 
 감태 유래 플로로탄닌 중 디에콜(Dieckol)과 6,6′-바이에콜(6,6′-Bieckol)은 AChE 활성 부위(촉매 삼원체: Ser203-His447-Glu334)와 주변 아니온 서브사이트에 강하게 결합합니다. 분자 도킹 시뮬레이션에서 Dieckol의 결합 에너지는 -9.8 kcal/mol로 도네페질(-10.1 kcal/mol)과 유사한 수준이었습니다.
 
@@ -156,12 +156,12 @@ NF-κB는 평소 IκB 단백질에 결합해 억제되어 있다가, 산화 스�
 ]
 
 const DISEASES = [
-  { name: '당뇨·혈당 조절', icon: Activity, mech: 'α-글루코시다제 억제 + AMPK 활성화', evidence: '공복혈당 27% 감소 (동물)', cat: 'metabolism' },
+  { name: '혈당 대사 연구', icon: Activity, mech: 'α-글루코시다제 억제 + AMPK 활성화', evidence: '공복혈당 지표 변화 관찰 (동물)', cat: 'metabolism' },
   { name: '비만·지방간', icon: TrendingUp, mech: 'SREBP-1c 억제 + 지방산 산화 촉진', evidence: '체중 18%, 중성지방 23% 감소', cat: 'metabolism' },
-  { name: '대장·위암 예방', icon: Microscope, mech: '암세포 아포토시스 유도 + 종양 신생혈관 억제', evidence: '대장암 세포 증식 억제 IC50 12μM', cat: 'cancer_immune' },
+  { name: '세포 보호 연구', icon: Microscope, mech: '세포 사멸 경로 + 신생혈관 관련 경로', evidence: '세포주 연구에서 증식 지표 변화 관찰', cat: 'cancer_immune' },
   { name: '면역 조절', icon: Shield, mech: 'Th1/Th2 균형 + NK세포 활성 증가', evidence: 'NK세포 활성 31% 증가 (in vitro)', cat: 'cancer_immune' },
-  { name: '고혈압·혈관', icon: Heart, mech: 'ACE 억제 + eNOS/NO 증가', evidence: 'ACE 억제 IC50 2.7μg/mL (캡토프릴 수준)', cat: 'cardiovascular' },
-  { name: '치매·인지 저하', icon: Brain, mech: 'AChE 억제 + BDNF 증가', evidence: '기억력 테스트 40% 개선 (쥐)', cat: 'neuro_cognitive' },
+  { name: '혈관 건강 연구', icon: Heart, mech: 'ACE 억제 + eNOS/NO 증가', evidence: 'ACE 활성 관련 실험 지표 보고', cat: 'cardiovascular' },
+  { name: '인지 건강 연구', icon: Brain, mech: 'AChE 억제 + BDNF 증가', evidence: '기억 과제 지표 변화 관찰 (쥐)', cat: 'neuro_cognitive' },
   { name: '피부 노화·주름', icon: Star, mech: 'MMP-1 억제 + 콜라겐 합성 촉진', evidence: 'MMP-1 62% 감소, 콜라겐 47% 증가', cat: 'skin' },
   { name: '탈모', icon: Users, mech: '5α-환원효소 억제 (DHT 생성 차단)', evidence: '모낭 세포 사멸 억제 (in vitro)', cat: 'hair' },
   { name: '관절·골다공증', icon: Zap, mech: 'RANKL 억제 + 파골세포 분화 억제', evidence: '골밀도 소실 14% 억제 (ovx 마우스)', cat: 'musculoskeletal' },
@@ -171,12 +171,12 @@ const DISEASES = [
 ]
 
 const PAPERS = [
-  { year: '2023', journal: 'Marine Drugs', title: '플로로탄닌의 당뇨병 예방 효과: 체계적 문헌 고찰', link: '#', highlight: '17개 연구 메타분석, 혈당 강하 효과 일관적 확인' },
-  { year: '2022', journal: 'Nutrients', title: 'Dieckol의 항암 기전: 미토콘드리아 경로 아포토시스', link: '#', highlight: '대장암·간암 세포주 10종에서 효과 검증' },
+  { year: '2023', journal: 'Marine Drugs', title: '플로로탄닌과 혈당 대사 지표: 체계적 문헌 고찰', link: '#', highlight: '17개 연구 메타분석, 대사 지표 변화 경향 검토' },
+  { year: '2022', journal: 'Nutrients', title: 'Dieckol의 세포 사멸 경로 연구: 미토콘드리아 경로', link: '#', highlight: '세포주 10종에서 실험 지표 변화 검토' },
   { year: '2021', journal: 'Food & Function', title: '플로로탄닌 생체이용률 향상: 나노캡슐화 연구', link: '#', highlight: '경구 흡수율 기존 대비 3.4배 향상' },
   { year: '2020', journal: 'J. Agric. Food Chem.', title: '감태 유래 플로로탄닌의 Nrf2 경로 활성화', link: '#', highlight: '항산화 효소 SOD·카탈라아제 동시 상향 조절' },
-  { year: '2019', journal: 'Phytomedicine', title: '에클로니아 카바 추출물의 인지기능 개선 임상 연구', link: '#', highlight: '경증 인지장애 성인 48명, 12주 투여 후 기억력 유의 개선' },
-  { year: '2018', journal: 'Int. J. Mol. Sci.', title: '플로로탄닌 구조-활성 관계(SAR): 중합도와 효능', link: '#', highlight: '6~8량체(Dieckol급)가 최고 생리활성' },
+  { year: '2019', journal: 'Phytomedicine', title: '에클로니아 카바 추출물의 인지 건강 임상 연구', link: '#', highlight: '성인 48명, 12주 섭취 후 인지 과제 지표 검토' },
+  { year: '2018', journal: 'Int. J. Mol. Sci.', title: '플로로탄닌 구조-활성 관계(SAR): 중합도와 생리활성', link: '#', highlight: '6~8량체(Dieckol급)의 생리활성 경향 검토' },
 ]
 
 const STRUCTURE_FEATURES = [
@@ -395,7 +395,7 @@ export default function PhlorotanninPage() {
               <p data-speakable="true" className="text-gray-600 text-[16px] md:text-[17px] leading-[1.8] mb-8 max-w-xl break-keep">
                 갈조류(미역·다시마·감태)에서만 발견되는 해양 폴리페놀.
                 단순한 항산화제를 넘어, <span className="text-gray-900 font-medium">6가지 분자 기전</span>으로
-                <span className="text-gray-900 font-medium"> 12개 질환 영역</span>에 작용하는
+                <span className="text-gray-900 font-medium"> 12개 건강 연구 영역</span>과 연결되는
                 차세대 자연 소재의 과학을 확인하세요.
               </p>
               <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
@@ -404,7 +404,7 @@ export default function PhlorotanninPage() {
                   <ChevronDown className="w-4 h-4 transition-transform group-hover:translate-y-0.5" strokeWidth={1.8} />
                 </a>
                 <a href="#diseases" className="inline-flex items-center gap-1 text-[14px] text-gray-700 hover:text-gray-900 underline underline-offset-4 decoration-gray-300 hover:decoration-gray-700">
-                  12개 질환 데이터
+                  건강 연구 데이터
                 </a>
               </div>
             </div>
@@ -470,7 +470,7 @@ export default function PhlorotanninPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <StatCard value="1200" suffix="+" label="플로로탄닌 관련 논문" source="PubMed 등재 기준" />
             <StatCard value="6" label="핵심 분자 기전" source="NF-κB, AMPK, Nrf2 등" />
-            <StatCard value="12" label="관련 질환 영역" source="당뇨~치매~피부 포함" />
+            <StatCard value="12" label="관련 건강 영역" source="대사~인지~피부 포함" />
             <div className="bg-white rounded-md p-5 border border-gray-200">
               <div className="text-xl md:text-2xl font-bold text-gray-900 tracking-tight">갈조류 전용</div>
               <p className="text-sm text-gray-600 mt-1 leading-snug break-keep">육상 식물엔 없음</p>
@@ -585,7 +585,7 @@ export default function PhlorotanninPage() {
         overlay="light"
         eyebrow="Molecular Mechanism"
         title="플로로탄닌은 어떻게 작용하는가?"
-        subtitle="6가지 핵심 분자 기전을 통해 만성 염증·당뇨·인지 저하 등 만성질환의 근본 원인 경로에 직접 작용합니다."
+        subtitle="6가지 핵심 분자 기전을 통해 대사·인지·피부 건강과 관련된 연구 경로를 확인합니다."
       />
 
       {/* ── 작용 기전 (D10: 시각화 강화 아코디언) ── */}
@@ -599,7 +599,7 @@ export default function PhlorotanninPage() {
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-4">6가지 핵심 작용 기전</h2>
             <p className="text-gray-600 text-[16px] leading-[1.8] max-w-2xl mx-auto break-keep">
-              플로로탄닌은 단순히 '항산화 작용'에 그치지 않습니다. 각 질환의 근본 원인인 분자 경로를 직접 조절합니다.
+              플로로탄닌은 단순히 '항산화 작용'에 그치지 않고, 여러 건강 연구에서 다루는 분자 경로와의 관련성이 검토되고 있습니다.
             </p>
           </div>
           <div className="space-y-3">
@@ -615,24 +615,24 @@ export default function PhlorotanninPage() {
         </div>
       </section>
 
-      {/* ── 질환별 근거 (D10: 그리드 + recharts 효능 차트) ── */}
+      {/* ── 건강 영역별 근거 (D10: 그리드 + recharts 지표 차트) ── */}
       <section id="diseases" className="py-16 bg-white">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-12">
             <div className="inline-flex items-center justify-center gap-3 mb-4">
               <span className="h-px w-8 bg-gray-300" />
-              <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500">질환별 관련성</span>
+              <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500">건강 영역별 관련성</span>
               <span className="h-px w-8 bg-gray-300" />
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-4">12개 질환 영역의 근거</h2>
-            <p className="text-gray-600 text-[16px] leading-[1.8]">각 질환을 클릭하면 기전과 근거 수준을 확인할 수 있습니다</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-4">12개 건강 영역의 연구 근거</h2>
+            <p className="text-gray-600 text-[16px] leading-[1.8]">각 영역을 클릭하면 기전과 근거 수준을 확인할 수 있습니다</p>
           </div>
 
           {/* D10 NEW: 핵심 임상 수치 막대 차트 — 한눈에 보는 임팩트 */}
           <div className="mb-10 bg-white rounded-lg p-6 border border-gray-200">
             <div className="flex items-center gap-2 mb-2">
               <TrendingUp className="w-4 h-4 text-gray-700" strokeWidth={1.8} />
-              <h3 className="font-bold text-gray-900 text-base tracking-tight">핵심 임상 효능 비교 (% 변화)</h3>
+              <h3 className="font-bold text-gray-900 text-base tracking-tight">핵심 연구 지표 비교 (% 변화)</h3>
             </div>
             <p className="text-xs text-gray-500 mb-4 break-keep">
               주요 동물·체외 연구에서 보고된 대표 수치. 절대값이 아닌 상대 변화율 기준.
@@ -644,7 +644,7 @@ export default function PhlorotanninPage() {
                   { name: 'AChE 억제 ↓ (인지)',           value: 60, color: '#0096C7' },
                   { name: '글루타치온 ↑ (항산화)',         value: 58, color: '#00B4D8' },
                   { name: 'TNF-α 감소 ↓ (염증)',          value: 45, color: '#48CAE4' },
-                  { name: '기억력 개선 ↑ (쥐)',            value: 40, color: '#48CAE4' },
+                  { name: '기억 과제 변화 ↑ (쥐)',          value: 40, color: '#48CAE4' },
                   { name: 'IL-6 감소 ↓ (염증)',           value: 38, color: '#00B4D8' },
                   { name: 'NK세포 활성 ↑ (면역)',          value: 31, color: '#0096C7' },
                   { name: '공복혈당 ↓ (대사)',             value: 27, color: '#0077B6' },
@@ -741,7 +741,7 @@ export default function PhlorotanninPage() {
           <SectionHeader
             eyebrow={<><TrendingUp className="w-4 h-4" /> Research Timeline</>}
             title="플로로탄닌 연구 20년 — 주요 발견사"
-            subtitle="2003년 첫 분리 이래 매년 새로운 분자 기전과 임상 효과가 보고되어 왔습니다."
+            subtitle="2003년 첫 분리 이래 다양한 분자 기전과 건강 지표 연구가 보고되어 왔습니다."
             level={2}
             align="center"
           />
@@ -750,10 +750,10 @@ export default function PhlorotanninPage() {
               orientation="horizontal"
               items={[
                 { year: '2003', title: '첫 분리·동정', desc: '제주대 전유진 교수팀, 감태에서 Dieckol 분리 (Algae)' },
-                { year: '2010', title: 'AChE 억제', desc: 'Dieckol의 인지기능 개선 작용 (Phytother. Res.)' },
+                { year: '2010', title: 'AChE 억제', desc: 'Dieckol의 인지 건강 관련 작용 연구 (Phytother. Res.)' },
                 { year: '2015', title: 'Nrf2 활성화', desc: '항산화 경로 직접 활성화 입증 (Mar. Drugs)' },
                 { year: '2019', title: '임상 시험', desc: '경증 인지장애 성인 48명 12주 무작위 시험 (Phytomedicine)', highlight: true },
-                { year: '2023', title: '메타분석', desc: '17개 연구 통합 — 당뇨 예방 효과 일관 (Mar. Drugs)' },
+                { year: '2023', title: '메타분석', desc: '17개 연구 통합 — 혈당 대사 지표 검토 (Mar. Drugs)' },
               ]}
             />
           </div>
