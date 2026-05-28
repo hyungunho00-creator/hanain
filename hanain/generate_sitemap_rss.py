@@ -26,6 +26,9 @@ SERVICE_KEY = (
     or os.environ.get("SUPABASE_SERVICE_KEY")
     or os.environ.get("SUPABASE_ANON_KEY")
     or os.environ.get("VITE_SUPABASE_ANON_KEY")
+    # Public anon key is already used in the browser client; this keeps local
+    # sitemap generation working when service-role env vars are unavailable.
+    or "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJsZnh1eWVvbHVvZWF4dXVqdGx5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU5NDEyNjMsImV4cCI6MjA5MTUxNzI2M30.EmygB1wZcIXM0_4KTC8Kuwh5RY3R9NgfEpuzXQswHck"
 )
 SITE_URL     = "https://phlorotannin.com"
 HEADERS      = {
@@ -94,7 +97,11 @@ r = requests.get(
     f"&limit=500",
     headers=HEADERS
 )
-posts = r.json() if r.ok else []
+if r.ok:
+    posts = r.json()
+else:
+    print(f"  ⚠️  블로그 포스트 조회 실패: HTTP {r.status_code} {r.text[:160]}")
+    posts = []
 print(f"  ✅ {len(posts)}개 포스트 조회 완료")
 
 CAT_NAMES = {
@@ -166,6 +173,8 @@ if INSIGHTS_DIR.exists():
     _re_pub    = re.compile(r"publishedAt\s*:\s*['\"](\d{4}-\d{2}-\d{2})['\"]")
     _re_upd    = re.compile(r"updatedAt\s*:\s*['\"](\d{4}-\d{2}-\d{2})['\"]")
     _re_cat    = re.compile(r"category\s*:\s*['\"]([\w-]+)['\"]")
+    _re_factory_slug = re.compile(r"create(?:FunctionalIngredient|Hospital)InsightPost\s*\(\s*['\"]([\w-]+)['\"]\s*\)")
+    _re_factory_slug_alt = re.compile(r"create(?:FunctionalIngredient|Hospital)Post\s*\(\s*['\"]([\w-]+)['\"]\s*\)")
 
     for fp in sorted(INSIGHTS_DIR.glob("*.js")) + sorted(INSIGHTS_DIR.glob("*.jsx")):
         try:
@@ -173,7 +182,7 @@ if INSIGHTS_DIR.exists():
         except Exception as e:
             print(f"  ⚠️  {fp.name} 읽기 실패: {e}")
             continue
-        m_slug = _re_slug.search(txt)
+        m_slug = _re_slug.search(txt) or _re_factory_slug.search(txt) or _re_factory_slug_alt.search(txt)
         if not m_slug:
             continue
         slug = m_slug.group(1)

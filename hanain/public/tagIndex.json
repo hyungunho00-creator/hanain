@@ -7851,6 +7851,18 @@
         "qa200-20260527-114"
       ]
     },
+    "DHA": {
+      "count": 7,
+      "qids": [
+        "neuro-002",
+        "woms-004",
+        "womens-003",
+        "womens-005",
+        "mens-extra-069",
+        "ingr-009",
+        "ingr-010"
+      ]
+    },
     "간건강": {
       "count": 7,
       "qids": [
@@ -7971,16 +7983,48 @@
         "qa200-20260527-032"
       ]
     },
-    "DHA": {
-      "count": 7,
+    "NK세포": {
+      "count": 6,
       "qids": [
-        "neuro-002",
-        "woms-004",
-        "womens-003",
-        "womens-005",
-        "mens-extra-069",
-        "ingr-009",
-        "ingr-010"
+        "cancer-002",
+        "cancer-006",
+        "infect-extra-042",
+        "infect-extra-045",
+        "mental-extra-040",
+        "ci_132"
+      ]
+    },
+    "PCOS": {
+      "count": 6,
+      "qids": [
+        "woms-002",
+        "woms-007",
+        "wh-extra-013",
+        "wh-extra-017",
+        "womens-008",
+        "womens-102"
+      ]
+    },
+    "PSA": {
+      "count": 6,
+      "qids": [
+        "cancer-007",
+        "mens-extra-006",
+        "mens-extra-030",
+        "mens-001",
+        "ci_128",
+        "qa200-20260527-197"
+      ]
+    },
+    "PTSD": {
+      "count": 6,
+      "qids": [
+        "wh-extra-063",
+        "mental-extra-009",
+        "mental-extra-017",
+        "mental-extra-048",
+        "mental-010",
+        "mental-105"
       ]
     },
     "고혈압": {
@@ -8269,48 +8313,34 @@
         "qa200-20260527-167"
       ]
     },
-    "NK세포": {
-      "count": 6,
+    "BRCA": {
+      "count": 5,
       "qids": [
-        "cancer-002",
-        "cancer-006",
-        "infect-extra-042",
-        "infect-extra-045",
-        "mental-extra-040",
-        "ci_132"
+        "wh-extra-055",
+        "mens-007",
+        "ci_108",
+        "ci_136",
+        "ci_144"
       ]
     },
-    "PCOS": {
-      "count": 6,
+    "HPV": {
+      "count": 5,
       "qids": [
-        "woms-002",
-        "woms-007",
-        "wh-extra-013",
-        "wh-extra-017",
-        "womens-008",
-        "womens-102"
+        "woms-012",
+        "wh-extra-033",
+        "infect-extra-017",
+        "infect-extra-058",
+        "ci_116"
       ]
     },
-    "PSA": {
-      "count": 6,
+    "SSRI": {
+      "count": 5,
       "qids": [
-        "cancer-007",
-        "mens-extra-006",
-        "mens-extra-030",
-        "mens-001",
-        "ci_128",
-        "qa200-20260527-197"
-      ]
-    },
-    "PTSD": {
-      "count": 6,
-      "qids": [
-        "wh-extra-063",
-        "mental-extra-009",
-        "mental-extra-017",
-        "mental-extra-048",
-        "mental-010",
-        "mental-105"
+        "wh-extra-062",
+        "mental-extra-002",
+        "mental-extra-006",
+        "mental-extra-013",
+        "mental-102"
       ]
     },
     "감정조절": {
@@ -8631,36 +8661,6 @@
         "sh_102",
         "qa200-20260527-093",
         "qa200-20260527-108"
-      ]
-    },
-    "BRCA": {
-      "count": 5,
-      "qids": [
-        "wh-extra-055",
-        "mens-007",
-        "ci_108",
-        "ci_136",
-        "ci_144"
-      ]
-    },
-    "HPV": {
-      "count": 5,
-      "qids": [
-        "woms-012",
-        "wh-extra-033",
-        "infect-extra-017",
-        "infect-extra-058",
-        "ci_116"
-      ]
-    },
-    "SSRI": {
-      "count": 5,
-      "qids": [
-        "wh-extra-062",
-        "mental-extra-002",
-        "mental-extra-006",
-        "mental-extra-013",
-        "mental-102"
       ]
     }
   },
@@ -9411,7 +9411,7 @@
     "wh-extra-024": "임신-중-철분제를-꼭-먹어야-하나요",
     "wh-extra-025": "출산-후-산후-우울증과-베이비-블루스의-차이는-무엇인가요",
     "wh-extra-026": "모유-수유가-산모-건강에도-좋은-점이-있나요",
-    "wh-extra-027": "유산-후-다시-임신하려면-얼마나-기다려야-하나요",
+    "wh-extra-027": "유산流産-후-다시-임신하려면-얼마나-기다려야-하나요",
     "wh-extra-028": "제왕절개-후-다음-임신까지-안전한-간격이-있나요",
     "wh-extra-029": "난임-치료-중-IVF시험관-아기-과정이-어떻게-되나요",
     "wh-extra-030": "임신-중-운동을-해도-되나요-어떤-운동이-안전한가요",
@@ -9697,7 +9697,7 @@
     "infect-extra-040": "어린이-아토피-성인이-되면-나을-수-있나요",
     "infect-extra-041": "면역력이-떨어지는-계절적-요인이-있나요",
     "infect-extra-042": "스트레스가-면역계에-미치는-영향은-구체적으로-어떻게-되나요",
-    "infect-extra-043": "장이-면역의-중심이라는-말은-무슨-의미인가요",
+    "infect-extra-043": "장腸이-면역의-중심이라는-말은-무슨-의미인가요",
     "infect-extra-044": "마늘-생강이-정말-면역에-효과가-있나요",
     "infect-extra-045": "운동이-면역력에-도움이-된다면-어떤-종류가-좋을까요",
     "infect-extra-046": "수면-부족이-감기에-잘-걸리게-만드나요",
@@ -10297,5 +10297,5 @@
     "qa-hospital-20260527-049": "보호자가-병원-갈-때-식사기록을-어떻게-가져가면-좋나요",
     "qa-hospital-20260527-050": "동네-병원-검색할-때-리뷰보다-먼저-볼-기준은-무엇인가요"
   },
-  "generated_at": "2026-05-27T15:03:16.933Z"
+  "generated_at": "2026-05-28T01:59:20.581522+00:00"
 }

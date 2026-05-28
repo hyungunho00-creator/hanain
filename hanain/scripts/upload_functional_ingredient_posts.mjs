@@ -151,6 +151,67 @@ if (process.argv.includes('--dry')) {
   process.exit(0)
 }
 
+if (process.argv.includes('--sql')) {
+  const payload = JSON.stringify(posts)
+  console.log(`with payload as (
+  select * from jsonb_to_recordset($functional_posts$${payload}$functional_posts$::jsonb) as x(
+    slug text,
+    title text,
+    excerpt text,
+    content text,
+    category text,
+    tags jsonb,
+    meta_title text,
+    meta_desc text,
+    og_image text,
+    status text,
+    view_count integer,
+    published_at timestamptz,
+    created_at timestamptz,
+    updated_at timestamptz
+  )
+), rows as (
+  select
+    slug,
+    title,
+    excerpt,
+    content,
+    category,
+    array(select jsonb_array_elements_text(tags)) as tags,
+    meta_title,
+    meta_desc,
+    og_image,
+    status,
+    view_count,
+    published_at,
+    created_at,
+    updated_at
+  from payload
+)
+insert into public.posts (
+  slug, title, excerpt, content, category, tags, meta_title, meta_desc,
+  og_image, status, view_count, published_at, created_at, updated_at
+)
+select
+  slug, title, excerpt, content, category, tags, meta_title, meta_desc,
+  og_image, status, view_count, published_at, created_at, updated_at
+from rows
+on conflict (slug) do update set
+  title = excluded.title,
+  excerpt = excluded.excerpt,
+  content = excluded.content,
+  category = excluded.category,
+  tags = excluded.tags,
+  meta_title = excluded.meta_title,
+  meta_desc = excluded.meta_desc,
+  og_image = excluded.og_image,
+  status = excluded.status,
+  published_at = excluded.published_at,
+  updated_at = excluded.updated_at
+returning slug, title, status, created_at, updated_at;`)
+  process.exit(0)
+}
+
 const { data, error } = await supabase
   .from('posts')
   .upsert(posts, { onConflict: 'slug' })

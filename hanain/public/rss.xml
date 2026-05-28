@@ -8,7 +8,7 @@
     <link>https://phlorotannin.com</link>
     <description>감태 추출 해양 폴리페놀 플로로탄닌(Phlorotannin) 전문 건강 정보. 당뇨·항암·뇌건강·심혈관·염증 최신 블로그 &amp; Q&amp;A 아카이브.</description>
     <language>ko</language>
-    <lastBuildDate>Wed, 27 May 2026 13:08:33 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 28 May 2026 01:59:20 +0000</lastBuildDate>
     <atom:link href="https://phlorotannin.com/rss.xml" rel="self" type="application/rss+xml"/>
     <copyright>© 2026 플로로탄닌 파트너스</copyright>
     <category>건강/의학</category>
@@ -30,16 +30,6 @@
     <dc:subject>역삼동 내과, 역삼동, 내과, 병원정보, 진료준비</dc:subject>
   </item>
   <item>
-    <title>삼성동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
-    <link>https://phlorotannin.com/blog/samsung-dong-internal-medicine-checklist</link>
-    <description><![CDATA[삼성동 내과 검색 전 증상 메모, 검진 결과, 복용약, 식사·체중 기록까지 진료 전에 챙길 기준을 정리했습니다.]]></description>
-    <category>병원정보</category>
-    <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/samsung-dong-internal-medicine-checklist</guid>
-    <enclosure url="https://phlorotannin.com/og/local-hospital/samsung-dong-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>삼성동 내과, 삼성동, 내과, 병원정보, 진료준비</dc:subject>
-  </item>
-  <item>
     <title>서초동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
     <link>https://phlorotannin.com/blog/seocho-dong-internal-medicine-checklist</link>
     <description><![CDATA[서초동 내과 검색 전 증상 메모, 검진 결과, 복용약, 식사·체중 기록까지 진료 전에 챙길 기준을 정리했습니다.]]></description>
@@ -48,6 +38,16 @@
     <guid isPermaLink="true">https://phlorotannin.com/blog/seocho-dong-internal-medicine-checklist</guid>
     <enclosure url="https://phlorotannin.com/og/local-hospital/seocho-dong-internal-medicine-checklist.webp" type="image/webp"/>
     <dc:subject>서초동 내과, 서초동, 내과, 병원정보, 진료준비</dc:subject>
+  </item>
+  <item>
+    <title>신림동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
+    <link>https://phlorotannin.com/blog/sillim-dong-internal-medicine-checklist</link>
+    <description><![CDATA[신림동 내과 검색 전 증상 메모, 검진 결과, 복용약, 식사·체중 기록까지 진료 전에 챙길 기준을 정리했습니다.]]></description>
+    <category>병원정보</category>
+    <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/sillim-dong-internal-medicine-checklist</guid>
+    <enclosure url="https://phlorotannin.com/og/local-hospital/sillim-dong-internal-medicine-checklist.webp" type="image/webp"/>
+    <dc:subject>신림동 내과, 신림동, 내과, 병원정보, 진료준비</dc:subject>
   </item>
   <item>
     <title>잠실동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
@@ -60,14 +60,14 @@
     <dc:subject>잠실동 내과, 잠실동, 내과, 병원정보, 진료준비</dc:subject>
   </item>
   <item>
-    <title>여의도 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
-    <link>https://phlorotannin.com/blog/yeouido-internal-medicine-checklist</link>
-    <description><![CDATA[여의도 내과 검색 전 증상 메모, 검진 결과, 복용약, 식사·체중 기록까지 진료 전에 챙길 기준을 정리했습니다.]]></description>
+    <title>구로디지털단지역 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
+    <link>https://phlorotannin.com/blog/guro-digital-complex-internal-medicine-checklist</link>
+    <description><![CDATA[구로디지털단지역 내과 검색 전 증상 메모, 검진 결과, 복용약, 식사·체중 기록까지 진료 전에 챙길 기준을 정리했습니다.]]></description>
     <category>병원정보</category>
     <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/yeouido-internal-medicine-checklist</guid>
-    <enclosure url="https://phlorotannin.com/og/local-hospital/yeouido-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>여의도 내과, 여의도, 내과, 병원정보, 진료준비</dc:subject>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/guro-digital-complex-internal-medicine-checklist</guid>
+    <enclosure url="https://phlorotannin.com/og/local-hospital/guro-digital-complex-internal-medicine-checklist.webp" type="image/webp"/>
+    <dc:subject>구로디지털단지역 내과, 구로디지털단지역, 내과, 병원정보, 진료준비</dc:subject>
   </item>
   <item>
     <title>공덕동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
@@ -90,14 +90,24 @@
     <dc:subject>성수동 내과, 성수동, 내과, 병원정보, 진료준비</dc:subject>
   </item>
   <item>
-    <title>목동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
-    <link>https://phlorotannin.com/blog/mok-dong-internal-medicine-checklist</link>
-    <description><![CDATA[목동 내과 검색 전 증상 메모, 검진 결과, 복용약, 식사·체중 기록까지 진료 전에 챙길 기준을 정리했습니다.]]></description>
+    <title>창원 상남동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
+    <link>https://phlorotannin.com/blog/changwon-sangnam-dong-internal-medicine-checklist</link>
+    <description><![CDATA[창원 상남동 내과 검색 전 증상 메모, 검진 결과, 복용약, 식사·체중 기록까지 진료 전에 챙길 기준을 정리했습니다.]]></description>
     <category>병원정보</category>
     <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/mok-dong-internal-medicine-checklist</guid>
-    <enclosure url="https://phlorotannin.com/og/local-hospital/mok-dong-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>목동 내과, 목동, 내과, 병원정보, 진료준비</dc:subject>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/changwon-sangnam-dong-internal-medicine-checklist</guid>
+    <enclosure url="https://phlorotannin.com/og/local-hospital/changwon-sangnam-dong-internal-medicine-checklist.webp" type="image/webp"/>
+    <dc:subject>창원 상남동 내과, 창원 상남동, 내과, 병원정보, 진료준비</dc:subject>
+  </item>
+  <item>
+    <title>천안 불당동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
+    <link>https://phlorotannin.com/blog/cheonan-buldang-dong-internal-medicine-checklist</link>
+    <description><![CDATA[천안 불당동 내과 검색 전 증상 메모, 검진 결과, 복용약, 식사·체중 기록까지 진료 전에 챙길 기준을 정리했습니다.]]></description>
+    <category>병원정보</category>
+    <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/cheonan-buldang-dong-internal-medicine-checklist</guid>
+    <enclosure url="https://phlorotannin.com/og/local-hospital/cheonan-buldang-dong-internal-medicine-checklist.webp" type="image/webp"/>
+    <dc:subject>천안 불당동 내과, 천안 불당동, 내과, 병원정보, 진료준비</dc:subject>
   </item>
   <item>
     <title>상암동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
@@ -120,24 +130,34 @@
     <dc:subject>노원역 내과, 노원역, 내과, 병원정보, 진료준비</dc:subject>
   </item>
   <item>
-    <title>신림동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
-    <link>https://phlorotannin.com/blog/sillim-dong-internal-medicine-checklist</link>
-    <description><![CDATA[신림동 내과 검색 전 증상 메모, 검진 결과, 복용약, 식사·체중 기록까지 진료 전에 챙길 기준을 정리했습니다.]]></description>
+    <title>삼성동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
+    <link>https://phlorotannin.com/blog/samsung-dong-internal-medicine-checklist</link>
+    <description><![CDATA[삼성동 내과 검색 전 증상 메모, 검진 결과, 복용약, 식사·체중 기록까지 진료 전에 챙길 기준을 정리했습니다.]]></description>
     <category>병원정보</category>
     <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/sillim-dong-internal-medicine-checklist</guid>
-    <enclosure url="https://phlorotannin.com/og/local-hospital/sillim-dong-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>신림동 내과, 신림동, 내과, 병원정보, 진료준비</dc:subject>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/samsung-dong-internal-medicine-checklist</guid>
+    <enclosure url="https://phlorotannin.com/og/local-hospital/samsung-dong-internal-medicine-checklist.webp" type="image/webp"/>
+    <dc:subject>삼성동 내과, 삼성동, 내과, 병원정보, 진료준비</dc:subject>
   </item>
   <item>
-    <title>구로디지털단지역 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
-    <link>https://phlorotannin.com/blog/guro-digital-complex-internal-medicine-checklist</link>
-    <description><![CDATA[구로디지털단지역 내과 검색 전 증상 메모, 검진 결과, 복용약, 식사·체중 기록까지 진료 전에 챙길 기준을 정리했습니다.]]></description>
+    <title>여의도 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
+    <link>https://phlorotannin.com/blog/yeouido-internal-medicine-checklist</link>
+    <description><![CDATA[여의도 내과 검색 전 증상 메모, 검진 결과, 복용약, 식사·체중 기록까지 진료 전에 챙길 기준을 정리했습니다.]]></description>
     <category>병원정보</category>
     <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/guro-digital-complex-internal-medicine-checklist</guid>
-    <enclosure url="https://phlorotannin.com/og/local-hospital/guro-digital-complex-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>구로디지털단지역 내과, 구로디지털단지역, 내과, 병원정보, 진료준비</dc:subject>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/yeouido-internal-medicine-checklist</guid>
+    <enclosure url="https://phlorotannin.com/og/local-hospital/yeouido-internal-medicine-checklist.webp" type="image/webp"/>
+    <dc:subject>여의도 내과, 여의도, 내과, 병원정보, 진료준비</dc:subject>
+  </item>
+  <item>
+    <title>목동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
+    <link>https://phlorotannin.com/blog/mok-dong-internal-medicine-checklist</link>
+    <description><![CDATA[목동 내과 검색 전 증상 메모, 검진 결과, 복용약, 식사·체중 기록까지 진료 전에 챙길 기준을 정리했습니다.]]></description>
+    <category>병원정보</category>
+    <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/mok-dong-internal-medicine-checklist</guid>
+    <enclosure url="https://phlorotannin.com/og/local-hospital/mok-dong-internal-medicine-checklist.webp" type="image/webp"/>
+    <dc:subject>목동 내과, 목동, 내과, 병원정보, 진료준비</dc:subject>
   </item>
   <item>
     <title>판교 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
@@ -300,56 +320,6 @@
     <dc:subject>세종 나성동 내과, 세종 나성동, 내과, 병원정보, 진료준비</dc:subject>
   </item>
   <item>
-    <title>창원 상남동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
-    <link>https://phlorotannin.com/blog/changwon-sangnam-dong-internal-medicine-checklist</link>
-    <description><![CDATA[창원 상남동 내과 검색 전 증상 메모, 검진 결과, 복용약, 식사·체중 기록까지 진료 전에 챙길 기준을 정리했습니다.]]></description>
-    <category>병원정보</category>
-    <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/changwon-sangnam-dong-internal-medicine-checklist</guid>
-    <enclosure url="https://phlorotannin.com/og/local-hospital/changwon-sangnam-dong-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>창원 상남동 내과, 창원 상남동, 내과, 병원정보, 진료준비</dc:subject>
-  </item>
-  <item>
-    <title>천안 불당동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
-    <link>https://phlorotannin.com/blog/cheonan-buldang-dong-internal-medicine-checklist</link>
-    <description><![CDATA[천안 불당동 내과 검색 전 증상 메모, 검진 결과, 복용약, 식사·체중 기록까지 진료 전에 챙길 기준을 정리했습니다.]]></description>
-    <category>병원정보</category>
-    <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/cheonan-buldang-dong-internal-medicine-checklist</guid>
-    <enclosure url="https://phlorotannin.com/og/local-hospital/cheonan-buldang-dong-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>천안 불당동 내과, 천안 불당동, 내과, 병원정보, 진료준비</dc:subject>
-  </item>
-  <item>
-    <title>당뇨환자 음료 고르는 법: 당류 0g보다 탄수화물·단백질·식이섬유</title>
-    <link>https://phlorotannin.com/blog/diabetes-medical-nutrition-drink-zero-sugar-carb-protein-fiber</link>
-    <description><![CDATA[당뇨환자 음료를 고를 때 당류 0g, 탄수화물, 단백질, 식이섬유, 식사 대용 여부를 함께 보는 방법입니다.]]></description>
-    <category>당뇨·혈당</category>
-    <pubDate>Wed, 27 May 2026 05:13:28 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/diabetes-medical-nutrition-drink-zero-sugar-carb-protein-fiber</guid>
-    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/diabetes-medical-nutrition-drink-zero-sugar-carb-protein-fiber.webp" type="image/webp"/>
-    <dc:subject>당뇨환자 음료, 당뇨음료, 탄수화물, 단백질, 식이섬유</dc:subject>
-  </item>
-  <item>
-    <title>암환자이면서 당뇨가 있을 때: 암환자음료와 당뇨음료 선택 기준</title>
-    <link>https://phlorotannin.com/blog/cancer-diabetes-drink-choice-checklist</link>
-    <description><![CDATA[암 치료 중 당뇨가 있거나 스테로이드로 혈당이 오를 때 암환자 음료와 당뇨음료를 어떻게 구분해 볼지 정리했습니다.]]></description>
-    <category>항암 치료 케어</category>
-    <pubDate>Wed, 27 May 2026 05:13:28 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/cancer-diabetes-drink-choice-checklist</guid>
-    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/cancer-diabetes-drink-choice-checklist.webp" type="image/webp"/>
-    <dc:subject>암환자 당뇨, 암환자음료, 당뇨음료, 스테로이드 혈당, 암환자 식단</dc:subject>
-  </item>
-  <item>
-    <title>특수의료용도식품 표시 읽기: 환자용 영양조제식품의 뜻</title>
-    <link>https://phlorotannin.com/blog/special-medical-purpose-food-label-guide-korea</link>
-    <description><![CDATA[특수의료용도식품, 표준형 영양조제식품, 당뇨환자용·암환자용 영양조제식품 표시를 쉽게 읽는 법입니다.]]></description>
-    <category>질환별 건강정보</category>
-    <pubDate>Wed, 27 May 2026 05:13:28 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/special-medical-purpose-food-label-guide-korea</guid>
-    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/special-medical-purpose-food-label-guide-korea.webp" type="image/webp"/>
-    <dc:subject>특수의료용도식품, 환자용 영양조제식품, 표준형 영양조제식품, 식품안전나라, 환자식</dc:subject>
-  </item>
-  <item>
     <title>환자용 음료와 일반 단백질음료 차이: 열량·단백질·당류·지방</title>
     <link>https://phlorotannin.com/blog/patient-drink-vs-protein-drink-difference</link>
     <description><![CDATA[환자용 음료와 일반 단백질음료를 열량, 단백질, 당류, 지방, 비타민·무기질, 의료진 상담 기준으로 비교했습니다.]]></description>
@@ -370,6 +340,26 @@
     <dc:subject>종근당건강 닥터케어, 닥터케어 구매, 당뇨음료, 암환자 음료, 맛있으리</dc:subject>
   </item>
   <item>
+    <title>당뇨환자 음료 고르는 법: 당류 0g보다 탄수화물·단백질·식이섬유</title>
+    <link>https://phlorotannin.com/blog/diabetes-medical-nutrition-drink-zero-sugar-carb-protein-fiber</link>
+    <description><![CDATA[당뇨환자 음료를 고를 때 당류 0g, 탄수화물, 단백질, 식이섬유, 식사 대용 여부를 함께 보는 방법입니다.]]></description>
+    <category>당뇨·혈당</category>
+    <pubDate>Wed, 27 May 2026 05:13:28 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/diabetes-medical-nutrition-drink-zero-sugar-carb-protein-fiber</guid>
+    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/diabetes-medical-nutrition-drink-zero-sugar-carb-protein-fiber.webp" type="image/webp"/>
+    <dc:subject>당뇨환자 음료, 당뇨음료, 탄수화물, 단백질, 식이섬유</dc:subject>
+  </item>
+  <item>
+    <title>특수의료용도식품 표시 읽기: 환자용 영양조제식품의 뜻</title>
+    <link>https://phlorotannin.com/blog/special-medical-purpose-food-label-guide-korea</link>
+    <description><![CDATA[특수의료용도식품, 표준형 영양조제식품, 당뇨환자용·암환자용 영양조제식품 표시를 쉽게 읽는 법입니다.]]></description>
+    <category>질환별 건강정보</category>
+    <pubDate>Wed, 27 May 2026 05:13:28 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/special-medical-purpose-food-label-guide-korea</guid>
+    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/special-medical-purpose-food-label-guide-korea.webp" type="image/webp"/>
+    <dc:subject>특수의료용도식품, 환자용 영양조제식품, 표준형 영양조제식품, 식품안전나라, 환자식</dc:subject>
+  </item>
+  <item>
     <title>종근당건강 닥터케어 키워드 지도: 특수의료용도식품·당뇨음료·암환자음료</title>
     <link>https://phlorotannin.com/blog/jongkundang-health-dr-care-special-medical-food-keyword-map</link>
     <description><![CDATA[종근당건강 닥터케어, 특수의료용도식품, 당뇨음료, 암환자 음료 키워드를 중복 없이 나누는 검색 지도입니다.]]></description>
@@ -378,16 +368,6 @@
     <guid isPermaLink="true">https://phlorotannin.com/blog/jongkundang-health-dr-care-special-medical-food-keyword-map</guid>
     <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/jongkundang-health-dr-care-special-medical-food-keyword-map.webp" type="image/webp"/>
     <dc:subject>종근당건강, 닥터케어, 특수의료용도식품, 당뇨음료, 암환자 음료</dc:subject>
-  </item>
-  <item>
-    <title>당뇨음료와 맛있으리 식단: 식사 대용이 아니라 루틴으로 쓰는 법</title>
-    <link>https://phlorotannin.com/blog/diabetes-drink-meulssori-meal-routine-checklist</link>
-    <description><![CDATA[당뇨음료를 맛있으리 식단과 함께 쓸 때 식사 대용, 간식, 운동 후 보완, 혈당 기록을 나누는 루틴입니다.]]></description>
-    <category>당뇨·혈당</category>
-    <pubDate>Wed, 27 May 2026 05:13:28 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/diabetes-drink-meulssori-meal-routine-checklist</guid>
-    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/diabetes-drink-meulssori-meal-routine-checklist.webp" type="image/webp"/>
-    <dc:subject>당뇨음료, 맛있으리, 당뇨 식단, 식단관리, 혈당 기록</dc:subject>
   </item>
   <item>
     <title>닥터케어 당코치제로: 종근당건강 당뇨음료 성분표에서 먼저 볼 것</title>
@@ -420,24 +400,24 @@
     <dc:subject>암환자 영양음료, 암환자 음료, 식욕부진, 오심, 삼킴</dc:subject>
   </item>
   <item>
-    <title>암환자 운동법: 걷기·근력·스트레칭을 언제 어떻게 시작할까</title>
-    <link>https://phlorotannin.com/blog/cancer-patient-exercise-guide-walking-strength-stretching</link>
-    <description><![CDATA[암환자와 보호자가 많이 묻는 걷기, 근력운동, 스트레칭 시작 기준과 운동 전 중단 신호를 정리했습니다.]]></description>
-    <category>운동·재활 루틴</category>
-    <pubDate>Wed, 27 May 2026 02:07:00 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/cancer-patient-exercise-guide-walking-strength-stretching</guid>
-    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/cancer-patient-exercise-guide-walking-strength-stretching.webp" type="image/webp"/>
-    <dc:subject>암환자 운동법, 항암 운동, 암 재활, 걷기, 근력운동</dc:subject>
+    <title>암환자이면서 당뇨가 있을 때: 암환자음료와 당뇨음료 선택 기준</title>
+    <link>https://phlorotannin.com/blog/cancer-diabetes-drink-choice-checklist</link>
+    <description><![CDATA[암 치료 중 당뇨가 있거나 스테로이드로 혈당이 오를 때 암환자 음료와 당뇨음료를 어떻게 구분해 볼지 정리했습니다.]]></description>
+    <category>항암 치료 케어</category>
+    <pubDate>Wed, 27 May 2026 05:13:28 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/cancer-diabetes-drink-choice-checklist</guid>
+    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/cancer-diabetes-drink-choice-checklist.webp" type="image/webp"/>
+    <dc:subject>암환자 당뇨, 암환자음료, 당뇨음료, 스테로이드 혈당, 암환자 식단</dc:subject>
   </item>
   <item>
-    <title>항암치료 중 운동: 피로·말초신경병증 있을 때 체크리스트</title>
-    <link>https://phlorotannin.com/blog/chemotherapy-exercise-fatigue-neuropathy-safety-checklist</link>
-    <description><![CDATA[항암치료 중 피로, 말초신경병증, 빈혈, 감염 위험이 있을 때 운동 강도와 중단 기준을 쉽게 정리했습니다.]]></description>
-    <category>운동·재활 루틴</category>
-    <pubDate>Wed, 27 May 2026 02:07:00 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/chemotherapy-exercise-fatigue-neuropathy-safety-checklist</guid>
-    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/chemotherapy-exercise-fatigue-neuropathy-safety-checklist.webp" type="image/webp"/>
-    <dc:subject>항암치료 중 운동, 항암 피로, 말초신경병증, 암 재활, 암환자 운동</dc:subject>
+    <title>당뇨음료와 맛있으리 식단: 식사 대용이 아니라 루틴으로 쓰는 법</title>
+    <link>https://phlorotannin.com/blog/diabetes-drink-meulssori-meal-routine-checklist</link>
+    <description><![CDATA[당뇨음료를 맛있으리 식단과 함께 쓸 때 식사 대용, 간식, 운동 후 보완, 혈당 기록을 나누는 루틴입니다.]]></description>
+    <category>당뇨·혈당</category>
+    <pubDate>Wed, 27 May 2026 05:13:28 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/diabetes-drink-meulssori-meal-routine-checklist</guid>
+    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/diabetes-drink-meulssori-meal-routine-checklist.webp" type="image/webp"/>
+    <dc:subject>당뇨음료, 맛있으리, 당뇨 식단, 식단관리, 혈당 기록</dc:subject>
   </item>
   <item>
     <title>당뇨 운동법: 식후 걷기와 근력운동을 같이 해야 하는 이유</title>
@@ -460,6 +440,36 @@
     <dc:subject>근감소증 운동법, 단백질, ONS, 포티멜, 환자식</dc:subject>
   </item>
   <item>
+    <title>항암치료 중 운동: 피로·말초신경병증 있을 때 체크리스트</title>
+    <link>https://phlorotannin.com/blog/chemotherapy-exercise-fatigue-neuropathy-safety-checklist</link>
+    <description><![CDATA[항암치료 중 피로, 말초신경병증, 빈혈, 감염 위험이 있을 때 운동 강도와 중단 기준을 쉽게 정리했습니다.]]></description>
+    <category>운동·재활 루틴</category>
+    <pubDate>Wed, 27 May 2026 02:07:00 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/chemotherapy-exercise-fatigue-neuropathy-safety-checklist</guid>
+    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/chemotherapy-exercise-fatigue-neuropathy-safety-checklist.webp" type="image/webp"/>
+    <dc:subject>항암치료 중 운동, 항암 피로, 말초신경병증, 암 재활, 암환자 운동</dc:subject>
+  </item>
+  <item>
+    <title>암환자 운동법: 걷기·근력·스트레칭을 언제 어떻게 시작할까</title>
+    <link>https://phlorotannin.com/blog/cancer-patient-exercise-guide-walking-strength-stretching</link>
+    <description><![CDATA[암환자와 보호자가 많이 묻는 걷기, 근력운동, 스트레칭 시작 기준과 운동 전 중단 신호를 정리했습니다.]]></description>
+    <category>운동·재활 루틴</category>
+    <pubDate>Wed, 27 May 2026 02:07:00 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/cancer-patient-exercise-guide-walking-strength-stretching</guid>
+    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/cancer-patient-exercise-guide-walking-strength-stretching.webp" type="image/webp"/>
+    <dc:subject>암환자 운동법, 항암 운동, 암 재활, 걷기, 근력운동</dc:subject>
+  </item>
+  <item>
+    <title>당뇨 교육 병원 찾기: 영양상담·운동교육·합병증 검사를 확인하세요</title>
+    <link>https://phlorotannin.com/blog/diabetes-education-hospital-nutrition-counseling-checklist</link>
+    <description><![CDATA[당뇨 교육 병원을 찾을 때 영양상담, 운동교육, 혈당 기록, 합병증 검사, 약물 상담 기준을 정리했습니다.]]></description>
+    <category>병원정보</category>
+    <pubDate>Wed, 27 May 2026 02:07:00 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/diabetes-education-hospital-nutrition-counseling-checklist</guid>
+    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/diabetes-education-hospital-nutrition-counseling-checklist.webp" type="image/webp"/>
+    <dc:subject>당뇨 교육 병원, 당뇨 영양상담, 당뇨 운동교육, 혈당 관리, 합병증 검사</dc:subject>
+  </item>
+  <item>
     <title>암 재활병원 선택 기준: 항암 후 회복기 가족이 보는 체크리스트</title>
     <link>https://phlorotannin.com/blog/cancer-rehabilitation-hospital-selection-checklist</link>
     <description><![CDATA[암 재활병원과 암요양병원을 찾는 가족이 의료진, 운동, 영양, 감염관리, 응급연계 기준을 확인하는 방법입니다.]]></description>
@@ -480,16 +490,6 @@
     <dc:subject>암 병원 정보, 수도권 암병원, 지역 암센터, 암요양병원, 병원 선택</dc:subject>
   </item>
   <item>
-    <title>당뇨 교육 병원 찾기: 영양상담·운동교육·합병증 검사를 확인하세요</title>
-    <link>https://phlorotannin.com/blog/diabetes-education-hospital-nutrition-counseling-checklist</link>
-    <description><![CDATA[당뇨 교육 병원을 찾을 때 영양상담, 운동교육, 혈당 기록, 합병증 검사, 약물 상담 기준을 정리했습니다.]]></description>
-    <category>병원정보</category>
-    <pubDate>Wed, 27 May 2026 02:07:00 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/diabetes-education-hospital-nutrition-counseling-checklist</guid>
-    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/diabetes-education-hospital-nutrition-counseling-checklist.webp" type="image/webp"/>
-    <dc:subject>당뇨 교육 병원, 당뇨 영양상담, 당뇨 운동교육, 혈당 관리, 합병증 검사</dc:subject>
-  </item>
-  <item>
     <title>병원 진료 전 질문 리스트: 보호자가 미리 적어가야 할 12가지</title>
     <link>https://phlorotannin.com/blog/hospital-visit-preparation-questions-caregiver-checklist</link>
     <description><![CDATA[암, 당뇨, 회복기 진료 전 보호자가 증상, 식사, 운동, 약, 병원 연계 질문을 정리하는 체크리스트입니다.]]></description>
@@ -498,6 +498,16 @@
     <guid isPermaLink="true">https://phlorotannin.com/blog/hospital-visit-preparation-questions-caregiver-checklist</guid>
     <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/hospital-visit-preparation-questions-caregiver-checklist.webp" type="image/webp"/>
     <dc:subject>병원 질문 리스트, 보호자 체크리스트, 진료 준비, 암환자 보호자, 당뇨 병원</dc:subject>
+  </item>
+  <item>
+    <title>저속노화 항산화 성분 비교: 플로로탄닌·커큐민·레스베라트롤</title>
+    <link>https://phlorotannin.com/blog/slow-aging-antioxidant-polyphenol-phlorotannin-guide</link>
+    <description><![CDATA[저속노화 항산화 성분을 플로로탄닌, 커큐민, 레스베라트롤, 녹차 폴리페놀 관점에서 과장 없이 비교했습니다.]]></description>
+    <category>성분 비교</category>
+    <pubDate>Wed, 27 May 2026 01:38:21 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/slow-aging-antioxidant-polyphenol-phlorotannin-guide</guid>
+    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/slow-aging-antioxidant-polyphenol-phlorotannin-guide.webp" type="image/webp"/>
+    <dc:subject>저속노화, 항산화, 플로로탄닌, 커큐민, 레스베라트롤</dc:subject>
   </item>
   <item>
     <title>저속노화 수면 루틴: 감태·테아닌·마그네슘보다 먼저 볼 것</title>
@@ -510,21 +520,11 @@
     <dc:subject>저속노화, 수면 루틴, 감태, 테아닌, 마그네슘</dc:subject>
   </item>
   <item>
-    <title>저속노화 영양제 키워드 2026: 혈당·수면·단백질·장건강</title>
-    <link>https://phlorotannin.com/blog/slow-aging-health-functional-food-2026-keyword-map</link>
-    <description><![CDATA[저속노화 키워드를 혈당, 수면, 단백질, 장건강, 폴리페놀로 나눠 장기 확장 가능한 건강정보 구조로 정리했습니다.]]></description>
-    <category>일반</category>
-    <pubDate>Wed, 27 May 2026 01:38:21 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/slow-aging-health-functional-food-2026-keyword-map</guid>
-    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/slow-aging-health-functional-food-2026-keyword-map.webp" type="image/webp"/>
-    <dc:subject>저속노화, 건강기능식품, 혈당, 수면, 단백질</dc:subject>
-  </item>
-  <item>
     <title>플로로탄닌 혈압 작용 기전 — ACE 억제와 혈관 내피 회복 근거</title>
     <link>https://phlorotannin.com/insights/phlorotannin-blood-pressure-mechanism</link>
     <description><![CDATA[갈조류 폴리페놀 플로로탄닌이 혈압을 낮추는 분자 기전(ACE 억제·NO 생산·산화스트레스 감소)을 2025 메타분석과 2026 종합 리뷰로 정리합니다.]]></description>
     <category>심혈관·혈압</category>
-    <pubDate>Wed, 27 May 2026 00:00:00 +0900</pubDate>
+    <pubDate>Thu, 28 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-blood-pressure-mechanism</guid>
   </item>
   <item>
@@ -532,7 +532,7 @@
     <link>https://phlorotannin.com/insights/dieckol-blood-glucose-evidence</link>
     <description><![CDATA[디에콜(Dieckol)이 식후 혈당과 인슐린 감수성에 미치는 영향을 α-glucosidase·α-amylase 억제, GLUT4 발현, 장내 미생물 기전으로 정리합니다.]]></description>
     <category>대사·당뇨</category>
-    <pubDate>Wed, 27 May 2026 00:00:00 +0900</pubDate>
+    <pubDate>Thu, 28 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/dieckol-blood-glucose-evidence</guid>
   </item>
   <item>
@@ -540,7 +540,7 @@
     <link>https://phlorotannin.com/insights/ecklonia-cava-diabetes-clinical</link>
     <description><![CDATA[감태(Ecklonia cava) 추출물의 인간 당뇨·전당뇨 임상 연구 현황을 약동학·대사체학·복합 제형 RCT를 중심으로 정리합니다.]]></description>
     <category>대사·당뇨</category>
-    <pubDate>Wed, 27 May 2026 00:00:00 +0900</pubDate>
+    <pubDate>Thu, 28 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/ecklonia-cava-diabetes-clinical</guid>
   </item>
   <item>
@@ -548,7 +548,7 @@
     <link>https://phlorotannin.com/insights/phlorotannin-cognitive-alzheimer</link>
     <description><![CDATA[플로로탄닌의 알츠하이머 예방·진행 둔화 가능성을 Aβ 응집 차단·AChE 억제·신경염증 완화 세 축으로 정리합니다 (2024 인지 RCT·2024 narrative review).]]></description>
     <category>뇌·인지</category>
-    <pubDate>Wed, 27 May 2026 00:00:00 +0900</pubDate>
+    <pubDate>Thu, 28 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-cognitive-alzheimer</guid>
   </item>
   <item>
@@ -556,7 +556,7 @@
     <link>https://phlorotannin.com/insights/phlorotannin-skin-uv-protection</link>
     <description><![CDATA[감태 플로로탄닌이 자외선 유발 피부 손상에 작용하는 메커니즘 — IL-17R 염증 억제, MMP 감소, 콜라겐 합성 촉진을 2025년 Marine Drugs 연구 기반으로 정리합니다.]]></description>
     <category>피부·모발</category>
-    <pubDate>Wed, 27 May 2026 00:00:00 +0900</pubDate>
+    <pubDate>Thu, 28 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-skin-uv-protection</guid>
   </item>
   <item>
@@ -564,7 +564,7 @@
     <link>https://phlorotannin.com/insights/phlorotannin-anti-aging-collagen</link>
     <description><![CDATA[플로로탄닌이 노화 과정에서 어떻게 작용하는지 — 산화스트레스 소거·콜라겐 신호·만성 저등급 염증의 세 축을 검증 출처와 함께 정리합니다.]]></description>
     <category>피부·모발</category>
-    <pubDate>Wed, 27 May 2026 00:00:00 +0900</pubDate>
+    <pubDate>Thu, 28 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-anti-aging-collagen</guid>
   </item>
   <item>
@@ -572,7 +572,7 @@
     <link>https://phlorotannin.com/insights/ecklonia-cava-hair-loss-evidence</link>
     <description><![CDATA[감태(Ecklonia cava)와 탈모·모발 건강 — 어디까지가 검증된 기전이고 어디부터 마케팅인지 PubMed 검증 출처로 정리합니다.]]></description>
     <category>피부·모발</category>
-    <pubDate>Wed, 27 May 2026 00:00:00 +0900</pubDate>
+    <pubDate>Thu, 28 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/ecklonia-cava-hair-loss-evidence</guid>
   </item>
   <item>
@@ -580,7 +580,7 @@
     <link>https://phlorotannin.com/insights/phlorotannin-inflammation-mechanism</link>
     <description><![CDATA[플로로탄닌이 만성 염증 경로(NF-κB·iNOS·COX-2·IL-17)에 어떻게 작용하는지 검증된 PMID와 함께 정리합니다.]]></description>
     <category>면역·염증</category>
-    <pubDate>Wed, 27 May 2026 00:00:00 +0900</pubDate>
+    <pubDate>Thu, 28 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-inflammation-mechanism</guid>
   </item>
   <item>
@@ -588,7 +588,7 @@
     <link>https://phlorotannin.com/insights/phlorotannin-cholesterol-ldl-rct</link>
     <description><![CDATA[플로로탄닌이 LDL 콜레스테롤·총 콜레스테롤·중성지방에 미치는 효과를 인간 파일럿 RCT와 전임상·종합 리뷰로 정리합니다.]]></description>
     <category>심혈관·혈압</category>
-    <pubDate>Wed, 27 May 2026 00:00:00 +0900</pubDate>
+    <pubDate>Thu, 28 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-cholesterol-ldl-rct</guid>
   </item>
   <item>
@@ -596,168 +596,168 @@
     <link>https://phlorotannin.com/insights/phlorotannin-cancer-prevention-evidence</link>
     <description><![CDATA[플로로탄닌(특히 디에콜)의 항암 근거 — MCF-7 유방암 이동 억제, 항암제 심장독성 완화 등 전임상 데이터와 그 한계를 정직하게 정리합니다.]]></description>
     <category>항암 보조</category>
-    <pubDate>Wed, 27 May 2026 00:00:00 +0900</pubDate>
+    <pubDate>Thu, 28 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-cancer-prevention-evidence</guid>
   </item>
   <item>
-    <title>알레르기비염 이비인후과 상담: 퀘르세틴·프로바이오틱스보다 유발요인</title>
-    <link>https://phlorotannin.com/insights/allergic-rhinitis-ent-quercetin-probiotics</link>
-    <description><![CDATA[알레르기 증상과 보충제 관심을 안전하게 정리하고 싶다. 이비인후과·알레르기내과 방문 전 증상·검사·복용약·퀘르세틴 상담 포인트를 정리했습니다.]]></description>
-    <category>병원·진료준비</category>
-    <pubDate>Wed, 27 May 2026 00:00:00 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/insights/allergic-rhinitis-ent-quercetin-probiotics</guid>
-  </item>
-  <item>
-    <title>천식·호흡기내과 상담: 비타민D·오메가3보다 흡입제 사용법</title>
+    <title>천식·호흡기내과 상담: 비타민D·오메가3보다 먼저 확인할 흡입제 사용법</title>
     <link>https://phlorotannin.com/insights/asthma-pulmonology-vitamin-d-omega3-check</link>
-    <description><![CDATA[천식 관리에서 약물 사용과 건강식품을 구분하고 싶다. 호흡기내과·알레르기내과 방문 전 증상·검사·복용약·비타민 D 상담 포인트를 정리했습니다.]]></description>
+    <description><![CDATA[천식 증상이 반복될 때 호흡기내과 방문 전 정리할 증상 기록, 흡입제 사용법, 응급 신호, 비타민D·오메가3 상담 포인트를 실제 진료 흐름에 맞춰 정리했습니다.]]></description>
     <category>병원·진료준비</category>
-    <pubDate>Wed, 27 May 2026 00:00:00 +0900</pubDate>
+    <pubDate>Thu, 28 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/asthma-pulmonology-vitamin-d-omega3-check</guid>
-  </item>
-  <item>
-    <title>만성기침 병원 선택: 호흡기·이비인후과·역류를 나누는 법</title>
-    <link>https://phlorotannin.com/insights/chronic-cough-hospital-reflux-allergy-supplement</link>
-    <description><![CDATA[만성기침 원인과 진료과 선택을 정리하고 싶다. 호흡기내과·이비인후과 방문 전 증상·검사·복용약·프로바이오틱스 상담 포인트를 정리했습니다.]]></description>
-    <category>병원·진료준비</category>
-    <pubDate>Wed, 27 May 2026 00:00:00 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/insights/chronic-cough-hospital-reflux-allergy-supplement</guid>
-  </item>
-  <item>
-    <title>피부과 상담: 콜라겐·아스타잔틴보다 병변 사진과 기간</title>
-    <link>https://phlorotannin.com/insights/dermatology-collagen-astaxanthin-skin-check</link>
-    <description><![CDATA[피부 증상과 먹는 원료를 병원에 설명하고 싶다. 피부과 방문 전 증상·검사·복용약·콜라겐 상담 포인트를 정리했습니다.]]></description>
-    <category>병원·진료준비</category>
-    <pubDate>Wed, 27 May 2026 00:00:00 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/insights/dermatology-collagen-astaxanthin-skin-check</guid>
-  </item>
-  <item>
-    <title>탈모 병원 상담: 철·비타민D·아연 검사와 복용기록</title>
-    <link>https://phlorotannin.com/insights/hair-loss-clinic-iron-vitamin-d-zinc-check</link>
-    <description><![CDATA[탈모 원인검사와 건강식품을 구분하고 싶다. 피부과·탈모클리닉 방문 전 증상·검사·복용약·비타민 D 상담 포인트를 정리했습니다.]]></description>
-    <category>병원·진료준비</category>
-    <pubDate>Wed, 27 May 2026 00:00:00 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/insights/hair-loss-clinic-iron-vitamin-d-zinc-check</guid>
-  </item>
-  <item>
-    <title>갱년기 병원 상담: 비타민D·오메가3·식사 루틴을 함께 보기</title>
-    <link>https://phlorotannin.com/insights/menopause-clinic-vitamin-d-omega3-meal-routine</link>
-    <description><![CDATA[갱년기 증상과 검진·영양상담을 연결하고 싶다. 산부인과·내과 방문 전 증상·검사·복용약·비타민 D 상담 포인트를 정리했습니다.]]></description>
-    <category>병원·진료준비</category>
-    <pubDate>Wed, 27 May 2026 00:00:00 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/insights/menopause-clinic-vitamin-d-omega3-meal-routine</guid>
-  </item>
-  <item>
-    <title>임신 준비·임산부 병원 상담: 엽산·철·오메가3 안전하게 묻기</title>
-    <link>https://phlorotannin.com/insights/pregnancy-clinic-folate-iron-omega3-safety</link>
-    <description><![CDATA[임신 전후 영양성분과 금기 성분을 안전하게 확인하고 싶다. 산부인과 방문 전 증상·검사·복용약·오메가3 상담 포인트를 정리했습니다.]]></description>
-    <category>병원·진료준비</category>
-    <pubDate>Wed, 27 May 2026 00:00:00 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/insights/pregnancy-clinic-folate-iron-omega3-safety</guid>
-  </item>
-  <item>
-    <title>전립선·비뇨의학과 상담: 쏘팔메토·아연보다 배뇨일지</title>
-    <link>https://phlorotannin.com/insights/prostate-urology-saw-palmetto-zinc-memo</link>
-    <description><![CDATA[전립선 증상과 건강식품 관심을 병원 질문으로 바꾸고 싶다. 비뇨의학과 방문 전 증상·검사·복용약·감태 플로로탄닌 상담 포인트를 정리했습니다.]]></description>
-    <category>병원·진료준비</category>
-    <pubDate>Wed, 27 May 2026 00:00:00 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/insights/prostate-urology-saw-palmetto-zinc-memo</guid>
-  </item>
-  <item>
-    <title>야간뇨 병원 상담: 물 줄이기보다 카페인·약물·혈당 기록</title>
-    <link>https://phlorotannin.com/insights/urinary-frequency-urology-caffeine-water-check</link>
-    <description><![CDATA[야간뇨의 원인과 기록표를 알고 싶다. 비뇨의학과·내과 방문 전 증상·검사·복용약·마그네슘 상담 포인트를 정리했습니다.]]></description>
-    <category>병원·진료준비</category>
-    <pubDate>Wed, 27 May 2026 00:00:00 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/insights/urinary-frequency-urology-caffeine-water-check</guid>
-  </item>
-  <item>
-    <title>비만클리닉 상담: GLP-1 약과 천연 원료를 혼동하지 않기</title>
-    <link>https://phlorotannin.com/insights/obesity-clinic-glp1-natural-adjuncts-safety</link>
-    <description><![CDATA[체중관리 병원 상담에서 원료와 약물을 구분하고 싶다. 비만클리닉·내분비내과 방문 전 증상·검사·복용약·베르베린 상담 포인트를 정리했습니다.]]></description>
-    <category>병원·진료준비</category>
-    <pubDate>Wed, 27 May 2026 00:00:00 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/insights/obesity-clinic-glp1-natural-adjuncts-safety</guid>
   </item>
   <item>
     <title>플로로탄닌 언제 먹는 게 좋을까 — 표적별 ‘최적 시점’ 정리</title>
     <link>https://phlorotannin.com/insights/phlorotannin-best-time-to-take</link>
     <description><![CDATA[플로로탄닌의 복용 시점(공복·식전·식사 동반·식후·취침 전)을 표적(혈당·지질·항산화·수면)에 따라 분리해 정리합니다.]]></description>
     <category>생활·복용</category>
-    <pubDate>Wed, 27 May 2026 00:00:00 +0900</pubDate>
+    <pubDate>Thu, 28 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-best-time-to-take</guid>
   </item>
   <item>
-    <title>통풍 병원 상담: 요산수치·식단·비타민C를 한 번에 정리</title>
-    <link>https://phlorotannin.com/insights/gout-rheumatology-vitamin-c-diet-supplement</link>
-    <description><![CDATA[통풍 발작과 식단·보충제 질문을 정리하고 싶다. 류마티스내과·내과 방문 전 증상·검사·복용약·비타민 D 상담 포인트를 정리했습니다.]]></description>
-    <category>병원·진료준비</category>
-    <pubDate>Wed, 27 May 2026 00:00:00 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/insights/gout-rheumatology-vitamin-c-diet-supplement</guid>
+    <title>플로로탄닌 + 비타민 D + 오메가 3 — 합리적 병용은 가능한가</title>
+    <link>https://phlorotannin.com/insights/phlorotannin-with-vitamin-d-omega3</link>
+    <description><![CDATA[플로로탄닌과 비타민 D, 오메가 3의 표적·기전 차이를 정리하고, 병용 시 합리적 시점·주의사항을 안내합니다.]]></description>
+    <category>생활·복용</category>
+    <pubDate>Thu, 28 May 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-with-vitamin-d-omega3</guid>
   </item>
   <item>
-    <title>자가면역질환 류마티스내과 상담: 오메가3·비타민D 기록</title>
-    <link>https://phlorotannin.com/insights/autoimmune-rheumatology-omega3-vitamin-d-memo</link>
-    <description><![CDATA[면역 관련 질환에서 보충제와 약물 상담을 안전하게 하고 싶다. 류마티스내과 방문 전 증상·검사·복용약·오메가3 상담 포인트를 정리했습니다.]]></description>
-    <category>병원·진료준비</category>
-    <pubDate>Wed, 27 May 2026 00:00:00 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/insights/autoimmune-rheumatology-omega3-vitamin-d-memo</guid>
+    <title>차전자피: LDL·변비·혈당을 함께 볼 때 확인할 것</title>
+    <link>https://phlorotannin.com/insights/psyllium-husk-fiber-cholesterol-bowel-guide</link>
+    <description><![CDATA[차전자피는 “장에 좋다”로 끝내기보다 수용성 식이섬유, LDL, 변비, 약 복용 간격을 함께 봐야 합니다.]]></description>
+    <category>임상 이슈 원료</category>
+    <pubDate>Thu, 28 May 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/insights/psyllium-husk-fiber-cholesterol-bowel-guide</guid>
   </item>
   <item>
-    <title>구강건조·구내염 병원 상담: 치과·이비인후과·영양 기록</title>
-    <link>https://phlorotannin.com/insights/dental-oral-dry-mouth-nutrition-hospital</link>
-    <description><![CDATA[구강 증상과 영양상태를 함께 점검하고 싶다. 치과·이비인후과 방문 전 증상·검사·복용약·락토페린 상담 포인트를 정리했습니다.]]></description>
-    <category>병원·진료준비</category>
-    <pubDate>Wed, 27 May 2026 00:00:00 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/insights/dental-oral-dry-mouth-nutrition-hospital</guid>
+    <title>밀크씨슬·실리마린: 간수치 글에서 빠지면 안 되는 질문</title>
+    <link>https://phlorotannin.com/insights/milk-thistle-silymarin-liver-enzyme-guide</link>
+    <description><![CDATA[밀크씨슬은 간에 좋다는 말보다 ALT·AST 원인, 술, 체중, 약 복용, 지방간 평가를 함께 봐야 합니다.]]></description>
+    <category>임상 이슈 원료</category>
+    <pubDate>Thu, 28 May 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/insights/milk-thistle-silymarin-liver-enzyme-guide</guid>
   </item>
   <item>
-    <title>눈 건강 병원 상담: 루테인·아스타잔틴보다 안저검사</title>
-    <link>https://phlorotannin.com/insights/eye-clinic-lutein-astaxanthin-amd-check</link>
-    <description><![CDATA[눈 영양제와 안과 검사의 역할을 구분하고 싶다. 안과 방문 전 증상·검사·복용약·루테인·아스타잔틴 상담 포인트를 정리했습니다.]]></description>
-    <category>병원·진료준비</category>
-    <pubDate>Wed, 27 May 2026 00:00:00 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/insights/eye-clinic-lutein-astaxanthin-amd-check</guid>
+    <title>크레아틴: 운동 성과만이 아니라 근감소·인지까지 읽는 기준</title>
+    <link>https://phlorotannin.com/insights/creatine-monohydrate-muscle-cognition-guide</link>
+    <description><![CDATA[크레아틴은 운동 보충제이지만 노화 근육과 인지 연구도 늘고 있습니다. 신장검사와 섭취 목적을 구분해 봅니다.]]></description>
+    <category>임상 이슈 원료</category>
+    <pubDate>Thu, 28 May 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/insights/creatine-monohydrate-muscle-cognition-guide</guid>
   </item>
   <item>
-    <title>어지럼 병원 선택: 이비인후과·신경과와 마그네슘 기록</title>
-    <link>https://phlorotannin.com/insights/dizziness-ent-neurology-magnesium-check</link>
-    <description><![CDATA[어지럼 양상과 위험 신호를 구분하고 싶다. 이비인후과·신경과 방문 전 증상·검사·복용약·마그네슘 상담 포인트를 정리했습니다.]]></description>
-    <category>병원·진료준비</category>
-    <pubDate>Wed, 27 May 2026 00:00:00 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/insights/dizziness-ent-neurology-magnesium-check</guid>
+    <title>HMB: 근감소 검색에서 단백질·운동과 함께 읽어야 하는 이유</title>
+    <link>https://phlorotannin.com/insights/hmb-sarcopenia-rehabilitation-protein-guide</link>
+    <description><![CDATA[HMB는 근감소와 재활 키워드에서 자주 보이지만 단백질 섭취, 저항운동, 질환 상태와 함께 해석해야 합니다.]]></description>
+    <category>임상 이슈 원료</category>
+    <pubDate>Thu, 28 May 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/insights/hmb-sarcopenia-rehabilitation-protein-guide</guid>
   </item>
   <item>
-    <title>예방접종·여행클리닉 상담: 면역 원료보다 일정과 금기 확인</title>
-    <link>https://phlorotannin.com/insights/vaccine-travel-clinic-immune-supplement-check</link>
-    <description><![CDATA[예방접종 일정과 건강식품 복용을 안전하게 확인하고 싶다. 감염내과·여행클리닉 방문 전 증상·검사·복용약·프로바이오틱스 상담 포인트를 정리했습니다.]]></description>
-    <category>병원·진료준비</category>
-    <pubDate>Wed, 27 May 2026 00:00:00 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/insights/vaccine-travel-clinic-immune-supplement-check</guid>
+    <title>이노시톨: PCOS·인슐린저항성 검색에서 꼭 나눠 볼 것</title>
+    <link>https://phlorotannin.com/insights/myo-inositol-pcos-insulin-resistance-guide</link>
+    <description><![CDATA[이노시톨은 PCOS에서 자주 찾는 원료입니다. 생리주기, 배란, 인슐린저항성, 약 복용을 구분해 정리합니다.]]></description>
+    <category>임상 이슈 원료</category>
+    <pubDate>Thu, 28 May 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/insights/myo-inositol-pcos-insulin-resistance-guide</guid>
   </item>
   <item>
-    <title>응급실 가야 하는 신호: 병원 검색보다 먼저 볼 7가지</title>
-    <link>https://phlorotannin.com/insights/emergency-red-flags-chest-stroke-hospital</link>
-    <description><![CDATA[검색으로 시간을 쓰면 안 되는 위험 신호를 알고 싶다. 응급의학과 방문 전 증상·검사·복용약·감태 플로로탄닌 상담 포인트를 정리했습니다.]]></description>
-    <category>병원·진료준비</category>
-    <pubDate>Wed, 27 May 2026 00:00:00 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/insights/emergency-red-flags-chest-stroke-hospital</guid>
+    <title>알파리포산: 당뇨발 저림과 신경병증 글을 읽는 기준</title>
+    <link>https://phlorotannin.com/insights/alpha-lipoic-acid-diabetic-neuropathy-guide</link>
+    <description><![CDATA[알파리포산은 당뇨성 신경병증에서 자주 언급됩니다. 발저림 원인, 혈당, 갑상선약, 항암치료 이력을 함께 봅니다.]]></description>
+    <category>임상 이슈 원료</category>
+    <pubDate>Thu, 28 May 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/insights/alpha-lipoic-acid-diabetic-neuropathy-guide</guid>
   </item>
   <item>
-    <title>열·감염 의심 병원 상담: 비타민C·아연보다 경과와 위험군</title>
-    <link>https://phlorotannin.com/insights/fever-infection-clinic-vitamin-c-zinc-caution</link>
-    <description><![CDATA[발열 시 병원 방문 기준과 보충제 역할을 구분하고 싶다. 내과·감염내과 방문 전 증상·검사·복용약·락토페린 상담 포인트를 정리했습니다.]]></description>
-    <category>병원·진료준비</category>
-    <pubDate>Wed, 27 May 2026 00:00:00 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/insights/fever-infection-clinic-vitamin-c-zinc-caution</guid>
+    <title>플로로탄닌 약물 상호작용 — 와파린·항혈소판·당뇨약·갑상선약</title>
+    <link>https://phlorotannin.com/insights/phlorotannin-drug-interactions-warfarin</link>
+    <description><![CDATA[플로로탄닌과 와파린·DOAC·아스피린·당뇨약·갑상선 약물 사이의 잠재 상호작용을 출처 기반으로 정리합니다.]]></description>
+    <category>안전성·금기</category>
+    <pubDate>Thu, 28 May 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-drug-interactions-warfarin</guid>
   </item>
   <item>
-    <title>약이 많을 때 병원 상담: 건강식품원료 리스트 만드는 법</title>
-    <link>https://phlorotannin.com/insights/polypharmacy-hospital-supplement-list-pharmacist</link>
-    <description><![CDATA[복용약과 보충제를 한 장으로 정리하고 싶다. 주치의·약사상담 방문 전 증상·검사·복용약·감태 플로로탄닌 상담 포인트를 정리했습니다.]]></description>
-    <category>병원·진료준비</category>
-    <pubDate>Wed, 27 May 2026 00:00:00 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/insights/polypharmacy-hospital-supplement-list-pharmacist</guid>
+    <title>은행잎 추출물: 기억력보다 먼저 확인할 약물 상호작용</title>
+    <link>https://phlorotannin.com/insights/ginkgo-biloba-memory-blood-circulation-caution</link>
+    <description><![CDATA[은행잎은 기억력·혈액순환 키워드로 검색되지만 항응고제, 수술 전 중단, 치매 예방 근거를 신중히 봐야 합니다.]]></description>
+    <category>임상 이슈 원료</category>
+    <pubDate>Thu, 28 May 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/insights/ginkgo-biloba-memory-blood-circulation-caution</guid>
+  </item>
+  <item>
+    <title>쏘팔메토: 전립선 검색에서 PSA·배뇨기록이 먼저입니다</title>
+    <link>https://phlorotannin.com/insights/saw-palmetto-prostate-urinary-symptom-guide</link>
+    <description><![CDATA[쏘팔메토는 전립선 원료로 알려졌지만, 야간뇨·잔뇨감·PSA·약 복용을 먼저 정리해야 합니다.]]></description>
+    <category>임상 이슈 원료</category>
+    <pubDate>Thu, 28 May 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/insights/saw-palmetto-prostate-urinary-symptom-guide</guid>
+  </item>
+  <item>
+    <title>바코파: 집중력 원료를 공부·수면·위장불편까지 함께 보기</title>
+    <link>https://phlorotannin.com/insights/bacopa-monnieri-memory-concentration-guide</link>
+    <description><![CDATA[바코파는 기억력·집중력 원료로 주목받지만 표준화, 복용 기간, 위장불편, 수면과 함께 봐야 합니다.]]></description>
+    <category>임상 이슈 원료</category>
+    <pubDate>Thu, 28 May 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/insights/bacopa-monnieri-memory-concentration-guide</guid>
+  </item>
+  <item>
+    <title>GABA: 수면 원료를 불면·스트레스·약 복용과 함께 읽기</title>
+    <link>https://phlorotannin.com/insights/gaba-sleep-stress-blood-pressure-guide</link>
+    <description><![CDATA[GABA는 수면·스트레스 원료로 검색되지만 불면의 원인, 복용약, 카페인, 수면위생을 함께 봐야 합니다.]]></description>
+    <category>임상 이슈 원료</category>
+    <pubDate>Thu, 28 May 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/insights/gaba-sleep-stress-blood-pressure-guide</guid>
+  </item>
+  <item>
+    <title>플로로탄닌과 임신·수유 — 데이터 부족이 곧 ‘회피 권장’인 이유</title>
+    <link>https://phlorotannin.com/insights/phlorotannin-pregnancy-breastfeeding</link>
+    <description><![CDATA[임산부·수유부의 플로로탄닌 섭취 — EFSA Novel Food 평가는 어떤 입장이고, 왜 데이터 부족이 곧 회피 권장으로 이어지는지 정리합니다.]]></description>
+    <category>안전성·금기</category>
+    <pubDate>Thu, 28 May 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-pregnancy-breastfeeding</guid>
+  </item>
+  <item>
+    <title>플로로탄닌 부작용 — 보고된 ‘실제’와 떠도는 ‘소문’ 구분</title>
+    <link>https://phlorotannin.com/insights/phlorotannin-side-effects-real</link>
+    <description><![CDATA[EFSA Novel Food 평가와 임상 약동학 연구를 바탕으로, 플로로탄닌에서 실제 보고된 부작용과 떠도는 잘못된 정보를 구분합니다.]]></description>
+    <category>안전성·금기</category>
+    <pubDate>Thu, 28 May 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-side-effects-real</guid>
+  </item>
+  <item>
+    <title>플로로탄닌 추출 품질 — 디에콜 함량과 표시 기준 어떻게 확인하나</title>
+    <link>https://phlorotannin.com/insights/phlorotannin-quality-extraction-method</link>
+    <description><![CDATA[감태 추출물 제품의 품질을 판단하는 핵심 — 디에콜·플로로글루시놀 정량(HPLC), 식약처 개별인정형 기준, 표시·표준화의 의미를 정리합니다.]]></description>
+    <category>생활·복용</category>
+    <pubDate>Thu, 28 May 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-quality-extraction-method</guid>
+  </item>
+  <item>
+    <title>Seapolynol™ vs 일반 플로로탄닌 — 무엇이 임상 결과를 결정하나</title>
+    <link>https://phlorotannin.com/insights/seapolynol-vs-generic-phlorotannin</link>
+    <description><![CDATA[표준화 추출물 Seapolynol™과 비표준화 갈조류 추출물의 차이 — EFSA Novel Food 평가, 약동학 데이터, 임상 RCT 기준으로 정리합니다.]]></description>
+    <category>성분 비교</category>
+    <pubDate>Thu, 28 May 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/insights/seapolynol-vs-generic-phlorotannin</guid>
+  </item>
+  <item>
+    <title>플로로탄닌 vs 레스베라트롤 — 표적·생체이용률·임상 데이터 비교</title>
+    <link>https://phlorotannin.com/insights/phlorotannin-vs-resveratrol</link>
+    <description><![CDATA[두 폴리페놀의 핵심 표적(SIRT1·AMPK·NF-κB)과 인간 데이터, 생체이용률 차이를 출처 기반으로 비교합니다.]]></description>
+    <category>성분 비교</category>
+    <pubDate>Thu, 28 May 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-vs-resveratrol</guid>
+  </item>
+  <item>
+    <title>플로로탄닌 vs 커큐민 — 항염 폴리페놀 두 강자의 차이</title>
+    <link>https://phlorotannin.com/insights/phlorotannin-vs-curcumin-inflammation</link>
+    <description><![CDATA[대표적 항염 천연 폴리페놀인 플로로탄닌과 커큐민의 표적·생체이용률·임상 활용 차이를 비교합니다.]]></description>
+    <category>성분 비교</category>
+    <pubDate>Thu, 28 May 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-vs-curcumin-inflammation</guid>
   </item>
   <item>
     <title>밤에 소변 때문에 자주 깨면 물을 줄이면 되나요?</title>
@@ -778,7 +778,7 @@
   <item>
     <title>근력운동을 시작한 남성은 단백질을 얼마나 챙겨야 하나요?</title>
     <link>https://phlorotannin.com/q/근력운동을-시작한-남성은-단백질을-얼마나-챙겨야-하나요</link>
-    <description><![CDATA[남성건강 · 근력운동을 시작한 남성은 단백질을 얼마나 챙겨야 하나요?라는 질문은 남성건강 상담에서 자주 나오는 주제입니다. 남성건강은 전립선 증상, 수면, 음주, 운동, 혈압·혈당, 탈모약·기타 약 복용을 함께 봐야 합니다. 꿀정보는 증상이 생긴 날짜, 반복 횟수, 식사·수면·약 복용 변화를 한 줄씩 남기는 것입니다. 식사 조정이 필요한 상황이라면 최근 1~2주의 식사량, 남긴 양, 체중 변화, 불편 증상을 한 장에 정리해 의료진 상담 자료로 남기는 것이 좋습니다. 실제로는 개인의 병력, 검...]]></description>
+    <description><![CDATA[남성건강 · 근력운동을 시작한 남성은 단백질을 얼마나 챙겨야 하나요?라는 질문은 남성건강 상담에서 자주 나오는 주제입니다. 남성건강은 전립선 증상, 수면, 음주, 운동, 혈압·혈당, 탈모약·기타 약 복용을 함께 봐야 합니다. 꿀정보는 증상이 생긴 날짜, 반복 횟수, 식사·수면·약 복용 변화를 한 줄씩 남기는 것입니다. 식사 조정이 필요한 상황이라면 최근 1~2주의 식사량, 남긴 양, 체중 변화, 불편 증상을 한 장에 정리해 의료진 상담 자료로 남기는 것이 좋습니다. 실제로는...]]></description>
     <category>남성건강</category>
     <pubDate>Wed, 27 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/q/근력운동을-시작한-남성은-단백질을-얼마나-챙겨야-하나요</guid>
@@ -826,7 +826,7 @@
   <item>
     <title>수유 중 건강기능식품은 어떤 기준으로 봐야 하나요?</title>
     <link>https://phlorotannin.com/q/수유-중-건강기능식품은-어떤-기준으로-봐야-하나요</link>
-    <description><![CDATA[여성건강 · 수유 중 건강기능식품은 어떤 기준으로 봐야 하나요?라는 질문은 여성건강 상담에서 자주 나오는 주제입니다. 여성건강 질문은 생리 주기, 임신 가능성, 철분·비타민 D, 수면, 체중 변화, 복용약을 같이 기록하면 상담이 정확해집니다. 꿀정보는 제품명보다 기능성 원료명, 1일 섭취량, 주의사항, 복용 중인 약과의 겹침을 보는 것입니다. 건강기능식품 원료 정보는 참고자료일 뿐, 약이나 표준치료를 대체한다고 해석하면 안 됩니...]]></description>
+    <description><![CDATA[여성건강 · 수유 중 건강기능식품은 어떤 기준으로 봐야 하나요?라는 질문은 여성건강 상담에서 자주 나오는 주제입니다. 여성건강 질문은 생리 주기, 임신 가능성, 철분·비타민 D, 수면, 체중 변화, 복용약을 같이 기록하면 상담이 정확해집니다. 꿀정보는 제품명보다 기능성 원료명, 1일 섭취량, 주의사항, 복용 중인 약과의 겹침을 보는 것입니다. 건강기능식품 원료 정보는 참고자료일 뿐, 약이나 표준치료를 대체한다고 해석하면 안 됩니다. 실제로는 개인의 병력, 검사 수치, 복용약...]]></description>
     <category>여성건강</category>
     <pubDate>Wed, 27 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/q/수유-중-건강기능식품은-어떤-기준으로-봐야-하나요</guid>
@@ -882,7 +882,7 @@
   <item>
     <title>임산부 영양제는 많이 먹을수록 좋은가요?</title>
     <link>https://phlorotannin.com/q/임산부-영양제는-많이-먹을수록-좋은가요</link>
-    <description><![CDATA[여성건강 · 임산부 영양제는 많이 먹을수록 좋은가요?라는 질문은 여성건강 상담에서 자주 나오는 주제입니다. 여성건강 질문은 생리 주기, 임신 가능성, 철분·비타민 D, 수면, 체중 변화, 복용약을 같이 기록하면 상담이 정확해집니다. 꿀정보는 제품명보다 기능성 원료명, 1일 섭취량, 주의사항, 복용 중인 약과의 겹침을 보는 것입니다. 건강기능식품 원료 정보는 참고자료일 뿐, 약이나 표준치료를 대체한다고 해석하면 안 됩니다. 실제로...]]></description>
+    <description><![CDATA[여성건강 · 임산부 영양제는 많이 먹을수록 좋은가요?라는 질문은 여성건강 상담에서 자주 나오는 주제입니다. 여성건강 질문은 생리 주기, 임신 가능성, 철분·비타민 D, 수면, 체중 변화, 복용약을 같이 기록하면 상담이 정확해집니다. 꿀정보는 제품명보다 기능성 원료명, 1일 섭취량, 주의사항, 복용 중인 약과의 겹침을 보는 것입니다. 건강기능식품 원료 정보는 참고자료일 뿐, 약이나 표준치료를 대체한다고 해석하면 안 됩니다. 실제로는 개인의 병력, 검사 수치, 복용약, 치료 단...]]></description>
     <category>여성건강</category>
     <pubDate>Wed, 27 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/q/임산부-영양제는-많이-먹을수록-좋은가요</guid>
@@ -890,7 +890,7 @@
   <item>
     <title>임신 준비 중 감태추출물이나 플로로탄닌을 먹어도 되나요?</title>
     <link>https://phlorotannin.com/q/임신-준비-중-감태추출물이나-플로로탄닌을-먹어도-되나요</link>
-    <description><![CDATA[여성건강 · 임신 준비 중 감태추출물이나 플로로탄닌을 먹어도 되나요?라는 질문은 여성건강 상담에서 자주 나오는 주제입니다. 여성건강 질문은 생리 주기, 임신 가능성, 철분·비타민 D, 수면, 체중 변화, 복용약을 같이 기록하면 상담이 정확해집니다. 꿀정보는 잠든 시간보다 기상 시간, 낮잠, 카페인 마감 시간을 먼저 고정하는 것입니다. 건강기능식품 원료 정보는 참고자료일 뿐, 약이나 표준치료를 대체한다고 해석하면 안 됩니다. 실제...]]></description>
+    <description><![CDATA[여성건강 · 임신 준비 중 감태추출물이나 플로로탄닌을 먹어도 되나요?라는 질문은 여성건강 상담에서 자주 나오는 주제입니다. 여성건강 질문은 생리 주기, 임신 가능성, 철분·비타민 D, 수면, 체중 변화, 복용약을 같이 기록하면 상담이 정확해집니다. 꿀정보는 잠든 시간보다 기상 시간, 낮잠, 카페인 마감 시간을 먼저 고정하는 것입니다. 건강기능식품 원료 정보는 참고자료일 뿐, 약이나 표준치료를 대체한다고 해석하면 안 됩니다. 실제로는 개인의 병력, 검사 수치, 복용약, 치료 ...]]></description>
     <category>여성건강</category>
     <pubDate>Wed, 27 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/q/임신-준비-중-감태추출물이나-플로로탄닌을-먹어도-되나요</guid>
@@ -898,7 +898,7 @@
   <item>
     <title>갱년기 열감에는 건강기능식품보다 무엇을 먼저 확인하나요?</title>
     <link>https://phlorotannin.com/q/갱년기-열감에는-건강기능식품보다-무엇을-먼저-확인하나요</link>
-    <description><![CDATA[여성건강 · 갱년기 열감에는 건강기능식품보다 무엇을 먼저 확인하나요?라는 질문은 여성건강 상담에서 자주 나오는 주제입니다. 여성건강 질문은 생리 주기, 임신 가능성, 철분·비타민 D, 수면, 체중 변화, 복용약을 같이 기록하면 상담이 정확해집니다. 꿀정보는 제품명보다 기능성 원료명, 1일 섭취량, 주의사항, 복용 중인 약과의 겹침을 보는 것입니다. 건강기능식품 원료 정보는 참고자료이며 의료진 상담을 대신하지 않습니다...]]></description>
+    <description><![CDATA[여성건강 · 갱년기 열감에는 건강기능식품보다 무엇을 먼저 확인하나요?라는 질문은 여성건강 상담에서 자주 나오는 주제입니다. 여성건강 질문은 생리 주기, 임신 가능성, 철분·비타민 D, 수면, 체중 변화, 복용약을 같이 기록하면 상담이 정확해집니다. 꿀정보는 제품명보다 기능성 원료명, 1일 섭취량, 주의사항, 복용 중인 약과의 겹침을 보는 것입니다. 건강기능식품 원료 정보는 참고자료일 뿐, 약이나 표준치료를 대체한다고 해석하면 안 됩니다. 실제로는 개인의 병력, 검사 수치, ...]]></description>
     <category>여성건강</category>
     <pubDate>Wed, 27 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/q/갱년기-열감에는-건강기능식품보다-무엇을-먼저-확인하나요</guid>
@@ -922,7 +922,7 @@
   <item>
     <title>플로로탄닌의 항염 연구는 사람에게 바로 적용해도 되나요?</title>
     <link>https://phlorotannin.com/q/플로로탄닌의-항염-연구는-사람에게-바로-적용해도-되나요</link>
-    <description><![CDATA[감염/염증 · 플로로탄닌의 항염 연구는 사람에게 바로 적용해도 되나요?라는 질문은 감염·염증 상담에서 자주 나오는 주제입니다. 감염·염증은 열, 통증 위치, 기간, 항생제 복용, 혈액검사 수치, 탈수·호흡곤란 같은 경고 신호를 함께 봐야 합니다. 꿀정보는 ‘감태’라는 식품명만 보지 말고 추출물인지, 지표성분과 1일 섭취량이 표시됐는지 확인하는 것입니다. 건강기능식품 원료 정보는 참고자료이며 의료진 상담을 대신하지 않습니다...]]></description>
+    <description><![CDATA[감염/염증 · 플로로탄닌의 항염 연구는 사람에게 바로 적용해도 되나요?라는 질문은 감염·염증 상담에서 자주 나오는 주제입니다. 감염·염증은 열, 통증 위치, 기간, 항생제 복용, 혈액검사 수치, 탈수·호흡곤란 같은 경고 신호를 함께 봐야 합니다. 꿀정보는 ‘감태’라는 식품명만 보지 말고 추출물인지, 지표성분과 1일 섭취량이 표시됐는지 확인하는 것입니다. 건강기능식품 원료 정보는 참고자료일 뿐, 약이나 표준치료를 대체한다고 해석하면 안 됩니다. 실제로는 개인의 병력, 검사 수치...]]></description>
     <category>감염/염증</category>
     <pubDate>Wed, 27 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/q/플로로탄닌의-항염-연구는-사람에게-바로-적용해도-되나요</guid>
@@ -954,7 +954,7 @@
   <item>
     <title>베타글루칸은 면역력에 실제로 도움이 되나요?</title>
     <link>https://phlorotannin.com/q/베타글루칸은-면역력에-실제로-도움이-되나요</link>
-    <description><![CDATA[감염/염증 · 베타글루칸은 면역력에 실제로 도움이 되나요?라는 질문은 감염·염증 상담에서 자주 나오는 주제입니다. 감염·염증은 열, 통증 위치, 기간, 항생제 복용, 혈액검사 수치, 탈수·호흡곤란 같은 경고 신호를 함께 봐야 합니다. 꿀정보는 제품명보다 기능성 원료명, 1일 섭취량, 주의사항, 복용 중인 약과의 겹침을 보는 것입니다. 건강기능식품 원료 정보는 참고자료일 뿐, 약이나 표준치료를 대체한다고 해석하면 안 됩니다. 실제로...]]></description>
+    <description><![CDATA[감염/염증 · 베타글루칸은 면역력에 실제로 도움이 되나요?라는 질문은 감염·염증 상담에서 자주 나오는 주제입니다. 감염·염증은 열, 통증 위치, 기간, 항생제 복용, 혈액검사 수치, 탈수·호흡곤란 같은 경고 신호를 함께 봐야 합니다. 꿀정보는 제품명보다 기능성 원료명, 1일 섭취량, 주의사항, 복용 중인 약과의 겹침을 보는 것입니다. 건강기능식품 원료 정보는 참고자료일 뿐, 약이나 표준치료를 대체한다고 해석하면 안 됩니다. 실제로는 개인의 병력, 검사 수치, 복용약, 치료 단...]]></description>
     <category>감염/염증</category>
     <pubDate>Wed, 27 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/q/베타글루칸은-면역력에-실제로-도움이-되나요</guid>
@@ -970,7 +970,7 @@
   <item>
     <title>백신 접종 전후 건강기능식품을 중단해야 하나요?</title>
     <link>https://phlorotannin.com/q/백신-접종-전후-건강기능식품을-중단해야-하나요</link>
-    <description><![CDATA[감염/염증 · 백신 접종 전후 건강기능식품을 중단해야 하나요?라는 질문은 감염·염증 상담에서 자주 나오는 주제입니다. 감염·염증은 열, 통증 위치, 기간, 항생제 복용, 혈액검사 수치, 탈수·호흡곤란 같은 경고 신호를 함께 봐야 합니다. 꿀정보는 제품명보다 기능성 원료명, 1일 섭취량, 주의사항, 복용 중인 약과의 겹침을 보는 것입니다. 건강기능식품 원료 정보는 참고자료일 뿐, 약이나 표준치료를 대체한다고 해석하면 안 됩니다. 실...]]></description>
+    <description><![CDATA[감염/염증 · 백신 접종 전후 건강기능식품을 중단해야 하나요?라는 질문은 감염·염증 상담에서 자주 나오는 주제입니다. 감염·염증은 열, 통증 위치, 기간, 항생제 복용, 혈액검사 수치, 탈수·호흡곤란 같은 경고 신호를 함께 봐야 합니다. 꿀정보는 제품명보다 기능성 원료명, 1일 섭취량, 주의사항, 복용 중인 약과의 겹침을 보는 것입니다. 건강기능식품 원료 정보는 참고자료일 뿐, 약이나 표준치료를 대체한다고 해석하면 안 됩니다. 실제로는 개인의 병력, 검사 수치, 복용약, 치료...]]></description>
     <category>감염/염증</category>
     <pubDate>Wed, 27 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/q/백신-접종-전후-건강기능식품을-중단해야-하나요</guid>
@@ -986,7 +986,7 @@
   <item>
     <title>만성염증을 낮춘다는 영양제는 어떻게 봐야 하나요?</title>
     <link>https://phlorotannin.com/q/만성염증을-낮춘다는-영양제는-어떻게-봐야-하나요</link>
-    <description><![CDATA[감염/염증 · 만성염증을 낮춘다는 영양제는 어떻게 봐야 하나요?라는 질문은 감염·염증 상담에서 자주 나오는 주제입니다. 감염·염증은 열, 통증 위치, 기간, 항생제 복용, 혈액검사 수치, 탈수·호흡곤란 같은 경고 신호를 함께 봐야 합니다. 꿀정보는 제품명보다 기능성 원료명, 1일 섭취량, 주의사항, 복용 중인 약과의 겹침을 보는 것입니다. 건강기능식품 원료 정보는 참고자료일 뿐, 약이나 표준치료를 대체한다고 해석하면 안 됩니다. ...]]></description>
+    <description><![CDATA[감염/염증 · 만성염증을 낮춘다는 영양제는 어떻게 봐야 하나요?라는 질문은 감염·염증 상담에서 자주 나오는 주제입니다. 감염·염증은 열, 통증 위치, 기간, 항생제 복용, 혈액검사 수치, 탈수·호흡곤란 같은 경고 신호를 함께 봐야 합니다. 꿀정보는 제품명보다 기능성 원료명, 1일 섭취량, 주의사항, 복용 중인 약과의 겹침을 보는 것입니다. 건강기능식품 원료 정보는 참고자료일 뿐, 약이나 표준치료를 대체한다고 해석하면 안 됩니다. 실제로는 개인의 병력, 검사 수치, 복용약, 치...]]></description>
     <category>감염/염증</category>
     <pubDate>Wed, 27 May 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/q/만성염증을-낮춘다는-영양제는-어떻게-봐야-하나요</guid>
