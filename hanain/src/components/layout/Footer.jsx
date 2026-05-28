@@ -244,7 +244,7 @@ export default function Footer() {
                     className="w-full border border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white px-3.5 py-2.5 rounded-md text-[13px] font-medium transition-colors"
                   />
                   <a
-                    href="https://naver.me/xyTAemD0"
+                    href="https://smartstore.naver.com/meul777/products/11645413264"
                     target="_blank"
                     rel="nofollow noopener sponsored"
                     className="flex items-center justify-center gap-2 w-full border border-gray-200 bg-white text-gray-700 hover:border-gray-900 hover:text-gray-900 px-3.5 py-2.5 rounded-md text-[13px] font-medium transition-colors"
