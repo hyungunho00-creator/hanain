@@ -243,14 +243,16 @@ export default function Footer() {
                     smsBody="[플로로탄닌 자료/상담 문의] 플로로탄닌 정보와 상담 안내를 받고 싶습니다."
                     className="w-full border border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white px-3.5 py-2.5 rounded-md text-[13px] font-medium transition-colors"
                   />
-                  <Link
-                    to="/blog/meulssori-patient-meal-delivery-service-introduction"
+                  <a
+                    href="https://naver.me/xyTAemD0"
+                    target="_blank"
+                    rel="nofollow noopener sponsored"
                     className="flex items-center justify-center gap-2 w-full border border-gray-200 bg-white text-gray-700 hover:border-gray-900 hover:text-gray-900 px-3.5 py-2.5 rounded-md text-[13px] font-medium transition-colors"
                   >
                     <Utensils className="w-4 h-4 flex-shrink-0" strokeWidth={1.8} aria-hidden="true" />
                     <span>건강한 반찬 정보 보기</span>
                     <ArrowUpRight className="w-3.5 h-3.5 flex-shrink-0" strokeWidth={1.8} aria-hidden="true" />
-                  </Link>
+                  </a>
                 </div>
                 <div>
                   <div className="text-gray-400 text-xs mb-1.5">운영 시간</div>
