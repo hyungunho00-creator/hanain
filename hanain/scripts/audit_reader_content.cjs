@@ -8,6 +8,10 @@ const forbidden = [
   { label: 'SEO direction wording', pattern: /SEO\s*방향|검색\s*의도|상위노출|선점/g },
   { label: 'business planning wording', pattern: /사업계획|내부\s*전략|작업\s*지시/g },
   { label: 'reader-facing strategy wording', pattern: /제품\s*권유|병원정보\s*글|구매보다|내\s*상황\s*정리|자료\s*요청으로\s*연결/g },
+  { label: 'forced inquiry wording', pattern: /추가\s*정보는\s*문의\s*주세요|자료\s*요청|연락\s*주세요/g },
+  { label: 'forced phlorotannin bridge', pattern: /자연스럽게\s*만나게\s*되는\s*소재|보완적으로\s*활용될\s*수\s*있는\s*해양\s*폴리페놀|주목받는\s*천연\s*소재가\s*바로|자연\s*유래\s*소재인\.?|자연\s*소재\s*플로로탄닌의\s*역할|플로로탄닌\s*파트너스에서/g },
+  { label: 'forced process promotion', pattern: /MOP\s*공정으로\s*추출한|MOP\s*공정에\s*대한/g },
+  { label: 'duplicate hospital template', pattern: /진료\s*전\s*먼저\s*정리할\s*것|건강식품원료는\s*이렇게\s*말하면\s*안전합니다/g },
 ];
 
 const targetFiles = [];
@@ -28,6 +32,7 @@ function addDir(dirPath, extension) {
 }
 
 addDir(path.join(root, 'src', 'data', 'insights', 'posts'), '.jsx');
+addFile(path.join(root, 'src', 'data', 'qa.json'));
 addFile(path.join(root, 'public', 'qa.json'));
 addFile(path.join(root, 'public', 'rss.xml'));
 addFile(path.join(root, 'public', 'sitemap.xml'));
