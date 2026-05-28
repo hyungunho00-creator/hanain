@@ -62,6 +62,16 @@ def fmt_rfc822(dt_str):
     except:
         return datetime.now(timezone.utc).strftime("%a, %d %b %Y %H:%M:%S +0000")
 
+def absolute_url(url):
+    if not url:
+        return f"{SITE_URL}/og-image.png"
+    url = str(url)
+    if url.startswith(("http://", "https://")):
+        return url
+    if url.startswith("/"):
+        return f"{SITE_URL}{url}"
+    return f"{SITE_URL}/{url}"
+
 # enclosure MIME 매핑 — 확장자 기반 동적 결정
 # GSC가 MIME 불일치를 오류로 잡는 것을 방지 (RSS 2.0 spec + Atom enclosure 검증 통과)
 _MIME_BY_EXT = {
@@ -373,7 +383,7 @@ print(f"  📄 블로그 포스트 {len(posts)}개 sitemap 추가 중...")
 for post in posts:
     slug      = post.get("slug", "")
     title     = esc(post.get("title", ""))
-    og_image  = esc(post.get("og_image") or f"{SITE_URL}/og-image.png")
+    og_image  = esc(absolute_url(post.get("og_image")))
     lastmod   = fmt_date(post.get("updated_at") or post.get("created_at", ""))
     if not slug:
         continue
@@ -425,7 +435,7 @@ for post in posts[:50]:  # 최신 50개
     excerpt = esc(post.get("excerpt", "")[:300])
     cat_id  = post.get("category", "general")
     cat_name = esc(CAT_NAMES.get(cat_id, cat_id))
-    raw_og  = post.get("og_image") or f"{SITE_URL}/og-image.png"
+    raw_og  = absolute_url(post.get("og_image"))
     og_img  = esc(raw_og)
     og_mime = mime_for_url(raw_og)  # 확장자 기반 MIME (webp/png/jpeg 자동 매핑)
     pub_date = fmt_rfc822(post.get("created_at", ""))
