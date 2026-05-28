@@ -53,7 +53,7 @@ export const FUNCTIONAL_INGREDIENT_CONFIGS = [
       '변비가 섬유 부족인지, 운동량·수분·약 부작용 때문인지 어떻게 구분하나요?',
     ],
     phlorotanninBridge: '플로로탄닌은 해양 폴리페놀 관점에서 항산화·대사 연구가 이어지는 원료이고, 차전자피는 장내에서 물리적으로 작동하는 섬유 원료입니다. 둘을 같은 “건강식품”으로 뭉뚱그리기보다 작용 위치가 다르다는 점을 이해하면 선택이 훨씬 차분해집니다.',
-    mealBridge: '식사량과 배변을 함께 기록해야 하는 돌봄 상황이라면 맛있으리 식단 상담처럼 식사 기록을 남기는 과정이 도움이 됩니다. 제품을 먼저 고르기보다 하루 물 섭취량, 식사량, 배변 패턴을 먼저 적어 두세요.',
+    mealBridge: '식사량과 배변을 함께 기록해야 하는 돌봄 상황이라면 건강한 반찬 정보처럼 식사 기록을 남기는 과정이 도움이 됩니다. 제품을 먼저 고르기보다 하루 물 섭취량, 식사량, 배변 패턴을 먼저 적어 두세요.',
     sourceLinks: [
       ['PubMed: Plantago 섭취와 콜레스테롤 메타분석', 'https://pubmed.ncbi.nlm.nih.gov/38688104/'],
       ['FDA/eCFR: soluble fiber health claim', 'https://ecfr.io/Title-21/Section-101.81'],
@@ -112,7 +112,7 @@ export const FUNCTIONAL_INGREDIENT_CONFIGS = [
       '제가 먹는 보충제 중 간수치에 영향을 줄 수 있는 성분이 있나요?',
     ],
     phlorotanninBridge: '플로로탄닌과 실리마린은 모두 폴리페놀 연구가 많은 원료이지만, 유래와 인체 근거의 질문이 다릅니다. 플로로탄닌은 갈조류 유래 해양 폴리페놀, 실리마린은 밀크씨슬 유래 식물성 복합체로 구분해 읽어야 합니다.',
-    mealBridge: '지방간이나 간수치 상담에서는 식사 기록이 검사 해석에 직접 도움이 됩니다. 맛있으리 식단 상담을 활용한다면 “무엇을 먹었는지”보다 음주, 야식, 단 음료, 단백질 섭취량을 같이 적어 두는 방식이 좋습니다.',
+    mealBridge: '지방간이나 간수치 상담에서는 식사 기록이 검사 해석에 직접 도움이 됩니다. 건강한 반찬 정보 글을 활용한다면 “무엇을 먹었는지”보다 음주, 야식, 단 음료, 단백질 섭취량을 같이 적어 두는 방식이 좋습니다.',
     sourceLinks: [
       ['PubMed: 2025 Cochrane 실리마린 리뷰', 'https://pubmed.ncbi.nlm.nih.gov/40552569/'],
       ['NCCIH: Milk Thistle', 'https://www.nccih.nih.gov/health/milk-thistle'],
@@ -171,7 +171,7 @@ export const FUNCTIONAL_INGREDIENT_CONFIGS = [
       '운동 전 제품에 카페인이 섞여 있는데 혈압과 수면에 문제가 없을까요?',
     ],
     phlorotanninBridge: '크레아틴은 운동 에너지 체계와 근육 기능을 중심으로 읽고, 플로로탄닌은 해양 폴리페놀의 항산화·대사 연구 맥락에서 읽는 것이 자연스럽습니다. 두 원료를 같은 목적의 대체재처럼 보지 않는 것이 중요합니다.',
-    mealBridge: '근감소 위험이 있는 사람은 보충제보다 실제 식사량이 더 큰 변수일 수 있습니다. 맛있으리 상담에서 식사량과 단백질 섭취를 정리하면 크레아틴이 필요한 상황인지도 더 현실적으로 판단할 수 있습니다.',
+    mealBridge: '근감소 위험이 있는 사람은 보충제보다 실제 식사량이 더 큰 변수일 수 있습니다. 건강한 반찬 정보 글에서 식사량과 단백질 섭취를 정리하면 크레아틴이 필요한 상황인지도 더 현실적으로 판단할 수 있습니다.',
     sourceLinks: [
       ['NIH ODS: Exercise and Athletic Performance Fact Sheet', 'https://ods.od.nih.gov/factsheets/ExerciseAndAthleticPerformance-HealthProfessional/'],
       ['PubMed: Creatine and Cognition in Aging', 'https://pubmed.ncbi.nlm.nih.gov/40971619/'],
@@ -230,7 +230,7 @@ export const FUNCTIONAL_INGREDIENT_CONFIGS = [
       '재활운동은 어떤 강도부터 시작해야 안전한가요?',
     ],
     phlorotanninBridge: 'HMB가 근육 기능과 회복의 질문이라면, 플로로탄닌은 해양 폴리페놀의 산화스트레스와 대사 연구를 보는 질문입니다. 고령자 건강 글에서는 “원료 이름”보다 체중, 식사량, 운동 가능 범위를 먼저 연결해야 합니다.',
-    mealBridge: '식사량이 줄어든 보호자 상황에서는 맛있으리 식단 상담처럼 먹은 양과 남긴 양을 기록하는 일이 실제로 중요합니다. HMB를 고민하기 전, 단백질 반찬을 얼마나 먹는지부터 확인하세요.',
+    mealBridge: '식사량이 줄어든 보호자 상황에서는 건강한 반찬 정보처럼 먹은 양과 남긴 양을 기록하는 일이 실제로 중요합니다. HMB를 고민하기 전, 단백질 반찬을 얼마나 먹는지부터 확인하세요.',
     sourceLinks: [
       ['PubMed: HMB와 저항운동 메타분석', 'https://pubmed.ncbi.nlm.nih.gov/41934514/'],
       ['PubMed: 근감소증 환자 HMB 메타분석', 'https://pubmed.ncbi.nlm.nih.gov/39999663/'],
@@ -289,7 +289,7 @@ export const FUNCTIONAL_INGREDIENT_CONFIGS = [
       '배란 확인, 갑상선 검사, 프로락틴 검사가 필요한 상황인가요?',
     ],
     phlorotanninBridge: '이노시톨은 여성 대사·생식 내분비 문맥에서 읽고, 플로로탄닌은 해양 폴리페놀의 대사·산화스트레스 연구로 읽습니다. 두 주제를 함께 다룰 때는 “혈당”이라는 단어만 겹친다고 같은 목적이라고 말하지 않는 것이 중요합니다.',
-    mealBridge: 'PCOS 관리에서는 식사 패턴과 수면 기록이 원료만큼 중요합니다. 맛있으리 식단 상담을 참고한다면 끼니 거름, 야식, 단 음료, 단백질 섭취를 함께 기록하는 방식이 좋습니다.',
+    mealBridge: 'PCOS 관리에서는 식사 패턴과 수면 기록이 원료만큼 중요합니다. 건강한 반찬 정보 글을 참고한다면 끼니 거름, 야식, 단 음료, 단백질 섭취를 함께 기록하는 방식이 좋습니다.',
     sourceLinks: [
       ['PubMed: 2026 PCOS 이노시톨 umbrella review', 'https://pubmed.ncbi.nlm.nih.gov/41757236/'],
       ['PubMed: 2024 PCOS 가이드라인 근거 메타분석', 'https://pubmed.ncbi.nlm.nih.gov/38163998/'],
@@ -348,7 +348,7 @@ export const FUNCTIONAL_INGREDIENT_CONFIGS = [
       '현재 약 중 갑상선약이나 혈당약과 간격을 띄워야 할 것이 있나요?',
     ],
     phlorotanninBridge: '알파리포산과 플로로탄닌은 모두 산화스트레스라는 단어로 연결될 수 있지만, 연구 맥락은 다릅니다. 알파리포산은 당뇨성 신경병증 같은 임상 증상 문맥이 강하고, 플로로탄닌은 해양 폴리페놀의 대사·염증 연구로 따로 읽어야 합니다.',
-    mealBridge: '당뇨성 신경병증은 혈당 변동과 식사 패턴이 중요합니다. 맛있으리 식단 상담을 활용한다면 아침 공복, 식후 2시간, 야식 여부를 함께 기록해 의료진에게 보여주는 방식이 좋습니다.',
+    mealBridge: '당뇨성 신경병증은 혈당 변동과 식사 패턴이 중요합니다. 건강한 반찬 정보 글을 활용한다면 아침 공복, 식후 2시간, 야식 여부를 함께 기록해 의료진에게 보여주는 방식이 좋습니다.',
     sourceLinks: [
       ['PubMed: 2026 알파리포산·당뇨성 신경병증 메타분석', 'https://pubmed.ncbi.nlm.nih.gov/41619689/'],
       ['MedlinePlus: Diabetic neuropathy', 'https://medlineplus.gov/diabeticnerveproblems.html'],
@@ -407,7 +407,7 @@ export const FUNCTIONAL_INGREDIENT_CONFIGS = [
       '치매 예방 목적으로 먹는 것이 제 상황에 의미가 있나요?',
     ],
     phlorotanninBridge: '은행잎과 플로로탄닌은 모두 인지 건강 글에서 만날 수 있지만, 은행잎은 오래 연구된 식물 추출물, 플로로탄닌은 갈조류 유래 해양 폴리페놀입니다. 인지 건강에서는 원료 이름보다 수면, 운동, 혈압, 혈당, 약물 검토가 먼저입니다.',
-    mealBridge: '기억력 저하가 식사량 감소나 체중감소와 함께 온다면 영양 상태도 봐야 합니다. 맛있으리 상담을 참고할 때는 끼니 횟수, 단백질 섭취, 수분 섭취를 같이 기록하세요.',
+    mealBridge: '기억력 저하가 식사량 감소나 체중감소와 함께 온다면 영양 상태도 봐야 합니다. 건강한 반찬 정보 글을 참고할 때는 끼니 횟수, 단백질 섭취, 수분 섭취를 같이 기록하세요.',
     sourceLinks: [
       ['NCCIH: Ginkgo', 'https://www.nccih.nih.gov/health/ginkgo'],
       ['PubMed: Bacopa and Ginkgo network meta-analysis', 'https://pubmed.ncbi.nlm.nih.gov/41678913/'],
@@ -466,7 +466,7 @@ export const FUNCTIONAL_INGREDIENT_CONFIGS = [
       '현재 먹는 전립선약 또는 탈모약과 보충제를 함께 먹어도 되나요?',
     ],
     phlorotanninBridge: '쏘팔메토는 전립선·배뇨 문맥의 식물 원료이고, 플로로탄닌은 갈조류 유래 해양 폴리페놀입니다. 남성 건강 글에서는 원료보다 증상 기록과 검사 기준이 먼저라는 점이 공통입니다.',
-    mealBridge: '야간뇨가 있으면 저녁 수분, 술, 카페인, 짠 음식도 함께 봐야 합니다. 맛있으리 상담을 참고한다면 저녁 식사 시간과 국물 섭취량을 기록하는 방식이 도움이 됩니다.',
+    mealBridge: '야간뇨가 있으면 저녁 수분, 술, 카페인, 짠 음식도 함께 봐야 합니다. 건강한 반찬 정보 글을 참고한다면 저녁 식사 시간과 국물 섭취량을 기록하는 방식이 도움이 됩니다.',
     sourceLinks: [
       ['NCCIH: Saw Palmetto', 'https://www.nccih.nih.gov/health/saw-palmetto'],
       ['PubMed: Serenoa repens 최신 리뷰', 'https://pubmed.ncbi.nlm.nih.gov/42023747/'],
@@ -525,7 +525,7 @@ export const FUNCTIONAL_INGREDIENT_CONFIGS = [
       '기억력 문제가 일상 기능 저하로 이어지는 단계인지 확인해야 하나요?',
     ],
     phlorotanninBridge: '바코파와 플로로탄닌은 모두 인지 건강 글에서 만날 수 있지만, 바코파는 식물 추출물, 플로로탄닌은 해양 폴리페놀입니다. 인지 건강 콘텐츠에서는 기전보다 실제 생활 지표와 안전성을 먼저 봐야 합니다.',
-    mealBridge: '집중력은 식사 리듬과도 연결됩니다. 맛있으리 상담을 참고한다면 아침 결식, 단 음료, 야식, 카페인 섭취 시간을 함께 기록해 보세요.',
+    mealBridge: '집중력은 식사 리듬과도 연결됩니다. 건강한 반찬 정보 글을 참고한다면 아침 결식, 단 음료, 야식, 카페인 섭취 시간을 함께 기록해 보세요.',
     sourceLinks: [
       ['PubMed: Bacopa and Ginkgo network meta-analysis', 'https://pubmed.ncbi.nlm.nih.gov/41678913/'],
       ['PubMed: Bacopa neuroprotective systematic review', 'https://pubmed.ncbi.nlm.nih.gov/38671841/'],
@@ -584,7 +584,7 @@ export const FUNCTIONAL_INGREDIENT_CONFIGS = [
       '수면 일지는 어떤 항목을 적어 오면 도움이 되나요?',
     ],
     phlorotanninBridge: 'GABA와 감태추출물, 플로로탄닌은 수면 글에서 함께 언급될 수 있지만 작용 설명이 다릅니다. 원료를 비교할 때는 “잠이 잘 온다”가 아니라 잠드는 시간, 중간 각성, 다음날 졸림을 나눠 기록해야 합니다.',
-    mealBridge: '수면은 저녁 식사 시간과 음주, 카페인, 야식의 영향을 받습니다. 맛있으리 상담을 참고한다면 수면 일지와 함께 저녁 식사 기록을 남겨 보는 것이 좋습니다.',
+    mealBridge: '수면은 저녁 식사 시간과 음주, 카페인, 야식의 영향을 받습니다. 건강한 반찬 정보 글을 참고한다면 수면 일지와 함께 저녁 식사 기록을 남겨 보는 것이 좋습니다.',
     sourceLinks: [
       ['PubMed: 2025 수면 보충제 메타분석', 'https://pubmed.ncbi.nlm.nih.gov/41470897/'],
       ['PubMed: GABA 스트레스·수면 체계적 리뷰', 'https://pubmed.ncbi.nlm.nih.gov/33041752/'],

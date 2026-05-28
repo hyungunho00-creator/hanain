@@ -407,6 +407,70 @@ const CATEGORY_POST_CONFIGS = [
       ['ACS Survivor Guideline page', 'https://www.cancer.org/cancer/supportive-care/nutrition-activity-with-cancer/acs-nutrition-and-physical-activity-guideline-for-survivors.html'],
     ],
   },
+  {
+    slug: 'gamtae-extract-label-reading-dieckol-checklist-2026',
+    title: '감태추출물 라벨 읽기 2026: 디에콜·1일 섭취량 체크리스트',
+    excerpt: '감태추출물 제품을 볼 때 원료명, 지표성분, 1일 섭취량을 어떻게 확인할지 정리한 정보 가이드입니다.',
+    category: 'buying-guide',
+    tags: ['감태', '감태추출물', '디에콜', '씨폴리놀', '라벨읽기'],
+    problem: '감태 관련 검색은 많지만, 실제 선택 단계에서 “원료명만 확인하고 끝내는” 경우가 많아 정보 누락이 생깁니다.',
+    context: '실무에서는 효능 문구보다 원재료명, 지표성분(예: 디에콜), 1일 섭취량, 복용 중인 약과의 충돌 가능성을 함께 확인하는 접근이 더 안전합니다.',
+    tldr: [
+      '제품 앞면 문구보다 뒷면 원재료명과 기능성 표시를 먼저 확인하세요.',
+      '디에콜 또는 플로로탄닌 표준화 표기가 있는지, 1일 섭취량 기준이 명확한지 점검하세요.',
+      '수면제·항응고제·갑상선 관련 치료 중이면 상담 후 시작하는 편이 안전합니다.',
+    ],
+    checklist: [
+      '원료명이 감태(원물)인지 감태추출물(표준화 원료)인지 구분',
+      '지표성분(디에콜/플로로탄닌)과 함량 표시 확인',
+      '1일 섭취량과 섭취 시점(아침/저녁) 메모',
+      '복용 중인 약·보충제 목록과 시작일 기록',
+      '2~4주 단위로 체감/수면/소화 변화를 같은 형식으로 기록',
+    ],
+    questions: [
+      '현재 복용약과 함께 시작해도 해석이 꼬이지 않을까요?',
+      '내 생활 패턴(수면·식사)에서 권장 섭취 시점은 언제가 적절한가요?',
+      '중단하거나 용량을 조정해야 할 신호는 무엇인가요?',
+    ],
+    blindspot: '“감태”라는 단어가 들어가도 제품 성격은 크게 다를 수 있습니다. 표준화 정보 없이 체감만으로 판단하면 나중에 비교가 어려워집니다.',
+    actionPlan: ['성분표 캡처', '복용 목록 정리', '2주 기록 후 상담'],
+    sources: [
+      ['EFSA Novel Food Opinion on Ecklonia cava phlorotannins (2017)', 'https://www.efsa.europa.eu/en/efsajournal/pub/5003'],
+      ['Mar Drugs 2024 pharmacokinetics report summary page', 'https://www.mdpi.com/journal/marinedrugs'],
+    ],
+  },
+  {
+    slug: 'gamtae-iodine-thyroid-medication-safety-check-2026',
+    title: '감태·요오드·갑상선 약 복용 시 확인할 점 2026',
+    excerpt: '감태 섭취 전 요오드 노출과 갑상선 치료 중 주의 포인트를 생활관리 관점에서 정리했습니다.',
+    category: 'safety-precautions',
+    tags: ['감태', '요오드', '갑상선', '안전성', '복용주의'],
+    problem: '감태는 해조류 계열이어서 요오드 관련 질문이 많은데, 검색 결과가 단편적이라 불안만 커지는 경우가 잦습니다.',
+    context: '안전 정보의 핵심은 “금지/허용” 이분법보다 현재 질환·복용약·검사 일정과 함께 노출량을 관리하는 것입니다.',
+    tldr: [
+      '갑상선 질환 치료 중이면 새 원료 시작 전 의료진 확인이 우선입니다.',
+      '요오드 노출은 감태 제품뿐 아니라 다시마·미역 섭취량까지 함께 봐야 합니다.',
+      '시작 후 이상 신호(두근거림, 체중 급변, 피로 악화)는 기록해 상담에 바로 공유하세요.',
+    ],
+    checklist: [
+      '현재 갑상선 진단명과 복용약(레보티록신 등) 정리',
+      '해조류 섭취 빈도(국/반찬/추출물) 주간 기록',
+      '제품 라벨의 1일 섭취량·주의문구 확인',
+      '검사 일정(TSH, free T4)과 복용 시작일 같은 메모에 기록',
+      '불편 신호 발생 시 즉시 중단 후 상담',
+    ],
+    questions: [
+      '현재 치료 단계에서 감태추출물을 추가해도 괜찮을까요?',
+      '요오드 섭취량 관리는 식사와 제품 중 어디를 먼저 조정해야 하나요?',
+      '추적 검사 시점은 언제가 적절한가요?',
+    ],
+    blindspot: '제품 하나만 보지 말고 식사 전체의 해조류 섭취량을 함께 봐야 합니다. 생활기록 없이 체감만 추적하면 원인 분리가 어렵습니다.',
+    actionPlan: ['기존 식사·약 기록 확보', '의료진 확인 후 시작', '2~4주 모니터링'],
+    sources: [
+      ['American Thyroid Association - Iodine and thyroid health', 'https://www.thyroid.org/iodine-deficiency/'],
+      ['NHS Thyroid function tests overview', 'https://www.nhs.uk/conditions/thyroid-function-tests/'],
+    ],
+  },
 ]
 
 export const LOCAL_CATEGORY_BLOG_POSTS = CATEGORY_POST_CONFIGS.map((c, idx) => {

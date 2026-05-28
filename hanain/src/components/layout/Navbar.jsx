@@ -18,7 +18,7 @@ const NAV_LINKS = [
 /* 외부 커뮤니티 링크 (네이버 카페/밴드) — 절제된 다크 톤으로 통일 */
 const EXTERNAL_LINKS = [
   {
-    href:  'https://naver.me/x4lFCvwV',
+    href:  'https://cafe.naver.com/phlorotannin',
     label: '네이버 카페',
     shortLabel: '네이버 카페',
     desk:  'bg-white/5 hover:bg-white/10 text-white border border-white/15',

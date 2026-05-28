@@ -143,12 +143,12 @@ export default {
         }}
       >
         <a
-          href="https://naver.me/GO6hNgaO"
+          href="https://smartstore.naver.com/fortimel/products/13335759907"
           target="_blank"
           rel="nofollow noopener sponsored"
           style={{ color: '#0D1B3E', textDecoration: 'none', fontSize: 15, letterSpacing: '0.02em' }}
         >
-          맛있으리 식단관리와 플로로탄닌 정보
+          건강한 반찬 정보 보기
           <span style={{ color: '#B8953A', fontFamily: 'Georgia, serif', marginLeft: 6 }}>&rarr;</span>
         </a>
       </p>

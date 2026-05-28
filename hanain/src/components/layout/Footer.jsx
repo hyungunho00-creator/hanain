@@ -74,10 +74,10 @@ export default function Footer() {
 
   // SEO 핵심 자산 (절대 보존) — sameAs 5채널, topTags 122 nav, 카테고리 13건
   const SOCIAL_LINKS = [
-    { href: 'https://naver.me/x4lFCvwV',          label: '네이버 카페',  Icon: MessageSquare, aria: '플로로탄닌 네이버 카페로 이동' },
+    { href: 'https://cafe.naver.com/phlorotannin', label: '네이버 카페',  Icon: MessageSquare, aria: '플로로탄닌 네이버 카페로 이동' },
     { href: 'https://band.us/n/a6aebc75vch6U',    label: '네이버 밴드',  Icon: Megaphone,     aria: '플로로탄닌 네이버 밴드로 이동' },
     { href: 'https://youtube.com/@phlorotannin',  label: '유튜브',       Icon: PlayCircle,    aria: '플로로탄닌 공식 유튜브 채널로 이동' },
-    { href: 'https://naver.me/5sunayUx',          label: '네이버 클립',  Icon: Film,          aria: '플로로탄닌 네이버 클립으로 이동' },
+    { href: 'https://clip.naver.com/@phlorotannin', label: '네이버 클립',  Icon: Film,        aria: '플로로탄닌 네이버 클립으로 이동' },
     { href: 'https://m.blog.naver.com/phlorotannin', label: '네이버 블로그', Icon: BookOpen,   aria: '플로로탄닌랩 네이버 블로그로 이동' },
   ]
 
@@ -139,10 +139,10 @@ export default function Footer() {
                   alternateName: 'Phlorotannin Partners',
                   url: 'https://phlorotannin.com',
                   sameAs: [
-                    'https://naver.me/x4lFCvwV',
+                    'https://cafe.naver.com/phlorotannin',
                     'https://band.us/n/a6aebc75vch6U',
                     'https://youtube.com/@phlorotannin',
-                    'https://naver.me/5sunayUx',
+                    'https://clip.naver.com/@phlorotannin',
                     'https://blog.naver.com/phlorotannin',
                   ],
                 }),

@@ -5,15 +5,15 @@ const PUB = '2026-05-26'
 
 export default {
   slug: 'meulssori-patient-meal-delivery-order-memo-examples',
-  title: '맛있으리 환자식 활용법: 보호자 주문 메모 예시',
+  title: '환자식 반찬 활용법: 보호자 주문 메모 예시',
   description:
-    '맛있으리 환자식 정기배송을 보호자가 더 잘 활용할 수 있도록 암환자, 당뇨환자, 회복기 환자별 주문 메모 예시를 정리했습니다.',
-  keywords: '맛있으리,환자식 정기배송,보호자 주문 메모,암환자식단배달,당뇨환자식단배달',
+    '환자식 반찬 정기배송을 보호자가 더 잘 활용할 수 있도록 암환자, 당뇨환자, 회복기 환자별 주문 메모 예시를 정리했습니다.',
+  keywords: '환자식 반찬,환자식 정기배송,보호자 주문 메모,암환자식단배달,당뇨환자식단배달',
   publishedAt: PUB,
   updatedAt: PUB,
   category: 'lifestyle',
   categoryLabel: '생활·복용',
-  tags: ['맛있으리', '환자식 정기배송', '주문 메모', '보호자 식단'],
+  tags: ['환자식 반찬', '환자식 정기배송', '주문 메모', '보호자 식단'],
   readingMinutes: 6,
   referenceIds: [],
   tldr: [
@@ -27,16 +27,16 @@ export default {
       a: '길 필요는 없습니다. 환자가 못 먹는 음식, 필요한 식감, 제한해야 할 양념, 질환별 주의사항 네 가지만 짧게 적으면 충분합니다.',
     },
     {
-      q: '맛있으리 환자식은 ONS와 같이 써도 되나요?',
+      q: '환자식 반찬은 ONS와 같이 써도 되나요?',
       a: '식사량이 부족한 회복기에는 환자식 반찬과 경구영양보충제를 함께 검토할 수 있습니다. 다만 당뇨·신장질환이 있으면 제품 성분을 의료진과 확인하는 것이 안전합니다.',
     },
   ],
   body: (
     <>
-      <H2 id="role">맛있으리는 어떤 상황에서 도움이 되나</H2>
+      <H2 id="role">환자식 반찬 정보는 어떤 상황에서 도움이 되나</H2>
       <P speakable>
         보호자가 매일 장을 보고, 조리하고, 환자 반응까지 확인하는 일은 오래 지속하기 어렵습니다.
-        맛있으리 같은 환자식 정기배송은 식단 전체를 대신한다기보다 보호자의 조리 부담을 줄이고,
+        환자식 반찬 정기배송은 식단 전체를 대신한다기보다 보호자의 조리 부담을 줄이고,
         환자가 먹을 수 있는 반찬 선택지를 안정적으로 확보하는 데 의미가 있습니다.
       </P>
       <P>
@@ -112,12 +112,12 @@ export default {
         }}
       >
         <a
-          href="https://naver.me/xyTAemD0"
+          href="https://smartstore.naver.com/meul777/products/11645413264"
           target="_blank"
           rel="nofollow noopener sponsored"
           style={{ color: '#0D1B3E', textDecoration: 'none', fontSize: 15, letterSpacing: '0.02em' }}
         >
-          환자식 반찬 구성 살펴보기
+          건강한 반찬 정보 보기
           <span style={{ color: '#B8953A', fontFamily: 'Georgia, serif', marginLeft: 6 }}>&rarr;</span>
         </a>
       </p>

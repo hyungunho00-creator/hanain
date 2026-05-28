@@ -5,7 +5,7 @@ import SEOHead from '../components/common/SEOHead'
 import { usePartner } from '../context/PartnerContext'
 import { withRef } from '../lib/partnerRef'
 import PartnerShareBar from '../components/partner/PartnerShareBar'
-import { getPosts, getPostCount, getBlogCategories, getVideosByCategory } from '../lib/supabase'
+import { getPosts, getPostCount, getBlogCategories, getVideosByCategory, expandSearchTerms } from '../lib/supabase'
 import { INSIGHTS_LIST } from '../data/insights'
 
 // Phase 3: Supabase categories 테이블이 1순위, 아래 상수는 DB 실패 시 fallback
@@ -39,6 +39,7 @@ const FALLBACK_CATEGORIES = [
 
 // 모듈 레벨 캐시 — BlogPage에서 DB 페치 후 갱신, PostCard 등이 같은 변수 참조
 let CATEGORIES = FALLBACK_CATEGORIES
+const SEARCH_SUGGESTIONS = ['감태', '감태추출물', '디에콜', 'Ecklonia cava', '씨폴리놀', '감태 수면', '감태 갑상선']
 
 // 카테고리 라벨: 단일 모노 톤(헌법 v3 — 1색 액센트 원칙). 카테고리별 시각 구분은 카드 hover/border로 위임
 const CAT_COLORS = {
@@ -256,14 +257,18 @@ export default function BlogPage() {
       // 안전망: tags 부분 매칭 (서버사이드 contains는 정확매치라 부분 단어 보완)
       let filtered = data
       if (searchQ) {
-        const ql = searchQ.toLowerCase()
+        const terms = expandSearchTerms(searchQ)
         // 서버에서 이미 title/excerpt/tags(정확) 결과 받았으나, 부분 단어로 tag 매칭도 추가 보완
-        const have = new Set(data.map(d => d.id))
         // 클라이언트 사이드 보완은 이미 받은 set 안에서 정렬만 다듬는 정도로 한정
-        filtered = data.filter(p =>
-          p.title?.toLowerCase().includes(ql) ||
-          p.excerpt?.toLowerCase().includes(ql) ||
-          p.tags?.some(t => t.toLowerCase().includes(ql))
+        filtered = data.filter((p) =>
+          terms.some((term) => {
+            const needle = term.toLowerCase()
+            return (
+              p.title?.toLowerCase().includes(needle) ||
+              p.excerpt?.toLowerCase().includes(needle) ||
+              p.tags?.some((t) => t.toLowerCase().includes(needle))
+            )
+          })
         )
         // 검색 결과가 0인데 서버 결과가 있으면 그대로 보여줌 (보완 필터가 너무 엄격하지 않게)
         if (filtered.length === 0 && data.length > 0) filtered = data
@@ -279,6 +284,13 @@ export default function BlogPage() {
     const p = new URLSearchParams(searchParams)
     if (searchInput.trim()) p.set('q', searchInput.trim())
     else p.delete('q')
+    setSearchParams(p)
+  }
+
+  const applySuggestedSearch = (term) => {
+    setSearchInput(term)
+    const p = new URLSearchParams(searchParams)
+    p.set('q', term)
     setSearchParams(p)
   }
 
@@ -340,6 +352,18 @@ export default function BlogPage() {
                 <Search className="w-4 h-4" /> 검색
               </button>
             </form>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {SEARCH_SUGGESTIONS.map((term) => (
+                <button
+                  key={term}
+                  type="button"
+                  onClick={() => applySuggestedSearch(term)}
+                  className="px-2.5 py-1 rounded-md border border-gray-200 bg-white text-[12px] text-gray-600 hover:border-gray-400 hover:text-gray-900 transition-colors"
+                >
+                  {term}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -381,8 +405,9 @@ export default function BlogPage() {
             {cats.map(cat => (
               <button key={cat.id}
                 onClick={() => {
-                  const p = new URLSearchParams()
+                  const p = new URLSearchParams(searchParams)
                   if (cat.id !== 'all') p.set('category', cat.id)
+                  else p.delete('category')
                   setSearchParams(p)
                 }}
                 className={`px-4 py-2 rounded-md text-[13px] font-medium transition-colors ${

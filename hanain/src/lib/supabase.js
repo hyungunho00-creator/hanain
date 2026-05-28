@@ -20,6 +20,65 @@ const LOCAL_BLOG_POSTS = [
   ...LOCAL_CATEGORY_BLOG_POSTS,
 ]
 
+const SEARCH_TERM_GROUPS = [
+  [
+    '감태',
+    '감태추출물',
+    'ecklonia',
+    'ecklonia cava',
+    '디에콜',
+    'dieckol',
+    '에콜',
+    'eckol',
+    '씨폴리놀',
+    'seapolynol',
+    '플로로탄닌',
+    'phlorotannin',
+    '해조류 폴리페놀',
+    '갈조류 폴리페놀',
+  ],
+]
+
+function normalizeSearchTerm(value) {
+  return String(value || '').trim().toLowerCase()
+}
+
+function sanitizeSearchTermForPostgrest(value) {
+  return normalizeSearchTerm(value)
+    .replace(/[%,()]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+}
+
+export function expandSearchTerms(rawQuery) {
+  const base = normalizeSearchTerm(rawQuery)
+  if (!base) return []
+
+  const seeds = new Set([base])
+  for (const token of base.split(/\s+/)) {
+    if (token.length >= 2) seeds.add(token)
+  }
+
+  const expanded = new Set(seeds)
+  for (const seed of seeds) {
+    for (const group of SEARCH_TERM_GROUPS) {
+      const matched = group.some((term) => seed.includes(term) || term.includes(seed))
+      if (matched) group.forEach((term) => expanded.add(term))
+    }
+  }
+
+  return Array.from(expanded).slice(0, 16)
+}
+
+function matchesByTerms(texts, terms) {
+  if (!terms.length) return false
+  return terms.some((needle) => {
+    const normalizedNeedle = normalizeSearchTerm(needle)
+    if (!normalizedNeedle) return false
+    return texts.some((text) => normalizeSearchTerm(text).includes(normalizedNeedle))
+  })
+}
+
 // ── Auth ──────────────────────────────────────────────────
 export async function getCurrentUser() {
   const { data: { user } } = await supabase.auth.getUser()
@@ -186,12 +245,15 @@ function matchesLocalPost(post, { category = null, tag = null, q = null } = {}) 
   if (category && category !== 'all' && post.category !== category) return false
   if (tag && !(post.tags || []).includes(tag)) return false
   if (q && q.trim()) {
-    const needle = q.trim().toLowerCase()
-    return (
-      post.title?.toLowerCase().includes(needle) ||
-      post.excerpt?.toLowerCase().includes(needle) ||
-      post.content?.toLowerCase().includes(needle) ||
-      (post.tags || []).some((t) => t.toLowerCase().includes(needle))
+    const terms = expandSearchTerms(q)
+    return matchesByTerms(
+      [
+        post.title,
+        post.excerpt,
+        post.content,
+        ...(post.tags || []),
+      ],
+      terms
     )
   }
   return true
@@ -217,6 +279,7 @@ function mergeLocalPosts(rows, options = {}) {
 export async function getPosts({ category = null, tag = null, limit = 20, page = 1, q = null } = {}) {
   // 검색 모드일 때는 전체 published 풀에서 찾을 수 있도록 limit을 충분히 키운다.
   const effectiveLimit = q ? Math.max(limit, 500) : limit
+  const searchTerms = expandSearchTerms(q)
   let query = supabase
     .from('posts')
     .select('id,slug,title,excerpt,category,tags,og_image,created_at,view_count')
@@ -229,9 +292,12 @@ export async function getPosts({ category = null, tag = null, limit = 20, page =
   // 검색어가 있으면 PostgREST의 or 필터로 title/excerpt를 ILIKE 검색.
   // tags는 배열이라 ILIKE 직접 불가 → cs(contains) 또는 별도 처리. 여기선 title/excerpt만 서버 처리하고
   // tags는 클라이언트에서 한 번 더 보완 필터링한다 (전체 풀이므로 안전).
-  if (q && q.trim()) {
-    const safe = q.trim().replace(/[%,()]/g, ' ')  // PostgREST 안전 이스케이프
-    query = query.or(`title.ilike.%${safe}%,excerpt.ilike.%${safe}%`)
+  if (searchTerms.length) {
+    const predicates = searchTerms
+      .map((term) => sanitizeSearchTermForPostgrest(term))
+      .filter(Boolean)
+      .flatMap((term) => [`title.ilike.%${term}%`, `excerpt.ilike.%${term}%`])
+    if (predicates.length) query = query.or(predicates.join(','))
   }
 
   const { data, error } = await query
@@ -239,19 +305,28 @@ export async function getPosts({ category = null, tag = null, limit = 20, page =
 
   // tags 보완 매칭 (클라이언트 사이드, 위 or 필터 결과에 누락된 tag-only 매치 글을 합치기 위해
   //   별도 쿼리 한 번 더 실행).
-  if (q && q.trim()) {
-    const safe = q.trim()
-    const tagQuery = supabase
-      .from('posts')
-      .select('id,slug,title,excerpt,category,tags,og_image,created_at,view_count')
-      .eq('status', 'published')
-      .contains('tags', [safe])  // 정확한 태그 매치
-      .order('created_at', { ascending: false })
-      .limit(50)
-    const { data: tagData } = await tagQuery
-    if (tagData && tagData.length) {
-      const have = new Set(rows.map(r => r.id))
-      for (const r of tagData) if (!have.has(r.id)) rows.push(r)
+  if (searchTerms.length) {
+    const have = new Set(rows.map((r) => r.id))
+    const tagCandidates = searchTerms.filter((term) => term.length >= 2).slice(0, 8)
+    const tagFetches = await Promise.all(
+      tagCandidates.map(async (term) => {
+        const { data: tagData } = await supabase
+          .from('posts')
+          .select('id,slug,title,excerpt,category,tags,og_image,created_at,view_count')
+          .eq('status', 'published')
+          .contains('tags', [term])
+          .order('created_at', { ascending: false })
+          .limit(20)
+        return tagData || []
+      })
+    )
+    for (const tagRows of tagFetches) {
+      for (const row of tagRows) {
+        if (!have.has(row.id)) {
+          rows.push(row)
+          have.add(row.id)
+        }
+      }
     }
   }
 

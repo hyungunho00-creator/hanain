@@ -92,9 +92,8 @@ export default {
         {' '}·{' '}
         <RelLink to="/blog/diabetes-patient-meal-delivery-checklist-carb-protein-fiber">당뇨환자식단배달 선택 기준</RelLink>
         {' '}·{' '}
-        <RelLink to="/blog/meulssori-patient-meal-delivery-service-introduction">맛있으리 환자식 정기배송 가이드</RelLink>.
+        <RelLink to="/blog/meulssori-patient-meal-delivery-service-introduction">환자식 반찬 정기배송 가이드</RelLink>.
       </P>
     </>
   ),
 }
-
