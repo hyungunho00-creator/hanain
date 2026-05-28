@@ -1,6 +1,7 @@
 import { createClient } from '@supabase/supabase-js'
 import { FUNCTIONAL_INGREDIENT_CONFIGS } from '../src/data/insights/functionalIngredientConfigs.js'
 import { LOCAL_FUNCTIONAL_INGREDIENT_POSTS } from '../src/data/localFunctionalIngredientPosts.js'
+import { LOCAL_CATEGORY_BLOG_POSTS } from '../src/data/localCategoryBlogPosts.js'
 
 const supabaseUrl = process.env.VITE_SUPABASE_URL || 'https://rlfxuyeoluoeaxuujtly.supabase.co'
 const supabaseKey =
@@ -125,12 +126,14 @@ function visibleLength(content) {
     .replace(/\s+/g, '').length
 }
 
-const posts = LOCAL_FUNCTIONAL_INGREDIENT_POSTS.map(({ id, is_local, ...post }) => post)
+const posts = [...LOCAL_FUNCTIONAL_INGREDIENT_POSTS, ...LOCAL_CATEGORY_BLOG_POSTS]
+  .map(({ id, is_local, ...post }) => post)
 const badTerms = /SEO|seo|상위노출|선점|자산화|CTA|구매 판단|자료 요청|작업 방향/g
 const failures = posts.flatMap((post) => {
   const out = []
   const len = visibleLength(post.content)
-  if (len < 3000) out.push(`${post.slug}: visible length ${len}`)
+  const minVisibleLength = post.category === 'ingredient-comparison' ? 3000 : 500
+  if (len < minVisibleLength) out.push(`${post.slug}: visible length ${len} (< ${minVisibleLength})`)
   if (badTerms.test(post.content)) out.push(`${post.slug}: internal term found`)
   badTerms.lastIndex = 0
   return out

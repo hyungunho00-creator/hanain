@@ -3,6 +3,10 @@ import {
   LOCAL_FUNCTIONAL_INGREDIENT_POSTS,
   getLocalFunctionalIngredientPost,
 } from '../data/localFunctionalIngredientPosts'
+import {
+  LOCAL_CATEGORY_BLOG_POSTS,
+  getLocalCategoryBlogPost,
+} from '../data/localCategoryBlogPosts'
 
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || 'https://rlfxuyeoluoeaxuujtly.supabase.co'
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJsZnh1eWVvbHVvZWF4dXVqdGx5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU5NDEyNjMsImV4cCI6MjA5MTUxNzI2M30.EmygB1wZcIXM0_4KTC8Kuwh5RY3R9NgfEpuzXQswHck'
@@ -10,6 +14,11 @@ const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || 'eyJhbGciOiJIU
 export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
   auth: { autoRefreshToken: true, persistSession: true, detectSessionInUrl: true },
 })
+
+const LOCAL_BLOG_POSTS = [
+  ...LOCAL_FUNCTIONAL_INGREDIENT_POSTS,
+  ...LOCAL_CATEGORY_BLOG_POSTS,
+]
 
 // ── Auth ──────────────────────────────────────────────────
 export async function getCurrentUser() {
@@ -191,7 +200,7 @@ function matchesLocalPost(post, { category = null, tag = null, q = null } = {}) 
 function mergeLocalPosts(rows, options = {}) {
   const limit = options.limit || 20
   const page = options.page || 1
-  const localRows = LOCAL_FUNCTIONAL_INGREDIENT_POSTS.filter((post) => matchesLocalPost(post, options))
+  const localRows = LOCAL_BLOG_POSTS.filter((post) => matchesLocalPost(post, options))
 
   const bySlug = new Map()
   for (const post of localRows) bySlug.set(post.slug, post)
@@ -253,7 +262,7 @@ export async function getPosts({ category = null, tag = null, limit = 20, page =
 }
 
 export async function getPostBySlug(slug) {
-  const local = getLocalFunctionalIngredientPost(slug)
+  const local = getLocalFunctionalIngredientPost(slug) || getLocalCategoryBlogPost(slug)
   if (local) return { data: local, error: null }
 
   const { data, error } = await supabase
@@ -269,7 +278,7 @@ export async function getPostCount(category = null) {
   let q = supabase.from('posts').select('id', { count: 'exact', head: true }).eq('status', 'published')
   if (category && category !== 'all') q = q.eq('category', category)
   const { count } = await q
-  const localCount = LOCAL_FUNCTIONAL_INGREDIENT_POSTS.filter((post) => matchesLocalPost(post, { category })).length
+  const localCount = LOCAL_BLOG_POSTS.filter((post) => matchesLocalPost(post, { category })).length
   return (count || 0) + localCount
 }
 
