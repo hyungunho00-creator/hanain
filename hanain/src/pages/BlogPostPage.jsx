@@ -235,64 +235,40 @@ export default function BlogPostPage() {
     : `${rawSeoTitle} | 플로로탄닌·감태추출물 건강정보`
   const seoDesc  = post.meta_desc  || post.excerpt || `${post.title} — 플로로탄닌·감태추출물·해양 폴리페놀 종합 건강정보 데이터센터의 건강정보 글입니다.`
 
-  // Article 구조화 데이터 (SEO 강화 버전)
-  const articleJsonLd = [
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": seoTitle,
-      "description": seoDesc,
-      "url": `https://phlorotannin.com/blog/${post.slug}`,
-      "datePublished": post.created_at,
-      "dateModified":  post.updated_at || post.created_at,
-      "author": {
-        "@type": "Organization",
-        "name": "플로로탄닌 파트너스",
-        "url": "https://phlorotannin.com",
-        "sameAs": ["https://phlorotannin.com"]
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "플로로탄닌 파트너스",
-        "logo": { "@type": "ImageObject", "url": "https://phlorotannin.com/og-image.png" }
-      },
-      "image": post.og_image || "https://phlorotannin.com/og-image.png",
-      "keywords": post.tags?.join(', '),
-      "inLanguage": "ko-KR",
-      "about": [
-        { "@type": "Thing", "name": "phlorotannin", "sameAs": "https://en.wikipedia.org/wiki/Phlorotannin" },
-        { "@type": "Thing", "name": "PH-100" },
-        { "@type": "Thing", "name": "플로로탄닌" }
-      ],
-      "mainEntityOfPage": { "@type": "WebPage", "@id": `https://phlorotannin.com/blog/${post.slug}` },
-      "speakable": {
-        "@type": "SpeakableSpecification",
-        "cssSelector": ["h1", "[data-speakable=\"true\"]"]
-      }
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "플로로탄닌(phlorotannin)이란 무엇인가요?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "플로로탄닌은 감태 등 질유 갈조류에서 추출한 해양 폴리페놀로, 항산화·항염증·혜당조절·인지기능 개선 등에 관련한 SCI 논문이 다수 발표된 신흥 성분입니다."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "PH-100이란 무엇인가요?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "PH-100은 플로로탄닌 유래 성분의 표준화된 추출물로, 임상 연구에서 효능이 확인된 플로로탄닌 제품의 � 종류입니다."
-          }
-        }
-      ]
-    }
+  const articleAbout = [
+    { "@type": "Thing", "name": post.title },
+    ...(post.tags || []).slice(0, 6).map(tag => ({ "@type": "Thing", "name": tag }))
   ]
+
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": seoTitle,
+    "description": seoDesc,
+    "url": `https://phlorotannin.com/blog/${post.slug}`,
+    "datePublished": post.created_at,
+    "dateModified":  post.updated_at || post.created_at,
+    "author": {
+      "@type": "Organization",
+      "name": "플로로탄닌 파트너스",
+      "url": "https://phlorotannin.com",
+      "sameAs": ["https://phlorotannin.com"]
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "플로로탄닌 파트너스",
+      "logo": { "@type": "ImageObject", "url": "https://phlorotannin.com/og-image.png" }
+    },
+    "image": post.og_image || "https://phlorotannin.com/og-image.png",
+    "keywords": post.tags?.join(', '),
+    "inLanguage": "ko-KR",
+    "about": articleAbout,
+    "mainEntityOfPage": { "@type": "WebPage", "@id": `https://phlorotannin.com/blog/${post.slug}` },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["h1", "[data-speakable=\"true\"]"]
+    }
+  }
 
   return (
     <>

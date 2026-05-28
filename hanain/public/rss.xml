@@ -8,7 +8,7 @@
     <link>https://phlorotannin.com</link>
     <description>감태 추출 해양 폴리페놀 플로로탄닌(Phlorotannin) 전문 건강 정보. 당뇨·항암·뇌건강·심혈관·염증 최신 블로그 &amp; Q&amp;A 아카이브.</description>
     <language>ko</language>
-    <lastBuildDate>Thu, 28 May 2026 02:14:11 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 28 May 2026 03:14:06 +0000</lastBuildDate>
     <atom:link href="https://phlorotannin.com/rss.xml" rel="self" type="application/rss+xml"/>
     <copyright>© 2026 플로로탄닌 파트너스</copyright>
     <category>건강/의학</category>
@@ -20,24 +20,14 @@
     </image>
 
   <item>
-    <title>차전자피 효능을 제대로 읽는 법: LDL, 변비, 혈당, 복용 간격까지</title>
-    <link>https://phlorotannin.com/blog/psyllium-husk-fiber-cholesterol-constipation-guide</link>
-    <description><![CDATA[차전자피는 수용성 식이섬유 원료입니다. 콜레스테롤, 배변, 식후 혈당을 한 번에 기대하기보다 물 섭취량과 약 복용 간격을 먼저 확인해야 합니다.]]></description>
+    <title>알파리포산과 당뇨성 신경병증: 발저림, 혈당, 약물 상호작용 체크</title>
+    <link>https://phlorotannin.com/blog/alpha-lipoic-acid-diabetic-neuropathy-guide</link>
+    <description><![CDATA[발저림이 모두 당뇨성 신경병증은 아닙니다. 알파리포산을 보기 전 B12, 갑상선, 허리, 항암제 이력까지 확인해야 합니다.]]></description>
     <category>성분 비교</category>
     <pubDate>Wed, 27 May 2026 15:00:00 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/psyllium-husk-fiber-cholesterol-constipation-guide</guid>
-    <enclosure url="https://phlorotannin.com/og/functional-ingredients/psyllium-husk-fiber.png" type="image/png"/>
-    <dc:subject>차전자피, 식이섬유, LDL, 변비, 기능성원료</dc:subject>
-  </item>
-  <item>
-    <title>밀크씨슬 실리마린과 간수치: ALT, 지방간, 술, 약 복용까지 보는 법</title>
-    <link>https://phlorotannin.com/blog/milk-thistle-silymarin-liver-enzyme-guide</link>
-    <description><![CDATA[실리마린은 밀크씨슬의 대표 성분이지만 간수치 상승의 원인을 대신 찾아주지는 않습니다. 검사 수치와 생활요인을 먼저 분리해야 합니다.]]></description>
-    <category>성분 비교</category>
-    <pubDate>Wed, 27 May 2026 15:00:00 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/milk-thistle-silymarin-liver-enzyme-guide</guid>
-    <enclosure url="https://phlorotannin.com/og/functional-ingredients/milk-thistle-silymarin.png" type="image/png"/>
-    <dc:subject>밀크씨슬, 실리마린, 간수치, 지방간, 기능성원료</dc:subject>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/alpha-lipoic-acid-diabetic-neuropathy-guide</guid>
+    <enclosure url="https://phlorotannin.com/og/functional-ingredients/alpha-lipoic-acid-neuropathy.png" type="image/png"/>
+    <dc:subject>알파리포산, 당뇨, 신경병증, 발저림, 기능성원료</dc:subject>
   </item>
   <item>
     <title>크레아틴 모노하이드레이트: 근육, 노화, 인지 연구와 신장검사 해석</title>
@@ -50,14 +40,14 @@
     <dc:subject>크레아틴, 근감소, 운동, 인지, 기능성원료</dc:subject>
   </item>
   <item>
-    <title>HMB와 근감소증: 부모님 근력, 재활, 단백질 섭취를 함께 보는 법</title>
-    <link>https://phlorotannin.com/blog/hmb-sarcopenia-rehabilitation-protein-guide</link>
-    <description><![CDATA[HMB는 류신 대사체로 설명되지만, 단독 원료보다 운동과 단백질 섭취가 함께 잡혀야 의미가 커집니다.]]></description>
+    <title>밀크씨슬 실리마린과 간수치: ALT, 지방간, 술, 약 복용까지 보는 법</title>
+    <link>https://phlorotannin.com/blog/milk-thistle-silymarin-liver-enzyme-guide</link>
+    <description><![CDATA[실리마린은 밀크씨슬의 대표 성분이지만 간수치 상승의 원인을 대신 찾아주지는 않습니다. 검사 수치와 생활요인을 먼저 분리해야 합니다.]]></description>
     <category>성분 비교</category>
     <pubDate>Wed, 27 May 2026 15:00:00 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/hmb-sarcopenia-rehabilitation-protein-guide</guid>
-    <enclosure url="https://phlorotannin.com/og/functional-ingredients/hmb-sarcopenia.png" type="image/png"/>
-    <dc:subject>HMB, 근감소증, 재활, 단백질, 기능성원료</dc:subject>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/milk-thistle-silymarin-liver-enzyme-guide</guid>
+    <enclosure url="https://phlorotannin.com/og/functional-ingredients/milk-thistle-silymarin.png" type="image/png"/>
+    <dc:subject>밀크씨슬, 실리마린, 간수치, 지방간, 기능성원료</dc:subject>
   </item>
   <item>
     <title>이노시톨과 PCOS: 생리주기, 배란, 인슐린저항성, 40:1 비율 읽기</title>
@@ -70,24 +60,34 @@
     <dc:subject>이노시톨, PCOS, 인슐린저항성, 여성건강, 기능성원료</dc:subject>
   </item>
   <item>
-    <title>알파리포산과 당뇨성 신경병증: 발저림, 혈당, 약물 상호작용 체크</title>
-    <link>https://phlorotannin.com/blog/alpha-lipoic-acid-diabetic-neuropathy-guide</link>
-    <description><![CDATA[발저림이 모두 당뇨성 신경병증은 아닙니다. 알파리포산을 보기 전 B12, 갑상선, 허리, 항암제 이력까지 확인해야 합니다.]]></description>
+    <title>차전자피 효능을 제대로 읽는 법: LDL, 변비, 혈당, 복용 간격까지</title>
+    <link>https://phlorotannin.com/blog/psyllium-husk-fiber-cholesterol-constipation-guide</link>
+    <description><![CDATA[차전자피는 수용성 식이섬유 원료입니다. 콜레스테롤, 배변, 식후 혈당을 한 번에 기대하기보다 물 섭취량과 약 복용 간격을 먼저 확인해야 합니다.]]></description>
     <category>성분 비교</category>
     <pubDate>Wed, 27 May 2026 15:00:00 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/alpha-lipoic-acid-diabetic-neuropathy-guide</guid>
-    <enclosure url="https://phlorotannin.com/og/functional-ingredients/alpha-lipoic-acid-neuropathy.png" type="image/png"/>
-    <dc:subject>알파리포산, 당뇨, 신경병증, 발저림, 기능성원료</dc:subject>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/psyllium-husk-fiber-cholesterol-constipation-guide</guid>
+    <enclosure url="https://phlorotannin.com/og/functional-ingredients/psyllium-husk-fiber.png" type="image/png"/>
+    <dc:subject>차전자피, 식이섬유, LDL, 변비, 기능성원료</dc:subject>
+  </item>
+  <item>
+    <title>HMB와 근감소증: 부모님 근력, 재활, 단백질 섭취를 함께 보는 법</title>
+    <link>https://phlorotannin.com/blog/hmb-sarcopenia-rehabilitation-protein-guide</link>
+    <description><![CDATA[HMB는 류신 대사체로 설명되지만, 단독 원료보다 운동과 단백질 섭취가 함께 잡혀야 의미가 커집니다.]]></description>
+    <category>성분 비교</category>
+    <pubDate>Wed, 27 May 2026 15:00:00 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/hmb-sarcopenia-rehabilitation-protein-guide</guid>
+    <enclosure url="https://phlorotannin.com/og/functional-ingredients/hmb-sarcopenia.png" type="image/png"/>
+    <dc:subject>HMB, 근감소증, 재활, 단백질, 기능성원료</dc:subject>
   </item>
   <item>
     <title>은행잎 추출물과 기억력: 치매 예방 광고보다 약물 상호작용부터</title>
     <link>https://phlorotannin.com/blog/ginkgo-biloba-memory-blood-circulation-caution</link>
-    <description><![CDATA[은행잎 추출물은 인지 기능 검색에서 자주 보이지만, 치매 예방 보충제로 단정하기 어렵고 약물 상호작용 확인이 중요합니다.]]></description>
+    <description><![CDATA[은행잎 추출물을 기억력·혈액순환 소재로 볼 때 항응고제, 수술, 치매 증상, 복용약을 먼저 확인합니다.]]></description>
     <category>성분 비교</category>
     <pubDate>Wed, 27 May 2026 15:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/blog/ginkgo-biloba-memory-blood-circulation-caution</guid>
-    <enclosure url="https://phlorotannin.com/og/functional-ingredients/ginkgo-biloba-extract.png" type="image/png"/>
-    <dc:subject>은행잎, 기억력, 인지, 상호작용, 기능성원료</dc:subject>
+    <enclosure url="https://phlorotannin.com/og/content-quality/ginkgo-biloba-memory-blood-circulation-caution.webp" type="image/webp"/>
+    <dc:subject>은행잎추출물, 기억력, 혈액순환, 약물상호작용</dc:subject>
   </item>
   <item>
     <title>쏘팔메토와 전립선비대증: 야간뇨, PSA, 배뇨기록을 먼저 보는 법</title>
@@ -102,12 +102,12 @@
   <item>
     <title>바코파 몬니에리와 기억력: 집중력 보충제 광고보다 확인할 것</title>
     <link>https://phlorotannin.com/blog/bacopa-monnieri-memory-concentration-guide</link>
-    <description><![CDATA[바코파는 단기 각성제처럼 기대하기보다 표준화 추출물, 복용 기간, 위장 반응, 수면 질을 함께 봐야 하는 원료입니다.]]></description>
+    <description><![CDATA[바코파 몬니에리를 기억력·집중력 소재로 볼 때 연구 기간, 졸림, 복용약, 생활요인을 확인합니다.]]></description>
     <category>성분 비교</category>
     <pubDate>Wed, 27 May 2026 15:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/blog/bacopa-monnieri-memory-concentration-guide</guid>
-    <enclosure url="https://phlorotannin.com/og/functional-ingredients/bacopa-monnieri-cognition.png" type="image/png"/>
-    <dc:subject>바코파, 기억력, 집중력, 인지, 기능성원료</dc:subject>
+    <enclosure url="https://phlorotannin.com/og/content-quality/bacopa-monnieri-memory-concentration-guide.webp" type="image/webp"/>
+    <dc:subject>바코파, 기억력, 집중력, 인지기능</dc:subject>
   </item>
   <item>
     <title>GABA 보충제와 수면: 잠드는 시간, 스트레스, 혈압약까지 확인할 것</title>
@@ -120,304 +120,304 @@
     <dc:subject>GABA, 수면, 스트레스, 불면, 기능성원료</dc:subject>
   </item>
   <item>
-    <title>역삼동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
-    <link>https://phlorotannin.com/blog/yeoksam-dong-internal-medicine-checklist</link>
-    <description><![CDATA[역삼동 내과 검색 전 증상 메모, 검진 결과, 복용약, 식사·체중 기록까지 진료 전에 챙길 기준을 정리했습니다.]]></description>
-    <category>병원정보</category>
-    <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/yeoksam-dong-internal-medicine-checklist</guid>
-    <enclosure url="https://phlorotannin.com/og/local-hospital/yeoksam-dong-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>역삼동 내과, 역삼동, 내과, 병원정보, 진료준비</dc:subject>
-  </item>
-  <item>
-    <title>서초동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
-    <link>https://phlorotannin.com/blog/seocho-dong-internal-medicine-checklist</link>
-    <description><![CDATA[서초동 내과 검색 전 증상 메모, 검진 결과, 복용약, 식사·체중 기록까지 진료 전에 챙길 기준을 정리했습니다.]]></description>
-    <category>병원정보</category>
-    <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/seocho-dong-internal-medicine-checklist</guid>
-    <enclosure url="https://phlorotannin.com/og/local-hospital/seocho-dong-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>서초동 내과, 서초동, 내과, 병원정보, 진료준비</dc:subject>
-  </item>
-  <item>
-    <title>신림동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
-    <link>https://phlorotannin.com/blog/sillim-dong-internal-medicine-checklist</link>
-    <description><![CDATA[신림동 내과 검색 전 증상 메모, 검진 결과, 복용약, 식사·체중 기록까지 진료 전에 챙길 기준을 정리했습니다.]]></description>
-    <category>병원정보</category>
-    <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/sillim-dong-internal-medicine-checklist</guid>
-    <enclosure url="https://phlorotannin.com/og/local-hospital/sillim-dong-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>신림동 내과, 신림동, 내과, 병원정보, 진료준비</dc:subject>
-  </item>
-  <item>
-    <title>잠실동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
-    <link>https://phlorotannin.com/blog/jamsil-dong-internal-medicine-checklist</link>
-    <description><![CDATA[잠실동 내과 검색 전 증상 메모, 검진 결과, 복용약, 식사·체중 기록까지 진료 전에 챙길 기준을 정리했습니다.]]></description>
-    <category>병원정보</category>
-    <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/jamsil-dong-internal-medicine-checklist</guid>
-    <enclosure url="https://phlorotannin.com/og/local-hospital/jamsil-dong-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>잠실동 내과, 잠실동, 내과, 병원정보, 진료준비</dc:subject>
-  </item>
-  <item>
-    <title>구로디지털단지역 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
-    <link>https://phlorotannin.com/blog/guro-digital-complex-internal-medicine-checklist</link>
-    <description><![CDATA[구로디지털단지역 내과 검색 전 증상 메모, 검진 결과, 복용약, 식사·체중 기록까지 진료 전에 챙길 기준을 정리했습니다.]]></description>
-    <category>병원정보</category>
-    <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/guro-digital-complex-internal-medicine-checklist</guid>
-    <enclosure url="https://phlorotannin.com/og/local-hospital/guro-digital-complex-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>구로디지털단지역 내과, 구로디지털단지역, 내과, 병원정보, 진료준비</dc:subject>
-  </item>
-  <item>
-    <title>공덕동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
-    <link>https://phlorotannin.com/blog/gongdeok-dong-internal-medicine-checklist</link>
-    <description><![CDATA[공덕동 내과 검색 전 증상 메모, 검진 결과, 복용약, 식사·체중 기록까지 진료 전에 챙길 기준을 정리했습니다.]]></description>
-    <category>병원정보</category>
-    <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/gongdeok-dong-internal-medicine-checklist</guid>
-    <enclosure url="https://phlorotannin.com/og/local-hospital/gongdeok-dong-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>공덕동 내과, 공덕동, 내과, 병원정보, 진료준비</dc:subject>
-  </item>
-  <item>
-    <title>성수동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
-    <link>https://phlorotannin.com/blog/seongsu-dong-internal-medicine-checklist</link>
-    <description><![CDATA[성수동 내과 검색 전 증상 메모, 검진 결과, 복용약, 식사·체중 기록까지 진료 전에 챙길 기준을 정리했습니다.]]></description>
-    <category>병원정보</category>
-    <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/seongsu-dong-internal-medicine-checklist</guid>
-    <enclosure url="https://phlorotannin.com/og/local-hospital/seongsu-dong-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>성수동 내과, 성수동, 내과, 병원정보, 진료준비</dc:subject>
-  </item>
-  <item>
-    <title>창원 상남동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
-    <link>https://phlorotannin.com/blog/changwon-sangnam-dong-internal-medicine-checklist</link>
-    <description><![CDATA[창원 상남동 내과 검색 전 증상 메모, 검진 결과, 복용약, 식사·체중 기록까지 진료 전에 챙길 기준을 정리했습니다.]]></description>
-    <category>병원정보</category>
-    <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/changwon-sangnam-dong-internal-medicine-checklist</guid>
-    <enclosure url="https://phlorotannin.com/og/local-hospital/changwon-sangnam-dong-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>창원 상남동 내과, 창원 상남동, 내과, 병원정보, 진료준비</dc:subject>
-  </item>
-  <item>
-    <title>천안 불당동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
-    <link>https://phlorotannin.com/blog/cheonan-buldang-dong-internal-medicine-checklist</link>
-    <description><![CDATA[천안 불당동 내과 검색 전 증상 메모, 검진 결과, 복용약, 식사·체중 기록까지 진료 전에 챙길 기준을 정리했습니다.]]></description>
-    <category>병원정보</category>
-    <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/cheonan-buldang-dong-internal-medicine-checklist</guid>
-    <enclosure url="https://phlorotannin.com/og/local-hospital/cheonan-buldang-dong-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>천안 불당동 내과, 천안 불당동, 내과, 병원정보, 진료준비</dc:subject>
-  </item>
-  <item>
-    <title>상암동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
-    <link>https://phlorotannin.com/blog/sangam-dong-internal-medicine-checklist</link>
-    <description><![CDATA[상암동 내과 검색 전 증상 메모, 검진 결과, 복용약, 식사·체중 기록까지 진료 전에 챙길 기준을 정리했습니다.]]></description>
-    <category>병원정보</category>
-    <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/sangam-dong-internal-medicine-checklist</guid>
-    <enclosure url="https://phlorotannin.com/og/local-hospital/sangam-dong-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>상암동 내과, 상암동, 내과, 병원정보, 진료준비</dc:subject>
-  </item>
-  <item>
     <title>노원역 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
     <link>https://phlorotannin.com/blog/nowon-station-internal-medicine-checklist</link>
-    <description><![CDATA[노원역 내과 검색 전 증상 메모, 검진 결과, 복용약, 식사·체중 기록까지 진료 전에 챙길 기준을 정리했습니다.]]></description>
+    <description><![CDATA[노원역 내과 검색 전 방문 목적, 검사결과, 복용약, 식사·혈당 기록을 실제 진료 흐름에 맞춰 정리했습니다.]]></description>
     <category>병원정보</category>
     <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/blog/nowon-station-internal-medicine-checklist</guid>
     <enclosure url="https://phlorotannin.com/og/local-hospital/nowon-station-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>노원역 내과, 노원역, 내과, 병원정보, 진료준비</dc:subject>
-  </item>
-  <item>
-    <title>삼성동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
-    <link>https://phlorotannin.com/blog/samsung-dong-internal-medicine-checklist</link>
-    <description><![CDATA[삼성동 내과 검색 전 증상 메모, 검진 결과, 복용약, 식사·체중 기록까지 진료 전에 챙길 기준을 정리했습니다.]]></description>
-    <category>병원정보</category>
-    <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/samsung-dong-internal-medicine-checklist</guid>
-    <enclosure url="https://phlorotannin.com/og/local-hospital/samsung-dong-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>삼성동 내과, 삼성동, 내과, 병원정보, 진료준비</dc:subject>
-  </item>
-  <item>
-    <title>여의도 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
-    <link>https://phlorotannin.com/blog/yeouido-internal-medicine-checklist</link>
-    <description><![CDATA[여의도 내과 검색 전 증상 메모, 검진 결과, 복용약, 식사·체중 기록까지 진료 전에 챙길 기준을 정리했습니다.]]></description>
-    <category>병원정보</category>
-    <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/yeouido-internal-medicine-checklist</guid>
-    <enclosure url="https://phlorotannin.com/og/local-hospital/yeouido-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>여의도 내과, 여의도, 내과, 병원정보, 진료준비</dc:subject>
+    <dc:subject>노원역, 내과, 병원정보, 진료준비, 검사기록</dc:subject>
   </item>
   <item>
     <title>목동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
     <link>https://phlorotannin.com/blog/mok-dong-internal-medicine-checklist</link>
-    <description><![CDATA[목동 내과 검색 전 증상 메모, 검진 결과, 복용약, 식사·체중 기록까지 진료 전에 챙길 기준을 정리했습니다.]]></description>
+    <description><![CDATA[목동 내과 검색 전 방문 목적, 검사결과, 복용약, 식사·혈당 기록을 실제 진료 흐름에 맞춰 정리했습니다.]]></description>
     <category>병원정보</category>
     <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/blog/mok-dong-internal-medicine-checklist</guid>
     <enclosure url="https://phlorotannin.com/og/local-hospital/mok-dong-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>목동 내과, 목동, 내과, 병원정보, 진료준비</dc:subject>
+    <dc:subject>목동, 내과, 병원정보, 진료준비, 검사기록</dc:subject>
+  </item>
+  <item>
+    <title>역삼동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
+    <link>https://phlorotannin.com/blog/yeoksam-dong-internal-medicine-checklist</link>
+    <description><![CDATA[역삼동 내과 검색 전 방문 목적, 검사결과, 복용약, 식사·혈당 기록을 실제 진료 흐름에 맞춰 정리했습니다.]]></description>
+    <category>병원정보</category>
+    <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/yeoksam-dong-internal-medicine-checklist</guid>
+    <enclosure url="https://phlorotannin.com/og/local-hospital/yeoksam-dong-internal-medicine-checklist.webp" type="image/webp"/>
+    <dc:subject>역삼동, 내과, 병원정보, 진료준비, 검사기록</dc:subject>
+  </item>
+  <item>
+    <title>서초동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
+    <link>https://phlorotannin.com/blog/seocho-dong-internal-medicine-checklist</link>
+    <description><![CDATA[서초동 내과 검색 전 방문 목적, 검사결과, 복용약, 식사·혈당 기록을 실제 진료 흐름에 맞춰 정리했습니다.]]></description>
+    <category>병원정보</category>
+    <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/seocho-dong-internal-medicine-checklist</guid>
+    <enclosure url="https://phlorotannin.com/og/local-hospital/seocho-dong-internal-medicine-checklist.webp" type="image/webp"/>
+    <dc:subject>서초동, 내과, 병원정보, 진료준비, 검사기록</dc:subject>
+  </item>
+  <item>
+    <title>신림동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
+    <link>https://phlorotannin.com/blog/sillim-dong-internal-medicine-checklist</link>
+    <description><![CDATA[신림동 내과 검색 전 방문 목적, 검사결과, 복용약, 식사·혈당 기록을 실제 진료 흐름에 맞춰 정리했습니다.]]></description>
+    <category>병원정보</category>
+    <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/sillim-dong-internal-medicine-checklist</guid>
+    <enclosure url="https://phlorotannin.com/og/local-hospital/sillim-dong-internal-medicine-checklist.webp" type="image/webp"/>
+    <dc:subject>신림동, 내과, 병원정보, 진료준비, 검사기록</dc:subject>
+  </item>
+  <item>
+    <title>잠실동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
+    <link>https://phlorotannin.com/blog/jamsil-dong-internal-medicine-checklist</link>
+    <description><![CDATA[잠실동 내과 검색 전 방문 목적, 검사결과, 복용약, 식사·혈당 기록을 실제 진료 흐름에 맞춰 정리했습니다.]]></description>
+    <category>병원정보</category>
+    <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/jamsil-dong-internal-medicine-checklist</guid>
+    <enclosure url="https://phlorotannin.com/og/local-hospital/jamsil-dong-internal-medicine-checklist.webp" type="image/webp"/>
+    <dc:subject>잠실동, 내과, 병원정보, 진료준비, 검사기록</dc:subject>
+  </item>
+  <item>
+    <title>구로디지털단지역 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
+    <link>https://phlorotannin.com/blog/guro-digital-complex-internal-medicine-checklist</link>
+    <description><![CDATA[구로디지털단지역 내과 검색 전 방문 목적, 검사결과, 복용약, 식사·혈당 기록을 실제 진료 흐름에 맞춰 정리했습니다.]]></description>
+    <category>병원정보</category>
+    <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/guro-digital-complex-internal-medicine-checklist</guid>
+    <enclosure url="https://phlorotannin.com/og/local-hospital/guro-digital-complex-internal-medicine-checklist.webp" type="image/webp"/>
+    <dc:subject>구로디지털단지역, 내과, 병원정보, 진료준비, 검사기록</dc:subject>
+  </item>
+  <item>
+    <title>공덕동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
+    <link>https://phlorotannin.com/blog/gongdeok-dong-internal-medicine-checklist</link>
+    <description><![CDATA[공덕동 내과 검색 전 방문 목적, 검사결과, 복용약, 식사·혈당 기록을 실제 진료 흐름에 맞춰 정리했습니다.]]></description>
+    <category>병원정보</category>
+    <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/gongdeok-dong-internal-medicine-checklist</guid>
+    <enclosure url="https://phlorotannin.com/og/local-hospital/gongdeok-dong-internal-medicine-checklist.webp" type="image/webp"/>
+    <dc:subject>공덕동, 내과, 병원정보, 진료준비, 검사기록</dc:subject>
+  </item>
+  <item>
+    <title>창원 상남동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
+    <link>https://phlorotannin.com/blog/changwon-sangnam-dong-internal-medicine-checklist</link>
+    <description><![CDATA[창원 상남동 내과 검색 전 방문 목적, 검사결과, 복용약, 식사·혈당 기록을 실제 진료 흐름에 맞춰 정리했습니다.]]></description>
+    <category>병원정보</category>
+    <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/changwon-sangnam-dong-internal-medicine-checklist</guid>
+    <enclosure url="https://phlorotannin.com/og/local-hospital/changwon-sangnam-dong-internal-medicine-checklist.webp" type="image/webp"/>
+    <dc:subject>창원 상남동, 내과, 병원정보, 진료준비, 검사기록</dc:subject>
+  </item>
+  <item>
+    <title>상암동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
+    <link>https://phlorotannin.com/blog/sangam-dong-internal-medicine-checklist</link>
+    <description><![CDATA[상암동 내과 검색 전 방문 목적, 검사결과, 복용약, 식사·혈당 기록을 실제 진료 흐름에 맞춰 정리했습니다.]]></description>
+    <category>병원정보</category>
+    <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/sangam-dong-internal-medicine-checklist</guid>
+    <enclosure url="https://phlorotannin.com/og/local-hospital/sangam-dong-internal-medicine-checklist.webp" type="image/webp"/>
+    <dc:subject>상암동, 내과, 병원정보, 진료준비, 검사기록</dc:subject>
+  </item>
+  <item>
+    <title>삼성동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
+    <link>https://phlorotannin.com/blog/samsung-dong-internal-medicine-checklist</link>
+    <description><![CDATA[삼성동 내과 검색 전 방문 목적, 검사결과, 복용약, 식사·혈당 기록을 실제 진료 흐름에 맞춰 정리했습니다.]]></description>
+    <category>병원정보</category>
+    <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/samsung-dong-internal-medicine-checklist</guid>
+    <enclosure url="https://phlorotannin.com/og/local-hospital/samsung-dong-internal-medicine-checklist.webp" type="image/webp"/>
+    <dc:subject>삼성동, 내과, 병원정보, 진료준비, 검사기록</dc:subject>
+  </item>
+  <item>
+    <title>여의도 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
+    <link>https://phlorotannin.com/blog/yeouido-internal-medicine-checklist</link>
+    <description><![CDATA[여의도 내과 검색 전 방문 목적, 검사결과, 복용약, 식사·혈당 기록을 실제 진료 흐름에 맞춰 정리했습니다.]]></description>
+    <category>병원정보</category>
+    <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/yeouido-internal-medicine-checklist</guid>
+    <enclosure url="https://phlorotannin.com/og/local-hospital/yeouido-internal-medicine-checklist.webp" type="image/webp"/>
+    <dc:subject>여의도, 내과, 병원정보, 진료준비, 검사기록</dc:subject>
+  </item>
+  <item>
+    <title>성수동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
+    <link>https://phlorotannin.com/blog/seongsu-dong-internal-medicine-checklist</link>
+    <description><![CDATA[성수동 내과 검색 전 방문 목적, 검사결과, 복용약, 식사·혈당 기록을 실제 진료 흐름에 맞춰 정리했습니다.]]></description>
+    <category>병원정보</category>
+    <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/seongsu-dong-internal-medicine-checklist</guid>
+    <enclosure url="https://phlorotannin.com/og/local-hospital/seongsu-dong-internal-medicine-checklist.webp" type="image/webp"/>
+    <dc:subject>성수동, 내과, 병원정보, 진료준비, 검사기록</dc:subject>
+  </item>
+  <item>
+    <title>천안 불당동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
+    <link>https://phlorotannin.com/blog/cheonan-buldang-dong-internal-medicine-checklist</link>
+    <description><![CDATA[천안 불당동 내과 검색 전 방문 목적, 검사결과, 복용약, 식사·혈당 기록을 실제 진료 흐름에 맞춰 정리했습니다.]]></description>
+    <category>병원정보</category>
+    <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/cheonan-buldang-dong-internal-medicine-checklist</guid>
+    <enclosure url="https://phlorotannin.com/og/local-hospital/cheonan-buldang-dong-internal-medicine-checklist.webp" type="image/webp"/>
+    <dc:subject>천안 불당동, 내과, 병원정보, 진료준비, 검사기록</dc:subject>
   </item>
   <item>
     <title>판교 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
     <link>https://phlorotannin.com/blog/pangyo-internal-medicine-checklist</link>
-    <description><![CDATA[판교 내과 검색 전 증상 메모, 검진 결과, 복용약, 식사·체중 기록까지 진료 전에 챙길 기준을 정리했습니다.]]></description>
+    <description><![CDATA[판교 내과 검색 전 방문 목적, 검사결과, 복용약, 식사·혈당 기록을 실제 진료 흐름에 맞춰 정리했습니다.]]></description>
     <category>병원정보</category>
     <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/blog/pangyo-internal-medicine-checklist</guid>
     <enclosure url="https://phlorotannin.com/og/local-hospital/pangyo-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>판교 내과, 판교, 내과, 병원정보, 진료준비</dc:subject>
+    <dc:subject>판교, 내과, 병원정보, 진료준비, 검사기록</dc:subject>
   </item>
   <item>
     <title>정자동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
     <link>https://phlorotannin.com/blog/jeongja-dong-internal-medicine-checklist</link>
-    <description><![CDATA[정자동 내과 검색 전 증상 메모, 검진 결과, 복용약, 식사·체중 기록까지 진료 전에 챙길 기준을 정리했습니다.]]></description>
+    <description><![CDATA[정자동 내과 검색 전 방문 목적, 검사결과, 복용약, 식사·혈당 기록을 실제 진료 흐름에 맞춰 정리했습니다.]]></description>
     <category>병원정보</category>
     <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/blog/jeongja-dong-internal-medicine-checklist</guid>
     <enclosure url="https://phlorotannin.com/og/local-hospital/jeongja-dong-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>정자동 내과, 정자동, 내과, 병원정보, 진료준비</dc:subject>
+    <dc:subject>정자동, 내과, 병원정보, 진료준비, 검사기록</dc:subject>
   </item>
   <item>
     <title>수내동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
     <link>https://phlorotannin.com/blog/sunae-dong-internal-medicine-checklist</link>
-    <description><![CDATA[수내동 내과 검색 전 증상 메모, 검진 결과, 복용약, 식사·체중 기록까지 진료 전에 챙길 기준을 정리했습니다.]]></description>
+    <description><![CDATA[수내동 내과 검색 전 방문 목적, 검사결과, 복용약, 식사·혈당 기록을 실제 진료 흐름에 맞춰 정리했습니다.]]></description>
     <category>병원정보</category>
     <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/blog/sunae-dong-internal-medicine-checklist</guid>
     <enclosure url="https://phlorotannin.com/og/local-hospital/sunae-dong-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>수내동 내과, 수내동, 내과, 병원정보, 진료준비</dc:subject>
+    <dc:subject>수내동, 내과, 병원정보, 진료준비, 검사기록</dc:subject>
   </item>
   <item>
     <title>광교 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
     <link>https://phlorotannin.com/blog/gwanggyo-internal-medicine-checklist</link>
-    <description><![CDATA[광교 내과 검색 전 증상 메모, 검진 결과, 복용약, 식사·체중 기록까지 진료 전에 챙길 기준을 정리했습니다.]]></description>
+    <description><![CDATA[광교 내과 검색 전 방문 목적, 검사결과, 복용약, 식사·혈당 기록을 실제 진료 흐름에 맞춰 정리했습니다.]]></description>
     <category>병원정보</category>
     <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/blog/gwanggyo-internal-medicine-checklist</guid>
     <enclosure url="https://phlorotannin.com/og/local-hospital/gwanggyo-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>광교 내과, 광교, 내과, 병원정보, 진료준비</dc:subject>
+    <dc:subject>광교, 내과, 병원정보, 진료준비, 검사기록</dc:subject>
   </item>
   <item>
     <title>영통동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
     <link>https://phlorotannin.com/blog/yeongtong-dong-internal-medicine-checklist</link>
-    <description><![CDATA[영통동 내과 검색 전 증상 메모, 검진 결과, 복용약, 식사·체중 기록까지 진료 전에 챙길 기준을 정리했습니다.]]></description>
+    <description><![CDATA[영통동 내과 검색 전 방문 목적, 검사결과, 복용약, 식사·혈당 기록을 실제 진료 흐름에 맞춰 정리했습니다.]]></description>
     <category>병원정보</category>
     <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/blog/yeongtong-dong-internal-medicine-checklist</guid>
     <enclosure url="https://phlorotannin.com/og/local-hospital/yeongtong-dong-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>영통동 내과, 영통동, 내과, 병원정보, 진료준비</dc:subject>
+    <dc:subject>영통동, 내과, 병원정보, 진료준비, 검사기록</dc:subject>
   </item>
   <item>
     <title>동탄 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
     <link>https://phlorotannin.com/blog/dongtan-internal-medicine-checklist</link>
-    <description><![CDATA[동탄 내과 검색 전 증상 메모, 검진 결과, 복용약, 식사·체중 기록까지 진료 전에 챙길 기준을 정리했습니다.]]></description>
+    <description><![CDATA[동탄 내과 검색 전 방문 목적, 검사결과, 복용약, 식사·혈당 기록을 실제 진료 흐름에 맞춰 정리했습니다.]]></description>
     <category>병원정보</category>
     <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/blog/dongtan-internal-medicine-checklist</guid>
     <enclosure url="https://phlorotannin.com/og/local-hospital/dongtan-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>동탄 내과, 동탄, 내과, 병원정보, 진료준비</dc:subject>
+    <dc:subject>동탄, 내과, 병원정보, 진료준비, 검사기록</dc:subject>
   </item>
   <item>
     <title>마두동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
     <link>https://phlorotannin.com/blog/madu-dong-internal-medicine-checklist</link>
-    <description><![CDATA[마두동 내과 검색 전 증상 메모, 검진 결과, 복용약, 식사·체중 기록까지 진료 전에 챙길 기준을 정리했습니다.]]></description>
+    <description><![CDATA[마두동 내과 검색 전 방문 목적, 검사결과, 복용약, 식사·혈당 기록을 실제 진료 흐름에 맞춰 정리했습니다.]]></description>
     <category>병원정보</category>
     <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/blog/madu-dong-internal-medicine-checklist</guid>
     <enclosure url="https://phlorotannin.com/og/local-hospital/madu-dong-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>마두동 내과, 마두동, 내과, 병원정보, 진료준비</dc:subject>
+    <dc:subject>마두동, 내과, 병원정보, 진료준비, 검사기록</dc:subject>
   </item>
   <item>
     <title>백석동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
     <link>https://phlorotannin.com/blog/baekseok-dong-internal-medicine-checklist</link>
-    <description><![CDATA[백석동 내과 검색 전 증상 메모, 검진 결과, 복용약, 식사·체중 기록까지 진료 전에 챙길 기준을 정리했습니다.]]></description>
+    <description><![CDATA[백석동 내과 검색 전 방문 목적, 검사결과, 복용약, 식사·혈당 기록을 실제 진료 흐름에 맞춰 정리했습니다.]]></description>
     <category>병원정보</category>
     <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/blog/baekseok-dong-internal-medicine-checklist</guid>
     <enclosure url="https://phlorotannin.com/og/local-hospital/baekseok-dong-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>백석동 내과, 백석동, 내과, 병원정보, 진료준비</dc:subject>
+    <dc:subject>백석동, 내과, 병원정보, 진료준비, 검사기록</dc:subject>
   </item>
   <item>
     <title>송도 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
     <link>https://phlorotannin.com/blog/songdo-internal-medicine-checklist</link>
-    <description><![CDATA[송도 내과 검색 전 증상 메모, 검진 결과, 복용약, 식사·체중 기록까지 진료 전에 챙길 기준을 정리했습니다.]]></description>
+    <description><![CDATA[송도 내과 검색 전 방문 목적, 검사결과, 복용약, 식사·혈당 기록을 실제 진료 흐름에 맞춰 정리했습니다.]]></description>
     <category>병원정보</category>
     <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/blog/songdo-internal-medicine-checklist</guid>
     <enclosure url="https://phlorotannin.com/og/local-hospital/songdo-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>송도 내과, 송도, 내과, 병원정보, 진료준비</dc:subject>
+    <dc:subject>송도, 내과, 병원정보, 진료준비, 검사기록</dc:subject>
   </item>
   <item>
     <title>부평 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
     <link>https://phlorotannin.com/blog/bupyeong-internal-medicine-checklist</link>
-    <description><![CDATA[부평 내과 검색 전 증상 메모, 검진 결과, 복용약, 식사·체중 기록까지 진료 전에 챙길 기준을 정리했습니다.]]></description>
+    <description><![CDATA[부평 내과 검색 전 방문 목적, 검사결과, 복용약, 식사·혈당 기록을 실제 진료 흐름에 맞춰 정리했습니다.]]></description>
     <category>병원정보</category>
     <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/blog/bupyeong-internal-medicine-checklist</guid>
     <enclosure url="https://phlorotannin.com/og/local-hospital/bupyeong-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>부평 내과, 부평, 내과, 병원정보, 진료준비</dc:subject>
+    <dc:subject>부평, 내과, 병원정보, 진료준비, 검사기록</dc:subject>
   </item>
   <item>
     <title>해운대 우동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
     <link>https://phlorotannin.com/blog/haeundae-udong-internal-medicine-checklist</link>
-    <description><![CDATA[해운대 우동 내과 검색 전 증상 메모, 검진 결과, 복용약, 식사·체중 기록까지 진료 전에 챙길 기준을 정리했습니다.]]></description>
+    <description><![CDATA[해운대 우동 내과 검색 전 방문 목적, 검사결과, 복용약, 식사·혈당 기록을 실제 진료 흐름에 맞춰 정리했습니다.]]></description>
     <category>병원정보</category>
     <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/blog/haeundae-udong-internal-medicine-checklist</guid>
     <enclosure url="https://phlorotannin.com/og/local-hospital/haeundae-udong-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>해운대 우동 내과, 해운대 우동, 내과, 병원정보, 진료준비</dc:subject>
+    <dc:subject>해운대 우동, 내과, 병원정보, 진료준비, 검사기록</dc:subject>
   </item>
   <item>
     <title>부산 서면 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
     <link>https://phlorotannin.com/blog/busan-seomyeon-internal-medicine-checklist</link>
-    <description><![CDATA[부산 서면 내과 검색 전 증상 메모, 검진 결과, 복용약, 식사·체중 기록까지 진료 전에 챙길 기준을 정리했습니다.]]></description>
+    <description><![CDATA[부산 서면 내과 검색 전 방문 목적, 검사결과, 복용약, 식사·혈당 기록을 실제 진료 흐름에 맞춰 정리했습니다.]]></description>
     <category>병원정보</category>
     <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/blog/busan-seomyeon-internal-medicine-checklist</guid>
     <enclosure url="https://phlorotannin.com/og/local-hospital/busan-seomyeon-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>부산 서면 내과, 부산 서면, 내과, 병원정보, 진료준비</dc:subject>
+    <dc:subject>부산 서면, 내과, 병원정보, 진료준비, 검사기록</dc:subject>
   </item>
   <item>
     <title>대구 범어동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
     <link>https://phlorotannin.com/blog/daegu-beomeo-dong-internal-medicine-checklist</link>
-    <description><![CDATA[대구 범어동 내과 검색 전 증상 메모, 검진 결과, 복용약, 식사·체중 기록까지 진료 전에 챙길 기준을 정리했습니다.]]></description>
+    <description><![CDATA[대구 범어동 내과 검색 전 방문 목적, 검사결과, 복용약, 식사·혈당 기록을 실제 진료 흐름에 맞춰 정리했습니다.]]></description>
     <category>병원정보</category>
     <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/blog/daegu-beomeo-dong-internal-medicine-checklist</guid>
     <enclosure url="https://phlorotannin.com/og/local-hospital/daegu-beomeo-dong-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>대구 범어동 내과, 대구 범어동, 내과, 병원정보, 진료준비</dc:subject>
+    <dc:subject>대구 범어동, 내과, 병원정보, 진료준비, 검사기록</dc:subject>
   </item>
   <item>
     <title>대전 둔산동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
     <link>https://phlorotannin.com/blog/daejeon-dunsan-dong-internal-medicine-checklist</link>
-    <description><![CDATA[대전 둔산동 내과 검색 전 증상 메모, 검진 결과, 복용약, 식사·체중 기록까지 진료 전에 챙길 기준을 정리했습니다.]]></description>
+    <description><![CDATA[대전 둔산동 내과 검색 전 방문 목적, 검사결과, 복용약, 식사·혈당 기록을 실제 진료 흐름에 맞춰 정리했습니다.]]></description>
     <category>병원정보</category>
     <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/blog/daejeon-dunsan-dong-internal-medicine-checklist</guid>
     <enclosure url="https://phlorotannin.com/og/local-hospital/daejeon-dunsan-dong-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>대전 둔산동 내과, 대전 둔산동, 내과, 병원정보, 진료준비</dc:subject>
+    <dc:subject>대전 둔산동, 내과, 병원정보, 진료준비, 검사기록</dc:subject>
   </item>
   <item>
     <title>광주 상무지구 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
     <link>https://phlorotannin.com/blog/gwangju-sangmu-district-internal-medicine-checklist</link>
-    <description><![CDATA[광주 상무지구 내과 검색 전 증상 메모, 검진 결과, 복용약, 식사·체중 기록까지 진료 전에 챙길 기준을 정리했습니다.]]></description>
+    <description><![CDATA[광주 상무지구 내과 검색 전 방문 목적, 검사결과, 복용약, 식사·혈당 기록을 실제 진료 흐름에 맞춰 정리했습니다.]]></description>
     <category>병원정보</category>
     <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/blog/gwangju-sangmu-district-internal-medicine-checklist</guid>
     <enclosure url="https://phlorotannin.com/og/local-hospital/gwangju-sangmu-district-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>광주 상무지구 내과, 광주 상무지구, 내과, 병원정보, 진료준비</dc:subject>
+    <dc:subject>광주 상무지구, 내과, 병원정보, 진료준비, 검사기록</dc:subject>
   </item>
   <item>
     <title>세종 나성동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
     <link>https://phlorotannin.com/blog/sejong-naseong-dong-internal-medicine-checklist</link>
-    <description><![CDATA[세종 나성동 내과 검색 전 증상 메모, 검진 결과, 복용약, 식사·체중 기록까지 진료 전에 챙길 기준을 정리했습니다.]]></description>
+    <description><![CDATA[세종 나성동 내과 검색 전 방문 목적, 검사결과, 복용약, 식사·혈당 기록을 실제 진료 흐름에 맞춰 정리했습니다.]]></description>
     <category>병원정보</category>
     <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/blog/sejong-naseong-dong-internal-medicine-checklist</guid>
     <enclosure url="https://phlorotannin.com/og/local-hospital/sejong-naseong-dong-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>세종 나성동 내과, 세종 나성동, 내과, 병원정보, 진료준비</dc:subject>
+    <dc:subject>세종 나성동, 내과, 병원정보, 진료준비, 검사기록</dc:subject>
   </item>
   <item>
     <title>환자용 음료와 일반 단백질음료 차이: 열량·단백질·당류·지방</title>
