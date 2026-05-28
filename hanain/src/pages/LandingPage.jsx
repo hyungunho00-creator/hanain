@@ -13,6 +13,7 @@ import { StatCard, MoleculeSVG, SectionHeader, IconFeature, MechanismDiagram, Sc
 import RevealContact from '../components/common/RevealContact'
 // [2026-05-21] 인사이트 진입 — 메인(/) 랜딩에서 최신 6편 직접 노출
 import { INSIGHTS_LIST, INSIGHT_CATEGORIES } from '../data/insights'
+import { QA_TOTAL, QA_CATEGORY_TOTAL } from '../data/siteStats'
 
 // ─── YouTube ID 추출 ──────────────────────────────────────────
 function extractYoutubeId(url) {
@@ -553,7 +554,7 @@ export default function LandingPage() {
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <StatCard
-              value="1,361"
+              value={String(QA_TOTAL.toLocaleString())}
               label="검증된 건강 Q&A"
               variant="default"
             />
@@ -563,7 +564,7 @@ export default function LandingPage() {
               variant="default"
             />
             <StatCard
-              value="13"
+              value={String(QA_CATEGORY_TOTAL)}
               label="질환 카테고리"
               variant="default"
             />
@@ -597,7 +598,7 @@ export default function LandingPage() {
               {[
                 { num: '01', label: '플로로탄닌 쉽게 배우기', desc: '중학생 눈높이 도입' },
                 { num: '02', label: '플로로탄닌 소개', desc: '6가지 분자 기전·근거' },
-                { num: '03', label: '건강 Q&A', desc: '소재별 1,361건 아카이브' },
+                { num: '03', label: '건강 Q&A', desc: `소재별 ${QA_TOTAL.toLocaleString()}건 아카이브` },
               ].map(item => (
                 <li key={item.num} className="flex items-baseline gap-4">
                   <span className="text-[11px] font-medium text-gray-400 tabular-nums tracking-[0.16em] w-8 flex-shrink-0">{item.num}</span>

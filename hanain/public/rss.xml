@@ -8,7 +8,7 @@
     <link>https://phlorotannin.com</link>
     <description>감태 추출 해양 폴리페놀 플로로탄닌(Phlorotannin) 전문 건강 정보. 당뇨·항암·뇌건강·심혈관·염증 최신 블로그 &amp; Q&amp;A 아카이브.</description>
     <language>ko</language>
-    <lastBuildDate>Thu, 28 May 2026 05:43:02 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 28 May 2026 07:09:27 +0000</lastBuildDate>
     <atom:link href="https://phlorotannin.com/rss.xml" rel="self" type="application/rss+xml"/>
     <copyright>© 2026 플로로탄닌 파트너스</copyright>
     <category>건강/의학</category>
@@ -712,52 +712,52 @@
     <guid isPermaLink="true">https://phlorotannin.com/insights/gaba-sleep-stress-blood-pressure-guide</guid>
   </item>
   <item>
-    <title>플로로탄닌과 임신·수유 — 데이터 부족이 곧 ‘회피 권장’인 이유</title>
-    <link>https://phlorotannin.com/insights/phlorotannin-pregnancy-breastfeeding</link>
-    <description><![CDATA[임산부·수유부의 플로로탄닌 섭취 — EFSA Novel Food 평가는 어떤 입장이고, 왜 데이터 부족이 곧 회피 권장으로 이어지는지 정리합니다.]]></description>
+    <title>플로로탄닌 장기 섭취 점검표: 12주 단위로 확인할 7가지</title>
+    <link>https://phlorotannin.com/insights/long-term-phlorotannin-safety-monitoring</link>
+    <description><![CDATA[플로로탄닌 장기 섭취를 고려할 때 필요한 안전성 점검 항목, 복용 기록법, 상담 체크리스트를 12주 단위로 정리한 가이드.]]></description>
+    <category>장기 복용</category>
+    <pubDate>Thu, 28 May 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/insights/long-term-phlorotannin-safety-monitoring</guid>
+  </item>
+  <item>
+    <title>혈압 관리 루틴과 플로로탄닌: 생활관리 중심으로 보는 4단계</title>
+    <link>https://phlorotannin.com/insights/cardiovascular-blood-pressure-lifestyle-phlorotannin</link>
+    <description><![CDATA[혈압 관리에서 식사·수면·활동 루틴을 먼저 정리하고 플로로탄닌 정보를 어떻게 활용할지 단계별로 안내하는 실전 가이드.]]></description>
+    <category>심혈관·혈압</category>
+    <pubDate>Thu, 28 May 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/insights/cardiovascular-blood-pressure-lifestyle-phlorotannin</guid>
+  </item>
+  <item>
+    <title>브레인포그·수면·스트레스: 뇌 건강 루틴과 플로로탄닌 체크포인트</title>
+    <link>https://phlorotannin.com/insights/neuro-brain-fog-sleep-stress-phlorotannin</link>
+    <description><![CDATA[브레인포그와 수면 질 저하를 겪는 사람을 위한 뇌 건강 생활 루틴, 기록 방법, 플로로탄닌 정보 해석 체크포인트를 정리한 가이드.]]></description>
+    <category>뇌·인지</category>
+    <pubDate>Thu, 28 May 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/insights/neuro-brain-fog-sleep-stress-phlorotannin</guid>
+  </item>
+  <item>
+    <title>계절성 컨디션 저하와 면역 밸런스: 플로로탄닌을 볼 때의 기준</title>
+    <link>https://phlorotannin.com/insights/immune-seasonal-resilience-phlorotannin-context</link>
+    <description><![CDATA[계절 변화 시 컨디션 저하를 겪는 사람을 위해 면역 밸런스 관점의 생활 점검 항목과 플로로탄닌 정보 해석 기준을 정리한 글.]]></description>
+    <category>면역·염증</category>
+    <pubDate>Thu, 28 May 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/insights/immune-seasonal-resilience-phlorotannin-context</guid>
+  </item>
+  <item>
+    <title>회복 생활 정보 정리: 항암 치료 중/후 플로로탄닌 관련 질문 체크리스트</title>
+    <link>https://phlorotannin.com/insights/cancer-recovery-lifestyle-information-phlorotannin</link>
+    <description><![CDATA[항암 치료 전후 회복 생활관리 관점에서 플로로탄닌 관련 질문을 어떻게 정리해 상담할지 안내하는 정보성 체크리스트.]]></description>
+    <category>항암 보조</category>
+    <pubDate>Thu, 28 May 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/insights/cancer-recovery-lifestyle-information-phlorotannin</guid>
+  </item>
+  <item>
+    <title>약물 상호작용 상담 템플릿: 폴리페놀 계열 성분을 안전하게 확인하는 법</title>
+    <link>https://phlorotannin.com/insights/safety-polyphenol-drug-interaction-discussion-template</link>
+    <description><![CDATA[플로로탄닌을 포함한 폴리페놀 계열 성분 복용 전 약물 상호작용을 점검하기 위한 상담 템플릿과 기록 항목을 제시하는 안전성 가이드.]]></description>
     <category>안전성·금기</category>
     <pubDate>Thu, 28 May 2026 00:00:00 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-pregnancy-breastfeeding</guid>
-  </item>
-  <item>
-    <title>플로로탄닌 부작용 — 보고된 ‘실제’와 떠도는 ‘소문’ 구분</title>
-    <link>https://phlorotannin.com/insights/phlorotannin-side-effects-real</link>
-    <description><![CDATA[EFSA Novel Food 평가와 임상 약동학 연구를 바탕으로, 플로로탄닌에서 실제 보고된 부작용과 떠도는 잘못된 정보를 구분합니다.]]></description>
-    <category>안전성·금기</category>
-    <pubDate>Thu, 28 May 2026 00:00:00 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-side-effects-real</guid>
-  </item>
-  <item>
-    <title>플로로탄닌 추출 품질 — 디에콜 함량과 표시 기준 어떻게 확인하나</title>
-    <link>https://phlorotannin.com/insights/phlorotannin-quality-extraction-method</link>
-    <description><![CDATA[감태 추출물 제품의 품질을 판단하는 핵심 — 디에콜·플로로글루시놀 정량(HPLC), 식약처 개별인정형 기준, 표시·표준화의 의미를 정리합니다.]]></description>
-    <category>생활·복용</category>
-    <pubDate>Thu, 28 May 2026 00:00:00 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-quality-extraction-method</guid>
-  </item>
-  <item>
-    <title>Seapolynol™ vs 일반 플로로탄닌 — 무엇이 임상 결과를 결정하나</title>
-    <link>https://phlorotannin.com/insights/seapolynol-vs-generic-phlorotannin</link>
-    <description><![CDATA[표준화 추출물 Seapolynol™과 비표준화 갈조류 추출물의 차이 — EFSA Novel Food 평가, 약동학 데이터, 임상 RCT 기준으로 정리합니다.]]></description>
-    <category>성분 비교</category>
-    <pubDate>Thu, 28 May 2026 00:00:00 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/insights/seapolynol-vs-generic-phlorotannin</guid>
-  </item>
-  <item>
-    <title>플로로탄닌 vs 레스베라트롤 — 표적·생체이용률·임상 데이터 비교</title>
-    <link>https://phlorotannin.com/insights/phlorotannin-vs-resveratrol</link>
-    <description><![CDATA[두 폴리페놀의 핵심 표적(SIRT1·AMPK·NF-κB)과 인간 데이터, 생체이용률 차이를 출처 기반으로 비교합니다.]]></description>
-    <category>성분 비교</category>
-    <pubDate>Thu, 28 May 2026 00:00:00 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-vs-resveratrol</guid>
-  </item>
-  <item>
-    <title>플로로탄닌 vs 커큐민 — 항염 폴리페놀 두 강자의 차이</title>
-    <link>https://phlorotannin.com/insights/phlorotannin-vs-curcumin-inflammation</link>
-    <description><![CDATA[대표적 항염 천연 폴리페놀인 플로로탄닌과 커큐민의 표적·생체이용률·임상 활용 차이를 비교합니다.]]></description>
-    <category>성분 비교</category>
-    <pubDate>Thu, 28 May 2026 00:00:00 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-vs-curcumin-inflammation</guid>
+    <guid isPermaLink="true">https://phlorotannin.com/insights/safety-polyphenol-drug-interaction-discussion-template</guid>
   </item>
   <item>
     <title>밤에 소변 때문에 자주 깨면 물을 줄이면 되나요?</title>

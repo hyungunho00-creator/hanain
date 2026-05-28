@@ -6,6 +6,7 @@ import SEOHead from '../components/common/SEOHead'
 import CategoryHeroBanner from '../components/common/CategoryHeroBanner'
 import CategoryGrid from '../components/common/CategoryGrid'
 import { getCategoryMeta } from '../data/qaCategoryMeta'
+import { QA_TOTAL } from '../data/siteStats'
 
 // URL slug → category_id 매핑 (DB qa_categories 기준)
 // [2026-05-21 D6 보강] skin/hair 단독 슬러그 추가 — sitemap·qa.json 정합성 확보
@@ -313,7 +314,7 @@ export default function CategoryPage() {
         keywords={`${category.name}, ${category.name_en || ''}, 플로로탄닌, 감태추출물, 해양 폴리페놀, 건강정보 아카이브, 종합 건강정보 데이터센터`}
         canonical={canonicalUrl}
         ogImage={`https://phlorotannin.com/og/qa-${primarySlug}.png`}
-        ogImageAlt={`${category.name} Q&A 아카이브 미리보기 — 플로로탄닌·감태추출물 기반 1,361건 건강정보, 13개 카테고리, 131개 태그 페이지`}
+        ogImageAlt={`${category.name} Q&A 아카이브 미리보기 — 플로로탄닌·감태추출물 기반 ${QA_TOTAL.toLocaleString()}건 건강정보, 카테고리·태그별 탐색 페이지`}
         jsonLd={jsonLd}
       />
 

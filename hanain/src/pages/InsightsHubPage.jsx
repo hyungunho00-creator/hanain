@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import SEOHead from '../components/common/SEOHead'
 import LastReviewed from '../components/common/LastReviewed'
 import { INSIGHTS_LIST, INSIGHT_CATEGORIES, INSIGHTS_BY_CATEGORY } from '../data/insights'
+import { QA_TOTAL } from '../data/siteStats'
 
 const SITE = 'https://phlorotannin.com'
 
@@ -124,7 +125,7 @@ export default function InsightsHubPage() {
               </div>
               <div className="rounded-lg border border-gray-200 bg-white px-4 py-3">
                 <div className="text-[11px] text-gray-500">건강 Q&amp;A</div>
-                <div className="text-xl font-semibold text-gray-900 mt-0.5">1,391건</div>
+                <div className="text-xl font-semibold text-gray-900 mt-0.5">{QA_TOTAL.toLocaleString()}건</div>
                 <div className="text-[10px] text-gray-400 mt-0.5">검토자 인증</div>
               </div>
               <div className="rounded-lg border border-gray-200 bg-white px-4 py-3">

@@ -6,6 +6,7 @@ import RelatedQA from '../components/qa/RelatedQA'
 import LastReviewed from '../components/common/LastReviewed'
 import { MoleculeSVG, SectionHeader, StatCard, SciImage } from '../components/visual'
 import { INSIGHTS_LIST, INSIGHT_CATEGORIES } from '../data/insights'
+import { QA_TOTAL } from '../data/siteStats'
 
 const LAST_REVIEWED = '2026-05-21'
 
@@ -1105,7 +1106,7 @@ function CTASection() {
         </div>
         <h2 className="text-3xl md:text-[2.25rem] font-bold text-gray-900 tracking-tight mb-4 leading-[1.2]">학습을 마치셨습니다</h2>
         <p className="text-gray-600 text-[16px] leading-[1.8] mb-10 max-w-xl mx-auto break-keep">
-          플로로탄닌의 작용 원리를 익히셨다면, 이제 1,391개의 심층 Q&amp;A와 {INSIGHTS_LIST.length}편의 원료 인사이트로
+          플로로탄닌의 작용 원리를 익히셨다면, 이제 {QA_TOTAL.toLocaleString()}개의 심층 Q&amp;A와 {INSIGHTS_LIST.length}편의 원료 인사이트로
           더 깊이 들어가거나 전문 파트너에게 직접 문의해보세요.
         </p>
 

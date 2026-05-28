@@ -4,6 +4,7 @@ import { Phone, MessageSquare, BookOpen, Leaf, ChevronRight, Shield, Brain, Hear
 import SEOHead from '../components/common/SEOHead'
 import RevealContact from '../components/common/RevealContact'
 import { savePartnerToSession } from '../context/PartnerContext'
+import { QA_TOTAL } from '../data/siteStats'
 
 const MAIN_SITE = 'https://phlorotannin.com'
 
@@ -117,7 +118,7 @@ export default function PartnerLandingPage() {
             </h1>
             <p className="text-emerald-100 text-base leading-relaxed mb-8">
               암 회복, 당뇨 식단, 뇌 건강, 염증 관리까지<br />
-              1,311개 Q&A 정보를 함께 확인해 드립니다.
+              {QA_TOTAL.toLocaleString()}개 Q&A 정보를 함께 확인해 드립니다.
             </p>
 
             {/* CTA 버튼 — 번호 평문 노출 방지 (RevealContact 클릭 후 노출) */}
@@ -169,7 +170,7 @@ export default function PartnerLandingPage() {
             <h2 className="text-lg font-bold text-gray-800 mb-4">이 정보는 믿을 수 있나요?</h2>
             <div className="space-y-3">
               {[
-                { icon: BookOpen,    text: '국내외 논문 기반 1,311개 Q&A' },
+                { icon: BookOpen,    text: `국내외 논문 기반 ${QA_TOTAL.toLocaleString()}개 Q&A` },
                 { icon: Shield,      text: '판매·광고 없는 순수 정보 공간' },
                 { icon: CheckCircle, text: '기초 개념부터 작용기전까지 체계적 정리' },
                 { icon: Users,       text: '파트너가 직접 안내해 드립니다' },

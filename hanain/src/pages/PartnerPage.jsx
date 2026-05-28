@@ -9,6 +9,7 @@ import {
   Smartphone, Handshake, BarChart3, Repeat2,
 } from 'lucide-react'
 import RevealContact from '../components/common/RevealContact'
+import { QA_TOTAL } from '../data/siteStats'
 
 // ── 색상 ───────────────────────────────────────────────
 // [2026-05-21] 사이트 전역 통일 — deep navy + cyan-hana 시그니처 (카테고리 배너와 동일 톤)
@@ -78,7 +79,7 @@ const WHO_FIT = [
   { icon: Star,       title: '피부샵 · 마사지샵',    desc: '피부·관절·회복에 관심 있는 고객층을 이미 보유한 분. 자연스럽게 연결되는 이야기입니다.' },
   { icon: Leaf,       title: '건강식품 사업자',      desc: '온·오프라인에서 건강 관련 제품을 이미 다루고 있는 분. 성분 하나가 전체 라인업을 강화합니다.' },
   { icon: Activity,   title: '운동·피트니스 관련',   desc: '근육 회복, 에너지 대사, 항염에 관심 있는 고객과 일하는 분. 과학적 근거가 신뢰를 높입니다.' },
-  { icon: Smartphone, title: '온라인 콘텐츠 활동가', desc: '블로그·SNS·유튜브로 건강 정보를 나누는 분. 1,361개 Q&A가 콘텐츠 소재가 됩니다.' },
+  { icon: Smartphone, title: '온라인 콘텐츠 활동가', desc: `블로그·SNS·유튜브로 건강 정보를 나누는 분. ${QA_TOTAL.toLocaleString()}개 Q&A가 콘텐츠 소재가 됩니다.` },
   { icon: Handshake,  title: '건강에 관심 많은 누구나', desc: '전문 경력 없어도 괜찮습니다. 주변 사람에게 좋은 정보를 먼저 전하는 것에서 시작됩니다.' },
 ]
 

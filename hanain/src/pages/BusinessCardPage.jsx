@@ -6,6 +6,7 @@ import {
 } from 'lucide-react'
 import SEOHead from '../components/common/SEOHead'
 import { savePartnerToSession } from '../context/PartnerContext'
+import { QA_TOTAL } from '../data/siteStats'
 
 const MAIN_SITE = 'https://phlorotannin.com'
 
@@ -807,7 +808,7 @@ export default function BusinessCardPage() {
               {[
                 { icon: Shield, label: '논문 기반', sub: '검증된 Q&A' },
                 { icon: Heart,  label: '광고 없음', sub: '순수 건강정보' },
-                { icon: Star,   label: '1,311',   sub: '건강 Q&A' },
+                { icon: Star,   label: QA_TOTAL.toLocaleString(),   sub: '건강 Q&A' },
               ].map(({ icon: Icon, label, sub }) => (
                 <div key={label} className="flex flex-col items-center gap-2">
                   <div style={{ width: '44px', height: '44px', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: `linear-gradient(135deg, ${CREAM2}, ${CREAM3})`, border: `1.5px solid ${GOLD}40` }}>
@@ -833,7 +834,7 @@ export default function BusinessCardPage() {
             {[
               { icon: Globe,    label: '쉽게 배우는 플로로탄닌', sub: '누구나 이해하는 건강 정보', path: '/easy' },
               { icon: Leaf,     label: '플로로탄닌 소개',        sub: '해양 폴리페놀 기초 개념',  path: '/phlorotannin' },
-              { icon: BookOpen, label: '건강 Q&A 1,311개',       sub: '질환별 전문 답변 모음',    path: '/qa' },
+              { icon: BookOpen, label: `건강 Q&A ${QA_TOTAL.toLocaleString()}개`,       sub: '질환별 전문 답변 모음',    path: '/qa' },
             ].map((item, i, arr) => (
               <button key={item.path}
                 onClick={() => navigate(item.path)}
