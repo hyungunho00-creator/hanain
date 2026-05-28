@@ -27,10 +27,10 @@ const MECHANISMS = [
     title: 'NF-κB 경로 억제 → 만성 염증 차단',
     subtitle: '항염증 핵심 기전',
     steps: [
-      { icon: '⚡', label: '외부 자극', desc: '산화 스트레스·독소' },
-      { icon: '🔬', label: 'IKK 인산화 차단', desc: '플로로탄닌이 ATP 부위 결합' },
-      { icon: '🧬', label: 'NF-κB 핵 이동 차단', desc: 'IκB 분해 억제' },
-      { icon: '✅', label: '염증 사이토카인 ↓', desc: 'TNF-α, IL-6 발현 감소' },
+      { label: '외부 자극', desc: '산화 스트레스·독소' },
+      { label: 'IKK 인산화 차단', desc: '플로로탄닌이 ATP 부위 결합' },
+      { label: 'NF-κB 핵 이동 차단', desc: 'IκB 분해 억제' },
+      { label: '염증 사이토카인 감소', desc: 'TNF-α, IL-6 발현 감소' },
     ],
     statHighlights: [
       { value: '45', suffix: '%', label: 'TNF-α 감소', trend: 'down' },
@@ -49,10 +49,10 @@ NF-κB는 평소 IκB 단백질에 결합해 억제되어 있다가, 산화 스�
     title: 'AMPK 활성화 → 에너지 대사 정상화',
     subtitle: '혈당·지방·비만 조절',
     steps: [
-      { icon: '🍚', label: '식사 후', desc: '탄수화물 → 포도당' },
-      { icon: '🚧', label: 'α-글루코시다제 억제', desc: '흡수 속도 ↓' },
-      { icon: '⚡', label: 'AMPK 인산화', desc: 'GLUT4 → 세포막 이동' },
-      { icon: '📉', label: '혈당·지방 감소', desc: 'SREBP-1c 억제' },
+      { label: '식사 후', desc: '탄수화물 → 포도당' },
+      { label: 'α-글루코시다제 억제', desc: '흡수 속도 감소' },
+      { label: 'AMPK 인산화', desc: 'GLUT4 → 세포막 이동' },
+      { label: '혈당·지방 감소', desc: 'SREBP-1c 억제' },
     ],
     statHighlights: [
       { value: '27', suffix: '%', label: '공복혈당 감소', trend: 'down' },
@@ -71,10 +71,10 @@ NF-κB는 평소 IκB 단백질에 결합해 억제되어 있다가, 산화 스�
     title: 'Nrf2 활성화 → 내인성 항산화 방어막',
     subtitle: '산화 스트레스·노화 억제',
     steps: [
-      { icon: '🌫️', label: '활성산소 발생', desc: '세포 산화 스트레스' },
-      { icon: '🔓', label: 'Keap1 결합', desc: '시스테인 잔기 변형' },
-      { icon: '🧬', label: 'Nrf2 핵 이동', desc: 'ARE 서열 결합' },
-      { icon: '🛡️', label: '항산화 효소 발현', desc: 'SOD·HO-1·GSH 증가' },
+      { label: '활성산소 발생', desc: '세포 산화 스트레스' },
+      { label: 'Keap1 결합', desc: '시스테인 잔기 변형' },
+      { label: 'Nrf2 핵 이동', desc: 'ARE 서열 결합' },
+      { label: '항산화 효소 발현', desc: 'SOD·HO-1·GSH 증가' },
     ],
     statHighlights: [
       { value: '3.2', suffix: '배', label: 'HO-1 발현 ↑', trend: 'up' },
@@ -93,10 +93,10 @@ NF-κB는 평소 IκB 단백질에 결합해 억제되어 있다가, 산화 스�
     title: 'ACE·PDE5 억제 → 혈압·혈관 건강',
     subtitle: '심혈관 보호',
     steps: [
-      { icon: '🫀', label: '혈관 수축 신호', desc: '안지오텐신 Ⅰ → Ⅱ 변환' },
-      { icon: '🔒', label: 'ACE 효소 억제', desc: 'Zn²⁺ 결합 차단' },
-      { icon: '💨', label: 'eNOS·NO 증가', desc: '내피세포 활성' },
-      { icon: '📉', label: '혈압 감소', desc: '혈관 이완 + 응집 억제' },
+      { label: '혈관 수축 신호', desc: '안지오텐신 Ⅰ → Ⅱ 변환' },
+      { label: 'ACE 효소 억제', desc: 'Zn²⁺ 결합 차단' },
+      { label: 'eNOS·NO 증가', desc: '내피세포 활성' },
+      { label: '혈압 감소', desc: '혈관 이완 + 응집 억제' },
     ],
     statHighlights: [
       { value: '2.7', prefix: 'IC50 ', suffix: 'μg/mL', label: 'ACE 억제 (≒캡토프릴)', animate: false },
@@ -115,10 +115,10 @@ NF-κB는 평소 IκB 단백질에 결합해 억제되어 있다가, 산화 스�
     title: 'AChE 억제 → 인지기능·기억 보호',
     subtitle: '뇌신경 보호·치매 예방',
     steps: [
-      { icon: '🧠', label: '뇌세포 활성', desc: '아세틸콜린 분비' },
-      { icon: '🛑', label: 'AChE 효소 결합', desc: '활성 부위 차단' },
-      { icon: '💬', label: '신경전달 유지', desc: '아세틸콜린 보존' },
-      { icon: '🌿', label: 'BDNF 증가', desc: '신경영양인자 분비' },
+      { label: '뇌세포 활성', desc: '아세틸콜린 분비' },
+      { label: 'AChE 효소 결합', desc: '활성 부위 차단' },
+      { label: '신경전달 유지', desc: '아세틸콜린 보존' },
+      { label: 'BDNF 증가', desc: '신경영양인자 분비' },
     ],
     statHighlights: [
       { value: '60', suffix: '%', label: 'AChE 억제율', trend: 'down' },
@@ -137,10 +137,10 @@ NF-κB는 평소 IκB 단백질에 결합해 억제되어 있다가, 산화 스�
     title: 'MMPs 억제 → 피부·관절 보호',
     subtitle: '콜라겐 보호·피부 탄력',
     steps: [
-      { icon: '☀️', label: '자외선 노출', desc: '피부 손상 자극' },
-      { icon: '🔒', label: 'MMP-1 효소 억제', desc: 'Zn²⁺ 킬레이션' },
-      { icon: '🧬', label: 'MAPK 경로 차단', desc: '유전자 전사 ↓' },
-      { icon: '💎', label: '콜라겐 보존', desc: '프로콜라겐 합성 ↑' },
+      { label: '자외선 노출', desc: '피부 손상 자극' },
+      { label: 'MMP-1 효소 억제', desc: 'Zn²⁺ 킬레이션' },
+      { label: 'MAPK 경로 차단', desc: '유전자 전사 감소' },
+      { label: '콜라겐 보존', desc: '프로콜라겐 합성 증가' },
     ],
     statHighlights: [
       { value: '62', suffix: '%', label: 'MMP-1 분비 ↓', trend: 'down' },
@@ -156,18 +156,18 @@ NF-κB는 평소 IκB 단백질에 결합해 억제되어 있다가, 산화 스�
 ]
 
 const DISEASES = [
-  { name: '당뇨·혈당 조절', icon: '🩸', mech: 'α-글루코시다제 억제 + AMPK 활성화', evidence: '공복혈당 27% 감소 (동물)', cat: 'metabolism' },
-  { name: '비만·지방간', icon: '⚖️', mech: 'SREBP-1c 억제 + 지방산 산화 촉진', evidence: '체중 18%, 중성지방 23% 감소', cat: 'metabolism' },
-  { name: '대장·위암 예방', icon: '🔬', mech: '암세포 아포토시스 유도 + 종양 신생혈관 억제', evidence: '대장암 세포 증식 억제 IC50 12μM', cat: 'cancer_immune' },
-  { name: '면역 조절', icon: '🛡️', mech: 'Th1/Th2 균형 + NK세포 활성 증가', evidence: 'NK세포 활성 31% 증가 (in vitro)', cat: 'cancer_immune' },
-  { name: '고혈압·혈관', icon: '❤️', mech: 'ACE 억제 + eNOS/NO 증가', evidence: 'ACE 억제 IC50 2.7μg/mL (캡토프릴 수준)', cat: 'cardiovascular' },
-  { name: '치매·인지 저하', icon: '🧠', mech: 'AChE 억제 + BDNF 증가', evidence: '기억력 테스트 40% 개선 (쥐)', cat: 'neuro_cognitive' },
-  { name: '피부 노화·주름', icon: '✨', mech: 'MMP-1 억제 + 콜라겐 합성 촉진', evidence: 'MMP-1 62% 감소, 콜라겐 47% 증가', cat: 'skin' },
-  { name: '탈모', icon: '💆', mech: '5α-환원효소 억제 (DHT 생성 차단)', evidence: '모낭 세포 사멸 억제 (in vitro)', cat: 'hair' },
-  { name: '관절·골다공증', icon: '🦴', mech: 'RANKL 억제 + 파골세포 분화 억제', evidence: '골밀도 소실 14% 억제 (ovx 마우스)', cat: 'musculoskeletal' },
-  { name: '우울·스트레스', icon: '🌿', mech: 'HPA 축 코르티솔 조절 + 세로토닌 전구체', evidence: '불안 행동 23% 감소 (스트레스 동물)', cat: 'mental_health' },
-  { name: '폐 염증·호흡기', icon: '🫁', mech: 'NLRP3 인플라마솜 억제', evidence: 'LPS 폐 염증 모델 사이토카인 40% 감소', cat: 'respiratory' },
-  { name: '간 보호', icon: '🟤', mech: 'CYP2E1 억제 + GSH 증가', evidence: 'ALT·AST 정상화 (알코올성 간 손상 모델)', cat: 'digestive' },
+  { name: '당뇨·혈당 조절', icon: Activity, mech: 'α-글루코시다제 억제 + AMPK 활성화', evidence: '공복혈당 27% 감소 (동물)', cat: 'metabolism' },
+  { name: '비만·지방간', icon: TrendingUp, mech: 'SREBP-1c 억제 + 지방산 산화 촉진', evidence: '체중 18%, 중성지방 23% 감소', cat: 'metabolism' },
+  { name: '대장·위암 예방', icon: Microscope, mech: '암세포 아포토시스 유도 + 종양 신생혈관 억제', evidence: '대장암 세포 증식 억제 IC50 12μM', cat: 'cancer_immune' },
+  { name: '면역 조절', icon: Shield, mech: 'Th1/Th2 균형 + NK세포 활성 증가', evidence: 'NK세포 활성 31% 증가 (in vitro)', cat: 'cancer_immune' },
+  { name: '고혈압·혈관', icon: Heart, mech: 'ACE 억제 + eNOS/NO 증가', evidence: 'ACE 억제 IC50 2.7μg/mL (캡토프릴 수준)', cat: 'cardiovascular' },
+  { name: '치매·인지 저하', icon: Brain, mech: 'AChE 억제 + BDNF 증가', evidence: '기억력 테스트 40% 개선 (쥐)', cat: 'neuro_cognitive' },
+  { name: '피부 노화·주름', icon: Star, mech: 'MMP-1 억제 + 콜라겐 합성 촉진', evidence: 'MMP-1 62% 감소, 콜라겐 47% 증가', cat: 'skin' },
+  { name: '탈모', icon: Users, mech: '5α-환원효소 억제 (DHT 생성 차단)', evidence: '모낭 세포 사멸 억제 (in vitro)', cat: 'hair' },
+  { name: '관절·골다공증', icon: Zap, mech: 'RANKL 억제 + 파골세포 분화 억제', evidence: '골밀도 소실 14% 억제 (ovx 마우스)', cat: 'musculoskeletal' },
+  { name: '우울·스트레스', icon: Leaf, mech: 'HPA 축 코르티솔 조절 + 세로토닌 전구체', evidence: '불안 행동 23% 감소 (스트레스 동물)', cat: 'mental_health' },
+  { name: '폐 염증·호흡기', icon: Waves, mech: 'NLRP3 인플라마솜 억제', evidence: 'LPS 폐 염증 모델 사이토카인 40% 감소', cat: 'respiratory' },
+  { name: '간 보호', icon: FlaskConical, mech: 'CYP2E1 억제 + GSH 증가', evidence: 'ALT·AST 정상화 (알코올성 간 손상 모델)', cat: 'digestive' },
 ]
 
 const PAPERS = [
@@ -698,31 +698,39 @@ export default function PhlorotanninPage() {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-            {DISEASES.map((d, i) => (
-              <button
-                key={i}
-                onClick={() => {
-                  setActiveDis(activeDis === i ? null : i)
-                }}
-                aria-expanded={activeDis === i}
-                className={`text-left p-4 rounded-md border transition-colors duration-200 ${
-                  activeDis === i
-                    ? 'bg-gray-900 border-gray-900 text-white'
-                    : 'bg-white border-gray-200 hover:border-gray-400'
-                }`}
-              >
-                <div className="text-2xl mb-2" aria-hidden="true">{d.icon}</div>
-                <div className={`font-bold text-base mb-1 tracking-tight ${activeDis === i ? 'text-white' : 'text-gray-900'}`}>{d.name}</div>
-                {activeDis === i ? (
-                  <div className="mt-2 space-y-1.5">
-                    <div className="text-xs text-gray-300 leading-snug break-keep">{d.mech}</div>
-                    <div className="text-xs text-white font-medium break-keep">✓ {d.evidence}</div>
+            {DISEASES.map((d, i) => {
+              const DiseaseIcon = d.icon || BookOpen
+              const isActive = activeDis === i
+              return (
+                <button
+                  key={i}
+                  onClick={() => {
+                    setActiveDis(isActive ? null : i)
+                  }}
+                  aria-expanded={isActive}
+                  className={`text-left p-4 rounded-md border transition-colors duration-200 ${
+                    isActive
+                      ? 'bg-gray-900 border-gray-900 text-white'
+                      : 'bg-white border-gray-200 hover:border-gray-400'
+                  }`}
+                >
+                  <div className={`inline-flex items-center justify-center w-9 h-9 rounded-md border mb-3 ${
+                    isActive ? 'border-white/15 bg-white/10 text-white' : 'border-gray-200 bg-gray-50 text-gray-600'
+                  }`} aria-hidden="true">
+                    <DiseaseIcon className="w-4 h-4" strokeWidth={1.7} />
                   </div>
-                ) : (
-                  <div className="text-xs text-gray-500 truncate">{d.mech.split(' ')[0]}</div>
-                )}
-              </button>
-            ))}
+                  <div className={`font-bold text-base mb-1 tracking-tight ${isActive ? 'text-white' : 'text-gray-900'}`}>{d.name}</div>
+                  {isActive ? (
+                    <div className="mt-2 space-y-1.5">
+                      <div className="text-xs text-gray-300 leading-snug break-keep">{d.mech}</div>
+                      <div className="text-xs text-white font-medium break-keep">{d.evidence}</div>
+                    </div>
+                  ) : (
+                    <div className="text-xs text-gray-500 truncate">{d.mech.split(' ')[0]}</div>
+                  )}
+                </button>
+              )
+            })}
           </div>
         </div>
       </section>
@@ -931,7 +939,7 @@ export default function PhlorotanninPage() {
             blogTags={['플로로탄닌', '감태추출물', '디에콜', '에콜', '폴리페놀', '항산화']}
             blogCategory="research"
             max={6}
-            title="🔬 플로로탄닌 심층 Q&A 아카이브"
+            title="플로로탄닌 심층 Q&A 아카이브"
           />
         </div>
       </section>

@@ -7,12 +7,7 @@
  * 100% 인라인 SVG → SEO 0 영향, 텍스트는 DOM에 그대로 노출됨.
  * 모바일에서 세로 스택으로 자동 전환.
  *
- * 사용 예:
- *   <MechanismDiagram steps={[
- *     { icon: '⚡', label: '자극', desc: '산화 스트레스' },
- *     { icon: '🔬', label: '효소', desc: 'IKK 인산화 차단' },
- *     ...
- *   ]} />
+ * step.icon이 이모지 문자열이면 화면에서는 숫자형 단계로 대체한다.
  */
 
 export default function MechanismDiagram({ steps = [], className = '' }) {
@@ -47,16 +42,20 @@ export default function MechanismDiagram({ steps = [], className = '' }) {
 }
 
 function StepBlock({ step, index, mobile = false }) {
+  const isEmojiIcon = typeof step.icon === 'string' && /[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/u.test(step.icon)
+
   return (
-    <div className={`relative flex-1 bg-white border border-lab-100 rounded-xl p-4 shadow-lab ${mobile ? 'flex items-center gap-4' : 'text-center'}`}>
+    <div className={`relative flex-1 bg-white border border-gray-200 rounded-lg p-4 ${mobile ? 'flex items-center gap-4' : 'text-center'}`}>
       {/* 단계 번호 배지 */}
-      <div className={`absolute -top-2 ${mobile ? '-left-2' : 'left-1/2 -translate-x-1/2'} w-6 h-6 rounded-full bg-lab-500 text-white text-xs font-bold flex items-center justify-center shadow-sm`}>
+      <div className={`absolute -top-2 ${mobile ? '-left-2' : 'left-1/2 -translate-x-1/2'} w-6 h-6 rounded-md bg-gray-900 text-white text-xs font-bold flex items-center justify-center`}>
         {index}
       </div>
       {/* 아이콘 */}
-      <div className={`${mobile ? 'flex-shrink-0' : 'mt-3 mb-2'} text-2xl`} aria-hidden="true">
-        {typeof step.icon === 'string' ? step.icon : step.icon}
-      </div>
+      {step.icon && (
+        <div className={`${mobile ? 'flex-shrink-0' : 'mt-3 mb-2'} text-xs font-semibold tracking-[0.16em] text-gray-400`} aria-hidden="true">
+          {isEmojiIcon ? String(index).padStart(2, '0') : step.icon}
+        </div>
+      )}
       <div className={mobile ? 'flex-1' : ''}>
         {/* 라벨 */}
         <div className="text-sm font-bold text-ocean-deep leading-snug break-keep">{step.label}</div>
@@ -72,14 +71,14 @@ function StepBlock({ step, index, mobile = false }) {
 function Arrow({ direction = 'right' }) {
   if (direction === 'down') {
     return (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00B4D8"
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF"
         strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <path d="M12 5v14M5 12l7 7 7-7" />
       </svg>
     )
   }
   return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00B4D8"
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF"
       strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
       aria-hidden="true" className="flex-shrink-0 mx-1">
       <path d="M5 12h14M12 5l7 7-7 7" />
