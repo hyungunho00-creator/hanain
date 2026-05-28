@@ -2,10 +2,9 @@
 // hanain/src/components/common/CategoryGrid.jsx
 // 13개 카테고리 통합 그리드 — 사이드바·둘러보기 박스 공용
 //
-// [2026-05-21] 통일 디자인
-//   - 단색 컬러 박스 6개 ❌ → 다크 카드 + 아이콘 + 액센트 14개 ✅
-//   - 모든 카테고리 동일 형태 (시각적 일관성)
-//   - 액센트 컬러는 카테고리 시그니처로만 사용 (배경/테두리/아이콘)
+// [2026-05-28] Q&A 공통 디자인
+//   - 모든 카테고리를 회색 계열의 같은 카드 규칙으로 통일
+//   - 카테고리별 강한 색 포인트는 화면 노출에서 제거
 // ───────────────────────────────────────────────────────────────
 import { Link } from 'react-router-dom'
 import { ChevronRight } from 'lucide-react'
@@ -29,7 +28,7 @@ export default function CategoryGrid({
 
   return (
     <section
-      className={`bg-white rounded-2xl border border-border-hana p-5 ${className}`}
+      className={`bg-white rounded-lg border border-gray-200 p-5 ${className}`}
       aria-label={title}
     >
       <div className="flex items-center justify-between mb-3">
@@ -37,7 +36,7 @@ export default function CategoryGrid({
         {showAllLink && (
           <Link
             to="/qa"
-            className="text-[11px] text-gray-400 hover:text-cyan-hana inline-flex items-center gap-0.5 transition"
+            className="text-[11px] text-gray-400 hover:text-gray-900 inline-flex items-center gap-0.5 transition-colors"
           >
             전체 <ChevronRight className="w-3 h-3" />
           </Link>
@@ -54,21 +53,14 @@ export default function CategoryGrid({
             <Link
               key={c.slug}
               to={`/category/${c.slug}`}
-              className="group relative flex items-center gap-2 rounded-xl bg-gray-50 hover:bg-white border border-gray-100 hover:border-cyan-hana/60 px-2.5 py-2 transition-all"
-              style={{
-                // hover 시 좌측 액센트 라인 효과 — inline pseudo 불가, ring 대신 box-shadow 이용은 별도, 여기서는 단순화
-              }}
+              className="group relative flex items-center gap-2 rounded-md bg-gray-50 hover:bg-white border border-gray-100 hover:border-gray-400 px-2.5 py-2 transition-colors"
             >
               <span
-                className="shrink-0 inline-flex items-center justify-center w-7 h-7 rounded-lg ring-1 ring-black/5"
-                style={{
-                  backgroundColor: `${c.accent}1A`,  // 10% 알파
-                  color: c.accent,
-                }}
+                className="shrink-0 inline-flex items-center justify-center w-7 h-7 rounded-md bg-white text-gray-500 ring-1 ring-gray-200 group-hover:text-gray-900"
               >
                 <Icon className="w-3.5 h-3.5" strokeWidth={2.25} />
               </span>
-              <span className="text-[12px] font-medium text-gray-700 group-hover:text-ocean-deep leading-tight">
+              <span className="text-[12px] font-medium text-gray-700 group-hover:text-gray-900 leading-tight">
                 {c.name}
               </span>
             </Link>

@@ -81,9 +81,9 @@ export default function RelatedQA({ blogTags = [], blogCategory = null, max = 3,
   if (!questions || related.length === 0) return null
 
   return (
-    <section className="mt-8 bg-white border border-gray-200 rounded-2xl p-5 md:p-6">
+    <section className="mt-8 bg-white border border-gray-200 rounded-lg p-5 md:p-6">
       <div className="flex items-center gap-2 mb-4">
-        <MessageSquare className="w-4 h-4 text-cyan-hana" />
+        <MessageSquare className="w-4 h-4 text-gray-500" />
         <h3 className="text-base md:text-lg font-bold text-ocean-deep">{title}</h3>
       </div>
       <ul className="space-y-2">
@@ -111,7 +111,7 @@ export default function RelatedQA({ blogTags = [], blogCategory = null, max = 3,
                     )}
                   </div>
                 </div>
-                <ChevronRight className="w-4 h-4 text-gray-300 group-hover:text-cyan-hana flex-shrink-0 mt-1" />
+                <ChevronRight className="w-4 h-4 text-gray-300 group-hover:text-gray-900 flex-shrink-0 mt-1" />
               </Link>
             </li>
           )

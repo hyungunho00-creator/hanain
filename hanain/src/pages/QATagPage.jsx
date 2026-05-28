@@ -236,7 +236,7 @@ export default function QATagPage() {
               <p className="text-gray-600 mb-4">이 태그의 Q&A가 아직 없습니다.</p>
               <Link
                 to={withRef('/qa', partner)}
-                className="inline-flex items-center gap-1 text-cyan-hana hover:underline text-sm font-medium"
+                className="inline-flex items-center gap-1 text-gray-700 hover:text-gray-900 underline underline-offset-4 decoration-gray-300 hover:decoration-gray-700 text-sm font-medium"
               >
                 전체 Q&A 보기 <ChevronRight className="w-4 h-4" />
               </Link>
@@ -244,23 +244,17 @@ export default function QATagPage() {
           ) : (
             <>
               {/* [2026-05-21] Q&A 카드 리스트 — 의학저널 카드 컨테이너 (CategoryPage 통일 패턴) */}
-              <article className="bg-white rounded-2xl border border-border-hana overflow-hidden shadow-[0_1px_2px_rgba(11,26,46,0.04),0_8px_24px_-12px_rgba(11,26,46,0.08)]">
-                {/* 카테고리 시그니처 라인 — 헤더 배너 하단 액센트 라인과 시각 호응 */}
+              <article className="bg-white rounded-lg border border-gray-200 overflow-hidden">
+                {/* Q&A 공통 상단 라인 */}
                 <div
                   aria-hidden
                   className="h-[3px] w-full"
-                  style={{
-                    background: `linear-gradient(90deg, ${dominantMeta.accent} 0%, ${dominantMeta.accent}88 35%, ${dominantMeta.accent}33 65%, transparent 100%)`,
-                  }}
+                  style={{ background: 'linear-gradient(90deg, #111827 0%, #E5E7EB 62%, transparent 100%)' }}
                 />
                 {/* 저널 섹션 헤더 */}
-                <header className="flex items-center justify-between gap-2 px-4 sm:px-5 py-3 bg-gradient-to-b from-gray-hana/40 to-white border-b border-gray-100">
+                <header className="flex items-center justify-between gap-2 px-4 sm:px-5 py-3 bg-white border-b border-gray-100">
                   <div className="flex items-center gap-2 min-w-0">
-                    <span
-                      aria-hidden
-                      className="inline-block w-1.5 h-1.5 rounded-full shrink-0"
-                      style={{ backgroundColor: dominantMeta.accent }}
-                    />
+                    <span aria-hidden className="h-px w-5 bg-gray-300 shrink-0" />
                     <h2 className="text-[11.5px] font-semibold text-ocean-deep tracking-[0.14em] uppercase truncate">
                       Tag Archive
                     </h2>
@@ -283,17 +277,17 @@ export default function QATagPage() {
                       <Link
                         key={q.id}
                         to={withRef(`/q/${slug}`, partner)}
-                        className="relative flex items-start gap-3.5 px-4 sm:px-5 py-4 hover:bg-cyan-hana/[0.03] transition-all duration-200 group"
+                        className="relative flex items-start gap-3.5 px-4 sm:px-5 py-4 hover:bg-gray-50 transition-colors group"
                       >
                         {/* hover 시 좌측 액센트 스트라이프 */}
                         <span
                           aria-hidden
-                          className="absolute left-0 top-2 bottom-2 w-[3px] rounded-r-full bg-cyan-hana opacity-0 scale-y-50 group-hover:opacity-100 group-hover:scale-y-100 transition-all duration-200 origin-center"
+                          className="absolute left-0 top-2 bottom-2 w-[3px] rounded-r bg-gray-900 opacity-0 scale-y-50 group-hover:opacity-100 group-hover:scale-y-100 transition-all duration-200 origin-center"
                         />
                         <div className="flex-1 min-w-0">
                           <div className="flex flex-wrap items-center gap-1.5 mb-1.5 text-[11.5px]">
                             {catName && (
-                              <span className="bg-gray-50 text-gray-500 px-2 py-0.5 rounded-full border border-gray-100">
+                              <span className="bg-gray-50 text-gray-500 px-2 py-0.5 rounded-md border border-gray-100">
                                 {catName}
                               </span>
                             )}
@@ -301,7 +295,7 @@ export default function QATagPage() {
                               <span key={t} className="text-gray-400">#{t}</span>
                             ))}
                           </div>
-                          <h3 className="font-semibold text-ocean-deep text-[15.5px] md:text-base group-hover:text-cyan-hana transition-colors leading-snug tracking-tight">
+                          <h3 className="font-semibold text-ocean-deep text-[15.5px] md:text-base group-hover:text-gray-900 transition-colors leading-snug tracking-tight">
                             {q.question}
                           </h3>
                           <div className="flex items-center gap-2 mt-2 text-[11.5px] text-gray-400">
@@ -310,7 +304,7 @@ export default function QATagPage() {
                             <span className="flex items-center gap-1 tabular-nums"><Heart className="w-3 h-3" />{likes}</span>
                           </div>
                         </div>
-                        <ChevronRight className="w-4 h-4 text-gray-300 group-hover:text-cyan-hana group-hover:translate-x-0.5 transition-all shrink-0 mt-1" />
+                        <ChevronRight className="w-4 h-4 text-gray-300 group-hover:text-gray-900 group-hover:translate-x-0.5 transition-all shrink-0 mt-1" />
                       </Link>
                     )
                   })}
@@ -341,7 +335,7 @@ export default function QATagPage() {
           <div className="mt-10 pt-6 border-t border-gray-200">
             <Link
               to={withRef('/qa', partner)}
-              className="inline-flex items-center gap-1.5 text-sm text-gray-600 hover:text-cyan-hana transition-colors"
+              className="inline-flex items-center gap-1.5 text-sm text-gray-600 hover:text-gray-900 transition-colors"
             >
               <BookOpen className="w-4 h-4" /> 전체 Q&A 라이브러리로
             </Link>
@@ -374,7 +368,7 @@ function RelatedTags({ currentTag, matchedQuestions, tagIndex, partner }) {
   if (related.length === 0) return null
 
   return (
-    <div className="mt-8 bg-white border border-gray-200 rounded-xl px-5 py-4">
+    <div className="mt-8 bg-white border border-gray-200 rounded-lg px-5 py-4">
       <div className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-3">
         관련 태그
       </div>
@@ -383,7 +377,7 @@ function RelatedTags({ currentTag, matchedQuestions, tagIndex, partner }) {
           <Link
             key={t}
             to={withRef(`/qa/tag/${encodeURIComponent(t)}`, partner)}
-            className="text-sm text-gray-600 bg-gray-50 hover:bg-cyan-hana hover:text-white border border-gray-200 hover:border-cyan-hana px-3 py-1.5 rounded-full transition-colors"
+            className="text-sm text-gray-600 bg-gray-50 hover:bg-gray-900 hover:text-white border border-gray-200 hover:border-gray-900 px-3 py-1.5 rounded-md transition-colors"
           >
             #{t}
           </Link>

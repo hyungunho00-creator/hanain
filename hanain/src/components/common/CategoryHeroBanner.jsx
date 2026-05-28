@@ -2,11 +2,9 @@
 // hanain/src/components/common/CategoryHeroBanner.jsx
 // 카테고리·태그 페이지 통합 히어로 배너 — E-E-A-T 신뢰감 강화
 //
-// [2026-05-21] 통일 디자인 시스템 도입
-//   - 단색 그라데이션 박스 → 의학저널 톤 배너 이미지 + 어두운 오버레이
-//   - 좌측: 한글 타이포 + 신뢰 메타 라인(리서치팀 검토·업데이트·출처)
-//   - 우측: 미니멀 의학 일러스트 (배너 자체에 내장)
-//   - 액센트 컬러는 카테고리별로 다르되 베이스(deep navy + cyan)는 통일
+// [2026-05-28] Q&A 디자인 정리
+//   - 카테고리마다 다른 강한 색 포인트를 제거하고 회색·네이비 톤으로 통일
+//   - 배너 이미지는 SEO/OG 자산으로 유지하되 화면 히어로에서는 정보 가독성을 우선
 // ───────────────────────────────────────────────────────────────
 import { Link } from 'react-router-dom'
 import { ChevronRight, ShieldCheck, BookOpen } from 'lucide-react'
@@ -21,34 +19,19 @@ export default function CategoryHeroBanner({
   sourceLabel = 'PubMed · Europe PMC · DOI',  // 출처 라벨
 }) {
   const Icon = meta?.icon
-  const accent = meta?.accent || '#00B4D8'
-  const banner = meta?.banner || '/banners/cat-default.png'
 
   return (
     <header
-      className="relative overflow-hidden border-b border-white/5"
+      className="relative overflow-hidden border-b border-gray-200"
       style={{
         backgroundColor: '#0B1A2E',
-        backgroundImage: `url("${banner}")`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center right',
-        backgroundRepeat: 'no-repeat',
       }}
     >
-      {/* 어두운 오버레이 — 좌측 강하게, 우측 옅게 (텍스트 가독성 + 배너 일러스트 노출) */}
       <div
         aria-hidden="true"
         className="absolute inset-0"
         style={{
-          background: 'linear-gradient(90deg, rgba(11,26,46,0.94) 0%, rgba(11,26,46,0.78) 50%, rgba(11,26,46,0.45) 100%)',
-        }}
-      />
-      {/* 미세 노이즈 텍스처를 위한 두 번째 그라디언트 */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 opacity-30"
-        style={{
-          background: 'radial-gradient(ellipse at 20% 50%, rgba(0,180,216,0.18) 0%, transparent 60%)',
+          background: 'linear-gradient(90deg, rgba(11,26,46,0.98) 0%, rgba(11,26,46,0.92) 58%, rgba(11,26,46,0.84) 100%)',
         }}
       />
 
@@ -77,7 +60,7 @@ export default function CategoryHeroBanner({
           {Icon && (
             <span
               className="inline-flex items-center justify-center w-9 h-9 rounded-lg ring-1 ring-white/10"
-              style={{ backgroundColor: `${accent}22`, color: accent }}
+              style={{ backgroundColor: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.76)' }}
             >
               <Icon className="w-5 h-5" strokeWidth={2.25} />
             </span>
@@ -104,11 +87,11 @@ export default function CategoryHeroBanner({
         {/* E-E-A-T 신뢰 메타 라인 — 리서치팀 검토·업데이트·출처 */}
         <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-[11px] md:text-xs text-white/55">
           <span className="inline-flex items-center gap-1.5">
-            <ShieldCheck className="w-3.5 h-3.5" style={{ color: accent }} />
+            <ShieldCheck className="w-3.5 h-3.5 text-white/55" />
             리서치팀 검토
           </span>
           <span className="inline-flex items-center gap-1.5">
-            <span className="w-1 h-1 rounded-full bg-white/40" />
+            <span className="text-white/30">·</span>
             최근 업데이트 {reviewedDate}
           </span>
           <span className="inline-flex items-center gap-1.5">
@@ -118,12 +101,12 @@ export default function CategoryHeroBanner({
         </div>
       </div>
 
-      {/* 액센트 하단 라인 — 카테고리 컬러 시그니처 */}
+      {/* 하단 라인 — Q&A 공통 톤 */}
       <div
         aria-hidden="true"
         className="relative h-[3px]"
         style={{
-          background: `linear-gradient(90deg, ${accent} 0%, ${accent}88 40%, transparent 100%)`,
+          background: 'linear-gradient(90deg, rgba(255,255,255,0.42) 0%, rgba(255,255,255,0.12) 55%, transparent 100%)',
         }}
       />
     </header>

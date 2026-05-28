@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { usePartner } from '../../context/PartnerContext'
 import { withRef } from '../../lib/partnerRef'
-import { Phone, MessageCircle, MessageSquare, Megaphone, PlayCircle, Film, BookOpen, ArrowUpRight } from 'lucide-react'
+import { MessageSquare, Megaphone, PlayCircle, Film, BookOpen, ArrowUpRight, Utensils } from 'lucide-react'
 import RevealContact from '../common/RevealContact'
 import { getQaCategories } from '../../lib/supabase'
 
@@ -229,6 +229,25 @@ export default function Footer() {
                     displayPhone={partner.phoneDisplay}
                     className="text-gray-800 font-medium hover:text-gray-900 transition-colors"
                   />
+                </div>
+                <div className="pt-1 space-y-2.5">
+                  <RevealContact
+                    type="sms"
+                    label="플로로탄닌 구매·가격 정보 문의"
+                    revealLabel={`${partner.phoneDisplay} 문자하기`}
+                    phone={partner.phone}
+                    displayPhone={partner.phoneDisplay}
+                    smsBody="[플로로탄닌 구매·가격 정보 문의] 제품과 가격 정보를 안내받고 싶습니다."
+                    className="w-full border border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white px-3.5 py-2.5 rounded-md text-[13px] font-medium transition-colors"
+                  />
+                  <Link
+                    to="/blog/meulssori-patient-meal-delivery-service-introduction"
+                    className="flex items-center justify-center gap-2 w-full border border-gray-200 bg-white text-gray-700 hover:border-gray-900 hover:text-gray-900 px-3.5 py-2.5 rounded-md text-[13px] font-medium transition-colors"
+                  >
+                    <Utensils className="w-4 h-4 flex-shrink-0" strokeWidth={1.8} aria-hidden="true" />
+                    <span>우리 맛있으리 식단 보러가기</span>
+                    <ArrowUpRight className="w-3.5 h-3.5 flex-shrink-0" strokeWidth={1.8} aria-hidden="true" />
+                  </Link>
                 </div>
                 <div>
                   <div className="text-gray-400 text-xs mb-1.5">운영 시간</div>

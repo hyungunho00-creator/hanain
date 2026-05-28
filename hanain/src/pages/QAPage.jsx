@@ -223,7 +223,7 @@ export default function QAPage() {
   const [searchParams, setSearchParams] = useSearchParams()
   const partner = usePartner()
 
-  // ✅ URL params를 직접 파생 — state 비동기 타이밍 버그 완전 제거
+  // URL params를 직접 파생해 state 비동기 타이밍 버그를 방지
   const activeCategory = searchParams.get('category') || 'all'
   const openId = searchParams.get('openId') || null
   const searchQuery = searchParams.get('q') || ''
@@ -282,7 +282,7 @@ export default function QAPage() {
       .catch(() => setDataLoaded(true))
   }, [])
 
-  // ✅ 필터링: URL params 직접 사용 → state 타이밍 문제 없음
+  // URL params 직접 사용으로 필터 state 불일치를 방지
   const { questions, totalCount } = useMemo(() => {
     if (!dataLoaded) return { questions: [], totalCount: 0 }
 
@@ -495,7 +495,7 @@ export default function QAPage() {
             <LastReviewed date={LAST_REVIEWED} className="text-left" />
           </div>
 
-          {/* 🔍 검색창 */}
+          {/* 검색창 */}
           <form onSubmit={handleSearch} className="relative max-w-2xl">
             <div className="flex items-center bg-white border border-gray-300 rounded-md overflow-hidden focus-within:border-gray-900 transition-colors">
               <Search className="w-4 h-4 text-gray-400 ml-4 flex-shrink-0" strokeWidth={1.8} />

@@ -104,38 +104,35 @@ async function getFallbackPopular(catId, limit = 5) {
     }))
 }
 
-// [2026-05-21] 질문 카드 — 의학저널 스타일 업그레이드
-// 변경사항: hover 시 좌측 cyan-hana 액센트 스트라이프 + subtle 엘리베이션 + 메타 라인 정제(• 구분자)
-// 카테고리 무관 통일 규칙 유지: 좌측 스트라이프·아이콘은 cyan-hana 고정 (PR #24 결정 준수)
-// 카테고리 색상은 컨테이너 상단 시그니처 라인에서만 디스크리트하게 사용
+// 질문 카드 — Q&A 공통 목록 스타일
 export function QuestionRow({ q, rank }) {
   const slug = q.slug || q.id
   return (
     <Link
       to={`/q/${slug}`}
-      className="relative flex items-start gap-3.5 px-4 py-4 sm:px-5 sm:py-4 hover:bg-cyan-hana/[0.03] transition-all duration-200 group"
+      className="relative flex items-start gap-3.5 px-4 py-4 sm:px-5 sm:py-4 hover:bg-gray-50 transition-colors group"
     >
       {/* hover 시 좌측 액센트 스트라이프 — 저널 인덱스 페이지 느낌 */}
       <span
         aria-hidden
-        className="absolute left-0 top-2 bottom-2 w-[3px] rounded-r-full bg-cyan-hana opacity-0 scale-y-50 group-hover:opacity-100 group-hover:scale-y-100 transition-all duration-200 origin-center"
+        className="absolute left-0 top-2 bottom-2 w-[3px] rounded-r bg-gray-900 opacity-0 scale-y-50 group-hover:opacity-100 group-hover:scale-y-100 transition-all duration-200 origin-center"
       />
       {rank && (
-        <span className={`shrink-0 inline-flex items-center justify-center w-7 h-7 rounded-full text-[13px] font-bold transition-all ${
+        <span className={`shrink-0 inline-flex items-center justify-center w-7 h-7 rounded-md text-[13px] font-bold transition-colors ${
           rank <= 3
-            ? 'bg-cyan-hana text-white shadow-sm shadow-cyan-hana/30 ring-2 ring-cyan-hana/10'
+            ? 'bg-gray-900 text-white'
             : 'bg-white text-gray-500 ring-1 ring-gray-200'
         }`}>
           {rank}
         </span>
       )}
       <div className="flex-1 min-w-0">
-        <p className="text-[15px] sm:text-[15.5px] font-semibold text-ocean-deep group-hover:text-cyan-hana transition-colors leading-snug mb-2 tracking-tight">
+        <p className="text-[15px] sm:text-[15.5px] font-semibold text-ocean-deep group-hover:text-gray-900 transition-colors leading-snug mb-2 tracking-tight">
           {q.title}
         </p>
         <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[11.5px] text-gray-400">
           {q.tags?.slice(0, 2).map(t => (
-            <span key={t} className="bg-gray-50 text-gray-500 px-2 py-0.5 rounded-full border border-gray-100">#{t}</span>
+            <span key={t} className="bg-gray-50 text-gray-500 px-2 py-0.5 rounded-md border border-gray-100">#{t}</span>
           ))}
           {q.tags?.length > 0 && <span className="text-gray-200">·</span>}
           <span className="flex items-center gap-1 tabular-nums"><Eye className="w-3 h-3" />{(q.view_count || 0).toLocaleString()}</span>
@@ -143,7 +140,7 @@ export function QuestionRow({ q, rank }) {
           <span className="flex items-center gap-1 tabular-nums"><Heart className="w-3 h-3" />{q.like_count || 0}</span>
         </div>
       </div>
-      <ChevronRight className="w-4 h-4 text-gray-300 group-hover:text-cyan-hana group-hover:translate-x-0.5 transition-all shrink-0 mt-1" />
+      <ChevronRight className="w-4 h-4 text-gray-300 group-hover:text-gray-900 group-hover:translate-x-0.5 transition-all shrink-0 mt-1" />
     </Link>
   )
 }
@@ -244,9 +241,8 @@ export default function CategoryPage() {
 
   if (notFound) return (
     <div className="pt-16 min-h-screen bg-gray-hana flex flex-col items-center justify-center gap-4">
-      <div className="text-5xl">🔍</div>
       <p className="text-gray-600 text-lg">카테고리를 찾을 수 없습니다.</p>
-      <Link to="/qa" className="text-cyan-hana hover:underline text-sm">← 전체 Q&A 보기</Link>
+      <Link to="/qa" className="text-gray-700 hover:text-gray-900 underline underline-offset-4 decoration-gray-300 hover:decoration-gray-700 text-sm">전체 Q&A 보기</Link>
     </div>
   )
 
@@ -256,7 +252,7 @@ export default function CategoryPage() {
     </div>
   )
 
-  // [2026-05-21] 카테고리 메타데이터 통합 — 헤더 배너 전용 (본문 인터랙티브는 cyan-hana 통일)
+  // 카테고리 메타데이터 통합 — 헤더 배너 전용
   const meta = getCategoryMeta(category.id)
 
   // [2026-05-21 D6 보강] 구조화 데이터 — BreadcrumbList + CollectionPage + ItemList
@@ -343,20 +339,20 @@ export default function CategoryPage() {
           <div className="flex flex-col lg:flex-row gap-6">
             {/* ── 메인: 질문 목록 ── */}
             <main className="flex-1 min-w-0">
-              {/* [2026-05-21] 정렬 탭 — frosted container + cyan-hana 통일 active */}
-              <div className="inline-flex items-center gap-1 p-1 mb-4 bg-white border border-border-hana rounded-full shadow-sm">
+              {/* 정렬 탭 */}
+              <div className="inline-flex items-center gap-1 p-1 mb-4 bg-white border border-gray-200 rounded-md">
                 {[
-                  { key: 'popular', label: '🔥 인기순' },
-                  { key: 'latest', label: '🕐 최신순' },
-                  { key: 'likes', label: '❤️ 추천순' },
+                  { key: 'popular', label: '인기순' },
+                  { key: 'latest', label: '최신순' },
+                  { key: 'likes', label: '추천순' },
                 ].map(s => (
                   <button
                     key={s.key}
                     onClick={() => { setSort(s.key); setPage(1) }}
-                    className={`px-3.5 py-1.5 rounded-full text-[13px] font-medium transition-all ${
+                    className={`px-3.5 py-1.5 rounded-md text-[13px] font-medium transition-colors ${
                       sort === s.key
-                        ? 'bg-cyan-hana text-white shadow-sm shadow-cyan-hana/20'
-                        : 'text-gray-500 hover:text-cyan-hana hover:bg-cyan-hana/5'
+                        ? 'bg-gray-900 text-white'
+                        : 'text-gray-500 hover:text-gray-900 hover:bg-gray-50'
                     }`}
                   >
                     {s.label}
@@ -365,24 +361,18 @@ export default function CategoryPage() {
               </div>
 
               {/* [2026-05-21] 질문 목록 — 의학저널 카드 디자인 (상단 카테고리 시그니처 라인 + 헤더 스트립 + 본문 카드) */}
-              <article className="bg-white rounded-2xl border border-border-hana overflow-hidden shadow-[0_1px_2px_rgba(11,26,46,0.04),0_8px_24px_-12px_rgba(11,26,46,0.08)]">
-                {/* 카테고리 시그니처 라인 — 헤더 배너 하단 액센트 라인과 시각 호응 */}
+              <article className="bg-white rounded-lg border border-gray-200 overflow-hidden">
+                {/* Q&A 공통 상단 라인 */}
                 <div
                   aria-hidden
                   className="h-[3px] w-full"
-                  style={{
-                    background: `linear-gradient(90deg, ${meta.accent} 0%, ${meta.accent}88 35%, ${meta.accent}33 65%, transparent 100%)`,
-                  }}
+                  style={{ background: 'linear-gradient(90deg, #111827 0%, #E5E7EB 62%, transparent 100%)' }}
                 />
 
                 {/* 저널 섹션 헤더 — Q&A 아카이브 / 총 N건 / 정렬 표시 */}
-                <header className="flex items-center justify-between gap-2 px-4 sm:px-5 py-3 bg-gradient-to-b from-gray-hana/40 to-white border-b border-gray-100">
+                <header className="flex items-center justify-between gap-2 px-4 sm:px-5 py-3 bg-white border-b border-gray-100">
                   <div className="flex items-center gap-2 min-w-0">
-                    <span
-                      aria-hidden
-                      className="inline-block w-1.5 h-1.5 rounded-full shrink-0"
-                      style={{ backgroundColor: meta.accent }}
-                    />
+                    <span aria-hidden className="h-px w-5 bg-gray-300 shrink-0" />
                     <h2 className="text-[11.5px] font-semibold text-ocean-deep tracking-[0.14em] uppercase truncate">
                       Q&amp;A Archive
                     </h2>
@@ -401,7 +391,7 @@ export default function CategoryPage() {
                   <div className="divide-y divide-gray-50">
                     {[...Array(8)].map((_, i) => (
                       <div key={i} className="px-4 sm:px-5 py-4 animate-pulse flex gap-3">
-                        <div className="w-7 h-7 bg-gray-100 rounded-full shrink-0" />
+                        <div className="w-7 h-7 bg-gray-100 rounded-md shrink-0" />
                         <div className="flex-1 space-y-2">
                           <div className="h-4 bg-gray-100 rounded w-3/4" />
                           <div className="h-3 bg-gray-50 rounded w-1/3" />
@@ -411,7 +401,6 @@ export default function CategoryPage() {
                   </div>
                 ) : questions.length === 0 ? (
                   <div className="p-12 text-center">
-                    <div className="text-4xl mb-3">📭</div>
                     <p className="text-gray-500">아직 질문이 없습니다.</p>
                   </div>
                 ) : (
@@ -427,26 +416,26 @@ export default function CategoryPage() {
                 )}
               </article>
 
-              {/* [2026-05-21] 페이지네이션 — cyan-hana 통일 */}
+              {/* 페이지네이션 */}
               {totalPages > 1 && (
                 <div className="flex items-center justify-center gap-1.5 mt-6">
                   <button onClick={() => setPage(p => Math.max(1, p - 1))} disabled={page === 1}
-                    className="px-4 py-2 rounded-lg border border-gray-200 bg-white text-sm text-gray-600 hover:border-cyan-hana hover:text-cyan-hana disabled:opacity-40 disabled:hover:border-gray-200 disabled:hover:text-gray-600 transition">이전</button>
+                    className="px-4 py-2 rounded-md border border-gray-200 bg-white text-sm text-gray-600 hover:border-gray-400 hover:text-gray-900 disabled:opacity-40 disabled:hover:border-gray-200 disabled:hover:text-gray-600 transition-colors">이전</button>
                   {[...Array(Math.min(5, totalPages))].map((_, i) => {
                     const p = Math.max(1, Math.min(page - 2, totalPages - 4)) + i
                     const active = page === p
                     return (
                       <button key={p} onClick={() => setPage(p)}
-                        className={`w-10 h-10 rounded-lg text-sm font-medium transition ${
+                        className={`w-10 h-10 rounded-md text-sm font-medium transition-colors ${
                           active
-                            ? 'bg-cyan-hana text-white ring-1 ring-cyan-hana/40 shadow-sm'
-                            : 'bg-white border border-gray-200 text-gray-600 hover:border-cyan-hana hover:text-cyan-hana'
+                            ? 'bg-gray-900 text-white border border-gray-900'
+                            : 'bg-white border border-gray-200 text-gray-600 hover:border-gray-400 hover:text-gray-900'
                         }`}
                       >{p}</button>
                     )
                   })}
                   <button onClick={() => setPage(p => Math.min(totalPages, p + 1))} disabled={page === totalPages}
-                    className="px-4 py-2 rounded-lg border border-gray-200 bg-white text-sm text-gray-600 hover:border-cyan-hana hover:text-cyan-hana disabled:opacity-40 disabled:hover:border-gray-200 disabled:hover:text-gray-600 transition">다음</button>
+                    className="px-4 py-2 rounded-md border border-gray-200 bg-white text-sm text-gray-600 hover:border-gray-400 hover:text-gray-900 disabled:opacity-40 disabled:hover:border-gray-200 disabled:hover:text-gray-600 transition-colors">다음</button>
                 </div>
               )}
             </main>
@@ -456,9 +445,9 @@ export default function CategoryPage() {
 
               {/* 인기 질문 TOP 5 */}
               {popular.length > 0 && (
-                <div className="bg-white rounded-2xl border border-border-hana p-5">
+                <div className="bg-white rounded-lg border border-gray-200 p-5">
                   <h3 className="font-bold text-ocean-deep mb-3 text-sm flex items-center gap-2">
-                    🔥 인기 질문 TOP 5
+                    인기 질문 TOP 5
                   </h3>
                   <div className="space-y-2">
                     {popular.slice(0, 5).map((q, i) => (
@@ -467,12 +456,12 @@ export default function CategoryPage() {
                         to={`/q/${q.slug || q.id}`}
                         className="flex items-start gap-2 group"
                       >
-                        <span className={`shrink-0 inline-flex items-center justify-center w-5 h-5 rounded-full text-xs font-bold mt-0.5 ${
-                          i < 3 ? 'bg-cyan-hana text-white' : 'bg-gray-100 text-gray-500'
+                        <span className={`shrink-0 inline-flex items-center justify-center w-5 h-5 rounded-md text-xs font-bold mt-0.5 ${
+                          i < 3 ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-500'
                         }`}>
                           {i + 1}
                         </span>
-                        <p className="text-xs text-gray-600 group-hover:text-cyan-hana transition line-clamp-2 leading-snug">{q.title}</p>
+                        <p className="text-xs text-gray-600 group-hover:text-gray-900 transition-colors line-clamp-2 leading-snug">{q.title}</p>
                       </Link>
                     ))}
                   </div>

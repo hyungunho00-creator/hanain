@@ -97,16 +97,11 @@ async function getFallbackSameCategory(excludeId, categoryId, limit = 6) {
   }))
 }
 
-function getCategoryColorClass(color) {
-  if (!color) return 'bg-cyan-hana text-white'
-  return ''
-}
-
 function YouTubeEmbed({ url, title, summary }) {
   const videoId = url.match(/(?:v=|youtu\.be\/)([^&\s]+)/)?.[1]
   if (!videoId) return null
   return (
-    <div className="bg-white rounded-2xl border border-border-hana overflow-hidden">
+    <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
       <div className="aspect-video">
         <iframe
           src={`https://www.youtube.com/embed/${videoId}`}
@@ -140,17 +135,16 @@ function RelatedCard({ q }) {
   return (
     <Link
       to={`/q/${slug}`}
-      className="flex items-start gap-3 p-3 rounded-xl hover:bg-gray-50 transition-colors group"
+      className="flex items-start gap-3 p-3 rounded-md hover:bg-gray-50 transition-colors group"
     >
       {cat && cat.name && (
         <span
-          className="shrink-0 text-xs font-bold px-2 py-0.5 rounded-full text-white mt-0.5"
-          style={{ backgroundColor: cat.color || '#00B4D8' }}
+          className="shrink-0 text-xs font-semibold px-2 py-0.5 rounded-md text-gray-600 border border-gray-200 bg-gray-50 mt-0.5"
         >
           {cat.name}
         </span>
       )}
-      <p className="text-sm text-gray-700 group-hover:text-cyan-hana transition-colors line-clamp-2 leading-snug">
+      <p className="text-sm text-gray-700 group-hover:text-gray-900 transition-colors line-clamp-2 leading-snug">
         {title}
       </p>
     </Link>
@@ -237,9 +231,8 @@ export default function QuestionDetailPage() {
 
   if (notFound) return (
     <div className="pt-16 min-h-screen bg-gray-hana flex flex-col items-center justify-center gap-4">
-      <div className="text-5xl">😕</div>
       <p className="text-gray-600 text-lg">질문을 찾을 수 없습니다.</p>
-      <Link to="/qa" className="text-cyan-hana hover:underline text-sm">← 건강 Q&A 전체 보기</Link>
+      <Link to="/qa" className="text-gray-700 hover:text-gray-900 underline underline-offset-4 decoration-gray-300 hover:decoration-gray-700 text-sm">건강 Q&A 전체 보기</Link>
     </div>
   )
 
@@ -363,25 +356,24 @@ export default function QuestionDetailPage() {
             <main className="flex-1 min-w-0 space-y-5">
 
               {/* 질문 카드 */}
-              <article className="bg-white rounded-2xl border border-border-hana overflow-hidden">
+              <article className="bg-white rounded-lg border border-gray-200 overflow-hidden">
                 <div className="p-6">
                   {/* 카테고리 + 메타 */}
                   <div className="flex flex-wrap items-center gap-2 mb-4">
                     {cat && (
                       <Link
                         to={`/category/${cat.slug}`}
-                        className="text-xs font-bold px-3 py-1 rounded-full text-white hover:opacity-90 transition"
-                        style={{ backgroundColor: cat.color || '#00B4D8' }}
+                        className="text-xs font-semibold px-3 py-1 rounded-md text-gray-700 border border-gray-200 bg-gray-50 hover:border-gray-400 hover:text-gray-900 transition-colors"
                       >
                         {cat.name}
                       </Link>
                     )}
-                    <span className="text-xs text-gray-400 border border-gray-200 px-2 py-0.5 rounded-full">{difficultyLabel}</span>
+                    <span className="text-xs text-gray-400 border border-gray-200 px-2 py-0.5 rounded-md">{difficultyLabel}</span>
                     {question.author_type && question.author_type !== 'self' && (
-                      <span className="text-xs text-gray-400 border border-gray-200 px-2 py-0.5 rounded-full">{authorTypeLabel} 질문</span>
+                      <span className="text-xs text-gray-400 border border-gray-200 px-2 py-0.5 rounded-md">{authorTypeLabel} 질문</span>
                     )}
                     {question.tags?.map(t => (
-                      <span key={t} className="text-xs bg-cyan-50 text-cyan-700 px-2 py-0.5 rounded-full">#{t}</span>
+                      <span key={t} className="text-xs bg-gray-50 text-gray-500 border border-gray-100 px-2 py-0.5 rounded-md">#{t}</span>
                     ))}
                   </div>
 
@@ -390,7 +382,7 @@ export default function QuestionDetailPage() {
                   </h1>
 
                   {question.content && (
-                    <p className="text-gray-600 text-base leading-relaxed mb-4 bg-gray-50 rounded-xl p-4">
+                    <p className="text-gray-600 text-base leading-relaxed mb-4 bg-gray-50 rounded-lg p-4">
                       {question.content}
                     </p>
                   )}
@@ -404,8 +396,8 @@ export default function QuestionDetailPage() {
                     <div className="flex items-center gap-2">
                       <button
                         onClick={handleLike}
-                        className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-medium border-2 transition-all ${
-                          liked ? 'bg-red-50 text-red-500 border-red-200' : 'bg-white text-gray-500 border-gray-200 hover:border-red-200'
+                        className={`flex items-center gap-1.5 px-3 py-2 rounded-md text-sm font-medium border transition-colors ${
+                          liked ? 'bg-gray-900 text-white border-gray-900' : 'bg-white text-gray-500 border-gray-200 hover:border-gray-400 hover:text-gray-900'
                         }`}
                       >
                         <Heart className={`w-4 h-4 ${liked ? 'fill-current' : ''}`} />
@@ -413,8 +405,8 @@ export default function QuestionDetailPage() {
                       </button>
                       <button
                         onClick={handleSave}
-                        className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-medium border-2 transition-all ${
-                          saved ? 'bg-gold-hana/10 text-gold-hana border-gold-hana/30' : 'bg-white text-gray-500 border-gray-200 hover:border-gold-hana'
+                        className={`flex items-center gap-1.5 px-3 py-2 rounded-md text-sm font-medium border transition-colors ${
+                          saved ? 'bg-gray-900 text-white border-gray-900' : 'bg-white text-gray-500 border-gray-200 hover:border-gray-400 hover:text-gray-900'
                         }`}
                       >
                         <Bookmark className={`w-4 h-4 ${saved ? 'fill-current' : ''}`} />
@@ -422,9 +414,9 @@ export default function QuestionDetailPage() {
                       </button>
                       <button
                         onClick={handleCopy}
-                        className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-medium border-2 bg-white text-gray-500 border-gray-200 hover:border-cyan-hana transition-all"
+                        className="flex items-center gap-1.5 px-3 py-2 rounded-md text-sm font-medium border bg-white text-gray-500 border-gray-200 hover:border-gray-400 hover:text-gray-900 transition-colors"
                       >
-                        {copied ? <Check className="w-4 h-4 text-green-500" /> : <Share2 className="w-4 h-4" />}
+                        {copied ? <Check className="w-4 h-4 text-gray-900" /> : <Share2 className="w-4 h-4" />}
                         {copied ? '복사됨' : '공유'}
                       </button>
                     </div>
@@ -434,10 +426,10 @@ export default function QuestionDetailPage() {
 
               {/* 운영자 답변 */}
               {officialAnswer && (
-                <section className="bg-white rounded-2xl border border-border-hana overflow-hidden">
-                  <div className="bg-gradient-to-r from-ocean-deep to-ocean-mid px-6 py-4">
+                <section className="bg-white rounded-lg border border-gray-200 overflow-hidden">
+                  <div className="bg-[#0B1A2E] px-6 py-4">
                     <h2 className="text-white font-bold flex items-center gap-2">
-                      <MessageCircle className="w-5 h-5 text-cyan-hana" />
+                      <MessageCircle className="w-5 h-5 text-white/70" />
                       전문 답변
                     </h2>
                   </div>
@@ -456,7 +448,7 @@ export default function QuestionDetailPage() {
               {/* 참고문헌 (peer-reviewed, Europe PMC / PubMed 검증)
                   [2026-05-21] E-E-A-T 강화 — 1,391건 전체에 1차 출처 referenceId 매핑 */}
               {question.references_pmid && question.references_pmid.length > 0 && (
-                <section className="bg-white rounded-2xl border border-border-hana overflow-hidden">
+                <section className="bg-white rounded-lg border border-gray-200 overflow-hidden">
                   <div className="px-6 pt-6 pb-2">
                     <ReferenceList
                       ids={question.references_pmid}
@@ -468,7 +460,7 @@ export default function QuestionDetailPage() {
 
               {/* 보조 출처 (가이드라인·진료지침 등 PubMed 비등재) */}
               {question.references_text && question.references_text.length > 0 && (
-                <section className="bg-white rounded-2xl border border-border-hana overflow-hidden">
+                <section className="bg-white rounded-lg border border-gray-200 overflow-hidden">
                   <div className="px-6 py-5">
                     <h3 className="text-[13px] font-semibold uppercase tracking-[0.14em] text-gray-700 mb-3">
                       보조 출처 (가이드라인·진료지침)
@@ -489,7 +481,7 @@ export default function QuestionDetailPage() {
               {videos.length > 0 && (
                 <section>
                   <h2 className="text-lg font-bold text-ocean-deep mb-3 flex items-center gap-2">
-                    <Play className="w-5 h-5 text-cyan-hana" />
+                    <Play className="w-5 h-5 text-gray-500" />
                     관련 영상
                   </h2>
                   <div className="grid gap-4 md:grid-cols-2">
@@ -500,16 +492,11 @@ export default function QuestionDetailPage() {
                 </section>
               )}
 
-              {/* [2026-05-21] 추가 질문하기 — 광고톤 그라데이션 박스 → 정보톤 다크 카드 (E-E-A-T) */}
-              <div className="relative overflow-hidden rounded-2xl border border-white/5 bg-[#0B1A2E] p-6 text-white">
-                <div
-                  aria-hidden="true"
-                  className="absolute inset-0 opacity-40 pointer-events-none"
-                  style={{ background: 'radial-gradient(circle at 85% 20%, rgba(0,180,216,0.22) 0%, transparent 55%)' }}
-                />
+              {/* 추가 질문하기 — Q&A 공통 정보톤 카드 */}
+              <div className="relative overflow-hidden rounded-lg border border-white/10 bg-[#0B1A2E] p-6 text-white">
                 <div className="relative flex items-start gap-4">
-                  <div className="shrink-0 inline-flex items-center justify-center w-10 h-10 rounded-lg bg-cyan-hana/15 ring-1 ring-cyan-hana/30">
-                    <MessageCircle className="w-5 h-5 text-cyan-hana" strokeWidth={2.25} />
+                  <div className="shrink-0 inline-flex items-center justify-center w-10 h-10 rounded-lg bg-white/10 ring-1 ring-white/15">
+                    <MessageCircle className="w-5 h-5 text-white/75" strokeWidth={2.25} />
                   </div>
                   <div className="flex-1 min-w-0">
                     <h3 className="font-semibold text-base text-white mb-1.5">
@@ -520,7 +507,7 @@ export default function QuestionDetailPage() {
                     </p>
                     <Link
                       to="/question/write"
-                      className="inline-flex items-center gap-1.5 bg-white/95 hover:bg-white text-ocean-deep font-semibold px-4 py-2 rounded-lg transition text-sm"
+                      className="inline-flex items-center gap-1.5 bg-white/95 hover:bg-white text-ocean-deep font-semibold px-4 py-2 rounded-md transition-colors text-sm"
                     >
                       질문 등록하기
                       <ChevronRight className="w-4 h-4" />
@@ -551,9 +538,9 @@ export default function QuestionDetailPage() {
                   .slice(0, 6)
                 if (items.length === 0) return null
                 return (
-                  <div className="bg-white rounded-2xl border border-border-hana p-5">
+                  <div className="bg-white rounded-lg border border-gray-200 p-5">
                     <h3 className="font-bold text-ocean-deep mb-3 text-sm flex items-center gap-2">
-                      <span style={{ color: cat?.color }}>●</span>
+                      <span className="h-px w-5 bg-gray-300" aria-hidden="true" />
                       {cat?.name} 관련 질문
                     </h3>
                     <div className="space-y-1 divide-y divide-gray-50">
@@ -564,7 +551,7 @@ export default function QuestionDetailPage() {
                     {cat && (
                       <Link
                         to={`/category/${cat.slug}`}
-                        className="mt-3 flex items-center gap-1 text-xs text-cyan-hana hover:underline"
+                        className="mt-3 flex items-center gap-1 text-xs text-gray-600 hover:text-gray-900 underline underline-offset-4 decoration-gray-300 hover:decoration-gray-700"
                       >
                         {cat.name} 전체 보기 <ChevronRight className="w-3 h-3" />
                       </Link>
@@ -580,15 +567,15 @@ export default function QuestionDetailPage() {
                 variant="sidebar"
               />
 
-              {/* [2026-05-21] 질문하기 유도 — 정보톤 다크 카드 (CTA 중복 단순화) */}
-              <div className="relative overflow-hidden rounded-2xl border border-white/5 bg-[#0B1A2E] p-5 text-white">
-                <p className="text-[11px] font-semibold tracking-wider uppercase text-cyan-hana mb-2">리서치팀 직접 답변</p>
+              {/* 질문하기 유도 — Q&A 공통 정보톤 카드 */}
+              <div className="relative overflow-hidden rounded-lg border border-white/10 bg-[#0B1A2E] p-5 text-white">
+                <p className="text-[11px] font-semibold tracking-wider uppercase text-white/55 mb-2">리서치팀 직접 답변</p>
                 <p className="text-sm text-white/80 leading-relaxed mb-3">
                   궁금한 건강 질문을 남겨주세요. PubMed 기반 근거를 정리해 회신합니다.
                 </p>
                 <Link
                   to="/question/write"
-                  className="inline-flex items-center gap-1.5 text-sm font-medium text-cyan-hana hover:text-white transition"
+                  className="inline-flex items-center gap-1.5 text-sm font-medium text-white/80 hover:text-white transition-colors"
                 >
                   질문 등록하기 <ChevronRight className="w-3.5 h-3.5" />
                 </Link>
