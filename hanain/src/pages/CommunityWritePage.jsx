@@ -11,7 +11,7 @@ const WRITE_CATEGORIES = COMMUNITY_CATEGORIES.filter(c => c.id !== 'all')
 export default function CommunityWritePage() {
   const { postId } = useParams() // 수정 시 사용
   const navigate = useNavigate()
-  const { user } = useAuth()
+  const { user, loading: authLoading } = useAuth()
 
   const [title, setTitle] = useState('')
   const [content, setContent] = useState('')
