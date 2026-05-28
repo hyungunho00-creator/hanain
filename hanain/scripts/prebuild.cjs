@@ -20,6 +20,11 @@ if (audit.error || audit.status !== 0) {
   process.exit(audit.status || 1);
 }
 
+const qaAudit = runPython(['scripts/qa_quality_audit.py', '--min-chars', '2000', '--fail-on', 'high']);
+if (qaAudit.error || qaAudit.status !== 0) {
+  process.exit(qaAudit.status || 1);
+}
+
 const sitemap = runPython(['generate_sitemap_rss.py']);
 if (sitemap.error || sitemap.status !== 0) {
   console.log('[warn] sitemap generation skipped (python not found)');
