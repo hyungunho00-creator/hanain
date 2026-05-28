@@ -183,7 +183,7 @@ function QACard({ qa, itemKey, isOpen, onToggle, searchQuery, categories }) {
               ※ 본 내용은 교육·정보 목적으로 제공되며 의료적 진단이나 처방을 대체하지 않습니다.
             </p>
             <p className="text-[12px] text-gray-400 leading-relaxed">
-              © 2025 플로로탄닌 파트너스 — 본 콘텐츠의 무단 복제·배포를 금합니다.
+               2025 플로로탄닌 파트너스 — 본 콘텐츠의 무단 복제·배포를 금합니다.
               더 자세한 내용이 궁금하시면 아래 [파트너 연락하기]를 이용해 주세요.
             </p>
           </div>

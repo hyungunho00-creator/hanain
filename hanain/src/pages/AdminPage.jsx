@@ -11,7 +11,7 @@ import { supabase, setVideoMain, upsertPost, getAllPostsAdmin, deletePost } from
 //   - 서버는 /auth/v1/user 로 JWT 검증 + app_metadata.role==='admin' 확인
 //   - JWT 위조 불가 (Supabase HMAC 서명) → 클라이언트 비교보다 안전
 //
-// 🔴 클라이언트 비밀번호 비교 코드는 제거됨
+//  클라이언트 비밀번호 비교 코드는 제거됨
 //   - 이전 버전은 import.meta.env.VITE_ADMIN_PASS 를 클라이언트 번들에 임베드 →
 //     누구나 JS 번들 grep 으로 어드민 비번 획득 가능했음
 //   - 이제는 Supabase Auth를 거치지 않으면 어떤 클라이언트 fallback 도 없음
@@ -25,7 +25,7 @@ const ADMIN_JWT_KEY = 'phl_admin_jwt'  // Supabase access_token 저장
 const EXT_BACKEND_KEY = import.meta.env.VITE_BACKEND_ADMIN_KEY || '' // 외부 백엔드용 (옵션)
 
 // /api/admin 액션 호출 헬퍼
-// 🔐 Supabase JWT 만 전송 (클라이언트 비밀번호 fallback 제거됨)
+//  Supabase JWT 만 전송 (클라이언트 비밀번호 fallback 제거됨)
 // 서버는 JWT 검증 실패 시 401 — UI 에서는 로그인 화면으로 복귀
 async function adminApi(action, payload) {
   // 최신 Supabase 세션 토큰 우선
@@ -150,7 +150,7 @@ function LoginScreen({ onLogin }) {
     setErr(false)
     setBusy(true)
     try {
-      // 🔐 Supabase Auth (JWT) 만 신뢰 — 클라이언트 비밀번호 비교 제거됨
+      //  Supabase Auth (JWT) 만 신뢰 — 클라이언트 비밀번호 비교 제거됨
       const { data, error } = await supabase.auth.signInWithPassword({
         email: ADMIN_EMAIL,
         password: pw,
@@ -421,7 +421,7 @@ function PartnerManageTab() {
 
         {/* 안내 */}
         <div className="mt-4 bg-amber-50 border border-amber-200 rounded-xl p-4">
-          <p className="font-semibold text-amber-800 mb-1">✨ 새로운 전자명함 시스템</p>
+          <p className="font-semibold text-amber-800 mb-1"> 새로운 전자명함 시스템</p>
           <div className="grid sm:grid-cols-2 gap-2 text-amber-700 text-sm">
             {[
               '이름 + 전화번호만 입력하면 URL 즉시 발급',
@@ -444,17 +444,17 @@ function PartnerManageTab() {
           {result.success ? (
             <div>
               <p className="font-bold text-green-800 flex items-center gap-2 mb-3">
-                <CheckCircle className="w-5 h-5" /> 🎉 {result.name} 파트너 전자명함 등록 완료!
+                <CheckCircle className="w-5 h-5" />  {result.name} 파트너 전자명함 등록 완료!
               </p>
-              <p className="text-sm font-semibold text-green-700 mb-1">📎 파트너 전달 URL (전자명함)</p>
+              <p className="text-sm font-semibold text-green-700 mb-1"> 파트너 전달 URL (전자명함)</p>
               <div className="flex items-center gap-2 bg-white rounded-lg p-3 border border-green-300">
                 <Globe className="w-4 h-4 text-green-600 flex-shrink-0" />
                 <span className="text-base text-gray-800 font-mono flex-1 font-semibold break-all">{result.url}</span>
                 <CopyButton text={result.url} label="복사" />
               </div>
               <p className="text-sm text-green-600 mt-2">
-                ✅ 이 URL을 파트너에게 전달하세요. 접속하면 전자명함이 바로 표시됩니다.<br />
-                ✅ 배포 없이 즉시 사용 가능합니다.
+                 이 URL을 파트너에게 전달하세요. 접속하면 전자명함이 바로 표시됩니다.<br />
+                 배포 없이 즉시 사용 가능합니다.
               </p>
             </div>
           ) : (
@@ -513,7 +513,7 @@ function PartnerManageTab() {
             <button onClick={() => { setShowForm(false); setErrors({}) }}
               className="px-6 py-2.5 rounded-xl border border-gray-200 text-gray-500 hover:bg-gray-50">취소</button>
           </div>
-          <p className="text-sm text-gray-400 mt-2">⚡ 배포 없이 즉시 URL이 발급됩니다</p>
+          <p className="text-sm text-gray-400 mt-2"> 배포 없이 즉시 URL이 발급됩니다</p>
         </div>
       )}
 
@@ -669,7 +669,7 @@ function QAAnswerTab() {
     if (error) {
       setMsg(m => ({ ...m, [q.id]: '저장 실패: ' + error.message }))
     } else {
-      setMsg(m => ({ ...m, [q.id]: '✅ 저장되었습니다.' }))
+      setMsg(m => ({ ...m, [q.id]: ' 저장되었습니다.' }))
       // 로컬 상태 갱신
       setQuestions(qs => qs.map(item => item.id === q.id
         ? { ...item, dbAnswer: { ...item.dbAnswer, content: content.trim() } }
@@ -699,7 +699,7 @@ function QAAnswerTab() {
           </div>
         </div>
         <p className="text-sm text-gray-500 mb-4">
-          💡 qa.json 기반 질문 목록입니다. 답변을 입력하면 Supabase DB에 저장되며, 질문 상세 페이지에 자동 표시됩니다.
+           qa.json 기반 질문 목록입니다. 답변을 입력하면 Supabase DB에 저장되며, 질문 상세 페이지에 자동 표시됩니다.
         </p>
 
         {loading ? (
@@ -732,8 +732,8 @@ function QAAnswerTab() {
                       <div className="flex items-center gap-3 mt-1">
                         <span className="text-xs text-gray-400">{q.id}</span>
                         {q.dbAnswer
-                          ? <span className="text-xs text-green-600 font-medium">✅ 답변 있음</span>
-                          : <span className="text-xs text-amber-500 font-medium">⚠️ DB 답변 없음 (qa.json 사용)</span>
+                          ? <span className="text-xs text-green-600 font-medium"> 답변 있음</span>
+                          : <span className="text-xs text-amber-500 font-medium"> DB 답변 없음 (qa.json 사용)</span>
                         }
                       </div>
                     </div>
@@ -834,9 +834,9 @@ function UserQuestionsTab() {
       .eq('id', q.id)
     setSaving(s => ({ ...s, [q.id]: false }))
     if (error) {
-      setMsg(m => ({ ...m, [q.id]: '❌ 저장 실패: ' + error.message }))
+      setMsg(m => ({ ...m, [q.id]: ' 저장 실패: ' + error.message }))
     } else {
-      setMsg(m => ({ ...m, [q.id]: '✅ 답변 저장 완료!' }))
+      setMsg(m => ({ ...m, [q.id]: ' 답변 저장 완료!' }))
       setQuestions(prev => prev.map(item =>
         item.id === q.id ? { ...item, admin_answer: answer, status: 'answered' } : item
       ))
@@ -891,7 +891,7 @@ function UserQuestionsTab() {
         {loading && <div className="bg-white rounded-2xl p-10 text-center text-gray-400">불러오는 중...</div>}
         {!loading && filtered.length === 0 && (
           <div className="bg-white rounded-2xl p-10 text-center text-gray-400">
-            {filter === 'pending' ? '미답변 질문이 없습니다 🎉' : '질문이 없습니다.'}
+            {filter === 'pending' ? '미답변 질문이 없습니다 ' : '질문이 없습니다.'}
           </div>
         )}
         {filtered.map(q => {
@@ -909,7 +909,7 @@ function UserQuestionsTab() {
                     <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${
                       q.status === 'answered' ? 'bg-teal-100 text-teal-700' : 'bg-orange-100 text-orange-700'
                     }`}>
-                      {q.status === 'answered' ? '✅ 답변완료' : '⏳ 미답변'}
+                      {q.status === 'answered' ? ' 답변완료' : ' 미답변'}
                     </span>
                     {q.category_id && (
                       <span className="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">
@@ -1003,9 +1003,9 @@ const BLOG_CATS = [
   { id: 'inflammation',       name: '염증·면역' },
   { id: 'skin',               name: '피부·모발' },
   { id: 'research',           name: '연구·임상' },
-  { id: 'buying-guide',       name: '구매 가이드' },        // 🆕
-  { id: 'safety-precautions', name: '부작용·주의사항' },    // 🆕
-  { id: 'cancer-treatment-care', name: '항암 치료 케어' },  // 🆕
+  { id: 'buying-guide',       name: '구매 가이드' },        // 
+  { id: 'safety-precautions', name: '부작용·주의사항' },    // 
+  { id: 'cancer-treatment-care', name: '항암 치료 케어' },  // 
 ]
 
 const EMPTY_POST = {
@@ -1034,7 +1034,7 @@ function SeoPreview({ title, desc, slug, ogImage }) {
       <div className="grid md:grid-cols-2 gap-4">
         {/* Google SERP 카드 */}
         <div className="bg-white rounded-xl p-4 shadow-sm">
-          <p className="text-xs text-gray-400 mb-2 font-semibold">🔍 Google 검색 결과</p>
+          <p className="text-xs text-gray-400 mb-2 font-semibold"> Google 검색 결과</p>
           <div className="text-xs text-gray-500 truncate">{fullUrl}</div>
           <div className="text-lg text-blue-700 font-medium leading-snug mt-0.5 truncate hover:underline cursor-pointer">
             {previewTitle}
@@ -1054,7 +1054,7 @@ function SeoPreview({ title, desc, slug, ogImage }) {
 
         {/* OG 카드 (카카오톡/페이스북) */}
         <div className="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100">
-          <p className="text-xs text-gray-400 mb-0 px-4 pt-3 font-semibold">💬 SNS 공유 카드 (카톡/페북/X)</p>
+          <p className="text-xs text-gray-400 mb-0 px-4 pt-3 font-semibold"> SNS 공유 카드 (카톡/페북/X)</p>
           {ogImage ? (
             <img src={ogImage} alt="OG" className="w-full h-32 object-cover mt-2 bg-gray-100"
               onError={(e) => { e.target.style.display = 'none' }} />
@@ -1074,7 +1074,7 @@ function SeoPreview({ title, desc, slug, ogImage }) {
       </div>
 
       <p className="text-xs text-purple-600 mt-3 leading-relaxed">
-        💡 <strong>팁:</strong> SEO 제목·설명은 비우면 본문 제목·요약이 자동 사용됩니다. og_image는 1200×630px 권장.
+         <strong>팁:</strong> SEO 제목·설명은 비우면 본문 제목·요약이 자동 사용됩니다. og_image는 1200×630px 권장.
       </p>
     </div>
   )
@@ -1102,7 +1102,7 @@ function BlogManageTab() {
 
   const handleSave = async () => {
     if (!form.title.trim() || !form.slug.trim() || !form.content.trim()) {
-      setMsg('❌ 제목, 슬러그, 본문은 필수입니다'); return
+      setMsg(' 제목, 슬러그, 본문은 필수입니다'); return
     }
     setSaving(true)
     const payload = {
@@ -1114,8 +1114,8 @@ function BlogManageTab() {
     if (editing !== 'new') payload.id = editing
     const { error } = await upsertPost(payload)
     setSaving(false)
-    if (error) { setMsg('❌ 저장 실패: ' + error.message); return }
-    setMsg('✅ 저장 완료!')
+    if (error) { setMsg(' 저장 실패: ' + error.message); return }
+    setMsg(' 저장 완료!')
     setTimeout(() => { setMsg(''); setEditing(null); loadPosts() }, 1200)
   }
 
@@ -1130,7 +1130,7 @@ function BlogManageTab() {
     <div className="bg-white rounded-2xl shadow-sm p-6">
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-xl font-bold text-gray-900">
-          {editing === 'new' ? '✏️ 새 글 작성' : '✏️ 글 수정'}
+          {editing === 'new' ? ' 새 글 작성' : ' 글 수정'}
         </h2>
         <button onClick={() => setEditing(null)} className="text-gray-400 hover:text-gray-700"><X className="w-5 h-5"/></button>
       </div>
@@ -1323,29 +1323,29 @@ function YouTubeManageTab() {
   // Q&A:   metabolism, cancer_immune, neuro_cognitive, cardiovascular, infection_inflammation, skin, digestive, ...
   const CATEGORY_OPTIONS = [
     // ── 블로그 카테고리 ──────────────────────────────
-    { id: 'diabetes',              name: '📝 블로그 · 당뇨·혈당',        group: 'blog' },
-    { id: 'cancer',                name: '📝 블로그 · 항암·면역',         group: 'blog' },
-    { id: 'brain',                 name: '📝 블로그 · 뇌·인지',          group: 'blog' },
-    { id: 'cardiovascular',        name: '📝 블로그 · 심혈관',           group: 'blog' },
-    { id: 'inflammation',          name: '📝 블로그 · 염증·면역',         group: 'blog' },
-    { id: 'skin',                  name: '📝 블로그 · 피부·모발',         group: 'blog' },
-    { id: 'research',              name: '📝 블로그 · 연구·임상',         group: 'blog' },
-    { id: 'general',               name: '📝 블로그 · 일반',             group: 'blog' },
-    { id: 'buying-guide',          name: '📝 블로그 · 구매 가이드',       group: 'blog' },   // 🆕
-    { id: 'safety-precautions',    name: '📝 블로그 · 부작용·주의사항',    group: 'blog' },   // 🆕
-    { id: 'cancer-treatment-care', name: '📝 블로그 · 항암 치료 케어',     group: 'blog' },   // 🆕
+    { id: 'diabetes',              name: ' 블로그 · 당뇨·혈당',        group: 'blog' },
+    { id: 'cancer',                name: ' 블로그 · 항암·면역',         group: 'blog' },
+    { id: 'brain',                 name: ' 블로그 · 뇌·인지',          group: 'blog' },
+    { id: 'cardiovascular',        name: ' 블로그 · 심혈관',           group: 'blog' },
+    { id: 'inflammation',          name: ' 블로그 · 염증·면역',         group: 'blog' },
+    { id: 'skin',                  name: ' 블로그 · 피부·모발',         group: 'blog' },
+    { id: 'research',              name: ' 블로그 · 연구·임상',         group: 'blog' },
+    { id: 'general',               name: ' 블로그 · 일반',             group: 'blog' },
+    { id: 'buying-guide',          name: ' 블로그 · 구매 가이드',       group: 'blog' },   // 
+    { id: 'safety-precautions',    name: ' 블로그 · 부작용·주의사항',    group: 'blog' },   // 
+    { id: 'cancer-treatment-care', name: ' 블로그 · 항암 치료 케어',     group: 'blog' },   // 
     // ── Q&A 카테고리 (DB: qa_categories) ─────────────────────────────────
-    { id: 'metabolism',            name: '❓ Q&A · 대사질환',            group: 'qa' },
-    { id: 'cancer_immune',         name: '❓ Q&A · 항암/면역',           group: 'qa' },
-    { id: 'digestive',             name: '❓ Q&A · 소화/간',             group: 'qa' },
-    { id: 'neuro_cognitive',       name: '❓ Q&A · 뇌/인지',             group: 'qa' },
-    { id: 'mental_health',         name: '❓ Q&A · 정신건강',            group: 'qa' },
-    { id: 'musculoskeletal',       name: '❓ Q&A · 근골격',              group: 'qa' },
-    { id: 'skin_hair',             name: '❓ Q&A · 피부/모발',           group: 'qa' },
-    { id: 'respiratory',           name: '❓ Q&A · 호흡기',              group: 'qa' },
-    { id: 'infection_inflammation',name: '❓ Q&A · 감염/염증',           group: 'qa' },
-    { id: 'womens_health',         name: '❓ Q&A · 여성건강',            group: 'qa' },
-    { id: 'mens_health',           name: '❓ Q&A · 남성건강',            group: 'qa' },
+    { id: 'metabolism',            name: ' Q&A · 대사질환',            group: 'qa' },
+    { id: 'cancer_immune',         name: ' Q&A · 항암/면역',           group: 'qa' },
+    { id: 'digestive',             name: ' Q&A · 소화/간',             group: 'qa' },
+    { id: 'neuro_cognitive',       name: ' Q&A · 뇌/인지',             group: 'qa' },
+    { id: 'mental_health',         name: ' Q&A · 정신건강',            group: 'qa' },
+    { id: 'musculoskeletal',       name: ' Q&A · 근골격',              group: 'qa' },
+    { id: 'skin_hair',             name: ' Q&A · 피부/모발',           group: 'qa' },
+    { id: 'respiratory',           name: ' Q&A · 호흡기',              group: 'qa' },
+    { id: 'infection_inflammation',name: ' Q&A · 감염/염증',           group: 'qa' },
+    { id: 'womens_health',         name: ' Q&A · 여성건강',            group: 'qa' },
+    { id: 'mens_health',           name: ' Q&A · 남성건강',            group: 'qa' },
   ]
 
   // YouTube URL에서 videoId 추출 (youtu.be, watch?v=, embed/ 모두 지원)
@@ -1416,10 +1416,10 @@ function YouTubeManageTab() {
     const videoId = extractVideoId(rawUrl)
 
     // 유효성 검사
-    if (!rawUrl) { setMsg('❌ YouTube URL을 입력해주세요.'); return }
-    if (!videoId) { setMsg('❌ 올바른 YouTube URL이 아닙니다. (youtu.be/... 또는 youtube.com/watch?v=... 형식)'); return }
-    if (!form.videoTitle.trim()) { setMsg('❌ 영상 제목을 입력해주세요.'); return }
-    if (!form.categoryId) { setMsg('❌ 카테고리를 선택해주세요.'); return }
+    if (!rawUrl) { setMsg(' YouTube URL을 입력해주세요.'); return }
+    if (!videoId) { setMsg(' 올바른 YouTube URL이 아닙니다. (youtu.be/... 또는 youtube.com/watch?v=... 형식)'); return }
+    if (!form.videoTitle.trim()) { setMsg(' 영상 제목을 입력해주세요.'); return }
+    if (!form.categoryId) { setMsg(' 카테고리를 선택해주세요.'); return }
 
     const normalizedUrl = `https://www.youtube.com/watch?v=${videoId}`
 
@@ -1454,9 +1454,9 @@ function YouTubeManageTab() {
 
     const error = ok ? null : (inserted?.[0] || { message: '저장 실패' })
     if (error) {
-      setMsg('❌ 저장 실패: ' + error.message)
+      setMsg(' 저장 실패: ' + error.message)
     } else {
-      setMsg(`✅ 등록 완료! [${CATEGORY_OPTIONS.find(c=>c.id===form.categoryId)?.name}] 영상 ID: ${videoId}`)
+      setMsg(` 등록 완료! [${CATEGORY_OPTIONS.find(c=>c.id===form.categoryId)?.name}] 영상 ID: ${videoId}`)
       setForm({ youtubeUrl: '', videoTitle: '', videoSummary: '', legacyId: '', categoryId: '', sortOrder: 0 })
       setPreview(null)
       loadVideos()
@@ -1474,7 +1474,7 @@ function YouTubeManageTab() {
   async function handleToggleMain(v) {
     const mainCount = videos.filter(x => x.is_main).length
     if (!v.is_main && mainCount >= 2) {
-      setMsg('❌ 메인 고정은 최대 2개까지만 가능합니다. 기존 고정을 먼저 해제해주세요.')
+      setMsg(' 메인 고정은 최대 2개까지만 가능합니다. 기존 고정을 먼저 해제해주세요.')
       setTimeout(() => setMsg(''), 3000)
       return
     }
@@ -1489,9 +1489,9 @@ function YouTubeManageTab() {
     void error
     setTogglingId(null)
     if (!ok) {
-      setMsg('❌ 변경 실패')
+      setMsg(' 변경 실패')
     } else {
-      setMsg(v.is_main ? '📌 메인 고정 해제됨' : '✅ 메인에 고정되었습니다!')
+      setMsg(v.is_main ? ' 메인 고정 해제됨' : ' 메인에 고정되었습니다!')
       setTimeout(() => setMsg(''), 2500)
       loadVideos()
     }
@@ -1508,9 +1508,9 @@ function YouTubeManageTab() {
 
         {/* 안내 */}
         <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-5 space-y-1 text-sm text-blue-700">
-          <p>📌 <strong>카테고리</strong>를 선택하면 해당 카테고리 페이지에 영상이 표시됩니다.</p>
-          <p>📌 <strong>YouTube URL</strong>은 youtu.be 단축 링크, youtube.com 전체 URL 모두 가능합니다.</p>
-          <p>📌 <strong>질문 레거시 ID</strong>(예: cardio-001)를 입력하면 참고용으로 저장됩니다.</p>
+          <p> <strong>카테고리</strong>를 선택하면 해당 카테고리 페이지에 영상이 표시됩니다.</p>
+          <p> <strong>YouTube URL</strong>은 youtu.be 단축 링크, youtube.com 전체 URL 모두 가능합니다.</p>
+          <p> <strong>질문 레거시 ID</strong>(예: cardio-001)를 입력하면 참고용으로 저장됩니다.</p>
         </div>
 
         <form onSubmit={handleAdd} className="space-y-4">
@@ -1534,7 +1534,7 @@ function YouTubeManageTab() {
                 </p>
               )}
               {form.youtubeUrl && !preview && (
-                <p className="text-xs text-red-500 mt-1">⚠️ 유효한 YouTube URL을 입력하세요</p>
+                <p className="text-xs text-red-500 mt-1"> 유효한 YouTube URL을 입력하세요</p>
               )}
             </div>
             {/* 실시간 썸네일 미리보기 */}
@@ -1623,7 +1623,7 @@ function YouTubeManageTab() {
           </div>
 
           {msg && (
-            <p className={`text-sm font-medium px-3 py-2 rounded-lg ${msg.includes('❌') ? 'bg-red-50 text-red-600' : 'bg-green-50 text-green-600'}`}>
+            <p className={`text-sm font-medium px-3 py-2 rounded-lg ${msg.includes('') ? 'bg-red-50 text-red-600' : 'bg-green-50 text-green-600'}`}>
               {msg}
             </p>
           )}
@@ -1646,12 +1646,12 @@ function YouTubeManageTab() {
               <span>등록된 영상 ({videos.length}개)</span>
               {videos.filter(v => v.is_main).length > 0 && (
                 <span className="text-xs bg-teal-100 text-teal-700 px-2 py-0.5 rounded-full font-semibold">
-                  📌 메인 고정 {videos.filter(v => v.is_main).length}/2
+                   메인 고정 {videos.filter(v => v.is_main).length}/2
                 </span>
               )}
             </h3>
             <p className="text-xs text-gray-400 mt-0.5">
-              📌 버튼으로 메인 페이지에 고정할 영상을 선택하세요 (최대 2개)
+               버튼으로 메인 페이지에 고정할 영상을 선택하세요 (최대 2개)
             </p>
           </div>
           <button onClick={loadVideos} className="text-sm text-gray-400 hover:text-cyan-hana flex items-center gap-1">
@@ -1735,7 +1735,7 @@ function YouTubeManageTab() {
                       )}
                       {!catName && !v.question_id && (
                         <span className="text-xs bg-yellow-50 text-yellow-600 px-2 py-0.5 rounded-full">
-                          ⚠️ 카테고리 미지정
+                           카테고리 미지정
                         </span>
                       )}
                       <span className="text-xs bg-gray-50 text-gray-500 px-2 py-0.5 rounded-full font-mono">
@@ -1831,8 +1831,8 @@ function SiteSeoSettings() {
     setSaving(s => ({ ...s, [key]: true }))
     const r = await adminApi('settings_set', { key, value: values[key] ?? '' })
     setSaving(s => ({ ...s, [key]: false }))
-    if (r.ok) setMsg(`✅ ${key} 저장 완료`)
-    else setMsg(`❌ ${key} 저장 실패: ${r.error || r.status}`)
+    if (r.ok) setMsg(` ${key} 저장 완료`)
+    else setMsg(` ${key} 저장 실패: ${r.error || r.status}`)
     setTimeout(() => setMsg(''), 2500)
   }
 
@@ -1852,7 +1852,7 @@ function SiteSeoSettings() {
 
       {unavailable && (
         <div className="bg-amber-50 border border-amber-200 rounded-xl p-3 text-sm text-amber-800">
-          <strong>⚠️ Supabase 연결 안됨</strong> — Vercel 환경변수 <code>SUPABASE_SERVICE_ROLE_KEY</code> 설정 후 재배포 필요.
+          <strong> Supabase 연결 안됨</strong> — Vercel 환경변수 <code>SUPABASE_SERVICE_ROLE_KEY</code> 설정 후 재배포 필요.
           {' '}현재는 읽기 전용 미리보기만 가능합니다.
         </div>
       )}
@@ -2367,7 +2367,7 @@ function CmsPagesTab() {
         </div>
       </div>
       <p className="text-xs text-gray-500 mb-3">
-        ⚠️ <code>slug</code>는 URL 경로(예: <code>home</code> → <code>/</code>, <code>phlorotannin</code> → <code>/phlorotannin</code>)에 매핑됩니다.
+         <code>slug</code>는 URL 경로(예: <code>home</code> → <code>/</code>, <code>phlorotannin</code> → <code>/phlorotannin</code>)에 매핑됩니다.
         여기서 <code>meta_title</code>/<code>meta_desc</code>를 채우면 <code>/api/seo</code>가 코드 상수보다 우선 사용합니다.
       </p>
       {msg && <p className="text-sm text-amber-700 bg-amber-50 rounded px-3 py-2 mb-3">{msg}</p>}

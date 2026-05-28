@@ -46,20 +46,20 @@ const DEFAULT_VIDEOS = [
 // D10 추가: lucideIcon, accent, mechanismSteps, stat 필드로 시각화 강화
 const BENEFIT_CARDS = [
   {
-    emoji: '🔥',
+    emoji: '',
     lucideIcon: Flame,
     accent: 'from-gray-700 to-gray-900',
     title: '염증 억제',
     short: '만성 염증을 줄이는 핵심 기전',
-    analogy: '🚒 불 끄는 소방관처럼 몸속 염증 신호를 꺼줘요',
+    analogy: ' 불 끄는 소방관처럼 몸속 염증 신호를 꺼줘요',
     simple: '만성 염증은 암·당뇨·심혈관 질환의 공통 뿌리예요. 플로로탄닌은 염증을 키우는 신호(NF-κB)를 차단해서 몸 전체 염증 반응을 조절해 줘요.',
     evidence: '항염증 경로 NF-κB 억제 확인 (다수 SCI 논문)',
     symptom: ['만성 피로', '반복되는 통증', '붓기', '소화 불량'],
     mechanismSteps: [
-      { icon: '⚡', label: '자극 도달', desc: '산화 스트레스·독소' },
-      { icon: '🔬', label: '신호 차단', desc: 'IKK 인산화 방해' },
-      { icon: '🧬', label: 'NF-κB 억제', desc: '핵 이동 차단' },
-      { icon: '✅', label: '염증 진정', desc: 'TNF-α·IL-6 감소' },
+      { icon: '', label: '자극 도달', desc: '산화 스트레스·독소' },
+      { icon: '', label: '신호 차단', desc: 'IKK 인산화 방해' },
+      { icon: '', label: 'NF-κB 억제', desc: '핵 이동 차단' },
+      { icon: '', label: '염증 진정', desc: 'TNF-α·IL-6 감소' },
     ],
     stats: [
       { value: '45', suffix: '%', label: 'TNF-α 감소', trend: 'down' },
@@ -67,20 +67,20 @@ const BENEFIT_CARDS = [
     ],
   },
   {
-    emoji: '🧠',
+    emoji: '',
     lucideIcon: Brain,
     accent: 'from-lab-500 to-lab-700',
     title: '뇌 건강',
     short: '인지력·기억력 보호에 연구 중',
-    analogy: '🧹 뇌 속 나쁜 단백질을 치워주는 청소부예요',
+    analogy: ' 뇌 속 나쁜 단백질을 치워주는 청소부예요',
     simple: '뇌에 베타아밀로이드 같은 나쁜 단백질이 쌓이면 기억력이 떨어져요. 플로로탄닌은 이 단백질 분해를 방해하는 효소를 억제해 뇌세포를 보호해요.',
     evidence: '기억력 관련 효소(AChE) 억제율 60% 이상 (체외 실험)',
     symptom: ['자꾸 깜빡함', '집중력 저하', '말이 잘 안 나옴', '수면 질 저하'],
     mechanismSteps: [
-      { icon: '🧠', label: '뇌 세포', desc: '아밀로이드 축적' },
-      { icon: '🛑', label: 'AChE 억제', desc: '신경전달물질 보호' },
-      { icon: '🔄', label: 'BDNF 증가', desc: '신경영양인자 분비' },
-      { icon: '💡', label: '인지 보호', desc: '기억력 유지' },
+      { icon: '', label: '뇌 세포', desc: '아밀로이드 축적' },
+      { icon: '', label: 'AChE 억제', desc: '신경전달물질 보호' },
+      { icon: '', label: 'BDNF 증가', desc: '신경영양인자 분비' },
+      { icon: '', label: '인지 보호', desc: '기억력 유지' },
     ],
     stats: [
       { value: '60', suffix: '%', label: 'AChE 억제율', trend: 'down' },
@@ -88,20 +88,20 @@ const BENEFIT_CARDS = [
     ],
   },
   {
-    emoji: '🩸',
+    emoji: '',
     lucideIcon: Droplet,
     accent: 'from-gray-700 to-gray-900',
     title: '혈당 조절',
     short: '당뇨·대사 관련 정보와 연결',
-    analogy: '🚦 당이 혈액으로 들어오는 문을 천천히 열리게 해요',
+    analogy: ' 당이 혈액으로 들어오는 문을 천천히 열리게 해요',
     simple: '밥을 먹으면 당이 빠르게 혈액으로 흡수돼요. 플로로탄닌은 이 흡수 속도를 늦춰줘서 혈당이 급격히 오르는 걸 막아줘요.',
     evidence: '임상 연구에서 공복 혈당 약 27% 감소 확인',
     symptom: ['식후 졸림', '심한 갈증', '잦은 소변', '쉽게 피곤함'],
     mechanismSteps: [
-      { icon: '🍚', label: '식사 후', desc: '탄수화물 분해' },
-      { icon: '🚧', label: 'α-글루코시다제 억제', desc: '흡수 속도 ↓' },
-      { icon: '📉', label: '완만한 상승', desc: '스파이크 차단' },
-      { icon: '⚖️', label: '안정 유지', desc: '인슐린 부담 ↓' },
+      { icon: '', label: '식사 후', desc: '탄수화물 분해' },
+      { icon: '', label: 'α-글루코시다제 억제', desc: '흡수 속도 ↓' },
+      { icon: '', label: '완만한 상승', desc: '스파이크 차단' },
+      { icon: '', label: '안정 유지', desc: '인슐린 부담 ↓' },
     ],
     stats: [
       { value: '27', suffix: '%', label: '공복 혈당 감소', trend: 'down' },
@@ -109,20 +109,20 @@ const BENEFIT_CARDS = [
     ],
   },
   {
-    emoji: '🛡️',
+    emoji: '',
     lucideIcon: Shield,
     accent: 'from-lab-600 to-lab-800',
     title: '면역 강화',
     short: '암 회복·면역 흐름과 교차',
-    analogy: '💪 면역 경비원을 더 강하게 훈련시켜요',
+    analogy: ' 면역 경비원을 더 강하게 훈련시켜요',
     simple: '면역세포(NK세포)가 약해지면 암세포나 바이러스를 제대로 못 막아요. 플로로탄닌은 면역세포를 활성화하고, 암세포의 성장 자체를 억제하는 기전이 연구되고 있어요.',
     evidence: '대장암·유방암 세포주에서 세포 사멸 유도 확인',
     symptom: ['잦은 감기', '상처 회복 느림', '계속 피곤함', '항암 치료 중 회복'],
     mechanismSteps: [
-      { icon: '😈', label: '암세포 발생', desc: '비정상 분열' },
-      { icon: '🔍', label: '면역 인식', desc: 'NK세포 활성화' },
-      { icon: '⚔️', label: '아포토시스', desc: '암세포 자멸 유도' },
-      { icon: '🛡️', label: '면역 균형', desc: 'Th1/Th2 정상화' },
+      { icon: '', label: '암세포 발생', desc: '비정상 분열' },
+      { icon: '', label: '면역 인식', desc: 'NK세포 활성화' },
+      { icon: '', label: '아포토시스', desc: '암세포 자멸 유도' },
+      { icon: '', label: '면역 균형', desc: 'Th1/Th2 정상화' },
     ],
     stats: [
       { value: '31', suffix: '%', label: 'NK세포 활성 ↑', trend: 'up' },
@@ -133,16 +133,16 @@ const BENEFIT_CARDS = [
 
 // ─── 질환 카테고리 그리드 ────────────────────────────────────
 const DISEASE_CATEGORIES = [
-  { emoji: '💪', name: '암·회복', categoryId: 'cancer_immune', query: '암' },
-  { emoji: '🩸', name: '당뇨·대사', categoryId: 'metabolism', query: '당뇨' },
-  { emoji: '🧠', name: '뇌·인지', categoryId: 'neuro_cognitive', query: '치매' },
-  { emoji: '🔥', name: '염증·피로', categoryId: 'infection_inflammation', query: '염증' },
-  { emoji: '❤️', name: '심혈관', categoryId: 'cardiovascular', query: '혈압' },
-  { emoji: '✨', name: '피부 건강', categoryId: 'skin', query: '아토피' },
-  { emoji: '💇', name: '모발 건강', categoryId: 'hair', query: '탈모' },
-  { emoji: '😴', name: '수면·정신', categoryId: 'mental_health', query: '수면' },
-  { emoji: '🦴', name: '근골격계', categoryId: 'musculoskeletal', query: '관절' },
-  { emoji: '🌊', name: '플로로탄닌', path: '/phlorotannin' },
+  { emoji: '', name: '암·회복', categoryId: 'cancer_immune', query: '암' },
+  { emoji: '', name: '당뇨·대사', categoryId: 'metabolism', query: '당뇨' },
+  { emoji: '', name: '뇌·인지', categoryId: 'neuro_cognitive', query: '치매' },
+  { emoji: '', name: '염증·피로', categoryId: 'infection_inflammation', query: '염증' },
+  { emoji: '', name: '심혈관', categoryId: 'cardiovascular', query: '혈압' },
+  { emoji: '', name: '피부 건강', categoryId: 'skin', query: '아토피' },
+  { emoji: '', name: '모발 건강', categoryId: 'hair', query: '탈모' },
+  { emoji: '', name: '수면·정신', categoryId: 'mental_health', query: '수면' },
+  { emoji: '', name: '근골격계', categoryId: 'musculoskeletal', query: '관절' },
+  { emoji: '', name: '플로로탄닌', path: '/phlorotannin' },
 ]
 
 // ─── FAQ ─────────────────────────────────────────────────────
@@ -165,7 +165,7 @@ const FAQS = [
   },
 ]
 
-// ⚠️ FAQPage를 메인(/)과 QA(/qa) 양쪽에 두면 Google이 중복으로 처리함
+//  FAQPage를 메인(/)과 QA(/qa) 양쪽에 두면 Google이 중복으로 처리함
 // → 메인은 WebSite + WebPage + Organization만 사용, FAQPage는 /qa 전용
 const landingJsonLd = {
   "@context": "https://schema.org",
@@ -249,9 +249,9 @@ const CAT_COLORS = {
   womens_health:'text-gray-600',
 }
 const CAT_NAMES = {
-  'cancer-treatment-care':'항암 치료 케어', // 🆕
-  'buying-guide':'구매 가이드',          // 🆕
-  'safety-precautions':'부작용·주의사항', // 🆕
+  'cancer-treatment-care':'항암 치료 케어', // 
+  'buying-guide':'구매 가이드',          // 
+  'safety-precautions':'부작용·주의사항', // 
   diabetes:'당뇨·혈당', cancer:'항암·면역', brain:'뇌·인지',
   cardiovascular:'심혈관', inflammation:'염증·면역',
   skin:'피부·모발', research:'연구·임상', general:'일반',
@@ -892,7 +892,7 @@ export default function LandingPage() {
             특정 제품의 질병 치료·예방 효능·효과를 주장하거나 보장하지 않습니다.
           </p>
           <p className="text-center text-xs text-gray-600 font-medium">
-            © 2026 플로로탄닌 파트너스 · 모든 저작권 보호
+             2026 플로로탄닌 파트너스 · 모든 저작권 보호
           </p>
         </div>
       </footer>

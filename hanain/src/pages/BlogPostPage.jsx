@@ -130,9 +130,9 @@ function parseMarkdown(md) {
 }
 
 const CAT_COLORS = {
-  'cancer-treatment-care': 'bg-fuchsia-100 text-fuchsia-800', // 🆕 항암 치료 케어
-  'buying-guide':       'bg-cyan-100 text-cyan-800',     // 🆕 구매 가이드 — 시안
-  'safety-precautions': 'bg-lime-100 text-lime-800',     // 🆕 부작용·주의사항 — 라임
+  'cancer-treatment-care': 'bg-fuchsia-100 text-fuchsia-800', //  항암 치료 케어
+  'buying-guide':       'bg-cyan-100 text-cyan-800',     //  구매 가이드 — 시안
+  'safety-precautions': 'bg-lime-100 text-lime-800',     //  부작용·주의사항 — 라임
   diabetes:      'bg-orange-100 text-orange-700',
   cancer:        'bg-red-100 text-red-700',
   brain:         'bg-purple-100 text-purple-700',
@@ -148,9 +148,9 @@ const CAT_COLORS = {
   'partner-info':          'bg-emerald-100 text-emerald-700',
 }
 const CAT_NAMES = {
-  'cancer-treatment-care': '항암 치료 케어',  // 🆕
-  'buying-guide':       '구매 가이드',        // 🆕
-  'safety-precautions': '부작용·주의사항',    // 🆕
+  'cancer-treatment-care': '항암 치료 케어',  // 
+  'buying-guide':       '구매 가이드',        // 
+  'safety-precautions': '부작용·주의사항',    // 
   diabetes:'당뇨·혈당', cancer:'항암·면역', brain:'뇌·인지',
   cardiovascular:'심혈관', inflammation:'염증·면역', skin:'피부·모발',
   research:'연구·임상', general:'일반',

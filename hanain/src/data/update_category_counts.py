@@ -23,10 +23,10 @@ for cat in data['categories']:
     old_count = cat.get('count', 0)
     cat['count'] = actual_count
     if old_count != actual_count:
-        print(f"✏️  {cat['name']}: {old_count} → {actual_count}")
+        print(f"  {cat['name']}: {old_count} → {actual_count}")
 
 # 저장
 with open(QA_FILE, 'w', encoding='utf-8') as f:
     json.dump(data, f, ensure_ascii=False, indent=2)
 
-print(f"\n✅ 업데이트 완료! 총 질문: {len(questions)}개")
+print(f"\n 업데이트 완료! 총 질문: {len(questions)}개")

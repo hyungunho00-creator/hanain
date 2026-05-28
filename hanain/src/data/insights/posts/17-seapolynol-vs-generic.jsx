@@ -5,9 +5,9 @@ const PUB = '2026-05-21'
 
 export default {
   slug: 'seapolynol-vs-generic-phlorotannin',
-  title: 'Seapolynol™ vs 일반 플로로탄닌 — 무엇이 임상 결과를 결정하나',
+  title: 'Seapolynol vs 일반 플로로탄닌 — 무엇이 임상 결과를 결정하나',
   description:
-    '표준화 추출물 Seapolynol™과 비표준화 갈조류 추출물의 차이 — EFSA Novel Food 평가, 약동학 데이터, 임상 RCT 기준으로 정리합니다.',
+    '표준화 추출물 Seapolynol과 비표준화 갈조류 추출물의 차이 — EFSA Novel Food 평가, 약동학 데이터, 임상 RCT 기준으로 정리합니다.',
   keywords: 'Seapolynol,플로로탄닌 차이,표준화 추출물,EFSA Novel Food,Ecklonia cava extract',
   publishedAt: PUB,
   updatedAt: PUB,
@@ -21,7 +21,7 @@ export default {
     'shin-2012-seapolynol-hyperlipidemic',
   ],
   tldr: [
-    'Seapolynol™은 EFSA Novel Food 평가·인간 약동학·소변 메타볼롬·항고지혈 전임상 모두에서 같은 표준화 추출물로 검증되었습니다',
+    'Seapolynol은 EFSA Novel Food 평가·인간 약동학·소변 메타볼롬·항고지혈 전임상 모두에서 같은 표준화 추출물로 검증되었습니다',
     '일반 ‘갈조류 추출물’이나 ‘플로로탄닌 함유 제품’은 같은 데이터를 공유하지 않습니다',
     '임상 결과를 ‘그대로 기대’하려면 같은 표준화 추출물을 선택해야 합니다',
   ],
@@ -33,7 +33,7 @@ export default {
         ‘표준화 추출물’을 명시한 채 실행됩니다. 결과를 그대로 기대하려면 같은 추출물을 써야 합니다.
       </P>
 
-      <H2 id="seapolynol">Seapolynol™ — 무엇이 검증되었나</H2>
+      <H2 id="seapolynol">Seapolynol — 무엇이 검증되었나</H2>
       <UL
         items={[
           'EFSA Novel Food 평가의 안전성 대상',
@@ -43,7 +43,7 @@ export default {
         ]}
       />
       <P>
-        Seapolynol™은 디에콜·플로로글루시놀·트리포로에톨 등 주요 분자 비율이 일정 범위로 관리되며
+        Seapolynol은 디에콜·플로로글루시놀·트리포로에톨 등 주요 분자 비율이 일정 범위로 관리되며
         <Cite id="efsa-2017-novel-food" />, 약동학 변동이 작은 것이 그 결과입니다<Cite id="shin-2024-pharmacokinetics" />.
       </P>
 
@@ -55,7 +55,7 @@ export default {
 
       <Table
         caption="비교 매트릭스"
-        headers={['항목', 'Seapolynol™', '일반 갈조류 추출물']}
+        headers={['항목', 'Seapolynol', '일반 갈조류 추출물']}
         rows={[
           ['EFSA 평가', '대상 (263 mg/일 안전)', '대상 외'],
           ['인간 약동학', '검증', '제품별 격차'],
@@ -66,7 +66,7 @@ export default {
       />
 
       <Callout type="key" title="요점">
-        Seapolynol™ 임상 결과를 일반 갈조류 추출물에 그대로 외삽할 수 없습니다.
+        Seapolynol 임상 결과를 일반 갈조류 추출물에 그대로 외삽할 수 없습니다.
       </Callout>
 
       <Hr />

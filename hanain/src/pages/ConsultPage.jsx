@@ -371,7 +371,7 @@ export default function ConsultPage() {
             {/* 저작권 */}
             <div className="mt-6 border-t border-gray-100 pt-5 text-center space-y-1">
               <p className="text-sm text-gray-400">
-                © 2026 <span className="font-semibold text-gray-600">플로로탄닌 파트너스</span> — All rights reserved.
+                 2026 <span className="font-semibold text-gray-600">플로로탄닌 파트너스</span> — All rights reserved.
               </p>
               <p className="text-sm text-gray-400 leading-relaxed">
                 본 사이트의 모든 콘텐츠는 저작권법의 보호를 받습니다. 무단 복제·배포를 금합니다.

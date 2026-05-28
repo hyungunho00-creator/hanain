@@ -48,14 +48,14 @@ export default {
       <Table
         headers={['인증', '발행기관', '검증 범위', '권위']}
         rows={[
-          ['USP Verified', 'United States Pharmacopeia', '함량·순도·붕해·GMP', '⭐⭐⭐⭐⭐'],
-          ['NSF Certified for Sport', 'NSF International', '함량·금지물질·오염', '⭐⭐⭐⭐⭐'],
-          ['Eurofins', 'Eurofins Scientific', '오염·중금속·미생물', '⭐⭐⭐⭐'],
-          ['식약처 GMP', '한국 식약처', '제조 공정·품질관리', '⭐⭐⭐⭐'],
-          ['HACCP', '한국·국제 표준', '위해요소 관리', '⭐⭐⭐'],
-          ['ISO 22000', '국제표준화기구', '식품안전 관리', '⭐⭐⭐'],
-          ['GOED Quality', 'Global Org. for EPA/DHA', '오메가-3 정제도·산패도', '⭐⭐⭐⭐'],
-          ['MSC', 'Marine Stewardship Council', '지속가능 어업', '⭐⭐⭐ (지속가능성)'],
+          ['USP Verified', 'United States Pharmacopeia', '함량·순도·붕해·GMP', ''],
+          ['NSF Certified for Sport', 'NSF International', '함량·금지물질·오염', ''],
+          ['Eurofins', 'Eurofins Scientific', '오염·중금속·미생물', ''],
+          ['식약처 GMP', '한국 식약처', '제조 공정·품질관리', ''],
+          ['HACCP', '한국·국제 표준', '위해요소 관리', ''],
+          ['ISO 22000', '국제표준화기구', '식품안전 관리', ''],
+          ['GOED Quality', 'Global Org. for EPA/DHA', '오메가-3 정제도·산패도', ''],
+          ['MSC', 'Marine Stewardship Council', '지속가능 어업', ' (지속가능성)'],
         ]}
       />
 
@@ -64,7 +64,7 @@ export default {
         "표준화 추출물"이란 핵심 활성 성분의 함량이 보증된 추출물을 말합니다. 다음은 주요 원료별 표준화 마커입니다.
       </P>
       <UL items={[
-        '플로로탄닌(감태) — Seapolynol™ 표준화, 디에콜·플로로푸코퓨로엑콜 A 정량',
+        '플로로탄닌(감태) — Seapolynol 표준화, 디에콜·플로로푸코퓨로엑콜 A 정량',
         '강황 — 커큐미노이드 95%',
         '녹차 — EGCG 함량 표기',
         '레스베라트롤 — 트랜스레스베라트롤 98%',

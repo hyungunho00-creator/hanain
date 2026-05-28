@@ -212,7 +212,7 @@ export default function QuestionWritePage() {
 
             {/* 안내 */}
             <div className="bg-teal-50 border border-teal-100 rounded-xl p-4 text-xs text-teal-700">
-              <p className="font-semibold mb-1">📋 안내</p>
+              <p className="font-semibold mb-1"> 안내</p>
               <ul className="space-y-0.5 text-teal-600">
                 <li>• 입력하신 정보는 답변 목적으로만 사용됩니다.</li>
                 <li>• 건강 정보는 참고용이며 의료 진단을 대체하지 않습니다.</li>

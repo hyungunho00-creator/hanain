@@ -28,7 +28,7 @@ const PALETTE = {
 const DISEASES = [
   {
     id: 'metabolism',
-    emoji: '🍬',
+    emoji: '',
     label: '혈당 · 당뇨',
     color: 'from-gray-700 to-gray-900',
     bg: 'bg-gray-50',
@@ -38,19 +38,19 @@ const DISEASES = [
     title: '혈당이 롤러코스터처럼 올라가는 걸 막아줘요',
     story: '밥을 먹으면 혈당이 쑥 올라가요. 그러면 췌장에서 인슐린이 달려와 혈당을 낮춰주는데, 당뇨가 있으면 이 과정이 고장 나요.',
     mechanism: [
-      { step: 1, icon: '🍚', title: '밥 먹음', desc: '탄수화물이 포도당으로 분해되려고 함' },
-      { step: 2, icon: '🚧', title: '플로로탄닌 등장!', desc: '소화 효소(α-글루코시데이스)를 막아서 포도당이 천천히 나오게 함' },
-      { step: 3, icon: '📉', title: '혈당 천천히 상승', desc: '급격한 혈당 스파이크를 방지해요' },
-      { step: 4, icon: '✅', title: '몸이 여유롭게 대처', desc: '인슐린이 천천히, 여유 있게 일할 수 있어요' },
+      { step: 1, icon: '', title: '밥 먹음', desc: '탄수화물이 포도당으로 분해되려고 함' },
+      { step: 2, icon: '', title: '플로로탄닌 등장!', desc: '소화 효소(α-글루코시데이스)를 막아서 포도당이 천천히 나오게 함' },
+      { step: 3, icon: '', title: '혈당 천천히 상승', desc: '급격한 혈당 스파이크를 방지해요' },
+      { step: 4, icon: '', title: '몸이 여유롭게 대처', desc: '인슐린이 천천히, 여유 있게 일할 수 있어요' },
     ],
-    analogy: { icon: '🚦', text: '톨게이트처럼 포도당이 한꺼번에 밀려들지 못하게 조절해줘요!' },
+    analogy: { icon: '', text: '톨게이트처럼 포도당이 한꺼번에 밀려들지 못하게 조절해줘요!' },
     fact: '8주간 플로로탄닌 섭취 시 공복혈당 27% 감소 (동물실험, Kang MC 2016)',
-    levelBadge: '⭐ 쉬움',
+    levelBadge: ' 쉬움',
     levelColor: 'text-gray-700 bg-gray-100',
   },
   {
     id: 'cancer_immune',
-    emoji: '🛡️',
+    emoji: '',
     label: '면역 · 항암',
     color: 'from-gray-700 to-gray-900',
     bg: 'bg-gray-50',
@@ -60,19 +60,19 @@ const DISEASES = [
     title: '우리 몸의 방패군을 강하게 만들어요',
     story: '암세포는 날마다 우리 몸 어딘가에서 생기지만, 면역세포(NK세포, T세포)가 빠르게 잡아서 없애줘요. 그런데 면역이 약해지면 암세포가 살아남아요.',
     mechanism: [
-      { step: 1, icon: '😈', title: '암세포 등장', desc: '세포가 비정상적으로 분열을 시작함' },
-      { step: 2, icon: '🔥', title: '염증 신호 차단', desc: '플로로탄닌이 NF-κB 스위치를 꺼서 염증이 암세포를 돕지 못하게 함' },
-      { step: 3, icon: '🛡️', title: '면역세포 활성화', desc: '자연살해(NK)세포가 암세포를 더 잘 인식하게 됨' },
-      { step: 4, icon: '💥', title: '암세포 자멸 유도', desc: '아포토시스(세포 자살) 경로를 켜서 암세포가 스스로 소멸하게 함' },
+      { step: 1, icon: '', title: '암세포 등장', desc: '세포가 비정상적으로 분열을 시작함' },
+      { step: 2, icon: '', title: '염증 신호 차단', desc: '플로로탄닌이 NF-κB 스위치를 꺼서 염증이 암세포를 돕지 못하게 함' },
+      { step: 3, icon: '', title: '면역세포 활성화', desc: '자연살해(NK)세포가 암세포를 더 잘 인식하게 됨' },
+      { step: 4, icon: '', title: '암세포 자멸 유도', desc: '아포토시스(세포 자살) 경로를 켜서 암세포가 스스로 소멸하게 함' },
     ],
-    analogy: { icon: '🏰', text: '성(몸)의 성벽과 기사(면역세포)를 모두 강하게 만드는 마법 강화제!' },
+    analogy: { icon: '', text: '성(몸)의 성벽과 기사(면역세포)를 모두 강하게 만드는 마법 강화제!' },
     fact: 'TNF-α 45%, IL-6 38% 감소 — 염증 지표 대폭 개선 (Park et al. 2013)',
-    levelBadge: '⭐⭐ 보통',
+    levelBadge: ' 보통',
     levelColor: 'text-gray-700 bg-gray-100',
   },
   {
     id: 'digestive',
-    emoji: '🫁',
+    emoji: '',
     label: '소화 · 간 건강',
     color: 'from-gray-700 to-gray-900',
     bg: 'bg-gray-50',
@@ -82,19 +82,19 @@ const DISEASES = [
     title: '간과 장을 청소하고 보호해요',
     story: '간은 하루 500가지 이상의 일을 하는 "몸의 공장"이에요. 술, 약, 나쁜 음식 등으로 간이 손상되면 해독 능력이 떨어져요.',
     mechanism: [
-      { step: 1, icon: '🏭', title: '간 세포 손상', desc: '활성산소, 독소, 알코올이 간 세포를 공격' },
-      { step: 2, icon: '🧹', title: '항산화 방어막', desc: 'Nrf2 경로를 켜서 SOD, 글루타티온 등 항산화 효소 대량 생산' },
-      { step: 3, icon: '🌿', title: '간 세포 재생', desc: '손상된 간세포 회복 속도가 빨라짐' },
-      { step: 4, icon: '🦠', title: '장 유익균 보호', desc: '장내 플로라 균형을 맞춰 소화 흡수 효율 향상' },
+      { step: 1, icon: '', title: '간 세포 손상', desc: '활성산소, 독소, 알코올이 간 세포를 공격' },
+      { step: 2, icon: '', title: '항산화 방어막', desc: 'Nrf2 경로를 켜서 SOD, 글루타티온 등 항산화 효소 대량 생산' },
+      { step: 3, icon: '', title: '간 세포 재생', desc: '손상된 간세포 회복 속도가 빨라짐' },
+      { step: 4, icon: '', title: '장 유익균 보호', desc: '장내 플로라 균형을 맞춰 소화 흡수 효율 향상' },
     ],
-    analogy: { icon: '🧼', text: '간에 달라붙은 때를 닦아주는 천연 세정제 같은 역할!' },
+    analogy: { icon: '', text: '간에 달라붙은 때를 닦아주는 천연 세정제 같은 역할!' },
     fact: '플로로탄닌 10μM 처리 시 글루타티온 58% 증가 (Kwon MJ 2015)',
-    levelBadge: '⭐ 쉬움',
+    levelBadge: ' 쉬움',
     levelColor: 'text-gray-700 bg-gray-100',
   },
   {
     id: 'neuro_cognitive',
-    emoji: '🧠',
+    emoji: '',
     label: '뇌 · 인지 · 치매',
     color: 'from-gray-700 to-gray-900',
     bg: 'bg-gray-50',
@@ -104,19 +104,19 @@ const DISEASES = [
     title: '뇌의 청소부 역할, 기억력을 지켜요',
     story: '치매는 뇌에 베타-아밀로이드라는 단백질 쓰레기가 쌓여서 신경세포가 죽는 병이에요. 마치 컴퓨터에 찌꺼기 파일이 가득 찬 것처럼요.',
     mechanism: [
-      { step: 1, icon: '🗑️', title: '뇌 속 쓰레기', desc: '베타-아밀로이드, 타우 단백질이 뇌에 축적됨' },
-      { step: 2, icon: '🧹', title: '플로로탄닌 청소!', desc: 'AChE(아세틸콜린 분해 효소)를 억제해 신경 전달 물질 보존' },
-      { step: 3, icon: '⚡', title: '신경 신호 강화', desc: '시냅스에서 아세틸콜린이 오래 머물러 기억력·집중력 향상' },
-      { step: 4, icon: '🌱', title: '신경세포 보호', desc: '항산화 + 항염으로 뇌세포 손상 최소화' },
+      { step: 1, icon: '', title: '뇌 속 쓰레기', desc: '베타-아밀로이드, 타우 단백질이 뇌에 축적됨' },
+      { step: 2, icon: '', title: '플로로탄닌 청소!', desc: 'AChE(아세틸콜린 분해 효소)를 억제해 신경 전달 물질 보존' },
+      { step: 3, icon: '', title: '신경 신호 강화', desc: '시냅스에서 아세틸콜린이 오래 머물러 기억력·집중력 향상' },
+      { step: 4, icon: '', title: '신경세포 보호', desc: '항산화 + 항염으로 뇌세포 손상 최소화' },
     ],
-    analogy: { icon: '🖥️', text: '뇌 컴퓨터의 청소 프로그램이자 메모리 최적화 도구!' },
+    analogy: { icon: '', text: '뇌 컴퓨터의 청소 프로그램이자 메모리 최적화 도구!' },
     fact: '플로로탄닌의 AChE 억제 효과가 치매 약 도네페질과 유사 수준 (Kim SK 2014)',
-    levelBadge: '⭐⭐ 보통',
+    levelBadge: ' 보통',
     levelColor: 'text-gray-700 bg-gray-100',
   },
   {
     id: 'cardiovascular',
-    emoji: '❤️',
+    emoji: '',
     label: '혈압 · 심장',
     color: 'from-gray-700 to-gray-900',
     bg: 'bg-gray-50',
@@ -126,19 +126,19 @@ const DISEASES = [
     title: '혈관을 넓히고 혈압을 낮춰요',
     story: '고혈압은 혈관 속 압력이 너무 높은 상태예요. 마치 좁은 호스에 물을 세게 틀면 터질 수 있는 것처럼 혈관이 손상돼요.',
     mechanism: [
-      { step: 1, icon: '🚰', title: '좁아진 혈관', desc: 'ACE(안지오텐신전환효소)가 혈관을 수축시킴' },
-      { step: 2, icon: '🚧', title: 'ACE 차단', desc: '플로로탄닌이 ACE를 직접 억제 — 혈관 수축 신호 차단' },
-      { step: 3, icon: '🫀', title: '혈관 이완', desc: 'NO(일산화질소) 생성이 늘어나 혈관이 넓어짐' },
-      { step: 4, icon: '📊', title: '혈압 정상화', desc: '혈액이 여유 있게 흘러 심장에 부담이 줄어듦' },
+      { step: 1, icon: '', title: '좁아진 혈관', desc: 'ACE(안지오텐신전환효소)가 혈관을 수축시킴' },
+      { step: 2, icon: '', title: 'ACE 차단', desc: '플로로탄닌이 ACE를 직접 억제 — 혈관 수축 신호 차단' },
+      { step: 3, icon: '', title: '혈관 이완', desc: 'NO(일산화질소) 생성이 늘어나 혈관이 넓어짐' },
+      { step: 4, icon: '', title: '혈압 정상화', desc: '혈액이 여유 있게 흘러 심장에 부담이 줄어듦' },
     ],
-    analogy: { icon: '🚿', text: '좁아진 호스(혈관)를 넓혀주는 천연 배관 청소제!' },
+    analogy: { icon: '', text: '좁아진 호스(혈관)를 넓혀주는 천연 배관 청소제!' },
     fact: 'ACE 억제 효과가 고혈압 약 캅토프릴과 유사 (Wijesinghe WA 2012)',
-    levelBadge: '⭐⭐ 보통',
+    levelBadge: ' 보통',
     levelColor: 'text-gray-700 bg-gray-100',
   },
   {
     id: 'mental_health',
-    emoji: '😌',
+    emoji: '',
     label: '스트레스 · 수면',
     color: 'from-gray-700 to-gray-900',
     bg: 'bg-gray-50',
@@ -148,19 +148,19 @@ const DISEASES = [
     title: '스트레스를 줄이고 잠을 잘 자게 해줘요',
     story: '스트레스를 받으면 코르티솔이라는 호르몬이 나와요. 오래 지속되면 뇌와 면역계 모두 망가져요.',
     mechanism: [
-      { step: 1, icon: '😰', title: '스트레스 발생', desc: '코르티솔이 과다 분비되어 뇌 신경에 손상을 줌' },
-      { step: 2, icon: '🧘', title: 'GABA 보호', desc: '플로로탄닌이 GABA 수용체를 안정시켜 불안감 감소' },
-      { step: 3, icon: '🌙', title: '수면 유도', desc: '세로토닌·멜라토닌 시스템에 긍정적 영향' },
-      { step: 4, icon: '☀️', title: '회복력 향상', desc: '뇌 염증 감소로 다음날 집중력·기분 개선' },
+      { step: 1, icon: '', title: '스트레스 발생', desc: '코르티솔이 과다 분비되어 뇌 신경에 손상을 줌' },
+      { step: 2, icon: '', title: 'GABA 보호', desc: '플로로탄닌이 GABA 수용체를 안정시켜 불안감 감소' },
+      { step: 3, icon: '', title: '수면 유도', desc: '세로토닌·멜라토닌 시스템에 긍정적 영향' },
+      { step: 4, icon: '', title: '회복력 향상', desc: '뇌 염증 감소로 다음날 집중력·기분 개선' },
     ],
-    analogy: { icon: '🛋️', text: '긴장한 뇌 신경을 부드럽게 안아주는 천연 진정제!' },
+    analogy: { icon: '', text: '긴장한 뇌 신경을 부드럽게 안아주는 천연 진정제!' },
     fact: '항불안 효과가 수면 개선 및 코르티솔 수치 조절과 연관 (Lee 등 2015)',
-    levelBadge: '⭐ 쉬움',
+    levelBadge: ' 쉬움',
     levelColor: 'text-gray-700 bg-gray-100',
   },
   {
     id: 'musculoskeletal',
-    emoji: '🦴',
+    emoji: '',
     label: '뼈 · 관절',
     color: 'from-gray-700 to-gray-900',
     bg: 'bg-gray-50',
@@ -170,19 +170,19 @@ const DISEASES = [
     title: '뼈와 연골을 튼튼하게 지켜줘요',
     story: '나이 들면 연골이 닳고, 뼈가 약해져요. 특히 무릎, 허리가 아프기 시작하는 게 관절염의 시작이에요.',
     mechanism: [
-      { step: 1, icon: '⚙️', title: '연골 마모', desc: '연골분해 효소(MMP)가 과도하게 활성화되어 연골을 분해' },
-      { step: 2, icon: '🛡️', title: 'MMP 억제', desc: '플로로탄닌이 연골 분해 효소를 직접 차단' },
-      { step: 3, icon: '🦴', title: '뼈 밀도 유지', desc: '파골세포(뼈 파괴 세포) 활성 억제로 골밀도 보존' },
-      { step: 4, icon: '✨', title: '염증 진통', desc: '관절 내 염증 사이토카인 감소로 통증 완화' },
+      { step: 1, icon: '', title: '연골 마모', desc: '연골분해 효소(MMP)가 과도하게 활성화되어 연골을 분해' },
+      { step: 2, icon: '', title: 'MMP 억제', desc: '플로로탄닌이 연골 분해 효소를 직접 차단' },
+      { step: 3, icon: '', title: '뼈 밀도 유지', desc: '파골세포(뼈 파괴 세포) 활성 억제로 골밀도 보존' },
+      { step: 4, icon: '', title: '염증 진통', desc: '관절 내 염증 사이토카인 감소로 통증 완화' },
     ],
-    analogy: { icon: '🔧', text: '닳아가는 기계 관절에 윤활유 + 수리 키트를 동시에 제공!' },
+    analogy: { icon: '', text: '닳아가는 기계 관절에 윤활유 + 수리 키트를 동시에 제공!' },
     fact: '플로로탄닌이 파골세포 분화를 억제해 골다공증 예방 효과 (Kim YA 2014)',
-    levelBadge: '⭐⭐ 보통',
+    levelBadge: ' 보통',
     levelColor: 'text-gray-700 bg-gray-100',
   },
   {
     id: 'skin_hair',
-    emoji: '✨',
+    emoji: '',
     label: '피부 · 탈모',
     color: 'from-gray-700 to-gray-900',
     bg: 'bg-gray-50',
@@ -192,19 +192,19 @@ const DISEASES = [
     title: '피부 노화를 늦추고 모발을 지켜요',
     story: '피부 노화의 주범은 자외선과 활성산소예요. 콜라겐이 줄어들면 주름이 생기고, 모낭이 약해지면 탈모가 시작돼요.',
     mechanism: [
-      { step: 1, icon: '☀️', title: '자외선 + 활성산소', desc: '피부 콜라겐을 분해하고 세포 DNA를 손상시킴' },
-      { step: 2, icon: '🛡️', title: 'MMP-1 억제', desc: '콜라겐 분해 효소(MMP-1)를 차단해 피부 탄력 보존' },
-      { step: 3, icon: '💧', title: '수분 & 재생', desc: '히알루론산 생성을 돕고 피부 장벽을 강화' },
-      { step: 4, icon: '💇', title: '모낭 보호', desc: 'DHT(탈모 유발 호르몬)를 억제해 모발 성장 지원' },
+      { step: 1, icon: '', title: '자외선 + 활성산소', desc: '피부 콜라겐을 분해하고 세포 DNA를 손상시킴' },
+      { step: 2, icon: '', title: 'MMP-1 억제', desc: '콜라겐 분해 효소(MMP-1)를 차단해 피부 탄력 보존' },
+      { step: 3, icon: '', title: '수분 & 재생', desc: '히알루론산 생성을 돕고 피부 장벽을 강화' },
+      { step: 4, icon: '', title: '모낭 보호', desc: 'DHT(탈모 유발 호르몬)를 억제해 모발 성장 지원' },
     ],
-    analogy: { icon: '🌟', text: '피부에 쌓인 활성산소 쓰레기를 청소하는 천연 뷰티 케어!' },
+    analogy: { icon: '', text: '피부에 쌓인 활성산소 쓰레기를 청소하는 천연 뷰티 케어!' },
     fact: '플로로탄닌 자외선 차단 효과 + 콜라겐 분해 억제 (Thomas NV & Kim SK 2011)',
-    levelBadge: '⭐ 쉬움',
+    levelBadge: ' 쉬움',
     levelColor: 'text-gray-700 bg-gray-100',
   },
   {
     id: 'respiratory',
-    emoji: '🌬️',
+    emoji: '',
     label: '호흡기 · 폐',
     color: 'from-gray-700 to-gray-900',
     bg: 'bg-gray-50',
@@ -214,19 +214,19 @@ const DISEASES = [
     title: '폐와 기도의 염증을 줄여줘요',
     story: '미세먼지, 바이러스, 꽃가루가 폐에 들어오면 염증이 생겨요. 만성 염증이 지속되면 천식, COPD로 발전할 수 있어요.',
     mechanism: [
-      { step: 1, icon: '😷', title: '염증 유발 물질 침투', desc: '폐 세포에서 히스타민, 염증 사이토카인 분비 증가' },
-      { step: 2, icon: '🚧', title: '히스타민 분비 억제', desc: '비만세포(Mast cell)의 과도한 히스타민 방출을 차단' },
-      { step: 3, icon: '🌬️', title: '기도 확장', desc: '기관지 근육 이완 효과로 호흡이 편해짐' },
-      { step: 4, icon: '💚', title: '폐 세포 보호', desc: '항산화로 폐포 세포 손상 예방' },
+      { step: 1, icon: '', title: '염증 유발 물질 침투', desc: '폐 세포에서 히스타민, 염증 사이토카인 분비 증가' },
+      { step: 2, icon: '', title: '히스타민 분비 억제', desc: '비만세포(Mast cell)의 과도한 히스타민 방출을 차단' },
+      { step: 3, icon: '', title: '기도 확장', desc: '기관지 근육 이완 효과로 호흡이 편해짐' },
+      { step: 4, icon: '', title: '폐 세포 보호', desc: '항산화로 폐포 세포 손상 예방' },
     ],
-    analogy: { icon: '🏠', text: '폐 속 집을 청소하고 환기창(기도)을 넓혀주는 관리사!' },
+    analogy: { icon: '', text: '폐 속 집을 청소하고 환기창(기도)을 넓혀주는 관리사!' },
     fact: '플로로탄닌의 항히스타민 + 항염 효과로 알레르기성 기도 반응 완화',
-    levelBadge: '⭐⭐ 보통',
+    levelBadge: ' 보통',
     levelColor: 'text-gray-700 bg-gray-100',
   },
   {
     id: 'infection_inflammation',
-    emoji: '🦠',
+    emoji: '',
     label: '항균 · 항바이러스',
     color: 'from-gray-700 to-gray-900',
     bg: 'bg-gray-50',
@@ -236,19 +236,19 @@ const DISEASES = [
     title: '세균과 바이러스를 직접 차단해요',
     story: '세균은 세포벽에 구멍을 내거나, 단백질을 만들어 증식해요. 플로로탄닌은 이 과정 자체를 방해해요.',
     mechanism: [
-      { step: 1, icon: '🦠', title: '세균·바이러스 침입', desc: '외부 병원체가 세포에 달라붙으려 함' },
-      { step: 2, icon: '🔒', title: '결합 부위 차단', desc: '플로로탄닌이 세균의 단백질 효소에 결합해 비활성화' },
-      { step: 3, icon: '💥', title: '세포막 손상', desc: '세균 세포막에 직접 작용해 구조를 불안정하게 만듦' },
-      { step: 4, icon: '🛡️', title: '면역 보조', desc: '항균 + 면역 활성화로 이중 방어' },
+      { step: 1, icon: '', title: '세균·바이러스 침입', desc: '외부 병원체가 세포에 달라붙으려 함' },
+      { step: 2, icon: '', title: '결합 부위 차단', desc: '플로로탄닌이 세균의 단백질 효소에 결합해 비활성화' },
+      { step: 3, icon: '', title: '세포막 손상', desc: '세균 세포막에 직접 작용해 구조를 불안정하게 만듦' },
+      { step: 4, icon: '', title: '면역 보조', desc: '항균 + 면역 활성화로 이중 방어' },
     ],
-    analogy: { icon: '🚪', text: '세균이 들어오는 문을 잠그고, 이미 들어온 세균에 독을 뿌리는 이중 보안!' },
+    analogy: { icon: '', text: '세균이 들어오는 문을 잠그고, 이미 들어온 세균에 독을 뿌리는 이중 보안!' },
     fact: '황색포도상구균, 대장균 등 다양한 균주에 대한 항균 활성 확인 (Ahn 등 2004)',
-    levelBadge: '⭐⭐⭐ 심화',
+    levelBadge: ' 심화',
     levelColor: 'text-gray-900 bg-gray-200',
   },
   {
     id: 'womens_health',
-    emoji: '🌸',
+    emoji: '',
     label: '여성 건강',
     color: 'from-gray-700 to-gray-900',
     bg: 'bg-gray-50',
@@ -258,19 +258,19 @@ const DISEASES = [
     title: '여성 호르몬 균형과 갱년기를 도와요',
     story: '갱년기에는 에스트로겐이 급감해 홍조, 골다공증, 우울감 등이 생겨요. 플로로탄닌은 천연 에스트로겐 유사 작용을 해요.',
     mechanism: [
-      { step: 1, icon: '📉', title: '에스트로겐 감소', desc: '폐경기에 에스트로겐이 급격히 줄어듦' },
-      { step: 2, icon: '🌿', title: '식물성 에스트로겐 작용', desc: '플로로탄닌이 에스트로겐 수용체에 약하게 결합해 완충' },
-      { step: 3, icon: '🦴', title: '골밀도 보호', desc: '에스트로겐 저하로 인한 골 손실 억제' },
-      { step: 4, icon: '😊', title: '갱년기 증상 완화', desc: '홍조, 수면 장애, 기분 변화 완화에 도움' },
+      { step: 1, icon: '', title: '에스트로겐 감소', desc: '폐경기에 에스트로겐이 급격히 줄어듦' },
+      { step: 2, icon: '', title: '식물성 에스트로겐 작용', desc: '플로로탄닌이 에스트로겐 수용체에 약하게 결합해 완충' },
+      { step: 3, icon: '', title: '골밀도 보호', desc: '에스트로겐 저하로 인한 골 손실 억제' },
+      { step: 4, icon: '', title: '갱년기 증상 완화', desc: '홍조, 수면 장애, 기분 변화 완화에 도움' },
     ],
-    analogy: { icon: '🌺', text: '줄어든 여성 호르몬 자리를 천연 소재가 부드럽게 채워주는 역할!' },
+    analogy: { icon: '', text: '줄어든 여성 호르몬 자리를 천연 소재가 부드럽게 채워주는 역할!' },
     fact: '마린 폴리페놀의 에스트로겐 유사 활성 및 갱년기 증상 완화 연구 (Jeong 등 2013)',
-    levelBadge: '⭐⭐ 보통',
+    levelBadge: ' 보통',
     levelColor: 'text-gray-700 bg-gray-100',
   },
   {
     id: 'mens_health',
-    emoji: '💪',
+    emoji: '',
     label: '남성 건강',
     color: 'from-gray-700 to-gray-900',
     bg: 'bg-gray-50',
@@ -280,14 +280,14 @@ const DISEASES = [
     title: '혈관 건강과 남성 활력을 높여줘요',
     story: '남성의 혈관 건강은 심장병과 직결돼요. 특히 PDE5 억제 작용은 혈관 이완에 중요한 역할을 해요.',
     mechanism: [
-      { step: 1, icon: '💔', title: '혈관 수축 & 기능 저하', desc: 'PDE5 효소가 cGMP를 분해해 혈관을 좁힘' },
-      { step: 2, icon: '🚧', title: 'PDE5 억제', desc: '플로로탄닌이 PDE5 효소를 차단해 cGMP 유지' },
-      { step: 3, icon: '🫀', title: '혈관 이완 & 혈류 개선', desc: '전립선 근육 이완, 혈류량 증가' },
-      { step: 4, icon: '💪', title: '전신 활력', desc: 'AMPK 활성화로 에너지 대사 개선, 근육 기능 향상' },
+      { step: 1, icon: '', title: '혈관 수축 & 기능 저하', desc: 'PDE5 효소가 cGMP를 분해해 혈관을 좁힘' },
+      { step: 2, icon: '', title: 'PDE5 억제', desc: '플로로탄닌이 PDE5 효소를 차단해 cGMP 유지' },
+      { step: 3, icon: '', title: '혈관 이완 & 혈류 개선', desc: '전립선 근육 이완, 혈류량 증가' },
+      { step: 4, icon: '', title: '전신 활력', desc: 'AMPK 활성화로 에너지 대사 개선, 근육 기능 향상' },
     ],
-    analogy: { icon: '⚡', text: '혈관 속 저항을 낮춰 에너지가 온몸에 자유롭게 흐르게 하는 회로 개선!' },
+    analogy: { icon: '', text: '혈관 속 저항을 낮춰 에너지가 온몸에 자유롭게 흐르게 하는 회로 개선!' },
     fact: 'PDE5 억제 효과로 혈관 이완 — 비아그라와 유사 메커니즘의 천연 소재 (Oh 등 2010)',
-    levelBadge: '⭐⭐⭐ 심화',
+    levelBadge: ' 심화',
     levelColor: 'text-gray-900 bg-gray-200',
   },
 ]
@@ -380,9 +380,9 @@ function IntroHero() {
 ───────────────────────────────────────────── */
 function WhatIsSection() {
   const items = [
-    { icon: '🌿', title: '어디서?', desc: '제주 바다의 미역, 감태, 다시마 같은 갈색 해조류 속에 들어있어요.' },
-    { icon: '☀️', title: '왜 생겼나요?', desc: '해조류가 강한 햇빛과 세균으로부터 스스로를 지키려고 만든 천연 갑옷이에요.' },
-    { icon: '💎', title: '무엇이 특별한가요?', desc: '일반 폴리페놀보다 8~10배 강한 항산화력, 물에 잘 녹아 몸에 흡수가 뛰어나요.' },
+    { icon: '', title: '어디서?', desc: '제주 바다의 미역, 감태, 다시마 같은 갈색 해조류 속에 들어있어요.' },
+    { icon: '', title: '왜 생겼나요?', desc: '해조류가 강한 햇빛과 세균으로부터 스스로를 지키려고 만든 천연 갑옷이에요.' },
+    { icon: '', title: '무엇이 특별한가요?', desc: '일반 폴리페놀보다 8~10배 강한 항산화력, 물에 잘 녹아 몸에 흡수가 뛰어나요.' },
   ]
 
   return (
@@ -407,15 +407,15 @@ function WhatIsSection() {
           <div className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500 mb-5">Flow · 추출에서 활용까지</div>
           <div className="flex items-center justify-between gap-2 text-center flex-wrap">
             {[
-              { emoji: '🌊', label: '제주 바다' },
+              { emoji: '', label: '제주 바다' },
               { emoji: '→', label: '' },
-              { emoji: '🌿', label: '감태·미역' },
+              { emoji: '', label: '감태·미역' },
               { emoji: '→', label: '' },
-              { emoji: '⚗️', label: '고순도 추출' },
+              { emoji: '', label: '고순도 추출' },
               { emoji: '→', label: '' },
-              { emoji: '🧬', label: '플로로탄닌' },
+              { emoji: '', label: '플로로탄닌' },
               { emoji: '→', label: '' },
-              { emoji: '💪', label: '우리 몸 보호' },
+              { emoji: '', label: '우리 몸 보호' },
             ].map((item, i) => (
               <div key={i} className={item.emoji === '→' ? 'text-gray-400 text-[14px] font-normal' : 'flex flex-col items-center gap-1.5'}>
                 <span className="text-[20px]" aria-hidden="true">{item.emoji}</span>
@@ -482,8 +482,8 @@ function DiseaseCard({ disease, isOpen, onToggle }) {
     }
   }, [isOpen])
 
-  // 레벨 텍스트 (이모지 ⭐ 제거)
-  const levelText = disease.levelBadge.replace(/⭐+\s*/g, '').trim()
+  // 레벨 텍스트
+  const levelText = (disease.levelBadge || '').trim()
 
   return (
     <div
@@ -583,15 +583,16 @@ function DiseasesSection() {
 
   const filters = [
     { id: 'all', label: '전체' },
-    { id: 'easy', label: '⭐ 쉬움' },
-    { id: 'medium', label: '⭐⭐ 보통' },
-    { id: 'hard', label: '⭐⭐⭐ 심화' },
+    { id: 'easy', label: '쉬움' },
+    { id: 'medium', label: '보통' },
+    { id: 'hard', label: '심화' },
   ]
 
   const filtered = DISEASES.filter(d => {
-    if (filter === 'easy') return d.levelBadge.startsWith('⭐ ')
-    if (filter === 'medium') return d.levelBadge.startsWith('⭐⭐ ')
-    if (filter === 'hard') return d.levelBadge.startsWith('⭐⭐⭐')
+    const level = (d.levelBadge || '').trim()
+    if (filter === 'easy') return level === '쉬움'
+    if (filter === 'medium') return level === '보통'
+    if (filter === 'hard') return level === '심화'
     return true
   })
 
@@ -599,7 +600,7 @@ function DiseasesSection() {
     <div className="bg-gray-50 py-10 px-4">
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-7">
-          <span className="text-4xl">📋</span>
+          <span className="text-4xl"></span>
           <h2 className="text-2xl font-black text-gray-800 mt-2">12가지 질환별 기전</h2>
           <p className="text-gray-500 text-base mt-2">카드를 눌러보세요 — 그림과 비유로 쉽게 설명해요!</p>
         </div>
@@ -643,7 +644,7 @@ function DiseasesSection() {
 function MechanismInfographic() {
   const mechs = [
     {
-      icon: '🔥',
+      icon: '',
       color: 'from-gray-700 to-gray-900',
       bg: 'bg-gray-50',
       border: 'border-gray-200',
@@ -655,7 +656,7 @@ function MechanismInfographic() {
       related: ['면역', '항암', '관절', '호흡기'],
     },
     {
-      icon: '⚡',
+      icon: '',
       color: 'from-gray-700 to-gray-900',
       bg: 'bg-gray-50',
       border: 'border-gray-200',
@@ -667,7 +668,7 @@ function MechanismInfographic() {
       related: ['혈당', '비만', '당뇨', '지방'],
     },
     {
-      icon: '🛡️',
+      icon: '',
       color: 'from-gray-700 to-gray-900',
       bg: 'bg-gray-50',
       border: 'border-gray-200',
@@ -679,7 +680,7 @@ function MechanismInfographic() {
       related: ['노화', '피부', '간', '뇌'],
     },
     {
-      icon: '❤️',
+      icon: '',
       color: 'from-gray-700 to-gray-900',
       bg: 'bg-gray-50',
       border: 'border-gray-200',
@@ -752,27 +753,27 @@ function MechanismInfographic() {
 const QUIZ = [
   {
     q: '플로로탄닌은 어디서 나오나요?',
-    opts: ['🍇 포도', '🌊 갈조류(미역·감태)', '🌳 소나무', '🍄 버섯'],
+    opts: [' 포도', ' 갈조류(미역·감태)', ' 소나무', ' 버섯'],
     ans: 1,
-    exp: '맞아요! 제주 바다의 감태, 미역, 다시마 같은 갈조류에서 추출해요 🌊',
+    exp: '맞아요! 제주 바다의 감태, 미역, 다시마 같은 갈조류에서 추출해요 ',
   },
   {
     q: '플로로탄닌의 항산화력은 비타민C보다 어느 정도인가요?',
     opts: ['같아요', '2배 강해요', '8~10배 강해요', '오히려 약해요'],
     ans: 2,
-    exp: '정답! 플로로탄닌은 비타민C보다 8~10배 강한 항산화력을 가져요 💎',
+    exp: '정답! 플로로탄닌은 비타민C보다 8~10배 강한 항산화력을 가져요 ',
   },
   {
     q: '혈당을 낮추는 데 플로로탄닌이 차단하는 효소는?',
     opts: ['ACE', 'α-글루코시데이스', 'PDE5', 'AChE'],
     ans: 1,
-    exp: '맞아요! α-글루코시데이스를 차단해 탄수화물이 천천히 흡수되게 해요 🍚',
+    exp: '맞아요! α-글루코시데이스를 차단해 탄수화물이 천천히 흡수되게 해요 ',
   },
   {
     q: '뇌 건강에서 플로로탄닌이 억제하는 효소는?',
     opts: ['NF-κB', 'MMP-1', 'AChE (아세틸콜린 분해효소)', 'AMPK'],
     ans: 2,
-    exp: '정답! AChE를 억제해 신경전달물질 아세틸콜린이 오래 유지되어 기억력이 높아져요 🧠',
+    exp: '정답! AChE를 억제해 신경전달물질 아세틸콜린이 오래 유지되어 기억력이 높아져요 ',
   },
 ]
 
@@ -903,7 +904,7 @@ function QuizSection() {
 function AgeGuideSection() {
   const guides = [
     {
-      emoji: '👦',
+      emoji: '',
       age: '청소년·학생',
       color: 'from-gray-700 to-gray-900',
       bg: 'bg-gray-50',
@@ -911,10 +912,10 @@ function AgeGuideSection() {
       textColor: 'text-gray-900',
       focus: ['집중력·기억력', '피부·아토피', '스트레스'],
       tip: '공부할 때 집중력과 스트레스 관리에 특히 좋아요. 뇌 속 AChE를 억제해 기억력을 도와줘요!',
-      icon: '🧠',
+      icon: '',
     },
     {
-      emoji: '👩',
+      emoji: '',
       age: '30~40대 여성',
       color: 'from-gray-700 to-gray-900',
       bg: 'bg-gray-50',
@@ -922,10 +923,10 @@ function AgeGuideSection() {
       textColor: 'text-gray-900',
       focus: ['피부 노화', '체중 관리', '여성 건강'],
       tip: '콜라겐 분해 효소(MMP-1)를 억제해 피부 탄력을 지키고, AMPK 활성화로 지방 분해를 도와요!',
-      icon: '✨',
+      icon: '',
     },
     {
-      emoji: '👨',
+      emoji: '',
       age: '40~50대 남성',
       color: 'from-gray-700 to-gray-900',
       bg: 'bg-gray-50',
@@ -933,10 +934,10 @@ function AgeGuideSection() {
       textColor: 'text-gray-900',
       focus: ['혈압·혈당', '혈관 건강', '활력'],
       tip: 'ACE 억제로 혈압을 낮추고, 혈당 조절 + 혈관 건강 개선으로 중년 건강 관리에 탁월해요!',
-      icon: '💪',
+      icon: '',
     },
     {
-      emoji: '👴👵',
+      emoji: '',
       age: '60대 이상 어르신',
       color: 'from-gray-700 to-gray-900',
       bg: 'bg-gray-50',
@@ -944,7 +945,7 @@ function AgeGuideSection() {
       textColor: 'text-gray-900',
       focus: ['치매 예방', '뼈·관절', '혈압·혈당'],
       tip: '뇌 보호, 관절 연골 보호, 혈압·혈당 관리 — 어르신에게 가장 중요한 3가지를 모두 도와줘요!',
-      icon: '🌿',
+      icon: '',
     },
   ]
 
@@ -1133,7 +1134,7 @@ function CTASection() {
 
         <p className="text-gray-400 text-[12px] mt-10 leading-relaxed">
           · 본 내용은 교육 목적의 건강 정보이며 의학적 진단·치료를 대체하지 않습니다.<br />
-          © 2025 플로로탄닌 파트너스
+           2025 플로로탄닌 파트너스
         </p>
       </div>
     </div>
@@ -1217,7 +1218,7 @@ export default function LearnPage() {
             blogTags={['플로로탄닌', '감태', '폴리페놀', '항산화', '해양폴리페놀']}
             blogCategory="research"
             max={6}
-            title="📚 학습한 내용과 관련된 Q&A"
+            title=" 학습한 내용과 관련된 Q&A"
           />
         </div>
       </section>

@@ -157,7 +157,7 @@ export default function CopyrightPage() {
             {/* 시행일 */}
             <section className="pt-4 border-t border-gray-100">
               <p className="text-xs md:text-sm text-gray-500 leading-relaxed">
-                © 2026 phlorotannin.com. All rights reserved.<br />
+                 2026 phlorotannin.com. All rights reserved.<br />
                 본 안내는 2026년 5월부로 시행되며, 사이트 운영 정책에 따라 수정될 수 있습니다.
               </p>
             </section>

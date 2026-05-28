@@ -4,7 +4,7 @@
    v2: 노안·초보 파트너용 가독성 강화 버전
    ─ 본문 22px semibold, 줄간격 1.7배
    ─ highlight: 빨강 28px + 노랑 형광 (핵심 한 줄)
-   ─ analogy : 💡 박스 + 진파랑 굵은 글씨 (비유 문장)
+   ─ analogy :  박스 + 진파랑 굵은 글씨 (비유 문장)
    ─ A4 794×1123, 자동 페이지네이션
 ══════════════════════════════════════════════════ */
 
@@ -93,7 +93,7 @@ function drawHeader(ctx) {
   ctx.fillStyle = NAVY
   ctx.textBaseline = 'middle'
   ctx.textAlign = 'left'
-  ctx.fillText('📚 플로로탄닌 파트너 실전 교본', PAD, 36)
+  ctx.fillText(' 플로로탄닌 파트너 실전 교본', PAD, 36)
 
   ctx.font = '12px sans-serif'
   ctx.fillStyle = GREY
@@ -171,14 +171,14 @@ function measureBlock(ctx, block) {
     }
 
     case 'highlight': {
-      // 🔴 핵심 한 줄 — 빨강 28px + 노랑 형광 배경 (상하 패딩 ↑)
+      //  핵심 한 줄 — 빨강 28px + 노랑 형광 배경 (상하 패딩 ↑)
       ctx.font = 'bold 28px sans-serif'
       const lines = wrapText(ctx, block.text, BODY_W - 56)
       return { h: 36 + lines.length * 42 + 36, _lines: lines }
     }
 
     case 'analogy': {
-      // 💡 비유 박스 — 진파랑 22px bold (상하 패딩 ↑)
+      //  비유 박스 — 진파랑 22px bold (상하 패딩 ↑)
       ctx.font = 'bold 22px sans-serif'
       const lines = wrapText(ctx, block.text, BODY_W - 72)
       return { h: 30 + lines.length * 36 + 30, _lines: lines }
@@ -353,7 +353,7 @@ function drawBlock(ctx, block, y, m) {
     }
 
     case 'analogy': {
-      // 💡 박스 — 연한 파랑 배경 + 진파랑 글씨, 내부 여백 ↑
+      //  박스 — 연한 파랑 배경 + 진파랑 글씨, 내부 여백 ↑
       const boxH = m.h - 12
       roundRect(ctx, PAD, y + 6, BODY_W, boxH, 12)
       ctx.fillStyle = AN_BG
@@ -361,11 +361,11 @@ function drawBlock(ctx, block, y, m) {
       ctx.strokeStyle = AN_BD
       ctx.lineWidth = 2
       ctx.stroke()
-      // 💡 아이콘
+      //  아이콘
       ctx.font = 'bold 28px sans-serif'
       ctx.fillStyle = AN_INK
       ctx.textBaseline = 'top'
-      ctx.fillText('💡', PAD + 18, y + 24)
+      ctx.fillText('', PAD + 18, y + 24)
       // 본문
       ctx.font = 'bold 22px sans-serif'
       ctx.fillStyle = AN_INK
@@ -620,7 +620,7 @@ function drawTocPageHeader(ctx, isFirst) {
   ctx.fillStyle = NAVY
   ctx.textBaseline = 'middle'
   ctx.textAlign = 'left'
-  ctx.fillText('📚 플로로탄닌 파트너 실전 교본', PAD, 36)
+  ctx.fillText(' 플로로탄닌 파트너 실전 교본', PAD, 36)
   ctx.font = '12px sans-serif'
   ctx.fillStyle = GREY
   ctx.textAlign = 'right'

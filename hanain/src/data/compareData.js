@@ -46,7 +46,7 @@ export const COMPARE_PAGES = {
       { dim: '핵심 작용기전', left: 'Nrf2 활성, NF-κB 억제, α-glucosidase 억제, MMP 억제, AChE 억제', right: 'P-/L-selectin 차단, 헤파라나제 억제, 면역세포 활성' },
       { dim: '대표 임상영역', left: '대사(혈당·지질)·인지·심혈관', right: '면역조절·암 보조요법(예비단계)' },
       { dim: '경구 흡수', left: '디에콜 등 저분자 분획 흡수 확인 (Shin 2024)', right: '분자량 크므로 흡수율 일반적으로 낮음 (장내 작용 우세)' },
-      { dim: '규제 인정', left: 'EFSA Novel Food (Seapolynol™, 263 mg/일 안전성)', right: '국가별 식품 성분 인정 (의약품 등재 없음)' },
+      { dim: '규제 인정', left: 'EFSA Novel Food (Seapolynol, 263 mg/일 안전성)', right: '국가별 식품 성분 인정 (의약품 등재 없음)' },
       { dim: '안전성 우려', left: '263 mg/일 이하 권장 (EFSA)', right: '항응고제와 병용 시 출혈 위험(헤파린 유사 구조)' },
       { dim: '대표 임상시험', left: '고콜레스테롤혈증 파일럿 (200 mg, 6주)', right: '면역·항암 보조 (예비 단계 많음)' },
     ],
@@ -105,7 +105,7 @@ export const COMPARE_PAGES = {
       },
       {
         q: '안전성 평가는 어떻게 다른가요?',
-        a: '플로로탄닌(Seapolynol™)은 EFSA가 2017년 Novel Food로 안전성 평가를 완료해 263 mg/일 이하 섭취가 안전하다고 결론냈습니다. 후코이단은 별도의 EFSA Novel Food 인정은 없으며, 전통 식품 수준에서는 안전하나 의약품적 고용량 사용은 항응고 위험을 동반합니다.',
+        a: '플로로탄닌(Seapolynol)은 EFSA가 2017년 Novel Food로 안전성 평가를 완료해 263 mg/일 이하 섭취가 안전하다고 결론냈습니다. 후코이단은 별도의 EFSA Novel Food 인정은 없으며, 전통 식품 수준에서는 안전하나 의약품적 고용량 사용은 항응고 위험을 동반합니다.',
       },
       {
         q: '둘 중 어느 쪽이 더 많이 연구되고 있나요?',

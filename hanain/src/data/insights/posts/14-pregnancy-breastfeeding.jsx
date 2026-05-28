@@ -28,7 +28,7 @@ export default {
     <>
       <H2 id="efsa">EFSA 입장 — 일반 성인 평가</H2>
       <P>
-        EFSA의 Ecklonia cava 플로로탄닌(Seapolynol™) Novel Food 평가<Cite id="efsa-2017-novel-food" />는 일반 성인 인구 대상
+        EFSA의 Ecklonia cava 플로로탄닌(Seapolynol) Novel Food 평가<Cite id="efsa-2017-novel-food" />는 일반 성인 인구 대상
         권장 섭취 상한 263 mg/일을 제시합니다. <strong>임산부·수유부·소아 대상 별도 안전성 평가는 포함되지 않습니다.</strong>
         이는 ‘안전하다’도 ‘위험하다’도 아닌, <em>평가 자체가 없다</em>는 의미입니다.
       </P>

@@ -683,7 +683,7 @@ export default function PartnerPage() {
 
             <div className="border-t border-gray-100 pt-5 space-y-1">
               <p className="text-xs text-gray-400 text-center">
-                © 2026 <span className="font-semibold text-gray-500">플로로탄닌 파트너스</span> — All rights reserved.
+                 2026 <span className="font-semibold text-gray-500">플로로탄닌 파트너스</span> — All rights reserved.
               </p>
               <p className="text-xs text-gray-400 text-center leading-relaxed">
                 본 사이트의 교육 자료·콘텐츠는 저작권법의 보호를 받습니다. 무단 복제·배포를 금합니다.

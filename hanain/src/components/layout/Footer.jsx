@@ -322,7 +322,7 @@ export default function Footer() {
 
           <div className="mt-8 pt-6 border-t border-gray-100 flex flex-col md:flex-row md:items-center md:justify-between gap-2">
             <p className="text-[12px] text-gray-400">
-              © 2026 phlorotannin.com · Phlorotannin Partners
+               2026 phlorotannin.com · Phlorotannin Partners
             </p>
             <p className="text-[12px] text-gray-400 text-center md:text-right">
               본 사이트의 정보는 건강 교육 목적이며 의료 처방·진단을 대체하지 않습니다.

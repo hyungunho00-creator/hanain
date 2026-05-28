@@ -196,7 +196,7 @@ export default function CommunityPostPage() {
   if (error || !post) {
     return (
       <div className="pt-16 min-h-screen bg-gray-hana flex items-center justify-center flex-col gap-4">
-        <div className="text-5xl">😕</div>
+        <div className="text-5xl"></div>
         <p className="text-gray-500 text-lg">{error || '게시글을 찾을 수 없습니다.'}</p>
         <Link to="/community" className="text-cyan-hana hover:underline">← 커뮤니티로 돌아가기</Link>
       </div>
@@ -326,7 +326,7 @@ export default function CommunityPostPage() {
                       onClick={handleKakaoShare}
                       className="w-full text-left px-4 py-2.5 text-sm hover:bg-gray-50 flex items-center gap-2"
                     >
-                      <span>💬</span> 카카오톡 공유
+                      <span></span> 카카오톡 공유
                     </button>
                     <button
                       onClick={handleCopyLink}
@@ -358,7 +358,7 @@ export default function CommunityPostPage() {
             <div className="px-6 divide-y divide-gray-100">
               {comments.length === 0 ? (
                 <p className="py-8 text-center text-gray-400 text-sm">
-                  첫 댓글을 남겨보세요 ✏️
+                  첫 댓글을 남겨보세요 
                 </p>
               ) : (
                 comments.map(comment => (

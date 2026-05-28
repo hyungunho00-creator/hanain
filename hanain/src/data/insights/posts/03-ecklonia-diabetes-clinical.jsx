@@ -23,7 +23,7 @@ export default {
   ],
   tldr: [
     '한국인 대상 약동학 연구로 디에콜 경구 흡수·축적 안전성이 확인되었습니다',
-    'Seapolynol™ 섭취 후 인간 소변 대사체학에서 지질·아미노산 대사 유의 변화가 관찰되었습니다',
+    'Seapolynol 섭취 후 인간 소변 대사체학에서 지질·아미노산 대사 유의 변화가 관찰되었습니다',
     '2026년 한국 RCT(Ecklonia 복합 제형)에서 효능·안전성 신호가 추가로 보고됩니다',
   ],
   faqs: [
@@ -57,9 +57,9 @@ export default {
         ]}
       />
 
-      <H2 id="metabolomics">대사체학 — Seapolynol™ 섭취 후 무엇이 바뀌었나</H2>
+      <H2 id="metabolomics">대사체학 — Seapolynol 섭취 후 무엇이 바뀌었나</H2>
       <P>
-        2020년 <em>Nutrients</em><Cite id="kim-2020-seapolynol-urinary" />는 인간 대상 Seapolynol™
+        2020년 <em>Nutrients</em><Cite id="kim-2020-seapolynol-urinary" />는 인간 대상 Seapolynol
         섭취 후 소변 메타볼롬을 분석했습니다. 지질·아미노산 대사 경로의 유의한 변화가 확인되어, ‘아무 변화 없음’이
         아닌 분자 수준의 반응이 존재함을 보여줍니다. 이는 당뇨 자체보다 ‘대사 체질’ 개선의 단서로 해석됩니다.
       </P>

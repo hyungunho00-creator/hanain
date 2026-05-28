@@ -23,7 +23,7 @@ export default {
   ],
   tldr: [
     '2012년 인간 파일럿 RCT에서 200 mg/일 6주 섭취로 LDL·총 콜레스테롤이 유의 감소함을 보였습니다',
-    '동일 그룹의 전임상 연구는 Seapolynol™·디에콜 단독에서도 항고지혈 효과를 입증했습니다',
+    '동일 그룹의 전임상 연구는 Seapolynol·디에콜 단독에서도 항고지혈 효과를 입증했습니다',
     '2026년 종합 리뷰는 장내 미생물 매개 당지질 대사 조절을 통합 기전으로 제시합니다',
   ],
   body: (
@@ -35,9 +35,9 @@ export default {
         파일럿 규모지만 인간에서 일관된 방향 신호라는 점이 중요합니다.
       </P>
 
-      <H2 id="preclinical">전임상 입증 — Seapolynol™·디에콜</H2>
+      <H2 id="preclinical">전임상 입증 — Seapolynol·디에콜</H2>
       <P>
-        동일 그룹의 2012년 PNF 연구<Cite id="shin-2012-seapolynol-hyperlipidemic" />는 정제 Seapolynol™과 단리 디에콜이
+        동일 그룹의 2012년 PNF 연구<Cite id="shin-2012-seapolynol-hyperlipidemic" />는 정제 Seapolynol과 단리 디에콜이
         동물·세포 모델에서 LDL 및 중성지방을 낮춤을 입증했습니다. 분자 단위로 효과의 인과가 비교적 명확합니다.
       </P>
 

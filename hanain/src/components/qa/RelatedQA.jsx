@@ -5,7 +5,7 @@
 // 매칭 룰 (룰베이스, LLM 0 토큰):
 //   1) 블로그 글 tags ∩ Q&A tags 교집합 카운트 내림차순
 //   2) 동률 시 views 내림차순
-//   3) 매칭 0건 → 같은 카테고리 fallback (블로그 category ↔ Q&A category 매핑)
+//   3) 매칭 0건 → 같은 카테고리 fallback (블로그 category  Q&A category 매핑)
 //   4) 최대 N개 (기본 3)
 //
 // 파트너 ref 전파: 모든 링크 withRef() 거침 (불변 강령 3)

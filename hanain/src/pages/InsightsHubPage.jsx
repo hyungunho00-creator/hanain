@@ -51,7 +51,7 @@ export default function InsightsHubPage() {
         about: {
           '@type': 'Thing',
           name: '플로로탄닌 (Phlorotannin)',
-          alternateName: ['감태 추출물', 'Ecklonia cava polyphenol', 'Seapolynol™'],
+          alternateName: ['감태 추출물', 'Ecklonia cava polyphenol', 'Seapolynol'],
         },
         speakable: {
           '@type': 'SpeakableSpecification',

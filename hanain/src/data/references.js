@@ -104,12 +104,12 @@ export const REFERENCES = {
     pmid: '24471056',
     pmc: 'PMC3866749',
     doi: '10.3746/pnf.2012.17.1.001',
-    title: 'Anti-hyperlipidemic Effect of Polyphenol Extract (Seapolynol™) and Dieckol Isolated from Ecklonia cava in In Vivo and In Vitro Models',
+    title: 'Anti-hyperlipidemic Effect of Polyphenol Extract (Seapolynol) and Dieckol Isolated from Ecklonia cava in In Vivo and In Vitro Models',
     authors: 'Yoon NY, Kim HR, Chung HY, Choi JS.',
     journal: 'Preventive Nutrition and Food Science',
     year: 2012,
     tags: ['preclinical', 'lipid', 'dieckol', 'seapolynol'],
-    keyFindings: 'Seapolynol(™) 추출물 및 정제 디에콜이 동물 및 세포 모델에서 항고지혈증 효과를 보임을 최초 입증.',
+    keyFindings: 'Seapolynol() 추출물 및 정제 디에콜이 동물 및 세포 모델에서 항고지혈증 효과를 보임을 최초 입증.',
   },
 
   // ─────────────────────────────────────────────────────────────────
@@ -306,7 +306,7 @@ export const REFERENCES = {
     journal: 'Nutrients',
     year: 2020,
     tags: ['clinical', 'human', 'seapolynol', 'metabolomics'],
-    keyFindings: '인간 대상 Seapolynol™(감태 추출물) 섭취 후 소변 대사체학 분석 — 지질·아미노산 대사 유의 변화 확인.',
+    keyFindings: '인간 대상 Seapolynol(감태 추출물) 섭취 후 소변 대사체학 분석 — 지질·아미노산 대사 유의 변화 확인.',
   },
   'kim-2025-collagen-il17': {
     id: 'kim-2025-collagen-il17',

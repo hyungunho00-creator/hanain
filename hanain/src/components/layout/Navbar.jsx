@@ -105,7 +105,7 @@ function PwModal({ onSuccess, onClose }) {
             <FolderLock size={26} color={GOLD} />
           </div>
           <p style={{ fontSize: 18, fontWeight: 900, color: '#fff', margin: '0 0 6px' }}>
-            🔒 파트너 전용 자료실
+             파트너 전용 자료실
           </p>
           <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.65)', margin: 0, lineHeight: 1.6 }}>
             파트너 전용 공간입니다.<br />
@@ -148,7 +148,7 @@ function PwModal({ onSuccess, onClose }) {
           {/* 에러 메시지 */}
           {error && (
             <p style={{ fontSize: 13, color: '#ef4444', margin: '0 0 12px', fontWeight: 600 }}>
-              ⚠️ {error}
+               {error}
             </p>
           )}
 
@@ -420,7 +420,7 @@ export default function Navbar() {
                 >
                   <FolderLock className="w-4 h-4 flex-shrink-0" />
                   <span style={{ fontSize: '14px', fontWeight: '900', color: '#fff' }}>
-                    📂 파트너 전용 자료실
+                     파트너 전용 자료실
                   </span>
                 </button>
               </div>

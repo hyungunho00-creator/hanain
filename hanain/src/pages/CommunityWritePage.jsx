@@ -201,7 +201,7 @@ export default function CommunityWritePage() {
 
             {/* 작성 규칙 */}
             <div className="bg-blue-50 border border-blue-100 rounded-xl p-4 text-xs text-blue-700">
-              <p className="font-semibold mb-1">✏️ 게시글 작성 안내</p>
+              <p className="font-semibold mb-1"> 게시글 작성 안내</p>
               <ul className="space-y-0.5 text-blue-600">
                 <li>• 건강 정보는 참고용이며 의료 진단을 대체하지 않습니다.</li>
                 <li>• 욕설·광고·비방 게시글은 관리자에 의해 삭제될 수 있습니다.</li>

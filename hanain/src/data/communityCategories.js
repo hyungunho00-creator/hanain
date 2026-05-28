@@ -3,7 +3,7 @@ export const COMMUNITY_CATEGORIES = [
   {
     id: 'all',
     label: '전체',
-    emoji: '📋',
+    emoji: '',
     color: 'bg-gray-600',
     textColor: 'text-gray-600',
     borderColor: 'border-gray-600',
@@ -13,7 +13,7 @@ export const COMMUNITY_CATEGORIES = [
   {
     id: 'metabolism',
     label: '대사질환',
-    emoji: '🩸',
+    emoji: '',
     color: 'bg-red-500',
     textColor: 'text-red-600',
     borderColor: 'border-red-400',
@@ -24,7 +24,7 @@ export const COMMUNITY_CATEGORIES = [
   {
     id: 'cancer_immune',
     label: '항암·면역',
-    emoji: '💪',
+    emoji: '',
     color: 'bg-purple-600',
     textColor: 'text-purple-600',
     borderColor: 'border-purple-400',
@@ -35,7 +35,7 @@ export const COMMUNITY_CATEGORIES = [
   {
     id: 'digestive',
     label: '소화기계',
-    emoji: '🌿',
+    emoji: '',
     color: 'bg-green-600',
     textColor: 'text-green-600',
     borderColor: 'border-green-400',
@@ -46,7 +46,7 @@ export const COMMUNITY_CATEGORIES = [
   {
     id: 'cardiovascular',
     label: '심혈관계',
-    emoji: '❤️',
+    emoji: '',
     color: 'bg-pink-600',
     textColor: 'text-pink-600',
     borderColor: 'border-pink-400',
@@ -57,7 +57,7 @@ export const COMMUNITY_CATEGORIES = [
   {
     id: 'neuro',
     label: '신경계·뇌',
-    emoji: '🧠',
+    emoji: '',
     color: 'bg-indigo-600',
     textColor: 'text-indigo-600',
     borderColor: 'border-indigo-400',
@@ -68,7 +68,7 @@ export const COMMUNITY_CATEGORIES = [
   {
     id: 'mental',
     label: '정신건강',
-    emoji: '🌙',
+    emoji: '',
     color: 'bg-blue-600',
     textColor: 'text-blue-600',
     borderColor: 'border-blue-400',
@@ -79,7 +79,7 @@ export const COMMUNITY_CATEGORIES = [
   {
     id: 'musculoskeletal',
     label: '근골격계',
-    emoji: '🦴',
+    emoji: '',
     color: 'bg-orange-500',
     textColor: 'text-orange-600',
     borderColor: 'border-orange-400',
@@ -90,7 +90,7 @@ export const COMMUNITY_CATEGORIES = [
   {
     id: 'skin',
     label: '피부·모발',
-    emoji: '✨',
+    emoji: '',
     color: 'bg-yellow-500',
     textColor: 'text-yellow-600',
     borderColor: 'border-yellow-400',
@@ -101,7 +101,7 @@ export const COMMUNITY_CATEGORIES = [
   {
     id: 'respiratory',
     label: '호흡기계',
-    emoji: '🫁',
+    emoji: '',
     color: 'bg-sky-600',
     textColor: 'text-sky-600',
     borderColor: 'border-sky-400',
@@ -112,7 +112,7 @@ export const COMMUNITY_CATEGORIES = [
   {
     id: 'infection_inflammation',
     label: '염증·감염',
-    emoji: '🔥',
+    emoji: '',
     color: 'bg-red-600',
     textColor: 'text-red-700',
     borderColor: 'border-red-500',
@@ -123,7 +123,7 @@ export const COMMUNITY_CATEGORIES = [
   {
     id: 'womens_health',
     label: '여성건강',
-    emoji: '🌸',
+    emoji: '',
     color: 'bg-rose-500',
     textColor: 'text-rose-600',
     borderColor: 'border-rose-400',
@@ -134,7 +134,7 @@ export const COMMUNITY_CATEGORIES = [
   {
     id: 'mens_health',
     label: '남성건강',
-    emoji: '💙',
+    emoji: '',
     color: 'bg-blue-700',
     textColor: 'text-blue-700',
     borderColor: 'border-blue-600',
@@ -145,7 +145,7 @@ export const COMMUNITY_CATEGORIES = [
   {
     id: 'review',
     label: '경험 후기',
-    emoji: '⭐',
+    emoji: '',
     color: 'bg-gold-hana',
     textColor: 'text-yellow-600',
     borderColor: 'border-yellow-400',
@@ -156,7 +156,7 @@ export const COMMUNITY_CATEGORIES = [
   {
     id: 'question',
     label: '질문·답변',
-    emoji: '❓',
+    emoji: '',
     color: 'bg-cyan-hana',
     textColor: 'text-cyan-700',
     borderColor: 'border-cyan-400',
@@ -167,7 +167,7 @@ export const COMMUNITY_CATEGORIES = [
   {
     id: 'free',
     label: '자유게시판',
-    emoji: '💬',
+    emoji: '',
     color: 'bg-gray-500',
     textColor: 'text-gray-600',
     borderColor: 'border-gray-400',

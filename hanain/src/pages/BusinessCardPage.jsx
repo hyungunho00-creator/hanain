@@ -411,7 +411,7 @@ export default function BusinessCardPage() {
 
     } else if (isIphone) {
       // iPhone (인앱 포함 전부) → Safari로 강제 이동
-      // Safari 열리면 ?pwa=1 감지 → 상단에 "⬆️ → 홈 화면에 추가" 배너 자동으로 표시
+      // Safari 열리면 ?pwa=1 감지 → 상단에 " → 홈 화면에 추가" 배너 자동으로 표시
       window.location.href = pwaUrl.replace('https://', 'x-safari-https://')
 
     } else {
@@ -526,7 +526,7 @@ export default function BusinessCardPage() {
         data-owner="phlorotannin.com"
         data-page-type="partner-business-card"
         data-partner-slug={partner?.slug || partner?.phone || ''}
-        data-copyright="© 2026 phlorotannin.com"
+        data-copyright=" 2026 phlorotannin.com"
         style={{ background: `linear-gradient(160deg, ${CREAM} 0%, ${CREAM2} 50%, ${CREAM3} 100%)` }}>
 
         {/* 상단 헤더 */}
@@ -907,7 +907,7 @@ export default function BusinessCardPage() {
             }}
           >
             <p style={{ fontSize: '11px', fontWeight: 800, color: GOLD2, marginBottom: 6, letterSpacing: '0.5px' }}>
-              © 2026 phlorotannin.com · 무단복제 금지
+               2026 phlorotannin.com · 무단복제 금지
             </p>
             <p style={{ fontSize: '11px', color: '#bfc8d4', lineHeight: 1.75, margin: 0 }}>
               본 페이지는 phlorotannin.com 파트너 정보페이지 시스템을 통해 제공되는 개인 정보페이지입니다.
@@ -932,7 +932,7 @@ export default function BusinessCardPage() {
           aria-hidden="true"
           style={{ position: 'absolute', width: 1, height: 1, padding: 0, margin: -1, overflow: 'hidden', clip: 'rect(0,0,0,0)', whiteSpace: 'nowrap', border: 0 }}
         >
-          © 2026 phlorotannin.com — phlorotannin-partner-page · 무단 복제·재가공·상업적 이용 금지
+           2026 phlorotannin.com — phlorotannin-partner-page · 무단 복제·재가공·상업적 이용 금지
         </div>
       </div>
 

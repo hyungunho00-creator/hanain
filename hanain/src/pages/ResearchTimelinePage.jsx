@@ -42,9 +42,9 @@ const TIMELINE = [
     year: 2012,
     label: '전임상 작용',
     refId: 'shin-2012-seapolynol-hyperlipidemic',
-    title: 'Seapolynol™ + 디에콜의 in vitro / in vivo 항고지혈',
+    title: 'Seapolynol + 디에콜의 in vitro / in vivo 항고지혈',
     insight:
-      'Seapolynol™ 추출물과 정제 디에콜이 동물·세포 모델에서 항고지혈증 효과를 보임. 활성 분자로서 디에콜의 역할 첫 입증.',
+      'Seapolynol 추출물과 정제 디에콜이 동물·세포 모델에서 항고지혈증 효과를 보임. 활성 분자로서 디에콜의 역할 첫 입증.',
     badge: 'preclinical',
   },
   {
@@ -62,7 +62,7 @@ const TIMELINE = [
     refId: 'efsa-2017-novel-food',
     title: 'EFSA Novel Food 안전성 평가 통과',
     insight:
-      '유럽식품안전청(EFSA)이 Seapolynol™ Ecklonia cava 플로로탄닌을 Novel Food로 평가, 263 mg/일 이하 안전성 확립. 글로벌 규제 입지 강화.',
+      '유럽식품안전청(EFSA)이 Seapolynol Ecklonia cava 플로로탄닌을 Novel Food로 평가, 263 mg/일 이하 안전성 확립. 글로벌 규제 입지 강화.',
     badge: 'regulatory',
   },
   {

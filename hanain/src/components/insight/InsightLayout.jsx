@@ -60,7 +60,7 @@ export default function InsightLayout({ post, related = [] }) {
         about: {
           '@type': 'Thing',
           name: '플로로탄닌 (Phlorotannin)',
-          alternateName: ['감태 추출물', 'Ecklonia cava polyphenol', 'Seapolynol™'],
+          alternateName: ['감태 추출물', 'Ecklonia cava polyphenol', 'Seapolynol'],
         },
         keywords: post.keywords,
         mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
@@ -215,7 +215,7 @@ export default function InsightLayout({ post, related = [] }) {
         <section className="max-w-3xl mx-auto px-4 sm:px-6 mt-10">
           <LastReviewed date={post.updatedAt || post.publishedAt} align="left" />
           <p className="mt-3 text-xs text-gray-500 leading-relaxed">
-            ⚠ 본 콘텐츠는 일반 건강정보 안내이며 의료 진단·치료를 대체하지 않습니다.
+             본 콘텐츠는 일반 건강정보 안내이며 의료 진단·치료를 대체하지 않습니다.
             기저질환자·임산부·소아·복용 중인 약이 있는 분은 반드시 의료 전문가와 상담 후 결정하세요.
           </p>
         </section>

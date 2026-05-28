@@ -31,7 +31,7 @@ const DOSAGE_TABLE = [
   {
     item: 'EFSA Novel Food 권장 상한',
     value: '263 mg / 일',
-    source: 'EFSA Journal 2017; Seapolynol™ phlorotannins. PMID:32625298',
+    source: 'EFSA Journal 2017; Seapolynol phlorotannins. PMID:32625298',
   },
   {
     item: '식약처 개별인정형 (감태추출물)',
@@ -55,7 +55,7 @@ const CONTRAINDICATIONS = [
     icon: AlertTriangle,
     title: '갑상선 질환자',
     detail:
-      '갈조류 원물 자체에는 요오드가 상당량 포함되어 있어 갑상선기능항진증·갑상선암 등 환자는 원물 섭취 시 주의가 필요합니다. 다만 정제된 플로로탄닌 추출물(Seapolynol™ 등)은 요오드를 제거한 정제 분획이므로 일반 원물보다 위험은 낮으나, 갑상선 질환이 있는 경우 의료진과 상담 후 사용해야 합니다.',
+      '갈조류 원물 자체에는 요오드가 상당량 포함되어 있어 갑상선기능항진증·갑상선암 등 환자는 원물 섭취 시 주의가 필요합니다. 다만 정제된 플로로탄닌 추출물(Seapolynol 등)은 요오드를 제거한 정제 분획이므로 일반 원물보다 위험은 낮으나, 갑상선 질환이 있는 경우 의료진과 상담 후 사용해야 합니다.',
     severity: 'high',
   },
   {
@@ -155,7 +155,7 @@ export default function SafetyPage() {
             acceptedAnswer: {
               '@type': 'Answer',
               text:
-                'EFSA(유럽식품안전청)는 2017년 Seapolynol™ Ecklonia cava 플로로탄닌을 Novel Food로 평가하면서 263 mg/일 이하 섭취가 안전하다고 결론냈습니다. 한국 식약처 개별인정형 제품은 제품 표시 권장량을 따르며, 임상 파일럿 연구에서는 200 mg/일을 6주간 사용한 사례가 있습니다.',
+                'EFSA(유럽식품안전청)는 2017년 Seapolynol Ecklonia cava 플로로탄닌을 Novel Food로 평가하면서 263 mg/일 이하 섭취가 안전하다고 결론냈습니다. 한국 식약처 개별인정형 제품은 제품 표시 권장량을 따르며, 임상 파일럿 연구에서는 200 mg/일을 6주간 사용한 사례가 있습니다.',
             },
           },
           {

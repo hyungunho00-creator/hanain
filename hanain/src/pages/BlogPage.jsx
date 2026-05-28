@@ -11,9 +11,9 @@ import { INSIGHTS_LIST } from '../data/insights'
 // Phase 3: Supabase categories 테이블이 1순위, 아래 상수는 DB 실패 시 fallback
 const FALLBACK_CATEGORIES = [
   { id: 'all',        name: '전체' },
-  { id: 'cancer-treatment-care', name: '항암 치료 케어' }, // 🆕 항암 치료 부작용·대처·보완 (고전환)
-  { id: 'buying-guide',       name: '구매 가이드' },      // 🆕 구매 의도 SEO 흡수
-  { id: 'safety-precautions', name: '부작용·주의사항' },  // 🆕 안전 정보 SEO 흡수
+  { id: 'cancer-treatment-care', name: '항암 치료 케어' }, //  항암 치료 부작용·대처·보완 (고전환)
+  { id: 'buying-guide',       name: '구매 가이드' },      //  구매 의도 SEO 흡수
+  { id: 'safety-precautions', name: '부작용·주의사항' },  //  안전 정보 SEO 흡수
   { id: 'diabetes',   name: '당뇨·혈당' },
   { id: 'cancer',     name: '항암·면역' },
   { id: 'brain',      name: '뇌·인지' },
@@ -85,9 +85,9 @@ const BLOG_TO_VIDEO_CAT = {
   'exercise-recovery':      null,
   'hospital-info':         null,
   'partner-info':          null,
-  'buying-guide':          null,  // 🆕 영상 매칭은 추후
-  'safety-precautions':    null,  // 🆕 영상 매칭은 추후
-  'cancer-treatment-care': 'cancer',  // 🆕 기존 cancer 영상 재활용
+  'buying-guide':          null,  //  영상 매칭은 추후
+  'safety-precautions':    null,  //  영상 매칭은 추후
+  'cancer-treatment-care': 'cancer',  //  기존 cancer 영상 재활용
   '분자기전 작용경로': 'research',
   '신약개발 임상': 'research',
   metabolism: 'diabetes',

@@ -14,7 +14,7 @@ const LAST_REVIEWED = '2026-05-21'
 const diseases = [
   {
     id: 'diabetes',
-    emoji: '🍬',
+    emoji: '',
     name: '당뇨 · 혈당',
     color: '#0077B6',
     bgLight: '#EFF8FF',
@@ -22,14 +22,14 @@ const diseases = [
     simple: '밥을 먹으면 혈당(혈액 속 당)이 오릅니다. 보통은 인슐린이 당을 세포 안으로 넣어주는데, 당뇨가 있으면 이 과정이 잘 안 됩니다.',
     what: '혈당이 오래 높으면 혈관과 신경이 망가져요.',
     howHelps: '플로로탄닌은 음식의 당이 혈액으로 흡수되는 속도를 늦춰줘요. 마치 "문에 브레이크"를 다는 것처럼요!',
-    analogy: '🚦 설탕이 혈액에 들어오는 문을 천천히 열리게 해요',
+    analogy: ' 설탕이 혈액에 들어오는 문을 천천히 열리게 해요',
     evidence: '임상 연구에서 공복 혈당 약 27% 감소 확인',
     symptom: ['심한 갈증', '잦은 소변', '쉽게 피곤함', '시야 흐릿함'],
     tip: '식사 후 30분 걷기 + 설탕 음료 줄이기',
   },
   {
     id: 'obesity',
-    emoji: '⚖️',
+    emoji: '',
     name: '비만 · 지방간',
     color: '#059669',
     bgLight: '#ECFDF5',
@@ -37,14 +37,14 @@ const diseases = [
     simple: '우리 몸에 에너지가 너무 많이 들어오면 지방으로 저장됩니다. 특히 간에 지방이 쌓이면 "지방간"이 생겨요.',
     what: '지방간은 나중에 간경화나 당뇨로 이어질 수 있어요.',
     howHelps: '플로로탄닌은 지방세포가 커지는 것을 억제하고, 간에 쌓인 지방을 분해하는 데 도움을 줘요.',
-    analogy: '🧹 간 청소부 역할을 해요',
+    analogy: ' 간 청소부 역할을 해요',
     evidence: '동물 연구에서 체중 약 18% 감소, 간 지방 축적 억제 확인',
     symptom: ['배가 볼록 나옴', '쉽게 숨참', '피로감', '소화 불량'],
     tip: '하루 물 8잔 + 야채 먼저 먹기',
   },
   {
     id: 'cancer',
-    emoji: '🛡️',
+    emoji: '',
     name: '항암 · 면역',
     color: '#7C3AED',
     bgLight: '#F5F3FF',
@@ -52,14 +52,14 @@ const diseases = [
     simple: '우리 몸의 세포는 항상 조금씩 잘못 복사돼요. 면역세포가 이걸 잡아주는데, 면역력이 약해지면 암세포가 자랄 수 있어요.',
     what: '암은 세포가 비정상적으로 계속 자라는 병이에요.',
     howHelps: '플로로탄닌은 암세포의 성장을 억제하고, 면역세포(NK세포)를 강하게 만들어줘요.',
-    analogy: '💪 면역 경비원을 더 강하게 훈련시켜요',
+    analogy: ' 면역 경비원을 더 강하게 훈련시켜요',
     evidence: '대장암·유방암 세포주에서 세포 사멸 유도 확인 (다수 SCI 논문)',
     symptom: ['쉽게 감기 걸림', '상처 회복 느림', '계속 피곤함', '체중 감소'],
     tip: '충분한 수면 + 스트레스 관리',
   },
   {
     id: 'hypertension',
-    emoji: '❤️',
+    emoji: '',
     name: '고혈압 · 혈관',
     color: '#DC2626',
     bgLight: '#FEF2F2',
@@ -67,14 +67,14 @@ const diseases = [
     simple: '혈관이 좁아지거나 딱딱해지면 심장이 피를 더 세게 펌프해야 해요. 이때 혈압이 높아집니다.',
     what: '혈압이 높으면 뇌졸중, 심근경색 위험이 올라가요.',
     howHelps: '플로로탄닌은 혈관을 좁히는 효소(ACE)를 막아줘요. 혈관이 더 부드럽게 늘어나도록 도와줘요.',
-    analogy: '🚰 좁아진 호스를 조금 넓혀주는 것처럼요',
+    analogy: ' 좁아진 호스를 조금 넓혀주는 것처럼요',
     evidence: '12주 복용 후 수축기 혈압 평균 8mmHg 감소 확인',
     symptom: ['두통', '어지러움', '코피', '가슴 두근거림'],
     tip: '소금 줄이기 + 매일 30분 산책',
   },
   {
     id: 'dementia',
-    emoji: '🧠',
+    emoji: '',
     name: '치매 · 뇌 건강',
     color: '#4338CA',
     bgLight: '#EEF2FF',
@@ -82,14 +82,14 @@ const diseases = [
     simple: '뇌세포가 나이 들면서 줄어들거나, 나쁜 단백질(베타아밀로이드)이 쌓여 신경세포를 막으면 기억력이 떨어져요.',
     what: '치매는 일상생활이 어려울 정도로 뇌 기능이 떨어지는 병이에요.',
     howHelps: '플로로탄닌은 뇌에 쌓이는 나쁜 단백질 분해 효소(AChE)를 억제하고, 뇌세포를 보호해요.',
-    analogy: '🧹 뇌 속 쓰레기를 치워주는 청소부예요',
+    analogy: ' 뇌 속 쓰레기를 치워주는 청소부예요',
     evidence: '기억력 관련 효소 억제율 60% 이상 (체외 실험)',
     symptom: ['자꾸 깜빡함', '길을 잃음', '말이 잘 안 나옴', '성격 변화'],
     tip: '독서·퍼즐 등 뇌 자극 활동 + 사회적 활동',
   },
   {
     id: 'skin',
-    emoji: '✨',
+    emoji: '',
     name: '피부 · 탈모',
     color: '#B45309',
     bgLight: '#FFFBEB',
@@ -97,14 +97,14 @@ const diseases = [
     simple: '활성산소라는 "녹슬게 하는 물질"이 피부 세포를 공격해요. 탈모는 두피 혈액순환이 안 되거나 염증이 생기면 나타나요.',
     what: '피부 노화와 탈모는 염증과 산화 스트레스가 주요 원인이에요.',
     howHelps: '플로로탄닌은 강력한 항산화 효과로 피부 세포를 보호하고, 두피 염증을 가라앉혀요.',
-    analogy: '🛡️ 피부에 방패막을 쳐주는 역할이에요',
+    analogy: ' 피부에 방패막을 쳐주는 역할이에요',
     evidence: '피부 MMP 억제로 주름 생성 억제 + 발모 촉진 동물 연구 확인',
     symptom: ['주름 증가', '색소 침착', '머리카락 가늘어짐', '두피 가려움'],
     tip: '자외선 차단 + 두피 마사지 꾸준히',
   },
   {
     id: 'joint',
-    emoji: '🦴',
+    emoji: '',
     name: '관절 · 뼈',
     color: '#C2410C',
     bgLight: '#FFF7ED',
@@ -112,14 +112,14 @@ const diseases = [
     simple: '관절을 감싸는 연골이 닳으면 뼈끼리 부딪혀 아파요. 뼈는 나이 들수록 칼슘이 빠져나가 약해집니다.',
     what: '관절염과 골다공증은 나이 들수록 누구나 조심해야 해요.',
     howHelps: '플로로탄닌은 연골을 파괴하는 효소(MMP)를 억제하고, 뼈 세포 생성을 도와줘요.',
-    analogy: '🔧 관절 연골이 닳지 않도록 코팅해 주는 것처럼요',
+    analogy: ' 관절 연골이 닳지 않도록 코팅해 주는 것처럼요',
     evidence: '연골 파괴 효소 MMP 억제 + 조골세포 활성화 확인',
     symptom: ['무릎 통증', '아침에 뻣뻣함', '허리 통증', '키가 줄어듦'],
     tip: '수영·자전거 등 저충격 운동 + 칼슘 섭취',
   },
   {
     id: 'stress',
-    emoji: '😌',
+    emoji: '',
     name: '스트레스 · 수면',
     color: '#BE185D',
     bgLight: '#FDF2F8',
@@ -127,7 +127,7 @@ const diseases = [
     simple: '스트레스를 받으면 코르티솔이라는 호르몬이 나와 몸 전체에 영향을 줘요. 이게 쌓이면 수면도 방해하고 면역력도 떨어져요.',
     what: '만성 스트레스는 거의 모든 병의 근본 원인 중 하나예요.',
     howHelps: '플로로탄닌의 항염증 효과가 뇌의 스트레스 반응을 줄여주고, 수면의 질 개선에도 도움이 돼요.',
-    analogy: '🧘 뇌의 긴장을 풀어주는 스트레칭 같아요',
+    analogy: ' 뇌의 긴장을 풀어주는 스트레칭 같아요',
     evidence: '항염증 경로(NF-κB) 억제로 스트레스성 염증 완화',
     symptom: ['잠을 못 잠', '예민해짐', '두통', '소화 불량'],
     tip: '하루 15분 산책 + 스마트폰 줄이기',
@@ -137,22 +137,22 @@ const diseases = [
 // ─── 플로로탄닌 기본 설명 카드 ────────────────────────────────────
 const basicCards = [
   {
-    emoji: '🌊',
+    emoji: '',
     title: '바다에서 왔어요',
     desc: '미역, 다시마, 감태 같은 해조류에서 발견되는 특별한 성분이에요. 육지 식물의 폴리페놀과는 완전히 달라요.',
   },
   {
-    emoji: '🔬',
+    emoji: '',
     title: '과학자들이 연구 중',
     desc: '전 세계 1,200편 이상의 과학 논문에서 연구된 성분이에요. 아직 연구 중이지만 가능성이 매우 높아요.',
   },
   {
-    emoji: '🛡️',
+    emoji: '',
     title: '몸의 방패 역할',
     desc: '몸 속 염증과 산화(녹스는 현상)를 막아줘요. 마치 몸에 방어막을 쳐주는 것처럼 작동해요.',
   },
   {
-    emoji: '🍃',
+    emoji: '',
     title: '자연 성분이에요',
     desc: '화학 합성이 아닌 자연에서 온 성분이에요. 여러 나라에서 건강기능식품 원료로 연구되고 있어요.',
   },
@@ -277,7 +277,7 @@ function FaqItem({ item }) {
         onClick={() => setOpen(!open)}
         className="w-full text-left px-5 py-4 flex items-center gap-3 hover:bg-gray-50 transition-colors"
       >
-        <span className="text-xl flex-shrink-0">🙋</span>
+        <span className="text-xl flex-shrink-0"></span>
         <span className="font-semibold text-gray-800 flex-1 text-base md:text-lg">{item.q}</span>
         {open ? <ChevronUp className="w-5 h-5 text-gray-400 flex-shrink-0" /> : <ChevronDown className="w-5 h-5 text-gray-400 flex-shrink-0" />}
       </button>
@@ -294,7 +294,7 @@ function FaqItem({ item }) {
 const CATEGORIES = [
   {
     id: 'cancer',
-    emoji: '🛡️',
+    emoji: '',
     label: '암·면역 관리',
     color: '#7C3AED',
     bg: '#F5F3FF',
@@ -331,7 +331,7 @@ const CATEGORIES = [
   },
   {
     id: 'fatigue',
-    emoji: '⚡',
+    emoji: '',
     label: '피로·염증 관리',
     color: '#D97706',
     bg: '#FFFBEB',
@@ -368,7 +368,7 @@ const CATEGORIES = [
   },
   {
     id: 'heart',
-    emoji: '❤️',
+    emoji: '',
     label: '심혈관 관리',
     color: '#DC2626',
     bg: '#FEF2F2',
@@ -400,7 +400,7 @@ const CATEGORIES = [
   },
   {
     id: 'joint',
-    emoji: '🦴',
+    emoji: '',
     label: '관절·근육 관리',
     color: '#C2410C',
     bg: '#FFF7ED',
@@ -432,7 +432,7 @@ const CATEGORIES = [
   },
   {
     id: 'sleep',
-    emoji: '🌙',
+    emoji: '',
     label: '수면 관리',
     color: '#4F46E5',
     bg: '#EEF2FF',
@@ -474,7 +474,7 @@ const CATEGORIES = [
   },
   {
     id: 'brain',
-    emoji: '🧠',
+    emoji: '',
     label: '뇌·치매 예방',
     color: '#0891B2',
     bg: '#ECFEFF',
@@ -516,7 +516,7 @@ const CATEGORIES = [
   },
   {
     id: 'diabetes',
-    emoji: '🍽️',
+    emoji: '',
     label: '혈당·식후 관리',
     color: '#0077B6',
     bg: '#EFF8FF',
@@ -566,7 +566,7 @@ function CategoryCard({ cat }) {
     if (sec.type === 'list') {
       return (
         <div key={i} className="bg-white rounded-2xl p-4 border border-gray-100">
-          <p className="font-bold text-gray-700 mb-3 text-base">📋 {sec.title}</p>
+          <p className="font-bold text-gray-700 mb-3 text-base"> {sec.title}</p>
           <ul className="space-y-2">
             {sec.content.map((item, j) => (
               <li key={j} className="flex items-start gap-2 text-base text-gray-600">
@@ -581,7 +581,7 @@ function CategoryCard({ cat }) {
     if (sec.type === 'text') {
       return (
         <div key={i} className="bg-white rounded-2xl p-4 border border-gray-100">
-          <p className="font-bold text-gray-700 mb-2 text-base">📖 {sec.title}</p>
+          <p className="font-bold text-gray-700 mb-2 text-base"> {sec.title}</p>
           <p className="text-base text-gray-600 leading-relaxed whitespace-pre-line">{sec.content}</p>
         </div>
       )
@@ -589,7 +589,7 @@ function CategoryCard({ cat }) {
     if (sec.type === 'check') {
       return (
         <div key={i} className="rounded-2xl p-4" style={{ backgroundColor: cat.color + '10', border: `1.5px solid ${cat.color}30` }}>
-          <p className="font-bold mb-3 text-base" style={{ color: cat.color }}>✅ {sec.title}</p>
+          <p className="font-bold mb-3 text-base" style={{ color: cat.color }}> {sec.title}</p>
           <ul className="space-y-2">
             {sec.content.map((item, j) => (
               <li key={j} className="flex items-center gap-2 text-base text-gray-700">
@@ -604,7 +604,7 @@ function CategoryCard({ cat }) {
     if (sec.type === 'ref') {
       return (
         <div key={i} className="bg-gray-50 rounded-2xl p-4 border border-gray-200">
-          <p className="font-bold text-gray-400 mb-2 text-sm">🔬 {sec.title}</p>
+          <p className="font-bold text-gray-400 mb-2 text-sm"> {sec.title}</p>
           <ul className="space-y-1">
             {sec.content.map((item, j) => (
               <li key={j} className="text-sm text-gray-500 leading-relaxed">• {item}</li>
@@ -667,11 +667,11 @@ export default function EasyHealthPage() {
   const [activeFilter, setActiveFilter] = useState('all')
 
   const filters = [
-    { id: 'all', label: '전체 보기', emoji: '🌟' },
-    { id: 'chronic', label: '만성질환', emoji: '💊', ids: ['diabetes', 'hypertension', 'obesity'] },
-    { id: 'brain', label: '뇌·신경', emoji: '🧠', ids: ['dementia', 'stress'] },
-    { id: 'body', label: '몸·외모', emoji: '✨', ids: ['skin', 'joint'] },
-    { id: 'immune', label: '면역·항암', emoji: '🛡️', ids: ['cancer'] },
+    { id: 'all', label: '전체 보기', emoji: '' },
+    { id: 'chronic', label: '만성질환', emoji: '', ids: ['diabetes', 'hypertension', 'obesity'] },
+    { id: 'brain', label: '뇌·신경', emoji: '', ids: ['dementia', 'stress'] },
+    { id: 'body', label: '몸·외모', emoji: '', ids: ['skin', 'joint'] },
+    { id: 'immune', label: '면역·항암', emoji: '', ids: ['cancer'] },
   ]
 
   const filteredDiseases = activeFilter === 'all'
@@ -966,7 +966,7 @@ export default function EasyHealthPage() {
       <section className="py-14 bg-gray-50">
         <div className="max-w-3xl mx-auto px-6">
           <div className="text-center mb-8">
-            <span className="text-3xl">❓</span>
+            <span className="text-3xl"></span>
             <h2 className="text-2xl md:text-3xl font-black text-gray-800 mt-2 mb-2">자주 묻는 질문</h2>
             <p className="text-gray-500 text-base">궁금한 게 있으시면 클릭해 보세요!</p>
           </div>
@@ -1082,7 +1082,7 @@ export default function EasyHealthPage() {
             blogTags={['건강', '항산화', '면역', '플로로탄닌', '감태']}
             blogCategory="general"
             max={6}
-            title="💡 쉽게 풀어쓴 건강 Q&A"
+            title=" 쉽게 풀어쓴 건강 Q&A"
           />
         </div>
       </section>
@@ -1093,7 +1093,7 @@ export default function EasyHealthPage() {
           <LastReviewed date={LAST_REVIEWED} />
         </div>
         <p className="text-sm text-gray-400">
-          © 2025 플로로탄닌 파트너스 — 본 콘텐츠의 무단 복제·배포를 금합니다.
+           2025 플로로탄닌 파트너스 — 본 콘텐츠의 무단 복제·배포를 금합니다.
         </p>
       </div>
     </div>
