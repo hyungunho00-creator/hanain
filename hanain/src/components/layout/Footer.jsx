@@ -46,6 +46,7 @@ export default function Footer() {
   const partner = usePartner()
   const [qaCats, setQaCats] = useState(FALLBACK_QA_CATS)
   const [topTags, setTopTags] = useState([])
+  const [leadStats, setLeadStats] = useState(null)
 
   useEffect(() => {
     let cancelled = false
@@ -66,6 +67,14 @@ export default function Footer() {
           .slice(0, 12)
           .map(([tag, info]) => ({ tag, count: info.count }))
         setTopTags(top)
+      })
+      .catch(() => {})
+
+    fetch('/api/metrics?kind=lead_stats')
+      .then(r => (r.ok ? r.json() : null))
+      .then(data => {
+        if (cancelled || !data?.ok || !data?.data) return
+        setLeadStats(data.data)
       })
       .catch(() => {})
 
@@ -244,7 +253,7 @@ export default function Footer() {
                     className="w-full border border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white px-3.5 py-2.5 rounded-md text-[13px] font-medium transition-colors"
                   />
                   <a
-                    href="https://smartstore.naver.com/meul777/products/11645413264"
+                    href="https://smartstore.naver.com/meul777"
                     target="_blank"
                     rel="nofollow noopener sponsored"
                     className="flex items-center justify-center gap-2 w-full border border-gray-200 bg-white text-gray-700 hover:border-gray-900 hover:text-gray-900 px-3.5 py-2.5 rounded-md text-[13px] font-medium transition-colors"
@@ -253,6 +262,14 @@ export default function Footer() {
                     <span>건강한 반찬 정보 보기</span>
                     <ArrowUpRight className="w-3.5 h-3.5 flex-shrink-0" strokeWidth={1.8} aria-hidden="true" />
                   </a>
+                  {leadStats && (
+                    <p className="text-[12px] text-gray-500 leading-relaxed">
+                      {Number(leadStats.todayCount || 0) > 0 ? (
+                        <>오늘 {Number(leadStats.todayCount || 0).toLocaleString()}명이 정보를 신청했고, </>
+                      ) : null}
+                      누적 {Number(leadStats.totalCount || 0).toLocaleString()}건이 접수되었습니다.
+                    </p>
+                  )}
                 </div>
                 <div>
                   <div className="text-gray-400 text-xs mb-1.5">운영 시간</div>

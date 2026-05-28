@@ -112,7 +112,7 @@ export default {
         }}
       >
         <a
-          href="https://smartstore.naver.com/meul777/products/11645413264"
+          href="https://smartstore.naver.com/meul777"
           target="_blank"
           rel="nofollow noopener sponsored"
           style={{ color: '#0D1B3E', textDecoration: 'none', fontSize: 15, letterSpacing: '0.02em' }}

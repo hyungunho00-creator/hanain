@@ -142,7 +142,7 @@ export default {
         }}
       >
         <a
-          href="https://smartstore.naver.com/fortimel/products/13335759907"
+          href="https://smartstore.naver.com/meul777"
           target="_blank"
           rel="nofollow noopener sponsored"
           style={{ color: '#0D1B3E', textDecoration: 'none', fontSize: 15, letterSpacing: '0.02em' }}

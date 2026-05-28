@@ -10,6 +10,7 @@
     "preview": "vite preview",
     "sitemap": "node scripts/run_python.cjs generate_sitemap_rss.py && node scripts/update_static_routes.mjs",
     "audit:links": "node scripts/run_python.cjs scripts/audit_links.py",
+    "audit:qa": "node scripts/run_python.cjs scripts/qa_quality_audit.py",
     "prebuild": "node scripts/prebuild.cjs"
   },
   "dependencies": {

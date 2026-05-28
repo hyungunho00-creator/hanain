@@ -47,6 +47,12 @@ def esc(text):
         .replace('"', "&quot;")
         .replace("'", "&apos;"))
 
+def sanitize_copy(text):
+    """Normalize public-facing copy to keep informational tone."""
+    if not text:
+        return ""
+    return str(text).replace("맛있으리", "건강한 반찬 정보")
+
 def fmt_date(dt_str):
     """ISO 날짜 → YYYY-MM-DD"""
     try:
@@ -382,7 +388,7 @@ print(f"  ✅ Q&A 추가: 개별 {qa_added}, 태그 {tag_added}")
 print(f"  📄 블로그 포스트 {len(posts)}개 sitemap 추가 중...")
 for post in posts:
     slug      = post.get("slug", "")
-    title     = esc(post.get("title", ""))
+    title     = esc(sanitize_copy(post.get("title", "")))
     og_image  = esc(absolute_url(post.get("og_image")))
     lastmod   = fmt_date(post.get("updated_at") or post.get("created_at", ""))
     if not slug:
@@ -431,8 +437,9 @@ rss_items = []
 # 블로그 포스트 RSS 항목
 for post in posts[:50]:  # 최신 50개
     slug    = post.get("slug", "")
-    title   = esc(post.get("title", ""))
-    excerpt = esc(post.get("excerpt", "")[:300])
+    title   = esc(sanitize_copy(post.get("title", "")))
+    excerpt_raw = sanitize_copy(post.get("excerpt", "")[:300])
+    excerpt = esc(excerpt_raw)
     cat_id  = post.get("category", "general")
     cat_name = esc(CAT_NAMES.get(cat_id, cat_id))
     raw_og  = absolute_url(post.get("og_image"))
@@ -440,7 +447,7 @@ for post in posts[:50]:  # 최신 50개
     og_mime = mime_for_url(raw_og)  # 확장자 기반 MIME (webp/png/jpeg 자동 매핑)
     pub_date = fmt_rfc822(post.get("created_at", ""))
     tags    = post.get("tags") or []
-    tags_str = ", ".join(esc(t) for t in tags[:5])
+    tags_str = ", ".join(esc(sanitize_copy(t)) for t in tags[:5])
 
     if not slug:
         continue
@@ -448,7 +455,7 @@ for post in posts[:50]:  # 최신 50개
     rss_items.append(f"""  <item>
     <title>{title}</title>
     <link>{SITE_URL}/blog/{slug}</link>
-    <description><![CDATA[{post.get('excerpt','')[:300]}]]></description>
+    <description><![CDATA[{excerpt_raw}]]></description>
     <category>{cat_name}</category>
     <pubDate>{pub_date}</pubDate>
     <guid isPermaLink="true">{SITE_URL}/blog/{slug}</guid>
