@@ -1,9 +1,8 @@
 const { spawnSync } = require('child_process');
 const path = require('path');
-// deploy trigger: keep this file touched for emergency redeploy.
 
 const root = path.resolve(__dirname, '..');
-const STRICT_PREBUILD = process.env.PREBUILD_STRICT === '1';
+const STRICT_PREBUILD = process.env.PREBUILD_STRICT !== '0';
 
 function run(command, args) {
   return spawnSync(command, args, {
@@ -35,6 +34,9 @@ handleStep('qa-answer-hard-validator', hardValidator);
 
 const duplicateAudit = run(process.execPath, [path.join('scripts', 'qa-duplicate-template-detector.mjs')]);
 handleStep('qa-duplicate-template-detector', duplicateAudit);
+
+const noBlankAudit = run(process.execPath, [path.join('scripts', 'qa-no-blank-answer-audit.mjs')]);
+handleStep('qa-no-blank-answer-audit', noBlankAudit);
 
 const qaAudit = runPython(['scripts/qa_quality_audit.py', '--min-chars', '900', '--fail-on', 'none']);
 if (qaAudit.error || qaAudit.status !== 0) {

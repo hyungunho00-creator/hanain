@@ -13,6 +13,8 @@
     "audit:qa": "node scripts/run_python.cjs scripts/qa_quality_audit.py --min-chars 900 --fail-on none",
     "audit:content": "node scripts/qa-answer-hard-validator.mjs",
     "audit:duplicate": "node scripts/qa-duplicate-template-detector.mjs",
+    "audit:no-blank": "node scripts/qa-no-blank-answer-audit.mjs",
+    "qa:emergency-promote": "node scripts/emergency-promote-validated.mjs",
     "qa:constitution": "node scripts/qa_constitution_upgrade.mjs",
     "qa:recall-rewrite": "node scripts/content_recall_rewrite_qa.mjs",
     "seo:expand": "node scripts/expand_existing_seo_assets.mjs",
