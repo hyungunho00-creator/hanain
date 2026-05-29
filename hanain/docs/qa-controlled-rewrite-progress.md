@@ -47,3 +47,15 @@
 1. 1200+ 구간 critical 20개 배치 생성
 2. 20개 배치 dry-run -> apply -> validator/duplicate/no-blank 순차 실행
 3. prebuild strict audit(기존 문구) 처리 전략 분리 후 build green 확보
+
+## Batch 1 Preflight (qa-1200-critical-20)
+- Queue batch: `qa-1200-critical-20` (1200+ 고위험 20개)
+- Selection artifact: `docs/batches/qa-1200-critical-20-selection.json`
+- Dry-run result (`node scripts/rewrite_qa_answer_v2_batch.mjs --batch qa-1200-critical-20 --dry-run`):
+  - 대상 20
+  - approved 0
+  - rejected 20
+  - 주요 실패: `required-terms-missing-in-first300` (20/20)
+- 해석:
+  - 현재 자동 초안(legacy 기반)만으로는 질문 직답/핵심어 포함 기준을 충족하지 못함
+  - 다음 단계는 20개를 우선 `answerV2` 수동 보강(질문 직접 답변형 첫 문장 + 핵심어 first300 강제) 후 apply
