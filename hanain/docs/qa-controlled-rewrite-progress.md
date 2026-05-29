@@ -90,3 +90,20 @@
     - repeatedFirstSentence(>=3 fail): 0
     - repeatedParagraphs(>=3 fail): 0
   - `node scripts/qa-no-blank-answer-audit.mjs`: PASS (blankPublicAnswers=0)
+
+## Batch 3 (qa-1250-1299)
+- Queue batch: `qa-1250-1299` (50개)
+- Selection artifact: `docs/batches/qa-1250-1299-selection.json`
+- Dry-run:
+  - 대상 50 / approved 50 / rejected 0
+- Apply:
+  - 대상 50 / approved 50 / rejected 0
+- Validation:
+  - `node scripts/qa-answer-v2-validator.mjs --batch qa-1250-1299`: PASS (approvedScanned=50)
+  - `node scripts/qa-answer-v2-duplicate-detector.mjs --batch qa-1250-1299`: PASS
+    - similarityPairs(수동검토): 1041
+    - repeatedFirstSentence(>=3 fail): 0
+    - repeatedParagraphs(>=3 fail): 0
+  - `node scripts/qa-no-blank-answer-audit.mjs`: PASS (blankPublicAnswers=0)
+- Build:
+  - `npm.cmd run build`: FAIL (기존 `reader-content-audit` strict 항목 다수, 본 배치 회귀 아님)

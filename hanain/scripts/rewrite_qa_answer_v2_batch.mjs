@@ -55,7 +55,7 @@ function makeStructuredDraftFromLegacy(q, item = null) {
     ],
     checkFirst: [
       `${emphasis}이(가) 언제부터 시작됐는지`,
-      `${categoryLabel} 관련 악화 요인과 완화 요인이 무엇인지`,
+      `${emphasis} 관련 악화 요인과 완화 요인이 무엇인지`,
       `${emphasis}과 함께 나타난 변화(수면/식사/활동)가 있는지`
     ],
     whenToSeeDoctor: [
