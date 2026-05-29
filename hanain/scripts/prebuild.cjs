@@ -1,5 +1,6 @@
 const { spawnSync } = require('child_process');
 const path = require('path');
+// deploy trigger: keep this file touched for emergency redeploy.
 
 const root = path.resolve(__dirname, '..');
 const STRICT_PREBUILD = process.env.PREBUILD_STRICT === '1';
