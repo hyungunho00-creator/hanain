@@ -894,8 +894,6 @@ function ProductFlyerCard({ mat, partnerName, partnerTel, cardUrl }) {
           const objectUrl = URL.createObjectURL(blob)
           a.href = objectUrl
           a.download = name
-          a.rel = 'noopener'
-          a.target = '_self'
           document.body.appendChild(a)
           a.click()
           document.body.removeChild(a)
@@ -993,18 +991,17 @@ function ProductFlyerCard({ mat, partnerName, partnerTel, cardUrl }) {
             </p>
           )}
           {previewImgs && (
-            <div style={{ overflowX: 'auto' }}>
-              <div style={{ transform: 'scale(0.38)', transformOrigin: 'top left', width: 794, pointerEvents: 'none' }}>
+            <div style={{ overflowX: 'hidden' }}>
+              <div style={{ maxWidth: 760, margin: '0 auto', display: 'grid', gap: 12 }}>
               <img
                 src={previewImgs.p1}
                 alt="1페이지 미리보기"
-                style={{ width: 794, height: 'auto', borderRadius: 4, boxShadow: '0 2px 8px rgba(0,0,0,0.12)', display: 'block' }}
+                style={{ width: '100%', height: 'auto', borderRadius: 4, boxShadow: '0 2px 8px rgba(0,0,0,0.12)', display: 'block' }}
               />
-              <div style={{ height: 12 }} />
               <img
                 src={previewImgs.p2}
                 alt="2페이지 미리보기"
-                style={{ width: 794, height: 'auto', borderRadius: 4, boxShadow: '0 2px 8px rgba(0,0,0,0.12)', display: 'block' }}
+                style={{ width: '100%', height: 'auto', borderRadius: 4, boxShadow: '0 2px 8px rgba(0,0,0,0.12)', display: 'block' }}
               />
               </div>
             </div>
