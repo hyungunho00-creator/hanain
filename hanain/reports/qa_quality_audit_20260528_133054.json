@@ -1,0 +1,12 @@
+{
+  "summary": {
+    "generated_at": "2026-05-28T13:30:54.741653+00:00",
+    "scanned": 1641,
+    "findings": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "min_chars": 2000
+  },
+  "findings": []
+}

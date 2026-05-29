@@ -1,0 +1,28 @@
+{
+  "generatedAt": "2026-05-28T14:27:52.593Z",
+  "host": "phlorotannin.com",
+  "keyLocation": "https://phlorotannin.com/6c13a351f7784b49b91e4da2717e6889.txt",
+  "totalUrls": 2420,
+  "endpoints": [
+    "https://api.indexnow.org/indexnow",
+    "https://www.bing.com/indexnow"
+  ],
+  "results": [
+    {
+      "endpoint": "https://api.indexnow.org/indexnow",
+      "status": 200,
+      "ok": true,
+      "body": "",
+      "chunk": 1,
+      "chunkSize": 2420
+    },
+    {
+      "endpoint": "https://www.bing.com/indexnow",
+      "status": 200,
+      "ok": true,
+      "body": "",
+      "chunk": 1,
+      "chunkSize": 2420
+    }
+  ]
+}

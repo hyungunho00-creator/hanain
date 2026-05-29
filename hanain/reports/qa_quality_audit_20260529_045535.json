@@ -1,0 +1,2737 @@
+{
+  "summary": {
+    "generated_at": "2026-05-29T04:55:35.113789+00:00",
+    "scanned": 1741,
+    "findings": 454,
+    "high": 454,
+    "medium": 0,
+    "low": 0,
+    "min_chars": 900
+  },
+  "findings": [
+    {
+      "id": "cardio-005",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cardio-005, cardio-018, qa200-20260527-083, qa-hospital-20260527-005",
+      "question": "좋은 콜레스테롤(HDL)을 높이는 방법이 있나요?"
+    },
+    {
+      "id": "cardio-018",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cardio-005, cardio-018, qa200-20260527-083, qa-hospital-20260527-005",
+      "question": "달걀을 많이 먹으면 콜레스테롤이 올라가나요?"
+    },
+    {
+      "id": "qa200-20260527-083",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cardio-005, cardio-018, qa200-20260527-083, qa-hospital-20260527-005",
+      "question": "LDL 콜레스테롤 목표 수치는 사람마다 왜 다른가요?"
+    },
+    {
+      "id": "qa-hospital-20260527-005",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cardio-005, cardio-018, qa200-20260527-083, qa-hospital-20260527-005",
+      "question": "콜레스테롤이 높으면 오메가3와 코큐텐을 같이 물어봐도 되나요?"
+    },
+    {
+      "id": "cardio-097",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cardio-097, qa200-20260527-091",
+      "question": "혈당과 혈압을 동시에 잘 관리하려면 어떻게 해야 하나요?"
+    },
+    {
+      "id": "qa200-20260527-091",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cardio-097, qa200-20260527-091",
+      "question": "당뇨와 고혈압이 같이 있으면 식단 우선순위가 달라지나요?"
+    },
+    {
+      "id": "meta-007",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta-007, meta_028, meta_046, meta_083",
+      "question": "공복혈당이 100~125mg/dL인 당뇨 전단계인데 어떻게 관리해야 하나요?"
+    },
+    {
+      "id": "meta_028",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta-007, meta_028, meta_046, meta_083",
+      "question": "혈당 스파이크란 무엇이고 어떻게 예방하나요?"
+    },
+    {
+      "id": "meta_046",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta-007, meta_028, meta_046, meta_083",
+      "question": "밥 대신 현미를 먹으면 혈당 관리에 도움이 되나요?"
+    },
+    {
+      "id": "meta_083",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta-007, meta_028, meta_046, meta_083",
+      "question": "운동 후 혈당이 오히려 올라갈 수 있나요?"
+    },
+    {
+      "id": "meta_093",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta-007, meta_028, meta_046, meta_083",
+      "question": "감자와 고구마 중 혈당 관리에 어떤 것이 더 좋나요?"
+    },
+    {
+      "id": "qa200-20260527-017",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta-007, meta_028, meta_046, meta_083",
+      "question": "감태추출물은 혈당 관리에 도움이 되나요?"
+    },
+    {
+      "id": "meta-010",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta-010, meta_032, ingr-004",
+      "question": "폐경 후 혈당과 콜레스테롤이 갑자기 나빠지는 이유는?"
+    },
+    {
+      "id": "meta_032",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta-010, meta_032, ingr-004",
+      "question": "LDL과 HDL 콜레스테롤의 차이는 무엇인가요?"
+    },
+    {
+      "id": "ingr-004",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta-010, meta_032, ingr-004",
+      "question": "알긴산이 콜레스테롤을 낮춰주나요?"
+    },
+    {
+      "id": "meta-011",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta-011, meta-015, meta_021, meta_030",
+      "question": "혈당 스파이크가 반복되면 어떤 장기 손상이 생기나요?"
+    },
+    {
+      "id": "meta-015",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta-011, meta-015, meta_021, meta_030",
+      "question": "오메가-3가 혈당에 영향을 미치나요?"
+    },
+    {
+      "id": "meta_021",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta-011, meta-015, meta_021, meta_030",
+      "question": "공복혈당이 높으면 당뇨병인가요?"
+    },
+    {
+      "id": "meta_030",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta-011, meta-015, meta_021, meta_030",
+      "question": "저혈당 증상은 무엇인가요?"
+    },
+    {
+      "id": "meta_036",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta-011, meta-015, meta_021, meta_030",
+      "question": "간헐적 단식이 혈당 조절에 도움이 되나요?"
+    },
+    {
+      "id": "meta_045",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta-011, meta-015, meta_021, meta_030",
+      "question": "혈당을 낮추는 자연 식품이 있나요?"
+    },
+    {
+      "id": "meta_047",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta-011, meta-015, meta_021, meta_030",
+      "question": "스트레스가 혈당을 높이나요?"
+    },
+    {
+      "id": "meta_053",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta-011, meta-015, meta_021, meta_030",
+      "question": "커피가 혈당에 영향을 주나요?"
+    },
+    {
+      "id": "meta_054",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta-011, meta-015, meta_021, meta_030",
+      "question": "알코올이 혈당에 어떤 영향을 미치나요?"
+    },
+    {
+      "id": "meta_055",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta-011, meta-015, meta_021, meta_030",
+      "question": "수면 부족이 혈당과 체중에 미치는 영향은?"
+    },
+    {
+      "id": "meta_062",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta-011, meta-015, meta_021, meta_030",
+      "question": "식이섬유가 혈당에 미치는 영향은?"
+    },
+    {
+      "id": "meta_065",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta-011, meta-015, meta_021, meta_030",
+      "question": "혈당 측정기 없이 고혈당을 감지하는 방법이 있나요?"
+    },
+    {
+      "id": "meta_067",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta-011, meta-015, meta_021, meta_030",
+      "question": "설탕 대신 인공 감미료를 쓰면 혈당이 안 오르나요?"
+    },
+    {
+      "id": "meta_069",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta-011, meta-015, meta_021, meta_030",
+      "question": "혈당 조절에 크롬(chromium)이 도움이 되나요?"
+    },
+    {
+      "id": "meta_071",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta-011, meta-015, meta_021, meta_030",
+      "question": "단식 중 혈당이 오를 수도 있나요?"
+    },
+    {
+      "id": "meta_075",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta-011, meta-015, meta_021, meta_030",
+      "question": "탄수화물, 단백질, 지방 중 어떤 것이 혈당을 가장 많이 올리나요?"
+    },
+    {
+      "id": "meta_079",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta-011, meta-015, meta_021, meta_030",
+      "question": "식사 순서(채소→단백질→탄수화물)가 혈당에 미치는 영향은?"
+    },
+    {
+      "id": "meta_084",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta-011, meta-015, meta_021, meta_030",
+      "question": "탄수화물의 혈당지수(GI)란 무엇인가요?"
+    },
+    {
+      "id": "meta_092",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta-011, meta-015, meta_021, meta_030",
+      "question": "혈당이 높으면 시력에 영향을 주나요?"
+    },
+    {
+      "id": "meta_097",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta-011, meta-015, meta_021, meta_030",
+      "question": "SGLT-2 억제제는 어떻게 혈당을 낮추나요?"
+    },
+    {
+      "id": "meta_098",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta-011, meta-015, meta_021, meta_030",
+      "question": "식후 2시간 혈당은 얼마가 정상인가요?"
+    },
+    {
+      "id": "meta_100",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta-011, meta-015, meta_021, meta_030",
+      "question": "연속혈당모니터(CGM)란 무엇인가요?"
+    },
+    {
+      "id": "qa200-20260527-001",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta-011, meta-015, meta_021, meta_030",
+      "question": "공복혈당이 110이면 당뇨 전단계인가요?"
+    },
+    {
+      "id": "qa200-20260527-002",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta-011, meta-015, meta_021, meta_030",
+      "question": "식후혈당은 식사 후 몇 시간에 재야 하나요?"
+    },
+    {
+      "id": "qa200-20260527-020",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta-011, meta-015, meta_021, meta_030",
+      "question": "단백질 쉐이크는 혈당을 올리나요?"
+    },
+    {
+      "id": "meta-013",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta-013, meta-017, meta_029, meta_076",
+      "question": "탄수화물을 완전히 끊으면 당뇨가 낫나요?"
+    },
+    {
+      "id": "meta-017",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta-013, meta-017, meta_029, meta_076",
+      "question": "지방간과 당뇨는 어떤 연관이 있나요?"
+    },
+    {
+      "id": "meta_029",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta-013, meta-017, meta_029, meta_076",
+      "question": "당뇨 환자는 과일을 먹으면 안 되나요?"
+    },
+    {
+      "id": "meta_076",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta-013, meta-017, meta_029, meta_076",
+      "question": "비만과 제2형 당뇨병의 관계는?"
+    },
+    {
+      "id": "qa200-20260527-008",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta-013, meta-017, meta_029, meta_076",
+      "question": "저당 음료라고 써 있으면 당뇨환자가 안심해도 되나요?"
+    },
+    {
+      "id": "qa200-20260527-023",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta-013, meta-017, meta_029, meta_076",
+      "question": "당뇨환자가 라면을 먹을 때 덜 위험한 방법이 있나요?"
+    },
+    {
+      "id": "qa200-20260527-025",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta-013, meta-017, meta_029, meta_076",
+      "question": "당뇨환자 간식은 어떤 기준으로 고르면 되나요?"
+    },
+    {
+      "id": "meta-014",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta-014, meta-019, qa200-20260527-007",
+      "question": "당뇨 환자가 운동 전후로 주의해야 할 점은 무엇인가요?"
+    },
+    {
+      "id": "meta-019",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta-014, meta-019, qa200-20260527-007",
+      "question": "살 빼면 당뇨가 완전 회복(임상적 관해)이 가능할 수 있나요?"
+    },
+    {
+      "id": "qa200-20260527-007",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta-014, meta-019, qa200-20260527-007",
+      "question": "당뇨환자 식단배달을 고를 때 탄수화물은 어떻게 확인하나요?"
+    },
+    {
+      "id": "meta-016",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta-016, meta_059, meta_070, meta_080",
+      "question": "혈당 측정기와 연속혈당측정기(CGM)의 차이는 무엇인가요?"
+    },
+    {
+      "id": "meta_059",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta-016, meta_059, meta_070, meta_080",
+      "question": "마그네슘이 혈당 조절에 도움이 되나요?"
+    },
+    {
+      "id": "meta_070",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta-016, meta_059, meta_070, meta_080",
+      "question": "혈당이 낮을수록 건강한 것인가요?"
+    },
+    {
+      "id": "meta_080",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta-016, meta_059, meta_070, meta_080",
+      "question": "콩팥(신장) 기능과 혈당 조절은 어떤 관계인가요?"
+    },
+    {
+      "id": "qa200-20260527-004",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta-016, meta_059, meta_070, meta_080",
+      "question": "혈당 스파이크를 줄이려면 식사 순서를 어떻게 바꾸나요?"
+    },
+    {
+      "id": "qa200-20260527-006",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta-016, meta_059, meta_070, meta_080",
+      "question": "야식이 다음 날 공복혈당에 영향을 주나요?"
+    },
+    {
+      "id": "meta_050",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta_050, meta_095",
+      "question": "당뇨 전단계에서 당뇨병으로 진행을 막을 수 있나요?"
+    },
+    {
+      "id": "meta_095",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): meta_050, meta_095",
+      "question": "발에 감각이 없거나 저린 것이 당뇨와 관련이 있나요?"
+    },
+    {
+      "id": "cancer-001",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-001, cancer-018, ci_028, ci_047",
+      "question": "항암치료 후 면역력이 너무 낮아졌어요. 자연적으로 회복할 수 있나요?"
+    },
+    {
+      "id": "cancer-018",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-001, cancer-018, ci_028, ci_047",
+      "question": "항암 치료 중 고열량 식사를 해야 한다고 들었는데 맞나요?"
+    },
+    {
+      "id": "ci_028",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-001, cancer-018, ci_028, ci_047",
+      "question": "암 치료 중 면역력 저하 시 무엇을 주의해야 하나요?"
+    },
+    {
+      "id": "ci_047",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-001, cancer-018, ci_028, ci_047",
+      "question": "방사선 치료는 어떻게 암세포를 죽이나요?"
+    },
+    {
+      "id": "ci_077",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-001, cancer-018, ci_028, ci_047",
+      "question": "항암치료 중 발열이 생기면 어떻게 해야 하나요?"
+    },
+    {
+      "id": "ci_094",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-001, cancer-018, ci_028, ci_047",
+      "question": "면역세포치료와 항암화학요법의 차이는?"
+    },
+    {
+      "id": "ci_096",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-001, cancer-018, ci_028, ci_047",
+      "question": "비소세포폐암과 소세포폐암의 치료 방향이 왜 다른가요?"
+    },
+    {
+      "id": "ci_098",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-001, cancer-018, ci_028, ci_047",
+      "question": "폐암에서 PD-L1 발현율이 왜 중요하고 면역관문억제제 치료 적응증은 어떻게 결정하나요?"
+    },
+    {
+      "id": "ci_101",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-001, cancer-018, ci_028, ci_047",
+      "question": "위암이 복막에 전이되면 치료가 어려운 이유와 복강내 항암 치료는 어떤 방법인가요?"
+    },
+    {
+      "id": "ci_103",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-001, cancer-018, ci_028, ci_047",
+      "question": "전이성 대장암에서 RAS 유전자 검사가 치료 선택에 왜 중요한가요?"
+    },
+    {
+      "id": "ci_106",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-001, cancer-018, ci_028, ci_047",
+      "question": "호르몬수용체 양성 유방암에서 호르몬 치료(내분비 치료)는 어떻게 진행되나요?"
+    },
+    {
+      "id": "ci_107",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-001, cancer-018, ci_028, ci_047",
+      "question": "HER2 양성 유방암에서 표적치료제 조합은 어떻게 구성되나요?"
+    },
+    {
+      "id": "ci_108",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-001, cancer-018, ci_028, ci_047",
+      "question": "삼중음성 유방암(TNBC) 치료가 어려운 이유와 최신 치료 옵션은?"
+    },
+    {
+      "id": "ci_110",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-001, cancer-018, ci_028, ci_047",
+      "question": "간암에서 고주파절제술(RFA)과 경동맥화학색전술(TACE)의 차이와 적응증은?"
+    },
+    {
+      "id": "ci_111",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-001, cancer-018, ci_028, ci_047",
+      "question": "간암 전신 치료에서 소라페닙 이후 어떤 약제들이 사용되나요?"
+    },
+    {
+      "id": "ci_114",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-001, cancer-018, ci_028, ci_047",
+      "question": "갑상선암에서 방사성요오드(RAI) 치료는 어떻게 하고 누구에게 필요한가요?"
+    },
+    {
+      "id": "ci_122",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-001, cancer-018, ci_028, ci_047",
+      "question": "CAR-T 세포치료는 어떻게 작동하고 어떤 암에 쓰이나요?"
+    },
+    {
+      "id": "ci_126",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-001, cancer-018, ci_028, ci_047",
+      "question": "비근침습성 방광암에서 BCG 방광 내 주입 치료는 어떻게 작동하나요?"
+    },
+    {
+      "id": "ci_137",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-001, cancer-018, ci_028, ci_047",
+      "question": "방사선 치료의 주요 부작용과 각 부위별로 나타나는 증상은?"
+    },
+    {
+      "id": "ci_138",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-001, cancer-018, ci_028, ci_047",
+      "question": "암 치료 중 극심한 피로를 느끼는데, 운동이 도움이 되나요?"
+    },
+    {
+      "id": "ci_139",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-001, cancer-018, ci_028, ci_047",
+      "question": "암 치료 후 2차 암(secondary cancer) 발생 위험이 있나요?"
+    },
+    {
+      "id": "ci_142",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-001, cancer-018, ci_028, ci_047",
+      "question": "진행성 흑색종에서 면역항암제와 BRAF 표적치료를 어떻게 선택하나요?"
+    },
+    {
+      "id": "ci_143",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-001, cancer-018, ci_028, ci_047",
+      "question": "자궁내막암 위험 요인과 주요 증상, 치료 원칙은?"
+    },
+    {
+      "id": "qa200-20260527-043",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-001, cancer-018, ci_028, ci_047",
+      "question": "수술 전 암환자는 단백질을 얼마나 챙겨야 하나요?"
+    },
+    {
+      "id": "qa-hospital-20260527-014",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-001, cancer-018, ci_028, ci_047",
+      "question": "암 치료 중 단백질 보충이나 환자식단을 병원에 어떻게 말해야 하나요?"
+    },
+    {
+      "id": "qa-hospital-20260527-016",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-001, cancer-018, ci_028, ci_047",
+      "question": "항암 치료 중 커큐민이나 퀘르세틴도 의료진에게 말해야 하나요?"
+    },
+    {
+      "id": "qa-hospital-20260527-017",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-001, cancer-018, ci_028, ci_047",
+      "question": "방사선 치료 중 입맛 변화와 보충제는 어디에 상담하나요?"
+    },
+    {
+      "id": "cancer-003",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-003, cancer-004, cancer-016, cancer-020",
+      "question": "암 예방을 위해 식단에서 가장 중요한 것은 무엇인가요?"
+    },
+    {
+      "id": "cancer-004",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-003, cancer-004, cancer-016, cancer-020",
+      "question": "항산화 보충제가 암 예방에 효과적인가요?"
+    },
+    {
+      "id": "cancer-016",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-003, cancer-004, cancer-016, cancer-020",
+      "question": "자궁경부암 예방 접종(HPV 백신)은 성인도 맞아야 하나요?"
+    },
+    {
+      "id": "cancer-020",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-003, cancer-004, cancer-016, cancer-020",
+      "question": "암 예방을 위해 어떤 검진을 받아야 하나요?"
+    },
+    {
+      "id": "ci_016",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-003, cancer-004, cancer-016, cancer-020",
+      "question": "암 예방을 위한 생활 습관은 무엇인가요?"
+    },
+    {
+      "id": "ci_022",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-003, cancer-004, cancer-016, cancer-020",
+      "question": "HPV 백신이 자궁경부암을 예방하나요?"
+    },
+    {
+      "id": "ci_060",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-003, cancer-004, cancer-016, cancer-020",
+      "question": "암 예방 백신이 있나요?"
+    },
+    {
+      "id": "ci_081",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-003, cancer-004, cancer-016, cancer-020",
+      "question": "암 생존자의 장기 추적 관리 항목은?"
+    },
+    {
+      "id": "ci_090",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-003, cancer-004, cancer-016, cancer-020",
+      "question": "암 통증 관리 방법에는 무엇이 있나요?"
+    },
+    {
+      "id": "ci_102",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-003, cancer-004, cancer-016, cancer-020",
+      "question": "대장 용종과 대장암의 관계, 용종 발견 시 어떻게 관리해야 하나요?"
+    },
+    {
+      "id": "ci_124",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-003, cancer-004, cancer-016, cancer-020",
+      "question": "암 예방을 위한 식이 원칙과 근거 있는 식품은?"
+    },
+    {
+      "id": "ci_140",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-003, cancer-004, cancer-016, cancer-020",
+      "question": "암 악액질(cachexia)이란 무엇이며 어떻게 관리해야 하나요?"
+    },
+    {
+      "id": "ci_146",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-003, cancer-004, cancer-016, cancer-020",
+      "question": "소세포폐암에서 예방적 뇌 방사선 조사(PCI)의 역할과 현재 논쟁은?"
+    },
+    {
+      "id": "qa200-20260527-031",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-003, cancer-004, cancer-016, cancer-020",
+      "question": "암환자 식단배달은 일반 도시락과 무엇을 다르게 봐야 하나요?"
+    },
+    {
+      "id": "qa200-20260527-053",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-003, cancer-004, cancer-016, cancer-020",
+      "question": "항암 중 체력이 떨어지면 운동보다 식사를 먼저 챙겨야 하나요?"
+    },
+    {
+      "id": "cancer-005",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-005, cancer-013, ci_046, ci_062",
+      "question": "면역항암제 치료 중 식이 관리는 어떻게 해야 하나요?"
+    },
+    {
+      "id": "cancer-013",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-005, cancer-013, ci_046, ci_062",
+      "question": "암 치료 후 재발을 예방하기 위해 어떻게 해야 하나요?"
+    },
+    {
+      "id": "ci_046",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-005, cancer-013, ci_046, ci_062",
+      "question": "항암 치료의 부작용을 줄이는 방법은?"
+    },
+    {
+      "id": "ci_062",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-005, cancer-013, ci_046, ci_062",
+      "question": "항암 치료 중 식욕 부진을 어떻게 관리하나요?"
+    },
+    {
+      "id": "ci_065",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-005, cancer-013, ci_046, ci_062",
+      "question": "암 치료 후 추적 관찰은 얼마나 해야 하나요?"
+    },
+    {
+      "id": "ci_097",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-005, cancer-013, ci_046, ci_062",
+      "question": "EGFR 돌연변이 폐암이란 무엇이며, 타그리소 같은 표적치료제가 어떻게 작용하나요?"
+    },
+    {
+      "id": "ci_099",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-005, cancer-013, ci_046, ci_062",
+      "question": "조기 위암과 진행성 위암의 차이, 내시경 치료가 가능한 기준은?"
+    },
+    {
+      "id": "ci_105",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-005, cancer-013, ci_046, ci_062",
+      "question": "유방암 수술 시 전절제와 유방보존술, 어떻게 선택하나요?"
+    },
+    {
+      "id": "ci_112",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-005, cancer-013, ci_046, ci_062",
+      "question": "췌장암이 발견 당시 수술 불가인 경우가 많은 이유와 현재 항암 표준치료는?"
+    },
+    {
+      "id": "ci_123",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-005, cancer-013, ci_046, ci_062",
+      "question": "항암치료 중 구역·구토 예방과 관리에 효과적인 방법은?"
+    },
+    {
+      "id": "ci_125",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-005, cancer-013, ci_046, ci_062",
+      "question": "암 치료 후 생존자가 재발 감시와 건강 관리를 어떻게 해야 하나요?"
+    },
+    {
+      "id": "ci_127",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-005, cancer-013, ci_046, ci_062",
+      "question": "투명세포 신세포암에서 VHL 유전자 변이와 VEGF 표적치료의 연관성은?"
+    },
+    {
+      "id": "ci_149",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-005, cancer-013, ci_046, ci_062",
+      "question": "젊은 암 환자가 항암치료 전에 생식 기능을 보존하는 방법은?"
+    },
+    {
+      "id": "qa200-20260527-035",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-005, cancer-013, ci_046, ci_062",
+      "question": "감태추출물이나 플로로탄닌은 항암치료 대신 쓸 수 있나요?"
+    },
+    {
+      "id": "qa200-20260527-046",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-005, cancer-013, ci_046, ci_062",
+      "question": "면역항암 치료 중 건강기능식품을 조심해야 하는 이유는 뭔가요?"
+    },
+    {
+      "id": "qa-hospital-20260527-015",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-005, cancer-013, ci_046, ci_062",
+      "question": "암재활병원 상담에서 어떤 질문을 먼저 해야 하나요?"
+    },
+    {
+      "id": "cancer-007",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-007, ci_042, ci_068, ci_128",
+      "question": "종양 표지자 수치가 높으면 무조건 암인가요?"
+    },
+    {
+      "id": "ci_042",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-007, ci_042, ci_068, ci_128",
+      "question": "전립선암 PSA 검사는 신뢰할 수 있나요?"
+    },
+    {
+      "id": "ci_068",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-007, ci_042, ci_068, ci_128",
+      "question": "고형암과 혈액암의 차이는?"
+    },
+    {
+      "id": "ci_128",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-007, ci_042, ci_068, ci_128",
+      "question": "전립선암 조기 발견을 위한 PSA 검사의 활용과 한계는?"
+    },
+    {
+      "id": "cancer-008",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-008, qa200-20260527-038",
+      "question": "항암 중 단백질을 많이 먹어야 한다는 게 사실인가요?"
+    },
+    {
+      "id": "qa200-20260527-038",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-008, qa200-20260527-038",
+      "question": "항암 후 설사가 있을 때 유산균을 바로 먹어도 되나요?"
+    },
+    {
+      "id": "cancer-009",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-009, ci_019, ci_027, ci_031",
+      "question": "후코이단이 항암에 도움이 될 수 있다고 보고됩니다는 게 사실인가요?"
+    },
+    {
+      "id": "ci_019",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-009, ci_019, ci_027, ci_031",
+      "question": "면역항암제(면역관문억제제)란 무엇인가요?"
+    },
+    {
+      "id": "ci_027",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-009, ci_019, ci_027, ci_031",
+      "question": "BRCA1/2 유전자 변이가 있으면 반드시 암이 생기나요?"
+    },
+    {
+      "id": "ci_031",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-009, ci_019, ci_027, ci_031",
+      "question": "폐암의 가장 큰 위험 요인은 무엇인가요?"
+    },
+    {
+      "id": "ci_033",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-009, ci_019, ci_027, ci_031",
+      "question": "유방암 자가검진은 어떻게 하나요?"
+    },
+    {
+      "id": "ci_037",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-009, ci_019, ci_027, ci_031",
+      "question": "림프절이 붓는 것은 암의 신호인가요?"
+    },
+    {
+      "id": "ci_043",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-009, ci_019, ci_027, ci_031",
+      "question": "암 줄기세포란 무엇인가요?"
+    },
+    {
+      "id": "ci_050",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-009, ci_019, ci_027, ci_031",
+      "question": "전이암이란 무엇인가요?"
+    },
+    {
+      "id": "ci_053",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-009, ci_019, ci_027, ci_031",
+      "question": "정기 암 검진에서 어떤 항목을 받아야 하나요?"
+    },
+    {
+      "id": "ci_083",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-009, ci_019, ci_027, ci_031",
+      "question": "HER2 양성 유방암이란 무엇인가요?"
+    },
+    {
+      "id": "ci_084",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-009, ci_019, ci_027, ci_031",
+      "question": "T세포가 암세포를 인식하는 방법은?"
+    },
+    {
+      "id": "ci_085",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-009, ci_019, ci_027, ci_031",
+      "question": "신장암은 어떤 증상이 나타나나요?"
+    },
+    {
+      "id": "ci_089",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-009, ci_019, ci_027, ci_031",
+      "question": "트리플 네거티브 유방암이란?"
+    },
+    {
+      "id": "ci_100",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-009, ci_019, ci_027, ci_031",
+      "question": "HER2 양성 위암에서 트라스투주맙(허셉틴)이 어떻게 쓰이나요?"
+    },
+    {
+      "id": "ci_134",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-009, ci_019, ci_027, ci_031",
+      "question": "종양 미세환경(TME)이 암 면역 회피에서 어떤 역할을 하나요?"
+    },
+    {
+      "id": "ci_135",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-009, ci_019, ci_027, ci_031",
+      "question": "국가에서 시행하는 5대 암 검진 항목과 대상자는?"
+    },
+    {
+      "id": "ci_150",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-009, ci_019, ci_027, ci_031",
+      "question": "세계보건기구(WHO)가 분류한 1군 발암물질 중 가장 피해야 할 것은?"
+    },
+    {
+      "id": "qa200-20260527-027",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-009, ci_019, ci_027, ci_031",
+      "question": "암환자가 식욕이 없을 때 하루 식사는 어떻게 나누면 좋나요?"
+    },
+    {
+      "id": "qa200-20260527-028",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-009, ci_019, ci_027, ci_031",
+      "question": "항암 중 구내염이 있을 때 먹기 쉬운 음식은 무엇인가요?"
+    },
+    {
+      "id": "qa200-20260527-029",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-009, ci_019, ci_027, ci_031",
+      "question": "항암 후 속이 메스꺼울 때 단백질은 어떻게 보충하나요?"
+    },
+    {
+      "id": "qa200-20260527-030",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-009, ci_019, ci_027, ci_031",
+      "question": "암환자 체중이 계속 줄면 언제 병원에 알려야 하나요?"
+    },
+    {
+      "id": "qa200-20260527-037",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-009, ci_019, ci_027, ci_031",
+      "question": "항암 후 변비가 심할 때 식이섬유를 늘려도 되나요?"
+    },
+    {
+      "id": "qa200-20260527-039",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-009, ci_019, ci_027, ci_031",
+      "question": "삼키기 힘든 암환자에게 음료형 영양식이 필요한 기준은 뭔가요?"
+    },
+    {
+      "id": "qa200-20260527-042",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-009, ci_019, ci_027, ci_031",
+      "question": "암환자용 영양음료는 하루 몇 병까지 괜찮나요?"
+    },
+    {
+      "id": "qa200-20260527-045",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-009, ci_019, ci_027, ci_031",
+      "question": "암환자 면역력에 좋은 음식이라는 말은 믿어도 되나요?"
+    },
+    {
+      "id": "qa200-20260527-048",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-009, ci_019, ci_027, ci_031",
+      "question": "항암 중 부종이 있을 때 짠 음식은 얼마나 줄여야 하나요?"
+    },
+    {
+      "id": "qa200-20260527-050",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-009, ci_019, ci_027, ci_031",
+      "question": "한 번에 못 먹는 암환자는 간식을 어떻게 구성하나요?"
+    },
+    {
+      "id": "qa200-20260527-052",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-009, ci_019, ci_027, ci_031",
+      "question": "항암 중 물맛이 이상할 때 수분 섭취를 늘리는 방법은 뭔가요?"
+    },
+    {
+      "id": "qa200-20260527-054",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-009, ci_019, ci_027, ci_031",
+      "question": "암환자 가족이 검색해야 할 병원 정보는 무엇부터인가요?"
+    },
+    {
+      "id": "qa200-20260527-058",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-009, ci_019, ci_027, ci_031",
+      "question": "암환자 식사 문의를 할 때 건강한 반찬 정보에 어떤 정보를 남기면 좋나요?"
+    },
+    {
+      "id": "seoqa-cancer_immune-01",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-009, ci_019, ci_027, ci_031",
+      "question": "항암·면역 정보를 검색할 때 먼저 어떤 기준을 봐야 하나요? - 기본편"
+    },
+    {
+      "id": "seoqa-cancer_immune-07",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-009, ci_019, ci_027, ci_031",
+      "question": "항암·면역 정보를 의료진 상담 질문으로 바꾸는 방법은? - 적용편"
+    },
+    {
+      "id": "seoqa-cancer_immune-08",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-009, ci_019, ci_027, ci_031",
+      "question": "항암·면역 검색 시 자주 놓치는 안전 점검 항목은? - 점검편"
+    },
+    {
+      "id": "seoqa-cancer_immune-11",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-009, ci_019, ci_027, ci_031",
+      "question": "항암·면역 정보를 검색할 때 먼저 어떤 기준을 봐야 하나요? - 확장편"
+    },
+    {
+      "id": "cancer-010",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-010, qa200-20260527-034, qa200-20260527-047",
+      "question": "암 환자가 홍삼이나 인삼을 먹어도 되나요?"
+    },
+    {
+      "id": "qa200-20260527-034",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-010, qa200-20260527-034, qa200-20260527-047",
+      "question": "항암 중 건강기능식품은 언제부터 다시 먹어도 되나요?"
+    },
+    {
+      "id": "qa200-20260527-047",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-010, qa200-20260527-034, qa200-20260527-047",
+      "question": "암환자 빈혈이 있을 때 철분을 임의로 먹어도 되나요?"
+    },
+    {
+      "id": "cancer-011",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-011, ci_018, ci_041, ci_044",
+      "question": "비타민 D 결핍이 암 발생과 연관이 있나요?"
+    },
+    {
+      "id": "ci_018",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-011, ci_018, ci_041, ci_044",
+      "question": "암세포는 왜 면역계를 피하나요?"
+    },
+    {
+      "id": "ci_041",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-011, ci_018, ci_041, ci_044",
+      "question": "간암 발생의 주요 원인은 무엇인가요?"
+    },
+    {
+      "id": "ci_044",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-011, ci_018, ci_041, ci_044",
+      "question": "위암의 주요 원인은 무엇인가요?"
+    },
+    {
+      "id": "ci_056",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-011, ci_018, ci_041, ci_044",
+      "question": "갑상선암이 증가하는 이유는 무엇인가요?"
+    },
+    {
+      "id": "ci_093",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-011, ci_018, ci_041, ci_044",
+      "question": "환경 요인과 암 발생의 관계는?"
+    },
+    {
+      "id": "ci_117",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-011, ci_018, ci_041, ci_044",
+      "question": "자궁경부암에서 동시화학방사선요법(CCRT)이 표준인 이유와 방사선 종류는?"
+    },
+    {
+      "id": "ci_144",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-011, ci_018, ci_041, ci_044",
+      "question": "난소암에서 PARP 억제제 유지 요법이 효과적인 이유와 적응 기준은?"
+    },
+    {
+      "id": "ci_145",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-011, ci_018, ci_041, ci_044",
+      "question": "두경부암에서 HPV 연관 구인두암이 증가하는 이유와 예후는?"
+    },
+    {
+      "id": "cancer-012",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-012, cancer-015, cancer-019, ci_026",
+      "question": "장내 미생물이 면역과 암에 어떤 영향을 미치나요?"
+    },
+    {
+      "id": "cancer-015",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-012, cancer-015, cancer-019, ci_026",
+      "question": "암 환자가 설탕을 먹으면 암이 빨리 자라나요?"
+    },
+    {
+      "id": "cancer-019",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-012, cancer-015, cancer-019, ci_026",
+      "question": "암과 스트레스는 어떤 관계가 있나요?"
+    },
+    {
+      "id": "ci_026",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-012, cancer-015, cancer-019, ci_026",
+      "question": "암은 유전되나요?"
+    },
+    {
+      "id": "ci_049",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-012, cancer-015, cancer-019, ci_026",
+      "question": "비타민 C 고용량이 암에 도움이 되나요?"
+    },
+    {
+      "id": "ci_076",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-012, cancer-015, cancer-019, ci_026",
+      "question": "암세포의 비정상적 대사(Warburg 효과)란?"
+    },
+    {
+      "id": "ci_080",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-012, cancer-015, cancer-019, ci_026",
+      "question": "암 환자에게 보완 대체 의학이 도움이 되나요?"
+    },
+    {
+      "id": "ci_088",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-012, cancer-015, cancer-019, ci_026",
+      "question": "암의 병기(Stage) 분류는 어떻게 하나요?"
+    },
+    {
+      "id": "qa200-20260527-051",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-012, cancer-015, cancer-019, ci_026",
+      "question": "암환자가 고기를 못 먹을 때 단백질 대체 식품은 무엇이 있나요?"
+    },
+    {
+      "id": "qa200-20260527-055",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-012, cancer-015, cancer-019, ci_026",
+      "question": "항암 중 프로바이오틱스를 먹기 전 확인할 점은 무엇인가요?"
+    },
+    {
+      "id": "qa200-20260527-056",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-012, cancer-015, cancer-019, ci_026",
+      "question": "암환자에게 저잔사식은 언제 필요한가요?"
+    },
+    {
+      "id": "seoqa-cancer_immune-05",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-012, cancer-015, cancer-019, ci_026",
+      "question": "항암·면역 관련 원료 비교 글을 읽을 때 주의할 점은? - 상세편"
+    },
+    {
+      "id": "seoqa-cancer_immune-09",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): cancer-012, cancer-015, cancer-019, ci_026",
+      "question": "항암·면역 관련 태그 페이지를 읽는 순서는 어떻게 잡나요? - 상담준비편"
+    },
+    {
+      "id": "ci_021",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): ci_021, ci_063, ci_087, ci_113",
+      "question": "암 표지자(종양 표지자) 검사는 신뢰할 수 있나요?"
+    },
+    {
+      "id": "ci_063",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): ci_021, ci_063, ci_087, ci_113",
+      "question": "암 유전자 검사(NGS)는 무엇인가요?"
+    },
+    {
+      "id": "ci_087",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): ci_021, ci_063, ci_087, ci_113",
+      "question": "폐암 조기 발견을 위한 검사 방법은?"
+    },
+    {
+      "id": "ci_113",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): ci_021, ci_063, ci_087, ci_113",
+      "question": "CA19-9가 췌장암 표지자로 쓰이는데, 왜 조기진단에 한계가 있나요?"
+    },
+    {
+      "id": "seoqa-cancer_immune-06",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): ci_021, ci_063, ci_087, ci_113",
+      "question": "항암·면역 관련 수치를 볼 때 단일 수치로 결론 내리지 않는 이유는? - 검증편"
+    },
+    {
+      "id": "ci_030",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): ci_030, ci_032, ci_116, qa200-20260527-057",
+      "question": "항산화제가 암을 예방하나요?"
+    },
+    {
+      "id": "ci_032",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): ci_030, ci_032, ci_116, qa200-20260527-057",
+      "question": "대장암 예방을 위한 식이 권고 사항은?"
+    },
+    {
+      "id": "ci_116",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): ci_030, ci_032, ci_116, qa200-20260527-057",
+      "question": "HPV 백신이 자궁경부암 예방에 얼마나 효과적이고 누가 맞아야 하나요?"
+    },
+    {
+      "id": "qa200-20260527-057",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): ci_030, ci_032, ci_116, qa200-20260527-057",
+      "question": "암환자 회복기 식단에서 플로로탄닌 정보는 어떻게 봐야 하나요?"
+    },
+    {
+      "id": "ci_075",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): ci_075, ci_129, seoqa-cancer_immune-02, seoqa-cancer_immune-04",
+      "question": "암의 종양 유전자와 종양 억제 유전자 차이는?"
+    },
+    {
+      "id": "ci_129",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): ci_075, ci_129, seoqa-cancer_immune-02, seoqa-cancer_immune-04",
+      "question": "식도암의 두 주요 유형(편평상피암 vs 선암) 차이와 위험 요인은?"
+    },
+    {
+      "id": "seoqa-cancer_immune-02",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): ci_075, ci_129, seoqa-cancer_immune-02, seoqa-cancer_immune-04",
+      "question": "항암·면역 관련 글에서 과장 문구를 구분하는 방법은? - 핵심편"
+    },
+    {
+      "id": "seoqa-cancer_immune-04",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): ci_075, ci_129, seoqa-cancer_immune-02, seoqa-cancer_immune-04",
+      "question": "항암·면역 정보에서 논문과 후기의 차이는 어떻게 보나요? - 초보자편"
+    },
+    {
+      "id": "seoqa-cancer_immune-12",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): ci_075, ci_129, seoqa-cancer_immune-02, seoqa-cancer_immune-04",
+      "question": "항암·면역 관련 글에서 과장 문구를 구분하는 방법은? - 심화편"
+    },
+    {
+      "id": "seoqa-cancer_immune-14",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): ci_075, ci_129, seoqa-cancer_immune-02, seoqa-cancer_immune-04",
+      "question": "항암·면역 정보에서 논문과 후기의 차이는 어떻게 보나요? - 사례편? - 핵심편"
+    },
+    {
+      "id": "dige-002",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): dige-002, dg_012, qa200-20260527-060",
+      "question": "역류성 식도염을 식이로 관리할 수 있나요?"
+    },
+    {
+      "id": "dg_012",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): dige-002, dg_012, qa200-20260527-060",
+      "question": "역류성 식도염을 예방하는 생활 습관은?"
+    },
+    {
+      "id": "qa200-20260527-060",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): dige-002, dg_012, qa200-20260527-060",
+      "question": "위염이 자주 재발할 때 식사기록은 어떻게 남기나요?"
+    },
+    {
+      "id": "dige-003",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): dige-003, dg_089",
+      "question": "헬리코박터균을 없애면 위암을 예방할 수 있나요?"
+    },
+    {
+      "id": "dg_089",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): dige-003, dg_089",
+      "question": "소화기암 예방을 위한 핵심 식이 지침은?"
+    },
+    {
+      "id": "dige-010",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): dige-010, dg_016",
+      "question": "크론병과 궤양성 대장염의 차이는 무엇인가요?"
+    },
+    {
+      "id": "dg_016",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): dige-010, dg_016",
+      "question": "크론병과 궤양성 대장염의 차이는?"
+    },
+    {
+      "id": "dg_014",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): dg_014, dg_019, qa200-20260527-059",
+      "question": "소화불량이 자주 생기면 어떻게 해야 하나요?"
+    },
+    {
+      "id": "dg_019",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): dg_014, dg_019, qa200-20260527-059",
+      "question": "복통이 있을 때 어떤 경우 응급으로 봐야 하나요?"
+    },
+    {
+      "id": "qa200-20260527-059",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): dg_014, dg_019, qa200-20260527-059",
+      "question": "역류성식도염이면 커피를 완전히 끊어야 하나요?"
+    },
+    {
+      "id": "dg_026",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): dg_026, dg_035",
+      "question": "대장암의 조기 증상은 무엇인가요?"
+    },
+    {
+      "id": "dg_035",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): dg_026, dg_035",
+      "question": "위암의 초기 증상은 무엇인가요?"
+    },
+    {
+      "id": "dg_078",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): dg_078, qa200-20260527-076",
+      "question": "위내시경 시 발견되는 만성 위염 유형은?"
+    },
+    {
+      "id": "qa200-20260527-076",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): dg_078, qa200-20260527-076",
+      "question": "식사량이 줄고 체중이 빠지면 소화불량으로 봐도 되나요?"
+    },
+    {
+      "id": "neuro-003",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): neuro-003, neuro-014, nc_013, nc_016",
+      "question": "뇌에 좋다는 식품들이 실제로 인지기능을 높이나요?"
+    },
+    {
+      "id": "neuro-014",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): neuro-003, neuro-014, nc_013, nc_016",
+      "question": "코로나19 후유증(Long COVID)으로 인지 기능이 떨어졌는데 어떻게 해야 하나요?"
+    },
+    {
+      "id": "nc_013",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): neuro-003, neuro-014, nc_013, nc_016",
+      "question": "치매와 알츠하이머병은 같은 것인가요?"
+    },
+    {
+      "id": "nc_016",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): neuro-003, neuro-014, nc_013, nc_016",
+      "question": "두통의 종류에는 어떤 것이 있나요?"
+    },
+    {
+      "id": "nc_017",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): neuro-003, neuro-014, nc_013, nc_016",
+      "question": "편두통과 긴장형 두통을 어떻게 구별하나요?"
+    },
+    {
+      "id": "nc_019",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): neuro-003, neuro-014, nc_013, nc_016",
+      "question": "기억력이 나빠지면 치매인가요?"
+    },
+    {
+      "id": "nc_026",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): neuro-003, neuro-014, nc_013, nc_016",
+      "question": "미주신경 자극이 인지에 도움이 되나요?"
+    },
+    {
+      "id": "nc_035",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): neuro-003, neuro-014, nc_013, nc_016",
+      "question": "인지 예비력(Cognitive Reserve)이란?"
+    },
+    {
+      "id": "nc_037",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): neuro-003, neuro-014, nc_013, nc_016",
+      "question": "경도 인지 장애(MCI)란 무엇인가요?"
+    },
+    {
+      "id": "nc_050",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): neuro-003, neuro-014, nc_013, nc_016",
+      "question": "디지털 건강 앱이 인지 훈련에 효과적인가요?"
+    },
+    {
+      "id": "nc_061",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): neuro-003, neuro-014, nc_013, nc_016",
+      "question": "치매 환자 돌봄에서 가족이 주의해야 할 점은?"
+    },
+    {
+      "id": "nc_066",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): neuro-003, neuro-014, nc_013, nc_016",
+      "question": "코그니티브 프라이밍(인지 준비)이란?"
+    },
+    {
+      "id": "nc_081",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): neuro-003, neuro-014, nc_013, nc_016",
+      "question": "군발두통이란 무엇인가요?"
+    },
+    {
+      "id": "nc_087",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): neuro-003, neuro-014, nc_013, nc_016",
+      "question": "레비소체 치매란 무엇인가요?"
+    },
+    {
+      "id": "nc_114",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): neuro-003, neuro-014, nc_013, nc_016",
+      "question": "노년기 인지 기능을 유지하는 데 뇌 훈련 앱이나 퍼즐이 효과적인가요?"
+    },
+    {
+      "id": "qa200-20260527-099",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): neuro-003, neuro-014, nc_013, nc_016",
+      "question": "수면 부족이 기억력 저하처럼 느껴질 수 있나요?"
+    },
+    {
+      "id": "qa200-20260527-101",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): neuro-003, neuro-014, nc_013, nc_016",
+      "question": "감태 수면 제품은 기억력에도 도움이 되나요?"
+    },
+    {
+      "id": "qa200-20260527-103",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): neuro-003, neuro-014, nc_013, nc_016",
+      "question": "비타민 B12 부족이 기억력에 영향을 줄 수 있나요?"
+    },
+    {
+      "id": "qa-hospital-20260527-024",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): neuro-003, neuro-014, nc_013, nc_016",
+      "question": "기억력이 떨어지면 건강식품보다 기억클리닉 상담이 먼저인가요?"
+    },
+    {
+      "id": "seoqa-neuro_cognitive-01",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): neuro-003, neuro-014, nc_013, nc_016",
+      "question": "뇌·인지 정보를 검색할 때 먼저 어떤 기준을 봐야 하나요? - 기본편"
+    },
+    {
+      "id": "seoqa-neuro_cognitive-05",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): neuro-003, neuro-014, nc_013, nc_016",
+      "question": "뇌·인지 관련 원료 비교 글을 읽을 때 주의할 점은? - 상세편"
+    },
+    {
+      "id": "seoqa-neuro_cognitive-07",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): neuro-003, neuro-014, nc_013, nc_016",
+      "question": "뇌·인지 정보를 의료진 상담 질문으로 바꾸는 방법은? - 적용편"
+    },
+    {
+      "id": "seoqa-neuro_cognitive-08",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): neuro-003, neuro-014, nc_013, nc_016",
+      "question": "뇌·인지 검색 시 자주 놓치는 안전 점검 항목은? - 점검편"
+    },
+    {
+      "id": "seoqa-neuro_cognitive-09",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): neuro-003, neuro-014, nc_013, nc_016",
+      "question": "뇌·인지 관련 태그 페이지를 읽는 순서는 어떻게 잡나요? - 상담준비편"
+    },
+    {
+      "id": "neuro-004",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): neuro-004, neuro-005, nc_028, nc_095",
+      "question": "두통이 너무 잦은데 어떻게 관리해야 하나요?"
+    },
+    {
+      "id": "neuro-005",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): neuro-004, neuro-005, nc_028, nc_095",
+      "question": "치매 예방에 가장 효과적인 생활습관은 무엇인가요?"
+    },
+    {
+      "id": "nc_028",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): neuro-004, neuro-005, nc_028, nc_095",
+      "question": "인지 기능 저하를 늦추는 운동 방법은?"
+    },
+    {
+      "id": "nc_095",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): neuro-004, neuro-005, nc_028, nc_095",
+      "question": "혈관성 치매는 알츠하이머와 어떻게 다르고, 예방 전략은?"
+    },
+    {
+      "id": "nc_117",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): neuro-004, neuro-005, nc_028, nc_095",
+      "question": "치매 환자를 돌보는 가족이 번아웃을 예방하는 방법은?"
+    },
+    {
+      "id": "neuro-010",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): neuro-010, nc_032, nc_038, nc_068",
+      "question": "기억력이 갑자기 나빠진 것 같은데 치매 초기인가요?"
+    },
+    {
+      "id": "nc_032",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): neuro-010, nc_032, nc_038, nc_068",
+      "question": "과도한 스마트폰 사용이 인지에 미치는 영향은?"
+    },
+    {
+      "id": "nc_038",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): neuro-010, nc_032, nc_038, nc_068",
+      "question": "뇌혈관 질환과 혈관성 치매의 관계는?"
+    },
+    {
+      "id": "nc_068",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): neuro-010, nc_032, nc_038, nc_068",
+      "question": "노인성 우울증은 치매와 어떻게 다른가요?"
+    },
+    {
+      "id": "nc_084",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): neuro-010, nc_032, nc_038, nc_068",
+      "question": "피질하 혈관성 치매(소혈관 질환)란?"
+    },
+    {
+      "id": "nc_088",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): neuro-010, nc_032, nc_038, nc_068",
+      "question": "인지 기능 향상을 위한 일상적 실천 방법은?"
+    },
+    {
+      "id": "nc_091",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): neuro-010, nc_032, nc_038, nc_068",
+      "question": "전두측두엽 치매(FTD)란 무엇인가요?"
+    },
+    {
+      "id": "nc_093",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): neuro-010, nc_032, nc_038, nc_068",
+      "question": "알츠하이머 치매의 초기 증상을 건망증과 어떻게 구별하나요?"
+    },
+    {
+      "id": "nc_096",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): neuro-010, nc_032, nc_038, nc_068",
+      "question": "루이소체 치매의 특징적 증상과 알츠하이머와 구별되는 점은?"
+    },
+    {
+      "id": "nc_097",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): neuro-010, nc_032, nc_038, nc_068",
+      "question": "전두측두엽 치매(FTD)는 어떤 질환이며 초기에 어떻게 나타나나요?"
+    },
+    {
+      "id": "nc_106",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): neuro-010, nc_032, nc_038, nc_068",
+      "question": "경도인지장애(MCI)란 무엇이고 치매로 진행하는 비율은?"
+    },
+    {
+      "id": "nc_120",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): neuro-010, nc_032, nc_038, nc_068",
+      "question": "수면이 기억과 인지 기능에 미치는 영향은?"
+    },
+    {
+      "id": "qa-hospital-20260527-041",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): neuro-010, nc_032, nc_038, nc_068",
+      "question": "어지럼은 이비인후과와 신경과 중 어디로 가야 하나요?"
+    },
+    {
+      "id": "neuro-011",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): neuro-011, neuro-016, nc_039, nc_054",
+      "question": "마그네슘이 수면과 스트레스에 정말 도움이 되나요?"
+    },
+    {
+      "id": "neuro-016",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): neuro-011, neuro-016, nc_039, nc_054",
+      "question": "수면 중 이갈이(이악물기)가 뇌에도 영향을 주나요?"
+    },
+    {
+      "id": "nc_039",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): neuro-011, neuro-016, nc_039, nc_054",
+      "question": "뇌 건강을 위한 최적의 수면 시간은?"
+    },
+    {
+      "id": "nc_054",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): neuro-011, neuro-016, nc_039, nc_054",
+      "question": "수면 중 이갈이(이를 가는 것)가 뇌와 관련이 있나요?"
+    },
+    {
+      "id": "nc_078",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): neuro-011, neuro-016, nc_039, nc_054",
+      "question": "렘수면 행동 장애란 무엇인가요?"
+    },
+    {
+      "id": "qa200-20260527-096",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): neuro-011, neuro-016, nc_039, nc_054",
+      "question": "브레인포그는 영양제보다 수면부터 봐야 하나요?"
+    },
+    {
+      "id": "nc_014",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): nc_014, nc_041, nc_098, qa200-20260527-104",
+      "question": "치매를 예방하는 방법이 있나요?"
+    },
+    {
+      "id": "nc_041",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): nc_014, nc_041, nc_098, qa200-20260527-104",
+      "question": "언어 능력이 치매 예방에 도움이 되나요?"
+    },
+    {
+      "id": "nc_098",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): nc_014, nc_041, nc_098, qa200-20260527-104",
+      "question": "치매 예방에 효과적인 생활습관은 무엇인가요?"
+    },
+    {
+      "id": "qa200-20260527-104",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): nc_014, nc_041, nc_098, qa200-20260527-104",
+      "question": "걷기 운동이 치매 예방에 실제로 도움이 되나요?"
+    },
+    {
+      "id": "nc_057",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): nc_057, nc_070",
+      "question": "음악 치료가 치매 환자에게 도움이 되나요?"
+    },
+    {
+      "id": "nc_070",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): nc_057, nc_070",
+      "question": "만성 편두통 예방 치료에는 어떤 약이 있나요?"
+    },
+    {
+      "id": "skin-001",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-001, sh_030, sh_127",
+      "question": "여드름이 계속 나는데 어떤 식이 관리가 효과적인가요?"
+    },
+    {
+      "id": "sh_030",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-001, sh_030, sh_127",
+      "question": "피부 노화를 예방하는 핵심 스킨케어는?"
+    },
+    {
+      "id": "sh_127",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-001, sh_030, sh_127",
+      "question": "겨드랑이 색소침착이 심한데 어떻게 관리하나요?"
+    },
+    {
+      "id": "skin-002",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-002, skin-004, skin-008, skin-012",
+      "question": "아토피 피부염을 악화시키는 요인은 무엇인가요?"
+    },
+    {
+      "id": "skin-004",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-002, skin-004, skin-008, skin-012",
+      "question": "피부 노화를 늦추는 가장 효과적인 방법은?"
+    },
+    {
+      "id": "skin-008",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-002, skin-004, skin-008, skin-012",
+      "question": "콜라겐 보충제를 먹으면 피부에 실제로 효과가 있나요?"
+    },
+    {
+      "id": "skin-012",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-002, skin-004, skin-008, skin-012",
+      "question": "피부에 황산화물이 들어간 제품을 피해야 하나요?"
+    },
+    {
+      "id": "skin-016",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-002, skin-004, skin-008, skin-012",
+      "question": "로즈힙오일과 아르간오일 중 어떤 것이 피부에 더 좋나요?"
+    },
+    {
+      "id": "skin-018",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-002, skin-004, skin-008, skin-012",
+      "question": "지성 피부를 위한 올바른 세안 방법은?"
+    },
+    {
+      "id": "sh_017",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-002, skin-004, skin-008, skin-012",
+      "question": "피부에 빨간 반점이 생기면 무엇을 의심해야 하나요?"
+    },
+    {
+      "id": "sh_018",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-002, skin-004, skin-008, skin-012",
+      "question": "피부 타입에 맞는 세안 방법은?"
+    },
+    {
+      "id": "sh_020",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-002, skin-004, skin-008, skin-012",
+      "question": "비타민 C 세럼이 피부에 도움이 되나요?"
+    },
+    {
+      "id": "sh_028",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-002, skin-004, skin-008, skin-012",
+      "question": "피부의 마이크로바이옴이란 무엇인가요?"
+    },
+    {
+      "id": "sh_029",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-002, skin-004, skin-008, skin-012",
+      "question": "여드름 흉터를 없애는 방법은?"
+    },
+    {
+      "id": "sh_037",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-002, skin-004, skin-008, skin-012",
+      "question": "피부 습진과 건선은 어떻게 다른가요?"
+    },
+    {
+      "id": "sh_048",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-002, skin-004, skin-008, skin-012",
+      "question": "피부과에서 히알루론산 필러는 어떻게 사용되나요?"
+    },
+    {
+      "id": "sh_049",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-002, skin-004, skin-008, skin-012",
+      "question": "피부 모공을 줄이는 방법은?"
+    },
+    {
+      "id": "sh_051",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-002, skin-004, skin-008, skin-012",
+      "question": "피부 타입이 변할 수 있나요?"
+    },
+    {
+      "id": "sh_056",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-002, skin-004, skin-008, skin-012",
+      "question": "피부에 좋은 음식은 무엇인가요?"
+    },
+    {
+      "id": "sh_057",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-002, skin-004, skin-008, skin-012",
+      "question": "임신 중 피부에 어떤 변화가 생기나요?"
+    },
+    {
+      "id": "sh_070",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-002, skin-004, skin-008, skin-012",
+      "question": "콜라겐이 피부에서 어떤 역할을 하나요?"
+    },
+    {
+      "id": "sh_078",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-002, skin-004, skin-008, skin-012",
+      "question": "피부 간지러움이 지속되면 어떻게 해야 하나요?"
+    },
+    {
+      "id": "sh_085",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-002, skin-004, skin-008, skin-012",
+      "question": "피부 노화와 호르몬의 관계는?"
+    },
+    {
+      "id": "sh_096",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-002, skin-004, skin-008, skin-012",
+      "question": "건성 피부와 아토피 피부염을 어떻게 구별하나요?"
+    },
+    {
+      "id": "sh_108",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-002, skin-004, skin-008, skin-012",
+      "question": "피부가 건조할 때 보습제 선택 기준은 무엇인가요?"
+    },
+    {
+      "id": "sh_124",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-002, skin-004, skin-008, skin-012",
+      "question": "스테로이드 크림을 오래 쓰면 피부에 어떤 영향을 미치나요?"
+    },
+    {
+      "id": "sh_126",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-002, skin-004, skin-008, skin-012",
+      "question": "피부에 좋은 음식 TOP 5는 무엇인가요?"
+    },
+    {
+      "id": "sh_130",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-002, skin-004, skin-008, skin-012",
+      "question": "피부에 물집이 생겼는데 터뜨려도 되나요?"
+    },
+    {
+      "id": "sh_131",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-002, skin-004, skin-008, skin-012",
+      "question": "볼 주변이 자꾸 붉고 건조한데 지루성 피부염인가요?"
+    },
+    {
+      "id": "sh_134",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-002, skin-004, skin-008, skin-012",
+      "question": "피부에 자꾸 멍이 드는데 건강에 문제가 있는 건가요?"
+    },
+    {
+      "id": "sh_135",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-002, skin-004, skin-008, skin-012",
+      "question": "피부 건조함을 해결하는 데 물을 많이 마시는 게 효과가 있나요?"
+    },
+    {
+      "id": "sh_140",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-002, skin-004, skin-008, skin-012",
+      "question": "플로로탄닌이 피부 건강에 도움이 된다는 연구가 있나요?"
+    },
+    {
+      "id": "qa200-20260527-138",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-002, skin-004, skin-008, skin-012",
+      "question": "여드름이 심하면 유산균이나 오메가3가 도움이 되나요?"
+    },
+    {
+      "id": "qa200-20260527-141",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-002, skin-004, skin-008, skin-012",
+      "question": "감태 플로로탄닌은 피부 항산화에 어떤 근거가 있나요?"
+    },
+    {
+      "id": "qa200-20260527-142",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-002, skin-004, skin-008, skin-012",
+      "question": "피부가 건조할 때 물을 많이 마시면 해결되나요?"
+    },
+    {
+      "id": "qa200-20260527-143",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-002, skin-004, skin-008, skin-012",
+      "question": "색소침착 영양제는 어느 정도 기간을 봐야 하나요?"
+    },
+    {
+      "id": "qa200-20260527-148",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-002, skin-004, skin-008, skin-012",
+      "question": "여름철 땀띠와 접촉피부염은 어떻게 다르게 보나요?"
+    },
+    {
+      "id": "qa-hospital-20260527-030",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-002, skin-004, skin-008, skin-012",
+      "question": "피부 트러블로 피부과 갈 때 먹는 콜라겐도 말해야 하나요?"
+    },
+    {
+      "id": "seoqa-skin-01",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-002, skin-004, skin-008, skin-012",
+      "question": "피부 정보를 검색할 때 먼저 어떤 기준을 봐야 하나요? - 기본편"
+    },
+    {
+      "id": "seoqa-skin-05",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-002, skin-004, skin-008, skin-012",
+      "question": "피부 관련 원료 비교 글을 읽을 때 주의할 점은? - 상세편"
+    },
+    {
+      "id": "seoqa-skin-07",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-002, skin-004, skin-008, skin-012",
+      "question": "피부 정보를 의료진 상담 질문으로 바꾸는 방법은? - 적용편"
+    },
+    {
+      "id": "seoqa-skin-08",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-002, skin-004, skin-008, skin-012",
+      "question": "피부 검색 시 자주 놓치는 안전 점검 항목은? - 점검편"
+    },
+    {
+      "id": "skin-006",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-006, skin-010, sh_031, sh_125",
+      "question": "두피 건강이 모발 성장에 어떻게 영향을 미치나요?"
+    },
+    {
+      "id": "skin-010",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-006, skin-010, sh_031, sh_125",
+      "question": "탈모에 좋다는 성분들이 너무 많은데 어떤 것이 실제로 효과가 있나요?"
+    },
+    {
+      "id": "sh_031",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-006, skin-010, sh_031, sh_125",
+      "question": "헤어 드라이어 사용이 모발 손상을 주나요?"
+    },
+    {
+      "id": "sh_125",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-006, skin-010, sh_031, sh_125",
+      "question": "여성 탈모와 남성 탈모는 어떻게 다른가요?"
+    },
+    {
+      "id": "qa200-20260527-150",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-006, skin-010, sh_031, sh_125",
+      "question": "비오틴은 탈모에 누구에게 도움이 되나요?"
+    },
+    {
+      "id": "skin-011",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-011, skin-019, sh_019, sh_033",
+      "question": "피부가 건조할 때 보습제를 고르는 기준은 무엇인가요?"
+    },
+    {
+      "id": "skin-019",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-011, skin-019, sh_019, sh_033",
+      "question": "피부 문신 제거 과정에서 주의할 점은 무엇인가요?"
+    },
+    {
+      "id": "sh_019",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-011, skin-019, sh_019, sh_033",
+      "question": "레티놀이 피부에 어떤 효과가 있나요?"
+    },
+    {
+      "id": "sh_033",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-011, skin-019, sh_019, sh_033",
+      "question": "접촉성 피부염이란 무엇인가요?"
+    },
+    {
+      "id": "sh_038",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-011, skin-019, sh_019, sh_033",
+      "question": "피부과에서 사용하는 화학 박피(필링)란?"
+    },
+    {
+      "id": "sh_041",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-011, skin-019, sh_019, sh_033",
+      "question": "나이아신아마이드가 피부에 어떤 효과가 있나요?"
+    },
+    {
+      "id": "sh_046",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-011, skin-019, sh_019, sh_033",
+      "question": "피부암의 종류와 위험 신호는?"
+    },
+    {
+      "id": "sh_052",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-011, skin-019, sh_019, sh_033",
+      "question": "보톡스가 피부에 어떻게 작용하나요?"
+    },
+    {
+      "id": "sh_060",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-011, skin-019, sh_019, sh_033",
+      "question": "피부 광노화(photoaging)란 무엇인가요?"
+    },
+    {
+      "id": "sh_063",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-011, skin-019, sh_019, sh_033",
+      "question": "피부에 갑자기 점이 많이 생기면 걱정해야 하나요?"
+    },
+    {
+      "id": "sh_074",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-011, skin-019, sh_019, sh_033",
+      "question": "피부 건강을 위해 물을 많이 마셔야 하나요?"
+    },
+    {
+      "id": "sh_076",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-011, skin-019, sh_019, sh_033",
+      "question": "피부과에서 IPL(강한 펄스 빛) 시술이란?"
+    },
+    {
+      "id": "sh_079",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-011, skin-019, sh_019, sh_033",
+      "question": "비타민 E가 피부에 어떻게 도움이 되나요?"
+    },
+    {
+      "id": "sh_080",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-011, skin-019, sh_019, sh_033",
+      "question": "피부 장벽(skin barrier)을 강화하는 방법은?"
+    },
+    {
+      "id": "sh_081",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-011, skin-019, sh_019, sh_033",
+      "question": "피부과에서 하는 프락셀 레이저란?"
+    },
+    {
+      "id": "sh_083",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-011, skin-019, sh_019, sh_033",
+      "question": "음식과 피부 트러블의 관계는?"
+    },
+    {
+      "id": "sh_101",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-011, skin-019, sh_019, sh_033",
+      "question": "색소침착(기미, 잡티)을 줄이는 방법은 무엇인가요?"
+    },
+    {
+      "id": "sh_104",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-011, skin-019, sh_019, sh_033",
+      "question": "여드름 흉터를 자연적으로 줄일 수 있나요?"
+    },
+    {
+      "id": "sh_113",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-011, skin-019, sh_019, sh_033",
+      "question": "화장품 성분 중 피부에 자극이 되는 성분은 무엇인가요?"
+    },
+    {
+      "id": "sh_128",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-011, skin-019, sh_019, sh_033",
+      "question": "피부 건강과 장 건강이 연결되어 있다는 게 사실인가요?"
+    },
+    {
+      "id": "qa200-20260527-146",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-011, skin-019, sh_019, sh_033",
+      "question": "피부 건강기능식품은 기능성 문구를 어떻게 읽어야 하나요?"
+    },
+    {
+      "id": "seoqa-skin-09",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-011, skin-019, sh_019, sh_033",
+      "question": "피부 관련 태그 페이지를 읽는 순서는 어떻게 잡나요? - 상담준비편"
+    },
+    {
+      "id": "skin-015",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-015, sh_016, seoqa-skin-04",
+      "question": "피부에 좋다는 콜라겐, 히알루론산, 세라마이드의 차이는?"
+    },
+    {
+      "id": "sh_016",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-015, sh_016, seoqa-skin-04",
+      "question": "건성 피부와 지성 피부, 혼합성 피부의 차이는?"
+    },
+    {
+      "id": "seoqa-skin-04",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): skin-015, sh_016, seoqa-skin-04",
+      "question": "피부 정보에서 논문과 후기의 차이는 어떻게 보나요? - 초보자편"
+    },
+    {
+      "id": "sh_013",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): sh_013, sh_072, sh_090, sh_098",
+      "question": "피부 보습이 중요한 이유는?"
+    },
+    {
+      "id": "sh_072",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): sh_013, sh_072, sh_090, sh_098",
+      "question": "피부에 튼살이 생기는 이유는?"
+    },
+    {
+      "id": "sh_090",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): sh_013, sh_072, sh_090, sh_098",
+      "question": "피부 건강을 위해 금연이 중요한 이유는?"
+    },
+    {
+      "id": "sh_098",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): sh_013, sh_072, sh_090, sh_098",
+      "question": "임신 중 피부 트러블(기미, 가려움)이 심해지는 이유는?"
+    },
+    {
+      "id": "sh_105",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): sh_013, sh_072, sh_090, sh_098",
+      "question": "피부 가려움증이 밤에 더 심해지는 이유는 무엇인가요?"
+    },
+    {
+      "id": "sh_110",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): sh_013, sh_072, sh_090, sh_098",
+      "question": "피부에 두드러기가 자주 나는데 원인을 어떻게 찾나요?"
+    },
+    {
+      "id": "sh_116",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): sh_013, sh_072, sh_090, sh_098",
+      "question": "피부 트러블이 생리 주기에 따라 달라지는 이유는?"
+    },
+    {
+      "id": "sh_117",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): sh_013, sh_072, sh_090, sh_098",
+      "question": "팔꿈치와 무릎 피부가 유독 까맣게 변하는 이유는?"
+    },
+    {
+      "id": "sh_132",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): sh_013, sh_072, sh_090, sh_098",
+      "question": "여드름이 등과 가슴에도 나는 이유는 무엇인가요?"
+    },
+    {
+      "id": "sh_014",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): sh_014, sh_024, sh_039, sh_055",
+      "question": "아토피 피부염 관리 방법은?"
+    },
+    {
+      "id": "sh_024",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): sh_014, sh_024, sh_039, sh_055",
+      "question": "피부 색소침착은 어떻게 관리하나요?"
+    },
+    {
+      "id": "sh_039",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): sh_014, sh_024, sh_039, sh_055",
+      "question": "자외선에 의한 피부 손상을 어떻게 예방하나요?"
+    },
+    {
+      "id": "sh_055",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): sh_014, sh_024, sh_039, sh_055",
+      "question": "면도 후 피부 트러블을 예방하는 방법은?"
+    },
+    {
+      "id": "sh_065",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): sh_014, sh_024, sh_039, sh_055",
+      "question": "피부 주름을 예방하는 습관은?"
+    },
+    {
+      "id": "sh_077",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): sh_014, sh_024, sh_039, sh_055",
+      "question": "피부에 흉터가 생기면 어떻게 관리하나요?"
+    },
+    {
+      "id": "sh_100",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): sh_014, sh_024, sh_039, sh_055",
+      "question": "피부 노화를 늦추는 생활 습관이 있나요?"
+    },
+    {
+      "id": "sh_122",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): sh_014, sh_024, sh_039, sh_055",
+      "question": "피부에 검버섯(노인성 반점)이 생기기 시작했어요. 관리법은?"
+    },
+    {
+      "id": "sh_015",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): sh_015, sh_047, sh_073, sh_086",
+      "question": "탈모의 종류에는 어떤 것이 있나요?"
+    },
+    {
+      "id": "sh_047",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): sh_015, sh_047, sh_073, sh_086",
+      "question": "탈모에 두피 마사지가 효과적인가요?"
+    },
+    {
+      "id": "sh_073",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): sh_015, sh_047, sh_073, sh_086",
+      "question": "영양 부족이 모발에 미치는 영향은?"
+    },
+    {
+      "id": "sh_086",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): sh_015, sh_047, sh_073, sh_086",
+      "question": "샴푸 교체가 탈모를 일으킬 수 있나요?"
+    },
+    {
+      "id": "qa200-20260527-151",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): sh_015, sh_047, sh_073, sh_086",
+      "question": "철분 부족이 여성 탈모에 영향을 줄 수 있나요?"
+    },
+    {
+      "id": "qa200-20260527-153",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): sh_015, sh_047, sh_073, sh_086",
+      "question": "산후탈모는 언제까지 기다려도 되나요?"
+    },
+    {
+      "id": "sh_022",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): sh_022, sh_088",
+      "question": "탈모 예방을 위한 식이 관리는?"
+    },
+    {
+      "id": "sh_088",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): sh_022, sh_088",
+      "question": "모발 이식 후 관리 방법은?"
+    },
+    {
+      "id": "sh_035",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): sh_035, sh_042, sh_067, sh_071",
+      "question": "발모증(원형 탈모)이 생겼을 때 치료 방법은?"
+    },
+    {
+      "id": "sh_042",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): sh_035, sh_042, sh_067, sh_071",
+      "question": "남성형 탈모(안드로겐성 탈모) 치료는?"
+    },
+    {
+      "id": "sh_067",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): sh_035, sh_042, sh_067, sh_071",
+      "question": "탈모 환자에게 모발이식 수술이 적합한가요?"
+    },
+    {
+      "id": "sh_071",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): sh_035, sh_042, sh_067, sh_071",
+      "question": "두피 탈모 치료에 PRP(혈소판 풍부 혈장) 주사가 효과적인가요?"
+    },
+    {
+      "id": "qa200-20260527-155",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): sh_035, sh_042, sh_067, sh_071",
+      "question": "두피염이 있으면 탈모 샴푸보다 병원 치료가 먼저인가요?"
+    },
+    {
+      "id": "sh_043",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): sh_043, sh_061, sh_112, seoqa-skin-02",
+      "question": "피부 결절과 낭종의 차이는?"
+    },
+    {
+      "id": "sh_061",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): sh_043, sh_061, sh_112, seoqa-skin-02",
+      "question": "피부 세럼과 크림의 차이는?"
+    },
+    {
+      "id": "sh_112",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): sh_043, sh_061, sh_112, seoqa-skin-02",
+      "question": "피부 건조증과 어린선(ichthyosis)의 차이는 무엇인가요?"
+    },
+    {
+      "id": "seoqa-skin-02",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): sh_043, sh_061, sh_112, seoqa-skin-02",
+      "question": "피부 관련 글에서 과장 문구를 구분하는 방법은? - 핵심편"
+    },
+    {
+      "id": "sh_064",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): sh_064, sh_129",
+      "question": "수면이 피부에 미치는 영향은?"
+    },
+    {
+      "id": "sh_129",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): sh_064, sh_129",
+      "question": "수면 부족이 피부에 미치는 영향은 무엇인가요?"
+    },
+    {
+      "id": "sh_068",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): sh_068, seoqa-skin-06",
+      "question": "피부 알레르기 검사는 어떻게 하나요?"
+    },
+    {
+      "id": "seoqa-skin-06",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): sh_068, seoqa-skin-06",
+      "question": "피부 관련 수치를 볼 때 단일 수치로 결론 내리지 않는 이유는? - 검증편"
+    },
+    {
+      "id": "musc-012",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): musc-012, ms_013",
+      "question": "목 디스크와 어깨 통증을 구분하는 방법은?"
+    },
+    {
+      "id": "ms_013",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): musc-012, ms_013",
+      "question": "허리 디스크와 척추관 협착증의 차이는?"
+    },
+    {
+      "id": "ms_060",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): ms_060, qa200-20260527-136",
+      "question": "골절 예방을 위해 낙상을 줄이는 방법은?"
+    },
+    {
+      "id": "qa200-20260527-136",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): ms_060, qa200-20260527-136",
+      "question": "낙상 예방을 위해 집에서 먼저 바꿀 것은 무엇인가요?"
+    },
+    {
+      "id": "woms-008",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): woms-008, wh-extra-003, wh-extra-005",
+      "question": "갱년기 우울감을 개선하는 방법은?"
+    },
+    {
+      "id": "wh-extra-003",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): woms-008, wh-extra-003, wh-extra-005",
+      "question": "갱년기 우울감과 기분 변화는 어떻게 대처해야 하나요?"
+    },
+    {
+      "id": "wh-extra-005",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): woms-008, wh-extra-003, wh-extra-005",
+      "question": "갱년기 수면 장애, 어떻게 개선할 수 있나요?"
+    },
+    {
+      "id": "woms-011",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): woms-011, wh-extra-025",
+      "question": "출산 후 우울증과 산후 우울감의 차이는?"
+    },
+    {
+      "id": "wh-extra-025",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): woms-011, wh-extra-025",
+      "question": "출산 후 산후 우울증과 베이비 블루스의 차이는 무엇인가요?"
+    },
+    {
+      "id": "woms-012",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): woms-012, wh-extra-034",
+      "question": "HPV 감염이 되면 자궁경부암이 무조건 생기나요?"
+    },
+    {
+      "id": "wh-extra-034",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): woms-012, wh-extra-034",
+      "question": "자궁내막암의 조기 신호는 무엇인가요?"
+    },
+    {
+      "id": "wh-extra-052",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): wh-extra-052, wh-extra-057",
+      "question": "유방 치밀 조직(dense breast)이 있으면 유방암 위험이 높아지나요?"
+    },
+    {
+      "id": "wh-extra-057",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): wh-extra-052, wh-extra-057",
+      "question": "유방 통증(유방통)은 유방암의 증상인가요?"
+    },
+    {
+      "id": "mens-007",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): mens-007, mens-extra-040",
+      "question": "남성이 유방암에 걸릴 수 있나요?"
+    },
+    {
+      "id": "mens-extra-040",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): mens-007, mens-extra-040",
+      "question": "남성 방광암의 위험 인자와 조기 증상은?"
+    },
+    {
+      "id": "mens-extra-006",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): mens-extra-006, qa200-20260527-197",
+      "question": "전립선암 PSA 검사, 언제부터 받아야 하나요?"
+    },
+    {
+      "id": "qa200-20260527-197",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): mens-extra-006, qa200-20260527-197",
+      "question": "PSA 수치가 높으면 바로 전립선암인가요?"
+    },
+    {
+      "id": "infect-extra-037",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): infect-extra-037, infect-extra-051",
+      "question": "건선(피부 만성 염증)과 면역계의 관계는 무엇인가요?"
+    },
+    {
+      "id": "infect-extra-051",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): infect-extra-037, infect-extra-051",
+      "question": "여드름은 피부 감염인가요? 세균과의 관계는 무엇인가요?"
+    },
+    {
+      "id": "mental-extra-001",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): mental-extra-001, mental-extra-021",
+      "question": "우울증과 단순한 우울감은 어떻게 구분하나요?"
+    },
+    {
+      "id": "mental-extra-021",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): mental-extra-001, mental-extra-021",
+      "question": "불안 장애의 다양한 유형(GAD, 공황, 특정 공포증 등)을 어떻게 구분하나요?"
+    },
+    {
+      "id": "mental-extra-002",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): mental-extra-002, mental-110, qa200-20260527-115, qa-hospital-20260527-025",
+      "question": "항우울제는 얼마나 복용해야 효과가 나타나나요?"
+    },
+    {
+      "id": "mental-110",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): mental-extra-002, mental-110, qa200-20260527-115, qa-hospital-20260527-025",
+      "question": "불면증에서 멜라토닌 보충제와 수면제의 차이, 장기 복용 안전성은?"
+    },
+    {
+      "id": "qa200-20260527-115",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): mental-extra-002, mental-110, qa200-20260527-115, qa-hospital-20260527-025",
+      "question": "수면제 복용 중 건강기능식품을 같이 먹어도 되나요?"
+    },
+    {
+      "id": "qa-hospital-20260527-025",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): mental-extra-002, mental-110, qa200-20260527-115, qa-hospital-20260527-025",
+      "question": "잠이 안 오면 수면제 전 건강식품 복용기록도 필요하나요?"
+    },
+    {
+      "id": "mental-extra-005",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): mental-extra-005, mental-extra-007, mental-extra-011, mental-extra-028",
+      "question": "수면 장애와 우울증은 어떤 관계인가요?"
+    },
+    {
+      "id": "mental-extra-007",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): mental-extra-005, mental-extra-007, mental-extra-011, mental-extra-028",
+      "question": "번아웃(Burnout) 증후군은 우울증과 다른가요?"
+    },
+    {
+      "id": "mental-extra-011",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): mental-extra-005, mental-extra-007, mental-extra-011, mental-extra-028",
+      "question": "조울증(양극성 장애)과 우울증은 어떻게 다른가요?"
+    },
+    {
+      "id": "mental-extra-028",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): mental-extra-005, mental-extra-007, mental-extra-011, mental-extra-028",
+      "question": "분리 불안 장애는 어린이에서만 나타나나요?"
+    },
+    {
+      "id": "mental-extra-046",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): mental-extra-005, mental-extra-007, mental-extra-011, mental-extra-028",
+      "question": "수면-각성 리듬과 정신 건강의 관계는 어떻게 되나요?"
+    },
+    {
+      "id": "mental-extra-056",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): mental-extra-005, mental-extra-007, mental-extra-011, mental-extra-028",
+      "question": "만성 피로 증후군(CFS/ME)과 우울증은 어떻게 다른가요?"
+    },
+    {
+      "id": "mental-extra-077",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): mental-extra-005, mental-extra-007, mental-extra-011, mental-extra-028",
+      "question": "수면 부족이 감정 조절에 미치는 영향은 어느 정도인가요?"
+    },
+    {
+      "id": "mental-101",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): mental-extra-005, mental-extra-007, mental-extra-011, mental-extra-028",
+      "question": "우울증의 핵심 증상과 단순 우울감을 구별하는 기준은?"
+    },
+    {
+      "id": "mental-107",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): mental-extra-005, mental-extra-007, mental-extra-011, mental-extra-028",
+      "question": "사회불안장애(사회공포증)의 특징과 극복 방법은?"
+    },
+    {
+      "id": "qa200-20260527-110",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): mental-extra-005, mental-extra-007, mental-extra-011, mental-extra-028",
+      "question": "우울감이 2주 넘게 지속되면 병원에 가야 하나요?"
+    },
+    {
+      "id": "qa200-20260527-111",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): mental-extra-005, mental-extra-007, mental-extra-011, mental-extra-028",
+      "question": "불안할 때 마그네슘이 실제로 도움이 될 수 있나요?"
+    },
+    {
+      "id": "qa200-20260527-116",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): mental-extra-005, mental-extra-007, mental-extra-011, mental-extra-028",
+      "question": "카페인을 끊으면 불안과 수면이 얼마나 달라질 수 있나요?"
+    },
+    {
+      "id": "qa200-20260527-120",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): mental-extra-005, mental-extra-007, mental-extra-011, mental-extra-028",
+      "question": "식사를 거르면 불안감이 심해질 수 있나요?"
+    },
+    {
+      "id": "qa-hospital-20260527-026",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): mental-extra-005, mental-extra-007, mental-extra-011, mental-extra-028",
+      "question": "불안할 때 오메가3나 테아닌을 먹는다고 병원에 말해야 하나요?"
+    },
+    {
+      "id": "mental-extra-006",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): mental-extra-006, mental-extra-031",
+      "question": "사회 불안 장애(사회공포증)는 어떻게 치료하나요?"
+    },
+    {
+      "id": "mental-extra-031",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): mental-extra-006, mental-extra-031",
+      "question": "산후 우울증(PPD)은 얼마나 흔하고 어떻게 치료하나요?"
+    },
+    {
+      "id": "mental-extra-017",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): mental-extra-017, mental-extra-026, mental-extra-066, qa200-20260527-117",
+      "question": "수면 중 악몽이 반복된다면 어떤 원인이 있을까요?"
+    },
+    {
+      "id": "mental-extra-026",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): mental-extra-017, mental-extra-026, mental-extra-066, qa200-20260527-117",
+      "question": "만성 통증이 있는 사람이 우울증에 걸리기 쉬운 이유는 무엇인가요?"
+    },
+    {
+      "id": "mental-extra-066",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): mental-extra-017, mental-extra-026, mental-extra-066, qa200-20260527-117",
+      "question": "우울증 환자가 '의지의 문제'라고 오해받는 이유와 반론은?"
+    },
+    {
+      "id": "qa200-20260527-117",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): mental-extra-017, mental-extra-026, mental-extra-066, qa200-20260527-117",
+      "question": "아침 햇빛 노출이 불면에 도움이 되는 이유는 뭔가요?"
+    },
+    {
+      "id": "mental-extra-030",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): mental-extra-030, mental-extra-038",
+      "question": "스트레스 반응의 신체적 증상(두통, 소화 장애)은 왜 생기나요?"
+    },
+    {
+      "id": "mental-extra-038",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): mental-extra-030, mental-extra-038",
+      "question": "노인 우울증이 치매와 혼동되는 이유는 무엇인가요?"
+    },
+    {
+      "id": "mental-extra-037",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): mental-extra-037, mental-extra-073",
+      "question": "심리 치료에서 인지 왜곡(cognitive distortion)이란 무엇인가요?"
+    },
+    {
+      "id": "mental-extra-073",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): mental-extra-037, mental-extra-073",
+      "question": "인터넷 기반 인지 행동 치료(iCBT)는 효과적인가요?"
+    },
+    {
+      "id": "mental-extra-045",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): mental-extra-045, mental-103",
+      "question": "반응성 우울증과 내인성 우울증의 차이는 무엇인가요?"
+    },
+    {
+      "id": "mental-103",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): mental-extra-045, mental-103",
+      "question": "불안장애와 공황장애의 차이, 공황발작 시 대처법은?"
+    },
+    {
+      "id": "mental-extra-049",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): mental-extra-049, mental-extra-072, mental-001, mental-003",
+      "question": "수면과 기억 사이에는 어떤 관계가 있나요?"
+    },
+    {
+      "id": "mental-extra-072",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): mental-extra-049, mental-extra-072, mental-001, mental-003",
+      "question": "기후 불안(eco-anxiety)이란 무엇이고 어떻게 다루나요?"
+    },
+    {
+      "id": "mental-001",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): mental-extra-049, mental-extra-072, mental-001, mental-003",
+      "question": "우울증은 단순히 의지력으로 극복할 수 있는 건가요?"
+    },
+    {
+      "id": "mental-003",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): mental-extra-049, mental-extra-072, mental-001, mental-003",
+      "question": "잠이 잘 오지 않고 자주 깹니다. 수면제 없이 개선할 수 있나요?"
+    },
+    {
+      "id": "ingr-023",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): mental-extra-049, mental-extra-072, mental-001, mental-003",
+      "question": "L-테아닌은 수면제 대신 쓸 수 있나요?"
+    },
+    {
+      "id": "qa200-20260527-121",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): mental-extra-049, mental-extra-072, mental-001, mental-003",
+      "question": "감태추출물은 수면제처럼 바로 졸리게 하나요?"
+    },
+    {
+      "id": "nc_099",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): nc_099, nc_108, nc_109",
+      "question": "현재 알츠하이머 치매에 승인된 치료제와 한계는?"
+    },
+    {
+      "id": "nc_108",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): nc_099, nc_108, nc_109",
+      "question": "만성 불면증의 1차 치료로 수면제보다 인지행동치료(CBT-I)가 권고되는 이유는?"
+    },
+    {
+      "id": "nc_109",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): nc_099, nc_108, nc_109",
+      "question": "수면무호흡증이 치매·인지 저하와 관련된 이유와 CPAP 치료 효과는?"
+    },
+    {
+      "id": "sh_097",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): sh_097, sh_102, sh_121",
+      "question": "여성 갱년기에 피부가 갑자기 건조해지고 가려운 이유는?"
+    },
+    {
+      "id": "sh_102",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): sh_097, sh_102, sh_121",
+      "question": "피부가 칙칙하고 어두워 보이는 원인이 뭔가요?"
+    },
+    {
+      "id": "sh_121",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): sh_097, sh_102, sh_121",
+      "question": "피부 모공이 크게 보이는 이유와 줄이는 방법은?"
+    },
+    {
+      "id": "qa200-20260527-016",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): qa200-20260527-016, qa200-20260527-018",
+      "question": "당뇨약 먹는 중 플로로탄닌을 같이 먹어도 되나요?"
+    },
+    {
+      "id": "qa200-20260527-018",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): qa200-20260527-016, qa200-20260527-018",
+      "question": "베르베린은 당뇨약 대신 먹어도 되나요?"
+    },
+    {
+      "id": "qa200-20260527-095",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): qa200-20260527-095, qa200-20260527-097",
+      "question": "부모님 기억력이 떨어질 때 치매검사는 언제 받아야 하나요?"
+    },
+    {
+      "id": "qa200-20260527-097",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): qa200-20260527-095, qa200-20260527-097",
+      "question": "두통이 자주 생기면 MRI를 바로 찍어야 하나요?"
+    },
+    {
+      "id": "qa200-20260527-098",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): qa200-20260527-098, seoqa-neuro_cognitive-02, seoqa-neuro_cognitive-04",
+      "question": "어지럼이 있을 때 빈혈과 이석증을 어떻게 구분하나요?"
+    },
+    {
+      "id": "seoqa-neuro_cognitive-02",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): qa200-20260527-098, seoqa-neuro_cognitive-02, seoqa-neuro_cognitive-04",
+      "question": "뇌·인지 관련 글에서 과장 문구를 구분하는 방법은? - 핵심편"
+    },
+    {
+      "id": "seoqa-neuro_cognitive-04",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): qa200-20260527-098, seoqa-neuro_cognitive-02, seoqa-neuro_cognitive-04",
+      "question": "뇌·인지 정보에서 논문과 후기의 차이는 어떻게 보나요? - 초보자편"
+    },
+    {
+      "id": "seoqa-metabolism-01",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): seoqa-metabolism-01, seoqa-metabolism-11",
+      "question": "대사질환 정보를 검색할 때 먼저 어떤 기준을 봐야 하나요? - 기본편"
+    },
+    {
+      "id": "seoqa-metabolism-11",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): seoqa-metabolism-01, seoqa-metabolism-11",
+      "question": "대사질환 정보를 검색할 때 먼저 어떤 기준을 봐야 하나요? - 확장편"
+    },
+    {
+      "id": "seoqa-metabolism-03",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): seoqa-metabolism-03, seoqa-metabolism-13",
+      "question": "대사질환 관심층이 식사·수면 기록을 어떻게 남기면 좋나요? - 실전편"
+    },
+    {
+      "id": "seoqa-metabolism-13",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): seoqa-metabolism-03, seoqa-metabolism-13",
+      "question": "대사질환 관심층이 식사·수면 기록을 어떻게 남기면 좋나요? - 체크편? - 기본편"
+    },
+    {
+      "id": "seoqa-digestive-01",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): seoqa-digestive-01, seoqa-digestive-11",
+      "question": "소화·간 정보를 검색할 때 먼저 어떤 기준을 봐야 하나요? - 기본편"
+    },
+    {
+      "id": "seoqa-digestive-11",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): seoqa-digestive-01, seoqa-digestive-11",
+      "question": "소화·간 정보를 검색할 때 먼저 어떤 기준을 봐야 하나요? - 확장편"
+    },
+    {
+      "id": "seoqa-digestive-03",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): seoqa-digestive-03, seoqa-digestive-13",
+      "question": "소화·간 관심층이 식사·수면 기록을 어떻게 남기면 좋나요? - 실전편"
+    },
+    {
+      "id": "seoqa-digestive-13",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): seoqa-digestive-03, seoqa-digestive-13",
+      "question": "소화·간 관심층이 식사·수면 기록을 어떻게 남기면 좋나요? - 체크편? - 기본편"
+    },
+    {
+      "id": "seoqa-digestive-04",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): seoqa-digestive-04, seoqa-digestive-14",
+      "question": "소화·간 정보에서 논문과 후기의 차이는 어떻게 보나요? - 초보자편"
+    },
+    {
+      "id": "seoqa-digestive-14",
+      "level": "high",
+      "reason": "중복 본문 의심(동일 정규화 본문): seoqa-digestive-04, seoqa-digestive-14",
+      "question": "소화·간 정보에서 논문과 후기의 차이는 어떻게 보나요? - 사례편? - 핵심편"
+    }
+  ]
+}
