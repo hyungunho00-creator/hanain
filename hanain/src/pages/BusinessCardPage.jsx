@@ -506,6 +506,12 @@ export default function BusinessCardPage() {
 
   const tel = `tel:${partner.phone}`
   const sms = `sms:${partner.phone}?body=${encodeURIComponent('[PHLOROTANNIN PARTNERS] 안녕하세요! 명함을 보고 연락드립니다.')}`
+  const withPartnerRef = (path) => {
+    const ref = String(partner?.phone || '').replace(/\D/g, '')
+    if (!ref) return path
+    const sep = path.includes('?') ? '&' : '?'
+    return `${path}${sep}ref=${encodeURIComponent(ref)}`
+  }
 
   const nameLen = (partner.name || '').length
   // 화면 너비에 따라 반응형으로 조정: vw 기반으로 절대 잘리지 않게
@@ -837,7 +843,7 @@ export default function BusinessCardPage() {
               { icon: BookOpen, label: `건강 Q&A ${QA_TOTAL.toLocaleString()}개`,       sub: '질환별 전문 답변 모음',    path: '/qa' },
             ].map((item, i, arr) => (
               <button key={item.path}
-                onClick={() => navigate(item.path)}
+                onClick={() => navigate(withPartnerRef(item.path))}
                 className="w-full flex items-center justify-between px-5 py-4 text-left active:opacity-70 transition-opacity"
                 style={{ borderBottom: i < arr.length - 1 ? `1.5px solid ${GOLD}20` : 'none' }}>
                 <div className="flex items-center gap-4">

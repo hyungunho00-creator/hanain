@@ -42,13 +42,15 @@ const SB_SVC = process.env.SUPABASE_SERVICE_ROLE_KEY ||
 // 클라이언트 노출되어도 안전한 키 (RLS 로 보호)
 const SB_ANON = process.env.VITE_SUPABASE_ANON_KEY ||
                 process.env.SUPABASE_ANON_KEY ||
-                ''
+                'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJsZnh1eWVvbHVvZWF4dXVqdGx5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU5NDEyNjMsImV4cCI6MjA5MTUxNzI2M30.EmygB1wZcIXM0_4KTC8Kuwh5RY3R9NgfEpuzXQswHck'
 
 // 레거시 토큰 — JWT 도입 후 호환성 유지용. 점진적 폐기 예정.
 const ADMIN_TOKEN = process.env.ADMIN_TOKEN || ''
 
 // 디버그 모드 — 평소엔 false (에러 메시지 익명화)
 const DEBUG = process.env.ADMIN_DEBUG === '1'
+let ACTIVE_DB_KEY = SB_SVC || ''
+let ACTIVE_DB_AUTH = SB_SVC || ''
 
 // ─────────────────────────────────────────
 // Supabase JWT 검증
@@ -78,9 +80,11 @@ async function verifySupabaseJwt(jwt) {
 }
 
 function sbHeaders(extra = {}) {
+  const apiKey = ACTIVE_DB_KEY || SB_SVC || SB_ANON
+  const authToken = ACTIVE_DB_AUTH || SB_SVC || SB_ANON
   return {
-    apikey: SB_SVC,
-    Authorization: `Bearer ${SB_SVC}`,
+    apikey: apiKey,
+    Authorization: `Bearer ${authToken}`,
     'Content-Type': 'application/json',
     'Accept-Profile': 'public',
     'Content-Profile': 'public',
@@ -238,7 +242,7 @@ const HANDLERS = {
   async partner_upsert({ row }) {
     if (!row || (!row.id && !row.phone)) throw new Error('row.id or row.phone required')
     // 컬럼 화이트리스트 (오용 방지)
-    const allowed = ['id','phone','name','slug','company','title','region','memo','og_image','status','sort_order']
+    const allowed = ['id','phone','name','slug','phone_display','site_url','company','title','region','memo','og_image','status','sort_order']
     const safe = {}
     for (const k of allowed) if (row[k] !== undefined) safe[k] = row[k]
     if (row.id) {
@@ -246,8 +250,8 @@ const HANDLERS = {
       if (!r.ok) throw new Error(`partner_update ${r.status} ${JSON.stringify(r.data)}`)
       return Array.isArray(r.data) ? r.data[0] : r.data
     } else {
-      const r = await sb('POST', '/partners', safe)
-      if (!r.ok) throw new Error(`partner_insert ${r.status} ${JSON.stringify(r.data)}`)
+      const r = await sb('POST', '/partners?on_conflict=phone', safe, { Prefer: 'resolution=merge-duplicates,return=representation' })
+      if (!r.ok) throw new Error(`partner_upsert ${r.status} ${JSON.stringify(r.data)}`)
       return Array.isArray(r.data) ? r.data[0] : r.data
     }
   },
@@ -371,8 +375,6 @@ export default async function handler(req, res) {
   }
 
   // 서버 환경변수 사전 검증 — 에러 메시지는 의도적으로 축약 (env 이름 노출 금지)
-  if (!SB_SVC) return serverError(res, DEBUG ? 'SUPABASE_SERVICE_ROLE_KEY env not set' : 'server misconfigured')
-
   let body
   try { body = await readBody(req) } catch (e) { return badRequest(res, 'invalid body') }
 
@@ -404,6 +406,16 @@ export default async function handler(req, res) {
   if (!authorized) {
     // 인증 실패 — 자세한 이유 노출 안 함 (공격자에게 힌트 X)
     return unauthorized(res, 'unauthorized')
+  }
+
+  if (SB_SVC) {
+    ACTIVE_DB_KEY = SB_SVC
+    ACTIVE_DB_AUTH = SB_SVC
+  } else if (SB_ANON && bearer) {
+    ACTIVE_DB_KEY = SB_ANON
+    ACTIVE_DB_AUTH = bearer
+  } else {
+    return serverError(res, DEBUG ? 'missing database credentials' : 'server misconfigured')
   }
 
   const action = body && body.action

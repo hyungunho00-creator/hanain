@@ -24,7 +24,7 @@ async function verifyAdmin(req, supabaseUrl, anonKey) {
   const bypassKey = env('ADMIN_API_KEY', 'VITE_BACKEND_ADMIN_KEY')
   const headerBypass = req.headers?.['x-admin-key'] || req.headers?.['X-Admin-Key']
   if (bypassKey && headerBypass && String(headerBypass) === String(bypassKey)) {
-    return { ok: true, user: { role: 'admin-bypass' } }
+    return { ok: true, user: { role: 'admin-bypass' }, token: '' }
   }
 
   const token = getBearerToken(req)
@@ -42,7 +42,7 @@ async function verifyAdmin(req, supabaseUrl, anonKey) {
     const appRole = user?.app_metadata?.role
     const allowRoles = new Set(['admin', 'superadmin'])
     if (!allowRoles.has(appRole)) return { ok: false, error: 'forbidden_role' }
-    return { ok: true, user }
+    return { ok: true, user, token }
   } catch {
     return { ok: false, error: 'auth_verify_failed' }
   }
@@ -265,7 +265,6 @@ export default async function handler(req, res) {
   )
 
   if (!supabaseUrl || !anonKey) return json(res, 500, { error: 'missing_supabase_public_env' })
-  if (!serviceKey) return json(res, 500, { error: 'missing_supabase_service_env' })
 
   const verified = await verifyAdmin(req, supabaseUrl, anonKey)
   if (!verified.ok) return json(res, 401, { error: verified.error || 'unauthorized' })
@@ -282,8 +281,12 @@ export default async function handler(req, res) {
   const payload = body.payload || {}
   if (!action) return json(res, 400, { error: 'missing_action' })
 
-  const admin = createClient(supabaseUrl, serviceKey, {
+  const adminKey = serviceKey || anonKey
+  const admin = createClient(supabaseUrl, adminKey, {
     auth: { autoRefreshToken: false, persistSession: false },
+    global: verified.token
+      ? { headers: { Authorization: `Bearer ${verified.token}` } }
+      : undefined,
   })
 
   try {

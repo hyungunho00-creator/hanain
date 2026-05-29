@@ -61,7 +61,10 @@ export function withRef(href, partner) {
 
     const partnerPhone = String(partner.phone).replace(/\D/g, '')
     if (!isValidRefSlug(partnerPhone)) return href
-    if (partnerPhone === DEFAULT_PHONE) return href  // 본사 기본은 안 붙임
+    // 기본 컨텍스트(PartnerContext 기본값)에서는 ref를 붙이지 않는다.
+    // 단, 실제 파트너가 명시적으로 활성화된 상태(id 존재)라면
+    // DEFAULT_PHONE과 같더라도 ref를 유지해야 공유 귀속이 끊기지 않는다.
+    if (partnerPhone === DEFAULT_PHONE && !partner.id) return href
 
     // 절대/상대 URL 모두 처리
     const isAbsolute = /^https?:\/\//i.test(href)

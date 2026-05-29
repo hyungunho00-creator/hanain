@@ -99,7 +99,7 @@ export default function Footer() {
 
           {/* Brand block — 좌측 5/12 */}
           <div className="lg:col-span-4">
-            <Link to="/" className="inline-flex items-baseline gap-2 mb-5">
+            <Link to={withRef('/', partner)} className="inline-flex items-baseline gap-2 mb-5">
               <span className="text-lg font-semibold tracking-tight text-gray-900">
                 Phlorotannin Partners
               </span>
@@ -182,7 +182,7 @@ export default function Footer() {
                 ].map(item => (
                   <li key={item.to}>
                     <Link
-                      to={item.to}
+                      to={withRef(item.to, partner)}
                       className="text-gray-600 hover:text-gray-900 transition-colors"
                     >
                       {item.label}
@@ -320,7 +320,7 @@ export default function Footer() {
                 인용 시 출처(phlorotannin.com)를 반드시 명시하세요.
               </p>
               <Link
-                to="/copyright"
+                to={withRef('/copyright', partner)}
                 className="inline-flex items-center gap-1 mt-2 text-[13px] text-gray-700 hover:text-gray-900 underline underline-offset-4 decoration-gray-300 hover:decoration-gray-700"
               >
                 저작권 및 무단복제 금지 안내

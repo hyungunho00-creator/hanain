@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { CreditCard, FolderLock, Eye, EyeOff, ExternalLink } from 'lucide-react'
 import { usePartner } from '../../context/PartnerContext'
+import { withRef } from '../../lib/partnerRef'
 
 // [2026-05-21] 인사이트 허브(60편 PMC 1차 자료 기반) 진입 메뉴 신설
 // PR #16/#17 로 60편 자산화했으나 진입로가 없어 사용자가 발견 불가했던 문제 해결
@@ -206,7 +207,7 @@ export default function Navbar() {
   const navigate  = useNavigate()
   const partner   = usePartner()
 
-  const isPartner = partner && partner.phone && partner.phone !== '01056528206'
+  const isPartner = Boolean(partner && partner.phone && partner.id)
   const cardPath  = isPartner ? `/p/${partner.phone}?view=card` : null
   const infoPath  = isPartner ? `/p/${partner.phone}/inforoom` : '/inforoom'
 
@@ -221,7 +222,7 @@ export default function Navbar() {
   function handleInfoRoom() {
     // 세션에 이미 인증된 경우 바로 이동
     if (sessionStorage.getItem(SESSION_KEY) === '1') {
-      navigate(infoPath)
+      navigate(withRef(infoPath, partner))
       setIsOpen(false)
     } else {
       setShowPwModal(true)
@@ -231,7 +232,7 @@ export default function Navbar() {
   function handlePwSuccess() {
     setShowPwModal(false)
     setIsOpen(false)
-    navigate(infoPath)
+    navigate(withRef(infoPath, partner))
   }
 
   return (
@@ -251,7 +252,7 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16">
 
             {/* 로고 — V1 P자 (네이비→틸 그라데이션, 골드 하이라이트 세리프 P, 2026-05 리브랜딩) */}
-            <Link to="/" className="flex items-center gap-2 group flex-shrink-0" aria-label="플로로탄닌 파트너스 홈">
+            <Link to={withRef('/', partner)} className="flex items-center gap-2 group flex-shrink-0" aria-label="플로로탄닌 파트너스 홈">
               <img
                 src="/icon-192.png?v=2"
                 alt="플로로탄닌 파트너스 로고"
@@ -277,7 +278,7 @@ export default function Navbar() {
                 return (
                   <Link
                     key={link.path}
-                    to={link.path}
+                    to={withRef(link.path, partner)}
                     className={`relative px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                       active
                         ? 'text-white'
@@ -326,7 +327,7 @@ export default function Navbar() {
 
                   {/* 명함 버튼 */}
                   <button
-                    onClick={() => navigate(cardPath)}
+                    onClick={() => navigate(withRef(cardPath, partner))}
                     className="ml-1 flex items-center gap-1.5 px-3 py-2 rounded-lg font-bold text-sm transition-all active:scale-95 whitespace-nowrap"
                     style={{
                       background: `linear-gradient(135deg, ${GOLD}, ${GOLD2})`,
@@ -345,7 +346,7 @@ export default function Navbar() {
             <div className="md:hidden flex items-center gap-1.5">
               {isPartner && (
                 <button
-                  onClick={() => navigate(cardPath)}
+                  onClick={() => navigate(withRef(cardPath, partner))}
                   className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg font-bold text-xs active:scale-95 transition-transform whitespace-nowrap"
                   style={{
                     background: `linear-gradient(135deg, ${GOLD}, ${GOLD2})`,
@@ -394,7 +395,7 @@ export default function Navbar() {
               <div className="px-4 pt-3 flex flex-col gap-1.5">
                 {/* 전자명함 */}
                 <button
-                  onClick={() => { navigate(cardPath); setIsOpen(false) }}
+                  onClick={() => { navigate(withRef(cardPath, partner)); setIsOpen(false) }}
                   className="w-full flex items-center gap-2 px-3 py-2.5 rounded-lg font-bold active:scale-95 transition-transform"
                   style={{
                     background: `linear-gradient(135deg, ${GOLD}, ${GOLD2})`,
@@ -439,7 +440,7 @@ export default function Navbar() {
                 return (
                   <Link
                     key={link.path}
-                    to={link.path}
+                    to={withRef(link.path, partner)}
                     className={`flex items-center gap-4 px-3 py-3 rounded-md text-sm transition-colors border-l-2 ${
                       active
                         ? 'border-white/70 text-white bg-white/5'

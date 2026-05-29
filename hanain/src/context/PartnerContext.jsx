@@ -138,6 +138,19 @@ export function PartnerProvider({ children }) {
     // ① URL /p/전화번호 → 가장 우선
     const phoneFromPath = getPhoneFromPath()
     if (phoneFromPath) {
+      const provisionalRaw = String(phoneFromPath).replace(/\D/g, '')
+      const provisionalDisplay = provisionalRaw.length === 11
+        ? `${provisionalRaw.slice(0,3)}-${provisionalRaw.slice(3,7)}-${provisionalRaw.slice(7)}`
+        : provisionalRaw
+      const provisional = {
+        id: provisionalRaw,
+        name: DEFAULT_PARTNER.name,
+        phone: provisionalRaw,
+        phoneDisplay: provisionalDisplay,
+        prefix: '',
+      }
+      setPartner(provisional)
+      savePartnerToSession(provisional)
       fetchPartnerByPhone(phoneFromPath).then(found => {
         if (found) {
           const rawPhone = found.phone?.replace(/\D/g, '') || ''
@@ -161,6 +174,19 @@ export function PartnerProvider({ children }) {
     // ①.5 URL ?ref=<slug> (파트너가 블로그 글을 공유한 경우 컨텍스트 복원)
     const phoneFromRef = getPhoneFromRef()
     if (phoneFromRef) {
+      const provisionalRaw = String(phoneFromRef).replace(/\D/g, '')
+      const provisionalDisplay = provisionalRaw.length === 11
+        ? `${provisionalRaw.slice(0,3)}-${provisionalRaw.slice(3,7)}-${provisionalRaw.slice(7)}`
+        : provisionalRaw
+      const provisional = {
+        id: provisionalRaw,
+        name: DEFAULT_PARTNER.name,
+        phone: provisionalRaw,
+        phoneDisplay: provisionalDisplay,
+        prefix: '',
+      }
+      setPartner(provisional)
+      savePartnerToSession(provisional)
       fetchPartnerByPhone(phoneFromRef).then(found => {
         if (found) {
           const rawPhone = found.phone?.replace(/\D/g, '') || ''

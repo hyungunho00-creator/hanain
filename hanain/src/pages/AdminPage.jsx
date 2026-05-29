@@ -330,14 +330,10 @@ function PartnerManageTab() {
     }
 
     // 2) 실패 시: 환경변수 미설정/네트워크 등 — 로컬 캐시 폴백 (읽기 전용 모드 안내)
-    const local = [normalizePartner({ ...row, created_at: new Date().toISOString() }), ...partners]
-    try { localStorage.setItem(PARTNERS_KEY, JSON.stringify(local)) } catch {}
-    setPartners(local)
-    setForm({ name: '', phone: '', memo: '' })
-    setErrors({}); setShowForm(false)
+    // Fail closed: do not show local-only partner as if DB save succeeded.
     setResult({
       success: false,
-      error: `Supabase 저장 실패 (${r.status || '?'}): ${r.error || '환경변수 SUPABASE_SERVICE_ROLE_KEY 미설정 가능성. 로컬 캐시에만 임시 저장됨.'}`,
+      error: `Supabase 저장 실패 (${r.status || '?'}): ${r.error || '환경변수 SUPABASE_SERVICE_ROLE_KEY 미설정 가능성. 실제 DB에는 저장되지 않았습니다.'}`,
     })
   }
 
