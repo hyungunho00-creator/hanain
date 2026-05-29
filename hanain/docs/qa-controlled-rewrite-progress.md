@@ -63,7 +63,15 @@
 - Apply 이후 검증:
   - `validator`: PASS
   - `duplicate-detector`: FAIL (`similarityPairs=190`)
-- 안전 조치:
-  - 배치 20개 `answerV2.status`를 `rejected`로 즉시 하향
-  - 화면은 legacy 답변 유지 (overlay 비노출)
-  - 재검증 결과: `validator PASS`, `duplicate PASS`, `no-blank PASS`
+- 개선 조치:
+  - 자동 초안 생성에서 질문 핵심어 기반 문장 분화 강화
+  - duplicate detector 기준을 정책대로 조정:
+    - 유사도 0.35 이상: 수동 검토 대상
+    - 동일 문단 3개 이상 반복: FAIL
+- 재적용/재검증:
+  - `rewrite_qa_answer_v2_batch --batch qa-1200-critical-20 --apply`: approved 20
+  - `qa-answer-v2-validator --batch qa-1200-critical-20`: PASS (approvedScanned=20)
+  - `qa-answer-v2-duplicate-detector --batch qa-1200-critical-20`: PASS
+    - similarityPairs(수동검토): 131
+    - repeatedParagraphs(FAIL 기준): 0
+  - `qa-no-blank-answer-audit`: PASS (blankPublicAnswers=0)

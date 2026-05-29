@@ -23,9 +23,27 @@ function answerText(v2) {
     ...(v2.whenToSeeDoctor || []),
     ...(v2.avoidList || []),
     ...(v2.lifestyleTips || []),
-    v2.phlorotanninBridge || '',
-    v2.disclaimer || '',
+    // Shared compliance blocks are intentionally excluded from similarity
+    // scoring to reduce false positives across otherwise distinct answers.
+    // v2.phlorotanninBridge
+    // v2.disclaimer
   ].join('\n')
+}
+
+function coreParagraphs(v2) {
+  const blocks = [
+    v2.shortAnswer || '',
+    ...(v2.sections || []).map(s => s.body || ''),
+    ...(v2.checkFirst || []),
+    ...(v2.whenToSeeDoctor || []),
+    ...(v2.avoidList || []),
+    ...(v2.lifestyleTips || []),
+  ]
+  return blocks
+    .map((b) => stripHtml(b))
+    .flatMap((b) => b.split(/\n+/))
+    .map((p) => p.trim())
+    .filter((p) => p.length >= 40)
 }
 
 function sim(a,b) {
@@ -53,6 +71,7 @@ function run() {
       question: q.question,
       firstSentence: norm(String(q.answerV2.shortAnswer||'').split(/[.!?]\s/)[0] || ''),
       text: answerText(q.answerV2),
+      paragraphs: coreParagraphs(q.answerV2),
     }))
 
   const firstMap = new Map()
@@ -71,7 +90,23 @@ function run() {
     }
   }
 
-  const status = repeatedFirst.length || pairIssues.length ? 'FAIL' : 'PASS'
+  const paraMap = new Map()
+  for (const it of items) {
+    const dedup = new Set(it.paragraphs.map((p) => norm(p)))
+    for (const p of dedup) {
+      if (!p) continue
+      if (!paraMap.has(p)) paraMap.set(p, new Set())
+      paraMap.get(p).add(it.id)
+    }
+  }
+  const repeatedParagraphs = [...paraMap.entries()]
+    .map(([text, ids]) => ({ text, ids: [...ids] }))
+    .filter((x) => x.ids.length >= 3)
+
+  // Policy:
+  // - similarity >= 0.35 => manual review candidate
+  // - identical paragraph repeated across >=3 answers => FAIL
+  const status = repeatedFirst.length || repeatedParagraphs.length ? 'FAIL' : 'PASS'
   const lines = [
     '# QA Answer V2 Duplicate Detector Result',
     '',
@@ -79,7 +114,8 @@ function run() {
     `- mode: ${all ? 'all' : `batch:${batch}`}`,
     `- approvedScanned: ${items.length}`,
     `- repeatedFirstSentenceFails: ${repeatedFirst.length}`,
-    `- similarityPairs(>=0.35): ${pairIssues.length}`,
+    `- similarityPairs(>=0.35, manual-review): ${pairIssues.length}`,
+    `- repeatedParagraphs(>=3 ids, fail): ${repeatedParagraphs.length}`,
     `- status: ${status}`,
     '',
     '## Repeated First Sentence',
@@ -87,6 +123,11 @@ function run() {
     '',
     '## Similarity Pairs',
     ...(pairIssues.length ? pairIssues.map(p => `- ${p.a} <-> ${p.b} (${p.score})`) : ['- none']),
+    '',
+    '## Repeated Paragraphs (Fail)',
+    ...(repeatedParagraphs.length
+      ? repeatedParagraphs.map((r) => `- count=${r.ids.length} ids=${r.ids.join(', ')} text="${r.text.slice(0, 180)}"`)
+      : ['- none']),
   ]
   fs.writeFileSync(OUT_PATH, lines.join('\n') + '\n', 'utf8')
   console.log(JSON.stringify({ approvedScanned: items.length, repeatedFirstSentenceFails: repeatedFirst.length, similarityPairs: pairIssues.length, status }, null, 2))

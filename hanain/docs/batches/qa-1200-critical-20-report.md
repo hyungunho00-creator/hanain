@@ -1,6 +1,6 @@
 # Batch Report: qa-1200-critical-20
 
-- generatedAt: 2026-05-29T13:59:01.167Z
+- generatedAt: 2026-05-29T14:04:25.723Z
 - sourceQueue: C:\Users\user\Documents\Codex\2026-05-26\deploy-main-hotfix\hanain\data\qa-rewrite-queue.json
 - mode: apply
 - 대상 개수: 20
