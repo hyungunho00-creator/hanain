@@ -5,6 +5,7 @@ import { usePartner, DEFAULT_PARTNER } from '../context/PartnerContext'
 import SEOHead from '../components/common/SEOHead'
 import { getPostBySlug, getPosts } from '../lib/supabase'
 import { withRef } from '../lib/partnerRef'
+import { resolvePostImage, getCategoryFallbackImage } from '../lib/postImages'
 import PartnerShareBar from '../components/partner/PartnerShareBar'
 import RelatedQA from '../components/qa/RelatedQA'
 
@@ -233,6 +234,10 @@ export default function BlogPostPage() {
   const date     = new Date(post.created_at).toLocaleDateString('ko-KR', { year:'numeric', month:'long', day:'numeric' })
   const catColor = CAT_COLORS[post.category] || 'bg-gray-100 text-gray-700'
   const catName  = CAT_NAMES[post.category]  || post.category
+  const resolvedImage = resolvePostImage(post.og_image, post.category)
+  const resolvedImageAbs = resolvedImage.startsWith('http')
+    ? resolvedImage
+    : `https://phlorotannin.com${resolvedImage.startsWith('/') ? '' : '/'}${resolvedImage}`
   // SEO 규칙: "[글 제목] | 플로로탄닌·감태추출물 건강정보"
   const rawSeoTitle = post.meta_title || post.title
   const seoTitle = rawSeoTitle.includes(' | ')
@@ -264,7 +269,7 @@ export default function BlogPostPage() {
       "name": "플로로탄닌 파트너스",
       "logo": { "@type": "ImageObject", "url": "https://phlorotannin.com/og-image.png" }
     },
-    "image": post.og_image || "https://phlorotannin.com/og-image.png",
+    "image": resolvedImageAbs,
     "keywords": post.tags?.join(', '),
     "inLanguage": "ko-KR",
     "about": articleAbout,
@@ -283,7 +288,7 @@ export default function BlogPostPage() {
         keywords={`${post.tags?.join(',') || ''},phlorotannin,플로로탄닌,PH-100,플로로탄닌 효능,감태 폴리페놀,해양 폴리페놀`}
         canonical={`https://phlorotannin.com/blog/${post.slug}`}
         ogType="article"
-        ogImage={post.og_image || "https://phlorotannin.com/og-image.png"}
+        ogImage={resolvedImageAbs}
         ogImageAlt={buildImageAlt(post)}
         jsonLd={articleJsonLd}
       />
@@ -366,16 +371,20 @@ export default function BlogPostPage() {
           {/* 대표 이미지 — alt는 글마다 다르게 (SEO 동일 alt 페널티 회피)
                 title의 '|' 또는 ':' 앞부분만 추출 + 카테고리 한글명 + 사이트 컨텍스트로 조합.
                 AI 호출 없이 DB 기존 데이터만으로 동적 생성 (토큰 0). */}
-          {post.og_image && (
-            <div className="rounded-2xl overflow-hidden mb-8 shadow-sm">
-              <img
-                src={post.og_image}
-                alt={buildImageAlt(post)}
-                className="w-full"
-                loading="lazy"
-              />
-            </div>
-          )}
+          <div className="rounded-2xl overflow-hidden mb-8 shadow-sm">
+            <img
+              src={resolvedImage}
+              alt={buildImageAlt(post)}
+              className="w-full"
+              loading="lazy"
+              onError={(e) => {
+                const fallback = getCategoryFallbackImage(post.category)
+                if (e.currentTarget.getAttribute('data-fallback-applied') === '1') return
+                e.currentTarget.setAttribute('data-fallback-applied', '1')
+                e.currentTarget.src = fallback
+              }}
+            />
+          </div>
 
           {/* 본문 — 통일 CTA placeholder 치환 (partner.phone, SMS body 동적 주입)
                 CTA 클릭 시 SMS 앱이 열리고 본문에 "자료요청 드립니다"가 미리 입력되어

@@ -6,6 +6,7 @@ import { usePartner } from '../context/PartnerContext'
 import { withRef } from '../lib/partnerRef'
 import PartnerShareBar from '../components/partner/PartnerShareBar'
 import { getPosts, getPostCount, getBlogCategories, getVideosByCategory, expandSearchTerms } from '../lib/supabase'
+import { resolvePostImage, getCategoryFallbackImage } from '../lib/postImages'
 import { INSIGHTS_LIST } from '../data/insights'
 
 // Phase 3: Supabase categories 테이블이 1순위, 아래 상수는 DB 실패 시 fallback
@@ -186,6 +187,7 @@ function PostCard({ post, partner }) {
   const catColor = CAT_COLORS[post.category] || 'bg-gray-100 text-gray-700'
   const catName  = CATEGORIES.find(c => c.id === post.category)?.name || post.category
   const date     = new Date(post.created_at).toLocaleDateString('ko-KR', { year:'numeric', month:'long', day:'numeric' })
+  const imageSrc = resolvePostImage(post.og_image, post.category)
 
   // SEO: 글마다 다른 alt 텍스트 (동일 alt 페널티 회피, AI 호출 없이 기존 데이터만 조합)
   // '|' 앞부분만 추출(영문 부제 제거, ':' 뒤 한글 부제는 유지 → 변별력↑)
@@ -195,12 +197,20 @@ function PostCard({ post, partner }) {
 
   return (
     <article className="bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-200 overflow-hidden group">
-      {post.og_image && (
-        <div className="aspect-video overflow-hidden">
-          <img src={post.og_image} alt={imgAlt} loading="lazy"
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-        </div>
-      )}
+      <div className="aspect-video overflow-hidden">
+        <img
+          src={imageSrc}
+          alt={imgAlt}
+          loading="lazy"
+          onError={(e) => {
+            const fallback = getCategoryFallbackImage(post.category)
+            if (e.currentTarget.getAttribute('data-fallback-applied') === '1') return
+            e.currentTarget.setAttribute('data-fallback-applied', '1')
+            e.currentTarget.src = fallback
+          }}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+        />
+      </div>
       <div className="p-6">
         <div className="flex items-center gap-2 mb-3">
           <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${catColor}`}>{catName}</span>

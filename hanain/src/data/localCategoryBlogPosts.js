@@ -1,3 +1,5 @@
+import { getCategoryFallbackImage } from '../lib/postImages.js'
+
 function list(items) {
   return items.map((item) => `- ${item}`).join('\n')
 }
@@ -711,7 +713,7 @@ export const LOCAL_CATEGORY_BLOG_POSTS = CATEGORY_POST_CONFIGS.map((c, idx) => {
     tags: c.tags,
     meta_title: `${c.title} | 플로로탄닌 건강정보`,
     meta_desc: c.excerpt,
-    og_image: '/og-image.png',
+    og_image: getCategoryFallbackImage(c.category),
     status: 'published',
     view_count: 0,
     published_at: BASE_DATE,
