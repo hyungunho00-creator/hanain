@@ -2,7 +2,28 @@ import { useState, useEffect } from 'react'
 import { usePartner } from '../context/PartnerContext'
 import SEOHead from '../components/common/SEOHead'
 import { Link } from 'react-router-dom'
-import { ChevronDown, ChevronUp, MessageSquare, ArrowRight, CheckCircle, BookOpen, Leaf, AlertTriangle } from 'lucide-react'
+import {
+  ChevronDown,
+  ChevronUp,
+  MessageSquare,
+  ArrowRight,
+  CheckCircle,
+  BookOpen,
+  Leaf,
+  AlertTriangle,
+  Activity,
+  Scale,
+  ShieldPlus,
+  HeartPulse,
+  BrainCircuit,
+  Sparkles,
+  Bone,
+  MoonStar,
+  Droplets,
+  Flame,
+  Dumbbell,
+  CircleHelp,
+} from 'lucide-react'
 import RelatedQA from '../components/qa/RelatedQA'
 import RevealContact from '../components/common/RevealContact'
 import LastReviewed from '../components/common/LastReviewed'
@@ -182,9 +203,31 @@ const faqs = [
   },
 ]
 
+const DISEASE_ICON_MAP = {
+  diabetes: Activity,
+  obesity: Scale,
+  cancer: ShieldPlus,
+  hypertension: HeartPulse,
+  dementia: BrainCircuit,
+  skin: Sparkles,
+  joint: Bone,
+  stress: MoonStar,
+}
+
+const CATEGORY_ICON_MAP = {
+  cancer: ShieldPlus,
+  fatigue: Flame,
+  blood: HeartPulse,
+  joint: Dumbbell,
+  sleep: MoonStar,
+  brain: BrainCircuit,
+  sugar: Droplets,
+}
+
 // ─── 질환 카드 컴포넌트 ───────────────────────────────────────────
 function DiseaseCard({ d }) {
   const [open, setOpen] = useState(false)
+  const Icon = DISEASE_ICON_MAP[d.id] || CircleHelp
 
   return (
     <div
@@ -203,7 +246,7 @@ function DiseaseCard({ d }) {
             open ? 'bg-gray-900 border-gray-900 text-white' : 'bg-gray-50 border-gray-200 text-gray-700'
           }`}
         >
-          <span className="text-2xl leading-none" aria-hidden="true">{d.emoji}</span>
+          <Icon className="w-5 h-5" strokeWidth={1.9} aria-hidden="true" />
         </div>
         <div className="flex-1 min-w-0">
           <div className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500 mb-1">
@@ -561,6 +604,7 @@ const CATEGORIES = [
 // ─── 심화 섹션 카드 ────────────────────────────────────────────────
 function CategoryCard({ cat }) {
   const [open, setOpen] = useState(false)
+  const Icon = CATEGORY_ICON_MAP[cat.id] || BookOpen
 
   const renderSection = (sec, i) => {
     if (sec.type === 'list') {
@@ -626,10 +670,10 @@ function CategoryCard({ cat }) {
         className="w-full text-left p-5 flex items-center gap-4"
       >
         <div
-          className="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"
+          className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-sm"
           style={{ backgroundColor: cat.bg }}
         >
-          {cat.emoji}
+          <Icon className="w-6 h-6" style={{ color: cat.color }} strokeWidth={1.9} aria-hidden="true" />
         </div>
         <div className="flex-1">
           <div
