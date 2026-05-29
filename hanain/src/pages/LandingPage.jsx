@@ -3,7 +3,7 @@ import { useNavigate, Link } from 'react-router-dom'
 import { usePartner } from '../context/PartnerContext'
 import { withRef } from '../lib/partnerRef'
 import SEOHead from '../components/common/SEOHead'
-import { getMainVideos, getPosts } from '../lib/supabase'
+import { getMainVideos, getPosts, getPostCount } from '../lib/supabase'
 import {
   Flame, Brain, Droplet, Shield, Heart, Sparkles,
   Scissors, Moon, Bone, Waves, FlaskConical, BookOpen,
@@ -398,9 +398,20 @@ export default function LandingPage() {
   const [openFaq, setOpenFaq] = useState(null)
   const [openBenefit, setOpenBenefit] = useState(null)
   const [scrollY, setScrollY] = useState(0)
+  const [blogTotal, setBlogTotal] = useState(298)
 
   useEffect(() => {
     getMainVideos().then(v => { if (v && v.length > 0) setMainVideos(v) }).catch(() => {})
+  }, [])
+
+  useEffect(() => {
+    let mounted = true
+    getPostCount()
+      .then((count) => {
+        if (mounted && Number.isFinite(count)) setBlogTotal(count)
+      })
+      .catch(() => {})
+    return () => { mounted = false }
   }, [])
 
   useEffect(() => {
@@ -559,7 +570,7 @@ export default function LandingPage() {
               variant="default"
             />
             <StatCard
-              value="298"
+              value={String(blogTotal.toLocaleString())}
               label="연구 블로그 발행"
               variant="default"
             />

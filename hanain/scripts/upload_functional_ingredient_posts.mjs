@@ -2,6 +2,7 @@ import { createClient } from '@supabase/supabase-js'
 import { FUNCTIONAL_INGREDIENT_CONFIGS } from '../src/data/insights/functionalIngredientConfigs.js'
 import { LOCAL_FUNCTIONAL_INGREDIENT_POSTS } from '../src/data/localFunctionalIngredientPosts.js'
 import { LOCAL_CATEGORY_BLOG_POSTS } from '../src/data/localCategoryBlogPosts.js'
+import { LOCAL_SEO_EXPANSION_POSTS } from '../src/data/localSeoExpansionPosts.js'
 
 const supabaseUrl = process.env.VITE_SUPABASE_URL || 'https://rlfxuyeoluoeaxuujtly.supabase.co'
 const supabaseKey =
@@ -126,7 +127,11 @@ function visibleLength(content) {
     .replace(/\s+/g, '').length
 }
 
-const posts = [...LOCAL_FUNCTIONAL_INGREDIENT_POSTS, ...LOCAL_CATEGORY_BLOG_POSTS]
+const posts = [
+  ...LOCAL_FUNCTIONAL_INGREDIENT_POSTS,
+  ...LOCAL_CATEGORY_BLOG_POSTS,
+  ...LOCAL_SEO_EXPANSION_POSTS,
+]
   .map(({ id, is_local, ...post }) => post)
 const badTerms = /SEO|seo|상위노출|선점|자산화|CTA|구매 판단|자료 요청|작업 방향/g
 const failures = posts.flatMap((post) => {

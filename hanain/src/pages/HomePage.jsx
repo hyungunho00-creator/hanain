@@ -9,6 +9,7 @@ import {
 } from 'lucide-react'
 import RevealContact from '../components/common/RevealContact'
 import LastReviewed from '../components/common/LastReviewed'
+import { getPostCount } from '../lib/supabase'
 // [2026-05-21] 인사이트 진입 — 홈에서 최신 6편 직접 노출 (사용자 발견성↑, SEO 내부 링크 그래프 강화)
 import { INSIGHTS_LIST } from '../data/insights'
 
@@ -95,6 +96,7 @@ export default function HomePage() {
   const [suggestions, setSuggestions] = useState([])
   const [featuredQAs, setFeaturedQAs] = useState([])
   const [qaData, setQaData] = useState({ questions: [], categories: [] })
+  const [blogTotal, setBlogTotal] = useState(100)
 
   useEffect(() => {
     fetch('/qa.json')
@@ -105,6 +107,16 @@ export default function HomePage() {
         setFeaturedQAs(shuffled.slice(0, 6))
       })
       .catch(console.error)
+  }, [])
+
+  useEffect(() => {
+    let mounted = true
+    getPostCount()
+      .then((count) => {
+        if (mounted && Number.isFinite(count)) setBlogTotal(count)
+      })
+      .catch(() => {})
+    return () => { mounted = false }
   }, [])
 
   const handleSearch = (e) => {
@@ -283,7 +295,7 @@ export default function HomePage() {
             <StatCounter value={totalQA} label="Health Q&A" suffix="+" />
             <StatCounter value="12" label="Categories" suffix="" />
             <StatCounter value="50" label="Active Partners" suffix="+" />
-            <StatCounter value="100" label="Articles" suffix="+" />
+            <StatCounter value={blogTotal} label="Articles" suffix="+" />
           </div>
         </div>
       </section>
