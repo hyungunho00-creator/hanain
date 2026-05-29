@@ -37,6 +37,14 @@ const DEFAULT_OG_IMAGES = new Set([
   'http://phlorotannin.com/og-image.png',
   'https://www.phlorotannin.com/og-image.png',
   'http://www.phlorotannin.com/og-image.png',
+  '/logo-512.png',
+  '/logo-1024.png',
+  '/icon-512.png',
+  '/icon-192.png',
+  'https://phlorotannin.com/logo-512.png',
+  'https://phlorotannin.com/logo-1024.png',
+  'https://phlorotannin.com/icon-512.png',
+  'https://phlorotannin.com/icon-192.png',
 ])
 
 function normalizeImageUrl(url) {
@@ -51,11 +59,12 @@ export function getCategoryFallbackImage(category) {
 
 export function isDefaultOgImage(url) {
   const normalized = normalizeImageUrl(url)
-  return DEFAULT_OG_IMAGES.has(normalized)
+  if (DEFAULT_OG_IMAGES.has(normalized)) return true
+  if (/\/(?:logo|icon)-\d+\.(png|webp|jpg|jpeg)$/i.test(normalized)) return true
+  return false
 }
 
 export function resolvePostImage(imageUrl, category) {
   if (!imageUrl || isDefaultOgImage(imageUrl)) return getCategoryFallbackImage(category)
   return imageUrl
 }
-

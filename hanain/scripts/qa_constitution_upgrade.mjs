@@ -2,6 +2,12 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
+if (process.env.ALLOW_LEGACY_QA_GENERATOR !== '1') {
+  console.error('[blocked] qa_constitution_upgrade.mjs is disabled by site-wide content recall policy.')
+  console.error('Use scripts/content_recall_rewrite_qa.mjs instead.')
+  process.exit(1)
+}
+
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const QA_PATH = path.join(ROOT, 'public', 'qa.json')
 const SRC_QA_PATH = path.join(ROOT, 'src', 'data', 'qa.json')

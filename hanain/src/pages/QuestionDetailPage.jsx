@@ -350,7 +350,7 @@ export default function QuestionDetailPage() {
         jsonLd={jsonLd}
       />
 
-      <div className="pt-16 min-h-screen bg-gray-hana">
+      <div className="pt-16 pb-24 min-h-screen bg-gray-hana">
         {/* 브레드크럼 헤더 */}
         <div className="bg-ocean-deep text-white py-4 px-4">
           <div className="max-w-5xl mx-auto flex items-center gap-2 text-sm text-gray-400">

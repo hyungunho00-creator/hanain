@@ -309,6 +309,61 @@
   .prose-custom .blog-cta-soft div[style] {
     font-size: inherit !important;
   }
+
+  /* Q&A 본문 구조형 렌더링 */
+  .qa-article {
+    line-height: 1.85;
+  }
+  .qa-article h3 {
+    margin-top: 1.1rem;
+    margin-bottom: 0.55rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0f172a;
+    letter-spacing: 0;
+  }
+  .qa-article p {
+    margin: 0.3rem 0;
+    line-height: 1.82;
+    color: #1f2937;
+  }
+  .qa-article ul {
+    margin: 0.35rem 0 0.7rem;
+    padding-left: 1rem;
+    list-style: disc;
+  }
+  .qa-article li {
+    margin: 0.18rem 0;
+    line-height: 1.78;
+  }
+  .qa-article .qa-phlorotannin-block {
+    margin-top: 1rem;
+    padding: 0.85rem 0.95rem;
+    border-radius: 0.65rem;
+    border: 1px solid #dbeafe;
+    background: #eff6ff;
+  }
+  .qa-article .qa-phlorotannin-block h3 {
+    margin-top: 0;
+    color: #0b1a2e;
+  }
+  .qa-article .qa-disclaimer {
+    margin-top: 0.85rem;
+    font-size: 0.8rem;
+    color: #6b7280;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 0.65rem;
+  }
+  @media (max-width: 640px) {
+    .qa-article h3 {
+      font-size: 0.96rem;
+    }
+    .qa-article p,
+    .qa-article li {
+      font-size: 0.94rem;
+      line-height: 1.8;
+    }
+  }
 }
 
 /* Spin animation for loading */

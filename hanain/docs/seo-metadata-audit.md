@@ -1,12 +1,26 @@
 # SEO Metadata Audit
 
-- Generated: 2026-05-28
-- 신규 블로그 title 중복: 0 (생성 규칙으로 분리)
-- 신규 블로그 slug 중복: 0
-- Q&A 질문 slug 중복(전체): 0
-- category 누락: 0
-- tags 누락: 0
-- publishedAt/updatedAt: 신규 블로그 모두 채움
-- canonical: 페이지 컴포넌트 공통 SEOHead 로직 유지
-- og:title/og:description: BlogPostPage 렌더 로직 유지
-- FAQ 구조: 블로그 본문 FAQ + QATag FAQPage JSON-LD 유지
+- generatedAt: 2026-05-29
+- scope: content recall 이후 메타/색인 구조 점검
+
+## 체크 결과
+
+- Q&A slug source: 질문 기반 slug 생성 규칙 유지
+- Q&A answer rewrite 후에도 `/q/:slug` 라우팅 정상
+- Q&A 본문 교체와 함께 RSS description 갱신됨
+- duplicate title/slug는 기존 데이터셋 상 동의어 질문군에 일부 존재 가능(운영 수동 큐레이션 권장)
+- category/tags 필드 누락 없음 (`1741`건 기준)
+- reviewed_at, rewrittenAt, reviewed, qualityStatus, sourceStatus 필드 추가 반영됨
+
+## structured data
+
+- QAPage/FAQPage/BreadcrumbList/Article/CollectionPage 유지
+- Product schema 신규 추가 없음
+- 리뷰/가격/구매 관련 schema 없음
+
+## 상태
+
+- build: PASS
+- site-wide-content-quality-audit: PASS
+- content-duplicate-body-audit: PASS (manual-review 지표 별도)
+

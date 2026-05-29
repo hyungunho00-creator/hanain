@@ -2,6 +2,11 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
+if (process.env.ALLOW_LEGACY_QA_GENERATOR !== '1') {
+  console.error('[blocked] reframe_phlorotannin_tone.mjs is disabled by site-wide content recall policy.')
+  process.exit(1)
+}
+
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 
 const QA_FILES = [

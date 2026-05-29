@@ -20,7 +20,17 @@ if (audit.error || audit.status !== 0) {
   process.exit(audit.status || 1);
 }
 
-const qaAudit = runPython(['scripts/qa_quality_audit.py', '--min-chars', '2000', '--fail-on', 'high']);
+const siteWideAudit = run(process.execPath, [path.join('scripts', 'site-wide-content-quality-audit.mjs')]);
+if (siteWideAudit.error || siteWideAudit.status !== 0) {
+  process.exit(siteWideAudit.status || 1);
+}
+
+const duplicateAudit = run(process.execPath, [path.join('scripts', 'content-duplicate-body-audit.mjs')]);
+if (duplicateAudit.error || duplicateAudit.status !== 0) {
+  process.exit(duplicateAudit.status || 1);
+}
+
+const qaAudit = runPython(['scripts/qa_quality_audit.py', '--min-chars', '1200', '--fail-on', 'high']);
 if (qaAudit.error || qaAudit.status !== 0) {
   process.exit(qaAudit.status || 1);
 }

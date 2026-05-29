@@ -1,7 +1,14 @@
 #!/usr/bin/env python3
 import json
 import re
+import os
+import sys
 from pathlib import Path
+
+if os.environ.get("ALLOW_LEGACY_QA_GENERATOR") != "1":
+    print("[blocked] qa_expand_asset_content.py is disabled by site-wide content recall policy.")
+    print("Use scripts/content_recall_rewrite_qa.mjs instead.")
+    sys.exit(1)
 
 
 ROOT = Path(__file__).resolve().parents[1]

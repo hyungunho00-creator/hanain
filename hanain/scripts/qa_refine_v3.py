@@ -18,8 +18,14 @@ v2 대비 강화:
 5. related_insights, source_type, reviewed_at 갱신
 """
 import json, re, random
+import os, sys
 from pathlib import Path
 from collections import Counter
+
+if os.environ.get("ALLOW_LEGACY_QA_GENERATOR") != "1":
+    print("[blocked] qa_refine_v3.py is disabled by site-wide content recall policy.")
+    print("Use scripts/content_recall_rewrite_qa.mjs instead.")
+    sys.exit(1)
 
 ROOT = Path(__file__).resolve().parent.parent
 QA_FILE = ROOT / 'public' / 'qa.json'
