@@ -139,3 +139,24 @@
     - repeatedFirstSentence(>=3 fail): 0
     - repeatedParagraphs(>=3 fail): 0
   - `node scripts/qa-no-blank-answer-audit.mjs`: PASS (blankPublicAnswers=0)
+
+## Batch 6 (qa-1400-1449)
+- Queue batch: `qa-1400-1449` (50개)
+- Selection artifact: `docs/batches/qa-1400-1449-selection.json`
+- Dry-run:
+  - 대상 50 / approved 46 / rejected 4
+  - rejected:
+    - `qa200-20260527-016` (`phlorotannin-in-top-paragraph`)
+    - `qa200-20260527-017` (`phlorotannin-in-top-paragraph`)
+    - `qa200-20260527-035` (`phlorotannin-in-top-paragraph`, `phlorotannin-claim`)
+    - `qa200-20260527-057` (`phlorotannin-in-top-paragraph`)
+- Apply:
+  - 대상 50 / approved 46 / rejected 4
+  - rejected 4건은 legacy 답변 유지(overlay 비노출)
+- Validation:
+  - `node scripts/qa-answer-v2-validator.mjs --batch qa-1400-1449`: PASS (approvedScanned=46)
+  - `node scripts/qa-answer-v2-duplicate-detector.mjs --batch qa-1400-1449`: PASS
+    - similarityPairs(수동검토): 990
+    - repeatedFirstSentence(>=3 fail): 0
+    - repeatedParagraphs(>=3 fail): 0
+  - `node scripts/qa-no-blank-answer-audit.mjs`: PASS (blankPublicAnswers=0)
