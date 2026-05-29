@@ -222,3 +222,27 @@
     - repeatedFirstSentence(>=3 fail): 0
     - repeatedParagraphs(>=3 fail): 0
   - `node scripts/qa-no-blank-answer-audit.mjs`: PASS (blankPublicAnswers=0)
+
+## Batch 10 (qa-1600-1641)
+- Queue batch: `qa-1600-1641` (42개)
+- Selection artifact: `docs/batches/qa-1600-1641-selection.json`
+- Dry-run:
+  - 대상 42 / approved 42 / rejected 0
+- Apply:
+  - 대상 42 / approved 42 / rejected 0
+- Validation:
+  - `node scripts/qa-answer-v2-validator.mjs --batch qa-1600-1641`: PASS (approvedScanned=42)
+  - `node scripts/qa-answer-v2-duplicate-detector.mjs --batch qa-1600-1641`: PASS
+    - similarityPairs(수동검토): 861
+    - repeatedFirstSentence(>=3 fail): 0
+    - repeatedParagraphs(>=3 fail): 0
+  - `node scripts/qa-no-blank-answer-audit.mjs`: PASS (blankPublicAnswers=0)
+
+## Overall Snapshot (Current)
+- Total Q&A: 1641
+- answerV2 created: 450
+- answerV2 approved: 434
+- answerV2 rejected: 16
+- answerV2 needs_source: 0
+- legacy answer preserved: 1641/1641
+- blank public answers: 0
