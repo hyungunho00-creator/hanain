@@ -122,3 +122,20 @@
     - repeatedFirstSentence(>=3 fail): 0
     - repeatedParagraphs(>=3 fail): 0
   - `node scripts/qa-no-blank-answer-audit.mjs`: PASS (blankPublicAnswers=0)
+
+## Batch 5 (qa-1350-1399)
+- Queue batch: `qa-1350-1399` (50개)
+- Selection artifact: `docs/batches/qa-1350-1399-selection.json`
+- Dry-run:
+  - 대상 50 / approved 49 / rejected 1
+  - rejected: `sh_140` (`phlorotannin-in-top-paragraph`, `phlorotannin-claim`)
+- Apply:
+  - 대상 50 / approved 49 / rejected 1
+  - `sh_140`는 legacy 답변 유지(overlay 비노출)
+- Validation:
+  - `node scripts/qa-answer-v2-validator.mjs --batch qa-1350-1399`: PASS (approvedScanned=49)
+  - `node scripts/qa-answer-v2-duplicate-detector.mjs --batch qa-1350-1399`: PASS
+    - similarityPairs(수동검토): 1140
+    - repeatedFirstSentence(>=3 fail): 0
+    - repeatedParagraphs(>=3 fail): 0
+  - `node scripts/qa-no-blank-answer-audit.mjs`: PASS (blankPublicAnswers=0)
