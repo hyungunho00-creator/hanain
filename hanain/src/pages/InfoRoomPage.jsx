@@ -2396,9 +2396,9 @@ async function drawProductPage1(scale = 2) {
   y += urgH + 14
 
   // ── 헤드라인
-  ctx.font = 'bold 46px sans-serif'; ctx.fillStyle = NAVY; ctx.textBaseline = 'top'
+  ctx.font = 'bold 42px sans-serif'; ctx.fillStyle = NAVY; ctx.textBaseline = 'top'
   ctx.fillText('건강식품,', pad, y); y += 54
-  ctx.font = 'bold 34px sans-serif'; ctx.fillStyle = col
+  ctx.font = 'bold 30px sans-serif'; ctx.fillStyle = col
   ctx.fillText('이름 말고 구조를 보셔야 합니다', pad, y); y += 46
   ctx.font = 'bold 16px sans-serif'
   const accTxt = '플로로탄닌 특강 — 회복의 과학'
@@ -2411,42 +2411,46 @@ async function drawProductPage1(scale = 2) {
   // ── 인트로 박스
   ctx.font = '16px sans-serif'
   const introTxt = '건강식품을 많이 드시는데도 아침이 무겁고, 잠을 자도 회복감이 없다면 — 이유가 있습니다. 건강식품 시장은 성분 이름은 화려한데, 그 성분이 몸에서 어떻게 작동하는지 설명이 부족합니다.'
-  const introLines = wrapText(ctx, introTxt, body - 36)
-  const introLH = 26
-  const introH = introLines.length * introLH + 22
+  const introLinesRaw = wrapText(ctx, introTxt, body - 36)
+  const introLines = introLinesRaw.slice(0, 3)
+  if (introLinesRaw.length > 3 && introLines.length > 0) {
+    introLines[introLines.length - 1] = `${introLines[introLines.length - 1].slice(0, Math.max(0, introLines[introLines.length - 1].length - 1))}...`
+  }
+  const introLH = 22
+  const introH = introLines.length * introLH + 16
   roundRect(ctx, pad + 5, y, body - 5, introH, 8); ctx.fillStyle = '#f8f9fc'; ctx.fill()
   ctx.fillStyle = col; ctx.fillRect(pad, y, 5, introH)
   ctx.fillStyle = '#333'; ctx.textBaseline = 'top'
-  introLines.forEach((l, i) => ctx.fillText(l, pad + 16, y + 11 + i * introLH))
-  y += introH + 14
+  introLines.forEach((l, i) => ctx.fillText(l, pad + 16, y + 8 + i * introLH))
+  y += introH + 10
 
   // ── 섹션1: 이름 vs 구조
   ctx.fillStyle = col; ctx.fillRect(pad, y, 5, 26)
-  ctx.font = 'bold 18px sans-serif'; ctx.fillStyle = NAVY; ctx.textBaseline = 'middle'
+  ctx.font = 'bold 16px sans-serif'; ctx.fillStyle = NAVY; ctx.textBaseline = 'middle'
   ctx.fillText('① 건강식품은 이름으로 먹는 게 아닙니다', pad + 14, y + 13)
   y += 36
 
   const cW = Math.floor((body - 12) / 2)
   const badItems = ['알부민 → 있어 보이니까', '태란 → 병원에서 들어봤으니까', '콜라겐 → 피부에 붙을 것 같으니까', '비싸면 효과 있을 것 같은 느낌']
   const goodItems = ['분자 구조가 다양한가?', '몸에서 어떻게 흡수되나?', '기전(메커니즘)이 연구됐나?', '여러 방향으로 작동하는가?']
-  const cBoxH = 16 + 26 + badItems.length * 22 + 10  // 헤더 + 간격 + 항목들 + 하단 여백
+  const cBoxH = 14 + 24 + badItems.length * 18 + 8  // 헤더 + 간격 + 항목들 + 하단 여백
 
   // 왼쪽 박스 (fill 먼저, stroke 나중)
   roundRect(ctx, pad, y, cW, cBoxH, 8); ctx.fillStyle = '#fff8f8'; ctx.fill()
   ctx.strokeStyle = '#DC3C3C'; ctx.lineWidth = 1.5; ctx.stroke()
   ctx.font = 'bold 15px sans-serif'; ctx.fillStyle = '#C83232'; ctx.textBaseline = 'top'
   ctx.fillText('✗  이름만 보는 방식', pad + 12, y + 11)
-  ctx.font = '14px sans-serif'; ctx.fillStyle = '#A02828'
-  badItems.forEach((t, i) => ctx.fillText(t, pad + 14, y + 38 + i * 22))
+  ctx.font = '13px sans-serif'; ctx.fillStyle = '#A02828'
+  badItems.forEach((t, i) => ctx.fillText(t, pad + 14, y + 34 + i * 18))
 
   // 오른쪽 박스
   roundRect(ctx, pad + cW + 12, y, cW, cBoxH, 8); ctx.fillStyle = '#f2fcf6'; ctx.fill()
   ctx.strokeStyle = '#1E8C5A'; ctx.lineWidth = 1.5; ctx.stroke()
   ctx.font = 'bold 15px sans-serif'; ctx.fillStyle = '#1E8C5A'; ctx.textBaseline = 'top'
   ctx.fillText('✓  구조를 보는 방식', pad + cW + 24, y + 11)
-  ctx.font = '14px sans-serif'; ctx.fillStyle = '#146E46'
-  goodItems.forEach((t, i) => ctx.fillText(t, pad + cW + 24, y + 38 + i * 22))
-  y += cBoxH + 14
+  ctx.font = '13px sans-serif'; ctx.fillStyle = '#146E46'
+  goodItems.forEach((t, i) => ctx.fillText(t, pad + cW + 24, y + 34 + i * 18))
+  y += cBoxH + 10
 
   // ── 섹션2: 분자구조
   ctx.fillStyle = col; ctx.fillRect(pad, y, 5, 26)
@@ -2459,18 +2463,18 @@ async function drawProductPage1(scale = 2) {
     ['O₂',  '산소', '산소 원자 2개', '숨 쉬는 산소',     '#3C64B4'],
     ['O₃',  '오존', '산소 원자 3개', '강한 산화력 오존',  '#8C3CB4'],
   ]
-  const mW = Math.floor((body - 20) / 3), mH = 110
+  const mW = Math.floor((body - 20) / 3), mH = 98
   mols.forEach(([f, n, s, d, c], i) => {
     const mx = pad + i * (mW + 10)
     roundRect(ctx, mx, y, mW, mH, 9); ctx.fillStyle = hexAlpha(c, 0x22); ctx.fill()
     ctx.strokeStyle = hexAlpha(c, 0x60); ctx.lineWidth = 1.5; ctx.stroke()
-    ctx.font = 'bold 34px sans-serif'; ctx.fillStyle = c; ctx.textBaseline = 'top'
-    ctx.fillText(f, mx + 12, y + 10)
-    ctx.font = 'bold 16px sans-serif'; ctx.fillStyle = NAVY; ctx.fillText(n, mx + 12, y + 54)
-    ctx.font = '13px sans-serif'; ctx.fillStyle = '#888'
-    ctx.fillText(s, mx + 12, y + 76); ctx.fillText(d, mx + 12, y + 93)
+    ctx.font = 'bold 30px sans-serif'; ctx.fillStyle = c; ctx.textBaseline = 'top'
+    ctx.fillText(f, mx + 12, y + 8)
+    ctx.font = 'bold 13px sans-serif'; ctx.fillStyle = NAVY; ctx.fillText(n, mx + 12, y + 48)
+    ctx.font = '12px sans-serif'; ctx.fillStyle = '#888'
+    ctx.fillText(s, mx + 12, y + 68); ctx.fillText(d, mx + 12, y + 83)
   })
-  y += mH + 14
+  y += mH + 10
 
   // ── 섹션3: 왜 플로로탄닌인가
   ctx.fillStyle = col; ctx.fillRect(pad, y, 5, 26)
@@ -2480,14 +2484,18 @@ async function drawProductPage1(scale = 2) {
 
   const seaTxt = '감태(Ecklonia cava) 같은 갈조류에서 추출한 해양 폴리페놀입니다. 해조류는 도망을 못 갑니다. 햇빛·파도·염분·미생물을 그 자리에서 버텨야 합니다. 수천만 년 진화가 만든 방어 성분 — 그게 플로로탄닌입니다.'
   ctx.font = '14px sans-serif'
-  const seaLines = wrapText(ctx, seaTxt, body - 36)
-  const seaLH = 22
-  const seaH = seaLines.length * seaLH + 16
+  const seaLinesRaw = wrapText(ctx, seaTxt, body - 36)
+  const seaLines = seaLinesRaw.slice(0, 3)
+  if (seaLinesRaw.length > 3 && seaLines.length > 0) {
+    seaLines[seaLines.length - 1] = `${seaLines[seaLines.length - 1].slice(0, Math.max(0, seaLines[seaLines.length - 1].length - 1))}...`
+  }
+  const seaLH = 20
+  const seaH = seaLines.length * seaLH + 12
   roundRect(ctx, pad + 5, y, body - 5, seaH, 8); ctx.fillStyle = '#f8f9fc'; ctx.fill()
   ctx.fillStyle = col; ctx.fillRect(pad, y, 5, seaH)
   ctx.fillStyle = '#333'; ctx.textBaseline = 'top'
-  seaLines.forEach((l, i) => ctx.fillText(l, pad + 16, y + 8 + i * seaLH))
-  y += seaH + 10
+  seaLines.forEach((l, i) => ctx.fillText(l, pad + 16, y + 6 + i * seaLH))
+  y += seaH + 8
 
   // ── 5가지 기전 행 (높이를 mechLines 수 기반으로 동적 계산)
   const tools = [
@@ -2507,38 +2515,38 @@ async function drawProductPage1(scale = 2) {
     roundRect(ctx, pad + 5, y, body - 5, tH, 8); ctx.fillStyle = '#f8f9fc'; ctx.fill()
     ctx.fillStyle = t.tc; ctx.fillRect(pad, y, 5, tH)
     ctx.font = 'bold 14px sans-serif'
-    roundRect(ctx, pad + 14, y + Math.floor((tH - 26) / 2), lw, 26, 7); ctx.fillStyle = t.tc; ctx.fill()
+    roundRect(ctx, pad + 14, y + Math.floor((tH - 22) / 2), lw, 22, 6); ctx.fillStyle = t.tc; ctx.fill()
     ctx.fillStyle = '#fff'; ctx.textBaseline = 'middle'
-    ctx.fillText(t.label, pad + 26, y + tH / 2)
-    ctx.font = '13px sans-serif'; ctx.fillStyle = '#555'; ctx.textBaseline = 'top'
-    const topPad = Math.floor((tH - mechLines.length * 18) / 2)
-    mechLines.forEach((l, i) => ctx.fillText(l, pad + lw + 24, y + topPad + i * 18))
-    y += tH + 6
+    ctx.fillText(t.label, pad + 24, y + tH / 2)
+    ctx.font = '12px sans-serif'; ctx.fillStyle = '#555'; ctx.textBaseline = 'top'
+    const topPad = Math.floor((tH - mechLines.length * 14) / 2)
+    mechLines.forEach((l, i) => ctx.fillText(l, pad + lw + 20, y + topPad + i * 14))
+    y += tH + 4
   })
-  y += 12
+  y += 8
 
   // ── 회복 정의 박스 — 글씨 키움
   y += 10
-  const recH = 142
+  const recH = 120
   roundRect(ctx, pad, y, body, recH, 12)
   ctx.fillStyle = hexAlpha(col, 0x12); ctx.fill()
   ctx.strokeStyle = hexAlpha(col, 0x50); ctx.lineWidth = 2; ctx.stroke()
 
   // 텍스트 — 상단 패딩 14px 기준
-  let ry = y + 14
+  let ry = y + 10
   ctx.textAlign = 'center'; ctx.textBaseline = 'top'
   ctx.font = 'bold 18px sans-serif'; ctx.fillStyle = NAVY
   ctx.fillText('회복(Recovery)이란 무엇인가', W / 2, ry); ry += 30
 
-  ctx.font = '15px sans-serif'; ctx.fillStyle = '#444'
+  ctx.font = '14px sans-serif'; ctx.fillStyle = '#444'
   ctx.fillText('아침이 조금 가볍다  ·  잠이 조금 깊다', W / 2, ry); ry += 26
   ctx.fillText('밥 먹고 난 뒤 덜 처진다  ·  하루를 버티는 힘이 달라진다', W / 2, ry); ry += 28
 
-  ctx.font = 'bold 15px sans-serif'; ctx.fillStyle = col
+  ctx.font = 'bold 14px sans-serif'; ctx.fillStyle = col
   ctx.fillText('몸 전체의 리듬이 다시 살아나는 느낌 — 이게 회복입니다', W / 2, ry)
   ctx.textAlign = 'left'
 
-  y += recH + 8
+  y += recH + 6
 
   // 페이지 번호 — 페이지 하단 안전 영역에 고정 배치
   ctx.font = '13px sans-serif'; ctx.fillStyle = '#aaa'; ctx.textBaseline = 'bottom'
@@ -2615,14 +2623,14 @@ async function drawProductPage2(partnerName, partnerTel, qrImg, scale = 2) {
     // ── 카드 높이를 실제 콘텐츠 기반으로 미리 계산
     ctx.font = '14px sans-serif'
     const descLinesRaw  = wrapText(ctx, p.desc,  body - 38)
-    const descLines = descLinesRaw.slice(0, 3)
-    if (descLinesRaw.length > 3 && descLines.length > 0) {
+    const descLines = descLinesRaw.slice(0, 2)
+    if (descLinesRaw.length > 2 && descLines.length > 0) {
       descLines[descLines.length - 1] = `${descLines[descLines.length - 1].slice(0, Math.max(0, descLines[descLines.length - 1].length - 1))}...`
     }
     ctx.font = '13px sans-serif'
     const usageLinesRaw = wrapText(ctx, p.usage, body - 38)
-    const usageLines = usageLinesRaw.slice(0, 2)
-    if (usageLinesRaw.length > 2 && usageLines.length > 0) {
+    const usageLines = usageLinesRaw.slice(0, 1)
+    if (usageLinesRaw.length > 1 && usageLines.length > 0) {
       usageLines[usageLines.length - 1] = `${usageLines[usageLines.length - 1].slice(0, Math.max(0, usageLines[usageLines.length - 1].length - 1))}...`
     }
     ctx.font = 'bold 12px sans-serif'
@@ -2645,7 +2653,7 @@ async function drawProductPage2(partnerName, partnerTel, qrImg, scale = 2) {
     })
     if (tagRow.length > 0) tagRows.push(tagRow)
 
-    const maxTagRows = 2
+    const maxTagRows = 1
     if (tagRows.length > maxTagRows) {
       const hiddenRows = tagRows.slice(maxTagRows)
       const hiddenCount = hiddenRows.reduce((acc, row) => acc + row.length, 0)
@@ -2669,34 +2677,34 @@ async function drawProductPage2(partnerName, partnerTel, qrImg, scale = 2) {
     ctx.fillStyle = p.pc; ctx.fillRect(pad, y, 5, cardH)
 
     // ── 헤더: 번호 원 + 제품명 + 가격
-    const numR = 17  // 원 반지름
+    const numR = 15  // 원 반지름
     const numCX = pad + 18 + numR, numCY = y + 28
     ctx.beginPath(); ctx.arc(numCX, numCY, numR, 0, Math.PI * 2)
     ctx.fillStyle = p.pc; ctx.fill()
-    ctx.font = 'bold 16px sans-serif'; ctx.fillStyle = '#fff'
+    ctx.font = 'bold 14px sans-serif'; ctx.fillStyle = '#fff'
     ctx.textBaseline = 'middle'; ctx.textAlign = 'center'
     ctx.fillText(p.num, numCX, numCY); ctx.textAlign = 'left'
 
-    ctx.font = 'bold 19px sans-serif'; ctx.fillStyle = NAVY; ctx.textBaseline = 'top'
+    ctx.font = 'bold 18px sans-serif'; ctx.fillStyle = NAVY; ctx.textBaseline = 'top'
     ctx.fillText(p.name, pad + 56, y + 10)
     ctx.font = '13px sans-serif'; ctx.fillStyle = '#888'
     ctx.fillText(p.en + '  ·  ' + p.size, pad + 56, y + 34)
-    ctx.font = 'bold 19px sans-serif'; ctx.fillStyle = p.pc
+    ctx.font = 'bold 18px sans-serif'; ctx.fillStyle = p.pc
     ctx.textAlign = 'right'; ctx.textBaseline = 'top'
-    ctx.fillText(p.price, W - pad - 10, y + 18)
+    ctx.fillText(p.price, W - pad - 10, y + 16)
     ctx.textAlign = 'left'
 
-    let cy = y + 58
+    let cy = y + 52
 
     // ── 구분선 + 슬로건
-    ctx.fillStyle = '#e0e4ec'; ctx.fillRect(pad + 5, cy, body - 5, 1); cy += 10
-    ctx.font = 'bold 14px sans-serif'; ctx.fillStyle = p.pc
+    ctx.fillStyle = '#e0e4ec'; ctx.fillRect(pad + 5, cy, body - 5, 1); cy += 8
+    ctx.font = 'bold 13px sans-serif'; ctx.fillStyle = p.pc
     ctx.textBaseline = 'top'; ctx.textAlign = 'center'
-    ctx.fillText(p.slogan, W / 2, cy); ctx.textAlign = 'left'; cy += 24
+    ctx.fillText(p.slogan, W / 2, cy); ctx.textAlign = 'left'; cy += 20
 
     // ── 설명
-    ctx.font = '14px sans-serif'; ctx.fillStyle = '#333'; ctx.textBaseline = 'top'
-    descLines.forEach(l => { ctx.fillText(l, pad + 16, cy); cy += 20 }); cy += 8
+    ctx.font = '13px sans-serif'; ctx.fillStyle = '#333'; ctx.textBaseline = 'top'
+    descLines.forEach(l => { ctx.fillText(l, pad + 16, cy); cy += 18 }); cy += 6
 
     // ── 태그
     tagRows.forEach((row, rowIdx) => {
@@ -2709,26 +2717,26 @@ async function drawProductPage2(partnerName, partnerTel, qrImg, scale = 2) {
         ctx.fillText(tag, tx + 10, cy + 12)
         tx += chipWidth + 6
       })
-      if (rowIdx < tagRows.length - 1) cy += 30
+      if (rowIdx < tagRows.length - 1) cy += 28
     })
-    cy += 26 + 8
+    cy += 24 + 6
 
     // ── 섭취방법
-    ctx.fillStyle = '#e0e4ec'; ctx.fillRect(pad + 16, cy, body - 24, 1); cy += 10
-    ctx.font = 'bold 13px sans-serif'; ctx.fillStyle = NAVY; ctx.textBaseline = 'top'
+    ctx.fillStyle = '#e0e4ec'; ctx.fillRect(pad + 16, cy, body - 24, 1); cy += 8
+    ctx.font = 'bold 12px sans-serif'; ctx.fillStyle = NAVY; ctx.textBaseline = 'top'
     ctx.fillText('섭취 방법', pad + 16, cy); cy += 20
-    ctx.font = '13px sans-serif'; ctx.fillStyle = '#666'
-    usageLines.forEach(l => { ctx.fillText(l, pad + 16, cy); cy += 18 }); cy += 8
+    ctx.font = '12px sans-serif'; ctx.fillStyle = '#666'
+    usageLines.forEach(l => { ctx.fillText(l, pad + 16, cy); cy += 16 }); cy += 6
 
     // ── 하단 배지
     const badgeTxt = 'SEANOL C.A.F.  감태추출물 플로로탄닌 해양 폴리페놀  ·  국산'
-    roundRect(ctx, pad + 5, cy, body - 5, 26, 6)
+    roundRect(ctx, pad + 5, cy, body - 5, 24, 6)
     ctx.fillStyle = hexAlpha(p.pc, 0x14); ctx.fill()
-    ctx.font = '12px sans-serif'; ctx.fillStyle = p.pc
+    ctx.font = '11px sans-serif'; ctx.fillStyle = p.pc
     ctx.textBaseline = 'middle'; ctx.textAlign = 'center'
-    ctx.fillText(badgeTxt, W / 2, cy + 13); ctx.textAlign = 'left'
+    ctx.fillText(badgeTxt, W / 2, cy + 12); ctx.textAlign = 'left'
 
-    y += cardH + 12
+    y += cardH + 8
   })
 
   // ── 파트너 박스 — 남은 공간 꽉 채우기 (하단 페이지번호+안전여백 40px 확보)
