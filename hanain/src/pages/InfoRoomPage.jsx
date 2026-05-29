@@ -2614,9 +2614,17 @@ async function drawProductPage2(partnerName, partnerTel, qrImg, scale = 2) {
   products.forEach(p => {
     // ── 카드 높이를 실제 콘텐츠 기반으로 미리 계산
     ctx.font = '14px sans-serif'
-    const descLines  = wrapText(ctx, p.desc,  body - 38)
+    const descLinesRaw  = wrapText(ctx, p.desc,  body - 38)
+    const descLines = descLinesRaw.slice(0, 3)
+    if (descLinesRaw.length > 3 && descLines.length > 0) {
+      descLines[descLines.length - 1] = `${descLines[descLines.length - 1].slice(0, Math.max(0, descLines[descLines.length - 1].length - 1))}...`
+    }
     ctx.font = '13px sans-serif'
-    const usageLines = wrapText(ctx, p.usage, body - 38)
+    const usageLinesRaw = wrapText(ctx, p.usage, body - 38)
+    const usageLines = usageLinesRaw.slice(0, 2)
+    if (usageLinesRaw.length > 2 && usageLines.length > 0) {
+      usageLines[usageLines.length - 1] = `${usageLines[usageLines.length - 1].slice(0, Math.max(0, usageLines[usageLines.length - 1].length - 1))}...`
+    }
     ctx.font = 'bold 12px sans-serif'
 
     const maxTagRowWidth = body - 32
@@ -2636,6 +2644,17 @@ async function drawProductPage2(partnerName, partnerTel, qrImg, scale = 2) {
       }
     })
     if (tagRow.length > 0) tagRows.push(tagRow)
+
+    const maxTagRows = 2
+    if (tagRows.length > maxTagRows) {
+      const hiddenRows = tagRows.slice(maxTagRows)
+      const hiddenCount = hiddenRows.reduce((acc, row) => acc + row.length, 0)
+      tagRows.length = maxTagRows
+      const extraTag = `+${hiddenCount}`
+      const extraW = ctx.measureText(extraTag).width + 20
+      tagRows[maxTagRows - 1].push({ tag: extraTag, chipWidth: extraW })
+    }
+
     const tagBlockH = tagRows.length * 26 + Math.max(0, (tagRows.length - 1) * 6)
 
     //  헤더행(58) + 구분선(10) + 슬로건행(24) + 설명(descLines*20+8) + 태그행(26+8)
