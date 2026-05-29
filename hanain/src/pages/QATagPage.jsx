@@ -21,6 +21,7 @@ import CategoryGrid from '../components/common/CategoryGrid'
 import { inferDominantCategory } from '../data/qaCategoryMeta'
 import { usePartner } from '../context/PartnerContext'
 import { withRef } from '../lib/partnerRef'
+import { getRenderableQaAnswer, hasRenderableQaAnswer, isQaAnswerSeoEligible } from '../lib/qaAnswerResolver'
 
 const FAQ_JSONLD_MAX_PER_PAGE = 10
 
@@ -39,15 +40,11 @@ function stripHtml(s) {
 }
 
 function getValidatedAnswerHtml(qa) {
-  if (!qa || typeof qa !== 'object') return ''
-  const answer = qa.validatedAnswer || qa.validated_answer || ''
-  return typeof answer === 'string' ? answer.trim() : ''
+  return getRenderableQaAnswer(qa).html
 }
 
 function isValidatedQa(qa) {
-  if (!qa || typeof qa !== 'object') return false
-  const status = String(qa.qualityStatus || qa.quality_status || '').toLowerCase()
-  return status === 'validated' && getValidatedAnswerHtml(qa).length > 0
+  return hasRenderableQaAnswer(qa)
 }
 
 // 카테고리 라벨 (QAPage와 동일)
@@ -157,7 +154,9 @@ export default function QATagPage() {
   const faqJsonLd = (() => {
     if (matchedQuestions.length === 0) return null
     const items = matchedQuestions.slice(0, FAQ_JSONLD_MAX_PER_PAGE).map(q => {
+      if (!isQaAnswerSeoEligible(q)) return null
       const ans = stripHtml(getValidatedAnswerHtml(q))
+      if (!ans) return null
       const slug = qaSlug(q.question)
       return {
         "@type": "Question",
@@ -169,6 +168,8 @@ export default function QATagPage() {
         }
       }
     })
+    const filteredItems = items.filter(Boolean)
+    if (filteredItems.length === 0) return null
     return [
       {
         "@context": "https://schema.org",
@@ -178,7 +179,7 @@ export default function QATagPage() {
         "name": `${decodedTag} 건강 Q&A`,
         "description": seoDesc,
         "inLanguage": "ko-KR",
-        "mainEntity": items,
+        "mainEntity": filteredItems,
       },
       {
         "@context": "https://schema.org",

@@ -7,6 +7,7 @@ import CategoryHeroBanner from '../components/common/CategoryHeroBanner'
 import CategoryGrid from '../components/common/CategoryGrid'
 import { getCategoryMeta } from '../data/qaCategoryMeta'
 import { QA_TOTAL } from '../data/siteStats'
+import { hasRenderableQaAnswer } from '../lib/qaAnswerResolver'
 
 // URL slug → category_id 매핑 (DB qa_categories 기준)
 // [2026-05-21 D6 보강] skin/hair 단독 슬러그 추가 — sitemap·qa.json 정합성 확보
@@ -40,14 +41,6 @@ const PAGE_SIZE = 20
 let QA_FALLBACK = null
 function slugifyKoLocal(s) {
   return String(s || '').replace(/[^\w\s가-힣]/g, '').replace(/\s+/g, '-').slice(0, 60)
-}
-function getValidatedAnswerHtml(item) {
-  const answer = item?.validatedAnswer || item?.validated_answer || ''
-  return typeof answer === 'string' ? answer.trim() : ''
-}
-function isValidatedQa(item) {
-  const status = String(item?.qualityStatus || item?.quality_status || '').toLowerCase()
-  return status === 'validated' && getValidatedAnswerHtml(item).length > 0
 }
 async function ensureQaFallback() {
   if (!QA_FALLBACK) {
@@ -84,7 +77,7 @@ async function getFallbackCategory(catId) {
 }
 async function getFallbackQuestions(catId, { page = 1, limit = PAGE_SIZE, sort = 'popular' } = {}) {
   const data = await ensureQaFallback()
-  let arr = data.questions.filter(q => q.category === catId && isValidatedQa(q))
+  let arr = data.questions.filter(q => q.category === catId && hasRenderableQaAnswer(q))
   if (sort === 'latest') {
     arr = arr.sort((a, b) => String(b.created_at || b.id).localeCompare(String(a.created_at || a.id)))
   } else if (sort === 'likes') {
@@ -111,7 +104,7 @@ async function getFallbackQuestions(catId, { page = 1, limit = PAGE_SIZE, sort =
 async function getFallbackPopular(catId, limit = 5) {
   const data = await ensureQaFallback()
   return data.questions
-    .filter(q => q.category === catId && isValidatedQa(q))
+    .filter(q => q.category === catId && hasRenderableQaAnswer(q))
     .sort((a, b) => (b.views || 0) - (a.views || 0))
     .slice(0, limit)
     .map(q => ({
@@ -181,7 +174,7 @@ export default function CategoryPage() {
   useEffect(() => {
     ensureQaFallback()
       .then((d) => {
-        const ids = (d.questions || []).filter(isValidatedQa).map((q) => q.id)
+        const ids = (d.questions || []).filter(hasRenderableQaAnswer).map((q) => q.id)
         setValidatedIds(new Set(ids))
       })
       .catch(() => setValidatedIds(new Set()))
@@ -240,7 +233,7 @@ export default function CategoryPage() {
     setQuestions(filtered)
     if (validatedIds.size > 0 && QA_FALLBACK?.questions?.length) {
       const validatedTotal = QA_FALLBACK.questions.filter(
-        (q) => q.category === category.id && isValidatedQa(q)
+        (q) => q.category === category.id && hasRenderableQaAnswer(q)
       ).length
       setTotal(validatedTotal)
     } else {

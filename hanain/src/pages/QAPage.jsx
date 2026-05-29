@@ -5,6 +5,7 @@ import { usePartner } from '../context/PartnerContext'
 import SEOHead from '../components/common/SEOHead'
 import RevealContact from '../components/common/RevealContact'
 import LastReviewed from '../components/common/LastReviewed'
+import { getRenderableQaAnswer, getRenderableQaPlainText, isQaAnswerSeoEligible } from '../lib/qaAnswerResolver'
 
 const LAST_REVIEWED = '2026-05-21'
 
@@ -43,16 +44,8 @@ const CAT_SLUG_MAP = {
   womens_health: 'womens-health', mens_health: 'mens-health',
 }
 
-function getValidatedAnswerHtml(qa) {
-  if (!qa || typeof qa !== 'object') return ''
-  const answer = qa.validatedAnswer || qa.validated_answer || ''
-  return typeof answer === 'string' ? answer.trim() : ''
-}
-
-function isValidatedQa(qa) {
-  if (!qa || typeof qa !== 'object') return false
-  const status = String(qa.qualityStatus || qa.quality_status || '').toLowerCase()
-  return status === 'validated' && getValidatedAnswerHtml(qa).length > 0
+function hasAnyQuestionShape(qa) {
+  return !!(qa && typeof qa === 'object' && qa.question)
 }
 
 function highlightText(text, query) {
@@ -117,7 +110,7 @@ function QACard({ qa, itemKey, isOpen, onToggle, searchQuery, categories }) {
     }
   }
 
-  const answerText = getValidatedAnswerHtml(qa) || '<p>검수 중인 건강정보입니다.</p>'
+  const answerText = getRenderableQaAnswer(qa).html
   const references = null
   const catId = qa.category_id || qa.category
   // 카테고리 이름 lookup — 동적 카테고리(qa.json categories) 기준
@@ -258,7 +251,7 @@ export default function QAPage() {
     fetch('/qa.json')
       .then(r => r.json())
       .then(data => {
-        const qs = (data.questions || []).filter(isValidatedQa)
+        const qs = (data.questions || []).filter(hasAnyQuestionShape)
         setAllQuestions(qs)
 
         // 카테고리 목록 — qa.json categories를 Source of Truth로 사용
@@ -298,7 +291,7 @@ export default function QAPage() {
     if (q.length >= 1) {
       filtered = filtered.filter(item => {
         const qText = (item.question || '').toLowerCase()
-        const aText = getValidatedAnswerHtml(item).toLowerCase()
+        const aText = getRenderableQaPlainText(item, 2000).toLowerCase()
         const tags = (item.tags || []).join(' ').toLowerCase()
         return qText.includes(q) || aText.includes(q) || tags.includes(q)
       })
@@ -411,7 +404,9 @@ export default function QAPage() {
     const useDynamic = (activeCategory && activeCategory !== 'all') || (searchQuery && searchQuery.length >= 2)
     if (useDynamic && questions.length > 0) {
       const items = questions.slice(0, FAQ_JSONLD_MAX_PER_PAGE).map(item => {
-        const ansText = stripHtml(getValidatedAnswerHtml(item))
+        if (!isQaAnswerSeoEligible(item)) return null
+        const ansText = stripHtml(getRenderableQaPlainText(item, 500))
+        if (!ansText) return null
         const slug = qaSlug(item.question)
         return {
           "@type": "Question",
@@ -423,13 +418,15 @@ export default function QAPage() {
           }
         }
       })
+      const filteredItems = items.filter(Boolean)
+      if (filteredItems.length === 0) return null
       const catSuffix = activeCategory && activeCategory !== 'all' ? `#${activeCategory}` : ''
       return {
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "@id": `https://phlorotannin.com/qa${catSuffix}#faqpage`,
         "url": `https://phlorotannin.com/qa${catSuffix}`,
-        "mainEntity": items,
+        "mainEntity": filteredItems,
       }
     }
     // 기본: 브랜드 STATIC_FAQ (메인 /qa 페이지) — 공식 FAQPage + Speakable + lastReviewed

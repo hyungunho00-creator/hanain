@@ -5,7 +5,7 @@ import {
   ArrowLeft, ChevronRight, MessageCircle, Play, ExternalLink
 } from 'lucide-react'
 import {
-  getQuestionBySlug, getAnswersByQuestion, getRelatedQuestions,
+  getQuestionBySlug, getRelatedQuestions,
   getSameCategory, getVideosByQuestion, incrementQuestionView,
   toggleQuestionLike, getQuestionLikeStatus, toggleSave, getSaveStatus
 } from '../lib/supabase'
@@ -14,6 +14,7 @@ import RelatedBlogPosts from '../components/qa/RelatedBlogPosts'
 import ReferenceList from '../components/common/ReferenceList'
 import CategoryGrid from '../components/common/CategoryGrid'
 import { REFERENCES } from '../data/references'
+import { getRenderableQaAnswer, getRenderableQaPlainText, isQaAnswerSeoEligible } from '../lib/qaAnswerResolver'
 
 // 카테고리 ID → OG 이미지 슬러그 (build_og_images.py 산출물과 1:1 매칭, 헌법 정합성)
 const CAT_OG_SLUG = {
@@ -59,16 +60,8 @@ function toQuestionSlug(value) {
     .slice(0, 60)
 }
 
-function getValidatedAnswerHtml(item) {
-  if (!item || typeof item !== 'object') return ''
-  const answer = item.validatedAnswer || item.validated_answer || ''
-  return typeof answer === 'string' ? answer.trim() : ''
-}
-
-function isValidatedQuestion(item) {
-  if (!item || typeof item !== 'object') return false
-  const status = String(item.qualityStatus || item.quality_status || '').toLowerCase()
-  return status === 'validated' && getValidatedAnswerHtml(item).length > 0
+function hasAnyQuestionShape(item) {
+  return !!(item && typeof item === 'object' && (item.question || item.title))
 }
 
 async function getFallbackQuestion(slug) {
@@ -107,7 +100,7 @@ async function getFallbackSameCategory(excludeId, categoryId, limit = 6) {
   const data = await ensureQaFallback()
   const cat = data.categories.find(c => c.id === categoryId)
   const sorted = data.questions
-    .filter(q => q.category === categoryId && q.id !== excludeId && isValidatedQuestion(q))
+    .filter(q => q.category === categoryId && q.id !== excludeId && hasAnyQuestionShape(q))
     .sort((a, b) => (b.views || 0) - (a.views || 0))
     .slice(0, limit)
   return sorted.map(q => ({
@@ -204,17 +197,16 @@ export default function QuestionDetailPage() {
       }
       if (!q) { setNotFound(true); setLoading(false); return }
 
-      const publishable = isValidatedQuestion(q)
-      setQuestion({ ...q, _publishable: publishable })
+      const rendered = getRenderableQaAnswer(q)
+      const publishable = rendered.mode !== 'review_notice'
+      setQuestion({ ...q, _publishable: publishable, _renderedAnswer: rendered })
       setLikeCount(q.like_count || 0)
 
       // 병렬 로드
       const [ans, rel, same, vids, likedStatus, savedStatus] = await Promise.all([
-        q._fallback
-          ? (publishable
-              ? Promise.resolve([{ id: 'fallback', content: getValidatedAnswerHtml(q), is_official: true }])
-              : Promise.resolve([]))
-          : (publishable ? getAnswersByQuestion(q.id) : Promise.resolve([])),
+        publishable
+          ? Promise.resolve([{ id: 'resolved', content: rendered.html, is_official: true, source: rendered.mode }])
+          : Promise.resolve([]),
         q._fallback ? Promise.resolve([]) : getRelatedQuestions(q.id),
         q._fallback ? getFallbackSameCategory(q.id, q.category_id, 6) : getSameCategory(q.id, q.category_id, 6),
         q._fallback ? Promise.resolve([]) : getVideosByQuestion(q.id),
@@ -275,14 +267,14 @@ export default function QuestionDetailPage() {
 
   const cat = question.categories
   const officialAnswer = answers.find(a => a.is_official)
-  const isPublicValidated = isValidatedQuestion(question)
+  const isPublicValidated = isQaAnswerSeoEligible(question)
 
   const difficultyLabel = { basic: '기초', intermediate: '중급', advanced: '심화' }[question.difficulty] || '기초'
   const authorTypeLabel = { self: '본인', family: '가족', caregiver: '보호자' }[question.author_type] || ''
   const preferredSlug = toQuestionSlug(question.title || question.question || slug) || slug
   const pageUrl = `https://phlorotannin.com/q/${preferredSlug}`
-  const rawAnswerText = isPublicValidated && officialAnswer
-    ? officialAnswer.content.replace(/<[^>]+>/g, '').slice(0, 300)
+  const rawAnswerText = isPublicValidated
+    ? getRenderableQaPlainText(question, 300)
     : '검수 중인 건강정보입니다. 검증된 답변만 공개됩니다.'
   const seoDesc = rawAnswerText.slice(0, 150)
 
@@ -320,7 +312,7 @@ export default function QuestionDetailPage() {
           url: pageUrl,
           datePublished: question.created_at || new Date().toISOString(),
           dateModified: question.reviewed_at || question.updated_at || new Date().toISOString().slice(0, 10),
-          answerCount: isPublicValidated ? (answers.length || 1) : 0,
+          answerCount: isPublicValidated ? 1 : 0,
           upvoteCount: question.like_count || 0,
           ...(isPublicValidated && rawAnswerText ? {
             acceptedAnswer: {
@@ -462,7 +454,7 @@ export default function QuestionDetailPage() {
               </article>
 
               {/* 운영자 답변 */}
-              {officialAnswer && isPublicValidated && (
+              {officialAnswer && (
                 <section className="bg-white rounded-lg border border-gray-200 overflow-hidden">
                   <div className="bg-[#0B1A2E] px-6 py-4">
                     <h2 className="text-white font-bold flex items-center gap-2">
@@ -481,7 +473,7 @@ export default function QuestionDetailPage() {
                   </div>
                 </section>
               )}
-              {!isPublicValidated && (
+              {!officialAnswer && (
                 <section className="bg-white rounded-lg border border-gray-200 overflow-hidden">
                   <div className="bg-gray-100 px-6 py-4">
                     <h2 className="text-gray-900 font-bold flex items-center gap-2">
