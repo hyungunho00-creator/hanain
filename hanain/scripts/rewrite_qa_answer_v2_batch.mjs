@@ -38,9 +38,10 @@ function makeStructuredDraftFromLegacy(q, item = null) {
   const first = plain.split('. ').slice(0, 2).join('. ').trim()
   const required = Array.isArray(item?.requiredTerms) ? item.requiredTerms.filter(Boolean) : []
   const requiredLead = required.slice(0, 2).join(' ')
+  const questionHint = stripHtml(q.question || '').slice(0, 28)
   let shortAnswer = first || `${q.question || '질문'}에 대해서는 개인 상태와 진료 맥락을 함께 확인하는 것이 중요합니다.`
   if (requiredLead) {
-    shortAnswer = `${requiredLead}는 개인 상태와 원인에 따라 해석이 달라질 수 있어 핵심 기준을 먼저 확인하는 것이 좋습니다. ${shortAnswer}`
+    shortAnswer = `${requiredLead} 관련 질문(${questionHint})은 개인 상태와 원인에 따라 해석이 달라질 수 있어 핵심 기준을 먼저 확인하는 것이 좋습니다. ${shortAnswer}`
   }
   const categoryLabel = stripHtml(q.category || item?.category || '해당 주제')
   const emphasis = requiredLead || stripHtml(q.question || '').slice(0, 20) || '증상 변화'
@@ -59,17 +60,17 @@ function makeStructuredDraftFromLegacy(q, item = null) {
     ],
     whenToSeeDoctor: [
       `${emphasis}이(가) 1~2주 이상 지속되거나 악화될 때`,
-      `일상 기능 저하(수면, 식사, 보행, 업무)로 ${categoryLabel} 관련 활동 제한이 커질 때`,
-      `응급 신호(의식 변화, 심한 통증, 호흡곤란 등) 또는 ${categoryLabel} 증상 급격 악화가 있을 때`
+      `일상 기능 저하(수면, 식사, 보행, 업무)로 ${emphasis} 관련 활동 제한이 커질 때`,
+      `응급 신호(의식 변화, 심한 통증, 호흡곤란 등) 또는 ${emphasis} 증상 급격 악화가 있을 때`
     ],
     avoidList: [
       `${emphasis}을(를) 무시하고 자가 판단만으로 버티기`,
-      `${categoryLabel} 상태를 진료 확인 없이 건강식품·보조요법만으로 대체하기`,
+      `${emphasis} 상태를 진료 확인 없이 건강식품·보조요법만으로 대체하기`,
       `${emphasis} 기록 없이 임의로 관리 방향을 자주 바꾸기`
     ],
     lifestyleTips: [
       `${emphasis} 변화를 1~2주 단위로 기록하기`,
-      `${categoryLabel} 맥락에서는 급격한 생활패턴 변화보다 지속 가능한 습관부터 조정하기`
+      `${emphasis} 맥락에서는 급격한 생활패턴 변화보다 지속 가능한 습관부터 조정하기`
     ],
     phlorotanninBridge: phlorotanninBridge(),
     disclaimer: disclaimer(),

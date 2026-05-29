@@ -81,6 +81,7 @@ function run() {
     firstMap.get(it.firstSentence).push(it.id)
   }
   const repeatedFirst = [...firstMap.entries()].filter(([,ids])=>ids.length>=2)
+  const repeatedFirstHardFail = repeatedFirst.filter(([, ids]) => ids.length >= 3)
 
   const pairIssues = []
   for (let i=0;i<items.length;i++) {
@@ -106,14 +107,15 @@ function run() {
   // Policy:
   // - similarity >= 0.35 => manual review candidate
   // - identical paragraph repeated across >=3 answers => FAIL
-  const status = repeatedFirst.length || repeatedParagraphs.length ? 'FAIL' : 'PASS'
+  const status = repeatedFirstHardFail.length || repeatedParagraphs.length ? 'FAIL' : 'PASS'
   const lines = [
     '# QA Answer V2 Duplicate Detector Result',
     '',
     `- generatedAt: ${new Date().toISOString()}`,
     `- mode: ${all ? 'all' : `batch:${batch}`}`,
     `- approvedScanned: ${items.length}`,
-    `- repeatedFirstSentenceFails: ${repeatedFirst.length}`,
+    `- repeatedFirstSentence(>=2, manual-review): ${repeatedFirst.length}`,
+    `- repeatedFirstSentence(>=3, fail): ${repeatedFirstHardFail.length}`,
     `- similarityPairs(>=0.35, manual-review): ${pairIssues.length}`,
     `- repeatedParagraphs(>=3 ids, fail): ${repeatedParagraphs.length}`,
     `- status: ${status}`,

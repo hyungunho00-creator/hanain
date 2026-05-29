@@ -75,3 +75,18 @@
     - similarityPairs(수동검토): 131
     - repeatedParagraphs(FAIL 기준): 0
   - `qa-no-blank-answer-audit`: PASS (blankPublicAnswers=0)
+
+## Batch 2 (qa-1200-1249)
+- Queue batch: `qa-1200-1249` (50개)
+- Selection artifact: `docs/batches/qa-1200-1249-selection.json`
+- Dry-run:
+  - 대상 50 / approved 50 / rejected 0
+- Apply:
+  - 대상 50 / approved 50 / rejected 0
+- Validation:
+  - `node scripts/qa-answer-v2-validator.mjs --batch qa-1200-1249`: PASS (approvedScanned=50)
+  - `node scripts/qa-answer-v2-duplicate-detector.mjs --batch qa-1200-1249`: PASS
+    - similarityPairs(수동검토): 1175
+    - repeatedFirstSentence(>=3 fail): 0
+    - repeatedParagraphs(>=3 fail): 0
+  - `node scripts/qa-no-blank-answer-audit.mjs`: PASS (blankPublicAnswers=0)
