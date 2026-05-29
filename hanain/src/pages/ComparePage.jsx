@@ -6,6 +6,8 @@ import LastReviewed from '../components/common/LastReviewed'
 import ReferenceList from '../components/common/ReferenceList'
 import COMPARE_PAGES from '../data/compareData'
 import { REFERENCES } from '../data/references'
+import { usePartner } from '../context/PartnerContext'
+import { withRef } from '../lib/partnerRef'
 
 const LAST_REVIEWED = '2026-05-21'
 
@@ -19,10 +21,11 @@ const LAST_REVIEWED = '2026-05-21'
  */
 export default function ComparePage() {
   const { slug } = useParams()
+  const partner = usePartner()
   const data = COMPARE_PAGES[slug]
 
   if (!data) {
-    return <Navigate to="/" replace />
+    return <Navigate to={withRef('/', partner)} replace />
   }
 
   const canonical = `https://phlorotannin.com/compare/${slug}`
@@ -106,7 +109,7 @@ export default function ComparePage() {
       {/* ── Breadcrumb ── */}
       <nav className="bg-gray-50 border-b border-gray-100" aria-label="breadcrumb">
         <div className="max-w-5xl mx-auto px-6 py-3 flex items-center gap-2 text-[12px] text-gray-500">
-          <Link to="/" className="hover:text-gray-900">홈</Link>
+          <Link to={withRef('/', partner)} className="hover:text-gray-900">홈</Link>
           <ChevronRight className="w-3.5 h-3.5" aria-hidden="true" />
           <span className="text-gray-700">심층 비교</span>
           <ChevronRight className="w-3.5 h-3.5" aria-hidden="true" />
@@ -330,7 +333,7 @@ export default function ComparePage() {
           </div>
           <div className="grid md:grid-cols-3 gap-3">
             <Link
-              to="/phlorotannin"
+              to={withRef('/phlorotannin', partner)}
               className="block bg-white border border-gray-200 rounded-md p-5 hover:border-gray-300 hover:shadow-sm transition-all"
             >
               <div className="text-[11px] font-medium uppercase tracking-[0.14em] text-gray-500 mb-2">권위 페이지</div>
@@ -340,7 +343,7 @@ export default function ComparePage() {
               </div>
             </Link>
             <Link
-              to="/safety"
+              to={withRef('/safety', partner)}
               className="block bg-white border border-gray-200 rounded-md p-5 hover:border-gray-300 hover:shadow-sm transition-all"
             >
               <div className="text-[11px] font-medium uppercase tracking-[0.14em] text-gray-500 mb-2">안전성</div>
@@ -350,7 +353,7 @@ export default function ComparePage() {
               </div>
             </Link>
             <Link
-              to="/research-timeline"
+              to={withRef('/research-timeline', partner)}
               className="block bg-white border border-gray-200 rounded-md p-5 hover:border-gray-300 hover:shadow-sm transition-all"
             >
               <div className="text-[11px] font-medium uppercase tracking-[0.14em] text-gray-500 mb-2">연구사</div>

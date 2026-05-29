@@ -1,6 +1,15 @@
 {
   "partners": [
     {
+      "slug": "01098498408",
+      "name": "현건우",
+      "phone": "01098498408",
+      "phoneDisplay": "010-9849-8408",
+      "siteUrl": "https://phlorotannin.com/p/01098498408",
+      "memo": "partner added by admin request",
+      "createdAt": "2026-05-29T08:33:03.488Z"
+    },
+    {
       "slug": "01032917939",
       "name": "강소연",
       "phone": "01032917939",

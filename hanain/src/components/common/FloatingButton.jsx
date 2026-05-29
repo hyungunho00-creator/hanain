@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { MessageCircle, X, Phone, Calendar, ChevronUp } from 'lucide-react'
 import { usePartner } from '../../context/PartnerContext'
 import RevealContact from './RevealContact'
+import { withRef } from '../../lib/partnerRef'
 
 export default function FloatingButton() {
   const partner = usePartner()
@@ -18,7 +19,7 @@ export default function FloatingButton() {
       {isOpen && (
         <div className="flex flex-col gap-2 items-end">
           <Link
-            to="/consult"
+            to={withRef('/consult', partner)}
             onClick={() => setIsOpen(false)}
             className="flex items-center gap-2 bg-white text-gray-900 border border-gray-200 px-4 py-2.5 rounded-md hover:border-gray-400 transition-colors text-sm font-medium"
           >
@@ -33,7 +34,7 @@ export default function FloatingButton() {
             className="flex items-center gap-2 bg-white text-gray-900 border border-gray-200 px-4 py-2.5 rounded-md hover:border-gray-400 transition-colors text-sm font-medium"
           />
           <Link
-            to="/partner"
+            to={withRef('/partner', partner)}
             onClick={() => setIsOpen(false)}
             className="flex items-center gap-2 bg-white text-gray-900 border border-gray-200 px-4 py-2.5 rounded-md hover:border-gray-400 transition-colors text-sm font-medium"
           >

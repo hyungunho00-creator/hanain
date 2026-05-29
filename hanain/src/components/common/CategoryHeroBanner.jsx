@@ -8,6 +8,8 @@
 // ───────────────────────────────────────────────────────────────
 import { Link } from 'react-router-dom'
 import { ChevronRight, ShieldCheck, BookOpen } from 'lucide-react'
+import { usePartner } from '../../context/PartnerContext'
+import { withRef } from '../../lib/partnerRef'
 
 export default function CategoryHeroBanner({
   meta,                  // qaCategoryMeta.js 의 카테고리 메타 (필수)
@@ -18,6 +20,7 @@ export default function CategoryHeroBanner({
   reviewedDate = '2026-05-21',  // 최근 검토일
   sourceLabel = 'PubMed · Europe PMC · DOI',  // 출처 라벨
 }) {
+  const partner = usePartner()
   const Icon = meta?.icon
 
   return (
@@ -44,7 +47,7 @@ export default function CategoryHeroBanner({
               return (
                 <span key={i} className="flex items-center gap-1.5">
                   {b.to && !isLast ? (
-                    <Link to={b.to} className="hover:text-white transition">{b.label}</Link>
+                    <Link to={withRef(b.to, partner)} className="hover:text-white transition">{b.label}</Link>
                   ) : (
                     <span className={isLast ? 'text-white/90' : ''}>{b.label}</span>
                   )}

@@ -5,6 +5,8 @@ import { usePartner } from '../context/PartnerContext'
 import SEOHead from '../components/common/SEOHead'
 import RevealContact from '../components/common/RevealContact'
 import LastReviewed from '../components/common/LastReviewed'
+import { withRef } from '../lib/partnerRef'
+import { getRenderableQAAnswer, shouldEmitQASchema, answerPlainTextForMeta, stripHtml } from '../lib/qaAnswer'
 
 const LAST_REVIEWED = '2026-05-21'
 
@@ -43,16 +45,16 @@ const CAT_SLUG_MAP = {
   womens_health: 'womens-health', mens_health: 'mens-health',
 }
 
-function getValidatedAnswerHtml(qa) {
-  if (!qa || typeof qa !== 'object') return ''
-  const answer = qa.validatedAnswer || qa.validated_answer || ''
-  return typeof answer === 'string' ? answer.trim() : ''
+function qaSlug(s) {
+  return (s || '').replace(/[^\w\s가-힣]/g, '').replace(/\s+/g, '-').slice(0, 60)
 }
 
-function isValidatedQa(qa) {
-  if (!qa || typeof qa !== 'object') return false
-  const status = String(qa.qualityStatus || qa.quality_status || '').toLowerCase()
-  return status === 'validated' && getValidatedAnswerHtml(qa).length > 0
+function getAnswerSearchText(qa) {
+  return stripHtml(getRenderableQAAnswer(qa).html).toLowerCase()
+}
+
+function isPublicQa(qa) {
+  return shouldEmitQASchema(qa)
 }
 
 function highlightText(text, query) {
@@ -101,6 +103,7 @@ function QACard({ qa, itemKey, isOpen, onToggle, searchQuery, categories }) {
   const partner = usePartner()
   const [liked, setLiked] = useState(false)
   const [likeCount, setLikeCount] = useState(qa.likes || 0)
+  const renderable = getRenderableQAAnswer(qa)
 
   const handleLike = (e) => {
     e.stopPropagation()
@@ -109,15 +112,20 @@ function QACard({ qa, itemKey, isOpen, onToggle, searchQuery, categories }) {
 
   const handleShare = async (e) => {
     e.stopPropagation()
+    const slug = qaSlug(qa.question)
+    const qaPath = slug
+      ? withRef(`/q/${slug}`, partner)
+      : withRef(`/qa?openId=${qa.id}&category=${qa.category || qa.category_id || ''}`, partner)
+    const shareUrl = `${window.location.origin}${qaPath}`
     try {
-      await navigator.clipboard.writeText(window.location.origin + '/qa?q=' + encodeURIComponent(qa.question))
+      await navigator.clipboard.writeText(shareUrl)
       alert('링크가 복사되었습니다!')
     } catch {
-      alert('링크 복사: ' + window.location.origin + '/qa')
+      alert('링크 복사: ' + shareUrl)
     }
   }
 
-  const answerText = getValidatedAnswerHtml(qa) || '<p>검수 중인 건강정보입니다.</p>'
+  const answerText = renderable.html
   const references = null
   const catId = qa.category_id || qa.category
   // 카테고리 이름 lookup — 동적 카테고리(qa.json categories) 기준
@@ -136,7 +144,7 @@ function QACard({ qa, itemKey, isOpen, onToggle, searchQuery, categories }) {
             <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 mb-3">
               {catId && (
                 <Link
-                  to={`/category/${CAT_SLUG_MAP[catId] || catId}`}
+                  to={withRef(`/category/${CAT_SLUG_MAP[catId] || catId}`, partner)}
                   onClick={e => e.stopPropagation()}
                   className="text-[11px] font-medium uppercase tracking-[0.16em] text-gray-500 hover:text-gray-900 transition-colors"
                 >
@@ -146,6 +154,11 @@ function QACard({ qa, itemKey, isOpen, onToggle, searchQuery, categories }) {
               <span className="text-[11px] font-medium uppercase tracking-[0.16em] text-gray-400">
                 {diffLabel}
               </span>
+              {renderable.badge && (
+                <span className="text-[11px] font-medium uppercase tracking-[0.16em] text-amber-700 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded">
+                  {renderable.badge}
+                </span>
+              )}
               {(qa.tags || []).slice(0, 3).map(tag => (
                 <span key={tag} className="text-[12px] text-gray-400">#{tag}</span>
               ))}
@@ -258,7 +271,7 @@ export default function QAPage() {
     fetch('/qa.json')
       .then(r => r.json())
       .then(data => {
-        const qs = (data.questions || []).filter(isValidatedQa)
+        const qs = data.questions || []
         setAllQuestions(qs)
 
         // 카테고리 목록 — qa.json categories를 Source of Truth로 사용
@@ -298,7 +311,7 @@ export default function QAPage() {
     if (q.length >= 1) {
       filtered = filtered.filter(item => {
         const qText = (item.question || '').toLowerCase()
-        const aText = getValidatedAnswerHtml(item).toLowerCase()
+        const aText = getAnswerSearchText(item)
         const tags = (item.tags || []).join(' ').toLowerCase()
         return qText.includes(q) || aText.includes(q) || tags.includes(q)
       })
@@ -397,21 +410,13 @@ export default function QAPage() {
   // ──────────────────────────────────────────────────────────
   const FAQ_JSONLD_MAX_PER_PAGE = 10
 
-  // 슬러그 규칙 (DO_NOT_TOUCH §3-Q — 변경 금지)
-  const qaSlug = (s) =>
-    (s || '').replace(/[^\w\s가-힣]/g, '').replace(/\s+/g, '-').slice(0, 60)
-
-  // HTML 태그 제거 (answer에 <span> 등이 들어있어서 schema.org text에 raw가 들어가면 안 됨)
-  const stripHtml = (s) => (typeof s === 'string'
-    ? s.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim()
-    : '')
-
   const faqJsonLd = (() => {
     // 카테고리/검색 필터가 활성이면 실데이터 기반 FAQPage
     const useDynamic = (activeCategory && activeCategory !== 'all') || (searchQuery && searchQuery.length >= 2)
     if (useDynamic && questions.length > 0) {
-      const items = questions.slice(0, FAQ_JSONLD_MAX_PER_PAGE).map(item => {
-        const ansText = stripHtml(getValidatedAnswerHtml(item))
+      const publicQuestions = questions.filter((item) => isPublicQa(item))
+      const items = publicQuestions.slice(0, FAQ_JSONLD_MAX_PER_PAGE).map(item => {
+        const ansText = answerPlainTextForMeta(item)
         const slug = qaSlug(item.question)
         return {
           "@type": "Question",
@@ -423,6 +428,7 @@ export default function QAPage() {
           }
         }
       })
+      if (items.length === 0) return null
       const catSuffix = activeCategory && activeCategory !== 'all' ? `#${activeCategory}` : ''
       return {
         "@context": "https://schema.org",
@@ -605,7 +611,7 @@ export default function QAPage() {
             {totalPages > 1 && (
               <nav className="flex justify-center items-center gap-1.5 mt-10" aria-label="페이지네이션">
                 <button
-                  onClick={() => setPage(p => Math.max(1, p - 1))}
+                  onClick={() => setPage(Math.max(1, page - 1))}
                   disabled={page === 1}
                   className="px-4 py-2 rounded-md bg-white border border-gray-200 text-[13px] text-gray-700 disabled:opacity-30 disabled:cursor-not-allowed hover:border-gray-400 hover:text-gray-900 transition-colors"
                 >
@@ -630,7 +636,7 @@ export default function QAPage() {
                   )
                 })}
                 <button
-                  onClick={() => setPage(p => Math.min(totalPages, p + 1))}
+                  onClick={() => setPage(Math.min(totalPages, page + 1))}
                   disabled={page === totalPages}
                   className="px-4 py-2 rounded-md bg-white border border-gray-200 text-[13px] text-gray-700 disabled:opacity-30 disabled:cursor-not-allowed hover:border-gray-400 hover:text-gray-900 transition-colors"
                 >
@@ -658,7 +664,7 @@ export default function QAPage() {
                 </p>
                 <div className="flex flex-wrap gap-x-6 gap-y-3 items-center">
                   <Link
-                    to="/partner"
+                    to={withRef('/partner', partner)}
                     className="inline-flex items-center gap-2 bg-gray-900 hover:bg-black text-white px-6 py-3 rounded-md text-[14px] font-medium transition-colors"
                   >
                     파트너와 이야기하기
@@ -732,7 +738,7 @@ export default function QAPage() {
                 이 정보를 고객에게 직접 전달하고 싶으신가요? 플로로탄닌 파트너스에서 더 많은 정보를 탐색해 보세요.
               </p>
               <Link
-                to="/partner"
+                to={withRef('/partner', partner)}
                 className="inline-flex items-center gap-1.5 text-[13px] text-gray-700 hover:text-gray-900 underline underline-offset-4 decoration-gray-300 hover:decoration-gray-700 transition-colors"
               >
                 파트너 과정 알아보기

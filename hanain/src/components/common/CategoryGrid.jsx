@@ -9,6 +9,8 @@
 import { Link } from 'react-router-dom'
 import { ChevronRight } from 'lucide-react'
 import { QA_CATEGORY_LIST } from '../../data/qaCategoryMeta'
+import { usePartner } from '../../context/PartnerContext'
+import { withRef } from '../../lib/partnerRef'
 
 export default function CategoryGrid({
   title = '카테고리 둘러보기',
@@ -18,6 +20,7 @@ export default function CategoryGrid({
   showAllLink = true,
   className = '',
 }) {
+  const partner = usePartner()
   const items = QA_CATEGORY_LIST.filter(c => {
     if (excludeId && c.id === excludeId) return false
     if (excludeSlug && c.slug === excludeSlug) return false
@@ -35,7 +38,7 @@ export default function CategoryGrid({
         <h3 className="font-bold text-ocean-deep text-sm">{title}</h3>
         {showAllLink && (
           <Link
-            to="/qa"
+            to={withRef('/qa', partner)}
             className="text-[11px] text-gray-400 hover:text-gray-900 inline-flex items-center gap-0.5 transition-colors"
           >
             전체 <ChevronRight className="w-3 h-3" />
@@ -52,7 +55,7 @@ export default function CategoryGrid({
           return (
             <Link
               key={c.slug}
-              to={`/category/${c.slug}`}
+              to={withRef(`/category/${c.slug}`, partner)}
               className="group relative flex items-center gap-2 rounded-md bg-gray-50 hover:bg-white border border-gray-100 hover:border-gray-400 px-2.5 py-2 transition-colors"
             >
               <span

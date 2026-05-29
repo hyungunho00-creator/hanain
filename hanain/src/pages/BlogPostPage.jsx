@@ -199,7 +199,7 @@ export default function BlogPostPage() {
   useEffect(() => {
     setLoading(true)
     getPostBySlug(slug).then(({ data, error }) => {
-      if (error || !data) { navigate('/blog', { replace: true }); return }
+      if (error || !data) { navigate(withRef('/blog', partner), { replace: true }); return }
       setPost(data)
       setLoading(false)
       // 관련 글
@@ -432,7 +432,7 @@ export default function BlogPostPage() {
               <div className="flex gap-2 sm:col-span-2">
                 <dt className="shrink-0 text-white/50 font-medium">용어 사전</dt>
                 <dd>
-                  <Link to="/glossary" className="text-cyan-hana hover:text-white underline decoration-cyan-hana/40 underline-offset-2 transition-colors">
+                  <Link to={withRef('/glossary', partner)} className="text-cyan-hana hover:text-white underline decoration-cyan-hana/40 underline-offset-2 transition-colors">
                     플로로탄닌 용어 사전
                   </Link>
                   <span className="text-white/60"> — 감태·디에콜·에콜·씨놀 등 주요 용어 한곳에서 확인</span>

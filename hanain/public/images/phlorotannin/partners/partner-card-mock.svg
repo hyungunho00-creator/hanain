@@ -1,0 +1,10 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#f8fafc"/>
+  <rect x="110" y="80" width="580" height="340" rx="24" fill="#0b1a2e"/>
+  <rect x="150" y="140" width="260" height="24" rx="12" fill="#94a3b8"/>
+  <rect x="150" y="182" width="320" height="16" rx="8" fill="#cbd5e1"/>
+  <rect x="150" y="214" width="180" height="16" rx="8" fill="#cbd5e1"/>
+  <rect x="150" y="274" width="220" height="44" rx="12" fill="#0a7e8c"/>
+  <circle cx="560" cy="220" r="86" fill="#e2e8f0"/>
+  <text x="400" y="460" text-anchor="middle" fill="#334155" font-size="24" font-family="Arial">Partner Card Mock</text>
+</svg>

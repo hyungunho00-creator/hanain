@@ -16,10 +16,14 @@ import SEOHead from '../common/SEOHead'
 import ReferenceList, { RefCite } from '../common/ReferenceList'
 import LastReviewed from '../common/LastReviewed'
 import REFERENCES from '../../data/references'
+import { usePartner } from '../../context/PartnerContext'
+import { withRef } from '../../lib/partnerRef'
+import PartnerSharePanel from '../partner/PartnerSharePanel'
 
 const SITE = 'https://phlorotannin.com'
 
 export default function InsightLayout({ post, related = [] }) {
+  const partner = usePartner()
   if (!post) return null
 
   const canonical = `${SITE}/insights/${post.slug}`
@@ -116,13 +120,17 @@ export default function InsightLayout({ post, related = [] }) {
         {/* 빵부스러기 */}
         <nav aria-label="breadcrumb" className="max-w-3xl mx-auto px-4 sm:px-6 pt-6 text-xs text-gray-500">
           <ol className="flex flex-wrap items-center gap-1.5">
-            <li><Link to="/" className="hover:underline">홈</Link></li>
-            <li aria-hidden>›</li>
-            <li><Link to="/insights" className="hover:underline">심층 인사이트</Link></li>
+                <li><Link to={withRef('/', partner)} className="hover:underline">홈</Link></li>
+                <li aria-hidden>›</li>
+                <li><Link to={withRef('/insights', partner)} className="hover:underline">심층 인사이트</Link></li>
             <li aria-hidden>›</li>
             <li className="text-gray-700">{post.title.length > 28 ? post.title.slice(0, 28) + '…' : post.title}</li>
           </ol>
         </nav>
+
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 pt-3">
+          <PartnerSharePanel />
+        </div>
 
         {/* 제목 / 메타 */}
         <header className="max-w-3xl mx-auto px-4 sm:px-6 pt-6 pb-8">
@@ -228,7 +236,7 @@ export default function InsightLayout({ post, related = [] }) {
               {related.map((r) => (
                 <li key={r.slug}>
                   <Link
-                    to={`/insights/${r.slug}`}
+                    to={withRef(`/insights/${r.slug}`, partner)}
                     className="block rounded-lg border border-gray-200 p-4 hover:border-gray-400 transition-colors bg-white"
                   >
                     <div className="text-xs text-gray-500 mb-1">{r.categoryLabel || r.category}</div>
@@ -248,12 +256,12 @@ export default function InsightLayout({ post, related = [] }) {
           <div className="rounded-lg bg-gray-50 border border-gray-200 p-5 text-sm text-gray-700">
             <strong className="text-gray-900">계속 읽으세요</strong>
             <div className="mt-2 flex flex-wrap gap-x-4 gap-y-2 text-[13px]">
-              <Link to="/phlorotannin" className="underline underline-offset-2 hover:text-black">플로로탄닌 종합 가이드</Link>
-              <Link to="/safety" className="underline underline-offset-2 hover:text-black">안전성·용량·금기</Link>
-              <Link to="/research-timeline" className="underline underline-offset-2 hover:text-black">연구 타임라인 2011-2026</Link>
-              <Link to="/qa" className="underline underline-offset-2 hover:text-black">건강 Q&amp;A</Link>
-              <Link to="/glossary" className="underline underline-offset-2 hover:text-black">용어 사전</Link>
-              <Link to="/insights" className="underline underline-offset-2 hover:text-black">전체 인사이트</Link>
+              <Link to={withRef('/phlorotannin', partner)} className="underline underline-offset-2 hover:text-black">플로로탄닌 종합 가이드</Link>
+              <Link to={withRef('/safety', partner)} className="underline underline-offset-2 hover:text-black">안전성·용량·금기</Link>
+              <Link to={withRef('/research-timeline', partner)} className="underline underline-offset-2 hover:text-black">연구 타임라인 2011-2026</Link>
+              <Link to={withRef('/qa', partner)} className="underline underline-offset-2 hover:text-black">건강 Q&amp;A</Link>
+              <Link to={withRef('/glossary', partner)} className="underline underline-offset-2 hover:text-black">용어 사전</Link>
+              <Link to={withRef('/insights', partner)} className="underline underline-offset-2 hover:text-black">전체 인사이트</Link>
             </div>
           </div>
         </section>

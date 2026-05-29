@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom'
 import { ArrowLeft, Send, AlertCircle, CheckCircle2 } from 'lucide-react'
 import { supabase } from '../lib/supabase'
 import SEOHead from '../components/common/SEOHead'
+import { usePartner } from '../context/PartnerContext'
+import { withRef } from '../lib/partnerRef'
 
 const CATEGORIES = [
   { id: 'metabolism',            name: '대사질환',    color: '#3B82F6' },
@@ -21,6 +23,7 @@ const CATEGORIES = [
 
 export default function QuestionWritePage() {
   const navigate = useNavigate()
+  const partner = usePartner()
   const [form, setForm] = useState({
     guestName: '',
     guestContact: '',
@@ -89,7 +92,7 @@ export default function QuestionWritePage() {
               추가 질문하기
             </button>
             <button
-              onClick={() => navigate('/')}
+              onClick={() => navigate(withRef('/', partner))}
               className="w-full py-3.5 rounded-xl border-2 border-gray-200 text-gray-600 font-semibold text-base hover:bg-gray-50 transition"
             >
               홈으로 돌아가기

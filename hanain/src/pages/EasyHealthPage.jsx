@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { usePartner } from '../context/PartnerContext'
 import SEOHead from '../components/common/SEOHead'
+import { withRef } from '../lib/partnerRef'
 import { Link } from 'react-router-dom'
 import { ChevronDown, ChevronUp, MessageSquare, ArrowRight, CheckCircle, BookOpen, Leaf, AlertTriangle } from 'lucide-react'
 import RelatedQA from '../components/qa/RelatedQA'
@@ -786,7 +787,7 @@ export default function EasyHealthPage() {
                   질환별 설명 보기
                   <ChevronDown className="w-4 h-4 transition-transform group-hover:translate-y-0.5" strokeWidth={1.8} />
                 </a>
-                <Link to="/phlorotannin" className="inline-flex items-center gap-1 text-[14px] text-gray-700 hover:text-gray-900 underline underline-offset-4 decoration-gray-300 hover:decoration-gray-700">
+                <Link to={withRef('/phlorotannin', partner)} className="inline-flex items-center gap-1 text-[14px] text-gray-700 hover:text-gray-900 underline underline-offset-4 decoration-gray-300 hover:decoration-gray-700">
                   논문·기전 상세
                 </Link>
               </div>
@@ -1048,7 +1049,7 @@ export default function EasyHealthPage() {
           </p>
           <div className="flex flex-wrap gap-x-6 gap-y-3 justify-center items-center">
             <Link
-              to="/consult"
+              to={withRef('/consult', partner)}
               className="inline-flex items-center gap-2 bg-gray-900 hover:bg-black text-white px-6 py-3 rounded-md text-[14px] font-medium transition-colors"
             >
               <MessageSquare className="w-4 h-4" strokeWidth={1.8} />

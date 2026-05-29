@@ -19,6 +19,7 @@ export default function SEOHead({
   description,
   keywords,
   canonical,
+  ogUrl = null,
   ogType = 'website',
   ogImage = 'https://phlorotannin.com/og-image.png',
   ogImageAlt = null,   // 호출부에서 카테고리별 차별화 가능 (없으면 title 기반 자동 fallback)
@@ -103,7 +104,7 @@ export default function SEOHead({
     setMeta('meta[property="og:title"]', fullTitle)
     setMeta('meta[property="og:description"]', finalDesc)
     setMeta('meta[property="og:type"]', ogType)
-    if (canonical) setMeta('meta[property="og:url"]', canonical)
+    if (ogUrl || canonical) setMeta('meta[property="og:url"]', ogUrl || canonical)
     // og:image:alt — 호출부 prop 우선, 없으면 title 기반 fallback (헌법 제10조 의무 7-B-4)
     const finalImageAlt = ogImageAlt || `${fullTitle} - 미리보기 이미지`
     setMeta('meta[property="og:image"]', ogImage)
@@ -155,7 +156,7 @@ export default function SEOHead({
         page_path: canonical ? new URL(canonical).pathname : window.location.pathname,
       })
     }
-  }, [fullTitle, finalDesc, finalKeywords, canonical, ogImage, ogImageAlt, noindex, ogType, jsonLd, lang, imageType])
+  }, [fullTitle, finalDesc, finalKeywords, canonical, ogUrl, ogImage, ogImageAlt, noindex, ogType, jsonLd, lang, imageType])
 
   return null
 }

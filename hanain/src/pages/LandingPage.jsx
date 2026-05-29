@@ -425,11 +425,11 @@ export default function LandingPage() {
     : 0
 
   const goCategory = (cat) => {
-    if (cat.path) { navigate(cat.path); return }
+    if (cat.path) { navigate(withRef(cat.path, partner)); return }
     if (cat.categoryId) {
-      navigate(`/qa?category=${encodeURIComponent(cat.categoryId)}`)
+      navigate(withRef(`/qa?category=${encodeURIComponent(cat.categoryId)}`, partner))
     } else {
-      navigate(`/qa?q=${encodeURIComponent(cat.query)}`)
+      navigate(withRef(`/qa?q=${encodeURIComponent(cat.query)}`, partner))
     }
   }
 
@@ -524,7 +524,7 @@ export default function LandingPage() {
             ].map(tag => (
               <button
                 key={tag.label}
-                onClick={() => navigate(`/qa?category=${tag.cat}`)}
+                onClick={() => navigate(withRef(`/qa?category=${tag.cat}`, partner))}
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white hover:bg-gray-50 text-gray-700 hover:text-gray-900 rounded-md text-[13px] font-medium border border-gray-200 hover:border-gray-300 transition-colors"
               >
                 <tag.Icon className="w-3.5 h-3.5 text-gray-500" strokeWidth={1.6} />
@@ -535,7 +535,7 @@ export default function LandingPage() {
 
           {/* CTA 버튼 — 학습 시작 (그라데이션 제거, 단색 잉크 톤) */}
           <button
-            onClick={() => navigate('/easy')}
+            onClick={() => navigate(withRef('/easy', partner))}
             className="group inline-flex items-center gap-3 bg-gray-900 hover:bg-black text-white px-6 py-4 rounded-md text-[15px] font-medium transition-colors"
           >
             플로로탄닌 쉽게 이해하기부터 시작하기
@@ -776,7 +776,7 @@ export default function LandingPage() {
           {/* ── 쉽게 배우기 배너 링크 (D10: 그라데이션 통일) ── */}
           <div className="mt-8">
             <button
-              onClick={() => navigate('/easy')}
+              onClick={() => navigate(withRef('/easy', partner))}
               className="group w-full flex items-center justify-between gap-3 px-6 py-5 bg-gray-900 hover:bg-black rounded-md text-white transition-colors text-left"
             >
               <div>
@@ -890,7 +890,7 @@ export default function LandingPage() {
             ].map(l => (
               <button
                 key={l.label}
-                onClick={() => navigate(l.path)}
+                onClick={() => navigate(withRef(l.path, partner))}
                 className="text-sm text-gray-400 hover:text-gray-200 transition-colors font-semibold"
               >
                 {l.label}

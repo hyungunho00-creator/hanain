@@ -4,10 +4,14 @@ import SEOHead from '../components/common/SEOHead'
 import LastReviewed from '../components/common/LastReviewed'
 import { INSIGHTS_LIST, INSIGHT_CATEGORIES, INSIGHTS_BY_CATEGORY } from '../data/insights'
 import { QA_TOTAL } from '../data/siteStats'
+import { usePartner } from '../context/PartnerContext'
+import { withRef } from '../lib/partnerRef'
+import PartnerSharePanel from '../components/partner/PartnerSharePanel'
 
 const SITE = 'https://phlorotannin.com'
 
 export default function InsightsHubPage() {
+  const partner = usePartner()
   const [activeCat, setActiveCat] = useState('all')
   const [q, setQ] = useState('')
 
@@ -94,7 +98,7 @@ export default function InsightsHubPage() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
             <nav aria-label="breadcrumb" className="text-xs text-gray-500 mb-3">
               <ol className="flex items-center gap-1.5">
-                <li><Link to="/" className="hover:underline">홈</Link></li>
+                <li><Link to={withRef('/', partner)} className="hover:underline">홈</Link></li>
                 <li aria-hidden>›</li>
                 <li className="text-gray-700">심층 인사이트</li>
               </ol>
@@ -140,6 +144,10 @@ export default function InsightsHubPage() {
             </div>
           </div>
         </header>
+
+        <section className="max-w-6xl mx-auto px-4 sm:px-6 py-5">
+          <PartnerSharePanel />
+        </section>
 
         {/* Filter Bar */}
         <section className="border-b border-gray-100 sticky top-0 bg-white/90 backdrop-blur z-10">
@@ -188,7 +196,7 @@ export default function InsightsHubPage() {
                 return (
                   <li key={p.slug}>
                     <Link
-                      to={`/insights/${p.slug}`}
+                      to={withRef(`/insights/${p.slug}`, partner)}
                       className="group block h-full overflow-hidden rounded-lg border border-gray-200 hover:border-gray-400 hover:shadow-sm transition bg-white"
                     >
                       {p.heroImage && (

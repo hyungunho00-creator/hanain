@@ -7,6 +7,10 @@ import CategoryHeroBanner from '../components/common/CategoryHeroBanner'
 import CategoryGrid from '../components/common/CategoryGrid'
 import { getCategoryMeta } from '../data/qaCategoryMeta'
 import { QA_TOTAL } from '../data/siteStats'
+import { usePartner } from '../context/PartnerContext'
+import { withRef } from '../lib/partnerRef'
+import { shouldEmitQASchema } from '../lib/qaAnswer'
+import PartnerSharePanel from '../components/partner/PartnerSharePanel'
 
 // URL slug → category_id 매핑 (DB qa_categories 기준)
 // [2026-05-21 D6 보강] skin/hair 단독 슬러그 추가 — sitemap·qa.json 정합성 확보
@@ -41,13 +45,8 @@ let QA_FALLBACK = null
 function slugifyKoLocal(s) {
   return String(s || '').replace(/[^\w\s가-힣]/g, '').replace(/\s+/g, '-').slice(0, 60)
 }
-function getValidatedAnswerHtml(item) {
-  const answer = item?.validatedAnswer || item?.validated_answer || ''
-  return typeof answer === 'string' ? answer.trim() : ''
-}
-function isValidatedQa(item) {
-  const status = String(item?.qualityStatus || item?.quality_status || '').toLowerCase()
-  return status === 'validated' && getValidatedAnswerHtml(item).length > 0
+function isPublicQa(item) {
+  return shouldEmitQASchema(item)
 }
 async function ensureQaFallback() {
   if (!QA_FALLBACK) {
@@ -84,7 +83,7 @@ async function getFallbackCategory(catId) {
 }
 async function getFallbackQuestions(catId, { page = 1, limit = PAGE_SIZE, sort = 'popular' } = {}) {
   const data = await ensureQaFallback()
-  let arr = data.questions.filter(q => q.category === catId && isValidatedQa(q))
+  let arr = data.questions.filter(q => q.category === catId && isPublicQa(q))
   if (sort === 'latest') {
     arr = arr.sort((a, b) => String(b.created_at || b.id).localeCompare(String(a.created_at || a.id)))
   } else if (sort === 'likes') {
@@ -111,7 +110,7 @@ async function getFallbackQuestions(catId, { page = 1, limit = PAGE_SIZE, sort =
 async function getFallbackPopular(catId, limit = 5) {
   const data = await ensureQaFallback()
   return data.questions
-    .filter(q => q.category === catId && isValidatedQa(q))
+    .filter(q => q.category === catId && isPublicQa(q))
     .sort((a, b) => (b.views || 0) - (a.views || 0))
     .slice(0, limit)
     .map(q => ({
@@ -122,11 +121,11 @@ async function getFallbackPopular(catId, limit = 5) {
 }
 
 // 질문 카드 — Q&A 공통 목록 스타일
-export function QuestionRow({ q, rank }) {
+export function QuestionRow({ q, rank, partner }) {
   const slug = toQuestionSlug(q.title || q.question) || q.slug || q.id
   return (
     <Link
-      to={`/q/${slug}`}
+      to={withRef(`/q/${slug}`, partner)}
       className="relative flex items-start gap-3.5 px-4 py-4 sm:px-5 sm:py-4 hover:bg-gray-50 transition-colors group"
     >
       {/* hover 시 좌측 액센트 스트라이프 — 저널 인덱스 페이지 느낌 */}
@@ -165,6 +164,7 @@ export function QuestionRow({ q, rank }) {
 export default function CategoryPage() {
   const { slug } = useParams()
   const navigate = useNavigate()
+  const partner = usePartner()
 
   const [category, setCategory] = useState(null)
   const [questions, setQuestions] = useState([])
@@ -172,7 +172,7 @@ export default function CategoryPage() {
   const [total, setTotal] = useState(0)
   const [page, setPage] = useState(1)
   const [sort, setSort] = useState('popular')
-  const [validatedIds, setValidatedIds] = useState(new Set())
+  const [publicIds, setPublicIds] = useState(new Set())
   const [loading, setLoading] = useState(true)
   const [notFound, setNotFound] = useState(false)
 
@@ -181,10 +181,10 @@ export default function CategoryPage() {
   useEffect(() => {
     ensureQaFallback()
       .then((d) => {
-        const ids = (d.questions || []).filter(isValidatedQa).map((q) => q.id)
-        setValidatedIds(new Set(ids))
+        const ids = (d.questions || []).filter(isPublicQa).map((q) => q.id)
+        setPublicIds(new Set(ids))
       })
-      .catch(() => setValidatedIds(new Set()))
+      .catch(() => setPublicIds(new Set()))
   }, [])
 
   useEffect(() => {
@@ -234,20 +234,20 @@ export default function CategoryPage() {
       like_count: q.likes || q.like_count || 0,
       difficulty: q.difficulty,
     }))
-    const filtered = validatedIds.size > 0
-      ? normalized.filter((q) => validatedIds.has(q.id))
+    const filtered = publicIds.size > 0
+      ? normalized.filter((q) => publicIds.has(q.id))
       : normalized
     setQuestions(filtered)
-    if (validatedIds.size > 0 && QA_FALLBACK?.questions?.length) {
+    if (publicIds.size > 0 && QA_FALLBACK?.questions?.length) {
       const validatedTotal = QA_FALLBACK.questions.filter(
-        (q) => q.category === category.id && isValidatedQa(q)
+        (q) => q.category === category.id && isPublicQa(q)
       ).length
       setTotal(validatedTotal)
     } else {
       setTotal(result.count || 0)
     }
     setLoading(false)
-  }, [category, page, sort, validatedIds])
+  }, [category, page, sort, publicIds])
 
   useEffect(() => { loadQuestions() }, [loadQuestions])
 
@@ -273,16 +273,16 @@ export default function CategoryPage() {
         slug: toQuestionSlug(q.question || q.title) || q.slug || q.id,
         title: q.question || q.title,
       }))
-      setPopular(validatedIds.size > 0 ? normalized.filter((q) => validatedIds.has(q.id)) : normalized)
+      setPopular(publicIds.size > 0 ? normalized.filter((q) => publicIds.has(q.id)) : normalized)
     }
     loadExtras()
-  }, [category, validatedIds])
+  }, [category, publicIds])
 
   if (notFound) return (
-    <div className="pt-16 min-h-screen bg-gray-hana flex flex-col items-center justify-center gap-4">
-      <p className="text-gray-600 text-lg">카테고리를 찾을 수 없습니다.</p>
-      <Link to="/qa" className="text-gray-700 hover:text-gray-900 underline underline-offset-4 decoration-gray-300 hover:decoration-gray-700 text-sm">전체 Q&A 보기</Link>
-    </div>
+      <div className="pt-16 min-h-screen bg-gray-hana flex flex-col items-center justify-center gap-4">
+        <p className="text-gray-600 text-lg">카테고리를 찾을 수 없습니다.</p>
+      <Link to={withRef('/qa', partner)} className="text-gray-700 hover:text-gray-900 underline underline-offset-4 decoration-gray-300 hover:decoration-gray-700 text-sm">전체 Q&A 보기</Link>
+      </div>
   )
 
   if (!category) return (
@@ -375,6 +375,9 @@ export default function CategoryPage() {
         />
 
         <div className="max-w-5xl mx-auto px-4 py-6">
+          <div className="mb-4">
+            <PartnerSharePanel />
+          </div>
           <div className="flex flex-col lg:flex-row gap-6">
             {/* ── 메인: 질문 목록 ── */}
             <main className="flex-1 min-w-0">
@@ -449,6 +452,7 @@ export default function CategoryPage() {
                         key={q.id || q.slug}
                         q={q}
                         rank={sort === 'popular' && page === 1 ? i + 1 : null}
+                        partner={partner}
                       />
                     ))}
                   </div>
@@ -492,7 +496,7 @@ export default function CategoryPage() {
                     {popular.slice(0, 5).map((q, i) => (
                       <Link
                         key={q.id || q.slug}
-                        to={`/q/${q.slug || q.id}`}
+                        to={withRef(`/q/${q.slug || q.id}`, partner)}
                         className="flex items-start gap-2 group"
                       >
                         <span className={`shrink-0 inline-flex items-center justify-center w-5 h-5 rounded-md text-xs font-bold mt-0.5 ${

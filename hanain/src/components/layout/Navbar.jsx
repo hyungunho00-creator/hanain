@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { CreditCard, FolderLock, Eye, EyeOff, ExternalLink } from 'lucide-react'
 import { usePartner } from '../../context/PartnerContext'
+import { withRef } from '../../lib/partnerRef'
 
 // [2026-05-21] 인사이트 허브(60편 PMC 1차 자료 기반) 진입 메뉴 신설
 // PR #16/#17 로 60편 자산화했으나 진입로가 없어 사용자가 발견 불가했던 문제 해결
@@ -205,10 +206,12 @@ export default function Navbar() {
   const location  = useLocation()
   const navigate  = useNavigate()
   const partner   = usePartner()
+  const basePath = location.pathname.replace(/^\/p\/[^/]+/, '') || '/'
+  const partnerSlug = partner?.partnerSlug || partner?.slug || partner?.id || partner?.phone
 
-  const isPartner = partner && partner.phone && partner.phone !== '01056528206'
-  const cardPath  = isPartner ? `/p/${partner.phone}?view=card` : null
-  const infoPath  = isPartner ? `/p/${partner.phone}/inforoom` : '/inforoom'
+  const isPartner = Boolean(partner?.isPartnerContext && partnerSlug)
+  const cardPath  = isPartner ? `/p/${partnerSlug}?view=card` : null
+  const infoPath  = isPartner ? `/p/${partnerSlug}/inforoom` : withRef('/inforoom', partner)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -251,7 +254,7 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16">
 
             {/* 로고 — V1 P자 (네이비→틸 그라데이션, 골드 하이라이트 세리프 P, 2026-05 리브랜딩) */}
-            <Link to="/" className="flex items-center gap-2 group flex-shrink-0" aria-label="플로로탄닌 파트너스 홈">
+            <Link to={withRef('/', partner)} className="flex items-center gap-2 group flex-shrink-0" aria-label="플로로탄닌 파트너스 홈">
               <img
                 src="/icon-192.png?v=2"
                 alt="플로로탄닌 파트너스 로고"
@@ -273,11 +276,11 @@ export default function Navbar() {
             {/* 데스크탑 메뉴 — 절제된 톤 */}
             <div className="hidden md:flex items-center gap-1">
               {NAV_LINKS.map(link => {
-                const active = location.pathname === link.path
+                const active = basePath === link.path
                 return (
                   <Link
                     key={link.path}
-                    to={link.path}
+                    to={withRef(link.path, partner)}
                     className={`relative px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                       active
                         ? 'text-white'
@@ -435,11 +438,11 @@ export default function Navbar() {
 
             <div className="px-4 pb-3 space-y-px">
               {NAV_LINKS.map(link => {
-                const active = location.pathname === link.path
+                const active = basePath === link.path
                 return (
                   <Link
                     key={link.path}
-                    to={link.path}
+                    to={withRef(link.path, partner)}
                     className={`flex items-center gap-4 px-3 py-3 rounded-md text-sm transition-colors border-l-2 ${
                       active
                         ? 'border-white/70 text-white bg-white/5'

@@ -10,23 +10,15 @@ import {
 import RevealContact from '../components/common/RevealContact'
 import LastReviewed from '../components/common/LastReviewed'
 import { getPostCount } from '../lib/supabase'
+import { withRef } from '../lib/partnerRef'
+import { shouldEmitQASchema, answerPlainTextForMeta } from '../lib/qaAnswer'
 // [2026-05-21] 인사이트 진입 — 홈에서 최신 6편 직접 노출 (사용자 발견성↑, SEO 내부 링크 그래프 강화)
 import { INSIGHTS_LIST } from '../data/insights'
 
 const LAST_REVIEWED = '2026-05-21'
 
-function getValidatedAnswerHtml(item) {
-  const answer = item?.validatedAnswer || item?.validated_answer || ''
-  return typeof answer === 'string' ? answer.trim() : ''
-}
-
-function isValidatedQa(item) {
-  const status = String(item?.qualityStatus || item?.quality_status || '').toLowerCase()
-  return status === 'validated' && getValidatedAnswerHtml(item).length > 0
-}
-
-function stripHtml(text) {
-  return String(text || '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim()
+function isPublicQa(item) {
+  return shouldEmitQASchema(item)
 }
 
 
@@ -117,7 +109,7 @@ export default function HomePage() {
       .then(r => r.json())
       .then(d => {
         setQaData(d)
-        const publicQuestions = (d.questions || []).filter(isValidatedQa)
+        const publicQuestions = (d.questions || []).filter(isPublicQa)
         const shuffled = [...publicQuestions].sort(() => Math.random() - 0.5)
         setFeaturedQAs(shuffled.slice(0, 6))
       })
@@ -139,7 +131,7 @@ export default function HomePage() {
     setSearchQuery(val)
     if (val.length > 1) {
       const matches = (qaData.questions || [])
-        .filter(isValidatedQa)
+        .filter(isPublicQa)
         .filter(q =>
         q.question.includes(val) || (q.tags || []).some(t => t.includes(val))
       ).slice(0, 6)
@@ -256,7 +248,7 @@ export default function HomePage() {
                     onClick={() => {
                       setSuggestions([])
                       setSearchQuery('')
-                      navigate(`/qa?openId=${s.id}&category=${s.category}`)
+                      navigate(withRef(`/qa?openId=${s.id}&category=${s.category}`, partner))
                     }}
                     className="w-full flex items-start gap-3 px-5 py-3 hover:bg-gray-50 transition-colors border-b border-gray-100 last:border-0 text-left"
                   >
@@ -276,14 +268,14 @@ export default function HomePage() {
           {/* CTA row */}
           <div className="flex flex-wrap gap-x-6 gap-y-3 items-center mb-10">
             <Link
-              to={`/consult`}
+              to={withRef('/consult', partner)}
               className="inline-flex items-center gap-2 bg-gray-900 hover:bg-black text-white px-6 py-3 rounded-md text-[14px] font-medium transition-colors"
             >
               파트너 문의하기
               <ArrowUpRight className="w-4 h-4" strokeWidth={1.8} aria-hidden="true" />
             </Link>
             <Link
-              to={`/qa`}
+              to={withRef('/qa', partner)}
               className="text-[14px] text-gray-700 hover:text-gray-900 underline underline-offset-4 decoration-gray-300 hover:decoration-gray-700 transition-colors"
             >
               전체 Q&amp;A 둘러보기
@@ -295,7 +287,7 @@ export default function HomePage() {
             {['당뇨', '탈모', '지방간', '고혈압', '아토피', '치매', '수면', '면역'].map(tag => (
               <Link
                 key={tag}
-                to={`/qa?q=${tag}`}
+                to={withRef(`/qa?q=${tag}`, partner)}
                 className="text-[12px] text-gray-600 hover:text-gray-900 border border-gray-200 hover:border-gray-400 px-3 py-1.5 rounded-md transition-colors"
               >
                 #{tag}
@@ -369,7 +361,7 @@ export default function HomePage() {
               </p>
             </div>
             <Link
-              to={`/easy`}
+              to={withRef('/easy', partner)}
               className="inline-flex items-center gap-2 bg-gray-900 hover:bg-black text-white px-6 py-3 rounded-md text-[14px] font-medium transition-colors flex-shrink-0 w-fit"
             >
               쉬운 설명 보러가기
@@ -401,7 +393,7 @@ export default function HomePage() {
               return (
                 <button
                   key={qa.id}
-                  onClick={() => navigate(`/qa?openId=${qa.id}&category=${qa.category}`)}
+                  onClick={() => navigate(withRef(`/qa?openId=${qa.id}&category=${qa.category}`, partner))}
                   className="text-left bg-white rounded-lg p-6 border border-gray-200 hover:border-gray-400 transition-colors group"
                 >
                   <div className="text-[11px] uppercase tracking-[0.16em] text-gray-500 mb-3">
@@ -411,7 +403,7 @@ export default function HomePage() {
                     {qa.question}
                   </h3>
                   <p className="text-gray-600 text-[13px] line-clamp-2 leading-[1.7] break-keep mb-5">
-                    {stripHtml(getValidatedAnswerHtml(qa)).slice(0, 120)}
+                    {answerPlainTextForMeta(qa).slice(0, 120)}
                   </p>
                   <div className="flex items-center justify-between text-[11px] text-gray-400 tabular-nums pt-4 border-t border-gray-100">
                     <span>{(qa.views || 0).toLocaleString()} views</span>
@@ -449,7 +441,7 @@ export default function HomePage() {
               </p>
             </div>
             <Link
-              to="/insights"
+              to={withRef('/insights', partner)}
               className="inline-flex items-center gap-1.5 text-[14px] text-gray-700 hover:text-gray-900 underline underline-offset-4 decoration-gray-300 hover:decoration-gray-700 flex-shrink-0"
             >
               전체 보기
@@ -461,7 +453,7 @@ export default function HomePage() {
             {INSIGHTS_LIST.slice(0, 6).map((post, i) => (
               <Link
                 key={post.slug}
-                to={`/insights/${post.slug}`}
+                to={withRef(`/insights/${post.slug}`, partner)}
                 className="group block bg-white rounded-lg p-6 border border-gray-200 hover:border-gray-400 transition-colors"
               >
                 <div className="flex items-center justify-between mb-3">
@@ -512,7 +504,7 @@ export default function HomePage() {
               return (
                 <button
                   key={cat.id}
-                  onClick={() => navigate(`/qa?category=${cat.id}`)}
+                  onClick={() => navigate(withRef(`/qa?category=${cat.id}`, partner))}
                   className="bg-white border border-gray-200 rounded-lg p-5 text-left hover:border-gray-400 transition-colors group"
                 >
                   <div className="flex items-center justify-between mb-4">
@@ -563,7 +555,7 @@ export default function HomePage() {
               </ol>
 
               <Link
-                to={`/phlorotannin`}
+              to={withRef('/phlorotannin', partner)}
                 className="inline-flex items-center gap-2 bg-gray-900 hover:bg-black text-white px-6 py-3 rounded-md text-[14px] font-medium transition-colors"
               >
                 플로로탄닌 상세 소개
@@ -638,7 +630,7 @@ export default function HomePage() {
 
           <div className="mt-12">
             <Link
-              to={`/partner`}
+              to={withRef('/partner', partner)}
               className="inline-flex items-center gap-2 bg-gray-900 hover:bg-black text-white px-6 py-3 rounded-md text-[14px] font-medium transition-colors"
             >
               파트너 참여 알아보기
@@ -681,11 +673,11 @@ export default function HomePage() {
             />
           </div>
           <div className="flex flex-wrap gap-x-4 gap-y-2 text-[13px] text-gray-500 pt-6 border-t border-gray-200">
-            <Link to={`/partner`} className="hover:text-gray-900 underline underline-offset-4 decoration-gray-300 hover:decoration-gray-700 transition-colors">
+            <Link to={withRef('/partner', partner)} className="hover:text-gray-900 underline underline-offset-4 decoration-gray-300 hover:decoration-gray-700 transition-colors">
               파트너 참여
             </Link>
             <span className="text-gray-300">/</span>
-            <Link to={`/consult`} className="hover:text-gray-900 underline underline-offset-4 decoration-gray-300 hover:decoration-gray-700 transition-colors">
+            <Link to={withRef('/consult', partner)} className="hover:text-gray-900 underline underline-offset-4 decoration-gray-300 hover:decoration-gray-700 transition-colors">
               상담 신청
             </Link>
           </div>

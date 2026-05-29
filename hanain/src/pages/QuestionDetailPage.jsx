@@ -14,6 +14,10 @@ import RelatedBlogPosts from '../components/qa/RelatedBlogPosts'
 import ReferenceList from '../components/common/ReferenceList'
 import CategoryGrid from '../components/common/CategoryGrid'
 import { REFERENCES } from '../data/references'
+import { usePartner } from '../context/PartnerContext'
+import { withRef } from '../lib/partnerRef'
+import { getRenderableQAAnswer, answerPlainTextForMeta, shouldEmitQASchema } from '../lib/qaAnswer'
+import PartnerSharePanel from '../components/partner/PartnerSharePanel'
 
 // 카테고리 ID → OG 이미지 슬러그 (build_og_images.py 산출물과 1:1 매칭, 헌법 정합성)
 const CAT_OG_SLUG = {
@@ -59,18 +63,6 @@ function toQuestionSlug(value) {
     .slice(0, 60)
 }
 
-function getValidatedAnswerHtml(item) {
-  if (!item || typeof item !== 'object') return ''
-  const answer = item.validatedAnswer || item.validated_answer || ''
-  return typeof answer === 'string' ? answer.trim() : ''
-}
-
-function isValidatedQuestion(item) {
-  if (!item || typeof item !== 'object') return false
-  const status = String(item.qualityStatus || item.quality_status || '').toLowerCase()
-  return status === 'validated' && getValidatedAnswerHtml(item).length > 0
-}
-
 async function getFallbackQuestion(slug) {
   const data = await ensureQaFallback()
   const q = data.questions.find(q => {
@@ -80,7 +72,7 @@ async function getFallbackQuestion(slug) {
   if (!q) return null
   const cat = data.categories.find(c => c.id === q.category)
   return {
-    id: q.id, slug: toQuestionSlug(q.question) || slug, title: q.question, content: null,
+    id: q.id, slug: toQuestionSlug(q.question) || slug, title: q.question,
     category_id: q.category,
     categories: cat ? { id: cat.id, name: cat.name, slug: cat.id, color: cat.color, icon: cat.icon } : null,
     tags: q.tags || [], view_count: q.views || 0, like_count: q.likes || 0,
@@ -96,6 +88,12 @@ async function getFallbackQuestion(slug) {
     references_text: Array.isArray(q.references) ? q.references : [],
     reviewed_at: q.reviewed_at || null,
     source_type: q.source_type || null,
+    answer: q.answer || '',
+    body: q.body || '',
+    content: q.content || null,
+    restoredAnswer: q.restoredAnswer || null,
+    restoredStatus: q.restoredStatus || null,
+    answerRestoredFrom: q.answerRestoredFrom || null,
   }
 }
 
@@ -107,7 +105,7 @@ async function getFallbackSameCategory(excludeId, categoryId, limit = 6) {
   const data = await ensureQaFallback()
   const cat = data.categories.find(c => c.id === categoryId)
   const sorted = data.questions
-    .filter(q => q.category === categoryId && q.id !== excludeId && isValidatedQuestion(q))
+    .filter(q => q.category === categoryId && q.id !== excludeId && shouldEmitQASchema(q))
     .sort((a, b) => (b.views || 0) - (a.views || 0))
     .slice(0, limit)
   return sorted.map(q => ({
@@ -150,7 +148,7 @@ function YouTubeEmbed({ url, title, summary }) {
 // - title/slug 가 모두 비면 렌더 자체를 건너뜀 (빈 카드 6개 노출 방지)
 // - q.title 누락 시 q.question fallback
 // - q.slug 누락 시 question 기반 즉석 슬러그 생성 (안전망)
-function RelatedCard({ q }) {
+function RelatedCard({ q, partner }) {
   if (!q) return null
   const title = q.title || q.question
   if (!title) return null
@@ -159,7 +157,7 @@ function RelatedCard({ q }) {
   const cat = q.categories
   return (
     <Link
-      to={`/q/${slug}`}
+      to={withRef(`/q/${slug}`, partner)}
       className="flex items-start gap-3 p-3 rounded-md hover:bg-gray-50 transition-colors group"
     >
       {cat && cat.name && (
@@ -179,6 +177,7 @@ function RelatedCard({ q }) {
 export default function QuestionDetailPage() {
   const { slug } = useParams()
   const navigate = useNavigate()
+  const partner = usePartner()
   const [question, setQuestion] = useState(null)
   const [answers, setAnswers] = useState([])
   const [related, setRelated] = useState([])
@@ -204,15 +203,16 @@ export default function QuestionDetailPage() {
       }
       if (!q) { setNotFound(true); setLoading(false); return }
 
-      const publishable = isValidatedQuestion(q)
-      setQuestion({ ...q, _publishable: publishable })
+      const renderable = getRenderableQAAnswer(q)
+      const publishable = renderable.mode !== 'review_notice'
+      setQuestion({ ...q, _publishable: publishable, _renderableAnswer: renderable })
       setLikeCount(q.like_count || 0)
 
       // 병렬 로드
       const [ans, rel, same, vids, likedStatus, savedStatus] = await Promise.all([
         q._fallback
           ? (publishable
-              ? Promise.resolve([{ id: 'fallback', content: getValidatedAnswerHtml(q), is_official: true }])
+              ? Promise.resolve([{ id: 'fallback', content: renderable.html, is_official: true }])
               : Promise.resolve([]))
           : (publishable ? getAnswersByQuestion(q.id) : Promise.resolve([])),
         q._fallback ? Promise.resolve([]) : getRelatedQuestions(q.id),
@@ -240,9 +240,9 @@ export default function QuestionDetailPage() {
     const preferred = toQuestionSlug(question.title || question.question)
     if (!preferred) return
     if (slug !== preferred) {
-      navigate(`/q/${preferred}`, { replace: true })
+      navigate(withRef(`/q/${preferred}`, partner), { replace: true })
     }
-  }, [question, slug, navigate])
+  }, [question, slug, navigate, partner])
 
   async function handleLike() {
     const prev = liked
@@ -256,7 +256,8 @@ export default function QuestionDetailPage() {
   }
 
   async function handleCopy() {
-    await navigator.clipboard.writeText(window.location.href)
+    const shareUrl = withRef(window.location.href, partner)
+    await navigator.clipboard.writeText(shareUrl)
     setCopied(true); setTimeout(() => setCopied(false), 2000)
   }
 
@@ -267,23 +268,26 @@ export default function QuestionDetailPage() {
   )
 
   if (notFound) return (
-    <div className="pt-16 min-h-screen bg-gray-hana flex flex-col items-center justify-center gap-4">
-      <p className="text-gray-600 text-lg">질문을 찾을 수 없습니다.</p>
-      <Link to="/qa" className="text-gray-700 hover:text-gray-900 underline underline-offset-4 decoration-gray-300 hover:decoration-gray-700 text-sm">건강 Q&A 전체 보기</Link>
-    </div>
+      <div className="pt-16 min-h-screen bg-gray-hana flex flex-col items-center justify-center gap-4">
+        <p className="text-gray-600 text-lg">질문을 찾을 수 없습니다.</p>
+      <Link to={withRef('/qa', partner)} className="text-gray-700 hover:text-gray-900 underline underline-offset-4 decoration-gray-300 hover:decoration-gray-700 text-sm">건강 Q&A 전체 보기</Link>
+      </div>
   )
 
   const cat = question.categories
-  const officialAnswer = answers.find(a => a.is_official)
-  const isPublicValidated = isValidatedQuestion(question)
+  const resolvedAnswer = question._renderableAnswer || getRenderableQAAnswer(question)
+  const officialAnswer = answers.find(a => a.is_official) || (resolvedAnswer.mode !== 'review_notice'
+    ? { id: 'derived', content: resolvedAnswer.html, is_official: true }
+    : null)
+  const isPublicValidated = shouldEmitQASchema(question)
 
   const difficultyLabel = { basic: '기초', intermediate: '중급', advanced: '심화' }[question.difficulty] || '기초'
   const authorTypeLabel = { self: '본인', family: '가족', caregiver: '보호자' }[question.author_type] || ''
   const preferredSlug = toQuestionSlug(question.title || question.question || slug) || slug
   const pageUrl = `https://phlorotannin.com/q/${preferredSlug}`
-  const rawAnswerText = isPublicValidated && officialAnswer
-    ? officialAnswer.content.replace(/<[^>]+>/g, '').slice(0, 300)
-    : '검수 중인 건강정보입니다. 검증된 답변만 공개됩니다.'
+  const rawAnswerText = isPublicValidated
+    ? answerPlainTextForMeta(question).slice(0, 300)
+    : '이 답변은 현재 검수 중입니다. 정확한 건강정보 제공을 위해 본문을 다시 확인하고 있습니다.'
   const seoDesc = rawAnswerText.slice(0, 150)
 
   // E-E-A-T 강화 [2026-05-21]: PubMed referenceId → schema.org Citation 변환
@@ -375,11 +379,11 @@ export default function QuestionDetailPage() {
             <button onClick={() => navigate(-1)} className="p-1 rounded hover:bg-white/10 transition">
               <ArrowLeft className="w-4 h-4" />
             </button>
-            <Link to="/qa" className="hover:text-white transition">건강 Q&A</Link>
+            <Link to={withRef('/qa', partner)} className="hover:text-white transition">건강 Q&A</Link>
             <ChevronRight className="w-3 h-3" />
             {cat && (
               <>
-                <Link to={`/category/${cat.slug}`} className="hover:text-white transition">{cat.name}</Link>
+                <Link to={withRef(`/category/${cat.slug}`, partner)} className="hover:text-white transition">{cat.name}</Link>
                 <ChevronRight className="w-3 h-3" />
               </>
             )}
@@ -388,6 +392,9 @@ export default function QuestionDetailPage() {
         </div>
 
         <div className="max-w-5xl mx-auto px-4 py-6">
+          <div className="mb-4">
+            <PartnerSharePanel />
+          </div>
           <div className="flex flex-col lg:flex-row gap-6">
             {/* ── 메인 컬럼 ── */}
             <main className="flex-1 min-w-0 space-y-5">
@@ -399,7 +406,7 @@ export default function QuestionDetailPage() {
                   <div className="flex flex-wrap items-center gap-2 mb-4">
                     {cat && (
                       <Link
-                        to={`/category/${cat.slug}`}
+                        to={withRef(`/category/${cat.slug}`, partner)}
                         className="text-xs font-semibold px-3 py-1 rounded-md text-gray-700 border border-gray-200 bg-gray-50 hover:border-gray-400 hover:text-gray-900 transition-colors"
                       >
                         {cat.name}
@@ -462,12 +469,12 @@ export default function QuestionDetailPage() {
               </article>
 
               {/* 운영자 답변 */}
-              {officialAnswer && isPublicValidated && (
+              {officialAnswer && resolvedAnswer.mode !== 'review_notice' && (
                 <section className="bg-white rounded-lg border border-gray-200 overflow-hidden">
                   <div className="bg-[#0B1A2E] px-6 py-4">
                     <h2 className="text-white font-bold flex items-center gap-2">
                       <MessageCircle className="w-5 h-5 text-white/70" />
-                      전문 답변
+                      {resolvedAnswer.mode === 'restored' ? '복구 답변' : '전문 답변'}
                     </h2>
                   </div>
                   <div className="p-6">
@@ -491,7 +498,7 @@ export default function QuestionDetailPage() {
                   </div>
                   <div className="p-6">
                     <p className="text-gray-700 leading-relaxed">
-                      검수 중인 건강정보입니다. 현재 페이지는 답변 정확도 점검이 끝난 뒤 공개됩니다.
+                      이 답변은 현재 검수 중입니다. 정확한 건강정보 제공을 위해 본문을 다시 확인하고 있습니다.
                     </p>
                     <p className="mt-3 text-sm text-gray-500">
                       질문과 직접 관련된 검증 답변만 공개하며, 임시·범용 템플릿 답변은 노출하지 않습니다.
@@ -561,7 +568,7 @@ export default function QuestionDetailPage() {
                       리서치팀이 PubMed·Europe PMC 기반으로 직접 답변해 드립니다. 회원가입 없이 익명으로 작성 가능합니다.
                     </p>
                     <Link
-                      to="/question/write"
+                      to={withRef('/question/write', partner)}
                       className="inline-flex items-center gap-1.5 bg-white/95 hover:bg-white text-ocean-deep font-semibold px-4 py-2 rounded-md transition-colors text-sm"
                     >
                       질문 등록하기
@@ -600,12 +607,12 @@ export default function QuestionDetailPage() {
                     </h3>
                     <div className="space-y-1 divide-y divide-gray-50">
                       {items.map((q, i) => (
-                        <RelatedCard key={`${q.id || 'qa'}-${q.slug || q.title || q.question || i}`} q={q} />
+                        <RelatedCard key={`${q.id || 'qa'}-${q.slug || q.title || q.question || i}`} q={q} partner={partner} />
                       ))}
                     </div>
                     {cat && (
                       <Link
-                        to={`/category/${cat.slug}`}
+                        to={withRef(`/category/${cat.slug}`, partner)}
                         className="mt-3 flex items-center gap-1 text-xs text-gray-600 hover:text-gray-900 underline underline-offset-4 decoration-gray-300 hover:decoration-gray-700"
                       >
                         {cat.name} 전체 보기 <ChevronRight className="w-3 h-3" />
@@ -629,7 +636,7 @@ export default function QuestionDetailPage() {
                   궁금한 건강 질문을 남겨주세요. PubMed 기반 근거를 정리해 회신합니다.
                 </p>
                 <Link
-                  to="/question/write"
+                  to={withRef('/question/write', partner)}
                   className="inline-flex items-center gap-1.5 text-sm font-medium text-white/80 hover:text-white transition-colors"
                 >
                   질문 등록하기 <ChevronRight className="w-3.5 h-3.5" />

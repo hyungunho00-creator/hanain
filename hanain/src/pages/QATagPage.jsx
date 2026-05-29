@@ -21,6 +21,8 @@ import CategoryGrid from '../components/common/CategoryGrid'
 import { inferDominantCategory } from '../data/qaCategoryMeta'
 import { usePartner } from '../context/PartnerContext'
 import { withRef } from '../lib/partnerRef'
+import { shouldEmitQASchema, answerPlainTextForMeta } from '../lib/qaAnswer'
+import PartnerSharePanel from '../components/partner/PartnerSharePanel'
 
 const FAQ_JSONLD_MAX_PER_PAGE = 10
 
@@ -32,22 +34,8 @@ function qaSlug(question) {
     .slice(0, 60)
 }
 
-function stripHtml(s) {
-  return typeof s === 'string'
-    ? s.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim()
-    : ''
-}
-
-function getValidatedAnswerHtml(qa) {
-  if (!qa || typeof qa !== 'object') return ''
-  const answer = qa.validatedAnswer || qa.validated_answer || ''
-  return typeof answer === 'string' ? answer.trim() : ''
-}
-
-function isValidatedQa(qa) {
-  if (!qa || typeof qa !== 'object') return false
-  const status = String(qa.qualityStatus || qa.quality_status || '').toLowerCase()
-  return status === 'validated' && getValidatedAnswerHtml(qa).length > 0
+function isPublicQa(qa) {
+  return shouldEmitQASchema(qa)
 }
 
 // 카테고리 라벨 (QAPage와 동일)
@@ -108,7 +96,7 @@ export default function QATagPage() {
   const { matchedQuestions } = useMemo(() => {
     if (!qaData) return { matchedQuestions: [] }
     const all = qaData.questions || []
-    const matched = all.filter((q) => isValidatedQa(q) && (q.tags || []).map(t => t.trim()).includes(decodedTag))
+    const matched = all.filter((q) => isPublicQa(q) && (q.tags || []).map(t => t.trim()).includes(decodedTag))
     matched.sort((a, b) => (b.views || b.view_count || 0) - (a.views || a.view_count || 0))
     return { matchedQuestions: matched }
   }, [qaData, decodedTag])
@@ -157,7 +145,7 @@ export default function QATagPage() {
   const faqJsonLd = (() => {
     if (matchedQuestions.length === 0) return null
     const items = matchedQuestions.slice(0, FAQ_JSONLD_MAX_PER_PAGE).map(q => {
-      const ans = stripHtml(getValidatedAnswerHtml(q))
+      const ans = answerPlainTextForMeta(q)
       const slug = qaSlug(q.question)
       return {
         "@type": "Question",
@@ -234,6 +222,9 @@ export default function QATagPage() {
 
         {/* 본문 */}
         <div className="max-w-5xl mx-auto px-4 py-8">
+          <div className="mb-4">
+            <PartnerSharePanel />
+          </div>
           {error && (
             <div className="bg-red-50 border border-red-200 text-red-700 text-sm rounded-lg px-4 py-3 mb-4">
               데이터를 불러오는 중 문제가 발생했습니다: {error}
