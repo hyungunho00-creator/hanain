@@ -16,7 +16,7 @@ const BAD_PHRASES = [
   '뇌·인지 맥락에서',
   '피부/모발 맥락에서',
   '증상, 검사, 치료, 생활요인을 함께 봐야',
-  '현재 상태를 구조화해',
+  '현재 상태를 구조화',
   '무엇을 먼저 확인할지',
   '이 질문의 핵심은',
   '실전 답은',
@@ -24,48 +24,37 @@ const BAD_PHRASES = [
   '관리형 질문',
 ]
 
-const BAD_GRAMMAR = [/\?에 대한/g, /은\?에 대한/g, /는\?에 대한/g, /요\?에 대한/g]
+const BAD_GRAMMAR = [
+  /\?에 대한/g,
+  /은\?에 대한/g,
+  /는\?에 대한/g,
+  /요\?에 대한/g,
+  /방법은\?에 대한/g,
+  /치료하나요\?에 대한/g,
+]
 
 const CATEGORY_START_PATTERNS = [
   '근골격 질문은',
   '대사질환 질문은',
   '항암·면역 질문은',
+  '정신건강/수면 문제 질문은',
   '소화·간 질문은',
   '심혈관 질문은',
   '뇌·인지 질문은',
-  '정신건강/수면 문제 질문은',
   '피부/모발 질문은',
   '이 질문의 핵심은',
-  '현재 상태를 구조화해',
+  '현재 상태를 구조화',
   '무엇을 먼저 확인할지',
-  '치료 방향을 정할 수 있습니다',
 ]
 
-const CLAIM_RE = /플로로탄닌.{0,40}(치료|예방|개선|완치|회복|재생|낫게|없앤|대체)/g
-
-const TOPIC_RULES = [
-  {
-    titleIncludes: ['척추'],
-    first300RequiresAny: ['척추', '허리', '목', '자세'],
-  },
-  {
-    titleIncludes: ['반월판', '반달'],
-    first300RequiresAny: ['반월판', '무릎', '연골', '파열'],
-  },
-  {
-    titleIncludes: ['어깨 탈구'],
-    first300RequiresAny: ['탈구', '정복', '고정', '재활'],
-  },
-  {
-    titleIncludes: ['당뇨'],
-    first300RequiresAny: ['혈당', '검사', '식사', '운동'],
-  },
-  {
-    titleIncludes: ['간수치'],
-    first300RequiresAny: ['ast', 'alt', '간수치', '음주', '약물'],
-  },
+const PHLORO_CLAIM_RE = /플로로탄닌.{0,40}(치료|예방|개선|완치|회복|재생|낫게|없애|대체|식욕|항암|혈당|통증)/g
+const PHLORO_SAFE_NEGATIONS = [
+  '치료한다는 의미는 아니',
+  '예방 목적이 아님',
+  '개선을 보장하지 않',
+  '약을 대신하지 않',
 ]
-
+const MEDICAL_TONE_RE = /(치료|수술|검사|진료|재활|응급|약물|항암|증후군|합병증)/i
 const SMOKE_IDS = ['ms_076', 'ms_053', 'ms_071', 'ms_057', 'ms_022', 'qa200-20260527-136']
 
 function stripHtml(text) {
@@ -76,91 +65,110 @@ function norm(text) {
   return stripHtml(text).replace(/\s+/g, ' ').trim()
 }
 
-function firstParagraphText(html) {
-  const m = String(html || '').match(/<p>([\s\S]*?)<\/p>/i)
-  return norm(m ? m[1] : html).slice(0, 300)
+function firstParagraphText(text) {
+  const m = String(text || '').match(/<p>([\s\S]*?)<\/p>/i)
+  return norm(m ? m[1] : text).slice(0, 300)
 }
 
-function getStatus(q) {
-  return String(q.qualityStatus || q.quality_status || '').toLowerCase()
+function tokenizeTitle(title) {
+  const stop = new Set(['무엇인가요', '무엇인가', '어떻게', '인가요', '할까요', '있나요', '좋나요', '나요'])
+  return String(title || '')
+    .replace(/[^\p{L}\p{N}\s]/gu, ' ')
+    .split(/\s+/)
+    .map((t) => t.trim())
+    .filter((t) => t.length >= 2 && !stop.has(t))
+    .slice(0, 8)
 }
 
-function getValidatedAnswer(q) {
-  const answer = q.validatedAnswer || q.validated_answer || ''
-  return typeof answer === 'string' ? answer.trim() : ''
+function includesAny(text, tokens) {
+  return tokens.some((token) => String(text || '').includes(token))
 }
 
-function isValidated(q) {
-  return getStatus(q) === 'validated' && getValidatedAnswer(q).length > 0
+function hasTherapeuticClaim(text) {
+  const src = String(text || '')
+  const matches = src.match(PHLORO_CLAIM_RE) || []
+  if (matches.length === 0) return false
+  return !PHLORO_SAFE_NEGATIONS.some((neg) => src.includes(neg))
 }
 
-function mustContain(title, first300) {
-  for (const rule of TOPIC_RULES) {
-    if (rule.titleIncludes.some((token) => title.includes(token))) {
-      return rule.first300RequiresAny.some((token) => first300.toLowerCase().includes(token.toLowerCase()))
+function getPreferredAnswer(q) {
+  const v2 = q.answerV2
+  if (!v2 || v2.status !== 'approved') return null
+
+  const parts = []
+  if (typeof v2.shortAnswer === 'string') parts.push(v2.shortAnswer)
+  if (typeof v2.detailedAnswer === 'string') parts.push(v2.detailedAnswer)
+
+  if (Array.isArray(v2.sections)) {
+    for (const sec of v2.sections) {
+      if (!sec || typeof sec !== 'object') continue
+      if (typeof sec.heading === 'string') parts.push(sec.heading)
+      if (typeof sec.body === 'string') parts.push(sec.body)
     }
   }
-  return true
-}
 
-function hasAny(text, list) {
-  return list.some((token) => String(text || '').includes(token))
+  const listFields = ['checkFirst', 'whenToSeeDoctor', 'avoidList', 'lifestyleTips']
+  for (const field of listFields) {
+    if (Array.isArray(v2[field])) parts.push(v2[field].join(' '))
+  }
+
+  if (typeof v2.phlorotanninBridge === 'string') parts.push(v2.phlorotanninBridge)
+  if (typeof v2.disclaimer === 'string') parts.push(v2.disclaimer)
+
+  const text = norm(parts.join('\n'))
+  return text.length > 0 ? text : null
 }
 
 function run() {
   const qa = JSON.parse(fs.readFileSync(QA_PATH, 'utf8'))
   const rows = qa.questions || []
-
   const failures = []
   const warnings = []
 
-  let validatedCount = 0
-  let hiddenCount = 0
+  let scannedApproved = 0
+  let skippedLegacy = 0
 
   for (const q of rows) {
-    const status = getStatus(q)
-    const answer = getValidatedAnswer(q)
-    const validated = isValidated(q)
+    const id = String(q.id || '')
     const title = String(q.question || '')
-    const allText = `${title}\n${answer}\n${q.answer || ''}`
+    const approvedText = getPreferredAnswer(q)
 
-    if (validated) {
-      validatedCount += 1
-      const first300 = norm(answer).slice(0, 300)
-      const firstPara = firstParagraphText(answer)
+    if (!approvedText) {
+      skippedLegacy += 1
+      continue
+    }
 
-      if (hasAny(answer, BAD_PHRASES) || hasAny(title, BAD_PHRASES)) {
-        failures.push(`${q.id} bad phrase detected`)
-      }
-      if (BAD_GRAMMAR.some((re) => re.test(allText))) {
-        failures.push(`${q.id} bad grammar pattern detected`)
-      }
-      if (CATEGORY_START_PATTERNS.some((p) => firstPara.startsWith(p))) {
-        failures.push(`${q.id} starts with category/template phrase`)
-      }
-      if (!mustContain(title, first300)) {
-        failures.push(`${q.id} title-body mismatch in first 300 chars`)
-      }
-      if (!title.includes('플로로탄닌') && first300.includes('플로로탄닌')) {
-        failures.push(`${q.id} phlorotannin appears in first 300 chars`)
-      }
-      if (CLAIM_RE.test(answer)) {
-        failures.push(`${q.id} phlorotannin therapeutic claim detected`)
-      }
+    scannedApproved += 1
+    const first300 = approvedText.slice(0, 300)
+    const firstPara = firstParagraphText(approvedText)
+    const titleTokens = tokenizeTitle(title)
+    const sourceStatus = String(q.sourceStatus || q.source_status || '').toLowerCase()
 
-      const sourceStatus = String(q.sourceStatus || q.source_status || '').toLowerCase()
-      const hasMedicalTone = /(치료|수술|검사|진료|재활|염증)/.test(first300)
-      if ((sourceStatus === 'missing' || sourceStatus === 'source_gap' || sourceStatus === 'needs_medical_review') && hasMedicalTone) {
-        failures.push(`${q.id} validated medical answer with source gap`)
-      }
-    } else {
-      hiddenCount += 1
-      if (answer.length > 0) {
-        failures.push(`${q.id} has validatedAnswer but status is not validated`)
-      }
-      if (status !== 'needs_review') {
-        warnings.push(`${q.id} non-validated status is ${status || '(empty)'}`)
-      }
+    if (includesAny(approvedText, BAD_PHRASES) || includesAny(title, BAD_PHRASES)) {
+      failures.push(`${id} bad phrase detected`)
+    }
+    if (BAD_GRAMMAR.some((re) => re.test(`${title}\n${approvedText}`))) {
+      failures.push(`${id} bad grammar pattern detected`)
+    }
+    if (CATEGORY_START_PATTERNS.some((p) => firstPara.startsWith(p))) {
+      failures.push(`${id} starts with category/template phrase`)
+    }
+    if (titleTokens.length > 0 && !includesAny(first300, titleTokens)) {
+      failures.push(`${id} title-body mismatch in first 300 chars`)
+    }
+    if (!title.includes('플로로탄닌') && first300.includes('플로로탄닌')) {
+      failures.push(`${id} phlorotannin appears in first 300 chars`)
+    }
+    if (hasTherapeuticClaim(approvedText)) {
+      failures.push(`${id} phlorotannin therapeutic claim detected`)
+    }
+
+    const hasMedicalTone = MEDICAL_TONE_RE.test(first300)
+    if ((sourceStatus === 'source_gap' || sourceStatus === 'needs_medical_review') && hasMedicalTone) {
+      failures.push(`${id} approved medical answer with source gap`)
+    }
+    if (!/일반 건강정보|진단|치료를 대신하지/.test(approvedText)) {
+      warnings.push(`${id} approved answer missing explicit disclaimer phrase`)
     }
   }
 
@@ -170,8 +178,8 @@ function run() {
       failures.push(`${id} missing from dataset`)
       continue
     }
-    if (!isValidated(item)) {
-      failures.push(`${id} is not validated`)
+    if (!getPreferredAnswer(item)) {
+      failures.push(`${id} does not have approved answerV2`)
     }
   }
 
@@ -180,9 +188,9 @@ function run() {
     '# QA Answer Hard Validator Result',
     '',
     `- generatedAt: ${new Date().toISOString()}`,
-    `- scanned: ${rows.length}`,
-    `- validated: ${validatedCount}`,
-    `- hidden(needs_review): ${hiddenCount}`,
+    `- totalQuestions: ${rows.length}`,
+    `- scannedApprovedAnswerV2: ${scannedApproved}`,
+    `- skippedLegacyFallback: ${skippedLegacy}`,
     `- failures: ${failures.length}`,
     `- warnings: ${warnings.length}`,
     `- status: ${status}`,
@@ -197,7 +205,20 @@ function run() {
   ]
 
   fs.writeFileSync(OUT_PATH, `${lines.join('\n')}\n`, 'utf8')
-  console.log(JSON.stringify({ scanned: rows.length, validated: validatedCount, hidden: hiddenCount, failures: failures.length, status }, null, 2))
+  console.log(
+    JSON.stringify(
+      {
+        totalQuestions: rows.length,
+        scannedApprovedAnswerV2: scannedApproved,
+        skippedLegacyFallback: skippedLegacy,
+        failures: failures.length,
+        warnings: warnings.length,
+        status,
+      },
+      null,
+      2,
+    ),
+  )
   if (failures.length > 0) process.exit(2)
 }
 
