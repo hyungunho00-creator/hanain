@@ -2617,11 +2617,31 @@ async function drawProductPage2(partnerName, partnerTel, qrImg, scale = 2) {
     const descLines  = wrapText(ctx, p.desc,  body - 38)
     ctx.font = '13px sans-serif'
     const usageLines = wrapText(ctx, p.usage, body - 38)
+    ctx.font = 'bold 12px sans-serif'
+
+    const maxTagRowWidth = body - 32
+    const tagRows = []
+    let tagRow = []
+    let tagRowWidth = 0
+    p.tags.forEach(tag => {
+      const chipWidth = ctx.measureText(tag).width + 20
+      const gap = tagRow.length > 0 ? 6 : 0
+      if (tagRowWidth + gap + chipWidth > maxTagRowWidth && tagRow.length > 0) {
+        tagRows.push(tagRow)
+        tagRow = [{ tag, chipWidth }]
+        tagRowWidth = chipWidth
+      } else {
+        tagRow.push({ tag, chipWidth })
+        tagRowWidth += gap + chipWidth
+      }
+    })
+    if (tagRow.length > 0) tagRows.push(tagRow)
+    const tagBlockH = tagRows.length * 26 + Math.max(0, (tagRows.length - 1) * 6)
 
     //  헤더행(58) + 구분선(10) + 슬로건행(24) + 설명(descLines*20+8) + 태그행(26+8)
     //  + 구분선(10) + '섭취방법' label(20) + usage(usageLines*18+8) + 하단배지(26) + 하단여백(12)
     const cardH = 58 + 10 + 24 + descLines.length * 20 + 8
-               + 26 + 8 + 10 + 20 + usageLines.length * 18 + 8 + 26 + 12
+               + tagBlockH + 8 + 10 + 20 + usageLines.length * 18 + 8 + 26 + 12
 
     // 카드 배경 (fill 먼저)
     roundRect(ctx, pad + 5, y, body - 5, cardH, 9)
@@ -2660,17 +2680,19 @@ async function drawProductPage2(partnerName, partnerTel, qrImg, scale = 2) {
     descLines.forEach(l => { ctx.fillText(l, pad + 16, cy); cy += 20 }); cy += 8
 
     // ── 태그
-    let tx = pad + 16
-    p.tags.forEach(tag => {
-      ctx.font = 'bold 12px sans-serif'
-      const tw = ctx.measureText(tag).width + 20
-      roundRect(ctx, tx, cy, tw, 24, 7)
-      ctx.fillStyle = hexAlpha(p.pc, 0x22); ctx.fill()
-      ctx.strokeStyle = hexAlpha(p.pc, 0x70); ctx.lineWidth = 1; ctx.stroke()
-      ctx.fillStyle = p.pc; ctx.textBaseline = 'middle'
-      ctx.fillText(tag, tx + 10, cy + 12)
-      tx += tw + 6
-    }); cy += 34
+    tagRows.forEach((row, rowIdx) => {
+      let tx = pad + 16
+      row.forEach(({ tag, chipWidth }) => {
+        roundRect(ctx, tx, cy, chipWidth, 24, 7)
+        ctx.fillStyle = hexAlpha(p.pc, 0x22); ctx.fill()
+        ctx.strokeStyle = hexAlpha(p.pc, 0x70); ctx.lineWidth = 1; ctx.stroke()
+        ctx.fillStyle = p.pc; ctx.textBaseline = 'middle'
+        ctx.fillText(tag, tx + 10, cy + 12)
+        tx += chipWidth + 6
+      })
+      if (rowIdx < tagRows.length - 1) cy += 30
+    })
+    cy += 26 + 8
 
     // ── 섭취방법
     ctx.fillStyle = '#e0e4ec'; ctx.fillRect(pad + 16, cy, body - 24, 1); cy += 10
