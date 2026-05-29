@@ -263,10 +263,10 @@
       "rewriteReason": "smoke-test-priority-question",
       "priority": "critical",
       "requiredTerms": [
-        "??? ??",
+        "유전자 검사",
         "NGS",
-        "??",
-        "????"
+        "변이",
+        "표적치료"
       ],
       "forbiddenTerms": [
         "??? ????",

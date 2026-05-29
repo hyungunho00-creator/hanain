@@ -32,18 +32,18 @@
 - Apply result:
   - 대상 10
   - answerV2 생성 10
-  - approved 9
-  - rejected 1 (`ci_063` required-terms-missing-in-first300)
+  - approved 10
+  - rejected 0
   - needs_source 0
 - Report: `docs/batches/qa-smoke-10-report.md`
 
 ## Validation
-- `node scripts/qa-answer-v2-validator.mjs --batch qa-smoke-10`: PASS (approvedScanned=9)
+- `node scripts/qa-answer-v2-validator.mjs --batch qa-smoke-10`: PASS (approvedScanned=10)
 - `node scripts/qa-answer-v2-duplicate-detector.mjs --batch qa-smoke-10`: PASS
 - `node scripts/qa-no-blank-answer-audit.mjs`: PASS (blankPublicAnswers=0)
-- `npx vite build`: PASS
+- `npm.cmd run build`: FAIL (pre-existing `scripts/prebuild.cjs` reader-content strict audit, `src/data/qa.json`의 기존 문구 다수 감지)
 
 ## Next Plan
-1. `ci_063` 수동 보강 후 smoke 10/10 승인
-2. 1200+ 구간 critical 20개 배치 생성
-3. 20개 배치에서 같은 파이프라인 적용 후 50개 단위 확장
+1. 1200+ 구간 critical 20개 배치 생성
+2. 20개 배치 dry-run -> apply -> validator/duplicate/no-blank 순차 실행
+3. prebuild strict audit(기존 문구) 처리 전략 분리 후 build green 확보

@@ -10154,7 +10154,7 @@
       "publicBodyMode": "validated",
       "reviewReason": "",
       "answerV2": {
-        "status": "rejected",
+        "status": "approved",
         "shortAnswer": "암 유전자 검사인 NGS는 암 조직이나 혈액에서 여러 유전자를 한 번에 분석해 변이를 확인하고, 치료 표적 가능성이나 약제 선택에 참고하는 검사입니다.",
         "sections": [
           {

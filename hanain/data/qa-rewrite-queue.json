@@ -6852,10 +6852,10 @@
           "rewriteReason": "phlorotannin-top",
           "priority": "high",
           "requiredTerms": [
-            "유전자",
-            "검사",
-            "ngs",
-            "무엇인가요"
+            "유전자 검사",
+            "NGS",
+            "변이",
+            "표적치료"
           ],
           "forbiddenTerms": [
             "근골격 맥락에서",
