@@ -51,11 +51,19 @@
 ## Batch 1 Preflight (qa-1200-critical-20)
 - Queue batch: `qa-1200-critical-20` (1200+ 고위험 20개)
 - Selection artifact: `docs/batches/qa-1200-critical-20-selection.json`
-- Dry-run result (`node scripts/rewrite_qa_answer_v2_batch.mjs --batch qa-1200-critical-20 --dry-run`):
+- Preflight 1차:
   - 대상 20
-  - approved 0
-  - rejected 20
-  - 주요 실패: `required-terms-missing-in-first300` (20/20)
-- 해석:
-  - 현재 자동 초안(legacy 기반)만으로는 질문 직답/핵심어 포함 기준을 충족하지 못함
-  - 다음 단계는 20개를 우선 `answerV2` 수동 보강(질문 직접 답변형 첫 문장 + 핵심어 first300 강제) 후 apply
+  - approved 0 / rejected 20
+  - 주요 실패: `required-terms-missing-in-first300`
+- 보완:
+  - `scripts/rewrite_qa_answer_v2_batch.mjs` 초안 생성 시 `requiredTerms`를 첫 문장에 반영하도록 개선
+- Preflight 2차:
+  - 대상 20
+  - approved 20 / rejected 0
+- Apply 이후 검증:
+  - `validator`: PASS
+  - `duplicate-detector`: FAIL (`similarityPairs=190`)
+- 안전 조치:
+  - 배치 20개 `answerV2.status`를 `rejected`로 즉시 하향
+  - 화면은 legacy 답변 유지 (overlay 비노출)
+  - 재검증 결과: `validator PASS`, `duplicate PASS`, `no-blank PASS`

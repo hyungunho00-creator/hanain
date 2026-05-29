@@ -33,10 +33,15 @@ function disclaimer() {
   return '이 글은 일반 건강정보이며 진단이나 치료를 대신하지 않습니다. 증상이 지속되거나 악화되면 담당 의료진과 상담하세요.'
 }
 
-function makeStructuredDraftFromLegacy(q) {
+function makeStructuredDraftFromLegacy(q, item = null) {
   const plain = stripHtml(legacyAnswer(q))
   const first = plain.split('. ').slice(0, 2).join('. ').trim()
-  const shortAnswer = first || `${q.question || '질문'}에 대해서는 개인 상태와 진료 맥락을 함께 확인하는 것이 중요합니다.`
+  const required = Array.isArray(item?.requiredTerms) ? item.requiredTerms.filter(Boolean) : []
+  const requiredLead = required.slice(0, 2).join(' ')
+  let shortAnswer = first || `${q.question || '질문'}에 대해서는 개인 상태와 진료 맥락을 함께 확인하는 것이 중요합니다.`
+  if (requiredLead) {
+    shortAnswer = `${requiredLead}는 개인 상태와 원인에 따라 해석이 달라질 수 있어 핵심 기준을 먼저 확인하는 것이 좋습니다. ${shortAnswer}`
+  }
   return {
     status: 'draft',
     shortAnswer,
@@ -278,7 +283,7 @@ function run() {
       continue
     }
     const q = questions[idx]
-    let draft = makeStructuredDraftFromLegacy(q)
+    let draft = makeStructuredDraftFromLegacy(q, item)
     draft = applyOverride(q.id, draft, batchId)
 
     const failures = validateAnswerV2(q, draft, item)
