@@ -1,10 +1,18 @@
 # Source Gap Report
 
 - generatedAt: 2026-05-29
-- scope: site-wide Q&A recall rewrite
+- scope: QA emergency hard reset
 
-현재 재작성된 Q&A 항목은 카테고리별 공신력 출처(질병관리청/식약처/대학병원/학회/MSD)를 하단 `참고한 건강정보` 섹션에 반영했습니다.
+## Summary
 
-- source-gap 항목 수: `0` (자동 감사 기준)
-- manual-review 필요 항목: `0` (출처 누락 기준)
+- total Q&A: 1741
+- validated: 6
+- needs_review: 1735
+- sourceStatus=verified: 1741
+- sourceStatus=source_gap: 0
+- sourceStatus=needs_medical_review: 0
 
+## Notes
+
+- 현재 데이터 기준 source gap으로 분류된 공개 글은 없습니다.
+- 비공개(`needs_review`) 글 1735건은 재검수 전까지 본문을 렌더링하지 않습니다.

@@ -256,3 +256,8 @@ function main() {
 }
 
 main()
+if (process.env.ALLOW_QA_TEMPLATE_REWRITE !== '1') {
+  console.error('[blocked] qa_emergency_precision_patch.mjs is disabled to prevent fallback/template answers from reappearing.')
+  console.error('Set ALLOW_QA_TEMPLATE_REWRITE=1 only for explicit manual emergency use.')
+  process.exit(1)
+}

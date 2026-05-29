@@ -537,3 +537,8 @@ function main() {
 }
 
 main()
+if (process.env.ALLOW_QA_TEMPLATE_REWRITE !== '1') {
+  console.error('[blocked] content_recall_rewrite_qa.mjs is disabled to prevent category template regeneration.')
+  console.error('Set ALLOW_QA_TEMPLATE_REWRITE=1 only for explicit manual emergency use.')
+  process.exit(1)
+}

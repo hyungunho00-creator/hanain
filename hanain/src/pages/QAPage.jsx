@@ -43,6 +43,18 @@ const CAT_SLUG_MAP = {
   womens_health: 'womens-health', mens_health: 'mens-health',
 }
 
+function getValidatedAnswerHtml(qa) {
+  if (!qa || typeof qa !== 'object') return ''
+  const answer = qa.validatedAnswer || qa.validated_answer || ''
+  return typeof answer === 'string' ? answer.trim() : ''
+}
+
+function isValidatedQa(qa) {
+  if (!qa || typeof qa !== 'object') return false
+  const status = String(qa.qualityStatus || qa.quality_status || '').toLowerCase()
+  return status === 'validated' && getValidatedAnswerHtml(qa).length > 0
+}
+
 function highlightText(text, query) {
   if (!query || query.length < 2) return text
   const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi')
@@ -105,15 +117,8 @@ function QACard({ qa, itemKey, isOpen, onToggle, searchQuery, categories }) {
     }
   }
 
-  const answerText = typeof qa.answer === 'string'
-    ? qa.answer
-    : [
-        qa.answer?.step1_empathy, qa.answer?.step2_statistics,
-        qa.answer?.step3_standard_treatment, qa.answer?.step4_natural_alternatives,
-        qa.answer?.step5_phlorotannin, qa.answer?.step6_cta,
-      ].filter(Boolean).join('\n\n')
-
-  const references = typeof qa.answer !== 'string' ? qa.answer?.references : null
+  const answerText = getValidatedAnswerHtml(qa) || '<p>검수 중인 건강정보입니다.</p>'
+  const references = null
   const catId = qa.category_id || qa.category
   // 카테고리 이름 lookup — 동적 카테고리(qa.json categories) 기준
   const catName = (categories || []).find(c => c.id === catId)?.name || catId
@@ -253,7 +258,7 @@ export default function QAPage() {
     fetch('/qa.json')
       .then(r => r.json())
       .then(data => {
-        const qs = data.questions || []
+        const qs = (data.questions || []).filter(isValidatedQa)
         setAllQuestions(qs)
 
         // 카테고리 목록 — qa.json categories를 Source of Truth로 사용
@@ -293,9 +298,7 @@ export default function QAPage() {
     if (q.length >= 1) {
       filtered = filtered.filter(item => {
         const qText = (item.question || '').toLowerCase()
-        const aText = typeof item.answer === 'string'
-          ? item.answer.toLowerCase()
-          : Object.values(item.answer || {}).join(' ').toLowerCase()
+        const aText = getValidatedAnswerHtml(item).toLowerCase()
         const tags = (item.tags || []).join(' ').toLowerCase()
         return qText.includes(q) || aText.includes(q) || tags.includes(q)
       })
@@ -408,9 +411,7 @@ export default function QAPage() {
     const useDynamic = (activeCategory && activeCategory !== 'all') || (searchQuery && searchQuery.length >= 2)
     if (useDynamic && questions.length > 0) {
       const items = questions.slice(0, FAQ_JSONLD_MAX_PER_PAGE).map(item => {
-        const ansText = typeof item.answer === 'string'
-          ? stripHtml(item.answer)
-          : stripHtml(Object.values(item.answer || {}).join(' '))
+        const ansText = stripHtml(getValidatedAnswerHtml(item))
         const slug = qaSlug(item.question)
         return {
           "@type": "Question",

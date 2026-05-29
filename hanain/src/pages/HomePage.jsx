@@ -15,6 +15,20 @@ import { INSIGHTS_LIST } from '../data/insights'
 
 const LAST_REVIEWED = '2026-05-21'
 
+function getValidatedAnswerHtml(item) {
+  const answer = item?.validatedAnswer || item?.validated_answer || ''
+  return typeof answer === 'string' ? answer.trim() : ''
+}
+
+function isValidatedQa(item) {
+  const status = String(item?.qualityStatus || item?.quality_status || '').toLowerCase()
+  return status === 'validated' && getValidatedAnswerHtml(item).length > 0
+}
+
+function stripHtml(text) {
+  return String(text || '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim()
+}
+
 
 function useCountUp(target, duration = 2000) {
   const [count, setCount] = useState(0)
@@ -103,7 +117,8 @@ export default function HomePage() {
       .then(r => r.json())
       .then(d => {
         setQaData(d)
-        const shuffled = [...(d.questions || [])].sort(() => Math.random() - 0.5)
+        const publicQuestions = (d.questions || []).filter(isValidatedQa)
+        const shuffled = [...publicQuestions].sort(() => Math.random() - 0.5)
         setFeaturedQAs(shuffled.slice(0, 6))
       })
       .catch(console.error)
@@ -123,7 +138,9 @@ export default function HomePage() {
     const val = e.target.value
     setSearchQuery(val)
     if (val.length > 1) {
-      const matches = (qaData.questions || []).filter(q =>
+      const matches = (qaData.questions || [])
+        .filter(isValidatedQa)
+        .filter(q =>
         q.question.includes(val) || (q.tags || []).some(t => t.includes(val))
       ).slice(0, 6)
       setSuggestions(matches)
@@ -394,7 +411,7 @@ export default function HomePage() {
                     {qa.question}
                   </h3>
                   <p className="text-gray-600 text-[13px] line-clamp-2 leading-[1.7] break-keep mb-5">
-                    {typeof qa.answer === 'string' ? qa.answer : qa.answer?.step1_empathy || ''}
+                    {stripHtml(getValidatedAnswerHtml(qa)).slice(0, 120)}
                   </p>
                   <div className="flex items-center justify-between text-[11px] text-gray-400 tabular-nums pt-4 border-t border-gray-100">
                     <span>{(qa.views || 0).toLocaleString()} views</span>

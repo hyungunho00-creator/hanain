@@ -38,6 +38,18 @@ function stripHtml(s) {
     : ''
 }
 
+function getValidatedAnswerHtml(qa) {
+  if (!qa || typeof qa !== 'object') return ''
+  const answer = qa.validatedAnswer || qa.validated_answer || ''
+  return typeof answer === 'string' ? answer.trim() : ''
+}
+
+function isValidatedQa(qa) {
+  if (!qa || typeof qa !== 'object') return false
+  const status = String(qa.qualityStatus || qa.quality_status || '').toLowerCase()
+  return status === 'validated' && getValidatedAnswerHtml(qa).length > 0
+}
+
 // 카테고리 라벨 (QAPage와 동일)
 const CAT_NAMES = {
   metabolism: '대사질환',
@@ -93,14 +105,13 @@ export default function QATagPage() {
   }, [])
 
   // 태그 매칭 Q&A 추출 (views 내림차순)
-  const { matchedQuestions, tagMeta } = useMemo(() => {
-    if (!qaData) return { matchedQuestions: [], tagMeta: null }
+  const { matchedQuestions } = useMemo(() => {
+    if (!qaData) return { matchedQuestions: [] }
     const all = qaData.questions || []
-    const matched = all.filter(q => (q.tags || []).map(t => t.trim()).includes(decodedTag))
+    const matched = all.filter((q) => isValidatedQa(q) && (q.tags || []).map(t => t.trim()).includes(decodedTag))
     matched.sort((a, b) => (b.views || b.view_count || 0) - (a.views || a.view_count || 0))
-    const meta = tagIndex?.tags?.[decodedTag] || null
-    return { matchedQuestions: matched, tagMeta: meta }
-  }, [qaData, tagIndex, decodedTag])
+    return { matchedQuestions: matched }
+  }, [qaData, decodedTag])
 
   // [2026-05-21] 태그 → 우세 카테고리 추론 → 통합 배너 메타 결정
   // 같은 태그의 Q&A 들 중 가장 많이 등장한 카테고리를 시각적 시그니처로 사용
@@ -146,9 +157,7 @@ export default function QATagPage() {
   const faqJsonLd = (() => {
     if (matchedQuestions.length === 0) return null
     const items = matchedQuestions.slice(0, FAQ_JSONLD_MAX_PER_PAGE).map(q => {
-      const ans = typeof q.answer === 'string'
-        ? stripHtml(q.answer)
-        : stripHtml(Object.values(q.answer || {}).join(' '))
+      const ans = stripHtml(getValidatedAnswerHtml(q))
       const slug = qaSlug(q.question)
       return {
         "@type": "Question",

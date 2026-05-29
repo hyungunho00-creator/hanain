@@ -59,6 +59,18 @@ function toQuestionSlug(value) {
     .slice(0, 60)
 }
 
+function getValidatedAnswerHtml(item) {
+  if (!item || typeof item !== 'object') return ''
+  const answer = item.validatedAnswer || item.validated_answer || ''
+  return typeof answer === 'string' ? answer.trim() : ''
+}
+
+function isValidatedQuestion(item) {
+  if (!item || typeof item !== 'object') return false
+  const status = String(item.qualityStatus || item.quality_status || '').toLowerCase()
+  return status === 'validated' && getValidatedAnswerHtml(item).length > 0
+}
+
 async function getFallbackQuestion(slug) {
   const data = await ensureQaFallback()
   const q = data.questions.find(q => {
@@ -74,7 +86,11 @@ async function getFallbackQuestion(slug) {
     tags: q.tags || [], view_count: q.views || 0, like_count: q.likes || 0,
     difficulty: q.difficulty, visibility: 'public', author_type: 'self',
     created_at: null, _fallback: true,
-    _answer: q.answer,
+    qualityStatus: q.qualityStatus || q.quality_status || 'needs_review',
+    validatedAnswer: q.validatedAnswer || q.validated_answer || null,
+    sourceStatus: q.sourceStatus || q.source_status || 'source_gap',
+    reviewReason: q.reviewReason || q.review_reason || null,
+    reviewedAt: q.reviewedAt || q.reviewed_at || null,
     // E-E-A-T 강화 [2026-05-21]: PubMed 등재 1차 출처 referenceId 배열 (Europe PMC 검증)
     references_pmid: Array.isArray(q.references_pmid) ? q.references_pmid : [],
     references_text: Array.isArray(q.references) ? q.references : [],
@@ -91,7 +107,7 @@ async function getFallbackSameCategory(excludeId, categoryId, limit = 6) {
   const data = await ensureQaFallback()
   const cat = data.categories.find(c => c.id === categoryId)
   const sorted = data.questions
-    .filter(q => q.category === categoryId && q.id !== excludeId)
+    .filter(q => q.category === categoryId && q.id !== excludeId && isValidatedQuestion(q))
     .sort((a, b) => (b.views || 0) - (a.views || 0))
     .slice(0, limit)
   return sorted.map(q => ({
@@ -188,14 +204,17 @@ export default function QuestionDetailPage() {
       }
       if (!q) { setNotFound(true); setLoading(false); return }
 
-      setQuestion(q)
+      const publishable = isValidatedQuestion(q)
+      setQuestion({ ...q, _publishable: publishable })
       setLikeCount(q.like_count || 0)
 
       // 병렬 로드
       const [ans, rel, same, vids, likedStatus, savedStatus] = await Promise.all([
         q._fallback
-          ? Promise.resolve(q._answer ? [{ id: 'fallback', content: q._answer, is_official: true }] : [])
-          : getAnswersByQuestion(q.id),
+          ? (publishable
+              ? Promise.resolve([{ id: 'fallback', content: getValidatedAnswerHtml(q), is_official: true }])
+              : Promise.resolve([]))
+          : (publishable ? getAnswersByQuestion(q.id) : Promise.resolve([])),
         q._fallback ? Promise.resolve([]) : getRelatedQuestions(q.id),
         q._fallback ? getFallbackSameCategory(q.id, q.category_id, 6) : getSameCategory(q.id, q.category_id, 6),
         q._fallback ? Promise.resolve([]) : getVideosByQuestion(q.id),
@@ -256,17 +275,15 @@ export default function QuestionDetailPage() {
 
   const cat = question.categories
   const officialAnswer = answers.find(a => a.is_official)
-  const otherAnswers = answers.filter(a => !a.is_official)
+  const isPublicValidated = isValidatedQuestion(question)
 
   const difficultyLabel = { basic: '기초', intermediate: '중급', advanced: '심화' }[question.difficulty] || '기초'
   const authorTypeLabel = { self: '본인', family: '가족', caregiver: '보호자' }[question.author_type] || ''
   const preferredSlug = toQuestionSlug(question.title || question.question || slug) || slug
   const pageUrl = `https://phlorotannin.com/q/${preferredSlug}`
-  const rawAnswerText = officialAnswer
+  const rawAnswerText = isPublicValidated && officialAnswer
     ? officialAnswer.content.replace(/<[^>]+>/g, '').slice(0, 300)
-    : (typeof question._answer === 'string'
-        ? question._answer.replace(/<[^>]+>/g, '').slice(0, 300)
-        : `${question.title}에 대한 전문 답변입니다.`)
+    : '검수 중인 건강정보입니다. 검증된 답변만 공개됩니다.'
   const seoDesc = rawAnswerText.slice(0, 150)
 
   // E-E-A-T 강화 [2026-05-21]: PubMed referenceId → schema.org Citation 변환
@@ -303,9 +320,9 @@ export default function QuestionDetailPage() {
           url: pageUrl,
           datePublished: question.created_at || new Date().toISOString(),
           dateModified: question.reviewed_at || question.updated_at || new Date().toISOString().slice(0, 10),
-          answerCount: answers.length || 1,
+          answerCount: isPublicValidated ? (answers.length || 1) : 0,
           upvoteCount: question.like_count || 0,
-          ...(rawAnswerText ? {
+          ...(isPublicValidated && rawAnswerText ? {
             acceptedAnswer: {
               '@type': 'Answer',
               text: rawAnswerText,
@@ -344,6 +361,7 @@ export default function QuestionDetailPage() {
         description={seoDesc}
         keywords={[cat?.name, ...(question.tags || []), '플로로탄닌', '감태추출물', '해양 폴리페놀', '건강정보 아카이브', '연구기반 Q&A'].filter(Boolean).join(', ')}
         canonical={pageUrl}
+        noindex={!isPublicValidated}
         ogType="article"
         ogImage={`https://phlorotannin.com/og/qa-${CAT_OG_SLUG[question.category_id] || 'default'}.png`}
         ogImageAlt={`${cat?.name || '건강정보'} Q&A: ${question.title} — 플로로탄닌·감태추출물 종합 건강정보 데이터센터`}
@@ -444,7 +462,7 @@ export default function QuestionDetailPage() {
               </article>
 
               {/* 운영자 답변 */}
-              {officialAnswer && (
+              {officialAnswer && isPublicValidated && (
                 <section className="bg-white rounded-lg border border-gray-200 overflow-hidden">
                   <div className="bg-[#0B1A2E] px-6 py-4">
                     <h2 className="text-white font-bold flex items-center gap-2">
@@ -459,6 +477,24 @@ export default function QuestionDetailPage() {
                     />
                     <p className="mt-4 text-xs text-gray-400 border-t border-gray-100 pt-3">
                       ※ 이 정보는 참고용이며 의료 진단을 대체하지 않습니다. 건강 문제는 반드시 전문의와 상담하세요.
+                    </p>
+                  </div>
+                </section>
+              )}
+              {!isPublicValidated && (
+                <section className="bg-white rounded-lg border border-gray-200 overflow-hidden">
+                  <div className="bg-gray-100 px-6 py-4">
+                    <h2 className="text-gray-900 font-bold flex items-center gap-2">
+                      <MessageCircle className="w-5 h-5 text-gray-500" />
+                      검수 안내
+                    </h2>
+                  </div>
+                  <div className="p-6">
+                    <p className="text-gray-700 leading-relaxed">
+                      검수 중인 건강정보입니다. 현재 페이지는 답변 정확도 점검이 끝난 뒤 공개됩니다.
+                    </p>
+                    <p className="mt-3 text-sm text-gray-500">
+                      질문과 직접 관련된 검증 답변만 공개하며, 임시·범용 템플릿 답변은 노출하지 않습니다.
                     </p>
                   </div>
                 </section>

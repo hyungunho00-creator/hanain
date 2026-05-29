@@ -20,12 +20,12 @@ if (audit.error || audit.status !== 0) {
   process.exit(audit.status || 1);
 }
 
-const siteWideAudit = run(process.execPath, [path.join('scripts', 'site-wide-content-quality-audit.mjs')]);
-if (siteWideAudit.error || siteWideAudit.status !== 0) {
-  process.exit(siteWideAudit.status || 1);
+const hardValidator = run(process.execPath, [path.join('scripts', 'qa-answer-hard-validator.mjs')]);
+if (hardValidator.error || hardValidator.status !== 0) {
+  process.exit(hardValidator.status || 1);
 }
 
-const duplicateAudit = run(process.execPath, [path.join('scripts', 'content-duplicate-body-audit.mjs')]);
+const duplicateAudit = run(process.execPath, [path.join('scripts', 'qa-duplicate-template-detector.mjs')]);
 if (duplicateAudit.error || duplicateAudit.status !== 0) {
   process.exit(duplicateAudit.status || 1);
 }

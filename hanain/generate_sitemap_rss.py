@@ -325,7 +325,13 @@ for slug in CATEGORY_SLUGS:
 # ════════════════════════════════════════════════════════════
 # Q&A 자산화 (헌법 제10조) — 1,361개 개별 + 122개 태그 페이지
 # ════════════════════════════════════════════════════════════
-qa_questions = qa_data.get('questions', [])
+def is_validated_qa(item):
+    status = str(item.get('qualityStatus') or item.get('quality_status') or '').strip().lower()
+    ans = item.get('validatedAnswer') or item.get('validated_answer') or ''
+    return status == 'validated' and isinstance(ans, str) and len(ans.strip()) > 0
+
+
+qa_questions = [q for q in qa_data.get('questions', []) if is_validated_qa(q)]
 print(f"  ❓ Q&A 개별 {len(qa_questions)}개 sitemap 추가 중...")
 
 qa_added = 0
@@ -356,7 +362,15 @@ for q in qa_questions:
     qa_added += 1
 
 # Q&A 태그 페이지 (≥5건 출현 태그만 — MIN_TAG_COUNT)
-tags_map = tag_index.get('tags', {})
+validated_tag_counts = {}
+for q in qa_questions:
+    for tag in (q.get('tags') or []):
+        t = str(tag).strip()
+        if not t:
+            continue
+        validated_tag_counts[t] = validated_tag_counts.get(t, 0) + 1
+
+tags_map = {tag: {'count': count} for tag, count in validated_tag_counts.items()}
 print(f"  🏷  Q&A 태그 페이지 {len(tags_map)}개 sitemap 추가 중...")
 
 tag_added = 0
@@ -509,7 +523,7 @@ try:
         qa_data = json.load(f)
     qa_cats_map = {c["id"]: c["name"] for c in qa_data.get("categories", [])}
     qa_questions_for_rss = sorted(
-        qa_data.get("questions", []),
+        [q for q in qa_data.get("questions", []) if is_validated_qa(q)],
         key=lambda q: (q.get("reviewed_at") or q.get("created_at") or "", q.get("id", "")),
         reverse=True,
     )
@@ -522,7 +536,7 @@ try:
             continue
         qtitle = esc(question)
         qcat = esc(qa_cats_map.get(q.get("category",""), "건강정보"))
-        qans_raw = (q.get("answer","") or "")[:260]
+        qans_raw = (q.get("validatedAnswer") or q.get("validated_answer") or "")[:260]
         qans_raw = qans_raw.replace("]]>", "]]&gt;")
         reviewed_at = q.get("reviewed_at") or today()
         pub_date = fmt_rfc822(f"{reviewed_at}T00:00:00+09:00")
