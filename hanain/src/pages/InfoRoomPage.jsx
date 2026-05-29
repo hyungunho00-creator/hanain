@@ -2361,6 +2361,13 @@ async function drawProductPage1(scale = 2) {
   canvas.width = W * scale; canvas.height = H * scale
   const ctx = canvas.getContext('2d')
   ctx.scale(scale, scale)
+  // Hard-fit content into A4 so PDF never overflows to another sheet.
+  const PAGE_FIT_SCALE = 0.90
+  const fitOffsetX = Math.round((W - W * PAGE_FIT_SCALE) / 2)
+  const fitOffsetY = 8
+  ctx.save()
+  ctx.translate(fitOffsetX, fitOffsetY)
+  ctx.scale(PAGE_FIT_SCALE, PAGE_FIT_SCALE)
   const col = COL_PRODUCT
   const pad = 32, body = W - pad * 2
   ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, W, H)
@@ -2534,8 +2541,9 @@ async function drawProductPage1(scale = 2) {
   y += recH + 8
 
   // 페이지 번호 — 페이지 하단 안전 영역에 고정 배치
+  ctx.restore()
   ctx.font = '13px sans-serif'; ctx.fillStyle = '#aaa'; ctx.textBaseline = 'bottom'
-  ctx.textAlign = 'right'; ctx.fillText('1 / 2', W - pad, H - 16); ctx.textAlign = 'left'
+  ctx.textAlign = 'right'; ctx.fillText('1 / 2', W - 32, H - 16); ctx.textAlign = 'left'
   return canvas
 }
 
@@ -2545,6 +2553,13 @@ async function drawProductPage2(partnerName, partnerTel, qrImg, scale = 2) {
   canvas.width = W * scale; canvas.height = H * scale
   const ctx = canvas.getContext('2d')
   ctx.scale(scale, scale)
+  // Hard-fit content into A4 so PDF never overflows to another sheet.
+  const PAGE_FIT_SCALE = 0.90
+  const fitOffsetX = Math.round((W - W * PAGE_FIT_SCALE) / 2)
+  const fitOffsetY = 8
+  ctx.save()
+  ctx.translate(fitOffsetX, fitOffsetY)
+  ctx.scale(PAGE_FIT_SCALE, PAGE_FIT_SCALE)
   const col = COL_PRODUCT
   const pad = 32, body = W - pad * 2
   ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, W, H)
@@ -2735,8 +2750,9 @@ async function drawProductPage2(partnerName, partnerTel, qrImg, scale = 2) {
   ctx.textAlign = 'left'
 
   // 페이지 번호 — 박스 바깥 하단 안전 영역 (박스 하단과 페이지 끝 사이 40px 안전여백 안에 위치)
+  ctx.restore()
   ctx.font = '13px sans-serif'; ctx.fillStyle = '#aaa'; ctx.textBaseline = 'bottom'
-  ctx.textAlign = 'right'; ctx.fillText('2 / 2', W - pad, H - 16); ctx.textAlign = 'left'
+  ctx.textAlign = 'right'; ctx.fillText('2 / 2', W - 32, H - 16); ctx.textAlign = 'left'
   return canvas
 }
 
