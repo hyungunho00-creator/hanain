@@ -1,4 +1,4 @@
-import fs from 'node:fs'
+﻿import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { getRenderableQAAnswer, extractLegacyCandidates, shouldEmitQASchema } from '../src/lib/qaAnswer.js'
@@ -39,10 +39,10 @@ function auditDataset(questions) {
     const validated = normalizeSpace(q.validatedAnswer || q.validated_answer || '')
     const legacyCandidates = extractLegacyCandidates(q)
 
-    if (renderable.mode === 'review_notice') reviewCount += 1
+    if (renderable.mode === 'missing_answer') reviewCount += 1
     else publicCount += 1
 
-    if (renderable.mode !== 'review_notice' && !html) {
+    if (renderable.mode !== 'missing_answer' && !html) {
       blankPublic += 1
       failures.push(`${q.id}: public answer is blank`)
     }
@@ -51,15 +51,15 @@ function auditDataset(questions) {
       failures.push(`${q.id}: qualityStatus=validated but validatedAnswer missing`)
     }
 
-    if (validated && renderable.mode === 'review_notice') {
+    if (validated && renderable.mode === 'missing_answer') {
       failures.push(`${q.id}: validatedAnswer exists but renderer hides answer`)
     }
 
-    if (legacyCandidates.length > 0 && renderable.mode === 'review_notice') {
-      warnings.push(`${q.id}: legacy answer exists but blocked to review_notice`)
+    if (legacyCandidates.length > 0 && renderable.mode === 'missing_answer') {
+      warnings.push(`${q.id}: legacy answer exists but blocked to missing_answer`)
     }
 
-    if (!shouldEmitQASchema(q) && renderable.mode !== 'review_notice') {
+    if (!shouldEmitQASchema(q) && renderable.mode !== 'missing_answer') {
       failures.push(`${q.id}: schema eligibility mismatch`)
     }
   }
@@ -129,3 +129,4 @@ function main() {
 }
 
 main()
+

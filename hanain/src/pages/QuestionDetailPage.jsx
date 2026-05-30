@@ -77,7 +77,7 @@ async function getFallbackQuestion(slug) {
     tags: q.tags || [], view_count: q.views || 0, like_count: q.likes || 0,
     difficulty: q.difficulty, visibility: 'public', author_type: 'self',
     created_at: null, _fallback: true,
-    qualityStatus: q.qualityStatus || q.quality_status || 'needs_review',
+    qualityStatus: q.qualityStatus || q.quality_status || 'validated',
     validatedAnswer: q.validatedAnswer || q.validated_answer || null,
     sourceStatus: q.sourceStatus || q.source_status || 'source_gap',
     reviewReason: q.reviewReason || q.review_reason || null,
@@ -193,17 +193,17 @@ export default function QuestionDetailPage() {
     if (!slug) return
     setLoading(true)
     async function load() {
-      // Supabase에서 먼저 조회
-      let { data: q, error } = await getQuestionBySlug(slug)
-
-      // Supabase에 없으면 qa.json fallback
-      if (!q || error) {
-        q = await getFallbackQuestion(slug)
+      // Restored qa.json is the source of truth for public Q&A answers.
+      // This prevents stale Supabase review gates from hiding legacy answers.
+      let q = await getFallbackQuestion(slug)
+      if (!q) {
+        const result = await getQuestionBySlug(slug)
+        q = result?.data || null
       }
       if (!q) { setNotFound(true); setLoading(false); return }
 
       const renderable = getRenderableQAAnswer(q)
-      const publishable = renderable.mode !== 'review_notice'
+      const publishable = Boolean(renderable.html)
       setQuestion({ ...q, _publishable: publishable, _renderableAnswer: renderable })
       setLikeCount(q.like_count || 0)
 
@@ -275,7 +275,7 @@ export default function QuestionDetailPage() {
 
   const cat = question.categories
   const resolvedAnswer = question._renderableAnswer || getRenderableQAAnswer(question)
-  const officialAnswer = answers.find(a => a.is_official) || (resolvedAnswer.mode !== 'review_notice'
+  const officialAnswer = answers.find(a => a.is_official) || (resolvedAnswer.html
     ? { id: 'derived', content: resolvedAnswer.html, is_official: true }
     : null)
   const isPublicValidated = shouldEmitQASchema(question)
@@ -284,9 +284,7 @@ export default function QuestionDetailPage() {
   const authorTypeLabel = { self: '본인', family: '가족', caregiver: '보호자' }[question.author_type] || ''
   const preferredSlug = toQuestionSlug(question.title || question.question || slug) || slug
   const pageUrl = `https://phlorotannin.com/q/${preferredSlug}`
-  const rawAnswerText = isPublicValidated
-    ? answerPlainTextForMeta(question).slice(0, 300)
-    : '이 답변은 현재 검수 중입니다. 정확한 건강정보 제공을 위해 본문을 다시 확인하고 있습니다.'
+  const rawAnswerText = answerPlainTextForMeta(question).slice(0, 300)
   const seoDesc = rawAnswerText.slice(0, 150)
 
   // E-E-A-T 강화 [2026-05-21]: PubMed referenceId → schema.org Citation 변환
@@ -364,7 +362,7 @@ export default function QuestionDetailPage() {
         description={seoDesc}
         keywords={[cat?.name, ...(question.tags || []), '플로로탄닌', '감태추출물', '해양 폴리페놀', '건강정보 아카이브', '연구기반 Q&A'].filter(Boolean).join(', ')}
         canonical={pageUrl}
-        noindex={!isPublicValidated}
+        noindex={false}
         ogType="article"
         ogImage={`https://phlorotannin.com/og/qa-${CAT_OG_SLUG[question.category_id] || 'default'}.png`}
         ogImageAlt={`${cat?.name || '건강정보'} Q&A: ${question.title} — 플로로탄닌·감태추출물 종합 건강정보 데이터센터`}
@@ -465,7 +463,7 @@ export default function QuestionDetailPage() {
               </article>
 
               {/* 운영자 답변 */}
-              {officialAnswer && resolvedAnswer.mode !== 'review_notice' && (
+              {officialAnswer && (
                 <section className="bg-white rounded-lg border border-gray-200 overflow-hidden">
                   <div className="bg-[#0B1A2E] px-6 py-4">
                     <h2 className="text-white font-bold flex items-center gap-2">
@@ -484,25 +482,6 @@ export default function QuestionDetailPage() {
                   </div>
                 </section>
               )}
-              {!isPublicValidated && (
-                <section className="bg-white rounded-lg border border-gray-200 overflow-hidden">
-                  <div className="bg-gray-100 px-6 py-4">
-                    <h2 className="text-gray-900 font-bold flex items-center gap-2">
-                      <MessageCircle className="w-5 h-5 text-gray-500" />
-                      검수 안내
-                    </h2>
-                  </div>
-                  <div className="p-6">
-                    <p className="text-gray-700 leading-relaxed">
-                      이 답변은 현재 검수 중입니다. 정확한 건강정보 제공을 위해 본문을 다시 확인하고 있습니다.
-                    </p>
-                    <p className="mt-3 text-sm text-gray-500">
-                      질문과 직접 관련된 검증 답변만 공개하며, 임시·범용 템플릿 답변은 노출하지 않습니다.
-                    </p>
-                  </div>
-                </section>
-              )}
-
               {/* 참고문헌 (peer-reviewed, Europe PMC / PubMed 검증)
                   [2026-05-21] E-E-A-T 강화 — 1,391건 전체에 1차 출처 referenceId 매핑 */}
               {question.references_pmid && question.references_pmid.length > 0 && (

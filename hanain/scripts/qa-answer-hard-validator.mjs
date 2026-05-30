@@ -1,4 +1,4 @@
-import fs from 'node:fs'
+﻿import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { getRenderableQAAnswer, answerPlainTextForMeta } from '../src/lib/qaAnswer.js'
@@ -9,53 +9,53 @@ const QA_PATH = path.join(ROOT, 'public', 'qa.json')
 const OUT_PATH = path.join(ROOT, 'docs', 'qa-answer-hard-validator-result.md')
 
 const BAD_PHRASES = [
-  '정신건강/수면 문제 질문은',
-  '근골격 맥락에서',
-  '대사질환 맥락에서',
-  '항암·면역 맥락에서',
-  '소화·간 맥락에서',
-  '심혈관 맥락에서',
-  '뇌·인지 맥락에서',
-  '피부/모발 맥락에서',
-  '증상, 검사, 치료, 생활요인을 함께 봐야',
-  '현재 상태를 구조화',
-  '무엇을 먼저 확인할지',
-  '보존치료·재활치료·수술치료 가능성을 단계적으로 설명',
-  '이 질문의 핵심은',
-  '실전 답은',
-  '작은 루틴',
-  '관리형 질문',
-  '?에 대한',
-  '은?에 대한',
-  '는?에 대한',
-  '요?에 대한',
-  '방법은?에 대한',
-  '치료하나요?에 대한',
+  '?뺤떊嫄닿컯/?섎㈃ 臾몄젣 吏덈Ц?',
+  '洹쇨낏寃?留λ씫?먯꽌',
+  '??ъ쭏??留λ씫?먯꽌',
+  '??븫쨌硫댁뿭 留λ씫?먯꽌',
+  '?뚰솕쨌媛?留λ씫?먯꽌',
+  '?ы삁愿 留λ씫?먯꽌',
+  '?뙿룹씤吏 留λ씫?먯꽌',
+  '?쇰?/紐⑤컻 留λ씫?먯꽌',
+  '利앹긽, 寃?? 移섎즺, ?앺솢?붿씤???④퍡 遊먯빞',
+  '?꾩옱 ?곹깭瑜?援ъ“??,
+  '臾댁뾿??癒쇱? ?뺤씤?좎?',
+  '蹂댁〈移섎즺쨌?ы솢移섎즺쨌?섏닠移섎즺 媛?μ꽦???④퀎?곸쑝濡??ㅻ챸',
+  '??吏덈Ц???듭떖?',
+  '?ㅼ쟾 ?듭?',
+  '?묒? 猷⑦떞',
+  '愿由ы삎 吏덈Ц',
+  '??????,
+  '???????,
+  '???????,
+  '???????,
+  '諛⑸쾿???????,
+  '移섎즺?섎굹???????,
 ]
 
 const BAD_GRAMMAR = [
-  /\?에 대한/g,
-  /은\?에 대한/g,
-  /는\?에 대한/g,
-  /요\?에 대한/g,
-  /방법은\?에 대한/g,
-  /치료하나요\?에 대한/g,
+  /\??????g,
+  /?\??????g,
+  /????????g,
+  /????????g,
+  /諛⑸쾿?\??????g,
+  /移섎즺?섎굹????????g,
 ]
 
 const CATEGORY_START_WORDS = [
-  '근골격',
-  '대사질환',
-  '항암',
-  '소화',
-  '심혈관',
-  '뇌',
-  '인지',
-  '정신건강',
-  '피부',
-  '모발',
+  '洹쇨낏寃?,
+  '??ъ쭏??,
+  '??븫',
+  '?뚰솕',
+  '?ы삁愿',
+  '??,
+  '?몄?',
+  '?뺤떊嫄닿컯',
+  '?쇰?',
+  '紐⑤컻',
 ]
 
-const THERAPEUTIC_CLAIM_RE = /플로로탄닌.{0,40}(치료|예방|개선|회복|완화|통증을 줄|혈당을 낮|암에 좋|식욕을 회복|약 대신)/i
+const THERAPEUTIC_CLAIM_RE = /?뚮줈濡쒗깂??{0,40}(移섎즺|?덈갑|媛쒖꽑|?뚮났|?꾪솕|?듭쬆??以??덈떦?????붿뿉 醫??앹슃???뚮났|?????/i
 
 function stripHtml(text) {
   return String(text || '').replace(/<[^>]+>/g, ' ')
@@ -100,10 +100,10 @@ function main() {
     const status = String(q.qualityStatus || q.quality_status || '').toLowerCase()
     const validatedAnswer = q.validatedAnswer || q.validated_answer || ''
 
-    if (renderable.mode === 'review_notice') {
+    if (renderable.mode === 'missing_answer') {
       hiddenCount += 1
-      if (status !== 'needs_review') {
-        warnings.push(`${q.id}: review_notice but status=${status || '(empty)'}`)
+      if (status !== 'missing_answer') {
+        warnings.push(`${q.id}: missing_answer but status=${status || '(empty)'}`)
       }
       continue
     }
@@ -119,7 +119,7 @@ function main() {
     if (BAD_GRAMMAR.some((re) => re.test(answerText))) failures.push(`${q.id}: bad grammar pattern detected`)
     if (CATEGORY_START_WORDS.some((w) => first.startsWith(w))) failures.push(`${q.id}: first sentence starts with category label`)
     if (!hasKeywordInFirst300(q.question, answerText)) failures.push(`${q.id}: title keyword missing in first 300 chars`)
-    if (/플로로탄닌/i.test(first)) failures.push(`${q.id}: phlorotannin appears in first paragraph`)
+    if (/?뚮줈濡쒗깂??i.test(first)) failures.push(`${q.id}: phlorotannin appears in first paragraph`)
     if (THERAPEUTIC_CLAIM_RE.test(answerText)) failures.push(`${q.id}: phlorotannin therapeutic claim detected`)
   }
 
@@ -130,7 +130,7 @@ function main() {
     `- generatedAt: ${new Date().toISOString()}`,
     `- scanned: ${rows.length}`,
     `- publicAnswers: ${publicCount}`,
-    `- hidden(needs_review): ${hiddenCount}`,
+    `- hidden(missing_answer): ${hiddenCount}`,
     `- failures: ${failures.length}`,
     `- warnings: ${warnings.length}`,
     `- status: ${status}`,
@@ -158,3 +158,4 @@ function main() {
 }
 
 main()
+

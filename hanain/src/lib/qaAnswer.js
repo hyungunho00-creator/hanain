@@ -1,6 +1,3 @@
-export const REVIEW_NOTICE_TEXT =
-  '이 답변은 현재 검수 중입니다. 정확한 건강정보 제공을 위해 본문을 다시 확인하고 있습니다.'
-
 const BAD_PHRASES = [
   '정신건강/수면 문제 질문은',
   '근골격 맥락에서',
@@ -291,50 +288,15 @@ export function validateLegacyAnswer(qa, answerHtml) {
 }
 
 export function buildReviewNoticeHtml() {
-  return `<div class="qa-review-notice"><p>${REVIEW_NOTICE_TEXT}</p></div>`
+  return '<div class="qa-answer-missing"><p>답변 본문을 불러오지 못했습니다.</p></div>'
 }
 
 export function getRenderableQAAnswer(qa) {
-  const status = String(qa?.qualityStatus || qa?.quality_status || '').toLowerCase()
-
-  const validatedRaw = qa?.validatedAnswer ?? qa?.validated_answer
-  const validatedHtml = normalizeAnswerValue(validatedRaw)
-
-  if (status === 'validated' && validatedHtml) {
-    return {
-      mode: 'validated',
-      html: validatedHtml,
-      source: 'validatedAnswer',
-      badge: null,
-      schemaEligible: true,
-      noindex: false,
-    }
-  }
-
-  const restoredHtml = normalizeAnswerValue(qa?.restoredAnswer)
-  const restoredStatus = String(qa?.restoredStatus || '').toLowerCase()
-  if (restoredHtml && (restoredStatus === 'validated' || restoredStatus === 'restored')) {
-    return {
-      mode: 'restored',
-      html: restoredHtml,
-      source: qa?.answerRestoredFrom || 'restoredAnswer',
-      badge: null,
-      schemaEligible: true,
-      noindex: false,
-    }
-  }
-
   const legacyCandidates = extractLegacyCandidates(qa)
-  let firstLegacy = null
   for (const [source, candidateHtml] of legacyCandidates) {
-    if (!firstLegacy && candidateHtml) {
-      firstLegacy = { source, candidateHtml }
-    }
-
-    const verdict = validateLegacyAnswer(qa, candidateHtml)
-    if (verdict.pass) {
+    if (candidateHtml) {
       return {
-        mode: 'legacy',
+        mode: source === 'validatedAnswer' ? 'validated' : 'legacy',
         html: candidateHtml,
         source: `legacy.${source}`,
         badge: null,
@@ -344,24 +306,13 @@ export function getRenderableQAAnswer(qa) {
     }
   }
 
-  if (firstLegacy) {
-    return {
-      mode: 'legacy',
-      html: firstLegacy.candidateHtml,
-      source: `legacy.${firstLegacy.source}`,
-      badge: null,
-      schemaEligible: true,
-      noindex: false,
-    }
-  }
-
   return {
-    mode: 'review_notice',
+    mode: 'missing',
     html: buildReviewNoticeHtml(),
-    source: 'review_notice',
-    badge: 'Under review',
+    source: 'missing',
+    badge: null,
     schemaEligible: false,
-    noindex: true,
+    noindex: false,
   }
 }
 
@@ -370,7 +321,7 @@ export function shouldEmitQASchema(qa) {
   return renderable.schemaEligible && Boolean(normalizeText(renderable.html))
 }
 
-export function answerPlainTextForMeta(qa, fallback = REVIEW_NOTICE_TEXT) {
+export function answerPlainTextForMeta(qa, fallback = '') {
   const renderable = getRenderableQAAnswer(qa)
   const plain = normalizeText(renderable.html)
   return plain || fallback

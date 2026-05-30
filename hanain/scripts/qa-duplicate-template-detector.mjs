@@ -1,4 +1,4 @@
-import fs from 'node:fs'
+﻿import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { getRenderableQAAnswer } from '../src/lib/qaAnswer.js'
@@ -8,13 +8,13 @@ const QA_PATH = path.join(ROOT, 'public', 'qa.json')
 const OUT_PATH = path.join(ROOT, 'docs', 'qa-duplicate-template-detector-result.md')
 
 const IGNORE_SENTENCE_MARKERS = [
-  '성분 정보로 함께 보기',
-  '플로로탄닌은 감태',
-  '플로로탄닌 연구 정리 보기',
-  '감태추출물 정보 더 보기',
-  '해양 폴리페놀 자료 보기',
-  '관련 Q&A 더 보기',
-  '안내문',
+  '?깅텇 ?뺣낫濡??④퍡 蹂닿린',
+  '?뚮줈濡쒗깂?뚯? 媛먰깭',
+  '?뚮줈濡쒗깂???곌뎄 ?뺣━ 蹂닿린',
+  '媛먰깭異붿텧臾??뺣낫 ??蹂닿린',
+  '?댁뼇 ?대━?섎? ?먮즺 蹂닿린',
+  '愿??Q&A ??蹂닿린',
+  '?덈궡臾?,
 ]
 
 function stripHtml(text) {
@@ -27,7 +27,7 @@ function normalize(text) {
 
 function getPublicAnswer(q) {
   const renderable = getRenderableQAAnswer(q)
-  if (renderable.mode === 'review_notice') return ''
+  if (renderable.mode === 'missing_answer') return ''
   return String(renderable.html || '').trim()
 }
 
@@ -93,8 +93,7 @@ function run() {
     .filter(([, ids]) => ids.length >= 2)
     .sort((a, b) => b[1].length - a[1].length)
 
-  // 대용량 데이터셋에서 O(n^2) 비교는 CI 타임아웃을 유발하므로
-  // pairwise 유사도는 샘플링 기반으로 제한한다.
+  // ??⑸웾 ?곗씠?곗뀑?먯꽌 O(n^2) 鍮꾧탳??CI ??꾩븘?껋쓣 ?좊컻?섎?濡?  // pairwise ?좎궗?꾨뒗 ?섑뵆留?湲곕컲?쇰줈 ?쒗븳?쒕떎.
   const similarPairs = []
   const maxRowsForPairwise = Math.min(rows.length, 120)
   for (let i = 0; i < maxRowsForPairwise; i += 1) {
@@ -166,3 +165,4 @@ function run() {
 }
 
 run()
+
