@@ -17,8 +17,9 @@ export default function PartnerArchiveShell({ position = 'top' }: { position?: '
   const active = isActivePartner(partner)
   const partnerSlug = partner?.partnerSlug || partner?.slug || partner?.id || null
   const logicalPath = stripPartnerPrefix(location.pathname || '/')
+  const isPartnerCardRoot = active && partnerSlug && logicalPath === '/'
 
-  const shouldShow = active && partnerSlug && isPartnerablePath(logicalPath)
+  const shouldShow = active && partnerSlug && !isPartnerCardRoot && isPartnerablePath(logicalPath)
 
   useEffect(() => {
     if (!shouldShow || position !== 'top') return
