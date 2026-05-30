@@ -317,7 +317,7 @@ async function drawBack(partner, cardUrl) {
 //  메인 컴포넌트
 // ─────────────────────────────────────────────
 export default function BusinessCardPage() {
-  const { phone }  = useParams()
+  const { partnerSlug: phone } = useParams()
   const navigate   = useNavigate()
   const [searchParams] = useSearchParams()
   const viewCard = searchParams.get('view') === 'card'
