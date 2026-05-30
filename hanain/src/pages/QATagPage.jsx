@@ -22,7 +22,6 @@ import { inferDominantCategory } from '../data/qaCategoryMeta'
 import { usePartner } from '../context/PartnerContext'
 import { withRef } from '../lib/partnerRef'
 import { shouldEmitQASchema, answerPlainTextForMeta } from '../lib/qaAnswer'
-import PartnerSharePanel from '../components/partner/PartnerSharePanel'
 
 const FAQ_JSONLD_MAX_PER_PAGE = 10
 
@@ -222,9 +221,6 @@ export default function QATagPage() {
 
         {/* 본문 */}
         <div className="max-w-5xl mx-auto px-4 py-8">
-          <div className="mb-4">
-            <PartnerSharePanel />
-          </div>
           {error && (
             <div className="bg-red-50 border border-red-200 text-red-700 text-sm rounded-lg px-4 py-3 mb-4">
               데이터를 불러오는 중 문제가 발생했습니다: {error}

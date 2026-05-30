@@ -6,7 +6,6 @@ import { INSIGHTS_LIST, INSIGHT_CATEGORIES, INSIGHTS_BY_CATEGORY } from '../data
 import { QA_TOTAL } from '../data/siteStats'
 import { usePartner } from '../context/PartnerContext'
 import { withRef } from '../lib/partnerRef'
-import PartnerSharePanel from '../components/partner/PartnerSharePanel'
 
 const SITE = 'https://phlorotannin.com'
 
@@ -144,10 +143,6 @@ export default function InsightsHubPage() {
             </div>
           </div>
         </header>
-
-        <section className="max-w-6xl mx-auto px-4 sm:px-6 py-5">
-          <PartnerSharePanel />
-        </section>
 
         {/* Filter Bar */}
         <section className="border-b border-gray-100 sticky top-0 bg-white/90 backdrop-blur z-10">

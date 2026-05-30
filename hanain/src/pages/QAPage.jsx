@@ -45,6 +45,33 @@ const CAT_SLUG_MAP = {
   womens_health: 'womens-health', mens_health: 'mens-health',
 }
 
+const CATEGORY_PASTELS = {
+  metabolism: { bg: '#EFF6FF', border: '#BFDBFE', text: '#1D4ED8', activeBg: '#DBEAFE', accent: '#3B82F6' },
+  cancer_immune: { bg: '#F5F3FF', border: '#DDD6FE', text: '#6D28D9', activeBg: '#EDE9FE', accent: '#8B5CF6' },
+  digestive: { bg: '#ECFDF5', border: '#BBF7D0', text: '#047857', activeBg: '#DCFCE7', accent: '#22C55E' },
+  cardiovascular: { bg: '#FFF1F2', border: '#FECDD3', text: '#BE123C', activeBg: '#FFE4E6', accent: '#F43F5E' },
+  neuro_cognitive: { bg: '#F0FDFA', border: '#99F6E4', text: '#0F766E', activeBg: '#CCFBF1', accent: '#14B8A6' },
+  mental_health: { bg: '#EEF2FF', border: '#C7D2FE', text: '#4338CA', activeBg: '#E0E7FF', accent: '#6366F1' },
+  musculoskeletal: { bg: '#FFF7ED', border: '#FED7AA', text: '#C2410C', activeBg: '#FFEDD5', accent: '#F97316' },
+  skin_hair: { bg: '#FDF2F8', border: '#FBCFE8', text: '#BE185D', activeBg: '#FCE7F3', accent: '#EC4899' },
+  skin: { bg: '#FDF2F8', border: '#FBCFE8', text: '#BE185D', activeBg: '#FCE7F3', accent: '#EC4899' },
+  hair: { bg: '#F5F5F4', border: '#D6D3D1', text: '#57534E', activeBg: '#E7E5E4', accent: '#78716C' },
+  respiratory: { bg: '#F0F9FF', border: '#BAE6FD', text: '#0369A1', activeBg: '#E0F2FE', accent: '#0EA5E9' },
+  infection_inflammation: { bg: '#FEF2F2', border: '#FECACA', text: '#B91C1C', activeBg: '#FEE2E2', accent: '#EF4444' },
+  womens_health: { bg: '#FFF7ED', border: '#FED7AA', text: '#B45309', activeBg: '#FFEDD5', accent: '#F59E0B' },
+  mens_health: { bg: '#F1F5F9', border: '#CBD5E1', text: '#334155', activeBg: '#E2E8F0', accent: '#64748B' },
+}
+
+function categoryPastelStyle(catId, isActive = false) {
+  const tone = CATEGORY_PASTELS[catId] || { bg: '#F8FAFC', border: '#E2E8F0', text: '#334155', activeBg: '#F1F5F9', accent: '#94A3B8' }
+  return {
+    backgroundColor: isActive ? tone.activeBg : tone.bg,
+    borderColor: isActive ? tone.accent : tone.border,
+    color: tone.text,
+    boxShadow: isActive ? `inset 0 -2px 0 ${tone.accent}` : 'none',
+  }
+}
+
 function qaSlug(s) {
   return (s || '').replace(/[^\w\s가-힣]/g, '').replace(/\s+/g, '-').slice(0, 60)
 }
@@ -555,14 +582,11 @@ export default function QAPage() {
               <button
                 key={cat.id}
                 onClick={() => handleCategoryChange(cat.id)}
-                className={`flex-shrink-0 inline-flex items-baseline gap-1.5 px-4 py-2.5 rounded-md border text-[14px] whitespace-nowrap transition-colors ${
-                  isActive
-                    ? 'bg-gray-900 border-gray-900 text-white'
-                    : 'bg-white border-gray-200 text-gray-700 hover:border-gray-400'
-                }`}
+                style={categoryPastelStyle(cat.id, isActive)}
+                className="flex-shrink-0 inline-flex items-baseline gap-1.5 px-4 py-2.5 rounded-md border text-[14px] whitespace-nowrap transition-all hover:-translate-y-0.5 hover:shadow-sm"
               >
                 <span>{cat.name}</span>
-                <span className={`text-[12px] tabular-nums ${isActive ? 'text-white/70' : 'text-gray-400'}`}>{(catCounts[cat.id] || 0).toLocaleString()}</span>
+                <span className="text-[12px] tabular-nums opacity-60">{(catCounts[cat.id] || 0).toLocaleString()}</span>
               </button>
             )
           })}
@@ -763,12 +787,11 @@ export default function QAPage() {
                     <li key={cat.id}>
                       <button
                         onClick={() => handleCategoryChange(cat.id)}
-                        className={`flex items-center justify-between w-full px-3 py-2 rounded-md transition-colors text-left ${
-                          isActive ? 'bg-gray-900 text-white' : 'text-gray-700 hover:bg-gray-50'
-                        }`}
+                        style={categoryPastelStyle(cat.id, isActive)}
+                        className="flex items-center justify-between w-full px-3 py-2 rounded-md border transition-all text-left hover:-translate-y-0.5 hover:shadow-sm"
                       >
                         <span className="text-[13px]">{cat.name}</span>
-                        <span className={`text-[11px] tabular-nums ${isActive ? 'text-white/60' : 'text-gray-400'}`}>
+                        <span className="text-[11px] tabular-nums opacity-60">
                           {(catCounts[cat.id] || 0).toLocaleString()}
                         </span>
                       </button>

@@ -4,7 +4,6 @@ import { usePartner } from '../../context/PartnerContext'
 import { withRef } from '../../lib/partnerRef'
 import { isPartnerablePath, stripPartnerPrefix } from '../../lib/partner/partnerRoutes'
 import { trackPartnerEvent } from '../../lib/partner/partnerAnalytics'
-import PartnerSharePanel from './PartnerSharePanel'
 
 function isActivePartner(partner: any) {
   const slug = partner?.partnerSlug || partner?.slug || partner?.id || null
@@ -81,9 +80,6 @@ export default function PartnerArchiveShell({ position = 'top' }: { position?: '
               공유 파트너: {label}
             </span>
           </div>
-        </div>
-        <div className="mx-auto max-w-7xl px-4 pb-3">
-          <PartnerSharePanel />
         </div>
       </div>
     )

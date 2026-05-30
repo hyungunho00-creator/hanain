@@ -18,7 +18,6 @@ import LastReviewed from '../common/LastReviewed'
 import REFERENCES from '../../data/references'
 import { usePartner } from '../../context/PartnerContext'
 import { withRef } from '../../lib/partnerRef'
-import PartnerSharePanel from '../partner/PartnerSharePanel'
 
 const SITE = 'https://phlorotannin.com'
 
@@ -127,10 +126,6 @@ export default function InsightLayout({ post, related = [] }) {
             <li className="text-gray-700">{post.title.length > 28 ? post.title.slice(0, 28) + '…' : post.title}</li>
           </ol>
         </nav>
-
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 pt-3">
-          <PartnerSharePanel />
-        </div>
 
         {/* 제목 / 메타 */}
         <header className="max-w-3xl mx-auto px-4 sm:px-6 pt-6 pb-8">

@@ -1,4 +1,4 @@
-﻿import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
+﻿import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 import FloatingButton from './components/common/FloatingButton'
@@ -35,14 +35,11 @@ import { AuthProvider } from './context/AuthContext'
 import PartnerArchiveShell from './components/partner/PartnerArchiveShell'
 
 function AppInner() {
-  const location = useLocation()
-  const isPartnerCardPage = /^\/p\/[^/]+\/?$/.test(location.pathname || '')
-
   return (
     <AuthProvider>
       <PartnerProvider>
         <div className="min-h-screen flex flex-col">
-          {!isPartnerCardPage ? <Navbar /> : null}
+          <Navbar />
           <PartnerArchiveShell position="top" />
           <main className="flex-1" style={{ paddingBottom: 'var(--partner-sticky-offset, 0px)' }}>
             <Routes>
@@ -125,4 +122,5 @@ function App() {
 }
 
 export default App
+
 

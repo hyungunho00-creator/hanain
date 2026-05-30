@@ -10,7 +10,6 @@ import { QA_TOTAL } from '../data/siteStats'
 import { usePartner } from '../context/PartnerContext'
 import { withRef } from '../lib/partnerRef'
 import { shouldEmitQASchema } from '../lib/qaAnswer'
-import PartnerSharePanel from '../components/partner/PartnerSharePanel'
 
 // URL slug → category_id 매핑 (DB qa_categories 기준)
 // [2026-05-21 D6 보강] skin/hair 단독 슬러그 추가 — sitemap·qa.json 정합성 확보
@@ -375,9 +374,6 @@ export default function CategoryPage() {
         />
 
         <div className="max-w-5xl mx-auto px-4 py-6">
-          <div className="mb-4">
-            <PartnerSharePanel />
-          </div>
           <div className="flex flex-col lg:flex-row gap-6">
             {/* ── 메인: 질문 목록 ── */}
             <main className="flex-1 min-w-0">

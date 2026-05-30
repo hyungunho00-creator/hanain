@@ -17,7 +17,6 @@ import { REFERENCES } from '../data/references'
 import { usePartner } from '../context/PartnerContext'
 import { withRef } from '../lib/partnerRef'
 import { getRenderableQAAnswer, answerPlainTextForMeta, shouldEmitQASchema } from '../lib/qaAnswer'
-import PartnerSharePanel from '../components/partner/PartnerSharePanel'
 
 // 카테고리 ID → OG 이미지 슬러그 (build_og_images.py 산출물과 1:1 매칭, 헌법 정합성)
 const CAT_OG_SLUG = {
@@ -392,9 +391,6 @@ export default function QuestionDetailPage() {
         </div>
 
         <div className="max-w-5xl mx-auto px-4 py-6">
-          <div className="mb-4">
-            <PartnerSharePanel />
-          </div>
           <div className="flex flex-col lg:flex-row gap-6">
             {/* ── 메인 컬럼 ── */}
             <main className="flex-1 min-w-0 space-y-5">
