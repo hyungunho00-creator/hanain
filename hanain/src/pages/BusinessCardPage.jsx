@@ -540,7 +540,7 @@ export default function BusinessCardPage() {
           </div>
         </div>
 
-        <div className="max-w-md mx-auto px-4 py-6">
+        <div className="mx-auto px-4 py-5 sm:py-6" style={{ maxWidth: '430px' }}>
 
           <p className="text-center mb-4"
             style={{ color: GOLD, fontSize: '11px', letterSpacing: '4px', textTransform: 'uppercase', fontWeight: '600' }}>
@@ -549,9 +549,10 @@ export default function BusinessCardPage() {
 
           {/* ════ 명함 카드 (앞/뒤 플립) ════ */}
           <div
-            className="mb-6 cursor-pointer select-none"
+            className="cursor-pointer select-none"
             onClick={() => setFlipped(!flipped)}
             style={{
+              width: 'min(100%, 420px)', margin: '0 auto 24px',
               borderRadius: '20px', overflow: 'hidden',
               boxShadow: `0 8px 40px ${GOLD}40, 0 0 0 2px ${GOLD}`,
               transition: 'transform 0.15s ease',

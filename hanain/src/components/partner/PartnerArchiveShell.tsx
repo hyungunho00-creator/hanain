@@ -71,18 +71,7 @@ export default function PartnerArchiveShell({ position = 'top' }: { position?: '
   if (!shouldShow) return null
 
   if (position === 'top') {
-    return (
-      <div className="border-b border-teal-100 bg-gradient-to-r from-teal-50 to-cyan-50">
-        <div className="mx-auto max-w-7xl px-4 py-2 text-sm text-teal-900">
-          <div className="flex flex-wrap items-center justify-between gap-2">
-            <p className="font-medium">{label} 파트너가 공유한 플로로탄닌 건강정보 아카이브</p>
-            <span className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-teal-700 ring-1 ring-teal-200">
-              공유 파트너: {label}
-            </span>
-          </div>
-        </div>
-      </div>
-    )
+    return null
   }
 
   return (
