@@ -1,4 +1,6 @@
-﻿const EXCLUDED_PREFIXES = [
+﻿import { normalizePartnerSlug } from './normalizePartnerSlug'
+
+const EXCLUDED_PREFIXES = [
   '/api',
   '/_next',
   '/assets',
@@ -56,7 +58,8 @@ export function isPartnerablePath(pathname) {
 
 export function getPartnerSlugFromPath(pathname) {
   const match = String(pathname || '').match(/^\/p\/([^/?#]+)/)
-  return match ? decodeURIComponent(match[1]) : null
+  if (!match) return null
+  return normalizePartnerSlug(decodeURIComponent(match[1]))
 }
 
 export function stripPartnerPrefix(pathname) {
@@ -67,8 +70,7 @@ export function stripPartnerPrefix(pathname) {
 }
 
 export function partnerPathFor(pathname, partnerSlug) {
-  if (!partnerSlug) return pathname
-  const normalized = String(partnerSlug).trim().toLowerCase()
+  const normalized = normalizePartnerSlug(partnerSlug)
   if (!normalized) return pathname
 
   if (!pathname || pathname === '/') return `/p/${encodeURIComponent(normalized)}`

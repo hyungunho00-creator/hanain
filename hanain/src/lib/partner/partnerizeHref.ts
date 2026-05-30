@@ -1,4 +1,5 @@
-﻿import { isExcludedPartnerPath, partnerPathFor } from './partnerRoutes'
+﻿import { normalizePartnerSlug } from './normalizePartnerSlug'
+import { isExcludedPartnerPath, partnerPathFor } from './partnerRoutes'
 
 const INTERNAL_HOSTS = new Set(['phlorotannin.com', 'www.phlorotannin.com'])
 
@@ -7,9 +8,7 @@ function isExternalScheme(href) {
 }
 
 function normalizeSlug(value) {
-  if (!value) return null
-  const slug = String(value).trim().toLowerCase()
-  return slug || null
+  return normalizePartnerSlug(value)
 }
 
 function extractSlug(input) {

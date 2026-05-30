@@ -31,6 +31,22 @@ export const DEFAULT_PARTNER = {
 const SESSION_KEY = 'phlorotannin_active_partner'
 const PartnerContext = createContext(DEFAULT_PARTNER)
 
+function shouldDebugPartnerResolve() {
+  if (typeof window === 'undefined') return false
+  if (import.meta.env.DEV) return true
+  try {
+    const sp = new URLSearchParams(window.location.search || '')
+    return sp.has('debugPartner') || sessionStorage.getItem('debugPartnerResolve') === '1'
+  } catch {
+    return false
+  }
+}
+
+function logPartnerResolve(payload) {
+  if (!shouldDebugPartnerResolve()) return
+  console.info('[partner-resolve]', payload)
+}
+
 export function savePartnerToSession(partnerData) {
   try {
     sessionStorage.setItem(SESSION_KEY, JSON.stringify(partnerData))
@@ -97,6 +113,18 @@ export function PartnerProvider({ children }) {
         pathname: location.pathname,
         search: location.search,
         persistedSlug,
+      })
+
+      logPartnerResolve({
+        requestedSlug: resolved?.requestedSlug || null,
+        normalizedSlug: resolved?.normalizedSlug || null,
+        source: resolved?.source || null,
+        status: resolved?.status || null,
+        reason: resolved?.reason || null,
+        route: location.pathname,
+        cacheMode: resolved?.cacheMode || null,
+        fallbackMode: resolved?.fallbackMode || null,
+        foundPartner: Boolean(resolved?.partner),
       })
 
       if (!mounted) return

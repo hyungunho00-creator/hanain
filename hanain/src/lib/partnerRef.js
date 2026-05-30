@@ -1,10 +1,12 @@
 ﻿import partnerizeHref from './partner/partnerizeHref'
+import { normalizePartnerSlug } from './partner/normalizePartnerSlug'
 
 const DEFAULT_PHONE = '01056528206'
 
 export function isValidRefSlug(slug) {
   if (!slug || typeof slug !== 'string') return false
-  return /^[a-z0-9_-]{2,64}$/.test(slug) || /^\d{9,11}$/.test(slug)
+  const normalized = normalizePartnerSlug(slug)
+  return Boolean(normalized)
 }
 
 export function extractRefFromUrl(rawUrl) {
@@ -13,8 +15,7 @@ export function extractRefFromUrl(rawUrl) {
       ? new URL(rawUrl, typeof window !== 'undefined' ? window.location.origin : 'https://phlorotannin.com')
       : (typeof window !== 'undefined' ? new URL(window.location.href) : null)
     if (!u) return null
-    const r = u.searchParams.get('pt') || u.searchParams.get('ref')
-    return isValidRefSlug(r || '') ? String(r).toLowerCase() : null
+    return normalizePartnerSlug(u.searchParams.get('pt') || u.searchParams.get('ref'))
   } catch {
     return null
   }
@@ -34,10 +35,10 @@ function extractPartnerSlug(partner) {
 
   if (!slug) return null
 
-  const value = String(slug).trim().toLowerCase()
-  if (!value) return null
-  if (value === DEFAULT_PHONE) return null
-  return value
+  const normalized = normalizePartnerSlug(slug)
+  if (!normalized) return null
+  if (normalized === DEFAULT_PHONE) return null
+  return normalized
 }
 
 export function withRef(href, partner) {

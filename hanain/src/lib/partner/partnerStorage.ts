@@ -1,4 +1,6 @@
-﻿export const PARTNER_COOKIE_KEY = 'ph_partner'
+﻿import { normalizePartnerSlug } from './normalizePartnerSlug'
+
+export const PARTNER_COOKIE_KEY = 'ph_partner'
 export const PARTNER_STORAGE_KEY = 'ph_partner'
 export const PARTNER_COOKIE_DAYS = 30
 
@@ -7,9 +9,7 @@ function isBrowser() {
 }
 
 function normalizeSlug(slug) {
-  if (!slug) return null
-  const trimmed = String(slug).trim().toLowerCase()
-  return trimmed || null
+  return normalizePartnerSlug(slug)
 }
 
 export function getPartnerFromCookie() {
