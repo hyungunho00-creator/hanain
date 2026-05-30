@@ -10,6 +10,7 @@ import {
   // ── [2026-05-24] 헌법 11-0 시니어 디자인 — 전단지/섹션 아이콘
   Folder, FileText, Lightbulb, Pin, AlertTriangle, Clock,
   PlayCircle, GraduationCap, BookOpen, Package, Star,
+  ShoppingBag,
   Ribbon, Sprout, FlaskConical, Dumbbell, Flower2, Award,
   ShieldPlus, Pill, RefreshCw, Sparkles, Scale, Dna,
   Shield, Waves, Droplet, Brain, Heart, Flame, Microscope,
@@ -78,6 +79,7 @@ async function renderJSXToCanvas(jsxElement, scale = 2) {
 
 const SESSION_KEY = 'phlorotannin_inforoom_auth'
 const CORRECT_PW  = '123456789'
+const HQ_SHOP_URL = 'https://www.thehanain.co.kr/shop/category.asp'
 
 /* ════════════════════════════════════════════════
    비밀번호 잠금 화면
@@ -512,6 +514,83 @@ export default function InfoRoomPage() {
             </div>
 
             {/* 화살표 */}
+            <div style={{
+              flexShrink: 0,
+              width: 36, height: 36,
+              borderRadius: '50%',
+              background: 'rgba(255,255,255,0.2)',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              border: '1.5px solid rgba(255,255,255,0.5)',
+            }}>
+              <svg width="16" height="16" fill="none" stroke="#fff" strokeWidth="3" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      {/* 본사 쇼핑몰 바로가기 */}
+      <div style={{ background: 'linear-gradient(135deg, #064e3b 0%, #047857 52%, #0f766e 100%)', borderBottom: '3px solid #5eead4', padding: '16px 16px' }}>
+        <div style={{ maxWidth: 800, margin: '0 auto' }}>
+          <a
+            href={HQ_SHOP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="더하나인 본사 쇼핑몰로 이동 (새 창)"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 14,
+              background: 'rgba(255,255,255,0.13)',
+              backdropFilter: 'blur(6px)',
+              border: '1.5px solid rgba(255,255,255,0.34)',
+              borderRadius: 14,
+              padding: '14px 18px',
+              textDecoration: 'none',
+              boxShadow: '0 4px 18px rgba(0,0,0,0.22)',
+              transition: 'transform 0.15s, background 0.15s',
+            }}
+            onMouseDown={(e) => e.currentTarget.style.transform = 'scale(0.98)'}
+            onMouseUp={(e) => e.currentTarget.style.transform = 'scale(1)'}
+            onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+          >
+            <div style={{
+              flexShrink: 0,
+              width: 52, height: 52,
+              borderRadius: 12,
+              background: '#fff',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              boxShadow: '0 2px 8px rgba(0,0,0,0.28)',
+            }}>
+              <ShoppingBag size={30} color="#047857" strokeWidth={2} />
+            </div>
+
+            <div style={{ flex: 1, minWidth: 0 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 3 }}>
+                <span style={{
+                  fontSize: 10,
+                  fontWeight: 900,
+                  letterSpacing: '1.5px',
+                  color: '#fff',
+                  background: 'rgba(0,0,0,0.32)',
+                  padding: '2px 8px',
+                  borderRadius: 4,
+                }}>
+                  OFFICIAL SHOP
+                </span>
+                <span style={{ fontSize: 11, color: '#ccfbf1', fontWeight: 700 }}>
+                  더하나인 본사
+                </span>
+              </div>
+              <div style={{ fontSize: 16, fontWeight: 900, color: '#fff', lineHeight: 1.3, marginBottom: 2, display: 'inline-flex', alignItems: 'center', gap: 8 }}>
+                <ShoppingBag size={18} strokeWidth={1.8} /> 본사 쇼핑몰 바로가기
+              </div>
+              <div style={{ fontSize: 12, color: '#ccfbf1', lineHeight: 1.5 }}>
+                더하나인 공식 쇼핑몰에서 <strong style={{ color: '#fff' }}>전체상품과 제품 상세 정보</strong>를 확인하세요
+              </div>
+            </div>
+
             <div style={{
               flexShrink: 0,
               width: 36, height: 36,
