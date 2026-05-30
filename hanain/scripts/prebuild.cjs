@@ -4,6 +4,7 @@ const path = require('path');
 const root = path.resolve(__dirname, '..');
 const STRICT_PREBUILD = process.env.PREBUILD_STRICT === '1';
 const QA_CONTENT_GATES = process.env.QA_CONTENT_GATES === '1';
+const QA_AUDIT_REPORTS = process.env.QA_AUDIT_REPORTS === '1';
 
 function run(command, args) {
   return spawnSync(command, args, {
@@ -40,9 +41,13 @@ if (QA_CONTENT_GATES) {
   console.log('[prebuild] QA content gates skipped (set QA_CONTENT_GATES=1 to run advisory validators)');
 }
 
-const qaAudit = runPython(['scripts/qa_quality_audit.py', '--min-chars', '900', '--fail-on', 'none']);
-if (qaAudit.error || qaAudit.status !== 0) {
-  process.exit(qaAudit.status || 1);
+if (QA_AUDIT_REPORTS) {
+  const qaAudit = runPython(['scripts/qa_quality_audit.py', '--min-chars', '900', '--fail-on', 'none']);
+  if (qaAudit.error || qaAudit.status !== 0) {
+    process.exit(qaAudit.status || 1);
+  }
+} else {
+  console.log('[prebuild] QA audit reports skipped (set QA_AUDIT_REPORTS=1 to generate advisory reports)');
 }
 
 const sitemap = runPython(['generate_sitemap_rss.py']);
