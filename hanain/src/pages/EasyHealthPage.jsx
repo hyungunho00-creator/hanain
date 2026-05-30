@@ -3,13 +3,36 @@ import { usePartner } from '../context/PartnerContext'
 import SEOHead from '../components/common/SEOHead'
 import { withRef } from '../lib/partnerRef'
 import { Link } from 'react-router-dom'
-import { ChevronDown, ChevronUp, MessageSquare, ArrowRight, CheckCircle, BookOpen, Leaf, AlertTriangle } from 'lucide-react'
+import {
+  ChevronDown, ChevronUp, MessageSquare, ArrowRight, CheckCircle, BookOpen, Leaf, AlertTriangle,
+  Activity, Scale, ShieldPlus, Heart, Brain, Sparkles, Bone, Zap, Moon, Waves,
+} from 'lucide-react'
 import RelatedQA from '../components/qa/RelatedQA'
 import RevealContact from '../components/common/RevealContact'
 import LastReviewed from '../components/common/LastReviewed'
 import { SciImage, InfoStrip } from '../components/visual'
 
 const LAST_REVIEWED = '2026-05-21'
+
+const LINE_ICON_MAP = {
+  diabetes: Activity,
+  obesity: Scale,
+  cancer: ShieldPlus,
+  hypertension: Heart,
+  dementia: Brain,
+  skin: Sparkles,
+  joint: Bone,
+  stress: Leaf,
+  fatigue: Zap,
+  heart: Heart,
+  sleep: Moon,
+  brain: Brain,
+}
+
+function LineTopicIcon({ id, className = 'w-5 h-5' }) {
+  const Icon = LINE_ICON_MAP[id] || Waves
+  return <Icon className={className} strokeWidth={1.8} aria-hidden="true" />
+}
 
 // ─── 질환별 카드 데이터 (쉬운 말로) ───────────────────────────────
 const diseases = [
@@ -200,11 +223,14 @@ function DiseaseCard({ d }) {
         aria-expanded={open}
       >
         <div
-          className={`w-12 h-12 rounded-md border flex items-center justify-center flex-shrink-0 ${
-            open ? 'bg-gray-900 border-gray-900 text-white' : 'bg-gray-50 border-gray-200 text-gray-700'
-          }`}
+          className="w-12 h-12 rounded-md border flex items-center justify-center flex-shrink-0 transition-colors"
+          style={{
+            backgroundColor: open ? d.color : (d.bgLight || '#F8FAFC'),
+            borderColor: open ? d.color : `${d.color}33`,
+            color: open ? '#ffffff' : d.color,
+          }}
         >
-          <span className="text-2xl leading-none" aria-hidden="true">{d.emoji}</span>
+          <LineTopicIcon id={d.id} className="w-5 h-5" />
         </div>
         <div className="flex-1 min-w-0">
           <div className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500 mb-1">
@@ -627,10 +653,10 @@ function CategoryCard({ cat }) {
         className="w-full text-left p-5 flex items-center gap-4"
       >
         <div
-          className="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0 shadow-sm"
-          style={{ backgroundColor: cat.bg }}
+          className="w-14 h-14 rounded-2xl border flex items-center justify-center flex-shrink-0 shadow-sm"
+          style={{ backgroundColor: cat.bg, borderColor: `${cat.color}30`, color: cat.color }}
         >
-          {cat.emoji}
+          <LineTopicIcon id={cat.id} className="w-6 h-6" />
         </div>
         <div className="flex-1">
           <div

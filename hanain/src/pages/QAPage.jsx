@@ -157,6 +157,7 @@ function QACard({ qa, itemKey, isOpen, onToggle, searchQuery, categories }) {
   const catId = qa.category_id || qa.category
   // 카테고리 이름 lookup — 동적 카테고리(qa.json categories) 기준
   const catName = (categories || []).find(c => c.id === catId)?.name || catId
+  const catTone = categoryPastelStyle(catId, false)
 
   const diffLabel = qa.difficulty === 'basic' ? '기초' : qa.difficulty === 'intermediate' ? '중급' : qa.difficulty === 'advanced' ? '심화' : (qa.difficulty || '기초')
 
@@ -164,6 +165,9 @@ function QACard({ qa, itemKey, isOpen, onToggle, searchQuery, categories }) {
     <div
       data-id={itemKey || qa.id}
       className={`bg-white rounded-lg border transition-colors overflow-hidden ${isOpen ? 'border-gray-900' : 'border-gray-200 hover:border-gray-400'}`}
+      style={{
+        boxShadow: catId ? `inset 4px 0 0 ${(CATEGORY_PASTELS[catId]?.accent || '#CBD5E1')}26` : undefined,
+      }}
     >
       <button onClick={onToggle} className="w-full text-left p-5 md:p-6">
         <div className="flex items-start gap-4">
@@ -173,7 +177,8 @@ function QACard({ qa, itemKey, isOpen, onToggle, searchQuery, categories }) {
                 <Link
                   to={withRef(`/category/${CAT_SLUG_MAP[catId] || catId}`, partner)}
                   onClick={e => e.stopPropagation()}
-                  className="text-[11px] font-medium uppercase tracking-[0.16em] text-gray-500 hover:text-gray-900 transition-colors"
+                  className="text-[11px] font-semibold uppercase tracking-[0.14em] px-2.5 py-0.5 rounded-full border transition-all hover:shadow-sm"
+                  style={catTone}
                 >
                   {catName}
                 </Link>
