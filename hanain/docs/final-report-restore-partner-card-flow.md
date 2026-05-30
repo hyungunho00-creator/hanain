@@ -83,7 +83,22 @@
 - 결과: SUCCESS
 - 참고: 프로젝트 prebuild 단계에서 사이트맵/리포트 자동 생성이 실행되나, 이번 복구 범위와 무관한 생성 산출물은 작업 범위에서 제외함.
 
-## 13) 비고 (요청사항 준수)
+## 13) 배포 및 실제 도메인 검증
+- Production deployment: `dpl_FAN4LWPz3JBMJmrsLuwAVi7LtxFD`
+- Vercel URL: `https://hanain-64jfeb5t2-01056528206s-projects.vercel.app`
+- `phlorotannin.com` alias를 현재 배포본으로 갱신함.
+- 실제 도메인 확인:
+  - `https://phlorotannin.com/p/01098498408`: 200, 정보 없음 문구 없음
+  - `https://phlorotannin.com/p/01074287589`: 200, 정보 없음 문구 없음
+  - `https://phlorotannin.com/p/010-7428-7589`: 200, 정보 없음 문구 없음
+  - `https://phlorotannin.com/api/partners/01074287589`: 200, `found`, source `supabase`
+  - `https://phlorotannin.com/api/vcard/01074287589`: 200, vCard 내부 URL `https://phlorotannin.com/p/01074287589`
+- 브라우저 렌더링 확인:
+  - 신규 파트너 `이수현` 전자명함 표시
+  - QR 영역 `SCAN ME` 표시
+  - `명함저장`, `전화하기`, `문자하기` 버튼 표시
+
+## 14) 비고 (요청사항 준수)
 - Q&A/블로그/SEO 콘텐츠 수정 없음
 - 디자인 전체 개편 없음
 - PWA/푸시 신규 기능 추가 없음
