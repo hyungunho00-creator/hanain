@@ -6,7 +6,6 @@ import SEOHead from '../components/common/SEOHead'
 import { getPostBySlug, getPosts } from '../lib/supabase'
 import { withRef } from '../lib/partnerRef'
 import { resolvePostImage, getCategoryFallbackImage } from '../lib/postImages'
-import PartnerShareBar from '../components/partner/PartnerShareBar'
 import RelatedQA from '../components/qa/RelatedQA'
 
 // 마크다운 → HTML 변환 (의존성 없이 직접 구현)
@@ -335,10 +334,6 @@ export default function BlogPostPage() {
             className="flex items-center gap-1.5 text-sm text-gray-500 hover:text-teal-600 mb-6 transition-colors">
             <ArrowLeft className="w-4 h-4" /> 블로그 목록
           </button>
-
-          {/* 파트너 추천 링크 공유 도구 — 파트너 컨텍스트 활성 시 본문 위에 노출.
-              주소창 URL을 ?ref=<phone> 으로 silent 동기화 + 큰 [복사][문자][공유] 버튼 제공. */}
-          <PartnerShareBar />
 
           {/* 글 헤더 */}
           <header className="mb-8">

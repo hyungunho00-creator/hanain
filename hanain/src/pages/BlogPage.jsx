@@ -4,7 +4,6 @@ import { Calendar, Eye, ChevronRight, Search, BookOpen, PlayCircle } from 'lucid
 import SEOHead from '../components/common/SEOHead'
 import { usePartner } from '../context/PartnerContext'
 import { withRef } from '../lib/partnerRef'
-import PartnerShareBar from '../components/partner/PartnerShareBar'
 import { getPosts, getPostCount, getBlogCategories, getVideosByCategory, expandSearchTerms } from '../lib/supabase'
 import { resolvePostImage, getCategoryFallbackImage } from '../lib/postImages'
 import { INSIGHTS_LIST } from '../data/insights'
@@ -390,9 +389,6 @@ export default function BlogPage() {
         </div>
 
         <div className="max-w-5xl mx-auto px-4 py-10">
-          {/* 파트너 추천 링크 공유 도구 — 파트너 컨텍스트 활성 시에만 노출 */}
-          <PartnerShareBar />
-
           {/* [2026-05-21] 인사이트 진입 CTA — 블로그 방문자에게 심층 자산 자연 안내
               디자인: 라이트 모노톤 위에 미세한 ocean-deep 액센트, 광고 톤 아님 */}
           <Link
