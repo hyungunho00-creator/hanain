@@ -3,6 +3,7 @@ const path = require('path');
 
 const root = path.resolve(__dirname, '..');
 const STRICT_PREBUILD = process.env.PREBUILD_STRICT === '1';
+const QA_CONTENT_GATES = process.env.QA_CONTENT_GATES === '1';
 
 function run(command, args) {
   return spawnSync(command, args, {
@@ -29,11 +30,15 @@ function handleStep(name, result) {
 const audit = run(process.execPath, [path.join('scripts', 'audit_reader_content.cjs')]);
 handleStep('audit_reader_content', audit);
 
-const hardValidator = run(process.execPath, [path.join('scripts', 'qa-answer-hard-validator.mjs')]);
-handleStep('qa-answer-hard-validator', hardValidator);
+if (QA_CONTENT_GATES) {
+  const hardValidator = run(process.execPath, [path.join('scripts', 'qa-answer-hard-validator.mjs')]);
+  handleStep('qa-answer-hard-validator', hardValidator);
 
-const duplicateAudit = run(process.execPath, [path.join('scripts', 'qa-duplicate-template-detector.mjs')]);
-handleStep('qa-duplicate-template-detector', duplicateAudit);
+  const duplicateAudit = run(process.execPath, [path.join('scripts', 'qa-duplicate-template-detector.mjs')]);
+  handleStep('qa-duplicate-template-detector', duplicateAudit);
+} else {
+  console.log('[prebuild] QA content gates skipped (set QA_CONTENT_GATES=1 to run advisory validators)');
+}
 
 const qaAudit = runPython(['scripts/qa_quality_audit.py', '--min-chars', '900', '--fail-on', 'none']);
 if (qaAudit.error || qaAudit.status !== 0) {

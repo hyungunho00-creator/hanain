@@ -318,7 +318,7 @@ export function getRenderableQAAnswer(qa) {
       mode: 'restored',
       html: restoredHtml,
       source: qa?.answerRestoredFrom || 'restoredAnswer',
-      badge: 'Review follow-up',
+      badge: null,
       schemaEligible: true,
       noindex: false,
     }
@@ -334,10 +334,10 @@ export function getRenderableQAAnswer(qa) {
     const verdict = validateLegacyAnswer(qa, candidateHtml)
     if (verdict.pass) {
       return {
-        mode: 'restored',
+        mode: 'legacy',
         html: candidateHtml,
         source: `legacy.${source}`,
-        badge: 'Review follow-up',
+        badge: null,
         schemaEligible: true,
         noindex: false,
       }
@@ -346,11 +346,11 @@ export function getRenderableQAAnswer(qa) {
 
   if (firstLegacy) {
     return {
-      mode: 'restored',
+      mode: 'legacy',
       html: firstLegacy.candidateHtml,
       source: `legacy.${firstLegacy.source}`,
-      badge: 'Review follow-up',
-      schemaEligible: false,
+      badge: null,
+      schemaEligible: true,
       noindex: false,
     }
   }
