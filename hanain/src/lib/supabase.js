@@ -8,6 +8,10 @@ import {
   getLocalCategoryBlogPost,
 } from '../data/localCategoryBlogPosts'
 import {
+  LOCAL_TREND_BLOG_POSTS,
+  getLocalTrendBlogPost,
+} from '../data/localTrendBlogPosts'
+import {
   LOCAL_SEO_EXPANSION_POSTS,
   getLocalSeoExpansionPost,
 } from '../data/localSeoExpansionPosts'
@@ -20,6 +24,7 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
 })
 
 const LOCAL_BLOG_POSTS = [
+  ...LOCAL_TREND_BLOG_POSTS,
   ...LOCAL_FUNCTIONAL_INGREDIENT_POSTS,
   ...LOCAL_CATEGORY_BLOG_POSTS,
   ...LOCAL_SEO_EXPANSION_POSTS,
@@ -369,6 +374,7 @@ export async function getPosts({ category = null, tag = null, limit = 20, page =
 
 export async function getPostBySlug(slug) {
   const local =
+    getLocalTrendBlogPost(slug) ||
     getLocalFunctionalIngredientPost(slug) ||
     getLocalCategoryBlogPost(slug) ||
     getLocalSeoExpansionPost(slug)

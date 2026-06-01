@@ -2440,6 +2440,7 @@ async function drawProductPage1(scale = 2) {
   canvas.width = W * scale; canvas.height = H * scale
   const ctx = canvas.getContext('2d')
   ctx.scale(scale, scale)
+  ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, W, H)
   // Hard-fit content into A4 so PDF never overflows to another sheet.
   const PAGE_FIT_SCALE = 0.90
   const fitOffsetX = Math.round((W - W * PAGE_FIT_SCALE) / 2)
@@ -2449,7 +2450,6 @@ async function drawProductPage1(scale = 2) {
   ctx.scale(PAGE_FIT_SCALE, PAGE_FIT_SCALE)
   const col = COL_PRODUCT
   const pad = 32, body = W - pad * 2
-  ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, W, H)
   let y = 44
 
   // ── 브랜드 바
@@ -2632,6 +2632,7 @@ async function drawProductPage2(partnerName, partnerTel, qrImg, scale = 2) {
   canvas.width = W * scale; canvas.height = H * scale
   const ctx = canvas.getContext('2d')
   ctx.scale(scale, scale)
+  ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, W, H)
   // Hard-fit content into A4 so PDF never overflows to another sheet.
   const PAGE_FIT_SCALE = 0.90
   const fitOffsetX = Math.round((W - W * PAGE_FIT_SCALE) / 2)
@@ -2641,7 +2642,6 @@ async function drawProductPage2(partnerName, partnerTel, qrImg, scale = 2) {
   ctx.scale(PAGE_FIT_SCALE, PAGE_FIT_SCALE)
   const col = COL_PRODUCT
   const pad = 32, body = W - pad * 2
-  ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, W, H)
   let y = 44
 
   // ── 브랜드 바
@@ -2698,17 +2698,19 @@ async function drawProductPage2(partnerName, partnerTel, qrImg, scale = 2) {
     },
   ]
 
+  const productGap = 8
+  const contactBoxMinH = 190
+  const bottomSafe = 52
+  const availableCardArea = H - y - contactBoxMinH - bottomSafe - productGap * (products.length - 1)
+  const productCardH = Math.min(230, Math.max(210, Math.floor(availableCardArea / products.length)))
+
   products.forEach(p => {
     // ── 카드 높이를 실제 콘텐츠 기반으로 미리 계산
-    ctx.font = '14px sans-serif'
-    const descLines  = wrapText(ctx, p.desc,  body - 38)
-    ctx.font = '13px sans-serif'
-    const usageLines = wrapText(ctx, p.usage, body - 38)
-
-    //  헤더행(58) + 구분선(10) + 슬로건행(24) + 설명(descLines*20+8) + 태그행(26+8)
-    //  + 구분선(10) + '섭취방법' label(20) + usage(usageLines*18+8) + 하단배지(26) + 하단여백(12)
-    const cardH = 58 + 10 + 24 + descLines.length * 20 + 8
-               + 26 + 8 + 10 + 20 + usageLines.length * 18 + 8 + 26 + 12
+    ctx.font = '12px sans-serif'
+    const descLines  = wrapTextMaxLines(ctx, p.desc,  body - 40, 2)
+    ctx.font = '11px sans-serif'
+    const usageLines = wrapTextMaxLines(ctx, p.usage, body - 40, 1)
+    const cardH = productCardH
 
     // 카드 배경 (fill 먼저)
     roundRect(ctx, pad + 5, y, body - 5, cardH, 9)
@@ -2717,69 +2719,70 @@ async function drawProductPage2(partnerName, partnerTel, qrImg, scale = 2) {
     ctx.fillStyle = p.pc; ctx.fillRect(pad, y, 5, cardH)
 
     // ── 헤더: 번호 원 + 제품명 + 가격
-    const numR = 17  // 원 반지름
-    const numCX = pad + 18 + numR, numCY = y + 28
+    const numR = 15  // 원 반지름
+    const numCX = pad + 17 + numR, numCY = y + 26
     ctx.beginPath(); ctx.arc(numCX, numCY, numR, 0, Math.PI * 2)
     ctx.fillStyle = p.pc; ctx.fill()
-    ctx.font = 'bold 16px sans-serif'; ctx.fillStyle = '#fff'
+    ctx.font = 'bold 15px sans-serif'; ctx.fillStyle = '#fff'
     ctx.textBaseline = 'middle'; ctx.textAlign = 'center'
     ctx.fillText(p.num, numCX, numCY); ctx.textAlign = 'left'
 
-    ctx.font = 'bold 19px sans-serif'; ctx.fillStyle = NAVY; ctx.textBaseline = 'top'
-    ctx.fillText(p.name, pad + 56, y + 10)
-    ctx.font = '13px sans-serif'; ctx.fillStyle = '#888'
-    ctx.fillText(p.en + '  ·  ' + p.size, pad + 56, y + 34)
-    ctx.font = 'bold 19px sans-serif'; ctx.fillStyle = p.pc
+    ctx.font = 'bold 18px sans-serif'; ctx.fillStyle = NAVY; ctx.textBaseline = 'top'
+    ctx.fillText(p.name, pad + 54, y + 9)
+    ctx.font = '12px sans-serif'; ctx.fillStyle = '#888'
+    ctx.fillText(fitText(ctx, p.en + '  ·  ' + p.size, body - 230), pad + 54, y + 32)
+    ctx.font = 'bold 17px sans-serif'; ctx.fillStyle = p.pc
     ctx.textAlign = 'right'; ctx.textBaseline = 'top'
-    ctx.fillText(p.price, W - pad - 10, y + 18)
+    ctx.fillText(p.price, W - pad - 12, y + 17)
     ctx.textAlign = 'left'
 
-    let cy = y + 58
+    let cy = y + 52
 
     // ── 구분선 + 슬로건
-    ctx.fillStyle = '#e0e4ec'; ctx.fillRect(pad + 5, cy, body - 5, 1); cy += 10
-    ctx.font = 'bold 14px sans-serif'; ctx.fillStyle = p.pc
+    ctx.fillStyle = '#e0e4ec'; ctx.fillRect(pad + 5, cy, body - 5, 1); cy += 8
+    ctx.font = 'bold 12px sans-serif'; ctx.fillStyle = p.pc
     ctx.textBaseline = 'top'; ctx.textAlign = 'center'
-    ctx.fillText(p.slogan, W / 2, cy); ctx.textAlign = 'left'; cy += 24
+    ctx.fillText(fitText(ctx, p.slogan, body - 30), W / 2, cy); ctx.textAlign = 'left'; cy += 20
 
     // ── 설명
-    ctx.font = '14px sans-serif'; ctx.fillStyle = '#333'; ctx.textBaseline = 'top'
-    descLines.forEach(l => { ctx.fillText(l, pad + 16, cy); cy += 20 }); cy += 8
+    ctx.font = '12px sans-serif'; ctx.fillStyle = '#333'; ctx.textBaseline = 'top'
+    descLines.forEach(l => { ctx.fillText(l, pad + 16, cy); cy += 16 }); cy += 6
 
     // ── 태그
     let tx = pad + 16
     p.tags.forEach(tag => {
-      ctx.font = 'bold 12px sans-serif'
-      const tw = ctx.measureText(tag).width + 20
-      roundRect(ctx, tx, cy, tw, 24, 7)
+      ctx.font = 'bold 10px sans-serif'
+      const tw = ctx.measureText(tag).width + 16
+      roundRect(ctx, tx, cy, tw, 20, 6)
       ctx.fillStyle = hexAlpha(p.pc, 0x22); ctx.fill()
       ctx.strokeStyle = hexAlpha(p.pc, 0x70); ctx.lineWidth = 1; ctx.stroke()
       ctx.fillStyle = p.pc; ctx.textBaseline = 'middle'
-      ctx.fillText(tag, tx + 10, cy + 12)
+      ctx.fillText(tag, tx + 8, cy + 10)
       tx += tw + 6
-    }); cy += 34
+    }); cy += 27
 
     // ── 섭취방법
-    ctx.fillStyle = '#e0e4ec'; ctx.fillRect(pad + 16, cy, body - 24, 1); cy += 10
-    ctx.font = 'bold 13px sans-serif'; ctx.fillStyle = NAVY; ctx.textBaseline = 'top'
-    ctx.fillText('섭취 방법', pad + 16, cy); cy += 20
-    ctx.font = '13px sans-serif'; ctx.fillStyle = '#666'
-    usageLines.forEach(l => { ctx.fillText(l, pad + 16, cy); cy += 18 }); cy += 8
+    ctx.fillStyle = '#e0e4ec'; ctx.fillRect(pad + 16, cy, body - 24, 1); cy += 8
+    ctx.font = 'bold 11px sans-serif'; ctx.fillStyle = NAVY; ctx.textBaseline = 'top'
+    ctx.fillText('섭취 방법', pad + 16, cy); cy += 16
+    ctx.font = '11px sans-serif'; ctx.fillStyle = '#666'
+    usageLines.forEach(l => { ctx.fillText(l, pad + 16, cy); cy += 15 }); cy += 6
 
     // ── 하단 배지
     const badgeTxt = 'SEANOL C.A.F.  감태추출물 플로로탄닌 해양 폴리페놀  ·  국산'
-    roundRect(ctx, pad + 5, cy, body - 5, 26, 6)
+    const badgeY = Math.min(cy, y + cardH - 28)
+    roundRect(ctx, pad + 5, badgeY, body - 5, 22, 6)
     ctx.fillStyle = hexAlpha(p.pc, 0x14); ctx.fill()
-    ctx.font = '12px sans-serif'; ctx.fillStyle = p.pc
+    ctx.font = '10px sans-serif'; ctx.fillStyle = p.pc
     ctx.textBaseline = 'middle'; ctx.textAlign = 'center'
-    ctx.fillText(badgeTxt, W / 2, cy + 13); ctx.textAlign = 'left'
+    ctx.fillText(badgeTxt, W / 2, badgeY + 11); ctx.textAlign = 'left'
 
-    y += cardH + 12
+    y += cardH + productGap
   })
 
   // ── 파트너 박스 — 남은 공간 꽉 채우기 (하단 페이지번호+안전여백 40px 확보)
-  const boxY = y
-  const boxH = H - boxY - 40
+  const boxY = y + 4
+  const boxH = Math.max(170, H - boxY - bottomSafe)
   // QR: 프레임 + 라벨(약 22) 이 박스 안에 들어가도록 제한
   const qrSize = Math.min(132, boxH - 60)
   const qrFrameSize = qrSize + 26
@@ -2883,6 +2886,23 @@ function wrapText(ctx, text, maxWidth) {
   }
   if (cur) lines.push(cur)
   return lines
+}
+
+function fitText(ctx, text, maxWidth) {
+  if (ctx.measureText(text).width <= maxWidth) return text
+  let cur = text
+  while (cur.length > 0 && ctx.measureText(`${cur}…`).width > maxWidth) {
+    cur = cur.slice(0, -1)
+  }
+  return `${cur}…`
+}
+
+function wrapTextMaxLines(ctx, text, maxWidth, maxLines) {
+  const lines = wrapText(ctx, text, maxWidth)
+  if (lines.length <= maxLines) return lines
+  const kept = lines.slice(0, maxLines)
+  kept[kept.length - 1] = fitText(ctx, kept[kept.length - 1] + lines.slice(maxLines).join(''), maxWidth)
+  return kept
 }
 
 // 둥근 사각형 path 헬퍼

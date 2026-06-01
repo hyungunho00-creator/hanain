@@ -192,7 +192,7 @@ function PostCard({ post, partner }) {
   // '|' 앞부분만 추출(영문 부제 제거, ':' 뒤 한글 부제는 유지 → 변별력↑)
   const rawTitle = (post.title || '').toString().trim()
   const titleCore = rawTitle.split('|')[0].trim() || rawTitle
-  const imgAlt   = `${titleCore} - ${catName} 건강정보 일러스트`
+  const imgAlt   = post.image_alt || `${titleCore} - ${catName} 건강정보 일러스트`
 
   return (
     <article className="bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-200 overflow-hidden group">

@@ -15,6 +15,9 @@ const BAD_PHRASES = [
   '실전 답은',
   '작은 루틴',
   '관리형 질문',
+  '혈당·혈압·지질 같은 검사 수치',
+  '플로로탄닌은 감태 등 갈조류에서 발견되는 해양 폴리페놀',
+  '질문에서는 한 번에 여러 요소를 바꾸기보다',
 ]
 
 const BAD_GRAMMAR_PATTERNS = [
@@ -318,11 +321,25 @@ export function getRenderableQAAnswer(qa) {
 
 export function shouldEmitQASchema(qa) {
   const renderable = getRenderableQAAnswer(qa)
-  return renderable.schemaEligible && Boolean(normalizeText(renderable.html))
+  return renderable.schemaEligible && isSearchIndexableQA(qa) && Boolean(normalizeText(renderable.html))
 }
 
 export function answerPlainTextForMeta(qa, fallback = '') {
   const renderable = getRenderableQAAnswer(qa)
   const plain = normalizeText(renderable.html)
   return plain || fallback
+}
+
+export function isSearchIndexableQA(qa) {
+  const legacyCandidates = extractLegacyCandidates(qa)
+  const candidate = legacyCandidates[0]?.[1] || ''
+  if (!candidate) return false
+
+  const answerText = normalizeText(candidate)
+  if (answerText.length < 700) return false
+
+  const sourceStatus = String(qa?.sourceStatus || qa?.source_status || '').toLowerCase()
+  if (!['verified', 'referenced'].includes(sourceStatus)) return false
+
+  return validateLegacyAnswer(qa, candidate).pass
 }

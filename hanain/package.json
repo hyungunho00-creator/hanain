@@ -17,11 +17,12 @@
     "qa:recall-rewrite": "node scripts/content_recall_rewrite_qa.mjs",
     "seo:expand": "node scripts/expand_existing_seo_assets.mjs",
     "seo:indexnow": "node scripts/submit_indexnow.mjs",
+    "verify:checkpoint": "node scripts/verify_checkpoint.mjs",
     "prebuild": "node scripts/prebuild.cjs"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
-    "@supabase/supabase-js": "^2.103.0",
+    "@supabase/supabase-js": "^2.106.2",
     "framer-motion": "^12.38.0",
     "html2canvas": "^1.4.1",
     "jspdf": "^4.2.1",
@@ -45,7 +46,7 @@
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.5.2",
     "globals": "^17.4.0",
-    "postcss": "^8.5.8",
+    "postcss": "^8.5.15",
     "tailwindcss": "^3.4.19",
     "vite": "^8.0.4"
   }

@@ -26,6 +26,9 @@ export default function InsightLayout({ post, related = [] }) {
   if (!post) return null
 
   const canonical = `${SITE}/insights/${post.slug}`
+  const heroImageAbs = post.heroImage
+    ? (post.heroImage.startsWith('http') ? post.heroImage : `${SITE}${post.heroImage.startsWith('/') ? '' : '/'}${post.heroImage}`)
+    : `${SITE}/og-image.png`
   const refs = (post.referenceIds || [])
     .map((id) => REFERENCES[id])
     .filter(Boolean)
@@ -41,6 +44,7 @@ export default function InsightLayout({ post, related = [] }) {
         name: post.title,
         headline: post.title,
         description: post.description,
+        image: heroImageAbs,
         inLanguage: 'ko-KR',
         datePublished: post.publishedAt,
         dateModified: post.updatedAt || post.publishedAt,
@@ -110,7 +114,7 @@ export default function InsightLayout({ post, related = [] }) {
         keywords={post.keywords}
         canonical={canonical}
         ogType="article"
-        ogImage={post.heroImage || 'https://phlorotannin.com/og-image.png'}
+        ogImage={heroImageAbs}
         ogImageAlt={post.heroAlt || post.title}
         jsonLd={jsonLd}
       />

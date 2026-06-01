@@ -1,11 +1,11 @@
 {
   "min_tag_count": 5,
-  "total_questions": 1741,
-  "total_unique_tags": 1903,
-  "page_eligible_tags": 190,
+  "total_questions": 1793,
+  "total_unique_tags": 2025,
+  "page_eligible_tags": 215,
   "tags": {
     "플로로탄닌": {
-      "count": 1325,
+      "count": 1363,
       "qids": [
         "cardio-001",
         "cardio-002",
@@ -144,26 +144,21 @@
         "meta_035",
         "meta_036",
         "meta_037",
-        "meta_038",
         "meta_039",
         "meta_040",
         "meta_041",
         "meta_042",
-        "meta_043",
         "meta_044",
         "meta_045",
-        "meta_046",
         "meta_047",
         "meta_048",
         "meta_049",
         "meta_050",
         "meta_051",
-        "meta_052",
         "meta_053",
         "meta_054",
         "meta_055",
         "meta_056",
-        "meta_057",
         "meta_058",
         "meta_059",
         "meta_060",
@@ -174,11 +169,9 @@
         "meta_065",
         "meta_066",
         "meta_067",
-        "meta_068",
         "meta_069",
         "meta_070",
         "meta_071",
-        "meta_072",
         "meta_073",
         "meta_074",
         "meta_075",
@@ -189,17 +182,13 @@
         "meta_080",
         "meta_081",
         "meta_082",
-        "meta_083",
         "meta_084",
         "meta_085",
-        "meta_086",
-        "meta_087",
         "meta_088",
         "meta_089",
         "meta_090",
         "meta_091",
         "meta_092",
-        "meta_093",
         "meta_094",
         "meta_095",
         "meta_096",
@@ -1234,7 +1223,6 @@
         "qa200-20260527-184",
         "seoqa-metabolism-01",
         "seoqa-metabolism-02",
-        "seoqa-metabolism-03",
         "seoqa-metabolism-04",
         "seoqa-metabolism-05",
         "seoqa-metabolism-06",
@@ -1331,11 +1319,61 @@
         "seoqa-respiratory-02",
         "seoqa-respiratory-03",
         "seoqa-respiratory-04",
-        "seoqa-respiratory-05"
+        "seoqa-respiratory-05",
+        "trendqa-metabolism-20260530",
+        "trendqa-cancer-immune-20260530",
+        "trendqa-digestive-20260530",
+        "trendqa-cardiovascular-20260530",
+        "trendqa-neuro-20260530",
+        "trendqa-musculoskeletal-20260530",
+        "trendqa-skin-20260530",
+        "trendqa-hair-20260530",
+        "trendqa-respiratory-20260530",
+        "trendqa-inflammation-20260530",
+        "trendqa-mens-20260530",
+        "round2-metabolism-20260530",
+        "round2-cancer-immune-20260530",
+        "round2-digestive-20260530",
+        "round2-cardiovascular-20260530",
+        "round2-neuro-cognitive-20260530",
+        "round2-mental-health-20260530",
+        "round2-musculoskeletal-20260530",
+        "round2-skin-20260530",
+        "round2-hair-20260530",
+        "round2-respiratory-20260530",
+        "round2-infection-inflammation-20260530",
+        "round2-womens-health-20260530",
+        "round2-mens-health-20260530",
+        "round3-metabolism-1-20260531",
+        "round3-metabolism-2-20260531",
+        "round3-cancer_immune-1-20260531",
+        "round3-cancer_immune-2-20260531",
+        "round3-digestive-1-20260531",
+        "round3-digestive-2-20260531",
+        "round3-cardiovascular-1-20260531",
+        "round3-cardiovascular-2-20260531",
+        "round3-neuro_cognitive-1-20260531",
+        "round3-neuro_cognitive-2-20260531",
+        "round3-mental_health-1-20260531",
+        "round3-mental_health-2-20260531",
+        "round3-musculoskeletal-1-20260531",
+        "round3-musculoskeletal-2-20260531",
+        "round3-skin-1-20260531",
+        "round3-skin-2-20260531",
+        "round3-hair-1-20260531",
+        "round3-hair-2-20260531",
+        "round3-respiratory-1-20260531",
+        "round3-respiratory-2-20260531",
+        "round3-infection_inflammation-1-20260531",
+        "round3-infection_inflammation-2-20260531",
+        "round3-womens_health-1-20260531",
+        "round3-womens_health-2-20260531",
+        "round3-mens_health-1-20260531",
+        "round3-mens_health-2-20260531"
       ]
     },
     "감태": {
-      "count": 996,
+      "count": 989,
       "qids": [
         "cardio-008",
         "cardio-012",
@@ -1410,9 +1448,7 @@
         "meta_039",
         "meta_040",
         "meta_041",
-        "meta_043",
         "meta_045",
-        "meta_046",
         "meta_047",
         "meta_049",
         "meta_050",
@@ -1420,7 +1456,6 @@
         "meta_053",
         "meta_055",
         "meta_056",
-        "meta_057",
         "meta_059",
         "meta_060",
         "meta_061",
@@ -1438,14 +1473,10 @@
         "meta_079",
         "meta_080",
         "meta_081",
-        "meta_083",
         "meta_085",
-        "meta_086",
-        "meta_087",
         "meta_089",
         "meta_090",
         "meta_091",
-        "meta_093",
         "meta_095",
         "meta_096",
         "meta_097",
@@ -2234,8 +2265,6 @@
         "qa200-20260527-109",
         "qa200-20260527-141",
         "seoqa-metabolism-01",
-        "seoqa-metabolism-02",
-        "seoqa-metabolism-03",
         "seoqa-metabolism-04",
         "seoqa-metabolism-05",
         "seoqa-metabolism-06",
@@ -2332,11 +2361,13 @@
         "seoqa-respiratory-02",
         "seoqa-respiratory-03",
         "seoqa-respiratory-04",
-        "seoqa-respiratory-05"
+        "seoqa-respiratory-05",
+        "trendqa-mental-20260530",
+        "round2-mental-health-20260530"
       ]
     },
     "항산화": {
-      "count": 608,
+      "count": 605,
       "qids": [
         "cardio-003",
         "cardio-004",
@@ -2398,13 +2429,11 @@
         "meta_034",
         "meta_037",
         "meta_040",
-        "meta_043",
         "meta_044",
         "meta_047",
         "meta_050",
         "meta_053",
         "meta_054",
-        "meta_057",
         "meta_060",
         "meta_063",
         "meta_064",
@@ -2414,11 +2443,8 @@
         "meta_074",
         "meta_077",
         "meta_080",
-        "meta_083",
         "meta_084",
-        "meta_087",
         "meta_090",
-        "meta_093",
         "meta_094",
         "meta_097",
         "meta_100",
@@ -2945,11 +2971,13 @@
         "ingr-003",
         "ingr-019",
         "ingr-020",
-        "qa200-20260527-139"
+        "qa200-20260527-139",
+        "trendqa-skin-20260530",
+        "round2-cardiovascular-20260530"
       ]
     },
     "디에콜": {
-      "count": 488,
+      "count": 491,
       "qids": [
         "cardio-012",
         "cardio-015",
@@ -3438,11 +3466,14 @@
         "mental-011",
         "mental-016",
         "mental-017",
-        "mental-018"
+        "mental-018",
+        "qa200-20260527-017",
+        "trendqa-mental-20260530",
+        "round2-mental-health-20260530"
       ]
     },
     "에콜": {
-      "count": 477,
+      "count": 475,
       "qids": [
         "cardio-008",
         "cardio-012",
@@ -3492,7 +3523,6 @@
         "meta_050",
         "meta_051",
         "meta_055",
-        "meta_057",
         "meta_060",
         "meta_061",
         "meta_065",
@@ -3504,7 +3534,6 @@
         "meta_080",
         "meta_081",
         "meta_085",
-        "meta_087",
         "meta_090",
         "meta_091",
         "meta_095",
@@ -3924,7 +3953,7 @@
       ]
     },
     "폴리페놀": {
-      "count": 464,
+      "count": 458,
       "qids": [
         "cardio-003",
         "cardio-007",
@@ -3972,14 +4001,11 @@
         "meta-019",
         "meta_021",
         "meta_023",
-        "meta_028",
         "meta_030",
         "meta_031",
         "meta_033",
-        "meta_038",
         "meta_040",
         "meta_041",
-        "meta_043",
         "meta_048",
         "meta_050",
         "meta_051",
@@ -3988,18 +4014,15 @@
         "meta_060",
         "meta_061",
         "meta_063",
-        "meta_068",
         "meta_070",
         "meta_071",
         "meta_073",
         "meta_078",
         "meta_080",
         "meta_081",
-        "meta_083",
         "meta_088",
         "meta_090",
         "meta_091",
-        "meta_093",
         "meta_098",
         "meta_100",
         "cancer-004",
@@ -4393,7 +4416,7 @@
       ]
     },
     "해양폴리페놀": {
-      "count": 345,
+      "count": 337,
       "qids": [
         "cardio-009",
         "cardio-019",
@@ -4415,20 +4438,14 @@
         "meta-014",
         "meta-019",
         "meta_023",
-        "meta_028",
         "meta_033",
-        "meta_038",
-        "meta_043",
         "meta_048",
         "meta_053",
         "meta_058",
         "meta_063",
-        "meta_068",
         "meta_073",
         "meta_078",
-        "meta_083",
         "meta_088",
-        "meta_093",
         "meta_098",
         "cancer-004",
         "cancer-009",
@@ -4641,8 +4658,6 @@
         "ci_124",
         "sh_140",
         "seoqa-metabolism-01",
-        "seoqa-metabolism-02",
-        "seoqa-metabolism-03",
         "seoqa-metabolism-04",
         "seoqa-metabolism-05",
         "seoqa-metabolism-06",
@@ -4743,7 +4758,7 @@
       ]
     },
     "항염증": {
-      "count": 326,
+      "count": 324,
       "qids": [
         "cardio-003",
         "cardio-007",
@@ -4771,10 +4786,8 @@
         "meta_037",
         "meta_042",
         "meta_047",
-        "meta_057",
         "meta_067",
         "meta_077",
-        "meta_087",
         "meta_097",
         "cancer-001",
         "cancer-008",
@@ -5282,7 +5295,7 @@
       ]
     },
     "자주묻는질문": {
-      "count": 200,
+      "count": 196,
       "qids": [
         "qa200-20260527-001",
         "qa200-20260527-002",
@@ -5290,7 +5303,6 @@
         "qa200-20260527-004",
         "qa200-20260527-005",
         "qa200-20260527-006",
-        "qa200-20260527-007",
         "qa200-20260527-008",
         "qa200-20260527-009",
         "qa200-20260527-010",
@@ -5300,12 +5312,9 @@
         "qa200-20260527-014",
         "qa200-20260527-015",
         "qa200-20260527-016",
-        "qa200-20260527-017",
         "qa200-20260527-018",
-        "qa200-20260527-019",
         "qa200-20260527-020",
         "qa200-20260527-021",
-        "qa200-20260527-022",
         "qa200-20260527-023",
         "qa200-20260527-024",
         "qa200-20260527-025",
@@ -5487,11 +5496,117 @@
       ]
     },
     "생활기록": {
-      "count": 100,
+      "count": 102,
+      "qids": [
+        "seoqa-metabolism-01",
+        "seoqa-metabolism-03",
+        "seoqa-metabolism-04",
+        "seoqa-metabolism-05",
+        "seoqa-metabolism-06",
+        "seoqa-metabolism-07",
+        "seoqa-metabolism-08",
+        "seoqa-metabolism-09",
+        "seoqa-metabolism-10",
+        "seoqa-metabolism-11",
+        "seoqa-metabolism-12",
+        "seoqa-metabolism-13",
+        "seoqa-metabolism-14",
+        "seoqa-metabolism-15",
+        "seoqa-cancer_immune-01",
+        "seoqa-cancer_immune-02",
+        "seoqa-cancer_immune-03",
+        "seoqa-cancer_immune-04",
+        "seoqa-cancer_immune-05",
+        "seoqa-cancer_immune-06",
+        "seoqa-cancer_immune-07",
+        "seoqa-cancer_immune-08",
+        "seoqa-cancer_immune-09",
+        "seoqa-cancer_immune-10",
+        "seoqa-cancer_immune-11",
+        "seoqa-cancer_immune-12",
+        "seoqa-cancer_immune-13",
+        "seoqa-cancer_immune-14",
+        "seoqa-cancer_immune-15",
+        "seoqa-digestive-01",
+        "seoqa-digestive-02",
+        "seoqa-digestive-03",
+        "seoqa-digestive-04",
+        "seoqa-digestive-05",
+        "seoqa-digestive-06",
+        "seoqa-digestive-07",
+        "seoqa-digestive-08",
+        "seoqa-digestive-09",
+        "seoqa-digestive-10",
+        "seoqa-digestive-11",
+        "seoqa-digestive-12",
+        "seoqa-digestive-13",
+        "seoqa-digestive-14",
+        "seoqa-digestive-15",
+        "seoqa-cardiovascular-01",
+        "seoqa-cardiovascular-02",
+        "seoqa-cardiovascular-03",
+        "seoqa-cardiovascular-04",
+        "seoqa-cardiovascular-05",
+        "seoqa-cardiovascular-06",
+        "seoqa-cardiovascular-07",
+        "seoqa-cardiovascular-08",
+        "seoqa-cardiovascular-09",
+        "seoqa-cardiovascular-10",
+        "seoqa-neuro_cognitive-01",
+        "seoqa-neuro_cognitive-02",
+        "seoqa-neuro_cognitive-03",
+        "seoqa-neuro_cognitive-04",
+        "seoqa-neuro_cognitive-05",
+        "seoqa-neuro_cognitive-06",
+        "seoqa-neuro_cognitive-07",
+        "seoqa-neuro_cognitive-08",
+        "seoqa-neuro_cognitive-09",
+        "seoqa-neuro_cognitive-10",
+        "seoqa-mental_health-01",
+        "seoqa-mental_health-02",
+        "seoqa-mental_health-03",
+        "seoqa-mental_health-04",
+        "seoqa-mental_health-05",
+        "seoqa-mental_health-06",
+        "seoqa-mental_health-07",
+        "seoqa-mental_health-08",
+        "seoqa-mental_health-09",
+        "seoqa-mental_health-10",
+        "seoqa-musculoskeletal-01",
+        "seoqa-musculoskeletal-02",
+        "seoqa-musculoskeletal-03",
+        "seoqa-musculoskeletal-04",
+        "seoqa-musculoskeletal-05",
+        "seoqa-musculoskeletal-06",
+        "seoqa-musculoskeletal-07",
+        "seoqa-musculoskeletal-08",
+        "seoqa-musculoskeletal-09",
+        "seoqa-musculoskeletal-10",
+        "seoqa-skin-01",
+        "seoqa-skin-02",
+        "seoqa-skin-03",
+        "seoqa-skin-04",
+        "seoqa-skin-05",
+        "seoqa-skin-06",
+        "seoqa-skin-07",
+        "seoqa-skin-08",
+        "seoqa-skin-09",
+        "seoqa-skin-10",
+        "seoqa-respiratory-01",
+        "seoqa-respiratory-02",
+        "seoqa-respiratory-03",
+        "seoqa-respiratory-04",
+        "seoqa-respiratory-05",
+        "trendqa-inflammation-20260530",
+        "round2-infection-inflammation-20260530",
+        "round3-cancer_immune-1-20260531"
+      ]
+    },
+    "정보검증": {
+      "count": 99,
       "qids": [
         "seoqa-metabolism-01",
         "seoqa-metabolism-02",
-        "seoqa-metabolism-03",
         "seoqa-metabolism-04",
         "seoqa-metabolism-05",
         "seoqa-metabolism-06",
@@ -5592,116 +5707,9 @@
       ]
     },
     "의료진상담우선": {
-      "count": 100,
+      "count": 98,
       "qids": [
         "seoqa-metabolism-01",
-        "seoqa-metabolism-02",
-        "seoqa-metabolism-03",
-        "seoqa-metabolism-04",
-        "seoqa-metabolism-05",
-        "seoqa-metabolism-06",
-        "seoqa-metabolism-07",
-        "seoqa-metabolism-08",
-        "seoqa-metabolism-09",
-        "seoqa-metabolism-10",
-        "seoqa-metabolism-11",
-        "seoqa-metabolism-12",
-        "seoqa-metabolism-13",
-        "seoqa-metabolism-14",
-        "seoqa-metabolism-15",
-        "seoqa-cancer_immune-01",
-        "seoqa-cancer_immune-02",
-        "seoqa-cancer_immune-03",
-        "seoqa-cancer_immune-04",
-        "seoqa-cancer_immune-05",
-        "seoqa-cancer_immune-06",
-        "seoqa-cancer_immune-07",
-        "seoqa-cancer_immune-08",
-        "seoqa-cancer_immune-09",
-        "seoqa-cancer_immune-10",
-        "seoqa-cancer_immune-11",
-        "seoqa-cancer_immune-12",
-        "seoqa-cancer_immune-13",
-        "seoqa-cancer_immune-14",
-        "seoqa-cancer_immune-15",
-        "seoqa-digestive-01",
-        "seoqa-digestive-02",
-        "seoqa-digestive-03",
-        "seoqa-digestive-04",
-        "seoqa-digestive-05",
-        "seoqa-digestive-06",
-        "seoqa-digestive-07",
-        "seoqa-digestive-08",
-        "seoqa-digestive-09",
-        "seoqa-digestive-10",
-        "seoqa-digestive-11",
-        "seoqa-digestive-12",
-        "seoqa-digestive-13",
-        "seoqa-digestive-14",
-        "seoqa-digestive-15",
-        "seoqa-cardiovascular-01",
-        "seoqa-cardiovascular-02",
-        "seoqa-cardiovascular-03",
-        "seoqa-cardiovascular-04",
-        "seoqa-cardiovascular-05",
-        "seoqa-cardiovascular-06",
-        "seoqa-cardiovascular-07",
-        "seoqa-cardiovascular-08",
-        "seoqa-cardiovascular-09",
-        "seoqa-cardiovascular-10",
-        "seoqa-neuro_cognitive-01",
-        "seoqa-neuro_cognitive-02",
-        "seoqa-neuro_cognitive-03",
-        "seoqa-neuro_cognitive-04",
-        "seoqa-neuro_cognitive-05",
-        "seoqa-neuro_cognitive-06",
-        "seoqa-neuro_cognitive-07",
-        "seoqa-neuro_cognitive-08",
-        "seoqa-neuro_cognitive-09",
-        "seoqa-neuro_cognitive-10",
-        "seoqa-mental_health-01",
-        "seoqa-mental_health-02",
-        "seoqa-mental_health-03",
-        "seoqa-mental_health-04",
-        "seoqa-mental_health-05",
-        "seoqa-mental_health-06",
-        "seoqa-mental_health-07",
-        "seoqa-mental_health-08",
-        "seoqa-mental_health-09",
-        "seoqa-mental_health-10",
-        "seoqa-musculoskeletal-01",
-        "seoqa-musculoskeletal-02",
-        "seoqa-musculoskeletal-03",
-        "seoqa-musculoskeletal-04",
-        "seoqa-musculoskeletal-05",
-        "seoqa-musculoskeletal-06",
-        "seoqa-musculoskeletal-07",
-        "seoqa-musculoskeletal-08",
-        "seoqa-musculoskeletal-09",
-        "seoqa-musculoskeletal-10",
-        "seoqa-skin-01",
-        "seoqa-skin-02",
-        "seoqa-skin-03",
-        "seoqa-skin-04",
-        "seoqa-skin-05",
-        "seoqa-skin-06",
-        "seoqa-skin-07",
-        "seoqa-skin-08",
-        "seoqa-skin-09",
-        "seoqa-skin-10",
-        "seoqa-respiratory-01",
-        "seoqa-respiratory-02",
-        "seoqa-respiratory-03",
-        "seoqa-respiratory-04",
-        "seoqa-respiratory-05"
-      ]
-    },
-    "정보검증": {
-      "count": 100,
-      "qids": [
-        "seoqa-metabolism-01",
-        "seoqa-metabolism-02",
-        "seoqa-metabolism-03",
         "seoqa-metabolism-04",
         "seoqa-metabolism-05",
         "seoqa-metabolism-06",
@@ -5974,6 +5982,76 @@
         "rsp_100"
       ]
     },
+    "면역": {
+      "count": 65,
+      "qids": [
+        "cancer-010",
+        "cancer-011",
+        "cancer-012",
+        "cancer-014",
+        "cancer-019",
+        "ci_017",
+        "ci_018",
+        "ci_019",
+        "ci_023",
+        "ci_024",
+        "ci_025",
+        "ci_028",
+        "ci_029",
+        "ci_034",
+        "ci_035",
+        "ci_036",
+        "ci_038",
+        "ci_039",
+        "ci_040",
+        "ci_048",
+        "ci_050",
+        "ci_051",
+        "ci_052",
+        "ci_055",
+        "ci_057",
+        "ci_058",
+        "ci_061",
+        "ci_063",
+        "ci_064",
+        "ci_067",
+        "ci_069",
+        "ci_070",
+        "ci_071",
+        "ci_072",
+        "ci_073",
+        "ci_074",
+        "ci_078",
+        "ci_082",
+        "ci_084",
+        "ci_086",
+        "ci_092",
+        "ci_094",
+        "resp-003",
+        "infect-extra-007",
+        "infect-extra-014",
+        "infect-extra-019",
+        "infect-extra-027",
+        "infect-extra-040",
+        "infect-extra-046",
+        "infect-extra-047",
+        "infect-extra-055",
+        "infect-007",
+        "infect-009",
+        "infect-015",
+        "infect-019",
+        "mental-extra-032",
+        "ingr-001",
+        "ingr-005",
+        "ingr-008",
+        "ingr-012",
+        "ingr-020",
+        "ingr-027",
+        "qa200-20260527-174",
+        "qa200-20260527-176",
+        "trendqa-cancer-immune-20260530"
+      ]
+    },
     "암": {
       "count": 65,
       "qids": [
@@ -6042,75 +6120,6 @@
         "ci_093",
         "ci_094",
         "ci_095"
-      ]
-    },
-    "면역": {
-      "count": 64,
-      "qids": [
-        "cancer-010",
-        "cancer-011",
-        "cancer-012",
-        "cancer-014",
-        "cancer-019",
-        "ci_017",
-        "ci_018",
-        "ci_019",
-        "ci_023",
-        "ci_024",
-        "ci_025",
-        "ci_028",
-        "ci_029",
-        "ci_034",
-        "ci_035",
-        "ci_036",
-        "ci_038",
-        "ci_039",
-        "ci_040",
-        "ci_048",
-        "ci_050",
-        "ci_051",
-        "ci_052",
-        "ci_055",
-        "ci_057",
-        "ci_058",
-        "ci_061",
-        "ci_063",
-        "ci_064",
-        "ci_067",
-        "ci_069",
-        "ci_070",
-        "ci_071",
-        "ci_072",
-        "ci_073",
-        "ci_074",
-        "ci_078",
-        "ci_082",
-        "ci_084",
-        "ci_086",
-        "ci_092",
-        "ci_094",
-        "resp-003",
-        "infect-extra-007",
-        "infect-extra-014",
-        "infect-extra-019",
-        "infect-extra-027",
-        "infect-extra-040",
-        "infect-extra-046",
-        "infect-extra-047",
-        "infect-extra-055",
-        "infect-007",
-        "infect-009",
-        "infect-015",
-        "infect-019",
-        "mental-extra-032",
-        "ingr-001",
-        "ingr-005",
-        "ingr-008",
-        "ingr-012",
-        "ingr-020",
-        "ingr-027",
-        "qa200-20260527-174",
-        "qa200-20260527-176"
       ]
     },
     "장": {
@@ -6250,76 +6259,8 @@
         "mental-009"
       ]
     },
-    "혈당": {
-      "count": 63,
-      "qids": [
-        "meta-001",
-        "meta-002",
-        "meta-010",
-        "meta-015",
-        "meta-020",
-        "meta_021",
-        "meta_022",
-        "meta_025",
-        "meta_028",
-        "meta_029",
-        "meta_030",
-        "meta_031",
-        "meta_032",
-        "meta_033",
-        "meta_035",
-        "meta_036",
-        "meta_039",
-        "meta_041",
-        "meta_042",
-        "meta_045",
-        "meta_046",
-        "meta_047",
-        "meta_051",
-        "meta_053",
-        "meta_054",
-        "meta_055",
-        "meta_056",
-        "meta_057",
-        "meta_059",
-        "meta_060",
-        "meta_061",
-        "meta_062",
-        "meta_063",
-        "meta_065",
-        "meta_067",
-        "meta_069",
-        "meta_070",
-        "meta_071",
-        "meta_074",
-        "meta_075",
-        "meta_079",
-        "meta_080",
-        "meta_081",
-        "meta_082",
-        "meta_083",
-        "meta_084",
-        "meta_086",
-        "meta_087",
-        "meta_088",
-        "meta_090",
-        "meta_091",
-        "meta_092",
-        "meta_093",
-        "meta_095",
-        "meta_096",
-        "meta_097",
-        "meta_098",
-        "meta_100",
-        "cancer-015",
-        "dige-020",
-        "ingr-016",
-        "qa200-20260527-020",
-        "qa200-20260527-186"
-      ]
-    },
     "심혈관": {
-      "count": 59,
+      "count": 61,
       "qids": [
         "cardio-019",
         "cardio-030",
@@ -6379,11 +6320,13 @@
         "seoqa-cardiovascular-07",
         "seoqa-cardiovascular-08",
         "seoqa-cardiovascular-09",
-        "seoqa-cardiovascular-10"
+        "seoqa-cardiovascular-10",
+        "trendqa-cardiovascular-20260530",
+        "round2-cardiovascular-20260530"
       ]
     },
     "관절": {
-      "count": 58,
+      "count": 59,
       "qids": [
         "musc-013",
         "musc-015",
@@ -6442,7 +6385,71 @@
         "ms_089",
         "ms_090",
         "infect-004",
-        "qa200-20260527-130"
+        "qa200-20260527-130",
+        "round2-musculoskeletal-20260530"
+      ]
+    },
+    "혈당": {
+      "count": 58,
+      "qids": [
+        "meta-001",
+        "meta-002",
+        "meta-010",
+        "meta-015",
+        "meta-020",
+        "meta_021",
+        "meta_022",
+        "meta_025",
+        "meta_029",
+        "meta_030",
+        "meta_031",
+        "meta_032",
+        "meta_033",
+        "meta_035",
+        "meta_036",
+        "meta_039",
+        "meta_041",
+        "meta_042",
+        "meta_045",
+        "meta_047",
+        "meta_051",
+        "meta_053",
+        "meta_054",
+        "meta_055",
+        "meta_056",
+        "meta_059",
+        "meta_060",
+        "meta_061",
+        "meta_062",
+        "meta_063",
+        "meta_065",
+        "meta_067",
+        "meta_069",
+        "meta_070",
+        "meta_071",
+        "meta_074",
+        "meta_075",
+        "meta_079",
+        "meta_080",
+        "meta_081",
+        "meta_082",
+        "meta_084",
+        "meta_088",
+        "meta_090",
+        "meta_091",
+        "meta_092",
+        "meta_095",
+        "meta_096",
+        "meta_097",
+        "meta_098",
+        "meta_100",
+        "cancer-015",
+        "dige-020",
+        "ingr-016",
+        "qa200-20260527-020",
+        "qa200-20260527-186",
+        "trendqa-neuro-20260530",
+        "round2-neuro-cognitive-20260530"
       ]
     },
     "병원정보": {
@@ -6667,53 +6674,6 @@
         "qa-hospital-20260527-050"
       ]
     },
-    "당뇨": {
-      "count": 42,
-      "qids": [
-        "cardio-040",
-        "cardio-081",
-        "meta-001",
-        "meta-008",
-        "meta-015",
-        "meta-017",
-        "meta_021",
-        "meta_022",
-        "meta_025",
-        "meta_029",
-        "meta_032",
-        "meta_033",
-        "meta_035",
-        "meta_036",
-        "meta_037",
-        "meta_039",
-        "meta_042",
-        "meta_045",
-        "meta_046",
-        "meta_050",
-        "meta_053",
-        "meta_054",
-        "meta_060",
-        "meta_061",
-        "meta_064",
-        "meta_076",
-        "meta_078",
-        "meta_080",
-        "meta_084",
-        "meta_086",
-        "meta_087",
-        "meta_090",
-        "meta_092",
-        "meta_095",
-        "meta_098",
-        "meta_100",
-        "mens-extra-055",
-        "infect-extra-006",
-        "ingr-016",
-        "ingr-028",
-        "qa200-20260527-091",
-        "qa200-20260527-195"
-      ]
-    },
     "뼈": {
       "count": 40,
       "qids": [
@@ -6759,8 +6719,52 @@
         "ms_090"
       ]
     },
+    "당뇨": {
+      "count": 39,
+      "qids": [
+        "cardio-040",
+        "cardio-081",
+        "meta-001",
+        "meta-008",
+        "meta-015",
+        "meta-017",
+        "meta_021",
+        "meta_022",
+        "meta_025",
+        "meta_029",
+        "meta_032",
+        "meta_033",
+        "meta_035",
+        "meta_036",
+        "meta_037",
+        "meta_039",
+        "meta_042",
+        "meta_045",
+        "meta_050",
+        "meta_053",
+        "meta_054",
+        "meta_060",
+        "meta_061",
+        "meta_064",
+        "meta_076",
+        "meta_078",
+        "meta_080",
+        "meta_084",
+        "meta_090",
+        "meta_092",
+        "meta_095",
+        "meta_098",
+        "meta_100",
+        "mens-extra-055",
+        "infect-extra-006",
+        "ingr-016",
+        "ingr-028",
+        "qa200-20260527-091",
+        "qa200-20260527-195"
+      ]
+    },
     "호흡기": {
-      "count": 37,
+      "count": 39,
       "qids": [
         "rsp_038",
         "rsp_046",
@@ -6798,7 +6802,9 @@
         "seoqa-respiratory-02",
         "seoqa-respiratory-03",
         "seoqa-respiratory-04",
-        "seoqa-respiratory-05"
+        "seoqa-respiratory-05",
+        "round2-respiratory-20260530",
+        "round3-respiratory-1-20260531"
       ]
     },
     "소화": {
@@ -6916,43 +6922,6 @@
         "rsp_100"
       ]
     },
-    "대사": {
-      "count": 32,
-      "qids": [
-        "meta_023",
-        "meta_024",
-        "meta_026",
-        "meta_027",
-        "meta_034",
-        "meta_036",
-        "meta_038",
-        "meta_039",
-        "meta_040",
-        "meta_044",
-        "meta_046",
-        "meta_048",
-        "meta_049",
-        "meta_051",
-        "meta_052",
-        "meta_054",
-        "meta_056",
-        "meta_064",
-        "meta_066",
-        "meta_068",
-        "meta_072",
-        "meta_074",
-        "meta_076",
-        "meta_077",
-        "meta_081",
-        "meta_084",
-        "meta_085",
-        "meta_086",
-        "meta_088",
-        "meta_089",
-        "meta_094",
-        "meta_096"
-      ]
-    },
     "암환자·면역·환자식": {
       "count": 32,
       "qids": [
@@ -6990,41 +6959,40 @@
         "qa200-20260527-058"
       ]
     },
-    "인슐린": {
-      "count": 32,
+    "수면": {
+      "count": 31,
       "qids": [
-        "meta_022",
-        "meta_028",
-        "meta_029",
-        "meta_036",
-        "meta_038",
-        "meta_039",
+        "cardio-020",
+        "meta-020",
         "meta_043",
-        "meta_047",
-        "meta_048",
-        "meta_049",
-        "meta_051",
-        "meta_055",
-        "meta_058",
-        "meta_059",
-        "meta_061",
-        "meta_063",
-        "meta_066",
-        "meta_067",
-        "meta_068",
-        "meta_069",
-        "meta_074",
-        "meta_076",
-        "meta_077",
-        "meta_078",
-        "meta_079",
-        "meta_082",
-        "meta_088",
-        "meta_089",
-        "meta_096",
-        "meta_098",
-        "meta_099",
-        "mens-extra-043"
+        "neuro-007",
+        "neuro-011",
+        "neuro-016",
+        "neuro-018",
+        "mens-015",
+        "mh-extra-071",
+        "mental-extra-039",
+        "mental-003",
+        "mental-005",
+        "nc_120",
+        "sh_105",
+        "ingr-023",
+        "ingr-024",
+        "qa200-20260527-006",
+        "qa200-20260527-096",
+        "qa200-20260527-101",
+        "qa200-20260527-113",
+        "qa200-20260527-116",
+        "qa200-20260527-121",
+        "qa200-20260527-154",
+        "qa200-20260527-166",
+        "qa200-20260527-175",
+        "trendqa-neuro-20260530",
+        "trendqa-womens-20260530",
+        "round2-neuro-cognitive-20260530",
+        "round2-infection-inflammation-20260530",
+        "round2-mens-health-20260530",
+        "round3-mental_health-2-20260531"
       ]
     },
     "심장": {
@@ -7134,6 +7102,41 @@
         "dg_088"
       ]
     },
+    "여성건강": {
+      "count": 30,
+      "qids": [
+        "woms-001",
+        "woms-005",
+        "woms-006",
+        "woms-008",
+        "woms-011",
+        "woms-012",
+        "woms-014",
+        "woms-015",
+        "woms-016",
+        "woms-017",
+        "woms-018",
+        "woms-019",
+        "woms-020",
+        "infect-005",
+        "qa200-20260527-153",
+        "qa200-20260527-178",
+        "qa200-20260527-181",
+        "qa200-20260527-182",
+        "qa200-20260527-183",
+        "qa200-20260527-184",
+        "qa200-20260527-185",
+        "qa200-20260527-186",
+        "qa200-20260527-187",
+        "qa200-20260527-188",
+        "qa200-20260527-189",
+        "qa200-20260527-190",
+        "qa200-20260527-191",
+        "qa200-20260527-192",
+        "trendqa-womens-20260530",
+        "round2-womens-health-20260530"
+      ]
+    },
     "치매": {
       "count": 30,
       "qids": [
@@ -7203,68 +7206,101 @@
         "nc_088"
       ]
     },
-    "여성건강": {
+    "인슐린": {
       "count": 28,
       "qids": [
-        "woms-001",
-        "woms-005",
-        "woms-006",
-        "woms-008",
-        "woms-011",
-        "woms-012",
-        "woms-014",
-        "woms-015",
-        "woms-016",
-        "woms-017",
-        "woms-018",
-        "woms-019",
-        "woms-020",
-        "infect-005",
-        "qa200-20260527-153",
-        "qa200-20260527-178",
-        "qa200-20260527-181",
-        "qa200-20260527-182",
-        "qa200-20260527-183",
-        "qa200-20260527-184",
-        "qa200-20260527-185",
-        "qa200-20260527-186",
-        "qa200-20260527-187",
-        "qa200-20260527-188",
-        "qa200-20260527-189",
-        "qa200-20260527-190",
-        "qa200-20260527-191",
-        "qa200-20260527-192"
+        "meta_022",
+        "meta_029",
+        "meta_036",
+        "meta_039",
+        "meta_047",
+        "meta_048",
+        "meta_049",
+        "meta_051",
+        "meta_055",
+        "meta_058",
+        "meta_059",
+        "meta_061",
+        "meta_063",
+        "meta_066",
+        "meta_067",
+        "meta_069",
+        "meta_074",
+        "meta_076",
+        "meta_077",
+        "meta_078",
+        "meta_079",
+        "meta_082",
+        "meta_088",
+        "meta_089",
+        "meta_096",
+        "meta_098",
+        "meta_099",
+        "mens-extra-043"
       ]
     },
-    "혈당·대사": {
+    "혈압": {
+      "count": 28,
+      "qids": [
+        "cardio-009",
+        "cardio-011",
+        "cardio-013",
+        "cardio-017",
+        "cardio-026",
+        "cardio-029",
+        "cardio-032",
+        "cardio-036",
+        "cardio-039",
+        "cardio-041",
+        "cardio-044",
+        "cardio-047",
+        "cardio-051",
+        "cardio-056",
+        "cardio-058",
+        "cardio-061",
+        "cardio-064",
+        "cardio-072",
+        "cardio-074",
+        "cardio-079",
+        "cardio-084",
+        "cardio-089",
+        "cardio-094",
+        "qa200-20260527-088",
+        "qa200-20260527-165",
+        "trendqa-cardiovascular-20260530",
+        "round3-cardiovascular-1-20260531",
+        "round3-cardiovascular-2-20260531"
+      ]
+    },
+    "대사": {
       "count": 26,
       "qids": [
-        "qa200-20260527-001",
-        "qa200-20260527-002",
-        "qa200-20260527-003",
-        "qa200-20260527-004",
-        "qa200-20260527-005",
-        "qa200-20260527-006",
-        "qa200-20260527-007",
-        "qa200-20260527-008",
-        "qa200-20260527-009",
-        "qa200-20260527-010",
-        "qa200-20260527-011",
-        "qa200-20260527-012",
-        "qa200-20260527-013",
-        "qa200-20260527-014",
-        "qa200-20260527-015",
-        "qa200-20260527-016",
-        "qa200-20260527-017",
-        "qa200-20260527-018",
-        "qa200-20260527-019",
-        "qa200-20260527-020",
-        "qa200-20260527-021",
-        "qa200-20260527-022",
-        "qa200-20260527-023",
-        "qa200-20260527-024",
-        "qa200-20260527-025",
-        "qa200-20260527-026"
+        "meta_023",
+        "meta_024",
+        "meta_026",
+        "meta_027",
+        "meta_034",
+        "meta_036",
+        "meta_039",
+        "meta_040",
+        "meta_044",
+        "meta_048",
+        "meta_049",
+        "meta_051",
+        "meta_054",
+        "meta_056",
+        "meta_064",
+        "meta_066",
+        "meta_074",
+        "meta_076",
+        "meta_077",
+        "meta_081",
+        "meta_084",
+        "meta_085",
+        "meta_088",
+        "meta_089",
+        "meta_094",
+        "meta_096"
       ]
     },
     "예방": {
@@ -7297,34 +7333,33 @@
         "infect-107"
       ]
     },
-    "혈압": {
-      "count": 25,
+    "남성건강": {
+      "count": 24,
       "qids": [
-        "cardio-009",
-        "cardio-011",
-        "cardio-013",
-        "cardio-017",
-        "cardio-026",
-        "cardio-029",
-        "cardio-032",
-        "cardio-036",
-        "cardio-039",
-        "cardio-041",
-        "cardio-044",
-        "cardio-047",
-        "cardio-051",
-        "cardio-056",
-        "cardio-058",
-        "cardio-061",
-        "cardio-064",
-        "cardio-072",
-        "cardio-074",
-        "cardio-079",
-        "cardio-084",
-        "cardio-089",
-        "cardio-094",
-        "qa200-20260527-088",
-        "qa200-20260527-165"
+        "mens-001",
+        "mens-002",
+        "mens-003",
+        "mens-004",
+        "mens-006",
+        "mens-007",
+        "mens-010",
+        "mens-011",
+        "mens-013",
+        "mens-014",
+        "mens-016",
+        "mens-017",
+        "mens-019",
+        "mens-020",
+        "ingr-012",
+        "qa200-20260527-193",
+        "qa200-20260527-194",
+        "qa200-20260527-195",
+        "qa200-20260527-196",
+        "qa200-20260527-197",
+        "qa200-20260527-198",
+        "qa200-20260527-199",
+        "qa200-20260527-200",
+        "trendqa-mens-20260530"
       ]
     },
     "뇌·인지": {
@@ -7356,60 +7391,33 @@
         "seoqa-neuro_cognitive-10"
       ]
     },
-    "남성건강": {
-      "count": 23,
+    "단백질": {
+      "count": 24,
       "qids": [
-        "mens-001",
-        "mens-002",
-        "mens-003",
+        "cancer-008",
+        "mens-009",
+        "mens-extra-023",
+        "mens-extra-026",
+        "mens-extra-031",
+        "mens-extra-034",
         "mens-004",
-        "mens-006",
-        "mens-007",
-        "mens-010",
-        "mens-011",
-        "mens-013",
-        "mens-014",
-        "mens-016",
-        "mens-017",
-        "mens-019",
-        "mens-020",
-        "ingr-012",
-        "qa200-20260527-193",
-        "qa200-20260527-194",
-        "qa200-20260527-195",
-        "qa200-20260527-196",
-        "qa200-20260527-197",
+        "rsp_085",
+        "ingr-006",
+        "qa200-20260527-009",
+        "qa200-20260527-025",
+        "qa200-20260527-029",
+        "qa200-20260527-031",
+        "qa200-20260527-043",
+        "qa200-20260527-053",
+        "qa200-20260527-126",
+        "qa200-20260527-128",
+        "qa200-20260527-133",
+        "qa200-20260527-134",
+        "qa200-20260527-152",
         "qa200-20260527-198",
-        "qa200-20260527-199",
-        "qa200-20260527-200"
-      ]
-    },
-    "수면": {
-      "count": 23,
-      "qids": [
-        "cardio-020",
-        "meta-020",
-        "neuro-007",
-        "neuro-011",
-        "neuro-016",
-        "neuro-018",
-        "mens-015",
-        "mh-extra-071",
-        "mental-extra-039",
-        "mental-003",
-        "nc_120",
-        "sh_105",
-        "ingr-023",
-        "ingr-024",
-        "qa200-20260527-006",
-        "qa200-20260527-096",
-        "qa200-20260527-101",
-        "qa200-20260527-113",
-        "qa200-20260527-116",
-        "qa200-20260527-121",
-        "qa200-20260527-154",
-        "qa200-20260527-166",
-        "qa200-20260527-175"
+        "trendqa-musculoskeletal-20260530",
+        "round3-metabolism-1-20260531",
+        "round3-musculoskeletal-1-20260531"
       ]
     },
     "알츠하이머": {
@@ -7440,6 +7448,34 @@
         "qa200-20260527-106"
       ]
     },
+    "오메가3": {
+      "count": 23,
+      "qids": [
+        "cardio-019",
+        "meta-015",
+        "neuro-002",
+        "musc-007",
+        "mens-extra-069",
+        "infect-014",
+        "nc_112",
+        "sh_095",
+        "sh_126",
+        "ingr-009",
+        "ingr-010",
+        "qa200-20260527-013",
+        "qa200-20260527-086",
+        "qa200-20260527-100",
+        "qa200-20260527-138",
+        "qa-hospital-20260527-005",
+        "qa-hospital-20260527-013",
+        "qa-hospital-20260527-023",
+        "qa-hospital-20260527-026",
+        "qa-hospital-20260527-033",
+        "qa-hospital-20260527-038",
+        "qa-hospital-20260527-046",
+        "round2-cardiovascular-20260530"
+      ]
+    },
     "모발": {
       "count": 22,
       "qids": [
@@ -7467,31 +7503,31 @@
         "qa200-20260527-153"
       ]
     },
-    "오메가3": {
+    "혈당·대사": {
       "count": 22,
       "qids": [
-        "cardio-019",
-        "meta-015",
-        "neuro-002",
-        "musc-007",
-        "mens-extra-069",
-        "infect-014",
-        "nc_112",
-        "sh_095",
-        "sh_126",
-        "ingr-009",
-        "ingr-010",
+        "qa200-20260527-001",
+        "qa200-20260527-002",
+        "qa200-20260527-003",
+        "qa200-20260527-004",
+        "qa200-20260527-005",
+        "qa200-20260527-006",
+        "qa200-20260527-008",
+        "qa200-20260527-009",
+        "qa200-20260527-010",
+        "qa200-20260527-011",
+        "qa200-20260527-012",
         "qa200-20260527-013",
-        "qa200-20260527-086",
-        "qa200-20260527-100",
-        "qa200-20260527-138",
-        "qa-hospital-20260527-005",
-        "qa-hospital-20260527-013",
-        "qa-hospital-20260527-023",
-        "qa-hospital-20260527-026",
-        "qa-hospital-20260527-033",
-        "qa-hospital-20260527-038",
-        "qa-hospital-20260527-046"
+        "qa200-20260527-014",
+        "qa200-20260527-015",
+        "qa200-20260527-016",
+        "qa200-20260527-018",
+        "qa200-20260527-020",
+        "qa200-20260527-021",
+        "qa200-20260527-023",
+        "qa200-20260527-024",
+        "qa200-20260527-025",
+        "qa200-20260527-026"
       ]
     },
     "에스트로겐": {
@@ -7520,33 +7556,8 @@
         "sh_097"
       ]
     },
-    "운동": {
-      "count": 20,
-      "qids": [
-        "cardio-012",
-        "cardio-053",
-        "cancer-013",
-        "neuro-015",
-        "musc-003",
-        "mh-extra-071",
-        "mens-004",
-        "infect-extra-045",
-        "mental-extra-012",
-        "mental-extra-039",
-        "mental-016",
-        "ci_138",
-        "qa200-20260527-021",
-        "qa200-20260527-022",
-        "qa200-20260527-053",
-        "qa200-20260527-088",
-        "qa200-20260527-104",
-        "qa200-20260527-123",
-        "qa200-20260527-131",
-        "qa200-20260527-160"
-      ]
-    },
     "스트레스": {
-      "count": 19,
+      "count": 20,
       "qids": [
         "cardio-013",
         "cancer-019",
@@ -7566,11 +7577,62 @@
         "nc_122",
         "ingr-023",
         "qa200-20260527-111",
-        "qa200-20260527-118"
+        "qa200-20260527-118",
+        "round3-mental_health-2-20260531"
+      ]
+    },
+    "운동": {
+      "count": 20,
+      "qids": [
+        "cardio-012",
+        "cardio-053",
+        "cancer-013",
+        "neuro-015",
+        "nc_014",
+        "musc-003",
+        "mh-extra-071",
+        "mens-004",
+        "infect-extra-045",
+        "mental-extra-012",
+        "mental-extra-039",
+        "mental-016",
+        "ci_138",
+        "qa200-20260527-021",
+        "qa200-20260527-053",
+        "qa200-20260527-088",
+        "qa200-20260527-104",
+        "qa200-20260527-123",
+        "qa200-20260527-131",
+        "qa200-20260527-160"
+      ]
+    },
+    "탈모": {
+      "count": 20,
+      "qids": [
+        "skin-003",
+        "skin-006",
+        "sh_015",
+        "sh_022",
+        "sh_035",
+        "sh_042",
+        "sh_045",
+        "sh_047",
+        "sh_067",
+        "sh_071",
+        "sh_073",
+        "sh_086",
+        "woms-010",
+        "mens-008",
+        "mens-extra-003",
+        "ci_133",
+        "qa200-20260527-149",
+        "qa200-20260527-150",
+        "trendqa-hair-20260530",
+        "round2-hair-20260530"
       ]
     },
     "테스토스테론": {
-      "count": 19,
+      "count": 20,
       "qids": [
         "wh-extra-040",
         "wh-extra-050",
@@ -7590,7 +7652,8 @@
         "mens-004",
         "mens-006",
         "mens-008",
-        "qa200-20260527-194"
+        "qa200-20260527-194",
+        "round3-mens_health-2-20260531"
       ]
     },
     "근육": {
@@ -7616,60 +7679,15 @@
         "ingr-015"
       ]
     },
-    "단백질": {
-      "count": 18,
-      "qids": [
-        "cancer-008",
-        "mens-009",
-        "mens-extra-023",
-        "mens-extra-026",
-        "mens-extra-031",
-        "mens-extra-034",
-        "mens-004",
-        "ingr-006",
-        "qa200-20260527-009",
-        "qa200-20260527-025",
-        "qa200-20260527-029",
-        "qa200-20260527-043",
-        "qa200-20260527-126",
-        "qa200-20260527-128",
-        "qa200-20260527-133",
-        "qa200-20260527-134",
-        "qa200-20260527-152",
-        "qa200-20260527-198"
-      ]
-    },
-    "탈모": {
-      "count": 18,
-      "qids": [
-        "skin-003",
-        "skin-006",
-        "sh_015",
-        "sh_022",
-        "sh_035",
-        "sh_042",
-        "sh_045",
-        "sh_047",
-        "sh_067",
-        "sh_071",
-        "sh_073",
-        "sh_086",
-        "woms-010",
-        "mens-008",
-        "mens-extra-003",
-        "ci_133",
-        "qa200-20260527-149",
-        "qa200-20260527-150"
-      ]
-    },
     "정신건강": {
-      "count": 17,
+      "count": 18,
       "qids": [
         "neuro-012",
         "woms-011",
         "mens-extra-070",
         "mental-extra-010",
         "mental-extra-029",
+        "mental-005",
         "qa200-20260527-110",
         "qa200-20260527-122",
         "seoqa-mental_health-01",
@@ -7682,6 +7700,49 @@
         "seoqa-mental_health-08",
         "seoqa-mental_health-09",
         "seoqa-mental_health-10"
+      ]
+    },
+    "천식": {
+      "count": 17,
+      "qids": [
+        "rsp_021",
+        "rsp_022",
+        "rsp_026",
+        "rsp_035",
+        "rsp_043",
+        "rsp_045",
+        "rsp_054",
+        "rsp_074",
+        "rsp_092",
+        "rsp_095",
+        "rsp_096",
+        "rsp_097",
+        "resp-001",
+        "resp-101",
+        "qa200-20260527-160",
+        "trendqa-respiratory-20260530",
+        "round3-respiratory-2-20260531"
+      ]
+    },
+    "갱년기": {
+      "count": 16,
+      "qids": [
+        "woms-003",
+        "woms-008",
+        "wh-extra-001",
+        "wh-extra-002",
+        "wh-extra-003",
+        "wh-extra-005",
+        "wh-extra-006",
+        "wh-extra-007",
+        "wh-extra-008",
+        "wh-extra-009",
+        "wh-extra-010",
+        "womens-001",
+        "womens-009",
+        "qa200-20260527-183",
+        "trendqa-womens-20260530",
+        "round3-womens_health-1-20260531"
       ]
     },
     "건강기능식품": {
@@ -7724,6 +7785,48 @@
         "seoqa-metabolism-13",
         "seoqa-metabolism-14",
         "seoqa-metabolism-15"
+      ]
+    },
+    "마그네슘": {
+      "count": 16,
+      "qids": [
+        "cardio-042",
+        "dige-007",
+        "neuro-004",
+        "neuro-011",
+        "musc-019",
+        "woms-015",
+        "womens-002",
+        "ingr-024",
+        "qa200-20260527-111",
+        "qa200-20260527-135",
+        "qa-hospital-20260527-004",
+        "qa-hospital-20260527-018",
+        "qa-hospital-20260527-022",
+        "qa-hospital-20260527-035",
+        "qa-hospital-20260527-041",
+        "round3-mental_health-2-20260531"
+      ]
+    },
+    "철분": {
+      "count": 16,
+      "qids": [
+        "cardio-087",
+        "woms-004",
+        "wh-extra-024",
+        "womens-003",
+        "womens-010",
+        "mens-013",
+        "ingr-006",
+        "ingr-027",
+        "qa200-20260527-047",
+        "qa200-20260527-151",
+        "qa200-20260527-177",
+        "qa200-20260527-185",
+        "trendqa-hair-20260530",
+        "round2-hair-20260530",
+        "round3-hair-1-20260531",
+        "round3-womens_health-2-20260531"
       ]
     },
     "항생제": {
@@ -7788,24 +7891,44 @@
         "qa200-20260527-189"
       ]
     },
-    "마그네슘": {
+    "기관지": {
       "count": 15,
       "qids": [
-        "cardio-042",
-        "dige-007",
-        "neuro-004",
-        "neuro-011",
-        "musc-019",
-        "woms-015",
-        "womens-002",
-        "ingr-024",
-        "qa200-20260527-111",
-        "qa200-20260527-135",
-        "qa-hospital-20260527-004",
-        "qa-hospital-20260527-018",
-        "qa-hospital-20260527-022",
-        "qa-hospital-20260527-035",
-        "qa-hospital-20260527-041"
+        "rsp_023",
+        "rsp_025",
+        "rsp_031",
+        "rsp_035",
+        "rsp_040",
+        "rsp_042",
+        "rsp_043",
+        "rsp_060",
+        "rsp_067",
+        "rsp_075",
+        "rsp_087",
+        "rsp_092",
+        "rsp_095",
+        "resp-001",
+        "trendqa-respiratory-20260530"
+      ]
+    },
+    "뇌건강": {
+      "count": 15,
+      "qids": [
+        "neuro-002",
+        "neuro-003",
+        "neuro-005",
+        "neuro-013",
+        "neuro-015",
+        "neuro-020",
+        "nc_047",
+        "mental-012",
+        "mental-016",
+        "nc_098",
+        "nc_112",
+        "nc_114",
+        "nc_122",
+        "qa200-20260527-100",
+        "qa200-20260527-102"
       ]
     },
     "소화기": {
@@ -7828,26 +7951,6 @@
         "dg_089"
       ]
     },
-    "천식": {
-      "count": 15,
-      "qids": [
-        "rsp_021",
-        "rsp_022",
-        "rsp_026",
-        "rsp_035",
-        "rsp_043",
-        "rsp_045",
-        "rsp_054",
-        "rsp_074",
-        "rsp_092",
-        "rsp_095",
-        "rsp_096",
-        "rsp_097",
-        "resp-001",
-        "resp-101",
-        "qa200-20260527-160"
-      ]
-    },
     "항암·면역": {
       "count": 15,
       "qids": [
@@ -7868,23 +7971,24 @@
         "seoqa-cancer_immune-15"
       ]
     },
-    "갱년기": {
-      "count": 14,
+    "혈당관리": {
+      "count": 15,
       "qids": [
-        "woms-003",
-        "woms-008",
-        "wh-extra-001",
-        "wh-extra-002",
-        "wh-extra-003",
-        "wh-extra-005",
-        "wh-extra-006",
-        "wh-extra-007",
-        "wh-extra-008",
-        "wh-extra-009",
-        "wh-extra-010",
-        "womens-001",
-        "womens-009",
-        "qa200-20260527-183"
+        "meta-008",
+        "meta-011",
+        "meta-014",
+        "meta_046",
+        "meta_083",
+        "meta_086",
+        "meta_093",
+        "wh-extra-067",
+        "qa200-20260527-001",
+        "qa200-20260527-007",
+        "qa200-20260527-017",
+        "qa200-20260527-019",
+        "qa200-20260527-022",
+        "qa200-20260527-032",
+        "seoqa-metabolism-03"
       ]
     },
     "근골격·근감소": {
@@ -7906,42 +8010,23 @@
         "qa200-20260527-136"
       ]
     },
-    "기관지": {
+    "기억력": {
       "count": 14,
       "qids": [
-        "rsp_023",
-        "rsp_025",
-        "rsp_031",
-        "rsp_035",
-        "rsp_040",
-        "rsp_042",
-        "rsp_043",
-        "rsp_060",
-        "rsp_067",
-        "rsp_075",
-        "rsp_087",
-        "rsp_092",
-        "rsp_095",
-        "resp-001"
-      ]
-    },
-    "뇌건강": {
-      "count": 14,
-      "qids": [
-        "neuro-002",
-        "neuro-003",
-        "neuro-005",
-        "neuro-013",
-        "neuro-015",
-        "neuro-020",
-        "mental-012",
-        "mental-016",
-        "nc_098",
-        "nc_112",
-        "nc_114",
-        "nc_122",
-        "qa200-20260527-100",
-        "qa200-20260527-102"
+        "neuro-010",
+        "nc_019",
+        "nc_050",
+        "nc_051",
+        "nc_060",
+        "nc_068",
+        "nc_072",
+        "nc_091",
+        "qa200-20260527-095",
+        "qa200-20260527-099",
+        "qa200-20260527-101",
+        "qa200-20260527-103",
+        "round2-neuro-cognitive-20260530",
+        "round3-neuro_cognitive-2-20260531"
       ]
     },
     "수면·정신건강": {
@@ -7980,6 +8065,43 @@
         "infect-010",
         "infect-012",
         "infect-018"
+      ]
+    },
+    "피부장벽": {
+      "count": 14,
+      "qids": [
+        "skin-002",
+        "skin-011",
+        "sh_014",
+        "sh_058",
+        "infect-extra-040",
+        "infect-extra-053",
+        "sh_093",
+        "sh_096",
+        "sh_099",
+        "sh_105",
+        "qa200-20260527-147",
+        "trendqa-skin-20260530",
+        "round2-skin-20260530",
+        "round3-skin-1-20260531"
+      ]
+    },
+    "비타민D": {
+      "count": 13,
+      "qids": [
+        "cardio-033",
+        "cancer-011",
+        "mens-extra-007",
+        "mens-extra-070",
+        "resp-015",
+        "infect-extra-041",
+        "infect-extra-078",
+        "mental-extra-027",
+        "ingr-029",
+        "qa200-20260527-125",
+        "qa200-20260527-189",
+        "trendqa-hair-20260530",
+        "round3-infection_inflammation-2-20260531"
       ]
     },
     "프로바이오틱스": {
@@ -8035,38 +8157,38 @@
         "qa200-20260527-180"
       ]
     },
-    "기억력": {
+    "상호작용": {
       "count": 12,
       "qids": [
-        "neuro-010",
-        "nc_019",
-        "nc_050",
-        "nc_051",
-        "nc_060",
-        "nc_068",
-        "nc_072",
-        "nc_091",
-        "qa200-20260527-095",
-        "qa200-20260527-099",
-        "qa200-20260527-101",
-        "qa200-20260527-103"
+        "qa200-20260527-016",
+        "qa200-20260527-018",
+        "qa200-20260527-034",
+        "qa200-20260527-046",
+        "qa200-20260527-087",
+        "qa200-20260527-092",
+        "qa200-20260527-115",
+        "qa200-20260527-156",
+        "trendqa-cancer-immune-20260530",
+        "round2-cancer-immune-20260530",
+        "round2-cardiovascular-20260530",
+        "round3-cancer_immune-2-20260531"
       ]
     },
-    "철분": {
+    "전립선": {
       "count": 12,
       "qids": [
-        "cardio-087",
-        "woms-004",
-        "wh-extra-024",
-        "womens-003",
-        "womens-010",
-        "mens-013",
-        "ingr-006",
-        "ingr-027",
-        "qa200-20260527-047",
-        "qa200-20260527-151",
-        "qa200-20260527-177",
-        "qa200-20260527-185"
+        "mens-001",
+        "mens-005",
+        "mens-012",
+        "mens-015",
+        "mens-extra-021",
+        "mens-extra-032",
+        "mens-extra-060",
+        "mens-001",
+        "mens-009",
+        "qa200-20260527-200",
+        "trendqa-mens-20260530",
+        "round2-mens-health-20260530"
       ]
     },
     "피부염": {
@@ -8102,20 +8224,36 @@
         "qa200-20260527-175"
       ]
     },
-    "비타민D": {
+    "식이섬유": {
       "count": 11,
       "qids": [
-        "cardio-033",
-        "cancer-011",
-        "mens-extra-007",
-        "mens-extra-070",
-        "resp-015",
-        "infect-extra-041",
-        "infect-extra-078",
-        "mental-extra-027",
-        "ingr-029",
-        "qa200-20260527-125",
-        "qa200-20260527-189"
+        "dige-007",
+        "qa200-20260527-025",
+        "qa200-20260527-037",
+        "qa200-20260527-063",
+        "qa-hospital-20260527-011",
+        "qa-hospital-20260527-012",
+        "trendqa-metabolism-20260530",
+        "trendqa-digestive-20260530",
+        "round2-digestive-20260530",
+        "round3-metabolism-2-20260531",
+        "round3-digestive-1-20260531"
+      ]
+    },
+    "염증": {
+      "count": 11,
+      "qids": [
+        "cardio-030",
+        "dige-015",
+        "wh-extra-009",
+        "womens-007",
+        "infect-extra-023",
+        "infect-extra-051",
+        "infect-010",
+        "qa200-20260527-127",
+        "round2-infection-inflammation-20260530",
+        "round3-metabolism-2-20260531",
+        "round3-infection_inflammation-1-20260531"
       ]
     },
     "인슐린저항성": {
@@ -8134,6 +8272,54 @@
         "qa200-20260527-187"
       ]
     },
+    "인지기능": {
+      "count": 11,
+      "qids": [
+        "neuro-001",
+        "neuro-002",
+        "neuro-003",
+        "neuro-010",
+        "neuro-014",
+        "neuro-015",
+        "nc_047",
+        "nc_106",
+        "ingr-017",
+        "qa200-20260527-096",
+        "qa200-20260527-100"
+      ]
+    },
+    "장건강": {
+      "count": 11,
+      "qids": [
+        "dige-001",
+        "dige-015",
+        "dige-018",
+        "mental-008",
+        "ingr-005",
+        "ingr-007",
+        "ingr-027",
+        "qa200-20260527-038",
+        "qa200-20260527-062",
+        "qa200-20260527-069",
+        "round2-digestive-20260530"
+      ]
+    },
+    "카페인": {
+      "count": 11,
+      "qids": [
+        "cardio-024",
+        "cardio-074",
+        "wh-extra-023",
+        "wh-extra-057",
+        "mens-010",
+        "qa200-20260527-080",
+        "qa200-20260527-114",
+        "qa200-20260527-116",
+        "qa200-20260527-190",
+        "round3-mental_health-1-20260531",
+        "round3-mens_health-1-20260531"
+      ]
+    },
     "콜라겐": {
       "count": 11,
       "qids": [
@@ -8150,6 +8336,21 @@
         "qa-hospital-20260527-030"
       ]
     },
+    "갑상선": {
+      "count": 10,
+      "qids": [
+        "cardio-089",
+        "meta-006",
+        "meta_023",
+        "meta_044",
+        "meta_073",
+        "meta_096",
+        "woms-019",
+        "mens-extra-070",
+        "round3-hair-1-20260531",
+        "round3-womens_health-2-20260531"
+      ]
+    },
     "근골격": {
       "count": 10,
       "qids": [
@@ -8163,6 +8364,21 @@
         "seoqa-musculoskeletal-08",
         "seoqa-musculoskeletal-09",
         "seoqa-musculoskeletal-10"
+      ]
+    },
+    "보습": {
+      "count": 10,
+      "qids": [
+        "skin-016",
+        "skin-017",
+        "sh_014",
+        "sh_058",
+        "sh_092",
+        "sh_093",
+        "qa200-20260527-142",
+        "qa200-20260527-147",
+        "trendqa-skin-20260530",
+        "round2-skin-20260530"
       ]
     },
     "생활습관": {
@@ -8210,49 +8426,49 @@
         "qa200-20260527-137"
       ]
     },
-    "인지기능": {
+    "유산균": {
       "count": 10,
       "qids": [
-        "neuro-001",
-        "neuro-002",
-        "neuro-003",
-        "neuro-010",
-        "neuro-014",
-        "neuro-015",
-        "nc_106",
-        "ingr-017",
-        "qa200-20260527-096",
-        "qa200-20260527-100"
-      ]
-    },
-    "장건강": {
-      "count": 10,
-      "qids": [
-        "dige-001",
-        "dige-015",
-        "dige-018",
-        "mental-008",
-        "ingr-005",
-        "ingr-007",
-        "ingr-027",
+        "dige-006",
         "qa200-20260527-038",
-        "qa200-20260527-062",
-        "qa200-20260527-069"
+        "qa200-20260527-061",
+        "qa200-20260527-074",
+        "qa200-20260527-138",
+        "qa200-20260527-159",
+        "qa200-20260527-173",
+        "qa200-20260527-191",
+        "trendqa-digestive-20260530",
+        "round3-digestive-1-20260531"
       ]
     },
-    "전립선": {
+    "집중력": {
       "count": 10,
       "qids": [
-        "mens-001",
-        "mens-005",
-        "mens-012",
-        "mens-015",
-        "mens-extra-021",
-        "mens-extra-032",
-        "mens-extra-060",
-        "mens-001",
-        "mens-009",
-        "qa200-20260527-200"
+        "neuro-006",
+        "neuro-013",
+        "mental-extra-004",
+        "mental-extra-035",
+        "mental-extra-057",
+        "mental-004",
+        "qa200-20260527-099",
+        "qa200-20260527-114",
+        "trendqa-neuro-20260530",
+        "round3-neuro_cognitive-1-20260531"
+      ]
+    },
+    "피로": {
+      "count": 10,
+      "qids": [
+        "neuro-007",
+        "mens-extra-063",
+        "infect-extra-080",
+        "trendqa-womens-20260530",
+        "round2-womens-health-20260530",
+        "round2-mens-health-20260530",
+        "round3-cancer_immune-2-20260531",
+        "round3-neuro_cognitive-1-20260531",
+        "round3-infection_inflammation-1-20260531",
+        "round3-womens_health-2-20260531"
       ]
     },
     "허리": {
@@ -8285,6 +8501,20 @@
         "ingr-001"
       ]
     },
+    "간건강": {
+      "count": 9,
+      "qids": [
+        "meta-005",
+        "dige-004",
+        "dige-008",
+        "dige-017",
+        "dige-019",
+        "mens-014",
+        "mens-extra-012",
+        "seoqa-digestive-10",
+        "round3-cancer_immune-1-20260531"
+      ]
+    },
     "감기": {
       "count": 9,
       "qids": [
@@ -8311,6 +8541,20 @@
         "qa200-20260527-190",
         "qa200-20260527-194",
         "qa200-20260527-197"
+      ]
+    },
+    "근력운동": {
+      "count": 9,
+      "qids": [
+        "meta_068",
+        "mens-009",
+        "qa200-20260527-126",
+        "qa200-20260527-198",
+        "trendqa-musculoskeletal-20260530",
+        "round2-musculoskeletal-20260530",
+        "round3-metabolism-1-20260531",
+        "round3-musculoskeletal-1-20260531",
+        "round3-musculoskeletal-2-20260531"
       ]
     },
     "도파민": {
@@ -8355,6 +8599,20 @@
         "ci_145"
       ]
     },
+    "아연": {
+      "count": 9,
+      "qids": [
+        "mens-extra-021",
+        "mens-extra-034",
+        "mens-002",
+        "mens-003",
+        "infect-extra-048",
+        "infect-extra-078",
+        "infect-019",
+        "qa200-20260527-196",
+        "round3-infection_inflammation-2-20260531"
+      ]
+    },
     "우울증": {
       "count": 9,
       "qids": [
@@ -8369,18 +8627,18 @@
         "mental-101"
       ]
     },
-    "카페인": {
+    "장내미생물": {
       "count": 9,
       "qids": [
-        "cardio-024",
-        "cardio-074",
-        "wh-extra-023",
-        "wh-extra-057",
-        "mens-010",
-        "qa200-20260527-080",
-        "qa200-20260527-114",
-        "qa200-20260527-116",
-        "qa200-20260527-190"
+        "cancer-005",
+        "cancer-012",
+        "dige-006",
+        "infect-extra-043",
+        "ingr-015",
+        "ingr-028",
+        "trendqa-digestive-20260530",
+        "round2-digestive-20260530",
+        "round3-digestive-1-20260531"
       ]
     },
     "코르티솔": {
@@ -8411,33 +8669,6 @@
         "ingr-006"
       ]
     },
-    "피부장벽": {
-      "count": 9,
-      "qids": [
-        "skin-002",
-        "skin-011",
-        "infect-extra-040",
-        "infect-extra-053",
-        "sh_093",
-        "sh_096",
-        "sh_099",
-        "sh_105",
-        "qa200-20260527-147"
-      ]
-    },
-    "갑상선": {
-      "count": 8,
-      "qids": [
-        "cardio-089",
-        "meta-006",
-        "meta_023",
-        "meta_044",
-        "meta_073",
-        "meta_096",
-        "woms-019",
-        "mens-extra-070"
-      ]
-    },
     "모발·두피": {
       "count": 8,
       "qids": [
@@ -8449,6 +8680,19 @@
         "qa200-20260527-154",
         "qa200-20260527-155",
         "qa200-20260527-156"
+      ]
+    },
+    "백신": {
+      "count": 8,
+      "qids": [
+        "rsp_030",
+        "resp-013",
+        "infect-extra-017",
+        "infect-extra-034",
+        "infect-103",
+        "infect-104",
+        "infect-109",
+        "qa200-20260527-174"
       ]
     },
     "비타민 D": {
@@ -8464,19 +8708,6 @@
         "qa-hospital-20260527-037"
       ]
     },
-    "상호작용": {
-      "count": 8,
-      "qids": [
-        "qa200-20260527-016",
-        "qa200-20260527-018",
-        "qa200-20260527-034",
-        "qa200-20260527-046",
-        "qa200-20260527-087",
-        "qa200-20260527-092",
-        "qa200-20260527-115",
-        "qa200-20260527-156"
-      ]
-    },
     "생리통": {
       "count": 8,
       "qids": [
@@ -8488,19 +8719,6 @@
         "wh-extra-069",
         "womens-101",
         "qa200-20260527-181"
-      ]
-    },
-    "아연": {
-      "count": 8,
-      "qids": [
-        "mens-extra-021",
-        "mens-extra-034",
-        "mens-002",
-        "mens-003",
-        "infect-extra-048",
-        "infect-extra-078",
-        "infect-019",
-        "qa200-20260527-196"
       ]
     },
     "알레르기": {
@@ -8529,17 +8747,17 @@
         "ci_150"
       ]
     },
-    "염증": {
+    "예방접종": {
       "count": 8,
       "qids": [
-        "cardio-030",
-        "dige-015",
-        "wh-extra-009",
-        "womens-007",
-        "infect-extra-023",
-        "infect-extra-051",
-        "infect-010",
-        "qa200-20260527-127"
+        "cancer-016",
+        "ci_016",
+        "ci_022",
+        "rsp_030",
+        "infect-extra-007",
+        "infect-extra-010",
+        "infect-extra-011",
+        "ci_116"
       ]
     },
     "유방암": {
@@ -8555,17 +8773,17 @@
         "ci_108"
       ]
     },
-    "유산균": {
+    "음주": {
       "count": 8,
       "qids": [
-        "dige-006",
-        "qa200-20260527-038",
-        "qa200-20260527-061",
-        "qa200-20260527-074",
-        "qa200-20260527-138",
-        "qa200-20260527-159",
-        "qa200-20260527-173",
-        "qa200-20260527-191"
+        "cardio-029",
+        "mens-014",
+        "mens-extra-012",
+        "mens-extra-033",
+        "mens-extra-044",
+        "ci_150",
+        "qa200-20260527-071",
+        "round3-cancer_immune-1-20260531"
       ]
     },
     "응급": {
@@ -8581,17 +8799,17 @@
         "infect-108"
       ]
     },
-    "집중력": {
+    "폐경": {
       "count": 8,
       "qids": [
-        "neuro-006",
-        "neuro-013",
-        "mental-extra-004",
-        "mental-extra-035",
-        "mental-extra-057",
-        "mental-004",
-        "qa200-20260527-099",
-        "qa200-20260527-114"
+        "meta-010",
+        "woms-003",
+        "wh-extra-004",
+        "wh-extra-048",
+        "wh-extra-064",
+        "wh-extra-070",
+        "qa200-20260527-189",
+        "round3-womens_health-1-20260531"
       ]
     },
     "DHA": {
@@ -8606,18 +8824,6 @@
         "ingr-010"
       ]
     },
-    "간건강": {
-      "count": 7,
-      "qids": [
-        "meta-005",
-        "dige-004",
-        "dige-008",
-        "dige-017",
-        "dige-019",
-        "mens-014",
-        "mens-extra-012"
-      ]
-    },
     "감태 플로로탄닌": {
       "count": 7,
       "qids": [
@@ -8630,16 +8836,64 @@
         "qa-hospital-20260527-050"
       ]
     },
-    "백신": {
+    "나트륨": {
       "count": 7,
       "qids": [
-        "resp-013",
-        "infect-extra-017",
-        "infect-extra-034",
-        "infect-103",
-        "infect-104",
-        "infect-109",
-        "qa200-20260527-174"
+        "cardio-017",
+        "mens-extra-044",
+        "qa200-20260527-023",
+        "qa200-20260527-048",
+        "qa200-20260527-079",
+        "qa200-20260527-090",
+        "round3-cardiovascular-1-20260531"
+      ]
+    },
+    "노화": {
+      "count": 7,
+      "qids": [
+        "cardio-027",
+        "meta_068",
+        "musc-011",
+        "mens-extra-042",
+        "mens-006",
+        "resp-010",
+        "trendqa-musculoskeletal-20260530"
+      ]
+    },
+    "대사증후군": {
+      "count": 7,
+      "qids": [
+        "meta-017",
+        "meta-018",
+        "meta_038",
+        "mens-010",
+        "mens-extra-010",
+        "qa200-20260527-010",
+        "qa200-20260527-026"
+      ]
+    },
+    "복부비만": {
+      "count": 7,
+      "qids": [
+        "meta-002",
+        "meta-018",
+        "wh-extra-002",
+        "mens-010",
+        "mens-extra-010",
+        "mens-extra-050",
+        "round3-mens_health-2-20260531"
+      ]
+    },
+    "식사기록": {
+      "count": 7,
+      "qids": [
+        "qa200-20260527-002",
+        "qa200-20260527-040",
+        "qa200-20260527-060",
+        "qa200-20260527-118",
+        "seoqa-metabolism-03",
+        "round2-metabolism-20260530",
+        "round3-metabolism-2-20260531"
       ]
     },
     "요실금": {
@@ -8652,18 +8906,6 @@
         "mens-extra-057",
         "mens-extra-065",
         "mens-009"
-      ]
-    },
-    "음주": {
-      "count": 7,
-      "qids": [
-        "cardio-029",
-        "mens-014",
-        "mens-extra-012",
-        "mens-extra-033",
-        "mens-extra-044",
-        "ci_150",
-        "qa200-20260527-071"
       ]
     },
     "임신": {
@@ -8690,28 +8932,40 @@
         "ci_117"
       ]
     },
-    "폐경": {
+    "지방간": {
       "count": 7,
       "qids": [
-        "meta-010",
-        "woms-003",
-        "wh-extra-004",
-        "wh-extra-048",
-        "wh-extra-064",
-        "wh-extra-070",
-        "qa200-20260527-189"
+        "meta-005",
+        "meta-017",
+        "dige-004",
+        "qa200-20260527-014",
+        "qa200-20260527-065",
+        "qa200-20260527-071",
+        "round3-digestive-2-20260531"
       ]
     },
-    "혈당관리": {
+    "체중감량": {
       "count": 7,
       "qids": [
-        "meta-008",
+        "meta-019",
+        "ingr-025",
+        "qa200-20260527-014",
+        "qa200-20260527-065",
+        "qa200-20260527-166",
+        "qa200-20260527-187",
+        "round3-musculoskeletal-1-20260531"
+      ]
+    },
+    "혈당스파이크": {
+      "count": 7,
+      "qids": [
         "meta-011",
-        "meta-014",
-        "wh-extra-067",
-        "qa200-20260527-001",
-        "qa200-20260527-017",
-        "qa200-20260527-032"
+        "meta_028",
+        "qa200-20260527-004",
+        "qa200-20260527-021",
+        "trendqa-metabolism-20260530",
+        "round2-metabolism-20260530",
+        "round3-metabolism-2-20260531"
       ]
     },
     "NK세포": {
@@ -8758,6 +9012,17 @@
         "mental-105"
       ]
     },
+    "간수치": {
+      "count": 6,
+      "qids": [
+        "qa200-20260527-014",
+        "qa200-20260527-036",
+        "qa200-20260527-066",
+        "qa200-20260527-071",
+        "seoqa-digestive-10",
+        "round3-digestive-2-20260531"
+      ]
+    },
     "고혈압": {
       "count": 6,
       "qids": [
@@ -8769,15 +9034,48 @@
         "qa200-20260527-091"
       ]
     },
-    "나트륨": {
+    "관절염": {
       "count": 6,
       "qids": [
-        "cardio-017",
-        "mens-extra-044",
-        "qa200-20260527-023",
-        "qa200-20260527-048",
-        "qa200-20260527-079",
-        "qa200-20260527-090"
+        "musc-001",
+        "musc-002",
+        "ingr-022",
+        "ingr-026",
+        "qa200-20260527-127",
+        "round3-musculoskeletal-2-20260531"
+      ]
+    },
+    "근감소증": {
+      "count": 6,
+      "qids": [
+        "meta_068",
+        "musc-011",
+        "mens-020",
+        "mens-extra-031",
+        "mens-004",
+        "qa200-20260527-126"
+      ]
+    },
+    "금연": {
+      "count": 6,
+      "qids": [
+        "cardio-003",
+        "cardio-031",
+        "ci_016",
+        "mens-extra-015",
+        "rsp_042",
+        "resp-102"
+      ]
+    },
+    "기침": {
+      "count": 6,
+      "qids": [
+        "resp-007",
+        "qa200-20260527-167",
+        "qa200-20260527-168",
+        "trendqa-respiratory-20260530",
+        "round2-respiratory-20260530",
+        "round3-respiratory-1-20260531"
       ]
     },
     "남성갱년기": {
@@ -8791,6 +9089,17 @@
         "qa200-20260527-194"
       ]
     },
+    "내장지방": {
+      "count": 6,
+      "qids": [
+        "meta-003",
+        "meta_038",
+        "mens-010",
+        "mens-extra-010",
+        "mens-extra-050",
+        "qa200-20260527-026"
+      ]
+    },
     "뇌졸중": {
       "count": 6,
       "qids": [
@@ -8802,15 +9111,26 @@
         "qa200-20260527-107"
       ]
     },
-    "대사증후군": {
+    "당뇨식단": {
       "count": 6,
       "qids": [
-        "meta-017",
-        "meta-018",
-        "mens-010",
-        "mens-extra-010",
-        "qa200-20260527-010",
-        "qa200-20260527-026"
+        "meta_046",
+        "meta_057",
+        "meta_086",
+        "qa200-20260527-004",
+        "qa200-20260527-007",
+        "qa200-20260527-023"
+      ]
+    },
+    "롱코비드": {
+      "count": 6,
+      "qids": [
+        "neuro-014",
+        "rsp_033",
+        "resp-017",
+        "infect-extra-012",
+        "round3-neuro_cognitive-1-20260531",
+        "round3-infection_inflammation-1-20260531"
       ]
     },
     "마음챙김": {
@@ -8857,26 +9177,15 @@
         "qa200-20260527-113"
       ]
     },
-    "보습": {
+    "보호자": {
       "count": 6,
       "qids": [
-        "skin-016",
-        "skin-017",
-        "sh_092",
-        "sh_093",
-        "qa200-20260527-142",
-        "qa200-20260527-147"
-      ]
-    },
-    "복부비만": {
-      "count": 6,
-      "qids": [
-        "meta-002",
-        "meta-018",
-        "wh-extra-002",
-        "mens-010",
-        "mens-extra-010",
-        "mens-extra-050"
+        "mental-extra-020",
+        "mental-extra-059",
+        "qa200-20260527-040",
+        "qa200-20260527-049",
+        "qa200-20260527-054",
+        "round2-cancer-immune-20260530"
       ]
     },
     "부작용": {
@@ -8888,6 +9197,17 @@
         "ci_137",
         "mental-102",
         "qa200-20260527-199"
+      ]
+    },
+    "브레인포그": {
+      "count": 6,
+      "qids": [
+        "neuro-014",
+        "qa200-20260527-096",
+        "trendqa-neuro-20260530",
+        "round2-neuro-cognitive-20260530",
+        "round3-neuro_cognitive-1-20260531",
+        "round3-infection_inflammation-1-20260531"
       ]
     },
     "비만": {
@@ -8912,17 +9232,6 @@
         "qa200-20260527-170"
       ]
     },
-    "식이섬유": {
-      "count": 6,
-      "qids": [
-        "dige-007",
-        "qa200-20260527-025",
-        "qa200-20260527-037",
-        "qa200-20260527-063",
-        "qa-hospital-20260527-011",
-        "qa-hospital-20260527-012"
-      ]
-    },
     "신장": {
       "count": 6,
       "qids": [
@@ -8945,6 +9254,17 @@
         "qa200-20260527-054"
       ]
     },
+    "야간뇨": {
+      "count": 6,
+      "qids": [
+        "mens-extra-060",
+        "qa200-20260527-193",
+        "qa200-20260527-200",
+        "trendqa-mens-20260530",
+        "round2-mens-health-20260530",
+        "round3-mens_health-1-20260531"
+      ]
+    },
     "자외선차단": {
       "count": 6,
       "qids": [
@@ -8956,15 +9276,15 @@
         "sh_118"
       ]
     },
-    "장내미생물": {
+    "저혈당": {
       "count": 6,
       "qids": [
-        "cancer-005",
-        "cancer-012",
-        "dige-006",
-        "infect-extra-043",
-        "ingr-015",
-        "ingr-028"
+        "meta-014",
+        "meta_083",
+        "meta_086",
+        "qa200-20260527-022",
+        "qa200-20260527-032",
+        "qa200-20260527-120"
       ]
     },
     "정자": {
@@ -8989,26 +9309,15 @@
         "mental-101"
       ]
     },
-    "지방간": {
+    "치매예방": {
       "count": 6,
       "qids": [
-        "meta-005",
-        "meta-017",
-        "dige-004",
-        "qa200-20260527-014",
-        "qa200-20260527-065",
-        "qa200-20260527-071"
-      ]
-    },
-    "체중감량": {
-      "count": 6,
-      "qids": [
-        "meta-019",
-        "ingr-025",
-        "qa200-20260527-014",
-        "qa200-20260527-065",
-        "qa200-20260527-166",
-        "qa200-20260527-187"
+        "neuro-005",
+        "nc_014",
+        "mental-extra-071",
+        "nc_098",
+        "ingr-014",
+        "qa200-20260527-104"
       ]
     },
     "칼슘": {
@@ -9020,6 +9329,28 @@
         "mens-extra-007",
         "mens-008",
         "qa200-20260527-125"
+      ]
+    },
+    "헬리코박터": {
+      "count": 6,
+      "qids": [
+        "dige-003",
+        "dige-009",
+        "infect-extra-001",
+        "infect-003",
+        "qa200-20260527-060",
+        "qa200-20260527-061"
+      ]
+    },
+    "혈압관리": {
+      "count": 6,
+      "qids": [
+        "cardio-001",
+        "cardio-003",
+        "nc_014",
+        "nc_047",
+        "qa200-20260527-079",
+        "qa200-20260527-090"
       ]
     },
     "환자식": {
@@ -9064,6 +9395,26 @@
         "ci_116"
       ]
     },
+    "LDL콜레스테롤": {
+      "count": 5,
+      "qids": [
+        "cardio-003",
+        "meta_057",
+        "meta_072",
+        "qa200-20260527-019",
+        "trendqa-cardiovascular-20260530"
+      ]
+    },
+    "PMS": {
+      "count": 5,
+      "qids": [
+        "woms-015",
+        "wh-extra-012",
+        "wh-extra-019",
+        "womens-002",
+        "round2-womens-health-20260530"
+      ]
+    },
     "SSRI": {
       "count": 5,
       "qids": [
@@ -9094,24 +9445,14 @@
         "qa200-20260527-184"
       ]
     },
-    "관절염": {
+    "과장광고": {
       "count": 5,
       "qids": [
-        "musc-001",
-        "musc-002",
-        "ingr-022",
-        "ingr-026",
-        "qa200-20260527-127"
-      ]
-    },
-    "근감소증": {
-      "count": 5,
-      "qids": [
-        "musc-011",
-        "mens-020",
-        "mens-extra-031",
-        "mens-004",
-        "qa200-20260527-126"
+        "qa200-20260527-045",
+        "qa200-20260527-089",
+        "qa200-20260527-137",
+        "qa200-20260527-172",
+        "seoqa-metabolism-02"
       ]
     },
     "남성호르몬": {
@@ -9132,26 +9473,6 @@
         "qa-hospital-20260527-005",
         "qa-hospital-20260527-009",
         "qa-hospital-20260527-044"
-      ]
-    },
-    "내장지방": {
-      "count": 5,
-      "qids": [
-        "meta-003",
-        "mens-010",
-        "mens-extra-010",
-        "mens-extra-050",
-        "qa200-20260527-026"
-      ]
-    },
-    "노화": {
-      "count": 5,
-      "qids": [
-        "cardio-027",
-        "musc-011",
-        "mens-extra-042",
-        "mens-006",
-        "resp-010"
       ]
     },
     "단백질·류신": {
@@ -9182,6 +9503,26 @@
         "mental-extra-030",
         "nc_110",
         "qa200-20260527-097"
+      ]
+    },
+    "마이크로바이옴": {
+      "count": 5,
+      "qids": [
+        "cardio-065",
+        "cancer-012",
+        "mental-extra-025",
+        "sh_128",
+        "trendqa-digestive-20260530"
+      ]
+    },
+    "만성염증": {
+      "count": 5,
+      "qids": [
+        "infect-extra-037",
+        "infect-002",
+        "infect-014",
+        "qa200-20260527-172",
+        "trendqa-inflammation-20260530"
       ]
     },
     "멜라토닌": {
@@ -9224,14 +9565,34 @@
         "mens-016"
       ]
     },
-    "보호자": {
+    "불안": {
       "count": 5,
       "qids": [
-        "mental-extra-020",
-        "mental-extra-059",
-        "qa200-20260527-040",
-        "qa200-20260527-049",
-        "qa200-20260527-054"
+        "qa200-20260527-111",
+        "qa200-20260527-116",
+        "qa200-20260527-120",
+        "trendqa-mental-20260530",
+        "round3-mental_health-2-20260531"
+      ]
+    },
+    "비타민C": {
+      "count": 5,
+      "qids": [
+        "skin-005",
+        "infect-extra-028",
+        "infect-extra-047",
+        "qa200-20260527-140",
+        "round3-skin-1-20260531"
+      ]
+    },
+    "생리불순": {
+      "count": 5,
+      "qids": [
+        "woms-007",
+        "wh-extra-013",
+        "wh-extra-017",
+        "qa200-20260527-182",
+        "round3-womens_health-2-20260531"
       ]
     },
     "소화기내과": {
@@ -9252,6 +9613,36 @@
         "qa200-20260527-068",
         "qa200-20260527-072",
         "qa200-20260527-076"
+      ]
+    },
+    "수면무호흡": {
+      "count": 5,
+      "qids": [
+        "cardio-044",
+        "resp-008",
+        "nc_109",
+        "qa200-20260527-165",
+        "round3-mens_health-2-20260531"
+      ]
+    },
+    "수면부족": {
+      "count": 5,
+      "qids": [
+        "infect-extra-046",
+        "mental-extra-077",
+        "sh_129",
+        "qa200-20260527-099",
+        "round3-neuro_cognitive-1-20260531"
+      ]
+    },
+    "수면장애": {
+      "count": 5,
+      "qids": [
+        "wh-extra-005",
+        "mental-extra-005",
+        "nc_108",
+        "mental-110",
+        "round3-womens_health-1-20260531"
       ]
     },
     "식이": {
@@ -9314,16 +9705,6 @@
         "qa200-20260527-185"
       ]
     },
-    "예방접종": {
-      "count": 5,
-      "qids": [
-        "cancer-016",
-        "infect-extra-007",
-        "infect-extra-010",
-        "infect-extra-011",
-        "ci_116"
-      ]
-    },
     "요로감염": {
       "count": 5,
       "qids": [
@@ -9354,14 +9735,14 @@
         "qa200-20260527-193"
       ]
     },
-    "치매예방": {
+    "중성지방": {
       "count": 5,
       "qids": [
-        "neuro-005",
-        "mental-extra-071",
-        "nc_098",
-        "ingr-014",
-        "qa200-20260527-104"
+        "meta-015",
+        "ingr-010",
+        "qa200-20260527-013",
+        "qa200-20260527-086",
+        "round3-digestive-2-20260531"
       ]
     },
     "폐암": {
@@ -9372,16 +9753,6 @@
         "ci_096",
         "ci_097",
         "ci_098"
-      ]
-    },
-    "헬리코박터": {
-      "count": 5,
-      "qids": [
-        "dige-003",
-        "dige-009",
-        "infect-extra-001",
-        "infect-003",
-        "qa200-20260527-061"
       ]
     },
     "혈액순환": {
@@ -11126,7 +11497,59 @@
     "seoqa-respiratory-02": "호흡기-관련-글에서-과장-문구를-구분하는-방법은-핵심편",
     "seoqa-respiratory-03": "호흡기-관심층이-식사수면-기록을-어떻게-남기면-좋나요-실전편",
     "seoqa-respiratory-04": "호흡기-정보에서-논문과-후기의-차이는-어떻게-보나요-초보자편",
-    "seoqa-respiratory-05": "호흡기-관련-원료-비교-글을-읽을-때-주의할-점은-상세편"
+    "seoqa-respiratory-05": "호흡기-관련-원료-비교-글을-읽을-때-주의할-점은-상세편",
+    "trendqa-metabolism-20260530": "혈당-스파이크가-잦은데-저속노화-식단은-무엇부터-바꿔야-하나요",
+    "trendqa-cancer-immune-20260530": "항암치료-중-건강식품을-함께-먹어도-되는지-어떻게-확인하나요",
+    "trendqa-digestive-20260530": "장내미생물-관리를-위해-유산균보다-먼저-확인할-것은-무엇인가요",
+    "trendqa-cardiovascular-20260530": "혈압은-정상인데-LDL-콜레스테롤이-높으면-무엇부터-관리해야-하나요",
+    "trendqa-neuro-20260530": "브레인-포그가-계속될-때-수면과-혈당을-같이-봐야-하나요",
+    "trendqa-mental-20260530": "새벽에-자주-깨고-불안한데-수면영양제를-먼저-먹어도-되나요",
+    "trendqa-musculoskeletal-20260530": "근감소를-막으려면-단백질과-운동을-어떻게-기록해야-하나요",
+    "trendqa-skin-20260530": "피부-장벽이-무너진-것-같을-때-먹는-항산화-성분도-봐야-하나요",
+    "trendqa-hair-20260530": "탈모가-시작됐을-때-철분비타민D두피-염증을-어떻게-확인하나요",
+    "trendqa-respiratory-20260530": "미세먼지-많은-날-기침이-반복되면-기관지-관리는-어떻게-하나요",
+    "trendqa-inflammation-20260530": "만성염증-수치가-걱정될-때-CRP와-생활기록은-어떻게-보나요",
+    "trendqa-womens-20260530": "갱년기-수면열감피로가-겹칠-때-무엇부터-확인하나요",
+    "trendqa-mens-20260530": "야간뇨가-늘고-전립선이-걱정될-때-무엇을-기록해야-하나요",
+    "round2-metabolism-20260530": "공복혈당은-정상인데-식후-졸림이-심하면-무엇을-기록해야-하나요",
+    "round2-cancer-immune-20260530": "암-치료-중-가족이-영양제를-권할-때-어떤-순서로-확인해야-하나요",
+    "round2-digestive-20260530": "속이-더부룩하고-배변이-들쭉날쭉할-때-장-건강-기록은-어떻게-남기나요",
+    "round2-cardiovascular-20260530": "혈압약을-먹고-있는데-오메가3나-항산화-성분을-같이-봐도-되나요",
+    "round2-neuro-cognitive-20260530": "기억력보다-집중력이-먼저-떨어질-때-수면혈당약물을-같이-봐야-하나요",
+    "round2-mental-health-20260530": "스트레스성-불면이-반복될-때-감태-수면영양제-전에-무엇을-확인하나요",
+    "round2-musculoskeletal-20260530": "무릎-통증이-있는데-걷기와-근력운동을-어떻게-나눠-기록하나요",
+    "round2-skin-20260530": "피부가-건조하고-가려울-때-세안보습식습관을-같이-봐야-하나요",
+    "round2-hair-20260530": "갑자기-머리카락이-많이-빠질-때-계절성-탈모와-질환-신호를-어떻게-구분하나요",
+    "round2-respiratory-20260530": "황사미세먼지-뒤-목이-칼칼하고-기침이-날-때-무엇을-기록하나요",
+    "round2-infection-inflammation-20260530": "감기가-자주-반복될-때-면역-영양제보다-먼저-볼-생활-기록은-무엇인가요",
+    "round2-womens-health-20260530": "생리-전-피로와-붓기가-심할-때-영양제보다-먼저-확인할-것은-무엇인가요",
+    "round2-mens-health-20260530": "중년-남성이-피로와-야간뇨를-같이-느낄-때-어떤-검사를-상담해야-하나요",
+    "round3-metabolism-1-20260531": "GLP1-다이어트-중-근손실이-걱정될-때-단백질과-운동은-어떻게-기록하나요",
+    "round3-metabolism-2-20260531": "초가공식품을-줄이면-혈당-스파이크와-염증-관리에-실제로-도움이-되나요",
+    "round3-cancer_immune-1-20260531": "술을-조금만-마셔도-암-위험과-면역-관리에는-영향을-줄-수-있나요",
+    "round3-cancer_immune-2-20260531": "항암치료-중-면역력-영양제를-고를-때-가장-먼저-확인할-것은-무엇인가요",
+    "round3-digestive-1-20260531": "복부팽만과-변비가-반복될-때-유산균과-식이섬유-중-무엇부터-봐야-하나요",
+    "round3-digestive-2-20260531": "지방간-수치가-높다고-들었을-때-술보다-먼저-줄여야-할-것도-있나요",
+    "round3-cardiovascular-1-20260531": "저나트륨-소금이나-칼륨-소금은-혈압-관리에-누구나-괜찮나요",
+    "round3-cardiovascular-2-20260531": "스마트워치가-심박수-이상을-알려줄-때-바로-병원에-가야-하나요",
+    "round3-neuro_cognitive-1-20260531": "브레인포그가-오래갈-때-롱코비드인지-수면부족인지-어떻게-구분하나요",
+    "round3-neuro_cognitive-2-20260531": "건망증이-늘었을-때-치매-초기-신호와-평범한-기억력-저하를-어떻게-구분하나요",
+    "round3-mental_health-1-20260531": "수면앱-점수가-계속-낮을-때-영양제보다-먼저-확인할-수면-습관은-무엇인가요",
+    "round3-mental_health-2-20260531": "불안과-스트레스가-심할-때-마그네슘이나-영양제부터-먹어도-될까요",
+    "round3-musculoskeletal-1-20260531": "체중감량-중-근육량을-지키려면-유산소와-근력운동-중-무엇을-먼저-해야-하나요",
+    "round3-musculoskeletal-2-20260531": "무릎-통증이-있을-때-걷기를-계속해야-할지-쉬어야-할지-어떻게-판단하나요",
+    "round3-skin-1-20260531": "레티놀-비타민C-나이아신아마이드를-같이-써도-피부-장벽에-괜찮나요",
+    "round3-skin-2-20260531": "흐린-날이나-실내에서도-자외선차단제를-발라야-하나요",
+    "round3-hair-1-20260531": "다이어트나-GLP1-이후-머리카락이-빠질-때-어떤-검사를-상담해야-하나요",
+    "round3-hair-2-20260531": "두피가-가렵고-비듬이-많을-때-샴푸를-바꾸면-충분한가요",
+    "round3-respiratory-1-20260531": "산불연기나-초미세먼지-뒤-목이-칼칼하고-기침이-날-때-어떻게-관리하나요",
+    "round3-respiratory-2-20260531": "감기-후-기침이-3주-넘게-이어지면-천식이나-역류도-확인해야-하나요",
+    "round3-infection_inflammation-1-20260531": "롱코비드-피로와-염증감이-오래갈-때-어떤-기록을-남겨야-하나요",
+    "round3-infection_inflammation-2-20260531": "비타민D-아연-면역-영양제-광고를-볼-때-어떤-표현을-조심해야-하나요",
+    "round3-womens_health-1-20260531": "갱년기-안면홍조와-수면장애가-같이-올-때-무엇을-기록해야-하나요",
+    "round3-womens_health-2-20260531": "생리불순과-피로가-같이-있으면-갑상선-철분-다낭성난소증후군도-봐야-하나요",
+    "round3-mens_health-1-20260531": "밤에-소변-때문에-자주-깨면-전립선비대인지-수분-습관인지-어떻게-구분하나요",
+    "round3-mens_health-2-20260531": "중년-남성이-피로와-성욕-저하를-느낄-때-테스토스테론-검사부터-해야-하나요"
   },
-  "generated_at": "2026-05-30T02:52:42.724770+00:00"
+  "generated_at": "2026-06-01T23:09:19.579452+00:00"
 }

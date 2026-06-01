@@ -1,114 +1,76 @@
-# robots.txt — phlorotannin.com
-# 최종 업데이트: 2026-04-24
+# robots.txt for phlorotannin.com
+# Updated: 2026-06-01
 
-# ── 모든 봇 기본 설정 ──────────────────────────────
 User-agent: *
 Allow: /
 Disallow: /admin
 Disallow: /admin/
-Disallow: /api/
 Disallow: /api
-Crawl-delay: 1
+Disallow: /api/
 
-# ── 구글봇 명시적 허용 (크롤 딜레이 없음) ──────────
 User-agent: Googlebot
 Allow: /
 Disallow: /admin
 Disallow: /admin/
+Disallow: /api
 Disallow: /api/
 
-# ── 구글 이미지봇 허용 ─────────────────────────────
 User-agent: Googlebot-Image
 Allow: /
 Allow: /og-image.png
 Allow: /favicon.svg
+Allow: /og/
 
-# ── 네이버 봇 (Yeti) — 크롤 딜레이 최소화 ─────────
 User-agent: Yeti
 Allow: /
-Allow: /qa
-Allow: /qa?category=metabolism
-Allow: /qa?category=cancer_immune
-Allow: /qa?category=cardiovascular
-Allow: /qa?category=neuro_cognitive
-Allow: /qa?category=mental_health
-Allow: /qa?category=digestive
-Allow: /qa?category=musculoskeletal
-Allow: /qa?category=skin_hair
-Allow: /qa?category=respiratory
-Allow: /qa?category=infection_inflammation
-Allow: /qa?category=womens_health
-Allow: /qa?category=mens_health
-Allow: /q/
-Allow: /phlorotannin
-Allow: /learn
-Allow: /easy
-Allow: /home
-Allow: /partner
-Allow: /consult
-Allow: /community
-Allow: /blog
-Allow: /blog/
-Allow: /category/
-Allow: /sitemap.xml
-Allow: /rss.xml
-Allow: /llms.txt
-Allow: /llms-full.txt
-Allow: /og-image.png
 Disallow: /admin
 Disallow: /admin/
+Disallow: /api
 Disallow: /api/
-Crawl-delay: 0
 
-# ── 빙봇 허용 ─────────────────────────────────────
 User-agent: Bingbot
 Allow: /
 Disallow: /admin
+Disallow: /admin/
+Disallow: /api
 Disallow: /api/
-Crawl-delay: 1
 
-# ── 다음 카카오봇 허용 ────────────────────────────
 User-agent: Daum
 Allow: /
 Disallow: /admin
+Disallow: /admin/
+Disallow: /api
 Disallow: /api/
 
-# ── 카카오 미리보기봇 허용 ────────────────────────
 User-agent: Kakaotalk-Scrap
 Allow: /
 
-# ── 트위터/X 카드봇 허용 ─────────────────────────
 User-agent: Twitterbot
 Allow: /
 
-# ── 페이스북 크롤러 허용 ──────────────────────────
 User-agent: facebookexternalhit
 Allow: /
 
-# ══════════════════════════════════════════════════
-#  AI 크롤러 / LLM 학습봇 — 학습·인용 모두 허용
-# ══════════════════════════════════════════════════
-
-# OpenAI ChatGPT 검색 (실시간 검색 응답용)
+# AI answer/search crawlers: public content is allowed; private endpoints stay blocked.
 User-agent: OAI-SearchBot
 Allow: /
 Disallow: /admin
+Disallow: /api
 Disallow: /api/
 
-# OpenAI ChatGPT 사용자 즉시 조회봇
 User-agent: ChatGPT-User
 Allow: /
 
-# OpenAI GPT 학습봇 (모델 학습 데이터 수집)
 User-agent: GPTBot
 Allow: /
 Disallow: /admin
+Disallow: /api
 Disallow: /api/
 
-# Anthropic Claude
 User-agent: ClaudeBot
 Allow: /
 Disallow: /admin
+Disallow: /api
 Disallow: /api/
 
 User-agent: Claude-Web
@@ -117,35 +79,33 @@ Allow: /
 User-agent: anthropic-ai
 Allow: /
 
-# Google Gemini / Bard / Vertex AI 학습
 User-agent: Google-Extended
 Allow: /
 Disallow: /admin
+Disallow: /api
 Disallow: /api/
 
-# Perplexity AI 답변 인용
 User-agent: PerplexityBot
 Allow: /
 Disallow: /admin
+Disallow: /api
 Disallow: /api/
 
 User-agent: Perplexity-User
 Allow: /
 
-# Bing/Copilot 학습
 User-agent: CCBot
 Allow: /
 Disallow: /admin
+Disallow: /api
 Disallow: /api/
-
-# Apple Intelligence
-User-agent: Applebot-Extended
-Allow: /
 
 User-agent: Applebot
 Allow: /
 
-# Meta AI (LLaMA 등)
+User-agent: Applebot-Extended
+Allow: /
+
 User-agent: FacebookBot
 Allow: /
 
@@ -155,7 +115,6 @@ Allow: /
 User-agent: meta-externalagent
 Allow: /
 
-# Cohere / You.com / Mistral / DeepSeek 등
 User-agent: cohere-ai
 Allow: /
 
@@ -174,9 +133,9 @@ Allow: /
 User-agent: Bytespider
 Allow: /
 
-# ── 사이트맵 위치 ─────────────────────────────────
 Sitemap: https://phlorotannin.com/sitemap.xml
+Sitemap: https://phlorotannin.com/rss.xml
 
-# ── AI 인덱스 (LLM 친화 요약 / 종합 건강정보 데이터센터) ─────
+# LLM-friendly public indexes
 # https://phlorotannin.com/llms.txt
 # https://phlorotannin.com/llms-full.txt

@@ -8,7 +8,7 @@
 
 import fs from 'fs'
 import path from 'path'
-import { LOCAL_TREND_BLOG_POSTS } from '../hanain/src/data/localTrendBlogPosts.js'
+import { LOCAL_TREND_BLOG_POSTS } from '../src/data/localTrendBlogPosts.js'
 
 const SITE = 'https://phlorotannin.com'
 const DEFAULT_ROBOTS = 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'

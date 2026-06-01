@@ -5,6 +5,7 @@ import { withRef } from '../../lib/partnerRef'
 import { MessageSquare, Megaphone, PlayCircle, Film, BookOpen, ArrowUpRight, Utensils } from 'lucide-react'
 import RevealContact from '../common/RevealContact'
 import { getQaCategories } from '../../lib/supabase'
+import { PARTNER_CONFIG } from '../../config/partner'
 
 // 카테고리 ID → /category/:slug URL 슬러그 매핑
 // (CategoryPage.jsx SLUG_TO_ID 의 역방향, 헌법 정합성)
@@ -44,6 +45,8 @@ const FALLBACK_QA_CATS = [
 
 export default function Footer() {
   const partner = usePartner()
+  const ownerPhone = PARTNER_CONFIG.phone
+  const ownerPhoneDisplay = PARTNER_CONFIG.phoneDisplay
   const [qaCats, setQaCats] = useState(FALLBACK_QA_CATS)
   const [topTags, setTopTags] = useState([])
   const [leadStats, setLeadStats] = useState(null)
@@ -320,7 +323,7 @@ export default function Footer() {
                 인용 시 출처(phlorotannin.com)를 반드시 명시하세요.
               </p>
               <Link
-                to={withRef('/copyright', partner)}
+                to="/copyright"
                 className="inline-flex items-center gap-1 mt-2 text-[13px] text-gray-700 hover:text-gray-900 underline underline-offset-4 decoration-gray-300 hover:decoration-gray-700"
               >
                 저작권 및 무단복제 금지 안내
@@ -330,9 +333,9 @@ export default function Footer() {
             <RevealContact
               type="sms"
               label="콘텐츠 사용·제휴 문의"
-              revealLabel={`${partner.phoneDisplay} 문자하기`}
-              phone={partner.phone}
-              displayPhone={partner.phoneDisplay}
+              revealLabel={`${ownerPhoneDisplay} 문자하기`}
+              phone={ownerPhone}
+              displayPhone={ownerPhoneDisplay}
               className="flex-shrink-0 inline-flex items-center gap-2 border border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white text-sm font-medium px-4 py-2.5 rounded-md transition-colors whitespace-nowrap"
             />
           </div>

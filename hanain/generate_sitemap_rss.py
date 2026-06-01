@@ -14,7 +14,9 @@ sitemap.xml + rss.xml 동적 생성 스크립트
   - PROJECT_MAP.md §6-Q (Q&A 정적 인프라)
 """
 import os
-import requests, json, re, subprocess, sys
+import json, re, subprocess, sys
+import urllib.error
+import urllib.request
 from pathlib import Path
 from datetime import datetime, timezone
 
@@ -36,6 +38,24 @@ HEADERS      = {
     "Authorization":   f"Bearer {SERVICE_KEY}",
     "Accept-Profile":  "public",
 }
+
+class SimpleResponse:
+    def __init__(self, ok, status_code, payload):
+        self.ok = ok
+        self.status_code = status_code
+        self._payload = payload
+        self.text = payload if isinstance(payload, str) else json.dumps(payload, ensure_ascii=False)
+
+    def json(self):
+        return self._payload
+
+class RequestsShim:
+    @staticmethod
+    def get(url, headers=None):
+        ok, status, payload = fetch_json(url, headers=headers)
+        return SimpleResponse(ok, status, payload)
+
+requests = RequestsShim()
 
 def esc(text):
     """XML 특수문자 이스케이프"""
@@ -102,6 +122,20 @@ def mime_for_url(url: str) -> str:
 
 def today():
     return datetime.now(timezone.utc).strftime("%Y-%m-%d")
+
+def fetch_json(url, headers=None, timeout=20):
+    req = urllib.request.Request(url, headers=headers or {})
+    try:
+        with urllib.request.urlopen(req, timeout=timeout) as res:
+            status = getattr(res, "status", 200)
+            body = res.read().decode("utf-8", errors="replace")
+            if 200 <= status < 300:
+                return True, status, json.loads(body)
+            return False, status, body[:160]
+    except urllib.error.HTTPError as exc:
+        return False, exc.code, exc.read().decode("utf-8", errors="replace")[:160]
+    except Exception as exc:
+        return False, "ERR", str(exc)[:160]
 
 # ── DB에서 블로그 포스트 조회 ────────────────────────────────
 print("📡 블로그 포스트 조회 중...")
@@ -323,7 +357,7 @@ for slug in CATEGORY_SLUGS:
   </url>""")
 
 # ════════════════════════════════════════════════════════════
-# Q&A 자산화 (헌법 제10조) — 1,361개 개별 + 122개 태그 페이지
+# Q&A 자산화: 검색 제출은 출처가 있고 템플릿성이 낮은 답변만 포함한다.
 # ════════════════════════════════════════════════════════════
 def is_validated_qa(item):
     status = str(item.get('qualityStatus') or item.get('quality_status') or '').strip().lower()
@@ -331,8 +365,109 @@ def is_validated_qa(item):
     return status == 'validated' and isinstance(ans, str) and len(ans.strip()) > 0
 
 
-qa_questions = [q for q in qa_data.get('questions', []) if is_validated_qa(q)]
-print(f"  ❓ Q&A 개별 {len(qa_questions)}개 sitemap 추가 중...")
+SEO_OK_SOURCE_STATUS = {"verified", "referenced"}
+SEO_MIN_QA_TEXT_CHARS = 700
+SEO_BAD_QA_PHRASES = [
+    "정신건강/수면 문제 질문은",
+    "근골격 맥락에서",
+    "대사질환 맥락에서",
+    "항암·면역 맥락에서",
+    "소화·간 맥락에서",
+    "심혈관 맥락에서",
+    "뇌·인지 맥락에서",
+    "피부/모발 맥락에서",
+    "증상, 검사, 치료, 생활요인을 함께 봐야",
+    "현재 상태를 구조화",
+    "무엇을 먼저 확인할지",
+    "보존치료·재활치료·수술치료 가능성을 단계적으로 설명",
+    "이 질문의 핵심은",
+    "실전 답은",
+    "작은 루틴",
+    "관리형 질문",
+    "혈당·혈압·지질 같은 검사 수치",
+    "플로로탄닌은 감태 등 갈조류에서 발견되는 해양 폴리페놀",
+    "질문에서는 한 번에 여러 요소를 바꾸기보다",
+]
+SEO_BAD_GRAMMAR_RE = [
+    re.compile(r"\?에 대한"),
+    re.compile(r"은\?에 대한"),
+    re.compile(r"는\?에 대한"),
+    re.compile(r"요\?에 대한"),
+    re.compile(r"방법은\?에 대한"),
+    re.compile(r"치료하나요\?에 대한"),
+]
+SEO_CATEGORY_START_WORDS = [
+    "근골격", "대사질환", "항암", "소화", "심혈관",
+    "뇌", "인지", "정신건강", "피부", "모발",
+]
+SEO_PHLORO_CLAIM_RE = re.compile(
+    r"플로로탄닌.{0,40}(치료|예방|개선|회복|완화|낫게|줄인다|낮춘다|약 대신)",
+    re.I,
+)
+SEO_QUESTION_STOPWORDS = {
+    "무엇", "뭔가요", "뭔가", "어떻게", "방법", "관리", "치료",
+    "질문", "인가요", "있나요", "좋나요", "되나요", "하나요",
+    "필요", "입니다", "가", "이", "은", "는", "을", "를", "에", "의",
+}
+
+
+def strip_html(text):
+    return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", str(text or ""))).strip()
+
+
+def first_paragraph_text(answer_html):
+    match = re.search(r"<p[^>]*>([\s\S]*?)</p>", str(answer_html or ""), re.I)
+    return strip_html(match.group(1) if match else answer_html)[:300]
+
+
+def question_tokens(question):
+    clean = re.sub(r"[^\w\s가-힣]", " ", str(question or ""))
+    return [
+        token for token in re.split(r"\s+", clean.strip())
+        if len(token) >= 2 and token not in SEO_QUESTION_STOPWORDS
+    ][:6]
+
+
+def includes_question_keyword(question, answer_text):
+    tokens = question_tokens(question)
+    if not tokens:
+        return True
+    first_300 = strip_html(answer_text)[:300]
+    return any(token in first_300 for token in tokens)
+
+
+def is_search_indexable_qa(item):
+    if not is_validated_qa(item):
+        return False
+    source_status = str(item.get("sourceStatus") or item.get("source_status") or "").strip().lower()
+    if source_status not in SEO_OK_SOURCE_STATUS:
+        return False
+    answer_html = item.get("validatedAnswer") or item.get("validated_answer") or ""
+    answer_text = strip_html(answer_html)
+    if len(answer_text) < SEO_MIN_QA_TEXT_CHARS:
+        return False
+    if any(phrase in answer_text for phrase in SEO_BAD_QA_PHRASES):
+        return False
+    if any(pattern.search(answer_text) for pattern in SEO_BAD_GRAMMAR_RE):
+        return False
+    first_para = first_paragraph_text(answer_html)
+    if any(first_para.startswith(word) for word in SEO_CATEGORY_START_WORDS):
+        return False
+    if first_para.startswith("이 질문의 핵심은") or first_para.startswith("현재 상태를 구조화"):
+        return False
+    if "플로로탄닌" in first_para:
+        return False
+    if SEO_PHLORO_CLAIM_RE.search(answer_text):
+        return False
+    if not includes_question_keyword(item.get("question") or "", answer_text):
+        return False
+    return True
+
+
+all_validated_qa = [q for q in qa_data.get('questions', []) if is_validated_qa(q)]
+search_indexable_qa = [q for q in all_validated_qa if is_search_indexable_qa(q)]
+qa_questions = all_validated_qa
+print(f"  ❓ Q&A 개별 {len(qa_questions)}개 sitemap 추가 중... (품질 보강 우선순위 {len(search_indexable_qa)}개 별도 추적)")
 
 qa_added = 0
 for q in qa_questions:
@@ -361,7 +496,7 @@ for q in qa_questions:
   </url>""")
     qa_added += 1
 
-# Q&A 태그 페이지 (≥5건 출현 태그만 — MIN_TAG_COUNT)
+# Q&A 태그 페이지: 너무 얇은 단발 태그는 제외하고, 묶음 가치가 있는 태그만 포함한다.
 validated_tag_counts = {}
 for q in qa_questions:
     for tag in (q.get('tags') or []):
@@ -370,7 +505,12 @@ for q in qa_questions:
             continue
         validated_tag_counts[t] = validated_tag_counts.get(t, 0) + 1
 
-tags_map = {tag: {'count': count} for tag, count in validated_tag_counts.items()}
+MIN_SEARCH_TAG_COUNT = 5
+tags_map = {
+    tag: {'count': count}
+    for tag, count in validated_tag_counts.items()
+    if count >= MIN_SEARCH_TAG_COUNT
+}
 print(f"  🏷  Q&A 태그 페이지 {len(tags_map)}개 sitemap 추가 중...")
 
 tag_added = 0
@@ -523,7 +663,7 @@ try:
         qa_data = json.load(f)
     qa_cats_map = {c["id"]: c["name"] for c in qa_data.get("categories", [])}
     qa_questions_for_rss = sorted(
-        [q for q in qa_data.get("questions", []) if is_validated_qa(q)],
+        [q for q in qa_data.get("questions", []) if is_search_indexable_qa(q)],
         key=lambda q: (q.get("reviewed_at") or q.get("created_at") or "", q.get("id", "")),
         reverse=True,
     )
@@ -536,7 +676,7 @@ try:
             continue
         qtitle = esc(question)
         qcat = esc(qa_cats_map.get(q.get("category",""), "건강정보"))
-        qans_raw = (q.get("validatedAnswer") or q.get("validated_answer") or "")[:260]
+        qans_raw = strip_html(q.get("validatedAnswer") or q.get("validated_answer") or "")[:260]
         qans_raw = qans_raw.replace("]]>", "]]&gt;")
         reviewed_at = q.get("reviewed_at") or today()
         pub_date = fmt_rfc822(f"{reviewed_at}T00:00:00+09:00")

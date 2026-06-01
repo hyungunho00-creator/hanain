@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom'
 import { ShieldAlert, ChevronRight, Mail, Phone } from 'lucide-react'
-import { usePartner } from '../context/PartnerContext'
 import SEOHead from '../components/common/SEOHead'
 import RevealContact from '../components/common/RevealContact'
+import { PARTNER_CONFIG } from '../config/partner'
 
 export default function CopyrightPage() {
-  const partner = usePartner()
+  const ownerPhone = PARTNER_CONFIG.phone
+  const ownerPhoneDisplay = PARTNER_CONFIG.phoneDisplay
 
   return (
     <>
@@ -138,9 +139,9 @@ export default function CopyrightPage() {
                   <span className="font-semibold">전화</span>
                   <RevealContact
                     type="tel"
-                    label="전화 상담 신청"
-                    phone={partner.phone}
-                    displayPhone={partner.phoneDisplay}
+                    label="대표번호 보기"
+                    phone={ownerPhone}
+                    displayPhone={ownerPhoneDisplay}
                     className="text-gray-900 underline underline-offset-4 decoration-gray-300 hover:decoration-gray-700"
                   />
                 </div>

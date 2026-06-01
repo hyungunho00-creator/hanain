@@ -1,7 +1,6 @@
 ﻿import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
-import FloatingButton from './components/common/FloatingButton'
 import LandingPage from './pages/LandingPage'
 import HomePage from './pages/HomePage'
 import QAPage from './pages/QAPage'
@@ -105,7 +104,6 @@ function AppInner() {
           </main>
           <PartnerArchiveShell position="bottom" />
           <Footer />
-          <FloatingButton />
         </div>
       </PartnerProvider>
     </AuthProvider>

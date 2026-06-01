@@ -110,8 +110,9 @@ export default function HomePage() {
       .then(d => {
         setQaData(d)
         const publicQuestions = (d.questions || []).filter(isPublicQa)
+        const latestQuestions = publicQuestions.filter((q) => String(q.id || '').startsWith('round3-'))
         const shuffled = [...publicQuestions].sort(() => Math.random() - 0.5)
-        setFeaturedQAs(shuffled.slice(0, 6))
+        setFeaturedQAs((latestQuestions.length ? latestQuestions : shuffled).slice(0, 6))
       })
       .catch(console.error)
   }, [])

@@ -1,4 +1,9 @@
 {
+  "functions": {
+    "api/seo.js": {
+      "includeFiles": "{dist/index.html,public/**}"
+    }
+  },
   "headers": [
     {
       "source": "/assets/(.*)\\.js",
@@ -70,6 +75,40 @@
     }
   ],
   "rewrites": [
+    { "source": "/", "destination": "/api/seo?p=/" },
+    { "source": "/home", "destination": "/api/seo?p=/home" },
+    { "source": "/easy", "destination": "/api/seo?p=/easy" },
+    { "source": "/phlorotannin", "destination": "/api/seo?p=/phlorotannin" },
+    { "source": "/learn", "destination": "/api/seo?p=/learn" },
+    { "source": "/qa", "destination": "/api/seo?p=/qa" },
+    { "source": "/blog", "has": [{ "type": "query", "key": "category", "value": "ingredient-comparison" }], "destination": "/api/seo?p=/blog%3Fcategory%3Dingredient-comparison" },
+    { "source": "/blog", "has": [{ "type": "query", "key": "category", "value": "disease-health-info" }], "destination": "/api/seo?p=/blog%3Fcategory%3Ddisease-health-info" },
+    { "source": "/blog", "has": [{ "type": "query", "key": "category", "value": "exercise-recovery" }], "destination": "/api/seo?p=/blog%3Fcategory%3Dexercise-recovery" },
+    { "source": "/blog", "has": [{ "type": "query", "key": "category", "value": "hospital-info" }], "destination": "/api/seo?p=/blog%3Fcategory%3Dhospital-info" },
+    { "source": "/blog", "has": [{ "type": "query", "key": "category", "value": "partner-info" }], "destination": "/api/seo?p=/blog%3Fcategory%3Dpartner-info" },
+    { "source": "/blog", "destination": "/api/seo?p=/blog" },
+    { "source": "/blog/:slug", "destination": "/api/seo?p=/blog/:slug" },
+    { "source": "/community", "destination": "/api/seo?p=/community" },
+    { "source": "/consult", "destination": "/api/seo?p=/consult" },
+    { "source": "/partner", "destination": "/api/seo?p=/partner" },
+    { "source": "/copyright", "destination": "/api/seo?p=/copyright" },
+    { "source": "/glossary", "destination": "/api/seo?p=/glossary" },
+    { "source": "/safety", "destination": "/api/seo?p=/safety" },
+    { "source": "/research-timeline", "destination": "/api/seo?p=/research-timeline" },
+    { "source": "/insights", "destination": "/api/seo?p=/insights" },
+    { "source": "/insights/:slug", "destination": "/api/seo?p=/insights/:slug" },
+    { "source": "/compare/:slug", "destination": "/api/seo?p=/compare/:slug" },
+    { "source": "/category/:slug", "destination": "/api/seo?p=/category/:slug" },
+    { "source": "/q/:slug", "destination": "/api/seo?p=/q/:slug" },
+    { "source": "/qa/tag/:tag", "destination": "/api/seo?p=/qa/tag/:tag" },
+    { "source": "/p/:partnerSlug", "destination": "/api/seo?p=/p/:partnerSlug" },
+    { "source": "/p/:partnerSlug/:path*", "destination": "/api/seo?p=/p/:partnerSlug/:path*" },
+    { "source": "/inforoom", "destination": "/api/seo?p=/inforoom" },
+    { "source": "/community/post/:postId", "destination": "/api/seo?p=/community/post/:postId" },
+    { "source": "/community/write", "destination": "/api/seo?p=/community/write" },
+    { "source": "/community/edit/:postId", "destination": "/api/seo?p=/community/edit/:postId" },
+    { "source": "/question/write", "destination": "/api/seo?p=/question/write" },
+    { "source": "/admin", "destination": "/api/seo?p=/admin" },
     {
       "source": "/((?!api/|assets/|favicon\\.svg|og-image\\.png|og-image\\.svg|robots\\.txt|sitemap\\.xml|rss\\.xml|qa\\.json|tagIndex\\.json|partners\\.json|icons\\.svg|naver[^/]*\\.html|flyer_product_front\\.png|flyer_product_back\\.png|indexnow\\.txt|[0-9a-f]{32}\\.txt|llms\\.txt|llms-full\\.txt|manifest\\.json|apple-touch-icon\\.png|icon-192\\.png|icon-512\\.png).*)",
       "destination": "/index.html"

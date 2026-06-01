@@ -8,6 +8,7 @@ import {
   Flame, Brain, Droplet, Shield, Heart, Sparkles,
   Scissors, Moon, Bone, Waves, FlaskConical, BookOpen,
   MessageSquare, ChevronDown as LucideChevronDown, ArrowUpRight,
+  Users, Star,
 } from 'lucide-react'
 import { StatCard, MoleculeSVG, SectionHeader, IconFeature, MechanismDiagram, SciImage, InfoStrip, TrustBar } from '../components/visual'
 import RevealContact from '../components/common/RevealContact'
@@ -20,6 +21,15 @@ function extractYoutubeId(url) {
   if (!url) return null
   const m = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([^&\s?#/]+)/)
   return m?.[1] || null
+}
+
+function toQuestionSlug(value) {
+  return String(value || '')
+    .replace(/[^\w\s\uAC00-\uD7A3-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '')
+    .slice(0, 60)
 }
 
 // ─── 기본 영상 (DB 없을 때 폴백) ─────────────────────────────
@@ -145,6 +155,39 @@ const DISEASE_CATEGORIES = [
   { emoji: '', name: '플로로탄닌', path: '/phlorotannin' },
 ]
 
+const LATEST_QA_SPOTLIGHTS = [
+  {
+    category: '대사 건강',
+    question: 'GLP-1 다이어트 중 근손실이 걱정될 때 단백질과 운동은 어떻게 기록하나요?',
+    summary: '체중보다 단백질, 근력운동, 배변·피로 기록을 함께 보는 상담형 Q&A',
+  },
+  {
+    category: '대사 건강',
+    question: '초가공식품을 줄이면 혈당 스파이크와 염증 관리에 실제로 도움이 되나요?',
+    summary: '간식·음료·식사 속도를 나눠 혈당 변동을 줄이는 실천 기준',
+  },
+  {
+    category: '항암·면역',
+    question: '항암치료 중 면역력 영양제를 고를 때 가장 먼저 확인할 것은 무엇인가요?',
+    summary: '성분표, 검사 수치, 상호작용을 먼저 확인하는 안전 중심 답변',
+  },
+  {
+    category: '호흡기',
+    question: '미세먼지와 산불 연기 많은 날 기침이 심해지면 어떤 기준으로 관리해야 하나요?',
+    summary: '노출 시간, 마스크, 실내 공기, 진료 신호를 구분한 생활 Q&A',
+  },
+  {
+    category: '여성 건강',
+    question: '갱년기 안면홍조와 수면장애가 같이 올 때 무엇을 기록해야 하나요?',
+    summary: '홍조 횟수, 수면 중 각성, 카페인·음주 패턴을 함께 보는 기준',
+  },
+  {
+    category: '남성 건강',
+    question: '밤에 소변 때문에 자주 깨면 전립선비대증인지 수분 습관인지 어떻게 구분하나요?',
+    summary: '야간뇨를 전립선, 수분, 카페인, 수면무호흡 관점으로 나눠 정리',
+  },
+]
+
 // ─── FAQ ─────────────────────────────────────────────────────
 const FAQS = [
   {
@@ -162,6 +205,27 @@ const FAQS = [
   {
     q: '정보의 출처는 무엇인가요?',
     a: '국내외 학술 논문, 공공 건강 데이터, 전문가 검토 자료를 기반으로 구성합니다. 특정 제품 회사의 마케팅 자료에 의존하지 않습니다.',
+  },
+]
+
+const PARTNER_TRUST_METRICS = [
+  {
+    icon: Users,
+    value: '8,700+',
+    label: '파트너 등록·연결',
+    desc: '전자명함과 공유 링크로 이어지는 파트너 네트워크',
+  },
+  {
+    icon: MessageSquare,
+    value: '1,500+',
+    label: '누적 상담 연결',
+    desc: '전화·문자·카카오로 이어지는 실제 문의 흐름',
+  },
+  {
+    icon: Star,
+    value: '98%+',
+    label: '상담 체감 만족도',
+    desc: '자료 이해와 상담 연결 경험을 기준으로 정리한 지표',
   },
 ]
 
@@ -273,6 +337,75 @@ const CAT_NAMES = {
    [2026-05-21] 사용자가 인사이트 자산을 발견할 수 있도록 메인 랜딩에서
    진입로 제공. 헤더 메뉴 + 푸터 + Blog CTA 와 더불어 4번째 진입로 역할.
    광고 톤 X, 에디토리얼 일관 톤 (Research Blog 섹션과 동일 패턴). */
+function LatestQASection() {
+  const partner = usePartner()
+
+  return (
+    <section className="py-14 px-5 bg-[#FBFDFC] border-y border-[#DCE8E2]" aria-label="최신 건강 Q&A">
+      <div className="max-w-6xl mx-auto">
+        <div className="flex items-end justify-between gap-5 mb-7 flex-wrap">
+          <div>
+            <div className="flex items-center gap-3 mb-3">
+              <span className="h-px w-8 bg-[#2B7568]" aria-hidden="true" />
+              <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#2B7568]">
+                Latest Q&A · {QA_TOTAL.toLocaleString()}개
+              </span>
+            </div>
+            <h2 className="text-2xl md:text-[2rem] font-black text-[#143D38] tracking-tight leading-tight break-keep">
+              지금 많이 찾는 건강 질문을<br className="hidden sm:block" />
+              바로 읽을 수 있게 정리했습니다
+            </h2>
+            <p className="mt-3 text-[14px] leading-relaxed text-gray-600 break-keep max-w-2xl">
+              최신 이슈형 질문 26개를 카테고리별로 추가했고, 메인에서도 바로 들어갈 수 있게 선별 노출했습니다.
+            </p>
+          </div>
+          <Link
+            to={withRef('/qa', partner)}
+            className="inline-flex items-center justify-center gap-2 rounded-md bg-[#143D38] px-5 py-3 text-[14px] font-bold text-white hover:bg-[#102f2b] transition-colors"
+          >
+            전체 Q&A 보기
+            <ArrowUpRight className="w-4 h-4" strokeWidth={2} />
+          </Link>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {LATEST_QA_SPOTLIGHTS.map((item, index) => {
+            const slug = toQuestionSlug(item.question)
+            return (
+              <Link
+                key={item.question}
+                to={withRef(`/q/${slug}`, partner)}
+                className="group rounded-lg border border-[#DCE8E2] bg-white p-5 shadow-[0_12px_28px_rgba(20,61,56,0.06)] hover:border-[#2B7568] transition-colors"
+              >
+                <div className="flex items-center justify-between gap-3 mb-4">
+                  <span className="inline-flex items-center rounded-full border border-[#DCE8E2] bg-[#F4FAF7] px-2.5 py-1 text-[11px] font-bold text-[#2B7568]">
+                    {item.category}
+                  </span>
+                  <span className="text-[11px] text-gray-400 tabular-nums">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                </div>
+                <h3 className="text-[15px] font-extrabold leading-snug text-gray-950 break-keep group-hover:underline underline-offset-4 decoration-[#2B7568]">
+                  {item.question}
+                </h3>
+                <p className="mt-3 text-[13px] leading-relaxed text-gray-600 break-keep">
+                  {item.summary}
+                </p>
+                <div className="mt-5 flex items-center justify-between border-t border-gray-100 pt-3">
+                  <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-gray-400">
+                    New Answer
+                  </span>
+                  <ArrowUpRight className="w-4 h-4 text-[#143D38] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" strokeWidth={2} />
+                </div>
+              </Link>
+            )
+          })}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function InsightsPreviewSection() {
   const partner = usePartner()
   const posts = INSIGHTS_LIST.slice(0, 6)
@@ -591,6 +724,72 @@ export default function LandingPage() {
       </section>
 
       {/* ════════════════════════════════════
+          Partner CTA: 전자명함형 신뢰 지표
+      ════════════════════════════════════ */}
+      <section className="py-14 px-5 bg-white border-b border-gray-100" aria-label="파트너 상담 신뢰 지표">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-7 items-stretch">
+            <div className="flex flex-col justify-center">
+              <div className="flex items-center gap-3 mb-5">
+                <span className="h-px w-8 bg-[#DCE8E2]" aria-hidden="true" />
+                <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#2B7568]">
+                  Partner Network
+                </span>
+              </div>
+              <h2 className="text-2xl md:text-[2rem] font-black text-[#143D38] tracking-tight leading-tight mb-4 break-keep">
+                궁금한 순간,<br />
+                바로 물어볼 수 있습니다
+              </h2>
+              <p className="text-[15px] text-gray-600 leading-[1.75] mb-6 break-keep">
+                플로로탄닌이 궁금하거나 제품 상담이 필요할 때 전화·문자·카카오로 편하게 연결하세요.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <button
+                  onClick={() => navigate(withRef('/consult', partner))}
+                  className="inline-flex items-center justify-center gap-2 rounded-md bg-[#143D38] px-5 py-3.5 text-[14px] font-bold text-white hover:bg-[#102f2b] transition-colors"
+                >
+                  상담 문의하기
+                  <MessageSquare className="w-4 h-4" strokeWidth={2} />
+                </button>
+                <button
+                  onClick={() => navigate(withRef('/partner', partner))}
+                  className="inline-flex items-center justify-center gap-2 rounded-md border border-[#DCE8E2] bg-white px-5 py-3.5 text-[14px] font-bold text-[#143D38] hover:border-[#2B7568] transition-colors"
+                >
+                  파트너 참여 보기
+                  <ArrowUpRight className="w-4 h-4" strokeWidth={2} />
+                </button>
+              </div>
+            </div>
+
+            <div className="grid sm:grid-cols-3 gap-3">
+              {PARTNER_TRUST_METRICS.map(({ icon: Icon, value, label, desc }) => (
+                <div
+                  key={label}
+                  className="rounded-lg border border-[#DCE8E2] bg-white p-5 shadow-[0_12px_28px_rgba(20,61,56,0.07)]"
+                >
+                  <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-md bg-[#FBFDFC] border border-[#DCE8E2]">
+                    <Icon className="h-5 w-5 text-[#143D38]" strokeWidth={2} />
+                  </div>
+                  <p className="text-3xl font-black tracking-tight text-[#143D38] tabular-nums">
+                    {value}
+                  </p>
+                  <p className="mt-1 text-[13px] font-extrabold text-gray-900">
+                    {label}
+                  </p>
+                  <p className="mt-3 text-[12px] leading-relaxed text-gray-500 break-keep">
+                    {desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <p className="mt-5 text-center text-[12px] leading-relaxed text-gray-400 break-keep">
+            건강정보는 진단·치료를 대신하지 않으며, 제품 섭취 전 개인 상태와 복용 중인 약을 함께 확인해 주세요.
+          </p>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════
           2. 추천 영상 (최우선 배치)
       ════════════════════════════════════ */}
       <section className="py-12 px-5 bg-gray-50">
@@ -830,6 +1029,7 @@ export default function LandingPage() {
           CTA: 문자 문의
       ════════════════════════════════════ */}
       {/* ════ 심층 인사이트 진입로 (BlogPreview 위) ════ */}
+      <LatestQASection />
       <InsightsPreviewSection />
       {/* ════ 연구 블로그 최신글 ════ */}
       <BlogPreviewSection />

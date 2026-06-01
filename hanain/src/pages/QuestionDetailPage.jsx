@@ -17,6 +17,7 @@ import { REFERENCES } from '../data/references'
 import { usePartner } from '../context/PartnerContext'
 import { withRef } from '../lib/partnerRef'
 import { getRenderableQAAnswer, answerPlainTextForMeta, shouldEmitQASchema } from '../lib/qaAnswer'
+import { QA_TOTAL } from '../data/siteStats'
 
 // 카테고리 ID → OG 이미지 슬러그 (build_og_images.py 산출물과 1:1 매칭, 헌법 정합성)
 const CAT_OG_SLUG = {
@@ -38,6 +39,26 @@ const CAT_OG_SLUG = {
 
 // qa.json fallback: Supabase에 데이터 없을 때 로컬 JSON 사용
 let QA_FALLBACK = null
+const QA_JSON_URL = `/qa.json?v=${QA_TOTAL}`
+const DEFAULT_QA_DATETIME = '2026-05-21T00:00:00+09:00'
+const QA_SCHEMA_AUTHOR = {
+  '@type': 'Organization',
+  name: '플로로탄닌 파트너스 건강정보 편집팀',
+  url: 'https://phlorotannin.com',
+}
+
+function toSchemaDateTime(value, fallback = DEFAULT_QA_DATETIME) {
+  const raw = String(value || '').trim()
+  if (!raw) return fallback
+  if (/^\d{4}-\d{2}-\d{2}$/.test(raw)) return `${raw}T00:00:00+09:00`
+  if (/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(:\d{2}(?:\.\d+)?)?(Z|[+-]\d{2}:\d{2})$/.test(raw)) return raw
+  if (/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(:\d{2}(?:\.\d+)?)?$/.test(raw)) return `${raw}+09:00`
+
+  const parsed = new Date(raw)
+  if (!Number.isNaN(parsed.getTime())) return parsed.toISOString()
+  return fallback
+}
+
 function slugifyKoLocal(s) {
   return String(s || '')
     .replace(/[^\w\s가-힣]/g, '')
@@ -47,7 +68,7 @@ function slugifyKoLocal(s) {
 
 async function ensureQaFallback() {
   if (!QA_FALLBACK) {
-    const r = await fetch('/qa.json')
+    const r = await fetch(QA_JSON_URL, { cache: 'no-store' })
     QA_FALLBACK = await r.json()
   }
   return QA_FALLBACK
@@ -66,7 +87,8 @@ async function getFallbackQuestion(slug) {
   const data = await ensureQaFallback()
   const q = data.questions.find(q => {
     const s = slugifyKoLocal(q.question)
-    return s === slug || q.id === slug
+    const canonicalSlug = toQuestionSlug(q.question)
+    return s === slug || canonicalSlug === slug || q.id === slug
   })
   if (!q) return null
   const cat = data.categories.find(c => c.id === q.category)
@@ -76,7 +98,10 @@ async function getFallbackQuestion(slug) {
     categories: cat ? { id: cat.id, name: cat.name, slug: cat.id, color: cat.color, icon: cat.icon } : null,
     tags: q.tags || [], view_count: q.views || 0, like_count: q.likes || 0,
     difficulty: q.difficulty, visibility: 'public', author_type: 'self',
-    created_at: null, _fallback: true,
+    author: q.author || QA_SCHEMA_AUTHOR.name,
+    created_at: q.created_at || q.published_at || q.reviewed_at || q.reviewedAt || '2026-05-21',
+    updated_at: q.updated_at || q.rewrittenAt || q.rewritten_at || q.reviewed_at || q.reviewedAt || null,
+    _fallback: true,
     qualityStatus: q.qualityStatus || q.quality_status || 'validated',
     validatedAnswer: q.validatedAnswer || q.validated_answer || null,
     sourceStatus: q.sourceStatus || q.source_status || 'source_gap',
@@ -284,6 +309,14 @@ export default function QuestionDetailPage() {
   const authorTypeLabel = { self: '본인', family: '가족', caregiver: '보호자' }[question.author_type] || ''
   const preferredSlug = toQuestionSlug(question.title || question.question || slug) || slug
   const pageUrl = `https://phlorotannin.com/q/${preferredSlug}`
+  const schemaDatePublished = toSchemaDateTime(question.created_at || question.reviewed_at || question.reviewedAt)
+  const schemaDateModified = toSchemaDateTime(
+    question.updated_at || question.reviewed_at || question.reviewedAt || question.created_at,
+    schemaDatePublished
+  )
+  const schemaAuthor = question.author
+    ? { ...QA_SCHEMA_AUTHOR, name: question.author }
+    : QA_SCHEMA_AUTHOR
   const rawAnswerText = answerPlainTextForMeta(question).slice(0, 300)
   const seoDesc = rawAnswerText.slice(0, 150)
 
@@ -319,8 +352,9 @@ export default function QuestionDetailPage() {
           name: question.title,
           text: question.title,
           url: pageUrl,
-          datePublished: question.created_at || new Date().toISOString(),
-          dateModified: question.reviewed_at || question.updated_at || new Date().toISOString().slice(0, 10),
+          datePublished: schemaDatePublished,
+          dateModified: schemaDateModified,
+          author: schemaAuthor,
           answerCount: isPublicValidated ? (answers.length || 1) : 0,
           upvoteCount: question.like_count || 0,
           ...(isPublicValidated && rawAnswerText ? {
@@ -329,7 +363,8 @@ export default function QuestionDetailPage() {
               text: rawAnswerText,
               url: `${pageUrl}#answer`,
               upvoteCount: 0,
-              dateCreated: question.reviewed_at || question.created_at || new Date().toISOString().slice(0, 10),
+              dateCreated: schemaDatePublished,
+              dateModified: schemaDateModified,
               author: {
                 '@type': 'Organization',
                 name: question.author || '플로로탄닌·감태추출물 종합 건강정보 데이터센터 편집팀',

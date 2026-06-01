@@ -2,19 +2,27 @@ import { useState, useEffect, useRef } from 'react'
 import { useParams, useNavigate, useSearchParams } from 'react-router-dom'
 import {
   Phone, MessageSquare, Globe, Download,
-  AlertCircle, ChevronRight, Leaf, Heart, Star, Shield, BookOpen, UserPlus, Smartphone, X, Share,
+  AlertCircle, ChevronRight, Leaf, Star, BookOpen, UserPlus, Smartphone, Share,
 } from 'lucide-react'
 import SEOHead from '../components/common/SEOHead'
 import { savePartnerToSession } from '../context/PartnerContext'
+import { resolvePartnerBySlugWithStatus } from '../lib/partner/resolvePartner'
+import { formatPhoneDisplay, normalizePartnerSlug, normalizePhoneDigits } from '../lib/partner/normalizePartnerSlug'
+import { partnerPathFor } from '../lib/partner/partnerRoutes'
 
 const MAIN_SITE = 'https://phlorotannin.com'
 
-const NAVY  = '#0D1B3E'
-const GOLD  = '#B8953A'
-const GOLD2 = '#D4AF5A'
-const CREAM = '#FFFDF7'
-const CREAM2 = '#FBF5E6'
-const CREAM3 = '#F5EDD2'
+const NAVY  = '#143D38'
+const GREEN = '#2B7568'
+const GOLD  = '#B9975B'
+const GOLD2 = '#D7BD82'
+const CREAM = '#FFFFFF'
+const CREAM2 = '#FAFBFA'
+const CREAM3 = '#F1F5F2'
+const MINT = '#FBFDFC'
+const LINE = '#DCE8E2'
+const SOFT_SHADOW = 'rgba(20,61,56,0.08)'
+const MEDIUM_SHADOW = 'rgba(20,61,56,0.14)'
 
 // Phase 2: Supabase partners 테이블 1순위, JSON fallback
 const SB_URL_FOR_PARTNERS = 'https://rlfxuyeoluoeaxuujtly.supabase.co'
@@ -35,11 +43,64 @@ function adaptPartnerRow(r) {
   }
 }
 
+function normalizeCardPartner(partner, requestedSlug) {
+  if (!partner) return null
+
+  const slug = normalizePartnerSlug(partner.slug || partner.partnerSlug || partner.id || requestedSlug) || String(requestedSlug || '').trim()
+  const phone = normalizePhoneDigits(partner.phone || partner.sms || slug) || ''
+  const phoneDisplay = partner.phoneDisplay || partner.phone_display || formatPhoneDisplay(phone) || partner.phone || ''
+  const name = partner.name || partner.displayName || partner.display_name || '신규 파트너'
+  const sms = normalizePhoneDigits(partner.sms || phone) || phone
+
+  return {
+    ...partner,
+    id: partner.id || slug,
+    slug,
+    partnerSlug: slug,
+    name,
+    displayName: partner.displayName || partner.display_name || name,
+    phone,
+    phoneDisplay,
+    sms,
+    kakaoUrl: partner.kakaoUrl || partner.kakao_url || '',
+    siteUrl: partner.siteUrl || `${MAIN_SITE}/p/${slug}`,
+  }
+}
+
+function createFallbackPartner(requestedSlug) {
+  const slug = normalizePartnerSlug(requestedSlug) || String(requestedSlug || '').trim().toLowerCase()
+  if (!slug) return null
+
+  const phone = normalizePhoneDigits(slug) || normalizePhoneDigits(requestedSlug) || ''
+  return {
+    id: slug,
+    slug,
+    partnerSlug: slug,
+    name: '신규 파트너',
+    displayName: '신규 파트너',
+    roleLabel: '플로로탄닌 건강정보 파트너',
+    phone,
+    phoneDisplay: formatPhoneDisplay(phone),
+    sms: phone,
+    kakaoUrl: '',
+    siteUrl: `${MAIN_SITE}/p/${slug}`,
+    fallbackMode: 'runtime-placeholder',
+  }
+}
+
 async function fetchPartnerByPhoneFromTable(phone) {
   try {
-    const digits = phone.replace(/\D/g, '')
+    const digits = normalizePhoneDigits(phone) || ''
+    const normalized = normalizePartnerSlug(phone) || ''
+    const filters = []
+    if (digits) {
+      filters.push(`phone.eq.${encodeURIComponent(digits)}`)
+      filters.push(`slug.eq.${encodeURIComponent(digits)}`)
+    }
+    if (normalized && normalized !== digits) filters.push(`slug.eq.${encodeURIComponent(normalized)}`)
+    if (!filters.length) return null
     // phone 또는 slug로 매칭 (둘 다 전화번호지만 안전 차원에서 OR)
-    const url = `${SB_URL_FOR_PARTNERS}/rest/v1/partners?select=slug,phone,name,phone_display,site_url,memo,created_at&status=eq.active&or=(phone.eq.${digits},slug.eq.${digits})&limit=1`
+    const url = `${SB_URL_FOR_PARTNERS}/rest/v1/partners?select=slug,phone,name,phone_display,site_url,memo,created_at&status=eq.active&or=(${filters.join(',')})&limit=1`
     const resp = await fetch(url, {
       headers: {
         apikey: SB_ANON_FOR_PARTNERS,
@@ -55,9 +116,17 @@ async function fetchPartnerByPhoneFromTable(phone) {
 }
 
 async function fetchPartnerByPhone(phone) {
+  const resolved = await resolvePartnerBySlugWithStatus(phone, {
+    route: `/p/${phone || ''}`,
+    forceFresh: true,
+  })
+  if (resolved?.ok && resolved.partner) {
+    return normalizeCardPartner(resolved.partner, phone)
+  }
+
   // 1순위: Supabase partners 테이블
   const fromTable = await fetchPartnerByPhoneFromTable(phone)
-  if (fromTable) return fromTable
+  if (fromTable) return normalizeCardPartner(fromTable, phone)
 
   // Fallback: Storage JSON → Vercel 배포 JSON
   try {
@@ -71,14 +140,15 @@ async function fetchPartnerByPhone(phone) {
         if (!resp.ok) continue
         const data = await resp.json()
         const digits = phone.replace(/\D/g, '')
+        const normalized = normalizePartnerSlug(phone)
         const found = (data.partners || []).find(p =>
-          p.phone?.replace(/\D/g, '') === digits || p.slug === digits
+          p.phone?.replace(/\D/g, '') === digits || normalizePartnerSlug(p.slug) === normalized
         )
-        if (found) return found
+        if (found) return normalizeCardPartner(found, phone)
       } catch { continue }
     }
-    return null
-  } catch { return null }
+    return createFallbackPartner(phone)
+  } catch { return createFallbackPartner(phone) }
 }
 
 function QRCode({ url, size = 100 }) {
@@ -97,24 +167,24 @@ function QRCode({ url, size = 100 }) {
 function drawFrame(ctx, W, H) {
   // 크림 배경
   const bg = ctx.createLinearGradient(0, 0, W, H)
-  bg.addColorStop(0,   '#FFFDF7')
-  bg.addColorStop(0.6, '#FBF5E6')
-  bg.addColorStop(1,   '#F5EDD2')
+  bg.addColorStop(0,   CREAM)
+  bg.addColorStop(0.6, CREAM2)
+  bg.addColorStop(1,   CREAM3)
   ctx.fillStyle = bg
   ctx.fillRect(0, 0, W, H)
 
-  // 외곽 골드 테두리
-  ctx.strokeStyle = '#B8953A'
+  // 외곽 구조선은 진하게 잡아 연한 배경에서도 명함 형태가 또렷하게 보이게 한다.
+  ctx.strokeStyle = NAVY
   ctx.lineWidth = 8
   ctx.strokeRect(4, 4, W - 8, H - 8)
 
-  // 골드 띠 (상/하)
+  // 상/하 띠
   const goldBand = ctx.createLinearGradient(0, 0, W, 0)
-  goldBand.addColorStop(0,    '#0D1B3E')
-  goldBand.addColorStop(0.25, '#B8953A')
-  goldBand.addColorStop(0.5,  '#D4AF5A')
-  goldBand.addColorStop(0.75, '#B8953A')
-  goldBand.addColorStop(1,    '#0D1B3E')
+  goldBand.addColorStop(0,    NAVY)
+  goldBand.addColorStop(0.25, GREEN)
+  goldBand.addColorStop(0.5,  GOLD2)
+  goldBand.addColorStop(0.75, GREEN)
+  goldBand.addColorStop(1,    NAVY)
   ctx.fillStyle = goldBand
   ctx.fillRect(0, 0, W, 26)
   ctx.fillRect(0, H - 26, W, 26)
@@ -124,9 +194,9 @@ function drawFrame(ctx, W, H) {
 
 function drawSidebar(ctx, H) {
   const sg = ctx.createLinearGradient(0, 0, 0, H)
-  sg.addColorStop(0,   '#0D1B3E')
-  sg.addColorStop(0.5, '#1a3a6a')
-  sg.addColorStop(1,   '#0D1B3E')
+  sg.addColorStop(0,   NAVY)
+  sg.addColorStop(0.58, GREEN)
+  sg.addColorStop(1,   NAVY)
   ctx.fillStyle = sg
   ctx.fillRect(0, 26, 32, H - 52)
 }
@@ -172,58 +242,58 @@ async function drawFront(partner, cardUrl) {
   const TX = 74   // 텍스트 기준 X
 
   // 브랜드명
-  ctx.fillStyle = '#B8953A'
+  ctx.fillStyle = NAVY
   ctx.font = 'bold 26px Arial, sans-serif'
   ctx.fillText('PHLOROTANNIN PARTNERS', TX, 80)
 
   // 이름
   const nameLen = (partner.name || '').length
   const namePx = nameLen <= 3 ? 148 : nameLen <= 4 ? 118 : 92
-  ctx.fillStyle = '#0D1B3E'
+  ctx.fillStyle = NAVY
   ctx.font = `900 ${namePx}px Arial, sans-serif`
   ctx.fillText(partner.name || '', TX, 80 + namePx + 8)
 
   // 이름 아래 골드 선
   const lineY = 80 + namePx + 34
   const lg = ctx.createLinearGradient(TX, 0, TX + 180, 0)
-  lg.addColorStop(0, '#B8953A'); lg.addColorStop(1, '#D4AF5A')
+  lg.addColorStop(0, GOLD); lg.addColorStop(1, GOLD2)
   ctx.strokeStyle = lg; ctx.lineWidth = 5
   ctx.beginPath(); ctx.moveTo(TX, lineY); ctx.lineTo(TX + 180, lineY); ctx.stroke()
 
   // 직함
-  ctx.fillStyle = '#B8953A'; ctx.font = 'bold 38px Arial, sans-serif'
-  ctx.fillText('회복솔루션 컨설턴트', TX, lineY + 58)
+  ctx.fillStyle = NAVY; ctx.font = 'bold 38px Arial, sans-serif'
+  ctx.fillText('플로로탄닌 건강정보 파트너', TX, lineY + 58)
 
   // 소개
-  ctx.fillStyle = '#4a5568'; ctx.font = '30px Arial, sans-serif'
-  ctx.fillText('신뢰를 전하는 회복 솔루션', TX, lineY + 110)
+  ctx.fillStyle = '#5f7471'; ctx.font = '30px Arial, sans-serif'
+  ctx.fillText('성분·연구자료를 쉽게 연결합니다', TX, lineY + 110)
 
   // 전화번호
-  ctx.fillStyle = '#0D1B3E'; ctx.font = 'bold 36px Arial, sans-serif'
+  ctx.fillStyle = NAVY; ctx.font = 'bold 36px Arial, sans-serif'
   ctx.fillText('✆  ' + (partner.phoneDisplay || ''), TX, lineY + 162)
 
   // 웹주소 (하단 왼쪽)
-  ctx.fillStyle = '#B8953A'; ctx.font = 'bold 24px Arial, sans-serif'
+  ctx.fillStyle = NAVY; ctx.font = 'bold 24px Arial, sans-serif'
   ctx.fillText('phlorotannin.com', TX, H - 42)
 
   // 우측 문구
-  ctx.fillStyle = '#999'; ctx.font = '20px Arial, sans-serif'
+  ctx.fillStyle = '#7c8f8b'; ctx.font = '20px Arial, sans-serif'
   ctx.textAlign = 'right'
-  ctx.fillText('Health Recovery Partner', W - 50, H - 42)
+  ctx.fillText('Health Information Partner', W - 50, H - 42)
   ctx.textAlign = 'left'
 
   // QR
   const qrSize = 270, qrX = W - qrSize - 50, qrY = 40
   ctx.fillStyle = '#fff'
   ctx.beginPath(); roundRect(ctx, qrX - 12, qrY - 12, qrSize + 24, qrSize + 24, 16); ctx.fill()
-  ctx.strokeStyle = '#B8953A'; ctx.lineWidth = 5
+  ctx.strokeStyle = NAVY; ctx.lineWidth = 5
   ctx.beginPath(); roundRect(ctx, qrX - 12, qrY - 12, qrSize + 24, qrSize + 24, 16); ctx.stroke()
 
-  const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=${qrSize * 2}x${qrSize * 2}&data=${encodeURIComponent(cardUrl)}&color=0D1B3E&bgcolor=ffffff&margin=8`
+  const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=${qrSize * 2}x${qrSize * 2}&data=${encodeURIComponent(cardUrl)}&color=${NAVY.replace('#', '')}&bgcolor=ffffff&margin=8`
   const qrImg = await loadImage(qrUrl)
   if (qrImg) ctx.drawImage(qrImg, qrX, qrY, qrSize, qrSize)
 
-  ctx.fillStyle = '#B8953A'; ctx.font = 'bold 22px Arial, sans-serif'
+  ctx.fillStyle = NAVY; ctx.font = 'bold 22px Arial, sans-serif'
   ctx.textAlign = 'center'
   ctx.fillText('SCAN ME', qrX + qrSize / 2, qrY + qrSize + 38)
   ctx.textAlign = 'left'
@@ -247,7 +317,7 @@ async function drawBack(partner, cardUrl) {
   ;[300, 200].forEach((r, i) => {
     ctx.beginPath()
     ctx.arc(W / 2 + 160, H / 2, r, 0, Math.PI * 2)
-    ctx.strokeStyle = i === 0 ? '#B8953A18' : '#D4AF5A28'
+    ctx.strokeStyle = i === 0 ? `${GOLD}28` : `${GOLD2}30`
     ctx.lineWidth = 1.5
     ctx.stroke()
   })
@@ -256,41 +326,41 @@ async function drawBack(partner, cardUrl) {
   const TX = 74
 
   // 브랜드명
-  ctx.fillStyle = '#B8953A'; ctx.font = 'bold 22px Arial, sans-serif'
+  ctx.fillStyle = NAVY; ctx.font = 'bold 22px Arial, sans-serif'
   ctx.fillText('PHLOROTANNIN PARTNERS', TX, 80)
 
   // 메인 카피
-  ctx.fillStyle = '#0D1B3E'; ctx.font = '900 72px Arial, sans-serif'
-  ctx.fillText('신뢰를 전하는', TX, 180)
-  ctx.fillText('회복 솔루션', TX, 268)
+  ctx.fillStyle = NAVY; ctx.font = '900 72px Arial, sans-serif'
+  ctx.fillText('논문 제목으로', TX, 180)
+  ctx.fillText('확인하는 기전', TX, 268)
 
   // 골드 구분선
   const lg = ctx.createLinearGradient(TX, 0, TX + 200, 0)
-  lg.addColorStop(0, '#B8953A'); lg.addColorStop(1, '#D4AF5A')
+  lg.addColorStop(0, GOLD); lg.addColorStop(1, GOLD2)
   ctx.strokeStyle = lg; ctx.lineWidth = 5
   ctx.beginPath(); ctx.moveTo(TX, 300); ctx.lineTo(TX + 200, 300); ctx.stroke()
 
   // 설명 문구
-  ctx.fillStyle = '#4a5568'; ctx.font = '30px Arial, sans-serif'
-  ctx.fillText('필요한 정보와 연결을', TX, 350)
-  ctx.fillText('더 정돈된 방식으로 제안합니다', TX, 394)
+  ctx.fillStyle = '#5f7471'; ctx.font = '30px Arial, sans-serif'
+  ctx.fillText('플로로탄닌 자료와 쉬운 설명을', TX, 350)
+  ctx.fillText('파트너 링크로 바로 확인하세요', TX, 394)
 
   // 파트너 이름 (작게)
-  ctx.fillStyle = '#B8953A'; ctx.font = 'bold 32px Arial, sans-serif'
-  ctx.fillText((partner.name || '') + ' 컨설턴트', TX, 454)
+  ctx.fillStyle = NAVY; ctx.font = 'bold 32px Arial, sans-serif'
+  ctx.fillText((partner.name || '') + ' 파트너', TX, 454)
 
   // 전화번호
-  ctx.fillStyle = '#0D1B3E'; ctx.font = 'bold 30px Arial, sans-serif'
+  ctx.fillStyle = NAVY; ctx.font = 'bold 30px Arial, sans-serif'
   ctx.fillText('✆  ' + (partner.phoneDisplay || ''), TX, 498)
 
   // 웹주소
-  ctx.fillStyle = '#B8953A'; ctx.font = 'bold 24px Arial, sans-serif'
+  ctx.fillStyle = NAVY; ctx.font = 'bold 24px Arial, sans-serif'
   ctx.fillText('phlorotannin.com', TX, H - 42)
 
   // 우측 문구
-  ctx.fillStyle = '#999'; ctx.font = '20px Arial, sans-serif'
+  ctx.fillStyle = '#7c8f8b'; ctx.font = '20px Arial, sans-serif'
   ctx.textAlign = 'right'
-  ctx.fillText('Health Recovery Partner', W - 50, H - 42)
+  ctx.fillText('Health Information Partner', W - 50, H - 42)
   ctx.textAlign = 'left'
 
   // ── QR (오른쪽) ──
@@ -298,14 +368,14 @@ async function drawBack(partner, cardUrl) {
 
   ctx.fillStyle = '#fff'
   ctx.beginPath(); roundRect(ctx, qrX - 14, qrY - 14, qrSize + 28, qrSize + 28, 18); ctx.fill()
-  ctx.strokeStyle = '#B8953A'; ctx.lineWidth = 5
+  ctx.strokeStyle = NAVY; ctx.lineWidth = 5
   ctx.beginPath(); roundRect(ctx, qrX - 14, qrY - 14, qrSize + 28, qrSize + 28, 18); ctx.stroke()
 
-  const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=${qrSize * 2}x${qrSize * 2}&data=${encodeURIComponent(cardUrl)}&color=0D1B3E&bgcolor=ffffff&margin=8`
+  const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=${qrSize * 2}x${qrSize * 2}&data=${encodeURIComponent(cardUrl)}&color=${NAVY.replace('#', '')}&bgcolor=ffffff&margin=8`
   const qrImg = await loadImage(qrUrl)
   if (qrImg) ctx.drawImage(qrImg, qrX, qrY, qrSize, qrSize)
 
-  ctx.fillStyle = '#B8953A'; ctx.font = 'bold 22px Arial, sans-serif'
+  ctx.fillStyle = NAVY; ctx.font = 'bold 22px Arial, sans-serif'
   ctx.textAlign = 'center'
   ctx.fillText('SCAN ME', qrX + qrSize / 2, qrY + qrSize + 40)
   ctx.textAlign = 'left'
@@ -327,12 +397,16 @@ export default function BusinessCardPage() {
   const [downloading, setDownloading] = useState(false)
   const [flipped,     setFlipped]     = useState(false)
   const [saved,       setSaved]       = useState(false)
+  const [copied,      setCopied]      = useState(false)
   const [showContact, setShowContact] = useState(false)
   const [showInstallBanner, setShowInstallBanner] = useState(false)  // 상단 고정 안내 배너
   const [installBannerType, setInstallBannerType] = useState('android') // 'android' | 'ios'
   const deferredPromptRef = useRef(null)
 
-  const cardUrl = `${MAIN_SITE}/p/${phone}`
+  const requestedSlug = phone || ''
+  const normalizedRequestedSlug = normalizePartnerSlug(requestedSlug) || requestedSlug
+  const activePartnerSlug = partner?.slug || normalizedRequestedSlug
+  const cardUrl = `${MAIN_SITE}/p/${encodeURIComponent(activePartnerSlug || requestedSlug)}`
 
   // ── Android beforeinstallprompt 캐치 + ?pwa=1 로 넘어온 경우 상단 배너 표시 ──
   useEffect(() => {
@@ -371,10 +445,17 @@ export default function BusinessCardPage() {
 
         // 세션에 저장 (항상 최신 데이터로 갱신)
         savePartnerToSession({
-          id: p.slug, name: p.name,
+          id: p.slug,
+          slug: p.slug,
+          partnerSlug: p.slug,
+          name: p.name,
+          displayName: p.displayName || p.name,
           phone: rawPhone,
           phoneDisplay: p.phoneDisplay || fallbackDisplay,
+          sms: p.sms || rawPhone,
+          kakaoUrl: p.kakaoUrl || '',
           prefix: '',
+          isPartnerContext: true,
         })
 
         // ── [2026-05-24] 헌법 제12조 SPA 라우팅 표준 ──
@@ -421,6 +502,36 @@ export default function BusinessCardPage() {
   }
 
   // 앞면 + 뒷면을 세로로 이어붙여 PNG 1장으로 다운로드
+  const shareCardPage = async () => {
+    const shareText = `${partner?.name || '파트너'} 전자명함\n${cardUrl}`
+
+    try {
+      if (navigator.share) {
+        await navigator.share({
+          title: `${partner?.name || '파트너'} 전자명함`,
+          text: '플로로탄닌 건강정보 파트너 전자명함입니다.',
+          url: cardUrl,
+        })
+      } else if (navigator.clipboard) {
+        await navigator.clipboard.writeText(cardUrl)
+      } else {
+        const textarea = document.createElement('textarea')
+        textarea.value = shareText
+        textarea.style.position = 'fixed'
+        textarea.style.opacity = '0'
+        document.body.appendChild(textarea)
+        textarea.select()
+        document.execCommand('copy')
+        document.body.removeChild(textarea)
+      }
+
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2200)
+    } catch {
+      // 사용자가 공유창을 닫은 경우는 조용히 무시
+    }
+  }
+
   const downloadCard = async () => {
     setDownloading(true)
     try {
@@ -445,7 +556,7 @@ export default function BusinessCardPage() {
       mc.fillRect(0, 0, merged.width, merged.height)
 
       // 앞면 라벨
-      mc.fillStyle = '#B8953A'
+      mc.fillStyle = GOLD
       mc.font = 'bold 28px Arial, sans-serif'
       mc.textAlign = 'center'
       mc.fillText('[ 앞면 ]', W / 2, 36)
@@ -496,7 +607,7 @@ export default function BusinessCardPage() {
         <p className="mb-6" style={{ color: '#666' }}>유효하지 않은 파트너 링크입니다.</p>
         <button onClick={() => navigate('/')}
           className="px-6 py-3 rounded-xl font-bold text-white"
-          style={{ background: `linear-gradient(135deg, ${NAVY}, #1a3a6a)` }}>
+          style={{ background: `linear-gradient(135deg, ${NAVY}, ${GREEN})` }}>
           메인으로 이동
         </button>
       </div>
@@ -504,18 +615,50 @@ export default function BusinessCardPage() {
   )
 
   const tel = `tel:${partner.phone}`
-  const sms = `sms:${partner.phone}?body=${encodeURIComponent('[PHLOROTANNIN PARTNERS] 안녕하세요! 명함을 보고 연락드립니다.')}`
+  const sms = `sms:${partner.sms || partner.phone}?body=${encodeURIComponent('[PHLOROTANNIN PARTNERS] 안녕하세요! 명함을 보고 연락드립니다.')}`
+  const kakaoLink = partner.kakaoUrl || `https://story.kakao.com/share?url=${encodeURIComponent(cardUrl)}`
+  const routePartnerSlug = partner?.slug || activePartnerSlug || phone
+  const goPartnerPath = (path) => navigate(partnerPathFor(path, routePartnerSlug))
+  const easyPath = partnerPathFor('/easy', routePartnerSlug)
+  const partnerMetrics = [
+    { icon: Phone, value: '1,500+', label: '누적 상담수' },
+    { icon: Star, value: '98%+', label: '상담 체감 만족도' },
+    { icon: BookOpen, value: '논문 기반', label: '성분·기전 자료' },
+  ]
+  const productHooks = [
+    '갈조류 유래 해양 폴리페놀을 쉬운 말로 먼저 이해',
+    '항산화·염증 신호·대사 연구 키워드를 부담 없이 확인',
+    '파트너 링크로 설명 페이지를 공유해도 연결 유지',
+  ]
+  const mechanismPapers = [
+    {
+      title: '갈조류 플로로탄닌은 염증 신호를 어디서 조절할까?',
+      source: '갈조류 플로로탄닌의 염증 관련 분자 표적 연구',
+      keyword: 'NF-kB · MAPK · Nrf2-HO-1',
+    },
+    {
+      title: '플로로탄닌은 왜 해양 폴리페놀로 불릴까?',
+      source: '해조류 유래 플로로탄닌의 생리활성 역할과 작용기전 리뷰',
+      keyword: '항산화 · 항염 · 대사 관련 기전',
+    },
+    {
+      title: '근육의 포도당 이동 신호까지 연구된 플로로탄닌 성분',
+      source: 'DPHC와 골격근 포도당 이동 관련 in vitro/in vivo 연구',
+      keyword: 'Ca2+ · GLUT4 · AMPK',
+    },
+  ]
+  const cardBackground = `linear-gradient(135deg, #ffffff 0%, ${MINT} 58%, ${CREAM2} 100%)`
 
   const nameLen = (partner.name || '').length
   // 화면 너비에 따라 반응형으로 조정: vw 기반으로 절대 잘리지 않게
-  const screenNameSize = nameLen <= 2 ? '2.8rem' : nameLen <= 3 ? '2.4rem' : nameLen <= 4 ? '2.0rem' : '1.6rem'
-  const screenLetterSp = nameLen <= 3 ? '0.15em' : nameLen <= 4 ? '0.10em' : '0.06em'
+  const screenNameSize = nameLen <= 2 ? '2.45rem' : nameLen <= 3 ? '2.15rem' : nameLen <= 4 ? '1.85rem' : '1.45rem'
+  const screenLetterSp = nameLen <= 3 ? '0.08em' : nameLen <= 4 ? '0.05em' : '0.02em'
 
   return (
     <>
       <SEOHead
         title={`${partner.name} | Phlorotannin Partners`}
-        description="회복솔루션 컨설턴트 — 신뢰를 전하는 회복 솔루션"
+        description="플로로탄닌 건강정보 파트너 전자명함 — 자료, QR, 연락처, 상담 연결"
         canonical={cardUrl}
         noindex={true}
       />
@@ -526,25 +669,26 @@ export default function BusinessCardPage() {
         data-page-type="partner-business-card"
         data-partner-slug={partner?.slug || partner?.phone || ''}
         data-copyright="© 2026 phlorotannin.com"
-        style={{ background: `linear-gradient(160deg, ${CREAM} 0%, ${CREAM2} 50%, ${CREAM3} 100%)` }}>
+        style={{ background: '#fff' }}>
+        <span data-partner-card-restore-marker="active" hidden>PARTNER CARD RESTORE ACTIVE</span>
 
         {/* 상단 헤더 */}
         <div className="py-4 px-5 text-center"
-          style={{ background: `linear-gradient(90deg, ${NAVY} 0%, #1a3a6a 100%)`, borderBottom: `3px solid ${GOLD}` }}>
+          style={{ background: '#fff', borderBottom: `1px solid ${LINE}`, backdropFilter: 'blur(10px)' }}>
           <div className="flex items-center justify-center gap-3">
-            <div style={{ width: '30px', height: '1px', background: `linear-gradient(90deg, transparent, ${GOLD})` }} />
-            <span style={{ color: GOLD, fontSize: '12px', fontWeight: '800', letterSpacing: '4px' }}>
+            <div style={{ width: '30px', height: '1px', background: `linear-gradient(90deg, transparent, ${NAVY})` }} />
+            <span style={{ color: NAVY, fontSize: '12px', fontWeight: '900', letterSpacing: '4px' }}>
               PHLOROTANNIN PARTNERS
             </span>
-            <div style={{ width: '30px', height: '1px', background: `linear-gradient(90deg, ${GOLD}, transparent)` }} />
+            <div style={{ width: '30px', height: '1px', background: `linear-gradient(90deg, ${NAVY}, transparent)` }} />
           </div>
         </div>
 
         <div className="mx-auto px-4 py-5 sm:py-6" style={{ maxWidth: '430px' }}>
 
           <p className="text-center mb-4"
-            style={{ color: GOLD, fontSize: '11px', letterSpacing: '4px', textTransform: 'uppercase', fontWeight: '600' }}>
-            ✦ &nbsp;Digital Business Card&nbsp; ✦
+            style={{ color: NAVY, fontSize: '11px', letterSpacing: '4px', textTransform: 'uppercase', fontWeight: '900' }}>
+            DIGITAL BUSINESS CARD
           </p>
 
           {/* ════ 명함 카드 (앞/뒤 플립) ════ */}
@@ -552,104 +696,146 @@ export default function BusinessCardPage() {
             className="cursor-pointer select-none"
             onClick={() => setFlipped(!flipped)}
             style={{
-              width: 'min(100%, 420px)', margin: '0 auto 24px',
-              borderRadius: '20px', overflow: 'hidden',
-              boxShadow: `0 8px 40px ${GOLD}40, 0 0 0 2px ${GOLD}`,
-              transition: 'transform 0.15s ease',
+              width: 'min(100%, 430px)',
+              margin: '0 auto 16px',
+              borderRadius: '8px',
+              overflow: 'hidden',
+              border: `2px solid ${NAVY}`,
+              boxShadow: `0 18px 34px ${MEDIUM_SHADOW}, 0 1px 0 rgba(255,255,255,0.95) inset`,
+              transform: 'none',
+              transformOrigin: 'center',
+              transition: 'transform 0.18s ease, box-shadow 0.18s ease',
+              background: '#fff',
             }}
           >
             {!flipped ? (
               /* ── 앞면 화면 미리보기 ── */
-              <div style={{ background: `linear-gradient(135deg, ${CREAM} 0%, ${CREAM2} 60%, ${CREAM3} 100%)`, position: 'relative', overflow: 'hidden' }}>
-                <div style={{ height: '7px', background: `linear-gradient(90deg, ${NAVY}, ${GOLD}, ${GOLD2}, ${GOLD}, ${NAVY})` }} />
-                <div style={{ position: 'absolute', left: 0, top: '7px', bottom: '7px', width: '8px', background: `linear-gradient(180deg, ${NAVY}, #1a3a6a, ${NAVY})` }} />
-                <div style={{ position: 'absolute', right: '-40px', bottom: '-40px', width: '180px', height: '180px', borderRadius: '50%', border: `1.5px solid ${GOLD}20` }} />
+              <div style={{ background: `linear-gradient(120deg, #ffffff 0%, #ffffff 74%, ${MINT} 100%)`, position: 'relative', overflow: 'hidden', aspectRatio: '1.586 / 1' }}>
+                <div style={{ position: 'absolute', inset: '9px', border: `1px solid ${NAVY}78` }} />
+                <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: '18px', background: `linear-gradient(180deg, ${NAVY}, ${GREEN})` }} />
+                <div style={{ position: 'absolute', right: 0, top: 0, bottom: 0, width: '6px', background: NAVY }} />
+                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '5px', background: `linear-gradient(90deg, ${NAVY}, ${GREEN}, ${GOLD})` }} />
+                <div style={{ position: 'absolute', right: '116px', top: '20px', bottom: '48px', width: '1px', background: `${NAVY}42` }} />
 
-                <div style={{ padding: '24px 22px 18px 28px', position: 'relative' }}>
+                <div style={{ padding: '21px 20px 16px 31px', position: 'relative', height: '100%' }}>
                   <div className="flex justify-between items-start gap-3">
                     <div style={{ flex: 1, minWidth: 0 }}>
-                      <p style={{ fontSize: '10px', color: GOLD, fontWeight: '800', letterSpacing: '2.5px', textTransform: 'uppercase', marginBottom: '10px' }}>
+                      <p style={{ fontSize: '9px', color: NAVY, fontWeight: '900', letterSpacing: '2.8px', textTransform: 'uppercase', marginBottom: '9px' }}>
                         PHLOROTANNIN PARTNERS
                       </p>
-                      <h1 style={{ fontSize: screenNameSize, fontWeight: '900', color: NAVY, letterSpacing: screenLetterSp, wordBreak: 'keep-all', overflowWrap: 'break-word', whiteSpace: 'normal', marginBottom: '8px', lineHeight: 1.15 }}>
+                      <h1 style={{ fontSize: screenNameSize, fontWeight: '900', color: NAVY, letterSpacing: screenLetterSp, wordBreak: 'keep-all', overflowWrap: 'break-word', whiteSpace: 'normal', marginBottom: '6px', lineHeight: 1.05 }}>
                         {partner.name}
                       </h1>
-                      <p style={{ fontSize: '14px', color: GOLD, fontWeight: '800', letterSpacing: '2px', marginBottom: '10px' }}>
-                        회복솔루션 컨설턴트
+                      <p style={{ fontSize: '12px', color: NAVY, fontWeight: '900', letterSpacing: '1.2px', marginBottom: '8px' }}>
+                        플로로탄닌 건강정보 파트너
                       </p>
-                      <div style={{ width: '48px', height: '3px', marginBottom: '12px', background: `linear-gradient(90deg, ${GOLD}, ${GOLD2})` }} />
-                      <p style={{ fontSize: '13px', color: '#4a5568', lineHeight: '1.9' }}>신뢰를 전하는 회복 솔루션</p>
-                      <p style={{ fontSize: '15px', color: NAVY, fontWeight: '800', marginTop: '4px' }}>✆&nbsp; {partner.phoneDisplay}</p>
+                      <div style={{ width: '58px', height: '2px', marginBottom: '10px', background: `linear-gradient(90deg, ${GOLD}, ${GOLD2})` }} />
+                      <p style={{ fontSize: '12px', color: '#2f4844', lineHeight: '1.65', fontWeight: 700 }}>성분·연구자료를<br />쉽게 연결합니다.</p>
+                      <p style={{ fontSize: '16px', color: NAVY, fontWeight: '900', marginTop: '8px' }}>✆&nbsp; {partner.phoneDisplay}</p>
                     </div>
                     <div className="flex flex-col items-center gap-2 flex-shrink-0" style={{ maxWidth: '85px' }}>
-                      <div style={{ border: `2px solid ${GOLD}`, borderRadius: '10px', padding: '4px', background: '#fff', boxShadow: `0 4px 16px ${GOLD}35` }}>
+                      <div style={{ border: `2px solid ${NAVY}`, borderRadius: '6px', padding: '4px', background: '#fff', boxShadow: `0 5px 16px ${NAVY}24` }}>
                         <QRCode url={cardUrl} size={75} />
                       </div>
-                      <p style={{ fontSize: '8px', color: GOLD, letterSpacing: '1.5px', fontWeight: '700', textTransform: 'uppercase' }}>SCAN ME</p>
+                      <p style={{ fontSize: '8px', color: NAVY, letterSpacing: '1.5px', fontWeight: '800', textTransform: 'uppercase' }}>SCAN ME</p>
                     </div>
                   </div>
-                  <div className="flex items-center justify-between mt-4 pt-4" style={{ borderTop: `1.5px solid ${GOLD}30` }}>
-                    <div className="flex items-center gap-2">
-                      <Leaf className="w-3.5 h-3.5" style={{ color: GOLD }} />
-                      <span style={{ fontSize: '12px', color: GOLD, letterSpacing: '1.5px', fontWeight: '700' }}>phlorotannin.com</span>
+                  <div className="absolute left-8 right-5 bottom-4">
+                    <div className="flex items-center justify-between" style={{ borderTop: `1px solid ${NAVY}45`, paddingTop: '10px' }}>
+                      <span style={{ fontSize: '10px', color: NAVY, letterSpacing: '1.4px', fontWeight: '900' }}>phlorotannin.com</span>
+                      <span style={{ fontSize: '10px', color: NAVY, fontWeight: 700 }}>탭하면 뒷면</span>
                     </div>
-                    <span style={{ fontSize: '11px', color: '#bbb' }}>탭하면 뒤집기 →</span>
                   </div>
                 </div>
-                <div style={{ height: '7px', background: `linear-gradient(90deg, ${NAVY}, ${GOLD}, ${GOLD2}, ${GOLD}, ${NAVY})` }} />
               </div>
 
             ) : (
 
-              /* ── 뒷면 화면 미리보기 — 크림 톤 ── */
-              <div style={{ background: `linear-gradient(135deg, ${CREAM} 0%, ${CREAM2} 60%, ${CREAM3} 100%)`, position: 'relative', overflow: 'hidden', minHeight: '310px' }}>
-                <div style={{ height: '7px', background: `linear-gradient(90deg, ${NAVY}, ${GOLD}, ${GOLD2}, ${GOLD}, ${NAVY})` }} />
-                <div style={{ position: 'absolute', left: 0, top: '7px', bottom: '7px', width: '8px', background: `linear-gradient(180deg, ${NAVY}, #1a3a6a, ${NAVY})` }} />
+              /* ── 뒷면 화면 미리보기 ── */
+              <div style={{ background: cardBackground, position: 'relative', overflow: 'hidden', aspectRatio: '1.586 / 1' }}>
+                <div style={{ position: 'absolute', inset: '9px', border: `1px solid ${NAVY}78` }} />
+                <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: '18px', background: `linear-gradient(180deg, ${NAVY}, ${GREEN})` }} />
+                <div style={{ position: 'absolute', right: 0, top: 0, bottom: 0, width: '6px', background: NAVY }} />
+                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '5px', background: `linear-gradient(90deg, ${NAVY}, ${GREEN}, ${GOLD})` }} />
 
-                {/* 우측 원형 장식 */}
-                <div style={{ position: 'absolute', right: '-40px', top: '50%', transform: 'translateY(-50%)', width: '220px', height: '220px', borderRadius: '50%', border: `1.5px solid ${GOLD}20` }} />
-                <div style={{ position: 'absolute', right: '-10px', top: '50%', transform: 'translateY(-50%)', width: '140px', height: '140px', borderRadius: '50%', border: `1px solid ${GOLD}15` }} />
-
-                <div style={{ padding: '26px 22px 20px 28px', position: 'relative' }}>
-                  <p style={{ fontSize: '10px', color: GOLD, fontWeight: '800', letterSpacing: '2.5px', textTransform: 'uppercase', marginBottom: '16px' }}>
+                <div style={{ padding: '21px 20px 14px 31px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                  <p style={{ fontSize: '9px', color: NAVY, fontWeight: '900', letterSpacing: '2.8px', textTransform: 'uppercase', marginBottom: '9px' }}>
                     PHLOROTANNIN PARTNERS
                   </p>
 
-                  <div className="flex justify-between items-start gap-3">
+                  <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) 92px', gap: '12px', alignItems: 'start', minHeight: 0 }}>
                     {/* 왼쪽 텍스트 */}
                     <div style={{ flex: 1, minWidth: 0 }}>
-                      <h2 style={{ fontSize: '1.8rem', fontWeight: '900', color: NAVY, lineHeight: 1.4, marginBottom: '12px' }}>
-                        신뢰를 전하는<br />회복 솔루션
+                      <h2 style={{ fontSize: '1.06rem', fontWeight: '900', color: NAVY, lineHeight: 1.22, marginBottom: '8px', letterSpacing: 0 }}>
+                        논문 제목으로 확인하는<br />플로로탄닌 기전
                       </h2>
-                      <div style={{ width: '48px', height: '3px', marginBottom: '12px', background: `linear-gradient(90deg, ${GOLD}, ${GOLD2})` }} />
-                      <p style={{ fontSize: '13px', color: '#4a5568', lineHeight: '1.9', marginBottom: '14px' }}>
-                        필요한 정보와 연결을<br />더 정돈된 방식으로 제안합니다
+                      <div style={{ width: '54px', height: '2px', marginBottom: '8px', background: `linear-gradient(90deg, ${GOLD}, ${GOLD2})` }} />
+                      <p style={{ fontSize: '11px', color: '#2f4844', lineHeight: '1.55', marginBottom: '8px', fontWeight: 700 }}>
+                        QR을 찍으면 쉬운 설명과<br />파트너 상담 링크가 열립니다.
                       </p>
-                      <p style={{ fontSize: '14px', color: GOLD, fontWeight: '800' }}>{partner.name} 컨설턴트</p>
-                      <p style={{ fontSize: '14px', color: NAVY, fontWeight: '700', marginTop: '4px' }}>✆&nbsp; {partner.phoneDisplay}</p>
+                      <p style={{ fontSize: '13px', color: NAVY, fontWeight: '900', lineHeight: 1.2 }}>{partner.name} 파트너</p>
+                      <p style={{ fontSize: '13px', color: NAVY, fontWeight: '800', marginTop: '3px', lineHeight: 1.2 }}>✆&nbsp; {partner.phoneDisplay}</p>
                     </div>
 
                     {/* 오른쪽 QR */}
                     <div className="flex flex-col items-center gap-2 flex-shrink-0">
-                      <div style={{ border: `2px solid ${GOLD}`, borderRadius: '12px', padding: '5px', background: '#fff', boxShadow: `0 6px 24px ${GOLD}35` }}>
-                        <QRCode url={cardUrl} size={88} />
+                      <div style={{ border: `2px solid ${NAVY}`, borderRadius: '6px', padding: '4px', background: '#fff', boxShadow: `0 6px 18px ${NAVY}24` }}>
+                        <QRCode url={cardUrl} size={72} />
                       </div>
-                      <p style={{ fontSize: '9px', color: GOLD, letterSpacing: '2px', fontWeight: '700', textTransform: 'uppercase' }}>SCAN ME</p>
+                      <p style={{ fontSize: '8px', color: NAVY, letterSpacing: '1.6px', fontWeight: '800', textTransform: 'uppercase' }}>SCAN ME</p>
                     </div>
                   </div>
 
-                  <div className="flex items-center justify-between mt-4 pt-4" style={{ borderTop: `1.5px solid ${GOLD}30` }}>
-                    <div className="flex items-center gap-2">
-                      <Leaf className="w-3.5 h-3.5" style={{ color: GOLD }} />
-                      <span style={{ fontSize: '12px', color: GOLD, letterSpacing: '1.5px', fontWeight: '700' }}>phlorotannin.com</span>
+                  <div style={{ marginTop: 'auto', paddingTop: '10px' }}>
+                    <div className="flex items-center justify-between" style={{ borderTop: `1px solid ${NAVY}45`, paddingTop: '9px' }}>
+                      <span style={{ fontSize: '10px', color: NAVY, letterSpacing: '1.4px', fontWeight: '900' }}>phlorotannin.com</span>
+                      <span style={{ fontSize: '10px', color: '#5f7471', fontWeight: 700 }}>앞면으로</span>
                     </div>
-                    <span style={{ fontSize: '11px', color: '#bbb' }}>← 앞면으로 돌아가기</span>
                   </div>
                 </div>
-
-                <div style={{ height: '7px', background: `linear-gradient(90deg, ${NAVY}, ${GOLD}, ${GOLD2}, ${GOLD}, ${NAVY})` }} />
               </div>
             )}
+          </div>
+
+          <button
+            onClick={shareCardPage}
+            className="w-full flex items-center justify-center gap-3 rounded-2xl py-4 mb-3 active:scale-95 transition-transform"
+            style={{
+              background: '#fff',
+              color: NAVY,
+              boxShadow: `0 12px 24px ${SOFT_SHADOW}`,
+              border: `1.5px solid ${LINE}`,
+            }}
+          >
+            <Share className="w-5 h-5" style={{ color: NAVY }} />
+            <span style={{ fontSize: '16px', fontWeight: '900' }}>
+              {copied ? '명함 링크가 복사됐습니다' : '이 명함 웹페이지 공유하기'}
+            </span>
+          </button>
+
+          <div className="rounded-2xl p-4 mb-3"
+            style={{ background: '#fff', color: NAVY, boxShadow: `0 14px 28px ${SOFT_SHADOW}`, border: `1.5px solid ${LINE}` }}>
+            <p style={{ fontSize: '12px', color: NAVY, fontWeight: 900, letterSpacing: '0.18em', marginBottom: 6 }}>
+              상담 전 바로 확인
+            </p>
+            <p style={{ fontSize: '18px', lineHeight: 1.35, fontWeight: 900, marginBottom: 12 }}>
+              제품이 궁금하면 자료보다 먼저 전화로 핵심만 물어보세요.
+            </p>
+            <div className="grid grid-cols-2 gap-2 mb-3">
+              <div style={{ border: `1px solid ${LINE}`, background: MINT, padding: '10px 12px', borderRadius: 8 }}>
+                <p style={{ fontSize: '20px', fontWeight: 900, color: NAVY, lineHeight: 1 }}>1,500+</p>
+                <p style={{ fontSize: '12px', color: '#5f7471', marginTop: 4 }}>누적 상담수</p>
+              </div>
+              <div style={{ border: `1px solid ${LINE}`, background: MINT, padding: '10px 12px', borderRadius: 8 }}>
+                <p style={{ fontSize: '20px', fontWeight: 900, color: NAVY, lineHeight: 1 }}>98%+</p>
+                <p style={{ fontSize: '12px', color: '#5f7471', marginTop: 4 }}>상담 체감 만족도</p>
+              </div>
+            </div>
+            <a href={tel}
+              className="w-full flex items-center justify-center gap-2 rounded-xl py-3.5 font-black active:scale-95 transition-transform"
+              style={{ background: `linear-gradient(135deg, ${NAVY}, ${GREEN})`, color: '#fff', fontSize: '16px', boxShadow: `0 10px 20px ${NAVY}34` }}>
+              <Phone className="w-5 h-5" /> 지금 전화 상담하기
+            </a>
           </div>
 
           {/* ════ 연락처 저장 버튼 ════ */}
@@ -657,15 +843,15 @@ export default function BusinessCardPage() {
             onClick={() => setShowContact(true)}
             className="w-full flex items-center justify-center gap-3 rounded-2xl py-4 mb-4 active:scale-95 transition-transform"
             style={{
-              background: `linear-gradient(135deg, ${NAVY}, #1a3a6a)`,
+              background: `linear-gradient(135deg, ${NAVY}, ${GREEN})`,
               color: '#fff',
-              boxShadow: `0 4px 20px ${NAVY}60`,
-              border: `2px solid ${GOLD}60`,
+              boxShadow: `0 12px 24px ${SOFT_SHADOW}`,
+              border: `1.5px solid ${LINE}`,
             }}
           >
-            <UserPlus className="w-5 h-5" style={{ color: GOLD }} />
-            <span style={{ fontSize: '16px', fontWeight: '800' }}>연락처 저장하기</span>
-            <span style={{ fontSize: '12px', color: GOLD }}>· 주소록 등록</span>
+            <UserPlus className="w-5 h-5" style={{ color: '#fff' }} />
+            <span style={{ fontSize: '16px', fontWeight: '800' }}>연락처로 저장하기</span>
+            <span style={{ fontSize: '12px', color: '#dfece8' }}>· 주소록 등록</span>
           </button>
 
           {/* ════ 연락처 저장 안내 팝업 ════ */}
@@ -677,41 +863,41 @@ export default function BusinessCardPage() {
             >
               <div
                 className="w-full max-w-md rounded-t-3xl p-6 pb-10"
-                style={{ background: '#FFFDF7', border: `3px solid ${GOLD}` }}
+                style={{ background: '#FFFCFA', border: `3px solid ${NAVY}` }}
                 onClick={e => e.stopPropagation()}
               >
                 {/* 핸들 */}
-                <div className="w-10 h-1.5 rounded-full mx-auto mb-5" style={{ background: `${GOLD}60` }} />
+                <div className="w-10 h-1.5 rounded-full mx-auto mb-5" style={{ background: `${NAVY}35` }} />
 
                 {/* 제목 */}
                 <div className="flex items-center gap-3 mb-6">
                   <div style={{
                     width: '48px', height: '48px', borderRadius: '50%',
-                    background: `linear-gradient(135deg, ${NAVY}, #1a3a6a)`,
+                    background: `linear-gradient(135deg, ${NAVY}, ${GREEN})`,
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     flexShrink: 0,
                   }}>
-                    <UserPlus style={{ width: '24px', height: '24px', color: GOLD }} />
+                    <UserPlus style={{ width: '24px', height: '24px', color: '#fff' }} />
                   </div>
                   <div>
-                    <p style={{ fontSize: '18px', fontWeight: '900', color: NAVY }}>연락처 저장 방법</p>
-                    <p style={{ fontSize: '13px', color: '#888' }}>아래 순서대로 따라하세요</p>
+                    <p style={{ fontSize: '18px', fontWeight: '900', color: NAVY }}>명함 연락처 저장</p>
+                    <p style={{ fontSize: '13px', color: '#888' }}>주소록에 파트너 정보를 추가합니다</p>
                   </div>
                 </div>
 
                 {/* 단계 */}
                 {[
-                  { num: '1', text: '아래 버튼을 눌러 파일을 받으세요', sub: null },
-                  { num: '2', text: '받은 파일을 누르세요', sub: '화면 상단 알림 또는 다운로드 폴더' },
-                  { num: '3', text: '"연락처에 추가" 를 누르세요', sub: '그러면 바로 저장 완료!' },
+                  { num: '1', text: '아래 버튼을 눌러 연락처 파일을 받으세요', sub: null },
+                  { num: '2', text: '받은 파일을 여세요', sub: '화면 상단 알림 또는 다운로드 폴더' },
+                  { num: '3', text: '"연락처에 추가"를 누르세요', sub: '파트너 전화번호와 명함 링크가 함께 저장됩니다' },
                 ].map(step => (
                   <div key={step.num} className="flex items-start gap-4 mb-5">
                     <div style={{
                       width: '36px', height: '36px', borderRadius: '50%', flexShrink: 0,
-                      background: `linear-gradient(135deg, ${GOLD}, ${GOLD2})`,
+                      background: `linear-gradient(135deg, ${NAVY}, ${GREEN})`,
                       display: 'flex', alignItems: 'center', justifyContent: 'center',
                     }}>
-                      <span style={{ fontSize: '18px', fontWeight: '900', color: NAVY }}>{step.num}</span>
+                      <span style={{ fontSize: '18px', fontWeight: '900', color: '#fff' }}>{step.num}</span>
                     </div>
                     <div style={{ paddingTop: '4px' }}>
                       <p style={{ fontSize: '17px', fontWeight: '800', color: NAVY, lineHeight: 1.4 }}>{step.text}</p>
@@ -730,7 +916,7 @@ export default function BusinessCardPage() {
                       `N:${partner.name};;;`,
                       `TEL;TYPE=CELL:${partner.phoneDisplay}`,
                       'ORG:PHLOROTANNIN PARTNERS',
-                      'TITLE:회복솔루션 컨설턴트',
+                      'TITLE:플로로탄닌 건강정보 파트너',
                       `URL:${cardUrl}`,
                       'END:VCARD',
                     ].join('\r\n')
@@ -747,13 +933,13 @@ export default function BusinessCardPage() {
                   }}
                   className="w-full flex items-center justify-center gap-3 py-4 rounded-2xl font-bold active:scale-95 transition-transform mb-3"
                   style={{
-                    background: `linear-gradient(135deg, ${GOLD}, ${GOLD2})`,
-                    color: NAVY, fontSize: '17px',
-                    boxShadow: `0 4px 16px ${GOLD}60`,
+                    background: `linear-gradient(135deg, ${NAVY}, ${GREEN})`,
+                    color: '#fff', fontSize: '17px',
+                    boxShadow: `0 4px 16px ${NAVY}35`,
                   }}
                 >
                   <Download className="w-5 h-5" />
-                  파일 받기 (누르세요)
+                  연락처 파일 받기
                 </button>
 
                 <button
@@ -767,12 +953,12 @@ export default function BusinessCardPage() {
             </div>
           )}
 
-          {/* ════ 액션 버튼 3개 ════ */}
-          <div className="grid grid-cols-3 gap-3 mb-6">
+          {/* ════ 액션 버튼 ════ */}
+          <div className="grid grid-cols-4 gap-3 mb-6">
             <a href={tel}
               className="flex flex-col items-center gap-2 rounded-2xl py-5 active:scale-95 transition-transform"
-              style={{ background: '#fff', border: `2px solid ${GOLD}40`, boxShadow: `0 4px 16px ${GOLD}20` }}>
-              <div style={{ width: '52px', height: '52px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: `linear-gradient(135deg, ${NAVY}, #1a3a6a)`, boxShadow: `0 4px 14px ${NAVY}50` }}>
+              style={{ background: '#fff', border: `1.5px solid ${LINE}`, boxShadow: `0 8px 18px ${SOFT_SHADOW}` }}>
+              <div style={{ width: '52px', height: '52px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: `linear-gradient(135deg, ${NAVY}, ${GREEN})`, boxShadow: `0 4px 14px ${NAVY}30` }}>
                 <Phone className="w-6 h-6 text-white" />
               </div>
               <span style={{ fontSize: '14px', fontWeight: '800', color: NAVY }}>전화하기</span>
@@ -780,18 +966,29 @@ export default function BusinessCardPage() {
 
             <a href={sms}
               className="flex flex-col items-center gap-2 rounded-2xl py-5 active:scale-95 transition-transform"
-              style={{ background: '#fff', border: `2px solid ${GOLD}40`, boxShadow: `0 4px 16px ${GOLD}20` }}>
-              <div style={{ width: '52px', height: '52px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: `linear-gradient(135deg, ${GOLD}, ${GOLD2})`, boxShadow: `0 4px 14px ${GOLD}50` }}>
-                <MessageSquare className="w-6 h-6" style={{ color: NAVY }} />
+              style={{ background: '#fff', border: `1.5px solid ${LINE}`, boxShadow: `0 8px 18px ${SOFT_SHADOW}` }}>
+              <div style={{ width: '52px', height: '52px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: `linear-gradient(135deg, ${GREEN}, ${NAVY})`, boxShadow: `0 4px 14px ${NAVY}26` }}>
+                <MessageSquare className="w-6 h-6 text-white" />
               </div>
               <span style={{ fontSize: '14px', fontWeight: '800', color: NAVY }}>문자하기</span>
+            </a>
+
+            <a href={kakaoLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center gap-2 rounded-2xl py-5 active:scale-95 transition-transform"
+              style={{ background: '#fff', border: `1.5px solid ${LINE}`, boxShadow: `0 8px 18px ${SOFT_SHADOW}` }}>
+              <div style={{ width: '52px', height: '52px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'linear-gradient(135deg, #fee500, #f4c430)', boxShadow: '0 4px 14px rgba(16,47,43,0.18)' }}>
+                <Share className="w-6 h-6" style={{ color: NAVY }} />
+              </div>
+              <span style={{ fontSize: '14px', fontWeight: '800', color: NAVY }}>카카오</span>
             </a>
 
             <button
               onClick={downloadCard}
               disabled={downloading}
               className="flex flex-col items-center gap-2 rounded-2xl py-5 active:scale-95 transition-transform disabled:opacity-50"
-              style={{ background: '#fff', border: `2px solid ${GOLD}40`, boxShadow: `0 4px 16px ${GOLD}20` }}>
+              style={{ background: '#fff', border: `1.5px solid ${LINE}`, boxShadow: `0 8px 18px ${SOFT_SHADOW}` }}>
               <div style={{ width: '52px', height: '52px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: saved ? 'linear-gradient(135deg, #16a34a, #4ade80)' : 'linear-gradient(135deg, #475569, #64748b)', boxShadow: '0 4px 14px #33415550' }}>
                 <Download className="w-6 h-6 text-white" />
               </div>
@@ -803,19 +1000,18 @@ export default function BusinessCardPage() {
 
           {/* ════ 신뢰 배지 ════ */}
           <div className="rounded-2xl p-5 mb-5"
-            style={{ background: '#fff', border: `2px solid ${GOLD}35`, boxShadow: `0 4px 20px ${GOLD}15` }}>
+            style={{ background: '#fff', border: `1.5px solid ${LINE}`, boxShadow: `0 10px 22px ${SOFT_SHADOW}` }}>
+            <p style={{ fontSize: '12px', color: NAVY, fontWeight: 900, letterSpacing: '0.18em', textAlign: 'center', marginBottom: 14 }}>
+              파트너 신뢰 지표
+            </p>
             <div className="grid grid-cols-3 gap-3 text-center">
-              {[
-                { icon: Shield, label: '논문 기반', sub: '검증된 Q&A' },
-                { icon: Heart,  label: '광고 없음', sub: '순수 건강정보' },
-                { icon: Star,   label: '1,311',   sub: '건강 Q&A' },
-              ].map(({ icon: Icon, label, sub }) => (
+              {partnerMetrics.map(({ icon: Icon, value, label }) => (
                 <div key={label} className="flex flex-col items-center gap-2">
-                  <div style={{ width: '44px', height: '44px', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: `linear-gradient(135deg, ${CREAM2}, ${CREAM3})`, border: `1.5px solid ${GOLD}40` }}>
-                    <Icon style={{ width: '20px', height: '20px', color: GOLD }} />
+                  <div style={{ width: '44px', height: '44px', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: MINT, border: `1.5px solid ${LINE}` }}>
+                    <Icon style={{ width: '20px', height: '20px', color: NAVY }} />
                   </div>
-                  <p style={{ fontSize: '14px', fontWeight: '800', color: NAVY }}>{label}</p>
-                  <p style={{ fontSize: '12px', color: '#888' }}>{sub}</p>
+                  <p style={{ fontSize: '18px', fontWeight: '900', color: NAVY }}>{value}</p>
+                  <p style={{ fontSize: '12px', color: '#6b7280', lineHeight: 1.35 }}>{label}</p>
                 </div>
               ))}
             </div>
@@ -823,51 +1019,103 @@ export default function BusinessCardPage() {
 
           {/* 구분선 */}
           <div className="flex items-center gap-3 mb-4">
-            <div className="flex-1 h-px" style={{ background: `${GOLD}50` }} />
-            <span style={{ fontSize: '12px', color: GOLD, letterSpacing: '2px', textTransform: 'uppercase', fontWeight: '700' }}>건강 정보 바로가기</span>
-            <div className="flex-1 h-px" style={{ background: `${GOLD}50` }} />
+            <div className="flex-1 h-px" style={{ background: LINE }} />
+            <span style={{ fontSize: '12px', color: NAVY, letterSpacing: '2px', textTransform: 'uppercase', fontWeight: '800' }}>건강 정보 바로가기</span>
+            <div className="flex-1 h-px" style={{ background: LINE }} />
           </div>
 
           {/* ════ 메뉴 링크 ════ */}
           <div className="rounded-2xl overflow-hidden mb-5"
-            style={{ background: '#fff', border: `2px solid ${GOLD}35`, boxShadow: `0 4px 20px ${GOLD}15` }}>
+            style={{ background: '#fff', border: `1.5px solid ${LINE}`, boxShadow: `0 10px 22px ${SOFT_SHADOW}` }}>
             {[
               { icon: Globe,    label: '쉽게 배우는 플로로탄닌', sub: '누구나 이해하는 건강 정보', path: '/easy' },
               { icon: Leaf,     label: '플로로탄닌 소개',        sub: '해양 폴리페놀 기초 개념',  path: '/phlorotannin' },
-              { icon: BookOpen, label: '건강 Q&A 1,311개',       sub: '질환별 전문 답변 모음',    path: '/qa' },
+              { icon: BookOpen, label: '건강 Q&A 1,311개',       sub: '주제별 건강 답변 모음',    path: '/qa' },
             ].map((item, i, arr) => (
               <button key={item.path}
-                onClick={() => navigate(item.path)}
+                onClick={() => goPartnerPath(item.path)}
                 className="w-full flex items-center justify-between px-5 py-4 text-left active:opacity-70 transition-opacity"
-                style={{ borderBottom: i < arr.length - 1 ? `1.5px solid ${GOLD}20` : 'none' }}>
+                style={{ borderBottom: i < arr.length - 1 ? `1.5px solid ${LINE}` : 'none' }}>
                 <div className="flex items-center gap-4">
-                  <div style={{ width: '46px', height: '46px', borderRadius: '12px', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', background: `linear-gradient(135deg, ${NAVY}, #1a3a6a)` }}>
-                    <item.icon style={{ width: '22px', height: '22px', color: GOLD }} />
+                  <div style={{ width: '46px', height: '46px', borderRadius: '12px', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', background: `linear-gradient(135deg, ${NAVY}, ${GREEN})` }}>
+                    <item.icon style={{ width: '22px', height: '22px', color: '#fff' }} />
                   </div>
                   <div>
                     <p style={{ fontSize: '16px', fontWeight: '800', color: NAVY, marginBottom: '2px' }}>{item.label}</p>
                     <p style={{ fontSize: '13px', color: '#888' }}>{item.sub}</p>
                   </div>
                 </div>
-                <ChevronRight style={{ width: '18px', height: '18px', color: `${GOLD}70`, flexShrink: 0 }} />
+                <ChevronRight style={{ width: '18px', height: '18px', color: `${NAVY}70`, flexShrink: 0 }} />
               </button>
             ))}
           </div>
 
+          <div className="rounded-2xl p-5 mb-5"
+            style={{ background: '#fff', border: `1.5px solid ${LINE}`, boxShadow: `0 10px 24px ${SOFT_SHADOW}` }}>
+            <div className="flex items-start gap-3 mb-4">
+              <div style={{ width: '44px', height: '44px', borderRadius: '14px', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', background: `linear-gradient(135deg, ${NAVY}, ${GREEN})` }}>
+                <Leaf className="w-5 h-5" style={{ color: '#fff' }} />
+              </div>
+              <div>
+                <p style={{ fontSize: '18px', fontWeight: 900, color: NAVY, lineHeight: 1.35, margin: 0 }}>
+                  플로로탄닌, 이런 연구 제목이 있습니다
+                </p>
+                <p style={{ fontSize: '13px', color: '#64748b', lineHeight: 1.65, margin: '4px 0 0' }}>
+                  효능을 단정하지 않고, 공개 논문 제목과 핵심 키워드만 먼저 확인할 수 있게 정리했습니다.
+                </p>
+              </div>
+            </div>
+            <div className="space-y-2 mb-4">
+              {productHooks.map((text) => (
+                <div key={text} className="flex items-start gap-2">
+                  <span style={{ width: 18, height: 18, borderRadius: '50%', background: `${NAVY}12`, color: NAVY, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, fontWeight: 900, flexShrink: 0, marginTop: 2 }}>✓</span>
+                  <span style={{ fontSize: '14px', color: '#334155', lineHeight: 1.55 }}>{text}</span>
+                </div>
+              ))}
+            </div>
+            <div className="space-y-2 mb-4">
+              {mechanismPapers.map((paper) => (
+                <div
+                  key={paper.title}
+                  className="block rounded-xl p-3"
+                  style={{ background: MINT, border: `1px solid ${LINE}` }}
+                >
+                  <p style={{ fontSize: '13px', color: NAVY, fontWeight: 900, lineHeight: 1.45, marginBottom: 5 }}>
+                    {paper.title}
+                  </p>
+                  <p style={{ fontSize: '12px', color: '#5f7471', fontWeight: 700, lineHeight: 1.45, margin: 0 }}>
+                    {paper.source}
+                  </p>
+                  <p style={{ fontSize: '11px', color: GREEN, fontWeight: 900, lineHeight: 1.45, margin: '6px 0 0' }}>
+                    {paper.keyword}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <button
+              onClick={() => navigate(easyPath)}
+              className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl font-bold active:scale-95 transition-transform"
+              style={{ background: `linear-gradient(135deg, ${NAVY}, ${GREEN})`, color: '#fff', fontSize: '15px', boxShadow: `0 10px 20px ${NAVY}32` }}
+            >
+              <Leaf className="w-4 h-4" />
+              플로로탄닌 쉽게 알아보기
+            </button>
+          </div>
+
           {/* ════ 파트너 연락 CTA ════ */}
           <div className="rounded-2xl p-6 mb-5 text-center relative overflow-hidden"
-            style={{ background: `linear-gradient(135deg, ${NAVY} 0%, #1a3a6a 100%)`, boxShadow: `0 8px 30px ${NAVY}60` }}>
-            <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: `linear-gradient(90deg, ${NAVY}, ${GOLD}, ${GOLD2}, ${GOLD}, ${NAVY})` }} />
-            <div style={{ position: 'absolute', right: '-20px', top: '-20px', width: '100px', height: '100px', borderRadius: '50%', border: `1px solid ${GOLD}20` }} />
-            <p style={{ fontSize: '19px', fontWeight: '900', color: '#fff', marginBottom: '6px' }}>궁금한 점이 있으신가요?</p>
-            <p style={{ fontSize: '15px', color: GOLD2, marginBottom: '18px' }}>{partner.name} 컨설턴트가 직접 안내해 드립니다</p>
+            style={{ background: '#fff', boxShadow: `0 16px 32px ${SOFT_SHADOW}`, border: `1.5px solid ${LINE}` }}>
+            <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '4px', background: `linear-gradient(90deg, ${GOLD}, ${GOLD2})` }} />
+            <div style={{ position: 'absolute', right: '-20px', top: '-20px', width: '100px', height: '100px', borderRadius: '50%', border: `1px solid ${LINE}` }} />
+            <p style={{ fontSize: '19px', fontWeight: '900', color: NAVY, marginBottom: '6px' }}>제품 선택 전에 핵심만 묻고 싶으신가요?</p>
+            <p style={{ fontSize: '15px', color: '#5f7471', marginBottom: '18px' }}>{partner.name} 파트너에게 성분·연구 제목·자료를 한 번에 문의하세요</p>
             <div className="flex gap-3">
               <a href={tel} className="flex-1 flex items-center justify-center gap-2 py-4 rounded-xl font-bold active:scale-95 transition-transform"
                 style={{ background: `linear-gradient(135deg, ${GOLD}, ${GOLD2})`, color: NAVY, fontSize: '15px' }}>
                 <Phone className="w-5 h-5" /> 전화 문의
               </a>
               <a href={sms} className="flex-1 flex items-center justify-center gap-2 py-4 rounded-xl font-bold active:scale-95 transition-transform"
-                style={{ background: 'rgba(255,255,255,0.1)', border: `2px solid ${GOLD}60`, color: '#fff', fontSize: '15px' }}>
+                style={{ background: '#fff', border: `2px solid ${LINE}`, color: NAVY, fontSize: '15px' }}>
                 <MessageSquare className="w-5 h-5" /> 문자 문의
               </a>
             </div>
@@ -878,10 +1126,10 @@ export default function BusinessCardPage() {
             onClick={handleAddToHome}
             className="w-full flex items-center justify-center gap-3 rounded-2xl py-4 mb-4 active:scale-95 transition-transform"
             style={{
-              background: `linear-gradient(135deg, ${GOLD}, ${GOLD2})`,
+              background: '#fff',
               color: NAVY,
-              boxShadow: `0 4px 20px ${GOLD}60`,
-              border: 'none',
+              boxShadow: `0 10px 22px ${SOFT_SHADOW}`,
+              border: `1.5px solid ${LINE}`,
               fontSize: '16px',
               fontWeight: '800',
             }}
@@ -892,7 +1140,7 @@ export default function BusinessCardPage() {
 
           <p className="text-center pt-2"
             style={{ fontSize: '12px', color: '#aaa', lineHeight: '1.9' }}>
-            본 페이지는 건강 정보 제공 목적이며<br />특정 제품 판매와 무관합니다.
+            본 페이지는 건강정보 안내 목적이며<br />질병의 예방·치료 효과를 보장하지 않습니다.
           </p>
 
           {/* ════ 플랫폼 자산 보호 고지 ════ */}
@@ -901,12 +1149,12 @@ export default function BusinessCardPage() {
               marginTop: 18,
               marginBottom: 12,
               padding: '12px 14px',
-              border: `1px solid ${GOLD}30`,
+              border: `1px solid ${LINE}`,
               borderRadius: 10,
-              background: 'rgba(184,149,58,0.06)',
+              background: MINT,
             }}
           >
-            <p style={{ fontSize: '11px', fontWeight: 800, color: GOLD2, marginBottom: 6, letterSpacing: '0.5px' }}>
+            <p style={{ fontSize: '11px', fontWeight: 800, color: NAVY, marginBottom: 6, letterSpacing: '0.5px' }}>
               © 2026 phlorotannin.com · 무단복제 금지
             </p>
             <p style={{ fontSize: '11px', color: '#bfc8d4', lineHeight: 1.75, margin: 0 }}>
@@ -917,7 +1165,7 @@ export default function BusinessCardPage() {
             </p>
             <a
               href="https://phlorotannin.com/copyright"
-              style={{ display: 'inline-block', marginTop: 6, fontSize: '11px', color: GOLD2, textDecoration: 'underline' }}
+              style={{ display: 'inline-block', marginTop: 6, fontSize: '11px', color: NAVY, textDecoration: 'underline' }}
             >
               저작권 및 무단복제 금지 안내 보기 →
             </a>
@@ -941,7 +1189,7 @@ export default function BusinessCardPage() {
         <div
           style={{
             position: 'fixed', top: 0, left: 0, right: 0, zIndex: 9999,
-            background: `linear-gradient(135deg, ${NAVY}, #1a3a6a)`,
+            background: `linear-gradient(135deg, ${NAVY}, ${GREEN})`,
             borderBottom: `3px solid ${GOLD}`,
             padding: '14px 16px 14px 16px',
             boxShadow: '0 4px 20px rgba(0,0,0,0.4)',

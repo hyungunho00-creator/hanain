@@ -7,10 +7,12 @@ import RevealContact from '../components/common/RevealContact'
 import LastReviewed from '../components/common/LastReviewed'
 import { withRef } from '../lib/partnerRef'
 import { getRenderableQAAnswer, shouldEmitQASchema, answerPlainTextForMeta, stripHtml } from '../lib/qaAnswer'
+import { QA_TOTAL } from '../data/siteStats'
 
 const LAST_REVIEWED = '2026-05-21'
 
 const ITEMS_PER_PAGE = 20
+const QA_JSON_URL = `/qa.json?v=${QA_TOTAL}`
 
 // [2026-05-21 fix] 카테고리는 qa.json의 categories에서 동적으로 로드한다.
 // — 과거에는 12개를 하드코딩(skin_hair 통합)했으나 qa.json은 13개(skin/hair 분리)였음
@@ -82,6 +84,10 @@ function getAnswerSearchText(qa) {
 
 function isPublicQa(qa) {
   return shouldEmitQASchema(qa)
+}
+
+function isLatestQa(qa) {
+  return String(qa?.id || '').startsWith('round3-')
 }
 
 function highlightText(text, query) {
@@ -182,6 +188,11 @@ function QACard({ qa, itemKey, isOpen, onToggle, searchQuery, categories }) {
                 >
                   {catName}
                 </Link>
+              )}
+              {isLatestQa(qa) && (
+                <span className="text-[11px] font-bold uppercase tracking-[0.14em] px-2.5 py-0.5 rounded-full border border-emerald-200 bg-emerald-50 text-emerald-700">
+                  NEW
+                </span>
               )}
               <span className="text-[11px] font-medium uppercase tracking-[0.16em] text-gray-400">
                 {diffLabel}
@@ -300,7 +311,7 @@ export default function QAPage() {
 
   // qa.json 로드 (최초 1회)
   useEffect(() => {
-    fetch('/qa.json')
+    fetch(QA_JSON_URL, { cache: 'no-store' })
       .then(r => r.json())
       .then(data => {
         const qs = data.questions || []
@@ -357,7 +368,11 @@ export default function QAPage() {
     }
 
     // 인기순 정렬
-    filtered.sort((a, b) => (b.views || b.view_count || 0) - (a.views || a.view_count || 0))
+    filtered.sort((a, b) => {
+      const latestDelta = Number(isLatestQa(b)) - Number(isLatestQa(a))
+      if (latestDelta !== 0) return latestDelta
+      return (b.views || b.view_count || 0) - (a.views || a.view_count || 0)
+    })
 
     const total = filtered.length
     const start = (page - 1) * ITEMS_PER_PAGE
@@ -421,16 +436,16 @@ export default function QAPage() {
 
   // FAQPage JSON-LD는 /qa 페이지 전용 (메인페이지 / 에는 FAQPage 없음 → 중복 방지)
   const STATIC_FAQ = [
-    { q: '플로로탄닌이란 무엇인가요?', a: '플로로탄닌(Phlorotannin)은 감태·미역·다시마 등 갈조류에서 추출되는 해양 폴리페놀 성분입니다. 육상 식물 폴리페놀과 구조가 달라 별도 분류되며 강력한 항산화·항염·혈당 조절 효과가 연구되고 있습니다.' },
-    { q: '발뒤꿈치 갈라짐에 플로로탄닌이 도움이 되나요?', a: '발뒤꿈치 갈라짐은 피부 수분 부족, 각질화 과정 이상이 주 원인입니다. 플로로탄닌의 항산화·항염 작용이 피부 장벽 강화와 수분 보유에 도움을 줄 수 있다는 연구가 있습니다.' },
-    { q: '아토피 피부염에 플로로탄닌이 효과적인가요?', a: '플로로탄닌은 NF-κB 경로를 억제해 염증 사이토카인 분비를 줄이고, 피부 장벽 단백질 발현을 높여 아토피 증상 완화에 기여할 수 있습니다. 동물 모델에서 가려움·홍반 감소가 관찰되었습니다.' },
-    { q: '탈모 예방에 플로로탄닌이 도움이 되나요?', a: '플로로탄닌은 5α-환원효소를 억제해 DHT(탈모 유발 호르몬) 생성을 차단하고, 모낭 세포 사멸을 억제하는 효과가 in vitro 연구에서 확인되었습니다.' },
-    { q: '플로로탄닌이 혈당 조절에 도움이 되나요?', a: '임상 연구에서 플로로탄닌 섭취 후 공복 혈당이 약 27% 감소한 결과가 보고되었습니다. α-글루코시다아제 억제를 통해 식후 혈당 급상승을 완화합니다.' },
-    { q: '플로로탄닌은 고혈압에도 효과가 있나요?', a: 'ACE(안지오텐신 전환효소) 억제 작용으로 혈압 조절에 도움이 될 수 있으며, IC50 2.7μg/mL로 처방 약물 수준의 억제력이 연구에서 보고되었습니다.' },
-    { q: '플로로탄닌이 치매·인지 기능 저하에 도움이 되나요?', a: '아세틸콜린에스테라제(AChE) 억제 및 BDNF 증가, 산화 스트레스 감소를 통해 인지 기능 보호에 기여할 수 있습니다. 동물 실험에서 기억력 테스트 40% 개선이 관찰되었습니다.' },
-    { q: '플로로탄닌은 어떤 만성 염증 질환에 도움이 되나요?', a: 'NF-κB 신호 경로를 억제해 TNF-α, IL-6 등 염증 사이토카인 분비를 줄입니다. 관절염, 장 염증, 피부 염증 등 다양한 만성 염증 질환 연구에서 긍정적 결과가 보고되었습니다.' },
-    { q: '플로로탄닌의 항암 효과는 어느 정도인가요?', a: '대장암·유방암 세포 실험에서 암세포 아포토시스(사멸) 유도와 혈관 신생 억제 효과가 확인되었습니다. 단, 임상 적용 전 추가 연구가 필요합니다.' },
-    { q: '플로로탄닌을 어떻게 섭취하나요?', a: '식품의약품안전처에서 인정한 감태 추출물 형태의 건강기능식품으로 섭취할 수 있습니다. 제품별 섭취 방법과 용량은 라벨을 확인하세요.' },
+    { q: '플로로탄닌이란 무엇인가요?', a: '플로로탄닌(Phlorotannin)은 감태·미역·다시마 같은 갈조류에 들어 있는 해양 폴리페놀 계열 성분입니다. 항산화, 염증 반응, 대사 건강, 수면 등 여러 연구 주제에서 다뤄지지만 질병 치료를 대신하는 표현으로 해석하면 안 됩니다.' },
+    { q: '감태추출물과 플로로탄닌은 같은 말인가요?', a: '감태추출물은 원료명에 가깝고, 플로로탄닌은 감태 등 갈조류에서 확인되는 성분군입니다. 제품을 볼 때는 기능성 문구, 원료 표준화 기준, 섭취량, 주의사항을 함께 확인하는 것이 안전합니다.' },
+    { q: '플로로탄닌 정보를 볼 때 가장 먼저 확인할 것은 무엇인가요?', a: '후기보다 먼저 원료명, 함량, 시험 대상, 연구가 세포·동물·인체 중 어디까지 진행됐는지 확인해야 합니다. 질병명과 함께 과장된 치료·완치 표현을 쓰는 자료는 조심해서 봐야 합니다.' },
+    { q: '혈당이나 대사 건강 글에서 플로로탄닌을 어떻게 읽어야 하나요?', a: '혈당 관리는 식사, 운동, 수면, 체중, 약물 복용이 기본입니다. 플로로탄닌 관련 연구는 원료 이해를 위한 참고 정보로 보고, 검사 수치나 처방을 바꾸는 판단은 의료진과 상의해야 합니다.' },
+    { q: '피부·모발 건강 글에서 감태 성분을 어떻게 봐야 하나요?', a: '피부와 모발 문제는 보습, 염증, 영양 상태, 호르몬, 약물, 질환 신호가 함께 얽힐 수 있습니다. 감태 유래 성분 연구는 보조적인 원료 정보로 읽고, 증상이 지속되면 진료가 우선입니다.' },
+    { q: '수면 건강과 감태추출물 글은 어떤 기준으로 봐야 하나요?', a: '수면 글은 잠드는 시간, 중간 각성, 다음날 졸림, 카페인, 음주, 수면무호흡 가능성을 먼저 나눠 봐야 합니다. 원료 정보는 생활기록과 안전성 확인 뒤에 판단하는 것이 좋습니다.' },
+    { q: '항암·면역 관련 글에서 건강기능식품을 봐도 되나요?', a: '항암치료 중에는 건강기능식품이 약물, 수술, 검사와 충돌할 수 있어 담당 의료진 확인이 우선입니다. 플로로탄닌이나 감태추출물도 치료 효과가 아니라 원료 연구 정보로 구분해 읽어야 합니다.' },
+    { q: '논문 제목만 보고 제품 효과를 판단해도 되나요?', a: '논문 제목은 출발점일 뿐입니다. 연구 대상, 용량, 기간, 대조군, 이해상충, 인체 적용 가능성을 함께 봐야 하며 세포·동물 연구를 사람에게 바로 적용하는 해석은 피해야 합니다.' },
+    { q: 'Q&A 답변은 어떤 기준으로 신뢰도를 관리하나요?', a: '질문별로 증상·검사·생활요인·주의사항을 분리하고, 치료 단정 표현과 과장된 원료 표현을 줄이는 방식으로 관리합니다. 검색엔진 제출도 출처와 문장 품질을 기준으로 선별합니다.' },
+    { q: '플로로탄닌을 어떻게 섭취하나요?', a: '섭취 여부는 제품 라벨의 원료명, 일일 섭취량, 주의사항을 기준으로 확인하세요. 임신·수유, 질환 치료 중, 항응고제 등 약물 복용 중이라면 제품 섭취 전 의료진이나 약사에게 상담하는 것이 좋습니다.' },
   ]
 
   // ──────────────────────────────────────────────────────────

@@ -180,6 +180,7 @@ const CAT_NAMES = {
  */
 function buildImageAlt(post) {
   if (!post) return '플로로탄닌 건강정보 일러스트'
+  if (post.image_alt) return post.image_alt
   const rawTitle = (post.title || '').toString().trim()
   const core = rawTitle.split('|')[0].trim() || rawTitle
   const catName = CAT_NAMES[post.category] || (post.category || '건강').toString()
