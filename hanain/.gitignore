@@ -43,6 +43,7 @@ core
 
 # ===== 개발 중 캡처 산출물 (작업물, 배포 불필요) =====
 /scratch/
+/tmp/
 *.screenshot.png
 shot-*.png
 v[0-9]*-*.png

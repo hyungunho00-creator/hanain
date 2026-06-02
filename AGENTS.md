@@ -13,9 +13,10 @@ Required first checks:
 
 Important content rule:
 
-- Some current blog assets are local static posts, not Supabase rows.
-- Do not delete, ignore, or replace local post sources in `hanain/src/data/localTrendBlogPosts.js`, `hanain/src/data/localFunctionalIngredientPosts.js`, `hanain/src/data/localCategoryBlogPosts.js`, or `hanain/src/data/localSeoExpansionPosts.js`.
-- Do not judge whether a post exists by querying Supabase alone.
+- Supabase `public.posts` is the canonical source for current blog content.
+- Local post sources in `hanain/src/data/localTrendBlogPosts.js`, `hanain/src/data/localFunctionalIngredientPosts.js`, `hanain/src/data/localCategoryBlogPosts.js`, and `hanain/src/data/localSeoExpansionPosts.js` are fallback/seed assets only.
+- Do not overwrite existing Supabase rows from local files. If local and Supabase metadata differ, keep Supabase unchanged and report the conflict.
+- Do not add large operating content to Git as a permanent source of truth.
 
 Deployment rule:
 

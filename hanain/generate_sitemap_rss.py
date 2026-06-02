@@ -139,19 +139,28 @@ def fetch_json(url, headers=None, timeout=20):
 
 # ── DB에서 블로그 포스트 조회 ────────────────────────────────
 print("📡 블로그 포스트 조회 중...")
-r = requests.get(
-    f"{SUPABASE_URL}/rest/v1/posts"
-    f"?status=eq.published"
-    f"&select=slug,title,excerpt,category,tags,og_image,created_at,updated_at"
-    f"&order=created_at.desc"
-    f"&limit=500",
-    headers=HEADERS
-)
-if r.ok:
-    posts = r.json()
-else:
-    print(f"  ⚠️  블로그 포스트 조회 실패: HTTP {r.status_code} {r.text[:160]}")
-    posts = []
+posts = []
+page_size = 1000
+offset = 0
+while True:
+    r = requests.get(
+        f"{SUPABASE_URL}/rest/v1/posts"
+        f"?status=eq.published"
+        f"&select=slug,title,excerpt,category,tags,og_image,created_at,updated_at"
+        f"&order=created_at.desc"
+        f"&limit={page_size}"
+        f"&offset={offset}",
+        headers=HEADERS
+    )
+    if not r.ok:
+        print(f"  ⚠️  블로그 포스트 조회 실패: HTTP {r.status_code} {r.text[:160]}")
+        posts = []
+        break
+    batch = r.json()
+    posts.extend(batch)
+    if len(batch) < page_size:
+        break
+    offset += page_size
 print(f"  ✅ {len(posts)}개 포스트 조회 완료")
 
 CAT_NAMES = {

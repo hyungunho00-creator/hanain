@@ -8,7 +8,7 @@
     <link>https://phlorotannin.com</link>
     <description>감태 추출 해양 폴리페놀 플로로탄닌(Phlorotannin) 전문 건강 정보. 당뇨·항암·뇌건강·심혈관·염증 최신 블로그 &amp; Q&amp;A 아카이브.</description>
     <language>ko</language>
-    <lastBuildDate>Mon, 01 Jun 2026 23:09:20 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 02 Jun 2026 00:02:56 +0000</lastBuildDate>
     <atom:link href="https://phlorotannin.com/rss.xml" rel="self" type="application/rss+xml"/>
     <copyright>© 2026 플로로탄닌 파트너스</copyright>
     <category>건강/의학</category>
@@ -209,221 +209,11 @@
     <dc:subject>영통동, 내과, 병원정보, 진료준비, 검사기록</dc:subject>
   </item>
   <item>
-    <title>동탄 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
-    <link>https://phlorotannin.com/blog/dongtan-internal-medicine-checklist</link>
-    <description><![CDATA[동탄 내과 검색 전 방문 목적, 검사결과, 복용약, 식사·혈당 기록을 실제 진료 흐름에 맞춰 정리했습니다.]]></description>
-    <category>병원정보</category>
-    <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/dongtan-internal-medicine-checklist</guid>
-    <enclosure url="https://phlorotannin.com/og/local-hospital/dongtan-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>동탄, 내과, 병원정보, 진료준비, 검사기록</dc:subject>
-  </item>
-  <item>
-    <title>마두동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
-    <link>https://phlorotannin.com/blog/madu-dong-internal-medicine-checklist</link>
-    <description><![CDATA[마두동 내과 검색 전 방문 목적, 검사결과, 복용약, 식사·혈당 기록을 실제 진료 흐름에 맞춰 정리했습니다.]]></description>
-    <category>병원정보</category>
-    <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/madu-dong-internal-medicine-checklist</guid>
-    <enclosure url="https://phlorotannin.com/og/local-hospital/madu-dong-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>마두동, 내과, 병원정보, 진료준비, 검사기록</dc:subject>
-  </item>
-  <item>
-    <title>백석동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
-    <link>https://phlorotannin.com/blog/baekseok-dong-internal-medicine-checklist</link>
-    <description><![CDATA[백석동 내과 검색 전 방문 목적, 검사결과, 복용약, 식사·혈당 기록을 실제 진료 흐름에 맞춰 정리했습니다.]]></description>
-    <category>병원정보</category>
-    <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/baekseok-dong-internal-medicine-checklist</guid>
-    <enclosure url="https://phlorotannin.com/og/local-hospital/baekseok-dong-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>백석동, 내과, 병원정보, 진료준비, 검사기록</dc:subject>
-  </item>
-  <item>
-    <title>송도 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
-    <link>https://phlorotannin.com/blog/songdo-internal-medicine-checklist</link>
-    <description><![CDATA[송도 내과 검색 전 방문 목적, 검사결과, 복용약, 식사·혈당 기록을 실제 진료 흐름에 맞춰 정리했습니다.]]></description>
-    <category>병원정보</category>
-    <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/songdo-internal-medicine-checklist</guid>
-    <enclosure url="https://phlorotannin.com/og/local-hospital/songdo-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>송도, 내과, 병원정보, 진료준비, 검사기록</dc:subject>
-  </item>
-  <item>
-    <title>부평 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
-    <link>https://phlorotannin.com/blog/bupyeong-internal-medicine-checklist</link>
-    <description><![CDATA[부평 내과 검색 전 방문 목적, 검사결과, 복용약, 식사·혈당 기록을 실제 진료 흐름에 맞춰 정리했습니다.]]></description>
-    <category>병원정보</category>
-    <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/bupyeong-internal-medicine-checklist</guid>
-    <enclosure url="https://phlorotannin.com/og/local-hospital/bupyeong-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>부평, 내과, 병원정보, 진료준비, 검사기록</dc:subject>
-  </item>
-  <item>
-    <title>해운대 우동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
-    <link>https://phlorotannin.com/blog/haeundae-udong-internal-medicine-checklist</link>
-    <description><![CDATA[해운대 우동 내과 검색 전 방문 목적, 검사결과, 복용약, 식사·혈당 기록을 실제 진료 흐름에 맞춰 정리했습니다.]]></description>
-    <category>병원정보</category>
-    <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/haeundae-udong-internal-medicine-checklist</guid>
-    <enclosure url="https://phlorotannin.com/og/local-hospital/haeundae-udong-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>해운대 우동, 내과, 병원정보, 진료준비, 검사기록</dc:subject>
-  </item>
-  <item>
-    <title>부산 서면 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
-    <link>https://phlorotannin.com/blog/busan-seomyeon-internal-medicine-checklist</link>
-    <description><![CDATA[부산 서면 내과 검색 전 방문 목적, 검사결과, 복용약, 식사·혈당 기록을 실제 진료 흐름에 맞춰 정리했습니다.]]></description>
-    <category>병원정보</category>
-    <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/busan-seomyeon-internal-medicine-checklist</guid>
-    <enclosure url="https://phlorotannin.com/og/local-hospital/busan-seomyeon-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>부산 서면, 내과, 병원정보, 진료준비, 검사기록</dc:subject>
-  </item>
-  <item>
-    <title>대구 범어동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
-    <link>https://phlorotannin.com/blog/daegu-beomeo-dong-internal-medicine-checklist</link>
-    <description><![CDATA[대구 범어동 내과 검색 전 방문 목적, 검사결과, 복용약, 식사·혈당 기록을 실제 진료 흐름에 맞춰 정리했습니다.]]></description>
-    <category>병원정보</category>
-    <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/daegu-beomeo-dong-internal-medicine-checklist</guid>
-    <enclosure url="https://phlorotannin.com/og/local-hospital/daegu-beomeo-dong-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>대구 범어동, 내과, 병원정보, 진료준비, 검사기록</dc:subject>
-  </item>
-  <item>
-    <title>대전 둔산동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
-    <link>https://phlorotannin.com/blog/daejeon-dunsan-dong-internal-medicine-checklist</link>
-    <description><![CDATA[대전 둔산동 내과 검색 전 방문 목적, 검사결과, 복용약, 식사·혈당 기록을 실제 진료 흐름에 맞춰 정리했습니다.]]></description>
-    <category>병원정보</category>
-    <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/daejeon-dunsan-dong-internal-medicine-checklist</guid>
-    <enclosure url="https://phlorotannin.com/og/local-hospital/daejeon-dunsan-dong-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>대전 둔산동, 내과, 병원정보, 진료준비, 검사기록</dc:subject>
-  </item>
-  <item>
-    <title>광주 상무지구 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
-    <link>https://phlorotannin.com/blog/gwangju-sangmu-district-internal-medicine-checklist</link>
-    <description><![CDATA[광주 상무지구 내과 검색 전 방문 목적, 검사결과, 복용약, 식사·혈당 기록을 실제 진료 흐름에 맞춰 정리했습니다.]]></description>
-    <category>병원정보</category>
-    <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/gwangju-sangmu-district-internal-medicine-checklist</guid>
-    <enclosure url="https://phlorotannin.com/og/local-hospital/gwangju-sangmu-district-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>광주 상무지구, 내과, 병원정보, 진료준비, 검사기록</dc:subject>
-  </item>
-  <item>
-    <title>세종 나성동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
-    <link>https://phlorotannin.com/blog/sejong-naseong-dong-internal-medicine-checklist</link>
-    <description><![CDATA[세종 나성동 내과 검색 전 방문 목적, 검사결과, 복용약, 식사·혈당 기록을 실제 진료 흐름에 맞춰 정리했습니다.]]></description>
-    <category>병원정보</category>
-    <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/sejong-naseong-dong-internal-medicine-checklist</guid>
-    <enclosure url="https://phlorotannin.com/og/local-hospital/sejong-naseong-dong-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>세종 나성동, 내과, 병원정보, 진료준비, 검사기록</dc:subject>
-  </item>
-  <item>
-    <title>환자용 음료와 일반 단백질음료 차이: 열량·단백질·당류·지방</title>
-    <link>https://phlorotannin.com/blog/patient-drink-vs-protein-drink-difference</link>
-    <description><![CDATA[환자용 음료와 일반 단백질음료를 열량, 단백질, 당류, 지방, 비타민·무기질, 의료진 상담 기준으로 비교했습니다.]]></description>
-    <category>구매 가이드</category>
-    <pubDate>Wed, 27 May 2026 05:13:28 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/patient-drink-vs-protein-drink-difference</guid>
-    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/patient-drink-vs-protein-drink-difference.webp" type="image/webp"/>
-    <dc:subject>환자용 음료, 단백질음료, 영양조제식품, 환자식, 성분표 비교</dc:subject>
-  </item>
-  <item>
-    <title>종근당건강 닥터케어 구매 전 체크리스트: 음료·식사·상담을 나누기</title>
-    <link>https://phlorotannin.com/blog/jongkundang-health-dr-care-buying-checklist-meulssori</link>
-    <description><![CDATA[종근당건강 닥터케어 구매 전 당뇨음료, 암환자 음료, 건강한 반찬 정보 식단, 의료진 상담을 나눠 확인하는 체크리스트입니다.]]></description>
-    <category>구매 가이드</category>
-    <pubDate>Wed, 27 May 2026 05:13:28 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/jongkundang-health-dr-care-buying-checklist-meulssori</guid>
-    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/jongkundang-health-dr-care-buying-checklist-meulssori.webp" type="image/webp"/>
-    <dc:subject>종근당건강 닥터케어, 닥터케어 구매, 당뇨음료, 암환자 음료, 건강한 반찬 정보</dc:subject>
-  </item>
-  <item>
-    <title>당뇨환자 음료 고르는 법: 당류 0g보다 탄수화물·단백질·식이섬유</title>
-    <link>https://phlorotannin.com/blog/diabetes-medical-nutrition-drink-zero-sugar-carb-protein-fiber</link>
-    <description><![CDATA[당뇨환자 음료를 고를 때 당류 0g, 탄수화물, 단백질, 식이섬유, 식사 대용 여부를 함께 보는 방법입니다.]]></description>
-    <category>당뇨·혈당</category>
-    <pubDate>Wed, 27 May 2026 05:13:28 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/diabetes-medical-nutrition-drink-zero-sugar-carb-protein-fiber</guid>
-    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/diabetes-medical-nutrition-drink-zero-sugar-carb-protein-fiber.webp" type="image/webp"/>
-    <dc:subject>당뇨환자 음료, 당뇨음료, 탄수화물, 단백질, 식이섬유</dc:subject>
-  </item>
-  <item>
-    <title>특수의료용도식품 표시 읽기: 환자용 영양조제식품의 뜻</title>
-    <link>https://phlorotannin.com/blog/special-medical-purpose-food-label-guide-korea</link>
-    <description><![CDATA[특수의료용도식품, 표준형 영양조제식품, 당뇨환자용·암환자용 영양조제식품 표시를 쉽게 읽는 법입니다.]]></description>
-    <category>질환별 건강정보</category>
-    <pubDate>Wed, 27 May 2026 05:13:28 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/special-medical-purpose-food-label-guide-korea</guid>
-    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/special-medical-purpose-food-label-guide-korea.webp" type="image/webp"/>
-    <dc:subject>특수의료용도식품, 환자용 영양조제식품, 표준형 영양조제식품, 식품안전나라, 환자식</dc:subject>
-  </item>
-  <item>
-    <title>종근당건강 닥터케어 키워드 지도: 특수의료용도식품·당뇨음료·암환자음료</title>
-    <link>https://phlorotannin.com/blog/jongkundang-health-dr-care-special-medical-food-keyword-map</link>
-    <description><![CDATA[종근당건강 닥터케어, 특수의료용도식품, 당뇨음료, 암환자 음료 키워드를 중복 없이 나누는 검색 지도입니다.]]></description>
-    <category>구매 가이드</category>
-    <pubDate>Wed, 27 May 2026 05:13:28 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/jongkundang-health-dr-care-special-medical-food-keyword-map</guid>
-    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/jongkundang-health-dr-care-special-medical-food-keyword-map.webp" type="image/webp"/>
-    <dc:subject>종근당건강, 닥터케어, 특수의료용도식품, 당뇨음료, 암환자 음료</dc:subject>
-  </item>
-  <item>
-    <title>닥터케어 당코치제로: 종근당건강 당뇨음료 성분표에서 먼저 볼 것</title>
-    <link>https://phlorotannin.com/blog/dr-care-dangcoach-zero-diabetes-drink-label-guide</link>
-    <description><![CDATA[닥터케어 당코치제로를 검색하는 분을 위해 99kcal, 고단백·고식이섬유, 당류와 탄수화물 확인 순서를 정리했습니다.]]></description>
-    <category>당뇨·혈당</category>
-    <pubDate>Wed, 27 May 2026 05:13:28 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/dr-care-dangcoach-zero-diabetes-drink-label-guide</guid>
-    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/dr-care-dangcoach-zero-diabetes-drink-label-guide.webp" type="image/webp"/>
-    <dc:subject>닥터케어 당코치제로, 종근당건강 당뇨음료, 당뇨환자용 영양조제식품, 혈당 관리, 성분표</dc:subject>
-  </item>
-  <item>
-    <title>닥터케어 캔서코치: 종근당건강 암환자 음료 성분표 읽는 법</title>
-    <link>https://phlorotannin.com/blog/dr-care-cancercoach-cancer-patient-drink-label-guide</link>
-    <description><![CDATA[닥터케어 캔서코치를 검색하는 보호자를 위해 암환자용 영양조제식품, 열량, 단백질, 비타민·무기질 확인 순서를 정리했습니다.]]></description>
-    <category>항암 치료 케어</category>
-    <pubDate>Wed, 27 May 2026 05:13:28 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/dr-care-cancercoach-cancer-patient-drink-label-guide</guid>
-    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/dr-care-cancercoach-cancer-patient-drink-label-guide.webp" type="image/webp"/>
-    <dc:subject>닥터케어 캔서코치, 종근당건강 암환자 음료, 암환자용 영양조제식품, 암환자 영양, 성분표</dc:subject>
-  </item>
-  <item>
-    <title>암환자 영양음료 고르는 법: 식욕부진·오심·삼킴 문제별 체크</title>
-    <link>https://phlorotannin.com/blog/cancer-patient-nutrition-drink-appetite-nausea-swallowing-guide</link>
-    <description><![CDATA[암환자 영양음료를 식욕부진, 오심, 입안 통증, 삼킴 문제, 설사·변비에 따라 다르게 보는 체크리스트입니다.]]></description>
-    <category>항암 치료 케어</category>
-    <pubDate>Wed, 27 May 2026 05:13:28 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/cancer-patient-nutrition-drink-appetite-nausea-swallowing-guide</guid>
-    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/cancer-patient-nutrition-drink-appetite-nausea-swallowing-guide.webp" type="image/webp"/>
-    <dc:subject>암환자 영양음료, 암환자 음료, 식욕부진, 오심, 삼킴</dc:subject>
-  </item>
-  <item>
-    <title>암환자이면서 당뇨가 있을 때: 암환자음료와 당뇨음료 선택 기준</title>
-    <link>https://phlorotannin.com/blog/cancer-diabetes-drink-choice-checklist</link>
-    <description><![CDATA[암 치료 중 당뇨가 있거나 스테로이드로 혈당이 오를 때 암환자 음료와 당뇨음료를 어떻게 구분해 볼지 정리했습니다.]]></description>
-    <category>항암 치료 케어</category>
-    <pubDate>Wed, 27 May 2026 05:13:28 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/cancer-diabetes-drink-choice-checklist</guid>
-    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/cancer-diabetes-drink-choice-checklist.webp" type="image/webp"/>
-    <dc:subject>암환자 당뇨, 암환자음료, 당뇨음료, 스테로이드 혈당, 암환자 식단</dc:subject>
-  </item>
-  <item>
-    <title>당뇨음료와 건강한 반찬 정보 식단: 식사 대용이 아니라 루틴으로 쓰는 법</title>
-    <link>https://phlorotannin.com/blog/diabetes-drink-meulssori-meal-routine-checklist</link>
-    <description><![CDATA[당뇨음료를 건강한 반찬 정보 식단과 함께 쓸 때 식사 대용, 간식, 운동 후 보완, 혈당 기록을 나누는 루틴입니다.]]></description>
-    <category>당뇨·혈당</category>
-    <pubDate>Wed, 27 May 2026 05:13:28 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/diabetes-drink-meulssori-meal-routine-checklist</guid>
-    <enclosure url="https://rlfxuyeoluoeaxuujtly.supabase.co/storage/v1/object/public/blog-images/diabetes-drink-meulssori-meal-routine-checklist.webp" type="image/webp"/>
-    <dc:subject>당뇨음료, 건강한 반찬 정보, 당뇨 식단, 식단관리, 혈당 기록</dc:subject>
-  </item>
-  <item>
     <title>플로로탄닌 혈압 작용 기전 — ACE 억제와 혈관 내피 회복 근거</title>
     <link>https://phlorotannin.com/insights/phlorotannin-blood-pressure-mechanism</link>
     <description><![CDATA[갈조류 폴리페놀 플로로탄닌이 혈압을 낮추는 분자 기전(ACE 억제·NO 생산·산화스트레스 감소)을 2025 메타분석과 2026 종합 리뷰로 정리합니다.]]></description>
     <category>심혈관·혈압</category>
-    <pubDate>Mon, 01 Jun 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 02 Jun 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-blood-pressure-mechanism</guid>
   </item>
   <item>
@@ -431,7 +221,7 @@
     <link>https://phlorotannin.com/insights/dieckol-blood-glucose-evidence</link>
     <description><![CDATA[디에콜(Dieckol)이 식후 혈당과 인슐린 감수성에 미치는 영향을 α-glucosidase·α-amylase 억제, GLUT4 발현, 장내 미생물 기전으로 정리합니다.]]></description>
     <category>대사·당뇨</category>
-    <pubDate>Mon, 01 Jun 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 02 Jun 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/dieckol-blood-glucose-evidence</guid>
   </item>
   <item>
@@ -439,7 +229,7 @@
     <link>https://phlorotannin.com/insights/ecklonia-cava-diabetes-clinical</link>
     <description><![CDATA[감태(Ecklonia cava) 추출물의 인간 당뇨·전당뇨 임상 연구 현황을 약동학·대사체학·복합 제형 RCT를 중심으로 정리합니다.]]></description>
     <category>대사·당뇨</category>
-    <pubDate>Mon, 01 Jun 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 02 Jun 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/ecklonia-cava-diabetes-clinical</guid>
   </item>
   <item>
@@ -447,7 +237,7 @@
     <link>https://phlorotannin.com/insights/phlorotannin-cognitive-alzheimer</link>
     <description><![CDATA[플로로탄닌의 알츠하이머 예방·진행 둔화 가능성을 Aβ 응집 차단·AChE 억제·신경염증 완화 세 축으로 정리합니다 (2024 인지 RCT·2024 narrative review).]]></description>
     <category>뇌·인지</category>
-    <pubDate>Mon, 01 Jun 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 02 Jun 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-cognitive-alzheimer</guid>
   </item>
   <item>
@@ -455,7 +245,7 @@
     <link>https://phlorotannin.com/insights/phlorotannin-skin-uv-protection</link>
     <description><![CDATA[감태 플로로탄닌이 자외선 유발 피부 손상에 작용하는 메커니즘 — IL-17R 염증 억제, MMP 감소, 콜라겐 합성 촉진을 2025년 Marine Drugs 연구 기반으로 정리합니다.]]></description>
     <category>피부·모발</category>
-    <pubDate>Mon, 01 Jun 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 02 Jun 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-skin-uv-protection</guid>
   </item>
   <item>
@@ -463,7 +253,7 @@
     <link>https://phlorotannin.com/insights/phlorotannin-anti-aging-collagen</link>
     <description><![CDATA[플로로탄닌이 노화 과정에서 어떻게 작용하는지 — 산화스트레스 소거·콜라겐 신호·만성 저등급 염증의 세 축을 검증 출처와 함께 정리합니다.]]></description>
     <category>피부·모발</category>
-    <pubDate>Mon, 01 Jun 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 02 Jun 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-anti-aging-collagen</guid>
   </item>
   <item>
@@ -471,7 +261,7 @@
     <link>https://phlorotannin.com/insights/ecklonia-cava-hair-loss-evidence</link>
     <description><![CDATA[감태(Ecklonia cava)와 탈모·모발 건강 — 어디까지가 검증된 기전이고 어디부터 마케팅인지 PubMed 검증 출처로 정리합니다.]]></description>
     <category>피부·모발</category>
-    <pubDate>Mon, 01 Jun 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 02 Jun 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/ecklonia-cava-hair-loss-evidence</guid>
   </item>
   <item>
@@ -479,7 +269,7 @@
     <link>https://phlorotannin.com/insights/phlorotannin-inflammation-mechanism</link>
     <description><![CDATA[플로로탄닌이 만성 염증 경로(NF-κB·iNOS·COX-2·IL-17)에 어떻게 작용하는지 검증된 PMID와 함께 정리합니다.]]></description>
     <category>면역·염증</category>
-    <pubDate>Mon, 01 Jun 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 02 Jun 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-inflammation-mechanism</guid>
   </item>
   <item>
@@ -487,7 +277,7 @@
     <link>https://phlorotannin.com/insights/phlorotannin-cholesterol-ldl-rct</link>
     <description><![CDATA[플로로탄닌이 LDL 콜레스테롤·총 콜레스테롤·중성지방에 미치는 효과를 인간 파일럿 RCT와 전임상·종합 리뷰로 정리합니다.]]></description>
     <category>심혈관·혈압</category>
-    <pubDate>Mon, 01 Jun 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 02 Jun 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-cholesterol-ldl-rct</guid>
   </item>
   <item>
@@ -495,7 +285,7 @@
     <link>https://phlorotannin.com/insights/phlorotannin-cancer-prevention-evidence</link>
     <description><![CDATA[플로로탄닌(특히 디에콜)의 항암 근거 — MCF-7 유방암 이동 억제, 항암제 심장독성 완화 등 전임상 데이터와 그 한계를 정직하게 정리합니다.]]></description>
     <category>항암 보조</category>
-    <pubDate>Mon, 01 Jun 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 02 Jun 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-cancer-prevention-evidence</guid>
   </item>
   <item>
@@ -503,7 +293,7 @@
     <link>https://phlorotannin.com/insights/asthma-pulmonology-vitamin-d-omega3-check</link>
     <description><![CDATA[천식 증상이 반복될 때 호흡기내과 방문 전 정리할 증상 기록, 흡입제 사용법, 응급 신호, 비타민D·오메가3 상담 포인트를 실제 진료 흐름에 맞춰 정리했습니다.]]></description>
     <category>병원·진료준비</category>
-    <pubDate>Mon, 01 Jun 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 02 Jun 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/asthma-pulmonology-vitamin-d-omega3-check</guid>
   </item>
   <item>
@@ -511,7 +301,7 @@
     <link>https://phlorotannin.com/insights/phlorotannin-best-time-to-take</link>
     <description><![CDATA[플로로탄닌의 복용 시점(공복·식전·식사 동반·식후·취침 전)을 표적(혈당·지질·항산화·수면)에 따라 분리해 정리합니다.]]></description>
     <category>생활·복용</category>
-    <pubDate>Mon, 01 Jun 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 02 Jun 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-best-time-to-take</guid>
   </item>
   <item>
@@ -519,7 +309,7 @@
     <link>https://phlorotannin.com/insights/phlorotannin-with-vitamin-d-omega3</link>
     <description><![CDATA[플로로탄닌과 비타민 D, 오메가 3의 표적·기전 차이를 정리하고, 병용 시 합리적 시점·주의사항을 안내합니다.]]></description>
     <category>생활·복용</category>
-    <pubDate>Mon, 01 Jun 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 02 Jun 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-with-vitamin-d-omega3</guid>
   </item>
   <item>
@@ -527,7 +317,7 @@
     <link>https://phlorotannin.com/insights/phlorotannin-drug-interactions-warfarin</link>
     <description><![CDATA[플로로탄닌과 와파린·DOAC·아스피린·당뇨약·갑상선 약물 사이의 잠재 상호작용을 출처 기반으로 정리합니다.]]></description>
     <category>안전성·금기</category>
-    <pubDate>Mon, 01 Jun 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 02 Jun 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-drug-interactions-warfarin</guid>
   </item>
   <item>
@@ -535,7 +325,7 @@
     <link>https://phlorotannin.com/insights/long-term-phlorotannin-safety-monitoring</link>
     <description><![CDATA[플로로탄닌 장기 섭취를 고려할 때 필요한 안전성 점검 항목, 복용 기록법, 상담 체크리스트를 12주 단위로 정리한 가이드.]]></description>
     <category>장기 복용</category>
-    <pubDate>Mon, 01 Jun 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 02 Jun 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/long-term-phlorotannin-safety-monitoring</guid>
   </item>
   <item>
@@ -543,7 +333,7 @@
     <link>https://phlorotannin.com/insights/cardiovascular-blood-pressure-lifestyle-phlorotannin</link>
     <description><![CDATA[혈압 관리에서 식사·수면·활동 루틴을 먼저 정리하고 플로로탄닌 정보를 어떻게 활용할지 단계별로 안내하는 실전 가이드.]]></description>
     <category>심혈관·혈압</category>
-    <pubDate>Mon, 01 Jun 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 02 Jun 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/cardiovascular-blood-pressure-lifestyle-phlorotannin</guid>
   </item>
   <item>
@@ -551,7 +341,7 @@
     <link>https://phlorotannin.com/insights/neuro-brain-fog-sleep-stress-phlorotannin</link>
     <description><![CDATA[브레인포그와 수면 질 저하를 겪는 사람을 위한 뇌 건강 생활 루틴, 기록 방법, 플로로탄닌 정보 해석 체크포인트를 정리한 가이드.]]></description>
     <category>뇌·인지</category>
-    <pubDate>Mon, 01 Jun 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 02 Jun 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/neuro-brain-fog-sleep-stress-phlorotannin</guid>
   </item>
   <item>
@@ -559,7 +349,7 @@
     <link>https://phlorotannin.com/insights/immune-seasonal-resilience-phlorotannin-context</link>
     <description><![CDATA[계절 변화 시 컨디션 저하를 겪는 사람을 위해 면역 밸런스 관점의 생활 점검 항목과 플로로탄닌 정보 해석 기준을 정리한 글.]]></description>
     <category>면역·염증</category>
-    <pubDate>Mon, 01 Jun 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 02 Jun 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/immune-seasonal-resilience-phlorotannin-context</guid>
   </item>
   <item>
@@ -567,7 +357,7 @@
     <link>https://phlorotannin.com/insights/cancer-recovery-lifestyle-information-phlorotannin</link>
     <description><![CDATA[항암 치료 전후 회복 생활관리 관점에서 플로로탄닌 관련 질문을 어떻게 정리해 상담할지 안내하는 정보성 체크리스트.]]></description>
     <category>항암 보조</category>
-    <pubDate>Mon, 01 Jun 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 02 Jun 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/cancer-recovery-lifestyle-information-phlorotannin</guid>
   </item>
   <item>
@@ -575,7 +365,7 @@
     <link>https://phlorotannin.com/insights/safety-polyphenol-drug-interaction-discussion-template</link>
     <description><![CDATA[플로로탄닌을 포함한 폴리페놀 계열 성분 복용 전 약물 상호작용을 점검하기 위한 상담 템플릿과 기록 항목을 제시하는 안전성 가이드.]]></description>
     <category>안전성·금기</category>
-    <pubDate>Mon, 01 Jun 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 02 Jun 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/safety-polyphenol-drug-interaction-discussion-template</guid>
   </item>
   <item>
@@ -583,7 +373,7 @@
     <link>https://phlorotannin.com/insights/phlorotannin-pregnancy-breastfeeding</link>
     <description><![CDATA[임산부·수유부의 플로로탄닌 섭취 — EFSA Novel Food 평가는 어떤 입장이고, 왜 데이터 부족이 곧 회피 권장으로 이어지는지 정리합니다.]]></description>
     <category>안전성·금기</category>
-    <pubDate>Mon, 01 Jun 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 02 Jun 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-pregnancy-breastfeeding</guid>
   </item>
   <item>
@@ -591,7 +381,7 @@
     <link>https://phlorotannin.com/insights/skin-hair-oxidative-stress-care-phlorotannin</link>
     <description><![CDATA[피부·모발 관리에서 자극 요인, 수면, 단백질 섭취, 두피·피부 루틴을 우선 점검하고 플로로탄닌 정보를 안전하게 활용하는 방법을 정리.]]></description>
     <category>피부·모발</category>
-    <pubDate>Mon, 01 Jun 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 02 Jun 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/skin-hair-oxidative-stress-care-phlorotannin</guid>
   </item>
   <item>
@@ -599,7 +389,7 @@
     <link>https://phlorotannin.com/insights/metabolic-postmeal-glucose-variability-guide</link>
     <description><![CDATA[식후 혈당 변동성을 줄이기 위한 생활관리 방법(식사 순서, 식후 활동, 기록법)과 플로로탄닌 정보의 활용 기준을 정리한 실전 가이드.]]></description>
     <category>대사·당뇨</category>
-    <pubDate>Mon, 01 Jun 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 02 Jun 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/metabolic-postmeal-glucose-variability-guide</guid>
   </item>
   <item>
@@ -607,7 +397,7 @@
     <link>https://phlorotannin.com/insights/gamtae-sleep-score-wearable-dieckol-2026</link>
     <description><![CDATA[수면앱·웨어러블 점수, 카페인, 수면일지, 감태 디에콜 연구를 함께 읽는 실전 기준. 제품 선택보다 기록과 안전 신호를 먼저 정리합니다.]]></description>
     <category>생활·복용</category>
-    <pubDate>Mon, 01 Jun 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 02 Jun 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/gamtae-sleep-score-wearable-dieckol-2026</guid>
   </item>
   <item>
@@ -615,7 +405,7 @@
     <link>https://phlorotannin.com/insights/phlorotannin-side-effects-real</link>
     <description><![CDATA[EFSA Novel Food 평가와 임상 약동학 연구를 바탕으로, 플로로탄닌에서 실제 보고된 부작용과 떠도는 잘못된 정보를 구분합니다.]]></description>
     <category>안전성·금기</category>
-    <pubDate>Mon, 01 Jun 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 02 Jun 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-side-effects-real</guid>
   </item>
   <item>
@@ -623,7 +413,7 @@
     <link>https://phlorotannin.com/insights/phlorotannin-quality-extraction-method</link>
     <description><![CDATA[감태 추출물 제품의 품질을 판단하는 핵심 — 디에콜·플로로글루시놀 정량(HPLC), 식약처 개별인정형 기준, 표시·표준화의 의미를 정리합니다.]]></description>
     <category>생활·복용</category>
-    <pubDate>Mon, 01 Jun 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 02 Jun 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-quality-extraction-method</guid>
   </item>
   <item>
@@ -631,7 +421,7 @@
     <link>https://phlorotannin.com/insights/seapolynol-vs-generic-phlorotannin</link>
     <description><![CDATA[표준화 추출물 Seapolynol과 비표준화 갈조류 추출물의 차이 — EFSA Novel Food 평가, 약동학 데이터, 임상 RCT 기준으로 정리합니다.]]></description>
     <category>성분 비교</category>
-    <pubDate>Mon, 01 Jun 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 02 Jun 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/seapolynol-vs-generic-phlorotannin</guid>
   </item>
   <item>
@@ -639,7 +429,7 @@
     <link>https://phlorotannin.com/insights/phlorotannin-vs-resveratrol</link>
     <description><![CDATA[두 폴리페놀의 핵심 표적(SIRT1·AMPK·NF-κB)과 인간 데이터, 생체이용률 차이를 출처 기반으로 비교합니다.]]></description>
     <category>성분 비교</category>
-    <pubDate>Mon, 01 Jun 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 02 Jun 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-vs-resveratrol</guid>
   </item>
   <item>
@@ -647,7 +437,7 @@
     <link>https://phlorotannin.com/insights/phlorotannin-vs-curcumin-inflammation</link>
     <description><![CDATA[대표적 항염 천연 폴리페놀인 플로로탄닌과 커큐민의 표적·생체이용률·임상 활용 차이를 비교합니다.]]></description>
     <category>성분 비교</category>
-    <pubDate>Mon, 01 Jun 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 02 Jun 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-vs-curcumin-inflammation</guid>
   </item>
   <item>
@@ -655,7 +445,7 @@
     <link>https://phlorotannin.com/insights/phlorotannin-vs-green-tea-catechin</link>
     <description><![CDATA[갈조류 플로로탄닌과 녹차 EGCG(에피갈로카테킨갈레이트)의 표적·임상 데이터·복용 전략 차이를 정리합니다.]]></description>
     <category>성분 비교</category>
-    <pubDate>Mon, 01 Jun 2026 00:00:00 +0900</pubDate>
+    <pubDate>Tue, 02 Jun 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-vs-green-tea-catechin</guid>
   </item>
   <item>

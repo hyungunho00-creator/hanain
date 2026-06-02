@@ -97,11 +97,11 @@ async function main() {
   results.push('partner archive canonical ok')
 
   await checkPage('/blog/masld-fatty-liver-insulin-resistance-phlorotannin-2026', {
-    source: 'local-trend',
+    source: 'posts-table',
     canonical: `${SITE}/blog/masld-fatty-liver-insulin-resistance-phlorotannin-2026`,
     robotsIncludes: 'index',
   })
-  results.push('local trend post route ok')
+  results.push('Supabase blog post route ok')
 
   await checkPage(`/blog/${EXPECTED.draftSlug}`, {
     source: 'blog-not-found',
