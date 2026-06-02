@@ -1,3 +1,3 @@
 // Synced with public/qa.json by scripts/update_site_stats.mjs during prebuild.
-export const QA_TOTAL = 1844
+export const QA_TOTAL = 1847
 export const QA_CATEGORY_TOTAL = 13

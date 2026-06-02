@@ -23,8 +23,8 @@ What "current" means:
 
 Content sources:
 
-- Supabase `public.posts`: canonical published blog posts (`593` published current posts).
-- Local trend posts: `src/data/localTrendBlogPosts.js` + round modules (`30` posts, fallback/seed only).
+- Supabase `public.posts`: canonical published blog posts (`596` published current posts).
+- Local trend posts: `src/data/localTrendBlogPosts.js` + round modules (`33` posts, fallback/seed only).
 - Local functional ingredient posts: `src/data/localFunctionalIngredientPosts.js` (`10` posts, fallback/seed only).
 - Local category posts: `src/data/localCategoryBlogPosts.js` (`20` posts, fallback/seed only).
 - Local SEO expansion posts: `src/data/localSeoExpansionPosts.js` (`105` posts, fallback/seed only).
@@ -52,13 +52,13 @@ Key local posts that must remain available:
 Expected production SEO signals:
 
 - `https://phlorotannin.com/sitemap.xml`
-  - total URLs: `2890`
+  - total URLs: `2901`
   - duplicate URLs: `0`
   - noindex-like URLs inside sitemap: `0`
-  - Q&A detail URLs: `1844`
-  - Q&A tag URLs: `229`
-  - blog detail URLs: `593`
-  - insight detail URLs: `193`
+  - Q&A detail URLs: `1847`
+  - Q&A tag URLs: `231`
+  - blog detail URLs: `596`
+  - insight detail URLs: `196`
 - `/qa?category=cancer_immune`
   - `X-Robots-Tag: noindex,nofollow`
   - canonical: `https://phlorotannin.com/qa`
@@ -371,6 +371,25 @@ Supabase note:
 - Added 3 Q&A items to both `public/qa.json` and `src/data/qa.json`.
 - Added 3 unified photo-style OG images under `public/og/content-quality`.
 - Source topics: 2026 MHRA finasteride/dutasteride safety warnings, HPV self-collection and cervical screening access, erectile dysfunction as a cardiovascular risk signal.
+
+2026-06-03 KST health trend content update round 18:
+
+- Category rotation basis: moved away from the just-updated hair/women/men batch and refreshed the next under-updated respiratory, infection/inflammation, and skin categories.
+- Selected categories:
+  - `respiratory`
+  - `infection_inflammation`
+  - `skin`
+- Added 3 Supabase blog posts:
+  - `/blog/pollen-thunderstorm-asthma-action-plan-record-2026`
+  - `/blog/tick-bite-lyme-alpha-gal-syndrome-summer-record-2026`
+  - `/blog/melasma-tinted-sunscreen-visible-light-iron-oxide-record-2026`
+- Added 3 local insight posts:
+  - `/insights/pollen-thunderstorm-asthma-action-plan-record-2026`
+  - `/insights/tick-bite-lyme-alpha-gal-syndrome-summer-record-2026`
+  - `/insights/melasma-tinted-sunscreen-visible-light-iron-oxide-record-2026`
+- Added 3 Q&A items to both `public/qa.json` and `src/data/qa.json`.
+- Added 3 unified photo-style OG images under `public/og/content-quality`.
+- Source topics: pollen/thunderstorm asthma action plans, tick bites with Lyme disease and alpha-gal syndrome records, melasma tinted sunscreen with visible-light and iron-oxide guidance.
 
 Required verification command:
 

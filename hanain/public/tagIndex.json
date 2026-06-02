@@ -1,8 +1,8 @@
 {
   "min_tag_count": 5,
-  "total_questions": 1844,
-  "total_unique_tags": 2149,
-  "page_eligible_tags": 229,
+  "total_questions": 1847,
+  "total_unique_tags": 2158,
+  "page_eligible_tags": 231,
   "tags": {
     "플로로탄닌": {
       "count": 1368,
@@ -5817,7 +5817,7 @@
       ]
     },
     "피부": {
-      "count": 96,
+      "count": 97,
       "qids": [
         "skin-001",
         "skin-005",
@@ -5914,7 +5914,8 @@
         "seoqa-skin-07",
         "seoqa-skin-08",
         "seoqa-skin-09",
-        "seoqa-skin-10"
+        "seoqa-skin-10",
+        "trend-melasma-tinted-sunscreen-visible-light-iron-oxide-20260603"
       ]
     },
     "폐": {
@@ -6689,6 +6690,52 @@
         "qa-hospital-20260527-050"
       ]
     },
+    "호흡기": {
+      "count": 41,
+      "qids": [
+        "rsp_038",
+        "rsp_046",
+        "rsp_051",
+        "rsp_055",
+        "rsp_057",
+        "rsp_059",
+        "rsp_062",
+        "rsp_063",
+        "rsp_064",
+        "rsp_072",
+        "rsp_076",
+        "rsp_083",
+        "rsp_085",
+        "rsp_088",
+        "rsp_089",
+        "rsp_090",
+        "rsp_093",
+        "rsp_096",
+        "rsp_099",
+        "rsp_100",
+        "qa200-20260527-157",
+        "qa200-20260527-158",
+        "qa200-20260527-159",
+        "qa200-20260527-160",
+        "qa200-20260527-161",
+        "qa200-20260527-162",
+        "qa200-20260527-163",
+        "qa200-20260527-164",
+        "qa200-20260527-165",
+        "qa200-20260527-166",
+        "qa200-20260527-167",
+        "qa200-20260527-168",
+        "seoqa-respiratory-01",
+        "seoqa-respiratory-02",
+        "seoqa-respiratory-03",
+        "seoqa-respiratory-04",
+        "seoqa-respiratory-05",
+        "round2-respiratory-20260530",
+        "round3-respiratory-1-20260531",
+        "trend-rsv-vaccine-older-adults-risk-20260602",
+        "trend-pollen-thunderstorm-asthma-action-plan-20260603"
+      ]
+    },
     "뼈": {
       "count": 40,
       "qids": [
@@ -6732,51 +6779,6 @@
         "ms_087",
         "ms_088",
         "ms_090"
-      ]
-    },
-    "호흡기": {
-      "count": 40,
-      "qids": [
-        "rsp_038",
-        "rsp_046",
-        "rsp_051",
-        "rsp_055",
-        "rsp_057",
-        "rsp_059",
-        "rsp_062",
-        "rsp_063",
-        "rsp_064",
-        "rsp_072",
-        "rsp_076",
-        "rsp_083",
-        "rsp_085",
-        "rsp_088",
-        "rsp_089",
-        "rsp_090",
-        "rsp_093",
-        "rsp_096",
-        "rsp_099",
-        "rsp_100",
-        "qa200-20260527-157",
-        "qa200-20260527-158",
-        "qa200-20260527-159",
-        "qa200-20260527-160",
-        "qa200-20260527-161",
-        "qa200-20260527-162",
-        "qa200-20260527-163",
-        "qa200-20260527-164",
-        "qa200-20260527-165",
-        "qa200-20260527-166",
-        "qa200-20260527-167",
-        "qa200-20260527-168",
-        "seoqa-respiratory-01",
-        "seoqa-respiratory-02",
-        "seoqa-respiratory-03",
-        "seoqa-respiratory-04",
-        "seoqa-respiratory-05",
-        "round2-respiratory-20260530",
-        "round3-respiratory-1-20260531",
-        "trend-rsv-vaccine-older-adults-risk-20260602"
       ]
     },
     "당뇨": {
@@ -7742,6 +7744,29 @@
         "ingr-015"
       ]
     },
+    "천식": {
+      "count": 18,
+      "qids": [
+        "rsp_021",
+        "rsp_022",
+        "rsp_026",
+        "rsp_035",
+        "rsp_043",
+        "rsp_045",
+        "rsp_054",
+        "rsp_074",
+        "rsp_092",
+        "rsp_095",
+        "rsp_096",
+        "rsp_097",
+        "resp-001",
+        "resp-101",
+        "qa200-20260527-160",
+        "trendqa-respiratory-20260530",
+        "round3-respiratory-2-20260531",
+        "trend-pollen-thunderstorm-asthma-action-plan-20260603"
+      ]
+    },
     "갱년기": {
       "count": 17,
       "qids": [
@@ -7784,28 +7809,6 @@
         "qa-hospital-20260527-041",
         "round3-mental_health-2-20260531",
         "trend-magnesium-glycinate-sleep-safety-20260602"
-      ]
-    },
-    "천식": {
-      "count": 17,
-      "qids": [
-        "rsp_021",
-        "rsp_022",
-        "rsp_026",
-        "rsp_035",
-        "rsp_043",
-        "rsp_045",
-        "rsp_054",
-        "rsp_074",
-        "rsp_092",
-        "rsp_095",
-        "rsp_096",
-        "rsp_097",
-        "resp-001",
-        "resp-101",
-        "qa200-20260527-160",
-        "trendqa-respiratory-20260530",
-        "round3-respiratory-2-20260531"
       ]
     },
     "건강기능식품": {
@@ -8747,6 +8750,20 @@
         "round3-infection_inflammation-2-20260531"
       ]
     },
+    "알레르기": {
+      "count": 9,
+      "qids": [
+        "skin-002",
+        "resp-001",
+        "resp-004",
+        "infect-extra-036",
+        "infect-extra-057",
+        "sh_110",
+        "ingr-020",
+        "qa200-20260527-145",
+        "trend-tick-bite-lyme-alpha-gal-syndrome-20260603"
+      ]
+    },
     "우울증": {
       "count": 9,
       "qids": [
@@ -8839,19 +8856,6 @@
         "qa-hospital-20260527-031",
         "qa-hospital-20260527-032",
         "qa-hospital-20260527-037"
-      ]
-    },
-    "알레르기": {
-      "count": 8,
-      "qids": [
-        "skin-002",
-        "resp-001",
-        "resp-004",
-        "infect-extra-036",
-        "infect-extra-057",
-        "sh_110",
-        "ingr-020",
-        "qa200-20260527-145"
       ]
     },
     "암예방": {
@@ -9595,6 +9599,16 @@
         "round2-womens-health-20260530"
       ]
     },
+    "SPF": {
+      "count": 5,
+      "qids": [
+        "skin-009",
+        "sh_114",
+        "round3-skin-2-20260531",
+        "trend-bemotrizinol-sunscreen-uva-broad-spectrum-20260602",
+        "trend-melasma-tinted-sunscreen-visible-light-iron-oxide-20260603"
+      ]
+    },
     "SSRI": {
       "count": 5,
       "qids": [
@@ -9783,6 +9797,16 @@
         "infect-extra-047",
         "qa200-20260527-140",
         "round3-skin-1-20260531"
+      ]
+    },
+    "색소침착": {
+      "count": 5,
+      "qids": [
+        "skin-013",
+        "sh_101",
+        "sh_104",
+        "qa200-20260527-143",
+        "trend-melasma-tinted-sunscreen-visible-light-iron-oxide-20260603"
       ]
     },
     "생리불순": {
@@ -11830,7 +11854,10 @@
     "trend-cold-plunge-sauna-blood-pressure-arrhythmia-safety-20260602": "냉수욕이나-사우나를-번갈아-하면-혈압과-심장-건강에-정말-좋은가요",
     "trend-finasteride-dutasteride-hair-loss-safety-warning-20260602": "탈모약-피나스테리드나-두타스테리드를-시작하기-전에-어떤-부작용을-기록해야-하나요",
     "trend-hpv-self-collection-cervical-screening-20260602": "HPV-자가채취-검사가-가능해지면-자궁경부암-검진을-병원에서-안-받아도-되나요",
-    "trend-erectile-dysfunction-cardiovascular-risk-20260602": "발기부전이-심혈관질환-위험-신호일-수-있다는데-어떤-검사를-확인해야-하나요"
+    "trend-erectile-dysfunction-cardiovascular-risk-20260602": "발기부전이-심혈관질환-위험-신호일-수-있다는데-어떤-검사를-확인해야-하나요",
+    "trend-pollen-thunderstorm-asthma-action-plan-20260603": "꽃가루-알레르기가-심한데-기침과-숨참이-생기면-천식-행동계획을-확인해야-하나요",
+    "trend-tick-bite-lyme-alpha-gal-syndrome-20260603": "진드기에-물린-뒤-라임병과-알파갈-증후군은-어떤-증상을-따로-기록해야-하나요",
+    "trend-melasma-tinted-sunscreen-visible-light-iron-oxide-20260603": "기미와-색소침착이-있으면-선스크린을-SPF만-보고-고르면-되나요"
   },
-  "generated_at": "2026-06-02T14:46:21.337239+00:00"
+  "generated_at": "2026-06-02T14:58:05.025966+00:00"
 }
