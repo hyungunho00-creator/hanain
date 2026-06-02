@@ -1,12 +1,12 @@
 # Current Working State
 
-Last verified: 2026-06-03 06:06 KST
+Last verified: 2026-06-03 06:27 KST
 
 Production domain:
 
 - `https://phlorotannin.com`
 - `https://www.phlorotannin.com` redirects to apex
-- Current verified deployment: `https://hanain-bhxgv79o4-01056528206s-projects.vercel.app`
+- Current verified deployment: `https://hanain-mbwjfqi8i-01056528206s-projects.vercel.app`
 
 Branch:
 
@@ -23,8 +23,8 @@ What "current" means:
 
 Content sources:
 
-- Supabase `public.posts`: canonical published blog posts (`611` published current posts).
-- Local trend posts: `src/data/localTrendBlogPosts.js` + round modules (`48` posts, fallback/seed only).
+- Supabase `public.posts`: canonical published blog posts (`614` published current posts).
+- Local trend posts: `src/data/localTrendBlogPosts.js` + round modules (`51` posts, fallback/seed only).
 - Local functional ingredient posts: `src/data/localFunctionalIngredientPosts.js` (`10` posts, fallback/seed only).
 - Local category posts: `src/data/localCategoryBlogPosts.js` (`20` posts, fallback/seed only).
 - Local SEO expansion posts: `src/data/localSeoExpansionPosts.js` (`105` posts, fallback/seed only).
@@ -52,13 +52,13 @@ Key local posts that must remain available:
 Expected production SEO signals:
 
 - `https://phlorotannin.com/sitemap.xml`
-  - total URLs: `2950`
+  - total URLs: `2960`
   - duplicate URLs: `0`
   - noindex-like URLs inside sitemap: `0`
-  - Q&A detail URLs: `1862`
-  - Q&A tag URLs: `235`
-  - blog detail URLs: `611`
-  - insight detail URLs: `211`
+  - Q&A detail URLs: `1865`
+  - Q&A tag URLs: `236`
+  - blog detail URLs: `614`
+  - insight detail URLs: `214`
 - `/qa?category=cancer_immune`
   - `X-Robots-Tag: noindex,nofollow`
   - canonical: `https://phlorotannin.com/qa`
@@ -485,6 +485,31 @@ Supabase note:
 - Added 3 Q&A items to both `public/qa.json` and `src/data/qa.json`.
 - Added 3 unified photo-style OG images under `public/og/content-quality`.
 - Source topics: 2026 AAPM&R PRP guidance and AAOS knee OA review, WHO 2026 psychological self-help guide and CDC worker mental-health support, 2026 DTC gut microbiome test performance evaluation and FDA DTC test guidance.
+
+2026-06-03 KST health trend content update round 24:
+
+- Category rotation basis: refreshed the lowest-count `hair`, `womens_health`, and `mens_health` categories after rounds 21-23 covered cardiovascular/neuro/cancer, respiratory/infection/skin, and musculoskeletal/mental/digestive.
+- Selected categories:
+  - `hair`
+  - `womens_health`
+  - `mens_health`
+- Added 3 Supabase blog posts:
+  - `/blog/alopecia-areata-jak-inhibitor-boxed-warning-safety-record-2026`
+  - `/blog/menopause-hormone-therapy-boxed-warning-label-update-record-2026`
+  - `/blog/male-fertility-at-home-sperm-test-dna-fragmentation-record-2026`
+- Added 3 local insight posts:
+  - `/insights/alopecia-areata-jak-inhibitor-boxed-warning-safety-record-2026`
+  - `/insights/menopause-hormone-therapy-boxed-warning-label-update-record-2026`
+  - `/insights/male-fertility-at-home-sperm-test-dna-fragmentation-record-2026`
+- Added 3 Q&A items to both `public/qa.json` and `src/data/qa.json`.
+- Added 3 unified photo-style OG images under `public/og/content-quality`.
+- Source topics: FDA JAK inhibitor labels and AAD alopecia areata guidance, FDA 2026 menopause hormone therapy labeling update, AUA/ASRM male infertility guidance with FDA direct-to-consumer test caution.
+- Verified production:
+  - `npm run build` succeeded with sitemap `2960`, Q&A `1865`, tag `236`, blog `614`, insight `214`.
+  - `npm run verify:checkpoint` passed on `https://phlorotannin.com`.
+  - New blog routes returned `200` with `X-Seo-Source: posts-table`.
+  - New insight routes returned `200` with `X-Seo-Source: static`.
+  - New OG card routes, `/sitemap.xml`, and `/rss.xml` returned `200`.
 
 Required verification command:
 
