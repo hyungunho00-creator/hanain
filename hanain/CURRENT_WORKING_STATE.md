@@ -23,7 +23,7 @@ What "current" means:
 
 Content sources:
 
-- Supabase `public.posts`: canonical published blog posts (`545` published current posts).
+- Supabase `public.posts`: canonical published blog posts (`548` published current posts).
 - Local trend posts: `src/data/localTrendBlogPosts.js` (`18` posts, fallback/seed only).
 - Local functional ingredient posts: `src/data/localFunctionalIngredientPosts.js` (`10` posts, fallback/seed only).
 - Local category posts: `src/data/localCategoryBlogPosts.js` (`20` posts, fallback/seed only).
@@ -52,13 +52,13 @@ Key local posts that must remain available:
 Expected production SEO signals:
 
 - `https://phlorotannin.com/sitemap.xml`
-  - total URLs: `2733`
+  - total URLs: `2742`
   - duplicate URLs: `0`
   - noindex-like URLs inside sitemap: `0`
-  - Q&A detail URLs: `1796`
+  - Q&A detail URLs: `1799`
   - Q&A tag URLs: `216`
-  - blog detail URLs: `545`
-  - insight detail URLs: `145`
+  - blog detail URLs: `548`
+  - insight detail URLs: `148`
 - `/qa?category=cancer_immune`
   - `X-Robots-Tag: noindex,nofollow`
   - canonical: `https://phlorotannin.com/qa`
@@ -92,6 +92,20 @@ Supabase note:
 - Added 3 Q&A items to both `public/qa.json` and `src/data/qa.json`.
 - Added 3 unified photo-style OG images under `public/og/content-quality`.
 - Source topics: heat-health planning, GLP-1 muscle/protein records, ultra-processed foods label reading.
+
+2026-06-02 KST health trend content update round 2:
+
+- Added 3 Supabase blog posts:
+  - `/blog/sodium-potassium-salt-substitute-blood-pressure-label-2026`
+  - `/blog/creatine-resistance-training-healthy-aging-sarcopenia-2026`
+  - `/blog/resistant-starch-gut-microbiome-polyphenol-phlorotannin-2026`
+- Added 3 local insight posts:
+  - `/insights/sodium-potassium-salt-blood-pressure-label-record-2026`
+  - `/insights/creatine-resistance-training-healthy-aging-sarcopenia-2026`
+  - `/insights/resistant-starch-gut-microbiome-polyphenol-phlorotannin-2026`
+- Added 3 Q&A items to both `public/qa.json` and `src/data/qa.json`.
+- Added 3 unified photo-style OG images under `public/og/content-quality`.
+- Source topics: sodium reduction/lower-sodium salt substitutes, creatine with resistance training in healthy aging, resistant starch and diet-microbiome associations.
 
 Required verification command:
 

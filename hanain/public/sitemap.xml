@@ -312,6 +312,27 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/ultra-processed-food-label-blood-sugar-heart-risk-2026"/>
   </url>
   <url>
+    <loc>https://phlorotannin.com/insights/sodium-potassium-salt-blood-pressure-label-record-2026</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/sodium-potassium-salt-blood-pressure-label-record-2026"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/insights/creatine-resistance-training-healthy-aging-sarcopenia-2026</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/creatine-resistance-training-healthy-aging-sarcopenia-2026"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/insights/resistant-starch-gut-microbiome-polyphenol-phlorotannin-2026</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/resistant-starch-gut-microbiome-polyphenol-phlorotannin-2026"/>
+  </url>
+  <url>
     <loc>https://phlorotannin.com/insights/phlorotannin-side-effects-real</loc>
     <lastmod>2026-06-02</lastmod>
     <changefreq>monthly</changefreq>
@@ -13738,6 +13759,27 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/q/초가공식품을-줄이고-싶을-때-혈당과-심혈관-건강을-위해-라벨에서-무엇을-먼저-봐야-하나요"/>
   </url>
   <url>
+    <loc>https://phlorotannin.com/q/혈압을-위해-나트륨을-줄일-때-칼륨-소금-대체제와-식품-라벨은-어떻게-봐야-하나요</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/q/혈압을-위해-나트륨을-줄일-때-칼륨-소금-대체제와-식품-라벨은-어떻게-봐야-하나요"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/q/크레아틴이-건강노화와-근감소-예방에-도움-된다고-하는데-먹기-전에-무엇을-확인해야-하나요</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/q/크레아틴이-건강노화와-근감소-예방에-도움-된다고-하는데-먹기-전에-무엇을-확인해야-하나요"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/q/장내미생물-관리를-위해-유산균보다-식이섬유와-저항성전분을-먼저-봐야-하나요</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/q/장내미생물-관리를-위해-유산균보다-식이섬유와-저항성전분을-먼저-봐야-하나요"/>
+  </url>
+  <url>
     <loc>https://phlorotannin.com/qa/tag/%EA%B3%A0%ED%98%88%EC%95%95</loc>
     <lastmod>2026-06-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -14308,7 +14350,7 @@
     <loc>https://phlorotannin.com/qa/tag/%EC%9E%A5%EB%82%B4%EB%AF%B8%EC%83%9D%EB%AC%BC</loc>
     <lastmod>2026-06-02</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.70</priority>
+    <priority>0.75</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa/tag/%EC%9E%A5%EB%82%B4%EB%AF%B8%EC%83%9D%EB%AC%BC"/>
   </url>
   <url>
@@ -15248,6 +15290,39 @@
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa/tag/%EA%B7%BC%EA%B3%A8%EA%B2%A9"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/sodium-potassium-salt-substitute-blood-pressure-label-2026</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/sodium-potassium-salt-substitute-blood-pressure-label-2026"/>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og-card/v20260602/sodium-potassium-salt-substitute-blood-pressure-label-2026.png</image:loc>
+      <image:title>나트륨 줄이기 이슈: 혈압을 위해 칼륨 소금과 식품 라벨을 볼 때 주의할 점</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/creatine-resistance-training-healthy-aging-sarcopenia-2026</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/creatine-resistance-training-healthy-aging-sarcopenia-2026"/>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og-card/v20260602/creatine-resistance-training-healthy-aging-sarcopenia-2026.png</image:loc>
+      <image:title>크레아틴과 근력운동 이슈: 건강노화를 위해 보충제보다 기록이 먼저입니다</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/resistant-starch-gut-microbiome-polyphenol-phlorotannin-2026</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/resistant-starch-gut-microbiome-polyphenol-phlorotannin-2026"/>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og-card/v20260602/resistant-starch-gut-microbiome-polyphenol-phlorotannin-2026.png</image:loc>
+      <image:title>장내미생물 이슈: 유산균보다 식이섬유, 저항성전분, 폴리페놀 기록이 먼저입니다</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://phlorotannin.com/blog/heat-health-action-plan-hydration-blood-pressure-2026</loc>

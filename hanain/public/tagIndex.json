@@ -1,7 +1,7 @@
 {
   "min_tag_count": 5,
-  "total_questions": 1796,
-  "total_unique_tags": 2031,
+  "total_questions": 1799,
+  "total_unique_tags": 2036,
   "page_eligible_tags": 216,
   "tags": {
     "플로로탄닌": {
@@ -3953,7 +3953,7 @@
       ]
     },
     "폴리페놀": {
-      "count": 458,
+      "count": 459,
       "qids": [
         "cardio-003",
         "cardio-007",
@@ -4412,7 +4412,8 @@
         "mental-020",
         "ci_124",
         "nc_112",
-        "sh_140"
+        "sh_140",
+        "trend-resistant-starch-gut-microbiome-polyphenol-20260602"
       ]
     },
     "해양폴리페놀": {
@@ -7208,6 +7209,40 @@
         "nc_088"
       ]
     },
+    "혈압": {
+      "count": 29,
+      "qids": [
+        "cardio-009",
+        "cardio-011",
+        "cardio-013",
+        "cardio-017",
+        "cardio-026",
+        "cardio-029",
+        "cardio-032",
+        "cardio-036",
+        "cardio-039",
+        "cardio-041",
+        "cardio-044",
+        "cardio-047",
+        "cardio-051",
+        "cardio-056",
+        "cardio-058",
+        "cardio-061",
+        "cardio-064",
+        "cardio-072",
+        "cardio-074",
+        "cardio-079",
+        "cardio-084",
+        "cardio-089",
+        "cardio-094",
+        "qa200-20260527-088",
+        "qa200-20260527-165",
+        "trendqa-cardiovascular-20260530",
+        "round3-cardiovascular-1-20260531",
+        "round3-cardiovascular-2-20260531",
+        "trend-sodium-potassium-salt-blood-pressure-20260602"
+      ]
+    },
     "인슐린": {
       "count": 28,
       "qids": [
@@ -7241,37 +7276,35 @@
         "mens-extra-043"
       ]
     },
-    "혈압": {
-      "count": 28,
+    "단백질": {
+      "count": 26,
       "qids": [
-        "cardio-009",
-        "cardio-011",
-        "cardio-013",
-        "cardio-017",
-        "cardio-026",
-        "cardio-029",
-        "cardio-032",
-        "cardio-036",
-        "cardio-039",
-        "cardio-041",
-        "cardio-044",
-        "cardio-047",
-        "cardio-051",
-        "cardio-056",
-        "cardio-058",
-        "cardio-061",
-        "cardio-064",
-        "cardio-072",
-        "cardio-074",
-        "cardio-079",
-        "cardio-084",
-        "cardio-089",
-        "cardio-094",
-        "qa200-20260527-088",
-        "qa200-20260527-165",
-        "trendqa-cardiovascular-20260530",
-        "round3-cardiovascular-1-20260531",
-        "round3-cardiovascular-2-20260531"
+        "cancer-008",
+        "mens-009",
+        "mens-extra-023",
+        "mens-extra-026",
+        "mens-extra-031",
+        "mens-extra-034",
+        "mens-004",
+        "rsp_085",
+        "ingr-006",
+        "qa200-20260527-009",
+        "qa200-20260527-025",
+        "qa200-20260527-029",
+        "qa200-20260527-031",
+        "qa200-20260527-043",
+        "qa200-20260527-053",
+        "qa200-20260527-126",
+        "qa200-20260527-128",
+        "qa200-20260527-133",
+        "qa200-20260527-134",
+        "qa200-20260527-152",
+        "qa200-20260527-198",
+        "trendqa-musculoskeletal-20260530",
+        "round3-metabolism-1-20260531",
+        "round3-musculoskeletal-1-20260531",
+        "trend-glp1-muscle-protein-fiber-20260602",
+        "trend-creatine-resistance-training-healthy-aging-20260602"
       ]
     },
     "대사": {
@@ -7303,36 +7336,6 @@
         "meta_089",
         "meta_094",
         "meta_096"
-      ]
-    },
-    "단백질": {
-      "count": 25,
-      "qids": [
-        "cancer-008",
-        "mens-009",
-        "mens-extra-023",
-        "mens-extra-026",
-        "mens-extra-031",
-        "mens-extra-034",
-        "mens-004",
-        "rsp_085",
-        "ingr-006",
-        "qa200-20260527-009",
-        "qa200-20260527-025",
-        "qa200-20260527-029",
-        "qa200-20260527-031",
-        "qa200-20260527-043",
-        "qa200-20260527-053",
-        "qa200-20260527-126",
-        "qa200-20260527-128",
-        "qa200-20260527-133",
-        "qa200-20260527-134",
-        "qa200-20260527-152",
-        "qa200-20260527-198",
-        "trendqa-musculoskeletal-20260530",
-        "round3-metabolism-1-20260531",
-        "round3-musculoskeletal-1-20260531",
-        "trend-glp1-muscle-protein-fiber-20260602"
       ]
     },
     "예방": {
@@ -8107,6 +8110,24 @@
         "round3-infection_inflammation-2-20260531"
       ]
     },
+    "식이섬유": {
+      "count": 13,
+      "qids": [
+        "dige-007",
+        "qa200-20260527-025",
+        "qa200-20260527-037",
+        "qa200-20260527-063",
+        "qa-hospital-20260527-011",
+        "qa-hospital-20260527-012",
+        "trendqa-metabolism-20260530",
+        "trendqa-digestive-20260530",
+        "round2-digestive-20260530",
+        "round3-metabolism-2-20260531",
+        "round3-digestive-1-20260531",
+        "trend-glp1-muscle-protein-fiber-20260602",
+        "trend-resistant-starch-gut-microbiome-polyphenol-20260602"
+      ]
+    },
     "프로바이오틱스": {
       "count": 13,
       "qids": [
@@ -8177,21 +8198,21 @@
         "round3-cancer_immune-2-20260531"
       ]
     },
-    "식이섬유": {
+    "장건강": {
       "count": 12,
       "qids": [
-        "dige-007",
-        "qa200-20260527-025",
-        "qa200-20260527-037",
-        "qa200-20260527-063",
-        "qa-hospital-20260527-011",
-        "qa-hospital-20260527-012",
-        "trendqa-metabolism-20260530",
-        "trendqa-digestive-20260530",
+        "dige-001",
+        "dige-015",
+        "dige-018",
+        "mental-008",
+        "ingr-005",
+        "ingr-007",
+        "ingr-027",
+        "qa200-20260527-038",
+        "qa200-20260527-062",
+        "qa200-20260527-069",
         "round2-digestive-20260530",
-        "round3-metabolism-2-20260531",
-        "round3-digestive-1-20260531",
-        "trend-glp1-muscle-protein-fiber-20260602"
+        "trend-resistant-starch-gut-microbiome-polyphenol-20260602"
       ]
     },
     "전립선": {
@@ -8228,6 +8249,22 @@
         "sh_094"
       ]
     },
+    "근력운동": {
+      "count": 11,
+      "qids": [
+        "meta_068",
+        "mens-009",
+        "qa200-20260527-126",
+        "qa200-20260527-198",
+        "trendqa-musculoskeletal-20260530",
+        "round2-musculoskeletal-20260530",
+        "round3-metabolism-1-20260531",
+        "round3-musculoskeletal-1-20260531",
+        "round3-musculoskeletal-2-20260531",
+        "trend-glp1-muscle-protein-fiber-20260602",
+        "trend-creatine-resistance-training-healthy-aging-20260602"
+      ]
+    },
     "면역력": {
       "count": 11,
       "qids": [
@@ -8260,6 +8297,22 @@
         "round3-infection_inflammation-1-20260531"
       ]
     },
+    "유산균": {
+      "count": 11,
+      "qids": [
+        "dige-006",
+        "qa200-20260527-038",
+        "qa200-20260527-061",
+        "qa200-20260527-074",
+        "qa200-20260527-138",
+        "qa200-20260527-159",
+        "qa200-20260527-173",
+        "qa200-20260527-191",
+        "trendqa-digestive-20260530",
+        "round3-digestive-1-20260531",
+        "trend-resistant-starch-gut-microbiome-polyphenol-20260602"
+      ]
+    },
     "인슐린저항성": {
       "count": 11,
       "qids": [
@@ -8290,22 +8343,6 @@
         "ingr-017",
         "qa200-20260527-096",
         "qa200-20260527-100"
-      ]
-    },
-    "장건강": {
-      "count": 11,
-      "qids": [
-        "dige-001",
-        "dige-015",
-        "dige-018",
-        "mental-008",
-        "ingr-005",
-        "ingr-007",
-        "ingr-027",
-        "qa200-20260527-038",
-        "qa200-20260527-062",
-        "qa200-20260527-069",
-        "round2-digestive-20260530"
       ]
     },
     "카페인": {
@@ -8370,21 +8407,6 @@
         "seoqa-musculoskeletal-10"
       ]
     },
-    "근력운동": {
-      "count": 10,
-      "qids": [
-        "meta_068",
-        "mens-009",
-        "qa200-20260527-126",
-        "qa200-20260527-198",
-        "trendqa-musculoskeletal-20260530",
-        "round2-musculoskeletal-20260530",
-        "round3-metabolism-1-20260531",
-        "round3-musculoskeletal-1-20260531",
-        "round3-musculoskeletal-2-20260531",
-        "trend-glp1-muscle-protein-fiber-20260602"
-      ]
-    },
     "보습": {
       "count": 10,
       "qids": [
@@ -8445,19 +8467,19 @@
         "qa200-20260527-137"
       ]
     },
-    "유산균": {
+    "장내미생물": {
       "count": 10,
       "qids": [
+        "cancer-005",
+        "cancer-012",
         "dige-006",
-        "qa200-20260527-038",
-        "qa200-20260527-061",
-        "qa200-20260527-074",
-        "qa200-20260527-138",
-        "qa200-20260527-159",
-        "qa200-20260527-173",
-        "qa200-20260527-191",
+        "infect-extra-043",
+        "ingr-015",
+        "ingr-028",
         "trendqa-digestive-20260530",
-        "round3-digestive-1-20260531"
+        "round2-digestive-20260530",
+        "round3-digestive-1-20260531",
+        "trend-resistant-starch-gut-microbiome-polyphenol-20260602"
       ]
     },
     "집중력": {
@@ -8562,6 +8584,20 @@
         "qa200-20260527-197"
       ]
     },
+    "나트륨": {
+      "count": 9,
+      "qids": [
+        "cardio-017",
+        "mens-extra-044",
+        "qa200-20260527-023",
+        "qa200-20260527-048",
+        "qa200-20260527-079",
+        "qa200-20260527-090",
+        "round3-cardiovascular-1-20260531",
+        "trend-ultra-processed-food-blood-sugar-label-20260602",
+        "trend-sodium-potassium-salt-blood-pressure-20260602"
+      ]
+    },
     "도파민": {
       "count": 9,
       "qids": [
@@ -8632,20 +8668,6 @@
         "mental-101"
       ]
     },
-    "장내미생물": {
-      "count": 9,
-      "qids": [
-        "cancer-005",
-        "cancer-012",
-        "dige-006",
-        "infect-extra-043",
-        "ingr-015",
-        "ingr-028",
-        "trendqa-digestive-20260530",
-        "round2-digestive-20260530",
-        "round3-digestive-1-20260531"
-      ]
-    },
     "코르티솔": {
       "count": 9,
       "qids": [
@@ -8672,19 +8694,6 @@
         "womens-009",
         "ingr-004",
         "ingr-006"
-      ]
-    },
-    "나트륨": {
-      "count": 8,
-      "qids": [
-        "cardio-017",
-        "mens-extra-044",
-        "qa200-20260527-023",
-        "qa200-20260527-048",
-        "qa200-20260527-079",
-        "qa200-20260527-090",
-        "round3-cardiovascular-1-20260531",
-        "trend-ultra-processed-food-blood-sugar-label-20260602"
       ]
     },
     "모발·두피": {
@@ -8852,6 +8861,18 @@
         "qa-hospital-20260527-043",
         "qa-hospital-20260527-045",
         "qa-hospital-20260527-050"
+      ]
+    },
+    "근감소증": {
+      "count": 7,
+      "qids": [
+        "meta_068",
+        "musc-011",
+        "mens-020",
+        "mens-extra-031",
+        "mens-004",
+        "qa200-20260527-126",
+        "trend-creatine-resistance-training-healthy-aging-20260602"
       ]
     },
     "노화": {
@@ -9049,17 +9070,6 @@
         "ingr-026",
         "qa200-20260527-127",
         "round3-musculoskeletal-2-20260531"
-      ]
-    },
-    "근감소증": {
-      "count": 6,
-      "qids": [
-        "meta_068",
-        "musc-011",
-        "mens-020",
-        "mens-extra-031",
-        "mens-004",
-        "qa200-20260527-126"
       ]
     },
     "금연": {
@@ -11568,7 +11578,10 @@
     "round3-mens_health-2-20260531": "중년-남성이-피로와-성욕-저하를-느낄-때-테스토스테론-검사부터-해야-하나요",
     "trend-heat-health-hydration-blood-pressure-20260602": "폭염이-시작되면-혈압약을-먹는-사람은-물을-얼마나-마시고-무엇을-기록해야-하나요",
     "trend-glp1-muscle-protein-fiber-20260602": "GLP1-체중관리를-하는-사람은-근손실을-막기-위해-단백질과-운동을-어떻게-챙겨야-하나요",
-    "trend-ultra-processed-food-blood-sugar-label-20260602": "초가공식품을-줄이고-싶을-때-혈당과-심혈관-건강을-위해-라벨에서-무엇을-먼저-봐야-하나요"
+    "trend-ultra-processed-food-blood-sugar-label-20260602": "초가공식품을-줄이고-싶을-때-혈당과-심혈관-건강을-위해-라벨에서-무엇을-먼저-봐야-하나요",
+    "trend-sodium-potassium-salt-blood-pressure-20260602": "혈압을-위해-나트륨을-줄일-때-칼륨-소금-대체제와-식품-라벨은-어떻게-봐야-하나요",
+    "trend-creatine-resistance-training-healthy-aging-20260602": "크레아틴이-건강노화와-근감소-예방에-도움-된다고-하는데-먹기-전에-무엇을-확인해야-하나요",
+    "trend-resistant-starch-gut-microbiome-polyphenol-20260602": "장내미생물-관리를-위해-유산균보다-식이섬유와-저항성전분을-먼저-봐야-하나요"
   },
-  "generated_at": "2026-06-02T01:23:58.519407+00:00"
+  "generated_at": "2026-06-02T02:22:38.834786+00:00"
 }
