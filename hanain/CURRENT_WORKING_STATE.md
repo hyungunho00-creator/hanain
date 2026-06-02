@@ -23,7 +23,7 @@ What "current" means:
 
 Content sources:
 
-- Supabase `public.posts`: canonical published blog posts (`551` published current posts).
+- Supabase `public.posts`: canonical published blog posts (`554` published current posts).
 - Local trend posts: `src/data/localTrendBlogPosts.js` (`18` posts, fallback/seed only).
 - Local functional ingredient posts: `src/data/localFunctionalIngredientPosts.js` (`10` posts, fallback/seed only).
 - Local category posts: `src/data/localCategoryBlogPosts.js` (`20` posts, fallback/seed only).
@@ -52,13 +52,13 @@ Key local posts that must remain available:
 Expected production SEO signals:
 
 - `https://phlorotannin.com/sitemap.xml`
-  - total URLs: `2751`
+  - total URLs: `2762`
   - duplicate URLs: `0`
   - noindex-like URLs inside sitemap: `0`
-  - Q&A detail URLs: `1802`
-  - Q&A tag URLs: `216`
-  - blog detail URLs: `551`
-  - insight detail URLs: `151`
+  - Q&A detail URLs: `1805`
+  - Q&A tag URLs: `218`
+  - blog detail URLs: `554`
+  - insight detail URLs: `154`
 - `/qa?category=cancer_immune`
   - `X-Robots-Tag: noindex,nofollow`
   - canonical: `https://phlorotannin.com/qa`
@@ -120,6 +120,20 @@ Supabase note:
 - Added 3 Q&A items to both `public/qa.json` and `src/data/qa.json`.
 - Added 3 unified photo-style OG images under `public/og/content-quality`.
 - Source topics: sleep regularity/circadian rhythm and cardiovascular risk, vitamin D with sun exposure and sunscreen balance, coffee and the microbiota-gut-brain axis.
+
+2026-06-02 KST health trend content update round 4:
+
+- Added 3 Supabase blog posts:
+  - `/blog/mouth-taping-snoring-sleep-apnea-safety-2026`
+  - `/blog/time-restricted-eating-evening-meal-metabolic-health-2026`
+  - `/blog/magnesium-glycinate-sleep-supplement-safety-record-2026`
+- Added 3 local insight posts:
+  - `/insights/mouth-taping-snoring-sleep-apnea-safety-2026`
+  - `/insights/time-restricted-eating-evening-meal-metabolic-record-2026`
+  - `/insights/magnesium-glycinate-sleep-supplement-safety-record-2026`
+- Added 3 Q&A items to both `public/qa.json` and `src/data/qa.json`.
+- Added 3 unified photo-style OG images under `public/og/content-quality`.
+- Source topics: mouth taping safety with snoring/sleep apnea, time-restricted eating aligned with sleep rhythm, magnesium glycinate sleep supplement safety.
 
 Required verification command:
 

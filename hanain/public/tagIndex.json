@@ -1,8 +1,8 @@
 {
   "min_tag_count": 5,
-  "total_questions": 1802,
-  "total_unique_tags": 2040,
-  "page_eligible_tags": 216,
+  "total_questions": 1805,
+  "total_unique_tags": 2046,
+  "page_eligible_tags": 218,
   "tags": {
     "플로로탄닌": {
       "count": 1363,
@@ -6329,6 +6329,71 @@
         "trend-sleep-regularity-heart-risk-20260602"
       ]
     },
+    "혈당": {
+      "count": 60,
+      "qids": [
+        "meta-001",
+        "meta-002",
+        "meta-010",
+        "meta-015",
+        "meta-020",
+        "meta_021",
+        "meta_022",
+        "meta_025",
+        "meta_029",
+        "meta_030",
+        "meta_031",
+        "meta_032",
+        "meta_033",
+        "meta_035",
+        "meta_036",
+        "meta_039",
+        "meta_041",
+        "meta_042",
+        "meta_045",
+        "meta_047",
+        "meta_051",
+        "meta_053",
+        "meta_054",
+        "meta_055",
+        "meta_056",
+        "meta_059",
+        "meta_060",
+        "meta_061",
+        "meta_062",
+        "meta_063",
+        "meta_065",
+        "meta_067",
+        "meta_069",
+        "meta_070",
+        "meta_071",
+        "meta_074",
+        "meta_075",
+        "meta_079",
+        "meta_080",
+        "meta_081",
+        "meta_082",
+        "meta_084",
+        "meta_088",
+        "meta_090",
+        "meta_091",
+        "meta_092",
+        "meta_095",
+        "meta_096",
+        "meta_097",
+        "meta_098",
+        "meta_100",
+        "cancer-015",
+        "dige-020",
+        "ingr-016",
+        "qa200-20260527-020",
+        "qa200-20260527-186",
+        "trendqa-neuro-20260530",
+        "round2-neuro-cognitive-20260530",
+        "trend-ultra-processed-food-blood-sugar-label-20260602",
+        "trend-time-restricted-eating-evening-meal-20260602"
+      ]
+    },
     "관절": {
       "count": 59,
       "qids": [
@@ -6391,70 +6456,6 @@
         "infect-004",
         "qa200-20260527-130",
         "round2-musculoskeletal-20260530"
-      ]
-    },
-    "혈당": {
-      "count": 59,
-      "qids": [
-        "meta-001",
-        "meta-002",
-        "meta-010",
-        "meta-015",
-        "meta-020",
-        "meta_021",
-        "meta_022",
-        "meta_025",
-        "meta_029",
-        "meta_030",
-        "meta_031",
-        "meta_032",
-        "meta_033",
-        "meta_035",
-        "meta_036",
-        "meta_039",
-        "meta_041",
-        "meta_042",
-        "meta_045",
-        "meta_047",
-        "meta_051",
-        "meta_053",
-        "meta_054",
-        "meta_055",
-        "meta_056",
-        "meta_059",
-        "meta_060",
-        "meta_061",
-        "meta_062",
-        "meta_063",
-        "meta_065",
-        "meta_067",
-        "meta_069",
-        "meta_070",
-        "meta_071",
-        "meta_074",
-        "meta_075",
-        "meta_079",
-        "meta_080",
-        "meta_081",
-        "meta_082",
-        "meta_084",
-        "meta_088",
-        "meta_090",
-        "meta_091",
-        "meta_092",
-        "meta_095",
-        "meta_096",
-        "meta_097",
-        "meta_098",
-        "meta_100",
-        "cancer-015",
-        "dige-020",
-        "ingr-016",
-        "qa200-20260527-020",
-        "qa200-20260527-186",
-        "trendqa-neuro-20260530",
-        "round2-neuro-cognitive-20260530",
-        "trend-ultra-processed-food-blood-sugar-label-20260602"
       ]
     },
     "병원정보": {
@@ -7710,6 +7711,28 @@
         "seoqa-mental_health-10"
       ]
     },
+    "마그네슘": {
+      "count": 17,
+      "qids": [
+        "cardio-042",
+        "dige-007",
+        "neuro-004",
+        "neuro-011",
+        "musc-019",
+        "woms-015",
+        "womens-002",
+        "ingr-024",
+        "qa200-20260527-111",
+        "qa200-20260527-135",
+        "qa-hospital-20260527-004",
+        "qa-hospital-20260527-018",
+        "qa-hospital-20260527-022",
+        "qa-hospital-20260527-035",
+        "qa-hospital-20260527-041",
+        "round3-mental_health-2-20260531",
+        "trend-magnesium-glycinate-sleep-safety-20260602"
+      ]
+    },
     "천식": {
       "count": 17,
       "qids": [
@@ -7793,27 +7816,6 @@
         "seoqa-metabolism-13",
         "seoqa-metabolism-14",
         "seoqa-metabolism-15"
-      ]
-    },
-    "마그네슘": {
-      "count": 16,
-      "qids": [
-        "cardio-042",
-        "dige-007",
-        "neuro-004",
-        "neuro-011",
-        "musc-019",
-        "woms-015",
-        "womens-002",
-        "ingr-024",
-        "qa200-20260527-111",
-        "qa200-20260527-135",
-        "qa-hospital-20260527-004",
-        "qa-hospital-20260527-018",
-        "qa-hospital-20260527-022",
-        "qa-hospital-20260527-035",
-        "qa-hospital-20260527-041",
-        "round3-mental_health-2-20260531"
       ]
     },
     "철분": {
@@ -8917,6 +8919,18 @@
         "round3-mens_health-2-20260531"
       ]
     },
+    "수면무호흡": {
+      "count": 7,
+      "qids": [
+        "cardio-044",
+        "resp-008",
+        "nc_109",
+        "qa200-20260527-165",
+        "round3-mens_health-2-20260531",
+        "trend-sleep-regularity-heart-risk-20260602",
+        "trend-mouth-taping-snoring-sleep-apnea-20260602"
+      ]
+    },
     "식사기록": {
       "count": 7,
       "qids": [
@@ -9255,17 +9269,6 @@
         "ingr-028"
       ]
     },
-    "수면무호흡": {
-      "count": 6,
-      "qids": [
-        "cardio-044",
-        "resp-008",
-        "nc_109",
-        "qa200-20260527-165",
-        "round3-mens_health-2-20260531",
-        "trend-sleep-regularity-heart-risk-20260602"
-      ]
-    },
     "수분": {
       "count": 6,
       "qids": [
@@ -9539,6 +9542,16 @@
         "qa200-20260527-019"
       ]
     },
+    "대사건강": {
+      "count": 5,
+      "qids": [
+        "meta_043",
+        "meta_052",
+        "meta_068",
+        "qa200-20260527-015",
+        "trend-time-restricted-eating-evening-meal-20260602"
+      ]
+    },
     "두통": {
       "count": 5,
       "qids": [
@@ -9607,6 +9620,16 @@
         "musc-009",
         "musc-020",
         "mens-016"
+      ]
+    },
+    "불면": {
+      "count": 5,
+      "qids": [
+        "qa200-20260527-109",
+        "qa200-20260527-117",
+        "qa200-20260527-119",
+        "round3-mental_health-1-20260531",
+        "trend-magnesium-glycinate-sleep-safety-20260602"
       ]
     },
     "불안": {
@@ -11592,7 +11615,10 @@
     "trend-resistant-starch-gut-microbiome-polyphenol-20260602": "장내미생물-관리를-위해-유산균보다-식이섬유와-저항성전분을-먼저-봐야-하나요",
     "trend-sleep-regularity-heart-risk-20260602": "수면-시간보다-취침-시간이-불규칙한-것이-심혈관-건강에-더-문제가-될-수-있나요",
     "trend-vitamin-d-sun-sunscreen-skin-20260602": "비타민D를-위해-햇빛을-많이-쬐면-자외선-차단제를-덜-발라도-되나요",
-    "trend-coffee-gut-brain-axis-polyphenol-20260602": "커피가-장내미생물과-기분에-영향을-준다는-연구는-어떻게-이해해야-하나요"
+    "trend-coffee-gut-brain-axis-polyphenol-20260602": "커피가-장내미생물과-기분에-영향을-준다는-연구는-어떻게-이해해야-하나요",
+    "trend-mouth-taping-snoring-sleep-apnea-20260602": "입테이핑이-코골이나-수면무호흡에-도움이-된다고-하는데-안전하게-해도-되나요",
+    "trend-time-restricted-eating-evening-meal-20260602": "시간제한식사를-할-때-저녁을-일찍-끝내는-것이-혈당과-대사-건강에-더-중요할까요",
+    "trend-magnesium-glycinate-sleep-safety-20260602": "마그네슘-글리시네이트가-수면에-좋다고-하는데-누구나-먹어도-괜찮나요"
   },
-  "generated_at": "2026-06-02T03:52:08.943202+00:00"
+  "generated_at": "2026-06-02T04:12:28.061916+00:00"
 }
