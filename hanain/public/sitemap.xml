@@ -865,11 +865,32 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/tattoo-ink-contamination-skin-cancer-mole-monitoring-record-2026"/>
   </url>
   <url>
+    <loc>https://phlorotannin.com/insights/older-adult-fall-prevention-balance-medication-vision-record-2026</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/older-adult-fall-prevention-balance-medication-vision-record-2026"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/insights/loneliness-social-connection-health-risk-support-record-2026</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/loneliness-social-connection-health-risk-support-record-2026"/>
+  </url>
+  <url>
     <loc>https://phlorotannin.com/insights/phlorotannin-fatty-liver-nafld</loc>
     <lastmod>2026-06-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/phlorotannin-fatty-liver-nafld"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/insights/masld-fib4-liver-fibrosis-risk-stratification-record-2026</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/masld-fib4-liver-fibrosis-risk-stratification-record-2026"/>
   </url>
   <url>
     <loc>https://phlorotannin.com/insights/phlorotannin-osteoarthritis-joint</loc>
@@ -14746,6 +14767,27 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/q/문신을-하기-전후에-피부-안전을-위해-어떤-기록을-남겨야-하나요"/>
   </url>
   <url>
+    <loc>https://phlorotannin.com/q/고령자-낙상과-고관절-골절을-예방하려면-어떤-기록을-먼저-봐야-하나요</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/q/고령자-낙상과-고관절-골절을-예방하려면-어떤-기록을-먼저-봐야-하나요"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/q/외로움과-사회적-고립도-건강-상담에서-기록해야-하나요</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/q/외로움과-사회적-고립도-건강-상담에서-기록해야-하나요"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/q/MASLD-지방간은-간수치보다-FIB4와-간섬유화-위험을-봐야-하나요</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/q/MASLD-지방간은-간수치보다-FIB4와-간섬유화-위험을-봐야-하나요"/>
+  </url>
+  <url>
     <loc>https://phlorotannin.com/qa/tag/%EA%B3%A0%ED%98%88%EC%95%95</loc>
     <lastmod>2026-06-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -15190,7 +15232,7 @@
     <loc>https://phlorotannin.com/qa/tag/%EA%B0%84%EA%B1%B4%EA%B0%95</loc>
     <lastmod>2026-06-02</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.70</priority>
+    <priority>0.75</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa/tag/%EA%B0%84%EA%B1%B4%EA%B0%95"/>
   </url>
   <url>
@@ -15752,6 +15794,13 @@
     <changefreq>weekly</changefreq>
     <priority>0.70</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa/tag/%EA%B3%A8%EB%B0%80%EB%8F%84"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/qa/tag/%EB%82%99%EC%83%81%EC%98%88%EB%B0%A9</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.70</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa/tag/%EB%82%99%EC%83%81%EC%98%88%EB%B0%A9"/>
   </url>
   <url>
     <loc>https://phlorotannin.com/qa/tag/%EC%B9%BC%EC%8A%98</loc>
@@ -21705,6 +21754,39 @@
       <image:title>문신 잉크와 피부 안전, 디자인보다 오염·알레르기·점 관찰 기록이 먼저입니다</image:title>
     </image:image>
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/tattoo-ink-contamination-skin-cancer-mole-monitoring-record-2026"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/older-adult-fall-prevention-balance-medication-vision-record-2026</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.86</priority>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og/content-quality/older-adult-fall-prevention-balance-medication-vision-record-2026.png</image:loc>
+      <image:title>낙상과 고관절 골절, 운동보다 먼저 균형·시력·약물 기록을 보세요</image:title>
+    </image:image>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/older-adult-fall-prevention-balance-medication-vision-record-2026"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/loneliness-social-connection-health-risk-support-record-2026</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.86</priority>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og/content-quality/loneliness-social-connection-health-risk-support-record-2026.png</image:loc>
+      <image:title>외로움과 사회적 고립, 마음 문제만이 아니라 건강 기록으로 봐야 합니다</image:title>
+    </image:image>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/loneliness-social-connection-health-risk-support-record-2026"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/masld-fib4-liver-fibrosis-risk-stratification-record-2026</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.86</priority>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og/content-quality/masld-fib4-liver-fibrosis-risk-stratification-record-2026.png</image:loc>
+      <image:title>MASLD와 FIB-4, 지방간 수치보다 간섬유화 위험 기록이 중요합니다</image:title>
+    </image:image>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/masld-fib4-liver-fibrosis-risk-stratification-record-2026"/>
   </url>
   <url>
     <loc>https://phlorotannin.com/blog/psyllium-husk-fiber-cholesterol-constipation-guide</loc>

@@ -1,8 +1,8 @@
 {
   "min_tag_count": 5,
-  "total_questions": 1868,
-  "total_unique_tags": 2221,
-  "page_eligible_tags": 237,
+  "total_questions": 1871,
+  "total_unique_tags": 2228,
+  "page_eligible_tags": 238,
   "tags": {
     "플로로탄닌": {
       "count": 1368,
@@ -6944,6 +6944,44 @@
         "seoqa-digestive-15"
       ]
     },
+    "수면": {
+      "count": 33,
+      "qids": [
+        "cardio-020",
+        "meta-020",
+        "meta_043",
+        "neuro-007",
+        "neuro-011",
+        "neuro-016",
+        "neuro-018",
+        "mens-015",
+        "mh-extra-071",
+        "mental-extra-039",
+        "mental-003",
+        "mental-005",
+        "nc_120",
+        "sh_105",
+        "ingr-023",
+        "ingr-024",
+        "qa200-20260527-006",
+        "qa200-20260527-096",
+        "qa200-20260527-101",
+        "qa200-20260527-113",
+        "qa200-20260527-116",
+        "qa200-20260527-121",
+        "qa200-20260527-154",
+        "qa200-20260527-166",
+        "qa200-20260527-175",
+        "trendqa-neuro-20260530",
+        "trendqa-womens-20260530",
+        "round2-neuro-cognitive-20260530",
+        "round2-infection-inflammation-20260530",
+        "round2-mens-health-20260530",
+        "round3-mental_health-2-20260531",
+        "trend-youth-mental-health-sleep-screen-time-20260602",
+        "trend-loneliness-social-connection-health-risk-support-record-20260603"
+      ]
+    },
     "혈압": {
       "count": 33,
       "qids": [
@@ -7018,43 +7056,6 @@
         "rsp_096",
         "rsp_099",
         "rsp_100"
-      ]
-    },
-    "수면": {
-      "count": 32,
-      "qids": [
-        "cardio-020",
-        "meta-020",
-        "meta_043",
-        "neuro-007",
-        "neuro-011",
-        "neuro-016",
-        "neuro-018",
-        "mens-015",
-        "mh-extra-071",
-        "mental-extra-039",
-        "mental-003",
-        "mental-005",
-        "nc_120",
-        "sh_105",
-        "ingr-023",
-        "ingr-024",
-        "qa200-20260527-006",
-        "qa200-20260527-096",
-        "qa200-20260527-101",
-        "qa200-20260527-113",
-        "qa200-20260527-116",
-        "qa200-20260527-121",
-        "qa200-20260527-154",
-        "qa200-20260527-166",
-        "qa200-20260527-175",
-        "trendqa-neuro-20260530",
-        "trendqa-womens-20260530",
-        "round2-neuro-cognitive-20260530",
-        "round2-infection-inflammation-20260530",
-        "round2-mens-health-20260530",
-        "round3-mental_health-2-20260531",
-        "trend-youth-mental-health-sleep-screen-time-20260602"
       ]
     },
     "암환자·면역·환자식": {
@@ -7653,6 +7654,32 @@
         "sh_097"
       ]
     },
+    "정신건강": {
+      "count": 21,
+      "qids": [
+        "neuro-012",
+        "woms-011",
+        "mens-extra-070",
+        "mental-extra-010",
+        "mental-extra-029",
+        "mental-005",
+        "qa200-20260527-110",
+        "qa200-20260527-122",
+        "seoqa-mental_health-01",
+        "seoqa-mental_health-02",
+        "seoqa-mental_health-03",
+        "seoqa-mental_health-04",
+        "seoqa-mental_health-05",
+        "seoqa-mental_health-06",
+        "seoqa-mental_health-07",
+        "seoqa-mental_health-08",
+        "seoqa-mental_health-09",
+        "seoqa-mental_health-10",
+        "trend-screen-time-sleep-anxiety-digital-behavior-20260602",
+        "trend-ai-chatbot-mental-health-crisis-safety-20260602",
+        "trend-loneliness-social-connection-health-risk-support-record-20260603"
+      ]
+    },
     "스트레스": {
       "count": 20,
       "qids": [
@@ -7701,31 +7728,6 @@
         "qa200-20260527-123",
         "qa200-20260527-131",
         "qa200-20260527-160"
-      ]
-    },
-    "정신건강": {
-      "count": 20,
-      "qids": [
-        "neuro-012",
-        "woms-011",
-        "mens-extra-070",
-        "mental-extra-010",
-        "mental-extra-029",
-        "mental-005",
-        "qa200-20260527-110",
-        "qa200-20260527-122",
-        "seoqa-mental_health-01",
-        "seoqa-mental_health-02",
-        "seoqa-mental_health-03",
-        "seoqa-mental_health-04",
-        "seoqa-mental_health-05",
-        "seoqa-mental_health-06",
-        "seoqa-mental_health-07",
-        "seoqa-mental_health-08",
-        "seoqa-mental_health-09",
-        "seoqa-mental_health-10",
-        "trend-screen-time-sleep-anxiety-digital-behavior-20260602",
-        "trend-ai-chatbot-mental-health-crisis-safety-20260602"
       ]
     },
     "천식": {
@@ -8218,6 +8220,24 @@
         "round3-skin-1-20260531"
       ]
     },
+    "근골격": {
+      "count": 13,
+      "qids": [
+        "seoqa-musculoskeletal-01",
+        "seoqa-musculoskeletal-02",
+        "seoqa-musculoskeletal-03",
+        "seoqa-musculoskeletal-04",
+        "seoqa-musculoskeletal-05",
+        "seoqa-musculoskeletal-06",
+        "seoqa-musculoskeletal-07",
+        "seoqa-musculoskeletal-08",
+        "seoqa-musculoskeletal-09",
+        "seoqa-musculoskeletal-10",
+        "trend-glp1-knee-osteoarthritis-muscle-bone-20260602",
+        "trend-knee-osteoarthritis-prp-conservative-care-record-20260603",
+        "trend-older-adult-fall-prevention-balance-medication-vision-record-20260603"
+      ]
+    },
     "장내미생물": {
       "count": 13,
       "qids": [
@@ -8287,23 +8307,6 @@
         "qa200-20260527-178",
         "qa200-20260527-179",
         "qa200-20260527-180"
-      ]
-    },
-    "근골격": {
-      "count": 12,
-      "qids": [
-        "seoqa-musculoskeletal-01",
-        "seoqa-musculoskeletal-02",
-        "seoqa-musculoskeletal-03",
-        "seoqa-musculoskeletal-04",
-        "seoqa-musculoskeletal-05",
-        "seoqa-musculoskeletal-06",
-        "seoqa-musculoskeletal-07",
-        "seoqa-musculoskeletal-08",
-        "seoqa-musculoskeletal-09",
-        "seoqa-musculoskeletal-10",
-        "trend-glp1-knee-osteoarthritis-muscle-bone-20260602",
-        "trend-knee-osteoarthritis-prp-conservative-care-record-20260603"
       ]
     },
     "근력운동": {
@@ -8486,6 +8489,21 @@
         "ingr-006",
         "trend-dyslipidemia-prevent-ldl-apob-lpa-risk-20260602",
         "trend-lpa-once-lifetime-test-family-heart-risk-20260603"
+      ]
+    },
+    "간건강": {
+      "count": 10,
+      "qids": [
+        "meta-005",
+        "dige-004",
+        "dige-008",
+        "dige-017",
+        "dige-019",
+        "mens-014",
+        "mens-extra-012",
+        "seoqa-digestive-10",
+        "round3-cancer_immune-1-20260531",
+        "trend-masld-fib4-liver-fibrosis-risk-stratification-record-20260603"
       ]
     },
     "갑상선": {
@@ -8681,20 +8699,6 @@
         "cancer-012",
         "skin-010",
         "ingr-001"
-      ]
-    },
-    "간건강": {
-      "count": 9,
-      "qids": [
-        "meta-005",
-        "dige-004",
-        "dige-008",
-        "dige-017",
-        "dige-019",
-        "mens-014",
-        "mens-extra-012",
-        "seoqa-digestive-10",
-        "round3-cancer_immune-1-20260531"
       ]
     },
     "감기": {
@@ -8954,6 +8958,19 @@
         "trend-hpv-self-collection-cervical-screening-20260602"
       ]
     },
+    "지방간": {
+      "count": 8,
+      "qids": [
+        "meta-005",
+        "meta-017",
+        "dige-004",
+        "qa200-20260527-014",
+        "qa200-20260527-065",
+        "qa200-20260527-071",
+        "round3-digestive-2-20260531",
+        "trend-masld-fib4-liver-fibrosis-risk-stratification-record-20260603"
+      ]
+    },
     "혈당스파이크": {
       "count": 8,
       "qids": [
@@ -9169,18 +9186,6 @@
         "qa200-20260527-032",
         "qa200-20260527-120",
         "trend-berberine-blood-sugar-drug-interaction-20260602"
-      ]
-    },
-    "지방간": {
-      "count": 7,
-      "qids": [
-        "meta-005",
-        "meta-017",
-        "dige-004",
-        "qa200-20260527-014",
-        "qa200-20260527-065",
-        "qa200-20260527-071",
-        "round3-digestive-2-20260531"
       ]
     },
     "체중감량": {
@@ -9503,6 +9508,17 @@
         "round3-mens_health-1-20260531"
       ]
     },
+    "우울": {
+      "count": 6,
+      "qids": [
+        "wh-extra-003",
+        "mental-extra-007",
+        "trend-youth-mental-health-sleep-screen-time-20260602",
+        "trend-ai-chatbot-mental-health-crisis-safety-20260602",
+        "trend-psychological-self-help-digital-burnout-support-record-20260603",
+        "trend-loneliness-social-connection-health-risk-support-record-20260603"
+      ]
+    },
     "정자": {
       "count": 6,
       "qids": [
@@ -9699,6 +9715,16 @@
         "qa200-20260527-137",
         "qa200-20260527-172",
         "seoqa-metabolism-02"
+      ]
+    },
+    "낙상예방": {
+      "count": 5,
+      "qids": [
+        "musc-003",
+        "musc-017",
+        "qa200-20260527-136",
+        "trend-weighted-vest-rucking-bone-joint-safety-20260602",
+        "trend-older-adult-fall-prevention-balance-medication-vision-record-20260603"
       ]
     },
     "남성호르몬": {
@@ -9999,16 +10025,6 @@
         "infect-005",
         "infect-105",
         "qa200-20260527-178"
-      ]
-    },
-    "우울": {
-      "count": 5,
-      "qids": [
-        "wh-extra-003",
-        "mental-extra-007",
-        "trend-youth-mental-health-sleep-screen-time-20260602",
-        "trend-ai-chatbot-mental-health-crisis-safety-20260602",
-        "trend-psychological-self-help-digital-burnout-support-record-20260603"
       ]
     },
     "자궁내막증": {
@@ -11960,7 +11976,10 @@
     "trend-male-fertility-home-sperm-test-dna-fragmentation-20260603": "가정용-정자검사와-DNA-fragmentation-검사-결과는-어떻게-해석해야-하나요",
     "trend-wildfire-smoke-aqi-n95-asthma-copd-action-record-20260603": "산불-연기와-PM25가-심한-날-천식이나-COPD가-있으면-무엇을-기록해야-하나요",
     "trend-dengue-chikungunya-travel-fever-joint-pain-record-20260603": "여행-후-발열과-관절통이-있으면-뎅기와-치쿤구니야를-어떻게-구분해서-상담해야-하나요",
-    "trend-tattoo-ink-contamination-skin-cancer-mole-monitoring-record-20260603": "문신을-하기-전후에-피부-안전을-위해-어떤-기록을-남겨야-하나요"
+    "trend-tattoo-ink-contamination-skin-cancer-mole-monitoring-record-20260603": "문신을-하기-전후에-피부-안전을-위해-어떤-기록을-남겨야-하나요",
+    "trend-older-adult-fall-prevention-balance-medication-vision-record-20260603": "고령자-낙상과-고관절-골절을-예방하려면-어떤-기록을-먼저-봐야-하나요",
+    "trend-loneliness-social-connection-health-risk-support-record-20260603": "외로움과-사회적-고립도-건강-상담에서-기록해야-하나요",
+    "trend-masld-fib4-liver-fibrosis-risk-stratification-record-20260603": "MASLD-지방간은-간수치보다-FIB4와-간섬유화-위험을-봐야-하나요"
   },
-  "generated_at": "2026-06-02T21:36:10.921228+00:00"
+  "generated_at": "2026-06-02T21:48:04.419340+00:00"
 }
