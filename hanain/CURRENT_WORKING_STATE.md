@@ -1,12 +1,12 @@
 # Current Working State
 
-Last verified: 2026-06-02 09:04 KST
+Last verified: 2026-06-02 09:59 KST
 
 Production domain:
 
 - `https://phlorotannin.com`
 - `https://www.phlorotannin.com` redirects to apex
-- Current verified deployment: `https://hanain-445chs929-01056528206s-projects.vercel.app`
+- Current verified deployment: `https://hanain-1h442mtnc-01056528206s-projects.vercel.app`
 
 Branch:
 
@@ -18,6 +18,8 @@ What "current" means:
 - SEO server routing through `hanain/api/seo.js` is part of the current product state.
 - Supabase `public.posts` is the canonical blog content source.
 - Local static blog posts remain in code only as fallback/seed assets, not as the operating source of truth.
+- First-screen blog card/OG images use the refreshed `scripts/build_blog_visual_refresh.py` system.
+- The refreshed front blog `og_image` URLs are served through `/og-card/v20260602/<slug>.png` by `api/og.js`; do not switch them back to `/og/blog-refresh` or raw `/og/content-quality` paths without checking CDN cache behavior.
 
 Content sources:
 
