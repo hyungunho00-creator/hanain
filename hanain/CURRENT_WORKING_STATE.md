@@ -23,8 +23,8 @@ What "current" means:
 
 Content sources:
 
-- Supabase `public.posts`: canonical published blog posts (`596` published current posts).
-- Local trend posts: `src/data/localTrendBlogPosts.js` + round modules (`33` posts, fallback/seed only).
+- Supabase `public.posts`: canonical published blog posts (`599` published current posts).
+- Local trend posts: `src/data/localTrendBlogPosts.js` + round modules (`36` posts, fallback/seed only).
 - Local functional ingredient posts: `src/data/localFunctionalIngredientPosts.js` (`10` posts, fallback/seed only).
 - Local category posts: `src/data/localCategoryBlogPosts.js` (`20` posts, fallback/seed only).
 - Local SEO expansion posts: `src/data/localSeoExpansionPosts.js` (`105` posts, fallback/seed only).
@@ -52,13 +52,13 @@ Key local posts that must remain available:
 Expected production SEO signals:
 
 - `https://phlorotannin.com/sitemap.xml`
-  - total URLs: `2901`
+  - total URLs: `2912`
   - duplicate URLs: `0`
   - noindex-like URLs inside sitemap: `0`
-  - Q&A detail URLs: `1847`
-  - Q&A tag URLs: `231`
-  - blog detail URLs: `596`
-  - insight detail URLs: `196`
+  - Q&A detail URLs: `1850`
+  - Q&A tag URLs: `233`
+  - blog detail URLs: `599`
+  - insight detail URLs: `199`
 - `/qa?category=cancer_immune`
   - `X-Robots-Tag: noindex,nofollow`
   - canonical: `https://phlorotannin.com/qa`
@@ -390,6 +390,25 @@ Supabase note:
 - Added 3 Q&A items to both `public/qa.json` and `src/data/qa.json`.
 - Added 3 unified photo-style OG images under `public/og/content-quality`.
 - Source topics: pollen/thunderstorm asthma action plans, tick bites with Lyme disease and alpha-gal syndrome records, melasma tinted sunscreen with visible-light and iron-oxide guidance.
+
+2026-06-03 KST health trend content update round 19:
+
+- Category rotation basis: refreshed under-updated musculoskeletal, mental health, and digestive categories after respiratory/infection/skin round 18.
+- Selected categories:
+  - `musculoskeletal`
+  - `mental_health`
+  - `digestive`
+- Added 3 Supabase blog posts:
+  - `/blog/pickleball-overuse-achilles-wrist-injury-prevention-record-2026`
+  - `/blog/teen-social-media-sleep-mental-health-boundary-record-2026`
+  - `/blog/glp1-compounded-dosing-error-gi-side-effect-record-2026`
+- Added 3 local insight posts:
+  - `/insights/pickleball-overuse-achilles-wrist-injury-prevention-record-2026`
+  - `/insights/teen-social-media-sleep-mental-health-boundary-record-2026`
+  - `/insights/glp1-compounded-dosing-error-gi-side-effect-record-2026`
+- Added 3 Q&A items to both `public/qa.json` and `src/data/qa.json`.
+- Added 3 unified photo-style OG images under `public/og/content-quality`.
+- Source topics: pickleball overuse injury records with wrist/Achilles/knee signals, teen social media sleep boundaries, GLP-1 compounded dosing errors with gastrointestinal side-effect records.
 
 Required verification command:
 
