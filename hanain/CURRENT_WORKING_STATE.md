@@ -23,7 +23,7 @@ What "current" means:
 
 Content sources:
 
-- Supabase `public.posts`: canonical published blog posts (`578` published current posts).
+- Supabase `public.posts`: canonical published blog posts (`581` published current posts).
 - Local trend posts: `src/data/localTrendBlogPosts.js` (`18` posts, fallback/seed only).
 - Local functional ingredient posts: `src/data/localFunctionalIngredientPosts.js` (`10` posts, fallback/seed only).
 - Local category posts: `src/data/localCategoryBlogPosts.js` (`20` posts, fallback/seed only).
@@ -52,13 +52,13 @@ Key local posts that must remain available:
 Expected production SEO signals:
 
 - `https://phlorotannin.com/sitemap.xml`
-  - total URLs: `2841`
+  - total URLs: `2852`
   - duplicate URLs: `0`
   - noindex-like URLs inside sitemap: `0`
-  - Q&A detail URLs: `1829`
-  - Q&A tag URLs: `225`
-  - blog detail URLs: `578`
-  - insight detail URLs: `178`
+  - Q&A detail URLs: `1832`
+  - Q&A tag URLs: `227`
+  - blog detail URLs: `581`
+  - insight detail URLs: `181`
 - `/qa?category=cancer_immune`
   - `X-Robots-Tag: noindex,nofollow`
   - canonical: `https://phlorotannin.com/qa`
@@ -276,6 +276,25 @@ Supabase note:
 - Added 3 Q&A items to both `public/qa.json` and `src/data/qa.json`.
 - Added 3 unified photo-style OG images under `public/og/content-quality`.
 - Source topics: oral minoxidil safety records for hair loss, cleaner indoor air with ventilation/HEPA for respiratory viruses, H5N1/raw milk exposure symptom monitoring.
+
+2026-06-02 KST health trend content update round 13:
+
+- Category rotation basis: lower-count and less-recent mental health, musculoskeletal, and skin categories after round 12.
+- Selected categories:
+  - `mental_health` / 정신건강
+  - `musculoskeletal` / 근골격
+  - `skin` / 피부
+- Added 3 Supabase blog posts:
+  - `/blog/youth-mental-health-sleep-screen-time-record-2026`
+  - `/blog/creatine-resistance-training-sarcopenia-older-adults-record-2026`
+  - `/blog/bemotrizinol-sunscreen-uva-broad-spectrum-record-2026`
+- Added 3 local insight posts:
+  - `/insights/youth-mental-health-sleep-screen-time-record-2026`
+  - `/insights/creatine-resistance-training-sarcopenia-older-adults-record-2026`
+  - `/insights/bemotrizinol-sunscreen-uva-broad-spectrum-record-2026`
+- Added 3 Q&A items to both `public/qa.json` and `src/data/qa.json`.
+- Added 3 unified photo-style OG images under `public/og/content-quality`.
+- Source topics: youth mental health with sleep and screen-time records, creatine/resistance training checks for older-adult sarcopenia risk, bemotrizinol sunscreen and broad-spectrum UVA label reading.
 
 Required verification command:
 

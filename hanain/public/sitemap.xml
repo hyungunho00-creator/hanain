@@ -564,11 +564,32 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/h5n1-bird-flu-raw-milk-exposure-monitoring-record-2026"/>
   </url>
   <url>
+    <loc>https://phlorotannin.com/insights/youth-mental-health-sleep-screen-time-record-2026</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/youth-mental-health-sleep-screen-time-record-2026"/>
+  </url>
+  <url>
     <loc>https://phlorotannin.com/insights/phlorotannin-vs-resveratrol</loc>
     <lastmod>2026-06-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/phlorotannin-vs-resveratrol"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/insights/creatine-resistance-training-sarcopenia-older-adults-record-2026</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/creatine-resistance-training-sarcopenia-older-adults-record-2026"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/insights/bemotrizinol-sunscreen-uva-broad-spectrum-record-2026</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/bemotrizinol-sunscreen-uva-broad-spectrum-record-2026"/>
   </url>
   <url>
     <loc>https://phlorotannin.com/insights/phlorotannin-vs-curcumin-inflammation</loc>
@@ -14200,6 +14221,27 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/q/조류독감-H5N1-뉴스가-많은데-생우유나-동물-접촉-후-어떤-증상을-봐야-하나요"/>
   </url>
   <url>
+    <loc>https://phlorotannin.com/q/청소년이-밤늦게-휴대폰을-보면-불안이나-우울이-더-심해질-수-있나요</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/q/청소년이-밤늦게-휴대폰을-보면-불안이나-우울이-더-심해질-수-있나요"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/q/중장년-근감소가-걱정되면-크레아틴을-먹는-게-도움이-되나요</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/q/중장년-근감소가-걱정되면-크레아틴을-먹는-게-도움이-되나요"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/q/미국-선크림-새-성분-이야기가-많은데-SPF-숫자만-보면-되나요</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/q/미국-선크림-새-성분-이야기가-많은데-SPF-숫자만-보면-되나요"/>
+  </url>
+  <url>
     <loc>https://phlorotannin.com/qa/tag/%EA%B3%A0%ED%98%88%EC%95%95</loc>
     <lastmod>2026-06-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -15103,6 +15145,13 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa/tag/%ED%83%88%EB%AA%A8"/>
   </url>
   <url>
+    <loc>https://phlorotannin.com/qa/tag/%ED%94%BC%EB%B6%80%EB%85%B8%ED%99%94</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.70</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa/tag/%ED%94%BC%EB%B6%80%EB%85%B8%ED%99%94"/>
+  </url>
+  <url>
     <loc>https://phlorotannin.com/qa/tag/%EC%9E%90%EC%99%B8%EC%84%A0</loc>
     <lastmod>2026-06-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -15192,6 +15241,13 @@
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa/tag/%EA%B4%80%EC%A0%88"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/qa/tag/%ED%81%AC%EB%A0%88%EC%95%84%ED%8B%B4</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.70</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa/tag/%ED%81%AC%EB%A0%88%EC%95%84%ED%8B%B4"/>
   </url>
   <url>
     <loc>https://phlorotannin.com/qa/tag/%EB%BC%88</loc>
@@ -15773,6 +15829,39 @@
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa/tag/%EA%B7%BC%EA%B3%A8%EA%B2%A9"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/youth-mental-health-sleep-screen-time-record-2026</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/youth-mental-health-sleep-screen-time-record-2026"/>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og-card/v20260602/youth-mental-health-sleep-screen-time-record-2026.png</image:loc>
+      <image:title>청소년 정신건강과 수면: 화면 시간보다 밤의 리듬을 먼저 보세요</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/creatine-resistance-training-sarcopenia-older-adults-record-2026</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/creatine-resistance-training-sarcopenia-older-adults-record-2026"/>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og-card/v20260602/creatine-resistance-training-sarcopenia-older-adults-record-2026.png</image:loc>
+      <image:title>중장년 근감소와 크레아틴: 보충제보다 운동 기록이 먼저입니다</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/bemotrizinol-sunscreen-uva-broad-spectrum-record-2026</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/bemotrizinol-sunscreen-uva-broad-spectrum-record-2026"/>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og-card/v20260602/bemotrizinol-sunscreen-uva-broad-spectrum-record-2026.png</image:loc>
+      <image:title>자외선차단제 새 성분 이슈: SPF 숫자만 보면 놓치는 것들</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://phlorotannin.com/blog/oral-minoxidil-hair-loss-blood-pressure-safety-record-2026</loc>

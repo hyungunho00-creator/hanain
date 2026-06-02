@@ -1,11 +1,11 @@
 {
   "min_tag_count": 5,
-  "total_questions": 1829,
-  "total_unique_tags": 2111,
-  "page_eligible_tags": 225,
+  "total_questions": 1832,
+  "total_unique_tags": 2117,
+  "page_eligible_tags": 227,
   "tags": {
     "플로로탄닌": {
-      "count": 1363,
+      "count": 1366,
       "qids": [
         "cardio-001",
         "cardio-002",
@@ -1369,7 +1369,10 @@
         "round3-womens_health-1-20260531",
         "round3-womens_health-2-20260531",
         "round3-mens_health-1-20260531",
-        "round3-mens_health-2-20260531"
+        "round3-mens_health-2-20260531",
+        "trend-youth-mental-health-sleep-screen-time-20260602",
+        "trend-creatine-resistance-training-sarcopenia-older-adults-20260602",
+        "trend-bemotrizinol-sunscreen-uva-broad-spectrum-20260602"
       ]
     },
     "감태": {
@@ -6930,6 +6933,43 @@
         "rsp_100"
       ]
     },
+    "수면": {
+      "count": 32,
+      "qids": [
+        "cardio-020",
+        "meta-020",
+        "meta_043",
+        "neuro-007",
+        "neuro-011",
+        "neuro-016",
+        "neuro-018",
+        "mens-015",
+        "mh-extra-071",
+        "mental-extra-039",
+        "mental-003",
+        "mental-005",
+        "nc_120",
+        "sh_105",
+        "ingr-023",
+        "ingr-024",
+        "qa200-20260527-006",
+        "qa200-20260527-096",
+        "qa200-20260527-101",
+        "qa200-20260527-113",
+        "qa200-20260527-116",
+        "qa200-20260527-121",
+        "qa200-20260527-154",
+        "qa200-20260527-166",
+        "qa200-20260527-175",
+        "trendqa-neuro-20260530",
+        "trendqa-womens-20260530",
+        "round2-neuro-cognitive-20260530",
+        "round2-infection-inflammation-20260530",
+        "round2-mens-health-20260530",
+        "round3-mental_health-2-20260531",
+        "trend-youth-mental-health-sleep-screen-time-20260602"
+      ]
+    },
     "암환자·면역·환자식": {
       "count": 32,
       "qids": [
@@ -7002,42 +7042,6 @@
         "round2-womens-health-20260530",
         "trend-menopause-hormone-therapy-label-change-20260602",
         "trend-endometriosis-clinical-diagnosis-acog-20260602"
-      ]
-    },
-    "수면": {
-      "count": 31,
-      "qids": [
-        "cardio-020",
-        "meta-020",
-        "meta_043",
-        "neuro-007",
-        "neuro-011",
-        "neuro-016",
-        "neuro-018",
-        "mens-015",
-        "mh-extra-071",
-        "mental-extra-039",
-        "mental-003",
-        "mental-005",
-        "nc_120",
-        "sh_105",
-        "ingr-023",
-        "ingr-024",
-        "qa200-20260527-006",
-        "qa200-20260527-096",
-        "qa200-20260527-101",
-        "qa200-20260527-113",
-        "qa200-20260527-116",
-        "qa200-20260527-121",
-        "qa200-20260527-154",
-        "qa200-20260527-166",
-        "qa200-20260527-175",
-        "trendqa-neuro-20260530",
-        "trendqa-womens-20260530",
-        "round2-neuro-cognitive-20260530",
-        "round2-infection-inflammation-20260530",
-        "round2-mens-health-20260530",
-        "round3-mental_health-2-20260531"
       ]
     },
     "심장": {
@@ -7252,6 +7256,39 @@
         "nc_088"
       ]
     },
+    "단백질": {
+      "count": 28,
+      "qids": [
+        "cancer-008",
+        "mens-009",
+        "mens-extra-023",
+        "mens-extra-026",
+        "mens-extra-031",
+        "mens-extra-034",
+        "mens-004",
+        "rsp_085",
+        "ingr-006",
+        "qa200-20260527-009",
+        "qa200-20260527-025",
+        "qa200-20260527-029",
+        "qa200-20260527-031",
+        "qa200-20260527-043",
+        "qa200-20260527-053",
+        "qa200-20260527-126",
+        "qa200-20260527-128",
+        "qa200-20260527-133",
+        "qa200-20260527-134",
+        "qa200-20260527-152",
+        "qa200-20260527-198",
+        "trendqa-musculoskeletal-20260530",
+        "round3-metabolism-1-20260531",
+        "round3-musculoskeletal-1-20260531",
+        "trend-glp1-muscle-protein-fiber-20260602",
+        "trend-creatine-resistance-training-healthy-aging-20260602",
+        "trend-glp1-hair-loss-telogen-effluvium-20260602",
+        "trend-creatine-resistance-training-sarcopenia-older-adults-20260602"
+      ]
+    },
     "인슐린": {
       "count": 28,
       "qids": [
@@ -7283,38 +7320,6 @@
         "meta_098",
         "meta_099",
         "mens-extra-043"
-      ]
-    },
-    "단백질": {
-      "count": 27,
-      "qids": [
-        "cancer-008",
-        "mens-009",
-        "mens-extra-023",
-        "mens-extra-026",
-        "mens-extra-031",
-        "mens-extra-034",
-        "mens-004",
-        "rsp_085",
-        "ingr-006",
-        "qa200-20260527-009",
-        "qa200-20260527-025",
-        "qa200-20260527-029",
-        "qa200-20260527-031",
-        "qa200-20260527-043",
-        "qa200-20260527-053",
-        "qa200-20260527-126",
-        "qa200-20260527-128",
-        "qa200-20260527-133",
-        "qa200-20260527-134",
-        "qa200-20260527-152",
-        "qa200-20260527-198",
-        "trendqa-musculoskeletal-20260530",
-        "round3-metabolism-1-20260531",
-        "round3-musculoskeletal-1-20260531",
-        "trend-glp1-muscle-protein-fiber-20260602",
-        "trend-creatine-resistance-training-healthy-aging-20260602",
-        "trend-glp1-hair-loss-telogen-effluvium-20260602"
       ]
     },
     "남성건강": {
@@ -8968,6 +8973,18 @@
         "round3-mens_health-2-20260531"
       ]
     },
+    "불안": {
+      "count": 7,
+      "qids": [
+        "qa200-20260527-111",
+        "qa200-20260527-116",
+        "qa200-20260527-120",
+        "trendqa-mental-20260530",
+        "round3-mental_health-2-20260531",
+        "trend-screen-time-sleep-anxiety-digital-behavior-20260602",
+        "trend-youth-mental-health-sleep-screen-time-20260602"
+      ]
+    },
     "수면무호흡": {
       "count": 7,
       "qids": [
@@ -9316,17 +9333,6 @@
         "round3-cardiovascular-2-20260531",
         "trend-omega3-atrial-fibrillation-supplement-20260602",
         "trend-energy-drink-preworkout-caffeine-sleep-20260602"
-      ]
-    },
-    "불안": {
-      "count": 6,
-      "qids": [
-        "qa200-20260527-111",
-        "qa200-20260527-116",
-        "qa200-20260527-120",
-        "trendqa-mental-20260530",
-        "round3-mental_health-2-20260531",
-        "trend-screen-time-sleep-anxiety-digital-behavior-20260602"
       ]
     },
     "브레인포그": {
@@ -9904,6 +9910,16 @@
         "round3-digestive-2-20260531"
       ]
     },
+    "크레아틴": {
+      "count": 5,
+      "qids": [
+        "musc-020",
+        "mens-extra-051",
+        "mens-010",
+        "trend-creatine-resistance-training-healthy-aging-20260602",
+        "trend-creatine-resistance-training-sarcopenia-older-adults-20260602"
+      ]
+    },
     "폐암": {
       "count": 5,
       "qids": [
@@ -9912,6 +9928,16 @@
         "ci_096",
         "ci_097",
         "ci_098"
+      ]
+    },
+    "피부노화": {
+      "count": 5,
+      "qids": [
+        "skin-004",
+        "sh_100",
+        "sh_122",
+        "qa200-20260527-139",
+        "trend-bemotrizinol-sunscreen-uva-broad-spectrum-20260602"
       ]
     },
     "혈액순환": {
@@ -11744,7 +11770,10 @@
     "trend-prostate-psa-mri-screening-aua-20260602": "PSA-수치가-높으면-바로-전립선-조직검사를-해야-하나요-MRI부터-봐야-하나요",
     "trend-oral-minoxidil-hair-loss-blood-pressure-safety-20260602": "먹는-미녹시딜이-탈모에-좋다는데-혈압이나-부작용은-어떻게-확인해야-하나요",
     "trend-cleaner-indoor-air-respiratory-virus-ventilation-20260602": "감기나-독감이-유행할-때-공기청정기와-환기가-실제로-도움이-되나요",
-    "trend-h5n1-bird-flu-raw-milk-exposure-monitoring-20260602": "조류독감-H5N1-뉴스가-많은데-생우유나-동물-접촉-후-어떤-증상을-봐야-하나요"
+    "trend-h5n1-bird-flu-raw-milk-exposure-monitoring-20260602": "조류독감-H5N1-뉴스가-많은데-생우유나-동물-접촉-후-어떤-증상을-봐야-하나요",
+    "trend-youth-mental-health-sleep-screen-time-20260602": "청소년이-밤늦게-휴대폰을-보면-불안이나-우울이-더-심해질-수-있나요",
+    "trend-creatine-resistance-training-sarcopenia-older-adults-20260602": "중장년-근감소가-걱정되면-크레아틴을-먹는-게-도움이-되나요",
+    "trend-bemotrizinol-sunscreen-uva-broad-spectrum-20260602": "미국-선크림-새-성분-이야기가-많은데-SPF-숫자만-보면-되나요"
   },
-  "generated_at": "2026-06-02T07:32:49.804147+00:00"
+  "generated_at": "2026-06-02T07:46:40.593526+00:00"
 }
