@@ -1,8 +1,8 @@
 {
   "min_tag_count": 5,
-  "total_questions": 1814,
-  "total_unique_tags": 2067,
-  "page_eligible_tags": 220,
+  "total_questions": 1817,
+  "total_unique_tags": 2078,
+  "page_eligible_tags": 221,
   "tags": {
     "플로로탄닌": {
       "count": 1363,
@@ -6726,6 +6726,51 @@
         "ms_090"
       ]
     },
+    "호흡기": {
+      "count": 40,
+      "qids": [
+        "rsp_038",
+        "rsp_046",
+        "rsp_051",
+        "rsp_055",
+        "rsp_057",
+        "rsp_059",
+        "rsp_062",
+        "rsp_063",
+        "rsp_064",
+        "rsp_072",
+        "rsp_076",
+        "rsp_083",
+        "rsp_085",
+        "rsp_088",
+        "rsp_089",
+        "rsp_090",
+        "rsp_093",
+        "rsp_096",
+        "rsp_099",
+        "rsp_100",
+        "qa200-20260527-157",
+        "qa200-20260527-158",
+        "qa200-20260527-159",
+        "qa200-20260527-160",
+        "qa200-20260527-161",
+        "qa200-20260527-162",
+        "qa200-20260527-163",
+        "qa200-20260527-164",
+        "qa200-20260527-165",
+        "qa200-20260527-166",
+        "qa200-20260527-167",
+        "qa200-20260527-168",
+        "seoqa-respiratory-01",
+        "seoqa-respiratory-02",
+        "seoqa-respiratory-03",
+        "seoqa-respiratory-04",
+        "seoqa-respiratory-05",
+        "round2-respiratory-20260530",
+        "round3-respiratory-1-20260531",
+        "trend-rsv-vaccine-older-adults-risk-20260602"
+      ]
+    },
     "당뇨": {
       "count": 39,
       "qids": [
@@ -6768,50 +6813,6 @@
         "ingr-028",
         "qa200-20260527-091",
         "qa200-20260527-195"
-      ]
-    },
-    "호흡기": {
-      "count": 39,
-      "qids": [
-        "rsp_038",
-        "rsp_046",
-        "rsp_051",
-        "rsp_055",
-        "rsp_057",
-        "rsp_059",
-        "rsp_062",
-        "rsp_063",
-        "rsp_064",
-        "rsp_072",
-        "rsp_076",
-        "rsp_083",
-        "rsp_085",
-        "rsp_088",
-        "rsp_089",
-        "rsp_090",
-        "rsp_093",
-        "rsp_096",
-        "rsp_099",
-        "rsp_100",
-        "qa200-20260527-157",
-        "qa200-20260527-158",
-        "qa200-20260527-159",
-        "qa200-20260527-160",
-        "qa200-20260527-161",
-        "qa200-20260527-162",
-        "qa200-20260527-163",
-        "qa200-20260527-164",
-        "qa200-20260527-165",
-        "qa200-20260527-166",
-        "qa200-20260527-167",
-        "qa200-20260527-168",
-        "seoqa-respiratory-01",
-        "seoqa-respiratory-02",
-        "seoqa-respiratory-03",
-        "seoqa-respiratory-04",
-        "seoqa-respiratory-05",
-        "round2-respiratory-20260530",
-        "round3-respiratory-1-20260531"
       ]
     },
     "소화": {
@@ -8280,6 +8281,22 @@
         "sh_094"
       ]
     },
+    "근골격": {
+      "count": 11,
+      "qids": [
+        "seoqa-musculoskeletal-01",
+        "seoqa-musculoskeletal-02",
+        "seoqa-musculoskeletal-03",
+        "seoqa-musculoskeletal-04",
+        "seoqa-musculoskeletal-05",
+        "seoqa-musculoskeletal-06",
+        "seoqa-musculoskeletal-07",
+        "seoqa-musculoskeletal-08",
+        "seoqa-musculoskeletal-09",
+        "seoqa-musculoskeletal-10",
+        "trend-glp1-knee-osteoarthritis-muscle-bone-20260602"
+      ]
+    },
     "근력운동": {
       "count": 11,
       "qids": [
@@ -8436,21 +8453,6 @@
         "qa200-20260527-194",
         "qa200-20260527-197",
         "trend-vitamin-d-sun-sunscreen-skin-20260602"
-      ]
-    },
-    "근골격": {
-      "count": 10,
-      "qids": [
-        "seoqa-musculoskeletal-01",
-        "seoqa-musculoskeletal-02",
-        "seoqa-musculoskeletal-03",
-        "seoqa-musculoskeletal-04",
-        "seoqa-musculoskeletal-05",
-        "seoqa-musculoskeletal-06",
-        "seoqa-musculoskeletal-07",
-        "seoqa-musculoskeletal-08",
-        "seoqa-musculoskeletal-09",
-        "seoqa-musculoskeletal-10"
       ]
     },
     "보습": {
@@ -8629,6 +8631,20 @@
         "nc_115"
       ]
     },
+    "백신": {
+      "count": 9,
+      "qids": [
+        "rsp_030",
+        "resp-013",
+        "infect-extra-017",
+        "infect-extra-034",
+        "infect-103",
+        "infect-104",
+        "infect-109",
+        "qa200-20260527-174",
+        "trend-rsv-vaccine-older-adults-risk-20260602"
+      ]
+    },
     "빈혈": {
       "count": 9,
       "qids": [
@@ -8751,19 +8767,6 @@
         "qa200-20260527-154",
         "qa200-20260527-155",
         "qa200-20260527-156"
-      ]
-    },
-    "백신": {
-      "count": 8,
-      "qids": [
-        "rsp_030",
-        "resp-013",
-        "infect-extra-017",
-        "infect-extra-034",
-        "infect-103",
-        "infect-104",
-        "infect-109",
-        "qa200-20260527-174"
       ]
     },
     "비타민 D": {
@@ -9524,6 +9527,16 @@
         "qa200-20260527-092",
         "qa200-20260527-121",
         "qa200-20260527-184"
+      ]
+    },
+    "골밀도": {
+      "count": 5,
+      "qids": [
+        "musc-003",
+        "wh-extra-007",
+        "mens-011",
+        "mens-008",
+        "trend-glp1-knee-osteoarthritis-muscle-bone-20260602"
       ]
     },
     "과장광고": {
@@ -11661,7 +11674,10 @@
     "trend-berberine-blood-sugar-drug-interaction-20260602": "베르베린이-혈당에-좋다고-하는데-당뇨약을-먹는-사람도-같이-먹어도-되나요",
     "trend-glp1-hair-loss-telogen-effluvium-20260602": "GLP1-감량-중-머리가-많이-빠지면-약-때문인가요-단백질과-페리틴을-봐야-하나요",
     "trend-menopause-hormone-therapy-label-change-20260602": "폐경-호르몬요법-라벨이-바뀌었다는데-갱년기-증상이-있으면-바로-상담해도-되나요",
-    "trend-testosterone-therapy-low-libido-bp-monitoring-20260602": "테스토스테론-치료가-다시-이슈라는데-피곤하고-성욕이-떨어지면-맞아도-되나요"
+    "trend-testosterone-therapy-low-libido-bp-monitoring-20260602": "테스토스테론-치료가-다시-이슈라는데-피곤하고-성욕이-떨어지면-맞아도-되나요",
+    "trend-measles-mmr-vitamin-a-outbreak-20260602": "홍역-유행-때-비타민A를-먹으면-예방이-되나요-MMR-접종-기록을-먼저-봐야-하나요",
+    "trend-rsv-vaccine-older-adults-risk-20260602": "RSV-백신은-75세-이상만-맞는-건가요-50대도-폐질환이-있으면-상담해야-하나요",
+    "trend-glp1-knee-osteoarthritis-muscle-bone-20260602": "GLP1-감량으로-무릎-통증이-줄면-골관절염이-좋아진-건가요-근손실도-봐야-하나요"
   },
-  "generated_at": "2026-06-02T06:11:12.560040+00:00"
+  "generated_at": "2026-06-02T06:27:25.519520+00:00"
 }
