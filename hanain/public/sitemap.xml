@@ -844,6 +844,27 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/male-fertility-at-home-sperm-test-dna-fragmentation-record-2026"/>
   </url>
   <url>
+    <loc>https://phlorotannin.com/insights/wildfire-smoke-aqi-n95-asthma-copd-action-record-2026</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/wildfire-smoke-aqi-n95-asthma-copd-action-record-2026"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/insights/dengue-chikungunya-travel-fever-joint-pain-mosquito-record-2026</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/dengue-chikungunya-travel-fever-joint-pain-mosquito-record-2026"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/insights/tattoo-ink-contamination-skin-cancer-mole-monitoring-record-2026</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/tattoo-ink-contamination-skin-cancer-mole-monitoring-record-2026"/>
+  </url>
+  <url>
     <loc>https://phlorotannin.com/insights/phlorotannin-fatty-liver-nafld</loc>
     <lastmod>2026-06-02</lastmod>
     <changefreq>monthly</changefreq>
@@ -14704,6 +14725,27 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/q/가정용-정자검사와-DNA-fragmentation-검사-결과는-어떻게-해석해야-하나요"/>
   </url>
   <url>
+    <loc>https://phlorotannin.com/q/산불-연기와-PM25가-심한-날-천식이나-COPD가-있으면-무엇을-기록해야-하나요</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/q/산불-연기와-PM25가-심한-날-천식이나-COPD가-있으면-무엇을-기록해야-하나요"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/q/여행-후-발열과-관절통이-있으면-뎅기와-치쿤구니야를-어떻게-구분해서-상담해야-하나요</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/q/여행-후-발열과-관절통이-있으면-뎅기와-치쿤구니야를-어떻게-구분해서-상담해야-하나요"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/q/문신을-하기-전후에-피부-안전을-위해-어떤-기록을-남겨야-하나요</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/q/문신을-하기-전후에-피부-안전을-위해-어떤-기록을-남겨야-하나요"/>
+  </url>
+  <url>
     <loc>https://phlorotannin.com/qa/tag/%EA%B3%A0%ED%98%88%EC%95%95</loc>
     <lastmod>2026-06-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -15603,7 +15645,7 @@
     <loc>https://phlorotannin.com/qa/tag/%EC%95%8C%EB%A0%88%EB%A5%B4%EA%B8%B0</loc>
     <lastmod>2026-06-02</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.70</priority>
+    <priority>0.75</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa/tag/%EC%95%8C%EB%A0%88%EB%A5%B4%EA%B8%B0"/>
   </url>
   <url>
@@ -16046,6 +16088,13 @@
     <changefreq>weekly</changefreq>
     <priority>0.70</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa/tag/%EB%8F%85%EA%B0%90"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/qa/tag/%EA%B0%90%EC%97%BC</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.70</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa/tag/%EA%B0%90%EC%97%BC"/>
   </url>
   <url>
     <loc>https://phlorotannin.com/qa/tag/%EC%9A%94%EB%A1%9C%EA%B0%90%EC%97%BC</loc>
@@ -21623,6 +21672,39 @@
       <image:title>남성 가정용 정자검사, 숫자 하나보다 반복 기록과 원인 평가가 중요합니다</image:title>
     </image:image>
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/male-fertility-at-home-sperm-test-dna-fragmentation-record-2026"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/wildfire-smoke-aqi-n95-asthma-copd-action-record-2026</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.86</priority>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og/content-quality/wildfire-smoke-aqi-n95-asthma-copd-action-record-2026.png</image:loc>
+      <image:title>산불 연기와 PM2.5, 기침이 시작된 뒤보다 AQI 기록이 먼저입니다</image:title>
+    </image:image>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/wildfire-smoke-aqi-n95-asthma-copd-action-record-2026"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/dengue-chikungunya-travel-fever-joint-pain-mosquito-record-2026</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.86</priority>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og/content-quality/dengue-chikungunya-travel-fever-joint-pain-mosquito-record-2026.png</image:loc>
+      <image:title>뎅기와 치쿤구니야, 여행 후 발열은 해열제보다 모기 노출 기록이 먼저입니다</image:title>
+    </image:image>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/dengue-chikungunya-travel-fever-joint-pain-mosquito-record-2026"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/tattoo-ink-contamination-skin-cancer-mole-monitoring-record-2026</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.86</priority>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og/content-quality/tattoo-ink-contamination-skin-cancer-mole-monitoring-record-2026.png</image:loc>
+      <image:title>문신 잉크와 피부 안전, 디자인보다 오염·알레르기·점 관찰 기록이 먼저입니다</image:title>
+    </image:image>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/tattoo-ink-contamination-skin-cancer-mole-monitoring-record-2026"/>
   </url>
   <url>
     <loc>https://phlorotannin.com/blog/psyllium-husk-fiber-cholesterol-constipation-guide</loc>

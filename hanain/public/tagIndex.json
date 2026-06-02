@@ -1,8 +1,8 @@
 {
   "min_tag_count": 5,
-  "total_questions": 1865,
-  "total_unique_tags": 2212,
-  "page_eligible_tags": 236,
+  "total_questions": 1868,
+  "total_unique_tags": 2221,
+  "page_eligible_tags": 237,
   "tags": {
     "플로로탄닌": {
       "count": 1368,
@@ -6691,7 +6691,7 @@
       ]
     },
     "호흡기": {
-      "count": 41,
+      "count": 42,
       "qids": [
         "rsp_038",
         "rsp_046",
@@ -6733,7 +6733,8 @@
         "round2-respiratory-20260530",
         "round3-respiratory-1-20260531",
         "trend-rsv-vaccine-older-adults-risk-20260602",
-        "trend-pollen-thunderstorm-asthma-action-plan-20260603"
+        "trend-pollen-thunderstorm-asthma-action-plan-20260603",
+        "trend-wildfire-smoke-aqi-n95-asthma-copd-action-record-20260603"
       ]
     },
     "뼈": {
@@ -7727,6 +7728,30 @@
         "trend-ai-chatbot-mental-health-crisis-safety-20260602"
       ]
     },
+    "천식": {
+      "count": 19,
+      "qids": [
+        "rsp_021",
+        "rsp_022",
+        "rsp_026",
+        "rsp_035",
+        "rsp_043",
+        "rsp_045",
+        "rsp_054",
+        "rsp_074",
+        "rsp_092",
+        "rsp_095",
+        "rsp_096",
+        "rsp_097",
+        "resp-001",
+        "resp-101",
+        "qa200-20260527-160",
+        "trendqa-respiratory-20260530",
+        "round3-respiratory-2-20260531",
+        "trend-pollen-thunderstorm-asthma-action-plan-20260603",
+        "trend-wildfire-smoke-aqi-n95-asthma-copd-action-record-20260603"
+      ]
+    },
     "갱년기": {
       "count": 18,
       "qids": [
@@ -7771,29 +7796,6 @@
         "ms_089",
         "wh-extra-050",
         "ingr-015"
-      ]
-    },
-    "천식": {
-      "count": 18,
-      "qids": [
-        "rsp_021",
-        "rsp_022",
-        "rsp_026",
-        "rsp_035",
-        "rsp_043",
-        "rsp_045",
-        "rsp_054",
-        "rsp_074",
-        "rsp_092",
-        "rsp_095",
-        "rsp_096",
-        "rsp_097",
-        "resp-001",
-        "resp-101",
-        "qa200-20260527-160",
-        "trendqa-respiratory-20260530",
-        "round3-respiratory-2-20260531",
-        "trend-pollen-thunderstorm-asthma-action-plan-20260603"
       ]
     },
     "마그네슘": {
@@ -8591,6 +8593,21 @@
         "qa200-20260527-137"
       ]
     },
+    "알레르기": {
+      "count": 10,
+      "qids": [
+        "skin-002",
+        "resp-001",
+        "resp-004",
+        "infect-extra-036",
+        "infect-extra-057",
+        "sh_110",
+        "ingr-020",
+        "qa200-20260527-145",
+        "trend-tick-bite-lyme-alpha-gal-syndrome-20260603",
+        "trend-tattoo-ink-contamination-skin-cancer-mole-monitoring-record-20260603"
+      ]
+    },
     "집중력": {
       "count": 10,
       "qids": [
@@ -8790,20 +8807,6 @@
         "infect-019",
         "qa200-20260527-196",
         "round3-infection_inflammation-2-20260531"
-      ]
-    },
-    "알레르기": {
-      "count": 9,
-      "qids": [
-        "skin-002",
-        "resp-001",
-        "resp-004",
-        "infect-extra-036",
-        "infect-extra-057",
-        "sh_110",
-        "ingr-020",
-        "qa200-20260527-145",
-        "trend-tick-bite-lyme-alpha-gal-syndrome-20260603"
       ]
     },
     "우울증": {
@@ -9646,6 +9649,16 @@
         "mental-extra-006",
         "mental-extra-013",
         "mental-102"
+      ]
+    },
+    "감염": {
+      "count": 5,
+      "qids": [
+        "resp-014",
+        "infect-extra-065",
+        "qa200-20260527-158",
+        "trendqa-inflammation-20260530",
+        "trend-tattoo-ink-contamination-skin-cancer-mole-monitoring-record-20260603"
       ]
     },
     "감염예방": {
@@ -11944,7 +11957,10 @@
     "trend-at-home-gut-microbiome-test-dtc-stool-report-record-20260603": "가정용-장내미생물-검사-결과로-내-장-건강과-식단을-바로-판단해도-되나요",
     "trend-alopecia-areata-jak-inhibitor-safety-record-20260603": "원형탈모-JAK-억제제를-상담하기-전에-어떤-안전-기록을-준비해야-하나요",
     "trend-menopause-hormone-therapy-label-update-record-20260603": "폐경-호르몬치료-라벨이-바뀌었다면-이제-안심하고-시작해도-되나요",
-    "trend-male-fertility-home-sperm-test-dna-fragmentation-20260603": "가정용-정자검사와-DNA-fragmentation-검사-결과는-어떻게-해석해야-하나요"
+    "trend-male-fertility-home-sperm-test-dna-fragmentation-20260603": "가정용-정자검사와-DNA-fragmentation-검사-결과는-어떻게-해석해야-하나요",
+    "trend-wildfire-smoke-aqi-n95-asthma-copd-action-record-20260603": "산불-연기와-PM25가-심한-날-천식이나-COPD가-있으면-무엇을-기록해야-하나요",
+    "trend-dengue-chikungunya-travel-fever-joint-pain-record-20260603": "여행-후-발열과-관절통이-있으면-뎅기와-치쿤구니야를-어떻게-구분해서-상담해야-하나요",
+    "trend-tattoo-ink-contamination-skin-cancer-mole-monitoring-record-20260603": "문신을-하기-전후에-피부-안전을-위해-어떤-기록을-남겨야-하나요"
   },
-  "generated_at": "2026-06-02T21:23:17.625132+00:00"
+  "generated_at": "2026-06-02T21:36:10.921228+00:00"
 }
