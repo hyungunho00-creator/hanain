@@ -23,8 +23,8 @@ What "current" means:
 
 Content sources:
 
-- Supabase `public.posts`: canonical published blog posts (`590` published current posts).
-- Local trend posts: `src/data/localTrendBlogPosts.js` + round modules (`27` posts, fallback/seed only).
+- Supabase `public.posts`: canonical published blog posts (`593` published current posts).
+- Local trend posts: `src/data/localTrendBlogPosts.js` + round modules (`30` posts, fallback/seed only).
 - Local functional ingredient posts: `src/data/localFunctionalIngredientPosts.js` (`10` posts, fallback/seed only).
 - Local category posts: `src/data/localCategoryBlogPosts.js` (`20` posts, fallback/seed only).
 - Local SEO expansion posts: `src/data/localSeoExpansionPosts.js` (`105` posts, fallback/seed only).
@@ -52,13 +52,13 @@ Key local posts that must remain available:
 Expected production SEO signals:
 
 - `https://phlorotannin.com/sitemap.xml`
-  - total URLs: `2880`
+  - total URLs: `2890`
   - duplicate URLs: `0`
   - noindex-like URLs inside sitemap: `0`
-  - Q&A detail URLs: `1841`
-  - Q&A tag URLs: `228`
-  - blog detail URLs: `590`
-  - insight detail URLs: `190`
+  - Q&A detail URLs: `1844`
+  - Q&A tag URLs: `229`
+  - blog detail URLs: `593`
+  - insight detail URLs: `193`
 - `/qa?category=cancer_immune`
   - `X-Robots-Tag: noindex,nofollow`
   - canonical: `https://phlorotannin.com/qa`
@@ -352,6 +352,25 @@ Supabase note:
 - Added 3 Q&A items to both `public/qa.json` and `src/data/qa.json`.
 - Added 3 unified photo-style OG images under `public/og/content-quality`.
 - Source topics: AI chatbot mental-health safeguards and crisis referral, weighted vest/rucking with bone and joint safety records, cold plunge/sauna recovery routines with blood pressure and arrhythmia safety.
+
+2026-06-02 KST health trend content update round 17:
+
+- Category rotation basis: prioritized the lowest-count categories after round 16.
+- Selected categories:
+  - `hair`
+  - `womens_health`
+  - `mens_health`
+- Added 3 Supabase blog posts:
+  - `/blog/finasteride-dutasteride-hair-loss-safety-warning-record-2026`
+  - `/blog/hpv-self-collection-cervical-screening-home-test-record-2026`
+  - `/blog/erectile-dysfunction-cardiovascular-risk-blood-pressure-record-2026`
+- Added 3 local insight posts:
+  - `/insights/finasteride-dutasteride-hair-loss-safety-warning-record-2026`
+  - `/insights/hpv-self-collection-cervical-screening-home-test-record-2026`
+  - `/insights/erectile-dysfunction-cardiovascular-risk-blood-pressure-record-2026`
+- Added 3 Q&A items to both `public/qa.json` and `src/data/qa.json`.
+- Added 3 unified photo-style OG images under `public/og/content-quality`.
+- Source topics: 2026 MHRA finasteride/dutasteride safety warnings, HPV self-collection and cervical screening access, erectile dysfunction as a cardiovascular risk signal.
 
 Required verification command:
 

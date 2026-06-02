@@ -1,8 +1,8 @@
 {
   "min_tag_count": 5,
-  "total_questions": 1841,
-  "total_unique_tags": 2142,
-  "page_eligible_tags": 228,
+  "total_questions": 1844,
+  "total_unique_tags": 2149,
+  "page_eligible_tags": 229,
   "tags": {
     "플로로탄닌": {
       "count": 1368,
@@ -6059,6 +6059,76 @@
         "trendqa-cancer-immune-20260530"
       ]
     },
+    "심혈관": {
+      "count": 65,
+      "qids": [
+        "cardio-019",
+        "cardio-030",
+        "cardio-040",
+        "cardio-045",
+        "cardio-050",
+        "cardio-057",
+        "cardio-060",
+        "cardio-065",
+        "cardio-067",
+        "cardio-070",
+        "cardio-075",
+        "cardio-080",
+        "cardio-085",
+        "cardio-090",
+        "cardio-095",
+        "cardio-100",
+        "meta-018",
+        "wh-extra-008",
+        "wh-extra-060",
+        "wh-extra-070",
+        "womens-009",
+        "mens-003",
+        "mens-016",
+        "mens-extra-005",
+        "mens-extra-030",
+        "mens-005",
+        "infect-extra-006",
+        "infect-extra-021",
+        "mental-extra-032",
+        "ingr-010",
+        "ingr-021",
+        "qa200-20260527-077",
+        "qa200-20260527-078",
+        "qa200-20260527-079",
+        "qa200-20260527-080",
+        "qa200-20260527-081",
+        "qa200-20260527-082",
+        "qa200-20260527-083",
+        "qa200-20260527-084",
+        "qa200-20260527-085",
+        "qa200-20260527-086",
+        "qa200-20260527-087",
+        "qa200-20260527-088",
+        "qa200-20260527-089",
+        "qa200-20260527-090",
+        "qa200-20260527-091",
+        "qa200-20260527-092",
+        "qa200-20260527-093",
+        "qa200-20260527-094",
+        "seoqa-cardiovascular-01",
+        "seoqa-cardiovascular-02",
+        "seoqa-cardiovascular-03",
+        "seoqa-cardiovascular-04",
+        "seoqa-cardiovascular-05",
+        "seoqa-cardiovascular-06",
+        "seoqa-cardiovascular-07",
+        "seoqa-cardiovascular-08",
+        "seoqa-cardiovascular-09",
+        "seoqa-cardiovascular-10",
+        "trendqa-cardiovascular-20260530",
+        "round2-cardiovascular-20260530",
+        "trend-ultra-processed-food-blood-sugar-label-20260602",
+        "trend-sleep-regularity-heart-risk-20260602",
+        "trend-cold-plunge-sauna-blood-pressure-arrhythmia-safety-20260602",
+        "trend-erectile-dysfunction-cardiovascular-risk-20260602"
+      ]
+    },
     "암": {
       "count": 65,
       "qids": [
@@ -6127,75 +6197,6 @@
         "ci_093",
         "ci_094",
         "ci_095"
-      ]
-    },
-    "심혈관": {
-      "count": 64,
-      "qids": [
-        "cardio-019",
-        "cardio-030",
-        "cardio-040",
-        "cardio-045",
-        "cardio-050",
-        "cardio-057",
-        "cardio-060",
-        "cardio-065",
-        "cardio-067",
-        "cardio-070",
-        "cardio-075",
-        "cardio-080",
-        "cardio-085",
-        "cardio-090",
-        "cardio-095",
-        "cardio-100",
-        "meta-018",
-        "wh-extra-008",
-        "wh-extra-060",
-        "wh-extra-070",
-        "womens-009",
-        "mens-003",
-        "mens-016",
-        "mens-extra-005",
-        "mens-extra-030",
-        "mens-005",
-        "infect-extra-006",
-        "infect-extra-021",
-        "mental-extra-032",
-        "ingr-010",
-        "ingr-021",
-        "qa200-20260527-077",
-        "qa200-20260527-078",
-        "qa200-20260527-079",
-        "qa200-20260527-080",
-        "qa200-20260527-081",
-        "qa200-20260527-082",
-        "qa200-20260527-083",
-        "qa200-20260527-084",
-        "qa200-20260527-085",
-        "qa200-20260527-086",
-        "qa200-20260527-087",
-        "qa200-20260527-088",
-        "qa200-20260527-089",
-        "qa200-20260527-090",
-        "qa200-20260527-091",
-        "qa200-20260527-092",
-        "qa200-20260527-093",
-        "qa200-20260527-094",
-        "seoqa-cardiovascular-01",
-        "seoqa-cardiovascular-02",
-        "seoqa-cardiovascular-03",
-        "seoqa-cardiovascular-04",
-        "seoqa-cardiovascular-05",
-        "seoqa-cardiovascular-06",
-        "seoqa-cardiovascular-07",
-        "seoqa-cardiovascular-08",
-        "seoqa-cardiovascular-09",
-        "seoqa-cardiovascular-10",
-        "trendqa-cardiovascular-20260530",
-        "round2-cardiovascular-20260530",
-        "trend-ultra-processed-food-blood-sugar-label-20260602",
-        "trend-sleep-regularity-heart-risk-20260602",
-        "trend-cold-plunge-sauna-blood-pressure-arrhythmia-safety-20260602"
       ]
     },
     "장": {
@@ -6336,7 +6337,7 @@
       ]
     },
     "혈당": {
-      "count": 61,
+      "count": 62,
       "qids": [
         "meta-001",
         "meta-002",
@@ -6398,7 +6399,8 @@
         "round2-neuro-cognitive-20260530",
         "trend-ultra-processed-food-blood-sugar-label-20260602",
         "trend-time-restricted-eating-evening-meal-20260602",
-        "trend-berberine-blood-sugar-drug-interaction-20260602"
+        "trend-berberine-blood-sugar-drug-interaction-20260602",
+        "trend-erectile-dysfunction-cardiovascular-risk-20260602"
       ]
     },
     "관절": {
@@ -6860,6 +6862,45 @@
         "qa200-20260527-075"
       ]
     },
+    "여성건강": {
+      "count": 34,
+      "qids": [
+        "woms-001",
+        "woms-005",
+        "woms-006",
+        "woms-008",
+        "woms-011",
+        "woms-012",
+        "woms-014",
+        "woms-015",
+        "woms-016",
+        "woms-017",
+        "woms-018",
+        "woms-019",
+        "woms-020",
+        "infect-005",
+        "qa200-20260527-153",
+        "qa200-20260527-178",
+        "qa200-20260527-181",
+        "qa200-20260527-182",
+        "qa200-20260527-183",
+        "qa200-20260527-184",
+        "qa200-20260527-185",
+        "qa200-20260527-186",
+        "qa200-20260527-187",
+        "qa200-20260527-188",
+        "qa200-20260527-189",
+        "qa200-20260527-190",
+        "qa200-20260527-191",
+        "qa200-20260527-192",
+        "trendqa-womens-20260530",
+        "round2-womens-health-20260530",
+        "trend-menopause-hormone-therapy-label-change-20260602",
+        "trend-endometriosis-clinical-diagnosis-acog-20260602",
+        "trend-pcos-glp1-insulin-resistance-pregnancy-planning-20260602",
+        "trend-hpv-self-collection-cervical-screening-20260602"
+      ]
+    },
     "소화·간": {
       "count": 33,
       "qids": [
@@ -6898,42 +6939,42 @@
         "seoqa-digestive-15"
       ]
     },
-    "여성건강": {
+    "혈압": {
       "count": 33,
       "qids": [
-        "woms-001",
-        "woms-005",
-        "woms-006",
-        "woms-008",
-        "woms-011",
-        "woms-012",
-        "woms-014",
-        "woms-015",
-        "woms-016",
-        "woms-017",
-        "woms-018",
-        "woms-019",
-        "woms-020",
-        "infect-005",
-        "qa200-20260527-153",
-        "qa200-20260527-178",
-        "qa200-20260527-181",
-        "qa200-20260527-182",
-        "qa200-20260527-183",
-        "qa200-20260527-184",
-        "qa200-20260527-185",
-        "qa200-20260527-186",
-        "qa200-20260527-187",
-        "qa200-20260527-188",
-        "qa200-20260527-189",
-        "qa200-20260527-190",
-        "qa200-20260527-191",
-        "qa200-20260527-192",
-        "trendqa-womens-20260530",
-        "round2-womens-health-20260530",
-        "trend-menopause-hormone-therapy-label-change-20260602",
-        "trend-endometriosis-clinical-diagnosis-acog-20260602",
-        "trend-pcos-glp1-insulin-resistance-pregnancy-planning-20260602"
+        "cardio-009",
+        "cardio-011",
+        "cardio-013",
+        "cardio-017",
+        "cardio-026",
+        "cardio-029",
+        "cardio-032",
+        "cardio-036",
+        "cardio-039",
+        "cardio-041",
+        "cardio-044",
+        "cardio-047",
+        "cardio-051",
+        "cardio-056",
+        "cardio-058",
+        "cardio-061",
+        "cardio-064",
+        "cardio-072",
+        "cardio-074",
+        "cardio-079",
+        "cardio-084",
+        "cardio-089",
+        "cardio-094",
+        "qa200-20260527-088",
+        "qa200-20260527-165",
+        "trendqa-cardiovascular-20260530",
+        "round3-cardiovascular-1-20260531",
+        "round3-cardiovascular-2-20260531",
+        "trend-sodium-potassium-salt-blood-pressure-20260602",
+        "trend-testosterone-therapy-low-libido-bp-monitoring-20260602",
+        "trend-oral-minoxidil-hair-loss-blood-pressure-safety-20260602",
+        "trend-cold-plunge-sauna-blood-pressure-arrhythmia-safety-20260602",
+        "trend-erectile-dysfunction-cardiovascular-risk-20260602"
       ]
     },
     "호흡": {
@@ -7046,43 +7087,6 @@
         "qa200-20260527-056",
         "qa200-20260527-057",
         "qa200-20260527-058"
-      ]
-    },
-    "혈압": {
-      "count": 32,
-      "qids": [
-        "cardio-009",
-        "cardio-011",
-        "cardio-013",
-        "cardio-017",
-        "cardio-026",
-        "cardio-029",
-        "cardio-032",
-        "cardio-036",
-        "cardio-039",
-        "cardio-041",
-        "cardio-044",
-        "cardio-047",
-        "cardio-051",
-        "cardio-056",
-        "cardio-058",
-        "cardio-061",
-        "cardio-064",
-        "cardio-072",
-        "cardio-074",
-        "cardio-079",
-        "cardio-084",
-        "cardio-089",
-        "cardio-094",
-        "qa200-20260527-088",
-        "qa200-20260527-165",
-        "trendqa-cardiovascular-20260530",
-        "round3-cardiovascular-1-20260531",
-        "round3-cardiovascular-2-20260531",
-        "trend-sodium-potassium-salt-blood-pressure-20260602",
-        "trend-testosterone-therapy-low-libido-bp-monitoring-20260602",
-        "trend-oral-minoxidil-hair-loss-blood-pressure-safety-20260602",
-        "trend-cold-plunge-sauna-blood-pressure-arrhythmia-safety-20260602"
       ]
     },
     "심장": {
@@ -7261,6 +7265,39 @@
         "nc_088"
       ]
     },
+    "남성건강": {
+      "count": 28,
+      "qids": [
+        "mens-001",
+        "mens-002",
+        "mens-003",
+        "mens-004",
+        "mens-006",
+        "mens-007",
+        "mens-010",
+        "mens-011",
+        "mens-013",
+        "mens-014",
+        "mens-016",
+        "mens-017",
+        "mens-019",
+        "mens-020",
+        "ingr-012",
+        "qa200-20260527-193",
+        "qa200-20260527-194",
+        "qa200-20260527-195",
+        "qa200-20260527-196",
+        "qa200-20260527-197",
+        "qa200-20260527-198",
+        "qa200-20260527-199",
+        "qa200-20260527-200",
+        "trendqa-mens-20260530",
+        "trend-testosterone-therapy-low-libido-bp-monitoring-20260602",
+        "trend-prostate-psa-mri-screening-aua-20260602",
+        "trend-phthalates-male-fertility-semen-quality-exposure-20260602",
+        "trend-erectile-dysfunction-cardiovascular-risk-20260602"
+      ]
+    },
     "단백질": {
       "count": 28,
       "qids": [
@@ -7325,38 +7362,6 @@
         "meta_098",
         "meta_099",
         "mens-extra-043"
-      ]
-    },
-    "남성건강": {
-      "count": 27,
-      "qids": [
-        "mens-001",
-        "mens-002",
-        "mens-003",
-        "mens-004",
-        "mens-006",
-        "mens-007",
-        "mens-010",
-        "mens-011",
-        "mens-013",
-        "mens-014",
-        "mens-016",
-        "mens-017",
-        "mens-019",
-        "mens-020",
-        "ingr-012",
-        "qa200-20260527-193",
-        "qa200-20260527-194",
-        "qa200-20260527-195",
-        "qa200-20260527-196",
-        "qa200-20260527-197",
-        "qa200-20260527-198",
-        "qa200-20260527-199",
-        "qa200-20260527-200",
-        "trendqa-mens-20260530",
-        "trend-testosterone-therapy-low-libido-bp-monitoring-20260602",
-        "trend-prostate-psa-mri-screening-aua-20260602",
-        "trend-phthalates-male-fertility-semen-quality-exposure-20260602"
       ]
     },
     "대사": {
@@ -8914,6 +8919,19 @@
         "infect-108"
       ]
     },
+    "자궁경부암": {
+      "count": 8,
+      "qids": [
+        "cancer-016",
+        "woms-012",
+        "wh-extra-031",
+        "wh-extra-038",
+        "infect-extra-017",
+        "ci_116",
+        "ci_117",
+        "trend-hpv-self-collection-cervical-screening-20260602"
+      ]
+    },
     "혈당스파이크": {
       "count": 8,
       "qids": [
@@ -9071,18 +9089,6 @@
         "womens-003"
       ]
     },
-    "자궁경부암": {
-      "count": 7,
-      "qids": [
-        "cancer-016",
-        "woms-012",
-        "wh-extra-031",
-        "wh-extra-038",
-        "infect-extra-017",
-        "ci_116",
-        "ci_117"
-      ]
-    },
     "자외선차단": {
       "count": 7,
       "qids": [
@@ -9140,6 +9146,17 @@
         "round3-hair-1-20260531",
         "trend-glp1-muscle-protein-fiber-20260602",
         "trend-pcos-glp1-insulin-resistance-pregnancy-planning-20260602"
+      ]
+    },
+    "HPV": {
+      "count": 6,
+      "qids": [
+        "woms-012",
+        "wh-extra-033",
+        "infect-extra-017",
+        "infect-extra-058",
+        "ci_116",
+        "trend-hpv-self-collection-cervical-screening-20260602"
       ]
     },
     "NK세포": {
@@ -9548,16 +9565,6 @@
         "ci_144"
       ]
     },
-    "HPV": {
-      "count": 5,
-      "qids": [
-        "woms-012",
-        "wh-extra-033",
-        "infect-extra-017",
-        "infect-extra-058",
-        "ci_116"
-      ]
-    },
     "LDL": {
       "count": 5,
       "qids": [
@@ -9726,6 +9733,16 @@
         "mental-extra-046",
         "mental-003",
         "mental-110"
+      ]
+    },
+    "발기부전": {
+      "count": 5,
+      "qids": [
+        "mens-003",
+        "mens-extra-005",
+        "mens-102",
+        "qa200-20260527-195",
+        "trend-erectile-dysfunction-cardiovascular-risk-20260602"
       ]
     },
     "방광염": {
@@ -11810,7 +11827,10 @@
     "trend-fermented-food-probiotics-gut-microbiome-safety-20260602": "김치나-요거트를-먹으면-프로바이오틱스-영양제를-안-먹어도-장-건강에-충분한가요",
     "trend-ai-chatbot-mental-health-crisis-safety-20260602": "AI-챗봇에게-불안이나-우울-상담을-해도-괜찮나요-어디까지-믿어야-하나요",
     "trend-weighted-vest-rucking-bone-joint-safety-20260602": "가중조끼나-러킹이-골밀도와-근력에-좋다는데-무릎허리에-부담은-없나요",
-    "trend-cold-plunge-sauna-blood-pressure-arrhythmia-safety-20260602": "냉수욕이나-사우나를-번갈아-하면-혈압과-심장-건강에-정말-좋은가요"
+    "trend-cold-plunge-sauna-blood-pressure-arrhythmia-safety-20260602": "냉수욕이나-사우나를-번갈아-하면-혈압과-심장-건강에-정말-좋은가요",
+    "trend-finasteride-dutasteride-hair-loss-safety-warning-20260602": "탈모약-피나스테리드나-두타스테리드를-시작하기-전에-어떤-부작용을-기록해야-하나요",
+    "trend-hpv-self-collection-cervical-screening-20260602": "HPV-자가채취-검사가-가능해지면-자궁경부암-검진을-병원에서-안-받아도-되나요",
+    "trend-erectile-dysfunction-cardiovascular-risk-20260602": "발기부전이-심혈관질환-위험-신호일-수-있다는데-어떤-검사를-확인해야-하나요"
   },
-  "generated_at": "2026-06-02T14:30:26.290782+00:00"
+  "generated_at": "2026-06-02T14:46:21.337239+00:00"
 }
