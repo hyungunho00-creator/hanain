@@ -1,6 +1,7 @@
 import { getCategoryFallbackImage } from '../lib/postImages.js'
 import { ROUND14_TREND_BLOG_POSTS } from './localTrendBlogPostsRound14.js'
 import { ROUND15_TREND_BLOG_POSTS } from './localTrendBlogPostsRound15.js'
+import { ROUND16_TREND_BLOG_POSTS } from './localTrendBlogPostsRound16.js'
 
 function list(items) {
   return items.map((item) => `- ${item}`).join('\n')
@@ -1249,6 +1250,7 @@ export const LOCAL_TREND_BLOG_POSTS = [
   ...BASE_LOCAL_TREND_BLOG_POSTS,
   ...ROUND14_TREND_BLOG_POSTS,
   ...ROUND15_TREND_BLOG_POSTS,
+  ...ROUND16_TREND_BLOG_POSTS,
 ]
 
 export function getLocalTrendBlogPost(slug) {

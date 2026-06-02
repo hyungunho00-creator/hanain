@@ -1,11 +1,11 @@
 const SITE = 'https://phlorotannin.com'
 
 const EXPECTED = {
-  sitemapTotal: 2871,
-  qCount: 1838,
+  sitemapTotal: 2880,
+  qCount: 1841,
   tagCount: 228,
-  blogCount: 587,
-  insightCount: 187,
+  blogCount: 590,
+  insightCount: 190,
   requiredBundleSlugs: [
     'glp1-era-protein-fiber-phlorotannin-checklist-2026',
     'glp1-muscle-loss-protein-resistance-training-2026',
@@ -42,6 +42,9 @@ const EXPECTED = {
     'indoor-co2-ventilation-hepa-respiratory-virus-record-2026',
     'norovirus-handwashing-bleach-hydration-outbreak-record-2026',
     'fermented-food-probiotics-gut-microbiome-safety-record-2026',
+    'ai-chatbot-mental-health-crisis-safety-record-2026',
+    'weighted-vest-rucking-bone-joint-safety-record-2026',
+    'cold-plunge-sauna-blood-pressure-arrhythmia-safety-record-2026',
   ],
   draftSlug: 'ecklonia-cava-respiratory-health-clinical-trial-2026',
 }

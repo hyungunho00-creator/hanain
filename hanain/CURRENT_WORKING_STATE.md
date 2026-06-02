@@ -23,8 +23,8 @@ What "current" means:
 
 Content sources:
 
-- Supabase `public.posts`: canonical published blog posts (`587` published current posts).
-- Local trend posts: `src/data/localTrendBlogPosts.js` + round modules (`24` posts, fallback/seed only).
+- Supabase `public.posts`: canonical published blog posts (`590` published current posts).
+- Local trend posts: `src/data/localTrendBlogPosts.js` + round modules (`27` posts, fallback/seed only).
 - Local functional ingredient posts: `src/data/localFunctionalIngredientPosts.js` (`10` posts, fallback/seed only).
 - Local category posts: `src/data/localCategoryBlogPosts.js` (`20` posts, fallback/seed only).
 - Local SEO expansion posts: `src/data/localSeoExpansionPosts.js` (`105` posts, fallback/seed only).
@@ -52,13 +52,13 @@ Key local posts that must remain available:
 Expected production SEO signals:
 
 - `https://phlorotannin.com/sitemap.xml`
-  - total URLs: `2871`
+  - total URLs: `2880`
   - duplicate URLs: `0`
   - noindex-like URLs inside sitemap: `0`
-  - Q&A detail URLs: `1838`
+  - Q&A detail URLs: `1841`
   - Q&A tag URLs: `228`
-  - blog detail URLs: `587`
-  - insight detail URLs: `187`
+  - blog detail URLs: `590`
+  - insight detail URLs: `190`
 - `/qa?category=cancer_immune`
   - `X-Robots-Tag: noindex,nofollow`
   - canonical: `https://phlorotannin.com/qa`
@@ -333,6 +333,25 @@ Supabase note:
 - Added 3 Q&A items to both `public/qa.json` and `src/data/qa.json`.
 - Added 3 unified photo-style OG images under `public/og/content-quality`.
 - Source topics: indoor CO2/ventilation/HEPA for respiratory-virus risk decisions, norovirus handwashing/surface disinfection/hydration, fermented foods versus probiotics for gut microbiome safety.
+
+2026-06-02 KST health trend content update round 16:
+
+- Category rotation basis: refreshed under-updated mental health and musculoskeletal categories, with cardiovascular updated through a forward-looking recovery-routine safety topic.
+- Selected categories:
+  - `mental_health`
+  - `musculoskeletal`
+  - `cardiovascular`
+- Added 3 Supabase blog posts:
+  - `/blog/ai-chatbot-mental-health-crisis-safety-record-2026`
+  - `/blog/weighted-vest-rucking-bone-joint-safety-record-2026`
+  - `/blog/cold-plunge-sauna-blood-pressure-arrhythmia-safety-record-2026`
+- Added 3 local insight posts:
+  - `/insights/ai-chatbot-mental-health-crisis-safety-record-2026`
+  - `/insights/weighted-vest-rucking-bone-joint-safety-record-2026`
+  - `/insights/cold-plunge-sauna-blood-pressure-arrhythmia-safety-record-2026`
+- Added 3 Q&A items to both `public/qa.json` and `src/data/qa.json`.
+- Added 3 unified photo-style OG images under `public/og/content-quality`.
+- Source topics: AI chatbot mental-health safeguards and crisis referral, weighted vest/rucking with bone and joint safety records, cold plunge/sauna recovery routines with blood pressure and arrhythmia safety.
 
 Required verification command:
 
