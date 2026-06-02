@@ -23,7 +23,7 @@ What "current" means:
 
 Content sources:
 
-- Supabase `public.posts`: canonical published blog posts (`566` published current posts).
+- Supabase `public.posts`: canonical published blog posts (`569` published current posts).
 - Local trend posts: `src/data/localTrendBlogPosts.js` (`18` posts, fallback/seed only).
 - Local functional ingredient posts: `src/data/localFunctionalIngredientPosts.js` (`10` posts, fallback/seed only).
 - Local category posts: `src/data/localCategoryBlogPosts.js` (`20` posts, fallback/seed only).
@@ -52,13 +52,13 @@ Key local posts that must remain available:
 Expected production SEO signals:
 
 - `https://phlorotannin.com/sitemap.xml`
-  - total URLs: `2801`
+  - total URLs: `2810`
   - duplicate URLs: `0`
   - noindex-like URLs inside sitemap: `0`
-  - Q&A detail URLs: `1817`
+  - Q&A detail URLs: `1820`
   - Q&A tag URLs: `221`
-  - blog detail URLs: `566`
-  - insight detail URLs: `166`
+  - blog detail URLs: `569`
+  - insight detail URLs: `169`
 - `/qa?category=cancer_immune`
   - `X-Robots-Tag: noindex,nofollow`
   - canonical: `https://phlorotannin.com/qa`
@@ -200,6 +200,25 @@ Supabase note:
 - Added 3 Q&A items to both `public/qa.json` and `src/data/qa.json`.
 - Added 3 unified photo-style OG images under `public/og/content-quality`.
 - Source topics: measles/MMR and vitamin A misinformation, RSV vaccine eligibility for older and high-risk adults, GLP-1 weight loss with knee osteoarthritis and muscle/bone records.
+
+2026-06-02 KST health trend content update round 9:
+
+- Category rotation basis: next categories after round 8, prioritizing fresh coverage without mass-editing old Q&A.
+- Selected categories:
+  - `neuro_cognitive` / 뇌·인지
+  - `mental_health` / 정신건강
+  - `skin` / 피부
+- Added 3 Supabase blog posts:
+  - `/blog/hearing-loss-dementia-risk-hearing-aid-record-2026`
+  - `/blog/screen-time-sleep-anxiety-digital-behavior-record-2026`
+  - `/blog/sunscreen-vitamin-d-uv-index-myth-check-2026`
+- Added 3 local insight posts:
+  - `/insights/hearing-loss-dementia-risk-hearing-aid-record-2026`
+  - `/insights/screen-time-sleep-anxiety-digital-behavior-record-2026`
+  - `/insights/sunscreen-vitamin-d-uv-index-myth-check-2026`
+- Added 3 Q&A items to both `public/qa.json` and `src/data/qa.json`.
+- Added 3 unified photo-style OG images under `public/og/content-quality`.
+- Source topics: hearing loss and dementia risk with hearing aids, screen time/sleep/anxiety digital behavior, sunscreen/vitamin D/UV index myths.
 
 Required verification command:
 

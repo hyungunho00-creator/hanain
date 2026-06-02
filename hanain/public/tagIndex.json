@@ -1,7 +1,7 @@
 {
   "min_tag_count": 5,
-  "total_questions": 1817,
-  "total_unique_tags": 2078,
+  "total_questions": 1820,
+  "total_unique_tags": 2086,
   "page_eligible_tags": 221,
   "tags": {
     "플로로탄닌": {
@@ -7673,6 +7673,30 @@
         "round2-hair-20260530"
       ]
     },
+    "정신건강": {
+      "count": 19,
+      "qids": [
+        "neuro-012",
+        "woms-011",
+        "mens-extra-070",
+        "mental-extra-010",
+        "mental-extra-029",
+        "mental-005",
+        "qa200-20260527-110",
+        "qa200-20260527-122",
+        "seoqa-mental_health-01",
+        "seoqa-mental_health-02",
+        "seoqa-mental_health-03",
+        "seoqa-mental_health-04",
+        "seoqa-mental_health-05",
+        "seoqa-mental_health-06",
+        "seoqa-mental_health-07",
+        "seoqa-mental_health-08",
+        "seoqa-mental_health-09",
+        "seoqa-mental_health-10",
+        "trend-screen-time-sleep-anxiety-digital-behavior-20260602"
+      ]
+    },
     "근육": {
       "count": 18,
       "qids": [
@@ -7694,29 +7718,6 @@
         "ms_089",
         "wh-extra-050",
         "ingr-015"
-      ]
-    },
-    "정신건강": {
-      "count": 18,
-      "qids": [
-        "neuro-012",
-        "woms-011",
-        "mens-extra-070",
-        "mental-extra-010",
-        "mental-extra-029",
-        "mental-005",
-        "qa200-20260527-110",
-        "qa200-20260527-122",
-        "seoqa-mental_health-01",
-        "seoqa-mental_health-02",
-        "seoqa-mental_health-03",
-        "seoqa-mental_health-04",
-        "seoqa-mental_health-05",
-        "seoqa-mental_health-06",
-        "seoqa-mental_health-07",
-        "seoqa-mental_health-08",
-        "seoqa-mental_health-09",
-        "seoqa-mental_health-10"
       ]
     },
     "갱년기": {
@@ -7950,6 +7951,26 @@
         "qa200-20260527-102"
       ]
     },
+    "비타민D": {
+      "count": 15,
+      "qids": [
+        "cardio-033",
+        "cancer-011",
+        "mens-extra-007",
+        "mens-extra-070",
+        "resp-015",
+        "infect-extra-041",
+        "infect-extra-078",
+        "mental-extra-027",
+        "ingr-029",
+        "qa200-20260527-125",
+        "qa200-20260527-189",
+        "trendqa-hair-20260530",
+        "round3-infection_inflammation-2-20260531",
+        "trend-vitamin-d-sun-sunscreen-skin-20260602",
+        "trend-sunscreen-vitamin-d-uv-index-myth-20260602"
+      ]
+    },
     "소화기": {
       "count": 15,
       "qids": [
@@ -8046,25 +8067,6 @@
         "qa200-20260527-103",
         "round2-neuro-cognitive-20260530",
         "round3-neuro_cognitive-2-20260531"
-      ]
-    },
-    "비타민D": {
-      "count": 14,
-      "qids": [
-        "cardio-033",
-        "cancer-011",
-        "mens-extra-007",
-        "mens-extra-070",
-        "resp-015",
-        "infect-extra-041",
-        "infect-extra-078",
-        "mental-extra-027",
-        "ingr-029",
-        "qa200-20260527-125",
-        "qa200-20260527-189",
-        "trendqa-hair-20260530",
-        "round3-infection_inflammation-2-20260531",
-        "trend-vitamin-d-sun-sunscreen-skin-20260602"
       ]
     },
     "수면·정신건강": {
@@ -9295,6 +9297,17 @@
         "trend-energy-drink-preworkout-caffeine-sleep-20260602"
       ]
     },
+    "불안": {
+      "count": 6,
+      "qids": [
+        "qa200-20260527-111",
+        "qa200-20260527-116",
+        "qa200-20260527-120",
+        "trendqa-mental-20260530",
+        "round3-mental_health-2-20260531",
+        "trend-screen-time-sleep-anxiety-digital-behavior-20260602"
+      ]
+    },
     "브레인포그": {
       "count": 6,
       "qids": [
@@ -9315,6 +9328,17 @@
         "ci_143",
         "ingr-002",
         "ingr-028"
+      ]
+    },
+    "수면부족": {
+      "count": 6,
+      "qids": [
+        "infect-extra-046",
+        "mental-extra-077",
+        "sh_129",
+        "qa200-20260527-099",
+        "round3-neuro_cognitive-1-20260531",
+        "trend-screen-time-sleep-anxiety-digital-behavior-20260602"
       ]
     },
     "수분": {
@@ -9679,16 +9703,6 @@
         "trend-magnesium-glycinate-sleep-safety-20260602"
       ]
     },
-    "불안": {
-      "count": 5,
-      "qids": [
-        "qa200-20260527-111",
-        "qa200-20260527-116",
-        "qa200-20260527-120",
-        "trendqa-mental-20260530",
-        "round3-mental_health-2-20260531"
-      ]
-    },
     "비타민C": {
       "count": 5,
       "qids": [
@@ -9727,16 +9741,6 @@
         "qa200-20260527-068",
         "qa200-20260527-072",
         "qa200-20260527-076"
-      ]
-    },
-    "수면부족": {
-      "count": 5,
-      "qids": [
-        "infect-extra-046",
-        "mental-extra-077",
-        "sh_129",
-        "qa200-20260527-099",
-        "round3-neuro_cognitive-1-20260531"
       ]
     },
     "수면장애": {
@@ -11677,7 +11681,10 @@
     "trend-testosterone-therapy-low-libido-bp-monitoring-20260602": "테스토스테론-치료가-다시-이슈라는데-피곤하고-성욕이-떨어지면-맞아도-되나요",
     "trend-measles-mmr-vitamin-a-outbreak-20260602": "홍역-유행-때-비타민A를-먹으면-예방이-되나요-MMR-접종-기록을-먼저-봐야-하나요",
     "trend-rsv-vaccine-older-adults-risk-20260602": "RSV-백신은-75세-이상만-맞는-건가요-50대도-폐질환이-있으면-상담해야-하나요",
-    "trend-glp1-knee-osteoarthritis-muscle-bone-20260602": "GLP1-감량으로-무릎-통증이-줄면-골관절염이-좋아진-건가요-근손실도-봐야-하나요"
+    "trend-glp1-knee-osteoarthritis-muscle-bone-20260602": "GLP1-감량으로-무릎-통증이-줄면-골관절염이-좋아진-건가요-근손실도-봐야-하나요",
+    "trend-hearing-loss-dementia-hearing-aid-20260602": "난청이-있으면-치매위험이-높아진다는데-보청기를-쓰면-기억력이-좋아지나요",
+    "trend-screen-time-sleep-anxiety-digital-behavior-20260602": "스크린타임이-많으면-불안이-심해지나요-밤-사용과-수면을-먼저-봐야-하나요",
+    "trend-sunscreen-vitamin-d-uv-index-myth-20260602": "자외선차단제를-바르면-비타민D가-부족해지니-햇빛을-오래-쬐는-게-좋나요"
   },
-  "generated_at": "2026-06-02T06:27:25.519520+00:00"
+  "generated_at": "2026-06-02T06:51:39.777042+00:00"
 }

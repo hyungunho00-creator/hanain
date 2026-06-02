@@ -473,6 +473,27 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/glp1-knee-osteoarthritis-muscle-bone-record-2026"/>
   </url>
   <url>
+    <loc>https://phlorotannin.com/insights/hearing-loss-dementia-risk-hearing-aid-record-2026</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/hearing-loss-dementia-risk-hearing-aid-record-2026"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/insights/screen-time-sleep-anxiety-digital-behavior-record-2026</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/screen-time-sleep-anxiety-digital-behavior-record-2026"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/insights/sunscreen-vitamin-d-uv-index-myth-check-2026</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/sunscreen-vitamin-d-uv-index-myth-check-2026"/>
+  </url>
+  <url>
     <loc>https://phlorotannin.com/insights/seapolynol-vs-generic-phlorotannin</loc>
     <lastmod>2026-06-02</lastmod>
     <changefreq>monthly</changefreq>
@@ -14032,6 +14053,27 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/q/GLP1-감량으로-무릎-통증이-줄면-골관절염이-좋아진-건가요-근손실도-봐야-하나요"/>
   </url>
   <url>
+    <loc>https://phlorotannin.com/q/난청이-있으면-치매위험이-높아진다는데-보청기를-쓰면-기억력이-좋아지나요</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/q/난청이-있으면-치매위험이-높아진다는데-보청기를-쓰면-기억력이-좋아지나요"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/q/스크린타임이-많으면-불안이-심해지나요-밤-사용과-수면을-먼저-봐야-하나요</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/q/스크린타임이-많으면-불안이-심해지나요-밤-사용과-수면을-먼저-봐야-하나요"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/q/자외선차단제를-바르면-비타민D가-부족해지니-햇빛을-오래-쬐는-게-좋나요</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/q/자외선차단제를-바르면-비타민D가-부족해지니-햇빛을-오래-쬐는-게-좋나요"/>
+  </url>
+  <url>
     <loc>https://phlorotannin.com/qa/tag/%EA%B3%A0%ED%98%88%EC%95%95</loc>
     <lastmod>2026-06-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -15577,6 +15619,39 @@
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa/tag/%EA%B7%BC%EA%B3%A8%EA%B2%A9"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/sunscreen-vitamin-d-uv-index-myth-check-2026</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/sunscreen-vitamin-d-uv-index-myth-check-2026"/>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og-card/v20260602/sunscreen-vitamin-d-uv-index-myth-check-2026.png</image:loc>
+      <image:title>자외선차단제와 비타민D 오해: UV 지수 3 이상이면 피부보호가 먼저입니다</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/screen-time-sleep-anxiety-digital-behavior-record-2026</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/screen-time-sleep-anxiety-digital-behavior-record-2026"/>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og-card/v20260602/screen-time-sleep-anxiety-digital-behavior-record-2026.png</image:loc>
+      <image:title>스크린타임과 불안: 화면시간보다 밤 사용과 수면 기록이 먼저입니다</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/hearing-loss-dementia-risk-hearing-aid-record-2026</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/hearing-loss-dementia-risk-hearing-aid-record-2026"/>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og-card/v20260602/hearing-loss-dementia-risk-hearing-aid-record-2026.png</image:loc>
+      <image:title>난청과 치매위험: 보청기는 기억력 약이 아니라 생활 기록에서 시작합니다</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://phlorotannin.com/blog/glp1-knee-osteoarthritis-muscle-bone-record-2026</loc>
