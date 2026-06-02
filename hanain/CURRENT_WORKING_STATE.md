@@ -23,8 +23,8 @@ What "current" means:
 
 Content sources:
 
-- Supabase `public.posts`: canonical published blog posts (`584` published current posts).
-- Local trend posts: `src/data/localTrendBlogPosts.js` + `src/data/localTrendBlogPostsRound14.js` (`21` posts, fallback/seed only).
+- Supabase `public.posts`: canonical published blog posts (`587` published current posts).
+- Local trend posts: `src/data/localTrendBlogPosts.js` + round modules (`24` posts, fallback/seed only).
 - Local functional ingredient posts: `src/data/localFunctionalIngredientPosts.js` (`10` posts, fallback/seed only).
 - Local category posts: `src/data/localCategoryBlogPosts.js` (`20` posts, fallback/seed only).
 - Local SEO expansion posts: `src/data/localSeoExpansionPosts.js` (`105` posts, fallback/seed only).
@@ -52,13 +52,13 @@ Key local posts that must remain available:
 Expected production SEO signals:
 
 - `https://phlorotannin.com/sitemap.xml`
-  - total URLs: `2861`
+  - total URLs: `2871`
   - duplicate URLs: `0`
   - noindex-like URLs inside sitemap: `0`
-  - Q&A detail URLs: `1835`
-  - Q&A tag URLs: `227`
-  - blog detail URLs: `584`
-  - insight detail URLs: `184`
+  - Q&A detail URLs: `1838`
+  - Q&A tag URLs: `228`
+  - blog detail URLs: `587`
+  - insight detail URLs: `187`
 - `/qa?category=cancer_immune`
   - `X-Robots-Tag: noindex,nofollow`
   - canonical: `https://phlorotannin.com/qa`
@@ -314,6 +314,25 @@ Supabase note:
 - Added 3 Q&A items to both `public/qa.json` and `src/data/qa.json`.
 - Added 3 unified photo-style OG images under `public/og/content-quality`.
 - Source topics: rosemary oil hair-loss evidence with scalp irritation/photo records, PCOS with GLP-1/insulin resistance/pregnancy planning, phthalates and male fertility with semen-test exposure records.
+
+2026-06-02 KST health trend content update round 15:
+
+- Category rotation basis: moved away from the just-updated hair/women/men batch and refreshed lower-count respiratory, infection/inflammation, and digestive categories.
+- Selected categories:
+  - `respiratory` / 호흡기
+  - `infection_inflammation` / 감염·염증
+  - `digestive` / 소화·장건강
+- Added 3 Supabase blog posts:
+  - `/blog/indoor-co2-ventilation-hepa-respiratory-virus-record-2026`
+  - `/blog/norovirus-handwashing-bleach-hydration-outbreak-record-2026`
+  - `/blog/fermented-food-probiotics-gut-microbiome-safety-record-2026`
+- Added 3 local insight posts:
+  - `/insights/indoor-co2-ventilation-hepa-respiratory-virus-record-2026`
+  - `/insights/norovirus-handwashing-bleach-hydration-outbreak-record-2026`
+  - `/insights/fermented-food-probiotics-gut-microbiome-safety-record-2026`
+- Added 3 Q&A items to both `public/qa.json` and `src/data/qa.json`.
+- Added 3 unified photo-style OG images under `public/og/content-quality`.
+- Source topics: indoor CO2/ventilation/HEPA for respiratory-virus risk decisions, norovirus handwashing/surface disinfection/hydration, fermented foods versus probiotics for gut microbiome safety.
 
 Required verification command:
 

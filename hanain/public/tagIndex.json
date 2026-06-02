@@ -1,11 +1,11 @@
 {
   "min_tag_count": 5,
-  "total_questions": 1835,
-  "total_unique_tags": 2127,
-  "page_eligible_tags": 227,
+  "total_questions": 1838,
+  "total_unique_tags": 2133,
+  "page_eligible_tags": 228,
   "tags": {
     "플로로탄닌": {
-      "count": 1367,
+      "count": 1368,
       "qids": [
         "cardio-001",
         "cardio-002",
@@ -1373,7 +1373,8 @@
         "trend-youth-mental-health-sleep-screen-time-20260602",
         "trend-creatine-resistance-training-sarcopenia-older-adults-20260602",
         "trend-bemotrizinol-sunscreen-uva-broad-spectrum-20260602",
-        "trend-rosemary-oil-hair-loss-scalp-irritation-20260602"
+        "trend-rosemary-oil-hair-loss-scalp-irritation-20260602",
+        "trend-indoor-co2-ventilation-hepa-respiratory-virus-20260602"
       ]
     },
     "감태": {
@@ -8139,6 +8140,25 @@
         "infect-018"
       ]
     },
+    "프로바이오틱스": {
+      "count": 14,
+      "qids": [
+        "dige-006",
+        "resp-018",
+        "infect-extra-002",
+        "infect-extra-027",
+        "infect-extra-043",
+        "infect-extra-078",
+        "infect-006",
+        "sh_128",
+        "qa200-20260527-055",
+        "qa200-20260527-069",
+        "qa-hospital-20260527-010",
+        "qa-hospital-20260527-029",
+        "qa-hospital-20260527-042",
+        "trend-fermented-food-probiotics-gut-microbiome-safety-20260602"
+      ]
+    },
     "피부장벽": {
       "count": 14,
       "qids": [
@@ -8158,6 +8178,42 @@
         "round3-skin-1-20260531"
       ]
     },
+    "장건강": {
+      "count": 13,
+      "qids": [
+        "dige-001",
+        "dige-015",
+        "dige-018",
+        "mental-008",
+        "ingr-005",
+        "ingr-007",
+        "ingr-027",
+        "qa200-20260527-038",
+        "qa200-20260527-062",
+        "qa200-20260527-069",
+        "round2-digestive-20260530",
+        "trend-resistant-starch-gut-microbiome-polyphenol-20260602",
+        "trend-fermented-food-probiotics-gut-microbiome-safety-20260602"
+      ]
+    },
+    "장내미생물": {
+      "count": 13,
+      "qids": [
+        "cancer-005",
+        "cancer-012",
+        "dige-006",
+        "infect-extra-043",
+        "ingr-015",
+        "ingr-028",
+        "trendqa-digestive-20260530",
+        "round2-digestive-20260530",
+        "round3-digestive-1-20260531",
+        "trend-resistant-starch-gut-microbiome-polyphenol-20260602",
+        "trend-coffee-gut-brain-axis-polyphenol-20260602",
+        "trend-diet-microbiome-ibs-upf-fermented-food-20260602",
+        "trend-fermented-food-probiotics-gut-microbiome-safety-20260602"
+      ]
+    },
     "카페인": {
       "count": 13,
       "qids": [
@@ -8174,24 +8230,6 @@
         "round3-mens_health-1-20260531",
         "trend-coffee-gut-brain-axis-polyphenol-20260602",
         "trend-energy-drink-preworkout-caffeine-sleep-20260602"
-      ]
-    },
-    "프로바이오틱스": {
-      "count": 13,
-      "qids": [
-        "dige-006",
-        "resp-018",
-        "infect-extra-002",
-        "infect-extra-027",
-        "infect-extra-043",
-        "infect-extra-078",
-        "infect-006",
-        "sh_128",
-        "qa200-20260527-055",
-        "qa200-20260527-069",
-        "qa-hospital-20260527-010",
-        "qa-hospital-20260527-029",
-        "qa-hospital-20260527-042"
       ]
     },
     "호르몬": {
@@ -8261,40 +8299,6 @@
         "qa200-20260527-015",
         "qa200-20260527-187",
         "trend-pcos-glp1-insulin-resistance-pregnancy-planning-20260602"
-      ]
-    },
-    "장건강": {
-      "count": 12,
-      "qids": [
-        "dige-001",
-        "dige-015",
-        "dige-018",
-        "mental-008",
-        "ingr-005",
-        "ingr-007",
-        "ingr-027",
-        "qa200-20260527-038",
-        "qa200-20260527-062",
-        "qa200-20260527-069",
-        "round2-digestive-20260530",
-        "trend-resistant-starch-gut-microbiome-polyphenol-20260602"
-      ]
-    },
-    "장내미생물": {
-      "count": 12,
-      "qids": [
-        "cancer-005",
-        "cancer-012",
-        "dige-006",
-        "infect-extra-043",
-        "ingr-015",
-        "ingr-028",
-        "trendqa-digestive-20260530",
-        "round2-digestive-20260530",
-        "round3-digestive-1-20260531",
-        "trend-resistant-starch-gut-microbiome-polyphenol-20260602",
-        "trend-coffee-gut-brain-axis-polyphenol-20260602",
-        "trend-diet-microbiome-ibs-upf-fermented-food-20260602"
       ]
     },
     "전립선": {
@@ -9765,6 +9769,16 @@
         "wh-extra-017",
         "qa200-20260527-182",
         "round3-womens_health-2-20260531"
+      ]
+    },
+    "설사": {
+      "count": 5,
+      "qids": [
+        "dige-018",
+        "infect-extra-002",
+        "qa200-20260527-056",
+        "qa200-20260527-064",
+        "trend-norovirus-handwashing-bleach-hydration-outbreak-20260602"
       ]
     },
     "소화기내과": {
@@ -11783,7 +11797,10 @@
     "trend-bemotrizinol-sunscreen-uva-broad-spectrum-20260602": "미국-선크림-새-성분-이야기가-많은데-SPF-숫자만-보면-되나요",
     "trend-rosemary-oil-hair-loss-scalp-irritation-20260602": "로즈마리오일을-바르면-탈모가-좋아진다는데-미녹시딜-대신-써도-되나요",
     "trend-pcos-glp1-insulin-resistance-pregnancy-planning-20260602": "PCOS가-있고-GLP1-약을-고민-중이면-임신-계획과-인슐린저항성은-어떻게-같이-봐야-하나요",
-    "trend-phthalates-male-fertility-semen-quality-exposure-20260602": "프탈레이트-같은-환경호르몬이-남성-난임에-영향을-준다는데-정액검사-전에-무엇을-기록해야-하나요"
+    "trend-phthalates-male-fertility-semen-quality-exposure-20260602": "프탈레이트-같은-환경호르몬이-남성-난임에-영향을-준다는데-정액검사-전에-무엇을-기록해야-하나요",
+    "trend-indoor-co2-ventilation-hepa-respiratory-virus-20260602": "실내-CO2-수치가-높으면-감기나-독감-같은-호흡기-감염-위험도-높다고-봐야-하나요",
+    "trend-norovirus-handwashing-bleach-hydration-outbreak-20260602": "노로바이러스는-손소독제로-안-잡힌다던데-가족끼리-계속-옮을-때-무엇부터-해야-하나요",
+    "trend-fermented-food-probiotics-gut-microbiome-safety-20260602": "김치나-요거트를-먹으면-프로바이오틱스-영양제를-안-먹어도-장-건강에-충분한가요"
   },
-  "generated_at": "2026-06-02T13:56:56.164459+00:00"
+  "generated_at": "2026-06-02T14:14:50.801834+00:00"
 }
