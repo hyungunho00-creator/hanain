@@ -1,7 +1,7 @@
 {
   "min_tag_count": 5,
-  "total_questions": 1850,
-  "total_unique_tags": 2165,
+  "total_questions": 1853,
+  "total_unique_tags": 2176,
   "page_eligible_tags": 233,
   "tags": {
     "플로로탄닌": {
@@ -6825,6 +6825,46 @@
         "qa200-20260527-195"
       ]
     },
+    "여성건강": {
+      "count": 35,
+      "qids": [
+        "woms-001",
+        "woms-005",
+        "woms-006",
+        "woms-008",
+        "woms-011",
+        "woms-012",
+        "woms-014",
+        "woms-015",
+        "woms-016",
+        "woms-017",
+        "woms-018",
+        "woms-019",
+        "woms-020",
+        "infect-005",
+        "qa200-20260527-153",
+        "qa200-20260527-178",
+        "qa200-20260527-181",
+        "qa200-20260527-182",
+        "qa200-20260527-183",
+        "qa200-20260527-184",
+        "qa200-20260527-185",
+        "qa200-20260527-186",
+        "qa200-20260527-187",
+        "qa200-20260527-188",
+        "qa200-20260527-189",
+        "qa200-20260527-190",
+        "qa200-20260527-191",
+        "qa200-20260527-192",
+        "trendqa-womens-20260530",
+        "round2-womens-health-20260530",
+        "trend-menopause-hormone-therapy-label-change-20260602",
+        "trend-endometriosis-clinical-diagnosis-acog-20260602",
+        "trend-pcos-glp1-insulin-resistance-pregnancy-planning-20260602",
+        "trend-hpv-self-collection-cervical-screening-20260602",
+        "trend-dense-breast-mammogram-notification-supplemental-screening-20260603"
+      ]
+    },
     "소화": {
       "count": 34,
       "qids": [
@@ -6862,45 +6902,6 @@
         "dg_086",
         "dg_089",
         "qa200-20260527-075"
-      ]
-    },
-    "여성건강": {
-      "count": 34,
-      "qids": [
-        "woms-001",
-        "woms-005",
-        "woms-006",
-        "woms-008",
-        "woms-011",
-        "woms-012",
-        "woms-014",
-        "woms-015",
-        "woms-016",
-        "woms-017",
-        "woms-018",
-        "woms-019",
-        "woms-020",
-        "infect-005",
-        "qa200-20260527-153",
-        "qa200-20260527-178",
-        "qa200-20260527-181",
-        "qa200-20260527-182",
-        "qa200-20260527-183",
-        "qa200-20260527-184",
-        "qa200-20260527-185",
-        "qa200-20260527-186",
-        "qa200-20260527-187",
-        "qa200-20260527-188",
-        "qa200-20260527-189",
-        "qa200-20260527-190",
-        "qa200-20260527-191",
-        "qa200-20260527-192",
-        "trendqa-womens-20260530",
-        "round2-womens-health-20260530",
-        "trend-menopause-hormone-therapy-label-change-20260602",
-        "trend-endometriosis-clinical-diagnosis-acog-20260602",
-        "trend-pcos-glp1-insulin-resistance-pregnancy-planning-20260602",
-        "trend-hpv-self-collection-cervical-screening-20260602"
       ]
     },
     "소화·간": {
@@ -7233,6 +7234,40 @@
         "nc_093"
       ]
     },
+    "남성건강": {
+      "count": 29,
+      "qids": [
+        "mens-001",
+        "mens-002",
+        "mens-003",
+        "mens-004",
+        "mens-006",
+        "mens-007",
+        "mens-010",
+        "mens-011",
+        "mens-013",
+        "mens-014",
+        "mens-016",
+        "mens-017",
+        "mens-019",
+        "mens-020",
+        "ingr-012",
+        "qa200-20260527-193",
+        "qa200-20260527-194",
+        "qa200-20260527-195",
+        "qa200-20260527-196",
+        "qa200-20260527-197",
+        "qa200-20260527-198",
+        "qa200-20260527-199",
+        "qa200-20260527-200",
+        "trendqa-mens-20260530",
+        "trend-testosterone-therapy-low-libido-bp-monitoring-20260602",
+        "trend-prostate-psa-mri-screening-aua-20260602",
+        "trend-phthalates-male-fertility-semen-quality-exposure-20260602",
+        "trend-erectile-dysfunction-cardiovascular-risk-20260602",
+        "trend-testosterone-therapy-fertility-sperm-count-20260603"
+      ]
+    },
     "인지": {
       "count": 29,
       "qids": [
@@ -7265,39 +7300,6 @@
         "nc_084",
         "nc_087",
         "nc_088"
-      ]
-    },
-    "남성건강": {
-      "count": 28,
-      "qids": [
-        "mens-001",
-        "mens-002",
-        "mens-003",
-        "mens-004",
-        "mens-006",
-        "mens-007",
-        "mens-010",
-        "mens-011",
-        "mens-013",
-        "mens-014",
-        "mens-016",
-        "mens-017",
-        "mens-019",
-        "mens-020",
-        "ingr-012",
-        "qa200-20260527-193",
-        "qa200-20260527-194",
-        "qa200-20260527-195",
-        "qa200-20260527-196",
-        "qa200-20260527-197",
-        "qa200-20260527-198",
-        "qa200-20260527-199",
-        "qa200-20260527-200",
-        "trendqa-mens-20260530",
-        "trend-testosterone-therapy-low-libido-bp-monitoring-20260602",
-        "trend-prostate-psa-mri-screening-aua-20260602",
-        "trend-phthalates-male-fertility-semen-quality-exposure-20260602",
-        "trend-erectile-dysfunction-cardiovascular-risk-20260602"
       ]
     },
     "단백질": {
@@ -7567,6 +7569,33 @@
         "trend-rosemary-oil-hair-loss-scalp-irritation-20260602"
       ]
     },
+    "테스토스테론": {
+      "count": 22,
+      "qids": [
+        "wh-extra-040",
+        "wh-extra-050",
+        "wh-extra-064",
+        "mens-002",
+        "mens-006",
+        "mens-extra-007",
+        "mens-extra-011",
+        "mens-extra-012",
+        "mens-extra-020",
+        "mens-extra-033",
+        "mens-extra-043",
+        "mens-extra-052",
+        "mens-extra-053",
+        "mh-extra-071",
+        "mens-002",
+        "mens-004",
+        "mens-006",
+        "mens-008",
+        "qa200-20260527-194",
+        "round3-mens_health-2-20260531",
+        "trend-testosterone-therapy-low-libido-bp-monitoring-20260602",
+        "trend-testosterone-therapy-fertility-sperm-count-20260603"
+      ]
+    },
     "혈당·대사": {
       "count": 22,
       "qids": [
@@ -7618,32 +7647,6 @@
         "mens-extra-018",
         "mental-extra-031",
         "sh_097"
-      ]
-    },
-    "테스토스테론": {
-      "count": 21,
-      "qids": [
-        "wh-extra-040",
-        "wh-extra-050",
-        "wh-extra-064",
-        "mens-002",
-        "mens-006",
-        "mens-extra-007",
-        "mens-extra-011",
-        "mens-extra-012",
-        "mens-extra-020",
-        "mens-extra-033",
-        "mens-extra-043",
-        "mens-extra-052",
-        "mens-extra-053",
-        "mh-extra-071",
-        "mens-002",
-        "mens-004",
-        "mens-006",
-        "mens-008",
-        "qa200-20260527-194",
-        "round3-mens_health-2-20260531",
-        "trend-testosterone-therapy-low-libido-bp-monitoring-20260602"
       ]
     },
     "스트레스": {
@@ -11883,7 +11886,10 @@
     "trend-melasma-tinted-sunscreen-visible-light-iron-oxide-20260603": "기미와-색소침착이-있으면-선스크린을-SPF만-보고-고르면-되나요",
     "trend-pickleball-overuse-achilles-wrist-injury-20260603": "피클볼을-하다가-손목이나-아킬레스가-아프면-어떤-부상-신호를-먼저-기록해야-하나요",
     "trend-teen-social-media-sleep-mental-health-boundary-20260603": "청소년-SNS-사용은-하루-몇-시간보다-잠들기-전-사용을-먼저-봐야-하나요",
-    "trend-glp1-compounded-dosing-error-gi-side-effect-20260603": "GLP1-복합조제-제품을-쓰는-사람이-구토나-복통이-있으면-무엇을-먼저-확인해야-하나요"
+    "trend-glp1-compounded-dosing-error-gi-side-effect-20260603": "GLP1-복합조제-제품을-쓰는-사람이-구토나-복통이-있으면-무엇을-먼저-확인해야-하나요",
+    "trend-exosome-scalp-injection-hair-loss-fda-safety-20260603": "탈모-엑소좀-두피주사-광고를-볼-때-FDA-승인-여부와-부작용-기록은-어떻게-확인해야-하나요",
+    "trend-dense-breast-mammogram-notification-supplemental-screening-20260603": "치밀유방-알림을-받으면-맘모그램-뒤-초음파나-MRI를-꼭-추가해야-하나요",
+    "trend-testosterone-therapy-fertility-sperm-count-20260603": "TRT를-시작하기-전에-임신-계획이-있으면-정자수와-호르몬-검사를-먼저-해야-하나요"
   },
-  "generated_at": "2026-06-02T15:22:22.449003+00:00"
+  "generated_at": "2026-06-02T15:43:25.244909+00:00"
 }
