@@ -1,12 +1,12 @@
 # Current Working State
 
-Last verified: 2026-06-03 06:27 KST
+Last verified: 2026-06-03 06:39 KST
 
 Production domain:
 
 - `https://phlorotannin.com`
 - `https://www.phlorotannin.com` redirects to apex
-- Current verified deployment: `https://hanain-mbwjfqi8i-01056528206s-projects.vercel.app`
+- Current verified deployment: `https://hanain-cola1o7zu-01056528206s-projects.vercel.app`
 
 Branch:
 
@@ -23,8 +23,8 @@ What "current" means:
 
 Content sources:
 
-- Supabase `public.posts`: canonical published blog posts (`614` published current posts).
-- Local trend posts: `src/data/localTrendBlogPosts.js` + round modules (`51` posts, fallback/seed only).
+- Supabase `public.posts`: canonical published blog posts (`617` published current posts).
+- Local trend posts: `src/data/localTrendBlogPosts.js` + round modules (`54` posts, fallback/seed only).
 - Local functional ingredient posts: `src/data/localFunctionalIngredientPosts.js` (`10` posts, fallback/seed only).
 - Local category posts: `src/data/localCategoryBlogPosts.js` (`20` posts, fallback/seed only).
 - Local SEO expansion posts: `src/data/localSeoExpansionPosts.js` (`105` posts, fallback/seed only).
@@ -52,13 +52,13 @@ Key local posts that must remain available:
 Expected production SEO signals:
 
 - `https://phlorotannin.com/sitemap.xml`
-  - total URLs: `2960`
+  - total URLs: `2970`
   - duplicate URLs: `0`
   - noindex-like URLs inside sitemap: `0`
-  - Q&A detail URLs: `1865`
-  - Q&A tag URLs: `236`
-  - blog detail URLs: `614`
-  - insight detail URLs: `214`
+  - Q&A detail URLs: `1868`
+  - Q&A tag URLs: `237`
+  - blog detail URLs: `617`
+  - insight detail URLs: `217`
 - `/qa?category=cancer_immune`
   - `X-Robots-Tag: noindex,nofollow`
   - canonical: `https://phlorotannin.com/qa`
@@ -506,6 +506,31 @@ Supabase note:
 - Source topics: FDA JAK inhibitor labels and AAD alopecia areata guidance, FDA 2026 menopause hormone therapy labeling update, AUA/ASRM male infertility guidance with FDA direct-to-consumer test caution.
 - Verified production:
   - `npm run build` succeeded with sitemap `2960`, Q&A `1865`, tag `236`, blog `614`, insight `214`.
+  - `npm run verify:checkpoint` passed on `https://phlorotannin.com`.
+  - New blog routes returned `200` with `X-Seo-Source: posts-table`.
+  - New insight routes returned `200` with `X-Seo-Source: static`.
+  - New OG card routes, `/sitemap.xml`, and `/rss.xml` returned `200`.
+
+2026-06-03 KST health trend content update round 25:
+
+- Category rotation basis: moved away from the just-updated hair/women/men batch and refreshed `respiratory`, `infection_inflammation`, and `skin`.
+- Selected categories:
+  - `respiratory`
+  - `infection_inflammation`
+  - `skin`
+- Added 3 Supabase blog posts:
+  - `/blog/wildfire-smoke-aqi-n95-asthma-copd-action-record-2026`
+  - `/blog/dengue-chikungunya-travel-fever-joint-pain-mosquito-record-2026`
+  - `/blog/tattoo-ink-contamination-skin-cancer-mole-monitoring-record-2026`
+- Added 3 local insight posts:
+  - `/insights/wildfire-smoke-aqi-n95-asthma-copd-action-record-2026`
+  - `/insights/dengue-chikungunya-travel-fever-joint-pain-mosquito-record-2026`
+  - `/insights/tattoo-ink-contamination-skin-cancer-mole-monitoring-record-2026`
+- Added 3 Q&A items to both `public/qa.json` and `src/data/qa.json`.
+- Added 3 unified photo-style OG images under `public/og/content-quality`.
+- Source topics: CDC 2026 wildfire smoke and chronic-condition safety guidance, CDC 2026 chikungunya/dengue travel-health guidance, FDA tattoo ink safety guidance and AAD tattoo/skin-cancer observation guidance.
+- Verified production:
+  - `npm run build` succeeded with sitemap `2970`, Q&A `1868`, tag `237`, blog `617`, insight `217`.
   - `npm run verify:checkpoint` passed on `https://phlorotannin.com`.
   - New blog routes returned `200` with `X-Seo-Source: posts-table`.
   - New insight routes returned `200` with `X-Seo-Source: static`.
