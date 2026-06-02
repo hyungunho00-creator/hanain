@@ -1,12 +1,12 @@
 # Current Working State
 
-Last verified: 2026-06-03 05:52 KST
+Last verified: 2026-06-03 06:06 KST
 
 Production domain:
 
 - `https://phlorotannin.com`
 - `https://www.phlorotannin.com` redirects to apex
-- Current verified deployment: `https://hanain-798pbm8np-01056528206s-projects.vercel.app`
+- Current verified deployment: `https://hanain-bhxgv79o4-01056528206s-projects.vercel.app`
 
 Branch:
 
@@ -23,8 +23,8 @@ What "current" means:
 
 Content sources:
 
-- Supabase `public.posts`: canonical published blog posts (`608` published current posts).
-- Local trend posts: `src/data/localTrendBlogPosts.js` + round modules (`45` posts, fallback/seed only).
+- Supabase `public.posts`: canonical published blog posts (`611` published current posts).
+- Local trend posts: `src/data/localTrendBlogPosts.js` + round modules (`48` posts, fallback/seed only).
 - Local functional ingredient posts: `src/data/localFunctionalIngredientPosts.js` (`10` posts, fallback/seed only).
 - Local category posts: `src/data/localCategoryBlogPosts.js` (`20` posts, fallback/seed only).
 - Local SEO expansion posts: `src/data/localSeoExpansionPosts.js` (`105` posts, fallback/seed only).
@@ -52,13 +52,13 @@ Key local posts that must remain available:
 Expected production SEO signals:
 
 - `https://phlorotannin.com/sitemap.xml`
-  - total URLs: `2940`
+  - total URLs: `2950`
   - duplicate URLs: `0`
   - noindex-like URLs inside sitemap: `0`
-  - Q&A detail URLs: `1859`
-  - Q&A tag URLs: `234`
-  - blog detail URLs: `608`
-  - insight detail URLs: `208`
+  - Q&A detail URLs: `1862`
+  - Q&A tag URLs: `235`
+  - blog detail URLs: `611`
+  - insight detail URLs: `211`
 - `/qa?category=cancer_immune`
   - `X-Robots-Tag: noindex,nofollow`
   - canonical: `https://phlorotannin.com/qa`
@@ -466,6 +466,25 @@ Supabase note:
 - Added 3 Q&A items to both `public/qa.json` and `src/data/qa.json`.
 - Added 3 unified photo-style OG images under `public/og/content-quality`.
 - Source topics: CDC 2025-26 respiratory virus vaccination guidance, CDC Candida auris clinical overview and 2026 EID genomic update, AAD/FDA home LED and red-light device safety wording.
+
+2026-06-03 KST health trend content update round 23:
+
+- Category rotation basis: refreshed `musculoskeletal`, `mental_health`, and `digestive` after round 22 covered respiratory/infection/skin.
+- Selected categories:
+  - `musculoskeletal`
+  - `mental_health`
+  - `digestive`
+- Added 3 Supabase blog posts:
+  - `/blog/knee-osteoarthritis-prp-injection-conservative-care-record-2026`
+  - `/blog/psychological-self-help-digital-burnout-support-record-2026`
+  - `/blog/at-home-gut-microbiome-test-dtc-stool-report-record-2026`
+- Added 3 local insight posts:
+  - `/insights/knee-osteoarthritis-prp-injection-conservative-care-record-2026`
+  - `/insights/psychological-self-help-digital-burnout-support-record-2026`
+  - `/insights/at-home-gut-microbiome-test-dtc-stool-report-record-2026`
+- Added 3 Q&A items to both `public/qa.json` and `src/data/qa.json`.
+- Added 3 unified photo-style OG images under `public/og/content-quality`.
+- Source topics: 2026 AAPM&R PRP guidance and AAOS knee OA review, WHO 2026 psychological self-help guide and CDC worker mental-health support, 2026 DTC gut microbiome test performance evaluation and FDA DTC test guidance.
 
 Required verification command:
 
