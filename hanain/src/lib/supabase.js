@@ -301,8 +301,8 @@ function mergeLocalPosts(rows, options = {}) {
   const localRows = LOCAL_BLOG_POSTS.filter((post) => matchesLocalPost(post, options))
 
   const bySlug = new Map()
-  for (const post of localRows) bySlug.set(post.slug, post)
-  for (const post of rows || []) if (!bySlug.has(post.slug)) bySlug.set(post.slug, post)
+  for (const post of rows || []) bySlug.set(post.slug, post)
+  for (const post of localRows) if (!bySlug.has(post.slug)) bySlug.set(post.slug, post)
 
   return Array.from(bySlug.values())
     .sort((a, b) => String(b.created_at || '').localeCompare(String(a.created_at || '')))
