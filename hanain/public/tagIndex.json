@@ -1,8 +1,8 @@
 {
   "min_tag_count": 5,
-  "total_questions": 1826,
-  "total_unique_tags": 2102,
-  "page_eligible_tags": 224,
+  "total_questions": 1829,
+  "total_unique_tags": 2111,
+  "page_eligible_tags": 225,
   "tags": {
     "플로로탄닌": {
       "count": 1363,
@@ -7112,6 +7112,42 @@
         "qa200-20260527-055"
       ]
     },
+    "혈압": {
+      "count": 31,
+      "qids": [
+        "cardio-009",
+        "cardio-011",
+        "cardio-013",
+        "cardio-017",
+        "cardio-026",
+        "cardio-029",
+        "cardio-032",
+        "cardio-036",
+        "cardio-039",
+        "cardio-041",
+        "cardio-044",
+        "cardio-047",
+        "cardio-051",
+        "cardio-056",
+        "cardio-058",
+        "cardio-061",
+        "cardio-064",
+        "cardio-072",
+        "cardio-074",
+        "cardio-079",
+        "cardio-084",
+        "cardio-089",
+        "cardio-094",
+        "qa200-20260527-088",
+        "qa200-20260527-165",
+        "trendqa-cardiovascular-20260530",
+        "round3-cardiovascular-1-20260531",
+        "round3-cardiovascular-2-20260531",
+        "trend-sodium-potassium-salt-blood-pressure-20260602",
+        "trend-testosterone-therapy-low-libido-bp-monitoring-20260602",
+        "trend-oral-minoxidil-hair-loss-blood-pressure-safety-20260602"
+      ]
+    },
     "간": {
       "count": 30,
       "qids": [
@@ -7180,41 +7216,6 @@
         "nc_091",
         "mental-012",
         "nc_093"
-      ]
-    },
-    "혈압": {
-      "count": 30,
-      "qids": [
-        "cardio-009",
-        "cardio-011",
-        "cardio-013",
-        "cardio-017",
-        "cardio-026",
-        "cardio-029",
-        "cardio-032",
-        "cardio-036",
-        "cardio-039",
-        "cardio-041",
-        "cardio-044",
-        "cardio-047",
-        "cardio-051",
-        "cardio-056",
-        "cardio-058",
-        "cardio-061",
-        "cardio-064",
-        "cardio-072",
-        "cardio-074",
-        "cardio-079",
-        "cardio-084",
-        "cardio-089",
-        "cardio-094",
-        "qa200-20260527-088",
-        "qa200-20260527-165",
-        "trendqa-cardiovascular-20260530",
-        "round3-cardiovascular-1-20260531",
-        "round3-cardiovascular-2-20260531",
-        "trend-sodium-potassium-salt-blood-pressure-20260602",
-        "trend-testosterone-therapy-low-libido-bp-monitoring-20260602"
       ]
     },
     "인지": {
@@ -7574,6 +7575,32 @@
         "sh_097"
       ]
     },
+    "탈모": {
+      "count": 21,
+      "qids": [
+        "skin-003",
+        "skin-006",
+        "sh_015",
+        "sh_022",
+        "sh_035",
+        "sh_042",
+        "sh_045",
+        "sh_047",
+        "sh_067",
+        "sh_071",
+        "sh_073",
+        "sh_086",
+        "woms-010",
+        "mens-008",
+        "mens-extra-003",
+        "ci_133",
+        "qa200-20260527-149",
+        "qa200-20260527-150",
+        "trendqa-hair-20260530",
+        "round2-hair-20260530",
+        "trend-oral-minoxidil-hair-loss-blood-pressure-safety-20260602"
+      ]
+    },
     "테스토스테론": {
       "count": 21,
       "qids": [
@@ -7648,31 +7675,6 @@
         "qa200-20260527-123",
         "qa200-20260527-131",
         "qa200-20260527-160"
-      ]
-    },
-    "탈모": {
-      "count": 20,
-      "qids": [
-        "skin-003",
-        "skin-006",
-        "sh_015",
-        "sh_022",
-        "sh_035",
-        "sh_042",
-        "sh_045",
-        "sh_047",
-        "sh_067",
-        "sh_071",
-        "sh_073",
-        "sh_086",
-        "woms-010",
-        "mens-008",
-        "mens-extra-003",
-        "ci_133",
-        "qa200-20260527-149",
-        "qa200-20260527-150",
-        "trendqa-hair-20260530",
-        "round2-hair-20260530"
       ]
     },
     "정신건강": {
@@ -9560,6 +9562,16 @@
         "mental-extra-006",
         "mental-extra-013",
         "mental-102"
+      ]
+    },
+    "감염예방": {
+      "count": 5,
+      "qids": [
+        "infect-extra-034",
+        "qa200-20260527-033",
+        "round3-infection_inflammation-2-20260531",
+        "trend-measles-mmr-vitamin-a-outbreak-20260602",
+        "trend-h5n1-bird-flu-raw-milk-exposure-monitoring-20260602"
       ]
     },
     "감정조절": {
@@ -11729,7 +11741,10 @@
     "trend-dyslipidemia-prevent-ldl-apob-lpa-risk-20260602": "2026년-콜레스테롤-가이드라인이-바뀌었다는데-LDL만-보면-되나요",
     "trend-mced-blood-test-cancer-screening-guideline-20260602": "다중암-조기발견-혈액검사MCED를-받으면-기존-암검진을-안-해도-되나요",
     "trend-endometriosis-clinical-diagnosis-acog-20260602": "생리통이-심하면-자궁내막증을-꼭-수술로-확인해야-하나요",
-    "trend-prostate-psa-mri-screening-aua-20260602": "PSA-수치가-높으면-바로-전립선-조직검사를-해야-하나요-MRI부터-봐야-하나요"
+    "trend-prostate-psa-mri-screening-aua-20260602": "PSA-수치가-높으면-바로-전립선-조직검사를-해야-하나요-MRI부터-봐야-하나요",
+    "trend-oral-minoxidil-hair-loss-blood-pressure-safety-20260602": "먹는-미녹시딜이-탈모에-좋다는데-혈압이나-부작용은-어떻게-확인해야-하나요",
+    "trend-cleaner-indoor-air-respiratory-virus-ventilation-20260602": "감기나-독감이-유행할-때-공기청정기와-환기가-실제로-도움이-되나요",
+    "trend-h5n1-bird-flu-raw-milk-exposure-monitoring-20260602": "조류독감-H5N1-뉴스가-많은데-생우유나-동물-접촉-후-어떤-증상을-봐야-하나요"
   },
-  "generated_at": "2026-06-02T07:17:41.350780+00:00"
+  "generated_at": "2026-06-02T07:32:49.804147+00:00"
 }

@@ -23,7 +23,7 @@ What "current" means:
 
 Content sources:
 
-- Supabase `public.posts`: canonical published blog posts (`575` published current posts).
+- Supabase `public.posts`: canonical published blog posts (`578` published current posts).
 - Local trend posts: `src/data/localTrendBlogPosts.js` (`18` posts, fallback/seed only).
 - Local functional ingredient posts: `src/data/localFunctionalIngredientPosts.js` (`10` posts, fallback/seed only).
 - Local category posts: `src/data/localCategoryBlogPosts.js` (`20` posts, fallback/seed only).
@@ -52,13 +52,13 @@ Key local posts that must remain available:
 Expected production SEO signals:
 
 - `https://phlorotannin.com/sitemap.xml`
-  - total URLs: `2831`
+  - total URLs: `2841`
   - duplicate URLs: `0`
   - noindex-like URLs inside sitemap: `0`
-  - Q&A detail URLs: `1826`
-  - Q&A tag URLs: `224`
-  - blog detail URLs: `575`
-  - insight detail URLs: `175`
+  - Q&A detail URLs: `1829`
+  - Q&A tag URLs: `225`
+  - blog detail URLs: `578`
+  - insight detail URLs: `178`
 - `/qa?category=cancer_immune`
   - `X-Robots-Tag: noindex,nofollow`
   - canonical: `https://phlorotannin.com/qa`
@@ -257,6 +257,25 @@ Supabase note:
 - Added 3 Q&A items to both `public/qa.json` and `src/data/qa.json`.
 - Added 3 unified photo-style OG images under `public/og/content-quality`.
 - Source topics: MCED/MCD blood tests and standard cancer screening limits, 2026 ACOG endometriosis diagnosis guidance, 2026 AUA/SUO prostate early detection update with PSA/MRI/biopsy decision-making.
+
+2026-06-02 KST health trend content update round 12:
+
+- Category rotation basis: returning to under-updated hair and respiratory/infection categories with current safety/public-health issues.
+- Selected categories:
+  - `hair` / 모발·두피
+  - `respiratory` / 호흡기
+  - `infection_inflammation` / 감염·염증
+- Added 3 Supabase blog posts:
+  - `/blog/oral-minoxidil-hair-loss-blood-pressure-safety-record-2026`
+  - `/blog/cleaner-indoor-air-respiratory-virus-ventilation-record-2026`
+  - `/blog/h5n1-bird-flu-raw-milk-exposure-monitoring-record-2026`
+- Added 3 local insight posts:
+  - `/insights/oral-minoxidil-hair-loss-blood-pressure-safety-record-2026`
+  - `/insights/cleaner-indoor-air-respiratory-virus-ventilation-record-2026`
+  - `/insights/h5n1-bird-flu-raw-milk-exposure-monitoring-record-2026`
+- Added 3 Q&A items to both `public/qa.json` and `src/data/qa.json`.
+- Added 3 unified photo-style OG images under `public/og/content-quality`.
+- Source topics: oral minoxidil safety records for hair loss, cleaner indoor air with ventilation/HEPA for respiratory viruses, H5N1/raw milk exposure symptom monitoring.
 
 Required verification command:
 
