@@ -23,7 +23,7 @@ What "current" means:
 
 Content sources:
 
-- Supabase `public.posts`: canonical published blog posts (`554` published current posts).
+- Supabase `public.posts`: canonical published blog posts (`557` published current posts).
 - Local trend posts: `src/data/localTrendBlogPosts.js` (`18` posts, fallback/seed only).
 - Local functional ingredient posts: `src/data/localFunctionalIngredientPosts.js` (`10` posts, fallback/seed only).
 - Local category posts: `src/data/localCategoryBlogPosts.js` (`20` posts, fallback/seed only).
@@ -52,13 +52,13 @@ Key local posts that must remain available:
 Expected production SEO signals:
 
 - `https://phlorotannin.com/sitemap.xml`
-  - total URLs: `2762`
+  - total URLs: `2772`
   - duplicate URLs: `0`
   - noindex-like URLs inside sitemap: `0`
-  - Q&A detail URLs: `1805`
-  - Q&A tag URLs: `218`
-  - blog detail URLs: `554`
-  - insight detail URLs: `154`
+  - Q&A detail URLs: `1808`
+  - Q&A tag URLs: `219`
+  - blog detail URLs: `557`
+  - insight detail URLs: `157`
 - `/qa?category=cancer_immune`
   - `X-Robots-Tag: noindex,nofollow`
   - canonical: `https://phlorotannin.com/qa`
@@ -134,6 +134,20 @@ Supabase note:
 - Added 3 Q&A items to both `public/qa.json` and `src/data/qa.json`.
 - Added 3 unified photo-style OG images under `public/og/content-quality`.
 - Source topics: mouth taping safety with snoring/sleep apnea, time-restricted eating aligned with sleep rhythm, magnesium glycinate sleep supplement safety.
+
+2026-06-02 KST health trend content update round 5:
+
+- Added 3 Supabase blog posts:
+  - `/blog/omega3-supplement-atrial-fibrillation-risk-check-2026`
+  - `/blog/young-colorectal-cancer-blood-stool-screening-symptoms-2026`
+  - `/blog/pfas-drinking-water-forever-chemicals-home-check-2026`
+- Added 3 local insight posts:
+  - `/insights/omega3-atrial-fibrillation-supplement-safety-record-2026`
+  - `/insights/young-colorectal-cancer-blood-stool-screening-symptoms-2026`
+  - `/insights/pfas-drinking-water-forever-chemicals-home-check-2026`
+- Added 3 Q&A items to both `public/qa.json` and `src/data/qa.json`.
+- Added 3 unified photo-style OG images under `public/og/content-quality`.
+- Source topics: omega-3 EPA/DHA supplements and atrial fibrillation risk, young-adult colorectal cancer warning symptoms, PFAS drinking water exposure checks.
 
 Required verification command:
 

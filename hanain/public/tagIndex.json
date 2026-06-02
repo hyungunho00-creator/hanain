@@ -1,8 +1,8 @@
 {
   "min_tag_count": 5,
-  "total_questions": 1805,
-  "total_unique_tags": 2046,
-  "page_eligible_tags": 218,
+  "total_questions": 1808,
+  "total_unique_tags": 2056,
+  "page_eligible_tags": 219,
   "tags": {
     "플로로탄닌": {
       "count": 1363,
@@ -7429,6 +7429,35 @@
         "seoqa-neuro_cognitive-10"
       ]
     },
+    "오메가3": {
+      "count": 24,
+      "qids": [
+        "cardio-019",
+        "meta-015",
+        "neuro-002",
+        "musc-007",
+        "mens-extra-069",
+        "infect-014",
+        "nc_112",
+        "sh_095",
+        "sh_126",
+        "ingr-009",
+        "ingr-010",
+        "qa200-20260527-013",
+        "qa200-20260527-086",
+        "qa200-20260527-100",
+        "qa200-20260527-138",
+        "qa-hospital-20260527-005",
+        "qa-hospital-20260527-013",
+        "qa-hospital-20260527-023",
+        "qa-hospital-20260527-026",
+        "qa-hospital-20260527-033",
+        "qa-hospital-20260527-038",
+        "qa-hospital-20260527-046",
+        "round2-cardiovascular-20260530",
+        "trend-omega3-atrial-fibrillation-supplement-20260602"
+      ]
+    },
     "알츠하이머": {
       "count": 23,
       "qids": [
@@ -7455,34 +7484,6 @@
         "nc_093",
         "nc_094",
         "qa200-20260527-106"
-      ]
-    },
-    "오메가3": {
-      "count": 23,
-      "qids": [
-        "cardio-019",
-        "meta-015",
-        "neuro-002",
-        "musc-007",
-        "mens-extra-069",
-        "infect-014",
-        "nc_112",
-        "sh_095",
-        "sh_126",
-        "ingr-009",
-        "ingr-010",
-        "qa200-20260527-013",
-        "qa200-20260527-086",
-        "qa200-20260527-100",
-        "qa200-20260527-138",
-        "qa-hospital-20260527-005",
-        "qa-hospital-20260527-013",
-        "qa-hospital-20260527-023",
-        "qa-hospital-20260527-026",
-        "qa-hospital-20260527-033",
-        "qa-hospital-20260527-038",
-        "qa-hospital-20260527-046",
-        "round2-cardiovascular-20260530"
       ]
     },
     "모발": {
@@ -8704,6 +8705,19 @@
         "ingr-006"
       ]
     },
+    "DHA": {
+      "count": 8,
+      "qids": [
+        "neuro-002",
+        "woms-004",
+        "womens-003",
+        "womens-005",
+        "mens-extra-069",
+        "ingr-009",
+        "ingr-010",
+        "trend-omega3-atrial-fibrillation-supplement-20260602"
+      ]
+    },
     "모발·두피": {
       "count": 8,
       "qids": [
@@ -8845,18 +8859,6 @@
         "wh-extra-070",
         "qa200-20260527-189",
         "round3-womens_health-1-20260531"
-      ]
-    },
-    "DHA": {
-      "count": 7,
-      "qids": [
-        "neuro-002",
-        "woms-004",
-        "womens-003",
-        "womens-005",
-        "mens-extra-069",
-        "ingr-009",
-        "ingr-010"
       ]
     },
     "감태 플로로탄닌": {
@@ -9620,6 +9622,16 @@
         "musc-009",
         "musc-020",
         "mens-016"
+      ]
+    },
+    "부정맥": {
+      "count": 5,
+      "qids": [
+        "cardio-004",
+        "qa200-20260527-080",
+        "qa200-20260527-087",
+        "round3-cardiovascular-2-20260531",
+        "trend-omega3-atrial-fibrillation-supplement-20260602"
       ]
     },
     "불면": {
@@ -11618,7 +11630,10 @@
     "trend-coffee-gut-brain-axis-polyphenol-20260602": "커피가-장내미생물과-기분에-영향을-준다는-연구는-어떻게-이해해야-하나요",
     "trend-mouth-taping-snoring-sleep-apnea-20260602": "입테이핑이-코골이나-수면무호흡에-도움이-된다고-하는데-안전하게-해도-되나요",
     "trend-time-restricted-eating-evening-meal-20260602": "시간제한식사를-할-때-저녁을-일찍-끝내는-것이-혈당과-대사-건강에-더-중요할까요",
-    "trend-magnesium-glycinate-sleep-safety-20260602": "마그네슘-글리시네이트가-수면에-좋다고-하는데-누구나-먹어도-괜찮나요"
+    "trend-magnesium-glycinate-sleep-safety-20260602": "마그네슘-글리시네이트가-수면에-좋다고-하는데-누구나-먹어도-괜찮나요",
+    "trend-omega3-atrial-fibrillation-supplement-20260602": "오메가3-보충제는-심장에-무조건-좋은가요-심방세동-위험도-봐야-하나요",
+    "trend-young-colorectal-cancer-blood-stool-20260602": "45세-전이라도-혈변이나-배변습관-변화가-있으면-대장암-검사를-상담해야-하나요",
+    "trend-pfas-drinking-water-home-check-20260602": "PFAS-수돗물-이슈가-걱정될-때-집에서는-무엇을-먼저-확인해야-하나요"
   },
-  "generated_at": "2026-06-02T04:12:28.061916+00:00"
+  "generated_at": "2026-06-02T05:26:42.644960+00:00"
 }
