@@ -1,8 +1,8 @@
 {
   "min_tag_count": 5,
-  "total_questions": 1793,
-  "total_unique_tags": 2025,
-  "page_eligible_tags": 215,
+  "total_questions": 1796,
+  "total_unique_tags": 2031,
+  "page_eligible_tags": 216,
   "tags": {
     "플로로탄닌": {
       "count": 1363,
@@ -6260,7 +6260,7 @@
       ]
     },
     "심혈관": {
-      "count": 61,
+      "count": 62,
       "qids": [
         "cardio-019",
         "cardio-030",
@@ -6322,7 +6322,8 @@
         "seoqa-cardiovascular-09",
         "seoqa-cardiovascular-10",
         "trendqa-cardiovascular-20260530",
-        "round2-cardiovascular-20260530"
+        "round2-cardiovascular-20260530",
+        "trend-ultra-processed-food-blood-sugar-label-20260602"
       ]
     },
     "관절": {
@@ -6390,7 +6391,7 @@
       ]
     },
     "혈당": {
-      "count": 58,
+      "count": 59,
       "qids": [
         "meta-001",
         "meta-002",
@@ -6449,7 +6450,8 @@
         "qa200-20260527-020",
         "qa200-20260527-186",
         "trendqa-neuro-20260530",
-        "round2-neuro-cognitive-20260530"
+        "round2-neuro-cognitive-20260530",
+        "trend-ultra-processed-food-blood-sugar-label-20260602"
       ]
     },
     "병원정보": {
@@ -7303,6 +7305,36 @@
         "meta_096"
       ]
     },
+    "단백질": {
+      "count": 25,
+      "qids": [
+        "cancer-008",
+        "mens-009",
+        "mens-extra-023",
+        "mens-extra-026",
+        "mens-extra-031",
+        "mens-extra-034",
+        "mens-004",
+        "rsp_085",
+        "ingr-006",
+        "qa200-20260527-009",
+        "qa200-20260527-025",
+        "qa200-20260527-029",
+        "qa200-20260527-031",
+        "qa200-20260527-043",
+        "qa200-20260527-053",
+        "qa200-20260527-126",
+        "qa200-20260527-128",
+        "qa200-20260527-133",
+        "qa200-20260527-134",
+        "qa200-20260527-152",
+        "qa200-20260527-198",
+        "trendqa-musculoskeletal-20260530",
+        "round3-metabolism-1-20260531",
+        "round3-musculoskeletal-1-20260531",
+        "trend-glp1-muscle-protein-fiber-20260602"
+      ]
+    },
     "예방": {
       "count": 25,
       "qids": [
@@ -7389,35 +7421,6 @@
         "seoqa-neuro_cognitive-08",
         "seoqa-neuro_cognitive-09",
         "seoqa-neuro_cognitive-10"
-      ]
-    },
-    "단백질": {
-      "count": 24,
-      "qids": [
-        "cancer-008",
-        "mens-009",
-        "mens-extra-023",
-        "mens-extra-026",
-        "mens-extra-031",
-        "mens-extra-034",
-        "mens-004",
-        "rsp_085",
-        "ingr-006",
-        "qa200-20260527-009",
-        "qa200-20260527-025",
-        "qa200-20260527-029",
-        "qa200-20260527-031",
-        "qa200-20260527-043",
-        "qa200-20260527-053",
-        "qa200-20260527-126",
-        "qa200-20260527-128",
-        "qa200-20260527-133",
-        "qa200-20260527-134",
-        "qa200-20260527-152",
-        "qa200-20260527-198",
-        "trendqa-musculoskeletal-20260530",
-        "round3-metabolism-1-20260531",
-        "round3-musculoskeletal-1-20260531"
       ]
     },
     "알츠하이머": {
@@ -8174,6 +8177,23 @@
         "round3-cancer_immune-2-20260531"
       ]
     },
+    "식이섬유": {
+      "count": 12,
+      "qids": [
+        "dige-007",
+        "qa200-20260527-025",
+        "qa200-20260527-037",
+        "qa200-20260527-063",
+        "qa-hospital-20260527-011",
+        "qa-hospital-20260527-012",
+        "trendqa-metabolism-20260530",
+        "trendqa-digestive-20260530",
+        "round2-digestive-20260530",
+        "round3-metabolism-2-20260531",
+        "round3-digestive-1-20260531",
+        "trend-glp1-muscle-protein-fiber-20260602"
+      ]
+    },
     "전립선": {
       "count": 12,
       "qids": [
@@ -8222,22 +8242,6 @@
         "infect-001",
         "qa200-20260527-045",
         "qa200-20260527-175"
-      ]
-    },
-    "식이섬유": {
-      "count": 11,
-      "qids": [
-        "dige-007",
-        "qa200-20260527-025",
-        "qa200-20260527-037",
-        "qa200-20260527-063",
-        "qa-hospital-20260527-011",
-        "qa-hospital-20260527-012",
-        "trendqa-metabolism-20260530",
-        "trendqa-digestive-20260530",
-        "round2-digestive-20260530",
-        "round3-metabolism-2-20260531",
-        "round3-digestive-1-20260531"
       ]
     },
     "염증": {
@@ -8364,6 +8368,21 @@
         "seoqa-musculoskeletal-08",
         "seoqa-musculoskeletal-09",
         "seoqa-musculoskeletal-10"
+      ]
+    },
+    "근력운동": {
+      "count": 10,
+      "qids": [
+        "meta_068",
+        "mens-009",
+        "qa200-20260527-126",
+        "qa200-20260527-198",
+        "trendqa-musculoskeletal-20260530",
+        "round2-musculoskeletal-20260530",
+        "round3-metabolism-1-20260531",
+        "round3-musculoskeletal-1-20260531",
+        "round3-musculoskeletal-2-20260531",
+        "trend-glp1-muscle-protein-fiber-20260602"
       ]
     },
     "보습": {
@@ -8543,20 +8562,6 @@
         "qa200-20260527-197"
       ]
     },
-    "근력운동": {
-      "count": 9,
-      "qids": [
-        "meta_068",
-        "mens-009",
-        "qa200-20260527-126",
-        "qa200-20260527-198",
-        "trendqa-musculoskeletal-20260530",
-        "round2-musculoskeletal-20260530",
-        "round3-metabolism-1-20260531",
-        "round3-musculoskeletal-1-20260531",
-        "round3-musculoskeletal-2-20260531"
-      ]
-    },
     "도파민": {
       "count": 9,
       "qids": [
@@ -8667,6 +8672,19 @@
         "womens-009",
         "ingr-004",
         "ingr-006"
+      ]
+    },
+    "나트륨": {
+      "count": 8,
+      "qids": [
+        "cardio-017",
+        "mens-extra-044",
+        "qa200-20260527-023",
+        "qa200-20260527-048",
+        "qa200-20260527-079",
+        "qa200-20260527-090",
+        "round3-cardiovascular-1-20260531",
+        "trend-ultra-processed-food-blood-sugar-label-20260602"
       ]
     },
     "모발·두피": {
@@ -8834,18 +8852,6 @@
         "qa-hospital-20260527-043",
         "qa-hospital-20260527-045",
         "qa-hospital-20260527-050"
-      ]
-    },
-    "나트륨": {
-      "count": 7,
-      "qids": [
-        "cardio-017",
-        "mens-extra-044",
-        "qa200-20260527-023",
-        "qa200-20260527-048",
-        "qa200-20260527-079",
-        "qa200-20260527-090",
-        "round3-cardiovascular-1-20260531"
       ]
     },
     "노화": {
@@ -9383,6 +9389,16 @@
         "ci_108",
         "ci_136",
         "ci_144"
+      ]
+    },
+    "GLP-1": {
+      "count": 5,
+      "qids": [
+        "ingr-025",
+        "qa200-20260527-009",
+        "round3-metabolism-1-20260531",
+        "round3-hair-1-20260531",
+        "trend-glp1-muscle-protein-fiber-20260602"
       ]
     },
     "HPV": {
@@ -11549,7 +11565,10 @@
     "round3-womens_health-1-20260531": "갱년기-안면홍조와-수면장애가-같이-올-때-무엇을-기록해야-하나요",
     "round3-womens_health-2-20260531": "생리불순과-피로가-같이-있으면-갑상선-철분-다낭성난소증후군도-봐야-하나요",
     "round3-mens_health-1-20260531": "밤에-소변-때문에-자주-깨면-전립선비대인지-수분-습관인지-어떻게-구분하나요",
-    "round3-mens_health-2-20260531": "중년-남성이-피로와-성욕-저하를-느낄-때-테스토스테론-검사부터-해야-하나요"
+    "round3-mens_health-2-20260531": "중년-남성이-피로와-성욕-저하를-느낄-때-테스토스테론-검사부터-해야-하나요",
+    "trend-heat-health-hydration-blood-pressure-20260602": "폭염이-시작되면-혈압약을-먹는-사람은-물을-얼마나-마시고-무엇을-기록해야-하나요",
+    "trend-glp1-muscle-protein-fiber-20260602": "GLP1-체중관리를-하는-사람은-근손실을-막기-위해-단백질과-운동을-어떻게-챙겨야-하나요",
+    "trend-ultra-processed-food-blood-sugar-label-20260602": "초가공식품을-줄이고-싶을-때-혈당과-심혈관-건강을-위해-라벨에서-무엇을-먼저-봐야-하나요"
   },
-  "generated_at": "2026-06-02T00:55:56.963620+00:00"
+  "generated_at": "2026-06-02T01:23:58.519407+00:00"
 }

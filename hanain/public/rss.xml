@@ -8,7 +8,7 @@
     <link>https://phlorotannin.com</link>
     <description>감태 추출 해양 폴리페놀 플로로탄닌(Phlorotannin) 전문 건강 정보. 당뇨·항암·뇌건강·심혈관·염증 최신 블로그 &amp; Q&amp;A 아카이브.</description>
     <language>ko</language>
-    <lastBuildDate>Tue, 02 Jun 2026 00:55:57 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 02 Jun 2026 01:23:59 +0000</lastBuildDate>
     <atom:link href="https://phlorotannin.com/rss.xml" rel="self" type="application/rss+xml"/>
     <copyright>© 2026 플로로탄닌 파트너스</copyright>
     <category>건강/의학</category>
@@ -18,6 +18,37 @@
       <title>플로로탄닌 파트너스</title>
       <link>https://phlorotannin.com</link>
     </image>
+
+  <item>
+    <title>폭염 건강관리: 혈압약 복용자는 수분, 혈압, 어지럼을 함께 기록해야 합니다</title>
+    <link>https://phlorotannin.com/blog/heat-health-action-plan-hydration-blood-pressure-2026</link>
+    <description><![CDATA[WHO와 CDC의 폭염 건강 안내를 바탕으로, 더운 날 혈압약·이뇨제를 복용하는 사람이 무엇을 기록하고 언제 상담해야 하는지 정리했습니다.]]></description>
+    <category>심혈관</category>
+    <pubDate>Tue, 02 Jun 2026 01:23:29 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/heat-health-action-plan-hydration-blood-pressure-2026</guid>
+    <enclosure url="https://phlorotannin.com/og-card/v20260602/heat-health-action-plan-hydration-blood-pressure-2026.png" type="image/png"/>
+    <dc:subject>폭염, 온열질환, 혈압약, 수분섭취, 이뇨제</dc:subject>
+  </item>
+  <item>
+    <title>GLP-1 체중관리 이슈: 근손실 걱정보다 단백질, 식이섬유, 근력 기록이 먼저입니다</title>
+    <link>https://phlorotannin.com/blog/glp1-plateau-muscle-protein-fiber-record-2026</link>
+    <description><![CDATA[GLP-1 시대의 체중관리는 체중계 숫자만 볼 일이 아닙니다. 근육 기능, 단백질, 식이섬유, 운동 기록을 함께 봐야 합니다.]]></description>
+    <category>대사 건강</category>
+    <pubDate>Tue, 02 Jun 2026 01:23:29 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/glp1-plateau-muscle-protein-fiber-record-2026</guid>
+    <enclosure url="https://phlorotannin.com/og-card/v20260602/glp1-plateau-muscle-protein-fiber-record-2026.png" type="image/png"/>
+    <dc:subject>GLP-1, 근손실, 단백질, 식이섬유, 근력운동</dc:subject>
+  </item>
+  <item>
+    <title>초가공식품 이슈: 혈당과 심혈관 건강을 위해 라벨에서 먼저 볼 5가지</title>
+    <link>https://phlorotannin.com/blog/ultra-processed-food-heart-risk-blood-sugar-label-2026</link>
+    <description><![CDATA[초가공식품을 무조건 금지하기보다 첨가당, 나트륨, 단백질, 식이섬유, 섭취 빈도를 읽는 법이 더 현실적인 건강관리입니다.]]></description>
+    <category>대사 건강</category>
+    <pubDate>Tue, 02 Jun 2026 01:23:29 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/blog/ultra-processed-food-heart-risk-blood-sugar-label-2026</guid>
+    <enclosure url="https://phlorotannin.com/og-card/v20260602/ultra-processed-food-heart-risk-blood-sugar-label-2026.png" type="image/png"/>
+    <dc:subject>초가공식품, 혈당, 심혈관, 라벨읽기, 첨가당</dc:subject>
+  </item>
   <item>
     <title>노원역 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
     <link>https://phlorotannin.com/blog/nowon-station-internal-medicine-checklist</link>
@@ -177,36 +208,6 @@
     <guid isPermaLink="true">https://phlorotannin.com/blog/jeongja-dong-internal-medicine-checklist</guid>
     <enclosure url="https://phlorotannin.com/og/local-hospital/jeongja-dong-internal-medicine-checklist.webp" type="image/webp"/>
     <dc:subject>정자동, 내과, 병원정보, 진료준비, 검사기록</dc:subject>
-  </item>
-  <item>
-    <title>수내동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
-    <link>https://phlorotannin.com/blog/sunae-dong-internal-medicine-checklist</link>
-    <description><![CDATA[수내동 내과 검색 전 방문 목적, 검사결과, 복용약, 식사·혈당 기록을 실제 진료 흐름에 맞춰 정리했습니다.]]></description>
-    <category>병원정보</category>
-    <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/sunae-dong-internal-medicine-checklist</guid>
-    <enclosure url="https://phlorotannin.com/og/local-hospital/sunae-dong-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>수내동, 내과, 병원정보, 진료준비, 검사기록</dc:subject>
-  </item>
-  <item>
-    <title>광교 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
-    <link>https://phlorotannin.com/blog/gwanggyo-internal-medicine-checklist</link>
-    <description><![CDATA[광교 내과 검색 전 방문 목적, 검사결과, 복용약, 식사·혈당 기록을 실제 진료 흐름에 맞춰 정리했습니다.]]></description>
-    <category>병원정보</category>
-    <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/gwanggyo-internal-medicine-checklist</guid>
-    <enclosure url="https://phlorotannin.com/og/local-hospital/gwanggyo-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>광교, 내과, 병원정보, 진료준비, 검사기록</dc:subject>
-  </item>
-  <item>
-    <title>영통동 내과 찾기 전: 진료·검사·식사기록 체크리스트</title>
-    <link>https://phlorotannin.com/blog/yeongtong-dong-internal-medicine-checklist</link>
-    <description><![CDATA[영통동 내과 검색 전 방문 목적, 검사결과, 복용약, 식사·혈당 기록을 실제 진료 흐름에 맞춰 정리했습니다.]]></description>
-    <category>병원정보</category>
-    <pubDate>Wed, 27 May 2026 10:11:48 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/blog/yeongtong-dong-internal-medicine-checklist</guid>
-    <enclosure url="https://phlorotannin.com/og/local-hospital/yeongtong-dong-internal-medicine-checklist.webp" type="image/webp"/>
-    <dc:subject>영통동, 내과, 병원정보, 진료준비, 검사기록</dc:subject>
   </item>
   <item>
     <title>플로로탄닌 혈압 작용 기전 — ACE 억제와 혈관 내피 회복 근거</title>
@@ -401,6 +402,30 @@
     <guid isPermaLink="true">https://phlorotannin.com/insights/gamtae-sleep-score-wearable-dieckol-2026</guid>
   </item>
   <item>
+    <title>폭염이 시작될 때 먼저 볼 것: 수분, 혈압, 복용약 기록</title>
+    <link>https://phlorotannin.com/insights/heat-health-hydration-blood-pressure-record-2026</link>
+    <description><![CDATA[폭염 시기에는 물을 많이 마시는 것만으로 끝나지 않습니다. 혈압약, 이뇨제, 어지럼, 소변 색, 체중 변화까지 함께 기록해야 위험 신호를 빨리 알아챌 수 있습니다.]]></description>
+    <category>생활·복용</category>
+    <pubDate>Tue, 02 Jun 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/insights/heat-health-hydration-blood-pressure-record-2026</guid>
+  </item>
+  <item>
+    <title>GLP-1 체중관리에서 체중계보다 먼저 봐야 할 근육 기록</title>
+    <link>https://phlorotannin.com/insights/glp1-muscle-protein-fiber-record-2026</link>
+    <description><![CDATA[GLP-1 계열 약물과 체중관리 이슈가 커질수록 단백질, 식이섬유, 근력운동, 변비·구역감 기록이 중요해집니다. 체중 숫자보다 기능을 지키는 기준을 정리했습니다.]]></description>
+    <category>대사·당뇨</category>
+    <pubDate>Tue, 02 Jun 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/insights/glp1-muscle-protein-fiber-record-2026</guid>
+  </item>
+  <item>
+    <title>초가공식품을 줄이라는 말보다 먼저 필요한 라벨 읽기</title>
+    <link>https://phlorotannin.com/insights/ultra-processed-food-label-blood-sugar-heart-risk-2026</link>
+    <description><![CDATA[초가공식품과 심혈관·혈당 이슈가 계속 나오고 있습니다. 무조건 금지보다 첨가당, 정제 탄수화물, 나트륨, 단백질·식이섬유 균형을 읽는 법이 더 실용적입니다.]]></description>
+    <category>대사·당뇨</category>
+    <pubDate>Tue, 02 Jun 2026 00:00:00 +0900</pubDate>
+    <guid isPermaLink="true">https://phlorotannin.com/insights/ultra-processed-food-label-blood-sugar-heart-risk-2026</guid>
+  </item>
+  <item>
     <title>플로로탄닌 부작용 — 보고된 ‘실제’와 떠도는 ‘소문’ 구분</title>
     <link>https://phlorotannin.com/insights/phlorotannin-side-effects-real</link>
     <description><![CDATA[EFSA Novel Food 평가와 임상 약동학 연구를 바탕으로, 플로로탄닌에서 실제 보고된 부작용과 떠도는 잘못된 정보를 구분합니다.]]></description>
@@ -423,30 +448,6 @@
     <category>성분 비교</category>
     <pubDate>Tue, 02 Jun 2026 00:00:00 +0900</pubDate>
     <guid isPermaLink="true">https://phlorotannin.com/insights/seapolynol-vs-generic-phlorotannin</guid>
-  </item>
-  <item>
-    <title>플로로탄닌 vs 레스베라트롤 — 표적·생체이용률·임상 데이터 비교</title>
-    <link>https://phlorotannin.com/insights/phlorotannin-vs-resveratrol</link>
-    <description><![CDATA[두 폴리페놀의 핵심 표적(SIRT1·AMPK·NF-κB)과 인간 데이터, 생체이용률 차이를 출처 기반으로 비교합니다.]]></description>
-    <category>성분 비교</category>
-    <pubDate>Tue, 02 Jun 2026 00:00:00 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-vs-resveratrol</guid>
-  </item>
-  <item>
-    <title>플로로탄닌 vs 커큐민 — 항염 폴리페놀 두 강자의 차이</title>
-    <link>https://phlorotannin.com/insights/phlorotannin-vs-curcumin-inflammation</link>
-    <description><![CDATA[대표적 항염 천연 폴리페놀인 플로로탄닌과 커큐민의 표적·생체이용률·임상 활용 차이를 비교합니다.]]></description>
-    <category>성분 비교</category>
-    <pubDate>Tue, 02 Jun 2026 00:00:00 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-vs-curcumin-inflammation</guid>
-  </item>
-  <item>
-    <title>플로로탄닌 vs 녹차 카테킨(EGCG) — 폴리페놀 두 거장의 표적 비교</title>
-    <link>https://phlorotannin.com/insights/phlorotannin-vs-green-tea-catechin</link>
-    <description><![CDATA[갈조류 플로로탄닌과 녹차 EGCG(에피갈로카테킨갈레이트)의 표적·임상 데이터·복용 전략 차이를 정리합니다.]]></description>
-    <category>성분 비교</category>
-    <pubDate>Tue, 02 Jun 2026 00:00:00 +0900</pubDate>
-    <guid isPermaLink="true">https://phlorotannin.com/insights/phlorotannin-vs-green-tea-catechin</guid>
   </item>
   <item>
     <title>공복운동이 혈당에 더 좋나요?</title>

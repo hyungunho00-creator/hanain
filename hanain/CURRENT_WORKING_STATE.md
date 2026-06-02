@@ -1,6 +1,6 @@
 # Current Working State
 
-Last verified: 2026-06-02 10:02 KST
+Last verified: 2026-06-02 10:45 KST
 
 Production domain:
 
@@ -23,7 +23,7 @@ What "current" means:
 
 Content sources:
 
-- Supabase `public.posts`: canonical published blog posts (`542` published current posts).
+- Supabase `public.posts`: canonical published blog posts (`545` published current posts).
 - Local trend posts: `src/data/localTrendBlogPosts.js` (`18` posts, fallback/seed only).
 - Local functional ingredient posts: `src/data/localFunctionalIngredientPosts.js` (`10` posts, fallback/seed only).
 - Local category posts: `src/data/localCategoryBlogPosts.js` (`20` posts, fallback/seed only).
@@ -52,13 +52,13 @@ Key local posts that must remain available:
 Expected production SEO signals:
 
 - `https://phlorotannin.com/sitemap.xml`
-  - total URLs: `2723`
+  - total URLs: `2733`
   - duplicate URLs: `0`
   - noindex-like URLs inside sitemap: `0`
-  - Q&A detail URLs: `1793`
-  - Q&A tag URLs: `215`
-  - blog detail URLs: `542`
-  - insight detail URLs: `142`
+  - Q&A detail URLs: `1796`
+  - Q&A tag URLs: `216`
+  - blog detail URLs: `545`
+  - insight detail URLs: `145`
 - `/qa?category=cancer_immune`
   - `X-Robots-Tag: noindex,nofollow`
   - canonical: `https://phlorotannin.com/qa`
@@ -78,6 +78,20 @@ Supabase note:
 - Project ref: `rlfxuyeoluoeaxuujtly`
 - Post id `414`, slug `ecklonia-cava-respiratory-health-clinical-trial-2026`, was created by another workflow after the previous stable state.
 - It is intentionally `draft` and must not be republished unless the user explicitly asks.
+
+2026-06-02 KST health trend content update:
+
+- Added 3 Supabase blog posts:
+  - `/blog/heat-health-action-plan-hydration-blood-pressure-2026`
+  - `/blog/glp1-plateau-muscle-protein-fiber-record-2026`
+  - `/blog/ultra-processed-food-heart-risk-blood-sugar-label-2026`
+- Added 3 local insight posts:
+  - `/insights/heat-health-hydration-blood-pressure-record-2026`
+  - `/insights/glp1-muscle-protein-fiber-record-2026`
+  - `/insights/ultra-processed-food-label-blood-sugar-heart-risk-2026`
+- Added 3 Q&A items to both `public/qa.json` and `src/data/qa.json`.
+- Added 3 unified photo-style OG images under `public/og/content-quality`.
+- Source topics: heat-health planning, GLP-1 muscle/protein records, ultra-processed foods label reading.
 
 Required verification command:
 
