@@ -1,8 +1,8 @@
 {
   "min_tag_count": 5,
-  "total_questions": 1859,
-  "total_unique_tags": 2197,
-  "page_eligible_tags": 234,
+  "total_questions": 1862,
+  "total_unique_tags": 2206,
+  "page_eligible_tags": 235,
   "tags": {
     "플로로탄닌": {
       "count": 1368,
@@ -8156,6 +8156,25 @@
         "infect-018"
       ]
     },
+    "장건강": {
+      "count": 14,
+      "qids": [
+        "dige-001",
+        "dige-015",
+        "dige-018",
+        "mental-008",
+        "ingr-005",
+        "ingr-007",
+        "ingr-027",
+        "qa200-20260527-038",
+        "qa200-20260527-062",
+        "qa200-20260527-069",
+        "round2-digestive-20260530",
+        "trend-resistant-starch-gut-microbiome-polyphenol-20260602",
+        "trend-fermented-food-probiotics-gut-microbiome-safety-20260602",
+        "trend-at-home-gut-microbiome-test-dtc-stool-report-record-20260603"
+      ]
+    },
     "프로바이오틱스": {
       "count": 14,
       "qids": [
@@ -8192,24 +8211,6 @@
         "trendqa-skin-20260530",
         "round2-skin-20260530",
         "round3-skin-1-20260531"
-      ]
-    },
-    "장건강": {
-      "count": 13,
-      "qids": [
-        "dige-001",
-        "dige-015",
-        "dige-018",
-        "mental-008",
-        "ingr-005",
-        "ingr-007",
-        "ingr-027",
-        "qa200-20260527-038",
-        "qa200-20260527-062",
-        "qa200-20260527-069",
-        "round2-digestive-20260530",
-        "trend-resistant-starch-gut-microbiome-polyphenol-20260602",
-        "trend-fermented-food-probiotics-gut-microbiome-safety-20260602"
       ]
     },
     "장내미생물": {
@@ -8281,6 +8282,23 @@
         "qa200-20260527-178",
         "qa200-20260527-179",
         "qa200-20260527-180"
+      ]
+    },
+    "근골격": {
+      "count": 12,
+      "qids": [
+        "seoqa-musculoskeletal-01",
+        "seoqa-musculoskeletal-02",
+        "seoqa-musculoskeletal-03",
+        "seoqa-musculoskeletal-04",
+        "seoqa-musculoskeletal-05",
+        "seoqa-musculoskeletal-06",
+        "seoqa-musculoskeletal-07",
+        "seoqa-musculoskeletal-08",
+        "seoqa-musculoskeletal-09",
+        "seoqa-musculoskeletal-10",
+        "trend-glp1-knee-osteoarthritis-muscle-bone-20260602",
+        "trend-knee-osteoarthritis-prp-conservative-care-record-20260603"
       ]
     },
     "근력운동": {
@@ -8383,22 +8401,6 @@
         "sh_068",
         "sh_079",
         "sh_094"
-      ]
-    },
-    "근골격": {
-      "count": 11,
-      "qids": [
-        "seoqa-musculoskeletal-01",
-        "seoqa-musculoskeletal-02",
-        "seoqa-musculoskeletal-03",
-        "seoqa-musculoskeletal-04",
-        "seoqa-musculoskeletal-05",
-        "seoqa-musculoskeletal-06",
-        "seoqa-musculoskeletal-07",
-        "seoqa-musculoskeletal-08",
-        "seoqa-musculoskeletal-09",
-        "seoqa-musculoskeletal-10",
-        "trend-glp1-knee-osteoarthritis-muscle-bone-20260602"
       ]
     },
     "면역력": {
@@ -8524,6 +8526,21 @@
         "qa200-20260527-147",
         "trendqa-skin-20260530",
         "round2-skin-20260530"
+      ]
+    },
+    "불안": {
+      "count": 10,
+      "qids": [
+        "qa200-20260527-111",
+        "qa200-20260527-116",
+        "qa200-20260527-120",
+        "trendqa-mental-20260530",
+        "round3-mental_health-2-20260531",
+        "trend-screen-time-sleep-anxiety-digital-behavior-20260602",
+        "trend-youth-mental-health-sleep-screen-time-20260602",
+        "trend-ai-chatbot-mental-health-crisis-safety-20260602",
+        "trend-teen-social-media-sleep-mental-health-boundary-20260603",
+        "trend-psychological-self-help-digital-burnout-support-record-20260603"
       ]
     },
     "생활습관": {
@@ -8699,20 +8716,6 @@
         "infect-109",
         "qa200-20260527-174",
         "trend-rsv-vaccine-older-adults-risk-20260602"
-      ]
-    },
-    "불안": {
-      "count": 9,
-      "qids": [
-        "qa200-20260527-111",
-        "qa200-20260527-116",
-        "qa200-20260527-120",
-        "trendqa-mental-20260530",
-        "round3-mental_health-2-20260531",
-        "trend-screen-time-sleep-anxiety-digital-behavior-20260602",
-        "trend-youth-mental-health-sleep-screen-time-20260602",
-        "trend-ai-chatbot-mental-health-crisis-safety-20260602",
-        "trend-teen-social-media-sleep-mental-health-boundary-20260603"
       ]
     },
     "빈혈": {
@@ -9041,6 +9044,18 @@
         "qa200-20260527-026"
       ]
     },
+    "번아웃": {
+      "count": 7,
+      "qids": [
+        "wh-extra-065",
+        "mental-extra-007",
+        "mental-extra-048",
+        "mental-005",
+        "nc_117",
+        "qa200-20260527-113",
+        "trend-psychological-self-help-digital-burnout-support-record-20260603"
+      ]
+    },
     "복부비만": {
       "count": 7,
       "qids": [
@@ -9349,6 +9364,17 @@
         "mental-009"
       ]
     },
+    "마이크로바이옴": {
+      "count": 6,
+      "qids": [
+        "cardio-065",
+        "cancer-012",
+        "mental-extra-025",
+        "sh_128",
+        "trendqa-digestive-20260530",
+        "trend-at-home-gut-microbiome-test-dtc-stool-report-record-20260603"
+      ]
+    },
     "면역항암": {
       "count": 6,
       "qids": [
@@ -9369,17 +9395,6 @@
         "mental-009",
         "mental-109",
         "qa200-20260527-122"
-      ]
-    },
-    "번아웃": {
-      "count": 6,
-      "qids": [
-        "wh-extra-065",
-        "mental-extra-007",
-        "mental-extra-048",
-        "mental-005",
-        "nc_117",
-        "qa200-20260527-113"
       ]
     },
     "베르베린": {
@@ -9739,16 +9754,6 @@
         "qa200-20260527-097"
       ]
     },
-    "마이크로바이옴": {
-      "count": 5,
-      "qids": [
-        "cardio-065",
-        "cancer-012",
-        "mental-extra-025",
-        "sh_128",
-        "trendqa-digestive-20260530"
-      ]
-    },
     "만성염증": {
       "count": 5,
       "qids": [
@@ -9967,6 +9972,16 @@
         "infect-005",
         "infect-105",
         "qa200-20260527-178"
+      ]
+    },
+    "우울": {
+      "count": 5,
+      "qids": [
+        "wh-extra-003",
+        "mental-extra-007",
+        "trend-youth-mental-health-sleep-screen-time-20260602",
+        "trend-ai-chatbot-mental-health-crisis-safety-20260602",
+        "trend-psychological-self-help-digital-burnout-support-record-20260603"
       ]
     },
     "자궁내막증": {
@@ -11909,7 +11924,10 @@
     "trend-personalized-cancer-vaccine-ctdna-neoantigen-trial-20260603": "개인맞춤-암-백신은-암-예방주사인가요-아니면-임상시험-치료인가요",
     "trend-respiratory-virus-vaccine-covid-flu-rsv-record-20260603": "202526-시즌-코로나독감RSV-백신-상담-전에-무엇을-기록해야-하나요",
     "trend-candida-auris-hospital-infection-resistance-record-20260603": "칸디다-아우리스는-왜-병원-감염과-항진균제-내성-이슈로-봐야-하나요",
-    "trend-home-led-red-light-mask-fda-cleared-skin-safety-20260603": "홈-LED레드라이트-마스크는-FDA-cleared라고-쓰여-있으면-효과가-보장되나요"
+    "trend-home-led-red-light-mask-fda-cleared-skin-safety-20260603": "홈-LED레드라이트-마스크는-FDA-cleared라고-쓰여-있으면-효과가-보장되나요",
+    "trend-knee-osteoarthritis-prp-conservative-care-record-20260603": "무릎-골관절염-PRP-주사를-상담하기-전에-어떤-기록을-준비해야-하나요",
+    "trend-psychological-self-help-digital-burnout-support-record-20260603": "심리적-자가도움-앱이나-번아웃-관리-콘텐츠는-혼자-해도-괜찮은가요",
+    "trend-at-home-gut-microbiome-test-dtc-stool-report-record-20260603": "가정용-장내미생물-검사-결과로-내-장-건강과-식단을-바로-판단해도-되나요"
   },
-  "generated_at": "2026-06-02T20:45:46.925578+00:00"
+  "generated_at": "2026-06-02T21:01:49.315437+00:00"
 }
