@@ -1,12 +1,12 @@
 # Current Working State
 
-Last verified: 2026-06-03 06:39 KST
+Last verified: 2026-06-03 06:51 KST
 
 Production domain:
 
 - `https://phlorotannin.com`
 - `https://www.phlorotannin.com` redirects to apex
-- Current verified deployment: `https://hanain-cola1o7zu-01056528206s-projects.vercel.app`
+- Current verified deployment: `https://hanain-hdrmsmqxp-01056528206s-projects.vercel.app`
 
 Branch:
 
@@ -23,8 +23,8 @@ What "current" means:
 
 Content sources:
 
-- Supabase `public.posts`: canonical published blog posts (`617` published current posts).
-- Local trend posts: `src/data/localTrendBlogPosts.js` + round modules (`54` posts, fallback/seed only).
+- Supabase `public.posts`: canonical published blog posts (`620` published current posts).
+- Local trend posts: `src/data/localTrendBlogPosts.js` + round modules (`57` posts, fallback/seed only).
 - Local functional ingredient posts: `src/data/localFunctionalIngredientPosts.js` (`10` posts, fallback/seed only).
 - Local category posts: `src/data/localCategoryBlogPosts.js` (`20` posts, fallback/seed only).
 - Local SEO expansion posts: `src/data/localSeoExpansionPosts.js` (`105` posts, fallback/seed only).
@@ -52,13 +52,13 @@ Key local posts that must remain available:
 Expected production SEO signals:
 
 - `https://phlorotannin.com/sitemap.xml`
-  - total URLs: `2970`
+  - total URLs: `2980`
   - duplicate URLs: `0`
   - noindex-like URLs inside sitemap: `0`
-  - Q&A detail URLs: `1868`
-  - Q&A tag URLs: `237`
-  - blog detail URLs: `617`
-  - insight detail URLs: `217`
+  - Q&A detail URLs: `1871`
+  - Q&A tag URLs: `238`
+  - blog detail URLs: `620`
+  - insight detail URLs: `220`
 - `/qa?category=cancer_immune`
   - `X-Robots-Tag: noindex,nofollow`
   - canonical: `https://phlorotannin.com/qa`
@@ -531,6 +531,31 @@ Supabase note:
 - Source topics: CDC 2026 wildfire smoke and chronic-condition safety guidance, CDC 2026 chikungunya/dengue travel-health guidance, FDA tattoo ink safety guidance and AAD tattoo/skin-cancer observation guidance.
 - Verified production:
   - `npm run build` succeeded with sitemap `2970`, Q&A `1868`, tag `237`, blog `617`, insight `217`.
+  - `npm run verify:checkpoint` passed on `https://phlorotannin.com`.
+  - New blog routes returned `200` with `X-Seo-Source: posts-table`.
+  - New insight routes returned `200` with `X-Seo-Source: static`.
+  - New OG card routes, `/sitemap.xml`, and `/rss.xml` returned `200`.
+
+2026-06-03 KST health trend content update round 26:
+
+- Category rotation basis: refreshed `musculoskeletal`, `mental_health`, and `digestive` after round 25 covered respiratory/infection/skin.
+- Selected categories:
+  - `musculoskeletal`
+  - `mental_health`
+  - `digestive`
+- Added 3 Supabase blog posts:
+  - `/blog/older-adult-fall-prevention-balance-medication-vision-record-2026`
+  - `/blog/loneliness-social-connection-health-risk-support-record-2026`
+  - `/blog/masld-fib4-liver-fibrosis-risk-stratification-record-2026`
+- Added 3 local insight posts:
+  - `/insights/older-adult-fall-prevention-balance-medication-vision-record-2026`
+  - `/insights/loneliness-social-connection-health-risk-support-record-2026`
+  - `/insights/masld-fib4-liver-fibrosis-risk-stratification-record-2026`
+- Added 3 Q&A items to both `public/qa.json` and `src/data/qa.json`.
+- Added 3 unified photo-style OG images under `public/og/content-quality`.
+- Source topics: CDC 2026 older-adult fall prevention and hip-fracture guidance, WHO/CDC social connection and loneliness health records, AGA 2026 MASLD clinical care pathway with FIB-4 risk stratification.
+- Verified production:
+  - `npm run build` succeeded with sitemap `2980`, Q&A `1871`, tag `238`, blog `620`, insight `220`.
   - `npm run verify:checkpoint` passed on `https://phlorotannin.com`.
   - New blog routes returned `200` with `X-Seo-Source: posts-table`.
   - New insight routes returned `200` with `X-Seo-Source: static`.
