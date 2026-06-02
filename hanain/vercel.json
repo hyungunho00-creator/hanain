@@ -3,7 +3,7 @@
     "api/seo.js": {
       "includeFiles": "{dist/index.html,public/**}"
     },
-    "api/og-card.js": {
+    "api/og.js": {
       "includeFiles": "{public/og/content-quality/**,dist/og/content-quality/**}"
     }
   },
@@ -92,7 +92,7 @@
     }
   ],
   "rewrites": [
-    { "source": "/og-card/:path*", "destination": "/api/og-card?file=:path*" },
+    { "source": "/og-card/:path*", "destination": "/api/og?file=:path*" },
     { "source": "/", "destination": "/api/seo?p=/" },
     { "source": "/home", "destination": "/api/seo?p=/home" },
     { "source": "/easy", "destination": "/api/seo?p=/easy" },
