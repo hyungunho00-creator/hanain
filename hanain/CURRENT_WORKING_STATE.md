@@ -1,12 +1,12 @@
 # Current Working State
 
-Last verified: 2026-06-02 10:45 KST
+Last verified: 2026-06-02 10:28 KST
 
 Production domain:
 
 - `https://phlorotannin.com`
 - `https://www.phlorotannin.com` redirects to apex
-- Current verified deployment: `https://hanain-m5xkxcb4e-01056528206s-projects.vercel.app`
+- Current verified deployment: `https://hanain-ovvrixuol-01056528206s-projects.vercel.app`
 
 Branch:
 
