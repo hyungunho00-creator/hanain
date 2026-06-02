@@ -1,12 +1,12 @@
 # Current Working State
 
-Last verified: 2026-06-03 00:48 KST
+Last verified: 2026-06-03 01:04 KST
 
 Production domain:
 
 - `https://phlorotannin.com`
 - `https://www.phlorotannin.com` redirects to apex
-- Current verified deployment: `https://hanain-mbpxmilkn-01056528206s-projects.vercel.app`
+- Current verified deployment: `https://hanain-fiqbw39cj-01056528206s-projects.vercel.app`
 
 Branch:
 
@@ -23,8 +23,8 @@ What "current" means:
 
 Content sources:
 
-- Supabase `public.posts`: canonical published blog posts (`602` published current posts).
-- Local trend posts: `src/data/localTrendBlogPosts.js` + round modules (`39` posts, fallback/seed only).
+- Supabase `public.posts`: canonical published blog posts (`605` published current posts).
+- Local trend posts: `src/data/localTrendBlogPosts.js` + round modules (`42` posts, fallback/seed only).
 - Local functional ingredient posts: `src/data/localFunctionalIngredientPosts.js` (`10` posts, fallback/seed only).
 - Local category posts: `src/data/localCategoryBlogPosts.js` (`20` posts, fallback/seed only).
 - Local SEO expansion posts: `src/data/localSeoExpansionPosts.js` (`105` posts, fallback/seed only).
@@ -52,13 +52,13 @@ Key local posts that must remain available:
 Expected production SEO signals:
 
 - `https://phlorotannin.com/sitemap.xml`
-  - total URLs: `2921`
+  - total URLs: `2930`
   - duplicate URLs: `0`
   - noindex-like URLs inside sitemap: `0`
-  - Q&A detail URLs: `1853`
+  - Q&A detail URLs: `1856`
   - Q&A tag URLs: `233`
-  - blog detail URLs: `602`
-  - insight detail URLs: `202`
+  - blog detail URLs: `605`
+  - insight detail URLs: `205`
 - `/qa?category=cancer_immune`
   - `X-Robots-Tag: noindex,nofollow`
   - canonical: `https://phlorotannin.com/qa`
@@ -428,6 +428,25 @@ Supabase note:
 - Added 3 Q&A items to both `public/qa.json` and `src/data/qa.json`.
 - Added 3 unified photo-style OG images under `public/og/content-quality`.
 - Source topics: exosome scalp injection/hair-loss FDA safety records, dense-breast mammogram notification with supplemental screening consultation records, testosterone therapy fertility and sperm-count records.
+
+2026-06-03 KST health trend content update round 21:
+
+- Category rotation basis: moved away from the just-updated hair/women/men batch and refreshed less-recent core SEO categories with forward-looking search topics.
+- Selected categories:
+  - `cardiovascular`
+  - `neuro_cognitive`
+  - `cancer_immune`
+- Added 3 Supabase blog posts:
+  - `/blog/lpa-once-lifetime-test-family-heart-risk-record-2026`
+  - `/blog/alzheimers-blood-biomarker-memory-clinic-test-record-2026`
+  - `/blog/personalized-cancer-vaccine-ctdna-neoantigen-trial-record-2026`
+- Added 3 local insight posts:
+  - `/insights/lpa-once-lifetime-test-family-heart-risk-record-2026`
+  - `/insights/alzheimers-blood-biomarker-memory-clinic-test-record-2026`
+  - `/insights/personalized-cancer-vaccine-ctdna-neoantigen-trial-record-2026`
+- Added 3 Q&A items to both `public/qa.json` and `src/data/qa.json`.
+- Added 3 unified photo-style OG images under `public/og/content-quality`.
+- Source topics: AHA Lp(a) once-in-a-lifetime testing and family cardiovascular records, Alzheimer's Association blood-based biomarker guidance for memory-clinic use, NCI personalized cancer vaccine trials with ctDNA and neoantigen records.
 
 Required verification command:
 
