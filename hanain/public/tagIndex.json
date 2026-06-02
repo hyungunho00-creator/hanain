@@ -1,8 +1,8 @@
 {
   "min_tag_count": 5,
-  "total_questions": 1856,
-  "total_unique_tags": 2185,
-  "page_eligible_tags": 233,
+  "total_questions": 1859,
+  "total_unique_tags": 2197,
+  "page_eligible_tags": 234,
   "tags": {
     "플로로탄닌": {
       "count": 1368,
@@ -9709,6 +9709,16 @@
         "qa200-20260527-019"
       ]
     },
+    "독감": {
+      "count": 5,
+      "qids": [
+        "resp-013",
+        "infect-extra-011",
+        "infect-extra-018",
+        "infect-101",
+        "trend-respiratory-virus-vaccine-covid-flu-rsv-record-20260603"
+      ]
+    },
     "두근거림": {
       "count": 5,
       "qids": [
@@ -11896,7 +11906,10 @@
     "trend-testosterone-therapy-fertility-sperm-count-20260603": "TRT를-시작하기-전에-임신-계획이-있으면-정자수와-호르몬-검사를-먼저-해야-하나요",
     "trend-lpa-once-lifetime-test-family-heart-risk-20260603": "Lpa는-왜-평생-한-번-검사하라는-말이-나오고-가족력이-있으면-무엇을-기록해야-하나요",
     "trend-alzheimers-blood-biomarker-memory-clinic-record-20260603": "알츠하이머-혈액검사가-나온다는데-기억력이-떨어지면-바로-검사부터-해야-하나요",
-    "trend-personalized-cancer-vaccine-ctdna-neoantigen-trial-20260603": "개인맞춤-암-백신은-암-예방주사인가요-아니면-임상시험-치료인가요"
+    "trend-personalized-cancer-vaccine-ctdna-neoantigen-trial-20260603": "개인맞춤-암-백신은-암-예방주사인가요-아니면-임상시험-치료인가요",
+    "trend-respiratory-virus-vaccine-covid-flu-rsv-record-20260603": "202526-시즌-코로나독감RSV-백신-상담-전에-무엇을-기록해야-하나요",
+    "trend-candida-auris-hospital-infection-resistance-record-20260603": "칸디다-아우리스는-왜-병원-감염과-항진균제-내성-이슈로-봐야-하나요",
+    "trend-home-led-red-light-mask-fda-cleared-skin-safety-20260603": "홈-LED레드라이트-마스크는-FDA-cleared라고-쓰여-있으면-효과가-보장되나요"
   },
-  "generated_at": "2026-06-02T16:00:49.978303+00:00"
+  "generated_at": "2026-06-02T20:45:46.925578+00:00"
 }

@@ -774,6 +774,27 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/personalized-cancer-vaccine-ctdna-neoantigen-trial-record-2026"/>
   </url>
   <url>
+    <loc>https://phlorotannin.com/insights/respiratory-virus-vaccine-2025-2026-covid-flu-rsv-record-2026</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/respiratory-virus-vaccine-2025-2026-covid-flu-rsv-record-2026"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/insights/candida-auris-hospital-infection-antifungal-resistance-record-2026</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/candida-auris-hospital-infection-antifungal-resistance-record-2026"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/insights/home-led-red-light-mask-fda-cleared-skin-safety-record-2026</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/home-led-red-light-mask-fda-cleared-skin-safety-record-2026"/>
+  </url>
+  <url>
     <loc>https://phlorotannin.com/insights/phlorotannin-metabolic-syndrome</loc>
     <lastmod>2026-06-02</lastmod>
     <changefreq>monthly</changefreq>
@@ -14578,6 +14599,27 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/q/개인맞춤-암-백신은-암-예방주사인가요-아니면-임상시험-치료인가요"/>
   </url>
   <url>
+    <loc>https://phlorotannin.com/q/202526-시즌-코로나독감RSV-백신-상담-전에-무엇을-기록해야-하나요</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/q/202526-시즌-코로나독감RSV-백신-상담-전에-무엇을-기록해야-하나요"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/q/칸디다-아우리스는-왜-병원-감염과-항진균제-내성-이슈로-봐야-하나요</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/q/칸디다-아우리스는-왜-병원-감염과-항진균제-내성-이슈로-봐야-하나요"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/q/홈-LED레드라이트-마스크는-FDA-cleared라고-쓰여-있으면-효과가-보장되나요</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/q/홈-LED레드라이트-마스크는-FDA-cleared라고-쓰여-있으면-효과가-보장되나요"/>
+  </url>
+  <url>
     <loc>https://phlorotannin.com/qa/tag/%EA%B3%A0%ED%98%88%EC%95%95</loc>
     <lastmod>2026-06-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -15899,6 +15941,13 @@
     <changefreq>weekly</changefreq>
     <priority>0.70</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa/tag/%EA%B8%B0%EC%B9%A8"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/qa/tag/%EB%8F%85%EA%B0%90</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.70</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa/tag/%EB%8F%85%EA%B0%90"/>
   </url>
   <url>
     <loc>https://phlorotannin.com/qa/tag/%EC%9A%94%EB%A1%9C%EA%B0%90%EC%97%BC</loc>
@@ -21377,6 +21426,39 @@
       <image:title>개인맞춤 암 백신은 예방주사가 아닙니다: ctDNA와 신생항원 임상기록 읽는 법</image:title>
     </image:image>
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/personalized-cancer-vaccine-ctdna-neoantigen-trial-record-2026"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/respiratory-virus-vaccine-2025-2026-covid-flu-rsv-record-2026</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.86</priority>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og/content-quality/respiratory-virus-vaccine-2025-2026-covid-flu-rsv-record-2026.png</image:loc>
+      <image:title>2025-26 호흡기 백신 상담, 코로나·독감·RSV를 한 장에 기록해야 하는 이유</image:title>
+    </image:image>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/respiratory-virus-vaccine-2025-2026-covid-flu-rsv-record-2026"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/candida-auris-hospital-infection-antifungal-resistance-record-2026</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.86</priority>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og/content-quality/candida-auris-hospital-infection-antifungal-resistance-record-2026.png</image:loc>
+      <image:title>칸디다 아우리스가 왜 병원 감염 이슈인가: 내성 진균과 감염관리 기록</image:title>
+    </image:image>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/candida-auris-hospital-infection-antifungal-resistance-record-2026"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/home-led-red-light-mask-fda-cleared-skin-safety-record-2026</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.86</priority>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og/content-quality/home-led-red-light-mask-fda-cleared-skin-safety-record-2026.png</image:loc>
+      <image:title>홈 LED·레드라이트 마스크, “FDA cleared”와 피부 안전 기록을 먼저 보세요</image:title>
+    </image:image>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/home-led-red-light-mask-fda-cleared-skin-safety-record-2026"/>
   </url>
   <url>
     <loc>https://phlorotannin.com/blog/psyllium-husk-fiber-cholesterol-constipation-guide</loc>
