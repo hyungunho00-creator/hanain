@@ -1,8 +1,8 @@
 {
   "min_tag_count": 5,
-  "total_questions": 1823,
-  "total_unique_tags": 2092,
-  "page_eligible_tags": 223,
+  "total_questions": 1826,
+  "total_unique_tags": 2102,
+  "page_eligible_tags": 224,
   "tags": {
     "플로로탄닌": {
       "count": 1363,
@@ -6967,6 +6967,43 @@
         "qa200-20260527-058"
       ]
     },
+    "여성건강": {
+      "count": 32,
+      "qids": [
+        "woms-001",
+        "woms-005",
+        "woms-006",
+        "woms-008",
+        "woms-011",
+        "woms-012",
+        "woms-014",
+        "woms-015",
+        "woms-016",
+        "woms-017",
+        "woms-018",
+        "woms-019",
+        "woms-020",
+        "infect-005",
+        "qa200-20260527-153",
+        "qa200-20260527-178",
+        "qa200-20260527-181",
+        "qa200-20260527-182",
+        "qa200-20260527-183",
+        "qa200-20260527-184",
+        "qa200-20260527-185",
+        "qa200-20260527-186",
+        "qa200-20260527-187",
+        "qa200-20260527-188",
+        "qa200-20260527-189",
+        "qa200-20260527-190",
+        "qa200-20260527-191",
+        "qa200-20260527-192",
+        "trendqa-womens-20260530",
+        "round2-womens-health-20260530",
+        "trend-menopause-hormone-therapy-label-change-20260602",
+        "trend-endometriosis-clinical-diagnosis-acog-20260602"
+      ]
+    },
     "수면": {
       "count": 31,
       "qids": [
@@ -7037,42 +7074,6 @@
         "cardio-096",
         "cardio-098",
         "mens-extra-046"
-      ]
-    },
-    "여성건강": {
-      "count": 31,
-      "qids": [
-        "woms-001",
-        "woms-005",
-        "woms-006",
-        "woms-008",
-        "woms-011",
-        "woms-012",
-        "woms-014",
-        "woms-015",
-        "woms-016",
-        "woms-017",
-        "woms-018",
-        "woms-019",
-        "woms-020",
-        "infect-005",
-        "qa200-20260527-153",
-        "qa200-20260527-178",
-        "qa200-20260527-181",
-        "qa200-20260527-182",
-        "qa200-20260527-183",
-        "qa200-20260527-184",
-        "qa200-20260527-185",
-        "qa200-20260527-186",
-        "qa200-20260527-187",
-        "qa200-20260527-188",
-        "qa200-20260527-189",
-        "qa200-20260527-190",
-        "qa200-20260527-191",
-        "qa200-20260527-192",
-        "trendqa-womens-20260530",
-        "round2-womens-health-20260530",
-        "trend-menopause-hormone-therapy-label-change-20260602"
       ]
     },
     "항암": {
@@ -7315,6 +7316,37 @@
         "trend-glp1-hair-loss-telogen-effluvium-20260602"
       ]
     },
+    "남성건강": {
+      "count": 26,
+      "qids": [
+        "mens-001",
+        "mens-002",
+        "mens-003",
+        "mens-004",
+        "mens-006",
+        "mens-007",
+        "mens-010",
+        "mens-011",
+        "mens-013",
+        "mens-014",
+        "mens-016",
+        "mens-017",
+        "mens-019",
+        "mens-020",
+        "ingr-012",
+        "qa200-20260527-193",
+        "qa200-20260527-194",
+        "qa200-20260527-195",
+        "qa200-20260527-196",
+        "qa200-20260527-197",
+        "qa200-20260527-198",
+        "qa200-20260527-199",
+        "qa200-20260527-200",
+        "trendqa-mens-20260530",
+        "trend-testosterone-therapy-low-libido-bp-monitoring-20260602",
+        "trend-prostate-psa-mri-screening-aua-20260602"
+      ]
+    },
     "대사": {
       "count": 26,
       "qids": [
@@ -7344,36 +7376,6 @@
         "meta_089",
         "meta_094",
         "meta_096"
-      ]
-    },
-    "남성건강": {
-      "count": 25,
-      "qids": [
-        "mens-001",
-        "mens-002",
-        "mens-003",
-        "mens-004",
-        "mens-006",
-        "mens-007",
-        "mens-010",
-        "mens-011",
-        "mens-013",
-        "mens-014",
-        "mens-016",
-        "mens-017",
-        "mens-019",
-        "mens-020",
-        "ingr-012",
-        "qa200-20260527-193",
-        "qa200-20260527-194",
-        "qa200-20260527-195",
-        "qa200-20260527-196",
-        "qa200-20260527-197",
-        "qa200-20260527-198",
-        "qa200-20260527-199",
-        "qa200-20260527-200",
-        "trendqa-mens-20260530",
-        "trend-testosterone-therapy-low-libido-bp-monitoring-20260602"
       ]
     },
     "예방": {
@@ -8678,6 +8680,20 @@
         "qa200-20260527-188"
       ]
     },
+    "생리통": {
+      "count": 9,
+      "qids": [
+        "woms-001",
+        "woms-006",
+        "wh-extra-011",
+        "wh-extra-016",
+        "wh-extra-047",
+        "wh-extra-069",
+        "womens-101",
+        "qa200-20260527-181",
+        "trend-endometriosis-clinical-diagnosis-acog-20260602"
+      ]
+    },
     "수술": {
       "count": 9,
       "qids": [
@@ -8787,19 +8803,6 @@
         "qa-hospital-20260527-037"
       ]
     },
-    "생리통": {
-      "count": 8,
-      "qids": [
-        "woms-001",
-        "woms-006",
-        "wh-extra-011",
-        "wh-extra-016",
-        "wh-extra-047",
-        "wh-extra-069",
-        "womens-101",
-        "qa200-20260527-181"
-      ]
-    },
     "알레르기": {
       "count": 8,
       "qids": [
@@ -8889,6 +8892,18 @@
         "round2-metabolism-20260530",
         "round3-metabolism-2-20260531",
         "trend-cgm-prediabetes-a1c-postprandial-spike-20260602"
+      ]
+    },
+    "PSA": {
+      "count": 7,
+      "qids": [
+        "cancer-007",
+        "mens-extra-006",
+        "mens-extra-030",
+        "mens-001",
+        "ci_128",
+        "qa200-20260527-197",
+        "trend-prostate-psa-mri-screening-aua-20260602"
       ]
     },
     "감태 플로로탄닌": {
@@ -9079,17 +9094,6 @@
         "wh-extra-017",
         "womens-008",
         "womens-102"
-      ]
-    },
-    "PSA": {
-      "count": 6,
-      "qids": [
-        "cancer-007",
-        "mens-extra-006",
-        "mens-extra-030",
-        "mens-001",
-        "ci_128",
-        "qa200-20260527-197"
       ]
     },
     "PTSD": {
@@ -9846,6 +9850,16 @@
         "infect-005",
         "infect-105",
         "qa200-20260527-178"
+      ]
+    },
+    "자궁내막증": {
+      "count": 5,
+      "qids": [
+        "woms-006",
+        "wh-extra-014",
+        "wh-extra-016",
+        "womens-007",
+        "trend-endometriosis-clinical-diagnosis-acog-20260602"
       ]
     },
     "자외선": {
@@ -11712,7 +11726,10 @@
     "trend-sunscreen-vitamin-d-uv-index-myth-20260602": "자외선차단제를-바르면-비타민D가-부족해지니-햇빛을-오래-쬐는-게-좋나요",
     "trend-cgm-prediabetes-a1c-postprandial-spike-20260602": "연속혈당측정기CGM를-차면-전당뇨나-혈당-스파이크를-진단할-수-있나요",
     "trend-diet-microbiome-ibs-upf-fermented-food-20260602": "장내미생물에-좋다며-발효식품과-식이섬유를-많이-먹으면-과민성장증후군에도-도움이-되나요",
-    "trend-dyslipidemia-prevent-ldl-apob-lpa-risk-20260602": "2026년-콜레스테롤-가이드라인이-바뀌었다는데-LDL만-보면-되나요"
+    "trend-dyslipidemia-prevent-ldl-apob-lpa-risk-20260602": "2026년-콜레스테롤-가이드라인이-바뀌었다는데-LDL만-보면-되나요",
+    "trend-mced-blood-test-cancer-screening-guideline-20260602": "다중암-조기발견-혈액검사MCED를-받으면-기존-암검진을-안-해도-되나요",
+    "trend-endometriosis-clinical-diagnosis-acog-20260602": "생리통이-심하면-자궁내막증을-꼭-수술로-확인해야-하나요",
+    "trend-prostate-psa-mri-screening-aua-20260602": "PSA-수치가-높으면-바로-전립선-조직검사를-해야-하나요-MRI부터-봐야-하나요"
   },
-  "generated_at": "2026-06-02T07:04:54.356518+00:00"
+  "generated_at": "2026-06-02T07:17:41.350780+00:00"
 }

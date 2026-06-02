@@ -23,7 +23,7 @@ What "current" means:
 
 Content sources:
 
-- Supabase `public.posts`: canonical published blog posts (`572` published current posts).
+- Supabase `public.posts`: canonical published blog posts (`575` published current posts).
 - Local trend posts: `src/data/localTrendBlogPosts.js` (`18` posts, fallback/seed only).
 - Local functional ingredient posts: `src/data/localFunctionalIngredientPosts.js` (`10` posts, fallback/seed only).
 - Local category posts: `src/data/localCategoryBlogPosts.js` (`20` posts, fallback/seed only).
@@ -52,13 +52,13 @@ Key local posts that must remain available:
 Expected production SEO signals:
 
 - `https://phlorotannin.com/sitemap.xml`
-  - total URLs: `2821`
+  - total URLs: `2831`
   - duplicate URLs: `0`
   - noindex-like URLs inside sitemap: `0`
-  - Q&A detail URLs: `1823`
-  - Q&A tag URLs: `223`
-  - blog detail URLs: `572`
-  - insight detail URLs: `172`
+  - Q&A detail URLs: `1826`
+  - Q&A tag URLs: `224`
+  - blog detail URLs: `575`
+  - insight detail URLs: `175`
 - `/qa?category=cancer_immune`
   - `X-Robots-Tag: noindex,nofollow`
   - canonical: `https://phlorotannin.com/qa`
@@ -238,6 +238,25 @@ Supabase note:
 - Added 3 Q&A items to both `public/qa.json` and `src/data/qa.json`.
 - Added 3 unified photo-style OG images under `public/og/content-quality`.
 - Source topics: CGM/prediabetes/A1C limits, diet-microbiome/IBS/fermented foods, 2026 dyslipidemia guideline with PREVENT/ApoB/Lp(a).
+
+2026-06-02 KST health trend content update round 11:
+
+- Category rotation basis: returning to cancer/immune plus lower-count women/men categories after core metabolic/digestive/cardiovascular topics.
+- Selected categories:
+  - `cancer_immune` / 항암/면역
+  - `womens_health` / 여성건강
+  - `mens_health` / 남성건강
+- Added 3 Supabase blog posts:
+  - `/blog/mced-blood-test-cancer-screening-guideline-record-2026`
+  - `/blog/endometriosis-clinical-diagnosis-acog-record-2026`
+  - `/blog/prostate-psa-mri-screening-aua-record-2026`
+- Added 3 local insight posts:
+  - `/insights/mced-blood-test-cancer-screening-guideline-record-2026`
+  - `/insights/endometriosis-clinical-diagnosis-acog-record-2026`
+  - `/insights/prostate-psa-mri-screening-aua-record-2026`
+- Added 3 Q&A items to both `public/qa.json` and `src/data/qa.json`.
+- Added 3 unified photo-style OG images under `public/og/content-quality`.
+- Source topics: MCED/MCD blood tests and standard cancer screening limits, 2026 ACOG endometriosis diagnosis guidance, 2026 AUA/SUO prostate early detection update with PSA/MRI/biopsy decision-making.
 
 Required verification command:
 
