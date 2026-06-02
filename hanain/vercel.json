@@ -29,6 +29,20 @@
       ]
     },
     {
+      "source": "/og/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/illustrations/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
       "source": "/index.html",
       "headers": [
         { "key": "Access-Control-Allow-Origin", "value": "*" },
@@ -110,7 +124,7 @@
     { "source": "/question/write", "destination": "/api/seo?p=/question/write" },
     { "source": "/admin", "destination": "/api/seo?p=/admin" },
     {
-      "source": "/((?!api/|assets/|favicon\\.svg|og-image\\.png|og-image\\.svg|robots\\.txt|sitemap\\.xml|rss\\.xml|qa\\.json|tagIndex\\.json|partners\\.json|icons\\.svg|naver[^/]*\\.html|flyer_product_front\\.png|flyer_product_back\\.png|indexnow\\.txt|[0-9a-f]{32}\\.txt|llms\\.txt|llms-full\\.txt|manifest\\.json|apple-touch-icon\\.png|icon-192\\.png|icon-512\\.png).*)",
+      "source": "/((?!api/|assets/|og/|illustrations/|favicon\\.svg|og-image\\.png|og-image\\.svg|robots\\.txt|sitemap\\.xml|rss\\.xml|qa\\.json|tagIndex\\.json|partners\\.json|icons\\.svg|naver[^/]*\\.html|flyer_product_front\\.png|flyer_product_back\\.png|indexnow\\.txt|[0-9a-f]{32}\\.txt|llms\\.txt|llms-full\\.txt|manifest\\.json|apple-touch-icon\\.png|icon-192\\.png|icon-512\\.png).*)",
       "destination": "/index.html"
     }
   ]
