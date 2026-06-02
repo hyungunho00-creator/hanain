@@ -1,12 +1,12 @@
 # Current Working State
 
-Last verified: 2026-06-03 01:04 KST
+Last verified: 2026-06-03 05:52 KST
 
 Production domain:
 
 - `https://phlorotannin.com`
 - `https://www.phlorotannin.com` redirects to apex
-- Current verified deployment: `https://hanain-fiqbw39cj-01056528206s-projects.vercel.app`
+- Current verified deployment: `https://hanain-798pbm8np-01056528206s-projects.vercel.app`
 
 Branch:
 
@@ -23,8 +23,8 @@ What "current" means:
 
 Content sources:
 
-- Supabase `public.posts`: canonical published blog posts (`605` published current posts).
-- Local trend posts: `src/data/localTrendBlogPosts.js` + round modules (`42` posts, fallback/seed only).
+- Supabase `public.posts`: canonical published blog posts (`608` published current posts).
+- Local trend posts: `src/data/localTrendBlogPosts.js` + round modules (`45` posts, fallback/seed only).
 - Local functional ingredient posts: `src/data/localFunctionalIngredientPosts.js` (`10` posts, fallback/seed only).
 - Local category posts: `src/data/localCategoryBlogPosts.js` (`20` posts, fallback/seed only).
 - Local SEO expansion posts: `src/data/localSeoExpansionPosts.js` (`105` posts, fallback/seed only).
@@ -52,13 +52,13 @@ Key local posts that must remain available:
 Expected production SEO signals:
 
 - `https://phlorotannin.com/sitemap.xml`
-  - total URLs: `2930`
+  - total URLs: `2940`
   - duplicate URLs: `0`
   - noindex-like URLs inside sitemap: `0`
-  - Q&A detail URLs: `1856`
-  - Q&A tag URLs: `233`
-  - blog detail URLs: `605`
-  - insight detail URLs: `205`
+  - Q&A detail URLs: `1859`
+  - Q&A tag URLs: `234`
+  - blog detail URLs: `608`
+  - insight detail URLs: `208`
 - `/qa?category=cancer_immune`
   - `X-Robots-Tag: noindex,nofollow`
   - canonical: `https://phlorotannin.com/qa`
@@ -447,6 +447,25 @@ Supabase note:
 - Added 3 Q&A items to both `public/qa.json` and `src/data/qa.json`.
 - Added 3 unified photo-style OG images under `public/og/content-quality`.
 - Source topics: AHA Lp(a) once-in-a-lifetime testing and family cardiovascular records, Alzheimer's Association blood-based biomarker guidance for memory-clinic use, NCI personalized cancer vaccine trials with ctDNA and neoantigen records.
+
+2026-06-03 KST health trend content update round 22:
+
+- Category rotation basis: returned to under-updated `respiratory`, `infection_inflammation`, and `skin` categories after round 21 covered cardiovascular/neuro/cancer.
+- Selected categories:
+  - `respiratory`
+  - `infection_inflammation`
+  - `skin`
+- Added 3 Supabase blog posts:
+  - `/blog/respiratory-virus-vaccine-2025-2026-covid-flu-rsv-record-2026`
+  - `/blog/candida-auris-hospital-infection-antifungal-resistance-record-2026`
+  - `/blog/home-led-red-light-mask-fda-cleared-skin-safety-record-2026`
+- Added 3 local insight posts:
+  - `/insights/respiratory-virus-vaccine-2025-2026-covid-flu-rsv-record-2026`
+  - `/insights/candida-auris-hospital-infection-antifungal-resistance-record-2026`
+  - `/insights/home-led-red-light-mask-fda-cleared-skin-safety-record-2026`
+- Added 3 Q&A items to both `public/qa.json` and `src/data/qa.json`.
+- Added 3 unified photo-style OG images under `public/og/content-quality`.
+- Source topics: CDC 2025-26 respiratory virus vaccination guidance, CDC Candida auris clinical overview and 2026 EID genomic update, AAD/FDA home LED and red-light device safety wording.
 
 Required verification command:
 
