@@ -23,7 +23,7 @@ What "current" means:
 
 Content sources:
 
-- Supabase `public.posts`: canonical published blog posts (`548` published current posts).
+- Supabase `public.posts`: canonical published blog posts (`551` published current posts).
 - Local trend posts: `src/data/localTrendBlogPosts.js` (`18` posts, fallback/seed only).
 - Local functional ingredient posts: `src/data/localFunctionalIngredientPosts.js` (`10` posts, fallback/seed only).
 - Local category posts: `src/data/localCategoryBlogPosts.js` (`20` posts, fallback/seed only).
@@ -52,13 +52,13 @@ Key local posts that must remain available:
 Expected production SEO signals:
 
 - `https://phlorotannin.com/sitemap.xml`
-  - total URLs: `2742`
+  - total URLs: `2751`
   - duplicate URLs: `0`
   - noindex-like URLs inside sitemap: `0`
-  - Q&A detail URLs: `1799`
+  - Q&A detail URLs: `1802`
   - Q&A tag URLs: `216`
-  - blog detail URLs: `548`
-  - insight detail URLs: `148`
+  - blog detail URLs: `551`
+  - insight detail URLs: `151`
 - `/qa?category=cancer_immune`
   - `X-Robots-Tag: noindex,nofollow`
   - canonical: `https://phlorotannin.com/qa`
@@ -106,6 +106,20 @@ Supabase note:
 - Added 3 Q&A items to both `public/qa.json` and `src/data/qa.json`.
 - Added 3 unified photo-style OG images under `public/og/content-quality`.
 - Source topics: sodium reduction/lower-sodium salt substitutes, creatine with resistance training in healthy aging, resistant starch and diet-microbiome associations.
+
+2026-06-02 KST health trend content update round 3:
+
+- Added 3 Supabase blog posts:
+  - `/blog/sleep-regularity-circadian-heart-risk-record-2026`
+  - `/blog/vitamin-d-sun-exposure-sunscreen-skin-balance-2026`
+  - `/blog/coffee-gut-brain-axis-polyphenol-microbiome-2026`
+- Added 3 local insight posts:
+  - `/insights/sleep-regularity-circadian-heart-risk-record-2026`
+  - `/insights/vitamin-d-sun-exposure-sunscreen-skin-record-2026`
+  - `/insights/coffee-gut-brain-axis-polyphenol-record-2026`
+- Added 3 Q&A items to both `public/qa.json` and `src/data/qa.json`.
+- Added 3 unified photo-style OG images under `public/og/content-quality`.
+- Source topics: sleep regularity/circadian rhythm and cardiovascular risk, vitamin D with sun exposure and sunscreen balance, coffee and the microbiota-gut-brain axis.
 
 Required verification command:
 

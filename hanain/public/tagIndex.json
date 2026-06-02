@@ -1,7 +1,7 @@
 {
   "min_tag_count": 5,
-  "total_questions": 1799,
-  "total_unique_tags": 2036,
+  "total_questions": 1802,
+  "total_unique_tags": 2040,
   "page_eligible_tags": 216,
   "tags": {
     "플로로탄닌": {
@@ -3953,7 +3953,7 @@
       ]
     },
     "폴리페놀": {
-      "count": 459,
+      "count": 460,
       "qids": [
         "cardio-003",
         "cardio-007",
@@ -4413,7 +4413,8 @@
         "ci_124",
         "nc_112",
         "sh_140",
-        "trend-resistant-starch-gut-microbiome-polyphenol-20260602"
+        "trend-resistant-starch-gut-microbiome-polyphenol-20260602",
+        "trend-coffee-gut-brain-axis-polyphenol-20260602"
       ]
     },
     "해양폴리페놀": {
@@ -6261,7 +6262,7 @@
       ]
     },
     "심혈관": {
-      "count": 62,
+      "count": 63,
       "qids": [
         "cardio-019",
         "cardio-030",
@@ -6324,7 +6325,8 @@
         "seoqa-cardiovascular-10",
         "trendqa-cardiovascular-20260530",
         "round2-cardiovascular-20260530",
-        "trend-ultra-processed-food-blood-sugar-label-20260602"
+        "trend-ultra-processed-food-blood-sugar-label-20260602",
+        "trend-sleep-regularity-heart-risk-20260602"
       ]
     },
     "관절": {
@@ -8035,6 +8037,25 @@
         "round3-neuro_cognitive-2-20260531"
       ]
     },
+    "비타민D": {
+      "count": 14,
+      "qids": [
+        "cardio-033",
+        "cancer-011",
+        "mens-extra-007",
+        "mens-extra-070",
+        "resp-015",
+        "infect-extra-041",
+        "infect-extra-078",
+        "mental-extra-027",
+        "ingr-029",
+        "qa200-20260527-125",
+        "qa200-20260527-189",
+        "trendqa-hair-20260530",
+        "round3-infection_inflammation-2-20260531",
+        "trend-vitamin-d-sun-sunscreen-skin-20260602"
+      ]
+    },
     "수면·정신건강": {
       "count": 14,
       "qids": [
@@ -8090,24 +8111,6 @@
         "trendqa-skin-20260530",
         "round2-skin-20260530",
         "round3-skin-1-20260531"
-      ]
-    },
-    "비타민D": {
-      "count": 13,
-      "qids": [
-        "cardio-033",
-        "cancer-011",
-        "mens-extra-007",
-        "mens-extra-070",
-        "resp-015",
-        "infect-extra-041",
-        "infect-extra-078",
-        "mental-extra-027",
-        "ingr-029",
-        "qa200-20260527-125",
-        "qa200-20260527-189",
-        "trendqa-hair-20260530",
-        "round3-infection_inflammation-2-20260531"
       ]
     },
     "식이섬유": {
@@ -8232,6 +8235,23 @@
         "round2-mens-health-20260530"
       ]
     },
+    "카페인": {
+      "count": 12,
+      "qids": [
+        "cardio-024",
+        "cardio-074",
+        "wh-extra-023",
+        "wh-extra-057",
+        "mens-010",
+        "qa200-20260527-080",
+        "qa200-20260527-114",
+        "qa200-20260527-116",
+        "qa200-20260527-190",
+        "round3-mental_health-1-20260531",
+        "round3-mens_health-1-20260531",
+        "trend-coffee-gut-brain-axis-polyphenol-20260602"
+      ]
+    },
     "피부염": {
       "count": 12,
       "qids": [
@@ -8345,20 +8365,20 @@
         "qa200-20260527-100"
       ]
     },
-    "카페인": {
+    "장내미생물": {
       "count": 11,
       "qids": [
-        "cardio-024",
-        "cardio-074",
-        "wh-extra-023",
-        "wh-extra-057",
-        "mens-010",
-        "qa200-20260527-080",
-        "qa200-20260527-114",
-        "qa200-20260527-116",
-        "qa200-20260527-190",
-        "round3-mental_health-1-20260531",
-        "round3-mens_health-1-20260531"
+        "cancer-005",
+        "cancer-012",
+        "dige-006",
+        "infect-extra-043",
+        "ingr-015",
+        "ingr-028",
+        "trendqa-digestive-20260530",
+        "round2-digestive-20260530",
+        "round3-digestive-1-20260531",
+        "trend-resistant-starch-gut-microbiome-polyphenol-20260602",
+        "trend-coffee-gut-brain-axis-polyphenol-20260602"
       ]
     },
     "콜라겐": {
@@ -8390,6 +8410,21 @@
         "mens-extra-070",
         "round3-hair-1-20260531",
         "round3-womens_health-2-20260531"
+      ]
+    },
+    "검사": {
+      "count": 10,
+      "qids": [
+        "qa200-20260527-093",
+        "qa200-20260527-149",
+        "qa200-20260527-157",
+        "qa200-20260527-171",
+        "qa200-20260527-179",
+        "qa200-20260527-182",
+        "qa200-20260527-190",
+        "qa200-20260527-194",
+        "qa200-20260527-197",
+        "trend-vitamin-d-sun-sunscreen-skin-20260602"
       ]
     },
     "근골격": {
@@ -8465,21 +8500,6 @@
         "sh_093",
         "sh_119",
         "qa200-20260527-137"
-      ]
-    },
-    "장내미생물": {
-      "count": 10,
-      "qids": [
-        "cancer-005",
-        "cancer-012",
-        "dige-006",
-        "infect-extra-043",
-        "ingr-015",
-        "ingr-028",
-        "trendqa-digestive-20260530",
-        "round2-digestive-20260530",
-        "round3-digestive-1-20260531",
-        "trend-resistant-starch-gut-microbiome-polyphenol-20260602"
       ]
     },
     "집중력": {
@@ -8568,20 +8588,6 @@
         "ingr-008",
         "qa200-20260527-161",
         "qa200-20260527-175"
-      ]
-    },
-    "검사": {
-      "count": 9,
-      "qids": [
-        "qa200-20260527-093",
-        "qa200-20260527-149",
-        "qa200-20260527-157",
-        "qa200-20260527-171",
-        "qa200-20260527-179",
-        "qa200-20260527-182",
-        "qa200-20260527-190",
-        "qa200-20260527-194",
-        "qa200-20260527-197"
       ]
     },
     "나트륨": {
@@ -8959,6 +8965,18 @@
         "ci_117"
       ]
     },
+    "자외선차단": {
+      "count": 7,
+      "qids": [
+        "skin-009",
+        "wh-extra-068",
+        "mens-extra-042",
+        "sh_100",
+        "sh_114",
+        "sh_118",
+        "trend-vitamin-d-sun-sunscreen-skin-20260602"
+      ]
+    },
     "지방간": {
       "count": 7,
       "qids": [
@@ -9237,6 +9255,17 @@
         "ingr-028"
       ]
     },
+    "수면무호흡": {
+      "count": 6,
+      "qids": [
+        "cardio-044",
+        "resp-008",
+        "nc_109",
+        "qa200-20260527-165",
+        "round3-mens_health-2-20260531",
+        "trend-sleep-regularity-heart-risk-20260602"
+      ]
+    },
     "수분": {
       "count": 6,
       "qids": [
@@ -9279,17 +9308,6 @@
         "trendqa-mens-20260530",
         "round2-mens-health-20260530",
         "round3-mens_health-1-20260531"
-      ]
-    },
-    "자외선차단": {
-      "count": 6,
-      "qids": [
-        "skin-009",
-        "wh-extra-068",
-        "mens-extra-042",
-        "sh_100",
-        "sh_114",
-        "sh_118"
       ]
     },
     "저혈당": {
@@ -9639,16 +9657,6 @@
         "qa200-20260527-068",
         "qa200-20260527-072",
         "qa200-20260527-076"
-      ]
-    },
-    "수면무호흡": {
-      "count": 5,
-      "qids": [
-        "cardio-044",
-        "resp-008",
-        "nc_109",
-        "qa200-20260527-165",
-        "round3-mens_health-2-20260531"
       ]
     },
     "수면부족": {
@@ -11581,7 +11589,10 @@
     "trend-ultra-processed-food-blood-sugar-label-20260602": "초가공식품을-줄이고-싶을-때-혈당과-심혈관-건강을-위해-라벨에서-무엇을-먼저-봐야-하나요",
     "trend-sodium-potassium-salt-blood-pressure-20260602": "혈압을-위해-나트륨을-줄일-때-칼륨-소금-대체제와-식품-라벨은-어떻게-봐야-하나요",
     "trend-creatine-resistance-training-healthy-aging-20260602": "크레아틴이-건강노화와-근감소-예방에-도움-된다고-하는데-먹기-전에-무엇을-확인해야-하나요",
-    "trend-resistant-starch-gut-microbiome-polyphenol-20260602": "장내미생물-관리를-위해-유산균보다-식이섬유와-저항성전분을-먼저-봐야-하나요"
+    "trend-resistant-starch-gut-microbiome-polyphenol-20260602": "장내미생물-관리를-위해-유산균보다-식이섬유와-저항성전분을-먼저-봐야-하나요",
+    "trend-sleep-regularity-heart-risk-20260602": "수면-시간보다-취침-시간이-불규칙한-것이-심혈관-건강에-더-문제가-될-수-있나요",
+    "trend-vitamin-d-sun-sunscreen-skin-20260602": "비타민D를-위해-햇빛을-많이-쬐면-자외선-차단제를-덜-발라도-되나요",
+    "trend-coffee-gut-brain-axis-polyphenol-20260602": "커피가-장내미생물과-기분에-영향을-준다는-연구는-어떻게-이해해야-하나요"
   },
-  "generated_at": "2026-06-02T02:22:38.834786+00:00"
+  "generated_at": "2026-06-02T03:52:08.943202+00:00"
 }

@@ -333,11 +333,32 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/resistant-starch-gut-microbiome-polyphenol-phlorotannin-2026"/>
   </url>
   <url>
+    <loc>https://phlorotannin.com/insights/sleep-regularity-circadian-heart-risk-record-2026</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/sleep-regularity-circadian-heart-risk-record-2026"/>
+  </url>
+  <url>
     <loc>https://phlorotannin.com/insights/phlorotannin-side-effects-real</loc>
     <lastmod>2026-06-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/phlorotannin-side-effects-real"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/insights/vitamin-d-sun-exposure-sunscreen-skin-record-2026</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/vitamin-d-sun-exposure-sunscreen-skin-record-2026"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/insights/coffee-gut-brain-axis-polyphenol-record-2026</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/coffee-gut-brain-axis-polyphenol-record-2026"/>
   </url>
   <url>
     <loc>https://phlorotannin.com/insights/phlorotannin-quality-extraction-method</loc>
@@ -13780,6 +13801,27 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/q/장내미생물-관리를-위해-유산균보다-식이섬유와-저항성전분을-먼저-봐야-하나요"/>
   </url>
   <url>
+    <loc>https://phlorotannin.com/q/수면-시간보다-취침-시간이-불규칙한-것이-심혈관-건강에-더-문제가-될-수-있나요</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/q/수면-시간보다-취침-시간이-불규칙한-것이-심혈관-건강에-더-문제가-될-수-있나요"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/q/비타민D를-위해-햇빛을-많이-쬐면-자외선-차단제를-덜-발라도-되나요</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/q/비타민D를-위해-햇빛을-많이-쬐면-자외선-차단제를-덜-발라도-되나요"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/q/커피가-장내미생물과-기분에-영향을-준다는-연구는-어떻게-이해해야-하나요</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/q/커피가-장내미생물과-기분에-영향을-준다는-연구는-어떻게-이해해야-하나요"/>
+  </url>
+  <url>
     <loc>https://phlorotannin.com/qa/tag/%EA%B3%A0%ED%98%88%EC%95%95</loc>
     <lastmod>2026-06-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -15162,7 +15204,7 @@
     <loc>https://phlorotannin.com/qa/tag/%EA%B2%80%EC%82%AC</loc>
     <lastmod>2026-06-02</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.70</priority>
+    <priority>0.75</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa/tag/%EA%B2%80%EC%82%AC"/>
   </url>
   <url>
@@ -15290,6 +15332,39 @@
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/qa/tag/%EA%B7%BC%EA%B3%A8%EA%B2%A9"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/sleep-regularity-circadian-heart-risk-record-2026</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/sleep-regularity-circadian-heart-risk-record-2026"/>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og-card/v20260602/sleep-regularity-circadian-heart-risk-record-2026.png</image:loc>
+      <image:title>수면 규칙성 이슈: 잠을 몇 시간 잤는가보다 언제 자고 일어나는지가 중요합니다</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/vitamin-d-sun-exposure-sunscreen-skin-balance-2026</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/vitamin-d-sun-exposure-sunscreen-skin-balance-2026"/>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og-card/v20260602/vitamin-d-sun-exposure-sunscreen-skin-balance-2026.png</image:loc>
+      <image:title>비타민D와 햇빛 이슈: 자외선 차단을 포기하지 않고 결핍을 관리하는 법</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/coffee-gut-brain-axis-polyphenol-microbiome-2026</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/coffee-gut-brain-axis-polyphenol-microbiome-2026"/>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og-card/v20260602/coffee-gut-brain-axis-polyphenol-microbiome-2026.png</image:loc>
+      <image:title>커피와 장-뇌축 이슈: 카페인보다 폴리페놀, 장내미생물, 수면 기록이 먼저입니다</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://phlorotannin.com/blog/sodium-potassium-salt-substitute-blood-pressure-label-2026</loc>
