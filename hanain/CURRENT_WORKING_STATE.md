@@ -23,7 +23,7 @@ What "current" means:
 
 Content sources:
 
-- Supabase `public.posts`: canonical published blog posts (`560` published current posts).
+- Supabase `public.posts`: canonical published blog posts (`563` published current posts).
 - Local trend posts: `src/data/localTrendBlogPosts.js` (`18` posts, fallback/seed only).
 - Local functional ingredient posts: `src/data/localFunctionalIngredientPosts.js` (`10` posts, fallback/seed only).
 - Local category posts: `src/data/localCategoryBlogPosts.js` (`20` posts, fallback/seed only).
@@ -52,13 +52,13 @@ Key local posts that must remain available:
 Expected production SEO signals:
 
 - `https://phlorotannin.com/sitemap.xml`
-  - total URLs: `2782`
+  - total URLs: `2791`
   - duplicate URLs: `0`
   - noindex-like URLs inside sitemap: `0`
-  - Q&A detail URLs: `1811`
+  - Q&A detail URLs: `1814`
   - Q&A tag URLs: `220`
-  - blog detail URLs: `560`
-  - insight detail URLs: `160`
+  - blog detail URLs: `563`
+  - insight detail URLs: `163`
 - `/qa?category=cancer_immune`
   - `X-Robots-Tag: noindex,nofollow`
   - canonical: `https://phlorotannin.com/qa`
@@ -162,6 +162,25 @@ Supabase note:
 - Added 3 Q&A items to both `public/qa.json` and `src/data/qa.json`.
 - Added 3 unified photo-style OG images under `public/og/content-quality`.
 - Source topics: wearable VO2 max/cardiorespiratory fitness records, energy drink/pre-workout caffeine safety, berberine blood sugar supplement interactions.
+
+2026-06-02 KST health trend content update round 7:
+
+- Category rotation basis: recently under-updated and lower-count categories first.
+- Selected categories:
+  - `hair` / 모발·두피
+  - `womens_health` / 여성건강
+  - `mens_health` / 남성건강
+- Added 3 Supabase blog posts:
+  - `/blog/glp1-hair-loss-telogen-effluvium-protein-ferritin-2026`
+  - `/blog/menopause-hormone-therapy-label-change-risk-conversation-2026`
+  - `/blog/testosterone-therapy-low-libido-blood-pressure-monitoring-2026`
+- Added 3 local insight posts:
+  - `/insights/glp1-hair-loss-telogen-effluvium-protein-ferritin-2026`
+  - `/insights/menopause-hormone-therapy-label-change-risk-conversation-2026`
+  - `/insights/testosterone-therapy-low-libido-blood-pressure-monitoring-2026`
+- Added 3 Q&A items to both `public/qa.json` and `src/data/qa.json`.
+- Added 3 unified photo-style OG images under `public/og/content-quality`.
+- Source topics: GLP-1-related hair shedding and telogen effluvium, 2026 menopause hormone therapy label changes, testosterone therapy low libido review with blood pressure monitoring.
 
 Required verification command:
 

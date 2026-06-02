@@ -1,7 +1,7 @@
 {
   "min_tag_count": 5,
-  "total_questions": 1811,
-  "total_unique_tags": 2063,
+  "total_questions": 1814,
+  "total_unique_tags": 2067,
   "page_eligible_tags": 220,
   "tags": {
     "플로로탄닌": {
@@ -7038,6 +7038,42 @@
         "mens-extra-046"
       ]
     },
+    "여성건강": {
+      "count": 31,
+      "qids": [
+        "woms-001",
+        "woms-005",
+        "woms-006",
+        "woms-008",
+        "woms-011",
+        "woms-012",
+        "woms-014",
+        "woms-015",
+        "woms-016",
+        "woms-017",
+        "woms-018",
+        "woms-019",
+        "woms-020",
+        "infect-005",
+        "qa200-20260527-153",
+        "qa200-20260527-178",
+        "qa200-20260527-181",
+        "qa200-20260527-182",
+        "qa200-20260527-183",
+        "qa200-20260527-184",
+        "qa200-20260527-185",
+        "qa200-20260527-186",
+        "qa200-20260527-187",
+        "qa200-20260527-188",
+        "qa200-20260527-189",
+        "qa200-20260527-190",
+        "qa200-20260527-191",
+        "qa200-20260527-192",
+        "trendqa-womens-20260530",
+        "round2-womens-health-20260530",
+        "trend-menopause-hormone-therapy-label-change-20260602"
+      ]
+    },
     "항암": {
       "count": 31,
       "qids": [
@@ -7109,41 +7145,6 @@
         "dg_088"
       ]
     },
-    "여성건강": {
-      "count": 30,
-      "qids": [
-        "woms-001",
-        "woms-005",
-        "woms-006",
-        "woms-008",
-        "woms-011",
-        "woms-012",
-        "woms-014",
-        "woms-015",
-        "woms-016",
-        "woms-017",
-        "woms-018",
-        "woms-019",
-        "woms-020",
-        "infect-005",
-        "qa200-20260527-153",
-        "qa200-20260527-178",
-        "qa200-20260527-181",
-        "qa200-20260527-182",
-        "qa200-20260527-183",
-        "qa200-20260527-184",
-        "qa200-20260527-185",
-        "qa200-20260527-186",
-        "qa200-20260527-187",
-        "qa200-20260527-188",
-        "qa200-20260527-189",
-        "qa200-20260527-190",
-        "qa200-20260527-191",
-        "qa200-20260527-192",
-        "trendqa-womens-20260530",
-        "round2-womens-health-20260530"
-      ]
-    },
     "치매": {
       "count": 30,
       "qids": [
@@ -7177,6 +7178,41 @@
         "nc_091",
         "mental-012",
         "nc_093"
+      ]
+    },
+    "혈압": {
+      "count": 30,
+      "qids": [
+        "cardio-009",
+        "cardio-011",
+        "cardio-013",
+        "cardio-017",
+        "cardio-026",
+        "cardio-029",
+        "cardio-032",
+        "cardio-036",
+        "cardio-039",
+        "cardio-041",
+        "cardio-044",
+        "cardio-047",
+        "cardio-051",
+        "cardio-056",
+        "cardio-058",
+        "cardio-061",
+        "cardio-064",
+        "cardio-072",
+        "cardio-074",
+        "cardio-079",
+        "cardio-084",
+        "cardio-089",
+        "cardio-094",
+        "qa200-20260527-088",
+        "qa200-20260527-165",
+        "trendqa-cardiovascular-20260530",
+        "round3-cardiovascular-1-20260531",
+        "round3-cardiovascular-2-20260531",
+        "trend-sodium-potassium-salt-blood-pressure-20260602",
+        "trend-testosterone-therapy-low-libido-bp-monitoring-20260602"
       ]
     },
     "인지": {
@@ -7213,40 +7249,6 @@
         "nc_088"
       ]
     },
-    "혈압": {
-      "count": 29,
-      "qids": [
-        "cardio-009",
-        "cardio-011",
-        "cardio-013",
-        "cardio-017",
-        "cardio-026",
-        "cardio-029",
-        "cardio-032",
-        "cardio-036",
-        "cardio-039",
-        "cardio-041",
-        "cardio-044",
-        "cardio-047",
-        "cardio-051",
-        "cardio-056",
-        "cardio-058",
-        "cardio-061",
-        "cardio-064",
-        "cardio-072",
-        "cardio-074",
-        "cardio-079",
-        "cardio-084",
-        "cardio-089",
-        "cardio-094",
-        "qa200-20260527-088",
-        "qa200-20260527-165",
-        "trendqa-cardiovascular-20260530",
-        "round3-cardiovascular-1-20260531",
-        "round3-cardiovascular-2-20260531",
-        "trend-sodium-potassium-salt-blood-pressure-20260602"
-      ]
-    },
     "인슐린": {
       "count": 28,
       "qids": [
@@ -7281,7 +7283,7 @@
       ]
     },
     "단백질": {
-      "count": 26,
+      "count": 27,
       "qids": [
         "cancer-008",
         "mens-009",
@@ -7308,7 +7310,8 @@
         "round3-metabolism-1-20260531",
         "round3-musculoskeletal-1-20260531",
         "trend-glp1-muscle-protein-fiber-20260602",
-        "trend-creatine-resistance-training-healthy-aging-20260602"
+        "trend-creatine-resistance-training-healthy-aging-20260602",
+        "trend-glp1-hair-loss-telogen-effluvium-20260602"
       ]
     },
     "대사": {
@@ -7342,6 +7345,36 @@
         "meta_096"
       ]
     },
+    "남성건강": {
+      "count": 25,
+      "qids": [
+        "mens-001",
+        "mens-002",
+        "mens-003",
+        "mens-004",
+        "mens-006",
+        "mens-007",
+        "mens-010",
+        "mens-011",
+        "mens-013",
+        "mens-014",
+        "mens-016",
+        "mens-017",
+        "mens-019",
+        "mens-020",
+        "ingr-012",
+        "qa200-20260527-193",
+        "qa200-20260527-194",
+        "qa200-20260527-195",
+        "qa200-20260527-196",
+        "qa200-20260527-197",
+        "qa200-20260527-198",
+        "qa200-20260527-199",
+        "qa200-20260527-200",
+        "trendqa-mens-20260530",
+        "trend-testosterone-therapy-low-libido-bp-monitoring-20260602"
+      ]
+    },
     "예방": {
       "count": 25,
       "qids": [
@@ -7370,35 +7403,6 @@
         "infect-extra-077",
         "ci_123",
         "infect-107"
-      ]
-    },
-    "남성건강": {
-      "count": 24,
-      "qids": [
-        "mens-001",
-        "mens-002",
-        "mens-003",
-        "mens-004",
-        "mens-006",
-        "mens-007",
-        "mens-010",
-        "mens-011",
-        "mens-013",
-        "mens-014",
-        "mens-016",
-        "mens-017",
-        "mens-019",
-        "mens-020",
-        "ingr-012",
-        "qa200-20260527-193",
-        "qa200-20260527-194",
-        "qa200-20260527-195",
-        "qa200-20260527-196",
-        "qa200-20260527-197",
-        "qa200-20260527-198",
-        "qa200-20260527-199",
-        "qa200-20260527-200",
-        "trendqa-mens-20260530"
       ]
     },
     "뇌·인지": {
@@ -7567,6 +7571,32 @@
         "sh_097"
       ]
     },
+    "테스토스테론": {
+      "count": 21,
+      "qids": [
+        "wh-extra-040",
+        "wh-extra-050",
+        "wh-extra-064",
+        "mens-002",
+        "mens-006",
+        "mens-extra-007",
+        "mens-extra-011",
+        "mens-extra-012",
+        "mens-extra-020",
+        "mens-extra-033",
+        "mens-extra-043",
+        "mens-extra-052",
+        "mens-extra-053",
+        "mh-extra-071",
+        "mens-002",
+        "mens-004",
+        "mens-006",
+        "mens-008",
+        "qa200-20260527-194",
+        "round3-mens_health-2-20260531",
+        "trend-testosterone-therapy-low-libido-bp-monitoring-20260602"
+      ]
+    },
     "스트레스": {
       "count": 20,
       "qids": [
@@ -7642,31 +7672,6 @@
         "round2-hair-20260530"
       ]
     },
-    "테스토스테론": {
-      "count": 20,
-      "qids": [
-        "wh-extra-040",
-        "wh-extra-050",
-        "wh-extra-064",
-        "mens-002",
-        "mens-006",
-        "mens-extra-007",
-        "mens-extra-011",
-        "mens-extra-012",
-        "mens-extra-020",
-        "mens-extra-033",
-        "mens-extra-043",
-        "mens-extra-052",
-        "mens-extra-053",
-        "mh-extra-071",
-        "mens-002",
-        "mens-004",
-        "mens-006",
-        "mens-008",
-        "qa200-20260527-194",
-        "round3-mens_health-2-20260531"
-      ]
-    },
     "근육": {
       "count": 18,
       "qids": [
@@ -7713,6 +7718,28 @@
         "seoqa-mental_health-10"
       ]
     },
+    "갱년기": {
+      "count": 17,
+      "qids": [
+        "woms-003",
+        "woms-008",
+        "wh-extra-001",
+        "wh-extra-002",
+        "wh-extra-003",
+        "wh-extra-005",
+        "wh-extra-006",
+        "wh-extra-007",
+        "wh-extra-008",
+        "wh-extra-009",
+        "wh-extra-010",
+        "womens-001",
+        "womens-009",
+        "qa200-20260527-183",
+        "trendqa-womens-20260530",
+        "round3-womens_health-1-20260531",
+        "trend-menopause-hormone-therapy-label-change-20260602"
+      ]
+    },
     "마그네슘": {
       "count": 17,
       "qids": [
@@ -7755,27 +7782,6 @@
         "qa200-20260527-160",
         "trendqa-respiratory-20260530",
         "round3-respiratory-2-20260531"
-      ]
-    },
-    "갱년기": {
-      "count": 16,
-      "qids": [
-        "woms-003",
-        "woms-008",
-        "wh-extra-001",
-        "wh-extra-002",
-        "wh-extra-003",
-        "wh-extra-005",
-        "wh-extra-006",
-        "wh-extra-007",
-        "wh-extra-008",
-        "wh-extra-009",
-        "wh-extra-010",
-        "womens-001",
-        "womens-009",
-        "qa200-20260527-183",
-        "trendqa-womens-20260530",
-        "round3-womens_health-1-20260531"
       ]
     },
     "건강기능식품": {
@@ -8707,6 +8713,20 @@
         "ingr-006"
       ]
     },
+    "폐경": {
+      "count": 9,
+      "qids": [
+        "meta-010",
+        "woms-003",
+        "wh-extra-004",
+        "wh-extra-048",
+        "wh-extra-064",
+        "wh-extra-070",
+        "qa200-20260527-189",
+        "round3-womens_health-1-20260531",
+        "trend-menopause-hormone-therapy-label-change-20260602"
+      ]
+    },
     "DHA": {
       "count": 8,
       "qids": [
@@ -8848,19 +8868,6 @@
         "ci_148",
         "nc_116",
         "infect-108"
-      ]
-    },
-    "폐경": {
-      "count": 8,
-      "qids": [
-        "meta-010",
-        "woms-003",
-        "wh-extra-004",
-        "wh-extra-048",
-        "wh-extra-064",
-        "wh-extra-070",
-        "qa200-20260527-189",
-        "round3-womens_health-1-20260531"
       ]
     },
     "감태 플로로탄닌": {
@@ -11651,7 +11658,10 @@
     "trend-pfas-drinking-water-home-check-20260602": "PFAS-수돗물-이슈가-걱정될-때-집에서는-무엇을-먼저-확인해야-하나요",
     "trend-wearable-vo2max-cardio-fitness-20260602": "웨어러블에-나오는-VO2-max나-심폐체력-나이를-건강노화-지표로-믿어도-되나요",
     "trend-energy-drink-preworkout-caffeine-sleep-20260602": "에너지드링크나-프리워크아웃을-먹고-운동해도-괜찮나요-수면과-심박을-봐야-하나요",
-    "trend-berberine-blood-sugar-drug-interaction-20260602": "베르베린이-혈당에-좋다고-하는데-당뇨약을-먹는-사람도-같이-먹어도-되나요"
+    "trend-berberine-blood-sugar-drug-interaction-20260602": "베르베린이-혈당에-좋다고-하는데-당뇨약을-먹는-사람도-같이-먹어도-되나요",
+    "trend-glp1-hair-loss-telogen-effluvium-20260602": "GLP1-감량-중-머리가-많이-빠지면-약-때문인가요-단백질과-페리틴을-봐야-하나요",
+    "trend-menopause-hormone-therapy-label-change-20260602": "폐경-호르몬요법-라벨이-바뀌었다는데-갱년기-증상이-있으면-바로-상담해도-되나요",
+    "trend-testosterone-therapy-low-libido-bp-monitoring-20260602": "테스토스테론-치료가-다시-이슈라는데-피곤하고-성욕이-떨어지면-맞아도-되나요"
   },
-  "generated_at": "2026-06-02T05:55:52.997630+00:00"
+  "generated_at": "2026-06-02T06:11:12.560040+00:00"
 }

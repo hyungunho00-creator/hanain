@@ -1,11 +1,11 @@
 const SITE = 'https://phlorotannin.com'
 
 const EXPECTED = {
-  sitemapTotal: 2782,
-  qCount: 1811,
+  sitemapTotal: 2791,
+  qCount: 1814,
   tagCount: 220,
-  blogCount: 560,
-  insightCount: 160,
+  blogCount: 563,
+  insightCount: 163,
   requiredBundleSlugs: [
     'glp1-era-protein-fiber-phlorotannin-checklist-2026',
     'glp1-muscle-loss-protein-resistance-training-2026',
@@ -15,6 +15,9 @@ const EXPECTED = {
     'wearable-vo2max-cardio-fitness-longevity-record-2026',
     'energy-drink-preworkout-caffeine-sleep-arrhythmia-safety-2026',
     'berberine-blood-sugar-supplement-safety-record-2026',
+    'glp1-hair-loss-telogen-effluvium-protein-ferritin-2026',
+    'menopause-hormone-therapy-label-change-risk-conversation-2026',
+    'testosterone-therapy-low-libido-blood-pressure-monitoring-2026',
   ],
   draftSlug: 'ecklonia-cava-respiratory-health-clinical-trial-2026',
 }
