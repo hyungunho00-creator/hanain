@@ -3,11 +3,14 @@ import { Link } from 'react-router-dom'
 import SEOHead from '../components/common/SEOHead'
 import LastReviewed from '../components/common/LastReviewed'
 import { INSIGHTS_LIST, INSIGHT_CATEGORIES, INSIGHTS_BY_CATEGORY } from '../data/insights'
+import { REFERENCES } from '../data/references'
 import { QA_TOTAL } from '../data/siteStats'
 import { usePartner } from '../context/PartnerContext'
 import { withRef } from '../lib/partnerRef'
 
 const SITE = 'https://phlorotannin.com'
+const LAST_REVIEWED = '2026-06-02'
+const REFERENCE_TOTAL = Object.keys(REFERENCES).length
 
 export default function InsightsHubPage() {
   const partner = usePartner()
@@ -50,7 +53,7 @@ export default function InsightsHubPage() {
         description:
           `플로로탄닌·감태(Ecklonia cava) 추출물과 트렌드 건강식품 원료에 대한 PubMed·PMC·EFSA·식약처 검증 1차 출처 기반 심층 콘텐츠 ${INSIGHTS_LIST.length}편. 작용기전·임상 근거·복용·안전성·비교·부작용·약물상호작용을 한곳에 정리했습니다.`,
         inLanguage: 'ko-KR',
-        lastReviewed: new Date().toISOString().slice(0, 10),
+        lastReviewed: LAST_REVIEWED,
         about: {
           '@type': 'Thing',
           name: '플로로탄닌 (Phlorotannin)',
@@ -123,7 +126,7 @@ export default function InsightsHubPage() {
               </div>
               <div className="rounded-lg border border-gray-200 bg-white px-4 py-3">
                 <div className="text-[11px] text-gray-500">검증 참고문헌</div>
-                <div className="text-xl font-semibold text-gray-900 mt-0.5">68건+</div>
+                <div className="text-xl font-semibold text-gray-900 mt-0.5">{REFERENCE_TOTAL.toLocaleString()}건+</div>
                 <div className="text-[10px] text-gray-400 mt-0.5">PubMed/PMC/EFSA</div>
               </div>
               <div className="rounded-lg border border-gray-200 bg-white px-4 py-3">
@@ -133,13 +136,13 @@ export default function InsightsHubPage() {
               </div>
               <div className="rounded-lg border border-gray-200 bg-white px-4 py-3">
                 <div className="text-[11px] text-gray-500">최근 검토</div>
-                <div className="text-xl font-semibold text-gray-900 mt-0.5">2026-05-21</div>
+                <div className="text-xl font-semibold text-gray-900 mt-0.5">{LAST_REVIEWED}</div>
                 <div className="text-[10px] text-gray-400 mt-0.5">매월 재검토</div>
               </div>
             </div>
 
             <div className="mt-5">
-              <LastReviewed date={new Date().toISOString().slice(0, 10)} align="left" />
+              <LastReviewed date={LAST_REVIEWED} align="left" />
             </div>
           </div>
         </header>

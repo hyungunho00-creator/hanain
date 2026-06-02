@@ -31,6 +31,11 @@ function handleStep(name, result) {
 const audit = run(process.execPath, [path.join('scripts', 'audit_reader_content.cjs')]);
 handleStep('audit_reader_content', audit);
 
+const siteStats = run(process.execPath, [path.join('scripts', 'update_site_stats.mjs')]);
+if (siteStats.error || siteStats.status !== 0) {
+  process.exit(siteStats.status || 1);
+}
+
 if (QA_CONTENT_GATES) {
   const hardValidator = run(process.execPath, [path.join('scripts', 'qa-answer-hard-validator.mjs')]);
   handleStep('qa-answer-hard-validator', hardValidator);
