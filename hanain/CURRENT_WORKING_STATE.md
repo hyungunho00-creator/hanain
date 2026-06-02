@@ -23,8 +23,8 @@ What "current" means:
 
 Content sources:
 
-- Supabase `public.posts`: canonical published blog posts (`581` published current posts).
-- Local trend posts: `src/data/localTrendBlogPosts.js` (`18` posts, fallback/seed only).
+- Supabase `public.posts`: canonical published blog posts (`584` published current posts).
+- Local trend posts: `src/data/localTrendBlogPosts.js` + `src/data/localTrendBlogPostsRound14.js` (`21` posts, fallback/seed only).
 - Local functional ingredient posts: `src/data/localFunctionalIngredientPosts.js` (`10` posts, fallback/seed only).
 - Local category posts: `src/data/localCategoryBlogPosts.js` (`20` posts, fallback/seed only).
 - Local SEO expansion posts: `src/data/localSeoExpansionPosts.js` (`105` posts, fallback/seed only).
@@ -52,13 +52,13 @@ Key local posts that must remain available:
 Expected production SEO signals:
 
 - `https://phlorotannin.com/sitemap.xml`
-  - total URLs: `2852`
+  - total URLs: `2861`
   - duplicate URLs: `0`
   - noindex-like URLs inside sitemap: `0`
-  - Q&A detail URLs: `1832`
+  - Q&A detail URLs: `1835`
   - Q&A tag URLs: `227`
-  - blog detail URLs: `581`
-  - insight detail URLs: `181`
+  - blog detail URLs: `584`
+  - insight detail URLs: `184`
 - `/qa?category=cancer_immune`
   - `X-Robots-Tag: noindex,nofollow`
   - canonical: `https://phlorotannin.com/qa`
@@ -295,6 +295,25 @@ Supabase note:
 - Added 3 Q&A items to both `public/qa.json` and `src/data/qa.json`.
 - Added 3 unified photo-style OG images under `public/og/content-quality`.
 - Source topics: youth mental health with sleep and screen-time records, creatine/resistance training checks for older-adult sarcopenia risk, bemotrizinol sunscreen and broad-spectrum UVA label reading.
+
+2026-06-02 KST health trend content update round 14:
+
+- Category rotation basis: updated the lower-count `hair`, `womens_health`, and `mens_health` categories again with forward-looking, search-relevant issues.
+- Selected categories:
+  - `hair` / 모발·두피
+  - `womens_health` / 여성건강
+  - `mens_health` / 남성건강
+- Added 3 Supabase blog posts:
+  - `/blog/rosemary-oil-hair-loss-scalp-irritation-record-2026`
+  - `/blog/pcos-glp1-insulin-resistance-pregnancy-planning-record-2026`
+  - `/blog/phthalates-male-fertility-semen-quality-exposure-record-2026`
+- Added 3 local insight posts:
+  - `/insights/rosemary-oil-hair-loss-scalp-irritation-record-2026`
+  - `/insights/pcos-glp1-insulin-resistance-pregnancy-planning-record-2026`
+  - `/insights/phthalates-male-fertility-semen-quality-exposure-record-2026`
+- Added 3 Q&A items to both `public/qa.json` and `src/data/qa.json`.
+- Added 3 unified photo-style OG images under `public/og/content-quality`.
+- Source topics: rosemary oil hair-loss evidence with scalp irritation/photo records, PCOS with GLP-1/insulin resistance/pregnancy planning, phthalates and male fertility with semen-test exposure records.
 
 Required verification command:
 

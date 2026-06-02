@@ -1,4 +1,5 @@
 import { getCategoryFallbackImage } from '../lib/postImages.js'
+import { ROUND14_TREND_BLOG_POSTS } from './localTrendBlogPostsRound14.js'
 
 function list(items) {
   return items.map((item) => `- ${item}`).join('\n')
@@ -1223,7 +1224,7 @@ CDC는 당뇨가 있으면 고혈당이 입 건강을 어렵게 만들고, 감�
   },
 ]
 
-export const LOCAL_TREND_BLOG_POSTS = TREND_POST_CONFIGS.map((c, index) => ({
+const BASE_LOCAL_TREND_BLOG_POSTS = TREND_POST_CONFIGS.map((c, index) => ({
   id: `local-trend-${index + 1}`,
   slug: c.slug,
   title: c.title,
@@ -1242,6 +1243,11 @@ export const LOCAL_TREND_BLOG_POSTS = TREND_POST_CONFIGS.map((c, index) => ({
   updated_at: c.updatedAt || c.createdAt || BASE_DATE,
   is_local: true,
 }))
+
+export const LOCAL_TREND_BLOG_POSTS = [
+  ...BASE_LOCAL_TREND_BLOG_POSTS,
+  ...ROUND14_TREND_BLOG_POSTS,
+]
 
 export function getLocalTrendBlogPost(slug) {
   return LOCAL_TREND_BLOG_POSTS.find((post) => post.slug === slug) || null

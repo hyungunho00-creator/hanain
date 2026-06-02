@@ -1,11 +1,11 @@
 {
   "min_tag_count": 5,
-  "total_questions": 1832,
-  "total_unique_tags": 2117,
+  "total_questions": 1835,
+  "total_unique_tags": 2127,
   "page_eligible_tags": 227,
   "tags": {
     "플로로탄닌": {
-      "count": 1366,
+      "count": 1367,
       "qids": [
         "cardio-001",
         "cardio-002",
@@ -1372,7 +1372,8 @@
         "round3-mens_health-2-20260531",
         "trend-youth-mental-health-sleep-screen-time-20260602",
         "trend-creatine-resistance-training-sarcopenia-older-adults-20260602",
-        "trend-bemotrizinol-sunscreen-uva-broad-spectrum-20260602"
+        "trend-bemotrizinol-sunscreen-uva-broad-spectrum-20260602",
+        "trend-rosemary-oil-hair-loss-scalp-irritation-20260602"
       ]
     },
     "감태": {
@@ -6895,6 +6896,44 @@
         "seoqa-digestive-15"
       ]
     },
+    "여성건강": {
+      "count": 33,
+      "qids": [
+        "woms-001",
+        "woms-005",
+        "woms-006",
+        "woms-008",
+        "woms-011",
+        "woms-012",
+        "woms-014",
+        "woms-015",
+        "woms-016",
+        "woms-017",
+        "woms-018",
+        "woms-019",
+        "woms-020",
+        "infect-005",
+        "qa200-20260527-153",
+        "qa200-20260527-178",
+        "qa200-20260527-181",
+        "qa200-20260527-182",
+        "qa200-20260527-183",
+        "qa200-20260527-184",
+        "qa200-20260527-185",
+        "qa200-20260527-186",
+        "qa200-20260527-187",
+        "qa200-20260527-188",
+        "qa200-20260527-189",
+        "qa200-20260527-190",
+        "qa200-20260527-191",
+        "qa200-20260527-192",
+        "trendqa-womens-20260530",
+        "round2-womens-health-20260530",
+        "trend-menopause-hormone-therapy-label-change-20260602",
+        "trend-endometriosis-clinical-diagnosis-acog-20260602",
+        "trend-pcos-glp1-insulin-resistance-pregnancy-planning-20260602"
+      ]
+    },
     "호흡": {
       "count": 33,
       "qids": [
@@ -7005,43 +7044,6 @@
         "qa200-20260527-056",
         "qa200-20260527-057",
         "qa200-20260527-058"
-      ]
-    },
-    "여성건강": {
-      "count": 32,
-      "qids": [
-        "woms-001",
-        "woms-005",
-        "woms-006",
-        "woms-008",
-        "woms-011",
-        "woms-012",
-        "woms-014",
-        "woms-015",
-        "woms-016",
-        "woms-017",
-        "woms-018",
-        "woms-019",
-        "woms-020",
-        "infect-005",
-        "qa200-20260527-153",
-        "qa200-20260527-178",
-        "qa200-20260527-181",
-        "qa200-20260527-182",
-        "qa200-20260527-183",
-        "qa200-20260527-184",
-        "qa200-20260527-185",
-        "qa200-20260527-186",
-        "qa200-20260527-187",
-        "qa200-20260527-188",
-        "qa200-20260527-189",
-        "qa200-20260527-190",
-        "qa200-20260527-191",
-        "qa200-20260527-192",
-        "trendqa-womens-20260530",
-        "round2-womens-health-20260530",
-        "trend-menopause-hormone-therapy-label-change-20260602",
-        "trend-endometriosis-clinical-diagnosis-acog-20260602"
       ]
     },
     "심장": {
@@ -7323,7 +7325,7 @@
       ]
     },
     "남성건강": {
-      "count": 26,
+      "count": 27,
       "qids": [
         "mens-001",
         "mens-002",
@@ -7350,7 +7352,8 @@
         "qa200-20260527-200",
         "trendqa-mens-20260530",
         "trend-testosterone-therapy-low-libido-bp-monitoring-20260602",
-        "trend-prostate-psa-mri-screening-aua-20260602"
+        "trend-prostate-psa-mri-screening-aua-20260602",
+        "trend-phthalates-male-fertility-semen-quality-exposure-20260602"
       ]
     },
     "대사": {
@@ -7527,6 +7530,33 @@
         "qa200-20260527-153"
       ]
     },
+    "탈모": {
+      "count": 22,
+      "qids": [
+        "skin-003",
+        "skin-006",
+        "sh_015",
+        "sh_022",
+        "sh_035",
+        "sh_042",
+        "sh_045",
+        "sh_047",
+        "sh_067",
+        "sh_071",
+        "sh_073",
+        "sh_086",
+        "woms-010",
+        "mens-008",
+        "mens-extra-003",
+        "ci_133",
+        "qa200-20260527-149",
+        "qa200-20260527-150",
+        "trendqa-hair-20260530",
+        "round2-hair-20260530",
+        "trend-oral-minoxidil-hair-loss-blood-pressure-safety-20260602",
+        "trend-rosemary-oil-hair-loss-scalp-irritation-20260602"
+      ]
+    },
     "혈당·대사": {
       "count": 22,
       "qids": [
@@ -7578,32 +7608,6 @@
         "mens-extra-018",
         "mental-extra-031",
         "sh_097"
-      ]
-    },
-    "탈모": {
-      "count": 21,
-      "qids": [
-        "skin-003",
-        "skin-006",
-        "sh_015",
-        "sh_022",
-        "sh_035",
-        "sh_042",
-        "sh_045",
-        "sh_047",
-        "sh_067",
-        "sh_071",
-        "sh_073",
-        "sh_086",
-        "woms-010",
-        "mens-008",
-        "mens-extra-003",
-        "ci_133",
-        "qa200-20260527-149",
-        "qa200-20260527-150",
-        "trendqa-hair-20260530",
-        "round2-hair-20260530",
-        "trend-oral-minoxidil-hair-loss-blood-pressure-safety-20260602"
       ]
     },
     "테스토스테론": {
@@ -8242,6 +8246,23 @@
         "round3-cancer_immune-2-20260531"
       ]
     },
+    "인슐린저항성": {
+      "count": 12,
+      "qids": [
+        "meta-001",
+        "meta-002",
+        "meta-017",
+        "meta-020",
+        "skin-001",
+        "woms-002",
+        "wh-extra-017",
+        "womens-008",
+        "womens-102",
+        "qa200-20260527-015",
+        "qa200-20260527-187",
+        "trend-pcos-glp1-insulin-resistance-pregnancy-planning-20260602"
+      ]
+    },
     "장건강": {
       "count": 12,
       "qids": [
@@ -8388,22 +8409,6 @@
         "trendqa-digestive-20260530",
         "round3-digestive-1-20260531",
         "trend-resistant-starch-gut-microbiome-polyphenol-20260602"
-      ]
-    },
-    "인슐린저항성": {
-      "count": 11,
-      "qids": [
-        "meta-001",
-        "meta-002",
-        "meta-017",
-        "meta-020",
-        "skin-001",
-        "woms-002",
-        "wh-extra-017",
-        "womens-008",
-        "womens-102",
-        "qa200-20260527-015",
-        "qa200-20260527-187"
       ]
     },
     "인지기능": {
@@ -8901,6 +8906,18 @@
         "trend-cgm-prediabetes-a1c-postprandial-spike-20260602"
       ]
     },
+    "PCOS": {
+      "count": 7,
+      "qids": [
+        "woms-002",
+        "woms-007",
+        "wh-extra-013",
+        "wh-extra-017",
+        "womens-008",
+        "womens-102",
+        "trend-pcos-glp1-insulin-resistance-pregnancy-planning-20260602"
+      ]
+    },
     "PSA": {
       "count": 7,
       "qids": [
@@ -9093,6 +9110,17 @@
         "round3-musculoskeletal-1-20260531"
       ]
     },
+    "GLP-1": {
+      "count": 6,
+      "qids": [
+        "ingr-025",
+        "qa200-20260527-009",
+        "round3-metabolism-1-20260531",
+        "round3-hair-1-20260531",
+        "trend-glp1-muscle-protein-fiber-20260602",
+        "trend-pcos-glp1-insulin-resistance-pregnancy-planning-20260602"
+      ]
+    },
     "NK세포": {
       "count": 6,
       "qids": [
@@ -9102,17 +9130,6 @@
         "infect-extra-045",
         "mental-extra-040",
         "ci_132"
-      ]
-    },
-    "PCOS": {
-      "count": 6,
-      "qids": [
-        "woms-002",
-        "woms-007",
-        "wh-extra-013",
-        "wh-extra-017",
-        "womens-008",
-        "womens-102"
       ]
     },
     "PTSD": {
@@ -9508,16 +9525,6 @@
         "ci_108",
         "ci_136",
         "ci_144"
-      ]
-    },
-    "GLP-1": {
-      "count": 5,
-      "qids": [
-        "ingr-025",
-        "qa200-20260527-009",
-        "round3-metabolism-1-20260531",
-        "round3-hair-1-20260531",
-        "trend-glp1-muscle-protein-fiber-20260602"
       ]
     },
     "HPV": {
@@ -11773,7 +11780,10 @@
     "trend-h5n1-bird-flu-raw-milk-exposure-monitoring-20260602": "조류독감-H5N1-뉴스가-많은데-생우유나-동물-접촉-후-어떤-증상을-봐야-하나요",
     "trend-youth-mental-health-sleep-screen-time-20260602": "청소년이-밤늦게-휴대폰을-보면-불안이나-우울이-더-심해질-수-있나요",
     "trend-creatine-resistance-training-sarcopenia-older-adults-20260602": "중장년-근감소가-걱정되면-크레아틴을-먹는-게-도움이-되나요",
-    "trend-bemotrizinol-sunscreen-uva-broad-spectrum-20260602": "미국-선크림-새-성분-이야기가-많은데-SPF-숫자만-보면-되나요"
+    "trend-bemotrizinol-sunscreen-uva-broad-spectrum-20260602": "미국-선크림-새-성분-이야기가-많은데-SPF-숫자만-보면-되나요",
+    "trend-rosemary-oil-hair-loss-scalp-irritation-20260602": "로즈마리오일을-바르면-탈모가-좋아진다는데-미녹시딜-대신-써도-되나요",
+    "trend-pcos-glp1-insulin-resistance-pregnancy-planning-20260602": "PCOS가-있고-GLP1-약을-고민-중이면-임신-계획과-인슐린저항성은-어떻게-같이-봐야-하나요",
+    "trend-phthalates-male-fertility-semen-quality-exposure-20260602": "프탈레이트-같은-환경호르몬이-남성-난임에-영향을-준다는데-정액검사-전에-무엇을-기록해야-하나요"
   },
-  "generated_at": "2026-06-02T07:46:40.593526+00:00"
+  "generated_at": "2026-06-02T13:56:56.164459+00:00"
 }
