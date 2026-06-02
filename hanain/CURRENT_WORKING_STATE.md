@@ -1,12 +1,12 @@
 # Current Working State
 
-Last verified: 2026-06-03 00:30 KST
+Last verified: 2026-06-03 00:48 KST
 
 Production domain:
 
 - `https://phlorotannin.com`
 - `https://www.phlorotannin.com` redirects to apex
-- Current verified deployment: `https://hanain-n6d8kcu3r-01056528206s-projects.vercel.app`
+- Current verified deployment: `https://hanain-mbpxmilkn-01056528206s-projects.vercel.app`
 
 Branch:
 
@@ -422,9 +422,9 @@ Supabase note:
   - `/blog/dense-breast-mammogram-notification-supplemental-screening-record-2026`
   - `/blog/testosterone-therapy-fertility-sperm-count-record-2026`
 - Added 3 local insight posts:
-  - `/insights/exosome-scalp-injection-hair-loss-fda-safety-record-2026`
-  - `/insights/dense-breast-mammogram-notification-supplemental-screening-record-2026`
-  - `/insights/testosterone-therapy-fertility-sperm-count-record-2026`
+  - `/insights/exosome-scalp-injection-hair-loss-fda-safety-record`
+  - `/insights/dense-breast-mammogram-notification-supplemental-screening-record`
+  - `/insights/testosterone-therapy-fertility-sperm-count-record`
 - Added 3 Q&A items to both `public/qa.json` and `src/data/qa.json`.
 - Added 3 unified photo-style OG images under `public/og/content-quality`.
 - Source topics: exosome scalp injection/hair-loss FDA safety records, dense-breast mammogram notification with supplemental screening consultation records, testosterone therapy fertility and sperm-count records.
