@@ -23,7 +23,7 @@ What "current" means:
 
 Content sources:
 
-- Supabase `public.posts`: canonical published blog posts (`569` published current posts).
+- Supabase `public.posts`: canonical published blog posts (`572` published current posts).
 - Local trend posts: `src/data/localTrendBlogPosts.js` (`18` posts, fallback/seed only).
 - Local functional ingredient posts: `src/data/localFunctionalIngredientPosts.js` (`10` posts, fallback/seed only).
 - Local category posts: `src/data/localCategoryBlogPosts.js` (`20` posts, fallback/seed only).
@@ -52,13 +52,13 @@ Key local posts that must remain available:
 Expected production SEO signals:
 
 - `https://phlorotannin.com/sitemap.xml`
-  - total URLs: `2810`
+  - total URLs: `2821`
   - duplicate URLs: `0`
   - noindex-like URLs inside sitemap: `0`
-  - Q&A detail URLs: `1820`
-  - Q&A tag URLs: `221`
-  - blog detail URLs: `569`
-  - insight detail URLs: `169`
+  - Q&A detail URLs: `1823`
+  - Q&A tag URLs: `223`
+  - blog detail URLs: `572`
+  - insight detail URLs: `172`
 - `/qa?category=cancer_immune`
   - `X-Robots-Tag: noindex,nofollow`
   - canonical: `https://phlorotannin.com/qa`
@@ -219,6 +219,25 @@ Supabase note:
 - Added 3 Q&A items to both `public/qa.json` and `src/data/qa.json`.
 - Added 3 unified photo-style OG images under `public/og/content-quality`.
 - Source topics: hearing loss and dementia risk with hearing aids, screen time/sleep/anxiety digital behavior, sunscreen/vitamin D/UV index myths.
+
+2026-06-02 KST health trend content update round 10:
+
+- Category rotation basis: next core categories after round 9, avoiding repeat of recent hair/skin/respiratory/infection topics.
+- Selected categories:
+  - `metabolism` / 대사질환
+  - `digestive` / 소화/간 건강
+  - `cardiovascular` / 심혈관
+- Added 3 Supabase blog posts:
+  - `/blog/cgm-prediabetes-a1c-postprandial-spike-record-2026`
+  - `/blog/diet-microbiome-ibs-upf-fermented-food-record-2026`
+  - `/blog/dyslipidemia-prevent-ldl-apob-lpa-risk-record-2026`
+- Added 3 local insight posts:
+  - `/insights/cgm-prediabetes-a1c-postprandial-spike-record-2026`
+  - `/insights/diet-microbiome-ibs-upf-fermented-food-record-2026`
+  - `/insights/dyslipidemia-prevent-ldl-apob-lpa-risk-record-2026`
+- Added 3 Q&A items to both `public/qa.json` and `src/data/qa.json`.
+- Added 3 unified photo-style OG images under `public/og/content-quality`.
+- Source topics: CGM/prediabetes/A1C limits, diet-microbiome/IBS/fermented foods, 2026 dyslipidemia guideline with PREVENT/ApoB/Lp(a).
 
 Required verification command:
 
