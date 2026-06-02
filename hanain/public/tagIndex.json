@@ -1,7 +1,7 @@
 {
   "min_tag_count": 5,
-  "total_questions": 1853,
-  "total_unique_tags": 2176,
+  "total_questions": 1856,
+  "total_unique_tags": 2185,
   "page_eligible_tags": 233,
   "tags": {
     "플로로탄닌": {
@@ -7458,6 +7458,35 @@
         "seoqa-neuro_cognitive-10"
       ]
     },
+    "알츠하이머": {
+      "count": 24,
+      "qids": [
+        "neuro-001",
+        "nc_013",
+        "nc_020",
+        "nc_027",
+        "nc_037",
+        "nc_038",
+        "nc_040",
+        "nc_042",
+        "nc_052",
+        "nc_053",
+        "nc_057",
+        "nc_059",
+        "nc_064",
+        "nc_065",
+        "nc_071",
+        "nc_074",
+        "nc_076",
+        "nc_080",
+        "nc_082",
+        "nc_091",
+        "nc_093",
+        "nc_094",
+        "qa200-20260527-106",
+        "trend-alzheimers-blood-biomarker-memory-clinic-record-20260603"
+      ]
+    },
     "오메가3": {
       "count": 24,
       "qids": [
@@ -7485,34 +7514,6 @@
         "qa-hospital-20260527-046",
         "round2-cardiovascular-20260530",
         "trend-omega3-atrial-fibrillation-supplement-20260602"
-      ]
-    },
-    "알츠하이머": {
-      "count": 23,
-      "qids": [
-        "neuro-001",
-        "nc_013",
-        "nc_020",
-        "nc_027",
-        "nc_037",
-        "nc_038",
-        "nc_040",
-        "nc_042",
-        "nc_052",
-        "nc_053",
-        "nc_057",
-        "nc_059",
-        "nc_064",
-        "nc_065",
-        "nc_071",
-        "nc_074",
-        "nc_076",
-        "nc_080",
-        "nc_082",
-        "nc_091",
-        "nc_093",
-        "nc_094",
-        "qa200-20260527-106"
       ]
     },
     "모발": {
@@ -7959,6 +7960,26 @@
         "trendqa-respiratory-20260530"
       ]
     },
+    "기억력": {
+      "count": 15,
+      "qids": [
+        "neuro-010",
+        "nc_019",
+        "nc_050",
+        "nc_051",
+        "nc_060",
+        "nc_068",
+        "nc_072",
+        "nc_091",
+        "qa200-20260527-095",
+        "qa200-20260527-099",
+        "qa200-20260527-101",
+        "qa200-20260527-103",
+        "round2-neuro-cognitive-20260530",
+        "round3-neuro_cognitive-2-20260531",
+        "trend-alzheimers-blood-biomarker-memory-clinic-record-20260603"
+      ]
+    },
     "뇌건강": {
       "count": 15,
       "qids": [
@@ -8076,25 +8097,6 @@
         "qa200-20260527-134",
         "qa200-20260527-135",
         "qa200-20260527-136"
-      ]
-    },
-    "기억력": {
-      "count": 14,
-      "qids": [
-        "neuro-010",
-        "nc_019",
-        "nc_050",
-        "nc_051",
-        "nc_060",
-        "nc_068",
-        "nc_072",
-        "nc_091",
-        "qa200-20260527-095",
-        "qa200-20260527-099",
-        "qa200-20260527-101",
-        "qa200-20260527-103",
-        "round2-neuro-cognitive-20260530",
-        "round3-neuro_cognitive-2-20260531"
       ]
     },
     "수면·정신건강": {
@@ -8332,6 +8334,23 @@
         "trend-pcos-glp1-insulin-resistance-pregnancy-planning-20260602"
       ]
     },
+    "인지기능": {
+      "count": 12,
+      "qids": [
+        "neuro-001",
+        "neuro-002",
+        "neuro-003",
+        "neuro-010",
+        "neuro-014",
+        "neuro-015",
+        "nc_047",
+        "nc_106",
+        "ingr-017",
+        "qa200-20260527-096",
+        "qa200-20260527-100",
+        "trend-alzheimers-blood-biomarker-memory-clinic-record-20260603"
+      ]
+    },
     "전립선": {
       "count": 12,
       "qids": [
@@ -8430,22 +8449,6 @@
         "trend-resistant-starch-gut-microbiome-polyphenol-20260602"
       ]
     },
-    "인지기능": {
-      "count": 11,
-      "qids": [
-        "neuro-001",
-        "neuro-002",
-        "neuro-003",
-        "neuro-010",
-        "neuro-014",
-        "neuro-015",
-        "nc_047",
-        "nc_106",
-        "ingr-017",
-        "qa200-20260527-096",
-        "qa200-20260527-100"
-      ]
-    },
     "콜라겐": {
       "count": 11,
       "qids": [
@@ -8460,6 +8463,22 @@
         "qa200-20260527-130",
         "qa200-20260527-140",
         "qa-hospital-20260527-030"
+      ]
+    },
+    "콜레스테롤": {
+      "count": 11,
+      "qids": [
+        "cardio-005",
+        "cardio-018",
+        "cardio-037",
+        "meta-004",
+        "meta-010",
+        "wh-extra-070",
+        "womens-009",
+        "ingr-004",
+        "ingr-006",
+        "trend-dyslipidemia-prevent-ldl-apob-lpa-risk-20260602",
+        "trend-lpa-once-lifetime-test-family-heart-risk-20260603"
       ]
     },
     "갑상선": {
@@ -8565,21 +8584,6 @@
         "qa200-20260527-114",
         "trendqa-neuro-20260530",
         "round3-neuro_cognitive-1-20260531"
-      ]
-    },
-    "콜레스테롤": {
-      "count": 10,
-      "qids": [
-        "cardio-005",
-        "cardio-018",
-        "cardio-037",
-        "meta-004",
-        "meta-010",
-        "wh-extra-070",
-        "womens-009",
-        "ingr-004",
-        "ingr-006",
-        "trend-dyslipidemia-prevent-ldl-apob-lpa-risk-20260602"
       ]
     },
     "피로": {
@@ -11889,7 +11893,10 @@
     "trend-glp1-compounded-dosing-error-gi-side-effect-20260603": "GLP1-복합조제-제품을-쓰는-사람이-구토나-복통이-있으면-무엇을-먼저-확인해야-하나요",
     "trend-exosome-scalp-injection-hair-loss-fda-safety-20260603": "탈모-엑소좀-두피주사-광고를-볼-때-FDA-승인-여부와-부작용-기록은-어떻게-확인해야-하나요",
     "trend-dense-breast-mammogram-notification-supplemental-screening-20260603": "치밀유방-알림을-받으면-맘모그램-뒤-초음파나-MRI를-꼭-추가해야-하나요",
-    "trend-testosterone-therapy-fertility-sperm-count-20260603": "TRT를-시작하기-전에-임신-계획이-있으면-정자수와-호르몬-검사를-먼저-해야-하나요"
+    "trend-testosterone-therapy-fertility-sperm-count-20260603": "TRT를-시작하기-전에-임신-계획이-있으면-정자수와-호르몬-검사를-먼저-해야-하나요",
+    "trend-lpa-once-lifetime-test-family-heart-risk-20260603": "Lpa는-왜-평생-한-번-검사하라는-말이-나오고-가족력이-있으면-무엇을-기록해야-하나요",
+    "trend-alzheimers-blood-biomarker-memory-clinic-record-20260603": "알츠하이머-혈액검사가-나온다는데-기억력이-떨어지면-바로-검사부터-해야-하나요",
+    "trend-personalized-cancer-vaccine-ctdna-neoantigen-trial-20260603": "개인맞춤-암-백신은-암-예방주사인가요-아니면-임상시험-치료인가요"
   },
-  "generated_at": "2026-06-02T15:43:25.244909+00:00"
+  "generated_at": "2026-06-02T16:00:49.978303+00:00"
 }
