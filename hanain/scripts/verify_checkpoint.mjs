@@ -1,17 +1,20 @@
 const SITE = 'https://phlorotannin.com'
 
 const EXPECTED = {
-  sitemapTotal: 2772,
-  qCount: 1808,
-  tagCount: 219,
-  blogCount: 557,
-  insightCount: 157,
+  sitemapTotal: 2782,
+  qCount: 1811,
+  tagCount: 220,
+  blogCount: 560,
+  insightCount: 160,
   requiredBundleSlugs: [
     'glp1-era-protein-fiber-phlorotannin-checklist-2026',
     'glp1-muscle-loss-protein-resistance-training-2026',
     'masld-fatty-liver-insulin-resistance-phlorotannin-2026',
     'menopause-sleep-hot-flash-metabolic-health-gamtae-2026',
     'oral-microbiome-gum-inflammation-systemic-health-2026',
+    'wearable-vo2max-cardio-fitness-longevity-record-2026',
+    'energy-drink-preworkout-caffeine-sleep-arrhythmia-safety-2026',
+    'berberine-blood-sugar-supplement-safety-record-2026',
   ],
   draftSlug: 'ecklonia-cava-respiratory-health-clinical-trial-2026',
 }

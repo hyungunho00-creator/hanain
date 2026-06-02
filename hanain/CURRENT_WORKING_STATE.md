@@ -23,7 +23,7 @@ What "current" means:
 
 Content sources:
 
-- Supabase `public.posts`: canonical published blog posts (`557` published current posts).
+- Supabase `public.posts`: canonical published blog posts (`560` published current posts).
 - Local trend posts: `src/data/localTrendBlogPosts.js` (`18` posts, fallback/seed only).
 - Local functional ingredient posts: `src/data/localFunctionalIngredientPosts.js` (`10` posts, fallback/seed only).
 - Local category posts: `src/data/localCategoryBlogPosts.js` (`20` posts, fallback/seed only).
@@ -52,13 +52,13 @@ Key local posts that must remain available:
 Expected production SEO signals:
 
 - `https://phlorotannin.com/sitemap.xml`
-  - total URLs: `2772`
+  - total URLs: `2782`
   - duplicate URLs: `0`
   - noindex-like URLs inside sitemap: `0`
-  - Q&A detail URLs: `1808`
-  - Q&A tag URLs: `219`
-  - blog detail URLs: `557`
-  - insight detail URLs: `157`
+  - Q&A detail URLs: `1811`
+  - Q&A tag URLs: `220`
+  - blog detail URLs: `560`
+  - insight detail URLs: `160`
 - `/qa?category=cancer_immune`
   - `X-Robots-Tag: noindex,nofollow`
   - canonical: `https://phlorotannin.com/qa`
@@ -148,6 +148,20 @@ Supabase note:
 - Added 3 Q&A items to both `public/qa.json` and `src/data/qa.json`.
 - Added 3 unified photo-style OG images under `public/og/content-quality`.
 - Source topics: omega-3 EPA/DHA supplements and atrial fibrillation risk, young-adult colorectal cancer warning symptoms, PFAS drinking water exposure checks.
+
+2026-06-02 KST health trend content update round 6:
+
+- Added 3 Supabase blog posts:
+  - `/blog/wearable-vo2max-cardio-fitness-longevity-record-2026`
+  - `/blog/energy-drink-preworkout-caffeine-sleep-arrhythmia-safety-2026`
+  - `/blog/berberine-blood-sugar-supplement-drug-interaction-safety-2026`
+- Added 3 local insight posts:
+  - `/insights/wearable-vo2max-cardio-fitness-longevity-record-2026`
+  - `/insights/energy-drink-preworkout-caffeine-sleep-arrhythmia-safety-2026`
+  - `/insights/berberine-blood-sugar-supplement-safety-record-2026`
+- Added 3 Q&A items to both `public/qa.json` and `src/data/qa.json`.
+- Added 3 unified photo-style OG images under `public/og/content-quality`.
+- Source topics: wearable VO2 max/cardiorespiratory fitness records, energy drink/pre-workout caffeine safety, berberine blood sugar supplement interactions.
 
 Required verification command:
 

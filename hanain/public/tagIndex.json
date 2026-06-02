@@ -1,8 +1,8 @@
 {
   "min_tag_count": 5,
-  "total_questions": 1808,
-  "total_unique_tags": 2056,
-  "page_eligible_tags": 219,
+  "total_questions": 1811,
+  "total_unique_tags": 2063,
+  "page_eligible_tags": 220,
   "tags": {
     "플로로탄닌": {
       "count": 1363,
@@ -6330,7 +6330,7 @@
       ]
     },
     "혈당": {
-      "count": 60,
+      "count": 61,
       "qids": [
         "meta-001",
         "meta-002",
@@ -6391,7 +6391,8 @@
         "trendqa-neuro-20260530",
         "round2-neuro-cognitive-20260530",
         "trend-ultra-processed-food-blood-sugar-label-20260602",
-        "trend-time-restricted-eating-evening-meal-20260602"
+        "trend-time-restricted-eating-evening-meal-20260602",
+        "trend-berberine-blood-sugar-drug-interaction-20260602"
       ]
     },
     "관절": {
@@ -8134,6 +8135,24 @@
         "trend-resistant-starch-gut-microbiome-polyphenol-20260602"
       ]
     },
+    "카페인": {
+      "count": 13,
+      "qids": [
+        "cardio-024",
+        "cardio-074",
+        "wh-extra-023",
+        "wh-extra-057",
+        "mens-010",
+        "qa200-20260527-080",
+        "qa200-20260527-114",
+        "qa200-20260527-116",
+        "qa200-20260527-190",
+        "round3-mental_health-1-20260531",
+        "round3-mens_health-1-20260531",
+        "trend-coffee-gut-brain-axis-polyphenol-20260602",
+        "trend-energy-drink-preworkout-caffeine-sleep-20260602"
+      ]
+    },
     "프로바이오틱스": {
       "count": 13,
       "qids": [
@@ -8236,23 +8255,6 @@
         "qa200-20260527-200",
         "trendqa-mens-20260530",
         "round2-mens-health-20260530"
-      ]
-    },
-    "카페인": {
-      "count": 12,
-      "qids": [
-        "cardio-024",
-        "cardio-074",
-        "wh-extra-023",
-        "wh-extra-057",
-        "mens-010",
-        "qa200-20260527-080",
-        "qa200-20260527-114",
-        "qa200-20260527-116",
-        "qa200-20260527-190",
-        "round3-mental_health-1-20260531",
-        "round3-mens_health-1-20260531",
-        "trend-coffee-gut-brain-axis-polyphenol-20260602"
       ]
     },
     "피부염": {
@@ -8993,6 +8995,18 @@
         "trend-vitamin-d-sun-sunscreen-skin-20260602"
       ]
     },
+    "저혈당": {
+      "count": 7,
+      "qids": [
+        "meta-014",
+        "meta_083",
+        "meta_086",
+        "qa200-20260527-022",
+        "qa200-20260527-032",
+        "qa200-20260527-120",
+        "trend-berberine-blood-sugar-drug-interaction-20260602"
+      ]
+    },
     "지방간": {
       "count": 7,
       "qids": [
@@ -9227,6 +9241,17 @@
         "qa200-20260527-113"
       ]
     },
+    "베르베린": {
+      "count": 6,
+      "qids": [
+        "ingr-016",
+        "ingr-025",
+        "qa200-20260527-018",
+        "qa-hospital-20260527-003",
+        "qa-hospital-20260527-036",
+        "trend-berberine-blood-sugar-drug-interaction-20260602"
+      ]
+    },
     "보호자": {
       "count": 6,
       "qids": [
@@ -9247,6 +9272,17 @@
         "ci_137",
         "mental-102",
         "qa200-20260527-199"
+      ]
+    },
+    "부정맥": {
+      "count": 6,
+      "qids": [
+        "cardio-004",
+        "qa200-20260527-080",
+        "qa200-20260527-087",
+        "round3-cardiovascular-2-20260531",
+        "trend-omega3-atrial-fibrillation-supplement-20260602",
+        "trend-energy-drink-preworkout-caffeine-sleep-20260602"
       ]
     },
     "브레인포그": {
@@ -9313,17 +9349,6 @@
         "trendqa-mens-20260530",
         "round2-mens-health-20260530",
         "round3-mens_health-1-20260531"
-      ]
-    },
-    "저혈당": {
-      "count": 6,
-      "qids": [
-        "meta-014",
-        "meta_083",
-        "meta_086",
-        "qa200-20260527-022",
-        "qa200-20260527-032",
-        "qa200-20260527-120"
       ]
     },
     "정자": {
@@ -9554,6 +9579,16 @@
         "trend-time-restricted-eating-evening-meal-20260602"
       ]
     },
+    "두근거림": {
+      "count": 5,
+      "qids": [
+        "cardio-015",
+        "qa200-20260527-080",
+        "qa200-20260527-112",
+        "round3-cardiovascular-2-20260531",
+        "trend-energy-drink-preworkout-caffeine-sleep-20260602"
+      ]
+    },
     "두통": {
       "count": 5,
       "qids": [
@@ -9604,16 +9639,6 @@
         "infect-105"
       ]
     },
-    "베르베린": {
-      "count": 5,
-      "qids": [
-        "ingr-016",
-        "ingr-025",
-        "qa200-20260527-018",
-        "qa-hospital-20260527-003",
-        "qa-hospital-20260527-036"
-      ]
-    },
     "보충제": {
       "count": 5,
       "qids": [
@@ -9622,16 +9647,6 @@
         "musc-009",
         "musc-020",
         "mens-016"
-      ]
-    },
-    "부정맥": {
-      "count": 5,
-      "qids": [
-        "cardio-004",
-        "qa200-20260527-080",
-        "qa200-20260527-087",
-        "round3-cardiovascular-2-20260531",
-        "trend-omega3-atrial-fibrillation-supplement-20260602"
       ]
     },
     "불면": {
@@ -11633,7 +11648,10 @@
     "trend-magnesium-glycinate-sleep-safety-20260602": "마그네슘-글리시네이트가-수면에-좋다고-하는데-누구나-먹어도-괜찮나요",
     "trend-omega3-atrial-fibrillation-supplement-20260602": "오메가3-보충제는-심장에-무조건-좋은가요-심방세동-위험도-봐야-하나요",
     "trend-young-colorectal-cancer-blood-stool-20260602": "45세-전이라도-혈변이나-배변습관-변화가-있으면-대장암-검사를-상담해야-하나요",
-    "trend-pfas-drinking-water-home-check-20260602": "PFAS-수돗물-이슈가-걱정될-때-집에서는-무엇을-먼저-확인해야-하나요"
+    "trend-pfas-drinking-water-home-check-20260602": "PFAS-수돗물-이슈가-걱정될-때-집에서는-무엇을-먼저-확인해야-하나요",
+    "trend-wearable-vo2max-cardio-fitness-20260602": "웨어러블에-나오는-VO2-max나-심폐체력-나이를-건강노화-지표로-믿어도-되나요",
+    "trend-energy-drink-preworkout-caffeine-sleep-20260602": "에너지드링크나-프리워크아웃을-먹고-운동해도-괜찮나요-수면과-심박을-봐야-하나요",
+    "trend-berberine-blood-sugar-drug-interaction-20260602": "베르베린이-혈당에-좋다고-하는데-당뇨약을-먹는-사람도-같이-먹어도-되나요"
   },
-  "generated_at": "2026-06-02T05:26:42.644960+00:00"
+  "generated_at": "2026-06-02T05:49:51.228687+00:00"
 }
