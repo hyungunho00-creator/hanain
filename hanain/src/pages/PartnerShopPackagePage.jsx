@@ -1,236 +1,91 @@
 import { useMemo, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
-import { QRCodeCanvas } from 'qrcode.react'
+import { useParams } from 'react-router-dom'
 import {
-  ArrowRight,
   CheckCircle2,
-  ClipboardCheck,
-  Copy,
-  ExternalLink,
-  Headphones,
-  HeartPulse,
-  Leaf,
-  Lock,
   MessageCircle,
-  Monitor,
-  Package,
   Phone,
-  Printer,
-  Search,
-  Share2,
-  ShieldCheck,
-  Sparkles,
-  Store,
-  TrendingUp,
-  Users,
-  Wallet,
+  Send,
 } from 'lucide-react'
 import SEOHead from '../components/common/SEOHead'
 import { usePartner } from '../context/PartnerContext'
 
 const SITE = 'https://phlorotannin.com'
 const SHARE_TOKEN = 'salon-growth-660'
-const HERO_IMAGE = '/partner/shop-package/salon-consult-hero.jpg'
+const SALON_IMAGE = '/partner/shop-package/salon-consult-hero.jpg'
+const DEFAULT_PHONE = '01056528206'
 
-const topMetrics = [
-  { label: '도입가', value: '660만 원', helper: '제품+웹+QR 구성' },
-  { label: '판매가', value: '1,320만 원', helper: '샵 고객 제안가' },
-  { label: '예상 마진', value: '약 660만 원', helper: '부가세 별도 기준' },
-]
-
-const ownerPainPoints = [
-  '관리만 받고 돌아가던 고객에게 추가 구매 이유가 생깁니다',
-  '샵 이름이 들어간 비공개 페이지라 고객이 문의처를 헷갈리지 않습니다',
-  '전단지와 모바일 링크가 전화·문자 상담으로 바로 이어집니다',
-  '동기반에서 먼저 열린 샵은 같은 전단지를 써도 더 먼저 기억됩니다',
-]
-
-const ownerDecisionCards = [
+const problemCards = [
   {
-    icon: Wallet,
-    label: '회수 구조',
-    title: '대표가 보는 첫 기준은 “이 돈이 돌아오는가”입니다',
-    body: '660만 원 구성, 1,320만 원 판매가, 예상 마진 약 660만 원이 바로 보여야 단순 재고가 아니라 회수 가능한 메뉴로 판단됩니다.',
+    title: '시술 매출만 있음',
+    body: ['고객은 만족하지만 결제는 1회로 끝남', '집에서 어떤 제품을 써야 할지 모름', '다음 방문 이유가 약함'],
+    image: 'object-[30%_45%]',
   },
   {
-    icon: Store,
-    label: '고객층',
-    title: '새 고객을 기다리는 상품이 아니라 기존 고객에게 붙는 상품',
-    body: '관리비를 이미 쓰는 고객, 단골 고객, 상담 고객에게 “다음 단계 프리미엄 케어”로 제안할 수 있어야 합니다.',
+    title: '제품은 있는데 안 팔림',
+    body: ['진열만 되어 있음', '직원이 설명하기 어려움', '고객에게 필요한 이유가 전달되지 않음'],
+    image: 'object-[60%_50%]',
   },
   {
-    icon: Users,
-    label: '샵 이름',
-    title: '고객 기억에 남는 건 “어느 샵에서 봤는가”입니다',
-    body: 'QR을 찍으면 우리 샵 이름의 랜딩페이지, 연락처, 전화·문자 문의 흐름이 남아 문의처가 흐려지지 않습니다.',
-  },
-  {
-    icon: TrendingUp,
-    label: '상권 선점',
-    title: '동기반 한 곳 우선 세팅은 희소성을 만듭니다',
-    body: '모든 샵에 동시에 열리면 가치가 떨어집니다. 먼저 시작한 샵이 지역 고객의 첫 기억을 잡습니다.',
+    title: '필요한 건 판매 동선',
+    body: ['시술 후 추천 멘트', '고객 상태별 제품 제안', '문자 안내와 재방문 연결'],
+    image: 'object-[75%_48%]',
   },
 ]
 
-const shopKillerPoints = [
-  {
-    icon: Wallet,
-    title: '관리 후 결제대에서 바로 이어지는 제안',
-    body: '관리 직후 고객이 만족한 순간에 “집에서도 이어가는 프리미엄 케어”로 보여줄 수 있어야 판매 타이밍을 놓치지 않습니다.',
-  },
-  {
-    icon: Store,
-    title: '1,320만 원을 말할 수 있는 고급 이유',
-    body: '감태 유래 해양 폴리페놀, 피부·컨디션 관심사, 샵 전용 페이지가 함께 보여야 비싼 단품이 아니라 패키지로 받아들여집니다.',
-  },
-  {
-    icon: Search,
-    title: '고객이 받은 전단지가 우리 샵으로 돌아옴',
-    body: '모바일 링크와 마지막 전단지 QR이 우리 샵 연락처로 이어져 고객이 다시 검색하거나 다른 곳으로 빠질 틈을 줄입니다.',
-  },
-  {
-    icon: Phone,
-    title: '같은 동기반에서 먼저 보이는 효과',
-    body: '한 곳만 먼저 세팅되면 고객은 플로로탄닌을 “처음 안내받은 그 샵”과 함께 기억할 가능성이 커집니다.',
-  },
+const systemItems = [
+  ['홈케어 상품 구성', '시술 후 고객에게 권하기 쉬운 상품 구성'],
+  ['매장 진열 방식', '계산대, 상담 테이블, 대기 공간에 놓기 좋은 진열 흐름'],
+  ['상담 멘트', '고객 상태별로 직원이 말하기 쉬운 설명 문구'],
+  ['문자 안내', '시술 후 고객에게 보내는 홈케어 안내 문구'],
+  ['재방문 동선', '제품 사용 후 다시 방문할 이유를 만드는 안내'],
+  ['대표용 운영 가이드', '복잡한 교육 없이 바로 적용 가능한 운영 흐름'],
 ]
 
-const shopUseCases = [
-  {
-    label: '관리 직후',
-    title: '결제가 끝나는 순간',
-    body: '고객이 만족하고 나가는 타이밍에 “이 케어를 집에서도 이어가는 패키지가 있다”는 한 문장과 링크를 건넵니다.',
-  },
-  {
-    label: '단골 고객',
-    title: '월관리 고객에게',
-    body: '이미 신뢰가 쌓인 고객에게 피부관리 다음 단계의 프리미엄 홈케어 선택지로 보여줍니다.',
-  },
-  {
-    label: '카카오 문의',
-    title: '온라인 문의가 왔을 때',
-    body: '긴 설명 대신 샵 전용 링크를 보내 가격, 구성, 문의 버튼을 한 번에 보게 만듭니다.',
-  },
+const sceneCards = [
+  ['상담할 때', '고객 상태를 설명하며 홈케어 필요성을 자연스럽게 연결합니다.', 'object-[34%_46%]'],
+  ['시술이 끝난 뒤', '관리 효과를 유지하기 위한 제품을 부담 없이 제안합니다.', 'object-[50%_52%]'],
+  ['결제 직전', '계산대 옆 진열은 고객의 마지막 선택을 만듭니다.', 'object-[72%_45%]'],
+  ['방문 후', '집에서 어떻게 써야 하는지 문자로 다시 안내합니다.', 'object-[44%_42%]'],
 ]
 
-const productReasons = [
-  {
-    icon: Leaf,
-    title: '고급스럽게 설명되는 감태 유래 소재',
-    body: '감태 등 갈조류 유래 해양 폴리페놀은 흔한 원료처럼 들리지 않아 프리미엄 상담 이야기가 만들어집니다.',
-  },
-  {
-    icon: HeartPulse,
-    title: '샵 고객의 관심사와 바로 맞물림',
-    body: '피부, 수면, 컨디션, 스트레스, 활력처럼 관리 고객이 이미 궁금해하는 주제로 자연스럽게 이어집니다.',
-  },
-  {
-    icon: Sparkles,
-    title: '제품만이 아니라 보여줄 페이지와 전단지가 있음',
-    body: '고객에게 말로만 설명하지 않고 모바일 랜딩페이지, QR 전단지, 전화·문자 연결을 함께 보여줍니다.',
-  },
-  {
-    icon: ShieldCheck,
-    title: '과장 없이 신뢰를 지키는 표현',
-    body: '치료·완치 표현이 아니라 건강정보와 생활 관리 관점으로 안내해 샵의 신뢰도를 지킵니다.',
-  },
+const journey = [
+  ['방문', '고객이 관리받으러 옵니다.'],
+  ['상담', '현재 상태와 고민을 듣습니다.'],
+  ['시술', '샵의 전문 관리가 진행됩니다.'],
+  ['홈케어 추천', '관리 후 집에서 이어 쓸 상품을 제안합니다.'],
+  ['제품 구매', '시술 만족이 상품 구매로 이어집니다.'],
+  ['문자 안내', '사용법과 다음 방문 이유를 안내합니다.'],
+  ['재방문', '고객은 다시 관리받을 이유를 갖게 됩니다.'],
 ]
 
-const territoryItems = [
-  {
-    title: '한 상권에 아무 데나 열면 가치가 떨어집니다',
-    body: '샵 대표 입장에서는 “우리 동네에서 먼저 보이는가”가 중요합니다. 그래서 동기반 한 곳 우선 세팅이 필요합니다.',
-  },
-  {
-    title: '먼저 보인 샵이 고객 기억을 가져갑니다',
-    body: '고객은 제품보다 처음 안내받은 장소를 기억합니다. 먼저 열린 샵이 상담 흐름을 먼저 잡습니다.',
-  },
-  {
-    title: '전단지 끝은 반드시 우리 샵 연락처여야 합니다',
-    body: '전단지 마지막 장 QR과 연락처가 우리 샵으로 이어져야 고객 문의가 흩어지지 않습니다.',
-  },
+const includedItems = [
+  '홈케어 상품 패키지',
+  '매장 진열 구성',
+  '상담 멘트',
+  '고객 안내 문구',
+  '문자 안내 문구',
+  '재방문 안내 흐름',
+  '대표용 운영 가이드',
+  '직원 설명 자료',
+  '제품 이미지 자료',
+  '매장 적용 상담',
 ]
 
-const supportItems = [
-  {
-    icon: Monitor,
-    label: '샵 전용 페이지',
-    title: '고객이 열면 우리 샵 이름이 먼저 보임',
-    body: '받은 사람이 링크를 열었을 때 제품 회사가 아니라 우리 샵 이름과 연락 버튼이 보입니다.',
-  },
-  {
-    icon: Search,
-    label: '선점 조건',
-    title: '동기반 한 곳 우선 세팅',
-    body: '같은 반, 같은 상권에 여러 곳이 동시에 보이지 않게 먼저 시작한 곳의 희소성을 지킵니다.',
-  },
-  {
-    icon: ClipboardCheck,
-    label: '고객용 전단지',
-    title: '읽고 끝나는 종이가 아니라 QR로 연결',
-    body: '고객이 집에 가져가도 마지막 장 QR을 통해 다시 우리 샵으로 연락할 수 있습니다.',
-  },
-  {
-    icon: Package,
-    label: '판매 구성',
-    title: '660만 원 구성과 1,320만 원 판매가',
-    body: '도입가, 판매가, 예상 마진을 고객용 페이지와 전단지에서 명확하게 보여줍니다.',
-  },
-  {
-    icon: Headphones,
-    label: '바로 문의',
-    title: '전화·문자 버튼으로 이어지는 모바일 동선',
-    body: '고객이 관심이 생긴 순간 바로 연락할 수 있어 문의 전환을 놓치지 않습니다.',
-  },
+const trustItems = [
+  ['우리 샵 고객에게 맞을까요?', '샵 업종, 고객 연령대, 시술 메뉴, 현재 객단가를 보고 권장 흐름을 제안합니다.'],
+  ['직원이 설명하기 어렵지 않을까요?', '전문 용어보다 고객이 이해하기 쉬운 상담 멘트를 제공합니다.'],
+  ['제품만 놓으면 팔릴까요?', '진열만으로는 부족합니다. 추천 타이밍과 문자 안내까지 연결해야 합니다.'],
+  ['1인샵도 가능한가요?', '가능합니다. 대표가 직접 상담하는 1인샵은 설명 흐름만 잡히면 적용이 빠릅니다.'],
+  ['기존 제품과 충돌하지 않나요?', '현재 메뉴 구성을 확인한 뒤 무리하게 겹치지 않는 방향으로 안내합니다.'],
+  ['도입 후 무엇을 해야 하나요?', '설명하고, 진열하고, 안내 문자를 보내고, 재방문 때 다시 연결하면 됩니다.'],
 ]
 
-const contractTriggers = [
-  {
-    label: '수익이 보인다',
-    title: '660만 원 도입 → 1,320만 원 판매가 구조',
-    body: '샵에서 바로 계산할 수 있는 숫자입니다. 제품값이 아니라 새 부가 매출 라인으로 보입니다.',
-  },
-  {
-    label: '고객이 이어진다',
-    title: 'QR을 찍으면 우리 샵 전화·문자 버튼으로 연결',
-    body: '전단지를 받은 고객이 다시 검색하지 않아도 바로 문의할 수 있습니다.',
-  },
-  {
-    label: '지역을 먼저 잡는다',
-    title: '동기반 한 곳 우선 웹 세팅',
-    body: '먼저 시작한 샵이 지역 상담 흐름과 고객 기억을 먼저 가져갑니다.',
-  },
-]
-
-const customerResponsePoints = [
-  {
-    title: '“이건 여기서 상담받는 상품이네”',
-    body: '우리 샵 이름의 페이지와 전화·문자 버튼이 보이면 문의처가 바로 정리됩니다.',
-  },
-  {
-    title: '“가격이 센 이유가 보인다”',
-    body: '원료 스토리, 관리 관점, 전용 페이지와 전단지가 함께 보이면 단순 단품 판매보다 납득도가 높아집니다.',
-  },
-  {
-    title: '“집에서 보고 다시 연락해야겠다”',
-    body: '고객이 링크를 저장하고 다시 들어와도 우리 샵 연락처와 문의 링크로 이어집니다.',
-  },
-]
-
-const productProofAngles = [
-  '감태 등 갈조류 유래 해양 폴리페놀 계열 소재',
-  '피부·컨디션·활력 관심 고객에게 연결하기 쉬운 프리미엄 소재',
-  '치료·완치 표현 없이 생활 관리 관점으로 고급스럽게 안내',
-]
-
-const recommendedShops = [
-  '뷰티샵 / 피부관리실',
-  '에스테틱샵 / 스킨케어룸',
-  '힐링센터 / 테라피샵',
-  '체형관리실 / 웰니스샵',
-  '객단가를 올릴 프리미엄 메뉴가 필요한 곳',
-  '우리 동네에서 먼저 보이는 샵이 되고 싶은 곳',
-]
+const beforeItems = ['시술 매출 중심', '홈케어 판매 약함', '제품 설명이 직원마다 다름', '진열 주목도가 낮음', '방문 후 고객 안내 없음', '재방문 이유가 약함']
+const afterItems = ['시술 후 홈케어 추천', '고객 상태별 상담 멘트', '계산대와 상담 테이블 진열', '문자 안내', '재방문 연결', '객단가 상승 기회']
+const shopTypes = ['헤어샵', '두피샵', '피부관리샵', '에스테틱', '네일샵', '바디관리샵', '왁싱샵', '1인샵', '기타']
+const customerCounts = ['50명 이하', '50~100명', '100~300명', '300명 이상', '잘 모름']
+const salesLevels = ['거의 없음', '조금 있음', '어느 정도 있음', '적극적으로 하고 있음']
+const questions = ['우리 샵에 맞는지', '가격과 구성', '제품 설명 방법', '진열 방법', '직원 교육', '고객 안내 문자', '재방문 연결']
 
 function onlyDigits(value) {
   return String(value || '').replace(/\D/g, '')
@@ -240,668 +95,508 @@ function formatPhone(value) {
   const digits = onlyDigits(value)
   if (digits.length === 11) return `${digits.slice(0, 3)}-${digits.slice(3, 7)}-${digits.slice(7)}`
   if (digits.length === 10) return `${digits.slice(0, 3)}-${digits.slice(3, 6)}-${digits.slice(6)}`
-  return String(value || '010-5652-8206')
+  return '010-5652-8206'
 }
 
 function safePartnerSlug(partner, paramsSlug) {
-  return (
-    paramsSlug ||
-    partner?.partnerSlug ||
-    partner?.slug ||
-    onlyDigits(partner?.phone) ||
-    '01056528206'
-  )
+  return paramsSlug || partner?.partnerSlug || partner?.slug || onlyDigits(partner?.phone) || DEFAULT_PHONE
 }
 
-function MetricCard({ label, value, helper, dark = false }) {
+function scrollToId(id) {
+  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+}
+
+function SectionIntro({ title, body, align = 'center' }) {
   return (
-    <div className={dark ? 'rounded-lg border border-[#d8be78] bg-[#063f2a] p-4 text-white' : 'rounded-lg border border-[#e2d4ad] bg-white p-4'}>
-      <p className={dark ? 'text-xs font-black tracking-[0.08em] text-[#f3d57a]' : 'text-xs font-black tracking-[0.08em] text-[#7b6a46]'}>{label}</p>
-      <p className={dark ? 'mt-1 text-3xl font-black leading-tight text-white' : 'mt-1 text-3xl font-black leading-tight text-[#063f2a]'}>{value}</p>
-      <p className={dark ? 'mt-2 text-xs font-bold text-[#f3e7c3]' : 'mt-2 text-xs font-bold text-[#7a817b]'}>{helper}</p>
+    <div className={align === 'left' ? 'mx-0 max-w-3xl' : 'mx-auto max-w-3xl text-center'}>
+      <h2 className="text-[26px] font-black leading-tight text-[#181512] sm:text-4xl lg:text-5xl">{title}</h2>
+      {body ? <p className="mt-5 text-base leading-8 text-[#625950] sm:text-lg">{body}</p> : null}
     </div>
   )
 }
 
-function SectionTitle({ kicker, title, body }) {
+function CheckList({ items, accent = false }) {
   return (
-    <div className="mx-auto mb-7 max-w-3xl text-center">
-      <p className="text-xs font-black text-[#a06f10]">{kicker}</p>
-      <h2 className="mt-2 text-3xl font-black leading-tight text-[#071b12] md:text-4xl">{title}</h2>
-      {body && <p className="mt-3 text-base font-semibold leading-8 text-[#59645f]">{body}</p>}
-    </div>
+    <ul className="space-y-3">
+      {items.map(item => (
+        <li key={item} className="flex gap-3 text-base leading-7 text-[#4b433c]">
+          <CheckCircle2 className={`mt-1 h-5 w-5 shrink-0 ${accent ? 'text-[#d8b25d]' : 'text-[#0f5a3b]'}`} />
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
   )
 }
 
-function PartnerContact({ partnerName, phoneDisplay, phone, pageUrl, cardUrl }) {
+function ProductVisual() {
   return (
-    <div className="grid gap-4 rounded-lg border-2 border-[#063f2a] bg-white p-4 shadow-lg shadow-[#0b2f1f]/10 sm:grid-cols-[1fr_auto]">
-      <div>
-        <p className="text-xs font-black tracking-[0.16em] text-[#a06f10]">샵 패키지 문의</p>
-        <p className="mt-1 text-2xl font-black text-[#071b12]">{partnerName}</p>
-        <p className="mt-1 text-xl font-black text-[#063f2a]">{phoneDisplay}</p>
-        <p className="mt-2 break-all text-xs font-semibold leading-5 text-[#607166]">공유 링크: {pageUrl}</p>
-        <p className="break-all text-xs font-semibold leading-5 text-[#607166]">문의 링크: {cardUrl}</p>
-      </div>
-      <div className="flex items-center gap-3">
-        <div className="rounded-md border border-[#d8c18a] bg-white p-2">
-          <QRCodeCanvas value={pageUrl} size={96} includeMargin={false} fgColor="#063f2a" />
-        </div>
-        <div className="grid gap-2">
-          <a href={`tel:${phone}`} className="inline-flex min-h-10 items-center justify-center gap-2 rounded-lg bg-[#063f2a] px-4 text-sm font-black text-white">
-            <Phone size={16} />
-            전화
-          </a>
-          <a href={`sms:${phone}`} className="inline-flex min-h-10 items-center justify-center gap-2 rounded-lg border border-[#063f2a] px-4 text-sm font-black text-[#063f2a]">
-            <MessageCircle size={16} />
-            문자
-          </a>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-function ProposalSheet({ page, title, subtitle, children, partnerName, phoneDisplay, pageUrl, showContact = false }) {
-  return (
-    <article className={['proposal-sheet relative overflow-hidden rounded-lg border-2 border-[#d8c18a] bg-[#fffdf7] shadow-lg shadow-[#0b2f1f]/10', showContact ? 'has-contact' : ''].join(' ')}>
-      <div className="flex items-center justify-between gap-4 bg-[#063f2a] px-5 py-4 text-white">
-        <div className="inline-flex items-center gap-2 text-sm font-black text-[#f0c45c]">
-          <Leaf size={18} />
-          플로로탄닌 샵 패키지
-        </div>
-        <div className="rounded-full border border-[#f0c45c] px-3 py-1 text-sm font-black text-[#f0c45c]">{page} / 4</div>
-      </div>
-      <div className="proposal-sheet-body p-5 md:p-7">
-        <h2 className="text-3xl font-black leading-tight text-[#071b12] md:text-4xl">{title}</h2>
-        <p className="mt-3 text-base font-bold leading-8 text-[#5b3a16]">{subtitle}</p>
-        <div className="mt-5">{children}</div>
-      </div>
-      {showContact && (
-        <div className="proposal-sheet-footer grid gap-3 border-t border-[#e5d4aa] bg-white px-5 py-4 sm:grid-cols-[1fr_auto]">
-          <div>
-            <p className="text-xs font-black tracking-[0.16em] text-[#a06f10]">샵 패키지 문의</p>
-            <p className="mt-1 text-lg font-black text-[#071b12]">{partnerName} · {phoneDisplay}</p>
-            <p className="mt-1 break-all text-xs font-bold text-[#66766d]">{pageUrl}</p>
+    <div className="relative min-h-[360px] overflow-hidden rounded-lg border border-[#d3b56a] bg-[#f7efe0] shadow-[0_24px_90px_rgba(30,22,15,0.16)]">
+      <img src={SALON_IMAGE} alt="고급 샵 상담과 제품 진열 이미지" className="absolute inset-0 h-full w-full object-cover object-[55%_45%]" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#12100e]/15 via-[#fff7e8]/40 to-[#0c382b]/80" />
+      <div className="absolute bottom-6 left-6 right-6 rounded-lg border border-white/40 bg-white/88 p-5 backdrop-blur">
+        <div className="flex items-end gap-4">
+          <div className="h-28 w-24 rounded-md border border-[#b58b3b] bg-gradient-to-b from-[#0b3d2d] to-[#02180f] shadow-2xl">
+            <div className="mx-auto mt-5 h-10 w-10 rounded-full border border-[#dbbd69]" />
+            <p className="mt-4 text-center text-sm font-black text-[#f0d889]">플로로탄닌</p>
           </div>
-          <div className="rounded-md border border-[#d8c18a] bg-white p-2">
-            <QRCodeCanvas value={pageUrl} size={74} includeMargin={false} fgColor="#063f2a" />
+          <div className="h-36 w-28 rounded-md border border-[#b58b3b] bg-gradient-to-b from-[#173f33] to-[#06170f] shadow-2xl">
+            <div className="mx-auto mt-6 h-12 w-12 rounded-full border border-[#e1c66d]" />
+            <p className="mt-5 text-center text-base font-black text-[#f4db84]">홈케어</p>
+          </div>
+          <div className="min-w-0 flex-1">
+            <p className="text-sm font-black text-[#a26f25]">계산대 옆 추천 진열</p>
+            <p className="mt-2 text-xl font-black leading-tight text-[#181512]">고객이 마지막에 한 번 더 보는 상품 자리</p>
           </div>
         </div>
-      )}
+      </div>
+    </div>
+  )
+}
+
+function PhonePreview() {
+  return (
+    <div className="rounded-[2rem] border-[10px] border-[#171512] bg-[#171512] shadow-2xl">
+      <div className="rounded-[1.35rem] bg-[#fffaf2] p-4">
+        <div className="mb-4 flex items-center justify-between border-b border-[#eadfce] pb-3">
+          <span className="text-sm font-black text-[#181512]">방문 후 안내</span>
+          <span className="h-2 w-2 rounded-full bg-[#0f5a3b]" />
+        </div>
+        <div className="space-y-3 text-sm leading-6">
+          <p className="rounded-lg bg-[#eee5d7] p-3 text-[#4b433c]">오늘 관리 후 집에서 이어 쓰는 순서만 지켜주세요.</p>
+          <p className="rounded-lg bg-[#0f3f2e] p-3 text-white">사용법과 다음 방문 추천 시점을 함께 안내드립니다.</p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function ImagePanel({ title, body, position, children }) {
+  return (
+    <article className="overflow-hidden rounded-lg border border-[#e0d5c4] bg-white shadow-[0_24px_80px_rgba(30,22,15,0.08)]">
+      <div className="relative h-56 overflow-hidden sm:h-64">
+        <img src={SALON_IMAGE} alt={`${title} 장면`} className={`h-full w-full object-cover ${position}`} loading="lazy" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
+        {children}
+      </div>
+      <div className="p-6">
+        <h3 className="text-[19px] font-black text-[#181512] sm:text-2xl">{title}</h3>
+        <p className="mt-3 text-base leading-7 text-[#625950]">{body}</p>
+      </div>
     </article>
   )
 }
 
-function PrintStyles() {
+function Field({ label, name, value, onChange, type = 'text', placeholder = '' }) {
   return (
-    <style>{`
-      .shop-print-root {
-        font-family: Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        color: #071b12;
-      }
-      @media print {
-        @page { size: A4 portrait; margin: 10mm; }
-        html, body, #root { background: #fff !important; }
-        .shop-no-print { display: none !important; }
-        .shop-print-root { background: #fff !important; }
-        .proposal-print-wrap { padding: 0 !important; background: #fff !important; }
-        .proposal-print-inner { max-width: none !important; padding: 0 !important; }
-        .proposal-print-list { display: block !important; }
-        .proposal-sheet {
-          width: 190mm !important;
-          min-height: 277mm !important;
-          margin: 0 auto !important;
-          border-radius: 0 !important;
-          box-shadow: none !important;
-          page-break-after: always;
-          break-after: page;
-        }
-        .proposal-sheet:last-child {
-          page-break-after: auto;
-          break-after: auto;
-        }
-        .proposal-sheet-body { padding: 9mm !important; }
-        .proposal-sheet.has-contact .proposal-sheet-body { padding-bottom: 36mm !important; }
-        .proposal-sheet h2 { font-size: 28px !important; line-height: 1.18 !important; }
-        .proposal-sheet-footer {
-          position: absolute !important;
-          left: 0 !important;
-          right: 0 !important;
-          bottom: 0 !important;
-        }
-      }
-    `}</style>
+    <label className="block">
+      <span className="text-sm font-black text-[#322a23]">{label}</span>
+      <input
+        name={name}
+        type={type}
+        value={value}
+        onChange={onChange}
+        placeholder={placeholder}
+        className="mt-2 h-12 w-full rounded-lg border border-[#d8ccbb] bg-white px-4 text-base text-[#181512] outline-none transition focus:border-[#8d6328] focus:ring-4 focus:ring-[#d6b263]/20"
+      />
+    </label>
   )
 }
 
-export default function PartnerShopPackagePage() {
+function SelectField({ label, name, value, onChange, options }) {
+  return (
+    <label className="block">
+      <span className="text-sm font-black text-[#322a23]">{label}</span>
+      <select
+        name={name}
+        value={value}
+        onChange={onChange}
+        className="mt-2 h-12 w-full rounded-lg border border-[#d8ccbb] bg-white px-4 text-base text-[#181512] outline-none transition focus:border-[#8d6328] focus:ring-4 focus:ring-[#d6b263]/20"
+      >
+        <option value="">선택해 주세요</option>
+        {options.map(option => <option key={option} value={option}>{option}</option>)}
+      </select>
+    </label>
+  )
+}
+
+export default function PartnerShopGrowthLandingPage() {
   const partner = usePartner()
   const { partnerSlug } = useParams()
-  const [copied, setCopied] = useState(false)
+  const slug = safePartnerSlug(partner, partnerSlug)
+  const rawPhone = onlyDigits(partner?.phone || partner?.sms || slug || DEFAULT_PHONE) || DEFAULT_PHONE
+  const phone = rawPhone.length >= 10 ? rawPhone : DEFAULT_PHONE
+  const phoneDisplay = formatPhone(phone)
+  const pageUrl = `${SITE}/p/${slug}/shop-package/${SHARE_TOKEN}`
+  const [form, setForm] = useState({
+    shopName: '',
+    ownerName: '',
+    phone: '',
+    region: '',
+    shopType: '',
+    mainMenu: '',
+    customerCount: '',
+    salesLevel: '',
+    question: '',
+    memo: '',
+  })
 
-  const partnerInfo = useMemo(() => {
-    const slug = safePartnerSlug(partner, partnerSlug)
-    const phone = onlyDigits(partner?.phone || partner?.sms || slug || '01056528206') || '01056528206'
-    const partnerName = partner?.name || partner?.displayName || '샵 전용 문의'
-    const phoneDisplay = partner?.phoneDisplay || formatPhone(phone)
-    const pagePath = `/p/${slug}/shop-package/${SHARE_TOKEN}`
+  const jsonLd = useMemo(() => ({
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: '샵 매출 성장 패키지 | 플로로탄닌 파트너스',
+    description: '시술 후 홈케어 판매, 객단가 상승, 재방문 관리, 매장 진열, 상담 멘트, 문자 안내까지 연결하는 샵 전용 매출 성장 패키지입니다.',
+    url: pageUrl,
+    inLanguage: 'ko-KR',
+    isPartOf: {
+      '@type': 'WebSite',
+      name: '플로로탄닌 파트너스',
+      url: SITE,
+    },
+  }), [pageUrl])
 
-    return {
-      slug,
-      phone,
-      partnerName,
-      phoneDisplay,
-      pagePath,
-      pageUrl: `${SITE}${pagePath}`,
-      cardUrl: `${SITE}/p/${slug}`,
-      easyUrl: `${SITE}/p/${slug}/easy`,
-    }
-  }, [partner, partnerSlug])
-
-  const {
-    phone,
-    partnerName,
-    phoneDisplay,
-    pagePath,
-    pageUrl,
-    cardUrl,
-    easyUrl,
-  } = partnerInfo
-
-  async function copyLink() {
-    try {
-      await navigator.clipboard.writeText(pageUrl)
-      setCopied(true)
-      window.setTimeout(() => setCopied(false), 1600)
-    } catch {
-      window.prompt('샵 패키지 링크를 복사해 주세요.', pageUrl)
-    }
+  const updateForm = event => {
+    const { name, value } = event.target
+    setForm(prev => ({ ...prev, [name]: value }))
   }
 
-  async function shareLink() {
-    const payload = {
-      title: '플로로탄닌 샵 패키지',
-      text: `샵 대표 전용 비공개 페이지입니다. 660만 원 구성, 1,320만 원 판매가, 우리 샵으로 이어지는 고객 동선을 확인해보세요.`,
-      url: pageUrl,
-    }
-
-    if (navigator.share) {
-      try {
-        await navigator.share(payload)
-        return
-      } catch {
-        return
-      }
-    }
-    await copyLink()
-  }
-
-  function printProposal() {
-    window.print()
+  const submitInquiry = event => {
+    event.preventDefault()
+    const message = [
+      '샵 매출 성장 패키지 도입 상담 요청',
+      `샵명: ${form.shopName || '-'}`,
+      `대표님: ${form.ownerName || '-'}`,
+      `연락처: ${form.phone || '-'}`,
+      `지역: ${form.region || '-'}`,
+      `업종: ${form.shopType || '-'}`,
+      `현재 주요 메뉴: ${form.mainMenu || '-'}`,
+      `월 평균 고객 수: ${form.customerCount || '-'}`,
+      `현재 제품 판매 여부: ${form.salesLevel || '-'}`,
+      `가장 궁금한 점: ${form.question || '-'}`,
+      `문의 내용: ${form.memo || '-'}`,
+    ].join('\n')
+    window.location.href = `sms:${phone}?body=${encodeURIComponent(message)}`
   }
 
   return (
-    <div className="shop-print-root min-h-screen bg-[#f8f5ed]">
+    <main className="min-h-screen bg-[#fbf7ef] text-[#181512]">
       <SEOHead
-        title="플로로탄닌 샵 패키지"
-        description="샵 대표가 직접 검토하는 비공개 플로로탄닌 샵 패키지 랜딩페이지입니다."
+        title="샵 매출 성장 패키지 | 플로로탄닌 파트너스"
+        description="시술 후 홈케어 판매, 객단가 상승, 재방문 관리, 매장 진열, 상담 멘트, 문자 안내까지 연결하는 샵 전용 매출 성장 패키지입니다."
         canonical={pageUrl}
         ogUrl={pageUrl}
-        ogImage={`${SITE}${HERO_IMAGE}`}
-        ogImageAlt="프리미엄 샵 상담 장면과 플로로탄닌 샵 패키지"
-        noindex={true}
+        ogImage={`${SITE}${SALON_IMAGE}`}
+        ogImageAlt="고급 샵에서 홈케어 상품을 상담하는 장면"
+        noindex
+        jsonLd={jsonLd}
       />
-      <PrintStyles />
 
-      <section className="shop-no-print border-b border-[#e6d7b3] bg-white">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-5 py-3 md:px-8">
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#d8c18a] bg-[#fff8e5] px-3 py-2 text-xs font-black text-[#7c5a12]">
-            <Lock size={14} />
-            초대 링크 전용 · 검색 노출 제외
-          </div>
-          <a href={easyUrl} className="inline-flex items-center gap-1.5 text-xs font-black text-[#063f2a] underline underline-offset-4">
-            플로로탄닌 쉽게 알아보기
-            <ArrowRight size={14} />
-          </a>
+      <section className="relative overflow-hidden bg-[#fffaf2]">
+        <div className="absolute inset-0">
+          <img src={SALON_IMAGE} alt="" className="h-full w-full object-cover object-[52%_45%] opacity-20" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#fffaf2] via-[#fffaf2]/92 to-[#fffaf2]/60" />
         </div>
-      </section>
-
-      <section
-        className="shop-no-print relative min-h-[720px] overflow-hidden bg-[#f5efe3]"
-        style={{
-          backgroundImage: `linear-gradient(90deg, rgba(255,253,247,0.98) 0%, rgba(255,253,247,0.92) 39%, rgba(255,253,247,0.45) 61%, rgba(255,253,247,0.06) 100%), url("${HERO_IMAGE}")`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        <div className="mx-auto flex min-h-[720px] max-w-7xl items-center px-5 py-14 md:px-8">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 rounded-full bg-[#063f2a] px-4 py-2 text-xs font-black tracking-[0.14em] text-[#f0c45c]">
-              <Leaf size={15} />
-              샵 대표 전용
-            </div>
-            <h1 className="mt-6 text-4xl font-black leading-[1.08] text-[#071b12] md:text-6xl">
-              제품을 들이는 게 아니라
-              <span className="block text-[#0b4a30]">샵 매출 라인을 엽니다</span>
-              플로로탄닌 샵 패키지
+        <div className="relative mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:px-8 sm:py-20 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:py-24">
+          <div>
+            <p className="inline-flex rounded-full border border-[#c9a862] bg-white/85 px-4 py-2 text-sm font-black text-[#7d5420] shadow-sm">
+              샵 전용 매출 성장 패키지
+            </p>
+            <h1 className="mt-6 max-w-4xl text-[32px] font-black leading-[1.08] text-[#181512] sm:text-5xl lg:text-6xl">
+              시술은 한 번, 매출은 홈케어에서 다시 만들어집니다.
             </h1>
-            <p className="mt-6 max-w-2xl text-lg font-bold leading-9 text-[#45584d] md:text-xl">
-              샵 대표가 보는 건 간단합니다. 660만 원을 넣고, 1,320만 원으로 제안할 수 있는가. 고객 문의가 우리 샵으로 돌아오는가.
-            </p>
-
-            <div className="mt-7 grid gap-3 sm:grid-cols-3">
-              {topMetrics.map((metric, index) => <MetricCard key={metric.label} {...metric} dark={index === 2} />)}
-            </div>
-
-            <div className="mt-5 grid gap-2 sm:grid-cols-2">
-              {[
-                '예상 마진 약 660만 원 구조',
-                '기존 고객에게 붙이는 프리미엄 메뉴',
-                'QR → 우리 샵 페이지 → 전화·문자',
-                '동기반 한 곳 우선 세팅',
-              ].map((text) => (
-                <div key={text} className="flex items-center gap-2 rounded-lg border border-[#e0cfaa] bg-white/85 px-4 py-3 text-sm font-black text-[#24362d]">
-                  <CheckCircle2 size={18} className="shrink-0 text-[#0b4a30]" />
-                  {text}
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-7 flex flex-wrap gap-3">
-              <button type="button" onClick={shareLink} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-[#063f2a] px-5 text-sm font-black text-white shadow-lg shadow-[#063f2a]/20">
-                <Share2 size={18} />
-                비공개 링크 공유
-              </button>
-              <button type="button" onClick={printProposal} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg border border-[#d8c18a] bg-[#fff8e5] px-5 text-sm font-black text-[#8a620d]">
-                <Printer size={18} />
-                고객용 전단지 출력
-              </button>
-              <button type="button" onClick={copyLink} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg border border-[#d8c18a] bg-white px-5 text-sm font-black text-[#063f2a]">
-                <Copy size={18} />
-                {copied ? '복사 완료' : '링크 복사'}
-              </button>
-            </div>
-
-            <div className="mt-6 max-w-2xl">
-              <PartnerContact
-                partnerName={partnerName}
-                phoneDisplay={phoneDisplay}
-                phone={phone}
-                pageUrl={pageUrl}
-                cardUrl={cardUrl}
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="shop-no-print bg-white py-12">
-        <div className="mx-auto grid max-w-6xl gap-8 px-5 md:grid-cols-[1fr_0.9fr] md:px-8">
-          <div>
-            <p className="text-xs font-black text-[#a06f10]">샵 대표가 먼저 볼 숫자</p>
-            <h2 className="mt-2 text-3xl font-black leading-tight text-[#071b12] md:text-4xl">
-              이 페이지는 샵 대표가 “계산”하려고 보는 페이지입니다
-            </h2>
-            <p className="mt-4 text-base font-semibold leading-8 text-[#59645f]">
-              좋은 제품 설명보다 먼저 보여야 하는 건 회수 구조, 기존 고객에게 권할 명분, 우리 샵으로 돌아오는 문의 동선입니다.
-            </p>
-            <div className="mt-6 grid gap-4 sm:grid-cols-2">
-              {ownerDecisionCards.map((item) => (
-                <div key={item.label} className="rounded-lg border border-[#e2d6bd] bg-[#fffdf8] p-5">
-                  <div className="flex items-center justify-between gap-3">
-                    <p className="text-xs font-black tracking-[0.12em] text-[#a06f10]">{item.label}</p>
-                    <item.icon size={28} className="text-[#0b4a30]" />
-                  </div>
-                  <h3 className="mt-3 text-lg font-black leading-7 text-[#071b12]">{item.title}</h3>
-                  <p className="mt-2 text-sm font-semibold leading-7 text-[#59645f]">{item.body}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="overflow-hidden rounded-lg border border-[#e2d6bd] bg-[#fffdf8] shadow-xl shadow-[#0b2f1f]/10">
-            <img src={HERO_IMAGE} alt="샵 대표가 고객에게 프리미엄 제품을 상담하는 장면" className="h-72 w-full object-cover md:h-96" />
-            <div className="p-5">
-              <p className="text-xs font-black text-[#a06f10]">샵 현장에서 바로 생기는 장면</p>
-              <h3 className="mt-2 text-2xl font-black leading-8 text-[#071b12]">고객을 그냥 보내지 않는 이유가 생깁니다</h3>
-              <div className="mt-4 grid gap-3">
-                {ownerPainPoints.map((text) => (
-                  <div key={text} className="flex items-start gap-3">
-                    <CheckCircle2 size={19} className="mt-0.5 shrink-0 text-[#0b4a30]" />
-                    <p className="text-sm font-black leading-6 text-[#24362d]">{text}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="shop-no-print bg-[#fffdf7] py-12">
-        <div className="mx-auto max-w-6xl px-5 md:px-8">
-          <SectionTitle
-            kicker="샵 대표가 바로 보는 킬포인트"
-            title="샵 대표가 도입하고 싶어지는 포인트는 숫자와 고객 동선입니다"
-            body="제품이 좋아 보이는 것만으로는 부족합니다. 고객에게 왜 권할지, 얼마가 남는지, 문의가 어디로 돌아오는지가 한눈에 보여야 합니다."
-          />
-          <div className="grid gap-4 md:grid-cols-4">
-            {shopKillerPoints.map((item) => (
-              <div key={item.title} className="rounded-lg border border-[#e2d6bd] bg-white p-5 shadow-sm shadow-[#0b2f1f]/5">
-                <item.icon size={30} className="text-[#0b4a30]" />
-                <h3 className="mt-4 text-lg font-black leading-7 text-[#071b12]">{item.title}</h3>
-                <p className="mt-3 text-sm font-semibold leading-7 text-[#59645f]">{item.body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="shop-no-print bg-[#063f2a] py-12 text-white">
-        <div className="mx-auto grid max-w-6xl gap-8 px-5 md:grid-cols-[0.9fr_1.1fr] md:px-8">
-          <div>
-            <p className="text-xs font-black text-[#f0c45c]">지역 선점 구조</p>
-            <h2 className="mt-3 text-3xl font-black leading-tight md:text-4xl">
-              같은 동기반에 한 곳만 먼저 열리면 대표의 판단이 달라집니다
-            </h2>
-            <p className="mt-4 text-base font-semibold leading-8 text-[#dce7df]">
-              “우리 동네에서 먼저 보이는 샵”이 될 수 있다면 단순 제품 도입이 아니라 상권 선점으로 보입니다.
-            </p>
-          </div>
-          <div className="grid gap-4">
-            {territoryItems.map((item, index) => (
-              <div key={item.title} className="rounded-lg border border-[#caa85a] bg-white p-5 text-[#071b12]">
-                <p className="text-xs font-black text-[#a06f10]">0{index + 1}</p>
-                <h3 className="mt-1 text-xl font-black">{item.title}</h3>
-                <p className="mt-2 text-sm font-semibold leading-7 text-[#59645f]">{item.body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="shop-no-print bg-[#fbf7ed] py-12">
-        <div className="mx-auto max-w-6xl px-5 md:px-8">
-          <SectionTitle
-            kicker="샵 대표가 고객에게 팔 수 있는 이유"
-            title="고객이 1,320만 원을 납득하려면 고급 이유가 보여야 합니다"
-            body="감태 유래 해양 폴리페놀 스토리, 피부·컨디션 관심사, 우리 샵 전용 페이지가 함께 보여야 프리미엄 패키지로 받아들여집니다."
-          />
-          <div className="grid gap-4 md:grid-cols-2">
-            {productReasons.map((item) => (
-              <div key={item.title} className="rounded-lg border border-[#e2d6bd] bg-white p-6">
-                <item.icon size={32} className="mb-4 text-[#0b4a30]" />
-                <h3 className="text-xl font-black leading-7 text-[#071b12]">{item.title}</h3>
-                <p className="mt-3 text-sm font-semibold leading-7 text-[#59645f]">{item.body}</p>
-              </div>
-            ))}
-          </div>
-          <div className="mt-6 rounded-lg border-2 border-[#063f2a] bg-white p-6">
-            <p className="text-xs font-black text-[#a06f10]">가격을 납득시키는 소재</p>
-            <h3 className="mt-2 text-2xl font-black leading-8 text-[#071b12]">고객이 “왜 비싼가”를 물었을 때 답할 이유가 보입니다</h3>
-            <div className="mt-5 grid gap-3 md:grid-cols-3">
-              {productProofAngles.map((text) => (
-                <div key={text} className="rounded-lg bg-[#f8f5ed] px-4 py-3">
-                  <p className="text-sm font-black leading-7 text-[#24362d]">{text}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="shop-no-print bg-white py-12">
-        <div className="mx-auto max-w-6xl px-5 md:px-8">
-          <SectionTitle
-            kicker="고객이 움직이는 흐름"
-            title="전단지는 예쁘기만 하면 안 됩니다. 고객이 다시 연락해야 합니다"
-            body="샵 대표가 원하는 건 감상용 이미지가 아니라, 고객이 저장하고 다시 열고 전화·문자로 움직이는 구조입니다."
-          />
-          <div className="grid gap-4 md:grid-cols-3">
-            {contractTriggers.map((item) => (
-              <div key={item.label} className="rounded-lg border border-[#e2d6bd] bg-[#fffdf8] p-6">
-                <p className="text-xs font-black tracking-[0.14em] text-[#a06f10]">{item.label}</p>
-                <h3 className="mt-3 text-xl font-black leading-7 text-[#071b12]">{item.title}</h3>
-                <p className="mt-3 text-sm font-semibold leading-7 text-[#59645f]">{item.body}</p>
-              </div>
-            ))}
-          </div>
-          <div className="mt-8 rounded-lg bg-[#063f2a] p-6 text-white">
-            <p className="text-xs font-black text-[#f0c45c]">고객이 보여야 할 반응</p>
-            <h3 className="mt-2 text-2xl font-black leading-8">대표가 원하는 건 “좋네요”가 아니라 “어디로 문의하죠?”입니다</h3>
-            <div className="mt-5 grid gap-4 md:grid-cols-3">
-              {customerResponsePoints.map((item) => (
-                <div key={item.title} className="rounded-lg border border-[#caa85a] bg-white/95 p-5 text-[#071b12]">
-                  <h4 className="text-lg font-black leading-7">{item.title}</h4>
-                  <p className="mt-2 text-sm font-semibold leading-7 text-[#59645f]">{item.body}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="shop-no-print bg-[#fbf7ed] py-12">
-        <div className="mx-auto max-w-6xl px-5 md:px-8">
-          <SectionTitle
-            kicker="샵에서 실제로 팔리는 순간"
-            title="대표가 상상해야 하는 장면은 고객 앞에서 바로 꺼내는 순간입니다"
-            body="관리 직후, 단골 상담, 카카오 문의에서 바로 링크와 전단지를 꺼낼 수 있어야 샵 매출로 연결됩니다."
-          />
-          <div className="grid gap-4 md:grid-cols-3">
-            {shopUseCases.map((item) => (
-              <div key={item.label} className="rounded-lg border border-[#e2d6bd] bg-white p-6">
-                <p className="text-xs font-black text-[#a06f10]">{item.label}</p>
-                <h3 className="mt-2 text-xl font-black leading-7 text-[#071b12]">{item.title}</h3>
-                <p className="mt-4 text-base font-black leading-8 text-[#24362d]">{item.body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="shop-no-print bg-[#f8f5ed] py-12">
-        <div className="mx-auto max-w-6xl px-5 md:px-8">
-          <SectionTitle
-            kicker="샵 대표가 받는 구성"
-            title="대표가 필요한 건 제품 박스가 아니라 판매 가능한 세트입니다"
-            body="샵 전용 페이지, 고객용 전단지, QR 연락 동선, 판매가 구조, 동기반 우선 세팅이 함께 있어야 검토할 이유가 생깁니다."
-          />
-          <div className="grid gap-4 lg:grid-cols-5">
-            {supportItems.map((item, index) => (
-              <div key={item.label} className="rounded-lg border border-[#e2d6bd] bg-white p-5">
-                <div className="mb-4 flex items-center justify-between gap-3">
-                  <span className="rounded-full bg-[#063f2a] px-3 py-1 text-xs font-black text-white">{String(index + 1).padStart(2, '0')}</span>
-                  <item.icon size={30} className="text-[#0b4a30]" />
-                </div>
-                <p className="text-xs font-black text-[#a06f10]">{item.label}</p>
-                <h3 className="mt-2 text-lg font-black leading-7 text-[#071b12]">{item.title}</h3>
-                <p className="mt-3 text-sm font-semibold leading-7 text-[#59645f]">{item.body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="shop-no-print bg-white py-12">
-        <div className="mx-auto grid max-w-6xl gap-8 px-5 md:grid-cols-[0.9fr_1.1fr] md:px-8">
-          <div>
-              <p className="text-xs font-black text-[#a06f10]">우선 시작하면 좋은 곳</p>
-            <h2 className="mt-2 text-3xl font-black leading-tight text-[#071b12]">매일 고객을 만나는 샵일수록 회수 가능성이 큽니다</h2>
-            <p className="mt-4 text-base font-semibold leading-8 text-[#59645f]">
-              매일 상담하고 관리하는 고객이 있다면, 고객에게 다시 권할 프리미엄 이유가 생기는 순간 매출 구조가 달라집니다.
-            </p>
-          </div>
-          <div className="grid gap-3">
-            {recommendedShops.map((text) => (
-              <div key={text} className="flex items-start gap-3 rounded-lg border border-[#e2d6bd] bg-[#fffdf8] px-4 py-3">
-                <CheckCircle2 size={20} className="mt-0.5 shrink-0 text-[#0b4a30]" />
-                <p className="text-sm font-black leading-7 text-[#24362d]">{text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="proposal-print-wrap bg-white py-12">
-        <div className="proposal-print-inner mx-auto max-w-5xl px-5 md:px-8">
-          <div className="shop-no-print mb-6 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
-            <div>
-              <p className="text-xs font-black text-[#a06f10]">샵 고객에게 건네는 전단지</p>
-              <h2 className="mt-2 text-3xl font-black text-[#071b12]">고객용 4장 전단지</h2>
-              <p className="mt-2 text-sm font-bold leading-7 text-[#66766d]">
-                1~3장은 가격·선점·고객 관심 포인트만 보여주고, 마지막 4장에만 샵 연락처와 QR을 넣습니다.
+            <div className="mt-6 max-w-2xl space-y-5 text-base leading-8 text-[#4b433c] sm:text-lg">
+              <p>
+                고객은 샵에서 관리받고 끝나지 않습니다. 집에서 무엇을 쓰느냐에 따라 만족도,
+                재방문, 추가 구매가 달라집니다.
+              </p>
+              <p>
+                플로로탄닌 샵 패키지는 시술 후 고객에게 자연스럽게 권할 수 있는 홈케어 상품과
+                상담 멘트, 진열 방식, 문자 안내, 재방문 동선을 함께 설계합니다.
               </p>
             </div>
+            <div className="mt-7 rounded-lg border-l-4 border-[#b88a36] bg-white/88 p-5 shadow-sm">
+              <p className="text-lg font-black leading-7 text-[#181512]">제품만 공급하는 것이 아니라, 샵에서 팔리는 흐름까지 만듭니다.</p>
+              <p className="mt-2 text-base font-bold leading-7 text-[#7a241f]">지역에서 먼저 도입한 샵이 고객 홈케어 매출을 먼저 가져갑니다.</p>
+            </div>
+            <div className="mt-8 grid gap-3 sm:max-w-xl sm:grid-cols-2">
+              <button
+                type="button"
+                onClick={() => scrollToId('inquiry')}
+                className="inline-flex min-h-[54px] items-center justify-center rounded-lg bg-[#171512] px-6 text-base font-black text-white shadow-[0_16px_34px_rgba(23,21,18,0.22)] transition hover:bg-[#2a231d]"
+              >
+                우리 샵 도입 가능 여부 확인하기
+              </button>
+              <button
+                type="button"
+                onClick={() => scrollToId('value')}
+                className="inline-flex min-h-[54px] items-center justify-center rounded-lg border border-[#a7803b] bg-white px-6 text-base font-black text-[#211a14] transition hover:bg-[#fff3d8]"
+              >
+                패키지 구성과 운영비 확인하기
+              </button>
+            </div>
+            <a href={`tel:${phone}`} className="mt-5 inline-flex items-center gap-2 text-base font-black text-[#0f3f2e]">
+              <Phone className="h-5 w-5" />
+              바로 상담: {phoneDisplay}
+            </a>
+          </div>
+
+          <div className="grid gap-4">
+            <ProductVisual />
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div className="rounded-lg border border-[#e0d5c4] bg-white p-5 shadow-sm">
+                <p className="text-sm font-black text-[#a26f25]">샵 대표가 보는 핵심</p>
+                <p className="mt-2 text-2xl font-black leading-tight text-[#181512]">시술 후 한 번 더 팔 수 있는 이유</p>
+              </div>
+              <div className="rounded-lg border border-[#123e2f] bg-[#0e3a2c] p-5 text-white shadow-sm">
+                <p className="text-sm font-black text-[#e8cc75]">도입 방향</p>
+                <p className="mt-2 text-2xl font-black leading-tight">진열, 멘트, 문자까지 한 흐름</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20">
+        <SectionIntro
+          title="시술만 잘해도 매출이 부족한 이유"
+          body="고객은 관리받고 만족해도, 집에서 이어 쓸 상품이 없으면 매출은 시술비에서 끝납니다. 반대로 시술 후 홈케어 상품이 자연스럽게 연결되면 객단가와 재방문 이유가 함께 만들어집니다."
+        />
+        <div className="mt-10 grid gap-6 md:grid-cols-3">
+          {problemCards.map(card => (
+            <article key={card.title} className="overflow-hidden rounded-lg border border-[#e0d5c4] bg-white shadow-sm">
+              <div className="h-40 overflow-hidden">
+                <img src={SALON_IMAGE} alt={`${card.title}을 보여주는 샵 장면`} className={`h-full w-full object-cover ${card.image}`} loading="lazy" />
+              </div>
+              <div className="p-6">
+                <h3 className="text-[19px] font-black text-[#181512] sm:text-2xl">{card.title}</h3>
+                <div className="mt-5">
+                  <CheckList items={card.body} />
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+        <p className="mx-auto mt-10 max-w-3xl rounded-lg border border-[#bfa15a] bg-[#fff8e8] p-5 text-center text-xl font-black leading-8 text-[#261c13]">
+          문제는 제품이 없는 것이 아니라, 고객에게 팔리는 흐름이 없는 것입니다.
+        </p>
+      </section>
+
+      <section className="bg-[#191512] px-5 py-16 text-white sm:px-8 sm:py-20">
+        <div className="mx-auto max-w-7xl">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="text-[26px] font-black leading-tight text-white sm:text-4xl lg:text-5xl">
+              플로로탄닌 샵 패키지는 제품 공급이 아니라, 매장 판매 동선입니다.
+            </h2>
+            <p className="mt-5 text-base leading-8 text-[#efe7dc] sm:text-lg">
+              샵 대표가 직접 기획하지 않아도 됩니다. 고객에게 언제, 어떻게, 어떤 말로 추천해야 하는지까지 매장 운영 흐름에 맞춰 구성합니다.
+            </p>
+          </div>
+          <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {systemItems.map(([title, body], index) => (
+              <article key={title} className="rounded-lg border border-white/12 bg-white/7 p-6">
+                <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#d8b25d] text-base font-black text-[#191512]">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <h3 className="mt-5 text-[19px] font-black sm:text-2xl">{title}</h3>
+                <p className="mt-3 text-base leading-7 text-[#efe7dc]">{body}</p>
+              </article>
+            ))}
+          </div>
+          <p className="mt-10 rounded-lg border border-[#d8b25d] bg-[#d8b25d]/12 p-6 text-center text-xl font-black leading-8 text-[#ffe4a0]">
+            대표님은 제품을 외우는 게 아니라, 매장에 팔리는 구조를 놓으면 됩니다.
+          </p>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20">
+        <SectionIntro
+          title="샵에서는 이렇게 보입니다."
+          body="고객이 실제로 보는 지점은 상담 테이블, 시술 직후, 계산대, 방문 후 문자입니다. 이 네 장면이 이어져야 상품이 자연스럽게 팔립니다."
+        />
+        <div className="mt-10 grid gap-6 md:grid-cols-2">
+          {sceneCards.map(([title, body, position], index) => (
+            <ImagePanel key={title} title={title} body={body} position={position}>
+              {index === 3 ? (
+                <div className="absolute bottom-4 right-4 w-44">
+                  <PhonePreview />
+                </div>
+              ) : null}
+            </ImagePanel>
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-[#fffaf2] px-5 py-16 sm:px-8 sm:py-20">
+        <div className="mx-auto max-w-7xl">
+          <SectionIntro
+            title="고객 한 명의 흐름이 이렇게 바뀝니다."
+            body="방문과 시술에서 끝나던 고객 여정이 홈케어 추천, 제품 구매, 문자 안내, 재방문까지 이어집니다."
+          />
+          <div className="mt-10 rounded-lg border border-[#e0d5c4] bg-white p-5 shadow-sm sm:p-8">
+            <div className="grid gap-3 text-center md:grid-cols-4 lg:grid-cols-7">
+              {journey.map(([title, body], index) => (
+                <article key={title} className="rounded-lg border border-[#eadfce] bg-[#fbf7ef] p-4">
+                  <span className="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-[#0f3f2e] text-sm font-black text-white">
+                    {index + 1}
+                  </span>
+                  <h3 className="mt-4 text-[19px] font-black text-[#181512]">{title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-[#625950]">{body}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+          <p className="mx-auto mt-8 max-w-4xl text-center text-2xl font-black leading-9 text-[#181512]">
+            샵 매출은 시술 당일에 끝나는 것이 아니라, 고객이 집에서 이어 쓰는 순간 다시 시작됩니다.
+          </p>
+        </div>
+      </section>
+
+      <section id="value" className="mx-auto max-w-7xl scroll-mt-8 px-5 py-16 sm:px-8 sm:py-20">
+        <div className="grid gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
+          <div>
+            <SectionIntro
+              align="left"
+              title="비용이 아니라, 매장에 쌓이는 판매 구조입니다."
+              body="이 패키지는 제품 몇 개를 납품하는 비용이 아닙니다. 샵에서 고객에게 설명하고, 진열하고, 판매하고, 다시 방문하게 만드는 운영 구조를 함께 세팅하는 비용입니다."
+            />
             <button
               type="button"
-              onClick={printProposal}
-              className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-[#d8c18a] bg-[#fff8e5] px-4 py-2 text-sm font-black text-[#8a620d]"
+              onClick={() => scrollToId('inquiry')}
+              className="mt-7 inline-flex min-h-[54px] w-full items-center justify-center rounded-lg bg-[#7a241f] px-6 text-base font-black text-white shadow-[0_18px_36px_rgba(122,36,31,0.24)] sm:w-auto"
             >
-              <Printer size={17} />
-              전단지 출력
+              우리 샵 적용 가능 여부 확인하기
             </button>
           </div>
+          <article className="rounded-lg border border-[#bfa15a] bg-[#fffaf2] p-6 shadow-[0_24px_80px_rgba(30,22,15,0.1)] sm:p-8">
+            <div className="grid gap-6 md:grid-cols-[0.9fr_1.1fr] md:items-center">
+              <div className="rounded-lg bg-[#171512] p-6 text-white">
+                <p className="text-base font-black text-[#e8cc75]">샵 성장 패키지</p>
+                <p className="mt-3 text-5xl font-black leading-none">660만 원</p>
+                <p className="mt-3 text-lg font-black text-[#f0dfb4]">VAT 별도</p>
+                <p className="mt-5 text-base leading-7 text-[#efe7dc]">한 번 팔고 끝나는 제품비가 아니라, 고객 한 명당 객단가와 재방문 이유를 만드는 판매 구조입니다.</p>
+              </div>
+              <CheckList items={includedItems} accent />
+            </div>
+          </article>
+        </div>
+      </section>
 
-          <div className="proposal-print-list grid gap-6">
-            <ProposalSheet
-              page="1"
-              title="대표가 먼저 보는 숫자: 660만 원 구성, 1,320만 원 판매가"
-              subtitle="이 전단지는 제품 설명보다 회수 가능성을 먼저 보여줍니다. 고객에게 제안할 판매가와 예상 마진이 바로 보여야 합니다."
-              partnerName={partnerName}
-              phoneDisplay={phoneDisplay}
-              pageUrl={pageUrl}
-            >
-              <div className="grid gap-5 md:grid-cols-[1fr_0.9fr]">
-                <div>
-                  <div className="grid gap-3 sm:grid-cols-3">
-                    {topMetrics.map((metric, index) => <MetricCard key={metric.label} {...metric} dark={index === 2} />)}
-                  </div>
-                  <div className="mt-5 grid gap-3">
-                    {ownerDecisionCards.slice(0, 3).map((item) => (
-                      <div key={item.label} className="rounded-lg border border-[#e2d6bd] bg-white px-4 py-3">
-                        <p className="text-xs font-black text-[#a06f10]">{item.label}</p>
-                        <p className="mt-1 text-sm font-black leading-7 text-[#24362d]">{item.title}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <img src={HERO_IMAGE} alt="프리미엄 샵 상담 장면" className="h-full min-h-[280px] rounded-lg border border-[#e2d6bd] object-cover" />
-              </div>
-            </ProposalSheet>
-
-            <ProposalSheet
-              page="2"
-              title="한 곳만 먼저 보이면 상품이 아니라 기회가 됩니다"
-              subtitle="같은 동기반과 상권에 모두 똑같이 열면 희소성이 사라집니다. 먼저 시작한 샵 이름으로 고객 기억을 잡습니다."
-              partnerName={partnerName}
-              phoneDisplay={phoneDisplay}
-              pageUrl={pageUrl}
-            >
-              <div className="grid gap-4 md:grid-cols-3">
-                {territoryItems.map((item, index) => (
-                  <div key={item.title} className="rounded-lg border border-[#e0cfaa] bg-white p-5">
-                    <p className="text-xs font-black text-[#a06f10]">0{index + 1}</p>
-                    <h3 className="mt-2 text-lg font-black leading-7 text-[#071b12]">{item.title}</h3>
-                    <p className="mt-3 text-sm font-semibold leading-7 text-[#59645f]">{item.body}</p>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-5 rounded-lg bg-[#063f2a] px-5 py-4 text-center text-xl font-black leading-8 text-[#f0c45c]">
-                같은 전단지라도, 먼저 시작한 샵 이름과 QR로 남아야 가치가 있습니다
-              </div>
-            </ProposalSheet>
-
-            <ProposalSheet
-              page="3"
-              title="고객이 비싼 가격을 납득할 이유가 보여야 합니다"
-              subtitle="감태 유래 해양 폴리페놀, 피부·컨디션 관심사, 프리미엄 케어 이미지를 한 번에 보여줄 수 있어야 샵에서 권하기 쉽습니다."
-              partnerName={partnerName}
-              phoneDisplay={phoneDisplay}
-              pageUrl={pageUrl}
-            >
-              <div className="grid gap-4 md:grid-cols-2">
-                {productReasons.map((item) => (
-                  <div key={item.title} className="rounded-lg border border-[#e2d6bd] bg-white p-5">
-                    <item.icon size={28} className="text-[#0b4a30]" />
-                    <h3 className="mt-3 text-lg font-black leading-7 text-[#071b12]">{item.title}</h3>
-                    <p className="mt-2 text-sm font-semibold leading-7 text-[#59645f]">{item.body}</p>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-5 grid gap-3 md:grid-cols-3">
-                {productProofAngles.map((text) => (
-                  <div key={text} className="rounded-lg bg-[#063f2a] px-4 py-3">
-                    <p className="text-sm font-black leading-6 text-[#f0c45c]">{text}</p>
-                  </div>
-                ))}
-              </div>
-            </ProposalSheet>
-
-            <ProposalSheet
-              page="4"
-              title="마지막 장에서만 우리 샵으로 연결됩니다"
-              subtitle="고객이 궁금해진 순간 바로 전화·문자할 수 있도록 연락처와 QR은 마지막 장에만 넣었습니다."
-              partnerName={partnerName}
-              phoneDisplay={phoneDisplay}
-              pageUrl={pageUrl}
-              showContact={true}
-            >
-              <div className="grid gap-5 md:grid-cols-[1fr_0.9fr]">
-                <div className="grid gap-3">
-                  {contractTriggers.map((item) => (
-                    <div key={item.label} className="rounded-lg border border-[#e2d6bd] bg-white px-4 py-3">
-                      <p className="text-xs font-black text-[#a06f10]">{item.label}</p>
-                      <p className="mt-2 text-sm font-black leading-7 text-[#24362d]">{item.title}</p>
-                    </div>
-                  ))}
-                </div>
-                <div className="rounded-lg border-2 border-[#063f2a] bg-[#fff8e5] p-5">
-                  <p className="text-sm font-black text-[#a06f10]">우리 샵 문의 연결</p>
-                  <h3 className="mt-2 text-2xl font-black leading-9 text-[#071b12]">
-                    고객이 QR을 찍으면 이 연락처로 바로 연결됩니다
-                  </h3>
-                  <div className="mt-5 flex items-center gap-4">
-                    <div className="rounded-md border border-[#d8c18a] bg-white p-2">
-                      <QRCodeCanvas value={pageUrl} size={112} includeMargin={false} fgColor="#063f2a" />
-                    </div>
-                    <div>
-                      <p className="text-sm font-black text-[#66766d]">문의 연락처</p>
-                      <p className="mt-1 text-2xl font-black text-[#063f2a]">{partnerName}</p>
-                      <p className="mt-1 text-xl font-black text-[#071b12]">{phoneDisplay}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </ProposalSheet>
+      <section className="bg-[#191512] px-5 py-16 text-white sm:px-8 sm:py-20">
+        <div className="mx-auto max-w-7xl">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="text-[26px] font-black leading-tight text-white sm:text-4xl lg:text-5xl">샵 대표가 도입 전에 가장 궁금해하는 것</h2>
+          </div>
+          <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {trustItems.map(([question, answer]) => (
+              <article key={question} className="rounded-lg border border-white/12 bg-white/7 p-6">
+                <h3 className="text-[19px] font-black sm:text-xl">{question}</h3>
+                <p className="mt-3 text-base leading-7 text-[#efe7dc]">{answer}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="shop-no-print bg-[#071b12] py-12 text-white">
-        <div className="mx-auto max-w-5xl px-5 text-center md:px-8">
-          <Sparkles size={30} className="mx-auto mb-4 text-[#f0c45c]" />
-          <h2 className="text-3xl font-black leading-tight md:text-4xl">
-            고객이 기억하는 건 제품명보다 어디서 봤는지입니다
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-sm font-semibold leading-7 text-[#dce7df]">
-            플로로탄닌 샵 패키지는 제품 공급을 넘어, 우리 샵 이름으로 고객에게 남고 다시 문의받는 비공개 연결 구조입니다.
+      <section className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20">
+        <SectionIntro title="도입 전과 도입 후, 대표가 보는 화면이 달라집니다." />
+        <div className="mt-10 grid gap-6 lg:grid-cols-2">
+          <article className="overflow-hidden rounded-lg border border-[#e0d5c4] bg-white shadow-sm">
+            <div className="h-56 overflow-hidden">
+              <img src={SALON_IMAGE} alt="시술 중심으로 끝나는 매장 흐름" className="h-full w-full object-cover object-[38%_50%] opacity-80 grayscale" loading="lazy" />
+            </div>
+            <div className="p-6 sm:p-8">
+              <h3 className="text-3xl font-black text-[#181512]">도입 전</h3>
+              <div className="mt-6"><CheckList items={beforeItems} /></div>
+            </div>
+          </article>
+          <article className="overflow-hidden rounded-lg border border-[#bfa15a] bg-[#fffaf2] shadow-[0_24px_80px_rgba(30,22,15,0.1)]">
+            <div className="h-56 overflow-hidden">
+              <img src={SALON_IMAGE} alt="홈케어 판매와 재방문으로 이어지는 매장 흐름" className="h-full w-full object-cover object-[68%_46%]" loading="lazy" />
+            </div>
+            <div className="p-6 sm:p-8">
+              <h3 className="text-3xl font-black text-[#0f3f2e]">도입 후</h3>
+              <div className="mt-6"><CheckList items={afterItems} accent /></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="inquiry" className="bg-[#fffaf2] px-5 py-16 sm:px-8 sm:py-20">
+        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.86fr_1.14fr]">
+          <div>
+            <SectionIntro
+              align="left"
+              title="우리 샵에 맞는 적용 가능 여부를 확인하세요."
+              body="샵 업종, 현재 메뉴, 고객층, 제품 판매 경험을 남겨주시면 우리 매장에 맞는 도입 흐름을 안내드립니다."
+            />
+            <div className="mt-8 overflow-hidden rounded-lg border border-[#e0d5c4] bg-white shadow-sm">
+              <img src={SALON_IMAGE} alt="샵 대표와 고객 상담 장면" className="h-72 w-full object-cover object-[50%_45%]" loading="lazy" />
+              <div className="p-6">
+                <p className="text-xl font-black leading-8 text-[#181512]">복잡한 준비보다 먼저 확인할 것은 한 가지입니다.</p>
+                <p className="mt-3 text-base leading-7 text-[#625950]">우리 매장 고객에게 어떤 장면에서, 어떤 말로, 어디에 진열해야 자연스럽게 팔리는지입니다.</p>
+              </div>
+            </div>
+          </div>
+
+          <form onSubmit={submitInquiry} className="rounded-lg border border-[#d8ccbb] bg-white p-5 shadow-[0_24px_80px_rgba(30,22,15,0.08)] sm:p-8">
+            <div className="grid gap-5 md:grid-cols-2">
+              <Field label="샵명" name="shopName" value={form.shopName} onChange={updateForm} />
+              <Field label="대표님 성함" name="ownerName" value={form.ownerName} onChange={updateForm} />
+              <Field label="연락처" name="phone" value={form.phone} onChange={updateForm} type="tel" placeholder="010-0000-0000" />
+              <Field label="지역" name="region" value={form.region} onChange={updateForm} placeholder="예: 서울 강남구" />
+              <SelectField label="업종" name="shopType" value={form.shopType} onChange={updateForm} options={shopTypes} />
+              <Field label="현재 주요 메뉴" name="mainMenu" value={form.mainMenu} onChange={updateForm} placeholder="예: 두피관리, 피부관리" />
+              <SelectField label="월 평균 고객 수" name="customerCount" value={form.customerCount} onChange={updateForm} options={customerCounts} />
+              <SelectField label="현재 제품 판매 여부" name="salesLevel" value={form.salesLevel} onChange={updateForm} options={salesLevels} />
+              <SelectField label="가장 궁금한 점" name="question" value={form.question} onChange={updateForm} options={questions} />
+              <label className="block md:col-span-2">
+                <span className="text-sm font-black text-[#322a23]">문의 내용</span>
+                <textarea
+                  name="memo"
+                  value={form.memo}
+                  onChange={updateForm}
+                  rows={5}
+                  placeholder="현재 매장 상황이나 궁금한 점을 남겨주세요."
+                  className="mt-2 w-full rounded-lg border border-[#d8ccbb] bg-white px-4 py-3 text-base text-[#181512] outline-none transition focus:border-[#8d6328] focus:ring-4 focus:ring-[#d6b263]/20"
+                />
+              </label>
+            </div>
+            <button type="submit" className="mt-6 inline-flex min-h-[54px] w-full items-center justify-center gap-2 rounded-lg bg-[#171512] px-6 text-base font-black text-white shadow-[0_16px_34px_rgba(23,21,18,0.22)]">
+              <Send className="h-5 w-5" />
+              우리 샵 적용 가능 여부 확인하기
+            </button>
+            <p className="mt-4 text-center text-sm leading-6 text-[#7a7066]">입력 내용은 도입 상담 안내 목적으로만 사용됩니다.</p>
+          </form>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden px-5 py-20 text-white sm:px-8 sm:py-24">
+        <img src={SALON_IMAGE} alt="" className="absolute inset-0 h-full w-full object-cover object-[58%_46%]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#171512]/95 via-[#171512]/82 to-[#0f3f2e]/70" />
+        <div className="relative mx-auto max-w-5xl text-center">
+          <p className="mx-auto inline-flex rounded-full border border-[#e8cc75]/50 bg-white/10 px-4 py-2 text-sm font-black text-[#f2d985]">
+            시술 후 홈케어 매출을 시작할 시간
           </p>
-          <div className="mx-auto mt-7 max-w-2xl">
-            <PartnerContact partnerName={partnerName} phoneDisplay={phoneDisplay} phone={phone} pageUrl={pageUrl} cardUrl={cardUrl} />
-          </div>
-          <div className="mt-5 flex flex-wrap justify-center gap-3 text-sm font-bold">
-            <a href={cardUrl} className="inline-flex items-center gap-1.5 text-[#f0c45c] underline underline-offset-4">
-              전화·문자 문의 <ArrowRight size={14} />
+          <h2 className="mt-6 text-[30px] font-black leading-tight sm:text-5xl">
+            고객은 이미 관리받고 있습니다. 이제 집에서 이어 쓰게 만들어야 합니다.
+          </h2>
+          <p className="mx-auto mt-6 max-w-3xl text-base leading-8 text-[#f3eadc] sm:text-lg">
+            시술 한 번으로 끝나는 매장이 있고, 시술 후 홈케어까지 이어지는 매장이 있습니다.
+            플로로탄닌 샵 패키지는 고객 상담, 제품 추천, 매장 진열, 문자 안내, 재방문 흐름까지
+            샵 대표가 바로 적용할 수 있게 구성합니다.
+          </p>
+          <div className="mt-8 grid gap-3 sm:mx-auto sm:max-w-xl sm:grid-cols-2">
+            <a href={`tel:${phone}`} className="inline-flex min-h-[54px] items-center justify-center gap-2 rounded-lg bg-white px-6 text-base font-black text-[#171512]">
+              <Phone className="h-5 w-5" />
+              우리 샵 도입 상담하기
             </a>
-            <a href={easyUrl} className="inline-flex items-center gap-1.5 text-[#f0c45c] underline underline-offset-4">
-              플로로탄닌 쉽게 알아보기 <ArrowRight size={14} />
+            <a href={`sms:${phone}`} className="inline-flex min-h-[54px] items-center justify-center gap-2 rounded-lg border border-white/50 bg-white/10 px-6 text-base font-black text-white">
+              <MessageCircle className="h-5 w-5" />
+              문자로 문의하기
             </a>
-            <Link to={pagePath} className="inline-flex items-center gap-1.5 text-[#f0c45c] underline underline-offset-4">
-              현재 페이지 링크 <ExternalLink size={14} />
-            </Link>
           </div>
+          <p className="mt-5 text-xl font-black text-[#f2d985]">{phoneDisplay}</p>
         </div>
       </section>
-    </div>
+    </main>
   )
 }
