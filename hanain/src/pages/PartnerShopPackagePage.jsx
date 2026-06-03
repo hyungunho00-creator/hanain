@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import {
   CheckCircle2,
@@ -7,7 +7,7 @@ import {
   Phone,
   Send,
 } from 'lucide-react'
-import html2canvas from 'html2canvas'
+import QRCode from 'qrcode'
 import SEOHead from '../components/common/SEOHead'
 import { usePartner } from '../context/PartnerContext'
 
@@ -210,150 +210,423 @@ function SelectField({ label, name, value, onChange, options }) {
   )
 }
 
-function FlyerPriceBlock() {
-  return (
-    <div className="grid overflow-hidden rounded-lg border-2 border-[#C69A2D] bg-white text-center sm:grid-cols-[1fr_1fr_0.8fr]">
-      <div className="bg-[#053D22] p-4 text-[#f5d275]">
-        <p className="text-4xl font-black leading-none">660만 원</p>
-        <p className="mt-2 text-2xl font-black">샵 패키지</p>
-      </div>
-      <div className="border-y-2 border-[#C69A2D] p-4 sm:border-x-2 sm:border-y-0">
-        <p className="text-sm font-black text-[#4A3A2A]">판매 시 공급가 기준</p>
-        <p className="mt-1 text-3xl font-black text-[#B8860B]">약 1,200만 원</p>
-        <p className="text-lg font-black">매출 구조</p>
-      </div>
-      <div className="bg-[#0B4A2B] p-4 text-white">
-        <p className="text-sm font-black text-[#f5d275]">마진 약</p>
-        <p className="text-5xl font-black leading-none">50%</p>
-        <p className="mt-2 text-xs font-bold">부가가치세 별도 기준</p>
-      </div>
-    </div>
-  )
+const FLYER = {
+  green: '#053D22',
+  green2: '#0B4A2B',
+  gold: '#C69A2D',
+  gold2: '#B8860B',
+  bg: '#FFFDF7',
+  cream: '#FFF6E8',
+  text: '#111111',
+  sub: '#4A3A2A',
 }
 
-function FlyerOne() {
-  return (
-    <article className="relative flex min-h-[720px] flex-col overflow-hidden rounded-lg border-[3px] border-[#053D22] bg-[#FFFDF7] text-[#111111] shadow-[0_22px_70px_rgba(5,61,34,0.18)]">
-      <div className="mx-auto rounded-b-lg bg-[#053D22] px-8 py-3 text-center text-2xl font-black text-[#f5d275]">
-        플로로탄닌 파트너스
-      </div>
-      <div className="grid flex-1 gap-4 p-6">
-        <div className="grid gap-5 md:grid-cols-[1.05fr_0.95fr] md:items-center">
-          <div>
-            <p className="text-lg font-black text-[#B8860B]">이런 샵·센터에 특히 추천합니다</p>
-            <h3 className="mt-3 text-[42px] font-black leading-[1.04] text-[#053D22]">
-              제품만 공급받는 시대는 끝났습니다
-            </h3>
-            <p className="mt-4 text-xl font-black leading-tight">
-              이제는 수익이 남고, 검색에 보이고, 고객에게 신뢰받는 구조까지 함께 가져가야 합니다.
-            </p>
-          </div>
-          <div className="relative h-56 overflow-hidden rounded-lg border-2 border-[#C69A2D]">
-            <img src={SALON_IMAGE} alt="샵 상담 장면" crossOrigin="anonymous" className="h-full w-full object-cover object-[63%_45%]" />
-            <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#FFFDF7]/30" />
-          </div>
-        </div>
-
-        <FlyerPriceBlock />
-
-        <div className="overflow-hidden rounded-lg border-2 border-[#C69A2D]">
-          <div className="bg-[#053D22] px-4 py-3 text-center text-xl font-black text-white">
-            플로로탄닌 파트너스는 이런 샵·센터에 특히 추천합니다
-          </div>
-          <div className="grid gap-0 bg-white p-5 md:grid-cols-2">
-            <div className="md:border-r md:border-[#C69A2D] md:pr-5">
-              <CheckList items={recommendLeft} />
-            </div>
-            <div className="pt-5 md:pl-5 md:pt-0">
-              <CheckList items={recommendRight} />
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-auto rounded-lg bg-[#053D22] p-5 text-center text-2xl font-black leading-tight text-[#f5d275]">
-          좋은 제품 + 검색되는 구조 + 회복의 관점 = 오래가는 샵
-        </div>
-      </div>
-    </article>
-  )
+function canvasFont(size, weight = 700) {
+  return `${weight} ${size}px "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo", sans-serif`
 }
 
-function FlyerTwo({ contactName, phoneDisplay }) {
-  return (
-    <article className="relative flex min-h-[720px] flex-col overflow-hidden rounded-lg border-[3px] border-[#053D22] bg-[#FFFDF7] text-[#111111] shadow-[0_22px_70px_rgba(5,61,34,0.18)]">
-      <div className="grid gap-5 p-6">
-        <div className="grid gap-5 md:grid-cols-[1fr_0.86fr] md:items-center">
-          <div>
-            <p className="inline-flex rounded-lg bg-[#053D22] px-5 py-2 text-lg font-black text-[#f5d275]">
-              플로로탄닌 파트너스
-            </p>
-            <h3 className="mt-5 text-[40px] font-black leading-[1.06] text-[#111111]">
-              수익도 만들고, 샵도 더 강해집니다
-            </h3>
-            <p className="mt-3 text-2xl font-black text-[#B8860B]">
-              좋은 제품 + 검색되는 시스템 + 초기 운영 지원까지
-            </p>
-          </div>
-          <div className="relative h-48 overflow-hidden rounded-lg border-2 border-[#C69A2D]">
-            <img src={SALON_IMAGE} alt="제품 진열과 상담 장면" crossOrigin="anonymous" className="h-full w-full object-cover object-[68%_45%]" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#053D22]/30 to-transparent" />
-          </div>
-        </div>
+function canvasRoundRect(ctx, x, y, w, h, r) {
+  ctx.beginPath()
+  ctx.moveTo(x + r, y)
+  ctx.lineTo(x + w - r, y)
+  ctx.arcTo(x + w, y, x + w, y + r, r)
+  ctx.lineTo(x + w, y + h - r)
+  ctx.arcTo(x + w, y + h, x + w - r, y + h, r)
+  ctx.lineTo(x + r, y + h)
+  ctx.arcTo(x, y + h, x, y + h - r, r)
+  ctx.lineTo(x, y + r)
+  ctx.arcTo(x, y, x + r, y, r)
+  ctx.closePath()
+}
 
-        <div className="grid gap-3 md:grid-cols-5">
-          {supportCards.map(([title, body, note], index) => (
-            <div key={title} className="overflow-hidden rounded-lg border border-[#eadfce] bg-white text-center">
-              <div className="bg-[#FFF6E8] p-3">
-                <span className="mx-auto flex h-9 w-9 items-center justify-center rounded-full bg-[#053D22] text-sm font-black text-[#f5d275]">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-                <p className="mt-3 text-base font-black leading-snug text-[#053D22]">{title}</p>
-                <p className="mt-2 text-xs font-bold leading-5 text-[#4A3A2A]">{body}</p>
-              </div>
-              {note ? <p className="bg-[#B8860B] px-2 py-2 text-lg font-black text-white">{note}</p> : null}
-            </div>
-          ))}
-        </div>
+function fillRound(ctx, x, y, w, h, r, fill, stroke = '', lineWidth = 1) {
+  canvasRoundRect(ctx, x, y, w, h, r)
+  ctx.fillStyle = fill
+  ctx.fill()
+  if (stroke) {
+    ctx.strokeStyle = stroke
+    ctx.lineWidth = lineWidth
+    ctx.stroke()
+  }
+}
 
-        <div className="rounded-lg border-2 border-[#C69A2D] bg-white p-4">
-          <p className="text-center text-2xl font-black text-[#053D22]">파트너가 받는 지원</p>
-          <div className="mt-4 grid gap-3 md:grid-cols-5">
-            {summaryItems.map(item => (
-              <div key={item} className="rounded-lg bg-[#FFF6E8] p-3 text-center">
-                <CheckCircle2 className="mx-auto h-6 w-6 text-[#C69A2D]" />
-                <p className="mt-2 text-sm font-black leading-snug">{item}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+function wrapCanvasText(ctx, text, maxWidth) {
+  const lines = []
+  let line = ''
+  for (const char of String(text || '').split('')) {
+    const next = line + char
+    if (ctx.measureText(next).width > maxWidth && line) {
+      lines.push(line)
+      line = char
+    } else {
+      line = next
+    }
+  }
+  if (line) lines.push(line)
+  return lines
+}
 
-        <div className="mt-auto overflow-hidden rounded-lg border-2 border-[#053D22] bg-white">
-          <div className="grid gap-0 md:grid-cols-[1.15fr_0.85fr]">
-            <div className="p-5">
-              <p className="text-xl font-black leading-snug text-[#053D22]">
-                연락주시면 샘플 체험과 자세한 자료로 찾아뵙겠습니다
-              </p>
-              <div className="mt-4 rounded-lg bg-[#053D22] p-4 text-white">
-                <p className="text-lg font-black text-[#f5d275]">{contactName}</p>
-                <p className="mt-1 text-3xl font-black">{phoneDisplay}</p>
-              </div>
-            </div>
-            <div className="border-t border-[#C69A2D] bg-[#FFF6E8] p-5 md:border-l md:border-t-0">
-              <p className="text-base font-black leading-7 text-[#4A3A2A]">
-                문의가 많아 예약된 순서대로 방문하는 점 양해 바랍니다.
-              </p>
-              <p className="mt-4 text-base font-black leading-7 text-[#053D22]">
-                샵에 맞는 운영 방향과 파트너 혜택을 안내해드립니다.
-              </p>
-            </div>
-          </div>
-          <div className="bg-[#053D22] px-4 py-4 text-center text-2xl font-black text-[#f5d275]">
-            수익을 더하고, 가치를 높이고, 회복을 전하는 샵 파트너십
-          </div>
-        </div>
-      </div>
-    </article>
-  )
+function drawCanvasText(ctx, text, x, y, maxWidth, lineHeight, options = {}) {
+  const { maxLines = 99, align = 'left' } = options
+  const lines = wrapCanvasText(ctx, text, maxWidth).slice(0, maxLines)
+  if (lines.length === maxLines) {
+    while (ctx.measureText(`${lines[lines.length - 1]}...`).width > maxWidth && lines[lines.length - 1].length > 1) {
+      lines[lines.length - 1] = lines[lines.length - 1].slice(0, -1)
+    }
+    if (wrapCanvasText(ctx, text, maxWidth).length > maxLines) lines[lines.length - 1] = `${lines[lines.length - 1]}...`
+  }
+  ctx.textAlign = align
+  lines.forEach((line, index) => ctx.fillText(line, x, y + index * lineHeight))
+  ctx.textAlign = 'left'
+  return y + lines.length * lineHeight
+}
+
+function drawCheck(ctx, x, y, size = 18) {
+  ctx.save()
+  ctx.strokeStyle = FLYER.green
+  ctx.lineWidth = 3
+  ctx.beginPath()
+  ctx.arc(x, y, size / 2, 0, Math.PI * 2)
+  ctx.stroke()
+  ctx.strokeStyle = FLYER.gold
+  ctx.beginPath()
+  ctx.moveTo(x - size * 0.24, y)
+  ctx.lineTo(x - size * 0.05, y + size * 0.2)
+  ctx.lineTo(x + size * 0.3, y - size * 0.25)
+  ctx.stroke()
+  ctx.restore()
+}
+
+function drawCoverImage(ctx, img, x, y, w, h, r = 20) {
+  if (!img) {
+    fillRound(ctx, x, y, w, h, r, '#f5ead9', FLYER.gold, 2)
+    return
+  }
+  const scale = Math.max(w / img.width, h / img.height)
+  const sw = w / scale
+  const sh = h / scale
+  const sx = (img.width - sw) / 2
+  const sy = (img.height - sh) / 2
+  ctx.save()
+  canvasRoundRect(ctx, x, y, w, h, r)
+  ctx.clip()
+  ctx.drawImage(img, sx, sy, sw, sh, x, y, w, h)
+  ctx.restore()
+  canvasRoundRect(ctx, x, y, w, h, r)
+  ctx.strokeStyle = FLYER.gold
+  ctx.lineWidth = 2
+  ctx.stroke()
+}
+
+function loadCanvasImage(src) {
+  return new Promise((resolve) => {
+    const image = new window.Image()
+    image.crossOrigin = 'anonymous'
+    image.onload = () => resolve(image)
+    image.onerror = () => resolve(null)
+    image.src = src
+  })
+}
+
+function makeCanvas(scale) {
+  const W = 794
+  const H = 1123
+  const canvas = document.createElement('canvas')
+  canvas.width = W * scale
+  canvas.height = H * scale
+  const ctx = canvas.getContext('2d')
+  ctx.scale(scale, scale)
+  ctx.fillStyle = FLYER.bg
+  ctx.fillRect(0, 0, W, H)
+  ctx.strokeStyle = FLYER.gold
+  ctx.lineWidth = 5
+  ctx.strokeRect(18, 18, W - 36, H - 36)
+  ctx.strokeStyle = FLYER.green
+  ctx.lineWidth = 2
+  ctx.strokeRect(26, 26, W - 52, H - 52)
+  return { canvas, ctx, W, H }
+}
+
+function drawBrandBadge(ctx, x, y, w, text = '플로로탄닌 파트너스') {
+  fillRound(ctx, x, y, w, 46, 18, FLYER.green, FLYER.gold, 2)
+  ctx.fillStyle = FLYER.gold
+  ctx.font = canvasFont(21, 900)
+  ctx.textBaseline = 'middle'
+  ctx.textAlign = 'center'
+  ctx.fillText(text, x + w / 2, y + 24)
+  ctx.textAlign = 'left'
+}
+
+function drawPriceStrip(ctx, x, y, w) {
+  fillRound(ctx, x, y, w, 148, 18, '#ffffff', FLYER.gold2, 3)
+  ctx.fillStyle = FLYER.green
+  ctx.fillRect(x, y, w * 0.34, 148)
+  ctx.fillStyle = FLYER.gold
+  ctx.font = canvasFont(44, 900)
+  ctx.textAlign = 'center'
+  ctx.textBaseline = 'top'
+  ctx.fillText('660만 원', x + w * 0.17, y + 28)
+  ctx.font = canvasFont(24, 900)
+  ctx.fillText('샵 패키지', x + w * 0.17, y + 86)
+
+  ctx.strokeStyle = FLYER.gold2
+  ctx.lineWidth = 2
+  ctx.beginPath()
+  ctx.moveTo(x + w * 0.34, y + 18)
+  ctx.lineTo(x + w * 0.34, y + 130)
+  ctx.moveTo(x + w * 0.72, y + 18)
+  ctx.lineTo(x + w * 0.72, y + 130)
+  ctx.stroke()
+
+  ctx.fillStyle = FLYER.text
+  ctx.font = canvasFont(17, 900)
+  ctx.fillText('판매 시 공급가 기준', x + w * 0.53, y + 26)
+  ctx.fillStyle = FLYER.gold2
+  ctx.font = canvasFont(37, 900)
+  ctx.fillText('약 1,200만 원', x + w * 0.53, y + 56)
+  ctx.fillStyle = FLYER.text
+  ctx.font = canvasFont(22, 900)
+  ctx.fillText('매출 구조', x + w * 0.53, y + 106)
+
+  fillRound(ctx, x + w * 0.76, y + 23, w * 0.2, 102, 14, FLYER.green2)
+  ctx.fillStyle = FLYER.gold
+  ctx.font = canvasFont(17, 900)
+  ctx.fillText('마진 약', x + w * 0.86, y + 33)
+  ctx.font = canvasFont(48, 900)
+  ctx.fillText('50%', x + w * 0.86, y + 57)
+  ctx.fillStyle = '#ffffff'
+  ctx.font = canvasFont(13, 800)
+  ctx.fillText('부가가치세 별도 기준', x + w * 0.86, y + 108)
+  ctx.textAlign = 'left'
+}
+
+function drawFooterBand(ctx, text) {
+  fillRound(ctx, 46, 1028, 702, 64, 18, FLYER.green, FLYER.gold, 2)
+  ctx.fillStyle = FLYER.gold
+  ctx.font = canvasFont(25, 900)
+  ctx.textBaseline = 'middle'
+  ctx.textAlign = 'center'
+  ctx.fillText(text, 397, 1060)
+  ctx.textAlign = 'left'
+}
+
+async function drawShopFlyerPage1({ scale = 2 } = {}) {
+  const { canvas, ctx } = makeCanvas(scale)
+  const heroImage = await loadCanvasImage(SALON_IMAGE)
+
+  drawBrandBadge(ctx, 258, 34, 278)
+  drawCoverImage(ctx, heroImage, 432, 92, 300, 238, 22)
+
+  ctx.textBaseline = 'top'
+  ctx.fillStyle = FLYER.gold2
+  ctx.font = canvasFont(22, 900)
+  ctx.fillText('이런 샵·센터에 특히 추천합니다', 56, 104)
+
+  ctx.fillStyle = FLYER.green
+  ctx.font = canvasFont(49, 900)
+  drawCanvasText(ctx, '제품만 공급받는 시대는 끝났습니다', 56, 148, 380, 57, { maxLines: 2 })
+
+  ctx.fillStyle = FLYER.text
+  ctx.font = canvasFont(22, 900)
+  drawCanvasText(ctx, '이제는 수익이 남고, 검색에 보이고, 고객에게 신뢰받는 구조까지 함께 가져가야 합니다.', 56, 272, 392, 31, { maxLines: 2 })
+
+  drawPriceStrip(ctx, 54, 362, 688)
+
+  const cards = [
+    ['추가 수익', '기존 고객에게 자연스럽게 소개하고 부가수익을 만들 수 있습니다.'],
+    ['지역 검색 노출', '우리 샵이 지역에서 더 잘 보일 수 있게 구조를 잡아드립니다.'],
+    ['고객 신뢰 상승', '회복 중심의 설명과 콘텐츠로 상담 연결이 쉬워집니다.'],
+  ]
+  cards.forEach(([title, body], index) => {
+    const x = 54 + index * 232
+    fillRound(ctx, x, 548, 214, 142, 16, '#ffffff', '#E5D4B6', 1.5)
+    drawCheck(ctx, x + 34, 582, 32)
+    ctx.fillStyle = FLYER.green
+    ctx.font = canvasFont(23, 900)
+    ctx.fillText(title, x + 56, 566)
+    ctx.fillStyle = FLYER.sub
+    ctx.font = canvasFont(16, 800)
+    drawCanvasText(ctx, body, x + 22, 614, 170, 25, { maxLines: 3 })
+  })
+
+  fillRound(ctx, 54, 724, 688, 210, 18, '#ffffff', FLYER.gold, 2.5)
+  fillRound(ctx, 74, 704, 648, 42, 12, FLYER.green, FLYER.gold, 2)
+  ctx.fillStyle = '#ffffff'
+  ctx.font = canvasFont(22, 900)
+  ctx.textAlign = 'center'
+  ctx.textBaseline = 'middle'
+  ctx.fillText('플로로탄닌 파트너스는 이런 샵·센터에 특히 추천합니다', 398, 726)
+  ctx.textAlign = 'left'
+
+  const checkItems = [...recommendLeft, ...recommendRight]
+  checkItems.forEach((item, index) => {
+    const col = index < 3 ? 0 : 1
+    const row = index % 3
+    const x = col === 0 ? 88 : 420
+    const y = 768 + row * 51
+    drawCheck(ctx, x, y + 11, 28)
+    ctx.fillStyle = FLYER.text
+    ctx.font = canvasFont(20, 900)
+    drawCanvasText(ctx, item, x + 28, y, col === 0 ? 265 : 290, 26, { maxLines: 2 })
+  })
+
+  fillRound(ctx, 84, 952, 626, 44, 14, FLYER.cream, FLYER.gold, 1.5)
+  ctx.fillStyle = FLYER.green
+  ctx.font = canvasFont(22, 900)
+  ctx.textBaseline = 'middle'
+  ctx.textAlign = 'center'
+  ctx.fillText('제품만 들여놓는 것이 아니라, 샵에서 팔릴 이유까지 함께 만들어드립니다.', 397, 974)
+  ctx.textAlign = 'left'
+
+  drawFooterBand(ctx, '좋은 제품 + 검색되는 구조 + 회복의 관점 = 오래가는 샵')
+  return canvas
+}
+
+async function drawShopFlyerPage2({ contactName, phoneDisplay, pageUrl, scale = 2 } = {}) {
+  const { canvas, ctx } = makeCanvas(scale)
+  const heroImage = await loadCanvasImage(SALON_IMAGE)
+  const qrDataUrl = await QRCode.toDataURL(pageUrl, {
+    width: 260,
+    margin: 1,
+    color: { dark: FLYER.green, light: '#ffffff' },
+    errorCorrectionLevel: 'M',
+  })
+  const qrImage = await loadCanvasImage(qrDataUrl)
+
+  drawBrandBadge(ctx, 42, 40, 246)
+  drawCoverImage(ctx, heroImage, 570, 40, 160, 124, 18)
+  ctx.textBaseline = 'top'
+  ctx.fillStyle = FLYER.green
+  ctx.font = canvasFont(42, 900)
+  ctx.fillText('수익도 만들고, 샵도 더 강해집니다', 54, 128)
+  ctx.fillStyle = FLYER.gold2
+  ctx.font = canvasFont(25, 900)
+  ctx.fillText('좋은 제품 + 검색되는 시스템 + 초기 운영 지원까지', 54, 184)
+
+  const cardW = 132
+  supportCards.forEach(([title, body, note], index) => {
+    const x = 48 + index * 143
+    fillRound(ctx, x, 244, cardW, 238, 16, '#ffffff', index === 0 ? FLYER.gold2 : '#E5D4B6', index === 0 ? 2.5 : 1.5)
+    fillRound(ctx, x + 41, 262, 50, 50, 25, index === 0 ? FLYER.gold2 : FLYER.green)
+    ctx.fillStyle = '#ffffff'
+    ctx.font = canvasFont(22, 900)
+    ctx.textAlign = 'center'
+    ctx.textBaseline = 'middle'
+    ctx.fillText(String(index + 1).padStart(2, '0'), x + 66, 287)
+    ctx.textBaseline = 'top'
+    ctx.fillStyle = FLYER.green
+    ctx.font = canvasFont(19, 900)
+    drawCanvasText(ctx, title, x + 66, 324, 108, 25, { align: 'center', maxLines: 2 })
+    ctx.fillStyle = FLYER.sub
+    ctx.font = canvasFont(13, 800)
+    drawCanvasText(ctx, body, x + 15, 382, 102, 19, { maxLines: note ? 4 : 5 })
+    if (note) {
+      fillRound(ctx, x, 424, cardW, 58, 0, FLYER.gold2)
+      ctx.fillStyle = '#ffffff'
+      ctx.font = canvasFont(26, 900)
+      ctx.textAlign = 'center'
+      ctx.fillText(note, x + cardW / 2, 440)
+    }
+    ctx.textAlign = 'left'
+  })
+
+  fillRound(ctx, 54, 512, 688, 66, 16, FLYER.green, FLYER.gold, 2)
+  ctx.fillStyle = FLYER.gold
+  ctx.font = canvasFont(26, 900)
+  ctx.textAlign = 'center'
+  ctx.textBaseline = 'middle'
+  ctx.fillText('이제는 단순 판매가 아니라, 회복을 제안하는 샵이 선택받습니다', 398, 545)
+  ctx.textAlign = 'left'
+
+  ctx.fillStyle = FLYER.green
+  ctx.font = canvasFont(28, 900)
+  ctx.textAlign = 'center'
+  ctx.textBaseline = 'top'
+  ctx.fillText('파트너가 받는 지원', 397, 606)
+  ctx.textAlign = 'left'
+  summaryItems.forEach((item, index) => {
+    const x = 58 + index * 139
+    fillRound(ctx, x, 654, 122, 82, 14, '#ffffff', '#E5D4B6', 1.5)
+    drawCheck(ctx, x + 61, 678, 26)
+    ctx.fillStyle = FLYER.text
+    ctx.font = canvasFont(15, 900)
+    drawCanvasText(ctx, item, x + 61, 704, 96, 19, { align: 'center', maxLines: 2 })
+  })
+
+  fillRound(ctx, 54, 770, 688, 130, 18, '#ffffff', FLYER.gold, 2)
+  ctx.fillStyle = FLYER.green
+  ctx.font = canvasFont(25, 900)
+  ctx.textAlign = 'center'
+  ctx.fillText('샵에서는 이렇게 매출로 연결됩니다', 397, 788)
+  const stepW = 104
+  revenueSteps.forEach(([title, body], index) => {
+    const x = 74 + index * 113
+    fillRound(ctx, x, 836, stepW, 48, 24, index === 3 ? FLYER.gold : FLYER.green)
+    ctx.fillStyle = index === 3 ? FLYER.green : '#ffffff'
+    ctx.font = canvasFont(17, 900)
+    ctx.textBaseline = 'middle'
+    ctx.fillText(title, x + stepW / 2, 860)
+    ctx.fillStyle = FLYER.sub
+    ctx.font = canvasFont(11, 800)
+    ctx.textBaseline = 'top'
+    drawCanvasText(ctx, body, x + stepW / 2, 889, 98, 15, { align: 'center', maxLines: 2 })
+  })
+  ctx.textAlign = 'left'
+
+  fillRound(ctx, 54, 928, 688, 134, 18, '#ffffff', FLYER.green, 3)
+  ctx.fillStyle = FLYER.green
+  ctx.font = canvasFont(24, 900)
+  drawCanvasText(ctx, '연락주시면 샘플 체험과 자세한 자료로 찾아뵙겠습니다', 78, 952, 425, 32, { maxLines: 2 })
+  fillRound(ctx, 78, 1012, 356, 42, 12, FLYER.green)
+  ctx.fillStyle = FLYER.gold
+  ctx.font = canvasFont(18, 900)
+  ctx.textBaseline = 'middle'
+  ctx.fillText(contactName || '플로로탄닌 파트너스', 98, 1033)
+  ctx.fillStyle = '#ffffff'
+  ctx.font = canvasFont(25, 900)
+  ctx.fillText(phoneDisplay || '010-5652-8206', 226, 1032)
+
+  fillRound(ctx, 466, 944, 120, 120, 12, '#ffffff', FLYER.gold, 2)
+  if (qrImage) ctx.drawImage(qrImage, 476, 954, 100, 100)
+  ctx.fillStyle = FLYER.green
+  ctx.font = canvasFont(13, 900)
+  ctx.textAlign = 'center'
+  ctx.fillText('QR 스캔하면', 646, 966)
+  ctx.fillText('바로 연결', 646, 986)
+  ctx.fillStyle = FLYER.sub
+  ctx.font = canvasFont(13, 800)
+  drawCanvasText(ctx, '문의가 많아 예약된 순서대로 방문하는 점 양해 바랍니다.', 646, 1010, 150, 18, { align: 'center', maxLines: 2 })
+  ctx.textAlign = 'left'
+
+  drawFooterBand(ctx, '수익을 더하고, 가치를 높이고, 회복을 전하는 샵 파트너십')
+  return canvas
+}
+
+function saveCanvasImage(canvas, fileName) {
+  return new Promise((resolve, reject) => {
+    canvas.toBlob(blob => {
+      if (!blob) {
+        reject(new Error('PNG 파일 생성에 실패했습니다.'))
+        return
+      }
+      const url = URL.createObjectURL(blob)
+      const link = document.createElement('a')
+      link.href = url
+      link.download = fileName
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+      URL.revokeObjectURL(url)
+      resolve()
+    }, 'image/png', 0.95)
+  })
+}
+
+function safeDownloadName(value) {
+  return String(value || '파트너')
+    .replace(/[\\/:*?"<>|]/g, '')
+    .replace(/\s+/g, '_')
+    .slice(0, 28)
 }
 
 export default function PartnerShopGrowthLandingPage() {
@@ -365,8 +638,8 @@ export default function PartnerShopGrowthLandingPage() {
   const phoneDisplay = partner?.phoneDisplay || formatPhone(phone)
   const contactName = partner?.displayName || partner?.name || '플로로탄닌 파트너스'
   const pageUrl = `${SITE}/p/${slug}/shop-package/${SHARE_TOKEN}`
-  const flyerRefs = useRef([])
   const [flyerDownloading, setFlyerDownloading] = useState(false)
+  const [flyerPreviews, setFlyerPreviews] = useState([null, null])
   const [form, setForm] = useState({
     shopName: '',
     ownerName: '',
@@ -393,6 +666,32 @@ export default function PartnerShopGrowthLandingPage() {
     },
   }), [pageUrl])
 
+  useEffect(() => {
+    let cancelled = false
+
+    async function makeFlyerPreviews() {
+      try {
+        const [page1, page2] = await Promise.all([
+          drawShopFlyerPage1({ scale: 1 }),
+          drawShopFlyerPage2({ contactName, phoneDisplay, pageUrl, scale: 1 }),
+        ])
+        if (!cancelled) {
+          setFlyerPreviews([
+            page1.toDataURL('image/png'),
+            page2.toDataURL('image/png'),
+          ])
+        }
+      } catch {
+        if (!cancelled) setFlyerPreviews([null, null])
+      }
+    }
+
+    makeFlyerPreviews()
+    return () => {
+      cancelled = true
+    }
+  }, [contactName, phoneDisplay, pageUrl])
+
   const updateForm = event => {
     const { name, value } = event.target
     setForm(prev => ({ ...prev, [name]: value }))
@@ -415,43 +714,18 @@ export default function PartnerShopGrowthLandingPage() {
     window.location.href = `sms:${phone}?body=${encodeURIComponent(message)}`
   }
 
-  const saveFlyerImage = async (index) => {
-    const node = flyerRefs.current[index]
-    if (!node) throw new Error('전단지 영역을 찾을 수 없습니다.')
-
-    if (document.fonts?.ready) await document.fonts.ready
-    const canvas = await html2canvas(node, {
-      backgroundColor: '#FFFDF7',
-      scale: 2,
-      useCORS: true,
-      logging: false,
-    })
-
-    await new Promise((resolve, reject) => {
-      canvas.toBlob(blob => {
-        if (!blob) {
-          reject(new Error('PNG 파일 생성에 실패했습니다.'))
-          return
-        }
-        const url = URL.createObjectURL(blob)
-        const a = document.createElement('a')
-        a.href = url
-        a.download = `플로로탄닌_샵매출성장전단지_${contactName}_${index + 1}페이지.png`
-        document.body.appendChild(a)
-        a.click()
-        document.body.removeChild(a)
-        URL.revokeObjectURL(url)
-        resolve()
-      }, 'image/png', 0.95)
-    })
-  }
-
   const downloadAllFlyers = async () => {
     setFlyerDownloading(true)
     try {
-      await saveFlyerImage(0)
+      if (document.fonts?.ready) await document.fonts.ready
+      const [page1, page2] = await Promise.all([
+        drawShopFlyerPage1({ scale: 2 }),
+        drawShopFlyerPage2({ contactName, phoneDisplay, pageUrl, scale: 2 }),
+      ])
+      const name = safeDownloadName(contactName)
+      await saveCanvasImage(page1, `플로로탄닌_샵매출성장전단지_${name}_1페이지.png`)
       await new Promise(resolve => setTimeout(resolve, 350))
-      await saveFlyerImage(1)
+      await saveCanvasImage(page2, `플로로탄닌_샵매출성장전단지_${name}_2페이지.png`)
     } catch (error) {
       alert(`전단지 다운로드 오류: ${error.message}`)
     } finally {
@@ -818,12 +1092,21 @@ export default function PartnerShopGrowthLandingPage() {
           </div>
 
           <div className="mt-8 grid gap-6 lg:grid-cols-2">
-            <div ref={node => { flyerRefs.current[0] = node }} className="mx-auto w-full max-w-[540px]">
-              <FlyerOne />
-            </div>
-            <div ref={node => { flyerRefs.current[1] = node }} className="mx-auto w-full max-w-[540px]">
-              <FlyerTwo contactName={contactName} phoneDisplay={phoneDisplay} />
-            </div>
+            {flyerPreviews.map((preview, index) => (
+              <div key={index} className="mx-auto w-full max-w-[540px] overflow-hidden rounded-lg border-2 border-[#C69A2D] bg-white shadow-[0_22px_70px_rgba(5,61,34,0.18)]">
+                {preview ? (
+                  <img
+                    src={preview}
+                    alt={`플로로탄닌 샵 매출 성장 전단지 ${index + 1}페이지 미리보기`}
+                    className="block w-full"
+                  />
+                ) : (
+                  <div className="flex aspect-[794/1123] items-center justify-center bg-[#FFFDF7] px-6 text-center text-base font-black text-[#053D22]">
+                    전단지 미리보기를 생성하고 있습니다.
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>
