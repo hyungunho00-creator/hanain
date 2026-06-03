@@ -1,12 +1,12 @@
 # Current Working State
 
-Last verified: 2026-06-03 11:05 KST
+Last verified: 2026-06-03 11:56 KST
 
 Production domain:
 
 - `https://phlorotannin.com`
 - `https://www.phlorotannin.com` redirects to apex
-- Current verified deployment: `https://hanain-nq0v1y7xb-01056528206s-projects.vercel.app`
+- Current verified deployment: `https://hanain-pkkq4tvfh-01056528206s-projects.vercel.app`
 
 Branch:
 
@@ -22,6 +22,9 @@ What "current" means:
 - The refreshed front blog `og_image` URLs are served through `/og-card/v20260602/<slug>.png` by `api/og.js`; do not switch them back to `/og/blog-refresh` or raw `/og/content-quality` paths without checking CDN cache behavior.
 - Private partner shop package proposal pages are dynamic HTML print/share pages under `/p/:partnerSlug/shop-package/salon-growth-660`.
 - Do not switch the shop package proposal body back to fixed proposal images. Printed sheets must automatically include the active partner name, phone number, share URL, and QR code.
+- The shop package page must be written for salon/esthetic/wellness shop owners, not generic consumers. It should lead with shop owner pain points, premium salon imagery, first-mover/local web advantage, product rationale, support package, and partner-specific contact/QR.
+- Do not invent fake testimonials. Use clearly labeled shop-owner reaction points or consultation conversation examples instead.
+- Hero asset: `/partner/shop-package/salon-consult-hero.jpg` (generated premium salon consultation photo, compressed JPEG).
 
 Content sources:
 
