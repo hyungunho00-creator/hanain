@@ -1,12 +1,12 @@
 # Current Working State
 
-Last verified: 2026-06-03 18:36 KST
+Last verified: 2026-06-03 19:16 KST
 
 Production domain:
 
 - `https://phlorotannin.com`
 - `https://www.phlorotannin.com` redirects to apex
-- Current verified deployment: `https://hanain-qzioxkbzr-01056528206s-projects.vercel.app`
+- Current verified deployment: `https://hanain-bldeby0aa-01056528206s-projects.vercel.app`
 
 Branch:
 
@@ -26,7 +26,8 @@ What "current" means:
 - Printed sheets 1-3 must stay clean with no contact footer and no QR. Only printed sheet 4 may include the active partner name, phone number, share URL, and QR code.
 - The shop package page should read as the shop owner's own opportunity: premium salon imagery, 660만원 구성, 1,320만원 판매가, 예상 마진 약 660만원, shop-name landing page, QR customer path, local first-mover advantage, product rationale, and final contact/QR.
 - The shop package page must lead with shop-owner hook points, not internal work labels: recovery/payback structure, premium add-on for existing customers, customer-to-shop QR flow, 동기반 한 곳 우선 세팅, and concrete consultation scenes.
-- Current shop package hero/landing direction: `관리가 끝난 뒤에도 매출이 남는 샵`, `도입을 결정하게 만드는 건 제품 설명보다 회수 가능성입니다`, `고객 앞에서 바로 꺼낼 수 있어야 도입할 이유가 생깁니다`.
+- Current shop package hero/landing direction: `제품을 들이는 게 아니라 샵 매출 라인을 엽니다`, `샵 대표가 보는 건 간단합니다. 660만 원을 넣고, 1,320만 원으로 제안할 수 있는가. 고객 문의가 우리 샵으로 돌아오는가.`, `전단지는 예쁘기만 하면 안 됩니다. 고객이 다시 연락해야 합니다`.
+- The partner info room entry for this flow must describe it as `샵 대표용 랜딩·전단지 공유` / `랜딩·전단지 보기`, not as a proposal or training document.
 - Do not reintroduce visible internal labels such as `제안서`, `계약 검토`, `SHOP PACKAGE PROPOSAL`, `CONTRACT CHECK`, `SELLING POINTS`, `CUSTOMER RESPONSE FLOW`, or a wrong `1,200만 원` sales figure on the shop package page.
 - Do not invent fake testimonials. Use clearly labeled shop-owner reaction points or consultation conversation examples instead.
 - Hero asset: `/partner/shop-package/salon-consult-hero.jpg` (generated premium salon consultation photo, compressed JPEG).
