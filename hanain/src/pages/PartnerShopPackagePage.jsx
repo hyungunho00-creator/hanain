@@ -39,30 +39,30 @@ const topMetrics = [
 ]
 
 const ownerPainPoints = [
-  '관리 후 결제대에서 바로 꺼낼 프리미엄 메뉴가 생깁니다',
-  '고객이 QR을 찍으면 제품 회사가 아니라 우리 샵 이름이 먼저 보입니다',
-  '전단지와 모바일 링크가 전화·문자·전자명함으로 끊기지 않고 이어집니다',
-  '동기반에서 한 곳만 먼저 열리면 “먼저 시작한 샵”으로 기억됩니다',
+  '관리만 받고 돌아가던 고객에게 추가 구매 이유가 생깁니다',
+  '샵 이름이 들어간 비공개 페이지라 고객이 문의처를 헷갈리지 않습니다',
+  '전단지와 모바일 링크가 전화·문자 상담으로 바로 이어집니다',
+  '동기반에서 먼저 열린 샵은 같은 전단지를 써도 더 먼저 기억됩니다',
 ]
 
 const ownerDecisionCards = [
   {
     icon: Wallet,
     label: '회수 구조',
-    title: '660만 원이 재고가 아니라 회수 가능한 구조로 보여야 합니다',
-    body: '1,320만 원 판매가와 약 660만 원 예상 마진이 한 화면에서 보여야 샵 운영 숫자로 판단할 수 있습니다.',
+    title: '대표가 보는 첫 기준은 “이 돈이 돌아오는가”입니다',
+    body: '660만 원 구성, 1,320만 원 판매가, 예상 마진 약 660만 원이 바로 보여야 단순 재고가 아니라 회수 가능한 메뉴로 판단됩니다.',
   },
   {
     icon: Store,
     label: '고객층',
-    title: '이미 돈을 쓰는 고객에게 권하는 프리미엄 부가 상품',
-    body: '새 고객을 억지로 모으는 구조가 아니라 관리, 상담, 재방문 고객에게 자연스럽게 붙이는 메뉴입니다.',
+    title: '새 고객을 기다리는 상품이 아니라 기존 고객에게 붙는 상품',
+    body: '관리비를 이미 쓰는 고객, 단골 고객, 상담 고객에게 “다음 단계 프리미엄 케어”로 제안할 수 있어야 합니다.',
   },
   {
     icon: Users,
     label: '샵 이름',
     title: '고객 기억에 남는 건 “어느 샵에서 봤는가”입니다',
-    body: 'QR을 찍으면 우리 샵 이름의 랜딩페이지, 연락처, 전자명함 흐름이 남아 문의처가 흐려지지 않습니다.',
+    body: 'QR을 찍으면 우리 샵 이름의 랜딩페이지, 연락처, 전화·문자 문의 흐름이 남아 문의처가 흐려지지 않습니다.',
   },
   {
     icon: TrendingUp,
@@ -75,41 +75,41 @@ const ownerDecisionCards = [
 const shopKillerPoints = [
   {
     icon: Wallet,
-    title: '관리 끝난 고객에게 바로 건넬 이유',
-    body: '“오늘 받은 케어를 집에서도 이어가세요”라는 흐름이 생기면 결제 후 대화가 제품 구매로 이어집니다.',
+    title: '관리 후 결제대에서 바로 이어지는 제안',
+    body: '관리 직후 고객이 만족한 순간에 “집에서도 이어가는 프리미엄 케어”로 보여줄 수 있어야 판매 타이밍을 놓치지 않습니다.',
   },
   {
     icon: Store,
-    title: '비싼 가격을 설명하는 고급 명분',
-    body: '감태 유래 해양 폴리페놀, 컨디션 관리, 프리미엄 케어 스토리가 있어 단품 판매처럼 보이지 않습니다.',
+    title: '1,320만 원을 말할 수 있는 고급 이유',
+    body: '감태 유래 해양 폴리페놀, 피부·컨디션 관심사, 샵 전용 페이지가 함께 보여야 비싼 단품이 아니라 패키지로 받아들여집니다.',
   },
   {
     icon: Search,
-    title: '고객이 문의할 곳을 헷갈리지 않음',
-    body: '출력물 마지막 장과 모바일 링크가 모두 우리 샵 연락처로 이어져 “어디에 물어보지?”가 사라집니다.',
+    title: '고객이 받은 전단지가 우리 샵으로 돌아옴',
+    body: '모바일 링크와 마지막 전단지 QR이 우리 샵 연락처로 이어져 고객이 다시 검색하거나 다른 곳으로 빠질 틈을 줄입니다.',
   },
   {
     icon: Phone,
-    title: '먼저 시작한 곳이 상담 기억을 선점',
-    body: '동기반에서 한 곳만 먼저 열리면 고객은 “이 샵이 먼저 안내한 브랜드”로 기억하기 쉽습니다.',
+    title: '같은 동기반에서 먼저 보이는 효과',
+    body: '한 곳만 먼저 세팅되면 고객은 플로로탄닌을 “처음 안내받은 그 샵”과 함께 기억할 가능성이 커집니다.',
   },
 ]
 
 const shopUseCases = [
   {
     label: '관리 직후',
-    title: '결제대 앞에서 바로',
-    body: '“오늘 케어를 집에서도 이어갈 수 있는 프리미엄 패키지가 있어요. 우리 샵 전용 페이지 먼저 보세요.”',
+    title: '결제가 끝나는 순간',
+    body: '고객이 만족하고 나가는 타이밍에 “이 케어를 집에서도 이어가는 패키지가 있다”는 한 문장과 링크를 건넵니다.',
   },
   {
     label: '단골 고객',
-    title: '월관리 상담 중에',
-    body: '“이번에는 피부만 보지 말고 컨디션 관리까지 같이 보시면 만족도가 달라질 수 있어요.”',
+    title: '월관리 고객에게',
+    body: '이미 신뢰가 쌓인 고객에게 피부관리 다음 단계의 프리미엄 홈케어 선택지로 보여줍니다.',
   },
   {
     label: '카카오 문의',
-    title: '문자·카카오 상담 전에',
-    body: '“가격과 구성은 이 링크가 가장 보기 쉬워요. 보시고 전화나 문자로 바로 문의 주세요.”',
+    title: '온라인 문의가 왔을 때',
+    body: '긴 설명 대신 샵 전용 링크를 보내 가격, 구성, 문의 버튼을 한 번에 보게 만듭니다.',
   },
 ]
 
@@ -126,8 +126,8 @@ const productReasons = [
   },
   {
     icon: Sparkles,
-    title: '제품만이 아니라 보여줄 자료가 있음',
-    body: '고객에게 말로만 설명하지 않고 모바일 랜딩페이지, QR 출력물, 전자명함 연결을 함께 보여줍니다.',
+    title: '제품만이 아니라 보여줄 페이지와 전단지가 있음',
+    body: '고객에게 말로만 설명하지 않고 모바일 랜딩페이지, QR 전단지, 전화·문자 연결을 함께 보여줍니다.',
   },
   {
     icon: ShieldCheck,
@@ -138,49 +138,49 @@ const productReasons = [
 
 const territoryItems = [
   {
-    title: '동기반 한 곳 우선 세팅',
-    body: '같은 동기반·상권에 모두 똑같이 열면 가치가 떨어집니다. 먼저 시작한 샵을 우선 세팅합니다.',
+    title: '한 상권에 아무 데나 열면 가치가 떨어집니다',
+    body: '샵 대표 입장에서는 “우리 동네에서 먼저 보이는가”가 중요합니다. 그래서 동기반 한 곳 우선 세팅이 필요합니다.',
   },
   {
-    title: '지역 키워드 선점',
-    body: '지역명, 샵 유형, 상담 키워드는 먼저 쌓은 곳이 유리합니다. 늦게 시작하면 따라잡기 어렵습니다.',
+    title: '먼저 보인 샵이 고객 기억을 가져갑니다',
+    body: '고객은 제품보다 처음 안내받은 장소를 기억합니다. 먼저 열린 샵이 상담 흐름을 먼저 잡습니다.',
   },
   {
-    title: '샵 이름으로 남는 자료',
-    body: '마지막 장 연락처와 QR이 전자명함으로 이어집니다. 고객은 어느 샵에 문의할지 바로 압니다.',
+    title: '전단지 끝은 반드시 우리 샵 연락처여야 합니다',
+    body: '전단지 마지막 장 QR과 연락처가 우리 샵으로 이어져야 고객 문의가 흩어지지 않습니다.',
   },
 ]
 
 const supportItems = [
   {
     icon: Monitor,
-    label: '전용 웹',
-    title: '우리 샵 이름으로 열리는 고객 페이지',
-    body: '제품 설명보다 우리 샵 이름, 연락처, 상담 버튼이 먼저 남는 비공개 링크입니다.',
+    label: '샵 전용 페이지',
+    title: '고객이 열면 우리 샵 이름이 먼저 보임',
+    body: '받은 사람이 링크를 열었을 때 제품 회사가 아니라 우리 샵 이름과 연락 버튼이 보입니다.',
   },
   {
     icon: Search,
-    label: '지역 선점',
-    title: '같은 동기반에서 먼저 잡는 상담 흐름',
-    body: '지역명과 샵 유형 중심의 상담 흐름을 먼저 잡아 뒤늦게 따라오는 곳과 차이를 만듭니다.',
+    label: '선점 조건',
+    title: '동기반 한 곳 우선 세팅',
+    body: '같은 반, 같은 상권에 여러 곳이 동시에 보이지 않게 먼저 시작한 곳의 희소성을 지킵니다.',
   },
   {
     icon: ClipboardCheck,
-    label: '현장 멘트',
-    title: '고객에게 바로 꺼낼 문장',
-    body: '가격을 말하기 전에 왜 우리 샵에서 권하는지 납득시키는 핵심 문장을 준비합니다.',
+    label: '고객용 전단지',
+    title: '읽고 끝나는 종이가 아니라 QR로 연결',
+    body: '고객이 집에 가져가도 마지막 장 QR을 통해 다시 우리 샵으로 연락할 수 있습니다.',
   },
   {
     icon: Package,
-    label: '출력 자료',
-    title: '마지막 장에 연락처·QR 삽입',
-    body: '1~3장은 고객이 읽을 내용만 담고, 마지막 장에서만 연락처와 QR로 연결합니다.',
+    label: '판매 구성',
+    title: '660만 원 구성과 1,320만 원 판매가',
+    body: '도입가, 판매가, 예상 마진을 고객용 페이지와 전단지에서 명확하게 보여줍니다.',
   },
   {
     icon: Headphones,
-    label: '시작 조건',
-    title: '선점 가능 여부 확인',
-    body: '동기반에서 이미 세팅된 곳이 있는지, 우리 샵이 먼저 열 수 있는지부터 확인합니다.',
+    label: '바로 문의',
+    title: '전화·문자 버튼으로 이어지는 모바일 동선',
+    body: '고객이 관심이 생긴 순간 바로 연락할 수 있어 문의 전환을 놓치지 않습니다.',
   },
 ]
 
@@ -192,7 +192,7 @@ const contractTriggers = [
   },
   {
     label: '고객이 이어진다',
-    title: 'QR을 찍으면 문의 전자명함과 상담 버튼으로 연결',
+    title: 'QR을 찍으면 우리 샵 전화·문자 버튼으로 연결',
     body: '전단지를 받은 고객이 다시 검색하지 않아도 바로 문의할 수 있습니다.',
   },
   {
@@ -209,18 +209,18 @@ const customerResponsePoints = [
   },
   {
     title: '“가격이 센 이유가 보인다”',
-    body: '원료 스토리, 관리 관점, 전용 자료가 함께 보이면 단순 단품 판매보다 납득도가 높아집니다.',
+    body: '원료 스토리, 관리 관점, 전용 페이지와 전단지가 함께 보이면 단순 단품 판매보다 납득도가 높아집니다.',
   },
   {
     title: '“집에서 보고 다시 연락해야겠다”',
-    body: '고객이 링크를 저장하고 다시 들어와도 우리 샵 연락처와 전자명함으로 이어집니다.',
+    body: '고객이 링크를 저장하고 다시 들어와도 우리 샵 연락처와 문의 링크로 이어집니다.',
   },
 ]
 
 const productProofAngles = [
   '감태 등 갈조류 유래 해양 폴리페놀 계열 소재',
-  '항산화, 염증 반응, 대사 밸런스 연구에서 반복적으로 언급되는 성분군',
-  '치료·완치 표현 없이 생활 관리와 컨디션 상담으로 연결되는 구조',
+  '피부·컨디션·활력 관심 고객에게 연결하기 쉬운 프리미엄 소재',
+  '치료·완치 표현 없이 생활 관리 관점으로 고급스럽게 안내',
 ]
 
 const recommendedShops = [
@@ -281,7 +281,7 @@ function PartnerContact({ partnerName, phoneDisplay, phone, pageUrl, cardUrl }) 
         <p className="mt-1 text-2xl font-black text-[#071b12]">{partnerName}</p>
         <p className="mt-1 text-xl font-black text-[#063f2a]">{phoneDisplay}</p>
         <p className="mt-2 break-all text-xs font-semibold leading-5 text-[#607166]">공유 링크: {pageUrl}</p>
-        <p className="break-all text-xs font-semibold leading-5 text-[#607166]">전자명함: {cardUrl}</p>
+        <p className="break-all text-xs font-semibold leading-5 text-[#607166]">문의 링크: {cardUrl}</p>
       </div>
       <div className="flex items-center gap-3">
         <div className="rounded-md border border-[#d8c18a] bg-white p-2">
@@ -308,7 +308,7 @@ function ProposalSheet({ page, title, subtitle, children, partnerName, phoneDisp
       <div className="flex items-center justify-between gap-4 bg-[#063f2a] px-5 py-4 text-white">
         <div className="inline-flex items-center gap-2 text-sm font-black text-[#f0c45c]">
           <Leaf size={18} />
-          플로로탄닌 파트너스
+          플로로탄닌 샵 패키지
         </div>
         <div className="rounded-full border border-[#f0c45c] px-3 py-1 text-sm font-black text-[#f0c45c]">{page} / 4</div>
       </div>
@@ -383,7 +383,7 @@ export default function PartnerShopPackagePage() {
   const partnerInfo = useMemo(() => {
     const slug = safePartnerSlug(partner, partnerSlug)
     const phone = onlyDigits(partner?.phone || partner?.sms || slug || '01056528206') || '01056528206'
-    const partnerName = partner?.name || partner?.displayName || '플로로탄닌 파트너스'
+    const partnerName = partner?.name || partner?.displayName || '샵 전용 문의'
     const phoneDisplay = partner?.phoneDisplay || formatPhone(phone)
     const pagePath = `/p/${slug}/shop-package/${SHARE_TOKEN}`
 
@@ -422,7 +422,7 @@ export default function PartnerShopPackagePage() {
   async function shareLink() {
     const payload = {
       title: '플로로탄닌 샵 패키지',
-      text: `660만 원 구성, 1,320만 원 판매가, 우리 샵 이름으로 이어지는 비공개 샵 패키지를 확인해보세요.`,
+      text: `샵 대표 전용 비공개 페이지입니다. 660만 원 구성, 1,320만 원 판매가, 우리 샵으로 이어지는 고객 동선을 확인해보세요.`,
       url: pageUrl,
     }
 
@@ -445,7 +445,7 @@ export default function PartnerShopPackagePage() {
     <div className="shop-print-root min-h-screen bg-[#f8f5ed]">
       <SEOHead
         title="플로로탄닌 샵 패키지"
-        description="샵 대표를 위한 비공개 플로로탄닌 샵 패키지 랜딩페이지입니다."
+        description="샵 대표가 직접 검토하는 비공개 플로로탄닌 샵 패키지 랜딩페이지입니다."
         canonical={pageUrl}
         ogUrl={pageUrl}
         ogImage={`${SITE}${HERO_IMAGE}`}
@@ -482,12 +482,12 @@ export default function PartnerShopPackagePage() {
               샵 대표 전용
             </div>
             <h1 className="mt-6 text-4xl font-black leading-[1.08] text-[#071b12] md:text-6xl">
-              관리가 끝난 뒤에도
-              <span className="block text-[#0b4a30]">매출이 남는 샵</span>
+              제품을 들이는 게 아니라
+              <span className="block text-[#0b4a30]">샵 매출 라인을 엽니다</span>
               플로로탄닌 샵 패키지
             </h1>
             <p className="mt-6 max-w-2xl text-lg font-bold leading-9 text-[#45584d] md:text-xl">
-              660만 원 구성, 1,320만 원 판매가, 예상 마진 약 660만 원. 고객이 QR을 찍으면 우리 샵 이름의 페이지와 전화·문자 버튼으로 바로 연결됩니다.
+              샵 대표가 보는 건 간단합니다. 660만 원을 넣고, 1,320만 원으로 제안할 수 있는가. 고객 문의가 우리 샵으로 돌아오는가.
             </p>
 
             <div className="mt-7 grid gap-3 sm:grid-cols-3">
@@ -496,10 +496,10 @@ export default function PartnerShopPackagePage() {
 
             <div className="mt-5 grid gap-2 sm:grid-cols-2">
               {[
-                '관리 후 30초 안에 링크 전송',
-                '동기반 한 곳 우선 세팅',
+                '예상 마진 약 660만 원 구조',
+                '기존 고객에게 붙이는 프리미엄 메뉴',
                 'QR → 우리 샵 페이지 → 전화·문자',
-                '마지막 출력 장에만 연락처와 QR 삽입',
+                '동기반 한 곳 우선 세팅',
               ].map((text) => (
                 <div key={text} className="flex items-center gap-2 rounded-lg border border-[#e0cfaa] bg-white/85 px-4 py-3 text-sm font-black text-[#24362d]">
                   <CheckCircle2 size={18} className="shrink-0 text-[#0b4a30]" />
@@ -511,11 +511,11 @@ export default function PartnerShopPackagePage() {
             <div className="mt-7 flex flex-wrap gap-3">
               <button type="button" onClick={shareLink} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-[#063f2a] px-5 text-sm font-black text-white shadow-lg shadow-[#063f2a]/20">
                 <Share2 size={18} />
-                링크 공유
+                비공개 링크 공유
               </button>
               <button type="button" onClick={printProposal} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg border border-[#d8c18a] bg-[#fff8e5] px-5 text-sm font-black text-[#8a620d]">
                 <Printer size={18} />
-                4장 자료 출력
+                고객용 전단지 출력
               </button>
               <button type="button" onClick={copyLink} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg border border-[#d8c18a] bg-white px-5 text-sm font-black text-[#063f2a]">
                 <Copy size={18} />
@@ -541,10 +541,10 @@ export default function PartnerShopPackagePage() {
           <div>
             <p className="text-xs font-black text-[#a06f10]">샵 대표가 먼저 볼 숫자</p>
             <h2 className="mt-2 text-3xl font-black leading-tight text-[#071b12] md:text-4xl">
-              이건 제품 매입이 아니라 새 메뉴를 여는 구조입니다
+              이 페이지는 샵 대표가 “계산”하려고 보는 페이지입니다
             </h2>
             <p className="mt-4 text-base font-semibold leading-8 text-[#59645f]">
-              고객에게 이미 관리비를 받는 공간이라면, “무엇을 더 권할 수 있는가”가 매출 차이를 만듭니다.
+              좋은 제품 설명보다 먼저 보여야 하는 건 회수 구조, 기존 고객에게 권할 명분, 우리 샵으로 돌아오는 문의 동선입니다.
             </p>
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
               {ownerDecisionCards.map((item) => (
@@ -581,8 +581,8 @@ export default function PartnerShopPackagePage() {
         <div className="mx-auto max-w-6xl px-5 md:px-8">
           <SectionTitle
             kicker="샵 대표가 바로 보는 킬포인트"
-            title="도입을 결정하게 만드는 건 제품 설명보다 회수 가능성입니다"
-            body="샵 대표가 보는 핵심은 간단합니다. 기존 고객에게 권할 명분이 있는가, 가격을 납득시킬 수 있는가, 문의가 우리 샵으로 돌아오는가."
+            title="샵 대표가 도입하고 싶어지는 포인트는 숫자와 고객 동선입니다"
+            body="제품이 좋아 보이는 것만으로는 부족합니다. 고객에게 왜 권할지, 얼마가 남는지, 문의가 어디로 돌아오는지가 한눈에 보여야 합니다."
           />
           <div className="grid gap-4 md:grid-cols-4">
             {shopKillerPoints.map((item) => (
@@ -601,10 +601,10 @@ export default function PartnerShopPackagePage() {
           <div>
             <p className="text-xs font-black text-[#f0c45c]">지역 선점 구조</p>
             <h2 className="mt-3 text-3xl font-black leading-tight md:text-4xl">
-              같은 동기반이라면 한 곳만 먼저 열어야 힘이 생깁니다
+              같은 동기반에 한 곳만 먼저 열리면 대표의 판단이 달라집니다
             </h2>
             <p className="mt-4 text-base font-semibold leading-8 text-[#dce7df]">
-              여러 샵에 동시에 똑같이 열리면 희소성이 사라집니다. 먼저 시작한 샵 이름으로 전용 웹, QR, 지역 상담 흐름이 남아야 합니다.
+              “우리 동네에서 먼저 보이는 샵”이 될 수 있다면 단순 제품 도입이 아니라 상권 선점으로 보입니다.
             </p>
           </div>
           <div className="grid gap-4">
@@ -622,9 +622,9 @@ export default function PartnerShopPackagePage() {
       <section className="shop-no-print bg-[#fbf7ed] py-12">
         <div className="mx-auto max-w-6xl px-5 md:px-8">
           <SectionTitle
-            kicker="고객에게 권할 명분"
-            title="고객은 제품만 보지 않고, 왜 이 샵에서 권하는지를 봅니다"
-            body="감태 유래 해양 폴리페놀 스토리와 피부·컨디션 관심사가 연결되어야 프리미엄 가격을 말할 수 있습니다."
+            kicker="샵 대표가 고객에게 팔 수 있는 이유"
+            title="고객이 1,320만 원을 납득하려면 고급 이유가 보여야 합니다"
+            body="감태 유래 해양 폴리페놀 스토리, 피부·컨디션 관심사, 우리 샵 전용 페이지가 함께 보여야 프리미엄 패키지로 받아들여집니다."
           />
           <div className="grid gap-4 md:grid-cols-2">
             {productReasons.map((item) => (
@@ -653,8 +653,8 @@ export default function PartnerShopPackagePage() {
         <div className="mx-auto max-w-6xl px-5 md:px-8">
           <SectionTitle
             kicker="고객이 움직이는 흐름"
-            title="고객이 이해하고, 저장하고, 다시 연락하는 동선이어야 팔립니다"
-            body="전단지와 링크가 읽고 끝나면 매출이 되지 않습니다. 우리 샵 연락처로 돌아오는 구조가 필요합니다."
+            title="전단지는 예쁘기만 하면 안 됩니다. 고객이 다시 연락해야 합니다"
+            body="샵 대표가 원하는 건 감상용 이미지가 아니라, 고객이 저장하고 다시 열고 전화·문자로 움직이는 구조입니다."
           />
           <div className="grid gap-4 md:grid-cols-3">
             {contractTriggers.map((item) => (
@@ -666,8 +666,8 @@ export default function PartnerShopPackagePage() {
             ))}
           </div>
           <div className="mt-8 rounded-lg bg-[#063f2a] p-6 text-white">
-            <p className="text-xs font-black text-[#f0c45c]">상담 장면에서 나와야 하는 반응</p>
-            <h3 className="mt-2 text-2xl font-black leading-8">샵 대표가 원하는 고객 반응은 명확해야 합니다</h3>
+            <p className="text-xs font-black text-[#f0c45c]">고객이 보여야 할 반응</p>
+            <h3 className="mt-2 text-2xl font-black leading-8">대표가 원하는 건 “좋네요”가 아니라 “어디로 문의하죠?”입니다</h3>
             <div className="mt-5 grid gap-4 md:grid-cols-3">
               {customerResponsePoints.map((item) => (
                 <div key={item.title} className="rounded-lg border border-[#caa85a] bg-white/95 p-5 text-[#071b12]">
@@ -683,9 +683,9 @@ export default function PartnerShopPackagePage() {
       <section className="shop-no-print bg-[#fbf7ed] py-12">
         <div className="mx-auto max-w-6xl px-5 md:px-8">
           <SectionTitle
-            kicker="매출로 바뀌는 사용 장면"
-            title="고객 앞에서 바로 꺼낼 수 있어야 도입할 이유가 생깁니다"
-            body="샵 대표가 필요한 건 긴 설명이 아니라, 관리가 끝난 고객에게 바로 보낼 수 있는 링크와 한 문장입니다."
+            kicker="샵에서 실제로 팔리는 순간"
+            title="대표가 상상해야 하는 장면은 고객 앞에서 바로 꺼내는 순간입니다"
+            body="관리 직후, 단골 상담, 카카오 문의에서 바로 링크와 전단지를 꺼낼 수 있어야 샵 매출로 연결됩니다."
           />
           <div className="grid gap-4 md:grid-cols-3">
             {shopUseCases.map((item) => (
@@ -702,9 +702,9 @@ export default function PartnerShopPackagePage() {
       <section className="shop-no-print bg-[#f8f5ed] py-12">
         <div className="mx-auto max-w-6xl px-5 md:px-8">
           <SectionTitle
-            kicker="도입하면 바로 있어야 할 것"
-            title="제품만 오면 부족합니다. 팔리게 만드는 장치가 함께 와야 합니다"
-            body="우리 샵 전용 웹, QR 자료, 현장 멘트, 출력물, 연락 동선까지 같이 있어야 고객에게 바로 보여줄 수 있습니다."
+            kicker="샵 대표가 받는 구성"
+            title="대표가 필요한 건 제품 박스가 아니라 판매 가능한 세트입니다"
+            body="샵 전용 페이지, 고객용 전단지, QR 연락 동선, 판매가 구조, 동기반 우선 세팅이 함께 있어야 검토할 이유가 생깁니다."
           />
           <div className="grid gap-4 lg:grid-cols-5">
             {supportItems.map((item, index) => (
@@ -725,8 +725,8 @@ export default function PartnerShopPackagePage() {
       <section className="shop-no-print bg-white py-12">
         <div className="mx-auto grid max-w-6xl gap-8 px-5 md:grid-cols-[0.9fr_1.1fr] md:px-8">
           <div>
-            <p className="text-xs font-black text-[#a06f10]">우선 시작하면 좋은 곳</p>
-            <h2 className="mt-2 text-3xl font-black leading-tight text-[#071b12]">이미 고객을 만나는 샵일수록 유리합니다</h2>
+              <p className="text-xs font-black text-[#a06f10]">우선 시작하면 좋은 곳</p>
+            <h2 className="mt-2 text-3xl font-black leading-tight text-[#071b12]">매일 고객을 만나는 샵일수록 회수 가능성이 큽니다</h2>
             <p className="mt-4 text-base font-semibold leading-8 text-[#59645f]">
               매일 상담하고 관리하는 고객이 있다면, 고객에게 다시 권할 프리미엄 이유가 생기는 순간 매출 구조가 달라집니다.
             </p>
@@ -746,10 +746,10 @@ export default function PartnerShopPackagePage() {
         <div className="proposal-print-inner mx-auto max-w-5xl px-5 md:px-8">
           <div className="shop-no-print mb-6 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
             <div>
-              <p className="text-xs font-black text-[#a06f10]">출력용 자료</p>
-              <h2 className="mt-2 text-3xl font-black text-[#071b12]">출력용 4장 자료</h2>
+              <p className="text-xs font-black text-[#a06f10]">샵 고객에게 건네는 전단지</p>
+              <h2 className="mt-2 text-3xl font-black text-[#071b12]">고객용 4장 전단지</h2>
               <p className="mt-2 text-sm font-bold leading-7 text-[#66766d]">
-                1~3장은 숫자와 선점 구조만 강하게 보여주고, 마지막 4장에만 문의 연락처와 QR을 넣습니다.
+                1~3장은 가격·선점·고객 관심 포인트만 보여주고, 마지막 4장에만 샵 연락처와 QR을 넣습니다.
               </p>
             </div>
             <button
@@ -758,15 +758,15 @@ export default function PartnerShopPackagePage() {
               className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-[#d8c18a] bg-[#fff8e5] px-4 py-2 text-sm font-black text-[#8a620d]"
             >
               <Printer size={17} />
-              4장 자료 출력
+              전단지 출력
             </button>
           </div>
 
           <div className="proposal-print-list grid gap-6">
             <ProposalSheet
               page="1"
-              title="660만 원 구성, 1,320만 원 판매가, 예상 마진 약 660만 원"
-              subtitle="샵 대표가 먼저 보는 건 좋은 말보다 숫자입니다. 도입 후 고객에게 제안할 판매가와 회수 가능성이 바로 보여야 합니다."
+              title="대표가 먼저 보는 숫자: 660만 원 구성, 1,320만 원 판매가"
+              subtitle="이 전단지는 제품 설명보다 회수 가능성을 먼저 보여줍니다. 고객에게 제안할 판매가와 예상 마진이 바로 보여야 합니다."
               partnerName={partnerName}
               phoneDisplay={phoneDisplay}
               pageUrl={pageUrl}
@@ -791,8 +791,8 @@ export default function PartnerShopPackagePage() {
 
             <ProposalSheet
               page="2"
-              title="동기반 한 곳만 먼저 열릴 때 가치가 생깁니다"
-              subtitle="같은 상권에 모두 똑같이 열면 희소성이 사라집니다. 먼저 시작한 샵 이름으로 전용 웹과 QR 상담 흐름을 잡습니다."
+              title="한 곳만 먼저 보이면 상품이 아니라 기회가 됩니다"
+              subtitle="같은 동기반과 상권에 모두 똑같이 열면 희소성이 사라집니다. 먼저 시작한 샵 이름으로 고객 기억을 잡습니다."
               partnerName={partnerName}
               phoneDisplay={phoneDisplay}
               pageUrl={pageUrl}
@@ -807,14 +807,14 @@ export default function PartnerShopPackagePage() {
                 ))}
               </div>
               <div className="mt-5 rounded-lg bg-[#063f2a] px-5 py-4 text-center text-xl font-black leading-8 text-[#f0c45c]">
-                같은 자료라도, 먼저 시작한 샵 이름과 QR로 남아야 가치가 있습니다
+                같은 전단지라도, 먼저 시작한 샵 이름과 QR로 남아야 가치가 있습니다
               </div>
             </ProposalSheet>
 
             <ProposalSheet
               page="3"
-              title="고객이 비싼 가격을 납득할 이유가 있어야 합니다"
-              subtitle="감태 유래 해양 폴리페놀, 피부·컨디션 관심사, 고급 상담 이미지를 한 번에 보여줄 수 있어야 샵에서 권하기 쉽습니다."
+              title="고객이 비싼 가격을 납득할 이유가 보여야 합니다"
+              subtitle="감태 유래 해양 폴리페놀, 피부·컨디션 관심사, 프리미엄 케어 이미지를 한 번에 보여줄 수 있어야 샵에서 권하기 쉽습니다."
               partnerName={partnerName}
               phoneDisplay={phoneDisplay}
               pageUrl={pageUrl}
@@ -839,8 +839,8 @@ export default function PartnerShopPackagePage() {
 
             <ProposalSheet
               page="4"
-              title="이제 우리 샵 이름으로 먼저 연결하세요"
-              subtitle="샵 패키지 문의는 아래 연락처와 QR로 바로 연결됩니다. 연락처와 QR은 마지막 장에만 넣었습니다."
+              title="마지막 장에서만 우리 샵으로 연결됩니다"
+              subtitle="고객이 궁금해진 순간 바로 전화·문자할 수 있도록 연락처와 QR은 마지막 장에만 넣었습니다."
               partnerName={partnerName}
               phoneDisplay={phoneDisplay}
               pageUrl={pageUrl}
@@ -856,16 +856,16 @@ export default function PartnerShopPackagePage() {
                   ))}
                 </div>
                 <div className="rounded-lg border-2 border-[#063f2a] bg-[#fff8e5] p-5">
-                  <p className="text-sm font-black text-[#a06f10]">상담 연결</p>
+                  <p className="text-sm font-black text-[#a06f10]">우리 샵 문의 연결</p>
                   <h3 className="mt-2 text-2xl font-black leading-9 text-[#071b12]">
-                    동기반 우선 세팅 가능 여부와 시작 조건을 바로 확인하세요
+                    고객이 QR을 찍으면 이 연락처로 바로 연결됩니다
                   </h3>
                   <div className="mt-5 flex items-center gap-4">
                     <div className="rounded-md border border-[#d8c18a] bg-white p-2">
                       <QRCodeCanvas value={pageUrl} size={112} includeMargin={false} fgColor="#063f2a" />
                     </div>
                     <div>
-                      <p className="text-sm font-black text-[#66766d]">샵 패키지 문의</p>
+                      <p className="text-sm font-black text-[#66766d]">문의 연락처</p>
                       <p className="mt-1 text-2xl font-black text-[#063f2a]">{partnerName}</p>
                       <p className="mt-1 text-xl font-black text-[#071b12]">{phoneDisplay}</p>
                     </div>
@@ -891,7 +891,7 @@ export default function PartnerShopPackagePage() {
           </div>
           <div className="mt-5 flex flex-wrap justify-center gap-3 text-sm font-bold">
             <a href={cardUrl} className="inline-flex items-center gap-1.5 text-[#f0c45c] underline underline-offset-4">
-              문의 전자명함 <ArrowRight size={14} />
+              전화·문자 문의 <ArrowRight size={14} />
             </a>
             <a href={easyUrl} className="inline-flex items-center gap-1.5 text-[#f0c45c] underline underline-offset-4">
               플로로탄닌 쉽게 알아보기 <ArrowRight size={14} />
