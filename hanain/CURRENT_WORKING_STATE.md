@@ -1,12 +1,12 @@
 # Current Working State
 
-Last verified: 2026-06-03 09:46 KST
+Last verified: 2026-06-03 10:17 KST
 
 Production domain:
 
 - `https://phlorotannin.com`
 - `https://www.phlorotannin.com` redirects to apex
-- Current verified deployment: `https://hanain-der6bym14-01056528206s-projects.vercel.app`
+- Current verified deployment: `https://hanain-lzfc12wdo-01056528206s-projects.vercel.app`
 
 Branch:
 
@@ -560,6 +560,29 @@ Supabase note:
   - New blog routes returned `200` with `X-Seo-Source: posts-table`.
   - New insight routes returned `200` with `X-Seo-Source: static`.
   - New OG card routes, `/sitemap.xml`, and `/rss.xml` returned `200`.
+
+2026-06-03 KST private partner shop package proposal page:
+
+- Added direct-link-only route:
+  - `/p/:partnerSlug/shop-package`
+  - `/p/:partnerSlug/shop-package/salon-growth-660`
+- Added the share controls inside the password-gated partner information room:
+  - `/p/:partnerSlug/inforoom`
+  - `/inforoom`
+  - password remains `123456789`.
+- The shop package proposal page is intentionally private/unlisted:
+  - not in navbar
+  - not in sitemap
+  - `X-Robots-Tag: noindex,follow`
+  - canonical stays on the real partner URL, e.g. `https://phlorotannin.com/p/test/shop-package/salon-growth-660`
+  - `X-Seo-Source: private-shop-package`
+- Static visual assets are under `public/partner/shop-package/`.
+  - `vercel.json` must keep `/partner/shop-package/` excluded from the SPA fallback rewrite so the PNG files serve as `image/png`.
+- Verified production:
+  - `https://phlorotannin.com/p/test/shop-package/salon-growth-660` returned `200`, `private-shop-package`, `noindex,follow`.
+  - `https://phlorotannin.com/partner/shop-package/shop-package-01.png` returned `200` and `image/png`.
+  - `https://phlorotannin.com/sitemap.xml` stayed at `2989` URLs and does not include `/shop-package`.
+  - `npm run verify:checkpoint` passed.
 
 2026-06-03 KST health trend content update round 27:
 
