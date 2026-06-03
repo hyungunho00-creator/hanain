@@ -353,14 +353,14 @@ export default function InfoRoomPage() {
       setShopLinkCopied(true)
       setTimeout(() => setShopLinkCopied(false), 1600)
     } catch {
-      window.prompt('샵 패키지 제안 링크를 복사해 주세요.', shopPackageUrl)
+      window.prompt('샵 패키지 링크를 복사해 주세요.', shopPackageUrl)
     }
   }
 
   async function shareShopPackageLink() {
     const payload = {
-      title: '플로로탄닌 샵 패키지 제안서',
-      text: '파트너 정보와 QR이 자동 삽입되는 플로로탄닌 샵 패키지 제안서입니다.',
+      title: '플로로탄닌 샵 패키지',
+      text: '샵 대표가 직접 보는 비공개 랜딩페이지입니다. 660만 원 구성과 1,320만 원 판매가 구조를 확인할 수 있습니다.',
       url: shopPackageUrl,
     }
     if (navigator.share) {
@@ -639,7 +639,7 @@ export default function InfoRoomPage() {
         </div>
       </div>
 
-      {/* 샵 패키지 모바일 제안 링크 */}
+      {/* 샵 패키지 모바일 랜딩 링크 */}
       <div style={{ background: '#fffdf7', borderBottom: '3px solid #e8dcc3', padding: '20px 16px' }}>
         <div style={{
           maxWidth: 800,
@@ -657,15 +657,15 @@ export default function InfoRoomPage() {
           }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8 }}>
               <Smartphone size={17} color="#f0c45c" />
-              <span style={{ fontSize: 11, fontWeight: 900, letterSpacing: '1.6px', color: '#f0c45c' }}>
-                SHOP PACKAGE PROPOSAL
+              <span style={{ fontSize: 11, fontWeight: 900, color: '#f0c45c' }}>
+                샵 대표용 랜딩페이지
               </span>
             </div>
             <h2 style={{ fontSize: 22, lineHeight: 1.32, fontWeight: 900, margin: 0 }}>
-              샵 패키지 제안서 공유·출력하기
+              샵 패키지 링크 공유·자료 출력
             </h2>
             <p style={{ fontSize: 13, lineHeight: 1.75, margin: '8px 0 0', color: '#e7f2ea', fontWeight: 700 }}>
-              뷰티샵·피부관리실·힐링센터에 660만 원 샵 패키지와 검색되는 상담 구조를 보여주는 파트너 전용 제안 페이지입니다.
+              샵 대표가 직접 열어보는 비공개 랜딩페이지입니다. 660만 원 구성, 1,320만 원 판매가, 전용 웹과 QR 고객 동선을 확인할 수 있습니다.
             </p>
           </div>
 
@@ -677,20 +677,20 @@ export default function InfoRoomPage() {
               marginBottom: 14,
             }}>
               {[
-                ['660만 원', '샵 패키지'],
-                ['약 1,200만 원', '판매 시 공급가 기준 매출 구조'],
-                ['약 50%', '마진 구조 · VAT 별도 기준'],
+                ['660만 원', '샵 패키지 구성'],
+                ['1,320만 원', '총 판매가 기준'],
+                ['약 660만 원', '예상 마진 · VAT 별도'],
               ].map(([value, label]) => (
                 <div key={value} style={{
                   border: value === '660만 원' ? '2px solid #063f2a' : '1.5px solid #e0cfaa',
                   borderRadius: 10,
-                  background: value === '약 50%' ? '#063f2a' : '#fffaf0',
+                  background: value === '약 660만 원' ? '#063f2a' : '#fffaf0',
                   padding: '13px 14px',
                 }}>
-                  <div style={{ fontSize: 22, fontWeight: 900, color: value === '약 50%' ? '#fff' : value === '약 1,200만 원' ? '#9a6a0c' : '#063f2a', lineHeight: 1.15 }}>
+                  <div style={{ fontSize: 22, fontWeight: 900, color: value === '약 660만 원' ? '#fff' : value === '1,320만 원' ? '#9a6a0c' : '#063f2a', lineHeight: 1.15 }}>
                     {value}
                   </div>
-                  <div style={{ marginTop: 5, fontSize: 11, fontWeight: 900, color: value === '약 50%' ? '#f0c45c' : '#66766d', lineHeight: 1.45 }}>
+                  <div style={{ marginTop: 5, fontSize: 11, fontWeight: 900, color: value === '약 660만 원' ? '#f0c45c' : '#66766d', lineHeight: 1.45 }}>
                     {label}
                   </div>
                 </div>
@@ -698,8 +698,8 @@ export default function InfoRoomPage() {
             </div>
 
             <p style={{ fontSize: 12.5, lineHeight: 1.7, color: '#4b5b52', fontWeight: 700, margin: '0 0 14px' }}>
-              이 링크는 메뉴와 사이트맵에 노출하지 않는 <strong style={{ color: '#063f2a' }}>파트너 공유 전용 noindex 페이지</strong>입니다.
-              출력하면 파트너명·연락처·QR이 각 장에 자동으로 들어갑니다.
+              이 링크는 메뉴와 사이트맵에 노출하지 않는 <strong style={{ color: '#063f2a' }}>초대 링크 전용 noindex 페이지</strong>입니다.
+              출력 자료는 1~3장에는 연락처 없이 보여주고, 마지막 4장에만 문의 연락처와 QR이 들어갑니다.
             </p>
 
             <div style={{
@@ -746,7 +746,7 @@ export default function InfoRoomPage() {
                 }}
               >
                 <Share2 size={17} />
-                모바일로 제안하기
+                모바일 링크 공유
               </button>
               <button
                 type="button"
