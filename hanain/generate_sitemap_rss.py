@@ -163,6 +163,52 @@ while True:
     offset += page_size
 print(f"  ✅ {len(posts)}개 포스트 조회 완료")
 
+def load_local_trend_posts():
+    """Load code fallback posts that are live through /api/seo but not yet in Supabase."""
+    node_bin = os.environ.get("NODE_BINARY") or "node"
+    code = r"""
+import { LOCAL_TREND_BLOG_POSTS } from './src/data/localTrendBlogPosts.js';
+const posts = LOCAL_TREND_BLOG_POSTS
+  .filter((post) => post && post.slug && (post.status || 'published') === 'published')
+  .map((post) => ({
+    slug: post.slug,
+    title: post.title || post.meta_title || post.slug,
+    excerpt: post.excerpt || post.meta_desc || '',
+    category: post.category || 'general',
+    tags: post.tags || [],
+    og_image: post.og_image || post.ogImage || '/og-image.png',
+    created_at: post.created_at || post.published_at || post.publishedAt || new Date().toISOString(),
+    updated_at: post.updated_at || post.updatedAt || post.created_at || post.published_at || new Date().toISOString(),
+    source: 'local-trend',
+  }));
+console.log(JSON.stringify(posts));
+"""
+    try:
+        result = subprocess.run(
+            [node_bin, "--input-type=module", "-e", code],
+            cwd=str(ROOT),
+            check=True,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+        )
+        return json.loads(result.stdout or "[]")
+    except Exception as exc:
+        print(f"  ⚠️  로컬 트렌드 포스트 조회 실패: {str(exc)[:120]}")
+        return []
+
+local_trend_posts = load_local_trend_posts()
+if local_trend_posts:
+    existing_slugs = {str(post.get("slug") or "") for post in posts}
+    missing_local_posts = [
+        post for post in local_trend_posts
+        if post.get("slug") and post.get("slug") not in existing_slugs
+    ]
+    if missing_local_posts:
+        posts.extend(missing_local_posts)
+        posts.sort(key=lambda post: post.get("created_at") or "", reverse=True)
+        print(f"  ✅ 로컬 fallback 포스트 {len(missing_local_posts)}개 sitemap 보강")
+
 CAT_NAMES = {
     "diabetes":      "당뇨·혈당",
     "cancer":        "항암·면역",

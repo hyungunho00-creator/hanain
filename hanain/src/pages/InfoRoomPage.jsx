@@ -11,6 +11,7 @@ import {
   Folder, FileText, Lightbulb, Pin, AlertTriangle, Clock,
   PlayCircle, GraduationCap, BookOpen, Package, Star,
   ShoppingBag,
+  Share2, Copy, CheckCircle2, ExternalLink, Smartphone, Link2,
   Ribbon, Sprout, FlaskConical, Dumbbell, Flower2, Award,
   ShieldPlus, Pill, RefreshCw, Sparkles, Scale, Dna,
   Shield, Waves, Droplet, Brain, Heart, Flame, Microscope,
@@ -292,6 +293,7 @@ export default function InfoRoomPage() {
   const [imaging, setImaging]         = useState(null)
   const [preview, setPreview]         = useState(null)
   const [handbookLoading, setHandbookLoading] = useState(false)
+  const [shopLinkCopied, setShopLinkCopied] = useState(false)
 
   // ── 페이지 진입 시 인앱브라우저 감지 → 즉시 크롬으로 이동
   useEffect(() => {
@@ -312,7 +314,10 @@ export default function InfoRoomPage() {
   // 비번 미통과 시 잠금 화면
   if (!unlocked) return <LockScreen onUnlock={() => setUnlocked(true)} />
 
-  const cardUrl     = `https://phlorotannin.com/p/${partner.phone}`
+  const partnerLinkSlug = partner.partnerSlug || partner.slug || partner.phone || '01056528206'
+  const cardUrl     = `https://phlorotannin.com/p/${partnerLinkSlug}`
+  const shopPackagePath = `/p/${partnerLinkSlug}/shop-package/salon-growth-660`
+  const shopPackageUrl = `https://phlorotannin.com${shopPackagePath}`
   const partnerName = partner.name || '플로로탄닌 파트너스'
   const partnerTel  = partner.phoneDisplay || partner.phone
 
@@ -340,6 +345,33 @@ export default function InfoRoomPage() {
       return true  // 인앱 → 차단
     }
     return false   // 일반 브라우저 → 통과
+  }
+
+  async function copyShopPackageLink() {
+    try {
+      await navigator.clipboard.writeText(shopPackageUrl)
+      setShopLinkCopied(true)
+      setTimeout(() => setShopLinkCopied(false), 1600)
+    } catch {
+      window.prompt('샵 패키지 제안 링크를 복사해 주세요.', shopPackageUrl)
+    }
+  }
+
+  async function shareShopPackageLink() {
+    const payload = {
+      title: '플로로탄닌 샵 패키지 제안서',
+      text: '제품만 파는 샵보다 회복을 제안하는 샵을 위한 플로로탄닌 파트너스 샵 패키지 제안서입니다.',
+      url: shopPackageUrl,
+    }
+    if (navigator.share) {
+      try {
+        await navigator.share(payload)
+        return
+      } catch {
+        // 공유 취소나 미지원 환경에서는 링크 복사로 이어간다.
+      }
+    }
+    copyShopPackageLink()
   }
 
   /* ── QR dataURL 생성 헬퍼 ── */
@@ -604,6 +636,163 @@ export default function InfoRoomPage() {
               </svg>
             </div>
           </a>
+        </div>
+      </div>
+
+      {/* 샵 패키지 모바일 제안 링크 */}
+      <div style={{ background: '#fffdf7', borderBottom: '3px solid #e8dcc3', padding: '20px 16px' }}>
+        <div style={{
+          maxWidth: 800,
+          margin: '0 auto',
+          background: '#fff',
+          border: '2px solid #d8c18a',
+          borderRadius: 14,
+          overflow: 'hidden',
+          boxShadow: '0 8px 28px rgba(8, 46, 31, 0.10)',
+        }}>
+          <div style={{
+            background: 'linear-gradient(135deg, #063f2a 0%, #0b4a30 68%, #8a620d 100%)',
+            padding: '18px 18px 16px',
+            color: '#fff',
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8 }}>
+              <Smartphone size={17} color="#f0c45c" />
+              <span style={{ fontSize: 11, fontWeight: 900, letterSpacing: '1.6px', color: '#f0c45c' }}>
+                SHOP PACKAGE PROPOSAL
+              </span>
+            </div>
+            <h2 style={{ fontSize: 22, lineHeight: 1.32, fontWeight: 900, margin: 0 }}>
+              샵 패키지 모바일로 제안하기
+            </h2>
+            <p style={{ fontSize: 13, lineHeight: 1.75, margin: '8px 0 0', color: '#e7f2ea', fontWeight: 700 }}>
+              뷰티샵·피부관리실·힐링센터에 660만 원 샵 패키지와 검색되는 상담 구조를 한 번에 보여주는 전용 제안 페이지입니다.
+            </p>
+          </div>
+
+          <div style={{ padding: '18px' }}>
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
+              gap: 10,
+              marginBottom: 14,
+            }}>
+              {[
+                ['660만 원', '샵 패키지'],
+                ['약 1,200만 원', '판매 시 공급가 기준 매출 구조'],
+                ['약 50%', '마진 구조 · VAT 별도 기준'],
+              ].map(([value, label]) => (
+                <div key={value} style={{
+                  border: value === '660만 원' ? '2px solid #063f2a' : '1.5px solid #e0cfaa',
+                  borderRadius: 10,
+                  background: value === '약 50%' ? '#063f2a' : '#fffaf0',
+                  padding: '13px 14px',
+                }}>
+                  <div style={{ fontSize: 22, fontWeight: 900, color: value === '약 50%' ? '#fff' : value === '약 1,200만 원' ? '#9a6a0c' : '#063f2a', lineHeight: 1.15 }}>
+                    {value}
+                  </div>
+                  <div style={{ marginTop: 5, fontSize: 11, fontWeight: 900, color: value === '약 50%' ? '#f0c45c' : '#66766d', lineHeight: 1.45 }}>
+                    {label}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <p style={{ fontSize: 12.5, lineHeight: 1.7, color: '#4b5b52', fontWeight: 700, margin: '0 0 14px' }}>
+              이 링크는 메뉴와 사이트맵에 노출하지 않는 <strong style={{ color: '#063f2a' }}>파트너 공유 전용 noindex 페이지</strong>입니다.
+              샵 대표님에게 직접 받은 사람만 볼 수 있도록 전달해 주세요.
+            </p>
+
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 8,
+              border: '1.5px solid #e0cfaa',
+              borderRadius: 10,
+              background: '#fffdf7',
+              padding: '10px 12px',
+              marginBottom: 12,
+            }}>
+              <Link2 size={16} color="#8a620d" style={{ flexShrink: 0 }} />
+              <span style={{
+                flex: 1,
+                minWidth: 0,
+                fontSize: 12,
+                fontWeight: 800,
+                color: '#4b5b52',
+                overflowWrap: 'anywhere',
+              }}>
+                {shopPackageUrl}
+              </span>
+              {shopLinkCopied && <CheckCircle2 size={17} color="#047857" style={{ flexShrink: 0 }} />}
+            </div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 10 }}>
+              <button
+                type="button"
+                onClick={shareShopPackageLink}
+                style={{
+                  minHeight: 46,
+                  borderRadius: 10,
+                  border: 'none',
+                  background: '#063f2a',
+                  color: '#fff',
+                  fontSize: 14,
+                  fontWeight: 900,
+                  cursor: 'pointer',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: 8,
+                }}
+              >
+                <Share2 size={17} />
+                모바일로 제안하기
+              </button>
+              <button
+                type="button"
+                onClick={copyShopPackageLink}
+                style={{
+                  minHeight: 46,
+                  borderRadius: 10,
+                  border: '1.5px solid #d8c18a',
+                  background: '#fff8e5',
+                  color: '#8a620d',
+                  fontSize: 14,
+                  fontWeight: 900,
+                  cursor: 'pointer',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: 8,
+                }}
+              >
+                {shopLinkCopied ? <CheckCircle2 size={17} /> : <Copy size={17} />}
+                {shopLinkCopied ? '복사 완료' : '링크 복사'}
+              </button>
+              <a
+                href={shopPackagePath}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  minHeight: 46,
+                  borderRadius: 10,
+                  border: '1.5px solid #d5ded8',
+                  background: '#fff',
+                  color: '#063f2a',
+                  fontSize: 14,
+                  fontWeight: 900,
+                  textDecoration: 'none',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: 8,
+                }}
+              >
+                <ExternalLink size={17} />
+                미리보기 열기
+              </a>
+            </div>
+          </div>
         </div>
       </div>
 

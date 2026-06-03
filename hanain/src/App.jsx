@@ -21,6 +21,7 @@ import CategoryPage from './pages/CategoryPage'
 import BlogPage from './pages/BlogPage'
 import BlogPostPage from './pages/BlogPostPage'
 import InfoRoomPage from './pages/InfoRoomPage'
+import PartnerShopPackagePage from './pages/PartnerShopPackagePage'
 import CopyrightPage from './pages/CopyrightPage'
 import GlossaryPage from './pages/GlossaryPage'
 import ComparePage from './pages/ComparePage'
@@ -70,6 +71,8 @@ function AppInner() {
               <Route path="/p/:partnerSlug/learn" element={<LearnPage />} />
               <Route path="/p/:partnerSlug/question/write" element={<QuestionWritePage />} />
               <Route path="/p/:partnerSlug/inforoom" element={<InfoRoomPage />} />
+              <Route path="/p/:partnerSlug/shop-package" element={<PartnerShopPackagePage />} />
+              <Route path="/p/:partnerSlug/shop-package/:token" element={<PartnerShopPackagePage />} />
               <Route path="/p/:partnerSlug/glossary" element={<GlossaryPage />} />
               <Route path="/p/:partnerSlug/copyright" element={<CopyrightPage />} />
               <Route path="/p/:partnerSlug/safety" element={<SafetyPage />} />

@@ -459,6 +459,16 @@ function staticMetaFor(pathname) {
   // sitemap에는 미포함(noindex 의도)이나 외부 공유/실제 진입 가능 → canonical은 자기 자신을
   // 가리키고 home title 누출은 차단. /question/write·/admin·/community/post 등 작성/관리
   // 페이지는 noindex 의도 영역이라 robots 메타에 noindex,nofollow 신호도 함께 송신한다.
+  if (pathname === '/shop-package' || pathname.startsWith('/shop-package/')) {
+    return {
+      title: '샵 패키지 제안서 | 플로로탄닌 파트너스',
+      desc:  '파트너가 직접 공유한 플로로탄닌 샵 패키지 제안 페이지입니다. 660만 원 샵 패키지, 지역 검색 구조, 상담 연결, 운영 지원 흐름을 안내합니다.',
+      canonical: `${SITE}${pathname}`,
+      robots: 'noindex,follow',
+      ogImage: `${SITE}/partner/shop-package/shop-package-01.png`,
+      ogImageAlt: '플로로탄닌 파트너스 660만 원 샵 패키지 모바일 제안서',
+    }
+  }
   if (pathname === '/inforoom') {
     return {
       title: '정보실 | 플로로탄닌·감태추출물 자료 안내',
@@ -1844,7 +1854,11 @@ export default async function handler(req, res) {
     }
     if (partnerArchiveLogicalPathname) {
       const canonicalPath = partnerArchiveLogicalPathname.split('?')[0] || '/'
-      const canonical = canonicalPath === '/'
+      const isPrivateShopPackage = canonicalPath === '/shop-package' || canonicalPath.startsWith('/shop-package/')
+      const requestCanonicalPath = pathname.split('?')[0] || '/'
+      const canonical = isPrivateShopPackage
+        ? `${SITE}${requestCanonicalPath}`
+        : canonicalPath === '/'
         ? `${SITE}/`
         : `${SITE}${canonicalPath}`
       const robots = meta.robots && String(meta.robots).includes('nofollow')

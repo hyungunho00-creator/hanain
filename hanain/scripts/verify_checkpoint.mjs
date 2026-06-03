@@ -140,6 +140,7 @@ async function main() {
   assert(urls.length === EXPECTED.sitemapTotal, `sitemap total ${urls.length}`)
   assert(duplicates === 0, `sitemap duplicates ${duplicates}`)
   assert(noindexLike.length === 0, `sitemap noindex-like URLs ${noindexLike.length}`)
+  assert(!urls.some((url) => url.includes('/shop-package')), 'private shop package appears in sitemap')
   assert(!urls.some((url) => url.includes(EXPECTED.draftSlug)), 'draft slug appears in sitemap')
   assert(urls.filter((url) => url.includes('/q/')).length === EXPECTED.qCount, 'Q&A URL count changed')
   assert(urls.filter((url) => url.includes('/qa/tag/')).length === EXPECTED.tagCount, 'Q&A tag URL count changed')
@@ -161,6 +162,13 @@ async function main() {
     robotsIncludes: 'noindex',
   })
   results.push('partner archive canonical ok')
+
+  await checkPage('/p/test/shop-package/salon-growth-660', {
+    xRobots: 'noindex,follow',
+    canonical: `${SITE}/p/test/shop-package/salon-growth-660`,
+    robotsIncludes: 'noindex',
+  })
+  results.push('private shop package noindex ok')
 
   await checkPage('/blog/masld-fatty-liver-insulin-resistance-phlorotannin-2026', {
     source: 'posts-table',
