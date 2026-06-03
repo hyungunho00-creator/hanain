@@ -1,12 +1,12 @@
 # Current Working State
 
-Last verified: 2026-06-03 06:51 KST
+Last verified: 2026-06-03 09:46 KST
 
 Production domain:
 
 - `https://phlorotannin.com`
 - `https://www.phlorotannin.com` redirects to apex
-- Current verified deployment: `https://hanain-hdrmsmqxp-01056528206s-projects.vercel.app`
+- Current verified deployment: `https://hanain-der6bym14-01056528206s-projects.vercel.app`
 
 Branch:
 
@@ -24,7 +24,7 @@ What "current" means:
 Content sources:
 
 - Supabase `public.posts`: canonical published blog posts (`620` published current posts).
-- Local trend posts: `src/data/localTrendBlogPosts.js` + round modules (`57` posts, fallback/seed only).
+- Local trend posts: `src/data/localTrendBlogPosts.js` + round modules (`60` posts, fallback/seed only).
 - Local functional ingredient posts: `src/data/localFunctionalIngredientPosts.js` (`10` posts, fallback/seed only).
 - Local category posts: `src/data/localCategoryBlogPosts.js` (`20` posts, fallback/seed only).
 - Local SEO expansion posts: `src/data/localSeoExpansionPosts.js` (`105` posts, fallback/seed only).
@@ -52,13 +52,13 @@ Key local posts that must remain available:
 Expected production SEO signals:
 
 - `https://phlorotannin.com/sitemap.xml`
-  - total URLs: `2980`
+  - total URLs: `2989`
   - duplicate URLs: `0`
   - noindex-like URLs inside sitemap: `0`
-  - Q&A detail URLs: `1871`
+  - Q&A detail URLs: `1874`
   - Q&A tag URLs: `238`
-  - blog detail URLs: `620`
-  - insight detail URLs: `220`
+  - blog detail URLs: `623`
+  - insight detail URLs: `223`
 - `/qa?category=cancer_immune`
   - `X-Robots-Tag: noindex,nofollow`
   - canonical: `https://phlorotannin.com/qa`
@@ -558,6 +558,36 @@ Supabase note:
   - `npm run build` succeeded with sitemap `2980`, Q&A `1871`, tag `238`, blog `620`, insight `220`.
   - `npm run verify:checkpoint` passed on `https://phlorotannin.com`.
   - New blog routes returned `200` with `X-Seo-Source: posts-table`.
+  - New insight routes returned `200` with `X-Seo-Source: static`.
+  - New OG card routes, `/sitemap.xml`, and `/rss.xml` returned `200`.
+
+2026-06-03 KST health trend content update round 27:
+
+- Category rotation basis: refreshed `cardiovascular`, `neuro_cognitive`, and `cancer_immune` after round 26 covered musculoskeletal/mental/digestive.
+- Selected categories:
+  - `cardiovascular`
+  - `neuro_cognitive`
+  - `cancer_immune`
+- Added 3 local trend blog posts:
+  - `/blog/renal-denervation-resistant-hypertension-home-bp-abpm-record-2026`
+  - `/blog/tia-mini-stroke-fast-warning-symptom-time-record-2026`
+  - `/blog/immune-checkpoint-inhibitor-side-effect-organ-inflammation-record-2026`
+- Added 3 local insight posts:
+  - `/insights/renal-denervation-resistant-hypertension-home-bp-abpm-record-2026`
+  - `/insights/tia-mini-stroke-fast-warning-symptom-time-record-2026`
+  - `/insights/immune-checkpoint-inhibitor-side-effect-organ-inflammation-record-2026`
+- Added and deepened 3 Q&A items to both `public/qa.json` and `src/data/qa.json`.
+- Added 3 unified photo-style OG images under `public/og/content-quality`.
+- Source topics: ACC/FDA renal denervation and resistant hypertension records, CDC/NINDS FAST and TIA symptom-time records, NCI/ASCO immune-checkpoint inhibitor adverse-event and organ-inflammation records.
+- Supabase canonical note:
+  - Supabase MCP remained unavailable with upstream connection refusal.
+  - Public anon and authenticated admin-JWT upserts were correctly blocked by RLS (`42501`).
+  - Therefore these 3 blog routes currently verify as `X-Seo-Source: local-trend`, not `posts-table`.
+  - When MCP or service-role access is restored, insert only these three slugs into `public.posts` with `og_image` set to `/og-card/v20260602/<slug>.png`.
+- Verified production:
+  - `npm run build` succeeded with sitemap `2989`, Q&A `1874`, tag `238`, blog `623`, insight `223`.
+  - `npm run verify:checkpoint` passed on `https://phlorotannin.com`.
+  - New blog routes returned `200` with `X-Seo-Source: local-trend`.
   - New insight routes returned `200` with `X-Seo-Source: static`.
   - New OG card routes, `/sitemap.xml`, and `/rss.xml` returned `200`.
 
