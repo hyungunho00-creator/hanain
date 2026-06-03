@@ -30,76 +30,114 @@ import { usePartner } from '../context/PartnerContext'
 
 const SITE = 'https://phlorotannin.com'
 const SHARE_TOKEN = 'salon-growth-660'
+const HERO_IMAGE = '/partner/shop-package/salon-consult-hero.jpg'
 
-const metrics = [
+const topMetrics = [
   { label: '도입 패키지', value: '660만 원', helper: '샵 패키지 기준' },
   { label: '판매 시 공급가 기준', value: '약 1,200만 원', helper: '매출 구조 예시' },
-  { label: '마진 구조', value: '약 50%', helper: '부가가치세 별도 기준' },
+  { label: '예상 마진 구조', value: '약 50%', helper: '부가가치세 별도 기준' },
+]
+
+const ownerPainPoints = [
+  '좋은 제품을 들여도 고객에게 설명할 말이 부족하다',
+  '온라인에서는 샵 이름보다 가격 비교 글이 먼저 보인다',
+  '한 번 관리받고 끝나는 고객을 다시 상담으로 연결하고 싶다',
+  '부가 상품은 필요하지만 샵 이미지가 싸 보이는 건 싫다',
+]
+
+const productReasons = [
+  {
+    icon: Leaf,
+    title: '해조류 유래 폴리페놀이라는 분명한 스토리',
+    body: '플로로탄닌은 감태 등 갈조류에 존재하는 해양 폴리페놀 계열로, 항산화·염증 반응·대사 밸런스 연구에서 반복적으로 언급되는 소재입니다.',
+  },
+  {
+    icon: HeartPulse,
+    title: '샵 고객이 이해하기 쉬운 회복 관점',
+    body: '피부만 따로 보는 설명보다 컨디션, 수면, 스트레스, 장 건강, 생활 리듬까지 연결해 이야기할 수 있어 상담 소재가 넓어집니다.',
+  },
+  {
+    icon: Sparkles,
+    title: '고급 샵 이미지와 맞는 제안 방식',
+    body: '단순 판매 문구가 아니라 전용 웹, QR, 전단지, 전자명함이 함께 움직여 “우리 샵이 관리해준다”는 인상을 만듭니다.',
+  },
+  {
+    icon: ShieldCheck,
+    title: '치료·완치가 아닌 건강정보 중심',
+    body: '질병 치료 표현을 피하고, 연구 기반 건강정보와 생활 관리 관점으로 안내해 샵의 신뢰도를 지키는 방향으로 설계합니다.',
+  },
+]
+
+const territoryItems = [
+  {
+    title: '동기반 한 곳 우선 세팅',
+    body: '동일 동기반·동일 상권에서는 먼저 도입한 샵을 중심으로 전용 웹과 QR 제안 구조를 우선 세팅합니다.',
+  },
+  {
+    title: '지역 검색 문구 선점',
+    body: '지역명, 샵 유형, 상담 키워드를 먼저 쌓은 곳이 고객에게 먼저 설명될 가능성이 커집니다. 검색 자산은 늦게 시작할수록 따라잡기 어렵습니다.',
+  },
+  {
+    title: '샵 이름으로 남는 자료',
+    body: '전단지와 제안서 하단에는 파트너명, 연락처, QR이 자동 삽입됩니다. 자료를 받을수록 고객은 제품보다 “그 샵”을 기억합니다.',
+  },
 ]
 
 const supportItems = [
   {
-    icon: Wallet,
-    label: '수익 구조',
-    title: '기존 고객에게 자연스럽게 제안',
-    body: '제품만 소개하는 방식보다 상담 흐름과 함께 제안할 수 있어 샵의 부가 매출 구조를 만들기 쉽습니다.',
-  },
-  {
     icon: Monitor,
-    label: '전용 페이지',
-    title: '샵 소개와 상담 안내 연결',
-    body: '고객이 QR이나 링크로 들어왔을 때 파트너 정보, 제품 설명, 문의 버튼을 한 번에 확인할 수 있습니다.',
+    label: '전용 웹',
+    title: '샵 이름으로 보이는 안내 페이지',
+    body: '샵 소개, 상담 안내, 제품 설명, QR 문의 흐름이 담긴 전용 웹페이지를 제공합니다.',
   },
   {
     icon: Search,
-    label: '검색 구조',
-    title: '지역 고객이 찾는 흐름 준비',
-    body: '지역명, 샵명, 상담 키워드 중심으로 고객이 비교하고 문의할 수 있는 기본 구조를 잡습니다.',
+    label: '검색 흐름',
+    title: '지역 고객이 찾는 구조',
+    body: '지역명과 상담 키워드 중심으로 고객이 찾아보고 문의할 수 있는 기본 흐름을 잡습니다.',
   },
   {
     icon: ClipboardCheck,
-    label: '운영 가이드',
-    title: '처음 안내할 문구까지 정리',
-    body: '블로그, 카페, 인스타, 고객 안내 멘트처럼 바로 쓰기 어려운 초기 문구를 함께 준비합니다.',
+    label: '상담 문구',
+    title: '처음 안내할 말까지 준비',
+    body: '샵 대표가 바로 말할 수 있는 소개 문장, 고객 질문 대응 문구, 전단지 설명 포인트를 정리합니다.',
+  },
+  {
+    icon: Package,
+    label: '전단지',
+    title: 'QR 출력물 자동 연결',
+    body: '출력용 제안서와 자료에는 파트너 연락처와 QR이 자동 삽입되어 샵 상담으로 이어집니다.',
   },
   {
     icon: Headphones,
-    label: '상담 지원',
-    title: '필요할 때 운영 방향 상담',
-    body: '샵 상황에 맞춰 어떤 고객에게 어떻게 안내할지, 파트너 운영 흐름을 함께 조정합니다.',
+    label: '운영 상담',
+    title: '샵 상황별 운영 방향',
+    body: '피부관리실, 에스테틱, 힐링센터, 체형관리실 등 업종별로 제안 포인트를 함께 맞춥니다.',
   },
 ]
 
-const whyItems = [
+const conversationExamples = [
   {
-    icon: Package,
-    title: '제품만 설명하면 오래 남기 어렵습니다',
-    body: '고객은 가격보다 왜 필요한지, 내 상황과 어떤 관련이 있는지, 누구에게 상담할 수 있는지를 함께 봅니다.',
+    who: '샵 대표 관점',
+    quote: '제품 하나 더 들이는 게 아니라, 우리 샵 이름으로 고객이 다시 들어오는 구조라면 해볼 만하다.',
   },
   {
-    icon: Search,
-    title: 'AI 시대에는 검색되는 샵이 유리합니다',
-    body: '고객은 검색으로 비교하고, 페이지를 읽고, 신뢰가 생겼을 때 문의합니다. 샵도 검색 자산이 필요합니다.',
+    who: '고객 상담 관점',
+    quote: '이건 피부관리만이 아니라 컨디션과 생활 관리까지 같이 설명해줘서 이해가 쉽다.',
   },
   {
-    icon: HeartPulse,
-    title: '피부·컨디션·생활 회복 관점이 강합니다',
-    body: '피부만 따로 보지 않고 컨디션, 밸런스, 생활 관리 관점으로 설명할 때 상담 연결이 쉬워집니다.',
-  },
-  {
-    icon: TrendingUp,
-    title: '반복 상담은 구조가 만듭니다',
-    body: '제품, 콘텐츠, 상담 문구, QR 링크가 함께 쌓이면 단발 판매가 아니라 지속 문의 흐름을 만들 수 있습니다.',
+    who: '운영 관점',
+    quote: '전단지 QR을 찍으면 내 연락처와 제안 페이지가 바로 열리니까 설명 시간이 줄어든다.',
   },
 ]
 
 const recommendedShops = [
   '뷰티샵 / 피부관리실',
+  '에스테틱샵 / 스킨케어룸',
   '힐링센터 / 테라피샵',
-  '체형관리실 / 에스테틱샵',
-  '기존 고객에게 부가 상품을 자연스럽게 제안하고 싶은 곳',
-  '온라인 홍보와 지역 고객 상담 연결을 강화하고 싶은 곳',
-  '제품 판매와 브랜드 신뢰를 함께 키우고 싶은 곳',
+  '체형관리실 / 웰니스샵',
+  '기존 고객에게 고급 부가 상품을 제안하고 싶은 곳',
+  '지역 검색과 온라인 상담 연결을 강화하고 싶은 곳',
 ]
 
 function onlyDigits(value) {
@@ -123,68 +161,31 @@ function safePartnerSlug(partner, paramsSlug) {
   )
 }
 
-function MetricCard({ label, value, helper }) {
+function MetricCard({ label, value, helper, dark = false }) {
   return (
-    <div className="rounded-lg border-2 border-[#d8be78] bg-white p-4 shadow-sm">
-      <p className="text-xs font-black tracking-[0.08em] text-[#7b6a46]">{label}</p>
-      <p className="mt-1 text-3xl font-black leading-tight text-[#063f2a]">{value}</p>
-      <p className="mt-2 text-xs font-bold text-[#7a817b]">{helper}</p>
+    <div className={dark ? 'rounded-lg border border-[#d8be78] bg-[#063f2a] p-4 text-white' : 'rounded-lg border border-[#e2d4ad] bg-white p-4'}>
+      <p className={dark ? 'text-xs font-black tracking-[0.08em] text-[#f3d57a]' : 'text-xs font-black tracking-[0.08em] text-[#7b6a46]'}>{label}</p>
+      <p className={dark ? 'mt-1 text-3xl font-black leading-tight text-white' : 'mt-1 text-3xl font-black leading-tight text-[#063f2a]'}>{value}</p>
+      <p className={dark ? 'mt-2 text-xs font-bold text-[#f3e7c3]' : 'mt-2 text-xs font-bold text-[#7a817b]'}>{helper}</p>
     </div>
   )
 }
 
-function ProductVisual() {
+function SectionTitle({ kicker, title, body }) {
   return (
-    <div className="relative min-h-[390px] overflow-hidden rounded-lg border border-[#dec78f] bg-[#fffaf0] p-5 shadow-xl shadow-[#0b2f1f]/10">
-      <div className="absolute right-[-48px] top-[-50px] h-44 w-44 rounded-full border border-[#ecd9aa]" />
-      <div className="absolute bottom-[-68px] left-[-58px] h-48 w-48 rounded-full border border-[#ecd9aa]" />
-      <div className="relative flex h-full flex-col justify-between">
-        <div>
-          <div className="inline-flex items-center gap-2 rounded-full bg-[#063f2a] px-4 py-2 text-xs font-black tracking-[0.12em] text-[#f3c75d]">
-            <Leaf size={15} />
-            FLORO TANNIN PARTNERS
-          </div>
-          <h2 className="mt-5 text-3xl font-black leading-tight text-[#071b12]">
-            샵 대표님이 바로 이해하는
-            <span className="block text-[#0b4a30]">수익 + 검색 + 상담 구조</span>
-          </h2>
-          <p className="mt-4 text-sm font-bold leading-7 text-[#5f6b62]">
-            고정 이미지를 보여주는 페이지가 아니라, 파트너 정보와 QR이 자동으로 들어가는 제안서입니다.
-          </p>
-        </div>
-
-        <div className="mt-8 grid grid-cols-[1fr_120px] items-end gap-4">
-          <div className="space-y-3">
-            {['부가수익', '지역 검색 노출', '고객 신뢰 상승'].map((text) => (
-              <div key={text} className="flex items-center gap-2 rounded-lg border border-[#e0cfaa] bg-white px-3 py-2 text-sm font-black text-[#22352b]">
-                <CheckCircle2 size={17} className="text-[#0b4a30]" />
-                {text}
-              </div>
-            ))}
-          </div>
-          <div className="relative h-52">
-            <div className="absolute bottom-0 right-4 h-44 w-20 rounded-md border-2 border-[#082818] bg-[#063f2a] shadow-xl">
-              <div className="mx-auto mt-4 h-7 w-7 rounded-full border border-[#f0c45c]" />
-              <div className="mx-auto mt-4 h-16 w-12 rounded-sm border border-[#f0c45c]" />
-              <p className="mt-3 text-center text-[10px] font-black leading-3 text-[#f0c45c]">FLORO<br />TANNIN</p>
-            </div>
-            <div className="absolute bottom-0 left-0 h-28 w-14 rounded-b-lg rounded-t-2xl border-2 border-[#082818] bg-[#103b29] shadow-lg">
-              <div className="mx-auto mt-2 h-3 w-8 rounded-full bg-[#d5b35b]" />
-              <div className="mx-auto mt-5 h-10 w-8 rounded-sm border border-[#f0c45c]" />
-            </div>
-            <div className="absolute bottom-28 left-3 h-8 w-8 rounded-full border-2 border-[#d5b35b] bg-[#fff8e5]" />
-          </div>
-        </div>
-      </div>
+    <div className="mx-auto mb-7 max-w-3xl text-center">
+      <p className="text-xs font-black tracking-[0.2em] text-[#a06f10]">{kicker}</p>
+      <h2 className="mt-2 text-3xl font-black leading-tight text-[#071b12] md:text-4xl">{title}</h2>
+      {body && <p className="mt-3 text-base font-semibold leading-8 text-[#59645f]">{body}</p>}
     </div>
   )
 }
 
 function PartnerContact({ partnerName, phoneDisplay, phone, pageUrl, cardUrl }) {
   return (
-    <div className="mt-5 grid gap-3 rounded-lg border-2 border-[#063f2a] bg-white p-4 sm:grid-cols-[1fr_auto]">
+    <div className="grid gap-4 rounded-lg border-2 border-[#063f2a] bg-white p-4 shadow-lg shadow-[#0b2f1f]/10 sm:grid-cols-[1fr_auto]">
       <div>
-        <p className="text-xs font-black tracking-[0.16em] text-[#a06f10]">PARTNER CONTACT</p>
+        <p className="text-xs font-black tracking-[0.16em] text-[#a06f10]">상담 담당 파트너</p>
         <p className="mt-1 text-2xl font-black text-[#071b12]">{partnerName}</p>
         <p className="mt-1 text-xl font-black text-[#063f2a]">{phoneDisplay}</p>
         <p className="mt-2 break-all text-xs font-semibold leading-5 text-[#607166]">제안 링크: {pageUrl}</p>
@@ -192,7 +193,7 @@ function PartnerContact({ partnerName, phoneDisplay, phone, pageUrl, cardUrl }) 
       </div>
       <div className="flex items-center gap-3">
         <div className="rounded-md border border-[#d8c18a] bg-white p-2">
-          <QRCodeCanvas value={pageUrl} size={92} includeMargin={false} fgColor="#063f2a" />
+          <QRCodeCanvas value={pageUrl} size={96} includeMargin={false} fgColor="#063f2a" />
         </div>
         <div className="grid gap-2">
           <a href={`tel:${phone}`} className="inline-flex min-h-10 items-center justify-center gap-2 rounded-lg bg-[#063f2a] px-4 text-sm font-black text-white">
@@ -231,7 +232,7 @@ function ProposalSheet({ page, title, subtitle, children, partnerName, phoneDisp
           <p className="mt-1 break-all text-xs font-bold text-[#66766d]">{pageUrl}</p>
         </div>
         <div className="rounded-md border border-[#d8c18a] bg-white p-2">
-          <QRCodeCanvas value={pageUrl} size={72} includeMargin={false} fgColor="#063f2a" />
+          <QRCodeCanvas value={pageUrl} size={74} includeMargin={false} fgColor="#063f2a" />
         </div>
       </div>
     </article>
@@ -326,7 +327,7 @@ export default function PartnerShopPackagePage() {
   async function shareLink() {
     const payload = {
       title: '플로로탄닌 샵 패키지 제안서',
-      text: `${partnerName} 파트너가 전달드리는 샵 패키지 제안서입니다.`,
+      text: `${partnerName} 파트너가 전달드리는 샵 전용 웹·QR·전단지 제안서입니다.`,
       url: pageUrl,
     }
 
@@ -346,20 +347,20 @@ export default function PartnerShopPackagePage() {
   }
 
   return (
-    <div className="shop-print-root min-h-screen bg-[#f7f3ea]">
+    <div className="shop-print-root min-h-screen bg-[#f8f5ed]">
       <SEOHead
         title="플로로탄닌 파트너스 샵 패키지 제안서"
         description="파트너 공유 전용 플로로탄닌 샵 패키지 제안 페이지입니다."
         canonical={pageUrl}
         ogUrl={pageUrl}
-        ogImage={`${SITE}/partner/shop-package/shop-package-01.png`}
-        ogImageAlt="플로로탄닌 파트너스 샵 패키지 제안서 미리보기"
+        ogImage={`${SITE}${HERO_IMAGE}`}
+        ogImageAlt="프리미엄 샵 상담 장면과 플로로탄닌 파트너스 제안서"
         noindex={true}
       />
       <PrintStyles />
 
       <section className="shop-no-print border-b border-[#e6d7b3] bg-white">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-5 py-3 md:px-8">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-5 py-3 md:px-8">
           <div className="inline-flex items-center gap-2 rounded-full border border-[#d8c18a] bg-[#fff8e5] px-3 py-2 text-xs font-black text-[#7c5a12]">
             <Lock size={14} />
             파트너 공유 전용 · 검색 노출 제외
@@ -371,46 +372,41 @@ export default function PartnerShopPackagePage() {
         </div>
       </section>
 
-      <section className="shop-no-print bg-[#fffdf7] py-10 md:py-14">
-        <div className="mx-auto grid max-w-6xl gap-8 px-5 md:grid-cols-[1.05fr_0.95fr] md:px-8">
-          <div>
+      <section
+        className="shop-no-print relative min-h-[720px] overflow-hidden bg-[#f5efe3]"
+        style={{
+          backgroundImage: `linear-gradient(90deg, rgba(255,253,247,0.98) 0%, rgba(255,253,247,0.92) 39%, rgba(255,253,247,0.45) 61%, rgba(255,253,247,0.06) 100%), url("${HERO_IMAGE}")`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <div className="mx-auto flex min-h-[720px] max-w-7xl items-center px-5 py-14 md:px-8">
+          <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 rounded-full bg-[#063f2a] px-4 py-2 text-xs font-black tracking-[0.14em] text-[#f0c45c]">
               <Leaf size={15} />
               SHOP PACKAGE PROPOSAL
             </div>
-            <h1 className="mt-5 text-4xl font-black leading-tight text-[#071b12] md:text-6xl">
-              제품만 파는 샵보다
-              <span className="block text-[#0b4a30]">상담으로 이어지는 샵이</span>
-              선택받습니다
+            <h1 className="mt-6 text-4xl font-black leading-[1.08] text-[#071b12] md:text-6xl">
+              샵 대표님,
+              <span className="block text-[#0b4a30]">제품을 하나 더 들이는 게 아니라</span>
+              지역 상담 구조를 먼저 선점하는 겁니다
             </h1>
-            <p className="mt-5 max-w-2xl text-lg font-bold leading-9 text-[#4f5f55]">
-              660만 원 샵 패키지를 단순 상품 제안이 아니라, 고객이 검색하고 이해하고 문의하는 구조로 보여주는 파트너 전용 제안서입니다.
+            <p className="mt-6 max-w-2xl text-lg font-bold leading-9 text-[#45584d] md:text-xl">
+              플로로탄닌 샵 패키지는 제품, 샵 전용 웹, QR 전단지, 상담 문구를 한 번에 묶어 고객이 “어디서 사야 하는지”까지 기억하게 만드는 제안 구조입니다.
             </p>
 
-            <div className="mt-6 grid gap-3 sm:grid-cols-3">
-              {metrics.map((metric) => <MetricCard key={metric.label} {...metric} />)}
+            <div className="mt-7 grid gap-3 sm:grid-cols-3">
+              {topMetrics.map((metric, index) => <MetricCard key={metric.label} {...metric} dark={index === 2} />)}
             </div>
 
-            <PartnerContact
-              partnerName={partnerName}
-              phoneDisplay={phoneDisplay}
-              phone={phone}
-              pageUrl={pageUrl}
-              cardUrl={cardUrl}
-            />
-
-            <div className="mt-5 flex flex-wrap gap-3">
-              <a href={`tel:${phone}`} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-[#063f2a] px-5 text-sm font-black text-white shadow-lg shadow-[#063f2a]/20">
-                <Phone size={18} />
-                바로 문의하기
-              </a>
-              <button type="button" onClick={shareLink} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg border border-[#d8c18a] bg-white px-5 text-sm font-black text-[#063f2a]">
+            <div className="mt-7 flex flex-wrap gap-3">
+              <button type="button" onClick={shareLink} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-[#063f2a] px-5 text-sm font-black text-white shadow-lg shadow-[#063f2a]/20">
                 <Share2 size={18} />
-                모바일로 제안하기
+                샵 대표에게 바로 공유
               </button>
               <button type="button" onClick={printProposal} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg border border-[#d8c18a] bg-[#fff8e5] px-5 text-sm font-black text-[#8a620d]">
                 <Printer size={18} />
-                출력용 전단지
+                출력 제안서 보기
               </button>
               <button type="button" onClick={copyLink} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg border border-[#d8c18a] bg-white px-5 text-sm font-black text-[#063f2a]">
                 <Copy size={18} />
@@ -418,31 +414,72 @@ export default function PartnerShopPackagePage() {
               </button>
             </div>
 
-            <div className="mt-4 flex flex-wrap gap-3 text-xs font-bold text-[#6d7a71]">
-              <span className="inline-flex items-center gap-1.5"><ShieldCheck size={14} /> noindex 비공개 제안 페이지</span>
-              <span className="inline-flex items-center gap-1.5"><Users size={14} /> 파트너 정보 자동 삽입</span>
-              <span className="inline-flex items-center gap-1.5"><Store size={14} /> 샵·센터 제안용</span>
+            <div className="mt-6 max-w-2xl">
+              <PartnerContact
+                partnerName={partnerName}
+                phoneDisplay={phoneDisplay}
+                phone={phone}
+                pageUrl={pageUrl}
+                cardUrl={cardUrl}
+              />
             </div>
           </div>
-
-          <ProductVisual />
         </div>
       </section>
 
-      <section className="shop-no-print bg-white py-10">
+      <section className="shop-no-print bg-white py-12">
         <div className="mx-auto max-w-6xl px-5 md:px-8">
-          <div className="mb-6 text-center">
-            <p className="text-xs font-black tracking-[0.18em] text-[#a06f10]">WHY NOW</p>
-            <h2 className="mt-2 text-3xl font-black text-[#071b12]">샵 대표님이 계약하고 싶어지는 이유</h2>
+          <SectionTitle
+            kicker="SHOP OWNER REALITY"
+            title="샵 대표가 계약을 망설이는 이유부터 풀어야 합니다"
+            body="대표님들은 제품 설명보다 먼저 “이게 우리 샵 매출과 고객 재방문에 도움이 되는가”를 봅니다."
+          />
+          <div className="grid gap-3 md:grid-cols-2">
+            {ownerPainPoints.map((text) => (
+              <div key={text} className="flex items-start gap-3 rounded-lg border border-[#e8dfc9] bg-[#fffdf8] px-5 py-4">
+                <CheckCircle2 size={21} className="mt-0.5 shrink-0 text-[#0b4a30]" />
+                <p className="text-base font-black leading-7 text-[#24362d]">{text}</p>
+              </div>
+            ))}
           </div>
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-            {whyItems.map((item, index) => (
-              <div key={item.title} className="rounded-lg border border-[#e2d6bd] bg-[#fffdf7] p-5">
-                <div className="mb-4 flex items-center justify-between gap-3">
-                  <span className="rounded-full bg-[#063f2a] px-3 py-1 text-xs font-black text-white">{String(index + 1).padStart(2, '0')}</span>
-                  <item.icon size={30} className="text-[#a06f10]" />
-                </div>
-                <h3 className="text-lg font-black leading-7 text-[#071b12]">{item.title}</h3>
+        </div>
+      </section>
+
+      <section className="shop-no-print bg-[#063f2a] py-12 text-white">
+        <div className="mx-auto grid max-w-6xl gap-8 px-5 md:grid-cols-[0.9fr_1.1fr] md:px-8">
+          <div>
+            <p className="text-xs font-black tracking-[0.2em] text-[#f0c45c]">FIRST MOVER ADVANTAGE</p>
+            <h2 className="mt-3 text-3xl font-black leading-tight md:text-4xl">
+              샵 전용 웹은 먼저 잡은 곳이 유리합니다
+            </h2>
+            <p className="mt-4 text-base font-semibold leading-8 text-[#dce7df]">
+              같은 상권에서 모두에게 똑같은 웹 구조를 뿌리면 가치가 떨어집니다. 먼저 시작한 샵이 자기 이름으로 검색 문구, QR, 전단지, 상담 흐름을 쌓아야 합니다.
+            </p>
+          </div>
+          <div className="grid gap-4">
+            {territoryItems.map((item, index) => (
+              <div key={item.title} className="rounded-lg border border-[#caa85a] bg-white p-5 text-[#071b12]">
+                <p className="text-xs font-black text-[#a06f10]">0{index + 1}</p>
+                <h3 className="mt-1 text-xl font-black">{item.title}</h3>
+                <p className="mt-2 text-sm font-semibold leading-7 text-[#59645f]">{item.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="shop-no-print bg-[#fbf7ed] py-12">
+        <div className="mx-auto max-w-6xl px-5 md:px-8">
+          <SectionTitle
+            kicker="WHY PHLOROTANNIN"
+            title="제품이 좋아야 상담 구조도 오래 갑니다"
+            body="샵 고객은 “왜 이 제품이어야 하는지”를 묻습니다. 그래서 제품 스토리, 연구 소재, 생활 관리 관점이 함께 있어야 합니다."
+          />
+          <div className="grid gap-4 md:grid-cols-2">
+            {productReasons.map((item) => (
+              <div key={item.title} className="rounded-lg border border-[#e2d6bd] bg-white p-6">
+                <item.icon size={32} className="mb-4 text-[#0b4a30]" />
+                <h3 className="text-xl font-black leading-7 text-[#071b12]">{item.title}</h3>
                 <p className="mt-3 text-sm font-semibold leading-7 text-[#59645f]">{item.body}</p>
               </div>
             ))}
@@ -450,25 +487,34 @@ export default function PartnerShopPackagePage() {
         </div>
       </section>
 
-      <section className="shop-no-print bg-[#063f2a] py-9 text-white">
-        <div className="mx-auto max-w-6xl px-5 text-center md:px-8">
-          <Sparkles size={28} className="mx-auto mb-3 text-[#f0c45c]" />
-          <p className="text-2xl font-black leading-9 md:text-3xl">
-            좋은 제품 + 검색되는 구조 + 회복 관점 상담 = 오래가는 샵
-          </p>
+      <section className="shop-no-print bg-white py-12">
+        <div className="mx-auto max-w-6xl px-5 md:px-8">
+          <SectionTitle
+            kicker="FIELD REACTION"
+            title="샵 대표가 바로 이해하는 반응 포인트"
+            body="허위 후기를 만들지 않고, 제안 현장에서 바로 나오는 판단 기준을 대화 형식으로 정리했습니다."
+          />
+          <div className="grid gap-4 md:grid-cols-3">
+            {conversationExamples.map((item) => (
+              <div key={item.who} className="rounded-lg border border-[#e2d6bd] bg-[#fffdf8] p-6">
+                <p className="text-xs font-black tracking-[0.14em] text-[#a06f10]">{item.who}</p>
+                <p className="mt-4 text-lg font-black leading-8 text-[#071b12]">“{item.quote}”</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="shop-no-print bg-white py-10">
+      <section className="shop-no-print bg-[#f8f5ed] py-12">
         <div className="mx-auto max-w-6xl px-5 md:px-8">
-          <div className="mb-6 text-center">
-            <p className="text-xs font-black tracking-[0.18em] text-[#a06f10]">PARTNER SUPPORT</p>
-            <h2 className="mt-2 text-3xl font-black text-[#071b12]">파트너가 받는 실제 지원</h2>
-          </div>
-
+          <SectionTitle
+            kicker="WHAT PARTNER GETS"
+            title="파트너가 실제로 받는 것"
+            body="제품만 공급하고 끝나는 구조가 아니라, 샵이 고객에게 설명하고 공유하고 문의받을 수 있는 세트를 제공합니다."
+          />
           <div className="grid gap-4 lg:grid-cols-5">
             {supportItems.map((item, index) => (
-              <div key={item.label} className="rounded-lg border border-[#e2d6bd] bg-[#fffdf7] p-5">
+              <div key={item.label} className="rounded-lg border border-[#e2d6bd] bg-white p-5">
                 <div className="mb-4 flex items-center justify-between gap-3">
                   <span className="rounded-full bg-[#063f2a] px-3 py-1 text-xs font-black text-white">{String(index + 1).padStart(2, '0')}</span>
                   <item.icon size={30} className="text-[#0b4a30]" />
@@ -482,18 +528,18 @@ export default function PartnerShopPackagePage() {
         </div>
       </section>
 
-      <section className="shop-no-print border-y border-[#e8dcc3] bg-[#fbf7ed] py-10">
-        <div className="mx-auto grid max-w-6xl gap-6 px-5 md:grid-cols-[0.92fr_1.08fr] md:px-8">
+      <section className="shop-no-print bg-white py-12">
+        <div className="mx-auto grid max-w-6xl gap-8 px-5 md:grid-cols-[0.9fr_1.1fr] md:px-8">
           <div>
             <p className="text-xs font-black tracking-[0.18em] text-[#a06f10]">RECOMMENDED</p>
-            <h2 className="mt-2 text-3xl font-black text-[#071b12]">이런 샵·센터에 특히 추천합니다</h2>
+            <h2 className="mt-2 text-3xl font-black leading-tight text-[#071b12]">이런 샵·센터에 특히 추천합니다</h2>
             <p className="mt-4 text-base font-semibold leading-8 text-[#59645f]">
-              고객과 이미 만나는 공간이라면 단순 제품 판매보다 상담과 신뢰가 남는 구조가 더 중요합니다.
+              이미 고객과 만나는 공간이라면 제품보다 “상담 이유”가 더 중요합니다. 플로로탄닌은 샵의 고급 부가 상담 소재로 쓰기 좋습니다.
             </p>
           </div>
           <div className="grid gap-3">
             {recommendedShops.map((text) => (
-              <div key={text} className="flex items-start gap-3 rounded-lg border border-[#e2d6bd] bg-white px-4 py-3">
+              <div key={text} className="flex items-start gap-3 rounded-lg border border-[#e2d6bd] bg-[#fffdf8] px-4 py-3">
                 <CheckCircle2 size={20} className="mt-0.5 shrink-0 text-[#0b4a30]" />
                 <p className="text-sm font-black leading-7 text-[#24362d]">{text}</p>
               </div>
@@ -502,14 +548,14 @@ export default function PartnerShopPackagePage() {
         </div>
       </section>
 
-      <section className="proposal-print-wrap bg-white py-10">
+      <section className="proposal-print-wrap bg-white py-12">
         <div className="proposal-print-inner mx-auto max-w-5xl px-5 md:px-8">
           <div className="shop-no-print mb-6 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="text-xs font-black tracking-[0.18em] text-[#a06f10]">PRINTABLE PROPOSAL</p>
               <h2 className="mt-2 text-3xl font-black text-[#071b12]">파트너 정보가 자동 삽입되는 출력용 4장 제안서</h2>
               <p className="mt-2 text-sm font-bold leading-7 text-[#66766d]">
-                아래 4장은 고정 이미지가 아니라 실제 HTML 출력물입니다. 인쇄하면 파트너명, 연락처, 제안 QR이 각 장 하단에 들어갑니다.
+                고정 이미지가 아니라 실제 출력물입니다. 인쇄하면 파트너명, 연락처, 제안 QR이 각 장 하단에 들어갑니다.
               </p>
             </div>
             <button
@@ -525,23 +571,19 @@ export default function PartnerShopPackagePage() {
           <div className="proposal-print-list grid gap-6">
             <ProposalSheet
               page="1"
-              title="제품만 파는 샵보다 상담으로 이어지는 샵이 선택받습니다"
-              subtitle="AI 시대, 고객은 좋은 제품만 보지 않습니다. 검색되고, 이해되고, 바로 문의할 수 있는 샵을 찾습니다."
+              title="우리 샵 이름으로 고객이 다시 들어오게 만듭니다"
+              subtitle="제품 제안, 전용 웹, QR, 상담 문구가 하나로 연결될 때 고객은 제품보다 샵을 기억합니다."
               partnerName={partnerName}
               phoneDisplay={phoneDisplay}
               pageUrl={pageUrl}
             >
-              <div className="grid gap-4 md:grid-cols-[1fr_260px]">
+              <div className="grid gap-5 md:grid-cols-[1fr_0.9fr]">
                 <div>
                   <div className="grid gap-3 sm:grid-cols-3">
-                    {metrics.map((metric) => <MetricCard key={metric.label} {...metric} />)}
+                    {topMetrics.map((metric, index) => <MetricCard key={metric.label} {...metric} dark={index === 2} />)}
                   </div>
                   <div className="mt-5 grid gap-3">
-                    {[
-                      '기존 고객에게 자연스럽게 부가 상품을 제안할 수 있습니다.',
-                      '지역 검색과 상담 연결 구조를 함께 세팅합니다.',
-                      '제품 설명보다 회복 관점의 콘텐츠로 신뢰를 쌓습니다.',
-                    ].map((text) => (
+                    {ownerPainPoints.slice(0, 3).map((text) => (
                       <div key={text} className="flex items-start gap-3 rounded-lg border border-[#e2d6bd] bg-white px-4 py-3">
                         <CheckCircle2 size={20} className="mt-0.5 shrink-0 text-[#0b4a30]" />
                         <p className="text-sm font-black leading-7 text-[#24362d]">{text}</p>
@@ -549,93 +591,81 @@ export default function PartnerShopPackagePage() {
                     ))}
                   </div>
                 </div>
-                <ProductVisual />
+                <img src={HERO_IMAGE} alt="프리미엄 샵 상담 장면" className="h-full min-h-[280px] rounded-lg border border-[#e2d6bd] object-cover" />
               </div>
             </ProposalSheet>
 
             <ProposalSheet
               page="2"
-              title="왜 지금 시작해야 할까요?"
-              subtitle="안티에이징도, 웰니스도, 결국 고객은 몸 전체의 균형과 생활 회복 관점을 찾습니다."
+              title="먼저 시작한 샵이 지역 상담 흐름을 선점합니다"
+              subtitle="동기반 한 곳 우선 세팅, 지역 검색 문구, QR 전단지가 함께 쌓이면 샵 이름이 고객 기억에 남습니다."
               partnerName={partnerName}
               phoneDisplay={phoneDisplay}
               pageUrl={pageUrl}
             >
-              <div className="grid gap-4 md:grid-cols-2">
-                {whyItems.map((item, index) => (
-                  <div key={item.title} className="rounded-lg border border-[#e0cfaa] bg-white p-4">
-                    <div className="mb-3 flex items-center gap-3">
-                      <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#063f2a] text-xs font-black text-white">
-                        {String(index + 1).padStart(2, '0')}
-                      </div>
-                      <item.icon size={25} className="text-[#a06f10]" />
-                    </div>
-                    <h3 className="text-lg font-black leading-7 text-[#071b12]">{item.title}</h3>
-                    <p className="mt-2 text-sm font-semibold leading-7 text-[#59645f]">{item.body}</p>
+              <div className="grid gap-4 md:grid-cols-3">
+                {territoryItems.map((item, index) => (
+                  <div key={item.title} className="rounded-lg border border-[#e0cfaa] bg-white p-5">
+                    <p className="text-xs font-black text-[#a06f10]">0{index + 1}</p>
+                    <h3 className="mt-2 text-lg font-black leading-7 text-[#071b12]">{item.title}</h3>
+                    <p className="mt-3 text-sm font-semibold leading-7 text-[#59645f]">{item.body}</p>
                   </div>
                 ))}
               </div>
               <div className="mt-5 rounded-lg bg-[#063f2a] px-5 py-4 text-center text-xl font-black leading-8 text-[#f0c45c]">
-                회복은 한 부위가 아니라 전체 시스템의 이야기입니다
+                같은 자료라도, 내 샵 이름과 QR로 남아야 가치가 있습니다
               </div>
             </ProposalSheet>
 
             <ProposalSheet
               page="3"
-              title="파트너가 되면 수익도 만들고 샵도 더 강해집니다"
-              subtitle="좋은 제품, 검색되는 시스템, 초기 운영 지원까지 함께 가져가는 구조입니다."
+              title="플로로탄닌은 샵 상담 소재로 설명하기 좋습니다"
+              subtitle="해조류 유래 폴리페놀, 항산화와 밸런스 연구 소재, 생활 회복 관점이 함께 있어 고객 이해가 쉽습니다."
               partnerName={partnerName}
               phoneDisplay={phoneDisplay}
               pageUrl={pageUrl}
             >
-              <div className="grid gap-4 md:grid-cols-5">
-                {supportItems.map((item, index) => (
-                  <div key={item.label} className="rounded-lg border border-[#e2d6bd] bg-white p-4">
-                    <span className="rounded-full bg-[#063f2a] px-3 py-1 text-xs font-black text-white">{String(index + 1).padStart(2, '0')}</span>
-                    <item.icon size={28} className="mt-4 text-[#0b4a30]" />
-                    <p className="mt-3 text-xs font-black text-[#a06f10]">{item.label}</p>
-                    <h3 className="mt-2 text-base font-black leading-6 text-[#071b12]">{item.title}</h3>
-                    <p className="mt-2 text-xs font-semibold leading-6 text-[#59645f]">{item.body}</p>
+              <div className="grid gap-4 md:grid-cols-2">
+                {productReasons.map((item) => (
+                  <div key={item.title} className="rounded-lg border border-[#e2d6bd] bg-white p-5">
+                    <item.icon size={28} className="text-[#0b4a30]" />
+                    <h3 className="mt-3 text-lg font-black leading-7 text-[#071b12]">{item.title}</h3>
+                    <p className="mt-2 text-sm font-semibold leading-7 text-[#59645f]">{item.body}</p>
                   </div>
                 ))}
-              </div>
-              <div className="mt-5 grid gap-3 sm:grid-cols-3">
-                {metrics.map((metric) => <MetricCard key={metric.label} {...metric} />)}
               </div>
             </ProposalSheet>
 
             <ProposalSheet
               page="4"
-              title="이런 샵·센터에 특히 추천합니다"
-              subtitle="제품만 공급받는 제안보다, 고객이 궁금해하고 상담으로 이어지는 구조가 필요한 곳에 맞습니다."
+              title="지금 필요한 건 제품 설명서가 아니라 계약하고 싶어지는 제안 구조입니다"
+              subtitle="샵 대표가 바로 판단할 수 있도록 수익 구조, 전용 웹, 고객 상담, 출력 QR까지 한 번에 보여드립니다."
               partnerName={partnerName}
               phoneDisplay={phoneDisplay}
               pageUrl={pageUrl}
             >
               <div className="grid gap-5 md:grid-cols-[1fr_0.9fr]">
                 <div className="grid gap-3">
-                  {recommendedShops.map((text) => (
-                    <div key={text} className="flex items-start gap-3 rounded-lg border border-[#e2d6bd] bg-white px-4 py-3">
-                      <CheckCircle2 size={20} className="mt-0.5 shrink-0 text-[#0b4a30]" />
-                      <p className="text-sm font-black leading-7 text-[#24362d]">{text}</p>
+                  {conversationExamples.map((item) => (
+                    <div key={item.who} className="rounded-lg border border-[#e2d6bd] bg-white px-4 py-3">
+                      <p className="text-xs font-black text-[#a06f10]">{item.who}</p>
+                      <p className="mt-2 text-sm font-black leading-7 text-[#24362d]">“{item.quote}”</p>
                     </div>
                   ))}
                 </div>
-                <div>
-                  <div className="rounded-lg border-2 border-[#063f2a] bg-[#fff8e5] p-5">
-                    <p className="text-sm font-black tracking-[0.16em] text-[#a06f10]">NEXT STEP</p>
-                    <h3 className="mt-2 text-2xl font-black leading-9 text-[#071b12]">
-                      연락 주시면 샘플 체험과 자세한 자료로 안내드리겠습니다
-                    </h3>
-                    <div className="mt-5 flex items-center gap-4">
-                      <div className="rounded-md border border-[#d8c18a] bg-white p-2">
-                        <QRCodeCanvas value={pageUrl} size={112} includeMargin={false} fgColor="#063f2a" />
-                      </div>
-                      <div>
-                        <p className="text-sm font-black text-[#66766d]">상담 담당</p>
-                        <p className="mt-1 text-2xl font-black text-[#063f2a]">{partnerName}</p>
-                        <p className="mt-1 text-xl font-black text-[#071b12]">{phoneDisplay}</p>
-                      </div>
+                <div className="rounded-lg border-2 border-[#063f2a] bg-[#fff8e5] p-5">
+                  <p className="text-sm font-black tracking-[0.16em] text-[#a06f10]">NEXT STEP</p>
+                  <h3 className="mt-2 text-2xl font-black leading-9 text-[#071b12]">
+                    상담 주시면 샵 상황에 맞는 도입 방향과 자료를 안내드리겠습니다
+                  </h3>
+                  <div className="mt-5 flex items-center gap-4">
+                    <div className="rounded-md border border-[#d8c18a] bg-white p-2">
+                      <QRCodeCanvas value={pageUrl} size={112} includeMargin={false} fgColor="#063f2a" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-black text-[#66766d]">상담 담당</p>
+                      <p className="mt-1 text-2xl font-black text-[#063f2a]">{partnerName}</p>
+                      <p className="mt-1 text-xl font-black text-[#071b12]">{phoneDisplay}</p>
                     </div>
                   </div>
                 </div>
@@ -645,20 +675,19 @@ export default function PartnerShopPackagePage() {
         </div>
       </section>
 
-      <section className="shop-no-print bg-[#071b12] py-10 text-white">
+      <section className="shop-no-print bg-[#071b12] py-12 text-white">
         <div className="mx-auto max-w-5xl px-5 text-center md:px-8">
           <Sparkles size={30} className="mx-auto mb-4 text-[#f0c45c]" />
-          <h2 className="text-3xl font-black leading-tight">샵의 수익을 더하고, 고객에게는 회복 관점을 전하세요</h2>
+          <h2 className="text-3xl font-black leading-tight md:text-4xl">
+            좋은 제품을 좋은 샵 이름으로 남기세요
+          </h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm font-semibold leading-7 text-[#dce7df]">
-            제품 설명, 상담 연결, 지역 검색 구조까지 함께 준비하면 고객은 더 쉽게 이해하고 더 명확하게 문의합니다.
+            플로로탄닌 샵 패키지는 제품 공급이 아니라, 샵이 고객에게 설명하고 공유하고 다시 문의받는 구조를 만드는 제안입니다.
           </p>
-          <PartnerContact partnerName={partnerName} phoneDisplay={phoneDisplay} phone={phone} pageUrl={pageUrl} cardUrl={cardUrl} />
-          <div className="mt-6 flex flex-wrap justify-center gap-3 text-xs font-bold text-[#c5d4ca]">
-            <span className="inline-flex items-center gap-1.5"><ShieldCheck size={14} /> 검색엔진 색인 제외</span>
-            <span className="inline-flex items-center gap-1.5"><Users size={14} /> 링크를 받은 분 전용</span>
-            <span className="inline-flex items-center gap-1.5"><Store size={14} /> 샵 상담 제안서</span>
+          <div className="mx-auto mt-7 max-w-2xl">
+            <PartnerContact partnerName={partnerName} phoneDisplay={phoneDisplay} phone={phone} pageUrl={pageUrl} cardUrl={cardUrl} />
           </div>
-          <div className="mt-4 flex flex-wrap justify-center gap-3 text-sm font-bold">
+          <div className="mt-5 flex flex-wrap justify-center gap-3 text-sm font-bold">
             <a href={cardUrl} className="inline-flex items-center gap-1.5 text-[#f0c45c] underline underline-offset-4">
               파트너 전자명함 <ArrowRight size={14} />
             </a>
