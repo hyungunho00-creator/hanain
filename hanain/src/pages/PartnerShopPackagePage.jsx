@@ -1,11 +1,13 @@
-import { useMemo, useState } from 'react'
+import { useMemo, useRef, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import {
   CheckCircle2,
+  Download,
   MessageCircle,
   Phone,
   Send,
 } from 'lucide-react'
+import html2canvas from 'html2canvas'
 import SEOHead from '../components/common/SEOHead'
 import { usePartner } from '../context/PartnerContext'
 
@@ -208,6 +210,152 @@ function SelectField({ label, name, value, onChange, options }) {
   )
 }
 
+function FlyerPriceBlock() {
+  return (
+    <div className="grid overflow-hidden rounded-lg border-2 border-[#C69A2D] bg-white text-center sm:grid-cols-[1fr_1fr_0.8fr]">
+      <div className="bg-[#053D22] p-4 text-[#f5d275]">
+        <p className="text-4xl font-black leading-none">660만 원</p>
+        <p className="mt-2 text-2xl font-black">샵 패키지</p>
+      </div>
+      <div className="border-y-2 border-[#C69A2D] p-4 sm:border-x-2 sm:border-y-0">
+        <p className="text-sm font-black text-[#4A3A2A]">판매 시 공급가 기준</p>
+        <p className="mt-1 text-3xl font-black text-[#B8860B]">약 1,200만 원</p>
+        <p className="text-lg font-black">매출 구조</p>
+      </div>
+      <div className="bg-[#0B4A2B] p-4 text-white">
+        <p className="text-sm font-black text-[#f5d275]">마진 약</p>
+        <p className="text-5xl font-black leading-none">50%</p>
+        <p className="mt-2 text-xs font-bold">부가가치세 별도 기준</p>
+      </div>
+    </div>
+  )
+}
+
+function FlyerOne() {
+  return (
+    <article className="relative flex min-h-[720px] flex-col overflow-hidden rounded-lg border-[3px] border-[#053D22] bg-[#FFFDF7] text-[#111111] shadow-[0_22px_70px_rgba(5,61,34,0.18)]">
+      <div className="mx-auto rounded-b-lg bg-[#053D22] px-8 py-3 text-center text-2xl font-black text-[#f5d275]">
+        플로로탄닌 파트너스
+      </div>
+      <div className="grid flex-1 gap-4 p-6">
+        <div className="grid gap-5 md:grid-cols-[1.05fr_0.95fr] md:items-center">
+          <div>
+            <p className="text-lg font-black text-[#B8860B]">이런 샵·센터에 특히 추천합니다</p>
+            <h3 className="mt-3 text-[42px] font-black leading-[1.04] text-[#053D22]">
+              제품만 공급받는 시대는 끝났습니다
+            </h3>
+            <p className="mt-4 text-xl font-black leading-tight">
+              이제는 수익이 남고, 검색에 보이고, 고객에게 신뢰받는 구조까지 함께 가져가야 합니다.
+            </p>
+          </div>
+          <div className="relative h-56 overflow-hidden rounded-lg border-2 border-[#C69A2D]">
+            <img src={SALON_IMAGE} alt="샵 상담 장면" crossOrigin="anonymous" className="h-full w-full object-cover object-[63%_45%]" />
+            <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#FFFDF7]/30" />
+          </div>
+        </div>
+
+        <FlyerPriceBlock />
+
+        <div className="overflow-hidden rounded-lg border-2 border-[#C69A2D]">
+          <div className="bg-[#053D22] px-4 py-3 text-center text-xl font-black text-white">
+            플로로탄닌 파트너스는 이런 샵·센터에 특히 추천합니다
+          </div>
+          <div className="grid gap-0 bg-white p-5 md:grid-cols-2">
+            <div className="md:border-r md:border-[#C69A2D] md:pr-5">
+              <CheckList items={recommendLeft} />
+            </div>
+            <div className="pt-5 md:pl-5 md:pt-0">
+              <CheckList items={recommendRight} />
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-auto rounded-lg bg-[#053D22] p-5 text-center text-2xl font-black leading-tight text-[#f5d275]">
+          좋은 제품 + 검색되는 구조 + 회복의 관점 = 오래가는 샵
+        </div>
+      </div>
+    </article>
+  )
+}
+
+function FlyerTwo({ contactName, phoneDisplay }) {
+  return (
+    <article className="relative flex min-h-[720px] flex-col overflow-hidden rounded-lg border-[3px] border-[#053D22] bg-[#FFFDF7] text-[#111111] shadow-[0_22px_70px_rgba(5,61,34,0.18)]">
+      <div className="grid gap-5 p-6">
+        <div className="grid gap-5 md:grid-cols-[1fr_0.86fr] md:items-center">
+          <div>
+            <p className="inline-flex rounded-lg bg-[#053D22] px-5 py-2 text-lg font-black text-[#f5d275]">
+              플로로탄닌 파트너스
+            </p>
+            <h3 className="mt-5 text-[40px] font-black leading-[1.06] text-[#111111]">
+              수익도 만들고, 샵도 더 강해집니다
+            </h3>
+            <p className="mt-3 text-2xl font-black text-[#B8860B]">
+              좋은 제품 + 검색되는 시스템 + 초기 운영 지원까지
+            </p>
+          </div>
+          <div className="relative h-48 overflow-hidden rounded-lg border-2 border-[#C69A2D]">
+            <img src={SALON_IMAGE} alt="제품 진열과 상담 장면" crossOrigin="anonymous" className="h-full w-full object-cover object-[68%_45%]" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#053D22]/30 to-transparent" />
+          </div>
+        </div>
+
+        <div className="grid gap-3 md:grid-cols-5">
+          {supportCards.map(([title, body, note], index) => (
+            <div key={title} className="overflow-hidden rounded-lg border border-[#eadfce] bg-white text-center">
+              <div className="bg-[#FFF6E8] p-3">
+                <span className="mx-auto flex h-9 w-9 items-center justify-center rounded-full bg-[#053D22] text-sm font-black text-[#f5d275]">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <p className="mt-3 text-base font-black leading-snug text-[#053D22]">{title}</p>
+                <p className="mt-2 text-xs font-bold leading-5 text-[#4A3A2A]">{body}</p>
+              </div>
+              {note ? <p className="bg-[#B8860B] px-2 py-2 text-lg font-black text-white">{note}</p> : null}
+            </div>
+          ))}
+        </div>
+
+        <div className="rounded-lg border-2 border-[#C69A2D] bg-white p-4">
+          <p className="text-center text-2xl font-black text-[#053D22]">파트너가 받는 지원</p>
+          <div className="mt-4 grid gap-3 md:grid-cols-5">
+            {summaryItems.map(item => (
+              <div key={item} className="rounded-lg bg-[#FFF6E8] p-3 text-center">
+                <CheckCircle2 className="mx-auto h-6 w-6 text-[#C69A2D]" />
+                <p className="mt-2 text-sm font-black leading-snug">{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-auto overflow-hidden rounded-lg border-2 border-[#053D22] bg-white">
+          <div className="grid gap-0 md:grid-cols-[1.15fr_0.85fr]">
+            <div className="p-5">
+              <p className="text-xl font-black leading-snug text-[#053D22]">
+                연락주시면 샘플 체험과 자세한 자료로 찾아뵙겠습니다
+              </p>
+              <div className="mt-4 rounded-lg bg-[#053D22] p-4 text-white">
+                <p className="text-lg font-black text-[#f5d275]">{contactName}</p>
+                <p className="mt-1 text-3xl font-black">{phoneDisplay}</p>
+              </div>
+            </div>
+            <div className="border-t border-[#C69A2D] bg-[#FFF6E8] p-5 md:border-l md:border-t-0">
+              <p className="text-base font-black leading-7 text-[#4A3A2A]">
+                문의가 많아 예약된 순서대로 방문하는 점 양해 바랍니다.
+              </p>
+              <p className="mt-4 text-base font-black leading-7 text-[#053D22]">
+                샵에 맞는 운영 방향과 파트너 혜택을 안내해드립니다.
+              </p>
+            </div>
+          </div>
+          <div className="bg-[#053D22] px-4 py-4 text-center text-2xl font-black text-[#f5d275]">
+            수익을 더하고, 가치를 높이고, 회복을 전하는 샵 파트너십
+          </div>
+        </div>
+      </div>
+    </article>
+  )
+}
+
 export default function PartnerShopGrowthLandingPage() {
   const partner = usePartner()
   const { partnerSlug } = useParams()
@@ -217,6 +365,8 @@ export default function PartnerShopGrowthLandingPage() {
   const phoneDisplay = partner?.phoneDisplay || formatPhone(phone)
   const contactName = partner?.displayName || partner?.name || '플로로탄닌 파트너스'
   const pageUrl = `${SITE}/p/${slug}/shop-package/${SHARE_TOKEN}`
+  const flyerRefs = useRef([])
+  const [flyerDownloading, setFlyerDownloading] = useState(false)
   const [form, setForm] = useState({
     shopName: '',
     ownerName: '',
@@ -263,6 +413,50 @@ export default function PartnerShopGrowthLandingPage() {
       `문의 내용: ${form.memo || '-'}`,
     ].join('\n')
     window.location.href = `sms:${phone}?body=${encodeURIComponent(message)}`
+  }
+
+  const saveFlyerImage = async (index) => {
+    const node = flyerRefs.current[index]
+    if (!node) throw new Error('전단지 영역을 찾을 수 없습니다.')
+
+    if (document.fonts?.ready) await document.fonts.ready
+    const canvas = await html2canvas(node, {
+      backgroundColor: '#FFFDF7',
+      scale: 2,
+      useCORS: true,
+      logging: false,
+    })
+
+    await new Promise((resolve, reject) => {
+      canvas.toBlob(blob => {
+        if (!blob) {
+          reject(new Error('PNG 파일 생성에 실패했습니다.'))
+          return
+        }
+        const url = URL.createObjectURL(blob)
+        const a = document.createElement('a')
+        a.href = url
+        a.download = `플로로탄닌_샵매출성장전단지_${contactName}_${index + 1}페이지.png`
+        document.body.appendChild(a)
+        a.click()
+        document.body.removeChild(a)
+        URL.revokeObjectURL(url)
+        resolve()
+      }, 'image/png', 0.95)
+    })
+  }
+
+  const downloadAllFlyers = async () => {
+    setFlyerDownloading(true)
+    try {
+      await saveFlyerImage(0)
+      await new Promise(resolve => setTimeout(resolve, 350))
+      await saveFlyerImage(1)
+    } catch (error) {
+      alert(`전단지 다운로드 오류: ${error.message}`)
+    } finally {
+      setFlyerDownloading(false)
+    }
   }
 
   return (
@@ -601,6 +795,35 @@ export default function PartnerShopGrowthLandingPage() {
             >
               우리 샵 도입 상담하기
             </button>
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 pb-10 pt-2 sm:px-6 sm:pb-14">
+        <div className="mx-auto max-w-[1180px] rounded-lg border-4 border-[#053D22] bg-[#FFFDF7] p-5 shadow-[0_28px_100px_rgba(5,61,34,0.18)] sm:p-8">
+          <SectionTitle
+            title="공유용 전단지 2장 다운로드"
+            body="전단지 이미지만 내려받아 바로 공유하세요. 버튼을 누르면 1페이지와 2페이지 PNG가 순서대로 저장됩니다."
+          />
+          <div className="mt-7 flex justify-center">
+            <button
+              type="button"
+              onClick={downloadAllFlyers}
+              disabled={flyerDownloading}
+              className="inline-flex min-h-[54px] w-full max-w-md items-center justify-center gap-2 rounded-lg bg-[#053D22] px-7 text-base font-black text-white shadow-[0_16px_34px_rgba(5,61,34,0.22)] disabled:cursor-not-allowed disabled:bg-[#7b827a]"
+            >
+              <Download className="h-5 w-5" />
+              {flyerDownloading ? '전단지 생성 중...' : '전단지 2장 다운로드'}
+            </button>
+          </div>
+
+          <div className="mt-8 grid gap-6 lg:grid-cols-2">
+            <div ref={node => { flyerRefs.current[0] = node }} className="mx-auto w-full max-w-[540px]">
+              <FlyerOne />
+            </div>
+            <div ref={node => { flyerRefs.current[1] = node }} className="mx-auto w-full max-w-[540px]">
+              <FlyerTwo contactName={contactName} phoneDisplay={phoneDisplay} />
+            </div>
           </div>
         </div>
       </section>
