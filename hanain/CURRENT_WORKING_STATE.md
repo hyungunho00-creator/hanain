@@ -1,12 +1,12 @@
 # Current Working State
 
-Last verified: 2026-06-03 10:17 KST
+Last verified: 2026-06-03 11:05 KST
 
 Production domain:
 
 - `https://phlorotannin.com`
 - `https://www.phlorotannin.com` redirects to apex
-- Current verified deployment: `https://hanain-lzfc12wdo-01056528206s-projects.vercel.app`
+- Current verified deployment: `https://hanain-nq0v1y7xb-01056528206s-projects.vercel.app`
 
 Branch:
 
@@ -20,6 +20,8 @@ What "current" means:
 - Local static blog posts remain in code only as fallback/seed assets, not as the operating source of truth.
 - First-screen blog card/OG images use the refreshed `scripts/build_blog_visual_refresh.py` system.
 - The refreshed front blog `og_image` URLs are served through `/og-card/v20260602/<slug>.png` by `api/og.js`; do not switch them back to `/og/blog-refresh` or raw `/og/content-quality` paths without checking CDN cache behavior.
+- Private partner shop package proposal pages are dynamic HTML print/share pages under `/p/:partnerSlug/shop-package/salon-growth-660`.
+- Do not switch the shop package proposal body back to fixed proposal images. Printed sheets must automatically include the active partner name, phone number, share URL, and QR code.
 
 Content sources:
 
@@ -65,6 +67,11 @@ Expected production SEO signals:
 - `/p/test/home`
   - `X-Robots-Tag: noindex,follow`
   - canonical: `https://phlorotannin.com/home`
+- `/p/test/shop-package/salon-growth-660`
+  - `X-Seo-Source: private-shop-package`
+  - `X-Robots-Tag: noindex,follow`
+  - canonical: `https://phlorotannin.com/p/test/shop-package/salon-growth-660`
+  - must not appear in sitemap
 - `/blog/masld-fatty-liver-insulin-resistance-phlorotannin-2026`
   - source: `posts-table`
   - robots: `index, follow`
