@@ -461,12 +461,12 @@ function staticMetaFor(pathname) {
   // 페이지는 noindex 의도 영역이라 robots 메타에 noindex,nofollow 신호도 함께 송신한다.
   if (pathname === '/shop-package' || pathname.startsWith('/shop-package/')) {
     return {
-      title: '샵 패키지 제안서 | 플로로탄닌 파트너스',
-      desc:  '파트너가 직접 공유한 플로로탄닌 샵 패키지 제안 페이지입니다. 660만 원 샵 패키지, 지역 검색 구조, 상담 연결, 운영 지원 흐름을 안내합니다.',
+      title: '샵 매출 성장 패키지 | 플로로탄닌 파트너스',
+      desc:  '660만 원 샵 패키지로 제품 공급, 전용 페이지, 지역 검색 구조, 기본 소개 문구, 초기 운영 지원까지 함께 제공하는 플로로탄닌 파트너스 샵 전용 매출 성장 랜딩입니다.',
       canonical: `${SITE}${pathname}`,
       robots: 'noindex,follow',
-      ogImage: `${SITE}/partner/shop-package/shop-package-01.png`,
-      ogImageAlt: '플로로탄닌 파트너스 660만 원 샵 패키지 모바일 제안서',
+      ogImage: `${SITE}/partner/shop-package/salon-consult-hero.jpg`,
+      ogImageAlt: '고급 피부관리 모델과 제품 진열',
     }
   }
   if (pathname === '/inforoom') {
@@ -1823,12 +1823,12 @@ export default async function handler(req, res) {
     if (privateShopPackageMatch) {
       const canonicalPath = pathname.split('?')[0] || pathname
       meta = {
-        title: '샵 패키지 제안서 | 플로로탄닌 파트너스',
-        desc:  '파트너가 직접 공유한 플로로탄닌 샵 패키지 제안 페이지입니다. 660만 원 샵 패키지, 지역 검색 구조, 상담 연결, 운영 지원 흐름을 안내합니다.',
+        title: '샵 매출 성장 패키지 | 플로로탄닌 파트너스',
+        desc:  '660만 원 샵 패키지로 제품 공급, 전용 페이지, 지역 검색 구조, 기본 소개 문구, 초기 운영 지원까지 함께 제공하는 플로로탄닌 파트너스 샵 전용 매출 성장 랜딩입니다.',
         canonical: `${SITE}${canonicalPath}`,
         robots: 'noindex,follow',
-        ogImage: `${SITE}/partner/shop-package/shop-package-01.png`,
-        ogImageAlt: '플로로탄닌 파트너스 660만 원 샵 패키지 모바일 제안서',
+        ogImage: `${SITE}/partner/shop-package/salon-consult-hero.jpg`,
+        ogImageAlt: '고급 피부관리 모델과 제품 진열',
       }
       metaSource = 'private-shop-package'
     }

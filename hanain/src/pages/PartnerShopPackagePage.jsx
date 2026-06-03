@@ -117,21 +117,21 @@ function scrollToId(id) {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
 }
 
-function SectionIntro({ title, body, light = false }) {
+function SectionTitle({ title, body, light = false }) {
   return (
-    <div className="mx-auto max-w-4xl text-center">
+    <div className="mx-auto max-w-5xl text-center">
       <h2 className={`text-[26px] font-black leading-tight sm:text-4xl lg:text-5xl ${light ? 'text-white' : 'text-[#111111]'}`}>{title}</h2>
-      {body ? <p className={`mt-5 text-base leading-8 sm:text-lg ${light ? 'text-[#f7ead2]' : 'text-[#4A3A2A]'}`}>{body}</p> : null}
+      {body ? <p className={`mx-auto mt-5 max-w-4xl text-base font-bold leading-8 sm:text-lg ${light ? 'text-[#f7ead2]' : 'text-[#4A3A2A]'}`}>{body}</p> : null}
     </div>
   )
 }
 
 function CheckList({ items, light = false }) {
   return (
-    <ul className="space-y-3">
+    <ul className="space-y-4">
       {items.map(item => (
-        <li key={item} className={`flex gap-3 text-base font-bold leading-7 ${light ? 'text-[#fff7e8]' : 'text-[#111111]'}`}>
-          <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-[#C69A2D]" />
+        <li key={item} className={`flex gap-3 text-base font-black leading-7 sm:text-lg ${light ? 'text-[#fff7e8]' : 'text-[#111111]'}`}>
+          <CheckCircle2 className="mt-0.5 h-6 w-6 shrink-0 text-[#C69A2D]" />
           <span>{item}</span>
         </li>
       ))}
@@ -139,24 +139,37 @@ function CheckList({ items, light = false }) {
   )
 }
 
+function PriceRibbon() {
+  return (
+    <div className="grid overflow-hidden rounded-lg border-2 border-[#C69A2D] bg-white shadow-[0_26px_70px_rgba(5,61,34,0.16)] md:grid-cols-[1.05fr_1fr_0.72fr]">
+      <div className="bg-[#053D22] p-5 text-center text-[#f5d275] sm:p-7">
+        <p className="text-[36px] font-black leading-none sm:text-6xl">660만 원</p>
+        <p className="mt-3 text-2xl font-black leading-tight sm:text-4xl">샵 패키지</p>
+      </div>
+      <div className="border-y-2 border-[#C69A2D] p-5 text-center md:border-x-2 md:border-y-0 sm:p-7">
+        <p className="text-base font-black text-[#4A3A2A]">판매 시 공급가 기준</p>
+        <p className="mt-2 text-[34px] font-black leading-tight text-[#B8860B] sm:text-5xl">약 1,200만 원</p>
+        <p className="mt-2 text-xl font-black text-[#111111]">매출 구조</p>
+      </div>
+      <div className="bg-[#0B4A2B] p-5 text-center text-white sm:p-7">
+        <p className="text-base font-black text-[#f5d275]">마진 약</p>
+        <p className="mt-1 text-[44px] font-black leading-none sm:text-6xl">50%</p>
+        <p className="mt-3 text-sm font-bold">부가가치세 별도 기준</p>
+      </div>
+    </div>
+  )
+}
+
 function ProductStage() {
   return (
-    <div className="relative min-h-[430px] overflow-hidden rounded-lg border-2 border-[#C69A2D] bg-[#FFFDF7] shadow-[0_28px_90px_rgba(5,61,34,0.18)]">
-      <img src={SALON_IMAGE} alt="고급 피부관리 모델과 제품 진열" className="absolute inset-0 h-full w-full object-cover object-[58%_43%]" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#FFFDF7]/88 via-[#FFFDF7]/46 to-[#053D22]/40" />
-      <div className="absolute bottom-6 left-5 right-5 rounded-lg border-2 border-[#C69A2D] bg-[#FFFDF7]/94 p-5">
-        <div className="grid gap-4 sm:grid-cols-[1fr_auto] sm:items-end">
-          <div>
-            <p className="text-lg font-black text-[#053D22]">660만 원 샵 패키지</p>
-            <p className="mt-2 text-sm font-bold leading-6 text-[#4A3A2A]">판매 시 공급가 기준</p>
-            <p className="text-3xl font-black leading-tight text-[#B8860B]">약 1,200만 원 매출 구조</p>
-          </div>
-          <div className="rounded-lg bg-[#053D22] px-6 py-4 text-center text-white">
-            <p className="text-sm font-black text-[#f5d275]">마진 약</p>
-            <p className="text-5xl font-black leading-none">50%</p>
-            <p className="mt-2 text-sm font-bold">부가가치세 별도 기준</p>
-          </div>
-        </div>
+    <div className="relative min-h-[500px] overflow-hidden rounded-lg border-2 border-[#C69A2D] bg-[#FFFDF7] shadow-[0_28px_90px_rgba(5,61,34,0.2)]">
+      <img src={SALON_IMAGE} alt="샵 대표가 고객에게 제품을 설명하는 고급 상담 장면" className="absolute inset-0 h-full w-full object-cover object-[60%_44%]" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#FFFDF7]/95 via-[#FFFDF7]/58 to-[#053D22]/22" />
+      <div className="absolute left-5 top-5 rounded-lg bg-[#053D22] px-5 py-3 text-base font-black text-[#f5d275] shadow-lg">
+        플로로탄닌 파트너스
+      </div>
+      <div className="absolute bottom-5 left-5 right-5">
+        <PriceRibbon />
       </div>
     </div>
   )
@@ -201,7 +214,7 @@ export default function PartnerShopGrowthLandingPage() {
   const slug = safePartnerSlug(partner, partnerSlug)
   const rawPhone = onlyDigits(partner?.phone || partner?.sms || slug || DEFAULT_PHONE) || DEFAULT_PHONE
   const phone = rawPhone.length >= 10 ? rawPhone : DEFAULT_PHONE
-  const phoneDisplay = formatPhone(phone)
+  const phoneDisplay = partner?.phoneDisplay || formatPhone(phone)
   const contactName = partner?.displayName || partner?.name || '플로로탄닌 파트너스'
   const pageUrl = `${SITE}/p/${slug}/shop-package/${SHARE_TOKEN}`
   const [form, setForm] = useState({
@@ -253,7 +266,7 @@ export default function PartnerShopGrowthLandingPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#FFFDF7] text-[#111111]">
+    <main className="min-h-screen bg-[#FFF6E8] text-[#111111]">
       <SEOHead
         title="샵 매출 성장 패키지 | 플로로탄닌 파트너스"
         description="660만 원 샵 패키지로 제품 공급, 전용 페이지, 지역 검색 구조, 기본 소개 문구, 초기 운영 지원까지 함께 제공하는 플로로탄닌 파트너스 샵 전용 매출 성장 랜딩입니다."
@@ -265,140 +278,164 @@ export default function PartnerShopGrowthLandingPage() {
         jsonLd={jsonLd}
       />
 
-      <section className="relative overflow-hidden border-b-4 border-[#C69A2D] bg-[#FFFDF7]">
-        <div className="absolute inset-0">
-          <img src={SALON_IMAGE} alt="" className="h-full w-full object-cover object-[58%_42%] opacity-18" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#FFFDF7] via-[#FFFDF7]/96 to-[#FFFDF7]/64" />
-        </div>
-        <div className="relative mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:px-8 sm:py-20 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:py-24">
-          <div>
-            <p className="inline-flex rounded-lg bg-[#053D22] px-6 py-3 text-base font-black text-[#f5d275] shadow-lg">
-              플로로탄닌 파트너스
-            </p>
-            <h1 className="mt-6 text-[32px] font-black leading-[1.05] text-[#053D22] sm:text-6xl lg:text-7xl">
-              제품만 공급받는 시대는 끝났습니다
-            </h1>
-            <p className="mt-5 text-[26px] font-black leading-tight text-[#111111] sm:text-4xl">
-              이제는 수익이 남고, 검색에 보이고, 고객에게 신뢰받는 구조까지 함께 가져가야 합니다.
-            </p>
-            <div className="mt-6 max-w-2xl space-y-4 text-base font-bold leading-8 text-[#4A3A2A] sm:text-lg">
-              <p>고객은 좋은 제품만 보지 않습니다. 검색되고, 이해되고, 신뢰되는 샵을 찾습니다.</p>
-              <p>플로로탄닌 파트너스는 제품만 공급하지 않습니다. 샵에서 고객에게 설명하고, 판매하고, 다시 찾아오게 만드는 구조까지 함께 제공합니다.</p>
+      <section className="px-4 py-5 sm:px-6 sm:py-8">
+        <div className="mx-auto max-w-[1180px] overflow-hidden rounded-lg border-4 border-[#053D22] bg-[#FFFDF7] shadow-[0_34px_120px_rgba(5,61,34,0.22)]">
+          <div className="mx-auto w-fit rounded-b-lg bg-[#053D22] px-8 py-4 text-center text-xl font-black text-[#f5d275] shadow-lg sm:text-3xl">
+            플로로탄닌 파트너스
+          </div>
+          <div className="grid gap-0 lg:grid-cols-[0.98fr_1.02fr] lg:items-stretch">
+            <div className="px-5 pb-8 pt-7 sm:px-10 sm:pb-12 lg:pt-12">
+              <h1 className="text-[42px] font-black leading-[1.02] text-[#053D22] sm:text-6xl lg:text-[74px]">
+                제품만 공급받는 시대는 끝났습니다
+              </h1>
+              <p className="mt-6 text-[24px] font-black leading-tight text-[#111111] sm:text-4xl">
+                이제는 수익이 남고, 검색에 보이고, 고객에게 신뢰받는 구조까지 함께 가져가야 합니다.
+              </p>
+              <div className="mt-6 max-w-2xl space-y-4 text-base font-bold leading-8 text-[#4A3A2A] sm:text-lg">
+                <p>고객은 좋은 제품만 보지 않습니다. 검색되고, 이해되고, 신뢰되는 샵을 찾습니다.</p>
+                <p>플로로탄닌 파트너스는 제품만 공급하지 않습니다. 샵에서 고객에게 설명하고, 판매하고, 다시 찾아오게 만드는 구조까지 함께 제공합니다.</p>
+              </div>
+              <div className="mt-8 grid gap-3 sm:max-w-xl sm:grid-cols-2">
+                <button
+                  type="button"
+                  onClick={() => scrollToId('inquiry')}
+                  className="inline-flex min-h-[54px] items-center justify-center rounded-lg bg-[#053D22] px-6 text-base font-black text-white shadow-[0_18px_36px_rgba(5,61,34,0.24)] transition hover:bg-[#0B4A2B]"
+                >
+                  우리 샵 도입 가능 여부 확인하기
+                </button>
+                <button
+                  type="button"
+                  onClick={() => scrollToId('value')}
+                  className="inline-flex min-h-[54px] items-center justify-center rounded-lg border-2 border-[#B8860B] bg-white px-6 text-base font-black text-[#053D22] transition hover:bg-[#fff6dc]"
+                >
+                  660만 원 구성 확인하기
+                </button>
+              </div>
             </div>
-            <div className="mt-8 grid gap-4 sm:max-w-xl sm:grid-cols-2">
-              <button
-                type="button"
-                onClick={() => scrollToId('inquiry')}
-                className="inline-flex min-h-[54px] items-center justify-center rounded-lg bg-[#053D22] px-6 text-base font-black text-white shadow-[0_18px_36px_rgba(5,61,34,0.24)] transition hover:bg-[#0B4A2B]"
-              >
-                우리 샵 도입 가능 여부 확인하기
-              </button>
-              <button
-                type="button"
-                onClick={() => scrollToId('value')}
-                className="inline-flex min-h-[54px] items-center justify-center rounded-lg border-2 border-[#B8860B] bg-white px-6 text-base font-black text-[#053D22] transition hover:bg-[#fff6dc]"
-              >
-                660만 원 구성 확인하기
-              </button>
+            <div className="p-4 sm:p-6 lg:p-8">
+              <ProductStage />
             </div>
           </div>
-
-          <ProductStage />
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20">
-        <SectionIntro
-          title="이런 샵·센터에 특히 추천합니다"
-          body="플로로탄닌 파트너스는 단순히 제품을 더 들여놓는 구조가 아닙니다. 기존 고객에게 자연스럽게 소개하고, 지역에서 검색되고, 신뢰를 쌓아가는 샵에 특히 잘 맞습니다."
-        />
-        <div className="mt-10 grid gap-6 lg:grid-cols-2">
-          <article className="rounded-lg border-2 border-[#C69A2D] bg-white p-7 shadow-sm">
-            <CheckList items={recommendLeft} />
-          </article>
-          <article className="rounded-lg border-2 border-[#C69A2D] bg-white p-7 shadow-sm">
-            <CheckList items={recommendRight} />
-          </article>
-        </div>
-        <p className="mx-auto mt-10 max-w-4xl rounded-lg bg-[#053D22] p-6 text-center text-2xl font-black leading-9 text-[#f5d275]">
-          제품만 들여놓는 것이 아니라, 샵에서 팔릴 이유까지 함께 만들어드립니다.
-        </p>
-      </section>
-
-      <section className="relative overflow-hidden bg-[#FFFDF7] px-5 py-16 sm:px-8 sm:py-20">
-        <div className="absolute right-0 top-0 hidden h-full w-1/3 overflow-hidden opacity-25 lg:block">
-          <img src={SALON_IMAGE} alt="" className="h-full w-full object-cover object-[35%_48%]" />
-        </div>
-        <div className="relative mx-auto max-w-7xl">
-          <SectionIntro
-            title="지금 도입한 샵이 먼저 가져가는 것"
-            body="고객은 이미 비교하고 검색합니다. 좋은 제품만 있는 샵보다, 설명할 수 있고 신뢰를 쌓는 샵이 선택받습니다."
-          />
-          <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-            {earlyCards.map(([title, body]) => (
-              <article key={title} className="rounded-lg border border-[#eadfce] bg-white p-6 shadow-[0_18px_42px_rgba(5,61,34,0.08)]">
-                <h3 className="text-[19px] font-black leading-snug text-[#053D22] sm:text-2xl">{title}</h3>
-                <p className="mt-4 text-base font-bold leading-7 text-[#4A3A2A]">{body}</p>
+          <div className="grid gap-0 border-t-2 border-[#C69A2D] md:grid-cols-3">
+            {[
+              ['추가 수익', '기존 고객에게 자연스럽게 소개하고 부가수익을 만들 수 있습니다.'],
+              ['지역 검색 노출', '우리 샵이 지역에서 더 잘 보일 수 있게 구조를 잡아드립니다.'],
+              ['고객 신뢰 상승', '회복 중심의 설명과 콘텐츠로 상담 연결이 쉬워집니다.'],
+            ].map(([title, body], index) => (
+              <article key={title} className={`p-6 text-center ${index > 0 ? 'border-t-2 border-[#C69A2D] md:border-l-2 md:border-t-0' : ''}`}>
+                <h2 className="text-2xl font-black text-[#053D22]">{title}</h2>
+                <p className="mt-3 text-base font-bold leading-7 text-[#4A3A2A]">{body}</p>
               </article>
             ))}
           </div>
-          <p className="mx-auto mt-10 max-w-5xl rounded-lg border-2 border-[#C69A2D] bg-[#053D22] p-6 text-center text-2xl font-black leading-9 text-[#f5d275]">
-            좋은 제품 + 검색되는 구조 + 회복의 관점 = 오래가는 샵
+        </div>
+      </section>
+
+      <section className="px-4 py-8 sm:px-6 sm:py-10">
+        <div className="mx-auto max-w-[1180px] overflow-hidden rounded-lg border-2 border-[#C69A2D] bg-[#FFFDF7] shadow-[0_22px_80px_rgba(5,61,34,0.12)]">
+          <div className="bg-[#053D22] px-5 py-4 text-center text-2xl font-black text-[#f5d275] sm:text-4xl">
+            이런 샵·센터에 특히 추천합니다
+          </div>
+          <div className="grid gap-8 p-5 sm:p-8 lg:grid-cols-[1fr_1fr]">
+            <div>
+              <p className="text-base font-bold leading-8 text-[#4A3A2A] sm:text-lg">
+                플로로탄닌 파트너스는 단순히 제품을 더 들여놓는 구조가 아닙니다.
+                기존 고객에게 자연스럽게 소개하고, 지역에서 검색되고, 신뢰를 쌓아가는 샵에 특히 잘 맞습니다.
+              </p>
+              <div className="mt-7 rounded-lg bg-[#FFF6E8] p-6">
+                <CheckList items={recommendLeft} />
+              </div>
+            </div>
+            <div className="rounded-lg border-2 border-[#C69A2D] bg-white p-6">
+              <CheckList items={recommendRight} />
+            </div>
+          </div>
+          <p className="border-t-2 border-[#C69A2D] bg-[#FFFDF7] p-5 text-center text-2xl font-black leading-9 text-[#053D22] sm:text-3xl">
+            제품만 들여놓는 것이 아니라, 샵에서 팔릴 이유까지 함께 만들어드립니다.
           </p>
         </div>
       </section>
 
-      <section className="bg-[#053D22] px-5 py-16 text-white sm:px-8 sm:py-20">
-        <div className="mx-auto max-w-7xl">
-          <SectionIntro
-            light
-            title="파트너가 되면 이렇게 지원합니다"
-            body="좋은 제품 + 검색되는 시스템 + 초기 운영 지원까지"
-          />
-          <h3 className="mt-6 text-center text-[32px] font-black leading-tight text-[#f5d275] sm:text-5xl">
+      <section className="px-4 py-8 sm:px-6 sm:py-10">
+        <div className="mx-auto grid max-w-[1180px] overflow-hidden rounded-lg border-2 border-[#C69A2D] bg-[#FFFDF7] shadow-[0_22px_80px_rgba(5,61,34,0.12)] lg:grid-cols-[0.78fr_1.22fr]">
+          <div className="relative min-h-[300px] overflow-hidden">
+            <img src={SALON_IMAGE} alt="샵 관리실과 제품 진열" className="absolute inset-0 h-full w-full object-cover object-[67%_45%]" loading="lazy" />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#053D22]/12 to-[#053D22]/48" />
+          </div>
+          <div className="p-5 sm:p-8">
+            <SectionTitle
+              title="지금 도입한 샵이 먼저 가져가는 것"
+              body="고객은 이미 비교하고 검색합니다. 좋은 제품만 있는 샵보다, 설명할 수 있고 신뢰를 쌓는 샵이 선택받습니다."
+            />
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              {earlyCards.map(([title, body], index) => (
+                <article key={title} className="rounded-lg border border-[#eadfce] bg-[#FFF6E8] p-5">
+                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#053D22] text-sm font-black text-[#f5d275]">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <h3 className="mt-4 text-[21px] font-black leading-snug text-[#053D22] sm:text-2xl">{title}</h3>
+                  <p className="mt-3 text-base font-bold leading-7 text-[#4A3A2A]">{body}</p>
+                </article>
+              ))}
+            </div>
+            <p className="mt-7 rounded-lg bg-[#053D22] p-5 text-center text-2xl font-black leading-9 text-[#f5d275]">
+              좋은 제품 + 검색되는 구조 + 회복의 관점 = 오래가는 샵
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 py-8 sm:px-6 sm:py-10">
+        <div className="mx-auto max-w-[1180px] rounded-lg bg-[#053D22] p-5 text-white shadow-[0_28px_100px_rgba(5,61,34,0.24)] sm:p-8">
+          <SectionTitle light title="파트너가 되면 이렇게 지원합니다" body="좋은 제품 + 검색되는 시스템 + 초기 운영 지원까지" />
+          <h3 className="mt-6 text-center text-[32px] font-black leading-tight text-white sm:text-6xl">
             수익도 만들고, 샵도 더 강해집니다
           </h3>
-          <div className="mt-12 grid gap-5 lg:grid-cols-5">
+          <div className="mt-10 grid gap-4 lg:grid-cols-5">
             {supportCards.map(([title, body, note], index) => (
-              <article key={title} className="rounded-lg border border-[#C69A2D]/60 bg-white p-6 text-[#111111] shadow-lg">
-                <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[#053D22] text-lg font-black text-[#f5d275]">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-                <h4 className="mt-5 text-center text-[19px] font-black leading-snug text-[#053D22]">{title}</h4>
-                <p className="mt-4 text-center text-base font-bold leading-7 text-[#4A3A2A]">{body}</p>
-                {note ? <p className="mt-5 rounded-lg bg-[#B8860B] px-4 py-3 text-center text-xl font-black text-white">{note}</p> : null}
+              <article key={title} className="overflow-hidden rounded-lg border border-[#C69A2D]/70 bg-[#FFFDF7] text-[#111111] shadow-lg">
+                <div className="bg-[#FFF6E8] p-5 text-center">
+                  <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[#053D22] text-lg font-black text-[#f5d275]">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <h4 className="mt-5 text-[21px] font-black leading-snug text-[#053D22]">{title}</h4>
+                  <p className="mt-4 text-base font-bold leading-7 text-[#4A3A2A]">{body}</p>
+                </div>
+                {note ? <p className="bg-[#B8860B] px-4 py-4 text-center text-2xl font-black text-white">{note}</p> : null}
               </article>
             ))}
           </div>
-          <p className="mt-10 rounded-lg bg-[#0B4A2B] p-6 text-center text-2xl font-black leading-9 text-[#f5d275]">
+          <p className="mt-8 rounded-lg border border-[#C69A2D] bg-[#0B4A2B] p-5 text-center text-2xl font-black leading-9 text-[#f5d275]">
             이제는 단순 판매가 아니라, 회복을 제안하는 샵이 선택받습니다
           </p>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20">
-        <SectionIntro title="파트너가 받는 지원" />
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-          {summaryItems.map(item => (
-            <article key={item} className="rounded-lg border border-[#C69A2D] bg-white p-6 text-center shadow-sm">
-              <CheckCircle2 className="mx-auto h-9 w-9 text-[#053D22]" />
-              <p className="mt-4 text-[19px] font-black leading-snug text-[#111111]">{item}</p>
-            </article>
-          ))}
+      <section className="px-4 py-8 sm:px-6 sm:py-10">
+        <div className="mx-auto max-w-[1180px] rounded-lg border-2 border-[#C69A2D] bg-[#FFFDF7] p-5 shadow-[0_22px_80px_rgba(5,61,34,0.12)] sm:p-8">
+          <SectionTitle title="파트너가 받는 지원" />
+          <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+            {summaryItems.map(item => (
+              <article key={item} className="rounded-lg border border-[#eadfce] bg-white p-5 text-center">
+                <CheckCircle2 className="mx-auto h-8 w-8 text-[#053D22]" />
+                <p className="mt-4 text-[19px] font-black leading-snug text-[#111111]">{item}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="bg-[#FFFDF7] px-5 py-16 sm:px-8 sm:py-20">
-        <div className="mx-auto max-w-7xl">
-          <SectionIntro
-            title="샵에서는 이렇게 매출로 연결됩니다"
-            body="고객에게 갑자기 제품을 파는 것이 아닙니다. 관리 후 고객이 느끼는 관심과 필요에 맞춰 자연스럽게 연결합니다."
-          />
-          <div className="mt-10 rounded-lg border-2 border-[#C69A2D] bg-white p-5 shadow-sm sm:p-8">
-            <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-6">
+      <section className="px-4 py-8 sm:px-6 sm:py-10">
+        <div className="mx-auto max-w-[1180px] overflow-hidden rounded-lg border-2 border-[#C69A2D] bg-[#FFFDF7] shadow-[0_22px_80px_rgba(5,61,34,0.12)]">
+          <div className="p-5 sm:p-8">
+            <SectionTitle
+              title="샵에서는 이렇게 매출로 연결됩니다"
+              body="고객에게 갑자기 제품을 파는 것이 아닙니다. 관리 후 고객이 느끼는 관심과 필요에 맞춰 자연스럽게 연결합니다."
+            />
+            <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-6">
               {revenueSteps.map(([title, body], index) => (
-                <article key={title} className="rounded-lg bg-[#FFFDF7] p-5 text-center">
-                  <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[#053D22] text-base font-black text-[#f5d275]">
+                <article key={title} className="rounded-lg bg-[#FFF6E8] p-5 text-center">
+                  <span className="mx-auto flex h-11 w-11 items-center justify-center rounded-full bg-[#053D22] text-base font-black text-[#f5d275]">
                     {index + 1}
                   </span>
                   <h3 className="mt-4 text-[19px] font-black text-[#053D22]">{title}</h3>
@@ -407,74 +444,73 @@ export default function PartnerShopGrowthLandingPage() {
               ))}
             </div>
           </div>
-          <p className="mx-auto mt-8 max-w-5xl text-center text-2xl font-black leading-9 text-[#053D22]">
+          <p className="bg-[#053D22] p-5 text-center text-2xl font-black leading-9 text-[#f5d275]">
             샵 매출은 관리 당일에 끝나는 것이 아니라, 고객이 집에서 이어 쓰는 순간 다시 시작됩니다.
           </p>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20">
-        <SectionIntro title="도입 전과 도입 후, 샵의 판매 구조가 달라집니다" />
-        <div className="mt-10 grid gap-6 lg:grid-cols-2">
-          <article className="overflow-hidden rounded-lg border border-[#e0d5c4] bg-white shadow-sm">
-            <div className="h-56 overflow-hidden">
-              <img src={SALON_IMAGE} alt="도입 전 샵 이미지" className="h-full w-full object-cover object-[38%_50%] opacity-80 grayscale" loading="lazy" />
-            </div>
-            <div className="p-7">
-              <h3 className="text-4xl font-black text-[#111111]">도입 전</h3>
-              <div className="mt-6"><CheckList items={beforeItems} /></div>
-            </div>
-          </article>
-          <article className="overflow-hidden rounded-lg border-2 border-[#C69A2D] bg-[#FFFDF7] shadow-[0_24px_80px_rgba(5,61,34,0.1)]">
-            <div className="h-56 overflow-hidden">
-              <img src={SALON_IMAGE} alt="도입 후 샵 이미지" className="h-full w-full object-cover object-[68%_46%]" loading="lazy" />
-            </div>
-            <div className="p-7">
-              <h3 className="text-4xl font-black text-[#053D22]">도입 후</h3>
-              <div className="mt-6"><CheckList items={afterItems} /></div>
-            </div>
-          </article>
+      <section className="px-4 py-8 sm:px-6 sm:py-10">
+        <div className="mx-auto max-w-[1180px] rounded-lg border-2 border-[#C69A2D] bg-[#FFFDF7] p-5 shadow-[0_22px_80px_rgba(5,61,34,0.12)] sm:p-8">
+          <SectionTitle title="도입 전과 도입 후, 샵의 판매 구조가 달라집니다" />
+          <div className="mt-8 grid gap-5 lg:grid-cols-2">
+            <article className="overflow-hidden rounded-lg border border-[#e0d5c4] bg-white">
+              <div className="h-52 overflow-hidden">
+                <img src={SALON_IMAGE} alt="도입 전 샵 이미지" className="h-full w-full object-cover object-[38%_50%] opacity-80 grayscale" loading="lazy" />
+              </div>
+              <div className="p-6">
+                <h3 className="text-4xl font-black text-[#111111]">도입 전</h3>
+                <div className="mt-5"><CheckList items={beforeItems} /></div>
+              </div>
+            </article>
+            <article className="overflow-hidden rounded-lg border-2 border-[#C69A2D] bg-[#FFF6E8] shadow-[0_24px_80px_rgba(5,61,34,0.1)]">
+              <div className="h-52 overflow-hidden">
+                <img src={SALON_IMAGE} alt="도입 후 샵 이미지" className="h-full w-full object-cover object-[68%_46%]" loading="lazy" />
+              </div>
+              <div className="p-6">
+                <h3 className="text-4xl font-black text-[#053D22]">도입 후</h3>
+                <div className="mt-5"><CheckList items={afterItems} /></div>
+              </div>
+            </article>
+          </div>
+          <p className="mt-8 rounded-lg bg-[#053D22] p-5 text-center text-2xl font-black leading-9 text-[#f5d275]">
+            제품을 파는 것이 아니라, 고객이 이해하고 선택할 수 있는 구조를 만드는 것입니다.
+          </p>
         </div>
-        <p className="mx-auto mt-10 max-w-5xl rounded-lg bg-[#053D22] p-6 text-center text-2xl font-black leading-9 text-[#f5d275]">
-          제품을 파는 것이 아니라, 고객이 이해하고 선택할 수 있는 구조를 만드는 것입니다.
-        </p>
       </section>
 
-      <section id="value" className="bg-[#FFFDF7] px-5 py-16 sm:px-8 sm:py-20">
-        <div className="mx-auto max-w-7xl">
-          <SectionIntro
+      <section id="value" className="px-4 py-8 sm:px-6 sm:py-10">
+        <div className="mx-auto max-w-[1180px] rounded-lg border-4 border-[#053D22] bg-[#FFFDF7] p-5 shadow-[0_28px_100px_rgba(5,61,34,0.18)] sm:p-8">
+          <SectionTitle
             title="660만 원은 제품비가 아니라, 매장에 판매 구조를 놓는 비용입니다"
             body="이 패키지는 제품 몇 개를 사는 비용이 아닙니다. 샵에서 고객에게 보여주고, 설명하고, 판매하고, 다시 방문하게 만드는 구조를 함께 세팅하는 비용입니다."
           />
-          <div className="mt-10 grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-            <article className="rounded-lg border-2 border-[#C69A2D] bg-[#053D22] p-7 text-white shadow-[0_24px_80px_rgba(5,61,34,0.18)]">
-              <p className="text-xl font-black text-[#f5d275]">샵 성장 패키지</p>
-              <p className="mt-4 text-6xl font-black leading-none">660만 원</p>
-              <p className="mt-4 text-lg font-bold">부가가치세 별도 기준</p>
-              <div className="mt-6 rounded-lg border border-[#C69A2D] bg-white p-5 text-[#111111]">
-                <p className="text-base font-black text-[#4A3A2A]">판매 시 공급가 기준</p>
-                <p className="mt-1 text-3xl font-black text-[#B8860B]">약 1,200만 원 매출 구조</p>
-              </div>
-              <div className="mt-4 rounded-lg bg-[#B8860B] p-5 text-center">
-                <p className="text-4xl font-black">마진 약 50%</p>
-              </div>
-            </article>
-            <article className="rounded-lg border border-[#eadfce] bg-white p-7 shadow-sm">
-              <CheckList items={priceItems} />
-            </article>
+          <div className="mt-8">
+            <PriceRibbon />
           </div>
-          <p className="mx-auto mt-10 max-w-5xl rounded-lg border-2 border-[#C69A2D] bg-white p-6 text-center text-2xl font-black leading-9 text-[#053D22]">
+          <div className="mt-6 rounded-lg border border-[#eadfce] bg-white p-6">
+            <h3 className="text-3xl font-black text-[#053D22]">샵 성장 패키지</h3>
+            <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {priceItems.map(item => (
+                <div key={item} className="rounded-lg bg-[#FFF6E8] p-4">
+                  <CheckCircle2 className="h-6 w-6 text-[#C69A2D]" />
+                  <p className="mt-3 text-base font-black leading-7 text-[#111111]">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <p className="mt-7 rounded-lg border-2 border-[#C69A2D] bg-white p-5 text-center text-2xl font-black leading-9 text-[#053D22]">
             가격을 보는 것이 아니라, 고객 한 명당 객단가와 재방문 이유를 만들 수 있는 판매 구조를 보는 것입니다.
           </p>
         </div>
       </section>
 
-      <section className="bg-[#053D22] px-5 py-16 text-white sm:px-8 sm:py-20">
-        <div className="mx-auto max-w-7xl">
-          <SectionIntro light title="대표님이 도입 전에 궁금한 것만 짧게 답합니다" />
-          <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <section className="px-4 py-8 sm:px-6 sm:py-10">
+        <div className="mx-auto max-w-[1180px] rounded-lg bg-[#053D22] p-5 text-white shadow-[0_28px_100px_rgba(5,61,34,0.22)] sm:p-8">
+          <SectionTitle light title="대표님이 도입 전에 궁금한 것만 짧게 답합니다" />
+          <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {faqItems.map(([question, answer]) => (
-              <article key={question} className="rounded-lg border border-[#C69A2D]/60 bg-white p-6 text-[#111111]">
+              <article key={question} className="rounded-lg border border-[#C69A2D]/60 bg-[#FFFDF7] p-5 text-[#111111]">
                 <h3 className="text-[19px] font-black leading-snug text-[#053D22] sm:text-xl">{question}</h3>
                 <p className="mt-3 text-base font-bold leading-7 text-[#4A3A2A]">{answer}</p>
               </article>
@@ -483,23 +519,29 @@ export default function PartnerShopGrowthLandingPage() {
         </div>
       </section>
 
-      <section id="inquiry" className="bg-[#FFFDF7] px-5 py-16 sm:px-8 sm:py-20">
-        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.86fr_1.14fr]">
-          <div>
-            <SectionIntro
-              title="우리 샵에 맞는 적용 가능 여부를 확인하세요"
-              body="연락주시면 샘플 체험과 자세한 자료로 찾아뵙겠습니다. 샵에 맞는 운영 방향과 파트너 혜택을 안내해드립니다."
-            />
-            <div className="mt-8 overflow-hidden rounded-lg border-2 border-[#C69A2D] bg-white shadow-sm">
-              <img src={SALON_IMAGE} alt="여성 모델과 제품 패키지" className="h-72 w-full object-cover object-[58%_44%]" loading="lazy" />
-              <div className="p-6">
-                <p className="rounded-lg bg-[#FFFDF7] p-4 text-base font-black leading-7 text-[#4A3A2A]">
-                  문의가 많아 예약된 순서대로 방문하는 점 양해 바랍니다.
-                </p>
-                <div className="mt-5 rounded-lg bg-[#053D22] p-5 text-white">
+      <section id="inquiry" className="px-4 py-8 sm:px-6 sm:py-10">
+        <div className="mx-auto grid max-w-[1180px] gap-6 lg:grid-cols-[0.88fr_1.12fr]">
+          <div className="overflow-hidden rounded-lg border-2 border-[#C69A2D] bg-[#FFFDF7] shadow-[0_22px_80px_rgba(5,61,34,0.12)]">
+            <div className="p-5 sm:p-7">
+              <SectionTitle
+                title="우리 샵에 맞는 적용 가능 여부를 확인하세요"
+                body="연락주시면 샘플 체험과 자세한 자료로 찾아뵙겠습니다. 샵에 맞는 운영 방향과 파트너 혜택을 안내해드립니다."
+              />
+            </div>
+            <div className="relative h-72 overflow-hidden">
+              <img src={SALON_IMAGE} alt="여성 모델과 제품 패키지" className="h-full w-full object-cover object-[60%_45%]" loading="lazy" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#053D22]/42 to-transparent" />
+            </div>
+            <div className="p-5 sm:p-7">
+              <p className="rounded-lg bg-[#FFF6E8] p-4 text-base font-black leading-7 text-[#4A3A2A]">
+                문의가 많아 예약된 순서대로 방문하는 점 양해 바랍니다.
+              </p>
+              <div className="mt-5 rounded-lg border-2 border-[#C69A2D] bg-[#053D22] p-5 text-white">
+                <div className="flex items-center gap-3">
+                  <MessageCircle className="h-7 w-7 text-[#f5d275]" />
                   <p className="text-lg font-black text-[#f5d275]">{contactName}</p>
-                  <p className="mt-2 text-3xl font-black">{phoneDisplay}</p>
                 </div>
+                <p className="mt-3 text-[32px] font-black leading-tight sm:text-4xl">{phoneDisplay}</p>
               </div>
             </div>
           </div>
@@ -538,26 +580,28 @@ export default function PartnerShopGrowthLandingPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden border-t-4 border-[#C69A2D] px-5 py-20 text-white sm:px-8 sm:py-24">
-        <img src={SALON_IMAGE} alt="" className="absolute inset-0 h-full w-full object-cover object-[58%_46%]" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#053D22]/96 via-[#053D22]/88 to-[#0B4A2B]/72" />
-        <div className="relative mx-auto max-w-5xl text-center">
-          <p className="text-3xl font-black leading-tight text-[#f5d275] sm:text-5xl">
-            수익을 더하고, 가치를 높이고, 회복을 전하는 샵 파트너십
-          </p>
-          <h2 className="mt-6 text-[32px] font-black leading-tight sm:text-6xl">
-            플로로탄닌 파트너스
-          </h2>
-          <p className="mx-auto mt-6 max-w-3xl text-base font-bold leading-8 text-[#f7ead2] sm:text-lg">
-            제품만 공급받는 시대는 끝났습니다. 이제는 수익이 남고, 검색에 보이고, 고객에게 신뢰받는 구조까지 함께 가져가야 합니다.
-          </p>
-          <button
-            type="button"
-            onClick={() => scrollToId('inquiry')}
-            className="mt-8 inline-flex min-h-[54px] items-center justify-center rounded-lg bg-white px-8 text-base font-black text-[#053D22]"
-          >
-            우리 샵 도입 상담하기
-          </button>
+      <section className="px-4 py-8 sm:px-6 sm:py-10">
+        <div className="relative mx-auto max-w-[1180px] overflow-hidden rounded-lg border-4 border-[#053D22] text-white shadow-[0_28px_100px_rgba(5,61,34,0.22)]">
+          <img src={SALON_IMAGE} alt="" className="absolute inset-0 h-full w-full object-cover object-[62%_46%]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#053D22]/98 via-[#053D22]/90 to-[#0B4A2B]/70" />
+          <div className="relative p-6 text-center sm:p-10 lg:p-14">
+            <p className="text-[28px] font-black leading-tight text-[#f5d275] sm:text-5xl">
+              수익을 더하고, 가치를 높이고, 회복을 전하는 샵 파트너십
+            </p>
+            <h2 className="mt-6 text-[36px] font-black leading-tight sm:text-6xl">
+              플로로탄닌 파트너스
+            </h2>
+            <p className="mx-auto mt-6 max-w-3xl text-base font-bold leading-8 text-[#f7ead2] sm:text-lg">
+              제품만 공급받는 시대는 끝났습니다. 이제는 수익이 남고, 검색에 보이고, 고객에게 신뢰받는 구조까지 함께 가져가야 합니다.
+            </p>
+            <button
+              type="button"
+              onClick={() => scrollToId('inquiry')}
+              className="mt-8 inline-flex min-h-[54px] items-center justify-center rounded-lg bg-white px-8 text-base font-black text-[#053D22]"
+            >
+              우리 샵 도입 상담하기
+            </button>
+          </div>
         </div>
       </section>
     </main>
