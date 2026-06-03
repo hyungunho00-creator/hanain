@@ -662,10 +662,10 @@ export default function InfoRoomPage() {
               </span>
             </div>
             <h2 style={{ fontSize: 22, lineHeight: 1.32, fontWeight: 900, margin: 0 }}>
-              샵 패키지 링크 공유·자료 출력
+              샵 대표용 랜딩·전단지 공유
             </h2>
             <p style={{ fontSize: 13, lineHeight: 1.75, margin: '8px 0 0', color: '#e7f2ea', fontWeight: 700 }}>
-              샵 대표가 직접 열어보는 비공개 랜딩페이지입니다. 660만 원 구성, 1,320만 원 판매가, 전용 웹과 QR 고객 동선을 확인할 수 있습니다.
+              샵 대표가 직접 검토하는 비공개 랜딩페이지입니다. 660만 원 구성, 1,320만 원 판매가, 고객이 우리 샵으로 돌아오는 QR 동선을 확인할 수 있습니다.
             </p>
           </div>
 
@@ -699,7 +699,7 @@ export default function InfoRoomPage() {
 
             <p style={{ fontSize: 12.5, lineHeight: 1.7, color: '#4b5b52', fontWeight: 700, margin: '0 0 14px' }}>
               이 링크는 메뉴와 사이트맵에 노출하지 않는 <strong style={{ color: '#063f2a' }}>초대 링크 전용 noindex 페이지</strong>입니다.
-              출력 자료는 1~3장에는 연락처 없이 보여주고, 마지막 4장에만 문의 연락처와 QR이 들어갑니다.
+              고객용 전단지는 1~3장에는 연락처 없이 보여주고, 마지막 4장에만 문의 연락처와 QR이 들어갑니다.
             </p>
 
             <div style={{
@@ -789,7 +789,7 @@ export default function InfoRoomPage() {
                 }}
               >
                 <ExternalLink size={17} />
-                제안서 보기·출력
+                랜딩·전단지 보기
               </a>
             </div>
           </div>
