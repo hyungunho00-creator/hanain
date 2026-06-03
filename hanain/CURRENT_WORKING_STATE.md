@@ -24,7 +24,7 @@ What "current" means:
 - Do not switch the shop package proposal body back to fixed proposal images.
 - The shop package page is a contract proposal for salon/esthetic/wellness shop owners, not partner education, training content, or a generic product explainer.
 - Printed proposal sheets 1-3 must stay clean with no contact footer and no QR. Only printed sheet 4 may include the active partner name, phone number, share URL, and QR code.
-- The shop package page should lead with shop owner contract logic: premium salon imagery, 660만원 package economics, first-mover/local web advantage, product rationale, support package, and final partner-specific contact/QR.
+- The shop package page should lead with shop owner contract logic: premium salon imagery, 660만원 도입가, 1,320만원 판매가, first-mover/local web advantage, product rationale, support package, and final partner-specific contact/QR.
 - Do not invent fake testimonials. Use clearly labeled shop-owner reaction points or consultation conversation examples instead.
 - Hero asset: `/partner/shop-package/salon-consult-hero.jpg` (generated premium salon consultation photo, compressed JPEG).
 

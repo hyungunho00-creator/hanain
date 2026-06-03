@@ -33,80 +33,80 @@ const SHARE_TOKEN = 'salon-growth-660'
 const HERO_IMAGE = '/partner/shop-package/salon-consult-hero.jpg'
 
 const topMetrics = [
-  { label: '도입 패키지', value: '660만 원', helper: '샵 패키지 기준' },
-  { label: '판매 시 공급가 기준', value: '약 1,200만 원', helper: '매출 구조 예시' },
-  { label: '예상 마진 구조', value: '약 50%', helper: '부가가치세 별도 기준' },
+  { label: '도입가', value: '660만 원', helper: '샵 패키지 기준' },
+  { label: '판매가', value: '1,320만 원', helper: '총 판매가 기준' },
+  { label: '예상 마진', value: '약 660만 원', helper: '부가세 별도, 약 50%' },
 ]
 
 const ownerPainPoints = [
-  '기존 고객에게 객단가를 올릴 부가 상품이 필요하다',
-  '좋은 제품이어도 설명이 길어지면 판매가 멈춘다',
-  '우리 지역에서 먼저 보이고 먼저 문의받는 구조가 필요하다',
-  '샵 분위기를 해치지 않는 프리미엄 제안이어야 한다',
+  '660만 원이 부담이 아니라 회수 가능한 패키지로 보여야 한다',
+  '기존 고객에게 자연스럽게 권할 고급 부가 상품이 필요하다',
+  '우리 동네에서 먼저 보이고 먼저 문의받는 샵이 되고 싶다',
+  '싸 보이는 판매가 아니라 샵 격에 맞는 제안이어야 한다',
 ]
 
 const ownerDecisionCards = [
   {
     icon: Wallet,
-    label: '비용 판단',
-    title: '660만 원을 비용이 아니라 회수 구조로 봅니다',
-    body: '도입 금액, 판매 시 공급가 기준 매출 구조, 예상 마진을 한 화면에서 확인하게 해야 계약 검토가 빨라집니다.',
+    label: '수익 구조',
+    title: '660만 원 도입 → 1,320만 원 판매가',
+    body: '대표가 가장 먼저 보는 건 숫자입니다. 도입가, 판매가, 예상 마진이 바로 보여야 계약 검토가 시작됩니다.',
   },
   {
     icon: Store,
-    label: '샵 이미지',
-    title: '샵 분위기를 해치지 않는 고급 제안이어야 합니다',
-    body: '고객이 받는 인상은 제품만이 아니라 제안서, QR, 웹페이지, 상담 문구까지 합쳐진 전체 경험입니다.',
+    label: '샵 전용 웹',
+    title: '샵 이름으로 열리는 제안 페이지',
+    body: '고객이 QR을 찍으면 제품 회사가 아니라 우리 샵 제안처럼 보입니다. 샵 이름이 남아야 다시 문의가 옵니다.',
   },
   {
     icon: Users,
-    label: '고객 반응',
-    title: '고객이 “어디서 상담받죠?”라고 물을 수 있어야 합니다',
-    body: '자료를 읽고 끝나는 구조가 아니라 QR, 전화, 문자, 전자명함으로 바로 상담 흐름이 이어져야 합니다.',
+    label: '상담 동선',
+    title: '전단지 QR에서 전화·문자까지 바로 연결',
+    body: '자료를 읽고 끝나는 게 아니라 담당자 명함, 전화, 문자로 이어집니다. 고객이 망설일 틈을 줄입니다.',
   },
   {
     icon: TrendingUp,
-    label: '지역 선점',
-    title: '동기반 한 곳만 먼저 세팅되는 구조가 힘입니다',
-    body: '같은 상권에 모두 같은 제안을 뿌리면 매력이 떨어집니다. 먼저 계약한 샵의 이름으로 상담 자산을 쌓는 게 핵심입니다.',
+    label: '선점 효과',
+    title: '동기반 한 곳 우선 세팅',
+    body: '모든 샵에 똑같이 뿌리면 가치가 떨어집니다. 먼저 계약한 샵이 전용 웹과 지역 상담 흐름을 먼저 잡습니다.',
   },
 ]
 
 const productReasons = [
   {
     icon: Leaf,
-    title: '고객에게 팔 이유가 분명한 소재',
-    body: '플로로탄닌은 감태 등 갈조류에 존재하는 해양 폴리페놀 계열입니다. 낯선 성분이 아니라 항산화, 염증 반응, 밸런스 연구에서 반복적으로 다뤄지는 스토리가 있습니다.',
+    title: '감태 유래 해양 폴리페놀 스토리',
+    body: '고객에게 “왜 이 제품인가”를 짧게 말할 수 있는 소재입니다.',
   },
   {
     icon: HeartPulse,
-    title: '피부샵 고객의 관심사와 바로 연결',
-    body: '피부, 컨디션, 수면, 스트레스, 장 건강, 생활 리듬처럼 샵 고객이 실제로 묻는 관심사와 자연스럽게 연결됩니다.',
+    title: '피부·컨디션 고객 관심사와 연결',
+    body: '피부관리실, 에스테틱, 웰니스 고객이 이미 궁금해하는 주제와 맞습니다.',
   },
   {
     icon: Sparkles,
-    title: '660만 원 제안을 받쳐주는 자료 구조',
-    body: '가격만 말하면 부담스럽지만, 전용 웹·QR·제안서·상담 문구가 함께 있으면 “왜 이 패키지인지”를 보여줄 수 있습니다.',
+    title: '전용 웹과 QR까지 포함된 제안',
+    body: '제품만 들이는 게 아니라 고객에게 보여줄 판매 도구까지 함께 받습니다.',
   },
   {
     icon: ShieldCheck,
-    title: '과장 없이 고급스럽게 설명 가능',
-    body: '치료·완치 표현 없이 연구 기반 건강정보와 생활 관리 관점으로 설명하므로 샵의 신뢰도와 프리미엄 이미지를 지킬 수 있습니다.',
+    title: '과장 없이 고급스럽게 말할 수 있음',
+    body: '치료·완치 표현 없이 건강정보와 생활 관리 관점으로 신뢰를 지킵니다.',
   },
 ]
 
 const territoryItems = [
   {
     title: '동기반 한 곳 우선 세팅',
-    body: '같은 동기반·상권에 모두 똑같은 제안 구조를 뿌리면 가치가 떨어집니다. 먼저 계약한 샵을 중심으로 전용 웹과 QR 구조를 우선 세팅합니다.',
+    body: '같은 동기반·상권에 모두 똑같이 열면 제안 가치가 떨어집니다. 먼저 계약한 샵을 우선 세팅합니다.',
   },
   {
     title: '지역 키워드 선점',
-    body: '지역명, 샵 유형, 상담 키워드는 먼저 쌓은 곳이 유리합니다. 검색 자산은 늦게 시작할수록 따라잡기 어렵습니다.',
+    body: '지역명, 샵 유형, 상담 키워드는 먼저 쌓은 곳이 유리합니다. 늦게 시작하면 따라잡기 어렵습니다.',
   },
   {
     title: '샵 이름으로 남는 자료',
-    body: '출력 제안서 마지막 장에는 담당자 연락처와 QR이 들어갑니다. 고객은 제품 이름만 보는 게 아니라 “누구에게 문의해야 하는지”까지 기억합니다.',
+    body: '마지막 장 연락처와 QR이 담당자 명함으로 이어집니다. 고객은 누구에게 문의할지 바로 압니다.',
   },
 ]
 
@@ -115,7 +115,7 @@ const supportItems = [
     icon: Monitor,
     label: '전용 웹',
     title: '샵 이름으로 열리는 제안 페이지',
-    body: '고객이 링크나 QR로 들어왔을 때 샵의 제안처럼 보이는 전용 안내 페이지를 제공합니다.',
+    body: '고객이 링크나 QR로 들어오면 우리 샵 이름의 제안 페이지가 열립니다.',
   },
   {
     icon: Search,
@@ -127,7 +127,7 @@ const supportItems = [
     icon: ClipboardCheck,
     label: '상담 문구',
     title: '대표님이 바로 말할 문장',
-    body: '제품 설명보다 계약과 판매에 필요한 고객 안내 문장, 질문 대응, 제안 포인트를 정리합니다.',
+    body: '고객에게 바로 말할 핵심 문장, 질문 대응, 제안 포인트를 정리합니다.',
   },
   {
     icon: Package,
@@ -145,41 +145,41 @@ const supportItems = [
 
 const contractTriggers = [
   {
-    label: '마진이 보인다',
-    title: '660만 원 도입 → 약 1,200만 원 매출 구조',
-    body: '단순 제품 매입이 아니라 판매 시 공급가 기준 약 1,200만 원 구조와 약 50% 마진 포인트를 한눈에 보여줍니다.',
+    label: '수익이 보인다',
+    title: '660만 원 도입 → 1,320만 원 판매가 구조',
+    body: '샵 대표가 바로 계산할 수 있는 숫자입니다. 제품값이 아니라 매출 구조로 보입니다.',
   },
   {
-    label: '고객이 다시 온다',
-    title: 'QR을 찍으면 우리 샵 제안 페이지로 연결',
-    body: '전단지를 받은 고객이 다시 검색하지 않아도 제안 페이지, 상담 버튼, 담당자 연락처로 이어집니다.',
+    label: '고객이 이어진다',
+    title: 'QR을 찍으면 담당자 명함과 상담 버튼으로 연결',
+    body: '전단지를 받은 고객이 다시 검색하지 않아도 바로 문의할 수 있습니다.',
   },
   {
-    label: '먼저 잡는다',
-    title: '동기반·지역 우선 세팅',
-    body: '같은 지역에서 먼저 전용 웹과 상담 키워드를 잡은 샵이 고객 기억에 먼저 남습니다.',
+    label: '지역을 먼저 잡는다',
+    title: '동기반 한 곳 우선 웹 세팅',
+    body: '먼저 계약한 샵이 지역 상담 흐름과 고객 기억을 먼저 가져갑니다.',
   },
 ]
 
 const customerResponsePoints = [
   {
     title: '“이건 우리 샵에서 상담받아야겠다”',
-    body: '전단지 QR과 제안 페이지가 담당자 명함으로 이어지면 고객이 다시 검색하지 않고 바로 문의할 수 있습니다.',
+    body: 'QR이 담당자 명함과 전화·문자로 이어지면 고객이 바로 움직입니다.',
   },
   {
-    title: '“제품 설명이 싸 보이지 않는다”',
-    body: '성분만 나열하지 않고 컨디션, 생활 리듬, 피부 관심사와 연결해 프리미엄 상담 소재처럼 보이게 만듭니다.',
+    title: '“우리 샵에서만 먼저 제안받는 느낌이다”',
+    body: '전용 웹과 출력 제안서가 있으면 단순 공동구매처럼 보이지 않습니다.',
   },
   {
     title: '“우리 동네에서 먼저 보이는 샵이 기억난다”',
-    body: '지역명과 샵 유형을 담은 전용 웹 흐름은 먼저 시작한 곳일수록 고객 기억에 남기 쉽습니다.',
+    body: '지역명과 샵 유형을 담은 흐름은 먼저 시작한 곳일수록 유리합니다.',
   },
 ]
 
 const productProofAngles = [
   '감태 등 갈조류 유래 해양 폴리페놀 계열 소재',
   '항산화, 염증 반응, 대사 밸런스 연구에서 반복적으로 언급되는 성분군',
-  '치료·완치 표현 없이 생활 관리와 컨디션 상담으로 설명하기 좋은 구조',
+  '치료·완치 표현 없이 생활 관리와 컨디션 상담으로 연결되는 구조',
 ]
 
 const recommendedShops = [
@@ -446,7 +446,7 @@ export default function PartnerShopPackagePage() {
               먼저 계약한 샵이 유리합니다
             </h1>
             <p className="mt-6 max-w-2xl text-lg font-bold leading-9 text-[#45584d] md:text-xl">
-              제품만 공급받는 구조가 아닙니다. 샵 이름으로 열리는 전용 웹, QR 제안서, 고객 상담 문구, 출력 자료까지 함께 받아 객단가와 재방문 상담을 만드는 계약 패키지입니다.
+              660만 원을 들여 1,320만 원 판매가 구조를 만들고, 샵 이름으로 열리는 전용 웹과 QR 제안서까지 먼저 잡는 패키지입니다.
             </p>
 
             <div className="mt-7 grid gap-3 sm:grid-cols-3">
@@ -486,10 +486,10 @@ export default function PartnerShopPackagePage() {
           <div>
             <p className="text-xs font-black tracking-[0.2em] text-[#a06f10]">SHOP OWNER DECISION</p>
             <h2 className="mt-2 text-3xl font-black leading-tight text-[#071b12] md:text-4xl">
-              샵 대표는 설명보다 “계약 후 바로 쓸 수 있는가”를 봅니다
+              대표님이 계약 전에 보는 건 딱 네 가지입니다
             </h2>
             <p className="mt-4 text-base font-semibold leading-8 text-[#59645f]">
-              좋은 성분 설명만으로는 부족합니다. 대표님은 도입 비용, 마진, 고객 연결, 샵 이미지, 지역 선점 가능성을 한 번에 판단합니다.
+              숫자가 맞는지, 고객에게 팔 수 있는지, 샵 이미지가 좋아지는지, 우리 지역에서 먼저 잡을 수 있는지입니다.
             </p>
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
               {ownerDecisionCards.map((item) => (
@@ -508,7 +508,7 @@ export default function PartnerShopPackagePage() {
             <img src={HERO_IMAGE} alt="샵 대표가 고객에게 프리미엄 제품을 상담하는 장면" className="h-72 w-full object-cover md:h-96" />
             <div className="p-5">
               <p className="text-xs font-black tracking-[0.16em] text-[#a06f10]">CONTRACT CHECK</p>
-              <h3 className="mt-2 text-2xl font-black leading-8 text-[#071b12]">대표님이 바로 따지는 조건</h3>
+              <h3 className="mt-2 text-2xl font-black leading-8 text-[#071b12]">이 조건이면 검토할 이유가 생깁니다</h3>
               <div className="mt-4 grid gap-3">
                 {ownerPainPoints.map((text) => (
                   <div key={text} className="flex items-start gap-3">
@@ -527,10 +527,10 @@ export default function PartnerShopPackagePage() {
           <div>
             <p className="text-xs font-black tracking-[0.2em] text-[#f0c45c]">FIRST MOVER ADVANTAGE</p>
             <h2 className="mt-3 text-3xl font-black leading-tight md:text-4xl">
-              샵 전용 웹은 먼저 잡은 곳이 유리합니다
+              동기반 한 곳만 먼저 잡아야 가치가 생깁니다
             </h2>
             <p className="mt-4 text-base font-semibold leading-8 text-[#dce7df]">
-              같은 상권에서 모두에게 똑같은 웹 구조를 뿌리면 가치가 떨어집니다. 먼저 계약한 샵이 자기 이름으로 검색 문구, QR, 제안서, 상담 흐름을 쌓아야 합니다.
+              같은 상권에 모두 같은 웹을 열면 매력이 떨어집니다. 먼저 계약한 샵 이름으로 전용 웹, QR, 지역 상담 흐름을 쌓는 게 핵심입니다.
             </p>
           </div>
           <div className="grid gap-4">
@@ -549,8 +549,8 @@ export default function PartnerShopPackagePage() {
         <div className="mx-auto max-w-6xl px-5 md:px-8">
           <SectionTitle
             kicker="WHY PHLOROTANNIN"
-            title="제품이 좋아 보여야 660만 원 제안도 설득됩니다"
-            body="샵 대표님은 고객에게 설명할 수 있는 제품인지 봅니다. 플로로탄닌은 소재 스토리, 생활 관리 관점, 고급 제안 방식이 함께 맞습니다."
+            title="고객에게 팔 명분이 있어야 660만 원도 움직입니다"
+            body="감태 유래 해양 폴리페놀 스토리, 피부·컨디션 관심사, 고급 제안 방식이 한 화면에서 맞물려야 합니다."
           />
           <div className="grid gap-4 md:grid-cols-2">
             {productReasons.map((item) => (
@@ -562,8 +562,8 @@ export default function PartnerShopPackagePage() {
             ))}
           </div>
           <div className="mt-6 rounded-lg border-2 border-[#063f2a] bg-white p-6">
-            <p className="text-xs font-black tracking-[0.16em] text-[#a06f10]">PRODUCT TALKING POINTS</p>
-            <h3 className="mt-2 text-2xl font-black leading-8 text-[#071b12]">고객에게 이렇게 설명할 수 있어야 판매가 자연스럽습니다</h3>
+            <p className="text-xs font-black tracking-[0.16em] text-[#a06f10]">SELLING POINTS</p>
+            <h3 className="mt-2 text-2xl font-black leading-8 text-[#071b12]">고객에게 말할 명분이 바로 보여야 팔립니다</h3>
             <div className="mt-5 grid gap-3 md:grid-cols-3">
               {productProofAngles.map((text) => (
                 <div key={text} className="rounded-lg bg-[#f8f5ed] px-4 py-3">
@@ -579,8 +579,8 @@ export default function PartnerShopPackagePage() {
         <div className="mx-auto max-w-6xl px-5 md:px-8">
           <SectionTitle
             kicker="CONTRACT POINT"
-            title="계약하고 싶어지는 포인트는 세 가지입니다"
-            body="샵 대표가 바로 계산할 수 있게 마진, 고객 연결, 지역 선점 구조를 먼저 보여줘야 합니다."
+            title="대표님이 계약을 고민하게 되는 포인트"
+            body="판매가, 상담 동선, 지역 선점이 한 번에 보이면 단순 제품 매입이 아니라 사업 제안이 됩니다."
           />
           <div className="grid gap-4 md:grid-cols-3">
             {contractTriggers.map((item) => (
@@ -593,7 +593,7 @@ export default function PartnerShopPackagePage() {
           </div>
           <div className="mt-8 rounded-lg bg-[#063f2a] p-6 text-white">
             <p className="text-xs font-black tracking-[0.16em] text-[#f0c45c]">CUSTOMER RESPONSE FLOW</p>
-            <h3 className="mt-2 text-2xl font-black leading-8">고객이 다시 문의하게 되는 흐름까지 보여줍니다</h3>
+            <h3 className="mt-2 text-2xl font-black leading-8">고객이 움직이는 장면이 보여야 대표도 움직입니다</h3>
             <div className="mt-5 grid gap-4 md:grid-cols-3">
               {customerResponsePoints.map((item) => (
                 <div key={item.title} className="rounded-lg border border-[#caa85a] bg-white/95 p-5 text-[#071b12]">
@@ -610,8 +610,8 @@ export default function PartnerShopPackagePage() {
         <div className="mx-auto max-w-6xl px-5 md:px-8">
           <SectionTitle
             kicker="WHAT THE SHOP GETS"
-            title="계약하면 샵이 바로 받는 패키지"
-            body="제품만 받는 게 아니라, 대표님이 고객에게 보여주고 말하고 공유하고 문의받을 수 있는 세트를 받습니다."
+            title="계약하면 샵이 바로 쓰는 것"
+            body="제품, 전용 웹, QR 제안서, 상담 문구, 출력물까지 바로 고객에게 보여줄 수 있게 묶습니다."
           />
           <div className="grid gap-4 lg:grid-cols-5">
             {supportItems.map((item, index) => (
@@ -635,7 +635,7 @@ export default function PartnerShopPackagePage() {
             <p className="text-xs font-black tracking-[0.18em] text-[#a06f10]">RECOMMENDED</p>
             <h2 className="mt-2 text-3xl font-black leading-tight text-[#071b12]">이런 샵·센터에 특히 추천합니다</h2>
             <p className="mt-4 text-base font-semibold leading-8 text-[#59645f]">
-              이미 고객과 만나는 공간이라면 제품보다 “상담 이유”가 더 중요합니다. 플로로탄닌은 샵의 고급 부가 상담 소재로 쓰기 좋습니다.
+              이미 고객과 만나는 공간이라면 “무엇을 더 권할지”가 매출 차이를 만듭니다. 이 패키지는 고급 부가 상담을 바로 시작하려는 샵에 맞습니다.
             </p>
           </div>
           <div className="grid gap-3">
@@ -656,7 +656,7 @@ export default function PartnerShopPackagePage() {
               <p className="text-xs font-black tracking-[0.18em] text-[#a06f10]">PRINTABLE PROPOSAL</p>
               <h2 className="mt-2 text-3xl font-black text-[#071b12]">출력용 4장 제안서</h2>
               <p className="mt-2 text-sm font-bold leading-7 text-[#66766d]">
-                1~3장은 계약 판단 자료로만 깔끔하게 보여주고, 마지막 4장에만 담당자 연락처와 QR을 넣습니다.
+                1~3장은 숫자와 선점 구조만 강하게 보여주고, 마지막 4장에만 담당자 연락처와 QR을 넣습니다.
               </p>
             </div>
             <button
@@ -672,8 +672,8 @@ export default function PartnerShopPackagePage() {
           <div className="proposal-print-list grid gap-6">
             <ProposalSheet
               page="1"
-              title="660만 원을 제품값으로 보지 않게 만듭니다"
-              subtitle="샵 대표가 보는 건 상품 설명이 아니라, 도입 후 객단가와 고객 상담으로 이어지는 구조입니다."
+              title="660만 원 도입, 1,320만 원 판매가 구조"
+              subtitle="샵 대표가 먼저 보는 건 숫자입니다. 도입가, 판매가, 예상 마진이 바로 보여야 계약 검토가 시작됩니다."
               partnerName={partnerName}
               phoneDisplay={phoneDisplay}
               pageUrl={pageUrl}
@@ -698,8 +698,8 @@ export default function PartnerShopPackagePage() {
 
             <ProposalSheet
               page="2"
-              title="먼저 계약한 샵이 지역 상담 흐름을 선점합니다"
-              subtitle="동기반 한 곳 우선 세팅, 지역 키워드, QR 제안서가 함께 쌓이면 고객은 먼저 보이는 샵을 기억합니다."
+              title="동기반 한 곳만 먼저 세팅해야 합니다"
+              subtitle="같은 상권에 모두 똑같이 열면 가치가 떨어집니다. 먼저 계약한 샵 이름으로 전용 웹과 QR 상담 흐름을 잡아야 합니다."
               partnerName={partnerName}
               phoneDisplay={phoneDisplay}
               pageUrl={pageUrl}
@@ -720,8 +720,8 @@ export default function PartnerShopPackagePage() {
 
             <ProposalSheet
               page="3"
-              title="제품이 좋아 보여야 계약도 쉬워집니다"
-              subtitle="플로로탄닌은 해조류 유래 폴리페놀 스토리와 생활 관리 관점이 있어 샵 고객에게 고급스럽게 제안하기 좋습니다."
+              title="고객에게 팔 명분이 있어야 합니다"
+              subtitle="감태 유래 해양 폴리페놀, 피부·컨디션 관심사, 고급 상담 이미지를 한 번에 보여줄 수 있어야 샵에서 권하기 쉽습니다."
               partnerName={partnerName}
               phoneDisplay={phoneDisplay}
               pageUrl={pageUrl}
@@ -746,8 +746,8 @@ export default function PartnerShopPackagePage() {
 
             <ProposalSheet
               page="4"
-              title="계약 검토는 여기서 시작하시면 됩니다"
-              subtitle="샵 상황에 맞는 도입 방향, 전용 웹 세팅, QR 제안서, 고객 안내 문구를 담당자가 안내드립니다."
+              title="이제 우리 샵 이름으로 먼저 잡으세요"
+              subtitle="계약 검토와 도입 상담은 아래 담당자에게 바로 연결됩니다. 연락처와 QR은 마지막 장에만 넣었습니다."
               partnerName={partnerName}
               phoneDisplay={phoneDisplay}
               pageUrl={pageUrl}
@@ -765,7 +765,7 @@ export default function PartnerShopPackagePage() {
                 <div className="rounded-lg border-2 border-[#063f2a] bg-[#fff8e5] p-5">
                   <p className="text-sm font-black tracking-[0.16em] text-[#a06f10]">NEXT STEP</p>
                   <h3 className="mt-2 text-2xl font-black leading-9 text-[#071b12]">
-                    상담 주시면 샵 상황에 맞는 계약 조건과 도입 방향을 안내드리겠습니다
+                    동기반 우선 세팅 가능 여부와 계약 조건을 바로 확인해드리겠습니다
                   </h3>
                   <div className="mt-5 flex items-center gap-4">
                     <div className="rounded-md border border-[#d8c18a] bg-white p-2">
@@ -791,7 +791,7 @@ export default function PartnerShopPackagePage() {
             좋은 제품을 좋은 샵 이름으로 남기세요
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm font-semibold leading-7 text-[#dce7df]">
-            플로로탄닌 샵 패키지는 제품 공급이 아니라, 샵이 고객에게 설명하고 공유하고 다시 문의받는 구조를 만드는 제안입니다.
+            플로로탄닌 샵 패키지는 제품 공급이 아니라, 샵이 고객에게 제안하고 공유하고 다시 문의받는 구조를 만드는 계약 제안입니다.
           </p>
           <div className="mx-auto mt-7 max-w-2xl">
             <PartnerContact partnerName={partnerName} phoneDisplay={phoneDisplay} phone={phone} pageUrl={pageUrl} cardUrl={cardUrl} />
