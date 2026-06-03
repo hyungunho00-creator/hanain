@@ -164,6 +164,7 @@ async function main() {
   results.push('partner archive canonical ok')
 
   await checkPage('/p/test/shop-package/salon-growth-660', {
+    source: 'private-shop-package',
     xRobots: 'noindex,follow',
     canonical: `${SITE}/p/test/shop-package/salon-growth-660`,
     robotsIncludes: 'noindex',

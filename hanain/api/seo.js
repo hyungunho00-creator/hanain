@@ -1819,10 +1819,23 @@ export default async function handler(req, res) {
     // 메타 결정
     let meta = null
     let metaSource = 'static'
+    const privateShopPackageMatch = pathname.match(/^\/p\/[^/]+\/shop-package(?:\/[^?]+)?$/)
+    if (privateShopPackageMatch) {
+      const canonicalPath = pathname.split('?')[0] || pathname
+      meta = {
+        title: '샵 패키지 제안서 | 플로로탄닌 파트너스',
+        desc:  '파트너가 직접 공유한 플로로탄닌 샵 패키지 제안 페이지입니다. 660만 원 샵 패키지, 지역 검색 구조, 상담 연결, 운영 지원 흐름을 안내합니다.',
+        canonical: `${SITE}${canonicalPath}`,
+        robots: 'noindex,follow',
+        ogImage: `${SITE}/partner/shop-package/shop-package-01.png`,
+        ogImageAlt: '플로로탄닌 파트너스 660만 원 샵 패키지 모바일 제안서',
+      }
+      metaSource = 'private-shop-package'
+    }
     const partnerArchiveLogicalPathname = getPartnerArchiveLogicalPath(pathname)
     const metaLookupPathname = partnerArchiveLogicalPathname || pathname
     const blogMatch = metaLookupPathname.match(/^\/blog\/([^/]+)$/)
-    if (blogMatch) {
+    if (!meta && blogMatch) {
       meta = await fetchPostMeta(blogMatch[1])
       if (meta) {
         metaSource = meta.source || 'posts-table'
@@ -1852,7 +1865,7 @@ export default async function handler(req, res) {
       meta.canonical = `${SITE}${metaLookupPathname}`
       metaSource = 'fallback'
     }
-    if (partnerArchiveLogicalPathname) {
+    if (partnerArchiveLogicalPathname && !privateShopPackageMatch) {
       const canonicalPath = partnerArchiveLogicalPathname.split('?')[0] || '/'
       const isPrivateShopPackage = canonicalPath === '/shop-package' || canonicalPath.startsWith('/shop-package/')
       const requestCanonicalPath = pathname.split('?')[0] || '/'
