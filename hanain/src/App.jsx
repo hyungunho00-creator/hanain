@@ -1,4 +1,4 @@
-﻿import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 import LandingPage from './pages/LandingPage'
@@ -35,13 +35,16 @@ import { AuthProvider } from './context/AuthContext'
 import PartnerArchiveShell from './components/partner/PartnerArchiveShell'
 
 function AppInner() {
+  const location = useLocation()
+  const isShopPackageRoute = /^\/p\/[^/]+\/shop-package(?:\/|$)/.test(location.pathname)
+
   return (
     <AuthProvider>
       <PartnerProvider>
         <div className="min-h-screen flex flex-col">
-          <Navbar />
-          <PartnerArchiveShell position="top" />
-          <main className="flex-1" style={{ paddingBottom: 'var(--partner-sticky-offset, 0px)' }}>
+          {!isShopPackageRoute && <Navbar />}
+          {!isShopPackageRoute && <PartnerArchiveShell position="top" />}
+          <main className="flex-1" style={{ paddingBottom: isShopPackageRoute ? '0px' : 'var(--partner-sticky-offset, 0px)' }}>
             <Routes>
               <Route path="/" element={<LandingPage />} />
               <Route path="/home" element={<HomePage />} />
@@ -105,8 +108,8 @@ function AppInner() {
               <Route path="/insights/:slug" element={<InsightPostPage />} />
             </Routes>
           </main>
-          <PartnerArchiveShell position="bottom" />
-          <Footer />
+          {!isShopPackageRoute && <PartnerArchiveShell position="bottom" />}
+          {!isShopPackageRoute && <Footer />}
         </div>
       </PartnerProvider>
     </AuthProvider>
@@ -123,5 +126,3 @@ function App() {
 }
 
 export default App
-
-

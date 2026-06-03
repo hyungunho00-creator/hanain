@@ -360,7 +360,7 @@ export default function InfoRoomPage() {
   async function shareShopPackageLink() {
     const payload = {
       title: '플로로탄닌 샵 패키지 제안서',
-      text: '제품만 파는 샵보다 회복을 제안하는 샵을 위한 플로로탄닌 파트너스 샵 패키지 제안서입니다.',
+      text: '파트너 정보와 QR이 자동 삽입되는 플로로탄닌 샵 패키지 제안서입니다.',
       url: shopPackageUrl,
     }
     if (navigator.share) {
@@ -662,10 +662,10 @@ export default function InfoRoomPage() {
               </span>
             </div>
             <h2 style={{ fontSize: 22, lineHeight: 1.32, fontWeight: 900, margin: 0 }}>
-              샵 패키지 모바일로 제안하기
+              샵 패키지 제안서 공유·출력하기
             </h2>
             <p style={{ fontSize: 13, lineHeight: 1.75, margin: '8px 0 0', color: '#e7f2ea', fontWeight: 700 }}>
-              뷰티샵·피부관리실·힐링센터에 660만 원 샵 패키지와 검색되는 상담 구조를 한 번에 보여주는 전용 제안 페이지입니다.
+              뷰티샵·피부관리실·힐링센터에 660만 원 샵 패키지와 검색되는 상담 구조를 보여주는 파트너 전용 제안 페이지입니다.
             </p>
           </div>
 
@@ -699,7 +699,7 @@ export default function InfoRoomPage() {
 
             <p style={{ fontSize: 12.5, lineHeight: 1.7, color: '#4b5b52', fontWeight: 700, margin: '0 0 14px' }}>
               이 링크는 메뉴와 사이트맵에 노출하지 않는 <strong style={{ color: '#063f2a' }}>파트너 공유 전용 noindex 페이지</strong>입니다.
-              샵 대표님에게 직접 받은 사람만 볼 수 있도록 전달해 주세요.
+              출력하면 파트너명·연락처·QR이 각 장에 자동으로 들어갑니다.
             </p>
 
             <div style={{
@@ -789,7 +789,7 @@ export default function InfoRoomPage() {
                 }}
               >
                 <ExternalLink size={17} />
-                미리보기 열기
+                제안서 보기·출력
               </a>
             </div>
           </div>
