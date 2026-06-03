@@ -1,12 +1,12 @@
 # Current Working State
 
-Last verified: 2026-06-03 15:06 KST
+Last verified: 2026-06-03 16:53 KST
 
 Production domain:
 
 - `https://phlorotannin.com`
 - `https://www.phlorotannin.com` redirects to apex
-- Current verified deployment: `https://hanain-joi1qlcso-01056528206s-projects.vercel.app`
+- Current verified deployment: `https://hanain-pwmx72jzt-01056528206s-projects.vercel.app`
 
 Branch:
 
@@ -20,10 +20,10 @@ What "current" means:
 - Local static blog posts remain in code only as fallback/seed assets, not as the operating source of truth.
 - First-screen blog card/OG images use the refreshed `scripts/build_blog_visual_refresh.py` system.
 - The refreshed front blog `og_image` URLs are served through `/og-card/v20260602/<slug>.png` by `api/og.js`; do not switch them back to `/og/blog-refresh` or raw `/og/content-quality` paths without checking CDN cache behavior.
-- Private partner shop package proposal pages are dynamic HTML print/share pages under `/p/:partnerSlug/shop-package/salon-growth-660`.
-- Do not switch the shop package proposal body back to fixed proposal images.
+- Private partner shop package landing pages are dynamic HTML print/share pages under `/p/:partnerSlug/shop-package/salon-growth-660`.
+- Do not switch the shop package landing body back to fixed proposal images.
 - The shop package page is a private landing page that salon/esthetic/wellness shop owners read directly, not partner education, training content, a sales script, or a generic product explainer.
-- Printed proposal sheets 1-3 must stay clean with no contact footer and no QR. Only printed sheet 4 may include the active partner name, phone number, share URL, and QR code.
+- Printed sheets 1-3 must stay clean with no contact footer and no QR. Only printed sheet 4 may include the active partner name, phone number, share URL, and QR code.
 - The shop package page should read as the shop owner's own opportunity: premium salon imagery, 660만원 구성, 1,320만원 판매가, shop-name landing page, QR customer path, local first-mover advantage, product rationale, and final contact/QR.
 - Do not invent fake testimonials. Use clearly labeled shop-owner reaction points or consultation conversation examples instead.
 - Hero asset: `/partner/shop-package/salon-consult-hero.jpg` (generated premium salon consultation photo, compressed JPEG).
