@@ -1,7 +1,7 @@
 {
   "min_tag_count": 5,
-  "total_questions": 1871,
-  "total_unique_tags": 2228,
+  "total_questions": 1874,
+  "total_unique_tags": 2238,
   "page_eligible_tags": 238,
   "tags": {
     "플로로탄닌": {
@@ -5990,6 +5990,77 @@
         "rsp_100"
       ]
     },
+    "심혈관": {
+      "count": 66,
+      "qids": [
+        "cardio-019",
+        "cardio-030",
+        "cardio-040",
+        "cardio-045",
+        "cardio-050",
+        "cardio-057",
+        "cardio-060",
+        "cardio-065",
+        "cardio-067",
+        "cardio-070",
+        "cardio-075",
+        "cardio-080",
+        "cardio-085",
+        "cardio-090",
+        "cardio-095",
+        "cardio-100",
+        "meta-018",
+        "wh-extra-008",
+        "wh-extra-060",
+        "wh-extra-070",
+        "womens-009",
+        "mens-003",
+        "mens-016",
+        "mens-extra-005",
+        "mens-extra-030",
+        "mens-005",
+        "infect-extra-006",
+        "infect-extra-021",
+        "mental-extra-032",
+        "ingr-010",
+        "ingr-021",
+        "qa200-20260527-077",
+        "qa200-20260527-078",
+        "qa200-20260527-079",
+        "qa200-20260527-080",
+        "qa200-20260527-081",
+        "qa200-20260527-082",
+        "qa200-20260527-083",
+        "qa200-20260527-084",
+        "qa200-20260527-085",
+        "qa200-20260527-086",
+        "qa200-20260527-087",
+        "qa200-20260527-088",
+        "qa200-20260527-089",
+        "qa200-20260527-090",
+        "qa200-20260527-091",
+        "qa200-20260527-092",
+        "qa200-20260527-093",
+        "qa200-20260527-094",
+        "seoqa-cardiovascular-01",
+        "seoqa-cardiovascular-02",
+        "seoqa-cardiovascular-03",
+        "seoqa-cardiovascular-04",
+        "seoqa-cardiovascular-05",
+        "seoqa-cardiovascular-06",
+        "seoqa-cardiovascular-07",
+        "seoqa-cardiovascular-08",
+        "seoqa-cardiovascular-09",
+        "seoqa-cardiovascular-10",
+        "trendqa-cardiovascular-20260530",
+        "round2-cardiovascular-20260530",
+        "trend-ultra-processed-food-blood-sugar-label-20260602",
+        "trend-sleep-regularity-heart-risk-20260602",
+        "trend-cold-plunge-sauna-blood-pressure-arrhythmia-safety-20260602",
+        "trend-erectile-dysfunction-cardiovascular-risk-20260602",
+        "trend-renal-denervation-resistant-hypertension-home-bp-abpm-record-20260603"
+      ]
+    },
     "면역": {
       "count": 65,
       "qids": [
@@ -6058,76 +6129,6 @@
         "qa200-20260527-174",
         "qa200-20260527-176",
         "trendqa-cancer-immune-20260530"
-      ]
-    },
-    "심혈관": {
-      "count": 65,
-      "qids": [
-        "cardio-019",
-        "cardio-030",
-        "cardio-040",
-        "cardio-045",
-        "cardio-050",
-        "cardio-057",
-        "cardio-060",
-        "cardio-065",
-        "cardio-067",
-        "cardio-070",
-        "cardio-075",
-        "cardio-080",
-        "cardio-085",
-        "cardio-090",
-        "cardio-095",
-        "cardio-100",
-        "meta-018",
-        "wh-extra-008",
-        "wh-extra-060",
-        "wh-extra-070",
-        "womens-009",
-        "mens-003",
-        "mens-016",
-        "mens-extra-005",
-        "mens-extra-030",
-        "mens-005",
-        "infect-extra-006",
-        "infect-extra-021",
-        "mental-extra-032",
-        "ingr-010",
-        "ingr-021",
-        "qa200-20260527-077",
-        "qa200-20260527-078",
-        "qa200-20260527-079",
-        "qa200-20260527-080",
-        "qa200-20260527-081",
-        "qa200-20260527-082",
-        "qa200-20260527-083",
-        "qa200-20260527-084",
-        "qa200-20260527-085",
-        "qa200-20260527-086",
-        "qa200-20260527-087",
-        "qa200-20260527-088",
-        "qa200-20260527-089",
-        "qa200-20260527-090",
-        "qa200-20260527-091",
-        "qa200-20260527-092",
-        "qa200-20260527-093",
-        "qa200-20260527-094",
-        "seoqa-cardiovascular-01",
-        "seoqa-cardiovascular-02",
-        "seoqa-cardiovascular-03",
-        "seoqa-cardiovascular-04",
-        "seoqa-cardiovascular-05",
-        "seoqa-cardiovascular-06",
-        "seoqa-cardiovascular-07",
-        "seoqa-cardiovascular-08",
-        "seoqa-cardiovascular-09",
-        "seoqa-cardiovascular-10",
-        "trendqa-cardiovascular-20260530",
-        "round2-cardiovascular-20260530",
-        "trend-ultra-processed-food-blood-sugar-label-20260602",
-        "trend-sleep-regularity-heart-risk-20260602",
-        "trend-cold-plunge-sauna-blood-pressure-arrhythmia-safety-20260602",
-        "trend-erectile-dysfunction-cardiovascular-risk-20260602"
       ]
     },
     "암": {
@@ -9032,6 +9033,18 @@
         "qa-hospital-20260527-050"
       ]
     },
+    "고혈압": {
+      "count": 7,
+      "qids": [
+        "cardio-001",
+        "mens-extra-044",
+        "nc_116",
+        "qa200-20260527-077",
+        "qa200-20260527-078",
+        "qa200-20260527-091",
+        "trend-tia-mini-stroke-fast-warning-symptom-time-record-20260603"
+      ]
+    },
     "근감소증": {
       "count": 7,
       "qids": [
@@ -9054,6 +9067,18 @@
         "mens-006",
         "resp-010",
         "trendqa-musculoskeletal-20260530"
+      ]
+    },
+    "뇌졸중": {
+      "count": 7,
+      "qids": [
+        "cardio-014",
+        "neuro-008",
+        "nc_095",
+        "nc_102",
+        "nc_103",
+        "qa200-20260527-107",
+        "trend-tia-mini-stroke-fast-warning-symptom-time-record-20260603"
       ]
     },
     "대사증후군": {
@@ -9244,17 +9269,6 @@
         "round3-digestive-2-20260531"
       ]
     },
-    "고혈압": {
-      "count": 6,
-      "qids": [
-        "cardio-001",
-        "mens-extra-044",
-        "nc_116",
-        "qa200-20260527-077",
-        "qa200-20260527-078",
-        "qa200-20260527-091"
-      ]
-    },
     "골밀도": {
       "count": 6,
       "qids": [
@@ -9319,17 +9333,6 @@
         "mens-extra-010",
         "mens-extra-050",
         "qa200-20260527-026"
-      ]
-    },
-    "뇌졸중": {
-      "count": 6,
-      "qids": [
-        "cardio-014",
-        "neuro-008",
-        "nc_095",
-        "nc_102",
-        "nc_103",
-        "qa200-20260527-107"
       ]
     },
     "당뇨식단": {
@@ -11979,7 +11982,10 @@
     "trend-tattoo-ink-contamination-skin-cancer-mole-monitoring-record-20260603": "문신을-하기-전후에-피부-안전을-위해-어떤-기록을-남겨야-하나요",
     "trend-older-adult-fall-prevention-balance-medication-vision-record-20260603": "고령자-낙상과-고관절-골절을-예방하려면-어떤-기록을-먼저-봐야-하나요",
     "trend-loneliness-social-connection-health-risk-support-record-20260603": "외로움과-사회적-고립도-건강-상담에서-기록해야-하나요",
-    "trend-masld-fib4-liver-fibrosis-risk-stratification-record-20260603": "MASLD-지방간은-간수치보다-FIB4와-간섬유화-위험을-봐야-하나요"
+    "trend-masld-fib4-liver-fibrosis-risk-stratification-record-20260603": "MASLD-지방간은-간수치보다-FIB4와-간섬유화-위험을-봐야-하나요",
+    "trend-renal-denervation-resistant-hypertension-home-bp-abpm-record-20260603": "저항성-고혈압에서-신장신경차단술을-상담하기-전에-어떤-기록이-필요한가요",
+    "trend-tia-mini-stroke-fast-warning-symptom-time-record-20260603": "TIA-미니뇌졸중-증상이-사라졌다면-그래도-응급-상담이-필요한가요",
+    "trend-immune-checkpoint-inhibitor-side-effect-organ-inflammation-record-20260603": "면역항암제-치료-중-어떤-부작용-신호를-바로-기록하고-알려야-하나요"
   },
-  "generated_at": "2026-06-02T21:48:04.419340+00:00"
+  "generated_at": "2026-06-03T00:42:19.805599+00:00"
 }
