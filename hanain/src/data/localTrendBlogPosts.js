@@ -23,6 +23,7 @@ import { ROUND35_TREND_BLOG_POSTS } from './localTrendBlogPostsRound35.js'
 import { ROUND36_TREND_BLOG_POSTS } from './localTrendBlogPostsRound36.js'
 import { ROUND37_TREND_BLOG_POSTS } from './localTrendBlogPostsRound37.js'
 import { ROUND38_TREND_BLOG_POSTS } from './localTrendBlogPostsRound38.js'
+import { ROUND39_TREND_BLOG_POSTS } from './localTrendBlogPostsRound39.js'
 
 function list(items) {
   return items.map((item) => `- ${item}`).join('\n')
@@ -1293,6 +1294,7 @@ export const LOCAL_TREND_BLOG_POSTS = [
   ...ROUND36_TREND_BLOG_POSTS,
   ...ROUND37_TREND_BLOG_POSTS,
   ...ROUND38_TREND_BLOG_POSTS,
+  ...ROUND39_TREND_BLOG_POSTS,
 ]
 
 export function getLocalTrendBlogPost(slug) {
