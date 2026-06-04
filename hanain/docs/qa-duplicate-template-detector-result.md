@@ -1,6 +1,6 @@
 # QA Duplicate Template Detector Result
 
-- generatedAt: 2026-06-04T17:27:26.492Z
+- generatedAt: 2026-06-04T18:05:50.277Z
 - validatedScanned: 1918
 - repeatedSentenceWarnings(>=4): 139
 - repeatedParagraphFails(>=3): 14
