@@ -1,10 +1,10 @@
 const SITE = 'https://phlorotannin.com'
 
 const EXPECTED = {
-  sitemapTotal: 3102,
+  sitemapTotal: 3105,
   qCount: 1918,
   tagCount: 252,
-  blogCount: 657,
+  blogCount: 660,
   insightCount: 244,
   requiredBundleSlugs: [
     'glp1-era-protein-fiber-phlorotannin-checklist-2026',
@@ -112,6 +112,9 @@ const EXPECTED = {
     'dementia-delirium-agitation-medication-infection-record-2026',
     'car-t-cell-crs-icans-fever-confusion-record-2026',
     'hair-dye-relaxer-scalp-reaction-hair-loss-record-2026',
+    'partner-info-qr-review-disclosure-health-claim-record-2026',
+    'older-adult-strength-balance-exercise-recovery-record-2026',
+    'heat-illness-medication-hospital-visit-checklist-record-2026',
   ],
   draftSlug: 'ecklonia-cava-respiratory-health-clinical-trial-2026',
 }
