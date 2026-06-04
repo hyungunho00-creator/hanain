@@ -1,7 +1,7 @@
 {
   "min_tag_count": 5,
-  "total_questions": 1883,
-  "total_unique_tags": 2257,
+  "total_questions": 1886,
+  "total_unique_tags": 2268,
   "page_eligible_tags": 243,
   "tags": {
     "플로로탄닌": {
@@ -6830,7 +6830,7 @@
       ]
     },
     "여성건강": {
-      "count": 38,
+      "count": 39,
       "qids": [
         "woms-001",
         "woms-005",
@@ -6869,11 +6869,12 @@
         "trend-dense-breast-mammogram-notification-supplemental-screening-20260603",
         "trend-menopause-hormone-therapy-label-update-record-20260603",
         "trend-summer-uti-women-hydration-urination-symptom-record-20260604",
-        "trend-hpv-self-collection-cervical-screening-record-20260604"
+        "trend-hpv-self-collection-cervical-screening-record-20260604",
+        "trend-pregnancy-postpartum-warning-signs-blood-pressure-record-20260604"
       ]
     },
     "혈압": {
-      "count": 35,
+      "count": 36,
       "qids": [
         "cardio-009",
         "cardio-011",
@@ -6909,7 +6910,8 @@
         "trend-cold-plunge-sauna-blood-pressure-arrhythmia-safety-20260602",
         "trend-erectile-dysfunction-cardiovascular-risk-20260602",
         "trend-mens-health-month-blood-pressure-waist-snoring-screening-record-20260604",
-        "trend-abdominal-aortic-aneurysm-men-smoking-screening-record-20260604"
+        "trend-abdominal-aortic-aneurysm-men-smoking-screening-record-20260604",
+        "trend-pregnancy-postpartum-warning-signs-blood-pressure-record-20260604"
       ]
     },
     "소화": {
@@ -6949,6 +6951,44 @@
         "dg_086",
         "dg_089",
         "qa200-20260527-075"
+      ]
+    },
+    "남성건강": {
+      "count": 33,
+      "qids": [
+        "mens-001",
+        "mens-002",
+        "mens-003",
+        "mens-004",
+        "mens-006",
+        "mens-007",
+        "mens-010",
+        "mens-011",
+        "mens-013",
+        "mens-014",
+        "mens-016",
+        "mens-017",
+        "mens-019",
+        "mens-020",
+        "ingr-012",
+        "qa200-20260527-193",
+        "qa200-20260527-194",
+        "qa200-20260527-195",
+        "qa200-20260527-196",
+        "qa200-20260527-197",
+        "qa200-20260527-198",
+        "qa200-20260527-199",
+        "qa200-20260527-200",
+        "trendqa-mens-20260530",
+        "trend-testosterone-therapy-low-libido-bp-monitoring-20260602",
+        "trend-prostate-psa-mri-screening-aua-20260602",
+        "trend-phthalates-male-fertility-semen-quality-exposure-20260602",
+        "trend-erectile-dysfunction-cardiovascular-risk-20260602",
+        "trend-testosterone-therapy-fertility-sperm-count-20260603",
+        "trend-male-fertility-home-sperm-test-dna-fragmentation-20260603",
+        "trend-mens-health-month-blood-pressure-waist-snoring-screening-record-20260604",
+        "trend-abdominal-aortic-aneurysm-men-smoking-screening-record-20260604",
+        "trend-testicular-lump-young-men-self-check-record-20260604"
       ]
     },
     "소화·간": {
@@ -7063,43 +7103,6 @@
         "rsp_096",
         "rsp_099",
         "rsp_100"
-      ]
-    },
-    "남성건강": {
-      "count": 32,
-      "qids": [
-        "mens-001",
-        "mens-002",
-        "mens-003",
-        "mens-004",
-        "mens-006",
-        "mens-007",
-        "mens-010",
-        "mens-011",
-        "mens-013",
-        "mens-014",
-        "mens-016",
-        "mens-017",
-        "mens-019",
-        "mens-020",
-        "ingr-012",
-        "qa200-20260527-193",
-        "qa200-20260527-194",
-        "qa200-20260527-195",
-        "qa200-20260527-196",
-        "qa200-20260527-197",
-        "qa200-20260527-198",
-        "qa200-20260527-199",
-        "qa200-20260527-200",
-        "trendqa-mens-20260530",
-        "trend-testosterone-therapy-low-libido-bp-monitoring-20260602",
-        "trend-prostate-psa-mri-screening-aua-20260602",
-        "trend-phthalates-male-fertility-semen-quality-exposure-20260602",
-        "trend-erectile-dysfunction-cardiovascular-risk-20260602",
-        "trend-testosterone-therapy-fertility-sperm-count-20260603",
-        "trend-male-fertility-home-sperm-test-dna-fragmentation-20260603",
-        "trend-mens-health-month-blood-pressure-waist-snoring-screening-record-20260604",
-        "trend-abdominal-aortic-aneurysm-men-smoking-screening-record-20260604"
       ]
     },
     "암환자·면역·환자식": {
@@ -9380,6 +9383,17 @@
         "trend-cgm-prediabetes-a1c-postprandial-spike-20260602"
       ]
     },
+    "두통": {
+      "count": 6,
+      "qids": [
+        "cardio-063",
+        "neuro-004",
+        "mental-extra-030",
+        "nc_110",
+        "qa200-20260527-097",
+        "trend-pregnancy-postpartum-warning-signs-blood-pressure-record-20260604"
+      ]
+    },
     "롱코비드": {
       "count": 6,
       "qids": [
@@ -9433,6 +9447,17 @@
         "mental-009",
         "mental-109",
         "qa200-20260527-122"
+      ]
+    },
+    "모발두피": {
+      "count": 6,
+      "qids": [
+        "trend-glp1-hair-loss-telogen-effluvium-20260602",
+        "trend-finasteride-dutasteride-hair-loss-safety-warning-20260602",
+        "trend-alopecia-areata-jak-inhibitor-safety-record-20260603",
+        "trend-summer-scalp-sunburn-thinning-hair-uv-record-20260604",
+        "trend-summer-swimming-scalp-itch-chlorine-saltwater-record-20260604",
+        "trend-tight-hairstyle-traction-alopecia-hairline-record-20260604"
       ]
     },
     "방광염": {
@@ -9857,16 +9882,6 @@
         "trend-energy-drink-preworkout-caffeine-sleep-20260602"
       ]
     },
-    "두통": {
-      "count": 5,
-      "qids": [
-        "cardio-063",
-        "neuro-004",
-        "mental-extra-030",
-        "nc_110",
-        "qa200-20260527-097"
-      ]
-    },
     "만성염증": {
       "count": 5,
       "qids": [
@@ -9885,16 +9900,6 @@
         "mental-extra-046",
         "mental-003",
         "mental-110"
-      ]
-    },
-    "모발두피": {
-      "count": 5,
-      "qids": [
-        "trend-glp1-hair-loss-telogen-effluvium-20260602",
-        "trend-finasteride-dutasteride-hair-loss-safety-warning-20260602",
-        "trend-alopecia-areata-jak-inhibitor-safety-record-20260603",
-        "trend-summer-scalp-sunburn-thinning-hair-uv-record-20260604",
-        "trend-summer-swimming-scalp-itch-chlorine-saltwater-record-20260604"
       ]
     },
     "무릎통증": {
@@ -12061,7 +12066,10 @@
     "trend-summer-uti-women-hydration-urination-symptom-record-20260604": "여름에-방광염이-의심될-때-물을-많이-마시기보다-어떤-증상을-먼저-기록해야-하나요",
     "trend-summer-swimming-scalp-itch-chlorine-saltwater-record-20260604": "수영장이나-바닷물-뒤-두피가-가려우면-탈모보다-무엇을-먼저-기록해야-하나요",
     "trend-abdominal-aortic-aneurysm-men-smoking-screening-record-20260604": "흡연력이-있는-남성은-복부대동맥류-선별검사에-대해-무엇을-준비해서-물어봐야-하나요",
-    "trend-hpv-self-collection-cervical-screening-record-20260604": "HPV-자가채취가-궁금할-때-자궁경부암-검진-전에-어떤-기록을-먼저-정리해야-하나요"
+    "trend-hpv-self-collection-cervical-screening-record-20260604": "HPV-자가채취가-궁금할-때-자궁경부암-검진-전에-어떤-기록을-먼저-정리해야-하나요",
+    "trend-tight-hairstyle-traction-alopecia-hairline-record-20260604": "꽉-묶는-머리-뒤-헤어라인이-아프면-견인성-탈모를-의심하고-무엇을-기록해야-하나요",
+    "trend-testicular-lump-young-men-self-check-record-20260604": "젊은-남성이-고환-덩이를-느꼈을-때-자가검진보다-먼저-정리해야-할-기록은-무엇인가요",
+    "trend-pregnancy-postpartum-warning-signs-blood-pressure-record-20260604": "임신-중이나-출산-후-두통과-시야-흐림이-있을-때-어떤-경고-신호를-기록해야-하나요"
   },
-  "generated_at": "2026-06-04T04:53:58.273873+00:00"
+  "generated_at": "2026-06-04T05:20:56.618121+00:00"
 }
