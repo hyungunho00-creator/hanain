@@ -1,12 +1,12 @@
 # Current Working State
 
-Last verified: 2026-06-04 22:21 KST
+Last verified: 2026-06-04 23:12 KST
 
 Production domain:
 
 - `https://phlorotannin.com`
 - `https://www.phlorotannin.com` redirects to apex
-- Current verified deployment: `https://hanain-f8q9jp8fy-01056528206s-projects.vercel.app`
+- Current verified deployment: `https://hanain-cr4jwegp5-01056528206s-projects.vercel.app`
 
 Branch:
 
@@ -56,6 +56,17 @@ What "current" means:
 - Replaced trust copy that looked like soft claims with concrete QR, contact, and research-material signals.
 - Verified local preview and production `/p/01056528206` with dynamic name/phone, QR render, molecule background usage, no browser console errors, and successful card download state.
 - Verified `npm run build`, `npm run verify:checkpoint`, asset `200`, and page `200` after deployment.
+
+2026-06-04 KST partner business card V4 bright print-ratio refresh:
+
+- Commit: `b2642c2 Refine partner card page and desktop menu`.
+- Added `/images/phlorotannin/partners/phlorotannin-molecule-light-card-v1.png` as the bright molecule-photo card asset.
+- Updated `src/pages/BusinessCardPage.jsx` so the visible card and downloaded front/back PNG use a `90:50` business-card ratio (`1.8`) instead of the previous squarer display.
+- Rebalanced the front card into a bright molecule photo panel, partner identity, dynamic phone/URL, and QR code while keeping partner-specific slug, QR, share, vCard, SMS/tel, and card download behavior.
+- Added the three bright molecule photo tiles below the share button and kept the overall page on a light trust-oriented paper/mint tone.
+- Updated `src/components/layout/Navbar.jsx` so PC also uses the same hamburger menu pattern as mobile; partner tools, categories, and community links live inside the menu panel.
+- Verified locally and on production `/p/01056528206?card_ratio=b2642c2`: desktop card ratio `1.8`, mobile card ratio `1.8`, no horizontal overflow, no clipped mobile card text, three photo tiles, menu panel sections, and no browser console errors.
+- Verified `npm run build`, `npm run audit:duplicate`, `npm run verify:checkpoint`, production page `200`, www page `200`, and new image asset `200` after deployment.
 
 Content sources:
 
