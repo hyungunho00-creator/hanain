@@ -1,10 +1,10 @@
 const SITE = 'https://phlorotannin.com'
 
 const EXPECTED = {
-  sitemapTotal: 3083,
+  sitemapTotal: 3096,
   qCount: 1918,
   tagCount: 252,
-  blogCount: 641,
+  blogCount: 654,
   insightCount: 241,
   requiredBundleSlugs: [
     'glp1-era-protein-fiber-phlorotannin-checklist-2026',
@@ -96,6 +96,19 @@ const EXPECTED = {
     'scalp-psoriasis-dandruff-silver-scale-hair-loss-record-2026',
     'bph-night-urination-weak-stream-urinary-symptom-record-2026',
     'migraine-aura-estrogen-birth-control-stroke-risk-record-2026',
+    'glp1-plateau-muscle-gut-phlorotannin-record-2026',
+    'cancer-biomarker-ctdna-mrd-report-phlorotannin-2026',
+    'young-colorectal-cancer-stool-blood-gut-record-2026',
+    'lpa-apob-family-heart-risk-phlorotannin-2026',
+    'tia-brain-fog-stroke-time-record-phlorotannin-2026',
+    'social-media-sleep-anxiety-digital-boundary-phlorotannin-2026',
+    'osteoporosis-fall-prevention-muscle-protein-phlorotannin-2026',
+    'uva-sunscreen-bemotrizinol-skin-barrier-phlorotannin-2026',
+    'alopecia-areata-jak-safety-scalp-record-phlorotannin-2026',
+    'wildfire-smoke-asthma-indoor-air-phlorotannin-2026',
+    'measles-mmr-vitamin-a-misinformation-immune-phlorotannin-2026',
+    'menopause-sleep-hormone-label-hot-flash-phlorotannin-2026',
+    'testosterone-therapy-fertility-psa-heart-record-phlorotannin-2026',
   ],
   draftSlug: 'ecklonia-cava-respiratory-health-clinical-trial-2026',
 }
