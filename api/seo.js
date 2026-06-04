@@ -1809,10 +1809,23 @@ export default async function handler(req, res) {
     // 메타 결정
     let meta = null
     let metaSource = 'static'
+    const privateShopPackageMatch = pathname.match(/^\/p\/[^/]+\/shop-package(?:\/[^?]+)?$/)
+    if (privateShopPackageMatch) {
+      const canonicalPath = pathname.split('?')[0] || pathname
+      meta = {
+        title: 'Private shop package | Phlorotannin Partners',
+        desc: 'Private partner shop package page.',
+        canonical: `${SITE}${canonicalPath}`,
+        robots: 'noindex,follow',
+        ogImage: `${SITE}/partner/shop-package/salon-consult-hero.jpg`,
+        ogImageAlt: 'Private partner shop package preview',
+      }
+      metaSource = 'private-shop-package'
+    }
     const partnerArchiveLogicalPathname = getPartnerArchiveLogicalPath(pathname)
     const metaLookupPathname = partnerArchiveLogicalPathname || pathname
     const blogMatch = metaLookupPathname.match(/^\/blog\/([^/]+)$/)
-    if (blogMatch) {
+    if (!meta && blogMatch) {
       meta = await fetchPostMeta(blogMatch[1])
       if (meta) {
         metaSource = meta.source || 'posts-table'
@@ -1842,7 +1855,7 @@ export default async function handler(req, res) {
       meta.canonical = `${SITE}${metaLookupPathname}`
       metaSource = 'fallback'
     }
-    if (partnerArchiveLogicalPathname) {
+    if (partnerArchiveLogicalPathname && !privateShopPackageMatch) {
       const canonicalPath = partnerArchiveLogicalPathname.split('?')[0] || '/'
       const canonical = canonicalPath === '/'
         ? `${SITE}/`
