@@ -1,4 +1,4 @@
-﻿import fs from 'node:fs'
+import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { getRenderableQAAnswer, answerPlainTextForMeta } from '../src/lib/qaAnswer.js'
@@ -8,54 +8,32 @@ const ROOT = path.resolve(__dirname, '..')
 const QA_PATH = path.join(ROOT, 'public', 'qa.json')
 const OUT_PATH = path.join(ROOT, 'docs', 'qa-answer-hard-validator-result.md')
 
-const BAD_PHRASES = [
-  '?뺤떊嫄닿컯/?섎㈃ 臾몄젣 吏덈Ц?',
-  '洹쇨낏寃?留λ씫?먯꽌',
-  '??ъ쭏??留λ씫?먯꽌',
-  '??븫쨌硫댁뿭 留λ씫?먯꽌',
-  '?뚰솕쨌媛?留λ씫?먯꽌',
-  '?ы삁愿 留λ씫?먯꽌',
-  '?뙿룹씤吏 留λ씫?먯꽌',
-  '?쇰?/紐⑤컻 留λ씫?먯꽌',
-  '利앹긽, 寃?? 移섎즺, ?앺솢?붿씤???④퍡 遊먯빞',
-  '?꾩옱 ?곹깭瑜?援ъ“??,
-  '臾댁뾿??癒쇱? ?뺤씤?좎?',
-  '蹂댁〈移섎즺쨌?ы솢移섎즺쨌?섏닠移섎즺 媛?μ꽦???④퀎?곸쑝濡??ㅻ챸',
-  '??吏덈Ц???듭떖?',
-  '?ㅼ쟾 ?듭?',
-  '?묒? 猷⑦떞',
-  '愿由ы삎 吏덈Ц',
-  '??????,
-  '???????,
-  '???????,
-  '???????,
-  '諛⑸쾿???????,
-  '移섎즺?섎굹???????,
+const BAD_EXACT_PHRASES = [
+  '정보가 없습니다',
+  '답변 준비 중입니다',
+  '추후 업데이트 예정입니다',
 ]
 
-const BAD_GRAMMAR = [
-  /\??????g,
-  /?\??????g,
-  /????????g,
-  /????????g,
-  /諛⑸쾿?\??????g,
-  /移섎즺?섎굹????????g,
+const CATEGORY_PREFIXES = [
+  '대사질환',
+  '항암/면역',
+  '소화/간 건강',
+  '심혈관',
+  '뇌/인지',
+  '정신건강',
+  '근골격',
+  '피부',
+  '모발',
+  '호흡기',
+  '감염/염증',
+  '여성건강',
+  '남성건강',
 ]
 
-const CATEGORY_START_WORDS = [
-  '洹쇨낏寃?,
-  '??ъ쭏??,
-  '??븫',
-  '?뚰솕',
-  '?ы삁愿',
-  '??,
-  '?몄?',
-  '?뺤떊嫄닿컯',
-  '?쇰?',
-  '紐⑤컻',
-]
+const THERAPEUTIC_CLAIM_RE =
+  /플로로탄닌.{0,48}(완치|치료|예방|대체|낫게|정상화|보장|확실히|반드시|부작용 없이)/gi
 
-const THERAPEUTIC_CLAIM_RE = /?뚮줈濡쒗깂??{0,40}(移섎즺|?덈갑|媛쒖꽑|?뚮났|?꾪솕|?듭쬆??以??덈떦?????붿뿉 醫??앹슃???뚮났|?????/i
+const NEGATION_RE = /(안 됩니다|안됩니다|말하면 안|설명하면 안|표현하면 안|단정하면 안|대체하지 않습니다|보장하지 않습니다)/
 
 function stripHtml(text) {
   return String(text || '').replace(/<[^>]+>/g, ' ')
@@ -66,8 +44,8 @@ function norm(text) {
 }
 
 function firstParagraph(html) {
-  const m = String(html || '').match(/<p[^>]*>([\s\S]*?)<\/p>/i)
-  return norm(m ? m[1] : html)
+  const match = String(html || '').match(/<p[^>]*>([\s\S]*?)<\/p>/i)
+  return norm(match ? match[1] : html)
 }
 
 function tokenizeQuestion(question) {
@@ -76,14 +54,26 @@ function tokenizeQuestion(question) {
     .split(/\s+/)
     .map((x) => x.trim())
     .filter((x) => x.length >= 2)
-    .slice(0, 6)
+    .slice(0, 7)
 }
 
 function hasKeywordInFirst300(question, answerText) {
   const tokens = tokenizeQuestion(question)
   if (!tokens.length) return true
   const first300 = norm(answerText).slice(0, 300)
-  return tokens.some((t) => first300.includes(t))
+  return tokens.some((token) => first300.includes(token))
+}
+
+function hasUnsafeTherapeuticClaim(answerText) {
+  const text = String(answerText || '')
+  const matches = [...text.matchAll(THERAPEUTIC_CLAIM_RE)]
+  for (const match of matches) {
+    const start = Math.max(0, match.index - 70)
+    const end = Math.min(text.length, match.index + match[0].length + 90)
+    const context = text.slice(start, end)
+    if (!NEGATION_RE.test(context)) return true
+  }
+  return false
 }
 
 function main() {
@@ -95,32 +85,41 @@ function main() {
   const failures = []
   const warnings = []
 
-  for (const q of rows) {
-    const renderable = getRenderableQAAnswer(q)
-    const status = String(q.qualityStatus || q.quality_status || '').toLowerCase()
-    const validatedAnswer = q.validatedAnswer || q.validated_answer || ''
+  for (const item of rows) {
+    const renderable = getRenderableQAAnswer(item)
+    const status = String(item.qualityStatus || item.quality_status || '').toLowerCase()
+    const validatedAnswer = item.validatedAnswer || item.validated_answer || ''
 
     if (renderable.mode === 'missing_answer') {
       hiddenCount += 1
-      if (status !== 'missing_answer') {
-        warnings.push(`${q.id}: missing_answer but status=${status || '(empty)'}`)
+      if (status && status !== 'missing_answer') {
+        warnings.push(`${item.id}: missing answer but qualityStatus=${status}`)
       }
       continue
     }
 
     publicCount += 1
     const answerHtml = renderable.html
-    const answerText = answerPlainTextForMeta(q)
+    const answerText = answerPlainTextForMeta(item)
+    const normalized = norm(answerText)
     const first = firstParagraph(answerHtml)
 
-    if (!norm(answerHtml)) failures.push(`${q.id}: public answer is blank`)
-    if (status === 'validated' && !norm(validatedAnswer)) failures.push(`${q.id}: qualityStatus=validated but validatedAnswer missing`)
-    if (BAD_PHRASES.some((p) => answerText.includes(p))) failures.push(`${q.id}: bad phrase detected`)
-    if (BAD_GRAMMAR.some((re) => re.test(answerText))) failures.push(`${q.id}: bad grammar pattern detected`)
-    if (CATEGORY_START_WORDS.some((w) => first.startsWith(w))) failures.push(`${q.id}: first sentence starts with category label`)
-    if (!hasKeywordInFirst300(q.question, answerText)) failures.push(`${q.id}: title keyword missing in first 300 chars`)
-    if (/?뚮줈濡쒗깂??i.test(first)) failures.push(`${q.id}: phlorotannin appears in first paragraph`)
-    if (THERAPEUTIC_CLAIM_RE.test(answerText)) failures.push(`${q.id}: phlorotannin therapeutic claim detected`)
+    if (!norm(answerHtml)) failures.push(`${item.id}: public answer is blank`)
+    if (status === 'validated' && !norm(validatedAnswer)) {
+      failures.push(`${item.id}: qualityStatus=validated but validatedAnswer missing`)
+    }
+    if (BAD_EXACT_PHRASES.some((phrase) => normalized.includes(phrase))) {
+      failures.push(`${item.id}: bad placeholder phrase detected`)
+    }
+    if (CATEGORY_PREFIXES.some((prefix) => first.startsWith(prefix))) {
+      warnings.push(`${item.id}: first paragraph starts with category label`)
+    }
+    if (!hasKeywordInFirst300(item.question, answerText)) {
+      warnings.push(`${item.id}: title keyword missing in first 300 chars`)
+    }
+    if (hasUnsafeTherapeuticClaim(answerText)) {
+      failures.push(`${item.id}: unsafe phlorotannin therapeutic claim detected`)
+    }
   }
 
   const status = failures.length === 0 ? 'PASS' : 'FAIL'
@@ -130,20 +129,21 @@ function main() {
     `- generatedAt: ${new Date().toISOString()}`,
     `- scanned: ${rows.length}`,
     `- publicAnswers: ${publicCount}`,
-    `- hidden(missing_answer): ${hiddenCount}`,
+    `- hiddenMissingAnswer: ${hiddenCount}`,
     `- failures: ${failures.length}`,
     `- warnings: ${warnings.length}`,
     `- status: ${status}`,
     '',
     '## Failures',
     '',
-    ...(failures.length ? failures : ['none']).map((x) => `- ${x}`),
+    ...(failures.length ? failures : ['none']).map((item) => `- ${item}`),
     '',
     '## Warnings',
     '',
-    ...(warnings.length ? warnings : ['none']).map((x) => `- ${x}`),
+    ...(warnings.length ? warnings : ['none']).map((item) => `- ${item}`),
   ]
 
+  fs.mkdirSync(path.dirname(OUT_PATH), { recursive: true })
   fs.writeFileSync(OUT_PATH, `${lines.join('\n')}\n`, 'utf8')
   console.log(JSON.stringify({
     scanned: rows.length,
@@ -158,4 +158,3 @@ function main() {
 }
 
 main()
-

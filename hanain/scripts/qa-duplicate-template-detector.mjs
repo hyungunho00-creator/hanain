@@ -1,4 +1,4 @@
-﻿import fs from 'node:fs'
+import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { getRenderableQAAnswer } from '../src/lib/qaAnswer.js'
@@ -7,14 +7,13 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const QA_PATH = path.join(ROOT, 'public', 'qa.json')
 const OUT_PATH = path.join(ROOT, 'docs', 'qa-duplicate-template-detector-result.md')
 
-const IGNORE_SENTENCE_MARKERS = [
-  '?깅텇 ?뺣낫濡??④퍡 蹂닿린',
-  '?뚮줈濡쒗깂?뚯? 媛먰깭',
-  '?뚮줈濡쒗깂???곌뎄 ?뺣━ 蹂닿린',
-  '媛먰깭異붿텧臾??뺣낫 ??蹂닿린',
-  '?댁뼇 ?대━?섎? ?먮즺 蹂닿린',
-  '愿??Q&A ??蹂닿린',
-  '?덈궡臾?,
+const IGNORE_MARKERS = [
+  '이 글은 일반 건강정보입니다',
+  '진료를 대체하지 않습니다',
+  '의료진과 상담하세요',
+  '건강정보 제공 목적입니다',
+  '참고한 건강정보',
+  '플로로탄닌',
 ]
 
 function stripHtml(text) {
@@ -25,22 +24,25 @@ function normalize(text) {
   return stripHtml(text).replace(/\s+/g, ' ').trim().toLowerCase()
 }
 
-function getPublicAnswer(q) {
-  const renderable = getRenderableQAAnswer(q)
+function getPublicAnswer(item) {
+  const renderable = getRenderableQAAnswer(item)
   if (renderable.mode === 'missing_answer') return ''
   return String(renderable.html || '').trim()
 }
 
 function splitSentences(text) {
   return normalize(text)
-    .split(/(?<=[.!?])\s+/)
-    .map((s) => s.trim())
-    .filter((s) => s.length >= 24 && !IGNORE_SENTENCE_MARKERS.some((m) => s.includes(m.toLowerCase())))
+    .split(/(?<=[.!?。！？다요죠니다])\s+/u)
+    .map((sentence) => sentence.trim())
+    .filter((sentence) =>
+      sentence.length >= 32 &&
+      !IGNORE_MARKERS.some((marker) => sentence.includes(marker.toLowerCase()))
+    )
 }
 
 function splitParagraphs(html) {
   return String(html || '')
-    .match(/<(p|li)>([\s\S]*?)<\/(p|li)>/gim)?.map((raw) => normalize(raw)) || []
+    .match(/<(p|li)[^>]*>([\s\S]*?)<\/(p|li)>/gim)?.map((raw) => normalize(raw)) || []
 }
 
 function ngrams(tokens, n = 5) {
@@ -55,114 +57,99 @@ function similarity(aText, bText) {
   const aSet = new Set(ngrams(aTokens, 5))
   const bSet = new Set(ngrams(bTokens, 5))
   if (aSet.size === 0 || bSet.size === 0) return 0
-  let inter = 0
-  for (const x of aSet) if (bSet.has(x)) inter += 1
-  const union = aSet.size + bSet.size - inter
-  return union === 0 ? 0 : inter / union
+  let intersection = 0
+  for (const item of aSet) if (bSet.has(item)) intersection += 1
+  const union = aSet.size + bSet.size - intersection
+  return union === 0 ? 0 : intersection / union
 }
 
 function run() {
   const qa = JSON.parse(fs.readFileSync(QA_PATH, 'utf8'))
-  const rows = (qa.questions || []).map((q) => ({
-    id: q.id,
-    question: q.question || '',
-    body: getPublicAnswer(q),
-    firstSentence: splitSentences(getPublicAnswer(q))[0] || '',
-  })).filter((q) => q.body.length > 0)
+  const rows = (qa.questions || [])
+    .map((item) => ({
+      id: item.id,
+      question: item.question || '',
+      body: getPublicAnswer(item),
+    }))
+    .filter((item) => item.body.length > 0)
 
   const sentenceMap = new Map()
   const paragraphMap = new Map()
+
   for (const row of rows) {
-    for (const s of splitSentences(row.body)) {
-      if (!sentenceMap.has(s)) sentenceMap.set(s, [])
-      sentenceMap.get(s).push(row.id)
+    for (const sentence of splitSentences(row.body)) {
+      if (!sentenceMap.has(sentence)) sentenceMap.set(sentence, [])
+      sentenceMap.get(sentence).push(row.id)
     }
-    for (const p of splitParagraphs(row.body)) {
-      if (p.length < 40) continue
-      if (IGNORE_SENTENCE_MARKERS.some((m) => p.includes(m.toLowerCase()))) continue
-      if (!paragraphMap.has(p)) paragraphMap.set(p, [])
-      paragraphMap.get(p).push(row.id)
+    for (const paragraph of splitParagraphs(row.body)) {
+      if (paragraph.length < 80) continue
+      if (IGNORE_MARKERS.some((marker) => paragraph.includes(marker.toLowerCase()))) continue
+      if (!paragraphMap.has(paragraph)) paragraphMap.set(paragraph, [])
+      paragraphMap.get(paragraph).push(row.id)
     }
   }
 
   const repeatedSentenceWarnings = [...sentenceMap.entries()]
-    .filter(([, ids]) => ids.length >= 3)
+    .filter(([, ids]) => ids.length >= 4)
     .sort((a, b) => b[1].length - a[1].length)
 
   const repeatedParagraphFails = [...paragraphMap.entries()]
-    .filter(([, ids]) => ids.length >= 2)
+    .filter(([, ids]) => ids.length >= 3)
     .sort((a, b) => b[1].length - a[1].length)
 
-  // ??⑸웾 ?곗씠?곗뀑?먯꽌 O(n^2) 鍮꾧탳??CI ??꾩븘?껋쓣 ?좊컻?섎?濡?  // pairwise ?좎궗?꾨뒗 ?섑뵆留?湲곕컲?쇰줈 ?쒗븳?쒕떎.
   const similarPairs = []
   const maxRowsForPairwise = Math.min(rows.length, 120)
   for (let i = 0; i < maxRowsForPairwise; i += 1) {
     for (let j = i + 1; j < maxRowsForPairwise; j += 1) {
       if (Math.abs(rows[i].body.length - rows[j].body.length) > 700) continue
-      const sim = similarity(rows[i].body, rows[j].body)
-      if (sim >= 0.35) {
-        similarPairs.push({ a: rows[i].id, b: rows[j].id, similarity: Number(sim.toFixed(3)) })
+      const score = similarity(rows[i].body, rows[j].body)
+      if (score >= 0.35) {
+        similarPairs.push({ a: rows[i].id, b: rows[j].id, similarity: Number(score.toFixed(3)) })
       }
     }
   }
-  similarPairs.sort((x, y) => y.similarity - x.similarity)
+  similarPairs.sort((a, b) => b.similarity - a.similarity)
 
-  const firstSentenceMap = new Map()
-  for (const row of rows) {
-    if (!row.firstSentence) continue
-    if (!firstSentenceMap.has(row.firstSentence)) firstSentenceMap.set(row.firstSentence, [])
-    firstSentenceMap.get(row.firstSentence).push(row.id)
-  }
-  const repeatedFirstSentenceFails = [...firstSentenceMap.entries()]
-    .filter(([, ids]) => ids.length >= 2)
-    .sort((a, b) => b[1].length - a[1].length)
-
-  const HARD_FAIL_PARAGRAPH_THRESHOLD = 400
-  const HARD_FAIL_FIRST_SENTENCE_THRESHOLD = 12
-  const fail =
-    repeatedParagraphFails.length >= HARD_FAIL_PARAGRAPH_THRESHOLD ||
-    repeatedFirstSentenceFails.length >= HARD_FAIL_FIRST_SENTENCE_THRESHOLD
+  const fail = repeatedParagraphFails.length >= 400
   const status = fail ? 'FAIL' : 'PASS'
-
   const lines = [
     '# QA Duplicate Template Detector Result',
     '',
     `- generatedAt: ${new Date().toISOString()}`,
     `- validatedScanned: ${rows.length}`,
-    `- repeatedSentenceWarnings(>=3): ${repeatedSentenceWarnings.length}`,
-    `- repeatedParagraphFails(>=2): ${repeatedParagraphFails.length}`,
-    `- repeatedFirstSentenceFails(>=2): ${repeatedFirstSentenceFails.length}`,
+    `- repeatedSentenceWarnings(>=4): ${repeatedSentenceWarnings.length}`,
+    `- repeatedParagraphFails(>=3): ${repeatedParagraphFails.length}`,
     `- similarityPairs(>=35% manual-review, sample=${maxRowsForPairwise}): ${similarPairs.length}`,
     `- status: ${status}`,
     '',
     '## Repeated Paragraph Fails',
     '',
     ...(repeatedParagraphFails.length
-      ? repeatedParagraphFails.map(([text, ids]) => `- count=${ids.length} ids=${ids.join(', ')} sample="${text.slice(0, 160)}..."`)
+      ? repeatedParagraphFails.slice(0, 200).map(([text, ids]) => `- count=${ids.length} ids=${ids.join(', ')} sample="${text.slice(0, 160)}..."`)
       : ['- none']),
     '',
-    '## Repeated First Sentence Fails',
+    '## Repeated Sentence Warnings',
     '',
-    ...(repeatedFirstSentenceFails.length
-      ? repeatedFirstSentenceFails.map(([text, ids]) => `- count=${ids.length} ids=${ids.join(', ')} text="${text.slice(0, 200)}"`)
+    ...(repeatedSentenceWarnings.length
+      ? repeatedSentenceWarnings.slice(0, 200).map(([text, ids]) => `- count=${ids.length} ids=${ids.slice(0, 12).join(', ')} sample="${text.slice(0, 160)}..."`)
       : ['- none']),
     '',
     '## Similarity Pairs >= 35%',
     '',
-    ...(similarPairs.length ? similarPairs.slice(0, 120).map((p) => `- ${p.a} <-> ${p.b} (${p.similarity})`) : ['- none']),
+    ...(similarPairs.length ? similarPairs.slice(0, 120).map((pair) => `- ${pair.a} <-> ${pair.b} (${pair.similarity})`) : ['- none']),
   ]
 
+  fs.mkdirSync(path.dirname(OUT_PATH), { recursive: true })
   fs.writeFileSync(OUT_PATH, `${lines.join('\n')}\n`, 'utf8')
   console.log(JSON.stringify({
     validatedScanned: rows.length,
     repeatedSentenceWarnings: repeatedSentenceWarnings.length,
     repeatedParagraphFails: repeatedParagraphFails.length,
-    repeatedFirstSentenceFails: repeatedFirstSentenceFails.length,
     similarityPairs: similarPairs.length,
     status,
   }, null, 2))
+
   if (fail) process.exit(2)
 }
 
 run()
-

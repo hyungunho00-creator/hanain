@@ -1,32 +1,298 @@
 # QA Duplicate Template Detector Result
 
-- generatedAt: 2026-05-29T23:25:47.088Z
-- validatedScanned: 1641
-- repeatedSentenceWarnings(>=3): 185
-- repeatedParagraphFails(>=2): 0
-- repeatedFirstSentenceFails(>=2): 0
-- similarityPairs(>=35% manual-review, sample=120): 12
+- generatedAt: 2026-06-04T03:13:44.471Z
+- validatedScanned: 1877
+- repeatedSentenceWarnings(>=4): 146
+- repeatedParagraphFails(>=3): 15
+- similarityPairs(>=35% manual-review, sample=120): 3360
 - status: PASS
 
 ## Repeated Paragraph Fails
 
-- none
+- count=177 ids=cardio-032, cardio-035, cardio-075, cardio-095, meta_037, meta_064, cancer-001, cancer-005, cancer-013, cancer-018, ci_020, ci_028, ci_040, ci_046, ci_047, ci_062, ci_065, ci_077, ci_094, dg_021, dg_044, dg_090, neuro-006, nc_018, nc_057, nc_070, nc_071, skin-020, sh_025, sh_026, sh_035, sh_042, sh_044, sh_062, sh_067, sh_071, sh_087, musc-006, musc-014, ms_019, ms_023, ms_028, ms_030, ms_032, ms_040, ms_042, ms_048, ms_053, ms_054, ms_057, ms_059, ms_066, ms_068, ms_070, ms_077, ms_087, ms_089, woms-018, wh-extra-001, wh-extra-006, wh-extra-014, wh-extra-018, wh-extra-029, wh-extra-032, wh-extra-037, wh-extra-054, wh-extra-056, wh-extra-058, wh-extra-059, wh-extra-069, womens-001, mens-extra-009, mens-extra-022, mens-extra-028, mens-extra-037, mens-extra-046, mens-extra-049, mens-extra-057, mens-extra-065, rsp_028, rsp_051, rsp_074, rsp_076, rsp_079, rsp_080, rsp_082, infect-extra-001, infect-extra-004, infect-extra-009, infect-extra-050, infect-extra-054, infect-extra-059, infect-extra-069, infect-003, infect-015, mental-extra-006, mental-extra-013, mental-extra-015, mental-extra-024, mental-extra-031, mental-extra-033, mental-extra-037, mental-extra-044, mental-extra-062, mental-extra-069, mental-extra-073, mental-extra-075, mental-extra-078, mental-006, mental-010, mental-014, ci_096, ci_097, ci_098, ci_099, ci_101, ci_103, ci_105, ci_106, ci_107, ci_108, ci_110, ci_111, ci_112, ci_114, ci_118, ci_119, ci_120, ci_122, ci_123, ci_125, ci_126, ci_127, ci_130, ci_133, ci_137, ci_138, ci_139, ci_142, ci_143, ci_147, ci_149, nc_099, nc_100, nc_102, nc_103, nc_105, nc_107, nc_108, nc_109, nc_111, nc_118, nc_119, infect-106, infect-110, mental-104, mental-105, mental-106, mental-108, resp-102, mens-101, mens-102, qa200-20260527-009, qa200-20260527-035, qa200-20260527-043, qa200-20260527-044, qa200-20260527-046, qa200-20260527-061, qa200-20260527-155, qa-hospital-20260527-014, qa-hospital-20260527-015, qa-hospital-20260527-016, qa-hospital-20260527-017, qa-hospital-20260527-019, qa-hospital-20260527-022, qa-hospital-20260527-023, qa-hospital-20260527-047 sample="치료 결정은 증상의 강도만으로 하지 않고, 병력·신체진찰·영상/혈액검사 결과를 함께 검토해 보존치료, 약물치료, 재활치료, 시술·수술치료 중 무엇이 맞는지 판단합니다...."
+- count=142 ids=cardio-009, cardio-027, cardio-074, cardio-079, meta-001, meta-020, meta_063, meta_081, cancer-011, ci_018, ci_041, ci_044, ci_056, ci_093, dige-020, dg_028, dg_040, dg_058, dg_063, dg_064, dg_072, dg_077, neuro-007, nc_027, nc_043, nc_060, skin-003, skin-009, sh_011, sh_013, sh_059, sh_072, sh_075, sh_090, musc-010, musc-017, musc-019, ms_015, ms_033, ms_051, ms_056, ms_062, ms_065, ms_067, ms_080, woms-007, woms-009, woms-019, wh-extra-013, wh-extra-016, wh-extra-019, wh-extra-035, wh-extra-038, wh-extra-048, wh-extra-061, wh-extra-065, womens-006, womens-009, mens-005, mens-009, mens-015, mens-019, mens-extra-001, mens-extra-010, mens-extra-014, mens-extra-018, mens-extra-019, mens-extra-036, mens-extra-047, mens-extra-050, mens-extra-060, mens-extra-063, mens-005, mens-009, rsp_035, rsp_054, rsp_058, rsp_059, rsp_060, rsp_073, rsp_090, rsp_093, rsp_096, resp-007, infect-extra-008, infect-extra-012, infect-extra-013, infect-extra-019, infect-extra-026, infect-extra-029, infect-extra-035, infect-extra-039, infect-extra-049, infect-extra-055, infect-extra-057, infect-extra-066, infect-extra-067, infect-extra-074, infect-extra-075, infect-extra-076, infect-009, infect-018, infect-019, mental-extra-009, mental-extra-016, mental-extra-017, mental-extra-026, mental-extra-030, mental-extra-038, mental-extra-042, mental-extra-061, mental-extra-066, mental-extra-068, mental-015, ci_104, ci_109, ci_115, ci_117, ci_144, ci_145, nc_116, infect-102, infect-103, womens-101, sh_091, sh_093, sh_097, sh_098, sh_102, sh_105, sh_107, sh_109, sh_110, sh_116, sh_117, sh_119, sh_121, sh_132, qa200-20260527-113, qa200-20260527-117, qa200-20260527-187, qa200-20260527-193 sample="원인 추정에서는 최근 변화(식사, 수면, 스트레스, 운동, 약물)를 시계열로 놓고 보는 것이 중요하며, 급성 위험 신호가 있으면 원인 탐색보다 즉시 진료가 우선입니다...."
+- count=133 ids=musc-001, musc-002, musc-003, musc-004, musc-005, musc-006, musc-007, musc-008, musc-009, musc-010, musc-011, musc-012, musc-013, musc-014, musc-015, musc-016, musc-017, musc-018, musc-019, musc-020, ms_011, ms_012, ms_013, ms_014, ms_015, ms_016, ms_017, ms_018, ms_019, ms_020, ms_021, ms_022, ms_023, ms_024, ms_025, ms_026, ms_027, ms_028, ms_029, ms_030, ms_031, ms_032, ms_033, ms_034, ms_035, ms_036, ms_037, ms_038, ms_039, ms_040, ms_041, ms_042, ms_043, ms_044, ms_045, ms_046, ms_047, ms_048, ms_049, ms_050, ms_051, ms_053, ms_054, ms_055, ms_056, ms_057, ms_058, ms_059, ms_060, ms_061, ms_062, ms_063, ms_064, ms_065, ms_066, ms_067, ms_068, ms_069, ms_070, ms_071, ms_072, ms_073, ms_074, ms_075, ms_076, ms_077, ms_078, ms_079, ms_080, ms_081, ms_082, ms_083, ms_084, ms_085, ms_086, ms_087, ms_088, ms_089, ms_090, ingr-015, ingr-022, ingr-024, ingr-026, ingr-029, qa200-20260527-123, qa200-20260527-124, qa200-20260527-125, qa200-20260527-126, qa200-20260527-127, qa200-20260527-128, qa200-20260527-129, qa200-20260527-130, qa200-20260527-131, qa200-20260527-132, qa200-20260527-133, qa200-20260527-134, qa200-20260527-135, qa200-20260527-136, qa-hospital-20260527-019, qa-hospital-20260527-020, qa-hospital-20260527-021, qa-hospital-20260527-022, qa-hospital-20260527-048, seoqa-musculoskeletal-01, seoqa-musculoskeletal-02, seoqa-musculoskeletal-03, seoqa-musculoskeletal-04, seoqa-musculoskeletal-05, seoqa-musculoskeletal-06, seoqa-musculoskeletal-07, seoqa-musculoskeletal-08, seoqa-musculoskeletal-09, seoqa-musculoskeletal-10 sample="관절·근육·재활 질문에서는 진단과 치료 계획이 우선입니다. 다만 회복기 생활관리에서는 수면, 단백질 섭취, 체중, 운동량, 산화스트레스와 염증 반응 관련 정보를 함께 보는 경우가 많습니다...."
+- count=103 ids=cardio-005, cardio-018, cardio-022, cardio-025, cardio-030, cardio-036, cardio-045, cardio-049, cardio-050, cardio-066, meta-004, meta-008, meta-009, meta-010, meta_025, meta_031, meta_032, meta_034, meta_056, meta_058, meta_073, meta_078, meta_096, cancer-007, ci_021, ci_042, ci_063, ci_068, ci_087, dg_020, dg_030, dg_048, dg_049, dg_066, dg_071, nc_062, nc_072, nc_075, sh_068, ms_035, ms_079, woms-016, wh-extra-031, wh-extra-033, wh-extra-046, wh-extra-055, wh-extra-070, mens-extra-006, mens-extra-025, mens-extra-038, mens-extra-054, rsp_022, rsp_092, resp-006, resp-014, resp-016, infect-extra-021, infect-002, mental-extra-070, ci_113, ci_128, ci_132, ci_136, nc_094, ingr-004, qa200-20260527-010, qa200-20260527-012, qa200-20260527-024, qa200-20260527-033, qa200-20260527-036, qa200-20260527-066, qa200-20260527-071, qa200-20260527-082, qa200-20260527-083, qa200-20260527-092, qa200-20260527-093, qa200-20260527-095, qa200-20260527-097, qa200-20260527-108, qa200-20260527-124, qa200-20260527-125, qa200-20260527-145, qa200-20260527-149, qa200-20260527-157, qa200-20260527-171, qa200-20260527-179, qa200-20260527-194, qa200-20260527-197, qa-hospital-20260527-005, qa-hospital-20260527-006, qa-hospital-20260527-007, qa-hospital-20260527-008, qa-hospital-20260527-020, qa-hospital-20260527-031, qa-hospital-20260527-040, seoqa-metabolism-06, seoqa-cancer_immune-06, seoqa-digestive-06, seoqa-cardiovascular-06, seoqa-neuro_cognitive-06, seoqa-mental_health-06, seoqa-musculoskeletal-06, seoqa-skin-06 sample="검사 결과는 측정 조건(시간대, 금식 여부, 복용약, 수면 상태)에 영향을 받으므로 이전 검사와 같은 조건에서 비교해야 해석 오류를 줄일 수 있습니다...."
+- count=26 ids=round3-metabolism-1-20260531, round3-metabolism-2-20260531, round3-cancer_immune-1-20260531, round3-cancer_immune-2-20260531, round3-digestive-1-20260531, round3-digestive-2-20260531, round3-cardiovascular-1-20260531, round3-cardiovascular-2-20260531, round3-neuro_cognitive-1-20260531, round3-neuro_cognitive-2-20260531, round3-mental_health-1-20260531, round3-mental_health-2-20260531, round3-musculoskeletal-1-20260531, round3-musculoskeletal-2-20260531, round3-skin-1-20260531, round3-skin-2-20260531, round3-hair-1-20260531, round3-hair-2-20260531, round3-respiratory-1-20260531, round3-respiratory-2-20260531, round3-infection_inflammation-1-20260531, round3-infection_inflammation-2-20260531, round3-womens_health-1-20260531, round3-womens_health-2-20260531, round3-mens_health-1-20260531, round3-mens_health-2-20260531 sample="다만 이 성분명은 특정 질환 결과를 약속하는 표현이 아니라 원료명, 표준화, 섭취량, 기존 복용약과의 관계를 차분히 확인하기 위한 참고 정보로 보는 편이 안전합니다...."
+- count=21 ids=cancer-003, cancer-004, cancer-016, cancer-020, ci_030, ci_032, ci_081, ci_090, ci_095, dige-003, dg_089, woms-005, ci_102, ci_116, ci_124, ci_131, ci_140, ci_146, qa200-20260527-057, qa200-20260527-133, seoqa-cancer_immune-10 sample="암 치료 중 건강관리 관리에서는 한 번에 여러 요소를 바꾸기보다 우선순위 1~2개를 정하고 1~2주 단위로 반응을 확인하는 접근이 실제 유지에 유리합니다...."
+- count=19 ids=cancer-003, cancer-004, cancer-016, cancer-020, ci_030, ci_032, ci_081, ci_090, dige-003, dg_089, woms-005, ci_102, ci_116, ci_124, ci_140, ci_146, qa200-20260527-040, qa200-20260527-057, qa200-20260527-133 sample="암 치료 중 건강관리 관리는 현재 증상의 강도와 유발 요인을 먼저 파악하고, 의료진 치료 계획 안에서 생활관리 항목을 조정하는 방식이 안전합니다...."
+- count=15 ids=skin-001, sh_024, sh_030, sh_032, sh_039, sh_055, sh_065, sh_077, mens-017, sh_100, sh_106, sh_122, sh_127, sh_139, seoqa-skin-10 sample="피부 증상 관리에서는 한 번에 여러 요소를 바꾸기보다 우선순위 1~2개를 정하고 1~2주 단위로 반응을 확인하는 접근이 실제 유지에 유리합니다...."
+- count=13 ids=round2-metabolism-20260530, round2-cancer-immune-20260530, round2-digestive-20260530, round2-cardiovascular-20260530, round2-neuro-cognitive-20260530, round2-mental-health-20260530, round2-musculoskeletal-20260530, round2-skin-20260530, round2-hair-20260530, round2-respiratory-20260530, round2-infection-inflammation-20260530, round2-womens-health-20260530, round2-mens-health-20260530 sample="마지막으로 날짜, 증상 점수, 식사·수면·운동 변화, 새로 시작한 제품이나 약의 시점을 한 줄씩 남기면 충분합니다. 이렇게 정리하면 스스로 판단을 서두르기보다 상담자가 원인을 좁히고 다음 확인 항목을 정하는 데 도움이 됩니다...."
+- count=11 ids=neuro-004, neuro-005, nc_028, nc_041, mental-extra-071, nc_095, nc_098, nc_110, nc_117, qa200-20260527-104, seoqa-neuro_cognitive-10 sample="뇌·인지 증상 관리에서는 한 번에 여러 요소를 바꾸기보다 우선순위 1~2개를 정하고 1~2주 단위로 반응을 확인하는 접근이 실제 유지에 유리합니다...."
+- count=11 ids=mental-016, seoqa-metabolism-13, seoqa-cancer_immune-03, seoqa-cancer_immune-13, seoqa-digestive-03, seoqa-digestive-13, seoqa-cardiovascular-03, seoqa-mental_health-03, seoqa-musculoskeletal-03, seoqa-skin-03, seoqa-respiratory-03 sample="정신건강/수면 문제 관리는 현재 증상의 강도와 유발 요인을 먼저 파악하고, 의료진 치료 계획 안에서 생활관리 항목을 조정하는 방식이 안전합니다...."
+- count=4 ids=sh_022, sh_088, mens-extra-034, qa200-20260527-154 sample="탈모/두피 문제 관리에서는 한 번에 여러 요소를 바꾸기보다 우선순위 1~2개를 정하고 1~2주 단위로 반응을 확인하는 접근이 실제 유지에 유리합니다...."
+- count=3 ids=musc-012, ms_013, ms_022 sample="디스크 증상 관련 질문에서는 통증 부위와 강도만이 아니라 손상 기전, 운동 제한, 부종, 검사 결과를 함께 확인해야 치료 방향을 정할 수 있습니다...."
+- count=3 ids=ms_046, ms_060, qa200-20260527-136 sample="낙상 위험 관리에서는 한 번에 여러 요소를 바꾸기보다 우선순위 1~2개를 정하고 1~2주 단위로 반응을 확인하는 접근이 실제 유지에 유리합니다...."
+- count=3 ids=wh-extra-067, nc_121, qa200-20260527-091 sample="혈당 관리 관리에서는 한 번에 여러 요소를 바꾸기보다 우선순위 1~2개를 정하고 1~2주 단위로 반응을 확인하는 접근이 실제 유지에 유리합니다...."
 
-## Repeated First Sentence Fails
+## Repeated Sentence Warnings
 
-- none
+- count=1671 ids=cardio-001, cardio-002, cardio-005, cardio-007, cardio-008, cardio-009, cardio-011, cardio-013, cardio-015, cardio-016, cardio-017, cardio-018 sample="증상이 지속되거나 악화되면 해당 진료과 전문의와 상담하세요...."
+- count=1658 ids=cardio-001, cardio-002, cardio-005, cardio-007, cardio-008, cardio-009, cardio-011, cardio-013, cardio-015, cardio-016, cardio-017, cardio-018 sample="감태추출물, 씨놀, 디에콜, 에콜 같은 키워드와 함께 항산화·염증 반응·대사 건강 관련 연구에서 자주 다뤄집니다...."
+- count=1658 ids=cardio-001, cardio-002, cardio-005, cardio-007, cardio-008, cardio-009, cardio-011, cardio-013, cardio-015, cardio-016, cardio-017, cardio-018 sample="특정 질병이나 손상을 치료한다는 의미는 아니지만, 건강정보를 볼 때 원료 연구와 생활관리 정보를 함께 이해하려는 분에게는 좋은 출발점이 될 수 있습니다...."
+- count=226 ids=cancer-011, cancer-014, ci_018, ci_041, ci_044, ci_056, ci_058, ci_070, ci_074, ci_075, ci_079, ci_093 sample="시작 시점, 악화 요인, 동반 증상, 검사 결과를 함께 확인해 구분해야 합니다...."
+- count=203 ids=cancer-001, cancer-002, cancer-003, cancer-004, cancer-005, cancer-006, cancer-007, cancer-008, cancer-009, cancer-010, cancer-011, cancer-012 sample="치료 중 건강식품 선택은 반드시 담당 의료진과 상의해야 하며, 건강정보는 치료를 대체할 수 없습니다...."
+- count=203 ids=cancer-001, cancer-002, cancer-003, cancer-004, cancer-005, cancer-006, cancer-007, cancer-008, cancer-009, cancer-010, cancer-011, cancer-012 sample="건강식품 정보는 치료를 대체하지 않으며, 약물 상호작용 가능성을 반드시 담당 의료진과 확인해야 안전합니다...."
+- count=203 ids=cancer-001, cancer-002, cancer-003, cancer-004, cancer-005, cancer-006, cancer-007, cancer-008, cancer-009, cancer-010, cancer-011, cancer-012 sample="먼저 확인할 것 현재 치료 단계와 일정 최근 혈액검사 결과 식사량·체중 변화 현재 복용약과 보충제 목록 발열·감염 의심 증상 유무 증상이 시작된 시점과 악화 요인 병원 진료가 필요한 경우 38도 이상 발열이 지속될 때 호흡곤란·흉통·의식저하가 있을 때 중증 탈수·지속 구토·혈변이 있을 ..."
+- count=195 ids=cancer-003, cancer-004, cancer-016, cancer-020, ci_030, ci_032, ci_061, ci_081, ci_090, ci_095, dige-002, dige-003 sample="우선순위 1~2개를 정하고 1~2주 단위로 반응을 확인하는 접근이 실제 유지에 유리합니다...."
+- count=182 ids=cancer-003, cancer-004, cancer-016, cancer-020, ci_030, ci_032, ci_061, ci_081, ci_090, dige-002, dige-003, dige-013 sample="우선순위 1~2가지를 정해 1~2주 단위로 반응을 점검하는 것이 현실적입니다...."
+- count=177 ids=cardio-032, cardio-035, cardio-075, cardio-095, meta_037, meta_064, cancer-001, cancer-005, cancer-013, cancer-018, ci_020, ci_028 sample="치료 결정은 증상의 강도만으로 하지 않고, 병력·신체진찰·영상/혈액검사 결과를 함께 검토해 보존치료, 약물치료, 재활치료, 시술·수술치료 중 무엇이 맞는지 판단합니다...."
+- count=158 ids=neuro-001, neuro-002, neuro-003, neuro-004, neuro-005, neuro-006, neuro-007, neuro-008, neuro-009, neuro-010, neuro-011, neuro-012 sample="갑작스러운 마비, 말 어눌함, 시야 이상, 심한 두통이 동반되면 응급 진료가 필요합니다...."
+- count=142 ids=cardio-009, cardio-027, cardio-074, cardio-079, meta-001, meta-020, meta_063, meta_081, cancer-011, ci_018, ci_041, ci_044 sample="원인 추정에서는 최근 변화(식사, 수면, 스트레스, 운동, 약물)를 시계열로 놓고 보는 것이 중요하며, 급성 위험 신호가 있으면 원인 탐색보다..."
+- count=140 ids=dige-001, dige-002, dige-003, dige-004, dige-005, dige-006, dige-007, dige-008, dige-009, dige-010, dige-011, dige-012 sample="흑변, 혈변, 황달, 지속 구토처럼 위험 신호가 있으면 자가관리보다..."
+- count=140 ids=dige-001, dige-002, dige-003, dige-004, dige-005, dige-006, dige-007, dige-008, dige-009, dige-010, dige-011, dige-012 sample="간수치 또는 위장 증상은 같은 이름이라도 원인이 달라, 검사와 진료 맥락을 함께 확인하는 것이 중요합니다...."
+- count=136 ids=mental-extra-001, mental-extra-002, mental-extra-003, mental-extra-004, mental-extra-005, mental-extra-006, mental-extra-007, mental-extra-008, mental-extra-009, mental-extra-010, mental-extra-011, mental-extra-012 sample="증상이 일상 기능을 크게 떨어뜨리거나 자해 위험 신호가 있으면 정신건강의학과 상담을 서둘러야 합니다...."
+- count=136 ids=mental-extra-001, mental-extra-002, mental-extra-003, mental-extra-004, mental-extra-005, mental-extra-006, mental-extra-007, mental-extra-008, mental-extra-009, mental-extra-010, mental-extra-011, mental-extra-012 sample="자가진단은 참고용이며, 증상이 지속되면 정신건강의학과 또는 상담기관의 평가가 필요합니다...."
+- count=136 ids=mental-extra-001, mental-extra-002, mental-extra-003, mental-extra-004, mental-extra-005, mental-extra-006, mental-extra-007, mental-extra-008, mental-extra-009, mental-extra-010, mental-extra-011, mental-extra-012 sample="먼저 확인할 것 증상 지속 기간 수면 질과 각성 패턴 업무·학업 기능 변화 불안/우울 강도 변동 복용약·카페인·음주 증상이 시작된 시점과 악화 요인 병원 진료가 필요한 경우 자해·자살 사고가 생길 때 극심한 불안·공황 증상이 반복될 때 불면이 장기화되어 기능 저하가 심할 때 현실검증 저..."
+- count=135 ids=skin-001, skin-002, skin-004, skin-005, skin-007, skin-008, skin-009, skin-011, skin-012, skin-013, skin-015, skin-016 sample="발진이 급격히 번지거나 통증·열감이 심해지면 피부과 진료로 원인을 확인해야 합니다...."
+- count=135 ids=skin-001, skin-002, skin-004, skin-005, skin-007, skin-008, skin-009, skin-011, skin-012, skin-013, skin-015, skin-016 sample="가려움·발진·색소·여드름 문제는 같은 이름이라도 진단과 치료가 달라 피부과 평가가 중요합니다...."
+- count=135 ids=skin-001, skin-002, skin-004, skin-005, skin-007, skin-008, skin-009, skin-011, skin-012, skin-013, skin-015, skin-016 sample="먼저 확인할 것 증상 시작 시점과 트리거 새 제품/시술 사용 이력 가려움·통증·진물 여부 수면 방해와 스트레스 수준 알레르기·약물 복용력 증상이 시작된 시점과 악화 요인 병원 진료가 필요한 경우 전신 발진과 호흡곤란이 동반될 때 급속히 퍼지는 발적·열감·통증 진물/출혈/감염 의심 소견 ..."
+- count=133 ids=musc-001, musc-002, musc-003, musc-004, musc-005, musc-006, musc-007, musc-008, musc-009, musc-010, musc-011, musc-012 sample="먼저 확인할 것 통증 유발 동작과 강도 부종·열감·운동 제한 여부 x-ray/mri 등 영상검사 결과 일상생활 제한 정도 기존 치료 반응 증상이 시작된 시점과 악화 요인 병원 진료가 필요한 경우 외상 후 체중부하가 어렵거나 변형이 있을 때 감각저하·근력저하가 진행될 때 야간 통증이 심해..."
+- count=133 ids=musc-001, musc-002, musc-003, musc-004, musc-005, musc-006, musc-007, musc-008, musc-009, musc-010, musc-011, musc-012 sample="다만 회복기 생활관리에서는 수면, 단백질 섭취, 체중, 운동량, 산화스트레스와 염증 반응 관련 정보를 함께 보는 경우가 많습니다...."
+- count=131 ids=meta-001, meta-002, meta-003, meta-004, meta-006, meta-008, meta-009, meta-010, meta-011, meta-012, meta-013, meta-015 sample="혈당·혈압·지질 같은 검사 수치와 식사·운동 기록을 함께 봐야 실제 관리 우선순위를 정확히 정할 수 있습니다...."
+- count=131 ids=meta-001, meta-002, meta-003, meta-004, meta-006, meta-008, meta-009, meta-010, meta-011, meta-012, meta-013, meta-015 sample="공복·식후 혈당, 혈압, 지질, 체중, 허리둘레, 수면, 활동량을 한 화면에서 보면 조정 우선순위를 세우기 쉽습니다...."
+- count=131 ids=meta-001, meta-002, meta-003, meta-004, meta-006, meta-008, meta-009, meta-010, meta-011, meta-012, meta-013, meta-015 sample="먼저 확인할 것 최근 검사 수치와 검사 날짜 식사 구성과 식사 시간 주당 운동 빈도·강도 복용 중 약물/건강식품 목록 체중·허리둘레 변화 증상이 시작된 시점과 악화 요인 병원 진료가 필요한 경우 혈당이 매우 높거나 저혈당 증상이 반복될 때 극심한 갈증·다뇨·의식 저하가 동반될 때 흉통·..."
+- count=131 ids=meta-001, meta-002, meta-003, meta-004, meta-006, meta-008, meta-009, meta-010, meta-011, meta-012, meta-013, meta-015 sample="“언제·얼마나·어떤 순서로”를 남기기 식후 10~20분 가벼운 걷기 루틴 고정하기 주 1회 같은 조건에서 체중·허리둘레 측정하기 검사 전후 복용 성분 변경 여부 표시하기 성분 정보로 함께 보기 혈당·지질·체중 질문에서는 검사 수치와 의료진 상담이 우선입니다...."
+- count=131 ids=musc-001, musc-002, musc-003, musc-004, musc-005, musc-006, musc-007, musc-008, musc-009, musc-010, musc-011, musc-012 sample="통증, 부종, 잠김, 운동 제한이 지속되면 정형외과 진료와 영상검사로 손상 범위를 먼저 확인하는 것이 안전합니다...."
+- count=124 ids=cardio-024, cardio-034, cardio-046, cardio-065, cardio-069, cardio-071, cardio-073, cardio-087, cardio-091, cardio-094, meta_022, meta_024 sample="질문의 핵심은 현재 상태를 구조화해 “무엇을 먼저 확인할지”를 정하는 데 있습니다...."
+- count=122 ids=infect-extra-001, infect-extra-002, infect-extra-004, infect-extra-005, infect-extra-006, infect-extra-007, infect-extra-008, infect-extra-009, infect-extra-010, infect-extra-011, infect-extra-012, infect-extra-013 sample="고열, 심한 통증, 빠른 부종 악화가 있으면 감염 여부를 확인하기 위한 진료가 우선입니다...."
+- count=119 ids=cardio-001, cardio-002, cardio-005, cardio-007, cardio-008, cardio-009, cardio-011, cardio-013, cardio-015, cardio-016, cardio-017, cardio-018 sample="흉통, 호흡곤란, 실신, 급격한 부종이 동반되면 지체하지 말고 응급평가를 받아야 합니다...."
+- count=119 ids=rsp_021, rsp_022, rsp_023, rsp_024, rsp_025, rsp_026, rsp_027, rsp_028, rsp_029, rsp_031, rsp_032, rsp_034 sample="호흡곤란, 청색증, 고열이 있으면 지체 없이 호흡기 진료를 받아야 합니다...."
+- count=119 ids=rsp_021, rsp_022, rsp_023, rsp_024, rsp_025, rsp_026, rsp_027, rsp_028, rsp_029, rsp_031, rsp_032, rsp_034 sample="호흡곤란·흉통·고열 등 급성 악화 신호가 있으면 즉시 진료가 필요합니다...."
+- count=115 ids=woms-001, woms-002, woms-003, woms-004, woms-005, woms-006, woms-007, woms-008, woms-009, woms-010, woms-011, woms-012 sample="출혈, 주기 급변이 있으면 산부인과에서 원인 평가를 받는 것이 좋습니다...."
+- count=104 ids=cardio-001, cardio-019, cardio-023, cardio-037, cardio-056, cardio-074, meta-001, meta-012, meta_031, meta_081, meta_082, meta_090 sample="현재 수치와 부작용, 병용약을 함께 확인해 의료진과 조정하는 방식이 원칙입니다...."
+- count=104 ids=cardio-001, cardio-019, cardio-023, cardio-037, cardio-056, cardio-074, meta-001, meta-012, meta_031, meta_081, meta_082, meta_090 sample="먼저 복용 중인 약 목록, 기저질환, 부작용 징후를 확인하는 것이 핵심입니다...."
+- count=103 ids=cardio-005, cardio-018, cardio-022, cardio-025, cardio-030, cardio-036, cardio-045, cardio-049, cardio-050, cardio-066, meta-004, meta-008 sample="검사 결과는 측정 조건(시간대, 금식 여부, 복용약, 수면 상태)에 영향을 받으므로 이전 검사와 같은 조건에서 비교해야 해석 오류를 줄일 수 있습니다...."
+- count=102 ids=mens-001, mens-002, mens-003, mens-004, mens-005, mens-006, mens-007, mens-008, mens-009, mens-010, mens-011, mens-012 sample="배뇨통, 혈뇨, 야간뇨 악화가 지속되면 비뇨의학과 상담이 필요할 수 있습니다...."
+- count=102 ids=mens-001, mens-002, mens-003, mens-004, mens-005, mens-006, mens-007, mens-008, mens-009, mens-010, mens-011, mens-012 sample="전립선·성기능·호르몬 관련 문제는 진단 기준이 달라 전문 평가가 필요할 수 있습니다...."
+- count=97 ids=cancer-001, cancer-003, cancer-004, cancer-009, cancer-010, cancer-011, cancer-016, cancer-018, cancer-020, ci_018, ci_019, ci_021 sample="암 치료 중 건강관리 관련 질문에서는 치료 단계(수술·항암·방사선·회복기)를 먼저 구분해야 해석 오류를 줄일 수 있습니다...."
+- count=74 ids=cardio-001, cardio-002, cardio-005, cardio-008, cardio-011, cardio-013, cardio-016, cardio-017, cardio-018, cardio-022, cardio-024, cardio-027 sample="가정혈압 추세, 증상 발생 상황, 약물 순응도를 함께 보는 접근이 필요합니다...."
+- count=71 ids=ci_054, skin-002, skin-004, skin-008, skin-011, skin-012, skin-016, skin-018, skin-019, sh_017, sh_018, sh_019 sample="자세히 보면 피부 증상 질문의 핵심은 현재 상태를 구조화해 “무엇을 먼저 확인할지”를 정하는 데 있습니다...."
+- count=64 ids=skin-002, skin-004, skin-008, skin-012, skin-015, skin-016, skin-018, sh_013, sh_016, sh_017, sh_018, sh_020 sample="피부 증상 관련 질문에서는 피부 타입, 자극 요인, 제품 사용 패턴, 수면·스트레스 요인을 같이 봐야 실제 원인 접근이 가능합니다...."
+- count=62 ids=skin-002, skin-004, skin-008, skin-011, skin-012, skin-016, skin-018, skin-019, sh_017, sh_018, sh_019, sh_020 sample="짧은 답변 피부 증상 질문은 피부 맥락에서 증상, 검사, 치료, 생활요인을 함께 봐야 정확한 판단이 가능합니다...."
+- count=58 ids=cancer-009, cancer-012, cancer-015, cancer-019, ci_019, ci_026, ci_027, ci_031, ci_033, ci_037, ci_043, ci_049 sample="자세히 보면 암 치료 중 건강관리 질문의 핵심은 현재 상태를 구조화해 “무엇을 먼저 확인할지”를 정하는 데 있습니다...."
+- count=47 ids=cancer-001, cancer-005, cancer-013, cancer-018, ci_028, ci_046, ci_047, ci_062, ci_065, ci_077, ci_094, wh-extra-058 sample="짧은 답변 암 치료 중 건강관리는 손상·증상 정도와 검사 결과를 기준으로 보존치료, 약물치료, 재활치료, 시술/수술 여부를 나눠 결정합니다...."
+- count=47 ids=cancer-001, cancer-005, cancer-013, cancer-018, ci_028, ci_046, ci_047, ci_062, ci_065, ci_077, ci_094, wh-extra-058 sample="자세히 보면 암 치료 중 건강관리 방향은 “현재 기능 제한이 어느 정도인지”와 “검사에서 확인된 손상 범위가 무엇인지”를 함께 보고 정합니다...."
+- count=47 ids=cancer-009, cancer-012, cancer-015, cancer-019, ci_019, ci_026, ci_027, ci_031, ci_033, ci_037, ci_043, ci_049 sample="짧은 답변 암 치료 중 건강관리 질문은 항암·면역 맥락에서 증상, 검사, 치료, 생활요인을 함께 봐야 정확한 판단이 가능합니다...."
+- count=45 ids=skin-003, skin-006, skin-010, skin-014, skin-020, sh_011, sh_015, sh_022, sh_023, sh_026, sh_027, sh_031 sample="탈모가 빠르게 진행되거나 두피 염증이 동반되면 자가 제품 변경보다..."
+- count=45 ids=skin-003, skin-006, skin-010, skin-014, skin-020, sh_011, sh_015, sh_022, sh_023, sh_026, sh_027, sh_031 sample="자가 판단보다는 피부과 진료를 통해 유형을 구분해야 치료 전략을 세울 수 있습니다...."
+- count=39 ids=neuro-003, neuro-014, nc_013, nc_016, nc_017, nc_019, nc_026, nc_035, nc_037, nc_041, nc_046, nc_050 sample="뇌·인지 증상 관련 질문에서는 기억 저하, 두통, 어지럼, 수면, 정서 상태를 함께 보아야 방향을 정확히 잡을 수 있습니다...."
+- count=39 ids=round2-metabolism-20260530, round2-cancer-immune-20260530, round2-digestive-20260530, round2-cardiovascular-20260530, round2-neuro-cognitive-20260530, round2-mental-health-20260530, round2-musculoskeletal-20260530, round2-skin-20260530, round2-hair-20260530, round2-respiratory-20260530, round2-infection-inflammation-20260530, round2-womens-health-20260530 sample="증상이 지속되거나 악화되면 담당 진료과 전문의와 상담하세요...."
+- count=38 ids=cardio-020, ci_034, neuro-011, neuro-016, nc_020, nc_039, nc_054, nc_078, sh_064, ms_076, woms-008, wh-extra-003 sample="자세히 보면 정신건강/수면 문제 질문의 핵심은 현재 상태를 구조화해 “무엇을 먼저 확인할지”를 정하는 데 있습니다...."
+- count=38 ids=neuro-003, neuro-010, neuro-014, nc_013, nc_016, nc_017, nc_019, nc_026, nc_032, nc_035, nc_037, nc_038 sample="자세히 보면 뇌·인지 증상 질문의 핵심은 현재 상태를 구조화해 “무엇을 먼저 확인할지”를 정하는 데 있습니다...."
+- count=37 ids=cardio-054, meta-011, meta-015, meta-016, meta-020, meta_021, meta_030, meta_036, meta_045, meta_047, meta_053, meta_054 sample="짧은 답변 혈당 관리 검사는 단일 숫자만 보지 말고 검사 시점, 증상 변화, 복용약, 이전 결과와 함께 비교해 해석해야 정확합니다...."
+- count=37 ids=cardio-054, meta-011, meta-015, meta-016, meta-020, meta_021, meta_030, meta_036, meta_045, meta_047, meta_053, meta_054 sample="자세히 보면 혈당 관리 검사 해석에서는 추세 비교가 핵심이며, 같은 검사도 조건이 다르면 결과 의미가 달라질 수 있습니다...."
+- count=37 ids=neuro-003, neuro-010, neuro-014, nc_013, nc_016, nc_017, nc_019, nc_026, nc_032, nc_035, nc_037, nc_038 sample="짧은 답변 뇌·인지 증상 질문은 뇌·인지 맥락에서 증상, 검사, 치료, 생활요인을 함께 봐야 정확한 판단이 가능합니다...."
+- count=28 ids=mental-extra-002, mental-extra-005, mental-extra-006, mental-extra-007, mental-extra-011, mental-extra-017, mental-extra-026, mental-extra-028, mental-extra-031, mental-extra-045, mental-extra-046, mental-extra-056 sample="정신건강/수면 문제 관련 질문에서는 감정 상태뿐 아니라 수면, 일상 기능, 대인관계, 스트레스 사건을 함께 봐야 합니다...."
+- count=26 ids=round3-metabolism-1-20260531, round3-metabolism-2-20260531, round3-cancer_immune-1-20260531, round3-cancer_immune-2-20260531, round3-digestive-1-20260531, round3-digestive-2-20260531, round3-cardiovascular-1-20260531, round3-cardiovascular-2-20260531, round3-neuro_cognitive-1-20260531, round3-neuro_cognitive-2-20260531, round3-mental_health-1-20260531, round3-mental_health-2-20260531 sample="다만 이 성분명은 특정 질환 결과를 약속하는 표현이 아니라 원료명, 표준화, 섭취량, 기존 복용약과의 관계를 차분히 확인하기 위한 참고 정보로 보는 편이 안전합니다...."
+- count=22 ids=skin-015, sh_011, sh_013, sh_016, sh_043, sh_059, sh_061, sh_072, sh_090, sh_097, sh_098, sh_102 sample="자세히 보면 피부 증상 원인 평가는 생활요인만으로 결론 내리지 말고 진찰·검사·경과 관찰을 함께 묶어 해석해야 정확도가 높습니다...."
+- count=21 ids=cancer-003, cancer-004, cancer-016, cancer-020, ci_030, ci_032, ci_081, ci_090, ci_095, dige-003, dg_089, woms-005 sample="암 치료 중 건강관리 관리에서는 한 번에 여러 요소를 바꾸기보다..."
+- count=21 ids=cancer-011, ci_018, ci_041, ci_044, ci_056, ci_075, ci_093, ci_095, wh-extra-035, mens-extra-047, rsp_058, ci_109 sample="짧은 답변 암 치료 중 건강관리의 원인은 한 가지로 단정하기보다..."
+- count=21 ids=cancer-011, ci_018, ci_041, ci_044, ci_056, ci_075, ci_093, ci_095, wh-extra-035, mens-extra-047, rsp_058, ci_109 sample="자세히 보면 암 치료 중 건강관리 원인 평가는 생활요인만으로 결론 내리지 말고 진찰·검사·경과 관찰을 함께 묶어 해석해야 정확도가 높습니다...."
+- count=20 ids=mental-extra-005, mental-extra-007, mental-extra-011, mental-extra-028, mental-extra-046, mental-extra-049, mental-extra-056, mental-extra-072, mental-extra-077, mental-001, mental-003, mental-101 sample="짧은 답변 정신건강/수면 문제 질문은 정신건강 맥락에서 증상, 검사, 치료, 생활요인을 함께 봐야 정확한 판단이 가능합니다...."
+- count=19 ids=cancer-003, cancer-004, cancer-016, cancer-020, ci_030, ci_032, ci_081, ci_090, dige-003, dg_089, woms-005, ci_102 sample="짧은 답변 암 치료 중 건강관리 관리는 현재 증상의 강도와 유발 요인을 먼저 파악하고, 의료진 치료 계획 안에서 생활관리 항목을 조정하는 방식이 안전합니다...."
+- count=19 ids=cancer-003, cancer-004, cancer-016, cancer-020, ci_030, ci_032, ci_081, ci_090, dige-003, dg_089, woms-005, ci_102 sample="자세히 보면 암 치료 중 건강관리 관리에서는 한 번에 모든 것을 바꾸기보다..."
+- count=19 ids=musc-015, ms_020, ms_024, ms_026, ms_027, ms_034, ms_039, ms_041, ms_043, ms_047, ms_055, ms_063 sample="질문은 근골격 맥락에서 증상, 검사, 치료, 생활요인을 함께 봐야 정확한 판단이 가능합니다...."
+- count=18 ids=rsp_027, rsp_031, rsp_032, rsp_039, rsp_040, rsp_044, rsp_047, rsp_052, rsp_053, rsp_061, rsp_076, rsp_098 sample="관련 질문에서는 기침 지속기간, 가래 변화, 야간 악화, 환경 노출을 함께 봐야 원인 추정이 가능합니다...."
+- count=16 ids=cardio-011, cardio-013, cardio-025, cardio-027, cardio-039, cardio-041, cardio-043, cardio-084, cardio-088, meta_026, meta_034, meta_073 sample="검사는 단일 숫자만 보지 말고 검사 시점, 증상 변화, 복용약, 이전 결과와 함께 비교해 해석해야 정확합니다...."
+- count=16 ids=cardio-011, cardio-013, cardio-025, cardio-027, cardio-039, cardio-041, cardio-043, cardio-084, cardio-088, meta_026, meta_034, meta_073 sample="검사 해석에서는 추세 비교가 핵심이며, 같은 검사도 조건이 다르면 결과 의미가 달라질 수 있습니다...."
+- count=16 ids=nc_021, nc_022, nc_024, nc_029, nc_030, nc_040, nc_045, nc_049, nc_055, nc_063, nc_065, nc_073 sample="질문은 뇌·인지 맥락에서 증상, 검사, 치료, 생활요인을 함께 봐야 정확한 판단이 가능합니다...."
+- count=16 ids=rsp_031, rsp_032, rsp_039, rsp_040, rsp_044, rsp_047, rsp_053, rsp_061, rsp_066, rsp_075, rsp_095, rsp_098 sample="질문은 호흡기 맥락에서 증상, 검사, 치료, 생활요인을 함께 봐야 정확한 판단이 가능합니다...."
+- count=15 ids=meta_022, meta_024, meta_027, meta_033, meta_039, meta_040, meta_041, meta_048, meta_049, meta_066, meta_099, ingr-013 sample="질문은 대사질환 맥락에서 증상, 검사, 치료, 생활요인을 함께 봐야 정확한 판단이 가능합니다...."
+- count=14 ids=cancer-006, ci_023, ci_024, ci_038, ci_045, ci_048, ci_052, ci_059, ci_066, ci_069, ci_071, ci_072 sample="질문은 항암·면역 맥락에서 증상, 검사, 치료, 생활요인을 함께 봐야 정확한 판단이 가능합니다...."
+- count=14 ids=cancer-007, ci_021, ci_042, ci_063, ci_068, ci_087, wh-extra-031, wh-extra-055, mens-extra-006, resp-006, ci_113, ci_128 sample="짧은 답변 암 치료 중 건강관리 검사는 단일 숫자만 보지 말고 검사 시점, 증상 변화, 복용약, 이전 결과와 함께 비교해 해석해야 정확합니다...."
+- count=14 ids=cancer-007, ci_021, ci_042, ci_063, ci_068, ci_087, wh-extra-031, wh-extra-055, mens-extra-006, resp-006, ci_113, ci_128 sample="자세히 보면 암 치료 중 건강관리 검사 해석에서는 추세 비교가 핵심이며, 같은 검사도 조건이 다르면 결과 의미가 달라질 수 있습니다...."
+- count=14 ids=neuro-007, nc_021, nc_022, nc_024, nc_030, nc_040, nc_049, nc_063, nc_072, nc_073, nc_075, nc_077 sample="관련 질문에서는 기억 저하, 두통, 어지럼, 수면, 정서 상태를 함께 보아야 방향을 정확히 잡을 수 있습니다...."
+- count=14 ids=sh_015, sh_035, sh_042, sh_047, sh_067, sh_071, sh_073, sh_086, qa200-20260527-149, qa200-20260527-151, qa200-20260527-153, qa200-20260527-154 sample="탈모/두피 문제 관련 질문에서는 탈모 유형, 진행 속도, 두피 상태, 영양·수면·스트레스 요인을 함께 봐야 정확합니다...."
+- count=13 ids=neuro-012, woms-011, wh-extra-025, wh-extra-061, mental-extra-001, mental-extra-017, mental-extra-021, mental-extra-026, mental-extra-045, mental-extra-066, ci_104, mental-103 sample="짧은 답변 정신건강/수면 문제의 원인은 한 가지로 단정하기보다..."
+- count=13 ids=neuro-012, woms-011, wh-extra-025, wh-extra-061, mental-extra-001, mental-extra-017, mental-extra-021, mental-extra-026, mental-extra-045, mental-extra-066, ci_104, mental-103 sample="자세히 보면 정신건강/수면 문제 원인 평가는 생활요인만으로 결론 내리지 말고 진찰·검사·경과 관찰을 함께 묶어 해석해야 정확도가 높습니다...."
+- count=13 ids=skin-006, skin-010, sh_015, sh_031, sh_047, sh_073, sh_086, woms-010, womens-010, sh_125, qa200-20260527-150, qa200-20260527-151 sample="자세히 보면 탈모/두피 문제 질문의 핵심은 현재 상태를 구조화해 “무엇을 먼저 확인할지”를 정하는 데 있습니다...."
+- count=13 ids=musc-015, musc-018, ms_012, ms_026, ms_027, ms_035, ms_047, ms_063, ms_064, ms_083, ingr-015, qa200-20260527-123 sample="관련 질문에서는 통증 부위와 강도만이 아니라 손상 기전, 운동 제한, 부종, 검사 결과를 함께 확인해야 치료 방향을 정할 수 있습니다...."
+- count=13 ids=round2-metabolism-20260530, round2-cancer-immune-20260530, round2-digestive-20260530, round2-cardiovascular-20260530, round2-neuro-cognitive-20260530, round2-mental-health-20260530, round2-musculoskeletal-20260530, round2-skin-20260530, round2-hair-20260530, round2-respiratory-20260530, round2-infection-inflammation-20260530, round2-womens-health-20260530 sample="상담자가 원인을 좁히고 다음 확인 항목을 정하는 데 도움이 됩니다...."
+- count=13 ids=round2-metabolism-20260530, round2-cancer-immune-20260530, round2-digestive-20260530, round2-cardiovascular-20260530, round2-neuro-cognitive-20260530, round2-mental-health-20260530, round2-musculoskeletal-20260530, round2-skin-20260530, round2-hair-20260530, round2-respiratory-20260530, round2-infection-inflammation-20260530, round2-womens-health-20260530 sample="이 정보는 특정 결과를 약속하는 문구가 아니라 성분표와 연구 배경을 읽기 위한 참고 자료로 두는 편이 안전합니다...."
+- count=13 ids=round2-metabolism-20260530, round2-cancer-immune-20260530, round2-digestive-20260530, round2-cardiovascular-20260530, round2-neuro-cognitive-20260530, round2-mental-health-20260530, round2-musculoskeletal-20260530, round2-skin-20260530, round2-hair-20260530, round2-respiratory-20260530, round2-infection-inflammation-20260530, round2-womens-health-20260530 sample="제품을 고를 때는 원료명, 1일 섭취량, 표준화 표시, 기존 복용약과의 관계를 함께 적어 상담에 가져가면 판단이 훨씬 또렷해집니다...."
+- count=12 ids=cardio-081, meta-013, meta-017, meta_029, meta_050, meta_076, meta_095, sh_034, qa200-20260527-008, qa200-20260527-023, qa200-20260527-025, qa200-20260527-186 sample="자세히 보면 혈당 관리 질문의 핵심은 현재 상태를 구조화해 “무엇을 먼저 확인할지”를 정하는 데 있습니다...."
+- count=12 ids=dige-011, dg_031, dg_032, dg_037, dg_053, dg_059, dg_061, dg_079, dg_081, dg_083, ingr-019, qa200-20260527-070 sample="질문은 소화·간 맥락에서 증상, 검사, 치료, 생활요인을 함께 봐야 정확한 판단이 가능합니다...."
+- count=12 ids=dige-013, musc-003, musc-018, ms_012, woms-006, mens-001, rsp_027, rsp_052, resp-019, infect-extra-007, infect-007, qa200-20260527-160 sample="관리는 현재 증상의 강도와 유발 요인을 먼저 파악하고, 의료진 치료 계획 안에서 생활관리 항목을 조정하는 방식이 안전합니다...."
+- count=12 ids=skin-001, sh_024, sh_030, sh_039, sh_055, sh_065, sh_077, mens-017, sh_100, sh_106, sh_122, sh_127 sample="짧은 답변 피부 증상 관리는 현재 증상의 강도와 유발 요인을 먼저 파악하고, 의료진 치료 계획 안에서 생활관리 항목을 조정하는 방식이 안전합니다...."
+- count=12 ids=skin-001, sh_024, sh_030, sh_039, sh_055, sh_065, sh_077, mens-017, sh_100, sh_106, sh_122, sh_127 sample="자세히 보면 피부 증상 관리에서는 한 번에 모든 것을 바꾸기보다..."
+- count=11 ids=cardio-024, cardio-034, cardio-046, cardio-065, cardio-069, cardio-071, cardio-073, cardio-087, cardio-091, cardio-094, ingr-009 sample="질문은 심혈관 맥락에서 증상, 검사, 치료, 생활요인을 함께 봐야 정확한 판단이 가능합니다...."
+- count=11 ids=ci_020, ci_024, ci_040, ci_048, ci_052, ci_059, ci_066, ci_069, ci_071, ci_072, ci_091 sample="관련 질문에서는 치료 단계(수술·항암·방사선·회복기)를 먼저 구분해야 해석 오류를 줄일 수 있습니다...."
+- count=11 ids=skin-006, skin-010, sh_015, sh_031, sh_047, sh_073, sh_086, sh_125, qa200-20260527-150, qa200-20260527-151, qa200-20260527-153 sample="짧은 답변 탈모/두피 문제 질문은 모발/두피 맥락에서 증상, 검사, 치료, 생활요인을 함께 봐야 정확한 판단이 가능합니다...."
+- count=11 ids=mental-016, seoqa-metabolism-13, seoqa-cancer_immune-03, seoqa-cancer_immune-13, seoqa-digestive-03, seoqa-digestive-13, seoqa-cardiovascular-03, seoqa-mental_health-03, seoqa-musculoskeletal-03, seoqa-skin-03, seoqa-respiratory-03 sample="짧은 답변 정신건강/수면 문제 관리는 현재 증상의 강도와 유발 요인을 먼저 파악하고, 의료진 치료 계획 안에서 생활관리 항목을 조정하는 방식이 안전합니다...."
+- count=11 ids=mental-016, seoqa-metabolism-13, seoqa-cancer_immune-03, seoqa-cancer_immune-13, seoqa-digestive-03, seoqa-digestive-13, seoqa-cardiovascular-03, seoqa-mental_health-03, seoqa-musculoskeletal-03, seoqa-skin-03, seoqa-respiratory-03 sample="자세히 보면 정신건강/수면 문제 관리에서는 한 번에 모든 것을 바꾸기보다..."
+- count=10 ids=dige-013, dige-020, dg_025, dg_031, dg_032, dg_037, dg_053, dg_079, dg_081, dg_083 sample="관련 질문에서는 증상 강도만 보지 말고 식사·수면·음주·약물 패턴과 연결해서 해석해야 합니다...."
+- count=10 ids=neuro-004, neuro-005, nc_028, nc_041, mental-extra-071, nc_095, nc_098, nc_117, qa200-20260527-104, seoqa-neuro_cognitive-03 sample="짧은 답변 뇌·인지 증상 관리는 현재 증상의 강도와 유발 요인을 먼저 파악하고, 의료진 치료 계획 안에서 생활관리 항목을 조정하는 방식이 안전합니다...."
+- count=10 ids=neuro-004, neuro-005, nc_028, nc_041, mental-extra-071, nc_095, nc_098, nc_117, qa200-20260527-104, seoqa-neuro_cognitive-03 sample="자세히 보면 뇌·인지 증상 관리에서는 한 번에 모든 것을 바꾸기보다..."
+- count=9 ids=cardio-005, cardio-018, meta-004, meta-010, meta_032, wh-extra-070, ingr-004, qa200-20260527-083, qa-hospital-20260527-005 sample="짧은 답변 콜레스테롤 관리 검사는 단일 숫자만 보지 말고 검사 시점, 증상 변화, 복용약, 이전 결과와 함께 비교해 해석해야 정확합니다...."
+- count=9 ids=cardio-005, cardio-018, meta-004, meta-010, meta_032, wh-extra-070, ingr-004, qa200-20260527-083, qa-hospital-20260527-005 sample="자세히 보면 콜레스테롤 관리 검사 해석에서는 추세 비교가 핵심이며, 같은 검사도 조건이 다르면 결과 의미가 달라질 수 있습니다...."
+- count=9 ids=meta-013, meta-017, meta_029, meta_050, meta_076, meta_095, qa200-20260527-008, qa200-20260527-023, qa200-20260527-025 sample="짧은 답변 혈당 관리 질문은 대사질환 맥락에서 증상, 검사, 치료, 생활요인을 함께 봐야 정확한 판단이 가능합니다...."
+- count=8 ids=neuro-001, nc_060, mental-extra-030, mental-extra-038, qa200-20260527-098, seoqa-neuro_cognitive-02, seoqa-neuro_cognitive-04, seoqa-neuro_cognitive-10 sample="자세히 보면 뇌·인지 증상 원인 평가는 생활요인만으로 결론 내리지 말고 진찰·검사·경과 관찰을 함께 묶어 해석해야 정확도가 높습니다...."
+- count=8 ids=nc_057, nc_070, mental-extra-037, mental-extra-062, mental-extra-073, nc_099, nc_108, nc_109 sample="짧은 답변 뇌·인지 증상의 치료는 손상·증상 정도와 검사 결과를 기준으로 보존치료, 약물치료, 재활치료, 시술/수술 여부를 나눠 결정합니다...."
+- count=8 ids=nc_057, nc_070, mental-extra-037, mental-extra-062, mental-extra-073, nc_099, nc_108, nc_109 sample="자세히 보면 뇌·인지 증상의 치료 방향은 “현재 기능 제한이 어느 정도인지”와 “검사에서 확인된 손상 범위가 무엇인지”를 함께 보고 정합니다...."
+- count=7 ids=cancer-008, cancer-010, ci_131, qa200-20260527-034, qa200-20260527-038, qa200-20260527-047, seoqa-cancer_immune-15 sample="짧은 답변 암 치료 중 건강관리 관련 약물은 임의 중단·증량보다..."
+- count=7 ids=cancer-008, cancer-010, ci_131, qa200-20260527-034, qa200-20260527-038, qa200-20260527-047, seoqa-cancer_immune-15 sample="자세히 보면 암 치료 중 건강관리 관련 약물 질문은 효과보다..."
+- count=7 ids=neuro-011, neuro-016, nc_020, nc_039, nc_054, nc_078, qa200-20260527-096 sample="짧은 답변 정신건강/수면 문제 질문은 뇌·인지 맥락에서 증상, 검사, 치료, 생활요인을 함께 봐야 정확한 판단이 가능합니다...."
+- count=7 ids=sh_035, sh_042, sh_067, sh_071, wh-extra-059, ci_133, qa200-20260527-155 sample="짧은 답변 탈모/두피 문제의 치료는 손상·증상 정도와 검사 결과를 기준으로 보존치료, 약물치료, 재활치료, 시술/수술 여부를 나눠 결정합니다...."
+- count=7 ids=sh_035, sh_042, sh_067, sh_071, wh-extra-059, ci_133, qa200-20260527-155 sample="자세히 보면 탈모/두피 문제의 치료 방향은 “현재 기능 제한이 어느 정도인지”와 “검사에서 확인된 손상 범위가 무엇인지”를 함께 보고 정합니다...."
+- count=7 ids=woms-006, wh-extra-038, wh-extra-056, wh-extra-060, qa200-20260527-185, qa200-20260527-190, qa200-20260527-191 sample="관련 질문에서는 생애주기, 월경/폐경 상태, 통증 양상, 검사 이력을 함께 보아야 정확한 방향을 잡을 수 있습니다...."
+- count=7 ids=wh-extra-062, mental-extra-002, mental-102, mental-110, qa200-20260527-109, qa200-20260527-115, qa-hospital-20260527-025 sample="짧은 답변 정신건강/수면 문제 관련 약물은 임의 중단·증량보다..."
+- count=7 ids=wh-extra-062, mental-extra-002, mental-102, mental-110, qa200-20260527-109, qa200-20260527-115, qa-hospital-20260527-025 sample="자세히 보면 정신건강/수면 문제 관련 약물 질문은 효과보다..."
+- count=7 ids=mens-008, mens-011, mens-016, mens-extra-007, mens-extra-012, mens-extra-035, mens-008 sample="질문은 남성건강 맥락에서 증상, 검사, 치료, 생활요인을 함께 봐야 정확한 판단이 가능합니다...."
+- count=6 ids=ci_020, ci_040, sh_025, sh_062, rsp_076, mental-extra-044 sample="방향은 “현재 기능 제한이 어느 정도인지”와 “검사에서 확인된 손상 범위가 무엇인지”를 함께 보고 정합니다...."
+- count=6 ids=dige-020, neuro-007, wh-extra-038, infect-extra-019, infect-extra-066, sh_093 sample="원인 평가는 생활요인만으로 결론 내리지 말고 진찰·검사·경과 관찰을 함께 묶어 해석해야 정확도가 높습니다...."
+- count=6 ids=dg_014, dg_019, dg_078, qa200-20260527-059, qa200-20260527-076, qa200-20260527-168 sample="자세히 보면 소화기 증상 질문의 핵심은 현재 상태를 구조화해 “무엇을 먼저 확인할지”를 정하는 데 있습니다...."
+- count=6 ids=neuro-011, neuro-016, nc_039, nc_054, nc_078, qa200-20260527-096 sample="정신건강/수면 문제 관련 질문에서는 기억 저하, 두통, 어지럼, 수면, 정서 상태를 함께 보아야 방향을 정확히 잡을 수 있습니다...."
+- count=6 ids=wh-extra-062, mental-extra-002, mental-102, mental-110, qa200-20260527-115, qa-hospital-20260527-025 sample="정신건강/수면 문제 약물 질문은 적응증과 금기, 병용 시 주의사항, 복용 중단 시 위험을 함께 확인해야 하며, 임의 변경은 피해야 합니다...."
+- count=6 ids=mens-001, mens-011, mens-extra-007, mens-extra-012, mens-extra-028, mens-extra-035 sample="관련 질문에서는 배뇨 증상, 수면, 체중, 혈압, 약물 이력을 함께 봐야 실질적인 관리 방향이 나옵니다...."
+- count=5 ids=cardio-009, cardio-063, qa200-20260527-095, qa200-20260527-097, seoqa-neuro_cognitive-06 sample="짧은 답변 뇌·인지 증상 검사는 단일 숫자만 보지 말고 검사 시점, 증상 변화, 복용약, 이전 결과와 함께 비교해 해석해야 정확합니다...."
+- count=5 ids=cardio-009, cardio-063, qa200-20260527-095, qa200-20260527-097, seoqa-neuro_cognitive-06 sample="자세히 보면 뇌·인지 증상 검사 해석에서는 추세 비교가 핵심이며, 같은 검사도 조건이 다르면 결과 의미가 달라질 수 있습니다...."
+- count=5 ids=dige-002, dg_012, dg_014, dg_019, qa200-20260527-059 sample="소화기 증상 관련 질문에서는 증상 강도만 보지 말고 식사·수면·음주·약물 패턴과 연결해서 해석해야 합니다...."
+- count=5 ids=dg_014, dg_019, dg_078, qa200-20260527-059, qa200-20260527-076 sample="짧은 답변 소화기 증상 질문은 소화·간 맥락에서 증상, 검사, 치료, 생활요인을 함께 봐야 정확한 판단이 가능합니다...."
+- count=5 ids=woms-008, wh-extra-003, wh-extra-005, wh-extra-061, wh-extra-062 sample="정신건강/수면 문제 관련 질문에서는 생애주기, 월경/폐경 상태, 통증 양상, 검사 이력을 함께 보아야 정확한 방향을 잡을 수 있습니다...."
+- count=5 ids=mens-extra-006, mens-extra-040, mens-extra-047, mens-extra-057, qa200-20260527-197 sample="암 치료 중 건강관리 관련 질문에서는 배뇨 증상, 수면, 체중, 혈압, 약물 이력을 함께 봐야 실질적인 관리 방향이 나옵니다...."
+- count=5 ids=infect-extra-005, infect-extra-007, infect-extra-019, infect-extra-073, infect-007 sample="관련 질문에서는 발열, 통증, 붓기, 전신증상, 노출력, 기저질환을 함께 확인해야 판단이 가능합니다...."
+- count=5 ids=mental-extra-008, mental-extra-044, mental-018, qa200-20260527-114, qa200-20260527-118 sample="관련 질문에서는 감정 상태뿐 아니라 수면, 일상 기능, 대인관계, 스트레스 사건을 함께 봐야 합니다...."
+- count=4 ids=meta-008, meta_025, sh_068, seoqa-skin-06 sample="짧은 답변 피부 증상 검사는 단일 숫자만 보지 말고 검사 시점, 증상 변화, 복용약, 이전 결과와 함께 비교해 해석해야 정확합니다...."
+- count=4 ids=meta-008, meta_025, sh_068, seoqa-skin-06 sample="자세히 보면 피부 증상 검사 해석에서는 추세 비교가 핵심이며, 같은 검사도 조건이 다르면 결과 의미가 달라질 수 있습니다...."
+- count=4 ids=dige-003, dg_026, dg_035, dg_089 sample="암 치료 중 건강관리 관련 질문에서는 증상 강도만 보지 말고 식사·수면·음주·약물 패턴과 연결해서 해석해야 합니다...."
+- count=4 ids=dg_018, dg_075, dg_088, qa200-20260527-071 sample="간 건강 관련 질문에서는 증상 강도만 보지 말고 식사·수면·음주·약물 패턴과 연결해서 해석해야 합니다...."
+- count=4 ids=dg_025, infect-extra-005, qa200-20260527-166, qa200-20260527-175 sample="약물 질문은 적응증과 금기, 병용 시 주의사항, 복용 중단 시 위험을 함께 확인해야 하며, 임의 변경은 피해야 합니다...."
+- count=4 ids=dg_088, infect-109, qa200-20260527-014, qa200-20260527-065 sample="자세히 보면 간 건강 질문의 핵심은 현재 상태를 구조화해 “무엇을 먼저 확인할지”를 정하는 데 있습니다...."
+- count=4 ids=sh_012, sh_138, ingr-003, ingr-011 sample="질문은 피부 맥락에서 증상, 검사, 치료, 생활요인을 함께 봐야 정확한 판단이 가능합니다...."
+- count=4 ids=sh_022, sh_088, mens-extra-034, qa200-20260527-154 sample="짧은 답변 탈모/두피 문제 관리는 현재 증상의 강도와 유발 요인을 먼저 파악하고, 의료진 치료 계획 안에서 생활관리 항목을 조정하는 방식이 안전합니다...."
+- count=4 ids=sh_022, sh_088, mens-extra-034, qa200-20260527-154 sample="자세히 보면 탈모/두피 문제 관리에서는 한 번에 모든 것을 바꾸기보다..."
+- count=4 ids=sh_022, sh_088, mens-extra-034, qa200-20260527-154 sample="탈모/두피 문제 관리에서는 한 번에 여러 요소를 바꾸기보다..."
+- count=4 ids=sh_025, sh_093, sh_138, ingr-003 sample="관련 질문에서는 피부 타입, 자극 요인, 제품 사용 패턴, 수면·스트레스 요인을 같이 봐야 실제 원인 접근이 가능합니다...."
+- count=4 ids=musc-012, ms_013, ms_022, ms_061 sample="디스크 증상의 치료를 볼 때는 보존치료·재활치료·수술치료 가능성을 단계적으로 설명하는 것이 핵심입니다...."
+- count=4 ids=musc-017, ms_046, ms_060, qa200-20260527-136 sample="낙상 위험의 치료를 볼 때는 보존치료·재활치료·수술치료 가능성을 단계적으로 설명하는 것이 핵심입니다...."
+- count=4 ids=woms-012, wh-extra-034, wh-extra-052, wh-extra-057 sample="짧은 답변 암 치료 중 건강관리 질문은 여성건강 맥락에서 증상, 검사, 치료, 생활요인을 함께 봐야 정확한 판단이 가능합니다...."
+- count=4 ids=wh-extra-008, wh-extra-060, qa200-20260527-185, qa200-20260527-190 sample="질문은 여성건강 맥락에서 증상, 검사, 치료, 생활요인을 함께 봐야 정확한 판단이 가능합니다...."
+- count=4 ids=wh-extra-052, wh-extra-055, wh-extra-057, wh-extra-058 sample="암 치료 중 건강관리 관련 질문에서는 생애주기, 월경/폐경 상태, 통증 양상, 검사 이력을 함께 보아야 정확한 방향을 잡을 수 있습니다...."
+- count=4 ids=rsp_028, mental-extra-006, mental-extra-031, mental-006 sample="짧은 답변 정신건강/수면 문제의 치료는 손상·증상 정도와 검사 결과를 기준으로 보존치료, 약물치료, 재활치료, 시술/수술 여부를 나눠 결정합니다...."
+- count=4 ids=rsp_028, mental-extra-006, mental-extra-031, mental-006 sample="자세히 보면 정신건강/수면 문제의 치료 방향은 “현재 기능 제한이 어느 정도인지”와 “검사에서 확인된 손상 범위가 무엇인지”를 함께 보고 정합니다...."
+- count=4 ids=rsp_028, resp-008, qa200-20260527-165, seoqa-respiratory-03 sample="정신건강/수면 문제 관련 질문에서는 기침 지속기간, 가래 변화, 야간 악화, 환경 노출을 함께 봐야 원인 추정이 가능합니다...."
+- count=4 ids=mental-extra-030, mental-extra-038, mental-extra-062, mental-012 sample="뇌·인지 증상 관련 질문에서는 감정 상태뿐 아니라 수면, 일상 기능, 대인관계, 스트레스 사건을 함께 봐야 합니다...."
 
 ## Similarity Pairs >= 35%
 
-- cardio-085 <-> cardio-095 (0.402)
-- cardio-035 <-> cardio-065 (0.389)
-- cardio-045 <-> cardio-065 (0.385)
-- cardio-025 <-> cardio-055 (0.384)
-- cardio-065 <-> cardio-075 (0.374)
-- cardio-035 <-> cardio-045 (0.371)
-- cardio-037 <-> cardio-047 (0.365)
-- cardio-037 <-> cardio-087 (0.365)
-- cardio-035 <-> cardio-075 (0.361)
-- cardio-047 <-> cardio-087 (0.36)
-- cardio-045 <-> cardio-075 (0.357)
-- cardio-028 <-> cardio-068 (0.354)
+- cardio-005 <-> cardio-018 (1)
+- meta-011 <-> meta-015 (1)
+- meta-013 <-> meta-017 (1)
+- meta-008 <-> meta-010 (0.936)
+- meta-004 <-> meta-010 (0.932)
+- meta-011 <-> meta-016 (0.927)
+- meta-015 <-> meta-016 (0.927)
+- meta-003 <-> meta-013 (0.918)
+- meta-003 <-> meta-017 (0.918)
+- meta-008 <-> meta-009 (0.916)
+- meta-009 <-> meta-010 (0.916)
+- cardio-009 <-> cardio-079 (0.911)
+- meta-006 <-> meta-013 (0.908)
+- meta-006 <-> meta-017 (0.908)
+- meta-011 <-> meta-020 (0.903)
+- meta-015 <-> meta-020 (0.903)
+- cardio-020 <-> cardio-071 (0.9)
+- cardio-020 <-> cardio-077 (0.9)
+- cardio-020 <-> cardio-085 (0.9)
+- cardio-020 <-> cardio-090 (0.9)
+- cardio-007 <-> cardio-020 (0.897)
+- cardio-015 <-> cardio-020 (0.897)
+- cardio-020 <-> cardio-034 (0.897)
+- cardio-020 <-> cardio-038 (0.897)
+- cardio-020 <-> cardio-057 (0.897)
+- cardio-020 <-> cardio-070 (0.897)
+- cardio-020 <-> cardio-082 (0.897)
+- cardio-020 <-> cardio-094 (0.897)
+- meta-003 <-> meta-006 (0.896)
+- cardio-057 <-> cardio-070 (0.894)
+- meta-002 <-> meta-018 (0.894)
+- cardio-020 <-> cardio-028 (0.893)
+- cardio-020 <-> cardio-055 (0.893)
+- cardio-020 <-> cardio-065 (0.893)
+- cardio-020 <-> cardio-083 (0.893)
+- cardio-020 <-> cardio-089 (0.893)
+- cardio-057 <-> cardio-089 (0.89)
+- cardio-070 <-> cardio-089 (0.89)
+- cardio-041 <-> cardio-042 (0.889)
+- cardio-041 <-> cardio-043 (0.889)
+- cardio-041 <-> cardio-058 (0.889)
+- cardio-042 <-> cardio-043 (0.889)
+- cardio-042 <-> cardio-058 (0.889)
+- cardio-043 <-> cardio-058 (0.889)
+- cardio-067 <-> cardio-099 (0.888)
+- cardio-025 <-> cardio-050 (0.887)
+- cardio-025 <-> cardio-066 (0.887)
+- cardio-071 <-> cardio-077 (0.886)
+- cardio-071 <-> cardio-085 (0.886)
+- cardio-071 <-> cardio-090 (0.886)
+- cardio-077 <-> cardio-085 (0.886)
+- cardio-077 <-> cardio-090 (0.886)
+- cardio-085 <-> cardio-090 (0.886)
+- cardio-026 <-> cardio-041 (0.885)
+- cardio-026 <-> cardio-042 (0.885)
+- cardio-026 <-> cardio-043 (0.885)
+- cardio-026 <-> cardio-058 (0.885)
+- cardio-041 <-> cardio-062 (0.885)
+- cardio-042 <-> cardio-062 (0.885)
+- cardio-043 <-> cardio-062 (0.885)
+- cardio-058 <-> cardio-062 (0.885)
+- cardio-050 <-> cardio-066 (0.884)
+- cardio-007 <-> cardio-071 (0.882)
+- cardio-007 <-> cardio-077 (0.882)
+- cardio-007 <-> cardio-085 (0.882)
+- cardio-007 <-> cardio-090 (0.882)
+- cardio-015 <-> cardio-071 (0.882)
+- cardio-015 <-> cardio-077 (0.882)
+- cardio-015 <-> cardio-085 (0.882)
+- cardio-015 <-> cardio-090 (0.882)
+- cardio-026 <-> cardio-062 (0.882)
+- cardio-034 <-> cardio-071 (0.882)
+- cardio-034 <-> cardio-077 (0.882)
+- cardio-034 <-> cardio-085 (0.882)
+- cardio-034 <-> cardio-090 (0.882)
+- cardio-038 <-> cardio-071 (0.882)
+- cardio-038 <-> cardio-077 (0.882)
+- cardio-038 <-> cardio-085 (0.882)
+- cardio-038 <-> cardio-090 (0.882)
+- cardio-057 <-> cardio-071 (0.882)
+- cardio-057 <-> cardio-077 (0.882)
+- cardio-057 <-> cardio-085 (0.882)
+- cardio-057 <-> cardio-090 (0.882)
+- cardio-070 <-> cardio-071 (0.882)
+- cardio-070 <-> cardio-077 (0.882)
+- cardio-070 <-> cardio-085 (0.882)
+- cardio-070 <-> cardio-090 (0.882)
+- cardio-071 <-> cardio-082 (0.882)
+- cardio-071 <-> cardio-094 (0.882)
+- cardio-077 <-> cardio-082 (0.882)
+- cardio-077 <-> cardio-094 (0.882)
+- cardio-082 <-> cardio-085 (0.882)
+- cardio-082 <-> cardio-090 (0.882)
+- cardio-085 <-> cardio-094 (0.882)
+- cardio-090 <-> cardio-094 (0.882)
+- cardio-044 <-> cardio-054 (0.88)
+- cardio-044 <-> cardio-063 (0.88)
+- cardio-054 <-> cardio-063 (0.88)
+- cardio-007 <-> cardio-015 (0.879)
+- cardio-007 <-> cardio-034 (0.879)
+- cardio-007 <-> cardio-038 (0.879)
+- cardio-007 <-> cardio-057 (0.879)
+- cardio-007 <-> cardio-070 (0.879)
+- cardio-007 <-> cardio-082 (0.879)
+- cardio-007 <-> cardio-094 (0.879)
+- cardio-015 <-> cardio-034 (0.879)
+- cardio-015 <-> cardio-038 (0.879)
+- cardio-015 <-> cardio-057 (0.879)
+- cardio-015 <-> cardio-070 (0.879)
+- cardio-015 <-> cardio-082 (0.879)
+- cardio-015 <-> cardio-094 (0.879)
+- cardio-028 <-> cardio-071 (0.879)
+- cardio-028 <-> cardio-077 (0.879)
+- cardio-028 <-> cardio-085 (0.879)
+- cardio-028 <-> cardio-090 (0.879)
+- cardio-034 <-> cardio-038 (0.879)
+- cardio-034 <-> cardio-057 (0.879)
+- cardio-034 <-> cardio-070 (0.879)
+- cardio-034 <-> cardio-082 (0.879)
+- cardio-034 <-> cardio-094 (0.879)

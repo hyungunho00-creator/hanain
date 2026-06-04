@@ -1,8 +1,8 @@
 {
   "min_tag_count": 5,
-  "total_questions": 1874,
-  "total_unique_tags": 2238,
-  "page_eligible_tags": 238,
+  "total_questions": 1877,
+  "total_unique_tags": 2244,
+  "page_eligible_tags": 239,
   "tags": {
     "플로로탄닌": {
       "count": 1368,
@@ -5918,6 +5918,78 @@
         "trend-melasma-tinted-sunscreen-visible-light-iron-oxide-20260603"
       ]
     },
+    "심혈관": {
+      "count": 67,
+      "qids": [
+        "cardio-019",
+        "cardio-030",
+        "cardio-040",
+        "cardio-045",
+        "cardio-050",
+        "cardio-057",
+        "cardio-060",
+        "cardio-065",
+        "cardio-067",
+        "cardio-070",
+        "cardio-075",
+        "cardio-080",
+        "cardio-085",
+        "cardio-090",
+        "cardio-095",
+        "cardio-100",
+        "meta-018",
+        "wh-extra-008",
+        "wh-extra-060",
+        "wh-extra-070",
+        "womens-009",
+        "mens-003",
+        "mens-016",
+        "mens-extra-005",
+        "mens-extra-030",
+        "mens-005",
+        "infect-extra-006",
+        "infect-extra-021",
+        "mental-extra-032",
+        "ingr-010",
+        "ingr-021",
+        "qa200-20260527-077",
+        "qa200-20260527-078",
+        "qa200-20260527-079",
+        "qa200-20260527-080",
+        "qa200-20260527-081",
+        "qa200-20260527-082",
+        "qa200-20260527-083",
+        "qa200-20260527-084",
+        "qa200-20260527-085",
+        "qa200-20260527-086",
+        "qa200-20260527-087",
+        "qa200-20260527-088",
+        "qa200-20260527-089",
+        "qa200-20260527-090",
+        "qa200-20260527-091",
+        "qa200-20260527-092",
+        "qa200-20260527-093",
+        "qa200-20260527-094",
+        "seoqa-cardiovascular-01",
+        "seoqa-cardiovascular-02",
+        "seoqa-cardiovascular-03",
+        "seoqa-cardiovascular-04",
+        "seoqa-cardiovascular-05",
+        "seoqa-cardiovascular-06",
+        "seoqa-cardiovascular-07",
+        "seoqa-cardiovascular-08",
+        "seoqa-cardiovascular-09",
+        "seoqa-cardiovascular-10",
+        "trendqa-cardiovascular-20260530",
+        "round2-cardiovascular-20260530",
+        "trend-ultra-processed-food-blood-sugar-label-20260602",
+        "trend-sleep-regularity-heart-risk-20260602",
+        "trend-cold-plunge-sauna-blood-pressure-arrhythmia-safety-20260602",
+        "trend-erectile-dysfunction-cardiovascular-risk-20260602",
+        "trend-renal-denervation-resistant-hypertension-home-bp-abpm-record-20260603",
+        "trend-extreme-heat-medication-plan-older-adults-hydration-record-20260604"
+      ]
+    },
     "폐": {
       "count": 67,
       "qids": [
@@ -5988,77 +6060,6 @@
         "rsp_098",
         "rsp_099",
         "rsp_100"
-      ]
-    },
-    "심혈관": {
-      "count": 66,
-      "qids": [
-        "cardio-019",
-        "cardio-030",
-        "cardio-040",
-        "cardio-045",
-        "cardio-050",
-        "cardio-057",
-        "cardio-060",
-        "cardio-065",
-        "cardio-067",
-        "cardio-070",
-        "cardio-075",
-        "cardio-080",
-        "cardio-085",
-        "cardio-090",
-        "cardio-095",
-        "cardio-100",
-        "meta-018",
-        "wh-extra-008",
-        "wh-extra-060",
-        "wh-extra-070",
-        "womens-009",
-        "mens-003",
-        "mens-016",
-        "mens-extra-005",
-        "mens-extra-030",
-        "mens-005",
-        "infect-extra-006",
-        "infect-extra-021",
-        "mental-extra-032",
-        "ingr-010",
-        "ingr-021",
-        "qa200-20260527-077",
-        "qa200-20260527-078",
-        "qa200-20260527-079",
-        "qa200-20260527-080",
-        "qa200-20260527-081",
-        "qa200-20260527-082",
-        "qa200-20260527-083",
-        "qa200-20260527-084",
-        "qa200-20260527-085",
-        "qa200-20260527-086",
-        "qa200-20260527-087",
-        "qa200-20260527-088",
-        "qa200-20260527-089",
-        "qa200-20260527-090",
-        "qa200-20260527-091",
-        "qa200-20260527-092",
-        "qa200-20260527-093",
-        "qa200-20260527-094",
-        "seoqa-cardiovascular-01",
-        "seoqa-cardiovascular-02",
-        "seoqa-cardiovascular-03",
-        "seoqa-cardiovascular-04",
-        "seoqa-cardiovascular-05",
-        "seoqa-cardiovascular-06",
-        "seoqa-cardiovascular-07",
-        "seoqa-cardiovascular-08",
-        "seoqa-cardiovascular-09",
-        "seoqa-cardiovascular-10",
-        "trendqa-cardiovascular-20260530",
-        "round2-cardiovascular-20260530",
-        "trend-ultra-processed-food-blood-sugar-label-20260602",
-        "trend-sleep-regularity-heart-risk-20260602",
-        "trend-cold-plunge-sauna-blood-pressure-arrhythmia-safety-20260602",
-        "trend-erectile-dysfunction-cardiovascular-risk-20260602",
-        "trend-renal-denervation-resistant-hypertension-home-bp-abpm-record-20260603"
       ]
     },
     "면역": {
@@ -6692,7 +6693,7 @@
       ]
     },
     "호흡기": {
-      "count": 42,
+      "count": 43,
       "qids": [
         "rsp_038",
         "rsp_046",
@@ -6735,7 +6736,8 @@
         "round3-respiratory-1-20260531",
         "trend-rsv-vaccine-older-adults-risk-20260602",
         "trend-pollen-thunderstorm-asthma-action-plan-20260603",
-        "trend-wildfire-smoke-aqi-n95-asthma-copd-action-record-20260603"
+        "trend-wildfire-smoke-aqi-n95-asthma-copd-action-record-20260603",
+        "trend-monsoon-mold-dampness-asthma-allergy-home-record-20260604"
       ]
     },
     "뼈": {
@@ -7732,7 +7734,7 @@
       ]
     },
     "천식": {
-      "count": 19,
+      "count": 20,
       "qids": [
         "rsp_021",
         "rsp_022",
@@ -7752,7 +7754,8 @@
         "trendqa-respiratory-20260530",
         "round3-respiratory-2-20260531",
         "trend-pollen-thunderstorm-asthma-action-plan-20260603",
-        "trend-wildfire-smoke-aqi-n95-asthma-copd-action-record-20260603"
+        "trend-wildfire-smoke-aqi-n95-asthma-copd-action-record-20260603",
+        "trend-monsoon-mold-dampness-asthma-allergy-home-record-20260604"
       ]
     },
     "갱년기": {
@@ -8048,6 +8051,26 @@
         "dg_089"
       ]
     },
+    "장건강": {
+      "count": 15,
+      "qids": [
+        "dige-001",
+        "dige-015",
+        "dige-018",
+        "mental-008",
+        "ingr-005",
+        "ingr-007",
+        "ingr-027",
+        "qa200-20260527-038",
+        "qa200-20260527-062",
+        "qa200-20260527-069",
+        "round2-digestive-20260530",
+        "trend-resistant-starch-gut-microbiome-polyphenol-20260602",
+        "trend-fermented-food-probiotics-gut-microbiome-safety-20260602",
+        "trend-at-home-gut-microbiome-test-dtc-stool-report-record-20260603",
+        "trend-world-food-safety-day-foodborne-illness-home-record-20260604"
+      ]
+    },
     "항암·면역": {
       "count": 15,
       "qids": [
@@ -8162,25 +8185,6 @@
         "infect-010",
         "infect-012",
         "infect-018"
-      ]
-    },
-    "장건강": {
-      "count": 14,
-      "qids": [
-        "dige-001",
-        "dige-015",
-        "dige-018",
-        "mental-008",
-        "ingr-005",
-        "ingr-007",
-        "ingr-027",
-        "qa200-20260527-038",
-        "qa200-20260527-062",
-        "qa200-20260527-069",
-        "round2-digestive-20260530",
-        "trend-resistant-starch-gut-microbiome-polyphenol-20260602",
-        "trend-fermented-food-probiotics-gut-microbiome-safety-20260602",
-        "trend-at-home-gut-microbiome-test-dtc-stool-report-record-20260603"
       ]
     },
     "프로바이오틱스": {
@@ -8428,6 +8432,22 @@
         "qa200-20260527-175"
       ]
     },
+    "알레르기": {
+      "count": 11,
+      "qids": [
+        "skin-002",
+        "resp-001",
+        "resp-004",
+        "infect-extra-036",
+        "infect-extra-057",
+        "sh_110",
+        "ingr-020",
+        "qa200-20260527-145",
+        "trend-tick-bite-lyme-alpha-gal-syndrome-20260603",
+        "trend-tattoo-ink-contamination-skin-cancer-mole-monitoring-record-20260603",
+        "trend-monsoon-mold-dampness-asthma-allergy-home-record-20260604"
+      ]
+    },
     "염증": {
       "count": 11,
       "qids": [
@@ -8610,21 +8630,6 @@
         "sh_093",
         "sh_119",
         "qa200-20260527-137"
-      ]
-    },
-    "알레르기": {
-      "count": 10,
-      "qids": [
-        "skin-002",
-        "resp-001",
-        "resp-004",
-        "infect-extra-036",
-        "infect-extra-057",
-        "sh_110",
-        "ingr-020",
-        "qa200-20260527-145",
-        "trend-tick-bite-lyme-alpha-gal-syndrome-20260603",
-        "trend-tattoo-ink-contamination-skin-cancer-mole-monitoring-record-20260603"
       ]
     },
     "집중력": {
@@ -9478,6 +9483,17 @@
         "qa200-20260527-170"
       ]
     },
+    "식중독": {
+      "count": 6,
+      "qids": [
+        "infect-extra-016",
+        "infect-extra-061",
+        "infect-006",
+        "infect-107",
+        "qa200-20260527-169",
+        "trend-world-food-safety-day-foodborne-illness-home-record-20260604"
+      ]
+    },
     "신장": {
       "count": 6,
       "qids": [
@@ -9564,6 +9580,17 @@
         "mens-extra-007",
         "mens-008",
         "qa200-20260527-125"
+      ]
+    },
+    "탈수": {
+      "count": 6,
+      "qids": [
+        "wh-extra-022",
+        "qa200-20260527-064",
+        "qa200-20260527-169",
+        "trend-norovirus-handwashing-bleach-hydration-outbreak-20260602",
+        "trend-glp1-compounded-dosing-error-gi-side-effect-20260603",
+        "trend-world-food-safety-day-foodborne-illness-home-record-20260604"
       ]
     },
     "헬리코박터": {
@@ -9970,16 +9997,6 @@
         "infect-extra-025"
       ]
     },
-    "식중독": {
-      "count": 5,
-      "qids": [
-        "infect-extra-016",
-        "infect-extra-061",
-        "infect-006",
-        "infect-107",
-        "qa200-20260527-169"
-      ]
-    },
     "식후혈당": {
       "count": 5,
       "qids": [
@@ -10080,16 +10097,6 @@
         "trend-creatine-resistance-training-sarcopenia-older-adults-20260602"
       ]
     },
-    "탈수": {
-      "count": 5,
-      "qids": [
-        "wh-extra-022",
-        "qa200-20260527-064",
-        "qa200-20260527-169",
-        "trend-norovirus-handwashing-bleach-hydration-outbreak-20260602",
-        "trend-glp1-compounded-dosing-error-gi-side-effect-20260603"
-      ]
-    },
     "폐암": {
       "count": 5,
       "qids": [
@@ -10108,6 +10115,16 @@
         "sh_122",
         "qa200-20260527-139",
         "trend-bemotrizinol-sunscreen-uva-broad-spectrum-20260602"
+      ]
+    },
+    "혈압약": {
+      "count": 5,
+      "qids": [
+        "cardio-023",
+        "qa200-20260527-078",
+        "round2-cardiovascular-20260530",
+        "trend-heat-health-hydration-blood-pressure-20260602",
+        "trend-extreme-heat-medication-plan-older-adults-hydration-record-20260604"
       ]
     },
     "혈액순환": {
@@ -11985,7 +12002,10 @@
     "trend-masld-fib4-liver-fibrosis-risk-stratification-record-20260603": "MASLD-지방간은-간수치보다-FIB4와-간섬유화-위험을-봐야-하나요",
     "trend-renal-denervation-resistant-hypertension-home-bp-abpm-record-20260603": "저항성-고혈압에서-신장신경차단술을-상담하기-전에-어떤-기록이-필요한가요",
     "trend-tia-mini-stroke-fast-warning-symptom-time-record-20260603": "TIA-미니뇌졸중-증상이-사라졌다면-그래도-응급-상담이-필요한가요",
-    "trend-immune-checkpoint-inhibitor-side-effect-organ-inflammation-record-20260603": "면역항암제-치료-중-어떤-부작용-신호를-바로-기록하고-알려야-하나요"
+    "trend-immune-checkpoint-inhibitor-side-effect-organ-inflammation-record-20260603": "면역항암제-치료-중-어떤-부작용-신호를-바로-기록하고-알려야-하나요",
+    "trend-world-food-safety-day-foodborne-illness-home-record-20260604": "여름철-설사와-복통이-생기면-장-건강보다-어떤-식품-기록을-먼저-봐야-하나요",
+    "trend-monsoon-mold-dampness-asthma-allergy-home-record-20260604": "장마철-곰팡이-냄새와-기침이-반복되면-공기청정기보다-무엇을-먼저-확인해야-하나요",
+    "trend-extreme-heat-medication-plan-older-adults-hydration-record-20260604": "폭염이-시작되기-전에-고령자와-혈압약-복용자는-무엇을-미리-기록해야-하나요"
   },
-  "generated_at": "2026-06-03T01:13:46.605274+00:00"
+  "generated_at": "2026-06-04T03:14:19.238175+00:00"
 }

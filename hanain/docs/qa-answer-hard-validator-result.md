@@ -1,1344 +1,795 @@
 # QA Answer Hard Validator Result
 
-- generatedAt: 2026-05-29T23:25:45.358Z
-- scanned: 1641
-- publicAnswers: 1641
-- hidden(needs_review): 0
-- failures: 1328
-- warnings: 0
+- generatedAt: 2026-06-04T03:13:46.220Z
+- scanned: 1877
+- publicAnswers: 1877
+- hiddenMissingAnswer: 0
+- failures: 211
+- warnings: 569
 - status: FAIL
 
 ## Failures
 
-- cardio-001: title keyword missing in first 300 chars
-- cardio-001: phlorotannin appears in first paragraph
-- cardio-002: phlorotannin appears in first paragraph
-- cardio-003: title keyword missing in first 300 chars
-- cardio-003: phlorotannin appears in first paragraph
-- cardio-004: phlorotannin appears in first paragraph
-- cardio-005: phlorotannin appears in first paragraph
-- cardio-006: title keyword missing in first 300 chars
-- cardio-006: phlorotannin appears in first paragraph
-- cardio-007: phlorotannin appears in first paragraph
-- cardio-008: phlorotannin appears in first paragraph
-- cardio-010: phlorotannin appears in first paragraph
-- cardio-011: title keyword missing in first 300 chars
-- cardio-011: phlorotannin appears in first paragraph
-- cardio-013: title keyword missing in first 300 chars
-- cardio-014: first sentence starts with category label
-- cardio-014: phlorotannin appears in first paragraph
-- cardio-015: title keyword missing in first 300 chars
-- cardio-015: phlorotannin appears in first paragraph
-- cardio-016: phlorotannin appears in first paragraph
-- cardio-017: phlorotannin appears in first paragraph
-- cardio-018: phlorotannin appears in first paragraph
-- cardio-021: phlorotannin appears in first paragraph
-- cardio-022: phlorotannin appears in first paragraph
-- cardio-024: phlorotannin appears in first paragraph
-- cardio-025: phlorotannin appears in first paragraph
-- cardio-026: title keyword missing in first 300 chars
-- cardio-026: phlorotannin appears in first paragraph
-- cardio-027: phlorotannin appears in first paragraph
-- cardio-028: first sentence starts with category label
-- cardio-028: title keyword missing in first 300 chars
-- cardio-028: phlorotannin appears in first paragraph
-- cardio-029: title keyword missing in first 300 chars
-- cardio-030: phlorotannin appears in first paragraph
-- cardio-034: title keyword missing in first 300 chars
-- cardio-034: phlorotannin appears in first paragraph
-- cardio-035: phlorotannin appears in first paragraph
-- cardio-036: phlorotannin appears in first paragraph
-- cardio-037: phlorotannin appears in first paragraph
-- cardio-038: title keyword missing in first 300 chars
-- cardio-038: phlorotannin appears in first paragraph
-- cardio-040: phlorotannin appears in first paragraph
-- cardio-042: title keyword missing in first 300 chars
-- cardio-044: title keyword missing in first 300 chars
-- cardio-044: phlorotannin appears in first paragraph
-- cardio-045: phlorotannin appears in first paragraph
-- cardio-046: title keyword missing in first 300 chars
-- cardio-047: phlorotannin appears in first paragraph
-- cardio-048: phlorotannin appears in first paragraph
-- cardio-049: phlorotannin appears in first paragraph
-- cardio-050: first sentence starts with category label
-- cardio-053: first sentence starts with category label
-- cardio-054: title keyword missing in first 300 chars
-- cardio-054: phlorotannin appears in first paragraph
-- cardio-055: phlorotannin appears in first paragraph
-- cardio-056: phlorotannin appears in first paragraph
-- cardio-057: phlorotannin appears in first paragraph
-- cardio-058: phlorotannin appears in first paragraph
-- cardio-062: phlorotannin appears in first paragraph
-- cardio-064: phlorotannin appears in first paragraph
-- cardio-065: phlorotannin appears in first paragraph
-- cardio-066: phlorotannin appears in first paragraph
-- cardio-067: phlorotannin appears in first paragraph
-- cardio-068: phlorotannin appears in first paragraph
-- cardio-072: title keyword missing in first 300 chars
-- cardio-074: phlorotannin appears in first paragraph
-- cardio-075: phlorotannin appears in first paragraph
-- cardio-076: phlorotannin appears in first paragraph
-- cardio-077: phlorotannin appears in first paragraph
-- cardio-078: phlorotannin appears in first paragraph
-- cardio-082: phlorotannin appears in first paragraph
-- cardio-084: phlorotannin appears in first paragraph
-- cardio-085: phlorotannin appears in first paragraph
-- cardio-086: phlorotannin appears in first paragraph
-- cardio-087: title keyword missing in first 300 chars
-- cardio-087: phlorotannin appears in first paragraph
-- cardio-088: phlorotannin appears in first paragraph
-- cardio-093: first sentence starts with category label
-- cardio-094: phlorotannin appears in first paragraph
-- cardio-095: phlorotannin appears in first paragraph
-- cardio-096: phlorotannin appears in first paragraph
-- cardio-097: phlorotannin appears in first paragraph
-- cardio-098: title keyword missing in first 300 chars
-- cardio-098: phlorotannin appears in first paragraph
-- meta-001: title keyword missing in first 300 chars
-- meta-001: phlorotannin appears in first paragraph
-- meta-001: phlorotannin therapeutic claim detected
-- meta-002: phlorotannin appears in first paragraph
-- meta-003: title keyword missing in first 300 chars
-- meta-003: phlorotannin appears in first paragraph
-- meta-004: phlorotannin appears in first paragraph
-- meta-005: phlorotannin appears in first paragraph
-- meta-005: phlorotannin therapeutic claim detected
-- meta-006: phlorotannin appears in first paragraph
-- meta-007: phlorotannin appears in first paragraph
-- meta-007: phlorotannin therapeutic claim detected
-- meta-008: phlorotannin appears in first paragraph
-- meta-008: phlorotannin therapeutic claim detected
-- meta-010: phlorotannin appears in first paragraph
-- meta-010: phlorotannin therapeutic claim detected
-- meta-011: phlorotannin appears in first paragraph
-- meta-011: phlorotannin therapeutic claim detected
-- meta-014: phlorotannin appears in first paragraph
-- meta-015: phlorotannin appears in first paragraph
-- meta-016: phlorotannin appears in first paragraph
-- meta-017: phlorotannin appears in first paragraph
-- meta-017: phlorotannin therapeutic claim detected
-- meta-018: title keyword missing in first 300 chars
-- meta-018: phlorotannin appears in first paragraph
-- meta_023: phlorotannin appears in first paragraph
-- meta_024: title keyword missing in first 300 chars
-- meta_024: phlorotannin appears in first paragraph
-- meta_025: phlorotannin appears in first paragraph
-- meta_026: title keyword missing in first 300 chars
-- meta_026: phlorotannin appears in first paragraph
-- meta_027: title keyword missing in first 300 chars
-- meta_027: phlorotannin appears in first paragraph
-- meta_033: phlorotannin appears in first paragraph
-- meta_034: phlorotannin appears in first paragraph
-- meta_035: phlorotannin appears in first paragraph
-- meta_036: phlorotannin appears in first paragraph
-- meta_037: title keyword missing in first 300 chars
-- meta_037: phlorotannin appears in first paragraph
-- meta_038: title keyword missing in first 300 chars
-- meta_039: title keyword missing in first 300 chars
-- meta_041: title keyword missing in first 300 chars
-- meta_043: title keyword missing in first 300 chars
-- meta_043: phlorotannin appears in first paragraph
-- meta_044: phlorotannin appears in first paragraph
-- meta_045: phlorotannin appears in first paragraph
-- meta_046: phlorotannin appears in first paragraph
-- meta_047: title keyword missing in first 300 chars
-- meta_047: phlorotannin appears in first paragraph
-- meta_049: title keyword missing in first 300 chars
-- meta_053: phlorotannin appears in first paragraph
-- meta_054: title keyword missing in first 300 chars
-- meta_054: phlorotannin appears in first paragraph
-- meta_055: phlorotannin appears in first paragraph
-- meta_056: phlorotannin appears in first paragraph
-- meta_057: title keyword missing in first 300 chars
-- meta_057: phlorotannin appears in first paragraph
-- meta_059: title keyword missing in first 300 chars
-- meta_062: title keyword missing in first 300 chars
-- meta_063: phlorotannin appears in first paragraph
-- meta_064: phlorotannin appears in first paragraph
-- meta_065: phlorotannin appears in first paragraph
-- meta_066: phlorotannin appears in first paragraph
-- meta_067: phlorotannin appears in first paragraph
-- meta_072: title keyword missing in first 300 chars
-- meta_073: title keyword missing in first 300 chars
-- meta_073: phlorotannin appears in first paragraph
-- meta_074: title keyword missing in first 300 chars
-- meta_074: phlorotannin appears in first paragraph
-- meta_075: phlorotannin appears in first paragraph
-- meta_076: title keyword missing in first 300 chars
-- meta_076: phlorotannin appears in first paragraph
-- meta_077: phlorotannin appears in first paragraph
-- meta_082: title keyword missing in first 300 chars
-- meta_083: phlorotannin appears in first paragraph
-- meta_084: phlorotannin appears in first paragraph
-- meta_085: phlorotannin appears in first paragraph
-- meta_086: phlorotannin appears in first paragraph
-- meta_087: phlorotannin appears in first paragraph
-- meta_092: title keyword missing in first 300 chars
-- meta_093: phlorotannin appears in first paragraph
-- meta_094: phlorotannin appears in first paragraph
-- meta_095: title keyword missing in first 300 chars
-- meta_095: phlorotannin appears in first paragraph
-- meta_096: phlorotannin appears in first paragraph
-- meta_097: phlorotannin appears in first paragraph
-- cancer-001: first sentence starts with category label
-- cancer-001: phlorotannin appears in first paragraph
-- cancer-001: phlorotannin therapeutic claim detected
-- cancer-002: phlorotannin appears in first paragraph
-- cancer-003: phlorotannin appears in first paragraph
-- cancer-004: phlorotannin appears in first paragraph
-- cancer-005: phlorotannin appears in first paragraph
-- cancer-006: phlorotannin appears in first paragraph
-- cancer-007: phlorotannin appears in first paragraph
-- cancer-008: phlorotannin appears in first paragraph
-- cancer-010: title keyword missing in first 300 chars
-- cancer-012: phlorotannin appears in first paragraph
-- cancer-014: phlorotannin appears in first paragraph
-- cancer-015: title keyword missing in first 300 chars
-- cancer-015: phlorotannin appears in first paragraph
-- cancer-016: phlorotannin appears in first paragraph
-- cancer-017: phlorotannin appears in first paragraph
-- cancer-018: first sentence starts with category label
-- cancer-018: phlorotannin appears in first paragraph
-- ci_016: title keyword missing in first 300 chars
-- ci_017: title keyword missing in first 300 chars
-- ci_019: title keyword missing in first 300 chars
-- ci_019: phlorotannin appears in first paragraph
-- ci_020: phlorotannin appears in first paragraph
-- ci_021: phlorotannin appears in first paragraph
-- ci_022: phlorotannin appears in first paragraph
-- ci_023: phlorotannin appears in first paragraph
-- ci_025: title keyword missing in first 300 chars
-- ci_028: first sentence starts with category label
-- ci_029: phlorotannin appears in first paragraph
-- ci_030: title keyword missing in first 300 chars
-- ci_030: phlorotannin appears in first paragraph
-- ci_031: phlorotannin appears in first paragraph
-- ci_032: phlorotannin appears in first paragraph
-- ci_033: phlorotannin appears in first paragraph
-- ci_037: title keyword missing in first 300 chars
-- ci_038: title keyword missing in first 300 chars
-- ci_039: title keyword missing in first 300 chars
-- ci_039: phlorotannin appears in first paragraph
-- ci_040: phlorotannin appears in first paragraph
-- ci_041: phlorotannin appears in first paragraph
-- ci_042: phlorotannin appears in first paragraph
-- ci_043: title keyword missing in first 300 chars
-- ci_043: phlorotannin appears in first paragraph
-- ci_044: title keyword missing in first 300 chars
-- ci_045: title keyword missing in first 300 chars
-- ci_046: title keyword missing in first 300 chars
-- ci_048: title keyword missing in first 300 chars
-- ci_049: phlorotannin appears in first paragraph
-- ci_050: title keyword missing in first 300 chars
-- ci_050: phlorotannin appears in first paragraph
-- ci_051: phlorotannin appears in first paragraph
-- ci_052: phlorotannin appears in first paragraph
-- ci_053: title keyword missing in first 300 chars
-- ci_053: phlorotannin appears in first paragraph
-- ci_054: title keyword missing in first 300 chars
-- ci_056: title keyword missing in first 300 chars
-- ci_059: phlorotannin appears in first paragraph
-- ci_060: phlorotannin appears in first paragraph
-- ci_061: title keyword missing in first 300 chars
-- ci_061: phlorotannin appears in first paragraph
-- ci_062: title keyword missing in first 300 chars
-- ci_062: phlorotannin appears in first paragraph
-- ci_063: phlorotannin appears in first paragraph
-- ci_066: first sentence starts with category label
-- ci_068: title keyword missing in first 300 chars
-- ci_069: phlorotannin appears in first paragraph
-- ci_070: title keyword missing in first 300 chars
-- ci_070: phlorotannin appears in first paragraph
-- ci_071: phlorotannin appears in first paragraph
-- ci_072: phlorotannin appears in first paragraph
-- ci_073: title keyword missing in first 300 chars
-- ci_073: phlorotannin appears in first paragraph
-- ci_077: first sentence starts with category label
-- ci_079: title keyword missing in first 300 chars
-- ci_079: phlorotannin appears in first paragraph
-- ci_080: phlorotannin appears in first paragraph
-- ci_081: title keyword missing in first 300 chars
-- ci_081: phlorotannin appears in first paragraph
-- ci_082: phlorotannin appears in first paragraph
-- ci_083: phlorotannin appears in first paragraph
-- ci_086: title keyword missing in first 300 chars
-- ci_089: title keyword missing in first 300 chars
-- ci_089: phlorotannin appears in first paragraph
-- ci_090: phlorotannin appears in first paragraph
-- ci_091: phlorotannin appears in first paragraph
-- ci_092: phlorotannin appears in first paragraph
-- ci_093: title keyword missing in first 300 chars
-- ci_093: phlorotannin appears in first paragraph
-- ci_094: first sentence starts with category label
-- ci_094: title keyword missing in first 300 chars
-- dige-003: title keyword missing in first 300 chars
-- dige-004: title keyword missing in first 300 chars
-- dige-004: phlorotannin appears in first paragraph
-- dige-005: phlorotannin appears in first paragraph
-- dige-006: title keyword missing in first 300 chars
-- dige-006: phlorotannin appears in first paragraph
-- dige-007: title keyword missing in first 300 chars
-- dige-007: phlorotannin appears in first paragraph
-- dige-008: phlorotannin appears in first paragraph
-- dige-009: title keyword missing in first 300 chars
-- dige-009: phlorotannin appears in first paragraph
-- dige-011: first sentence starts with category label
-- dige-013: title keyword missing in first 300 chars
-- dige-014: phlorotannin appears in first paragraph
-- dige-015: title keyword missing in first 300 chars
-- dige-015: phlorotannin appears in first paragraph
-- dige-016: phlorotannin appears in first paragraph
-- dige-017: title keyword missing in first 300 chars
-- dige-017: phlorotannin appears in first paragraph
-- dige-018: title keyword missing in first 300 chars
-- dige-018: phlorotannin appears in first paragraph
-- dige-019: phlorotannin appears in first paragraph
-- dg_011: title keyword missing in first 300 chars
-- dg_012: title keyword missing in first 300 chars
-- dg_013: title keyword missing in first 300 chars
-- dg_013: phlorotannin appears in first paragraph
-- dg_014: title keyword missing in first 300 chars
-- dg_014: phlorotannin appears in first paragraph
-- dg_015: title keyword missing in first 300 chars
-- dg_015: phlorotannin appears in first paragraph
-- dg_016: phlorotannin appears in first paragraph
-- dg_017: phlorotannin appears in first paragraph
-- dg_018: title keyword missing in first 300 chars
-- dg_021: title keyword missing in first 300 chars
-- dg_022: title keyword missing in first 300 chars
-- dg_023: title keyword missing in first 300 chars
-- dg_023: phlorotannin appears in first paragraph
-- dg_024: phlorotannin appears in first paragraph
-- dg_025: phlorotannin appears in first paragraph
-- dg_026: phlorotannin appears in first paragraph
-- dg_027: phlorotannin appears in first paragraph
-- dg_029: title keyword missing in first 300 chars
-- dg_031: title keyword missing in first 300 chars
-- dg_032: title keyword missing in first 300 chars
-- dg_033: phlorotannin appears in first paragraph
-- dg_034: title keyword missing in first 300 chars
-- dg_034: phlorotannin appears in first paragraph
-- dg_035: phlorotannin appears in first paragraph
-- dg_036: phlorotannin appears in first paragraph
-- dg_037: title keyword missing in first 300 chars
-- dg_037: phlorotannin appears in first paragraph
-- dg_038: title keyword missing in first 300 chars
-- dg_040: title keyword missing in first 300 chars
-- dg_042: title keyword missing in first 300 chars
-- dg_043: phlorotannin appears in first paragraph
-- dg_044: phlorotannin appears in first paragraph
-- dg_045: phlorotannin appears in first paragraph
-- dg_046: phlorotannin appears in first paragraph
-- dg_047: title keyword missing in first 300 chars
-- dg_047: phlorotannin appears in first paragraph
-- dg_050: title keyword missing in first 300 chars
-- dg_051: title keyword missing in first 300 chars
-- dg_052: first sentence starts with category label
-- dg_053: phlorotannin appears in first paragraph
-- dg_054: title keyword missing in first 300 chars
-- dg_054: phlorotannin appears in first paragraph
-- dg_055: title keyword missing in first 300 chars
-- dg_055: phlorotannin appears in first paragraph
-- dg_056: phlorotannin appears in first paragraph
-- dg_057: phlorotannin appears in first paragraph
-- dg_058: title keyword missing in first 300 chars
-- dg_059: title keyword missing in first 300 chars
-- dg_060: title keyword missing in first 300 chars
-- dg_063: phlorotannin appears in first paragraph
-- dg_064: phlorotannin appears in first paragraph
-- dg_065: title keyword missing in first 300 chars
-- dg_065: phlorotannin appears in first paragraph
-- dg_066: phlorotannin appears in first paragraph
-- dg_067: phlorotannin appears in first paragraph
-- dg_068: title keyword missing in first 300 chars
-- dg_069: title keyword missing in first 300 chars
-- dg_071: title keyword missing in first 300 chars
-- dg_072: first sentence starts with category label
-- dg_073: phlorotannin appears in first paragraph
-- dg_074: title keyword missing in first 300 chars
-- dg_074: phlorotannin appears in first paragraph
-- dg_075: phlorotannin appears in first paragraph
-- dg_076: phlorotannin appears in first paragraph
-- dg_077: phlorotannin appears in first paragraph
-- dg_079: title keyword missing in first 300 chars
-- dg_081: title keyword missing in first 300 chars
-- dg_082: title keyword missing in first 300 chars
-- dg_083: title keyword missing in first 300 chars
-- dg_083: phlorotannin appears in first paragraph
-- dg_084: phlorotannin appears in first paragraph
-- dg_085: title keyword missing in first 300 chars
-- dg_085: phlorotannin appears in first paragraph
-- dg_086: phlorotannin appears in first paragraph
-- dg_087: phlorotannin appears in first paragraph
-- dg_090: title keyword missing in first 300 chars
-- neuro-003: title keyword missing in first 300 chars
-- neuro-003: phlorotannin appears in first paragraph
-- neuro-003: phlorotannin therapeutic claim detected
-- neuro-004: phlorotannin appears in first paragraph
-- neuro-005: phlorotannin appears in first paragraph
-- neuro-006: phlorotannin appears in first paragraph
-- neuro-008: first sentence starts with category label
-- neuro-008: phlorotannin appears in first paragraph
-- neuro-009: phlorotannin appears in first paragraph
-- neuro-011: title keyword missing in first 300 chars
-- neuro-012: title keyword missing in first 300 chars
-- neuro-013: first sentence starts with category label
-- neuro-013: phlorotannin appears in first paragraph
-- neuro-014: phlorotannin appears in first paragraph
-- neuro-015: phlorotannin appears in first paragraph
-- neuro-016: phlorotannin appears in first paragraph
-- neuro-018: phlorotannin appears in first paragraph
-- neuro-020: first sentence starts with category label
-- nc_014: title keyword missing in first 300 chars
-- nc_015: phlorotannin appears in first paragraph
-- nc_016: title keyword missing in first 300 chars
-- nc_016: phlorotannin appears in first paragraph
-- nc_017: phlorotannin appears in first paragraph
-- nc_018: first sentence starts with category label
-- nc_018: phlorotannin appears in first paragraph
-- nc_019: title keyword missing in first 300 chars
-- nc_019: phlorotannin appears in first paragraph
-- nc_020: title keyword missing in first 300 chars
-- nc_021: title keyword missing in first 300 chars
-- nc_022: first sentence starts with category label
-- nc_022: title keyword missing in first 300 chars
-- nc_023: title keyword missing in first 300 chars
-- nc_024: first sentence starts with category label
-- nc_024: title keyword missing in first 300 chars
-- nc_025: phlorotannin appears in first paragraph
-- nc_026: phlorotannin appears in first paragraph
-- nc_027: phlorotannin appears in first paragraph
-- nc_028: phlorotannin appears in first paragraph
-- nc_029: phlorotannin appears in first paragraph
-- nc_030: title keyword missing in first 300 chars
-- nc_033: first sentence starts with category label
-- nc_033: title keyword missing in first 300 chars
-- nc_035: first sentence starts with category label
-- nc_035: phlorotannin appears in first paragraph
-- nc_036: phlorotannin appears in first paragraph
-- nc_037: phlorotannin appears in first paragraph
-- nc_038: first sentence starts with category label
-- nc_038: phlorotannin appears in first paragraph
-- nc_039: phlorotannin appears in first paragraph
-- nc_040: title keyword missing in first 300 chars
-- nc_045: title keyword missing in first 300 chars
-- nc_045: phlorotannin appears in first paragraph
-- nc_046: phlorotannin appears in first paragraph
-- nc_047: phlorotannin appears in first paragraph
-- nc_048: title keyword missing in first 300 chars
-- nc_048: phlorotannin appears in first paragraph
-- nc_049: first sentence starts with category label
-- nc_049: title keyword missing in first 300 chars
-- nc_049: phlorotannin appears in first paragraph
-- nc_050: first sentence starts with category label
-- nc_052: first sentence starts with category label
-- nc_052: title keyword missing in first 300 chars
-- nc_053: title keyword missing in first 300 chars
-- nc_055: title keyword missing in first 300 chars
-- nc_055: phlorotannin appears in first paragraph
-- nc_056: phlorotannin appears in first paragraph
-- nc_057: phlorotannin appears in first paragraph
-- nc_058: phlorotannin appears in first paragraph
-- nc_059: title keyword missing in first 300 chars
-- nc_059: phlorotannin appears in first paragraph
-- nc_061: title keyword missing in first 300 chars
-- nc_063: first sentence starts with category label
-- nc_064: title keyword missing in first 300 chars
-- nc_065: title keyword missing in first 300 chars
-- nc_065: phlorotannin appears in first paragraph
-- nc_066: phlorotannin appears in first paragraph
-- nc_067: phlorotannin appears in first paragraph
-- nc_068: phlorotannin appears in first paragraph
-- nc_069: phlorotannin appears in first paragraph
-- nc_071: title keyword missing in first 300 chars
-- nc_073: title keyword missing in first 300 chars
-- nc_075: title keyword missing in first 300 chars
-- nc_075: phlorotannin appears in first paragraph
-- nc_076: phlorotannin appears in first paragraph
-- nc_077: title keyword missing in first 300 chars
-- nc_077: phlorotannin appears in first paragraph
-- nc_078: phlorotannin appears in first paragraph
-- nc_079: phlorotannin appears in first paragraph
-- nc_080: title keyword missing in first 300 chars
-- nc_081: title keyword missing in first 300 chars
-- nc_082: first sentence starts with category label
-- nc_082: title keyword missing in first 300 chars
-- nc_083: title keyword missing in first 300 chars
-- nc_084: first sentence starts with category label
-- nc_085: title keyword missing in first 300 chars
-- nc_085: phlorotannin appears in first paragraph
-- nc_086: first sentence starts with category label
-- nc_086: phlorotannin appears in first paragraph
-- nc_087: title keyword missing in first 300 chars
-- nc_087: phlorotannin appears in first paragraph
-- nc_088: phlorotannin appears in first paragraph
-- nc_089: phlorotannin appears in first paragraph
-- nc_090: title keyword missing in first 300 chars
-- skin-004: first sentence starts with category label
-- skin-004: phlorotannin appears in first paragraph
-- skin-005: phlorotannin appears in first paragraph
-- skin-006: first sentence starts with category label
-- skin-008: phlorotannin appears in first paragraph
-- skin-011: title keyword missing in first 300 chars
-- skin-014: phlorotannin appears in first paragraph
-- skin-015: phlorotannin appears in first paragraph
-- skin-016: phlorotannin appears in first paragraph
-- skin-017: phlorotannin appears in first paragraph
-- skin-018: phlorotannin appears in first paragraph
-- skin-019: phlorotannin appears in first paragraph
-- sh_011: title keyword missing in first 300 chars
-- sh_013: first sentence starts with category label
-- sh_014: title keyword missing in first 300 chars
-- sh_015: title keyword missing in first 300 chars
-- sh_015: phlorotannin appears in first paragraph
-- sh_016: phlorotannin appears in first paragraph
-- sh_017: title keyword missing in first 300 chars
-- sh_017: phlorotannin appears in first paragraph
-- sh_018: phlorotannin appears in first paragraph
-- sh_019: title keyword missing in first 300 chars
-- sh_019: phlorotannin appears in first paragraph
-- sh_024: title keyword missing in first 300 chars
-- sh_025: title keyword missing in first 300 chars
-- sh_025: phlorotannin appears in first paragraph
-- sh_026: title keyword missing in first 300 chars
-- sh_026: phlorotannin appears in first paragraph
-- sh_027: phlorotannin appears in first paragraph
-- sh_028: first sentence starts with category label
-- sh_028: title keyword missing in first 300 chars
-- sh_028: phlorotannin appears in first paragraph
-- sh_029: phlorotannin appears in first paragraph
-- sh_033: title keyword missing in first 300 chars
-- sh_035: title keyword missing in first 300 chars
-- sh_035: phlorotannin appears in first paragraph
-- sh_036: phlorotannin appears in first paragraph
-- sh_037: phlorotannin appears in first paragraph
-- sh_038: title keyword missing in first 300 chars
-- sh_038: phlorotannin appears in first paragraph
-- sh_039: phlorotannin appears in first paragraph
-- sh_041: title keyword missing in first 300 chars
-- sh_044: title keyword missing in first 300 chars
-- sh_045: phlorotannin appears in first paragraph
-- sh_046: phlorotannin appears in first paragraph
-- sh_047: phlorotannin appears in first paragraph
-- sh_048: phlorotannin appears in first paragraph
-- sh_049: phlorotannin appears in first paragraph
-- sh_052: title keyword missing in first 300 chars
-- sh_053: title keyword missing in first 300 chars
-- sh_055: phlorotannin appears in first paragraph
-- sh_056: title keyword missing in first 300 chars
-- sh_056: phlorotannin appears in first paragraph
-- sh_057: first sentence starts with category label
-- sh_057: phlorotannin appears in first paragraph
-- sh_058: phlorotannin appears in first paragraph
-- sh_059: phlorotannin appears in first paragraph
-- sh_062: title keyword missing in first 300 chars
-- sh_063: title keyword missing in first 300 chars
-- sh_064: title keyword missing in first 300 chars
-- sh_065: phlorotannin appears in first paragraph
-- sh_066: phlorotannin appears in first paragraph
-- sh_067: phlorotannin appears in first paragraph
-- sh_068: phlorotannin appears in first paragraph
-- sh_069: title keyword missing in first 300 chars
-- sh_069: phlorotannin appears in first paragraph
-- sh_070: title keyword missing in first 300 chars
-- sh_072: title keyword missing in first 300 chars
-- sh_075: title keyword missing in first 300 chars
-- sh_075: phlorotannin appears in first paragraph
-- sh_076: title keyword missing in first 300 chars
-- sh_076: phlorotannin appears in first paragraph
-- sh_077: title keyword missing in first 300 chars
-- sh_077: phlorotannin appears in first paragraph
-- sh_078: phlorotannin appears in first paragraph
-- sh_079: phlorotannin appears in first paragraph
-- sh_085: phlorotannin appears in first paragraph
-- sh_086: phlorotannin appears in first paragraph
-- sh_087: phlorotannin appears in first paragraph
-- sh_088: phlorotannin appears in first paragraph
-- sh_089: phlorotannin appears in first paragraph
-- musc-001: title keyword missing in first 300 chars
-- musc-001: phlorotannin appears in first paragraph
-- musc-002: title keyword missing in first 300 chars
-- musc-003: title keyword missing in first 300 chars
-- musc-004: phlorotannin appears in first paragraph
-- musc-005: phlorotannin appears in first paragraph
-- musc-005: phlorotannin therapeutic claim detected
-- musc-006: phlorotannin appears in first paragraph
-- musc-008: phlorotannin appears in first paragraph
-- musc-009: phlorotannin appears in first paragraph
-- musc-014: phlorotannin appears in first paragraph
-- musc-015: title keyword missing in first 300 chars
-- musc-015: phlorotannin appears in first paragraph
-- musc-016: phlorotannin appears in first paragraph
-- musc-017: title keyword missing in first 300 chars
-- musc-017: phlorotannin appears in first paragraph
-- musc-018: title keyword missing in first 300 chars
-- musc-018: phlorotannin appears in first paragraph
-- musc-019: phlorotannin appears in first paragraph
-- ms_011: title keyword missing in first 300 chars
-- ms_012: title keyword missing in first 300 chars
-- ms_013: phlorotannin appears in first paragraph
-- ms_014: title keyword missing in first 300 chars
-- ms_014: phlorotannin appears in first paragraph
-- ms_015: phlorotannin appears in first paragraph
-- ms_016: phlorotannin appears in first paragraph
-- ms_017: phlorotannin appears in first paragraph
-- ms_018: title keyword missing in first 300 chars
-- ms_021: title keyword missing in first 300 chars
-- ms_022: title keyword missing in first 300 chars
-- ms_023: phlorotannin appears in first paragraph
-- ms_024: title keyword missing in first 300 chars
-- ms_024: phlorotannin appears in first paragraph
-- ms_025: title keyword missing in first 300 chars
-- ms_025: phlorotannin appears in first paragraph
-- ms_026: title keyword missing in first 300 chars
-- ms_026: phlorotannin appears in first paragraph
-- ms_027: phlorotannin appears in first paragraph
-- ms_032: title keyword missing in first 300 chars
-- ms_033: phlorotannin appears in first paragraph
-- ms_034: phlorotannin appears in first paragraph
-- ms_035: title keyword missing in first 300 chars
-- ms_035: phlorotannin appears in first paragraph
-- ms_036: title keyword missing in first 300 chars
-- ms_036: phlorotannin appears in first paragraph
-- ms_037: phlorotannin appears in first paragraph
-- ms_038: title keyword missing in first 300 chars
-- ms_039: title keyword missing in first 300 chars
-- ms_043: title keyword missing in first 300 chars
-- ms_043: phlorotannin appears in first paragraph
-- ms_044: phlorotannin appears in first paragraph
-- ms_045: phlorotannin appears in first paragraph
-- ms_046: phlorotannin appears in first paragraph
-- ms_047: title keyword missing in first 300 chars
-- ms_047: phlorotannin appears in first paragraph
-- ms_049: title keyword missing in first 300 chars
-- ms_053: title keyword missing in first 300 chars
-- ms_053: phlorotannin appears in first paragraph
-- ms_054: title keyword missing in first 300 chars
-- ms_054: phlorotannin appears in first paragraph
-- ms_055: title keyword missing in first 300 chars
-- ms_055: phlorotannin appears in first paragraph
-- ms_056: phlorotannin appears in first paragraph
-- ms_057: title keyword missing in first 300 chars
-- ms_057: phlorotannin appears in first paragraph
-- ms_061: title keyword missing in first 300 chars
-- ms_063: phlorotannin appears in first paragraph
-- ms_064: title keyword missing in first 300 chars
-- ms_064: phlorotannin appears in first paragraph
-- ms_065: phlorotannin appears in first paragraph
-- ms_066: phlorotannin appears in first paragraph
-- ms_067: phlorotannin appears in first paragraph
-- ms_070: title keyword missing in first 300 chars
-- ms_073: phlorotannin appears in first paragraph
-- ms_074: phlorotannin appears in first paragraph
-- ms_075: phlorotannin appears in first paragraph
-- ms_076: phlorotannin appears in first paragraph
-- ms_077: phlorotannin appears in first paragraph
-- ms_078: title keyword missing in first 300 chars
-- ms_080: title keyword missing in first 300 chars
-- ms_083: phlorotannin appears in first paragraph
-- ms_084: phlorotannin appears in first paragraph
-- ms_085: title keyword missing in first 300 chars
-- ms_085: phlorotannin appears in first paragraph
-- ms_086: phlorotannin appears in first paragraph
-- ms_087: phlorotannin appears in first paragraph
-- ms_088: title keyword missing in first 300 chars
-- ms_089: title keyword missing in first 300 chars
-- woms-004: phlorotannin appears in first paragraph
-- woms-005: phlorotannin appears in first paragraph
-- woms-006: title keyword missing in first 300 chars
-- woms-006: phlorotannin appears in first paragraph
-- woms-008: phlorotannin appears in first paragraph
-- woms-009: phlorotannin appears in first paragraph
-- woms-014: phlorotannin appears in first paragraph
-- woms-015: phlorotannin appears in first paragraph
-- woms-017: phlorotannin appears in first paragraph
-- woms-018: phlorotannin appears in first paragraph
-- wh-extra-001: phlorotannin appears in first paragraph
-- wh-extra-004: phlorotannin appears in first paragraph
-- wh-extra-005: phlorotannin appears in first paragraph
-- wh-extra-007: phlorotannin appears in first paragraph
-- wh-extra-008: phlorotannin appears in first paragraph
-- wh-extra-010: phlorotannin appears in first paragraph
-- wh-extra-011: title keyword missing in first 300 chars
-- wh-extra-011: phlorotannin appears in first paragraph
-- wh-extra-012: phlorotannin appears in first paragraph
-- wh-extra-013: phlorotannin appears in first paragraph
-- wh-extra-014: phlorotannin appears in first paragraph
-- wh-extra-015: title keyword missing in first 300 chars
-- wh-extra-015: phlorotannin appears in first paragraph
-- wh-extra-016: title keyword missing in first 300 chars
-- wh-extra-017: phlorotannin appears in first paragraph
-- wh-extra-019: title keyword missing in first 300 chars
-- wh-extra-019: phlorotannin appears in first paragraph
-- wh-extra-020: phlorotannin appears in first paragraph
-- wh-extra-021: phlorotannin appears in first paragraph
-- wh-extra-022: phlorotannin appears in first paragraph
-- wh-extra-024: phlorotannin appears in first paragraph
-- wh-extra-025: phlorotannin appears in first paragraph
-- wh-extra-026: phlorotannin appears in first paragraph
-- wh-extra-027: phlorotannin appears in first paragraph
-- wh-extra-028: phlorotannin appears in first paragraph
-- wh-extra-029: phlorotannin appears in first paragraph
-- wh-extra-031: phlorotannin appears in first paragraph
-- wh-extra-032: phlorotannin appears in first paragraph
-- wh-extra-033: phlorotannin appears in first paragraph
-- wh-extra-034: phlorotannin appears in first paragraph
-- wh-extra-035: phlorotannin appears in first paragraph
-- wh-extra-036: phlorotannin appears in first paragraph
-- wh-extra-037: title keyword missing in first 300 chars
-- wh-extra-038: phlorotannin appears in first paragraph
-- wh-extra-039: title keyword missing in first 300 chars
-- wh-extra-039: phlorotannin appears in first paragraph
-- wh-extra-041: phlorotannin appears in first paragraph
-- wh-extra-042: phlorotannin appears in first paragraph
-- wh-extra-043: phlorotannin appears in first paragraph
-- wh-extra-044: title keyword missing in first 300 chars
-- wh-extra-045: phlorotannin appears in first paragraph
-- wh-extra-047: title keyword missing in first 300 chars
-- wh-extra-047: phlorotannin appears in first paragraph
-- wh-extra-048: phlorotannin appears in first paragraph
-- wh-extra-049: phlorotannin appears in first paragraph
-- wh-extra-050: phlorotannin appears in first paragraph
-- wh-extra-052: phlorotannin appears in first paragraph
-- wh-extra-053: phlorotannin appears in first paragraph
-- wh-extra-054: phlorotannin appears in first paragraph
-- wh-extra-056: phlorotannin appears in first paragraph
-- wh-extra-057: phlorotannin appears in first paragraph
-- wh-extra-058: title keyword missing in first 300 chars
-- wh-extra-059: first sentence starts with category label
-- wh-extra-059: phlorotannin appears in first paragraph
-- wh-extra-060: phlorotannin appears in first paragraph
-- wh-extra-061: title keyword missing in first 300 chars
-- wh-extra-061: phlorotannin appears in first paragraph
-- wh-extra-062: phlorotannin appears in first paragraph
-- wh-extra-063: phlorotannin appears in first paragraph
-- wh-extra-064: phlorotannin appears in first paragraph
-- wh-extra-066: phlorotannin appears in first paragraph
-- wh-extra-067: phlorotannin appears in first paragraph
-- wh-extra-068: phlorotannin appears in first paragraph
-- wh-extra-070: phlorotannin appears in first paragraph
-- womens-001: phlorotannin appears in first paragraph
-- womens-002: phlorotannin appears in first paragraph
-- womens-003: phlorotannin appears in first paragraph
-- womens-004: title keyword missing in first 300 chars
-- womens-004: phlorotannin appears in first paragraph
-- womens-010: phlorotannin appears in first paragraph
-- mens-004: phlorotannin appears in first paragraph
-- mens-005: phlorotannin appears in first paragraph
-- mens-006: phlorotannin appears in first paragraph
-- mens-008: phlorotannin appears in first paragraph
-- mens-010: title keyword missing in first 300 chars
-- mens-010: phlorotannin appears in first paragraph
-- mens-013: title keyword missing in first 300 chars
-- mens-014: phlorotannin appears in first paragraph
-- mens-015: phlorotannin appears in first paragraph
-- mens-018: phlorotannin appears in first paragraph
-- mens-019: phlorotannin appears in first paragraph
-- mens-extra-001: phlorotannin appears in first paragraph
-- mens-extra-003: phlorotannin appears in first paragraph
-- mens-extra-005: phlorotannin appears in first paragraph
-- mens-extra-006: phlorotannin appears in first paragraph
-- mens-extra-007: phlorotannin appears in first paragraph
-- mens-extra-008: phlorotannin appears in first paragraph
-- mens-extra-009: phlorotannin appears in first paragraph
-- mens-extra-011: phlorotannin appears in first paragraph
-- mens-extra-012: phlorotannin appears in first paragraph
-- mens-extra-013: title keyword missing in first 300 chars
-- mens-extra-013: phlorotannin appears in first paragraph
-- mens-extra-015: phlorotannin appears in first paragraph
-- mens-extra-016: phlorotannin appears in first paragraph
-- mens-extra-017: phlorotannin appears in first paragraph
-- mens-extra-018: phlorotannin appears in first paragraph
-- mens-extra-019: phlorotannin appears in first paragraph
-- mens-extra-021: phlorotannin appears in first paragraph
-- mens-extra-022: phlorotannin appears in first paragraph
-- mens-extra-023: phlorotannin appears in first paragraph
-- mens-extra-025: title keyword missing in first 300 chars
-- mens-extra-025: phlorotannin appears in first paragraph
-- mens-extra-026: phlorotannin appears in first paragraph
-- mens-extra-027: phlorotannin appears in first paragraph
-- mens-extra-028: phlorotannin appears in first paragraph
-- mens-extra-029: phlorotannin appears in first paragraph
-- mens-extra-031: phlorotannin appears in first paragraph
-- mens-extra-032: phlorotannin appears in first paragraph
-- mens-extra-033: phlorotannin appears in first paragraph
-- mens-extra-035: phlorotannin appears in first paragraph
-- mens-extra-036: phlorotannin appears in first paragraph
-- mens-extra-037: phlorotannin appears in first paragraph
-- mens-extra-038: phlorotannin appears in first paragraph
-- mens-extra-039: phlorotannin appears in first paragraph
-- mens-extra-041: phlorotannin appears in first paragraph
-- mens-extra-042: phlorotannin appears in first paragraph
-- mens-extra-043: phlorotannin appears in first paragraph
-- mens-extra-045: phlorotannin appears in first paragraph
-- mens-extra-046: phlorotannin appears in first paragraph
-- mens-extra-047: title keyword missing in first 300 chars
-- mens-extra-047: phlorotannin appears in first paragraph
-- mens-extra-048: phlorotannin appears in first paragraph
-- mens-extra-049: phlorotannin appears in first paragraph
-- mens-extra-051: phlorotannin appears in first paragraph
-- mens-extra-052: phlorotannin appears in first paragraph
-- mens-extra-053: phlorotannin appears in first paragraph
-- mens-extra-055: phlorotannin appears in first paragraph
-- mens-extra-056: phlorotannin appears in first paragraph
-- mens-extra-057: phlorotannin appears in first paragraph
-- mens-extra-058: phlorotannin appears in first paragraph
-- mens-extra-059: title keyword missing in first 300 chars
-- mens-extra-059: phlorotannin appears in first paragraph
-- mens-extra-062: phlorotannin appears in first paragraph
-- mens-extra-063: phlorotannin appears in first paragraph
-- mens-extra-065: phlorotannin appears in first paragraph
-- mens-extra-066: phlorotannin appears in first paragraph
-- mens-extra-067: phlorotannin appears in first paragraph
-- mens-extra-068: phlorotannin appears in first paragraph
-- mens-extra-069: phlorotannin appears in first paragraph
-- mh-extra-071: phlorotannin appears in first paragraph
-- mens-001: phlorotannin appears in first paragraph
-- mens-002: phlorotannin appears in first paragraph
-- mens-003: phlorotannin appears in first paragraph
-- mens-004: phlorotannin appears in first paragraph
-- mens-010: phlorotannin appears in first paragraph
-- rsp_021: title keyword missing in first 300 chars
-- rsp_023: title keyword missing in first 300 chars
-- rsp_025: title keyword missing in first 300 chars
-- rsp_025: phlorotannin appears in first paragraph
-- rsp_026: phlorotannin appears in first paragraph
-- rsp_027: title keyword missing in first 300 chars
-- rsp_027: phlorotannin appears in first paragraph
-- rsp_028: phlorotannin appears in first paragraph
-- rsp_029: title keyword missing in first 300 chars
-- rsp_029: phlorotannin appears in first paragraph
-- rsp_032: title keyword missing in first 300 chars
-- rsp_034: title keyword missing in first 300 chars
-- rsp_035: phlorotannin appears in first paragraph
-- rsp_036: phlorotannin appears in first paragraph
-- rsp_037: phlorotannin appears in first paragraph
-- rsp_038: phlorotannin appears in first paragraph
-- rsp_039: title keyword missing in first 300 chars
-- rsp_039: phlorotannin appears in first paragraph
-- rsp_045: phlorotannin appears in first paragraph
-- rsp_046: phlorotannin appears in first paragraph
-- rsp_047: title keyword missing in first 300 chars
-- rsp_047: phlorotannin appears in first paragraph
-- rsp_048: title keyword missing in first 300 chars
-- rsp_048: phlorotannin appears in first paragraph
-- rsp_049: phlorotannin appears in first paragraph
-- rsp_051: title keyword missing in first 300 chars
-- rsp_055: title keyword missing in first 300 chars
-- rsp_055: phlorotannin appears in first paragraph
-- rsp_056: phlorotannin appears in first paragraph
-- rsp_057: phlorotannin appears in first paragraph
-- rsp_058: phlorotannin appears in first paragraph
-- rsp_059: title keyword missing in first 300 chars
-- rsp_059: phlorotannin appears in first paragraph
-- rsp_061: title keyword missing in first 300 chars
-- rsp_065: phlorotannin appears in first paragraph
-- rsp_066: phlorotannin appears in first paragraph
-- rsp_067: phlorotannin appears in first paragraph
-- rsp_068: title keyword missing in first 300 chars
-- rsp_068: phlorotannin appears in first paragraph
-- rsp_069: title keyword missing in first 300 chars
-- rsp_069: phlorotannin appears in first paragraph
-- rsp_070: title keyword missing in first 300 chars
-- rsp_071: title keyword missing in first 300 chars
-- rsp_075: phlorotannin appears in first paragraph
-- rsp_076: phlorotannin appears in first paragraph
-- rsp_077: title keyword missing in first 300 chars
-- rsp_077: phlorotannin appears in first paragraph
-- rsp_078: phlorotannin appears in first paragraph
-- rsp_079: title keyword missing in first 300 chars
-- rsp_079: phlorotannin appears in first paragraph
-- rsp_083: first sentence starts with category label
-- rsp_084: title keyword missing in first 300 chars
-- rsp_085: phlorotannin appears in first paragraph
-- rsp_086: phlorotannin appears in first paragraph
-- rsp_087: phlorotannin appears in first paragraph
-- rsp_088: phlorotannin appears in first paragraph
-- rsp_089: phlorotannin appears in first paragraph
-- rsp_095: phlorotannin appears in first paragraph
-- rsp_096: phlorotannin appears in first paragraph
-- rsp_097: phlorotannin appears in first paragraph
-- rsp_098: phlorotannin appears in first paragraph
-- rsp_099: phlorotannin appears in first paragraph
-- resp-001: title keyword missing in first 300 chars
-- resp-001: phlorotannin appears in first paragraph
-- resp-002: phlorotannin appears in first paragraph
-- resp-003: phlorotannin appears in first paragraph
-- resp-004: phlorotannin appears in first paragraph
-- resp-004: phlorotannin therapeutic claim detected
-- resp-005: title keyword missing in first 300 chars
-- resp-005: phlorotannin appears in first paragraph
-- resp-006: title keyword missing in first 300 chars
-- resp-008: title keyword missing in first 300 chars
-- resp-009: phlorotannin appears in first paragraph
-- resp-010: title keyword missing in first 300 chars
-- resp-010: phlorotannin appears in first paragraph
-- resp-011: title keyword missing in first 300 chars
-- resp-011: phlorotannin appears in first paragraph
-- resp-012: phlorotannin appears in first paragraph
-- resp-013: phlorotannin appears in first paragraph
-- resp-014: title keyword missing in first 300 chars
-- resp-014: phlorotannin appears in first paragraph
-- resp-014: phlorotannin therapeutic claim detected
-- resp-020: title keyword missing in first 300 chars
-- resp-020: phlorotannin appears in first paragraph
-- infect-extra-001: title keyword missing in first 300 chars
-- infect-extra-002: phlorotannin appears in first paragraph
-- infect-extra-003: title keyword missing in first 300 chars
-- infect-extra-003: phlorotannin appears in first paragraph
-- infect-extra-003: phlorotannin therapeutic claim detected
-- infect-extra-005: title keyword missing in first 300 chars
-- infect-extra-005: phlorotannin appears in first paragraph
-- infect-extra-006: phlorotannin appears in first paragraph
-- infect-extra-006: phlorotannin therapeutic claim detected
-- infect-extra-007: phlorotannin appears in first paragraph
-- infect-extra-008: title keyword missing in first 300 chars
-- infect-extra-008: phlorotannin appears in first paragraph
-- infect-extra-009: phlorotannin appears in first paragraph
-- infect-extra-010: phlorotannin appears in first paragraph
-- infect-extra-011: phlorotannin appears in first paragraph
-- infect-extra-012: phlorotannin appears in first paragraph
-- infect-extra-013: phlorotannin appears in first paragraph
-- infect-extra-014: phlorotannin appears in first paragraph
-- infect-extra-015: phlorotannin appears in first paragraph
-- infect-extra-016: phlorotannin appears in first paragraph
-- infect-extra-016: phlorotannin therapeutic claim detected
-- infect-extra-017: phlorotannin appears in first paragraph
-- infect-extra-018: title keyword missing in first 300 chars
-- infect-extra-018: phlorotannin appears in first paragraph
-- infect-extra-019: title keyword missing in first 300 chars
-- infect-extra-019: phlorotannin appears in first paragraph
-- infect-extra-020: phlorotannin appears in first paragraph
-- infect-extra-021: phlorotannin appears in first paragraph
-- infect-extra-021: phlorotannin therapeutic claim detected
-- infect-extra-022: phlorotannin appears in first paragraph
-- infect-extra-023: phlorotannin appears in first paragraph
-- infect-extra-024: phlorotannin appears in first paragraph
-- infect-extra-025: phlorotannin appears in first paragraph
-- infect-extra-026: phlorotannin appears in first paragraph
-- infect-extra-027: phlorotannin appears in first paragraph
-- infect-extra-028: phlorotannin appears in first paragraph
-- infect-extra-029: phlorotannin appears in first paragraph
-- infect-extra-030: phlorotannin appears in first paragraph
-- infect-extra-030: phlorotannin therapeutic claim detected
-- infect-extra-031: phlorotannin appears in first paragraph
-- infect-extra-033: phlorotannin appears in first paragraph
-- infect-extra-034: phlorotannin appears in first paragraph
-- infect-extra-035: title keyword missing in first 300 chars
-- infect-extra-035: phlorotannin appears in first paragraph
-- infect-extra-037: phlorotannin appears in first paragraph
-- infect-extra-038: phlorotannin appears in first paragraph
-- infect-extra-039: phlorotannin appears in first paragraph
-- infect-extra-040: phlorotannin appears in first paragraph
-- infect-extra-041: title keyword missing in first 300 chars
-- infect-extra-041: phlorotannin appears in first paragraph
-- infect-extra-041: phlorotannin therapeutic claim detected
-- infect-extra-042: title keyword missing in first 300 chars
-- infect-extra-042: phlorotannin appears in first paragraph
-- infect-extra-043: title keyword missing in first 300 chars
-- infect-extra-043: phlorotannin appears in first paragraph
-- infect-extra-044: phlorotannin appears in first paragraph
-- infect-extra-045: title keyword missing in first 300 chars
-- infect-extra-045: phlorotannin appears in first paragraph
-- infect-extra-046: phlorotannin appears in first paragraph
-- infect-extra-047: phlorotannin appears in first paragraph
-- infect-extra-048: phlorotannin appears in first paragraph
-- infect-extra-049: phlorotannin appears in first paragraph
-- infect-extra-050: phlorotannin appears in first paragraph
-- infect-extra-051: phlorotannin appears in first paragraph
-- infect-extra-051: phlorotannin therapeutic claim detected
-- infect-extra-052: title keyword missing in first 300 chars
-- infect-extra-052: phlorotannin appears in first paragraph
-- infect-extra-053: title keyword missing in first 300 chars
-- infect-extra-053: phlorotannin appears in first paragraph
-- infect-extra-054: phlorotannin appears in first paragraph
-- infect-extra-055: phlorotannin appears in first paragraph
-- infect-extra-056: phlorotannin appears in first paragraph
-- infect-extra-057: phlorotannin appears in first paragraph
-- infect-extra-058: phlorotannin appears in first paragraph
-- infect-extra-059: phlorotannin appears in first paragraph
-- infect-extra-060: phlorotannin appears in first paragraph
-- infect-extra-061: phlorotannin appears in first paragraph
-- infect-extra-062: phlorotannin appears in first paragraph
-- infect-extra-063: phlorotannin appears in first paragraph
-- infect-extra-064: phlorotannin appears in first paragraph
-- infect-extra-065: title keyword missing in first 300 chars
-- infect-extra-065: phlorotannin appears in first paragraph
-- infect-extra-066: title keyword missing in first 300 chars
-- infect-extra-066: phlorotannin appears in first paragraph
-- infect-extra-067: title keyword missing in first 300 chars
-- infect-extra-067: phlorotannin appears in first paragraph
-- infect-extra-068: phlorotannin appears in first paragraph
-- infect-extra-069: phlorotannin appears in first paragraph
-- infect-extra-070: phlorotannin appears in first paragraph
-- infect-extra-070: phlorotannin therapeutic claim detected
-- infect-extra-071: phlorotannin appears in first paragraph
-- infect-extra-072: phlorotannin appears in first paragraph
-- infect-extra-073: phlorotannin appears in first paragraph
-- infect-extra-074: phlorotannin appears in first paragraph
-- infect-extra-075: phlorotannin appears in first paragraph
-- infect-extra-076: title keyword missing in first 300 chars
-- infect-extra-076: phlorotannin appears in first paragraph
-- infect-extra-076: phlorotannin therapeutic claim detected
-- infect-extra-077: phlorotannin appears in first paragraph
-- infect-extra-078: phlorotannin appears in first paragraph
-- infect-extra-079: phlorotannin appears in first paragraph
-- infect-extra-080: phlorotannin appears in first paragraph
-- infect-001: phlorotannin appears in first paragraph
-- infect-002: phlorotannin appears in first paragraph
-- infect-003: phlorotannin appears in first paragraph
-- infect-004: phlorotannin appears in first paragraph
-- infect-006: title keyword missing in first 300 chars
-- infect-007: title keyword missing in first 300 chars
-- infect-008: phlorotannin appears in first paragraph
-- infect-009: title keyword missing in first 300 chars
-- infect-010: phlorotannin appears in first paragraph
-- infect-011: title keyword missing in first 300 chars
-- infect-011: phlorotannin appears in first paragraph
-- infect-013: phlorotannin appears in first paragraph
-- infect-014: title keyword missing in first 300 chars
-- infect-014: phlorotannin appears in first paragraph
-- infect-019: title keyword missing in first 300 chars
-- mental-extra-001: phlorotannin appears in first paragraph
-- mental-extra-002: phlorotannin appears in first paragraph
-- mental-extra-003: phlorotannin appears in first paragraph
-- mental-extra-004: title keyword missing in first 300 chars
-- mental-extra-004: phlorotannin appears in first paragraph
-- mental-extra-005: phlorotannin appears in first paragraph
-- mental-extra-006: phlorotannin appears in first paragraph
-- mental-extra-006: phlorotannin therapeutic claim detected
-- mental-extra-008: phlorotannin appears in first paragraph
-- mental-extra-010: phlorotannin appears in first paragraph
-- mental-extra-011: phlorotannin appears in first paragraph
-- mental-extra-012: phlorotannin appears in first paragraph
-- mental-extra-013: phlorotannin appears in first paragraph
-- mental-extra-014: phlorotannin appears in first paragraph
-- mental-extra-015: phlorotannin appears in first paragraph
-- mental-extra-016: phlorotannin appears in first paragraph
-- mental-extra-016: phlorotannin therapeutic claim detected
-- mental-extra-018: phlorotannin appears in first paragraph
-- mental-extra-020: phlorotannin appears in first paragraph
-- mental-extra-021: phlorotannin appears in first paragraph
-- mental-extra-023: phlorotannin appears in first paragraph
-- mental-extra-024: phlorotannin appears in first paragraph
-- mental-extra-025: phlorotannin appears in first paragraph
-- mental-extra-026: phlorotannin appears in first paragraph
-- mental-extra-026: phlorotannin therapeutic claim detected
-- mental-extra-028: phlorotannin appears in first paragraph
-- mental-extra-030: phlorotannin appears in first paragraph
-- mental-extra-031: phlorotannin appears in first paragraph
-- mental-extra-032: title keyword missing in first 300 chars
-- mental-extra-032: phlorotannin appears in first paragraph
-- mental-extra-033: phlorotannin appears in first paragraph
-- mental-extra-034: phlorotannin appears in first paragraph
-- mental-extra-035: phlorotannin appears in first paragraph
-- mental-extra-035: phlorotannin therapeutic claim detected
-- mental-extra-036: phlorotannin appears in first paragraph
-- mental-extra-036: phlorotannin therapeutic claim detected
-- mental-extra-037: first sentence starts with category label
-- mental-extra-038: phlorotannin appears in first paragraph
-- mental-extra-040: title keyword missing in first 300 chars
-- mental-extra-040: phlorotannin appears in first paragraph
-- mental-extra-041: phlorotannin appears in first paragraph
-- mental-extra-042: phlorotannin appears in first paragraph
-- mental-extra-043: phlorotannin appears in first paragraph
-- mental-extra-044: phlorotannin appears in first paragraph
-- mental-extra-045: phlorotannin appears in first paragraph
-- mental-extra-046: phlorotannin appears in first paragraph
-- mental-extra-046: phlorotannin therapeutic claim detected
-- mental-extra-048: phlorotannin appears in first paragraph
-- mental-extra-050: phlorotannin appears in first paragraph
-- mental-extra-051: first sentence starts with category label
-- mental-extra-051: phlorotannin appears in first paragraph
-- mental-extra-052: phlorotannin appears in first paragraph
-- mental-extra-053: phlorotannin appears in first paragraph
-- mental-extra-054: phlorotannin appears in first paragraph
-- mental-extra-055: phlorotannin appears in first paragraph
-- mental-extra-055: phlorotannin therapeutic claim detected
-- mental-extra-056: phlorotannin appears in first paragraph
-- mental-extra-056: phlorotannin therapeutic claim detected
-- mental-extra-058: phlorotannin appears in first paragraph
-- mental-extra-060: phlorotannin appears in first paragraph
-- mental-extra-061: title keyword missing in first 300 chars
-- mental-extra-061: phlorotannin appears in first paragraph
-- mental-extra-062: phlorotannin appears in first paragraph
-- mental-extra-063: phlorotannin appears in first paragraph
-- mental-extra-064: phlorotannin appears in first paragraph
-- mental-extra-065: phlorotannin appears in first paragraph
-- mental-extra-066: phlorotannin appears in first paragraph
-- mental-extra-066: phlorotannin therapeutic claim detected
-- mental-extra-068: phlorotannin appears in first paragraph
-- mental-extra-070: phlorotannin appears in first paragraph
-- mental-extra-071: phlorotannin appears in first paragraph
-- mental-extra-072: phlorotannin appears in first paragraph
-- mental-extra-073: phlorotannin appears in first paragraph
-- mental-extra-074: phlorotannin appears in first paragraph
-- mental-extra-075: phlorotannin appears in first paragraph
-- mental-extra-076: phlorotannin appears in first paragraph
-- mental-extra-076: phlorotannin therapeutic claim detected
-- mental-extra-078: phlorotannin appears in first paragraph
-- mental-001: phlorotannin appears in first paragraph
-- mental-002: phlorotannin appears in first paragraph
-- mental-003: phlorotannin appears in first paragraph
-- mental-004: phlorotannin appears in first paragraph
-- mental-006: title keyword missing in first 300 chars
-- mental-007: phlorotannin appears in first paragraph
-- mental-008: title keyword missing in first 300 chars
-- mental-009: title keyword missing in first 300 chars
-- mental-010: phlorotannin appears in first paragraph
-- mental-011: title keyword missing in first 300 chars
-- mental-011: phlorotannin appears in first paragraph
-- mental-012: phlorotannin appears in first paragraph
-- mental-013: phlorotannin appears in first paragraph
-- mental-014: phlorotannin appears in first paragraph
-- mental-020: phlorotannin appears in first paragraph
-- ci_101: title keyword missing in first 300 chars
-- ci_123: first sentence starts with category label
-- ci_124: phlorotannin appears in first paragraph
-- ci_132: phlorotannin appears in first paragraph
-- ci_132: phlorotannin therapeutic claim detected
-- nc_098: phlorotannin appears in first paragraph
-- nc_102: first sentence starts with category label
-- nc_103: first sentence starts with category label
-- nc_105: first sentence starts with category label
-- nc_112: first sentence starts with category label
-- nc_112: phlorotannin appears in first paragraph
-- sh_091: title keyword missing in first 300 chars
-- sh_091: phlorotannin appears in first paragraph
-- sh_091: phlorotannin therapeutic claim detected
-- sh_092: phlorotannin appears in first paragraph
-- sh_092: phlorotannin therapeutic claim detected
-- sh_093: title keyword missing in first 300 chars
-- sh_093: phlorotannin appears in first paragraph
-- sh_093: phlorotannin therapeutic claim detected
-- sh_094: phlorotannin appears in first paragraph
-- sh_094: phlorotannin therapeutic claim detected
-- sh_095: phlorotannin appears in first paragraph
-- sh_095: phlorotannin therapeutic claim detected
-- sh_096: phlorotannin appears in first paragraph
-- sh_096: phlorotannin therapeutic claim detected
-- sh_097: title keyword missing in first 300 chars
-- sh_097: phlorotannin appears in first paragraph
-- sh_097: phlorotannin therapeutic claim detected
-- sh_098: phlorotannin appears in first paragraph
-- sh_098: phlorotannin therapeutic claim detected
-- sh_099: title keyword missing in first 300 chars
-- sh_099: phlorotannin appears in first paragraph
-- sh_099: phlorotannin therapeutic claim detected
-- sh_100: first sentence starts with category label
-- sh_100: phlorotannin appears in first paragraph
-- sh_100: phlorotannin therapeutic claim detected
-- sh_101: phlorotannin appears in first paragraph
-- sh_101: phlorotannin therapeutic claim detected
-- sh_102: first sentence starts with category label
-- sh_102: title keyword missing in first 300 chars
-- sh_102: phlorotannin appears in first paragraph
-- sh_102: phlorotannin therapeutic claim detected
-- sh_103: phlorotannin appears in first paragraph
-- sh_103: phlorotannin therapeutic claim detected
-- sh_104: phlorotannin appears in first paragraph
-- sh_104: phlorotannin therapeutic claim detected
-- sh_105: phlorotannin appears in first paragraph
-- sh_105: phlorotannin therapeutic claim detected
-- sh_106: phlorotannin appears in first paragraph
-- sh_106: phlorotannin therapeutic claim detected
-- sh_107: title keyword missing in first 300 chars
-- sh_107: phlorotannin appears in first paragraph
-- sh_107: phlorotannin therapeutic claim detected
-- sh_108: phlorotannin appears in first paragraph
-- sh_108: phlorotannin therapeutic claim detected
-- sh_109: phlorotannin appears in first paragraph
-- sh_109: phlorotannin therapeutic claim detected
-- sh_110: title keyword missing in first 300 chars
-- sh_110: phlorotannin appears in first paragraph
-- sh_110: phlorotannin therapeutic claim detected
-- sh_111: phlorotannin appears in first paragraph
-- sh_111: phlorotannin therapeutic claim detected
-- sh_112: phlorotannin appears in first paragraph
-- sh_112: phlorotannin therapeutic claim detected
-- sh_113: first sentence starts with category label
-- sh_113: phlorotannin appears in first paragraph
-- sh_113: phlorotannin therapeutic claim detected
-- sh_114: phlorotannin appears in first paragraph
-- sh_114: phlorotannin therapeutic claim detected
-- sh_115: phlorotannin appears in first paragraph
-- sh_115: phlorotannin therapeutic claim detected
-- sh_116: phlorotannin appears in first paragraph
-- sh_116: phlorotannin therapeutic claim detected
-- sh_117: phlorotannin appears in first paragraph
-- sh_117: phlorotannin therapeutic claim detected
-- sh_118: phlorotannin appears in first paragraph
-- sh_118: phlorotannin therapeutic claim detected
-- sh_119: phlorotannin appears in first paragraph
-- sh_119: phlorotannin therapeutic claim detected
-- sh_120: title keyword missing in first 300 chars
-- sh_120: phlorotannin appears in first paragraph
-- sh_120: phlorotannin therapeutic claim detected
-- sh_121: phlorotannin appears in first paragraph
-- sh_121: phlorotannin therapeutic claim detected
-- sh_122: phlorotannin appears in first paragraph
-- sh_122: phlorotannin therapeutic claim detected
-- sh_123: phlorotannin appears in first paragraph
-- sh_123: phlorotannin therapeutic claim detected
-- sh_124: phlorotannin appears in first paragraph
-- sh_124: phlorotannin therapeutic claim detected
-- sh_125: phlorotannin appears in first paragraph
-- sh_125: phlorotannin therapeutic claim detected
-- sh_126: first sentence starts with category label
-- sh_126: title keyword missing in first 300 chars
-- sh_126: phlorotannin appears in first paragraph
-- sh_126: phlorotannin therapeutic claim detected
-- sh_127: phlorotannin appears in first paragraph
-- sh_127: phlorotannin therapeutic claim detected
-- sh_128: phlorotannin appears in first paragraph
-- sh_128: phlorotannin therapeutic claim detected
-- sh_129: phlorotannin appears in first paragraph
-- sh_129: phlorotannin therapeutic claim detected
-- sh_130: title keyword missing in first 300 chars
-- sh_130: phlorotannin appears in first paragraph
-- sh_130: phlorotannin therapeutic claim detected
-- sh_131: phlorotannin appears in first paragraph
-- sh_131: phlorotannin therapeutic claim detected
-- sh_132: title keyword missing in first 300 chars
-- sh_132: phlorotannin appears in first paragraph
-- sh_132: phlorotannin therapeutic claim detected
-- sh_133: first sentence starts with category label
-- sh_133: phlorotannin appears in first paragraph
-- sh_133: phlorotannin therapeutic claim detected
-- sh_134: phlorotannin appears in first paragraph
-- sh_134: phlorotannin therapeutic claim detected
-- sh_135: phlorotannin appears in first paragraph
-- sh_135: phlorotannin therapeutic claim detected
-- sh_136: phlorotannin appears in first paragraph
-- sh_136: phlorotannin therapeutic claim detected
-- sh_137: phlorotannin appears in first paragraph
-- sh_137: phlorotannin therapeutic claim detected
-- sh_138: phlorotannin appears in first paragraph
-- sh_138: phlorotannin therapeutic claim detected
-- sh_139: phlorotannin appears in first paragraph
-- sh_139: phlorotannin therapeutic claim detected
-- sh_140: phlorotannin appears in first paragraph
-- ingr-002: title keyword missing in first 300 chars
-- ingr-004: title keyword missing in first 300 chars
-- ingr-005: title keyword missing in first 300 chars
-- ingr-008: title keyword missing in first 300 chars
-- ingr-010: title keyword missing in first 300 chars
-- ingr-013: title keyword missing in first 300 chars
-- ingr-014: title keyword missing in first 300 chars
-- ingr-016: title keyword missing in first 300 chars
-- ingr-017: title keyword missing in first 300 chars
-- ingr-021: title keyword missing in first 300 chars
-- qa200-20260527-001: phlorotannin appears in first paragraph
-- qa200-20260527-003: phlorotannin appears in first paragraph
-- qa200-20260527-004: phlorotannin appears in first paragraph
-- qa200-20260527-005: phlorotannin appears in first paragraph
-- qa200-20260527-006: phlorotannin appears in first paragraph
-- qa200-20260527-008: phlorotannin appears in first paragraph
-- qa200-20260527-010: phlorotannin appears in first paragraph
-- qa200-20260527-011: phlorotannin appears in first paragraph
-- qa200-20260527-012: phlorotannin appears in first paragraph
-- qa200-20260527-013: phlorotannin appears in first paragraph
-- qa200-20260527-014: phlorotannin appears in first paragraph
-- qa200-20260527-015: phlorotannin appears in first paragraph
-- qa200-20260527-016: phlorotannin appears in first paragraph
-- qa200-20260527-017: phlorotannin appears in first paragraph
-- qa200-20260527-018: phlorotannin appears in first paragraph
-- qa200-20260527-019: phlorotannin appears in first paragraph
-- qa200-20260527-021: phlorotannin appears in first paragraph
-- qa200-20260527-022: phlorotannin appears in first paragraph
-- qa200-20260527-023: phlorotannin appears in first paragraph
-- qa200-20260527-024: phlorotannin appears in first paragraph
-- qa200-20260527-026: phlorotannin appears in first paragraph
-- qa200-20260527-028: first sentence starts with category label
-- qa200-20260527-029: first sentence starts with category label
-- qa200-20260527-032: first sentence starts with category label
-- qa200-20260527-034: first sentence starts with category label
-- qa200-20260527-034: phlorotannin appears in first paragraph
-- qa200-20260527-035: phlorotannin appears in first paragraph
-- qa200-20260527-035: phlorotannin therapeutic claim detected
-- qa200-20260527-036: first sentence starts with category label
-- qa200-20260527-036: phlorotannin appears in first paragraph
-- qa200-20260527-037: first sentence starts with category label
-- qa200-20260527-038: first sentence starts with category label
-- qa200-20260527-046: phlorotannin appears in first paragraph
-- qa200-20260527-048: first sentence starts with category label
-- qa200-20260527-052: first sentence starts with category label
-- qa200-20260527-053: first sentence starts with category label
-- qa200-20260527-055: first sentence starts with category label
-- qa200-20260527-057: phlorotannin appears in first paragraph
-- qa200-20260527-059: phlorotannin appears in first paragraph
-- qa200-20260527-061: phlorotannin appears in first paragraph
-- qa200-20260527-062: phlorotannin appears in first paragraph
-- qa200-20260527-063: phlorotannin appears in first paragraph
-- qa200-20260527-064: phlorotannin appears in first paragraph
-- qa200-20260527-065: phlorotannin appears in first paragraph
-- qa200-20260527-066: phlorotannin appears in first paragraph
-- qa200-20260527-067: phlorotannin appears in first paragraph
-- qa200-20260527-068: first sentence starts with category label
-- qa200-20260527-068: phlorotannin appears in first paragraph
-- qa200-20260527-069: phlorotannin appears in first paragraph
-- qa200-20260527-070: phlorotannin appears in first paragraph
-- qa200-20260527-071: phlorotannin appears in first paragraph
-- qa200-20260527-072: phlorotannin appears in first paragraph
-- qa200-20260527-073: phlorotannin appears in first paragraph
-- qa200-20260527-074: phlorotannin appears in first paragraph
-- qa200-20260527-075: phlorotannin appears in first paragraph
-- qa200-20260527-076: phlorotannin appears in first paragraph
-- qa200-20260527-077: phlorotannin appears in first paragraph
-- qa200-20260527-078: phlorotannin appears in first paragraph
-- qa200-20260527-079: phlorotannin appears in first paragraph
-- qa200-20260527-080: phlorotannin appears in first paragraph
-- qa200-20260527-081: phlorotannin appears in first paragraph
-- qa200-20260527-082: phlorotannin appears in first paragraph
-- qa200-20260527-083: phlorotannin appears in first paragraph
-- qa200-20260527-084: phlorotannin appears in first paragraph
-- qa200-20260527-085: phlorotannin appears in first paragraph
-- qa200-20260527-086: phlorotannin appears in first paragraph
-- qa200-20260527-087: phlorotannin appears in first paragraph
-- qa200-20260527-088: phlorotannin appears in first paragraph
-- qa200-20260527-089: phlorotannin appears in first paragraph
-- qa200-20260527-090: phlorotannin appears in first paragraph
-- qa200-20260527-091: phlorotannin appears in first paragraph
-- qa200-20260527-092: phlorotannin appears in first paragraph
-- qa200-20260527-093: phlorotannin appears in first paragraph
-- qa200-20260527-094: phlorotannin appears in first paragraph
-- qa200-20260527-096: phlorotannin appears in first paragraph
-- qa200-20260527-101: phlorotannin appears in first paragraph
-- qa200-20260527-102: phlorotannin appears in first paragraph
-- qa200-20260527-106: phlorotannin appears in first paragraph
-- qa200-20260527-107: first sentence starts with category label
-- qa200-20260527-109: phlorotannin appears in first paragraph
-- qa200-20260527-115: phlorotannin appears in first paragraph
-- qa200-20260527-121: phlorotannin appears in first paragraph
-- qa200-20260527-129: phlorotannin appears in first paragraph
-- qa200-20260527-133: first sentence starts with category label
-- qa200-20260527-137: phlorotannin appears in first paragraph
-- qa200-20260527-141: phlorotannin appears in first paragraph
-- qa200-20260527-142: first sentence starts with category label
-- qa200-20260527-143: phlorotannin appears in first paragraph
-- qa200-20260527-146: first sentence starts with category label
-- qa200-20260527-146: phlorotannin appears in first paragraph
-- qa200-20260527-147: first sentence starts with category label
-- qa200-20260527-156: phlorotannin appears in first paragraph
-- qa200-20260527-172: phlorotannin appears in first paragraph
-- qa200-20260527-174: phlorotannin appears in first paragraph
-- qa200-20260527-176: phlorotannin appears in first paragraph
-- qa200-20260527-180: phlorotannin appears in first paragraph
-- qa200-20260527-183: phlorotannin appears in first paragraph
-- qa200-20260527-184: phlorotannin appears in first paragraph
-- qa200-20260527-185: phlorotannin appears in first paragraph
-- qa200-20260527-192: phlorotannin appears in first paragraph
-- qa-hospital-20260527-001: phlorotannin appears in first paragraph
-- qa-hospital-20260527-006: phlorotannin appears in first paragraph
-- qa-hospital-20260527-016: first sentence starts with category label
-- qa-hospital-20260527-017: phlorotannin appears in first paragraph
-- qa-hospital-20260527-023: first sentence starts with category label
-- qa-hospital-20260527-030: first sentence starts with category label
-- qa-hospital-20260527-034: phlorotannin appears in first paragraph
-- qa-hospital-20260527-043: phlorotannin appears in first paragraph
-- qa-hospital-20260527-045: phlorotannin appears in first paragraph
-- qa-hospital-20260527-050: phlorotannin appears in first paragraph
+- cardio-014: unsafe phlorotannin therapeutic claim detected
+- cardio-082: unsafe phlorotannin therapeutic claim detected
+- cancer-001: unsafe phlorotannin therapeutic claim detected
+- cancer-002: unsafe phlorotannin therapeutic claim detected
+- cancer-003: unsafe phlorotannin therapeutic claim detected
+- cancer-004: unsafe phlorotannin therapeutic claim detected
+- cancer-005: unsafe phlorotannin therapeutic claim detected
+- cancer-006: unsafe phlorotannin therapeutic claim detected
+- cancer-007: unsafe phlorotannin therapeutic claim detected
+- cancer-008: unsafe phlorotannin therapeutic claim detected
+- cancer-009: unsafe phlorotannin therapeutic claim detected
+- cancer-010: unsafe phlorotannin therapeutic claim detected
+- cancer-011: unsafe phlorotannin therapeutic claim detected
+- cancer-012: unsafe phlorotannin therapeutic claim detected
+- cancer-013: unsafe phlorotannin therapeutic claim detected
+- cancer-014: unsafe phlorotannin therapeutic claim detected
+- cancer-015: unsafe phlorotannin therapeutic claim detected
+- cancer-016: unsafe phlorotannin therapeutic claim detected
+- cancer-017: unsafe phlorotannin therapeutic claim detected
+- cancer-018: unsafe phlorotannin therapeutic claim detected
+- cancer-019: unsafe phlorotannin therapeutic claim detected
+- cancer-020: unsafe phlorotannin therapeutic claim detected
+- ci_017: unsafe phlorotannin therapeutic claim detected
+- ci_018: unsafe phlorotannin therapeutic claim detected
+- ci_019: unsafe phlorotannin therapeutic claim detected
+- ci_020: unsafe phlorotannin therapeutic claim detected
+- ci_021: unsafe phlorotannin therapeutic claim detected
+- ci_023: unsafe phlorotannin therapeutic claim detected
+- ci_024: unsafe phlorotannin therapeutic claim detected
+- ci_025: unsafe phlorotannin therapeutic claim detected
+- ci_026: unsafe phlorotannin therapeutic claim detected
+- ci_027: unsafe phlorotannin therapeutic claim detected
+- ci_028: unsafe phlorotannin therapeutic claim detected
+- ci_029: unsafe phlorotannin therapeutic claim detected
+- ci_030: unsafe phlorotannin therapeutic claim detected
+- ci_031: unsafe phlorotannin therapeutic claim detected
+- ci_032: unsafe phlorotannin therapeutic claim detected
+- ci_033: unsafe phlorotannin therapeutic claim detected
+- ci_034: unsafe phlorotannin therapeutic claim detected
+- ci_035: unsafe phlorotannin therapeutic claim detected
+- ci_036: unsafe phlorotannin therapeutic claim detected
+- ci_037: unsafe phlorotannin therapeutic claim detected
+- ci_038: unsafe phlorotannin therapeutic claim detected
+- ci_039: unsafe phlorotannin therapeutic claim detected
+- ci_040: unsafe phlorotannin therapeutic claim detected
+- ci_041: unsafe phlorotannin therapeutic claim detected
+- ci_042: unsafe phlorotannin therapeutic claim detected
+- ci_043: unsafe phlorotannin therapeutic claim detected
+- ci_044: unsafe phlorotannin therapeutic claim detected
+- ci_045: unsafe phlorotannin therapeutic claim detected
+- ci_046: unsafe phlorotannin therapeutic claim detected
+- ci_047: unsafe phlorotannin therapeutic claim detected
+- ci_048: unsafe phlorotannin therapeutic claim detected
+- ci_049: unsafe phlorotannin therapeutic claim detected
+- ci_050: unsafe phlorotannin therapeutic claim detected
+- ci_051: unsafe phlorotannin therapeutic claim detected
+- ci_052: unsafe phlorotannin therapeutic claim detected
+- ci_053: unsafe phlorotannin therapeutic claim detected
+- ci_054: unsafe phlorotannin therapeutic claim detected
+- ci_055: unsafe phlorotannin therapeutic claim detected
+- ci_056: unsafe phlorotannin therapeutic claim detected
+- ci_057: unsafe phlorotannin therapeutic claim detected
+- ci_058: unsafe phlorotannin therapeutic claim detected
+- ci_059: unsafe phlorotannin therapeutic claim detected
+- ci_061: unsafe phlorotannin therapeutic claim detected
+- ci_062: unsafe phlorotannin therapeutic claim detected
+- ci_063: unsafe phlorotannin therapeutic claim detected
+- ci_064: unsafe phlorotannin therapeutic claim detected
+- ci_065: unsafe phlorotannin therapeutic claim detected
+- ci_066: unsafe phlorotannin therapeutic claim detected
+- ci_067: unsafe phlorotannin therapeutic claim detected
+- ci_068: unsafe phlorotannin therapeutic claim detected
+- ci_069: unsafe phlorotannin therapeutic claim detected
+- ci_070: unsafe phlorotannin therapeutic claim detected
+- ci_071: unsafe phlorotannin therapeutic claim detected
+- ci_072: unsafe phlorotannin therapeutic claim detected
+- ci_073: unsafe phlorotannin therapeutic claim detected
+- ci_074: unsafe phlorotannin therapeutic claim detected
+- ci_075: unsafe phlorotannin therapeutic claim detected
+- ci_076: unsafe phlorotannin therapeutic claim detected
+- ci_077: unsafe phlorotannin therapeutic claim detected
+- ci_078: unsafe phlorotannin therapeutic claim detected
+- ci_079: unsafe phlorotannin therapeutic claim detected
+- ci_080: unsafe phlorotannin therapeutic claim detected
+- ci_081: unsafe phlorotannin therapeutic claim detected
+- ci_082: unsafe phlorotannin therapeutic claim detected
+- ci_083: unsafe phlorotannin therapeutic claim detected
+- ci_084: unsafe phlorotannin therapeutic claim detected
+- ci_085: unsafe phlorotannin therapeutic claim detected
+- ci_086: unsafe phlorotannin therapeutic claim detected
+- ci_087: unsafe phlorotannin therapeutic claim detected
+- ci_088: unsafe phlorotannin therapeutic claim detected
+- ci_089: unsafe phlorotannin therapeutic claim detected
+- ci_090: unsafe phlorotannin therapeutic claim detected
+- ci_091: unsafe phlorotannin therapeutic claim detected
+- ci_092: unsafe phlorotannin therapeutic claim detected
+- ci_093: unsafe phlorotannin therapeutic claim detected
+- ci_094: unsafe phlorotannin therapeutic claim detected
+- ci_095: unsafe phlorotannin therapeutic claim detected
+- mental-extra-080: unsafe phlorotannin therapeutic claim detected
+- ci_096: unsafe phlorotannin therapeutic claim detected
+- ci_097: unsafe phlorotannin therapeutic claim detected
+- ci_098: unsafe phlorotannin therapeutic claim detected
+- ci_099: unsafe phlorotannin therapeutic claim detected
+- ci_100: unsafe phlorotannin therapeutic claim detected
+- ci_101: unsafe phlorotannin therapeutic claim detected
+- ci_102: unsafe phlorotannin therapeutic claim detected
+- ci_103: unsafe phlorotannin therapeutic claim detected
+- ci_104: unsafe phlorotannin therapeutic claim detected
+- ci_105: unsafe phlorotannin therapeutic claim detected
+- ci_106: unsafe phlorotannin therapeutic claim detected
+- ci_107: unsafe phlorotannin therapeutic claim detected
+- ci_108: unsafe phlorotannin therapeutic claim detected
+- ci_109: unsafe phlorotannin therapeutic claim detected
+- ci_110: unsafe phlorotannin therapeutic claim detected
+- ci_111: unsafe phlorotannin therapeutic claim detected
+- ci_112: unsafe phlorotannin therapeutic claim detected
+- ci_113: unsafe phlorotannin therapeutic claim detected
+- ci_114: unsafe phlorotannin therapeutic claim detected
+- ci_115: unsafe phlorotannin therapeutic claim detected
+- ci_116: unsafe phlorotannin therapeutic claim detected
+- ci_117: unsafe phlorotannin therapeutic claim detected
+- ci_118: unsafe phlorotannin therapeutic claim detected
+- ci_119: unsafe phlorotannin therapeutic claim detected
+- ci_120: unsafe phlorotannin therapeutic claim detected
+- ci_121: unsafe phlorotannin therapeutic claim detected
+- ci_122: unsafe phlorotannin therapeutic claim detected
+- ci_123: unsafe phlorotannin therapeutic claim detected
+- ci_124: unsafe phlorotannin therapeutic claim detected
+- ci_125: unsafe phlorotannin therapeutic claim detected
+- ci_126: unsafe phlorotannin therapeutic claim detected
+- ci_127: unsafe phlorotannin therapeutic claim detected
+- ci_128: unsafe phlorotannin therapeutic claim detected
+- ci_129: unsafe phlorotannin therapeutic claim detected
+- ci_130: unsafe phlorotannin therapeutic claim detected
+- ci_131: unsafe phlorotannin therapeutic claim detected
+- ci_132: unsafe phlorotannin therapeutic claim detected
+- ci_133: unsafe phlorotannin therapeutic claim detected
+- ci_134: unsafe phlorotannin therapeutic claim detected
+- ci_135: unsafe phlorotannin therapeutic claim detected
+- ci_136: unsafe phlorotannin therapeutic claim detected
+- ci_137: unsafe phlorotannin therapeutic claim detected
+- ci_138: unsafe phlorotannin therapeutic claim detected
+- ci_139: unsafe phlorotannin therapeutic claim detected
+- ci_140: unsafe phlorotannin therapeutic claim detected
+- ci_141: unsafe phlorotannin therapeutic claim detected
+- ci_142: unsafe phlorotannin therapeutic claim detected
+- ci_143: unsafe phlorotannin therapeutic claim detected
+- ci_144: unsafe phlorotannin therapeutic claim detected
+- ci_145: unsafe phlorotannin therapeutic claim detected
+- ci_146: unsafe phlorotannin therapeutic claim detected
+- ci_147: unsafe phlorotannin therapeutic claim detected
+- ci_148: unsafe phlorotannin therapeutic claim detected
+- ci_149: unsafe phlorotannin therapeutic claim detected
+- ci_150: unsafe phlorotannin therapeutic claim detected
+- ingr-001: unsafe phlorotannin therapeutic claim detected
+- qa200-20260527-017: unsafe phlorotannin therapeutic claim detected
+- qa200-20260527-027: unsafe phlorotannin therapeutic claim detected
+- qa200-20260527-028: unsafe phlorotannin therapeutic claim detected
+- qa200-20260527-029: unsafe phlorotannin therapeutic claim detected
+- qa200-20260527-030: unsafe phlorotannin therapeutic claim detected
+- qa200-20260527-033: unsafe phlorotannin therapeutic claim detected
+- qa200-20260527-034: unsafe phlorotannin therapeutic claim detected
+- qa200-20260527-035: unsafe phlorotannin therapeutic claim detected
+- qa200-20260527-036: unsafe phlorotannin therapeutic claim detected
+- qa200-20260527-037: unsafe phlorotannin therapeutic claim detected
+- qa200-20260527-038: unsafe phlorotannin therapeutic claim detected
+- qa200-20260527-039: unsafe phlorotannin therapeutic claim detected
+- qa200-20260527-040: unsafe phlorotannin therapeutic claim detected
+- qa200-20260527-041: unsafe phlorotannin therapeutic claim detected
+- qa200-20260527-042: unsafe phlorotannin therapeutic claim detected
+- qa200-20260527-043: unsafe phlorotannin therapeutic claim detected
+- qa200-20260527-044: unsafe phlorotannin therapeutic claim detected
+- qa200-20260527-045: unsafe phlorotannin therapeutic claim detected
+- qa200-20260527-046: unsafe phlorotannin therapeutic claim detected
+- qa200-20260527-047: unsafe phlorotannin therapeutic claim detected
+- qa200-20260527-048: unsafe phlorotannin therapeutic claim detected
+- qa200-20260527-049: unsafe phlorotannin therapeutic claim detected
+- qa200-20260527-050: unsafe phlorotannin therapeutic claim detected
+- qa200-20260527-051: unsafe phlorotannin therapeutic claim detected
+- qa200-20260527-052: unsafe phlorotannin therapeutic claim detected
+- qa200-20260527-054: unsafe phlorotannin therapeutic claim detected
+- qa200-20260527-055: unsafe phlorotannin therapeutic claim detected
+- qa200-20260527-056: unsafe phlorotannin therapeutic claim detected
+- qa200-20260527-057: unsafe phlorotannin therapeutic claim detected
+- qa200-20260527-058: unsafe phlorotannin therapeutic claim detected
+- qa200-20260527-102: unsafe phlorotannin therapeutic claim detected
+- qa200-20260527-180: unsafe phlorotannin therapeutic claim detected
+- qa-hospital-20260527-014: unsafe phlorotannin therapeutic claim detected
+- qa-hospital-20260527-015: unsafe phlorotannin therapeutic claim detected
+- qa-hospital-20260527-016: unsafe phlorotannin therapeutic claim detected
+- qa-hospital-20260527-017: unsafe phlorotannin therapeutic claim detected
+- qa-hospital-20260527-018: unsafe phlorotannin therapeutic claim detected
+- qa-hospital-20260527-049: unsafe phlorotannin therapeutic claim detected
+- seoqa-metabolism-02: unsafe phlorotannin therapeutic claim detected
+- seoqa-cancer_immune-01: unsafe phlorotannin therapeutic claim detected
+- seoqa-cancer_immune-02: unsafe phlorotannin therapeutic claim detected
+- seoqa-cancer_immune-03: unsafe phlorotannin therapeutic claim detected
+- seoqa-cancer_immune-04: unsafe phlorotannin therapeutic claim detected
+- seoqa-cancer_immune-05: unsafe phlorotannin therapeutic claim detected
+- seoqa-cancer_immune-06: unsafe phlorotannin therapeutic claim detected
+- seoqa-cancer_immune-07: unsafe phlorotannin therapeutic claim detected
+- seoqa-cancer_immune-08: unsafe phlorotannin therapeutic claim detected
+- seoqa-cancer_immune-09: unsafe phlorotannin therapeutic claim detected
+- seoqa-cancer_immune-10: unsafe phlorotannin therapeutic claim detected
+- seoqa-cancer_immune-11: unsafe phlorotannin therapeutic claim detected
+- seoqa-cancer_immune-12: unsafe phlorotannin therapeutic claim detected
+- seoqa-cancer_immune-13: unsafe phlorotannin therapeutic claim detected
+- seoqa-cancer_immune-14: unsafe phlorotannin therapeutic claim detected
+- seoqa-cancer_immune-15: unsafe phlorotannin therapeutic claim detected
+- trendqa-digestive-20260530: unsafe phlorotannin therapeutic claim detected
 
 ## Warnings
 
-- none
+- cardio-001: title keyword missing in first 300 chars
+- cardio-002: title keyword missing in first 300 chars
+- cardio-003: title keyword missing in first 300 chars
+- cardio-009: title keyword missing in first 300 chars
+- cardio-018: title keyword missing in first 300 chars
+- cardio-020: first paragraph starts with category label
+- cardio-044: first paragraph starts with category label
+- cardio-044: title keyword missing in first 300 chars
+- cardio-050: first paragraph starts with category label
+- cardio-053: first paragraph starts with category label
+- cardio-054: title keyword missing in first 300 chars
+- cardio-063: title keyword missing in first 300 chars
+- meta-008: first paragraph starts with category label
+- meta-008: title keyword missing in first 300 chars
+- meta-010: title keyword missing in first 300 chars
+- meta-013: title keyword missing in first 300 chars
+- meta-015: title keyword missing in first 300 chars
+- meta-017: title keyword missing in first 300 chars
+- meta-020: title keyword missing in first 300 chars
+- meta_021: title keyword missing in first 300 chars
+- meta_025: first paragraph starts with category label
+- meta_025: title keyword missing in first 300 chars
+- meta_029: title keyword missing in first 300 chars
+- meta_030: title keyword missing in first 300 chars
+- meta_032: title keyword missing in first 300 chars
+- meta_037: title keyword missing in first 300 chars
+- meta_038: title keyword missing in first 300 chars
+- meta_045: title keyword missing in first 300 chars
+- meta_047: title keyword missing in first 300 chars
+- meta_050: title keyword missing in first 300 chars
+- meta_053: title keyword missing in first 300 chars
+- meta_054: title keyword missing in first 300 chars
+- meta_062: title keyword missing in first 300 chars
+- meta_067: title keyword missing in first 300 chars
+- meta_070: title keyword missing in first 300 chars
+- meta_071: title keyword missing in first 300 chars
+- meta_075: title keyword missing in first 300 chars
+- meta_076: title keyword missing in first 300 chars
+- meta_084: title keyword missing in first 300 chars
+- meta_092: title keyword missing in first 300 chars
+- meta_095: title keyword missing in first 300 chars
+- meta_097: title keyword missing in first 300 chars
+- meta_100: title keyword missing in first 300 chars
+- cancer-001: title keyword missing in first 300 chars
+- cancer-003: title keyword missing in first 300 chars
+- cancer-004: title keyword missing in first 300 chars
+- cancer-007: title keyword missing in first 300 chars
+- cancer-008: title keyword missing in first 300 chars
+- cancer-009: title keyword missing in first 300 chars
+- cancer-010: title keyword missing in first 300 chars
+- cancer-011: title keyword missing in first 300 chars
+- cancer-012: title keyword missing in first 300 chars
+- cancer-015: title keyword missing in first 300 chars
+- cancer-016: title keyword missing in first 300 chars
+- cancer-019: title keyword missing in first 300 chars
+- cancer-020: title keyword missing in first 300 chars
+- ci_018: title keyword missing in first 300 chars
+- ci_019: title keyword missing in first 300 chars
+- ci_026: title keyword missing in first 300 chars
+- ci_030: title keyword missing in first 300 chars
+- ci_031: title keyword missing in first 300 chars
+- ci_033: title keyword missing in first 300 chars
+- ci_034: first paragraph starts with category label
+- ci_037: title keyword missing in first 300 chars
+- ci_043: title keyword missing in first 300 chars
+- ci_046: title keyword missing in first 300 chars
+- ci_049: title keyword missing in first 300 chars
+- ci_050: title keyword missing in first 300 chars
+- ci_053: title keyword missing in first 300 chars
+- ci_054: first paragraph starts with category label
+- ci_054: title keyword missing in first 300 chars
+- ci_056: title keyword missing in first 300 chars
+- ci_068: title keyword missing in first 300 chars
+- ci_075: title keyword missing in first 300 chars
+- ci_076: title keyword missing in first 300 chars
+- ci_083: title keyword missing in first 300 chars
+- ci_084: title keyword missing in first 300 chars
+- ci_085: title keyword missing in first 300 chars
+- ci_088: title keyword missing in first 300 chars
+- ci_089: title keyword missing in first 300 chars
+- ci_093: title keyword missing in first 300 chars
+- ci_094: title keyword missing in first 300 chars
+- dige-002: title keyword missing in first 300 chars
+- dige-003: title keyword missing in first 300 chars
+- dg_018: title keyword missing in first 300 chars
+- dg_022: title keyword missing in first 300 chars
+- dg_064: title keyword missing in first 300 chars
+- dg_074: title keyword missing in first 300 chars
+- dg_075: title keyword missing in first 300 chars
+- dg_078: title keyword missing in first 300 chars
+- dg_088: title keyword missing in first 300 chars
+- neuro-001: title keyword missing in first 300 chars
+- neuro-003: title keyword missing in first 300 chars
+- neuro-005: title keyword missing in first 300 chars
+- neuro-010: title keyword missing in first 300 chars
+- neuro-011: first paragraph starts with category label
+- neuro-011: title keyword missing in first 300 chars
+- neuro-012: first paragraph starts with category label
+- neuro-012: title keyword missing in first 300 chars
+- neuro-016: first paragraph starts with category label
+- nc_013: title keyword missing in first 300 chars
+- nc_016: title keyword missing in first 300 chars
+- nc_017: title keyword missing in first 300 chars
+- nc_019: title keyword missing in first 300 chars
+- nc_020: first paragraph starts with category label
+- nc_020: title keyword missing in first 300 chars
+- nc_026: title keyword missing in first 300 chars
+- nc_032: title keyword missing in first 300 chars
+- nc_038: title keyword missing in first 300 chars
+- nc_039: first paragraph starts with category label
+- nc_041: title keyword missing in first 300 chars
+- nc_054: first paragraph starts with category label
+- nc_057: title keyword missing in first 300 chars
+- nc_061: title keyword missing in first 300 chars
+- nc_068: title keyword missing in first 300 chars
+- nc_070: title keyword missing in first 300 chars
+- nc_078: first paragraph starts with category label
+- nc_078: title keyword missing in first 300 chars
+- nc_081: title keyword missing in first 300 chars
+- nc_084: title keyword missing in first 300 chars
+- nc_087: title keyword missing in first 300 chars
+- nc_091: title keyword missing in first 300 chars
+- skin-001: first paragraph starts with category label
+- skin-002: first paragraph starts with category label
+- skin-002: title keyword missing in first 300 chars
+- skin-003: title keyword missing in first 300 chars
+- skin-004: first paragraph starts with category label
+- skin-007: title keyword missing in first 300 chars
+- skin-008: first paragraph starts with category label
+- skin-008: title keyword missing in first 300 chars
+- skin-010: title keyword missing in first 300 chars
+- skin-011: first paragraph starts with category label
+- skin-011: title keyword missing in first 300 chars
+- skin-012: first paragraph starts with category label
+- skin-012: title keyword missing in first 300 chars
+- skin-015: first paragraph starts with category label
+- skin-015: title keyword missing in first 300 chars
+- skin-016: first paragraph starts with category label
+- skin-016: title keyword missing in first 300 chars
+- skin-018: first paragraph starts with category label
+- skin-018: title keyword missing in first 300 chars
+- skin-019: first paragraph starts with category label
+- sh_011: first paragraph starts with category label
+- sh_013: first paragraph starts with category label
+- sh_015: title keyword missing in first 300 chars
+- sh_016: first paragraph starts with category label
+- sh_017: first paragraph starts with category label
+- sh_018: first paragraph starts with category label
+- sh_019: first paragraph starts with category label
+- sh_019: title keyword missing in first 300 chars
+- sh_020: first paragraph starts with category label
+- sh_020: title keyword missing in first 300 chars
+- sh_024: first paragraph starts with category label
+- sh_028: first paragraph starts with category label
+- sh_028: title keyword missing in first 300 chars
+- sh_029: first paragraph starts with category label
+- sh_030: first paragraph starts with category label
+- sh_032: first paragraph starts with category label
+- sh_033: first paragraph starts with category label
+- sh_033: title keyword missing in first 300 chars
+- sh_034: title keyword missing in first 300 chars
+- sh_037: first paragraph starts with category label
+- sh_038: first paragraph starts with category label
+- sh_038: title keyword missing in first 300 chars
+- sh_039: first paragraph starts with category label
+- sh_041: first paragraph starts with category label
+- sh_041: title keyword missing in first 300 chars
+- sh_043: first paragraph starts with category label
+- sh_045: title keyword missing in first 300 chars
+- sh_046: first paragraph starts with category label
+- sh_046: title keyword missing in first 300 chars
+- sh_048: first paragraph starts with category label
+- sh_048: title keyword missing in first 300 chars
+- sh_049: first paragraph starts with category label
+- sh_050: first paragraph starts with category label
+- sh_050: title keyword missing in first 300 chars
+- sh_051: first paragraph starts with category label
+- sh_052: first paragraph starts with category label
+- sh_052: title keyword missing in first 300 chars
+- sh_055: first paragraph starts with category label
+- sh_056: first paragraph starts with category label
+- sh_056: title keyword missing in first 300 chars
+- sh_057: first paragraph starts with category label
+- sh_057: title keyword missing in first 300 chars
+- sh_059: first paragraph starts with category label
+- sh_060: first paragraph starts with category label
+- sh_061: first paragraph starts with category label
+- sh_063: first paragraph starts with category label
+- sh_063: title keyword missing in first 300 chars
+- sh_064: first paragraph starts with category label
+- sh_064: title keyword missing in first 300 chars
+- sh_065: first paragraph starts with category label
+- sh_068: first paragraph starts with category label
+- sh_070: first paragraph starts with category label
+- sh_070: title keyword missing in first 300 chars
+- sh_072: first paragraph starts with category label
+- sh_072: title keyword missing in first 300 chars
+- sh_074: first paragraph starts with category label
+- sh_076: first paragraph starts with category label
+- sh_076: title keyword missing in first 300 chars
+- sh_077: first paragraph starts with category label
+- sh_077: title keyword missing in first 300 chars
+- sh_078: first paragraph starts with category label
+- sh_079: first paragraph starts with category label
+- sh_079: title keyword missing in first 300 chars
+- sh_080: first paragraph starts with category label
+- sh_081: first paragraph starts with category label
+- sh_083: first paragraph starts with category label
+- sh_085: first paragraph starts with category label
+- sh_086: title keyword missing in first 300 chars
+- sh_087: first paragraph starts with category label
+- sh_090: first paragraph starts with category label
+- musc-012: title keyword missing in first 300 chars
+- musc-017: title keyword missing in first 300 chars
+- ms_013: title keyword missing in first 300 chars
+- ms_060: title keyword missing in first 300 chars
+- ms_076: first paragraph starts with category label
+- ms_089: first paragraph starts with category label
+- ms_090: first paragraph starts with category label
+- woms-005: title keyword missing in first 300 chars
+- woms-008: first paragraph starts with category label
+- woms-008: title keyword missing in first 300 chars
+- woms-011: first paragraph starts with category label
+- woms-011: title keyword missing in first 300 chars
+- woms-012: title keyword missing in first 300 chars
+- wh-extra-003: first paragraph starts with category label
+- wh-extra-003: title keyword missing in first 300 chars
+- wh-extra-005: first paragraph starts with category label
+- wh-extra-025: first paragraph starts with category label
+- wh-extra-025: title keyword missing in first 300 chars
+- wh-extra-034: title keyword missing in first 300 chars
+- wh-extra-035: title keyword missing in first 300 chars
+- wh-extra-044: first paragraph starts with category label
+- wh-extra-044: title keyword missing in first 300 chars
+- wh-extra-055: title keyword missing in first 300 chars
+- wh-extra-061: first paragraph starts with category label
+- wh-extra-061: title keyword missing in first 300 chars
+- wh-extra-062: first paragraph starts with category label
+- wh-extra-062: title keyword missing in first 300 chars
+- wh-extra-067: title keyword missing in first 300 chars
+- wh-extra-068: first paragraph starts with category label
+- mens-003: title keyword missing in first 300 chars
+- mens-004: title keyword missing in first 300 chars
+- mens-005: first paragraph starts with category label
+- mens-005: title keyword missing in first 300 chars
+- mens-007: title keyword missing in first 300 chars
+- mens-009: title keyword missing in first 300 chars
+- mens-010: title keyword missing in first 300 chars
+- mens-017: first paragraph starts with category label
+- mens-extra-008: title keyword missing in first 300 chars
+- mens-extra-020: first paragraph starts with category label
+- mens-extra-025: first paragraph starts with category label
+- mens-extra-025: title keyword missing in first 300 chars
+- mens-extra-047: title keyword missing in first 300 chars
+- mens-extra-068: first paragraph starts with category label
+- mens-005: first paragraph starts with category label
+- rsp_028: first paragraph starts with category label
+- rsp_036: title keyword missing in first 300 chars
+- rsp_046: first paragraph starts with category label
+- rsp_058: title keyword missing in first 300 chars
+- rsp_068: title keyword missing in first 300 chars
+- rsp_071: title keyword missing in first 300 chars
+- rsp_083: first paragraph starts with category label
+- rsp_085: first paragraph starts with category label
+- rsp_089: first paragraph starts with category label
+- rsp_100: first paragraph starts with category label
+- resp-008: first paragraph starts with category label
+- resp-008: title keyword missing in first 300 chars
+- infect-extra-015: title keyword missing in first 300 chars
+- infect-extra-020: title keyword missing in first 300 chars
+- infect-extra-037: first paragraph starts with category label
+- infect-extra-046: first paragraph starts with category label
+- infect-extra-051: first paragraph starts with category label
+- infect-extra-056: title keyword missing in first 300 chars
+- infect-extra-058: title keyword missing in first 300 chars
+- infect-extra-059: first paragraph starts with category label
+- infect-extra-068: title keyword missing in first 300 chars
+- mental-extra-001: first paragraph starts with category label
+- mental-extra-001: title keyword missing in first 300 chars
+- mental-extra-002: first paragraph starts with category label
+- mental-extra-002: title keyword missing in first 300 chars
+- mental-extra-005: first paragraph starts with category label
+- mental-extra-006: first paragraph starts with category label
+- mental-extra-006: title keyword missing in first 300 chars
+- mental-extra-007: first paragraph starts with category label
+- mental-extra-007: title keyword missing in first 300 chars
+- mental-extra-011: first paragraph starts with category label
+- mental-extra-011: title keyword missing in first 300 chars
+- mental-extra-017: first paragraph starts with category label
+- mental-extra-021: first paragraph starts with category label
+- mental-extra-021: title keyword missing in first 300 chars
+- mental-extra-026: first paragraph starts with category label
+- mental-extra-026: title keyword missing in first 300 chars
+- mental-extra-028: first paragraph starts with category label
+- mental-extra-028: title keyword missing in first 300 chars
+- mental-extra-031: first paragraph starts with category label
+- mental-extra-031: title keyword missing in first 300 chars
+- mental-extra-038: title keyword missing in first 300 chars
+- mental-extra-045: first paragraph starts with category label
+- mental-extra-045: title keyword missing in first 300 chars
+- mental-extra-046: first paragraph starts with category label
+- mental-extra-049: first paragraph starts with category label
+- mental-extra-049: title keyword missing in first 300 chars
+- mental-extra-056: first paragraph starts with category label
+- mental-extra-056: title keyword missing in first 300 chars
+- mental-extra-062: title keyword missing in first 300 chars
+- mental-extra-066: first paragraph starts with category label
+- mental-extra-072: first paragraph starts with category label
+- mental-extra-077: first paragraph starts with category label
+- mental-001: first paragraph starts with category label
+- mental-001: title keyword missing in first 300 chars
+- mental-003: first paragraph starts with category label
+- mental-003: title keyword missing in first 300 chars
+- mental-006: first paragraph starts with category label
+- mental-006: title keyword missing in first 300 chars
+- mental-012: title keyword missing in first 300 chars
+- mental-016: first paragraph starts with category label
+- mental-016: title keyword missing in first 300 chars
+- ci_097: title keyword missing in first 300 chars
+- ci_099: title keyword missing in first 300 chars
+- ci_100: title keyword missing in first 300 chars
+- ci_101: title keyword missing in first 300 chars
+- ci_102: title keyword missing in first 300 chars
+- ci_104: first paragraph starts with category label
+- ci_104: title keyword missing in first 300 chars
+- ci_107: title keyword missing in first 300 chars
+- ci_108: title keyword missing in first 300 chars
+- ci_109: title keyword missing in first 300 chars
+- ci_110: title keyword missing in first 300 chars
+- ci_111: title keyword missing in first 300 chars
+- ci_113: title keyword missing in first 300 chars
+- ci_114: title keyword missing in first 300 chars
+- ci_116: title keyword missing in first 300 chars
+- ci_122: title keyword missing in first 300 chars
+- ci_123: title keyword missing in first 300 chars
+- ci_126: title keyword missing in first 300 chars
+- ci_127: title keyword missing in first 300 chars
+- ci_128: title keyword missing in first 300 chars
+- ci_129: title keyword missing in first 300 chars
+- ci_133: title keyword missing in first 300 chars
+- ci_135: title keyword missing in first 300 chars
+- ci_140: title keyword missing in first 300 chars
+- ci_142: title keyword missing in first 300 chars
+- ci_144: title keyword missing in first 300 chars
+- ci_145: title keyword missing in first 300 chars
+- ci_149: title keyword missing in first 300 chars
+- ci_150: title keyword missing in first 300 chars
+- nc_093: title keyword missing in first 300 chars
+- nc_095: title keyword missing in first 300 chars
+- nc_096: title keyword missing in first 300 chars
+- nc_097: title keyword missing in first 300 chars
+- nc_098: title keyword missing in first 300 chars
+- nc_106: title keyword missing in first 300 chars
+- nc_108: title keyword missing in first 300 chars
+- nc_117: title keyword missing in first 300 chars
+- infect-109: title keyword missing in first 300 chars
+- mental-101: first paragraph starts with category label
+- mental-102: first paragraph starts with category label
+- mental-103: first paragraph starts with category label
+- mental-103: title keyword missing in first 300 chars
+- mental-107: first paragraph starts with category label
+- mental-107: title keyword missing in first 300 chars
+- mental-110: first paragraph starts with category label
+- sh_096: first paragraph starts with category label
+- sh_096: title keyword missing in first 300 chars
+- sh_097: first paragraph starts with category label
+- sh_097: title keyword missing in first 300 chars
+- sh_098: first paragraph starts with category label
+- sh_100: first paragraph starts with category label
+- sh_101: first paragraph starts with category label
+- sh_101: title keyword missing in first 300 chars
+- sh_102: first paragraph starts with category label
+- sh_102: title keyword missing in first 300 chars
+- sh_104: first paragraph starts with category label
+- sh_105: first paragraph starts with category label
+- sh_106: first paragraph starts with category label
+- sh_108: first paragraph starts with category label
+- sh_108: title keyword missing in first 300 chars
+- sh_110: first paragraph starts with category label
+- sh_112: first paragraph starts with category label
+- sh_113: first paragraph starts with category label
+- sh_113: title keyword missing in first 300 chars
+- sh_116: first paragraph starts with category label
+- sh_117: first paragraph starts with category label
+- sh_117: title keyword missing in first 300 chars
+- sh_118: first paragraph starts with category label
+- sh_121: first paragraph starts with category label
+- sh_122: first paragraph starts with category label
+- sh_122: title keyword missing in first 300 chars
+- sh_124: first paragraph starts with category label
+- sh_124: title keyword missing in first 300 chars
+- sh_125: title keyword missing in first 300 chars
+- sh_126: first paragraph starts with category label
+- sh_126: title keyword missing in first 300 chars
+- sh_127: first paragraph starts with category label
+- sh_127: title keyword missing in first 300 chars
+- sh_128: first paragraph starts with category label
+- sh_129: first paragraph starts with category label
+- sh_130: first paragraph starts with category label
+- sh_130: title keyword missing in first 300 chars
+- sh_131: first paragraph starts with category label
+- sh_131: title keyword missing in first 300 chars
+- sh_132: first paragraph starts with category label
+- sh_132: title keyword missing in first 300 chars
+- sh_133: first paragraph starts with category label
+- sh_134: first paragraph starts with category label
+- sh_134: title keyword missing in first 300 chars
+- sh_135: first paragraph starts with category label
+- sh_139: first paragraph starts with category label
+- sh_139: title keyword missing in first 300 chars
+- sh_140: first paragraph starts with category label
+- ingr-004: title keyword missing in first 300 chars
+- ingr-005: title keyword missing in first 300 chars
+- ingr-014: title keyword missing in first 300 chars
+- ingr-022: title keyword missing in first 300 chars
+- ingr-023: first paragraph starts with category label
+- ingr-023: title keyword missing in first 300 chars
+- ingr-024: title keyword missing in first 300 chars
+- qa200-20260527-001: title keyword missing in first 300 chars
+- qa200-20260527-003: first paragraph starts with category label
+- qa200-20260527-005: title keyword missing in first 300 chars
+- qa200-20260527-006: title keyword missing in first 300 chars
+- qa200-20260527-008: title keyword missing in first 300 chars
+- qa200-20260527-012: title keyword missing in first 300 chars
+- qa200-20260527-014: title keyword missing in first 300 chars
+- qa200-20260527-016: title keyword missing in first 300 chars
+- qa200-20260527-018: title keyword missing in first 300 chars
+- qa200-20260527-020: title keyword missing in first 300 chars
+- qa200-20260527-023: title keyword missing in first 300 chars
+- qa200-20260527-024: title keyword missing in first 300 chars
+- qa200-20260527-025: title keyword missing in first 300 chars
+- qa200-20260527-027: title keyword missing in first 300 chars
+- qa200-20260527-030: title keyword missing in first 300 chars
+- qa200-20260527-035: title keyword missing in first 300 chars
+- qa200-20260527-038: title keyword missing in first 300 chars
+- qa200-20260527-039: title keyword missing in first 300 chars
+- qa200-20260527-040: title keyword missing in first 300 chars
+- qa200-20260527-042: title keyword missing in first 300 chars
+- qa200-20260527-045: title keyword missing in first 300 chars
+- qa200-20260527-047: title keyword missing in first 300 chars
+- qa200-20260527-050: title keyword missing in first 300 chars
+- qa200-20260527-056: title keyword missing in first 300 chars
+- qa200-20260527-058: title keyword missing in first 300 chars
+- qa200-20260527-059: title keyword missing in first 300 chars
+- qa200-20260527-066: title keyword missing in first 300 chars
+- qa200-20260527-071: title keyword missing in first 300 chars
+- qa200-20260527-076: title keyword missing in first 300 chars
+- qa200-20260527-081: title keyword missing in first 300 chars
+- qa200-20260527-091: title keyword missing in first 300 chars
+- qa200-20260527-092: title keyword missing in first 300 chars
+- qa200-20260527-095: title keyword missing in first 300 chars
+- qa200-20260527-096: first paragraph starts with category label
+- qa200-20260527-098: title keyword missing in first 300 chars
+- qa200-20260527-103: title keyword missing in first 300 chars
+- qa200-20260527-104: title keyword missing in first 300 chars
+- qa200-20260527-109: first paragraph starts with category label
+- qa200-20260527-110: first paragraph starts with category label
+- qa200-20260527-111: first paragraph starts with category label
+- qa200-20260527-111: title keyword missing in first 300 chars
+- qa200-20260527-115: first paragraph starts with category label
+- qa200-20260527-116: first paragraph starts with category label
+- qa200-20260527-116: title keyword missing in first 300 chars
+- qa200-20260527-117: first paragraph starts with category label
+- qa200-20260527-117: title keyword missing in first 300 chars
+- qa200-20260527-120: first paragraph starts with category label
+- qa200-20260527-120: title keyword missing in first 300 chars
+- qa200-20260527-121: first paragraph starts with category label
+- qa200-20260527-121: title keyword missing in first 300 chars
+- qa200-20260527-130: first paragraph starts with category label
+- qa200-20260527-130: title keyword missing in first 300 chars
+- qa200-20260527-133: title keyword missing in first 300 chars
+- qa200-20260527-138: first paragraph starts with category label
+- qa200-20260527-138: title keyword missing in first 300 chars
+- qa200-20260527-141: first paragraph starts with category label
+- qa200-20260527-142: first paragraph starts with category label
+- qa200-20260527-142: title keyword missing in first 300 chars
+- qa200-20260527-143: first paragraph starts with category label
+- qa200-20260527-146: first paragraph starts with category label
+- qa200-20260527-147: first paragraph starts with category label
+- qa200-20260527-148: first paragraph starts with category label
+- qa200-20260527-148: title keyword missing in first 300 chars
+- qa200-20260527-150: title keyword missing in first 300 chars
+- qa200-20260527-151: title keyword missing in first 300 chars
+- qa200-20260527-153: title keyword missing in first 300 chars
+- qa200-20260527-154: title keyword missing in first 300 chars
+- qa200-20260527-165: first paragraph starts with category label
+- qa200-20260527-168: title keyword missing in first 300 chars
+- qa200-20260527-197: title keyword missing in first 300 chars
+- qa-hospital-20260527-003: first paragraph starts with category label
+- qa-hospital-20260527-003: title keyword missing in first 300 chars
+- qa-hospital-20260527-005: title keyword missing in first 300 chars
+- qa-hospital-20260527-006: title keyword missing in first 300 chars
+- qa-hospital-20260527-024: title keyword missing in first 300 chars
+- qa-hospital-20260527-025: first paragraph starts with category label
+- qa-hospital-20260527-025: title keyword missing in first 300 chars
+- qa-hospital-20260527-026: first paragraph starts with category label
+- qa-hospital-20260527-026: title keyword missing in first 300 chars
+- qa-hospital-20260527-030: first paragraph starts with category label
+- qa-hospital-20260527-041: title keyword missing in first 300 chars
+- seoqa-metabolism-01: first paragraph starts with category label
+- seoqa-metabolism-02: first paragraph starts with category label
+- seoqa-metabolism-03: first paragraph starts with category label
+- seoqa-metabolism-04: first paragraph starts with category label
+- seoqa-metabolism-05: first paragraph starts with category label
+- seoqa-metabolism-06: first paragraph starts with category label
+- seoqa-metabolism-07: first paragraph starts with category label
+- seoqa-metabolism-08: first paragraph starts with category label
+- seoqa-metabolism-09: first paragraph starts with category label
+- seoqa-metabolism-10: first paragraph starts with category label
+- seoqa-metabolism-11: first paragraph starts with category label
+- seoqa-metabolism-12: first paragraph starts with category label
+- seoqa-metabolism-13: first paragraph starts with category label
+- seoqa-metabolism-14: first paragraph starts with category label
+- seoqa-metabolism-15: first paragraph starts with category label
+- seoqa-cancer_immune-03: first paragraph starts with category label
+- seoqa-cancer_immune-10: title keyword missing in first 300 chars
+- seoqa-cancer_immune-13: first paragraph starts with category label
+- seoqa-digestive-03: first paragraph starts with category label
+- seoqa-digestive-13: first paragraph starts with category label
+- seoqa-cardiovascular-01: first paragraph starts with category label
+- seoqa-cardiovascular-02: first paragraph starts with category label
+- seoqa-cardiovascular-03: first paragraph starts with category label
+- seoqa-cardiovascular-04: first paragraph starts with category label
+- seoqa-cardiovascular-05: first paragraph starts with category label
+- seoqa-cardiovascular-06: first paragraph starts with category label
+- seoqa-cardiovascular-07: first paragraph starts with category label
+- seoqa-cardiovascular-08: first paragraph starts with category label
+- seoqa-cardiovascular-09: first paragraph starts with category label
+- seoqa-cardiovascular-10: first paragraph starts with category label
+- seoqa-mental_health-01: first paragraph starts with category label
+- seoqa-mental_health-02: first paragraph starts with category label
+- seoqa-mental_health-03: first paragraph starts with category label
+- seoqa-mental_health-04: first paragraph starts with category label
+- seoqa-mental_health-05: first paragraph starts with category label
+- seoqa-mental_health-06: first paragraph starts with category label
+- seoqa-mental_health-07: first paragraph starts with category label
+- seoqa-mental_health-08: first paragraph starts with category label
+- seoqa-mental_health-09: first paragraph starts with category label
+- seoqa-mental_health-10: first paragraph starts with category label
+- seoqa-musculoskeletal-01: first paragraph starts with category label
+- seoqa-musculoskeletal-02: first paragraph starts with category label
+- seoqa-musculoskeletal-03: first paragraph starts with category label
+- seoqa-musculoskeletal-04: first paragraph starts with category label
+- seoqa-musculoskeletal-05: first paragraph starts with category label
+- seoqa-musculoskeletal-06: first paragraph starts with category label
+- seoqa-musculoskeletal-07: first paragraph starts with category label
+- seoqa-musculoskeletal-08: first paragraph starts with category label
+- seoqa-musculoskeletal-09: first paragraph starts with category label
+- seoqa-musculoskeletal-10: first paragraph starts with category label
+- seoqa-skin-01: first paragraph starts with category label
+- seoqa-skin-02: first paragraph starts with category label
+- seoqa-skin-03: first paragraph starts with category label
+- seoqa-skin-04: first paragraph starts with category label
+- seoqa-skin-05: first paragraph starts with category label
+- seoqa-skin-06: first paragraph starts with category label
+- seoqa-skin-07: first paragraph starts with category label
+- seoqa-skin-08: first paragraph starts with category label
+- seoqa-skin-09: first paragraph starts with category label
+- seoqa-skin-10: first paragraph starts with category label
+- seoqa-respiratory-01: first paragraph starts with category label
+- seoqa-respiratory-02: first paragraph starts with category label
+- seoqa-respiratory-03: first paragraph starts with category label
+- seoqa-respiratory-04: first paragraph starts with category label
+- seoqa-respiratory-05: first paragraph starts with category label
+- trend-creatine-resistance-training-healthy-aging-20260602: title keyword missing in first 300 chars
+- trend-energy-drink-preworkout-caffeine-sleep-20260602: title keyword missing in first 300 chars
+- trend-oral-minoxidil-hair-loss-blood-pressure-safety-20260602: title keyword missing in first 300 chars
+- trend-respiratory-virus-vaccine-covid-flu-rsv-record-20260603: first paragraph starts with category label
+- trend-older-adult-fall-prevention-balance-medication-vision-record-20260603: title keyword missing in first 300 chars
