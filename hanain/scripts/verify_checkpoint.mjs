@@ -1,10 +1,10 @@
 const SITE = 'https://phlorotannin.com'
 
 const EXPECTED = {
-  sitemapTotal: 3117,
+  sitemapTotal: 3120,
   qCount: 1918,
   tagCount: 252,
-  blogCount: 672,
+  blogCount: 675,
   insightCount: 244,
   requiredBundleSlugs: [
     'glp1-era-protein-fiber-phlorotannin-checklist-2026',
@@ -127,6 +127,9 @@ const EXPECTED = {
     'supplement-label-buying-guide-record-2026',
     'egfr-uacr-kidney-disease-record-2026',
     'polyphenol-ingredient-comparison-phlorotannin-record-2026',
+    'supplement-medication-surgery-safety-record-2026',
+    'metabolic-syndrome-a1c-waist-lab-record-2026',
+    'mens-health-bp-waist-sleep-psa-record-2026',
   ],
   draftSlug: 'ecklonia-cava-respiratory-health-clinical-trial-2026',
 }
