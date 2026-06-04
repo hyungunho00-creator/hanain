@@ -1,10 +1,10 @@
 const SITE = 'https://phlorotannin.com'
 
 const EXPECTED = {
-  sitemapTotal: 3123,
+  sitemapTotal: 3126,
   qCount: 1918,
   tagCount: 252,
-  blogCount: 678,
+  blogCount: 681,
   insightCount: 244,
   requiredBundleSlugs: [
     'glp1-era-protein-fiber-phlorotannin-checklist-2026',
@@ -133,6 +133,9 @@ const EXPECTED = {
     'postpartum-blood-pressure-warning-signs-record-2026',
     'sepsis-warning-signs-infection-record-2026',
     'cosmetic-contact-dermatitis-patch-test-record-2026',
+    'gerd-reflux-ppi-antacid-symptom-record-2026',
+    'stroke-fast-blood-pressure-warning-record-2026',
+    'depression-anxiety-symptom-diary-988-record-2026',
   ],
   draftSlug: 'ecklonia-cava-respiratory-health-clinical-trial-2026',
 }
