@@ -16,10 +16,12 @@ const NAVY  = '#143D38'
 const GREEN = '#2B7568'
 const GOLD  = '#B9975B'
 const GOLD2 = '#D7BD82'
-const CREAM = '#FFFFFF'
-const CREAM2 = '#FAFBFA'
-const CREAM3 = '#F1F5F2'
-const MINT = '#FBFDFC'
+const CREAM = '#F5F1E2'
+const CREAM2 = '#EFE9D5'
+const CREAM3 = '#E7DDC4'
+const MINT = '#F7F3E7'
+const DEEP = '#071F1E'
+const MUTED = '#5F6F68'
 const LINE = '#DCE8E2'
 const SOFT_SHADOW = 'rgba(20,61,56,0.08)'
 const MEDIUM_SHADOW = 'rgba(20,61,56,0.14)'
@@ -161,11 +163,75 @@ function QRCode({ url, size = 100 }) {
   )
 }
 
+function MoleculeNetworkSvg({ className = '', style = {}, opacity = 1 }) {
+  return (
+    <svg className={className} style={style} viewBox="0 0 360 470" fill="none" aria-hidden="true">
+      <g opacity={opacity}>
+        <path d="M36 78 91 46 151 76 205 48 282 87" stroke="#BFEFE4" strokeWidth="2.5" />
+        <path d="M36 78 61 153 132 126 188 168 255 134 316 177" stroke="#BFEFE4" strokeWidth="2.5" />
+        <path d="M61 153 39 292 98 352 173 315 229 373 306 333" stroke="#BFEFE4" strokeWidth="2.5" />
+        <path d="M132 126 151 76 188 168 206 256 173 315" stroke="#E6D39B" strokeWidth="2" />
+        <path d="M255 134 282 87 316 177 286 254 229 373" stroke="#E6D39B" strokeWidth="2" />
+        {[
+          [36, 78, 8, '#EFF8F1'], [91, 46, 5, '#E5C77A'], [151, 76, 9, '#BFEFE4'], [205, 48, 5, '#E5C77A'],
+          [282, 87, 8, '#EFF8F1'], [61, 153, 6, '#BFEFE4'], [132, 126, 7, '#E5C77A'], [188, 168, 6, '#EFF8F1'],
+          [255, 134, 9, '#BFEFE4'], [316, 177, 6, '#E5C77A'], [39, 292, 10, '#EFF8F1'], [98, 352, 6, '#BFEFE4'],
+          [173, 315, 7, '#E5C77A'], [229, 373, 8, '#BFEFE4'], [306, 333, 10, '#EFF8F1'], [206, 256, 5, '#E5C77A'],
+          [286, 254, 5, '#BFEFE4'],
+        ].map(([cx, cy, r, fill], idx) => (
+          <circle key={idx} cx={cx} cy={cy} r={r} fill={fill} />
+        ))}
+      </g>
+    </svg>
+  )
+}
+
+function MoleculePhotoPanel({ small = false }) {
+  return (
+    <div
+      style={{
+        position: 'relative',
+        width: small ? '34%' : '40%',
+        minWidth: small ? '112px' : '132px',
+        alignSelf: 'stretch',
+        borderRadius: '14px',
+        overflow: 'hidden',
+        border: `1.5px solid ${GOLD}`,
+        background: `radial-gradient(circle at 20% 18%, rgba(205,238,226,0.2), transparent 34%), linear-gradient(145deg, ${DEEP}, #0b5149 72%, #073330)`,
+        boxShadow: `inset 0 0 0 1px rgba(255,255,255,0.12), 0 10px 24px ${NAVY}1F`,
+      }}
+    >
+      <MoleculeNetworkSvg style={{ position: 'absolute', inset: small ? '10px 8px' : '15px 12px', width: 'calc(100% - 20px)', height: 'calc(100% - 24px)' }} opacity={0.95} />
+      <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(105deg, rgba(255,255,255,0.18) 0 22%, transparent 23% 100%)' }} />
+      <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, padding: '6px 8px', fontSize: '6px', letterSpacing: '0.14em', color: '#DCD0A6', background: 'rgba(2,19,18,0.28)' }}>
+        PHLOROTANNIN · ECKLONIA CAVA
+      </div>
+    </div>
+  )
+}
+
+function MoleculeWatermark({ style = {} }) {
+  return (
+    <svg viewBox="0 0 360 160" style={{ position: 'absolute', pointerEvents: 'none', ...style }} aria-hidden="true">
+      <g opacity="0.22" stroke={GREEN} strokeWidth="5" fill="none">
+        <polygon points="58,47 98,24 139,47 139,94 98,118 58,94" />
+        <polygon points="158,68 199,45 239,68 239,115 199,138 158,115" />
+        <polygon points="264,36 304,13 345,36 345,83 304,107 264,83" />
+        <path d="M139 70h19M239 86l25-24" />
+      </g>
+      <g fill={GOLD2} opacity="0.4">
+        {[58, 98, 139, 199, 239, 304, 345].map((x, i) => (
+          <circle key={i} cx={x} cy={i % 2 ? 24 : 47} r="7" />
+        ))}
+      </g>
+    </svg>
+  )
+}
+
 // ─────────────────────────────────────────────
 //  공통 Canvas 유틸 — 골드 띠 / 사이드바 / 테두리
 // ─────────────────────────────────────────────
 function drawFrame(ctx, W, H) {
-  // 크림 배경
   const bg = ctx.createLinearGradient(0, 0, W, H)
   bg.addColorStop(0,   CREAM)
   bg.addColorStop(0.6, CREAM2)
@@ -173,32 +239,35 @@ function drawFrame(ctx, W, H) {
   ctx.fillStyle = bg
   ctx.fillRect(0, 0, W, H)
 
-  // 외곽 구조선은 진하게 잡아 연한 배경에서도 명함 형태가 또렷하게 보이게 한다.
+  // Subtle paper grain for the downloaded PNG.
+  ctx.save()
+  ctx.globalAlpha = 0.09
+  for (let y = 0; y < H; y += 7) {
+    ctx.strokeStyle = y % 14 === 0 ? '#fff' : NAVY
+    ctx.beginPath()
+    ctx.moveTo(0, y)
+    ctx.lineTo(W, y + Math.sin(y / 31) * 2)
+    ctx.stroke()
+  }
+  ctx.restore()
+
+  ctx.fillStyle = DEEP
+  ctx.fillRect(0, 0, W, 24)
+  ctx.fillRect(0, H - 24, W, 24)
+  ctx.fillStyle = GREEN
+  ctx.fillRect(0, 24, 28, H - 48)
+
   ctx.strokeStyle = NAVY
-  ctx.lineWidth = 8
-  ctx.strokeRect(4, 4, W - 8, H - 8)
-
-  // 상/하 띠
-  const goldBand = ctx.createLinearGradient(0, 0, W, 0)
-  goldBand.addColorStop(0,    NAVY)
-  goldBand.addColorStop(0.25, GREEN)
-  goldBand.addColorStop(0.5,  GOLD2)
-  goldBand.addColorStop(0.75, GREEN)
-  goldBand.addColorStop(1,    NAVY)
-  ctx.fillStyle = goldBand
-  ctx.fillRect(0, 0, W, 26)
-  ctx.fillRect(0, H - 26, W, 26)
-
-  return goldBand   // 재사용용
+  ctx.lineWidth = 3
+  ctx.beginPath(); roundRect(ctx, 24, 24, W - 48, H - 48, 28); ctx.stroke()
+  ctx.strokeStyle = 'rgba(255,255,255,0.72)'
+  ctx.lineWidth = 2
+  ctx.beginPath(); roundRect(ctx, 35, 35, W - 70, H - 70, 22); ctx.stroke()
 }
 
 function drawSidebar(ctx, H) {
-  const sg = ctx.createLinearGradient(0, 0, 0, H)
-  sg.addColorStop(0,   NAVY)
-  sg.addColorStop(0.58, GREEN)
-  sg.addColorStop(1,   NAVY)
-  ctx.fillStyle = sg
-  ctx.fillRect(0, 26, 32, H - 52)
+  ctx.fillStyle = GREEN
+  ctx.fillRect(0, 24, 28, H - 48)
 }
 
 function roundRect(ctx, x, y, w, h, r) {
@@ -227,6 +296,104 @@ async function loadImage(src) {
   })
 }
 
+function drawCanvasMolecule(ctx, ox, oy, scale = 1, alpha = 0.55) {
+  const hex = (cx, cy, r) => {
+    const pts = []
+    for (let i = 0; i < 6; i++) {
+      const a = (Math.PI / 180) * (60 * i - 30)
+      pts.push([cx + Math.cos(a) * r, cy + Math.sin(a) * r])
+    }
+    for (let i = 0; i < 6; i++) {
+      ctx.beginPath()
+      ctx.moveTo(pts[i][0], pts[i][1])
+      ctx.lineTo(pts[(i + 1) % 6][0], pts[(i + 1) % 6][1])
+      ctx.stroke()
+    }
+    return pts
+  }
+
+  ctx.save()
+  ctx.globalAlpha = alpha
+  ctx.strokeStyle = GREEN
+  ctx.lineWidth = 4 * scale
+  ctx.fillStyle = GOLD2
+  const rings = [[ox, oy], [ox + 105 * scale, oy + 38 * scale], [ox + 205 * scale, oy - 12 * scale]]
+  let prev = null
+  rings.forEach(([cx, cy]) => {
+    const pts = hex(cx, cy, 38 * scale)
+    if (prev) {
+      ctx.beginPath(); ctx.moveTo(prev[0], prev[1]); ctx.lineTo(pts[3][0], pts[3][1]); ctx.stroke()
+    }
+    prev = pts[0]
+    ;[0, 2, 4].forEach((idx) => {
+      const [x, y] = pts[idx]
+      ctx.beginPath(); ctx.arc(x, y, 7 * scale, 0, Math.PI * 2); ctx.fill()
+    })
+  })
+  ctx.restore()
+}
+
+function drawMoleculePhotoPanelCanvas(ctx, x, y, w, h) {
+  ctx.save()
+  ctx.beginPath(); roundRect(ctx, x, y, w, h, 26); ctx.clip()
+  const bg = ctx.createLinearGradient(x, y, x + w, y + h)
+  bg.addColorStop(0, DEEP)
+  bg.addColorStop(0.72, '#0B5149')
+  bg.addColorStop(1, '#073330')
+  ctx.fillStyle = bg
+  ctx.fillRect(x, y, w, h)
+
+  ctx.strokeStyle = 'rgba(191,239,228,0.72)'
+  ctx.fillStyle = '#BFEFE4'
+  ctx.lineWidth = 3
+  const points = [
+    [x + 42, y + 82], [x + 90, y + 45], [x + 142, y + 78], [x + 196, y + 50],
+    [x + 270, y + 92], [x + 66, y + 155], [x + 128, y + 130], [x + 190, y + 166],
+    [x + 252, y + 138], [x + 318, y + 178], [x + 55, y + 292], [x + 116, y + 352],
+    [x + 190, y + 315], [x + 250, y + 375], [x + 315, y + 333], [x + 206, y + 256],
+  ]
+  for (let i = 0; i < points.length - 1; i++) {
+    if (i % 3 !== 1) {
+      ctx.beginPath()
+      ctx.moveTo(points[i][0], points[i][1])
+      ctx.lineTo(points[i + 1][0], points[i + 1][1])
+      ctx.stroke()
+    }
+  }
+  points.forEach(([px, py], i) => {
+    ctx.fillStyle = i % 3 === 0 ? '#EFF8F1' : i % 3 === 1 ? GOLD2 : '#BFEFE4'
+    ctx.beginPath(); ctx.arc(px, py, i % 4 === 0 ? 10 : 6, 0, Math.PI * 2); ctx.fill()
+  })
+
+  ctx.fillStyle = 'rgba(255,255,255,0.16)'
+  ctx.beginPath()
+  ctx.moveTo(x, y)
+  ctx.lineTo(x + w * 0.55, y)
+  ctx.lineTo(x + w * 0.28, y + h)
+  ctx.lineTo(x, y + h)
+  ctx.closePath()
+  ctx.fill()
+
+  ctx.fillStyle = 'rgba(2,19,18,0.3)'
+  ctx.fillRect(x, y + h - 36, w, 36)
+  ctx.fillStyle = '#DCD0A6'
+  ctx.font = 'bold 13px Arial, sans-serif'
+  ctx.fillText('PHLOROTANNIN · ECKLONIA CAVA', x + 14, y + h - 13)
+  ctx.restore()
+  ctx.strokeStyle = GOLD
+  ctx.lineWidth = 2
+  ctx.beginPath(); roundRect(ctx, x, y, w, h, 26); ctx.stroke()
+}
+
+function drawGoldRule(ctx, x, y, w) {
+  const lg = ctx.createLinearGradient(x, y, x + w, y)
+  lg.addColorStop(0, GOLD)
+  lg.addColorStop(1, GOLD2)
+  ctx.strokeStyle = lg
+  ctx.lineWidth = 5
+  ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x + w, y); ctx.stroke()
+}
+
 // ─────────────────────────────────────────────
 //  앞면 Canvas
 // ─────────────────────────────────────────────
@@ -237,65 +404,53 @@ async function drawFront(partner, cardUrl) {
   const ctx = canvas.getContext('2d')
 
   drawFrame(ctx, W, H)
-  drawSidebar(ctx, H)
+  drawMoleculePhotoPanelCanvas(ctx, 74, 80, 360, 468)
 
-  const TX = 74   // 텍스트 기준 X
+  drawCanvasMolecule(ctx, 640, 125, 1.18, 0.24)
 
-  // 브랜드명
-  ctx.fillStyle = NAVY
-  ctx.font = 'bold 26px Arial, sans-serif'
-  ctx.fillText('PHLOROTANNIN PARTNERS', TX, 80)
+  const TX = 500
+  ctx.fillStyle = GREEN
+  ctx.font = 'bold 30px Arial, sans-serif'
+  ctx.fillText('PHLOROTANNIN', TX, 113)
+  ctx.fillStyle = MUTED
+  ctx.font = '20px Arial, sans-serif'
+  ctx.fillText('PARTNERS', TX, 143)
 
-  // 이름
   const nameLen = (partner.name || '').length
-  const namePx = nameLen <= 3 ? 148 : nameLen <= 4 ? 118 : 92
+  const namePx = nameLen <= 3 ? 92 : nameLen <= 4 ? 80 : 68
   ctx.fillStyle = NAVY
   ctx.font = `900 ${namePx}px Arial, sans-serif`
-  ctx.fillText(partner.name || '', TX, 80 + namePx + 8)
+  ctx.fillText(partner.name || '', TX, 255)
 
-  // 이름 아래 골드 선
-  const lineY = 80 + namePx + 34
-  const lg = ctx.createLinearGradient(TX, 0, TX + 180, 0)
-  lg.addColorStop(0, GOLD); lg.addColorStop(1, GOLD2)
-  ctx.strokeStyle = lg; ctx.lineWidth = 5
-  ctx.beginPath(); ctx.moveTo(TX, lineY); ctx.lineTo(TX + 180, lineY); ctx.stroke()
+  ctx.fillStyle = NAVY
+  ctx.font = 'bold 36px Arial, sans-serif'
+  ctx.fillText('해양 폴리페놀 건강정보 파트너', TX, 305)
+  drawGoldRule(ctx, TX, 333, 360)
 
-  // 직함
-  ctx.fillStyle = NAVY; ctx.font = 'bold 38px Arial, sans-serif'
-  ctx.fillText('플로로탄닌 건강정보 파트너', TX, lineY + 58)
+  ctx.fillStyle = MUTED
+  ctx.font = '30px Arial, sans-serif'
+  ctx.fillText('성분·연구자료·쉬운 설명을', TX, 415)
+  ctx.fillText('내 파트너 링크로 바로 연결합니다.', TX, 458)
 
-  // 소개
-  ctx.fillStyle = '#5f7471'; ctx.font = '30px Arial, sans-serif'
-  ctx.fillText('성분·연구자료를 쉽게 연결합니다', TX, lineY + 110)
+  ctx.fillStyle = NAVY
+  ctx.font = 'bold 34px Arial, sans-serif'
+  ctx.fillText(partner.phoneDisplay || '', TX, 535)
+  ctx.font = '28px Arial, sans-serif'
+  ctx.fillText('phlorotannin.com', TX, 575)
 
-  // 전화번호
-  ctx.fillStyle = NAVY; ctx.font = 'bold 36px Arial, sans-serif'
-  ctx.fillText('✆  ' + (partner.phoneDisplay || ''), TX, lineY + 162)
-
-  // 웹주소 (하단 왼쪽)
-  ctx.fillStyle = NAVY; ctx.font = 'bold 24px Arial, sans-serif'
-  ctx.fillText('phlorotannin.com', TX, H - 42)
-
-  // 우측 문구
-  ctx.fillStyle = '#7c8f8b'; ctx.font = '20px Arial, sans-serif'
-  ctx.textAlign = 'right'
-  ctx.fillText('Health Information Partner', W - 50, H - 42)
-  ctx.textAlign = 'left'
-
-  // QR
-  const qrSize = 270, qrX = W - qrSize - 50, qrY = 40
+  const qrSize = 132, qrX = W - qrSize - 76, qrY = 78
   ctx.fillStyle = '#fff'
-  ctx.beginPath(); roundRect(ctx, qrX - 12, qrY - 12, qrSize + 24, qrSize + 24, 16); ctx.fill()
-  ctx.strokeStyle = NAVY; ctx.lineWidth = 5
-  ctx.beginPath(); roundRect(ctx, qrX - 12, qrY - 12, qrSize + 24, qrSize + 24, 16); ctx.stroke()
+  ctx.beginPath(); roundRect(ctx, qrX - 16, qrY - 16, qrSize + 32, qrSize + 60, 18); ctx.fill()
+  ctx.strokeStyle = NAVY; ctx.lineWidth = 3
+  ctx.beginPath(); roundRect(ctx, qrX - 16, qrY - 16, qrSize + 32, qrSize + 60, 18); ctx.stroke()
 
   const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=${qrSize * 2}x${qrSize * 2}&data=${encodeURIComponent(cardUrl)}&color=${NAVY.replace('#', '')}&bgcolor=ffffff&margin=8`
   const qrImg = await loadImage(qrUrl)
   if (qrImg) ctx.drawImage(qrImg, qrX, qrY, qrSize, qrSize)
 
-  ctx.fillStyle = NAVY; ctx.font = 'bold 22px Arial, sans-serif'
+  ctx.fillStyle = NAVY; ctx.font = 'bold 18px Arial, sans-serif'
   ctx.textAlign = 'center'
-  ctx.fillText('SCAN ME', qrX + qrSize / 2, qrY + qrSize + 38)
+  ctx.fillText('SCAN', qrX + qrSize / 2, qrY + qrSize + 34)
   ctx.textAlign = 'left'
 
   return canvas
@@ -311,65 +466,39 @@ async function drawBack(partner, cardUrl) {
   const ctx = canvas.getContext('2d')
 
   drawFrame(ctx, W, H)
-  drawSidebar(ctx, H)
+  drawCanvasMolecule(ctx, 430, 110, 1.8, 0.2)
+  drawCanvasMolecule(ctx, 560, 405, 1.1, 0.12)
 
-  // ── 중앙 원형 장식 (크림 톤 어울리게 골드 계열) ──
-  ;[300, 200].forEach((r, i) => {
-    ctx.beginPath()
-    ctx.arc(W / 2 + 160, H / 2, r, 0, Math.PI * 2)
-    ctx.strokeStyle = i === 0 ? `${GOLD}28` : `${GOLD2}30`
-    ctx.lineWidth = 1.5
-    ctx.stroke()
-  })
-
-  // ── 왼쪽 텍스트 영역 ──
   const TX = 74
+  ctx.fillStyle = GREEN
+  ctx.font = 'bold 40px Arial, sans-serif'
+  ctx.fillText('QR을 찍으면', TX, 118)
+  ctx.fillStyle = NAVY
+  ctx.font = '900 44px Arial, sans-serif'
+  ctx.fillText('내 파트너 페이지가 열립니다', TX, 172)
+  drawGoldRule(ctx, TX, 214, 330)
 
-  // 브랜드명
-  ctx.fillStyle = NAVY; ctx.font = 'bold 22px Arial, sans-serif'
-  ctx.fillText('PHLOROTANNIN PARTNERS', TX, 80)
+  ctx.fillStyle = NAVY
+  ctx.font = '30px Arial, sans-serif'
+  ctx.fillText('1. 쉬운 플로로탄닌 설명', TX, 292)
+  ctx.fillText('2. 블로그·Q&A 자료 연결', TX, 344)
+  ctx.fillText('3. 전화·문자·명함 저장', TX, 396)
 
-  // 메인 카피
-  ctx.fillStyle = NAVY; ctx.font = '900 72px Arial, sans-serif'
-  ctx.fillText('논문 제목으로', TX, 180)
-  ctx.fillText('확인하는 기전', TX, 268)
+  ctx.fillStyle = NAVY
+  ctx.font = 'bold 36px Arial, sans-serif'
+  ctx.fillText(`${partner.name || ''} 파트너`, TX, 502)
+  ctx.font = 'bold 32px Arial, sans-serif'
+  ctx.fillText(partner.phoneDisplay || '', TX, 546)
+  ctx.fillStyle = MUTED
+  ctx.font = '22px Arial, sans-serif'
+  ctx.fillText(cardUrl.replace('https://', ''), TX, 584)
 
-  // 골드 구분선
-  const lg = ctx.createLinearGradient(TX, 0, TX + 200, 0)
-  lg.addColorStop(0, GOLD); lg.addColorStop(1, GOLD2)
-  ctx.strokeStyle = lg; ctx.lineWidth = 5
-  ctx.beginPath(); ctx.moveTo(TX, 300); ctx.lineTo(TX + 200, 300); ctx.stroke()
-
-  // 설명 문구
-  ctx.fillStyle = '#5f7471'; ctx.font = '30px Arial, sans-serif'
-  ctx.fillText('플로로탄닌 자료와 쉬운 설명을', TX, 350)
-  ctx.fillText('파트너 링크로 바로 확인하세요', TX, 394)
-
-  // 파트너 이름 (작게)
-  ctx.fillStyle = NAVY; ctx.font = 'bold 32px Arial, sans-serif'
-  ctx.fillText((partner.name || '') + ' 파트너', TX, 454)
-
-  // 전화번호
-  ctx.fillStyle = NAVY; ctx.font = 'bold 30px Arial, sans-serif'
-  ctx.fillText('✆  ' + (partner.phoneDisplay || ''), TX, 498)
-
-  // 웹주소
-  ctx.fillStyle = NAVY; ctx.font = 'bold 24px Arial, sans-serif'
-  ctx.fillText('phlorotannin.com', TX, H - 42)
-
-  // 우측 문구
-  ctx.fillStyle = '#7c8f8b'; ctx.font = '20px Arial, sans-serif'
-  ctx.textAlign = 'right'
-  ctx.fillText('Health Information Partner', W - 50, H - 42)
-  ctx.textAlign = 'left'
-
-  // ── QR (오른쪽) ──
-  const qrSize = 260, qrX = W - qrSize - 60, qrY = H / 2 - qrSize / 2 - 20
+  const qrSize = 235, qrX = W - qrSize - 86, qrY = 148
 
   ctx.fillStyle = '#fff'
-  ctx.beginPath(); roundRect(ctx, qrX - 14, qrY - 14, qrSize + 28, qrSize + 28, 18); ctx.fill()
-  ctx.strokeStyle = NAVY; ctx.lineWidth = 5
-  ctx.beginPath(); roundRect(ctx, qrX - 14, qrY - 14, qrSize + 28, qrSize + 28, 18); ctx.stroke()
+  ctx.beginPath(); roundRect(ctx, qrX - 18, qrY - 18, qrSize + 36, qrSize + 64, 22); ctx.fill()
+  ctx.strokeStyle = NAVY; ctx.lineWidth = 3
+  ctx.beginPath(); roundRect(ctx, qrX - 18, qrY - 18, qrSize + 36, qrSize + 64, 22); ctx.stroke()
 
   const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=${qrSize * 2}x${qrSize * 2}&data=${encodeURIComponent(cardUrl)}&color=${NAVY.replace('#', '')}&bgcolor=ffffff&margin=8`
   const qrImg = await loadImage(qrUrl)
@@ -379,6 +508,9 @@ async function drawBack(partner, cardUrl) {
   ctx.textAlign = 'center'
   ctx.fillText('SCAN ME', qrX + qrSize / 2, qrY + qrSize + 40)
   ctx.textAlign = 'left'
+  ctx.font = '24px Arial, sans-serif'
+  ctx.fillText('자료 보기 · 상담 연결', qrX, qrY + qrSize + 92)
+  ctx.fillText('연락처 저장', qrX, qrY + qrSize + 128)
 
   return canvas
 }
@@ -647,11 +779,11 @@ export default function BusinessCardPage() {
       keyword: 'Ca2+ · GLUT4 · AMPK',
     },
   ]
-  const cardBackground = `linear-gradient(135deg, #ffffff 0%, ${MINT} 58%, ${CREAM2} 100%)`
+  const cardBackground = `linear-gradient(135deg, ${CREAM} 0%, ${CREAM2} 72%, ${CREAM3} 100%)`
 
   const nameLen = (partner.name || '').length
   // 화면 너비에 따라 반응형으로 조정: vw 기반으로 절대 잘리지 않게
-  const screenNameSize = nameLen <= 2 ? '2.45rem' : nameLen <= 3 ? '2.15rem' : nameLen <= 4 ? '1.85rem' : '1.45rem'
+  const screenNameSize = nameLen <= 2 ? '2.2rem' : nameLen <= 3 ? '1.92rem' : nameLen <= 4 ? '1.66rem' : '1.34rem'
   const screenLetterSp = nameLen <= 3 ? '0.08em' : nameLen <= 4 ? '0.05em' : '0.02em'
 
   return (
@@ -684,7 +816,7 @@ export default function BusinessCardPage() {
           </div>
         </div>
 
-        <div className="mx-auto px-4 py-5 sm:py-6" style={{ maxWidth: '430px' }}>
+        <div className="mx-auto px-4 py-5 sm:py-6" style={{ maxWidth: '520px' }}>
 
           <p className="text-center mb-4"
             style={{ color: NAVY, fontSize: '11px', letterSpacing: '4px', textTransform: 'uppercase', fontWeight: '900' }}>
@@ -696,7 +828,7 @@ export default function BusinessCardPage() {
             className="cursor-pointer select-none"
             onClick={() => setFlipped(!flipped)}
             style={{
-              width: 'min(100%, 430px)',
+              width: 'min(100%, 520px)',
               margin: '0 auto 16px',
               borderRadius: '8px',
               overflow: 'hidden',
@@ -710,41 +842,34 @@ export default function BusinessCardPage() {
           >
             {!flipped ? (
               /* ── 앞면 화면 미리보기 ── */
-              <div style={{ background: `linear-gradient(120deg, #ffffff 0%, #ffffff 74%, ${MINT} 100%)`, position: 'relative', overflow: 'hidden', aspectRatio: '1.586 / 1' }}>
-                <div style={{ position: 'absolute', inset: '9px', border: `1px solid ${NAVY}78` }} />
-                <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: '18px', background: `linear-gradient(180deg, ${NAVY}, ${GREEN})` }} />
-                <div style={{ position: 'absolute', right: 0, top: 0, bottom: 0, width: '6px', background: NAVY }} />
-                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '5px', background: `linear-gradient(90deg, ${NAVY}, ${GREEN}, ${GOLD})` }} />
-                <div style={{ position: 'absolute', right: '116px', top: '20px', bottom: '48px', width: '1px', background: `${NAVY}42` }} />
+              <div style={{ background: cardBackground, position: 'relative', overflow: 'hidden', aspectRatio: '1076 / 650' }}>
+                <div style={{ position: 'absolute', inset: '10px', border: `1px solid ${NAVY}78`, borderRadius: '6px' }} />
+                <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: '13px', background: GREEN }} />
+                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '5px', background: DEEP }} />
+                <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '5px', background: DEEP }} />
+                <MoleculeWatermark style={{ width: '160px', height: '72px', right: '76px', top: '22px' }} />
 
-                <div style={{ padding: '21px 20px 16px 31px', position: 'relative', height: '100%' }}>
-                  <div className="flex justify-between items-start gap-3">
-                    <div style={{ flex: 1, minWidth: 0 }}>
-                      <p style={{ fontSize: '9px', color: NAVY, fontWeight: '900', letterSpacing: '2.8px', textTransform: 'uppercase', marginBottom: '9px' }}>
-                        PHLOROTANNIN PARTNERS
-                      </p>
-                      <h1 style={{ fontSize: screenNameSize, fontWeight: '900', color: NAVY, letterSpacing: screenLetterSp, wordBreak: 'keep-all', overflowWrap: 'break-word', whiteSpace: 'normal', marginBottom: '6px', lineHeight: 1.05 }}>
-                        {partner.name}
-                      </h1>
-                      <p style={{ fontSize: '12px', color: NAVY, fontWeight: '900', letterSpacing: '1.2px', marginBottom: '8px' }}>
-                        플로로탄닌 건강정보 파트너
-                      </p>
-                      <div style={{ width: '58px', height: '2px', marginBottom: '10px', background: `linear-gradient(90deg, ${GOLD}, ${GOLD2})` }} />
-                      <p style={{ fontSize: '12px', color: '#2f4844', lineHeight: '1.65', fontWeight: 700 }}>성분·연구자료를<br />쉽게 연결합니다.</p>
-                      <p style={{ fontSize: '16px', color: NAVY, fontWeight: '900', marginTop: '8px' }}>✆&nbsp; {partner.phoneDisplay}</p>
-                    </div>
-                    <div className="flex flex-col items-center gap-2 flex-shrink-0" style={{ maxWidth: '85px' }}>
-                      <div style={{ border: `2px solid ${NAVY}`, borderRadius: '6px', padding: '4px', background: '#fff', boxShadow: `0 5px 16px ${NAVY}24` }}>
-                        <QRCode url={cardUrl} size={75} />
-                      </div>
-                      <p style={{ fontSize: '8px', color: NAVY, letterSpacing: '1.5px', fontWeight: '800', textTransform: 'uppercase' }}>SCAN ME</p>
-                    </div>
+                <div style={{ position: 'relative', zIndex: 1, height: '100%', padding: '17px 16px 14px 30px', display: 'flex', gap: '13px', alignItems: 'stretch' }}>
+                  <MoleculePhotoPanel small />
+                  <div style={{ flex: 1, minWidth: 0, paddingTop: '4px' }}>
+                    <p style={{ fontSize: '10px', color: GREEN, fontWeight: '900', letterSpacing: '0.08em', marginBottom: '1px' }}>PHLOROTANNIN</p>
+                    <p style={{ fontSize: '8px', color: MUTED, fontWeight: 800, letterSpacing: '0.08em', marginBottom: '12px' }}>PARTNERS</p>
+                    <h1 style={{ fontSize: screenNameSize, fontWeight: '900', color: NAVY, letterSpacing: screenLetterSp, wordBreak: 'keep-all', overflowWrap: 'break-word', whiteSpace: 'normal', marginBottom: '3px', lineHeight: 0.98 }}>
+                      {partner.name}
+                    </h1>
+                    <p style={{ fontSize: '11px', color: NAVY, fontWeight: '900', letterSpacing: '0.02em', marginBottom: '7px', whiteSpace: 'nowrap' }}>
+                      해양 폴리페놀 건강정보 파트너
+                    </p>
+                    <div style={{ width: '82px', height: '2px', marginBottom: '8px', background: `linear-gradient(90deg, ${GOLD}, ${GOLD2})` }} />
+                    <p style={{ fontSize: '10px', color: MUTED, lineHeight: '1.42', fontWeight: 700 }}>성분·연구자료·쉬운 설명을<br />내 파트너 링크로 연결합니다.</p>
+                    <p style={{ fontSize: '13px', color: NAVY, fontWeight: '900', marginTop: '7px', lineHeight: 1 }}>{partner.phoneDisplay}</p>
+                    <p style={{ fontSize: '10px', color: NAVY, fontWeight: 800, marginTop: '4px', letterSpacing: '0.03em' }}>phlorotannin.com</p>
                   </div>
-                  <div className="absolute left-8 right-5 bottom-4">
-                    <div className="flex items-center justify-between" style={{ borderTop: `1px solid ${NAVY}45`, paddingTop: '10px' }}>
-                      <span style={{ fontSize: '10px', color: NAVY, letterSpacing: '1.4px', fontWeight: '900' }}>phlorotannin.com</span>
-                      <span style={{ fontSize: '10px', color: NAVY, fontWeight: 700 }}>탭하면 뒷면</span>
+                  <div className="flex flex-col items-center flex-shrink-0" style={{ width: '78px', paddingTop: '16px' }}>
+                    <div style={{ border: `1.5px solid ${NAVY}`, borderRadius: '8px', padding: '5px', background: '#fff', boxShadow: `0 8px 18px ${NAVY}20` }}>
+                      <QRCode url={cardUrl} size={62} />
                     </div>
+                    <p style={{ fontSize: '8px', color: NAVY, letterSpacing: '0.12em', fontWeight: '900', textTransform: 'uppercase', marginTop: '7px' }}>SCAN</p>
                   </div>
                 </div>
               </div>
@@ -752,45 +877,34 @@ export default function BusinessCardPage() {
             ) : (
 
               /* ── 뒷면 화면 미리보기 ── */
-              <div style={{ background: cardBackground, position: 'relative', overflow: 'hidden', aspectRatio: '1.586 / 1' }}>
-                <div style={{ position: 'absolute', inset: '9px', border: `1px solid ${NAVY}78` }} />
-                <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: '18px', background: `linear-gradient(180deg, ${NAVY}, ${GREEN})` }} />
-                <div style={{ position: 'absolute', right: 0, top: 0, bottom: 0, width: '6px', background: NAVY }} />
-                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '5px', background: `linear-gradient(90deg, ${NAVY}, ${GREEN}, ${GOLD})` }} />
+              <div style={{ background: cardBackground, position: 'relative', overflow: 'hidden', aspectRatio: '1076 / 650' }}>
+                <div style={{ position: 'absolute', inset: '10px', border: `1px solid ${NAVY}78`, borderRadius: '6px' }} />
+                <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: '13px', background: GREEN }} />
+                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '5px', background: DEEP }} />
+                <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '5px', background: DEEP }} />
+                <MoleculeWatermark style={{ width: '230px', height: '98px', right: '78px', top: '22px' }} />
+                <MoleculeWatermark style={{ width: '155px', height: '72px', right: '78px', bottom: '38px', opacity: 0.55 }} />
 
-                <div style={{ padding: '21px 20px 14px 31px', position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
-                  <p style={{ fontSize: '9px', color: NAVY, fontWeight: '900', letterSpacing: '2.8px', textTransform: 'uppercase', marginBottom: '9px' }}>
-                    PHLOROTANNIN PARTNERS
-                  </p>
-
-                  <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) 92px', gap: '12px', alignItems: 'start', minHeight: 0 }}>
-                    {/* 왼쪽 텍스트 */}
-                    <div style={{ flex: 1, minWidth: 0 }}>
-                      <h2 style={{ fontSize: '1.06rem', fontWeight: '900', color: NAVY, lineHeight: 1.22, marginBottom: '8px', letterSpacing: 0 }}>
-                        논문 제목으로 확인하는<br />플로로탄닌 기전
-                      </h2>
-                      <div style={{ width: '54px', height: '2px', marginBottom: '8px', background: `linear-gradient(90deg, ${GOLD}, ${GOLD2})` }} />
-                      <p style={{ fontSize: '11px', color: '#2f4844', lineHeight: '1.55', marginBottom: '8px', fontWeight: 700 }}>
-                        QR을 찍으면 쉬운 설명과<br />파트너 상담 링크가 열립니다.
-                      </p>
-                      <p style={{ fontSize: '13px', color: NAVY, fontWeight: '900', lineHeight: 1.2 }}>{partner.name} 파트너</p>
-                      <p style={{ fontSize: '13px', color: NAVY, fontWeight: '800', marginTop: '3px', lineHeight: 1.2 }}>✆&nbsp; {partner.phoneDisplay}</p>
-                    </div>
-
-                    {/* 오른쪽 QR */}
-                    <div className="flex flex-col items-center gap-2 flex-shrink-0">
-                      <div style={{ border: `2px solid ${NAVY}`, borderRadius: '6px', padding: '4px', background: '#fff', boxShadow: `0 6px 18px ${NAVY}24` }}>
-                        <QRCode url={cardUrl} size={72} />
-                      </div>
-                      <p style={{ fontSize: '8px', color: NAVY, letterSpacing: '1.6px', fontWeight: '800', textTransform: 'uppercase' }}>SCAN ME</p>
-                    </div>
+                <div style={{ position: 'relative', zIndex: 1, height: '100%', padding: '22px 20px 17px 31px', display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) 100px', gap: '14px' }}>
+                  <div style={{ minWidth: 0 }}>
+                    <h2 style={{ fontSize: '1.28rem', fontWeight: '900', color: GREEN, lineHeight: 1.18, marginBottom: '5px', letterSpacing: 0 }}>
+                      QR을 찍으면<br />내 파트너 페이지가 열립니다
+                    </h2>
+                    <div style={{ width: '82px', height: '2px', margin: '10px 0 13px', background: `linear-gradient(90deg, ${GOLD}, ${GOLD2})` }} />
+                    <p style={{ fontSize: '11px', color: NAVY, lineHeight: '1.65', marginBottom: '10px', fontWeight: 800 }}>
+                      1. 쉬운 플로로탄닌 설명<br />2. 블로그·Q&A 자료 연결<br />3. 전화·문자·명함 저장
+                    </p>
+                    <p style={{ fontSize: '13px', color: NAVY, fontWeight: '900', lineHeight: 1.2 }}>{partner.name} 파트너</p>
+                    <p style={{ fontSize: '13px', color: NAVY, fontWeight: '800', marginTop: '3px', lineHeight: 1.2 }}>{partner.phoneDisplay}</p>
+                    <p style={{ fontSize: '8px', color: MUTED, marginTop: '6px', lineHeight: 1.2 }}>{cardUrl.replace('https://', '')}</p>
                   </div>
 
-                  <div style={{ marginTop: 'auto', paddingTop: '10px' }}>
-                    <div className="flex items-center justify-between" style={{ borderTop: `1px solid ${NAVY}45`, paddingTop: '9px' }}>
-                      <span style={{ fontSize: '10px', color: NAVY, letterSpacing: '1.4px', fontWeight: '900' }}>phlorotannin.com</span>
-                      <span style={{ fontSize: '10px', color: '#5f7471', fontWeight: 700 }}>앞면으로</span>
+                  <div className="flex flex-col items-center" style={{ paddingTop: '30px' }}>
+                    <div style={{ border: `1.5px solid ${NAVY}`, borderRadius: '9px', padding: '6px', background: '#fff', boxShadow: `0 7px 18px ${NAVY}20` }}>
+                      <QRCode url={cardUrl} size={82} />
                     </div>
+                    <p style={{ fontSize: '7px', color: NAVY, letterSpacing: '0.12em', fontWeight: '900', textTransform: 'uppercase', marginTop: '6px' }}>SCAN ME</p>
+                    <p style={{ fontSize: '9px', color: NAVY, fontWeight: 800, marginTop: '13px', lineHeight: 1.35, textAlign: 'left', alignSelf: 'stretch' }}>자료 보기 · 상담 연결<br />연락처 저장</p>
                   </div>
                 </div>
               </div>
