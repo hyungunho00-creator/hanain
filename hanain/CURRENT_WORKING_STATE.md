@@ -1,12 +1,12 @@
 # Current Working State
 
-Last verified: 2026-06-04 19:23 KST
+Last verified: 2026-06-04 21:45 KST
 
 Production domain:
 
 - `https://phlorotannin.com`
 - `https://www.phlorotannin.com` redirects to apex
-- Current verified deployment: `https://hanain-auu56odq3-01056528206s-projects.vercel.app`
+- Current verified deployment: `https://hanain-3fepd8c14-01056528206s-projects.vercel.app`
 
 Branch:
 
@@ -39,6 +39,14 @@ What "current" means:
 - `npm run audit:content` now passes with `1918` scanned, `1918` public answers, `0` hidden answers, and `0` failures.
 - Missing Q&A answers now fail the hard validator instead of being silently hidden.
 - Stat cards now render their actual values immediately instead of starting at `0`.
+
+2026-06-04 KST partner business card V2 redesign:
+
+- Updated only `src/pages/BusinessCardPage.jsx` for the production partner card UI.
+- The front/back card now uses a real business-card layout with a molecule-photo style panel, paper texture, QR panel, dynamic partner name, phone, and URL.
+- Preserved the existing partner-specific behavior: slug-based phone changes, QR generation, share flow, vCard save, and business-card-size downloads.
+- Verified `/p/01056528206` locally and on `https://phlorotannin.com` with the new layout visible, dynamic name/phone present, QR rendered, and no browser console errors.
+- Verified `npm run build` and `npm run verify:checkpoint` after deployment.
 
 Content sources:
 
