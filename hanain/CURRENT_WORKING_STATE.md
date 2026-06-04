@@ -1,12 +1,12 @@
 # Current Working State
 
-Last verified: 2026-06-04 21:45 KST
+Last verified: 2026-06-04 22:21 KST
 
 Production domain:
 
 - `https://phlorotannin.com`
 - `https://www.phlorotannin.com` redirects to apex
-- Current verified deployment: `https://hanain-3fepd8c14-01056528206s-projects.vercel.app`
+- Current verified deployment: `https://hanain-f8q9jp8fy-01056528206s-projects.vercel.app`
 
 Branch:
 
@@ -47,6 +47,15 @@ What "current" means:
 - Preserved the existing partner-specific behavior: slug-based phone changes, QR generation, share flow, vCard save, and business-card-size downloads.
 - Verified `/p/01056528206` locally and on `https://phlorotannin.com` with the new layout visible, dynamic name/phone present, QR rendered, and no browser console errors.
 - Verified `npm run build` and `npm run verify:checkpoint` after deployment.
+
+2026-06-04 KST partner business card V3 premium visual refresh:
+
+- Added `/images/phlorotannin/partners/phlorotannin-molecule-luxury-v3.png` as the production molecule-photo visual asset.
+- Updated `src/pages/BusinessCardPage.jsx` so the first screen, front card, back card, consultation panel, and downloaded front/back PNG share the same premium molecule-photo direction.
+- Kept partner-specific name, phone, QR URL, share, vCard save, SMS/tel links, and business-card-size download behavior intact.
+- Replaced trust copy that looked like soft claims with concrete QR, contact, and research-material signals.
+- Verified local preview and production `/p/01056528206` with dynamic name/phone, QR render, molecule background usage, no browser console errors, and successful card download state.
+- Verified `npm run build`, `npm run verify:checkpoint`, asset `200`, and page `200` after deployment.
 
 Content sources:
 
