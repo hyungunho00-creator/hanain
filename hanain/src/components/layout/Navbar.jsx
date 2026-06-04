@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import { CreditCard, FolderLock, Eye, EyeOff, ExternalLink } from 'lucide-react'
+import { CreditCard, FolderLock, Eye, EyeOff, ExternalLink, Menu, X } from 'lucide-react'
 import { usePartner } from '../../context/PartnerContext'
 import { withRef } from '../../lib/partnerRef'
 
@@ -273,109 +273,22 @@ export default function Navbar() {
               </div>
             </Link>
 
-            {/* 데스크탑 메뉴 — 절제된 톤 */}
-            <div className="hidden md:flex items-center gap-1">
-              {NAV_LINKS.map(link => {
-                const active = basePath === link.path
-                return (
-                  <Link
-                    key={link.path}
-                    to={withRef(link.path, partner)}
-                    className={`relative px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                      active
-                        ? 'text-white'
-                        : 'text-white/60 hover:text-white'
-                    }`}
-                  >
-                    {link.label}
-                    {active && (
-                      <span className="absolute left-3 right-3 -bottom-px h-px bg-white/60" />
-                    )}
-                  </Link>
-                )
-              })}
-
-              {/* 데스크탑 외부 커뮤니티 링크 — 절제된 톤 */}
-              {EXTERNAL_LINKS.map(ext => (
-                <a
-                  key={ext.href}
-                  href={ext.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`ml-1 flex items-center gap-1.5 px-3 py-2 rounded-md text-xs font-medium transition-colors whitespace-nowrap ${ext.desk}`}
-                  title={ext.label}
-                >
-                  <span>{ext.shortLabel}</span>
-                  <ExternalLink className="w-3 h-3 flex-shrink-0 opacity-60" />
-                </a>
-              ))}
-
-              {/* 데스크탑 파트너 버튼들 */}
-              {isPartner && (
-                <>
-                  {/* 자료실 버튼 */}
-                  <button
-                    onClick={handleInfoRoom}
-                    className="ml-1 flex items-center gap-1.5 px-3 py-2 rounded-lg font-bold text-sm transition-all active:scale-95 whitespace-nowrap"
-                    style={{
-                      background: `linear-gradient(135deg, ${TEAL}, ${TEAL2})`,
-                      color: '#fff',
-                      boxShadow: `0 2px 10px rgba(10,126,140,0.45)`,
-                    }}
-                  >
-                    <FolderLock className="w-4 h-4 flex-shrink-0" />
-                    <span>파트너 자료실</span>
-                  </button>
-
-                  {/* 명함 버튼 */}
-                  <button
-                    onClick={() => navigate(cardPath)}
-                    className="ml-1 flex items-center gap-1.5 px-3 py-2 rounded-lg font-bold text-sm transition-all active:scale-95 whitespace-nowrap"
-                    style={{
-                      background: `linear-gradient(135deg, ${GOLD}, ${GOLD2})`,
-                      color: NAVY,
-                      boxShadow: `0 2px 10px ${GOLD}60`,
-                    }}
-                  >
-                    <CreditCard className="w-4 h-4 flex-shrink-0" style={{ color: NAVY }} />
-                    <span style={{ color: NAVY }}>{partner.name} 명함</span>
-                  </button>
-                </>
-              )}
-            </div>
-
-            {/* 모바일 오른쪽: 명함 + 햄버거 */}
-            <div className="md:hidden flex items-center gap-1.5">
-              {isPartner && (
-                <button
-                  onClick={() => navigate(cardPath)}
-                  className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg font-bold text-xs active:scale-95 transition-transform whitespace-nowrap"
-                  style={{
-                    background: `linear-gradient(135deg, ${GOLD}, ${GOLD2})`,
-                    color: NAVY,
-                    boxShadow: `0 2px 6px ${GOLD}50`,
-                  }}
-                >
-                  <CreditCard className="w-3.5 h-3.5 flex-shrink-0" style={{ color: NAVY }} />
-                  <span style={{ color: NAVY, fontSize: '12px', fontWeight: '700' }}>{partner.name}</span>
-                </button>
-              )}
+            {/* 모든 화면 공통: 삼선 메뉴 */}
+            <div className="flex items-center gap-2 flex-shrink-0">
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="flex items-center gap-1 text-white px-2.5 py-1.5 rounded-lg hover:bg-white/10 transition-colors"
+                aria-expanded={isOpen}
+                aria-controls="site-menu-panel"
+                className="flex items-center gap-2 text-white px-3.5 py-2 rounded-xl border border-white/15 bg-white/5 hover:bg-white/10 transition-colors"
               >
                 {isOpen ? (
                   <>
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                    </svg>
+                    <X className="w-5 h-5" />
                     <span className="text-sm font-bold">닫기</span>
                   </>
                 ) : (
                   <>
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
+                    <Menu className="w-5 h-5" />
                     <span className="text-sm font-bold">메뉴</span>
                   </>
                 )}
@@ -385,104 +298,105 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* 모바일 드롭다운 — 화면 높이 내 스크롤 가능 + 컴팩트 레이아웃 */}
+        {/* 공통 메뉴 패널 — PC도 모바일처럼 모든 항목을 삼선 메뉴 안에 수납 */}
         {isOpen && (
           <div
-            className="md:hidden bg-gray-900 border-t border-white/10 overflow-y-auto overscroll-contain"
+            id="site-menu-panel"
+            className="bg-gray-900/98 border-t border-white/10 overflow-y-auto overscroll-contain shadow-2xl"
             style={{ maxHeight: 'calc(100vh - 64px)' }}
           >
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 md:py-5">
+              <div className={`grid gap-4 ${isPartner ? 'md:grid-cols-[minmax(240px,0.9fr)_minmax(0,1.7fr)_minmax(220px,0.8fr)]' : 'md:grid-cols-[minmax(0,1.8fr)_minmax(220px,0.8fr)]'}`}>
+                {isPartner && (
+                  <section className="rounded-2xl border border-white/10 bg-white/[0.04] p-3 md:p-4">
+                    <p className="text-[10px] text-white/45 font-medium uppercase tracking-[0.18em] pb-3">
+                      파트너 도구
+                    </p>
+                    <div className="grid gap-2">
+                      <button
+                        onClick={() => { navigate(cardPath); setIsOpen(false) }}
+                        className="w-full flex items-center gap-2 px-3 py-2.5 rounded-xl font-bold active:scale-95 transition-transform text-left"
+                        style={{
+                          background: `linear-gradient(135deg, ${GOLD}, ${GOLD2})`,
+                          color: NAVY,
+                          boxShadow: `0 2px 8px ${GOLD}40`,
+                        }}
+                      >
+                        <CreditCard className="w-4 h-4 flex-shrink-0" style={{ color: NAVY }} />
+                        <span style={{ fontSize: '14px', fontWeight: '900', color: NAVY }}>
+                          {partner.name} 전자명함
+                        </span>
+                      </button>
 
-            {/* 파트너 전용 버튼들 — 컴팩트 버전 */}
-            {isPartner && (
-              <div className="px-4 pt-3 flex flex-col gap-1.5">
-                {/* 전자명함 */}
-                <button
-                  onClick={() => { navigate(cardPath); setIsOpen(false) }}
-                  className="w-full flex items-center gap-2 px-3 py-2.5 rounded-lg font-bold active:scale-95 transition-transform"
-                  style={{
-                    background: `linear-gradient(135deg, ${GOLD}, ${GOLD2})`,
-                    color: NAVY,
-                    boxShadow: `0 2px 8px ${GOLD}40`,
-                  }}
-                >
-                  <CreditCard className="w-4 h-4 flex-shrink-0" style={{ color: NAVY }} />
-                  <span style={{ fontSize: '14px', fontWeight: '900', color: NAVY }}>
-                    {partner.name} 전자명함
-                  </span>
-                </button>
+                      <button
+                        onClick={handleInfoRoom}
+                        className="w-full flex items-center gap-2 px-3 py-2.5 rounded-xl font-bold active:scale-95 transition-transform text-left"
+                        style={{
+                          background: `linear-gradient(135deg, ${TEAL}, ${TEAL2})`,
+                          color: '#fff',
+                          boxShadow: '0 2px 8px rgba(10,126,140,0.35)',
+                        }}
+                      >
+                        <FolderLock className="w-4 h-4 flex-shrink-0" />
+                        <span style={{ fontSize: '14px', fontWeight: '900', color: '#fff' }}>
+                          파트너 전용 자료실
+                        </span>
+                      </button>
+                    </div>
+                  </section>
+                )}
 
-                {/* 파트너 자료실 */}
-                <button
-                  onClick={handleInfoRoom}
-                  className="w-full flex items-center gap-2 px-3 py-2.5 rounded-lg font-bold active:scale-95 transition-transform"
-                  style={{
-                    background: `linear-gradient(135deg, ${TEAL}, ${TEAL2})`,
-                    color: '#fff',
-                    boxShadow: '0 2px 8px rgba(10,126,140,0.35)',
-                  }}
-                >
-                  <FolderLock className="w-4 h-4 flex-shrink-0" />
-                  <span style={{ fontSize: '14px', fontWeight: '900', color: '#fff' }}>
-                     파트너 전용 자료실
-                  </span>
-                </button>
+                <section className="rounded-2xl border border-white/10 bg-white/[0.035] p-3 md:p-4">
+                  <p className="text-[10px] text-white/45 font-medium uppercase tracking-[0.18em] pb-3">
+                    카테고리
+                  </p>
+                  <div className="grid gap-1 md:grid-cols-2 lg:grid-cols-3">
+                    {NAV_LINKS.map(link => {
+                      const active = basePath === link.path
+                      return (
+                        <Link
+                          key={link.path}
+                          to={withRef(link.path, partner)}
+                          className={`flex items-center gap-3 px-3 py-3 rounded-xl text-sm transition-colors border ${
+                            active
+                              ? 'border-white/20 text-white bg-white/10'
+                              : 'border-transparent text-white/70 hover:text-white hover:bg-white/[0.06]'
+                          }`}
+                        >
+                          <span className={`font-mono text-xs tracking-wider flex-shrink-0 ${
+                            active ? 'text-white/80' : 'text-white/30'
+                          }`}>
+                            {link.num}
+                          </span>
+                          <span className="font-medium">{link.label}</span>
+                        </Link>
+                      )
+                    })}
+                  </div>
+                </section>
+
+                <section className="rounded-2xl border border-white/10 bg-white/[0.035] p-3 md:p-4">
+                  <p className="text-[10px] text-white/45 font-medium uppercase tracking-[0.18em] pb-3">
+                    커뮤니티
+                  </p>
+                  <div className="grid grid-cols-2 gap-2 md:grid-cols-1">
+                    {EXTERNAL_LINKS.map(ext => (
+                      <a
+                        key={ext.href}
+                        href={ext.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => setIsOpen(false)}
+                        className={`flex items-center justify-between gap-2 px-3 py-2.5 rounded-xl text-xs transition-colors ${ext.mob}`}
+                      >
+                        <span className="font-medium truncate">{ext.shortLabel}</span>
+                        <ExternalLink className="w-3 h-3 flex-shrink-0 opacity-50" />
+                      </a>
+                    ))}
+                  </div>
+                </section>
               </div>
-            )}
-
-            {/* 섹션 라벨 — 절제된 톤 */}
-            <div className="px-4 pt-4 pb-2">
-              <p className="text-[10px] text-white/40 font-medium uppercase tracking-[0.18em]">
-                Contents
-              </p>
             </div>
-
-            <div className="px-4 pb-3 space-y-px">
-              {NAV_LINKS.map(link => {
-                const active = basePath === link.path
-                return (
-                  <Link
-                    key={link.path}
-                    to={withRef(link.path, partner)}
-                    className={`flex items-center gap-4 px-3 py-3 rounded-md text-sm transition-colors border-l-2 ${
-                      active
-                        ? 'border-white/70 text-white bg-white/5'
-                        : 'border-transparent text-white/70 hover:text-white hover:bg-white/[0.04]'
-                    }`}
-                  >
-                    <span className={`font-mono text-xs tracking-wider flex-shrink-0 ${
-                      active ? 'text-white/80' : 'text-white/30'
-                    }`}>
-                      {link.num}
-                    </span>
-                    <span className="font-medium">{link.label}</span>
-                  </Link>
-                )
-              })}
-            </div>
-
-            {/* 외부 커뮤니티 — 절제된 다크 톤, 통일 */}
-            <div className="px-4 pt-2 pb-1 border-t border-white/5">
-              <p className="text-[10px] text-white/40 font-medium uppercase tracking-[0.18em] pt-3 pb-2">
-                Community
-              </p>
-              <div className="grid grid-cols-2 gap-2">
-                {EXTERNAL_LINKS.map(ext => (
-                  <a
-                    key={ext.href}
-                    href={ext.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => setIsOpen(false)}
-                    className={`flex items-center justify-between gap-2 px-3 py-2.5 rounded-md text-xs transition-colors ${ext.mob}`}
-                  >
-                    <span className="font-medium truncate">{ext.shortLabel}</span>
-                    <ExternalLink className="w-3 h-3 flex-shrink-0 opacity-50" />
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            <div className="px-4 pb-4"></div>
           </div>
         )}
       </nav>
