@@ -11,7 +11,7 @@ const posts = [
     meta_title: '인지검사 전 뇌 건강 기록법 | brain 건강정보 | 플로로탄닌',
     meta_desc:
       '기억력 저하나 집중력 변화가 걱정될 때 수면, 복용약, 기분, 일상 기능, 가족 관찰, 인지검사 전 질문을 어떻게 기록할지 NIA와 MedlinePlus 자료 기반으로 정리했습니다.',
-    og_image: '/og/content-quality/cognitive-testing-sleep-medicine-brain-record-2026.png',
+    og_image: '/og/content-quality/cognitive-testing-sleep-medicine-brain-record-2026.jpg',
     image_alt:
       '밝은 진료실 책상 위 뇌 영상이 보이는 태블릿, 빈 증상 기록 노트, 안경, 약 정리함, 수면 추적 시계가 놓인 인지검사 준비 이미지',
     tags: ['뇌건강', '인지검사', '기억력', '수면기록', '복용약', '일상기능', 'NIA', 'MedlinePlus'],
@@ -81,7 +81,7 @@ const posts = [
     meta_title: '염증 flare 증상 기록법 | inflammation 건강정보 | 플로로탄닌',
     meta_desc:
       '붓기, 열감, 통증, 피로, 발열, 자가면역 의심 증상이 있을 때 부위, 기간, 유발요인, 검사 결과, 병원 연락 기준을 어떻게 기록할지 NIEHS, NIAMS, MedlinePlus 자료 기반으로 정리했습니다.',
-    og_image: '/og/content-quality/inflammation-flare-trigger-symptom-record-2026.png',
+    og_image: '/og/content-quality/inflammation-flare-trigger-symptom-record-2026.jpg',
     image_alt:
       '밝은 책상 위 빈 신체 증상 기록지, 색 점 스티커, 체온계, 물컵, 얼음주머니, 라벨 없는 약병이 놓인 염증 증상 기록 이미지',
     tags: ['염증', 'flare', '자가면역', '붓기', '열감', '증상기록', 'NIH', 'MedlinePlus'],
@@ -153,7 +153,7 @@ flare라는 말은 증상이 갑자기 심해지는 시기를 뜻하는 데 자�
     meta_title: '건강 연구 기사 근거 기록법 | research 건강정보 | 플로로탄닌',
     meta_desc:
       '건강 연구 뉴스와 임상시험 자료를 읽을 때 연구설계, 비교군, 무작위배정, 결과 지표, 사람 수, 한계, 이해상충, 적용 대상을 어떻게 기록할지 NIH, ClinicalTrials.gov, FDA 자료 기반으로 정리했습니다.',
-    og_image: '/og/content-quality/clinical-study-headline-evidence-record-2026.png',
+    og_image: '/og/content-quality/clinical-study-headline-evidence-record-2026.jpg',
     image_alt:
       '밝은 연구 책상 위 흐릿한 차트가 있는 논문 묶음, 태블릿의 추상 임상시험 타임라인, 돋보기, 펜, 빈 메모지가 놓인 연구 근거 확인 이미지',
     tags: ['연구', '임상시험', '근거읽기', '비교군', '무작위배정', '결과지표', 'NIH', 'FDA'],
