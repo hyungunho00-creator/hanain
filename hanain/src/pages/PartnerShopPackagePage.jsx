@@ -51,6 +51,14 @@ const summaryItems = [
   '운영 상담 가능',
 ]
 
+const flyerSupportCards = [
+  ['부가수익 구조', '660만 원 도입 후 공급가 기준 약 1,200만 원 매출 구조', '마진 약 50%'],
+  ['전용 웹페이지', '샵 소개와 상담 안내가 담긴 전용 페이지 세팅', ''],
+  ['지역 검색 구조', '지역명 + 샵명 + 상담 키워드 중심으로 기본 구조 세팅', ''],
+  ['초기 운영 자료', '블로그, 카페, 인스타에 올릴 기본 방향 안내', ''],
+  ['운영 상담 가능', '직접 운영이 어려우면 방향 상담과 운영 도움 가능', ''],
+]
+
 const revenueSteps = [
   ['방문', '고객이 관리받으러 옵니다.'],
   ['상담', '현재 고민과 관리 목적을 듣습니다.'],
@@ -400,13 +408,13 @@ function drawPriceStrip(ctx, x, y, w) {
   ctx.textAlign = 'left'
 }
 
-function drawFooterBand(ctx, text) {
-  fillRound(ctx, 46, 1028, 702, 64, 18, FLYER.green, FLYER.gold, 2)
+function drawFooterBand(ctx, text, y = 1028, h = 64, fontSize = 25) {
+  fillRound(ctx, 46, y, 702, h, 18, FLYER.green, FLYER.gold, 2)
   ctx.fillStyle = FLYER.gold
-  ctx.font = canvasFont(25, 900)
+  ctx.font = canvasFont(fontSize, 900)
   ctx.textBaseline = 'middle'
   ctx.textAlign = 'center'
-  ctx.fillText(text, 397, 1060)
+  ctx.fillText(text, 397, y + h / 2)
   ctx.textAlign = 'left'
 }
 
@@ -423,12 +431,14 @@ async function drawShopFlyerPage1({ scale = 2 } = {}) {
   ctx.fillText('이런 샵·센터에 특히 추천합니다', 56, 104)
 
   ctx.fillStyle = FLYER.green
-  ctx.font = canvasFont(49, 900)
-  drawCanvasText(ctx, '제품만 공급받는 시대는 끝났습니다', 56, 148, 380, 57, { maxLines: 2 })
+  ctx.font = canvasFont(48, 900)
+  ctx.fillText('제품만 공급받는', 56, 148)
+  ctx.fillText('시대는 끝났습니다', 56, 205)
 
   ctx.fillStyle = FLYER.text
-  ctx.font = canvasFont(22, 900)
-  drawCanvasText(ctx, '이제는 수익이 남고, 검색에 보이고, 고객에게 신뢰받는 구조까지 함께 가져가야 합니다.', 56, 272, 392, 31, { maxLines: 2 })
+  ctx.font = canvasFont(20, 900)
+  ctx.fillText('이제는 수익이 남고, 검색에 보이고,', 56, 274)
+  ctx.fillText('고객에게 신뢰받는 구조까지 가져가야 합니다.', 56, 303)
 
   drawPriceStrip(ctx, 54, 362, 688)
 
@@ -503,10 +513,10 @@ async function drawShopFlyerPage2({ contactName, phoneDisplay, pageUrl, scale = 
   ctx.font = canvasFont(25, 900)
   ctx.fillText('좋은 제품 + 검색되는 시스템 + 초기 운영 지원까지', 54, 184)
 
-  const cardW = 132
-  supportCards.forEach(([title, body, note], index) => {
-    const x = 48 + index * 143
-    fillRound(ctx, x, 244, cardW, 238, 16, '#ffffff', index === 0 ? FLYER.gold2 : '#E5D4B6', index === 0 ? 2.5 : 1.5)
+  const cardW = 130
+  flyerSupportCards.forEach(([title, body, note], index) => {
+    const x = 50 + index * 139
+    fillRound(ctx, x, 236, cardW, 252, 16, '#ffffff', index === 0 ? FLYER.gold2 : '#E5D4B6', index === 0 ? 2.5 : 1.5)
     fillRound(ctx, x + 41, 262, 50, 50, 25, index === 0 ? FLYER.gold2 : FLYER.green)
     ctx.fillStyle = '#ffffff'
     ctx.font = canvasFont(22, 900)
@@ -515,90 +525,93 @@ async function drawShopFlyerPage2({ contactName, phoneDisplay, pageUrl, scale = 
     ctx.fillText(String(index + 1).padStart(2, '0'), x + 66, 287)
     ctx.textBaseline = 'top'
     ctx.fillStyle = FLYER.green
-    ctx.font = canvasFont(19, 900)
-    drawCanvasText(ctx, title, x + 66, 324, 108, 25, { align: 'center', maxLines: 2 })
+    ctx.font = canvasFont(18, 900)
+    drawCanvasText(ctx, title, x + 65, 324, 104, 24, { align: 'center', maxLines: 2 })
     ctx.fillStyle = FLYER.sub
-    ctx.font = canvasFont(13, 800)
-    drawCanvasText(ctx, body, x + 15, 382, 102, 19, { maxLines: note ? 4 : 5 })
+    ctx.font = canvasFont(12, 800)
+    drawCanvasText(ctx, body, x + 14, 376, 102, 18, { maxLines: 4 })
     if (note) {
-      fillRound(ctx, x, 424, cardW, 58, 0, FLYER.gold2)
+      fillRound(ctx, x + 8, 438, cardW - 16, 44, 10, FLYER.gold2)
       ctx.fillStyle = '#ffffff'
-      ctx.font = canvasFont(26, 900)
+      ctx.font = canvasFont(20, 900)
       ctx.textAlign = 'center'
-      ctx.fillText(note, x + cardW / 2, 440)
+      ctx.textBaseline = 'middle'
+      ctx.fillText(note, x + cardW / 2, 460)
     }
     ctx.textAlign = 'left'
   })
 
-  fillRound(ctx, 54, 512, 688, 66, 16, FLYER.green, FLYER.gold, 2)
+  fillRound(ctx, 54, 516, 688, 58, 16, FLYER.green, FLYER.gold, 2)
   ctx.fillStyle = FLYER.gold
-  ctx.font = canvasFont(26, 900)
+  ctx.font = canvasFont(24, 900)
   ctx.textAlign = 'center'
   ctx.textBaseline = 'middle'
   ctx.fillText('이제는 단순 판매가 아니라, 회복을 제안하는 샵이 선택받습니다', 398, 545)
   ctx.textAlign = 'left'
 
   ctx.fillStyle = FLYER.green
-  ctx.font = canvasFont(28, 900)
+  ctx.font = canvasFont(26, 900)
   ctx.textAlign = 'center'
   ctx.textBaseline = 'top'
-  ctx.fillText('파트너가 받는 지원', 397, 606)
+  ctx.fillText('파트너가 받는 지원', 397, 596)
   ctx.textAlign = 'left'
   summaryItems.forEach((item, index) => {
     const x = 58 + index * 139
-    fillRound(ctx, x, 654, 122, 82, 14, '#ffffff', '#E5D4B6', 1.5)
-    drawCheck(ctx, x + 61, 678, 26)
+    fillRound(ctx, x, 642, 122, 78, 14, '#ffffff', '#E5D4B6', 1.5)
+    drawCheck(ctx, x + 61, 665, 25)
     ctx.fillStyle = FLYER.text
     ctx.font = canvasFont(15, 900)
-    drawCanvasText(ctx, item, x + 61, 704, 96, 19, { align: 'center', maxLines: 2 })
+    drawCanvasText(ctx, item, x + 61, 692, 96, 19, { align: 'center', maxLines: 2 })
   })
 
-  fillRound(ctx, 54, 770, 688, 130, 18, '#ffffff', FLYER.gold, 2)
-  ctx.fillStyle = FLYER.green
-  ctx.font = canvasFont(25, 900)
-  ctx.textAlign = 'center'
-  ctx.fillText('샵에서는 이렇게 매출로 연결됩니다', 397, 788)
-  const stepW = 104
-  revenueSteps.forEach(([title, body], index) => {
-    const x = 74 + index * 113
-    fillRound(ctx, x, 836, stepW, 48, 24, index === 3 ? FLYER.gold : FLYER.green)
-    ctx.fillStyle = index === 3 ? FLYER.green : '#ffffff'
-    ctx.font = canvasFont(17, 900)
-    ctx.textBaseline = 'middle'
-    ctx.fillText(title, x + stepW / 2, 860)
-    ctx.fillStyle = FLYER.sub
-    ctx.font = canvasFont(11, 800)
-    ctx.textBaseline = 'top'
-    drawCanvasText(ctx, body, x + stepW / 2, 889, 98, 15, { align: 'center', maxLines: 2 })
-  })
-  ctx.textAlign = 'left'
-
-  fillRound(ctx, 54, 928, 688, 134, 18, '#ffffff', FLYER.green, 3)
+  fillRound(ctx, 54, 742, 688, 128, 18, '#ffffff', FLYER.gold, 2)
   ctx.fillStyle = FLYER.green
   ctx.font = canvasFont(24, 900)
-  drawCanvasText(ctx, '연락주시면 샘플 체험과 자세한 자료로 찾아뵙겠습니다', 78, 952, 425, 32, { maxLines: 2 })
-  fillRound(ctx, 78, 1012, 356, 42, 12, FLYER.green)
+  ctx.textAlign = 'center'
+  ctx.textBaseline = 'top'
+  ctx.fillText('샵에서는 이렇게 매출로 연결됩니다', 397, 760)
+  const stepW = 100
+  revenueSteps.forEach(([title], index) => {
+    const x = 78 + index * 110
+    fillRound(ctx, x, 810, stepW, 42, 21, index === 3 ? FLYER.gold : FLYER.green)
+    ctx.fillStyle = index === 3 ? FLYER.green : '#ffffff'
+    ctx.font = canvasFont(16, 900)
+    ctx.textBaseline = 'middle'
+    ctx.fillText(title, x + stepW / 2, 831)
+  })
+  ctx.fillStyle = FLYER.sub
+  ctx.font = canvasFont(14, 900)
+  ctx.textBaseline = 'top'
+  ctx.fillText('관리 당일 결제로 끝나지 않고, 홈케어와 재방문으로 이어지는 흐름', 397, 858)
+  ctx.textAlign = 'left'
+
+  fillRound(ctx, 54, 900, 688, 146, 18, '#ffffff', FLYER.green, 3)
+  ctx.fillStyle = FLYER.green
+  ctx.font = canvasFont(23, 900)
+  drawCanvasText(ctx, '연락주시면 샘플 체험과 자세한 자료로 찾아뵙겠습니다', 78, 922, 382, 30, { maxLines: 2 })
+  fillRound(ctx, 78, 982, 356, 42, 12, FLYER.green)
   ctx.fillStyle = FLYER.gold
   ctx.font = canvasFont(18, 900)
   ctx.textBaseline = 'middle'
-  ctx.fillText(contactName || '플로로탄닌 파트너스', 98, 1033)
+  ctx.fillText(contactName || '플로로탄닌 파트너스', 98, 1003)
   ctx.fillStyle = '#ffffff'
-  ctx.font = canvasFont(25, 900)
-  ctx.fillText(phoneDisplay || '010-5652-8206', 226, 1032)
+  ctx.font = canvasFont(24, 900)
+  ctx.fillText(phoneDisplay || '010-5652-8206', 226, 1003)
 
-  fillRound(ctx, 466, 944, 120, 120, 12, '#ffffff', FLYER.gold, 2)
-  if (qrImage) ctx.drawImage(qrImage, 476, 954, 100, 100)
+  fillRound(ctx, 466, 916, 118, 118, 12, '#ffffff', FLYER.gold, 2)
+  if (qrImage) ctx.drawImage(qrImage, 476, 926, 98, 98)
   ctx.fillStyle = FLYER.green
   ctx.font = canvasFont(13, 900)
   ctx.textAlign = 'center'
-  ctx.fillText('QR 스캔하면', 646, 966)
-  ctx.fillText('바로 연결', 646, 986)
+  ctx.textBaseline = 'top'
+  ctx.fillText('QR 스캔하면', 646, 928)
+  ctx.fillText('바로 연결', 646, 948)
   ctx.fillStyle = FLYER.sub
   ctx.font = canvasFont(13, 800)
-  drawCanvasText(ctx, '문의가 많아 예약된 순서대로 방문하는 점 양해 바랍니다.', 646, 1010, 150, 18, { align: 'center', maxLines: 2 })
+  drawCanvasText(ctx, '문의가 많아 예약된 순서대로 방문하는 점 양해 바랍니다.', 646, 978, 150, 18, { align: 'center', maxLines: 2 })
   ctx.textAlign = 'left'
 
-  drawFooterBand(ctx, '수익을 더하고, 가치를 높이고, 회복을 전하는 샵 파트너십')
+  drawFooterBand(ctx, '수익을 더하고, 가치를 높이고, 회복을 전하는 샵 파트너십', 1060, 38, 18)
   return canvas
 }
 
