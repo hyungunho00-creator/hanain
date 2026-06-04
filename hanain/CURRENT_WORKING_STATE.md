@@ -1,12 +1,12 @@
 # Current Working State
 
-Last verified: 2026-06-03 19:16 KST
+Last verified: 2026-06-04 19:23 KST
 
 Production domain:
 
 - `https://phlorotannin.com`
 - `https://www.phlorotannin.com` redirects to apex
-- Current verified deployment: `https://hanain-bldeby0aa-01056528206s-projects.vercel.app`
+- Current verified deployment: `https://hanain-auu56odq3-01056528206s-projects.vercel.app`
 
 Branch:
 
@@ -32,9 +32,17 @@ What "current" means:
 - Do not invent fake testimonials. Use clearly labeled shop-owner reaction points or consultation conversation examples instead.
 - Hero asset: `/partner/shop-package/salon-consult-hero.jpg` (generated premium salon consultation photo, compressed JPEG).
 
+2026-06-04 KST exposure constitution amendment:
+
+- Added Article 21 to `AI_BLOG_SEO_CONSTITUTION.md`: constitution-mismatched public data must be repaired and exposed, not hidden.
+- Added `scripts/qa-exposure-constitution-repair.mjs` to the prebuild pipeline.
+- `npm run audit:content` now passes with `1918` scanned, `1918` public answers, `0` hidden answers, and `0` failures.
+- Missing Q&A answers now fail the hard validator instead of being silently hidden.
+- Stat cards now render their actual values immediately instead of starting at `0`.
+
 Content sources:
 
-- Supabase `public.posts`: canonical published blog posts (`620` published current posts).
+- Supabase `public.posts`: canonical published blog posts (`623` published current posts).
 - Local trend posts: `src/data/localTrendBlogPosts.js` + round modules (`60` posts, fallback/seed only).
 - Local functional ingredient posts: `src/data/localFunctionalIngredientPosts.js` (`10` posts, fallback/seed only).
 - Local category posts: `src/data/localCategoryBlogPosts.js` (`20` posts, fallback/seed only).
@@ -63,13 +71,13 @@ Key local posts that must remain available:
 Expected production SEO signals:
 
 - `https://phlorotannin.com/sitemap.xml`
-  - total URLs: `2989`
+  - total URLs: `3096`
   - duplicate URLs: `0`
   - noindex-like URLs inside sitemap: `0`
-  - Q&A detail URLs: `1874`
-  - Q&A tag URLs: `238`
-  - blog detail URLs: `623`
-  - insight detail URLs: `223`
+  - Q&A detail URLs: `1918`
+  - Q&A tag URLs: `252`
+  - blog detail URLs: `654`
+  - insight detail URLs: `241`
 - `/qa?category=cancer_immune`
   - `X-Robots-Tag: noindex,nofollow`
   - canonical: `https://phlorotannin.com/qa`

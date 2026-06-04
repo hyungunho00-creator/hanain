@@ -90,8 +90,9 @@ function main() {
     const status = String(item.qualityStatus || item.quality_status || '').toLowerCase()
     const validatedAnswer = item.validatedAnswer || item.validated_answer || ''
 
-    if (renderable.mode === 'missing_answer') {
+    if (renderable.mode === 'missing' || renderable.mode === 'missing_answer') {
       hiddenCount += 1
+      failures.push(`${item.id}: missing answer must be repaired before public build`)
       if (status && status !== 'missing_answer') {
         warnings.push(`${item.id}: missing answer but qualityStatus=${status}`)
       }

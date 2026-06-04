@@ -8,7 +8,7 @@
  *   <StatCard value="27" suffix="%" label="공복 혈당 감소" source="Kang 2016" trend="down" />
  *   <StatCard value="1,361" label="검증된 Q&A" />
  */
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export default function StatCard({
   value,
@@ -21,45 +21,14 @@ export default function StatCard({
   className = '',
   animate = true,
 }) {
-  const [displayValue, setDisplayValue] = useState(animate ? 0 : parseNumber(value))
-  const ref = useRef(null)
   const target = parseNumber(value)
   const isNumeric = !isNaN(target) && isFinite(target)
+  const [displayValue, setDisplayValue] = useState(() => (isNumeric ? target : value))
 
   useEffect(() => {
-    if (!animate || !isNumeric) {
-      setDisplayValue(target)
-      return
-    }
-    const prefersReduce = typeof window !== 'undefined' &&
-      window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
-    if (prefersReduce) { setDisplayValue(target); return }
-
-    const node = ref.current
-    if (!node) { setDisplayValue(target); return }
-
-    let started = false
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !started) {
-          started = true
-          const duration = 1400
-          const startTime = performance.now()
-          const tick = (now) => {
-            const t = Math.min((now - startTime) / duration, 1)
-            const eased = 1 - Math.pow(1 - t, 3) // easeOutCubic
-            setDisplayValue(target * eased)
-            if (t < 1) requestAnimationFrame(tick)
-            else setDisplayValue(target)
-          }
-          requestAnimationFrame(tick)
-        }
-      },
-      { threshold: 0.4 }
-    )
-    observer.observe(node)
-    return () => observer.disconnect()
-  }, [target, animate, isNumeric])
+    // Production counters must expose the real value immediately.
+    setDisplayValue(isNumeric ? target : value)
+  }, [target, value, animate, isNumeric])
 
   const formatted = isNumeric
     ? (Number.isInteger(target) ? Math.round(displayValue).toLocaleString() : displayValue.toFixed(1))
@@ -70,7 +39,7 @@ export default function StatCard({
 
   if (variant === 'compact') {
     return (
-      <div ref={ref} className={`flex items-baseline gap-2 ${className}`}>
+      <div className={`flex items-baseline gap-2 ${className}`}>
         <span className={`text-xl font-extrabold tabular-nums ${trendColor}`}>
           {prefix}{formatted}{suffix}
         </span>
@@ -84,7 +53,7 @@ export default function StatCard({
     : 'lab-card'
 
   return (
-    <div ref={ref} className={`${cardClass} ${className}`}>
+    <div className={`${cardClass} ${className}`}>
       <div className="flex items-baseline gap-2 mb-1">
         {trendIcon && <span className={trendColor}>{trendIcon}</span>}
         <span className={`lab-stat-value ${trendColor}`}>

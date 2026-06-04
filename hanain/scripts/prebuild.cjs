@@ -28,6 +28,11 @@ function handleStep(name, result) {
   console.warn(`[prebuild] ${name} failed but continuing (non-strict mode)`);
 }
 
+const exposureRepair = run(process.execPath, [path.join('scripts', 'qa-exposure-constitution-repair.mjs')]);
+if (exposureRepair.error || exposureRepair.status !== 0) {
+  process.exit(exposureRepair.status || 1);
+}
+
 const audit = run(process.execPath, [path.join('scripts', 'audit_reader_content.cjs')]);
 handleStep('audit_reader_content', audit);
 
