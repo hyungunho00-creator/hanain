@@ -1,11 +1,11 @@
 {
   "min_tag_count": 5,
-  "total_questions": 1936,
-  "total_unique_tags": 2361,
-  "page_eligible_tags": 260,
+  "total_questions": 1939,
+  "total_unique_tags": 2370,
+  "page_eligible_tags": 262,
   "tags": {
     "플로로탄닌": {
-      "count": 1386,
+      "count": 1389,
       "qids": [
         "cardio-001",
         "cardio-002",
@@ -1392,7 +1392,10 @@
         "strategic-qa-womens-urinary-incontinence-bladder-diary-caffeine-uti-record-20260605",
         "strategic-qa-hair-oral-minoxidil-edema-heart-rate-blood-pressure-record-20260605",
         "strategic-qa-mens-peyronies-curvature-plaque-pain-erection-record-20260605",
-        "strategic-qa-respiratory-long-covid-cough-dyspnea-oximeter-exertion-record-20260605"
+        "strategic-qa-respiratory-long-covid-cough-dyspnea-oximeter-exertion-record-20260605",
+        "strategic-qa-hair-scalp-psoriasis-scale-itch-temporary-shedding-record-20260605",
+        "strategic-qa-womens-dense-breast-mammogram-notification-risk-supplemental-screening-record-20260605",
+        "strategic-qa-infection-mpox-rash-exposure-jynneos-testing-isolation-record-20260605"
       ]
     },
     "감태": {
@@ -6718,7 +6721,7 @@
       ]
     },
     "여성건강": {
-      "count": 48,
+      "count": 49,
       "qids": [
         "woms-001",
         "woms-005",
@@ -6767,7 +6770,8 @@
         "strategic-qa-womens-menopause-ht-label-hotflash-sleep-phlorotannin-20260605",
         "strategic-qa-womens-fibroid-heavy-bleeding-anemia-iron-record-20260605",
         "strategic-qa-womens-pelvic-organ-prolapse-urinary-leakage-constipation-record-20260605",
-        "strategic-qa-womens-urinary-incontinence-bladder-diary-caffeine-uti-record-20260605"
+        "strategic-qa-womens-urinary-incontinence-bladder-diary-caffeine-uti-record-20260605",
+        "strategic-qa-womens-dense-breast-mammogram-notification-risk-supplemental-screening-record-20260605"
       ]
     },
     "남성건강": {
@@ -9426,6 +9430,18 @@
         "trend-neuro-long-covid-brain-fog-memory-record-20260604"
       ]
     },
+    "비듬": {
+      "count": 7,
+      "qids": [
+        "skin-006",
+        "infect-extra-052",
+        "sh_106",
+        "round3-hair-2-20260531",
+        "trend-scalp-psoriasis-dandruff-silver-scale-hair-loss-record-20260604",
+        "strategic-qa-hair-scalp-itch-scale-psoriasis-tinea-scarring-record-20260605",
+        "strategic-qa-hair-scalp-psoriasis-scale-itch-temporary-shedding-record-20260605"
+      ]
+    },
     "수면무호흡": {
       "count": 7,
       "qids": [
@@ -9765,17 +9781,6 @@
         "qa200-20260527-199"
       ]
     },
-    "비듬": {
-      "count": 6,
-      "qids": [
-        "skin-006",
-        "infect-extra-052",
-        "sh_106",
-        "round3-hair-2-20260531",
-        "trend-scalp-psoriasis-dandruff-silver-scale-hair-loss-record-20260604",
-        "strategic-qa-hair-scalp-itch-scale-psoriasis-tinea-scarring-record-20260605"
-      ]
-    },
     "비만": {
       "count": 6,
       "qids": [
@@ -10034,6 +10039,16 @@
         "mental-102"
       ]
     },
+    "가려움": {
+      "count": 5,
+      "qids": [
+        "sh_014",
+        "sh_096",
+        "round2-skin-20260530",
+        "trend-skin-atopic-dermatitis-moisturizer-steroid-fear-record-20260604",
+        "strategic-qa-hair-scalp-psoriasis-scale-itch-temporary-shedding-record-20260605"
+      ]
+    },
     "감염예방": {
       "count": 5,
       "qids": [
@@ -10062,6 +10077,16 @@
         "qa200-20260527-092",
         "qa200-20260527-121",
         "qa200-20260527-184"
+      ]
+    },
+    "건선": {
+      "count": 5,
+      "qids": [
+        "skin-007",
+        "infect-extra-037",
+        "infect-012",
+        "sh_137",
+        "strategic-qa-hair-scalp-psoriasis-scale-itch-temporary-shedding-record-20260605"
       ]
     },
     "골반저근": {
@@ -12421,7 +12446,10 @@
     "strategic-qa-womens-urinary-incontinence-bladder-diary-caffeine-uti-record-20260605": "기침할-때-소변이-새거나-갑자기-참기-어려우면-요실금-유형과-방광일지는-어떻게-기록하나요",
     "strategic-qa-hair-oral-minoxidil-edema-heart-rate-blood-pressure-record-20260605": "저용량-경구-미녹시딜을-탈모로-상담할-때-부종심박혈압다모증-기록은-어떻게-준비하나요",
     "strategic-qa-mens-peyronies-curvature-plaque-pain-erection-record-20260605": "음경이-휘고-발기-통증이나-단단한-판이-만져질-때-페이로니병-상담-기록은-어떻게-준비하나요",
-    "strategic-qa-respiratory-long-covid-cough-dyspnea-oximeter-exertion-record-20260605": "코로나-이후-기침과-숨참이-오래가면-롱코비드인지-산소포화도운동-후-악화-기록은-어떻게-준비하나요"
+    "strategic-qa-respiratory-long-covid-cough-dyspnea-oximeter-exertion-record-20260605": "코로나-이후-기침과-숨참이-오래가면-롱코비드인지-산소포화도운동-후-악화-기록은-어떻게-준비하나요",
+    "strategic-qa-hair-scalp-psoriasis-scale-itch-temporary-shedding-record-20260605": "두피-건선처럼-비늘가려움출혈과-탈모가-같이-보이면-어떤-기록을-준비하나요",
+    "strategic-qa-womens-dense-breast-mammogram-notification-risk-supplemental-screening-record-20260605": "유방촬영-결과에서-치밀유방이라고-나오면-추가-초음파MRI-상담-기록은-어떻게-준비하나요",
+    "strategic-qa-infection-mpox-rash-exposure-jynneos-testing-isolation-record-20260605": "엠폭스-의심-발진이나-노출이-있으면-검사격리JYNNEOS-백신-상담-기록은-어떻게-준비하나요"
   },
-  "generated_at": "2026-06-05T09:24:03.867377+00:00"
+  "generated_at": "2026-06-05T12:14:04.161764+00:00"
 }
