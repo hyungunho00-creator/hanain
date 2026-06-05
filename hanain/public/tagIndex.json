@@ -1,11 +1,11 @@
 {
   "min_tag_count": 5,
-  "total_questions": 1924,
-  "total_unique_tags": 2333,
-  "page_eligible_tags": 258,
+  "total_questions": 1927,
+  "total_unique_tags": 2336,
+  "page_eligible_tags": 260,
   "tags": {
     "플로로탄닌": {
-      "count": 1374,
+      "count": 1377,
       "qids": [
         "cardio-001",
         "cardio-002",
@@ -1380,7 +1380,10 @@
         "strategic-qa-womens-menopause-ht-label-hotflash-sleep-phlorotannin-20260605",
         "strategic-qa-hair-scalp-itch-scale-psoriasis-tinea-scarring-record-20260605",
         "strategic-qa-mens-hpv-vaccine-oropharyngeal-cancer-neck-node-record-20260605",
-        "strategic-qa-womens-fibroid-heavy-bleeding-anemia-iron-record-20260605"
+        "strategic-qa-womens-fibroid-heavy-bleeding-anemia-iron-record-20260605",
+        "strategic-qa-hair-thyroid-iron-brittle-nails-protein-record-20260605",
+        "strategic-qa-mens-bph-nocturia-sleep-diuretic-glucose-record-20260605",
+        "strategic-qa-womens-pelvic-organ-prolapse-urinary-leakage-constipation-record-20260605"
       ]
     },
     "감태": {
@@ -6281,6 +6284,75 @@
         "dg_089"
       ]
     },
+    "혈당": {
+      "count": 64,
+      "qids": [
+        "meta-001",
+        "meta-002",
+        "meta-010",
+        "meta-015",
+        "meta-020",
+        "meta_021",
+        "meta_022",
+        "meta_025",
+        "meta_029",
+        "meta_030",
+        "meta_031",
+        "meta_032",
+        "meta_033",
+        "meta_035",
+        "meta_036",
+        "meta_039",
+        "meta_041",
+        "meta_042",
+        "meta_045",
+        "meta_047",
+        "meta_051",
+        "meta_053",
+        "meta_054",
+        "meta_055",
+        "meta_056",
+        "meta_059",
+        "meta_060",
+        "meta_061",
+        "meta_062",
+        "meta_063",
+        "meta_065",
+        "meta_067",
+        "meta_069",
+        "meta_070",
+        "meta_071",
+        "meta_074",
+        "meta_075",
+        "meta_079",
+        "meta_080",
+        "meta_081",
+        "meta_082",
+        "meta_084",
+        "meta_088",
+        "meta_090",
+        "meta_091",
+        "meta_092",
+        "meta_095",
+        "meta_096",
+        "meta_097",
+        "meta_098",
+        "meta_100",
+        "cancer-015",
+        "dige-020",
+        "ingr-016",
+        "qa200-20260527-020",
+        "qa200-20260527-186",
+        "trendqa-neuro-20260530",
+        "round2-neuro-cognitive-20260530",
+        "trend-ultra-processed-food-blood-sugar-label-20260602",
+        "trend-time-restricted-eating-evening-meal-20260602",
+        "trend-berberine-blood-sugar-drug-interaction-20260602",
+        "trend-erectile-dysfunction-cardiovascular-risk-20260602",
+        "strategic-qa-mens-ed-cardiovascular-bp-glucose-phlorotannin-20260605",
+        "strategic-qa-mens-bph-nocturia-sleep-diuretic-glucose-record-20260605"
+      ]
+    },
     "뇌": {
       "count": 63,
       "qids": [
@@ -6347,74 +6419,6 @@
         "nc_090",
         "nc_092",
         "mental-009"
-      ]
-    },
-    "혈당": {
-      "count": 63,
-      "qids": [
-        "meta-001",
-        "meta-002",
-        "meta-010",
-        "meta-015",
-        "meta-020",
-        "meta_021",
-        "meta_022",
-        "meta_025",
-        "meta_029",
-        "meta_030",
-        "meta_031",
-        "meta_032",
-        "meta_033",
-        "meta_035",
-        "meta_036",
-        "meta_039",
-        "meta_041",
-        "meta_042",
-        "meta_045",
-        "meta_047",
-        "meta_051",
-        "meta_053",
-        "meta_054",
-        "meta_055",
-        "meta_056",
-        "meta_059",
-        "meta_060",
-        "meta_061",
-        "meta_062",
-        "meta_063",
-        "meta_065",
-        "meta_067",
-        "meta_069",
-        "meta_070",
-        "meta_071",
-        "meta_074",
-        "meta_075",
-        "meta_079",
-        "meta_080",
-        "meta_081",
-        "meta_082",
-        "meta_084",
-        "meta_088",
-        "meta_090",
-        "meta_091",
-        "meta_092",
-        "meta_095",
-        "meta_096",
-        "meta_097",
-        "meta_098",
-        "meta_100",
-        "cancer-015",
-        "dige-020",
-        "ingr-016",
-        "qa200-20260527-020",
-        "qa200-20260527-186",
-        "trendqa-neuro-20260530",
-        "round2-neuro-cognitive-20260530",
-        "trend-ultra-processed-food-blood-sugar-label-20260602",
-        "trend-time-restricted-eating-evening-meal-20260602",
-        "trend-berberine-blood-sugar-drug-interaction-20260602",
-        "trend-erectile-dysfunction-cardiovascular-risk-20260602",
-        "strategic-qa-mens-ed-cardiovascular-bp-glucose-phlorotannin-20260605"
       ]
     },
     "관절": {
@@ -6704,7 +6708,7 @@
       ]
     },
     "여성건강": {
-      "count": 46,
+      "count": 47,
       "qids": [
         "woms-001",
         "woms-005",
@@ -6751,7 +6755,8 @@
         "trend-womens-ovarian-cancer-bloating-symptom-record-20260604",
         "trend-womens-endometriosis-pain-cycle-record-20260604",
         "strategic-qa-womens-menopause-ht-label-hotflash-sleep-phlorotannin-20260605",
-        "strategic-qa-womens-fibroid-heavy-bleeding-anemia-iron-record-20260605"
+        "strategic-qa-womens-fibroid-heavy-bleeding-anemia-iron-record-20260605",
+        "strategic-qa-womens-pelvic-organ-prolapse-urinary-leakage-constipation-record-20260605"
       ]
     },
     "호흡기": {
@@ -6802,6 +6807,51 @@
         "trend-monsoon-mold-dampness-asthma-allergy-home-record-20260604"
       ]
     },
+    "남성건강": {
+      "count": 40,
+      "qids": [
+        "mens-001",
+        "mens-002",
+        "mens-003",
+        "mens-004",
+        "mens-006",
+        "mens-007",
+        "mens-010",
+        "mens-011",
+        "mens-013",
+        "mens-014",
+        "mens-016",
+        "mens-017",
+        "mens-019",
+        "mens-020",
+        "ingr-012",
+        "qa200-20260527-193",
+        "qa200-20260527-194",
+        "qa200-20260527-195",
+        "qa200-20260527-196",
+        "qa200-20260527-197",
+        "qa200-20260527-198",
+        "qa200-20260527-199",
+        "qa200-20260527-200",
+        "trendqa-mens-20260530",
+        "trend-testosterone-therapy-low-libido-bp-monitoring-20260602",
+        "trend-prostate-psa-mri-screening-aua-20260602",
+        "trend-phthalates-male-fertility-semen-quality-exposure-20260602",
+        "trend-erectile-dysfunction-cardiovascular-risk-20260602",
+        "trend-testosterone-therapy-fertility-sperm-count-20260603",
+        "trend-male-fertility-home-sperm-test-dna-fragmentation-20260603",
+        "trend-mens-health-month-blood-pressure-waist-snoring-screening-record-20260604",
+        "trend-abdominal-aortic-aneurysm-men-smoking-screening-record-20260604",
+        "trend-testicular-lump-young-men-self-check-record-20260604",
+        "trend-heat-exposure-male-fertility-sperm-record-20260604",
+        "trend-bph-night-urination-weak-stream-urinary-symptom-record-20260604",
+        "trend-mens-psa-screening-shared-decision-family-history-record-20260604",
+        "trend-mens-gynecomastia-breast-lump-medication-record-20260604",
+        "strategic-qa-mens-ed-cardiovascular-bp-glucose-phlorotannin-20260605",
+        "strategic-qa-mens-hpv-vaccine-oropharyngeal-cancer-neck-node-record-20260605",
+        "strategic-qa-mens-bph-nocturia-sleep-diuretic-glucose-record-20260605"
+      ]
+    },
     "뼈": {
       "count": 40,
       "qids": [
@@ -6845,50 +6895,6 @@
         "ms_087",
         "ms_088",
         "ms_090"
-      ]
-    },
-    "남성건강": {
-      "count": 39,
-      "qids": [
-        "mens-001",
-        "mens-002",
-        "mens-003",
-        "mens-004",
-        "mens-006",
-        "mens-007",
-        "mens-010",
-        "mens-011",
-        "mens-013",
-        "mens-014",
-        "mens-016",
-        "mens-017",
-        "mens-019",
-        "mens-020",
-        "ingr-012",
-        "qa200-20260527-193",
-        "qa200-20260527-194",
-        "qa200-20260527-195",
-        "qa200-20260527-196",
-        "qa200-20260527-197",
-        "qa200-20260527-198",
-        "qa200-20260527-199",
-        "qa200-20260527-200",
-        "trendqa-mens-20260530",
-        "trend-testosterone-therapy-low-libido-bp-monitoring-20260602",
-        "trend-prostate-psa-mri-screening-aua-20260602",
-        "trend-phthalates-male-fertility-semen-quality-exposure-20260602",
-        "trend-erectile-dysfunction-cardiovascular-risk-20260602",
-        "trend-testosterone-therapy-fertility-sperm-count-20260603",
-        "trend-male-fertility-home-sperm-test-dna-fragmentation-20260603",
-        "trend-mens-health-month-blood-pressure-waist-snoring-screening-record-20260604",
-        "trend-abdominal-aortic-aneurysm-men-smoking-screening-record-20260604",
-        "trend-testicular-lump-young-men-self-check-record-20260604",
-        "trend-heat-exposure-male-fertility-sperm-record-20260604",
-        "trend-bph-night-urination-weak-stream-urinary-symptom-record-20260604",
-        "trend-mens-psa-screening-shared-decision-family-history-record-20260604",
-        "trend-mens-gynecomastia-breast-lump-medication-record-20260604",
-        "strategic-qa-mens-ed-cardiovascular-bp-glucose-phlorotannin-20260605",
-        "strategic-qa-mens-hpv-vaccine-oropharyngeal-cancer-neck-node-record-20260605"
       ]
     },
     "당뇨": {
@@ -6979,7 +6985,7 @@
       ]
     },
     "수면": {
-      "count": 35,
+      "count": 36,
       "qids": [
         "cardio-020",
         "meta-020",
@@ -7015,7 +7021,8 @@
         "trend-youth-mental-health-sleep-screen-time-20260602",
         "trend-loneliness-social-connection-health-risk-support-record-20260603",
         "trend-mental-social-media-sleep-anxiety-boundary-record-20260604",
-        "strategic-qa-womens-menopause-ht-label-hotflash-sleep-phlorotannin-20260605"
+        "strategic-qa-womens-menopause-ht-label-hotflash-sleep-phlorotannin-20260605",
+        "strategic-qa-mens-bph-nocturia-sleep-diuretic-glucose-record-20260605"
       ]
     },
     "소화": {
@@ -7170,6 +7177,42 @@
         "qa200-20260527-058"
       ]
     },
+    "단백질": {
+      "count": 31,
+      "qids": [
+        "cancer-008",
+        "mens-009",
+        "mens-extra-023",
+        "mens-extra-026",
+        "mens-extra-031",
+        "mens-extra-034",
+        "mens-004",
+        "rsp_085",
+        "ingr-006",
+        "qa200-20260527-009",
+        "qa200-20260527-025",
+        "qa200-20260527-029",
+        "qa200-20260527-031",
+        "qa200-20260527-043",
+        "qa200-20260527-053",
+        "qa200-20260527-126",
+        "qa200-20260527-128",
+        "qa200-20260527-133",
+        "qa200-20260527-134",
+        "qa200-20260527-152",
+        "qa200-20260527-198",
+        "trendqa-musculoskeletal-20260530",
+        "round3-metabolism-1-20260531",
+        "round3-musculoskeletal-1-20260531",
+        "trend-glp1-muscle-protein-fiber-20260602",
+        "trend-creatine-resistance-training-healthy-aging-20260602",
+        "trend-glp1-hair-loss-telogen-effluvium-20260602",
+        "trend-creatine-resistance-training-sarcopenia-older-adults-20260602",
+        "trend-metabolism-glp1-constipation-hydration-meal-record-20260604",
+        "strategic-qa-hair-glp1-telogen-protein-ferritin-phlorotannin-20260605",
+        "strategic-qa-hair-thyroid-iron-brittle-nails-protein-record-20260605"
+      ]
+    },
     "심장": {
       "count": 31,
       "qids": [
@@ -7275,41 +7318,6 @@
         "dg_076",
         "dg_077",
         "dg_088"
-      ]
-    },
-    "단백질": {
-      "count": 30,
-      "qids": [
-        "cancer-008",
-        "mens-009",
-        "mens-extra-023",
-        "mens-extra-026",
-        "mens-extra-031",
-        "mens-extra-034",
-        "mens-004",
-        "rsp_085",
-        "ingr-006",
-        "qa200-20260527-009",
-        "qa200-20260527-025",
-        "qa200-20260527-029",
-        "qa200-20260527-031",
-        "qa200-20260527-043",
-        "qa200-20260527-053",
-        "qa200-20260527-126",
-        "qa200-20260527-128",
-        "qa200-20260527-133",
-        "qa200-20260527-134",
-        "qa200-20260527-152",
-        "qa200-20260527-198",
-        "trendqa-musculoskeletal-20260530",
-        "round3-metabolism-1-20260531",
-        "round3-musculoskeletal-1-20260531",
-        "trend-glp1-muscle-protein-fiber-20260602",
-        "trend-creatine-resistance-training-healthy-aging-20260602",
-        "trend-glp1-hair-loss-telogen-effluvium-20260602",
-        "trend-creatine-resistance-training-sarcopenia-older-adults-20260602",
-        "trend-metabolism-glp1-constipation-hydration-meal-record-20260604",
-        "strategic-qa-hair-glp1-telogen-protein-ferritin-phlorotannin-20260605"
       ]
     },
     "치매": {
@@ -8487,6 +8495,23 @@
         "trend-cardiovascular-lpa-family-heart-risk-record-20260604"
       ]
     },
+    "폐경": {
+      "count": 12,
+      "qids": [
+        "meta-010",
+        "woms-003",
+        "wh-extra-004",
+        "wh-extra-048",
+        "wh-extra-064",
+        "wh-extra-070",
+        "qa200-20260527-189",
+        "round3-womens_health-1-20260531",
+        "trend-menopause-hormone-therapy-label-change-20260602",
+        "trend-menopause-hormone-therapy-label-update-record-20260603",
+        "strategic-qa-womens-menopause-ht-label-hotflash-sleep-phlorotannin-20260605",
+        "strategic-qa-womens-pelvic-organ-prolapse-urinary-leakage-constipation-record-20260605"
+      ]
+    },
     "피부염": {
       "count": 12,
       "qids": [
@@ -8502,6 +8527,22 @@
         "sh_068",
         "sh_079",
         "sh_094"
+      ]
+    },
+    "갑상선": {
+      "count": 11,
+      "qids": [
+        "cardio-089",
+        "meta-006",
+        "meta_023",
+        "meta_044",
+        "meta_073",
+        "meta_096",
+        "woms-019",
+        "mens-extra-070",
+        "round3-hair-1-20260531",
+        "round3-womens_health-2-20260531",
+        "strategic-qa-hair-thyroid-iron-brittle-nails-protein-record-20260605"
       ]
     },
     "면역력": {
@@ -8600,22 +8641,6 @@
         "qa-hospital-20260527-030"
       ]
     },
-    "폐경": {
-      "count": 11,
-      "qids": [
-        "meta-010",
-        "woms-003",
-        "wh-extra-004",
-        "wh-extra-048",
-        "wh-extra-064",
-        "wh-extra-070",
-        "qa200-20260527-189",
-        "round3-womens_health-1-20260531",
-        "trend-menopause-hormone-therapy-label-change-20260602",
-        "trend-menopause-hormone-therapy-label-update-record-20260603",
-        "strategic-qa-womens-menopause-ht-label-hotflash-sleep-phlorotannin-20260605"
-      ]
-    },
     "피로": {
       "count": 11,
       "qids": [
@@ -8645,21 +8670,6 @@
         "seoqa-digestive-10",
         "round3-cancer_immune-1-20260531",
         "trend-masld-fib4-liver-fibrosis-risk-stratification-record-20260603"
-      ]
-    },
-    "갑상선": {
-      "count": 10,
-      "qids": [
-        "cardio-089",
-        "meta-006",
-        "meta_023",
-        "meta_044",
-        "meta_073",
-        "meta_096",
-        "woms-019",
-        "mens-extra-070",
-        "round3-hair-1-20260531",
-        "round3-womens_health-2-20260531"
       ]
     },
     "검사": {
@@ -9030,6 +9040,19 @@
         "qa200-20260527-156"
       ]
     },
+    "모발건강": {
+      "count": 8,
+      "qids": [
+        "skin-003",
+        "woms-010",
+        "trend-summer-scalp-sunburn-thinning-hair-uv-record-20260604",
+        "trend-hair-ferritin-iron-hair-shedding-record-20260604",
+        "trend-hair-alopecia-areata-jak-inhibitor-safety-record-20260604",
+        "strategic-qa-hair-glp1-telogen-protein-ferritin-phlorotannin-20260605",
+        "strategic-qa-hair-scalp-itch-scale-psoriasis-tinea-scarring-record-20260605",
+        "strategic-qa-hair-thyroid-iron-brittle-nails-protein-record-20260605"
+      ]
+    },
     "모발두피": {
       "count": 8,
       "qids": [
@@ -9093,6 +9116,32 @@
         "woms-005",
         "ci_124",
         "ci_150"
+      ]
+    },
+    "야간뇨": {
+      "count": 8,
+      "qids": [
+        "mens-extra-060",
+        "qa200-20260527-193",
+        "qa200-20260527-200",
+        "trendqa-mens-20260530",
+        "round2-mens-health-20260530",
+        "round3-mens_health-1-20260531",
+        "trend-bph-night-urination-weak-stream-urinary-symptom-record-20260604",
+        "strategic-qa-mens-bph-nocturia-sleep-diuretic-glucose-record-20260605"
+      ]
+    },
+    "요실금": {
+      "count": 8,
+      "qids": [
+        "woms-018",
+        "wh-extra-037",
+        "mens-extra-022",
+        "mens-extra-048",
+        "mens-extra-057",
+        "mens-extra-065",
+        "mens-009",
+        "strategic-qa-womens-pelvic-organ-prolapse-urinary-leakage-constipation-record-20260605"
       ]
     },
     "유방암": {
@@ -9280,18 +9329,6 @@
         "trend-neuro-long-covid-brain-fog-memory-record-20260604"
       ]
     },
-    "모발건강": {
-      "count": 7,
-      "qids": [
-        "skin-003",
-        "woms-010",
-        "trend-summer-scalp-sunburn-thinning-hair-uv-record-20260604",
-        "trend-hair-ferritin-iron-hair-shedding-record-20260604",
-        "trend-hair-alopecia-areata-jak-inhibitor-safety-record-20260604",
-        "strategic-qa-hair-glp1-telogen-protein-ferritin-phlorotannin-20260605",
-        "strategic-qa-hair-scalp-itch-scale-psoriasis-tinea-scarring-record-20260605"
-      ]
-    },
     "방광염": {
       "count": 7,
       "qids": [
@@ -9364,18 +9401,6 @@
         "trend-teen-social-media-sleep-mental-health-boundary-20260603"
       ]
     },
-    "야간뇨": {
-      "count": 7,
-      "qids": [
-        "mens-extra-060",
-        "qa200-20260527-193",
-        "qa200-20260527-200",
-        "trendqa-mens-20260530",
-        "round2-mens-health-20260530",
-        "round3-mens_health-1-20260531",
-        "trend-bph-night-urination-weak-stream-urinary-symptom-record-20260604"
-      ]
-    },
     "요로감염": {
       "count": 7,
       "qids": [
@@ -9386,18 +9411,6 @@
         "qa200-20260527-178",
         "trend-summer-uti-women-hydration-urination-symptom-record-20260604",
         "trend-infection-recurrent-uti-antibiotic-resistance-record-20260604"
-      ]
-    },
-    "요실금": {
-      "count": 7,
-      "qids": [
-        "woms-018",
-        "wh-extra-037",
-        "mens-extra-022",
-        "mens-extra-048",
-        "mens-extra-057",
-        "mens-extra-065",
-        "mens-009"
       ]
     },
     "임신": {
@@ -9434,6 +9447,18 @@
         "qa200-20260527-032",
         "qa200-20260527-120",
         "trend-berberine-blood-sugar-drug-interaction-20260602"
+      ]
+    },
+    "전립선비대증": {
+      "count": 7,
+      "qids": [
+        "mens-005",
+        "mens-extra-001",
+        "mens-extra-037",
+        "mens-101",
+        "qa200-20260527-193",
+        "trend-bph-night-urination-weak-stream-urinary-symptom-record-20260604",
+        "strategic-qa-mens-bph-nocturia-sleep-diuretic-glucose-record-20260605"
       ]
     },
     "체중감량": {
@@ -9670,6 +9695,17 @@
         "trend-berberine-blood-sugar-drug-interaction-20260602"
       ]
     },
+    "변비": {
+      "count": 6,
+      "qids": [
+        "dige-005",
+        "dige-007",
+        "qa200-20260527-063",
+        "round3-digestive-1-20260531",
+        "trend-metabolism-glp1-constipation-hydration-meal-record-20260604",
+        "strategic-qa-womens-pelvic-organ-prolapse-urinary-leakage-constipation-record-20260605"
+      ]
+    },
     "보호자": {
       "count": 6,
       "qids": [
@@ -9811,17 +9847,6 @@
         "womens-007",
         "trend-endometriosis-clinical-diagnosis-acog-20260602",
         "trend-womens-endometriosis-pain-cycle-record-20260604"
-      ]
-    },
-    "전립선비대증": {
-      "count": 6,
-      "qids": [
-        "mens-005",
-        "mens-extra-001",
-        "mens-extra-037",
-        "mens-101",
-        "qa200-20260527-193",
-        "trend-bph-night-urination-weak-stream-urinary-symptom-record-20260604"
       ]
     },
     "정자": {
@@ -10002,6 +10027,16 @@
         "qa200-20260527-184"
       ]
     },
+    "골반저근": {
+      "count": 5,
+      "qids": [
+        "wh-extra-030",
+        "wh-extra-037",
+        "mens-extra-022",
+        "mens-extra-048",
+        "strategic-qa-womens-pelvic-organ-prolapse-urinary-leakage-constipation-record-20260605"
+      ]
+    },
     "과장광고": {
       "count": 5,
       "qids": [
@@ -10120,16 +10155,6 @@
         "round3-musculoskeletal-2-20260531",
         "trend-weighted-vest-rucking-bone-joint-safety-20260602",
         "trend-pickleball-overuse-achilles-wrist-injury-20260603"
-      ]
-    },
-    "변비": {
-      "count": 5,
-      "qids": [
-        "dige-005",
-        "dige-007",
-        "qa200-20260527-063",
-        "round3-digestive-1-20260531",
-        "trend-metabolism-glp1-constipation-hydration-meal-record-20260604"
       ]
     },
     "보충제": {
@@ -10360,6 +10385,16 @@
         "infect-extra-066",
         "infect-108",
         "trend-infection-sepsis-warning-signs-fever-confusion-record-20260604"
+      ]
+    },
+    "페리틴": {
+      "count": 5,
+      "qids": [
+        "womens-006",
+        "trend-glp1-hair-loss-telogen-effluvium-20260602",
+        "trend-hair-ferritin-iron-hair-shedding-record-20260604",
+        "strategic-qa-hair-glp1-telogen-protein-ferritin-phlorotannin-20260605",
+        "strategic-qa-hair-thyroid-iron-brittle-nails-protein-record-20260605"
       ]
     },
     "폐암": {
@@ -12347,7 +12382,10 @@
     "strategic-qa-womens-menopause-ht-label-hotflash-sleep-phlorotannin-20260605": "2026-폐경-호르몬치료-라벨-변화-이후-열감수면-기록은-어떻게-준비해야-하나요",
     "strategic-qa-hair-scalp-itch-scale-psoriasis-tinea-scarring-record-20260605": "두피-가려움딱지비듬과-함께-머리카락이-빠질-때-건선두부백선흉터탈모-신호는-어떻게-기록하나요",
     "strategic-qa-mens-hpv-vaccine-oropharyngeal-cancer-neck-node-record-20260605": "남성도-HPV-백신과-구강인두암-위험을-상담할-때-목-림프절흡연예방접종-기록을-봐야-하나요",
-    "strategic-qa-womens-fibroid-heavy-bleeding-anemia-iron-record-20260605": "자궁근종이-의심되는-생리과다와-빈혈-증상이-있을-때-어떤-출혈철결핍-기록을-준비해야-하나요"
+    "strategic-qa-womens-fibroid-heavy-bleeding-anemia-iron-record-20260605": "자궁근종이-의심되는-생리과다와-빈혈-증상이-있을-때-어떤-출혈철결핍-기록을-준비해야-하나요",
+    "strategic-qa-hair-thyroid-iron-brittle-nails-protein-record-20260605": "머리카락이-가늘어지고-손톱이-잘-부러질-때-갑상선철결핍단백질-기록은-어떻게-준비하나요",
+    "strategic-qa-mens-bph-nocturia-sleep-diuretic-glucose-record-20260605": "전립선비대증으로-밤에-자주-깨면-야간뇨가-전립선-때문인지-수면이뇨제혈당-기록은-어떻게-보나요",
+    "strategic-qa-womens-pelvic-organ-prolapse-urinary-leakage-constipation-record-20260605": "골반이-묵직하고-소변이-새는-느낌이-있으면-골반장기탈출요실금-상담-전-무엇을-기록하나요"
   },
-  "generated_at": "2026-06-05T00:22:01.102408+00:00"
+  "generated_at": "2026-06-05T00:34:29.191837+00:00"
 }
