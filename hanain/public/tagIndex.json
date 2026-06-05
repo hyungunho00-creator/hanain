@@ -1,11 +1,11 @@
 {
   "min_tag_count": 5,
-  "total_questions": 1921,
-  "total_unique_tags": 2327,
-  "page_eligible_tags": 256,
+  "total_questions": 1924,
+  "total_unique_tags": 2333,
+  "page_eligible_tags": 258,
   "tags": {
     "플로로탄닌": {
-      "count": 1371,
+      "count": 1374,
       "qids": [
         "cardio-001",
         "cardio-002",
@@ -1377,11 +1377,14 @@
         "trend-indoor-co2-ventilation-hepa-respiratory-virus-20260602",
         "strategic-qa-hair-glp1-telogen-protein-ferritin-phlorotannin-20260605",
         "strategic-qa-mens-ed-cardiovascular-bp-glucose-phlorotannin-20260605",
-        "strategic-qa-womens-menopause-ht-label-hotflash-sleep-phlorotannin-20260605"
+        "strategic-qa-womens-menopause-ht-label-hotflash-sleep-phlorotannin-20260605",
+        "strategic-qa-hair-scalp-itch-scale-psoriasis-tinea-scarring-record-20260605",
+        "strategic-qa-mens-hpv-vaccine-oropharyngeal-cancer-neck-node-record-20260605",
+        "strategic-qa-womens-fibroid-heavy-bleeding-anemia-iron-record-20260605"
       ]
     },
     "감태": {
-      "count": 991,
+      "count": 992,
       "qids": [
         "cardio-008",
         "cardio-012",
@@ -2373,7 +2376,8 @@
         "trendqa-mental-20260530",
         "round2-mental-health-20260530",
         "strategic-qa-hair-glp1-telogen-protein-ferritin-phlorotannin-20260605",
-        "strategic-qa-womens-menopause-ht-label-hotflash-sleep-phlorotannin-20260605"
+        "strategic-qa-womens-menopause-ht-label-hotflash-sleep-phlorotannin-20260605",
+        "strategic-qa-hair-scalp-itch-scale-psoriasis-tinea-scarring-record-20260605"
       ]
     },
     "항산화": {
@@ -6700,7 +6704,7 @@
       ]
     },
     "여성건강": {
-      "count": 45,
+      "count": 46,
       "qids": [
         "woms-001",
         "woms-005",
@@ -6746,7 +6750,8 @@
         "trend-infection-recurrent-uti-antibiotic-resistance-record-20260604",
         "trend-womens-ovarian-cancer-bloating-symptom-record-20260604",
         "trend-womens-endometriosis-pain-cycle-record-20260604",
-        "strategic-qa-womens-menopause-ht-label-hotflash-sleep-phlorotannin-20260605"
+        "strategic-qa-womens-menopause-ht-label-hotflash-sleep-phlorotannin-20260605",
+        "strategic-qa-womens-fibroid-heavy-bleeding-anemia-iron-record-20260605"
       ]
     },
     "호흡기": {
@@ -6842,6 +6847,50 @@
         "ms_090"
       ]
     },
+    "남성건강": {
+      "count": 39,
+      "qids": [
+        "mens-001",
+        "mens-002",
+        "mens-003",
+        "mens-004",
+        "mens-006",
+        "mens-007",
+        "mens-010",
+        "mens-011",
+        "mens-013",
+        "mens-014",
+        "mens-016",
+        "mens-017",
+        "mens-019",
+        "mens-020",
+        "ingr-012",
+        "qa200-20260527-193",
+        "qa200-20260527-194",
+        "qa200-20260527-195",
+        "qa200-20260527-196",
+        "qa200-20260527-197",
+        "qa200-20260527-198",
+        "qa200-20260527-199",
+        "qa200-20260527-200",
+        "trendqa-mens-20260530",
+        "trend-testosterone-therapy-low-libido-bp-monitoring-20260602",
+        "trend-prostate-psa-mri-screening-aua-20260602",
+        "trend-phthalates-male-fertility-semen-quality-exposure-20260602",
+        "trend-erectile-dysfunction-cardiovascular-risk-20260602",
+        "trend-testosterone-therapy-fertility-sperm-count-20260603",
+        "trend-male-fertility-home-sperm-test-dna-fragmentation-20260603",
+        "trend-mens-health-month-blood-pressure-waist-snoring-screening-record-20260604",
+        "trend-abdominal-aortic-aneurysm-men-smoking-screening-record-20260604",
+        "trend-testicular-lump-young-men-self-check-record-20260604",
+        "trend-heat-exposure-male-fertility-sperm-record-20260604",
+        "trend-bph-night-urination-weak-stream-urinary-symptom-record-20260604",
+        "trend-mens-psa-screening-shared-decision-family-history-record-20260604",
+        "trend-mens-gynecomastia-breast-lump-medication-record-20260604",
+        "strategic-qa-mens-ed-cardiovascular-bp-glucose-phlorotannin-20260605",
+        "strategic-qa-mens-hpv-vaccine-oropharyngeal-cancer-neck-node-record-20260605"
+      ]
+    },
     "당뇨": {
       "count": 39,
       "qids": [
@@ -6884,49 +6933,6 @@
         "ingr-028",
         "qa200-20260527-091",
         "qa200-20260527-195"
-      ]
-    },
-    "남성건강": {
-      "count": 38,
-      "qids": [
-        "mens-001",
-        "mens-002",
-        "mens-003",
-        "mens-004",
-        "mens-006",
-        "mens-007",
-        "mens-010",
-        "mens-011",
-        "mens-013",
-        "mens-014",
-        "mens-016",
-        "mens-017",
-        "mens-019",
-        "mens-020",
-        "ingr-012",
-        "qa200-20260527-193",
-        "qa200-20260527-194",
-        "qa200-20260527-195",
-        "qa200-20260527-196",
-        "qa200-20260527-197",
-        "qa200-20260527-198",
-        "qa200-20260527-199",
-        "qa200-20260527-200",
-        "trendqa-mens-20260530",
-        "trend-testosterone-therapy-low-libido-bp-monitoring-20260602",
-        "trend-prostate-psa-mri-screening-aua-20260602",
-        "trend-phthalates-male-fertility-semen-quality-exposure-20260602",
-        "trend-erectile-dysfunction-cardiovascular-risk-20260602",
-        "trend-testosterone-therapy-fertility-sperm-count-20260603",
-        "trend-male-fertility-home-sperm-test-dna-fragmentation-20260603",
-        "trend-mens-health-month-blood-pressure-waist-snoring-screening-record-20260604",
-        "trend-abdominal-aortic-aneurysm-men-smoking-screening-record-20260604",
-        "trend-testicular-lump-young-men-self-check-record-20260604",
-        "trend-heat-exposure-male-fertility-sperm-record-20260604",
-        "trend-bph-night-urination-weak-stream-urinary-symptom-record-20260604",
-        "trend-mens-psa-screening-shared-decision-family-history-record-20260604",
-        "trend-mens-gynecomastia-breast-lump-medication-record-20260604",
-        "strategic-qa-mens-ed-cardiovascular-bp-glucose-phlorotannin-20260605"
       ]
     },
     "혈압": {
@@ -8671,6 +8677,21 @@
         "trend-vitamin-d-sun-sunscreen-skin-20260602"
       ]
     },
+    "빈혈": {
+      "count": 10,
+      "qids": [
+        "skin-014",
+        "woms-020",
+        "wh-extra-024",
+        "womens-006",
+        "mens-extra-063",
+        "qa200-20260527-047",
+        "qa200-20260527-098",
+        "qa200-20260527-151",
+        "qa200-20260527-188",
+        "strategic-qa-womens-fibroid-heavy-bleeding-anemia-iron-record-20260605"
+      ]
+    },
     "생리통": {
       "count": 10,
       "qids": [
@@ -8860,20 +8881,6 @@
         "trend-rsv-vaccine-older-adults-risk-20260602"
       ]
     },
-    "빈혈": {
-      "count": 9,
-      "qids": [
-        "skin-014",
-        "woms-020",
-        "wh-extra-024",
-        "womens-006",
-        "mens-extra-063",
-        "qa200-20260527-047",
-        "qa200-20260527-098",
-        "qa200-20260527-151",
-        "qa200-20260527-188"
-      ]
-    },
     "수술": {
       "count": 9,
       "qids": [
@@ -8900,6 +8907,20 @@
         "infect-019",
         "qa200-20260527-196",
         "round3-infection_inflammation-2-20260531"
+      ]
+    },
+    "예방접종": {
+      "count": 9,
+      "qids": [
+        "cancer-016",
+        "ci_016",
+        "ci_022",
+        "rsp_030",
+        "infect-extra-007",
+        "infect-extra-010",
+        "infect-extra-011",
+        "ci_116",
+        "strategic-qa-mens-hpv-vaccine-oropharyngeal-cancer-neck-node-record-20260605"
       ]
     },
     "우울증": {
@@ -9074,19 +9095,6 @@
         "ci_150"
       ]
     },
-    "예방접종": {
-      "count": 8,
-      "qids": [
-        "cancer-016",
-        "ci_016",
-        "ci_022",
-        "rsp_030",
-        "infect-extra-007",
-        "infect-extra-010",
-        "infect-extra-011",
-        "ci_116"
-      ]
-    },
     "유방암": {
       "count": 8,
       "qids": [
@@ -9150,6 +9158,18 @@
         "qa200-20260527-071",
         "round3-digestive-2-20260531",
         "trend-masld-fib4-liver-fibrosis-risk-stratification-record-20260603"
+      ]
+    },
+    "HPV": {
+      "count": 7,
+      "qids": [
+        "woms-012",
+        "wh-extra-033",
+        "infect-extra-017",
+        "infect-extra-058",
+        "ci_116",
+        "trend-hpv-self-collection-cervical-screening-20260602",
+        "strategic-qa-mens-hpv-vaccine-oropharyngeal-cancer-neck-node-record-20260605"
       ]
     },
     "PCOS": {
@@ -9258,6 +9278,18 @@
         "round3-neuro_cognitive-1-20260531",
         "round3-infection_inflammation-1-20260531",
         "trend-neuro-long-covid-brain-fog-memory-record-20260604"
+      ]
+    },
+    "모발건강": {
+      "count": 7,
+      "qids": [
+        "skin-003",
+        "woms-010",
+        "trend-summer-scalp-sunburn-thinning-hair-uv-record-20260604",
+        "trend-hair-ferritin-iron-hair-shedding-record-20260604",
+        "trend-hair-alopecia-areata-jak-inhibitor-safety-record-20260604",
+        "strategic-qa-hair-glp1-telogen-protein-ferritin-phlorotannin-20260605",
+        "strategic-qa-hair-scalp-itch-scale-psoriasis-tinea-scarring-record-20260605"
       ]
     },
     "방광염": {
@@ -9428,15 +9460,16 @@
         "trend-digestive-hpylori-breath-test-eradication-record-20260604"
       ]
     },
-    "HPV": {
-      "count": 6,
+    "흡연": {
+      "count": 7,
       "qids": [
-        "woms-012",
-        "wh-extra-033",
-        "infect-extra-017",
-        "infect-extra-058",
-        "ci_116",
-        "trend-hpv-self-collection-cervical-screening-20260602"
+        "cardio-092",
+        "mens-extra-040",
+        "resp-002",
+        "resp-009",
+        "ci_150",
+        "qa200-20260527-167",
+        "strategic-qa-mens-hpv-vaccine-oropharyngeal-cancer-neck-node-record-20260605"
       ]
     },
     "NK세포": {
@@ -9481,6 +9514,17 @@
         "mens-008",
         "trend-glp1-knee-osteoarthritis-muscle-bone-20260602",
         "trend-weighted-vest-rucking-bone-joint-safety-20260602"
+      ]
+    },
+    "골반통": {
+      "count": 6,
+      "qids": [
+        "mens-extra-009",
+        "infect-extra-024",
+        "trend-endometriosis-clinical-diagnosis-acog-20260602",
+        "trend-womens-ovarian-cancer-bloating-symptom-record-20260604",
+        "trend-womens-endometriosis-pain-cycle-record-20260604",
+        "strategic-qa-womens-fibroid-heavy-bleeding-anemia-iron-record-20260605"
       ]
     },
     "관절염": {
@@ -9604,17 +9648,6 @@
         "qa200-20260527-122"
       ]
     },
-    "모발건강": {
-      "count": 6,
-      "qids": [
-        "skin-003",
-        "woms-010",
-        "trend-summer-scalp-sunburn-thinning-hair-uv-record-20260604",
-        "trend-hair-ferritin-iron-hair-shedding-record-20260604",
-        "trend-hair-alopecia-areata-jak-inhibitor-safety-record-20260604",
-        "strategic-qa-hair-glp1-telogen-protein-ferritin-phlorotannin-20260605"
-      ]
-    },
     "발기부전": {
       "count": 6,
       "qids": [
@@ -9657,6 +9690,17 @@
         "ci_137",
         "mental-102",
         "qa200-20260527-199"
+      ]
+    },
+    "비듬": {
+      "count": 6,
+      "qids": [
+        "skin-006",
+        "infect-extra-052",
+        "sh_106",
+        "round3-hair-2-20260531",
+        "trend-scalp-psoriasis-dandruff-silver-scale-hair-loss-record-20260604",
+        "strategic-qa-hair-scalp-itch-scale-psoriasis-tinea-scarring-record-20260605"
       ]
     },
     "비만": {
@@ -9868,17 +9912,6 @@
         "qa200-20260527-058"
       ]
     },
-    "흡연": {
-      "count": 6,
-      "qids": [
-        "cardio-092",
-        "mens-extra-040",
-        "resp-002",
-        "resp-009",
-        "ci_150",
-        "qa200-20260527-167"
-      ]
-    },
     "BRCA": {
       "count": 5,
       "qids": [
@@ -9969,16 +10002,6 @@
         "qa200-20260527-184"
       ]
     },
-    "골반통": {
-      "count": 5,
-      "qids": [
-        "mens-extra-009",
-        "infect-extra-024",
-        "trend-endometriosis-clinical-diagnosis-acog-20260602",
-        "trend-womens-ovarian-cancer-bloating-symptom-record-20260604",
-        "trend-womens-endometriosis-pain-cycle-record-20260604"
-      ]
-    },
     "과장광고": {
       "count": 5,
       "qids": [
@@ -10059,6 +10082,16 @@
         "trend-respiratory-virus-vaccine-covid-flu-rsv-record-20260603"
       ]
     },
+    "두피가려움": {
+      "count": 5,
+      "qids": [
+        "sh_106",
+        "round3-hair-2-20260531",
+        "trend-summer-swimming-scalp-itch-chlorine-saltwater-record-20260604",
+        "trend-scalp-psoriasis-dandruff-silver-scale-hair-loss-record-20260604",
+        "strategic-qa-hair-scalp-itch-scale-psoriasis-tinea-scarring-record-20260605"
+      ]
+    },
     "만성염증": {
       "count": 5,
       "qids": [
@@ -10117,16 +10150,6 @@
         "qa200-20260527-119",
         "round3-mental_health-1-20260531",
         "trend-magnesium-glycinate-sleep-safety-20260602"
-      ]
-    },
-    "비듬": {
-      "count": 5,
-      "qids": [
-        "skin-006",
-        "infect-extra-052",
-        "sh_106",
-        "round3-hair-2-20260531",
-        "trend-scalp-psoriasis-dandruff-silver-scale-hair-loss-record-20260604"
       ]
     },
     "비타민C": {
@@ -10267,6 +10290,16 @@
         "wh-extra-021",
         "womens-003",
         "qa200-20260527-185"
+      ]
+    },
+    "자궁근종": {
+      "count": 5,
+      "qids": [
+        "woms-014",
+        "wh-extra-014",
+        "wh-extra-018",
+        "womens-004",
+        "strategic-qa-womens-fibroid-heavy-bleeding-anemia-iron-record-20260605"
       ]
     },
     "자외선": {
@@ -12311,7 +12344,10 @@
     "trend-mens-gynecomastia-breast-lump-medication-record-20260604": "남성-가슴-멍울이-생기면-여성형유방인지-약물암-신호인지-무엇을-기록해야-하나요",
     "strategic-qa-hair-glp1-telogen-protein-ferritin-phlorotannin-20260605": "GLP1로-체중이-빨리-줄고-머리카락이-많이-빠질-때-휴지기-탈모인지-무엇을-기록해야-하나요",
     "strategic-qa-mens-ed-cardiovascular-bp-glucose-phlorotannin-20260605": "발기부전이-생기면-남성호르몬보다-먼저-심혈관혈당혈압-위험-기록을-봐야-하나요",
-    "strategic-qa-womens-menopause-ht-label-hotflash-sleep-phlorotannin-20260605": "2026-폐경-호르몬치료-라벨-변화-이후-열감수면-기록은-어떻게-준비해야-하나요"
+    "strategic-qa-womens-menopause-ht-label-hotflash-sleep-phlorotannin-20260605": "2026-폐경-호르몬치료-라벨-변화-이후-열감수면-기록은-어떻게-준비해야-하나요",
+    "strategic-qa-hair-scalp-itch-scale-psoriasis-tinea-scarring-record-20260605": "두피-가려움딱지비듬과-함께-머리카락이-빠질-때-건선두부백선흉터탈모-신호는-어떻게-기록하나요",
+    "strategic-qa-mens-hpv-vaccine-oropharyngeal-cancer-neck-node-record-20260605": "남성도-HPV-백신과-구강인두암-위험을-상담할-때-목-림프절흡연예방접종-기록을-봐야-하나요",
+    "strategic-qa-womens-fibroid-heavy-bleeding-anemia-iron-record-20260605": "자궁근종이-의심되는-생리과다와-빈혈-증상이-있을-때-어떤-출혈철결핍-기록을-준비해야-하나요"
   },
-  "generated_at": "2026-06-05T00:10:02.426129+00:00"
+  "generated_at": "2026-06-05T00:22:01.102408+00:00"
 }
