@@ -1,7 +1,7 @@
 # QA Duplicate Template Detector Result
 
-- generatedAt: 2026-06-05T09:07:00.149Z
-- validatedScanned: 1933
+- generatedAt: 2026-06-05T09:23:46.974Z
+- validatedScanned: 1936
 - repeatedSentenceWarnings(>=4): 140
 - repeatedParagraphFails(>=3): 14
 - similarityPairs(>=35% manual-review, sample=120): 3360
@@ -137,6 +137,7 @@
 - count=6 ids=neuro-011, neuro-016, nc_039, nc_054, nc_078, qa200-20260527-096 sample="정신건강/수면 문제 관련 질문에서는 기억 저하, 두통, 어지럼, 수면, 정서 상태를 함께 보아야 방향을 정확히 잡을 수 있습니다...."
 - count=6 ids=wh-extra-062, mental-extra-002, mental-102, mental-110, qa200-20260527-115, qa-hospital-20260527-025 sample="정신건강/수면 문제 약물 질문은 적응증과 금기, 병용 시 주의사항, 복용 중단 시 위험을 함께 확인해야 하며, 임의 변경은 피해야 합니다...."
 - count=6 ids=mens-001, mens-011, mens-extra-007, mens-extra-012, mens-extra-028, mens-extra-035 sample="관련 질문에서는 배뇨 증상, 수면, 체중, 혈압, 약물 이력을 함께 봐야 실질적인 관리 방향이 나옵니다...."
+- count=6 ids=strategic-qa-womens-fibroid-heavy-bleeding-anemia-iron-record-20260605, strategic-qa-womens-pelvic-organ-prolapse-urinary-leakage-constipation-record-20260605, strategic-qa-mens-varicocele-testicular-pain-semen-analysis-fertility-record-20260605, strategic-qa-mens-testicular-lump-ultrasound-tumor-marker-record-20260605, strategic-qa-womens-urinary-incontinence-bladder-diary-caffeine-uti-record-20260605, strategic-qa-mens-peyronies-curvature-plaque-pain-erection-record-20260605 sample="pubmed에는 phlorotannin-rich ecklonia cava extract가 염증 관련 표지와 대사 반응을 다룬 연구가 등재되어 있습니다...."
 - count=5 ids=cardio-009, cardio-063, qa200-20260527-095, qa200-20260527-097, seoqa-neuro_cognitive-06 sample="짧은 답변 뇌·인지 증상 검사는 단일 숫자만 보지 말고 검사 시점, 증상 변화, 복용약, 이전 결과와 함께 비교해 해석해야 정확합니다...."
 - count=5 ids=cardio-009, cardio-063, qa200-20260527-095, qa200-20260527-097, seoqa-neuro_cognitive-06 sample="자세히 보면 뇌·인지 증상 검사 해석에서는 추세 비교가 핵심이며, 같은 검사도 조건이 다르면 결과 의미가 달라질 수 있습니다...."
 - count=5 ids=dige-002, dg_012, dg_014, dg_019, qa200-20260527-059 sample="소화기 증상 관련 질문에서는 증상 강도만 보지 말고 식사·수면·음주·약물 패턴과 연결해서 해석해야 합니다...."
@@ -145,7 +146,6 @@
 - count=5 ids=mens-extra-006, mens-extra-040, mens-extra-047, mens-extra-057, qa200-20260527-197 sample="암 치료 중 건강관리 관련 질문에서는 배뇨 증상, 수면, 체중, 혈압, 약물 이력을 함께 봐야 실질적인 관리 방향이 나옵니다...."
 - count=5 ids=infect-extra-005, infect-extra-007, infect-extra-019, infect-extra-073, infect-007 sample="관련 질문에서는 발열, 통증, 붓기, 전신증상, 노출력, 기저질환을 함께 확인해야 판단이 가능합니다...."
 - count=5 ids=mental-extra-008, mental-extra-044, mental-018, qa200-20260527-114, qa200-20260527-118 sample="관련 질문에서는 감정 상태뿐 아니라 수면, 일상 기능, 대인관계, 스트레스 사건을 함께 봐야 합니다...."
-- count=5 ids=strategic-qa-womens-fibroid-heavy-bleeding-anemia-iron-record-20260605, strategic-qa-womens-pelvic-organ-prolapse-urinary-leakage-constipation-record-20260605, strategic-qa-mens-varicocele-testicular-pain-semen-analysis-fertility-record-20260605, strategic-qa-mens-testicular-lump-ultrasound-tumor-marker-record-20260605, strategic-qa-womens-urinary-incontinence-bladder-diary-caffeine-uti-record-20260605 sample="pubmed에는 phlorotannin-rich ecklonia cava extract가 염증 관련 표지와 대사 반응을 다룬 연구가 등재되어 있습니다...."
 - count=4 ids=meta-008, meta_025, sh_068, seoqa-skin-06 sample="짧은 답변 피부 증상 검사는 단일 숫자만 보지 말고 검사 시점, 증상 변화, 복용약, 이전 결과와 함께 비교해 해석해야 정확합니다...."
 - count=4 ids=meta-008, meta_025, sh_068, seoqa-skin-06 sample="자세히 보면 피부 증상 검사 해석에서는 추세 비교가 핵심이며, 같은 검사도 조건이 다르면 결과 의미가 달라질 수 있습니다...."
 - count=4 ids=dige-003, dg_026, dg_035, dg_089 sample="암 치료 중 건강관리 관련 질문에서는 증상 강도만 보지 말고 식사·수면·음주·약물 패턴과 연결해서 해석해야 합니다...."

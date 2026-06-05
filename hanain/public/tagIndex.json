@@ -1,11 +1,11 @@
 {
   "min_tag_count": 5,
-  "total_questions": 1933,
-  "total_unique_tags": 2355,
+  "total_questions": 1936,
+  "total_unique_tags": 2361,
   "page_eligible_tags": 260,
   "tags": {
     "플로로탄닌": {
-      "count": 1383,
+      "count": 1386,
       "qids": [
         "cardio-001",
         "cardio-002",
@@ -1389,7 +1389,10 @@
         "strategic-qa-respiratory-pertussis-prolonged-cough-vaccine-exposure-record-20260605",
         "strategic-qa-hair-alopecia-areata-jak-safety-autoimmune-record-20260605",
         "strategic-qa-mens-testicular-lump-ultrasound-tumor-marker-record-20260605",
-        "strategic-qa-womens-urinary-incontinence-bladder-diary-caffeine-uti-record-20260605"
+        "strategic-qa-womens-urinary-incontinence-bladder-diary-caffeine-uti-record-20260605",
+        "strategic-qa-hair-oral-minoxidil-edema-heart-rate-blood-pressure-record-20260605",
+        "strategic-qa-mens-peyronies-curvature-plaque-pain-erection-record-20260605",
+        "strategic-qa-respiratory-long-covid-cough-dyspnea-oximeter-exertion-record-20260605"
       ]
     },
     "감태": {
@@ -6767,6 +6770,54 @@
         "strategic-qa-womens-urinary-incontinence-bladder-diary-caffeine-uti-record-20260605"
       ]
     },
+    "남성건강": {
+      "count": 43,
+      "qids": [
+        "mens-001",
+        "mens-002",
+        "mens-003",
+        "mens-004",
+        "mens-006",
+        "mens-007",
+        "mens-010",
+        "mens-011",
+        "mens-013",
+        "mens-014",
+        "mens-016",
+        "mens-017",
+        "mens-019",
+        "mens-020",
+        "ingr-012",
+        "qa200-20260527-193",
+        "qa200-20260527-194",
+        "qa200-20260527-195",
+        "qa200-20260527-196",
+        "qa200-20260527-197",
+        "qa200-20260527-198",
+        "qa200-20260527-199",
+        "qa200-20260527-200",
+        "trendqa-mens-20260530",
+        "trend-testosterone-therapy-low-libido-bp-monitoring-20260602",
+        "trend-prostate-psa-mri-screening-aua-20260602",
+        "trend-phthalates-male-fertility-semen-quality-exposure-20260602",
+        "trend-erectile-dysfunction-cardiovascular-risk-20260602",
+        "trend-testosterone-therapy-fertility-sperm-count-20260603",
+        "trend-male-fertility-home-sperm-test-dna-fragmentation-20260603",
+        "trend-mens-health-month-blood-pressure-waist-snoring-screening-record-20260604",
+        "trend-abdominal-aortic-aneurysm-men-smoking-screening-record-20260604",
+        "trend-testicular-lump-young-men-self-check-record-20260604",
+        "trend-heat-exposure-male-fertility-sperm-record-20260604",
+        "trend-bph-night-urination-weak-stream-urinary-symptom-record-20260604",
+        "trend-mens-psa-screening-shared-decision-family-history-record-20260604",
+        "trend-mens-gynecomastia-breast-lump-medication-record-20260604",
+        "strategic-qa-mens-ed-cardiovascular-bp-glucose-phlorotannin-20260605",
+        "strategic-qa-mens-hpv-vaccine-oropharyngeal-cancer-neck-node-record-20260605",
+        "strategic-qa-mens-bph-nocturia-sleep-diuretic-glucose-record-20260605",
+        "strategic-qa-mens-varicocele-testicular-pain-semen-analysis-fertility-record-20260605",
+        "strategic-qa-mens-testicular-lump-ultrasound-tumor-marker-record-20260605",
+        "strategic-qa-mens-peyronies-curvature-plaque-pain-erection-record-20260605"
+      ]
+    },
     "호흡기": {
       "count": 43,
       "qids": [
@@ -6813,53 +6864,6 @@
         "trend-pollen-thunderstorm-asthma-action-plan-20260603",
         "trend-wildfire-smoke-aqi-n95-asthma-copd-action-record-20260603",
         "trend-monsoon-mold-dampness-asthma-allergy-home-record-20260604"
-      ]
-    },
-    "남성건강": {
-      "count": 42,
-      "qids": [
-        "mens-001",
-        "mens-002",
-        "mens-003",
-        "mens-004",
-        "mens-006",
-        "mens-007",
-        "mens-010",
-        "mens-011",
-        "mens-013",
-        "mens-014",
-        "mens-016",
-        "mens-017",
-        "mens-019",
-        "mens-020",
-        "ingr-012",
-        "qa200-20260527-193",
-        "qa200-20260527-194",
-        "qa200-20260527-195",
-        "qa200-20260527-196",
-        "qa200-20260527-197",
-        "qa200-20260527-198",
-        "qa200-20260527-199",
-        "qa200-20260527-200",
-        "trendqa-mens-20260530",
-        "trend-testosterone-therapy-low-libido-bp-monitoring-20260602",
-        "trend-prostate-psa-mri-screening-aua-20260602",
-        "trend-phthalates-male-fertility-semen-quality-exposure-20260602",
-        "trend-erectile-dysfunction-cardiovascular-risk-20260602",
-        "trend-testosterone-therapy-fertility-sperm-count-20260603",
-        "trend-male-fertility-home-sperm-test-dna-fragmentation-20260603",
-        "trend-mens-health-month-blood-pressure-waist-snoring-screening-record-20260604",
-        "trend-abdominal-aortic-aneurysm-men-smoking-screening-record-20260604",
-        "trend-testicular-lump-young-men-self-check-record-20260604",
-        "trend-heat-exposure-male-fertility-sperm-record-20260604",
-        "trend-bph-night-urination-weak-stream-urinary-symptom-record-20260604",
-        "trend-mens-psa-screening-shared-decision-family-history-record-20260604",
-        "trend-mens-gynecomastia-breast-lump-medication-record-20260604",
-        "strategic-qa-mens-ed-cardiovascular-bp-glucose-phlorotannin-20260605",
-        "strategic-qa-mens-hpv-vaccine-oropharyngeal-cancer-neck-node-record-20260605",
-        "strategic-qa-mens-bph-nocturia-sleep-diuretic-glucose-record-20260605",
-        "strategic-qa-mens-varicocele-testicular-pain-semen-analysis-fertility-record-20260605",
-        "strategic-qa-mens-testicular-lump-ultrasound-tumor-marker-record-20260605"
       ]
     },
     "뼈": {
@@ -6952,7 +6956,7 @@
       ]
     },
     "혈압": {
-      "count": 38,
+      "count": 39,
       "qids": [
         "cardio-009",
         "cardio-011",
@@ -6991,7 +6995,8 @@
         "trend-abdominal-aortic-aneurysm-men-smoking-screening-record-20260604",
         "trend-pregnancy-postpartum-warning-signs-blood-pressure-record-20260604",
         "trend-migraine-aura-estrogen-birth-control-stroke-risk-record-20260604",
-        "strategic-qa-mens-ed-cardiovascular-bp-glucose-phlorotannin-20260605"
+        "strategic-qa-mens-ed-cardiovascular-bp-glucose-phlorotannin-20260605",
+        "strategic-qa-hair-oral-minoxidil-edema-heart-rate-blood-pressure-record-20260605"
       ]
     },
     "수면": {
@@ -7608,6 +7613,34 @@
         "trend-mental-social-media-sleep-anxiety-boundary-record-20260604"
       ]
     },
+    "천식": {
+      "count": 23,
+      "qids": [
+        "rsp_021",
+        "rsp_022",
+        "rsp_026",
+        "rsp_035",
+        "rsp_043",
+        "rsp_045",
+        "rsp_054",
+        "rsp_074",
+        "rsp_092",
+        "rsp_095",
+        "rsp_096",
+        "rsp_097",
+        "resp-001",
+        "resp-101",
+        "qa200-20260527-160",
+        "trendqa-respiratory-20260530",
+        "round3-respiratory-2-20260531",
+        "trend-pollen-thunderstorm-asthma-action-plan-20260603",
+        "trend-wildfire-smoke-aqi-n95-asthma-copd-action-record-20260603",
+        "trend-monsoon-mold-dampness-asthma-allergy-home-record-20260604",
+        "trend-respiratory-cough-three-weeks-asthma-reflux-record-20260604",
+        "trend-respiratory-asthma-inhaler-spacer-action-plan-record-20260604",
+        "strategic-qa-respiratory-long-covid-cough-dyspnea-oximeter-exertion-record-20260605"
+      ]
+    },
     "탈모": {
       "count": 23,
       "qids": [
@@ -7688,33 +7721,6 @@
         "mental-extra-031",
         "sh_097",
         "trend-migraine-aura-estrogen-birth-control-stroke-risk-record-20260604"
-      ]
-    },
-    "천식": {
-      "count": 22,
-      "qids": [
-        "rsp_021",
-        "rsp_022",
-        "rsp_026",
-        "rsp_035",
-        "rsp_043",
-        "rsp_045",
-        "rsp_054",
-        "rsp_074",
-        "rsp_092",
-        "rsp_095",
-        "rsp_096",
-        "rsp_097",
-        "resp-001",
-        "resp-101",
-        "qa200-20260527-160",
-        "trendqa-respiratory-20260530",
-        "round3-respiratory-2-20260531",
-        "trend-pollen-thunderstorm-asthma-action-plan-20260603",
-        "trend-wildfire-smoke-aqi-n95-asthma-copd-action-record-20260603",
-        "trend-monsoon-mold-dampness-asthma-allergy-home-record-20260604",
-        "trend-respiratory-cough-three-weeks-asthma-reflux-record-20260604",
-        "trend-respiratory-asthma-inhaler-spacer-action-plan-record-20260604"
       ]
     },
     "테스토스테론": {
@@ -8876,6 +8882,20 @@
         "trend-bph-night-urination-weak-stream-urinary-symptom-record-20260604"
       ]
     },
+    "기침": {
+      "count": 9,
+      "qids": [
+        "resp-007",
+        "qa200-20260527-167",
+        "qa200-20260527-168",
+        "trendqa-respiratory-20260530",
+        "round2-respiratory-20260530",
+        "round3-respiratory-1-20260531",
+        "trend-cancer-immune-immunotherapy-diarrhea-cough-side-effect-record-20260604",
+        "strategic-qa-respiratory-pertussis-prolonged-cough-vaccine-exposure-record-20260605",
+        "strategic-qa-respiratory-long-covid-cough-dyspnea-oximeter-exertion-record-20260605"
+      ]
+    },
     "나트륨": {
       "count": 9,
       "qids": [
@@ -9042,19 +9062,6 @@
         "trend-mens-psa-screening-shared-decision-family-history-record-20260604"
       ]
     },
-    "기침": {
-      "count": 8,
-      "qids": [
-        "resp-007",
-        "qa200-20260527-167",
-        "qa200-20260527-168",
-        "trendqa-respiratory-20260530",
-        "round2-respiratory-20260530",
-        "round3-respiratory-1-20260531",
-        "trend-cancer-immune-immunotherapy-diarrhea-cough-side-effect-record-20260604",
-        "strategic-qa-respiratory-pertussis-prolonged-cough-vaccine-exposure-record-20260605"
-      ]
-    },
     "뇌졸중": {
       "count": 8,
       "qids": [
@@ -9079,6 +9086,19 @@
         "trend-cgm-prediabetes-a1c-postprandial-spike-20260602",
         "trend-metabolism-glp1-constipation-hydration-meal-record-20260604",
         "trend-metabolism-a1c-normal-postprandial-spike-cgm-record-20260604"
+      ]
+    },
+    "롱코비드": {
+      "count": 8,
+      "qids": [
+        "neuro-014",
+        "rsp_033",
+        "resp-017",
+        "infect-extra-012",
+        "round3-neuro_cognitive-1-20260531",
+        "round3-infection_inflammation-1-20260531",
+        "trend-neuro-long-covid-brain-fog-memory-record-20260604",
+        "strategic-qa-respiratory-long-covid-cough-dyspnea-oximeter-exertion-record-20260605"
       ]
     },
     "모발·두피": {
@@ -9346,16 +9366,16 @@
         "qa200-20260527-026"
       ]
     },
-    "롱코비드": {
+    "발기부전": {
       "count": 7,
       "qids": [
-        "neuro-014",
-        "rsp_033",
-        "resp-017",
-        "infect-extra-012",
-        "round3-neuro_cognitive-1-20260531",
-        "round3-infection_inflammation-1-20260531",
-        "trend-neuro-long-covid-brain-fog-memory-record-20260604"
+        "mens-003",
+        "mens-extra-005",
+        "mens-102",
+        "qa200-20260527-195",
+        "trend-erectile-dysfunction-cardiovascular-risk-20260602",
+        "strategic-qa-mens-ed-cardiovascular-bp-glucose-phlorotannin-20260605",
+        "strategic-qa-mens-peyronies-curvature-plaque-pain-erection-record-20260605"
       ]
     },
     "방광염": {
@@ -9699,17 +9719,6 @@
         "mental-009",
         "mental-109",
         "qa200-20260527-122"
-      ]
-    },
-    "발기부전": {
-      "count": 6,
-      "qids": [
-        "mens-003",
-        "mens-extra-005",
-        "mens-102",
-        "qa200-20260527-195",
-        "trend-erectile-dysfunction-cardiovascular-risk-20260602",
-        "strategic-qa-mens-ed-cardiovascular-bp-glucose-phlorotannin-20260605"
       ]
     },
     "베르베린": {
@@ -12409,7 +12418,10 @@
     "strategic-qa-respiratory-pertussis-prolonged-cough-vaccine-exposure-record-20260605": "기침이-발작처럼-오래가고-구토까지-있으면-백일해인지-접종노출-기록을-어떻게-준비하나요",
     "strategic-qa-hair-alopecia-areata-jak-safety-autoimmune-record-20260605": "동전-모양-원형탈모가-갑자기-생기면-JAK-억제제-안전성자가면역-동반-증상은-어떻게-기록하나요",
     "strategic-qa-mens-testicular-lump-ultrasound-tumor-marker-record-20260605": "고환에-통증-없는-멍울이나-한쪽-커짐이-느껴질-때-초음파종양표지자-상담-기록은-어떻게-준비하나요",
-    "strategic-qa-womens-urinary-incontinence-bladder-diary-caffeine-uti-record-20260605": "기침할-때-소변이-새거나-갑자기-참기-어려우면-요실금-유형과-방광일지는-어떻게-기록하나요"
+    "strategic-qa-womens-urinary-incontinence-bladder-diary-caffeine-uti-record-20260605": "기침할-때-소변이-새거나-갑자기-참기-어려우면-요실금-유형과-방광일지는-어떻게-기록하나요",
+    "strategic-qa-hair-oral-minoxidil-edema-heart-rate-blood-pressure-record-20260605": "저용량-경구-미녹시딜을-탈모로-상담할-때-부종심박혈압다모증-기록은-어떻게-준비하나요",
+    "strategic-qa-mens-peyronies-curvature-plaque-pain-erection-record-20260605": "음경이-휘고-발기-통증이나-단단한-판이-만져질-때-페이로니병-상담-기록은-어떻게-준비하나요",
+    "strategic-qa-respiratory-long-covid-cough-dyspnea-oximeter-exertion-record-20260605": "코로나-이후-기침과-숨참이-오래가면-롱코비드인지-산소포화도운동-후-악화-기록은-어떻게-준비하나요"
   },
-  "generated_at": "2026-06-05T09:07:10.955124+00:00"
+  "generated_at": "2026-06-05T09:24:03.867377+00:00"
 }
