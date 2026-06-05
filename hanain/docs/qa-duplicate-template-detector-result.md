@@ -1,8 +1,8 @@
 # QA Duplicate Template Detector Result
 
-- generatedAt: 2026-06-05T08:15:45.391Z
-- validatedScanned: 1930
-- repeatedSentenceWarnings(>=4): 139
+- generatedAt: 2026-06-05T09:07:00.149Z
+- validatedScanned: 1933
+- repeatedSentenceWarnings(>=4): 140
 - repeatedParagraphFails(>=3): 14
 - similarityPairs(>=35% manual-review, sample=120): 3360
 - status: PASS
@@ -145,6 +145,7 @@
 - count=5 ids=mens-extra-006, mens-extra-040, mens-extra-047, mens-extra-057, qa200-20260527-197 sample="암 치료 중 건강관리 관련 질문에서는 배뇨 증상, 수면, 체중, 혈압, 약물 이력을 함께 봐야 실질적인 관리 방향이 나옵니다...."
 - count=5 ids=infect-extra-005, infect-extra-007, infect-extra-019, infect-extra-073, infect-007 sample="관련 질문에서는 발열, 통증, 붓기, 전신증상, 노출력, 기저질환을 함께 확인해야 판단이 가능합니다...."
 - count=5 ids=mental-extra-008, mental-extra-044, mental-018, qa200-20260527-114, qa200-20260527-118 sample="관련 질문에서는 감정 상태뿐 아니라 수면, 일상 기능, 대인관계, 스트레스 사건을 함께 봐야 합니다...."
+- count=5 ids=strategic-qa-womens-fibroid-heavy-bleeding-anemia-iron-record-20260605, strategic-qa-womens-pelvic-organ-prolapse-urinary-leakage-constipation-record-20260605, strategic-qa-mens-varicocele-testicular-pain-semen-analysis-fertility-record-20260605, strategic-qa-mens-testicular-lump-ultrasound-tumor-marker-record-20260605, strategic-qa-womens-urinary-incontinence-bladder-diary-caffeine-uti-record-20260605 sample="pubmed에는 phlorotannin-rich ecklonia cava extract가 염증 관련 표지와 대사 반응을 다룬 연구가 등재되어 있습니다...."
 - count=4 ids=meta-008, meta_025, sh_068, seoqa-skin-06 sample="짧은 답변 피부 증상 검사는 단일 숫자만 보지 말고 검사 시점, 증상 변화, 복용약, 이전 결과와 함께 비교해 해석해야 정확합니다...."
 - count=4 ids=meta-008, meta_025, sh_068, seoqa-skin-06 sample="자세히 보면 피부 증상 검사 해석에서는 추세 비교가 핵심이며, 같은 검사도 조건이 다르면 결과 의미가 달라질 수 있습니다...."
 - count=4 ids=dige-003, dg_026, dg_035, dg_089 sample="암 치료 중 건강관리 관련 질문에서는 증상 강도만 보지 말고 식사·수면·음주·약물 패턴과 연결해서 해석해야 합니다...."

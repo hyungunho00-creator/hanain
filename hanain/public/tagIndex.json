@@ -1,11 +1,11 @@
 {
   "min_tag_count": 5,
-  "total_questions": 1930,
-  "total_unique_tags": 2346,
+  "total_questions": 1933,
+  "total_unique_tags": 2355,
   "page_eligible_tags": 260,
   "tags": {
     "플로로탄닌": {
-      "count": 1380,
+      "count": 1383,
       "qids": [
         "cardio-001",
         "cardio-002",
@@ -1386,7 +1386,10 @@
         "strategic-qa-womens-pelvic-organ-prolapse-urinary-leakage-constipation-record-20260605",
         "strategic-qa-hair-cancer-treatment-scalp-cooling-infection-recovery-record-20260605",
         "strategic-qa-mens-varicocele-testicular-pain-semen-analysis-fertility-record-20260605",
-        "strategic-qa-respiratory-pertussis-prolonged-cough-vaccine-exposure-record-20260605"
+        "strategic-qa-respiratory-pertussis-prolonged-cough-vaccine-exposure-record-20260605",
+        "strategic-qa-hair-alopecia-areata-jak-safety-autoimmune-record-20260605",
+        "strategic-qa-mens-testicular-lump-ultrasound-tumor-marker-record-20260605",
+        "strategic-qa-womens-urinary-incontinence-bladder-diary-caffeine-uti-record-20260605"
       ]
     },
     "감태": {
@@ -6712,7 +6715,7 @@
       ]
     },
     "여성건강": {
-      "count": 47,
+      "count": 48,
       "qids": [
         "woms-001",
         "woms-005",
@@ -6760,7 +6763,8 @@
         "trend-womens-endometriosis-pain-cycle-record-20260604",
         "strategic-qa-womens-menopause-ht-label-hotflash-sleep-phlorotannin-20260605",
         "strategic-qa-womens-fibroid-heavy-bleeding-anemia-iron-record-20260605",
-        "strategic-qa-womens-pelvic-organ-prolapse-urinary-leakage-constipation-record-20260605"
+        "strategic-qa-womens-pelvic-organ-prolapse-urinary-leakage-constipation-record-20260605",
+        "strategic-qa-womens-urinary-incontinence-bladder-diary-caffeine-uti-record-20260605"
       ]
     },
     "호흡기": {
@@ -6812,7 +6816,7 @@
       ]
     },
     "남성건강": {
-      "count": 41,
+      "count": 42,
       "qids": [
         "mens-001",
         "mens-002",
@@ -6854,7 +6858,8 @@
         "strategic-qa-mens-ed-cardiovascular-bp-glucose-phlorotannin-20260605",
         "strategic-qa-mens-hpv-vaccine-oropharyngeal-cancer-neck-node-record-20260605",
         "strategic-qa-mens-bph-nocturia-sleep-diuretic-glucose-record-20260605",
-        "strategic-qa-mens-varicocele-testicular-pain-semen-analysis-fertility-record-20260605"
+        "strategic-qa-mens-varicocele-testicular-pain-semen-analysis-fertility-record-20260605",
+        "strategic-qa-mens-testicular-lump-ultrasound-tumor-marker-record-20260605"
       ]
     },
     "뼈": {
@@ -8154,6 +8159,26 @@
         "dg_089"
       ]
     },
+    "자가면역": {
+      "count": 15,
+      "qids": [
+        "skin-007",
+        "musc-007",
+        "woms-019",
+        "infect-extra-021",
+        "infect-extra-023",
+        "infect-extra-034",
+        "infect-extra-035",
+        "infect-extra-037",
+        "infect-extra-038",
+        "infect-extra-039",
+        "infect-004",
+        "infect-010",
+        "infect-012",
+        "infect-018",
+        "strategic-qa-hair-alopecia-areata-jak-safety-autoimmune-record-20260605"
+      ]
+    },
     "피부장벽": {
       "count": 15,
       "qids": [
@@ -8271,23 +8296,23 @@
         "trend-diet-microbiome-ibs-upf-fermented-food-20260602"
       ]
     },
-    "자가면역": {
+    "카페인": {
       "count": 14,
       "qids": [
-        "skin-007",
-        "musc-007",
-        "woms-019",
-        "infect-extra-021",
-        "infect-extra-023",
-        "infect-extra-034",
-        "infect-extra-035",
-        "infect-extra-037",
-        "infect-extra-038",
-        "infect-extra-039",
-        "infect-004",
-        "infect-010",
-        "infect-012",
-        "infect-018"
+        "cardio-024",
+        "cardio-074",
+        "wh-extra-023",
+        "wh-extra-057",
+        "mens-010",
+        "qa200-20260527-080",
+        "qa200-20260527-114",
+        "qa200-20260527-116",
+        "qa200-20260527-190",
+        "round3-mental_health-1-20260531",
+        "round3-mens_health-1-20260531",
+        "trend-coffee-gut-brain-axis-polyphenol-20260602",
+        "trend-energy-drink-preworkout-caffeine-sleep-20260602",
+        "strategic-qa-womens-urinary-incontinence-bladder-diary-caffeine-uti-record-20260605"
       ]
     },
     "프로바이오틱스": {
@@ -8344,24 +8369,6 @@
         "trend-coffee-gut-brain-axis-polyphenol-20260602",
         "trend-diet-microbiome-ibs-upf-fermented-food-20260602",
         "trend-fermented-food-probiotics-gut-microbiome-safety-20260602"
-      ]
-    },
-    "카페인": {
-      "count": 13,
-      "qids": [
-        "cardio-024",
-        "cardio-074",
-        "wh-extra-023",
-        "wh-extra-057",
-        "mens-010",
-        "qa200-20260527-080",
-        "qa200-20260527-114",
-        "qa200-20260527-116",
-        "qa200-20260527-190",
-        "round3-mental_health-1-20260531",
-        "round3-mens_health-1-20260531",
-        "trend-coffee-gut-brain-axis-polyphenol-20260602",
-        "trend-energy-drink-preworkout-caffeine-sleep-20260602"
       ]
     },
     "감염·염증": {
@@ -8897,6 +8904,20 @@
         "nc_115"
       ]
     },
+    "모발건강": {
+      "count": 9,
+      "qids": [
+        "skin-003",
+        "woms-010",
+        "trend-summer-scalp-sunburn-thinning-hair-uv-record-20260604",
+        "trend-hair-ferritin-iron-hair-shedding-record-20260604",
+        "trend-hair-alopecia-areata-jak-inhibitor-safety-record-20260604",
+        "strategic-qa-hair-glp1-telogen-protein-ferritin-phlorotannin-20260605",
+        "strategic-qa-hair-scalp-itch-scale-psoriasis-tinea-scarring-record-20260605",
+        "strategic-qa-hair-thyroid-iron-brittle-nails-protein-record-20260605",
+        "strategic-qa-hair-alopecia-areata-jak-safety-autoimmune-record-20260605"
+      ]
+    },
     "백신": {
       "count": 9,
       "qids": [
@@ -8937,6 +8958,20 @@
         "infect-019",
         "qa200-20260527-196",
         "round3-infection_inflammation-2-20260531"
+      ]
+    },
+    "요실금": {
+      "count": 9,
+      "qids": [
+        "woms-018",
+        "wh-extra-037",
+        "mens-extra-022",
+        "mens-extra-048",
+        "mens-extra-057",
+        "mens-extra-065",
+        "mens-009",
+        "strategic-qa-womens-pelvic-organ-prolapse-urinary-leakage-constipation-record-20260605",
+        "strategic-qa-womens-urinary-incontinence-bladder-diary-caffeine-uti-record-20260605"
       ]
     },
     "우울증": {
@@ -9059,19 +9094,6 @@
         "qa200-20260527-156"
       ]
     },
-    "모발건강": {
-      "count": 8,
-      "qids": [
-        "skin-003",
-        "woms-010",
-        "trend-summer-scalp-sunburn-thinning-hair-uv-record-20260604",
-        "trend-hair-ferritin-iron-hair-shedding-record-20260604",
-        "trend-hair-alopecia-areata-jak-inhibitor-safety-record-20260604",
-        "strategic-qa-hair-glp1-telogen-protein-ferritin-phlorotannin-20260605",
-        "strategic-qa-hair-scalp-itch-scale-psoriasis-tinea-scarring-record-20260605",
-        "strategic-qa-hair-thyroid-iron-brittle-nails-protein-record-20260605"
-      ]
-    },
     "모발두피": {
       "count": 8,
       "qids": [
@@ -9150,17 +9172,17 @@
         "strategic-qa-mens-bph-nocturia-sleep-diuretic-glucose-record-20260605"
       ]
     },
-    "요실금": {
+    "요로감염": {
       "count": 8,
       "qids": [
-        "woms-018",
-        "wh-extra-037",
-        "mens-extra-022",
-        "mens-extra-048",
-        "mens-extra-057",
-        "mens-extra-065",
-        "mens-009",
-        "strategic-qa-womens-pelvic-organ-prolapse-urinary-leakage-constipation-record-20260605"
+        "infect-extra-003",
+        "infect-extra-064",
+        "infect-005",
+        "infect-105",
+        "qa200-20260527-178",
+        "trend-summer-uti-women-hydration-urination-symptom-record-20260604",
+        "trend-infection-recurrent-uti-antibiotic-resistance-record-20260604",
+        "strategic-qa-womens-urinary-incontinence-bladder-diary-caffeine-uti-record-20260605"
       ]
     },
     "유방암": {
@@ -9406,18 +9428,6 @@
         "round3-neuro_cognitive-1-20260531",
         "trend-screen-time-sleep-anxiety-digital-behavior-20260602",
         "trend-teen-social-media-sleep-mental-health-boundary-20260603"
-      ]
-    },
-    "요로감염": {
-      "count": 7,
-      "qids": [
-        "infect-extra-003",
-        "infect-extra-064",
-        "infect-005",
-        "infect-105",
-        "qa200-20260527-178",
-        "trend-summer-uti-women-hydration-urination-symptom-record-20260604",
-        "trend-infection-recurrent-uti-antibiotic-resistance-record-20260604"
       ]
     },
     "임신": {
@@ -12396,7 +12406,10 @@
     "strategic-qa-womens-pelvic-organ-prolapse-urinary-leakage-constipation-record-20260605": "골반이-묵직하고-소변이-새는-느낌이-있으면-골반장기탈출요실금-상담-전-무엇을-기록하나요",
     "strategic-qa-hair-cancer-treatment-scalp-cooling-infection-recovery-record-20260605": "항암치료-전-탈모와-두피냉각을-상담할-때-어떤-두피감염회복-기록을-준비해야-하나요",
     "strategic-qa-mens-varicocele-testicular-pain-semen-analysis-fertility-record-20260605": "고환이-묵직하고-정계정맥류가-의심될-때-통증고환크기정액검사-기록은-어떻게-준비하나요",
-    "strategic-qa-respiratory-pertussis-prolonged-cough-vaccine-exposure-record-20260605": "기침이-발작처럼-오래가고-구토까지-있으면-백일해인지-접종노출-기록을-어떻게-준비하나요"
+    "strategic-qa-respiratory-pertussis-prolonged-cough-vaccine-exposure-record-20260605": "기침이-발작처럼-오래가고-구토까지-있으면-백일해인지-접종노출-기록을-어떻게-준비하나요",
+    "strategic-qa-hair-alopecia-areata-jak-safety-autoimmune-record-20260605": "동전-모양-원형탈모가-갑자기-생기면-JAK-억제제-안전성자가면역-동반-증상은-어떻게-기록하나요",
+    "strategic-qa-mens-testicular-lump-ultrasound-tumor-marker-record-20260605": "고환에-통증-없는-멍울이나-한쪽-커짐이-느껴질-때-초음파종양표지자-상담-기록은-어떻게-준비하나요",
+    "strategic-qa-womens-urinary-incontinence-bladder-diary-caffeine-uti-record-20260605": "기침할-때-소변이-새거나-갑자기-참기-어려우면-요실금-유형과-방광일지는-어떻게-기록하나요"
   },
-  "generated_at": "2026-06-05T08:14:47.781110+00:00"
+  "generated_at": "2026-06-05T09:07:10.955124+00:00"
 }
