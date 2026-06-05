@@ -1,7 +1,7 @@
 # QA Duplicate Template Detector Result
 
-- generatedAt: 2026-06-05T12:57:39.808Z
-- validatedScanned: 1942
+- generatedAt: 2026-06-05T14:08:45.929Z
+- validatedScanned: 1945
 - repeatedSentenceWarnings(>=4): 140
 - repeatedParagraphFails(>=3): 14
 - similarityPairs(>=35% manual-review, sample=120): 3360
@@ -131,13 +131,13 @@
 - count=7 ids=wh-extra-062, mental-extra-002, mental-102, mental-110, qa200-20260527-109, qa200-20260527-115, qa-hospital-20260527-025 sample="짧은 답변 정신건강/수면 문제 관련 약물은 임의 중단·증량보다..."
 - count=7 ids=wh-extra-062, mental-extra-002, mental-102, mental-110, qa200-20260527-109, qa200-20260527-115, qa-hospital-20260527-025 sample="자세히 보면 정신건강/수면 문제 관련 약물 질문은 효과보다..."
 - count=7 ids=mens-008, mens-011, mens-016, mens-extra-007, mens-extra-012, mens-extra-035, mens-008 sample="질문은 남성건강 맥락에서 증상, 검사, 치료, 생활요인을 함께 봐야 정확한 판단이 가능합니다...."
+- count=7 ids=strategic-qa-womens-fibroid-heavy-bleeding-anemia-iron-record-20260605, strategic-qa-womens-pelvic-organ-prolapse-urinary-leakage-constipation-record-20260605, strategic-qa-mens-varicocele-testicular-pain-semen-analysis-fertility-record-20260605, strategic-qa-mens-testicular-lump-ultrasound-tumor-marker-record-20260605, strategic-qa-womens-urinary-incontinence-bladder-diary-caffeine-uti-record-20260605, strategic-qa-mens-peyronies-curvature-plaque-pain-erection-record-20260605, strategic-qa-infection-lyme-tick-bite-expanding-rash-doxycycline-testing-record-20260605 sample="pubmed에는 phlorotannin-rich ecklonia cava extract가 염증 관련 표지와 대사 반응을 다룬 연구가 등재되어 있습니다...."
 - count=6 ids=ci_020, ci_040, sh_025, sh_062, rsp_076, mental-extra-044 sample="방향은 “현재 기능 제한이 어느 정도인지”와 “검사에서 확인된 손상 범위가 무엇인지”를 함께 보고 정합니다...."
 - count=6 ids=dige-020, neuro-007, wh-extra-038, infect-extra-019, infect-extra-066, sh_093 sample="원인 평가는 생활요인만으로 결론 내리지 말고 진찰·검사·경과 관찰을 함께 묶어 해석해야 정확도가 높습니다...."
 - count=6 ids=dg_014, dg_019, dg_078, qa200-20260527-059, qa200-20260527-076, qa200-20260527-168 sample="자세히 보면 소화기 증상 질문의 핵심은 현재 상태를 구조화해 “무엇을 먼저 확인할지”를 정하는 데 있습니다...."
 - count=6 ids=neuro-011, neuro-016, nc_039, nc_054, nc_078, qa200-20260527-096 sample="정신건강/수면 문제 관련 질문에서는 기억 저하, 두통, 어지럼, 수면, 정서 상태를 함께 보아야 방향을 정확히 잡을 수 있습니다...."
 - count=6 ids=wh-extra-062, mental-extra-002, mental-102, mental-110, qa200-20260527-115, qa-hospital-20260527-025 sample="정신건강/수면 문제 약물 질문은 적응증과 금기, 병용 시 주의사항, 복용 중단 시 위험을 함께 확인해야 하며, 임의 변경은 피해야 합니다...."
 - count=6 ids=mens-001, mens-011, mens-extra-007, mens-extra-012, mens-extra-028, mens-extra-035 sample="관련 질문에서는 배뇨 증상, 수면, 체중, 혈압, 약물 이력을 함께 봐야 실질적인 관리 방향이 나옵니다...."
-- count=6 ids=strategic-qa-womens-fibroid-heavy-bleeding-anemia-iron-record-20260605, strategic-qa-womens-pelvic-organ-prolapse-urinary-leakage-constipation-record-20260605, strategic-qa-mens-varicocele-testicular-pain-semen-analysis-fertility-record-20260605, strategic-qa-mens-testicular-lump-ultrasound-tumor-marker-record-20260605, strategic-qa-womens-urinary-incontinence-bladder-diary-caffeine-uti-record-20260605, strategic-qa-mens-peyronies-curvature-plaque-pain-erection-record-20260605 sample="pubmed에는 phlorotannin-rich ecklonia cava extract가 염증 관련 표지와 대사 반응을 다룬 연구가 등재되어 있습니다...."
 - count=5 ids=cardio-009, cardio-063, qa200-20260527-095, qa200-20260527-097, seoqa-neuro_cognitive-06 sample="짧은 답변 뇌·인지 증상 검사는 단일 숫자만 보지 말고 검사 시점, 증상 변화, 복용약, 이전 결과와 함께 비교해 해석해야 정확합니다...."
 - count=5 ids=cardio-009, cardio-063, qa200-20260527-095, qa200-20260527-097, seoqa-neuro_cognitive-06 sample="자세히 보면 뇌·인지 증상 검사 해석에서는 추세 비교가 핵심이며, 같은 검사도 조건이 다르면 결과 의미가 달라질 수 있습니다...."
 - count=5 ids=dige-002, dg_012, dg_014, dg_019, qa200-20260527-059 sample="소화기 증상 관련 질문에서는 증상 강도만 보지 말고 식사·수면·음주·약물 패턴과 연결해서 해석해야 합니다...."

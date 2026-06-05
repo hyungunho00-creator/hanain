@@ -1,11 +1,11 @@
 {
   "min_tag_count": 5,
-  "total_questions": 1942,
-  "total_unique_tags": 2380,
+  "total_questions": 1945,
+  "total_unique_tags": 2389,
   "page_eligible_tags": 263,
   "tags": {
     "플로로탄닌": {
-      "count": 1392,
+      "count": 1395,
       "qids": [
         "cardio-001",
         "cardio-002",
@@ -1398,7 +1398,10 @@
         "strategic-qa-infection-mpox-rash-exposure-jynneos-testing-isolation-record-20260605",
         "strategic-qa-hair-telogen-effluvium-fever-diet-stress-shedding-record-20260605",
         "strategic-qa-mens-psa-screening-family-history-bph-prostatitis-shared-decision-record-20260605",
-        "strategic-qa-respiratory-rsv-vaccine-adult-risk-pregnancy-abrysvo-record-20260605"
+        "strategic-qa-respiratory-rsv-vaccine-adult-risk-pregnancy-abrysvo-record-20260605",
+        "strategic-qa-hair-traction-alopecia-tight-hairstyle-extension-wig-hairline-record-20260605",
+        "strategic-qa-womens-hpv-self-collection-cervical-screening-pap-positive-followup-record-20260605",
+        "strategic-qa-infection-lyme-tick-bite-expanding-rash-doxycycline-testing-record-20260605"
       ]
     },
     "감태": {
@@ -6668,6 +6671,61 @@
         "qa-hospital-20260527-050"
       ]
     },
+    "여성건강": {
+      "count": 50,
+      "qids": [
+        "woms-001",
+        "woms-005",
+        "woms-006",
+        "woms-008",
+        "woms-011",
+        "woms-012",
+        "woms-014",
+        "woms-015",
+        "woms-016",
+        "woms-017",
+        "woms-018",
+        "woms-019",
+        "woms-020",
+        "infect-005",
+        "qa200-20260527-153",
+        "qa200-20260527-178",
+        "qa200-20260527-181",
+        "qa200-20260527-182",
+        "qa200-20260527-183",
+        "qa200-20260527-184",
+        "qa200-20260527-185",
+        "qa200-20260527-186",
+        "qa200-20260527-187",
+        "qa200-20260527-188",
+        "qa200-20260527-189",
+        "qa200-20260527-190",
+        "qa200-20260527-191",
+        "qa200-20260527-192",
+        "trendqa-womens-20260530",
+        "round2-womens-health-20260530",
+        "trend-menopause-hormone-therapy-label-change-20260602",
+        "trend-endometriosis-clinical-diagnosis-acog-20260602",
+        "trend-pcos-glp1-insulin-resistance-pregnancy-planning-20260602",
+        "trend-hpv-self-collection-cervical-screening-20260602",
+        "trend-dense-breast-mammogram-notification-supplemental-screening-20260603",
+        "trend-menopause-hormone-therapy-label-update-record-20260603",
+        "trend-summer-uti-women-hydration-urination-symptom-record-20260604",
+        "trend-hpv-self-collection-cervical-screening-record-20260604",
+        "trend-pregnancy-postpartum-warning-signs-blood-pressure-record-20260604",
+        "trend-perimenopause-abnormal-bleeding-menopause-record-20260604",
+        "trend-migraine-aura-estrogen-birth-control-stroke-risk-record-20260604",
+        "trend-infection-recurrent-uti-antibiotic-resistance-record-20260604",
+        "trend-womens-ovarian-cancer-bloating-symptom-record-20260604",
+        "trend-womens-endometriosis-pain-cycle-record-20260604",
+        "strategic-qa-womens-menopause-ht-label-hotflash-sleep-phlorotannin-20260605",
+        "strategic-qa-womens-fibroid-heavy-bleeding-anemia-iron-record-20260605",
+        "strategic-qa-womens-pelvic-organ-prolapse-urinary-leakage-constipation-record-20260605",
+        "strategic-qa-womens-urinary-incontinence-bladder-diary-caffeine-uti-record-20260605",
+        "strategic-qa-womens-dense-breast-mammogram-notification-risk-supplemental-screening-record-20260605",
+        "strategic-qa-womens-hpv-self-collection-cervical-screening-pap-positive-followup-record-20260605"
+      ]
+    },
     "진료준비": {
       "count": 50,
       "qids": [
@@ -6721,60 +6779,6 @@
         "qa-hospital-20260527-048",
         "qa-hospital-20260527-049",
         "qa-hospital-20260527-050"
-      ]
-    },
-    "여성건강": {
-      "count": 49,
-      "qids": [
-        "woms-001",
-        "woms-005",
-        "woms-006",
-        "woms-008",
-        "woms-011",
-        "woms-012",
-        "woms-014",
-        "woms-015",
-        "woms-016",
-        "woms-017",
-        "woms-018",
-        "woms-019",
-        "woms-020",
-        "infect-005",
-        "qa200-20260527-153",
-        "qa200-20260527-178",
-        "qa200-20260527-181",
-        "qa200-20260527-182",
-        "qa200-20260527-183",
-        "qa200-20260527-184",
-        "qa200-20260527-185",
-        "qa200-20260527-186",
-        "qa200-20260527-187",
-        "qa200-20260527-188",
-        "qa200-20260527-189",
-        "qa200-20260527-190",
-        "qa200-20260527-191",
-        "qa200-20260527-192",
-        "trendqa-womens-20260530",
-        "round2-womens-health-20260530",
-        "trend-menopause-hormone-therapy-label-change-20260602",
-        "trend-endometriosis-clinical-diagnosis-acog-20260602",
-        "trend-pcos-glp1-insulin-resistance-pregnancy-planning-20260602",
-        "trend-hpv-self-collection-cervical-screening-20260602",
-        "trend-dense-breast-mammogram-notification-supplemental-screening-20260603",
-        "trend-menopause-hormone-therapy-label-update-record-20260603",
-        "trend-summer-uti-women-hydration-urination-symptom-record-20260604",
-        "trend-hpv-self-collection-cervical-screening-record-20260604",
-        "trend-pregnancy-postpartum-warning-signs-blood-pressure-record-20260604",
-        "trend-perimenopause-abnormal-bleeding-menopause-record-20260604",
-        "trend-migraine-aura-estrogen-birth-control-stroke-risk-record-20260604",
-        "trend-infection-recurrent-uti-antibiotic-resistance-record-20260604",
-        "trend-womens-ovarian-cancer-bloating-symptom-record-20260604",
-        "trend-womens-endometriosis-pain-cycle-record-20260604",
-        "strategic-qa-womens-menopause-ht-label-hotflash-sleep-phlorotannin-20260605",
-        "strategic-qa-womens-fibroid-heavy-bleeding-anemia-iron-record-20260605",
-        "strategic-qa-womens-pelvic-organ-prolapse-urinary-leakage-constipation-record-20260605",
-        "strategic-qa-womens-urinary-incontinence-bladder-diary-caffeine-uti-record-20260605",
-        "strategic-qa-womens-dense-breast-mammogram-notification-risk-supplemental-screening-record-20260605"
       ]
     },
     "남성건강": {
@@ -9018,6 +9022,20 @@
         "mental-101"
       ]
     },
+    "자궁경부암": {
+      "count": 9,
+      "qids": [
+        "cancer-016",
+        "woms-012",
+        "wh-extra-031",
+        "wh-extra-038",
+        "infect-extra-017",
+        "ci_116",
+        "ci_117",
+        "trend-hpv-self-collection-cervical-screening-20260602",
+        "strategic-qa-womens-hpv-self-collection-cervical-screening-pap-positive-followup-record-20260605"
+      ]
+    },
     "코르티솔": {
       "count": 9,
       "qids": [
@@ -9252,19 +9270,6 @@
         "ci_148",
         "nc_116",
         "infect-108"
-      ]
-    },
-    "자궁경부암": {
-      "count": 8,
-      "qids": [
-        "cancer-016",
-        "woms-012",
-        "wh-extra-031",
-        "wh-extra-038",
-        "infect-extra-017",
-        "ci_116",
-        "ci_117",
-        "trend-hpv-self-collection-cervical-screening-20260602"
       ]
     },
     "전립선비대증": {
@@ -12470,7 +12475,10 @@
     "strategic-qa-infection-mpox-rash-exposure-jynneos-testing-isolation-record-20260605": "엠폭스-의심-발진이나-노출이-있으면-검사격리JYNNEOS-백신-상담-기록은-어떻게-준비하나요",
     "strategic-qa-hair-telogen-effluvium-fever-diet-stress-shedding-record-20260605": "고열감염다이어트-뒤-머리카락이-한꺼번에-빠지면-휴지기-탈모-상담-기록은-어떻게-준비하나요",
     "strategic-qa-mens-psa-screening-family-history-bph-prostatitis-shared-decision-record-20260605": "PSA-전립선암-검사를-받을지-고민할-때-가족력배뇨증상검사-전-조건은-어떻게-기록하나요",
-    "strategic-qa-respiratory-rsv-vaccine-adult-risk-pregnancy-abrysvo-record-20260605": "RSV-백신을-맞아야-하는지-상담할-때-나이위험질환임신-주수-기록은-어떻게-준비하나요"
+    "strategic-qa-respiratory-rsv-vaccine-adult-risk-pregnancy-abrysvo-record-20260605": "RSV-백신을-맞아야-하는지-상담할-때-나이위험질환임신-주수-기록은-어떻게-준비하나요",
+    "strategic-qa-hair-traction-alopecia-tight-hairstyle-extension-wig-hairline-record-20260605": "꽉-묶는-머리붙임머리가발-뒤-헤어라인이-밀리면-견인성-탈모-상담-기록은-어떻게-준비하나요",
+    "strategic-qa-womens-hpv-self-collection-cervical-screening-pap-positive-followup-record-20260605": "HPV-자가채취-검사가-가능하다고-들었는데-Pap-검사양성-결과-상담-기록은-어떻게-준비하나요",
+    "strategic-qa-infection-lyme-tick-bite-expanding-rash-doxycycline-testing-record-20260605": "진드기-물린-뒤-붉은-발진이-커지면-라임병-검사예방-항생제-상담-기록은-어떻게-준비하나요"
   },
-  "generated_at": "2026-06-05T12:57:58.586844+00:00"
+  "generated_at": "2026-06-05T14:09:05.308204+00:00"
 }
