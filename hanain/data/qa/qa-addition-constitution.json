@@ -1,0 +1,66 @@
+{
+  "version": "2026-06-05-strategic-qna-v1",
+  "purpose": "사용자가 'Q&A 3개' 또는 동등한 표현으로 신규 건강 Q&A 발행을 지시하면, 별도 지시가 없어도 부족 카테고리와 최신 이슈 키워드를 우선하여 균일한 품질로 공개 자산화한다.",
+  "batchSize": 3,
+  "categoryStrategy": [
+    "카테고리별 공개 Q&A 수를 오름차순으로 정렬하고 부족 카테고리를 우선 배정한다.",
+    "최근 10개 Q&A의 주제와 겹치지 않는 최신 공중보건·진료상담·연구 이슈를 고른다.",
+    "카테고리 수가 같으면 최신 검색 수요와 공식 출처 업데이트가 있는 주제를 먼저 고른다.",
+    "암시적 반복 요청이 들어와도 기존 SEO 라우트와 컴포넌트는 바꾸지 않고 신규 Q&A 데이터와 공개 자산만 갱신한다."
+  ],
+  "qualityMinimums": {
+    "itemsPerBatch": 3,
+    "plainAnswerCharsEach": 3000,
+    "tagsEach": 6,
+    "referencesEach": 3,
+    "officialReferencesEach": 1,
+    "phlorotanninReferencesEach": 1,
+    "mustHaveValidatedAnswer": true,
+    "mustBePublic": true,
+    "mustBeInSourceAndPublicQaJson": true
+  },
+  "sourceRule": {
+    "preferred": [
+      "FDA",
+      "CDC",
+      "NIH",
+      "NIDDK",
+      "NIA",
+      "MedlinePlus",
+      "NCI",
+      "USPSTF",
+      "ACOG",
+      "American Heart Association",
+      "PubMed",
+      "PMC"
+    ],
+    "mustIncludeCurrentOfficialOrPrimaryResearch": true
+  },
+  "phlorotanninRule": {
+    "tone": "positive_but_bounded",
+    "mustConnectThrough": [
+      "해양 폴리페놀",
+      "감태 또는 갈조류 연구 맥락",
+      "항산화·염증 반응·수면·혈관·대사·두피 환경 중 해당 주제와 맞는 축",
+      "의료 상담 전 기록과 생활 리듬 정리"
+    ],
+    "forbiddenClaims": [
+      "치료한다",
+      "완치한다",
+      "예방을 보장한다",
+      "약물이나 진료를 대체한다",
+      "부작용 없이 해결한다",
+      "검사 결과를 바꾼다고 단정한다"
+    ]
+  },
+  "seoRule": {
+    "doNotChangeExistingSeoRoutesOrComponents": true,
+    "newItemsNoindex": false,
+    "qualityStatus": "validated",
+    "sourceStatus": "referenced",
+    "publicBodyMode": "full",
+    "mustAppearInSitemap": true,
+    "mustUpdateCheckpointCounts": true
+  },
+  "verificationCommand": "npm run audit:qa-batch"
+}
