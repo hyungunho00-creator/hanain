@@ -1,11 +1,11 @@
 {
   "min_tag_count": 5,
-  "total_questions": 1939,
-  "total_unique_tags": 2370,
-  "page_eligible_tags": 262,
+  "total_questions": 1942,
+  "total_unique_tags": 2380,
+  "page_eligible_tags": 263,
   "tags": {
     "플로로탄닌": {
-      "count": 1389,
+      "count": 1392,
       "qids": [
         "cardio-001",
         "cardio-002",
@@ -1395,7 +1395,10 @@
         "strategic-qa-respiratory-long-covid-cough-dyspnea-oximeter-exertion-record-20260605",
         "strategic-qa-hair-scalp-psoriasis-scale-itch-temporary-shedding-record-20260605",
         "strategic-qa-womens-dense-breast-mammogram-notification-risk-supplemental-screening-record-20260605",
-        "strategic-qa-infection-mpox-rash-exposure-jynneos-testing-isolation-record-20260605"
+        "strategic-qa-infection-mpox-rash-exposure-jynneos-testing-isolation-record-20260605",
+        "strategic-qa-hair-telogen-effluvium-fever-diet-stress-shedding-record-20260605",
+        "strategic-qa-mens-psa-screening-family-history-bph-prostatitis-shared-decision-record-20260605",
+        "strategic-qa-respiratory-rsv-vaccine-adult-risk-pregnancy-abrysvo-record-20260605"
       ]
     },
     "감태": {
@@ -6775,7 +6778,7 @@
       ]
     },
     "남성건강": {
-      "count": 43,
+      "count": 44,
       "qids": [
         "mens-001",
         "mens-002",
@@ -6819,7 +6822,8 @@
         "strategic-qa-mens-bph-nocturia-sleep-diuretic-glucose-record-20260605",
         "strategic-qa-mens-varicocele-testicular-pain-semen-analysis-fertility-record-20260605",
         "strategic-qa-mens-testicular-lump-ultrasound-tumor-marker-record-20260605",
-        "strategic-qa-mens-peyronies-curvature-plaque-pain-erection-record-20260605"
+        "strategic-qa-mens-peyronies-curvature-plaque-pain-erection-record-20260605",
+        "strategic-qa-mens-psa-screening-family-history-bph-prostatitis-shared-decision-record-20260605"
       ]
     },
     "호흡기": {
@@ -7877,6 +7881,29 @@
         "ingr-015"
       ]
     },
+    "철분": {
+      "count": 18,
+      "qids": [
+        "cardio-087",
+        "woms-004",
+        "wh-extra-024",
+        "womens-003",
+        "womens-010",
+        "mens-013",
+        "ingr-006",
+        "ingr-027",
+        "qa200-20260527-047",
+        "qa200-20260527-151",
+        "qa200-20260527-177",
+        "qa200-20260527-185",
+        "trendqa-hair-20260530",
+        "round2-hair-20260530",
+        "round3-hair-1-20260531",
+        "round3-womens_health-2-20260531",
+        "trend-hair-ferritin-iron-hair-shedding-record-20260604",
+        "strategic-qa-hair-telogen-effluvium-fever-diet-stress-shedding-record-20260605"
+      ]
+    },
     "마그네슘": {
       "count": 17,
       "qids": [
@@ -7897,28 +7924,6 @@
         "qa-hospital-20260527-041",
         "round3-mental_health-2-20260531",
         "trend-magnesium-glycinate-sleep-safety-20260602"
-      ]
-    },
-    "철분": {
-      "count": 17,
-      "qids": [
-        "cardio-087",
-        "woms-004",
-        "wh-extra-024",
-        "womens-003",
-        "womens-010",
-        "mens-013",
-        "ingr-006",
-        "ingr-027",
-        "qa200-20260527-047",
-        "qa200-20260527-151",
-        "qa200-20260527-177",
-        "qa200-20260527-185",
-        "trendqa-hair-20260530",
-        "round2-hair-20260530",
-        "round3-hair-1-20260531",
-        "round3-womens_health-2-20260531",
-        "trend-hair-ferritin-iron-hair-shedding-record-20260604"
       ]
     },
     "항생제": {
@@ -8398,6 +8403,23 @@
         "qa200-20260527-180"
       ]
     },
+    "갑상선": {
+      "count": 12,
+      "qids": [
+        "cardio-089",
+        "meta-006",
+        "meta_023",
+        "meta_044",
+        "meta_073",
+        "meta_096",
+        "woms-019",
+        "mens-extra-070",
+        "round3-hair-1-20260531",
+        "round3-womens_health-2-20260531",
+        "strategic-qa-hair-thyroid-iron-brittle-nails-protein-record-20260605",
+        "strategic-qa-hair-telogen-effluvium-fever-diet-stress-shedding-record-20260605"
+      ]
+    },
     "근력운동": {
       "count": 12,
       "qids": [
@@ -8549,22 +8571,6 @@
         "sh_068",
         "sh_079",
         "sh_094"
-      ]
-    },
-    "갑상선": {
-      "count": 11,
-      "qids": [
-        "cardio-089",
-        "meta-006",
-        "meta_023",
-        "meta_044",
-        "meta_073",
-        "meta_096",
-        "woms-019",
-        "mens-extra-070",
-        "round3-hair-1-20260531",
-        "round3-womens_health-2-20260531",
-        "strategic-qa-hair-thyroid-iron-brittle-nails-protein-record-20260605"
       ]
     },
     "면역력": {
@@ -9261,6 +9267,19 @@
         "trend-hpv-self-collection-cervical-screening-20260602"
       ]
     },
+    "전립선비대증": {
+      "count": 8,
+      "qids": [
+        "mens-005",
+        "mens-extra-001",
+        "mens-extra-037",
+        "mens-101",
+        "qa200-20260527-193",
+        "trend-bph-night-urination-weak-stream-urinary-symptom-record-20260604",
+        "strategic-qa-mens-bph-nocturia-sleep-diuretic-glucose-record-20260605",
+        "strategic-qa-mens-psa-screening-family-history-bph-prostatitis-shared-decision-record-20260605"
+      ]
+    },
     "지방간": {
       "count": 8,
       "qids": [
@@ -9500,18 +9519,6 @@
         "qa200-20260527-032",
         "qa200-20260527-120",
         "trend-berberine-blood-sugar-drug-interaction-20260602"
-      ]
-    },
-    "전립선비대증": {
-      "count": 7,
-      "qids": [
-        "mens-005",
-        "mens-extra-001",
-        "mens-extra-037",
-        "mens-101",
-        "qa200-20260527-193",
-        "trend-bph-night-urination-weak-stream-urinary-symptom-record-20260604",
-        "strategic-qa-mens-bph-nocturia-sleep-diuretic-glucose-record-20260605"
       ]
     },
     "체중감량": {
@@ -9979,6 +9986,17 @@
         "qa200-20260527-058"
       ]
     },
+    "휴지기탈모": {
+      "count": 6,
+      "qids": [
+        "qa200-20260527-154",
+        "round3-hair-1-20260531",
+        "trend-glp1-hair-loss-telogen-effluvium-20260602",
+        "trend-hair-ferritin-iron-hair-shedding-record-20260604",
+        "strategic-qa-hair-glp1-telogen-protein-ferritin-phlorotannin-20260605",
+        "strategic-qa-hair-telogen-effluvium-fever-diet-stress-shedding-record-20260605"
+      ]
+    },
     "BRCA": {
       "count": 5,
       "qids": [
@@ -10047,6 +10065,16 @@
         "round2-skin-20260530",
         "trend-skin-atopic-dermatitis-moisturizer-steroid-fear-record-20260604",
         "strategic-qa-hair-scalp-psoriasis-scale-itch-temporary-shedding-record-20260605"
+      ]
+    },
+    "가족력": {
+      "count": 5,
+      "qids": [
+        "qa200-20260527-106",
+        "trend-lpa-once-lifetime-test-family-heart-risk-20260603",
+        "trend-cardiovascular-lpa-family-heart-risk-record-20260604",
+        "trend-mens-psa-screening-shared-decision-family-history-record-20260604",
+        "strategic-qa-mens-psa-screening-family-history-bph-prostatitis-shared-decision-record-20260605"
       ]
     },
     "감염예방": {
@@ -10507,16 +10535,6 @@
         "ci_106",
         "trend-menopause-hormone-therapy-label-update-record-20260603",
         "strategic-qa-womens-menopause-ht-label-hotflash-sleep-phlorotannin-20260605"
-      ]
-    },
-    "휴지기탈모": {
-      "count": 5,
-      "qids": [
-        "qa200-20260527-154",
-        "round3-hair-1-20260531",
-        "trend-glp1-hair-loss-telogen-effluvium-20260602",
-        "trend-hair-ferritin-iron-hair-shedding-record-20260604",
-        "strategic-qa-hair-glp1-telogen-protein-ferritin-phlorotannin-20260605"
       ]
     }
   },
@@ -12449,7 +12467,10 @@
     "strategic-qa-respiratory-long-covid-cough-dyspnea-oximeter-exertion-record-20260605": "코로나-이후-기침과-숨참이-오래가면-롱코비드인지-산소포화도운동-후-악화-기록은-어떻게-준비하나요",
     "strategic-qa-hair-scalp-psoriasis-scale-itch-temporary-shedding-record-20260605": "두피-건선처럼-비늘가려움출혈과-탈모가-같이-보이면-어떤-기록을-준비하나요",
     "strategic-qa-womens-dense-breast-mammogram-notification-risk-supplemental-screening-record-20260605": "유방촬영-결과에서-치밀유방이라고-나오면-추가-초음파MRI-상담-기록은-어떻게-준비하나요",
-    "strategic-qa-infection-mpox-rash-exposure-jynneos-testing-isolation-record-20260605": "엠폭스-의심-발진이나-노출이-있으면-검사격리JYNNEOS-백신-상담-기록은-어떻게-준비하나요"
+    "strategic-qa-infection-mpox-rash-exposure-jynneos-testing-isolation-record-20260605": "엠폭스-의심-발진이나-노출이-있으면-검사격리JYNNEOS-백신-상담-기록은-어떻게-준비하나요",
+    "strategic-qa-hair-telogen-effluvium-fever-diet-stress-shedding-record-20260605": "고열감염다이어트-뒤-머리카락이-한꺼번에-빠지면-휴지기-탈모-상담-기록은-어떻게-준비하나요",
+    "strategic-qa-mens-psa-screening-family-history-bph-prostatitis-shared-decision-record-20260605": "PSA-전립선암-검사를-받을지-고민할-때-가족력배뇨증상검사-전-조건은-어떻게-기록하나요",
+    "strategic-qa-respiratory-rsv-vaccine-adult-risk-pregnancy-abrysvo-record-20260605": "RSV-백신을-맞아야-하는지-상담할-때-나이위험질환임신-주수-기록은-어떻게-준비하나요"
   },
-  "generated_at": "2026-06-05T12:14:04.161764+00:00"
+  "generated_at": "2026-06-05T12:57:58.586844+00:00"
 }
