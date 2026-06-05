@@ -1,11 +1,11 @@
 {
   "min_tag_count": 5,
-  "total_questions": 1927,
-  "total_unique_tags": 2336,
+  "total_questions": 1930,
+  "total_unique_tags": 2346,
   "page_eligible_tags": 260,
   "tags": {
     "플로로탄닌": {
-      "count": 1377,
+      "count": 1380,
       "qids": [
         "cardio-001",
         "cardio-002",
@@ -1383,11 +1383,14 @@
         "strategic-qa-womens-fibroid-heavy-bleeding-anemia-iron-record-20260605",
         "strategic-qa-hair-thyroid-iron-brittle-nails-protein-record-20260605",
         "strategic-qa-mens-bph-nocturia-sleep-diuretic-glucose-record-20260605",
-        "strategic-qa-womens-pelvic-organ-prolapse-urinary-leakage-constipation-record-20260605"
+        "strategic-qa-womens-pelvic-organ-prolapse-urinary-leakage-constipation-record-20260605",
+        "strategic-qa-hair-cancer-treatment-scalp-cooling-infection-recovery-record-20260605",
+        "strategic-qa-mens-varicocele-testicular-pain-semen-analysis-fertility-record-20260605",
+        "strategic-qa-respiratory-pertussis-prolonged-cough-vaccine-exposure-record-20260605"
       ]
     },
     "감태": {
-      "count": 992,
+      "count": 993,
       "qids": [
         "cardio-008",
         "cardio-012",
@@ -2380,7 +2383,8 @@
         "round2-mental-health-20260530",
         "strategic-qa-hair-glp1-telogen-protein-ferritin-phlorotannin-20260605",
         "strategic-qa-womens-menopause-ht-label-hotflash-sleep-phlorotannin-20260605",
-        "strategic-qa-hair-scalp-itch-scale-psoriasis-tinea-scarring-record-20260605"
+        "strategic-qa-hair-scalp-itch-scale-psoriasis-tinea-scarring-record-20260605",
+        "strategic-qa-hair-cancer-treatment-scalp-cooling-infection-recovery-record-20260605"
       ]
     },
     "항산화": {
@@ -6808,7 +6812,7 @@
       ]
     },
     "남성건강": {
-      "count": 40,
+      "count": 41,
       "qids": [
         "mens-001",
         "mens-002",
@@ -6849,7 +6853,8 @@
         "trend-mens-gynecomastia-breast-lump-medication-record-20260604",
         "strategic-qa-mens-ed-cardiovascular-bp-glucose-phlorotannin-20260605",
         "strategic-qa-mens-hpv-vaccine-oropharyngeal-cancer-neck-node-record-20260605",
-        "strategic-qa-mens-bph-nocturia-sleep-diuretic-glucose-record-20260605"
+        "strategic-qa-mens-bph-nocturia-sleep-diuretic-glucose-record-20260605",
+        "strategic-qa-mens-varicocele-testicular-pain-semen-analysis-fertility-record-20260605"
       ]
     },
     "뼈": {
@@ -8762,6 +8767,21 @@
         "qa200-20260527-137"
       ]
     },
+    "예방접종": {
+      "count": 10,
+      "qids": [
+        "cancer-016",
+        "ci_016",
+        "ci_022",
+        "rsp_030",
+        "infect-extra-007",
+        "infect-extra-010",
+        "infect-extra-011",
+        "ci_116",
+        "strategic-qa-mens-hpv-vaccine-oropharyngeal-cancer-neck-node-record-20260605",
+        "strategic-qa-respiratory-pertussis-prolonged-cough-vaccine-exposure-record-20260605"
+      ]
+    },
     "집중력": {
       "count": 10,
       "qids": [
@@ -8919,20 +8939,6 @@
         "round3-infection_inflammation-2-20260531"
       ]
     },
-    "예방접종": {
-      "count": 9,
-      "qids": [
-        "cancer-016",
-        "ci_016",
-        "ci_022",
-        "rsp_030",
-        "infect-extra-007",
-        "infect-extra-010",
-        "infect-extra-011",
-        "ci_116",
-        "strategic-qa-mens-hpv-vaccine-oropharyngeal-cancer-neck-node-record-20260605"
-      ]
-    },
     "우울증": {
       "count": 9,
       "qids": [
@@ -8999,6 +9005,19 @@
         "qa200-20260527-197",
         "trend-prostate-psa-mri-screening-aua-20260602",
         "trend-mens-psa-screening-shared-decision-family-history-record-20260604"
+      ]
+    },
+    "기침": {
+      "count": 8,
+      "qids": [
+        "resp-007",
+        "qa200-20260527-167",
+        "qa200-20260527-168",
+        "trendqa-respiratory-20260530",
+        "round2-respiratory-20260530",
+        "round3-respiratory-1-20260531",
+        "trend-cancer-immune-immunotherapy-diarrhea-cough-side-effect-record-20260604",
+        "strategic-qa-respiratory-pertussis-prolonged-cough-vaccine-exposure-record-20260605"
       ]
     },
     "뇌졸중": {
@@ -9279,18 +9298,6 @@
         "mens-004",
         "qa200-20260527-126",
         "trend-creatine-resistance-training-healthy-aging-20260602"
-      ]
-    },
-    "기침": {
-      "count": 7,
-      "qids": [
-        "resp-007",
-        "qa200-20260527-167",
-        "qa200-20260527-168",
-        "trendqa-respiratory-20260530",
-        "round2-respiratory-20260530",
-        "round3-respiratory-1-20260531",
-        "trend-cancer-immune-immunotherapy-diarrhea-cough-side-effect-record-20260604"
       ]
     },
     "노화": {
@@ -9583,6 +9590,17 @@
         "mens-extra-054",
         "mens-006",
         "qa200-20260527-194"
+      ]
+    },
+    "남성난임": {
+      "count": 6,
+      "qids": [
+        "mens-004",
+        "trend-phthalates-male-fertility-semen-quality-exposure-20260602",
+        "trend-testosterone-therapy-fertility-sperm-count-20260603",
+        "trend-male-fertility-home-sperm-test-dna-fragmentation-20260603",
+        "trend-heat-exposure-male-fertility-sperm-record-20260604",
+        "strategic-qa-mens-varicocele-testicular-pain-semen-analysis-fertility-record-20260605"
       ]
     },
     "내장지방": {
@@ -10055,16 +10073,6 @@
         "qa200-20260527-136",
         "trend-weighted-vest-rucking-bone-joint-safety-20260602",
         "trend-older-adult-fall-prevention-balance-medication-vision-record-20260603"
-      ]
-    },
-    "남성난임": {
-      "count": 5,
-      "qids": [
-        "mens-004",
-        "trend-phthalates-male-fertility-semen-quality-exposure-20260602",
-        "trend-testosterone-therapy-fertility-sperm-count-20260603",
-        "trend-male-fertility-home-sperm-test-dna-fragmentation-20260603",
-        "trend-heat-exposure-male-fertility-sperm-record-20260604"
       ]
     },
     "남성호르몬": {
@@ -12385,7 +12393,10 @@
     "strategic-qa-womens-fibroid-heavy-bleeding-anemia-iron-record-20260605": "자궁근종이-의심되는-생리과다와-빈혈-증상이-있을-때-어떤-출혈철결핍-기록을-준비해야-하나요",
     "strategic-qa-hair-thyroid-iron-brittle-nails-protein-record-20260605": "머리카락이-가늘어지고-손톱이-잘-부러질-때-갑상선철결핍단백질-기록은-어떻게-준비하나요",
     "strategic-qa-mens-bph-nocturia-sleep-diuretic-glucose-record-20260605": "전립선비대증으로-밤에-자주-깨면-야간뇨가-전립선-때문인지-수면이뇨제혈당-기록은-어떻게-보나요",
-    "strategic-qa-womens-pelvic-organ-prolapse-urinary-leakage-constipation-record-20260605": "골반이-묵직하고-소변이-새는-느낌이-있으면-골반장기탈출요실금-상담-전-무엇을-기록하나요"
+    "strategic-qa-womens-pelvic-organ-prolapse-urinary-leakage-constipation-record-20260605": "골반이-묵직하고-소변이-새는-느낌이-있으면-골반장기탈출요실금-상담-전-무엇을-기록하나요",
+    "strategic-qa-hair-cancer-treatment-scalp-cooling-infection-recovery-record-20260605": "항암치료-전-탈모와-두피냉각을-상담할-때-어떤-두피감염회복-기록을-준비해야-하나요",
+    "strategic-qa-mens-varicocele-testicular-pain-semen-analysis-fertility-record-20260605": "고환이-묵직하고-정계정맥류가-의심될-때-통증고환크기정액검사-기록은-어떻게-준비하나요",
+    "strategic-qa-respiratory-pertussis-prolonged-cough-vaccine-exposure-record-20260605": "기침이-발작처럼-오래가고-구토까지-있으면-백일해인지-접종노출-기록을-어떻게-준비하나요"
   },
-  "generated_at": "2026-06-05T00:34:29.191837+00:00"
+  "generated_at": "2026-06-05T08:14:47.781110+00:00"
 }
