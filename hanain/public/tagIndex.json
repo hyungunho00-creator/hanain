@@ -1,11 +1,11 @@
 {
   "min_tag_count": 5,
-  "total_questions": 1957,
-  "total_unique_tags": 2429,
+  "total_questions": 1960,
+  "total_unique_tags": 2444,
   "page_eligible_tags": 266,
   "tags": {
     "플로로탄닌": {
-      "count": 1407,
+      "count": 1410,
       "qids": [
         "cardio-001",
         "cardio-002",
@@ -1413,7 +1413,10 @@
         "strategic-qa-womens-heavy-menstrual-bleeding-anemia-fibroid-abnormal-uterine-record-20260606",
         "strategic-qa-hair-scalp-folliculitis-pustule-pain-shedding-antibiotic-record-20260606",
         "strategic-qa-respiratory-pneumococcal-vaccine-pcv20-pcv21-risk-condition-record-20260606",
-        "strategic-qa-mens-hematuria-blood-urine-bladder-prostate-stone-record-20260606"
+        "strategic-qa-mens-hematuria-blood-urine-bladder-prostate-stone-record-20260606",
+        "strategic-qa-hair-ccca-scarring-alopecia-crown-burning-biopsy-record-20260606",
+        "strategic-qa-infection-pertussis-whooping-cough-tdap-antibiotic-exposure-record-20260606",
+        "strategic-qa-womens-postpartum-depression-anxiety-screening-bipolar-988-record-20260606"
       ]
     },
     "감태": {
@@ -9953,6 +9956,17 @@
         "strategic-qa-womens-pcos-irregular-period-hirsutism-insulin-resistance-fertility-record-20260606"
       ]
     },
+    "여성탈모": {
+      "count": 6,
+      "qids": [
+        "woms-010",
+        "wh-extra-048",
+        "womens-010",
+        "sh_125",
+        "qa200-20260527-151",
+        "strategic-qa-hair-ccca-scarring-alopecia-crown-burning-biopsy-record-20260606"
+      ]
+    },
     "우울": {
       "count": 6,
       "qids": [
@@ -10432,16 +10446,6 @@
         "qa200-20260527-192",
         "trend-fermented-food-probiotics-gut-microbiome-safety-20260602",
         "trend-alopecia-areata-jak-inhibitor-safety-record-20260603"
-      ]
-    },
-    "여성탈모": {
-      "count": 5,
-      "qids": [
-        "woms-010",
-        "wh-extra-048",
-        "womens-010",
-        "sh_125",
-        "qa200-20260527-151"
       ]
     },
     "열감": {
@@ -12552,7 +12556,10 @@
     "strategic-qa-womens-heavy-menstrual-bleeding-anemia-fibroid-abnormal-uterine-record-20260606": "생리-양이-너무-많고-빈혈이-걱정되면-과다월경자궁근종비정상-자궁출혈-상담-기록은-어떻게-준비하나요",
     "strategic-qa-hair-scalp-folliculitis-pustule-pain-shedding-antibiotic-record-20260606": "두피에-여드름-같은-고름통증이-반복되고-머리-빠짐이-걱정될-때-모낭염-상담-기록은-어떻게-준비하나요",
     "strategic-qa-respiratory-pneumococcal-vaccine-pcv20-pcv21-risk-condition-record-20260606": "50세-이후-또는-만성질환이-있을-때-폐렴구균-백신-PCV20PCV21-상담-기록은-어떻게-준비하나요",
-    "strategic-qa-mens-hematuria-blood-urine-bladder-prostate-stone-record-20260606": "남성이-소변에-피가-보이거나-현미경-혈뇨가-나오면-방광암전립선결석-상담-기록은-어떻게-준비하나요"
+    "strategic-qa-mens-hematuria-blood-urine-bladder-prostate-stone-record-20260606": "남성이-소변에-피가-보이거나-현미경-혈뇨가-나오면-방광암전립선결석-상담-기록은-어떻게-준비하나요",
+    "strategic-qa-hair-ccca-scarring-alopecia-crown-burning-biopsy-record-20260606": "정수리-탈모가-번지고-두피가-화끈거리면-CCCA흉터성-탈모-상담-기록은-어떻게-준비하나요",
+    "strategic-qa-infection-pertussis-whooping-cough-tdap-antibiotic-exposure-record-20260606": "기침이-2주-넘고-발작처럼-몰아치면-백일해-검사Tdap항생제-노출-기록은-어떻게-준비하나요",
+    "strategic-qa-womens-postpartum-depression-anxiety-screening-bipolar-988-record-20260606": "출산-후-우울불안이-2주-넘게-지속되면-산후우울증-선별양극성988-상담-기록은-어떻게-준비하나요"
   },
-  "generated_at": "2026-06-06T04:03:26.712523+00:00"
+  "generated_at": "2026-06-06T04:42:48.633553+00:00"
 }
