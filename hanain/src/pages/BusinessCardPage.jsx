@@ -209,15 +209,15 @@ function MoleculePhotoPanel({ small = false }) {
         borderRadius: small ? '10px' : '14px',
         overflow: 'hidden',
         border: `1.5px solid ${GOLD}`,
-        backgroundImage: `linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.6)), url(${MOLECULE_PHOTO})`,
+        backgroundImage: `linear-gradient(180deg, rgba(255,255,255,0.26), rgba(255,255,255,0.68)), url(${MOLECULE_PHOTO})`,
         backgroundSize: 'cover',
-        backgroundPosition: small ? '28% center' : '30% center',
+        backgroundPosition: small ? '34% center' : '30% center',
         boxShadow: `inset 0 0 0 1px rgba(255,255,255,0.72), 0 10px 24px ${NAVY}12`,
       }}
     >
-      <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(105deg, rgba(255,255,255,0.36) 0 18%, transparent 19% 100%)' }} />
+      <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(105deg, rgba(255,255,255,0.44) 0 18%, transparent 19% 100%)' }} />
       <div style={{ position: 'absolute', inset: 0, boxShadow: 'inset 0 0 26px rgba(20,61,56,0.08)' }} />
-      <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, padding: '6px 8px', fontSize: '6px', letterSpacing: '0.14em', color: NAVY, background: 'rgba(255,255,255,0.68)' }}>
+      <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, padding: '6px 8px', fontSize: '6px', letterSpacing: '0.14em', color: NAVY, background: 'rgba(255,255,255,0.76)' }}>
         PHLOROTANNIN · ECKLONIA CAVA
       </div>
     </div>
@@ -449,38 +449,36 @@ async function drawFront(partner, cardUrl) {
   const ctx = canvas.getContext('2d')
 
   drawFrame(ctx, W, H)
-  await drawMoleculePhotoPanelCanvas(ctx, 64, 76, 300, 448)
-  drawCanvasMolecule(ctx, 668, 122, 1.02, 0.09)
+  await drawMoleculePhotoPanelCanvas(ctx, 778, 80, 226, 432)
+  drawCanvasMolecule(ctx, 594, 86, 1.02, 0.055)
 
-  const TX = 408
+  const TX = 78
   ctx.fillStyle = GREEN
-  ctx.font = 'bold 28px Arial, sans-serif'
-  ctx.fillText('PHLOROTANNIN', TX, 132)
+  ctx.font = 'bold 31px Arial, sans-serif'
+  ctx.fillText('PHLOROTANNIN PARTNERS', TX, 134)
   ctx.fillStyle = MUTED
   ctx.font = '20px Arial, sans-serif'
-  ctx.fillText('PARTNERS', TX, 162)
+  ctx.fillText('HEALTH RECOVERY NETWORK', TX, 166)
 
   const nameLen = (partner.name || '').length
-  const namePx = nameLen <= 3 ? 88 : nameLen <= 4 ? 76 : 64
+  const namePx = nameLen <= 3 ? 122 : nameLen <= 4 ? 104 : 82
   ctx.fillStyle = NAVY
   ctx.font = `900 ${namePx}px Arial, sans-serif`
-  ctx.fillText(partner.name || '', TX, 260)
+  ctx.fillText(partner.name || '', TX, 294)
 
   ctx.fillStyle = NAVY
-  ctx.font = 'bold 30px Arial, sans-serif'
-  ctx.fillText('회복 플래너 · AI 검색 파트너', TX, 316)
-  drawGoldRule(ctx, TX, 350, 350)
-
-  ctx.fillStyle = MUTED
-  ctx.font = '25px Arial, sans-serif'
-  ctx.fillText('샵 AI 검색·Q&A·연구자료를', TX, 414)
-  ctx.fillText('내 파트너 링크로 바로 안내합니다.', TX, 454)
+  ctx.font = '900 43px Arial, sans-serif'
+  ctx.fillText('회복 플래너', TX, 372)
+  ctx.fillStyle = GREEN
+  ctx.font = 'bold 34px Arial, sans-serif'
+  ctx.fillText('AI 건강검색 에이전트', TX, 424)
+  drawGoldRule(ctx, TX, 456, 500)
 
   ctx.fillStyle = NAVY
-  ctx.font = 'bold 31px Arial, sans-serif'
-  ctx.fillText(partner.phoneDisplay || '', TX, 526)
-  ctx.font = '25px Arial, sans-serif'
-  ctx.fillText('phlorotannin.com', 650, 526)
+  ctx.font = 'bold 38px Arial, sans-serif'
+  ctx.fillText(partner.phoneDisplay || '', TX, 532)
+  ctx.font = '27px Arial, sans-serif'
+  ctx.fillText('phlorotannin.com', 426, 532)
 
   return canvas
 }
@@ -499,19 +497,20 @@ async function drawBack(partner, cardUrl) {
 
   const TX = 82
   ctx.fillStyle = GREEN
-  ctx.font = 'bold 34px Arial, sans-serif'
-  ctx.fillText('QR로 열리는', TX, 132)
+  ctx.font = 'bold 28px Arial, sans-serif'
+  ctx.fillText('SCAN TO CONNECT', TX, 132)
   ctx.fillStyle = NAVY
-  ctx.font = '900 48px Arial, sans-serif'
-  ctx.fillText('회복 플래너 링크', TX, 198)
-  ctx.fillText('AI 검색 에이전트', TX, 256)
-  drawGoldRule(ctx, TX, 304, 390)
+  ctx.font = '900 56px Arial, sans-serif'
+  ctx.fillText('파트너 링크', TX, 210)
+  ctx.fillStyle = GREEN
+  ctx.font = '900 40px Arial, sans-serif'
+  ctx.fillText('회복 플래너 · AI 건강검색', TX, 268)
+  drawGoldRule(ctx, TX, 312, 456)
 
   ctx.fillStyle = NAVY
-  ctx.font = '28px Arial, sans-serif'
-  ctx.fillText('1. 회복 플래너 상담 흐름', TX, 386)
-  ctx.fillText('2. 샵 AI 검색 에이전트', TX, 438)
-  ctx.fillText('3. Q&A·블로그·명함 저장', TX, 490)
+  ctx.font = '29px Arial, sans-serif'
+  ctx.fillText('파트너 정보 · 건강 Q&A · 블로그 자료', TX, 394)
+  ctx.fillText('연락처 저장 · 공유 링크 연결', TX, 446)
 
   ctx.fillStyle = NAVY
   ctx.font = 'bold 30px Arial, sans-serif'
@@ -798,7 +797,7 @@ export default function BusinessCardPage() {
   ]
   const productHooks = [
     '회복 플래너처럼 관심사와 상담 흐름을 차분히 정리',
-    '샵 AI 검색 에이전트로 제품·Q&A·블로그 자료를 빠르게 탐색',
+    'AI 건강검색 에이전트로 제품·Q&A·블로그 자료를 빠르게 탐색',
     '파트너 링크로 문의·명함 저장·자료 공유까지 연결 유지',
   ]
   const mechanismPapers = [
@@ -823,8 +822,8 @@ export default function BusinessCardPage() {
   const nameLen = (partner.name || '').length
   // 화면 너비에 따라 명함 안의 정보가 잘리지 않게 조정
   const screenNameSize = compactCardPreview
-    ? (nameLen <= 2 ? '2.16rem' : nameLen <= 3 ? '1.96rem' : nameLen <= 4 ? '1.68rem' : '1.38rem')
-    : (nameLen <= 2 ? '2.78rem' : nameLen <= 3 ? '2.48rem' : nameLen <= 4 ? '2.08rem' : '1.72rem')
+    ? (nameLen <= 2 ? '3.05rem' : nameLen <= 3 ? '2.72rem' : nameLen <= 4 ? '2.22rem' : '1.72rem')
+    : (nameLen <= 2 ? '4.12rem' : nameLen <= 3 ? '3.62rem' : nameLen <= 4 ? '2.92rem' : '2.22rem')
   const screenLetterSp = compactCardPreview ? 0 : (nameLen <= 3 ? '0.04em' : nameLen <= 4 ? '0.02em' : 0)
 
   return (
@@ -898,26 +897,29 @@ export default function BusinessCardPage() {
               /* ── 앞면 화면 미리보기 ── */
               <div style={{ background: cardBackground, position: 'relative', overflow: 'hidden', aspectRatio: SCREEN_CARD_ASPECT, borderRadius: '11px', boxShadow: 'inset 0 0 0 1px rgba(255,255,255,0.8)' }}>
                 <div style={{ position: 'absolute', inset: '9px', border: `1px solid ${NAVY}45`, borderRadius: '8px' }} />
-                <MoleculeWatermark style={{ width: compactCardPreview ? '132px' : '188px', height: compactCardPreview ? '56px' : '78px', right: compactCardPreview ? '18px' : '34px', top: compactCardPreview ? '54px' : '62px', opacity: compactCardPreview ? 0.22 : 0.3 }} />
+                <MoleculeWatermark style={{ width: compactCardPreview ? '128px' : '176px', height: compactCardPreview ? '54px' : '72px', right: compactCardPreview ? '88px' : '124px', top: compactCardPreview ? '38px' : '48px', opacity: compactCardPreview ? 0.12 : 0.17 }} />
 
-                <div style={{ position: 'relative', zIndex: 1, height: '100%', padding: compactCardPreview ? '12px' : '16px', display: 'grid', gridTemplateColumns: compactCardPreview ? 'minmax(112px, 0.42fr) minmax(0, 1fr)' : 'minmax(126px, 0.38fr) minmax(0, 1fr)', gap: compactCardPreview ? '9px' : '14px', alignItems: 'stretch' }}>
-                  <MoleculePhotoPanel small />
-                  <div style={{ minWidth: 0, padding: compactCardPreview ? '4px 2px 4px 0' : '9px 7px 8px 0', display: 'flex', flexDirection: 'column', height: '100%' }}>
-                    <p style={{ fontSize: compactCardPreview ? '9.5px' : '12px', color: GREEN, fontWeight: '900', letterSpacing: '0.08em', marginBottom: '2px' }}>PHLOROTANNIN</p>
-                    <p style={{ fontSize: compactCardPreview ? '7.5px' : '9.5px', color: MUTED, fontWeight: 800, letterSpacing: '0.08em', marginBottom: compactCardPreview ? '5px' : '8px' }}>PARTNERS</p>
-                    <h1 style={{ fontSize: screenNameSize, fontWeight: '900', color: NAVY, letterSpacing: screenLetterSp, wordBreak: 'keep-all', overflowWrap: 'break-word', whiteSpace: 'normal', marginBottom: compactCardPreview ? '3px' : '5px', lineHeight: 0.96 }}>
+                <div style={{ position: 'relative', zIndex: 1, height: '100%', padding: compactCardPreview ? '14px 12px 12px 17px' : '24px 22px 20px 32px', display: 'grid', gridTemplateColumns: compactCardPreview ? 'minmax(0, 1fr) 82px' : 'minmax(0, 1fr) 132px', gap: compactCardPreview ? '8px' : '18px', alignItems: 'stretch' }}>
+                  <div style={{ minWidth: 0, padding: compactCardPreview ? '0 0 2px 0' : '2px 0 2px 0', display: 'flex', flexDirection: 'column', height: '100%' }}>
+                    <p style={{ fontSize: compactCardPreview ? '9.2px' : '12px', color: GREEN, fontWeight: '900', letterSpacing: '0.08em', marginBottom: '2px' }}>PHLOROTANNIN PARTNERS</p>
+                    <p style={{ fontSize: compactCardPreview ? '6.8px' : '8.6px', color: MUTED, fontWeight: 800, letterSpacing: '0.08em', marginBottom: compactCardPreview ? '6px' : '10px' }}>HEALTH RECOVERY NETWORK</p>
+                    <h1 style={{ fontSize: screenNameSize, fontWeight: '900', color: NAVY, letterSpacing: screenLetterSp, wordBreak: 'keep-all', overflowWrap: 'break-word', whiteSpace: 'normal', marginBottom: compactCardPreview ? '5px' : '9px', lineHeight: 0.86 }}>
                       {partner.name}
                     </h1>
-                    <p style={{ fontSize: compactCardPreview ? '9.8px' : '13px', color: NAVY, fontWeight: '900', letterSpacing: '0.02em', marginBottom: compactCardPreview ? '4px' : '7px', lineHeight: 1.14 }}>
-                      회복 플래너 · AI 검색 파트너
+                    <p style={{ fontSize: compactCardPreview ? '14.5px' : '20px', color: NAVY, fontWeight: '900', letterSpacing: 0, marginBottom: compactCardPreview ? '2px' : '4px', lineHeight: 1.02 }}>
+                      회복 플래너
                     </p>
-                    <div style={{ width: compactCardPreview ? '72px' : '102px', height: '2px', marginBottom: compactCardPreview ? '4px' : '7px', background: `linear-gradient(90deg, ${GOLD}, ${GOLD2})` }} />
-                    <p style={{ fontSize: compactCardPreview ? '8.2px' : '11px', color: MUTED, lineHeight: compactCardPreview ? '1.22' : '1.32', fontWeight: 700 }}>샵 AI 검색·Q&A·연구자료를<br />내 파트너 링크로 안내합니다.</p>
+                    <p style={{ fontSize: compactCardPreview ? '11px' : '14.5px', color: GREEN, fontWeight: '900', letterSpacing: 0, marginBottom: compactCardPreview ? '5px' : '8px', lineHeight: 1.04 }}>
+                      AI 건강검색 에이전트
+                    </p>
+                    <div style={{ width: compactCardPreview ? '104px' : '154px', height: '2px', marginBottom: compactCardPreview ? '5px' : '8px', background: `linear-gradient(90deg, ${GOLD}, ${GOLD2})` }} />
+                    <p style={{ fontSize: compactCardPreview ? '7.4px' : '9.4px', color: MUTED, fontWeight: 900, letterSpacing: '0.12em', lineHeight: 1.1 }}>PHLOROTANNIN PARTNER</p>
                     <div style={{ display: 'flex', alignItems: 'baseline', gap: compactCardPreview ? '6px' : '10px', flexWrap: 'wrap', marginTop: 'auto', paddingTop: compactCardPreview ? '4px' : '10px' }}>
-                      <p style={{ fontSize: compactCardPreview ? '10.5px' : '14px', color: NAVY, fontWeight: '900', lineHeight: 1 }}>{partner.phoneDisplay}</p>
-                      <p style={{ fontSize: compactCardPreview ? '8.5px' : '10.5px', color: NAVY, fontWeight: 800, letterSpacing: '0.03em' }}>phlorotannin.com</p>
+                      <p style={{ fontSize: compactCardPreview ? '13.2px' : '17px', color: NAVY, fontWeight: '900', lineHeight: 1 }}>{partner.phoneDisplay}</p>
+                      <p style={{ fontSize: compactCardPreview ? '8.2px' : '10.2px', color: NAVY, fontWeight: 800, letterSpacing: '0.03em' }}>phlorotannin.com</p>
                     </div>
                   </div>
+                  <MoleculePhotoPanel small />
                 </div>
               </div>
 
@@ -930,12 +932,15 @@ export default function BusinessCardPage() {
 
                 <div style={{ position: 'relative', zIndex: 1, height: '100%', padding: compactCardPreview ? '18px 16px 15px 20px' : '32px 28px 24px 34px', display: 'grid', gridTemplateColumns: compactCardPreview ? 'minmax(0, 1fr) 96px' : 'minmax(0, 1fr) 138px', gap: compactCardPreview ? '8px' : '18px', alignItems: 'center' }}>
                   <div style={{ minWidth: 0 }}>
-                    <h2 style={{ fontSize: compactCardPreview ? '1rem' : '1.34rem', fontWeight: '900', color: GREEN, lineHeight: 1.15, marginBottom: compactCardPreview ? '5px' : '8px', letterSpacing: 0 }}>
-                      QR로 열리는<br />회복 플래너 링크
+                    <p style={{ fontSize: compactCardPreview ? '7px' : '9px', color: GREEN, fontWeight: 900, letterSpacing: '0.14em', marginBottom: compactCardPreview ? '4px' : '7px' }}>
+                      SCAN TO CONNECT
+                    </p>
+                    <h2 style={{ fontSize: compactCardPreview ? '1.12rem' : '1.5rem', fontWeight: '900', color: NAVY, lineHeight: 1.06, marginBottom: compactCardPreview ? '4px' : '8px', letterSpacing: 0 }}>
+                      파트너 링크
                     </h2>
                     <div style={{ width: compactCardPreview ? '68px' : '114px', height: '2px', margin: compactCardPreview ? '6px 0 7px' : '10px 0 14px', background: `linear-gradient(90deg, ${GOLD}, ${GOLD2})` }} />
-                    <p style={{ fontSize: compactCardPreview ? '7.7px' : '11px', color: NAVY, lineHeight: compactCardPreview ? '1.48' : '1.58', marginBottom: compactCardPreview ? '6px' : '12px', fontWeight: 800 }}>
-                      1. 회복 플래너 상담 흐름<br />2. 샵 AI 검색 에이전트<br />3. Q&A·블로그·명함 저장
+                    <p style={{ fontSize: compactCardPreview ? '8px' : '11.4px', color: NAVY, lineHeight: compactCardPreview ? '1.48' : '1.58', marginBottom: compactCardPreview ? '6px' : '12px', fontWeight: 800 }}>
+                      건강 Q&A · 블로그 자료<br />연락처 저장 · 공유 링크
                     </p>
                     <p style={{ fontSize: compactCardPreview ? '10.5px' : '15px', color: NAVY, fontWeight: '900', lineHeight: 1.2 }}>{partner.name} 파트너</p>
                     <p style={{ fontSize: compactCardPreview ? '11px' : '15px', color: NAVY, fontWeight: '800', marginTop: compactCardPreview ? '2px' : '4px', lineHeight: 1.2 }}>{partner.phoneDisplay}</p>
