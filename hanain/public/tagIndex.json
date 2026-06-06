@@ -1,11 +1,11 @@
 {
   "min_tag_count": 5,
-  "total_questions": 1960,
-  "total_unique_tags": 2444,
+  "total_questions": 1963,
+  "total_unique_tags": 2455,
   "page_eligible_tags": 266,
   "tags": {
     "플로로탄닌": {
-      "count": 1410,
+      "count": 1413,
       "qids": [
         "cardio-001",
         "cardio-002",
@@ -1416,7 +1416,10 @@
         "strategic-qa-mens-hematuria-blood-urine-bladder-prostate-stone-record-20260606",
         "strategic-qa-hair-ccca-scarring-alopecia-crown-burning-biopsy-record-20260606",
         "strategic-qa-infection-pertussis-whooping-cough-tdap-antibiotic-exposure-record-20260606",
-        "strategic-qa-womens-postpartum-depression-anxiety-screening-bipolar-988-record-20260606"
+        "strategic-qa-womens-postpartum-depression-anxiety-screening-bipolar-988-record-20260606",
+        "strategic-qa-hair-frontal-fibrosing-alopecia-eyebrow-hairline-biopsy-record-20260606",
+        "strategic-qa-mens-testicular-torsion-sudden-pain-ultrasound-emergency-record-20260606",
+        "strategic-qa-respiratory-sleep-apnea-cpap-home-sleep-test-drowsy-driving-record-20260606"
       ]
     },
     "감태": {
@@ -9129,6 +9132,19 @@
         "trend-mens-psa-screening-shared-decision-family-history-record-20260604"
       ]
     },
+    "고혈압": {
+      "count": 8,
+      "qids": [
+        "cardio-001",
+        "mens-extra-044",
+        "nc_116",
+        "qa200-20260527-077",
+        "qa200-20260527-078",
+        "qa200-20260527-091",
+        "trend-tia-mini-stroke-fast-warning-symptom-time-record-20260603",
+        "strategic-qa-respiratory-sleep-apnea-cpap-home-sleep-test-drowsy-driving-record-20260606"
+      ]
+    },
     "뇌졸중": {
       "count": 8,
       "qids": [
@@ -9244,6 +9260,19 @@
         "qa-hospital-20260527-031",
         "qa-hospital-20260527-032",
         "qa-hospital-20260527-037"
+      ]
+    },
+    "수면무호흡": {
+      "count": 8,
+      "qids": [
+        "cardio-044",
+        "resp-008",
+        "nc_109",
+        "qa200-20260527-165",
+        "round3-mens_health-2-20260531",
+        "trend-sleep-regularity-heart-risk-20260602",
+        "trend-mouth-taping-snoring-sleep-apnea-20260602",
+        "strategic-qa-respiratory-sleep-apnea-cpap-home-sleep-test-drowsy-driving-record-20260606"
       ]
     },
     "식사기록": {
@@ -9399,18 +9428,6 @@
         "qa-hospital-20260527-050"
       ]
     },
-    "고혈압": {
-      "count": 7,
-      "qids": [
-        "cardio-001",
-        "mens-extra-044",
-        "nc_116",
-        "qa200-20260527-077",
-        "qa200-20260527-078",
-        "qa200-20260527-091",
-        "trend-tia-mini-stroke-fast-warning-symptom-time-record-20260603"
-      ]
-    },
     "근감소증": {
       "count": 7,
       "qids": [
@@ -9493,18 +9510,6 @@
         "round3-neuro_cognitive-1-20260531",
         "round3-infection_inflammation-1-20260531",
         "trend-neuro-long-covid-brain-fog-memory-record-20260604"
-      ]
-    },
-    "수면무호흡": {
-      "count": 7,
-      "qids": [
-        "cardio-044",
-        "resp-008",
-        "nc_109",
-        "qa200-20260527-165",
-        "round3-mens_health-2-20260531",
-        "trend-sleep-regularity-heart-risk-20260602",
-        "trend-mouth-taping-snoring-sleep-apnea-20260602"
       ]
     },
     "수면부족": {
@@ -10044,6 +10049,17 @@
         "qa200-20260527-125"
       ]
     },
+    "코골이": {
+      "count": 6,
+      "qids": [
+        "resp-008",
+        "qa200-20260527-165",
+        "qa200-20260527-166",
+        "trend-mouth-taping-snoring-sleep-apnea-20260602",
+        "trend-mens-health-month-blood-pressure-waist-snoring-screening-record-20260604",
+        "strategic-qa-respiratory-sleep-apnea-cpap-home-sleep-test-drowsy-driving-record-20260606"
+      ]
+    },
     "탈수": {
       "count": 6,
       "qids": [
@@ -10496,16 +10512,6 @@
         "qa200-20260527-013",
         "qa200-20260527-086",
         "round3-digestive-2-20260531"
-      ]
-    },
-    "코골이": {
-      "count": 5,
-      "qids": [
-        "resp-008",
-        "qa200-20260527-165",
-        "qa200-20260527-166",
-        "trend-mouth-taping-snoring-sleep-apnea-20260602",
-        "trend-mens-health-month-blood-pressure-waist-snoring-screening-record-20260604"
       ]
     },
     "크레아틴": {
@@ -12559,7 +12565,10 @@
     "strategic-qa-mens-hematuria-blood-urine-bladder-prostate-stone-record-20260606": "남성이-소변에-피가-보이거나-현미경-혈뇨가-나오면-방광암전립선결석-상담-기록은-어떻게-준비하나요",
     "strategic-qa-hair-ccca-scarring-alopecia-crown-burning-biopsy-record-20260606": "정수리-탈모가-번지고-두피가-화끈거리면-CCCA흉터성-탈모-상담-기록은-어떻게-준비하나요",
     "strategic-qa-infection-pertussis-whooping-cough-tdap-antibiotic-exposure-record-20260606": "기침이-2주-넘고-발작처럼-몰아치면-백일해-검사Tdap항생제-노출-기록은-어떻게-준비하나요",
-    "strategic-qa-womens-postpartum-depression-anxiety-screening-bipolar-988-record-20260606": "출산-후-우울불안이-2주-넘게-지속되면-산후우울증-선별양극성988-상담-기록은-어떻게-준비하나요"
+    "strategic-qa-womens-postpartum-depression-anxiety-screening-bipolar-988-record-20260606": "출산-후-우울불안이-2주-넘게-지속되면-산후우울증-선별양극성988-상담-기록은-어떻게-준비하나요",
+    "strategic-qa-hair-frontal-fibrosing-alopecia-eyebrow-hairline-biopsy-record-20260606": "앞머리선이-뒤로-밀리고-눈썹이-빠지면-전두섬유화탈모-FFA-상담-기록은-어떻게-준비하나요",
+    "strategic-qa-mens-testicular-torsion-sudden-pain-ultrasound-emergency-record-20260606": "고환-통증이-갑자기-심하게-오면-고환염전초음파응급수술-상담-기록은-어떻게-준비하나요",
+    "strategic-qa-respiratory-sleep-apnea-cpap-home-sleep-test-drowsy-driving-record-20260606": "코골이숨멎음낮-졸림이-있으면-수면무호흡-검사CPAP-상담-기록은-어떻게-준비하나요"
   },
-  "generated_at": "2026-06-06T04:42:48.633553+00:00"
+  "generated_at": "2026-06-06T04:58:52.673623+00:00"
 }
