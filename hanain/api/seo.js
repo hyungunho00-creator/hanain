@@ -590,6 +590,24 @@ function staticMetaFor(pathname) {
         ogImage: '/og/content-quality/molecular-pathway-phlorotannin-oxidative-stress-record-2026.png',
         ogImageAlt: '씨놀 카프 PH100 SeaPolynol 용어를 연구 문맥별로 정리한 인사이트 이미지',
       },
+      'ebola-bundibugyo-pheic-response-record-2026': {
+        title: 'WHO Ebola Bundibugyo PHEIC | 해외 감염 대응 신호',
+        desc: '2026년 WHO Ebola Bundibugyo PHEIC와 Africa CDC·WHO 공동 대응계획을 조기 발견, 격리, 접촉 추적, 감염관리 기준으로 정리합니다.',
+        ogImage: '/og/content-quality/sepsis-warning-signs-infection-record-2026.png',
+        ogImageAlt: 'WHO Ebola Bundibugyo PHEIC 대응 신호와 접촉 추적 기록을 정리한 인사이트 이미지',
+      },
+      'andes-hantavirus-cruise-travel-record-2026': {
+        title: 'Andes hantavirus 크루즈선 이슈 | 여행 감염 접촉자 추적',
+        desc: 'WHO의 2026년 크루즈선 Andes hantavirus outbreak 업데이트를 여행 동선, 고위험 접촉, 증상 시간표 중심으로 정리합니다.',
+        ogImage: '/og/content-quality/respiratory-virus-vaccine-2025-2026-covid-flu-rsv-record-2026.png',
+        ogImageAlt: 'Andes hantavirus 크루즈선 여행 감염과 접촉자 추적을 요약한 인사이트 이미지',
+      },
+      'fda-bht-ada-food-chemical-record-2026': {
+        title: 'FDA BHT·ADA 재평가 | 해외 식품안전 라벨 기록',
+        desc: 'FDA의 2026년 BHT·ADA 식품첨가물 재평가와 식품 화학물질 사후 안전성 평가 프로그램을 라벨·섭취 빈도 기록 중심으로 정리합니다.',
+        ogImage: '/og/content-quality/ultra-processed-food-blood-sugar-inflammation-guide-2026.png',
+        ogImageAlt: 'FDA BHT ADA 식품첨가물 재평가와 가공식품 라벨 기록을 요약한 인사이트 이미지',
+      },
     }
     if (insightMeta[rawSlug]) {
       return {

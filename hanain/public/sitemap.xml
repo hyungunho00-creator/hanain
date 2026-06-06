@@ -1096,11 +1096,32 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/seanol-caf-ph100-terms-guide-2026"/>
   </url>
   <url>
+    <loc>https://phlorotannin.com/insights/ebola-bundibugyo-pheic-response-record-2026</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/ebola-bundibugyo-pheic-response-record-2026"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/insights/andes-hantavirus-cruise-travel-record-2026</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/andes-hantavirus-cruise-travel-record-2026"/>
+  </url>
+  <url>
     <loc>https://phlorotannin.com/insights/phlorotannin-gut-microbiome</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/phlorotannin-gut-microbiome"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/insights/fda-bht-ada-food-chemical-record-2026</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/fda-bht-ada-food-chemical-record-2026"/>
   </url>
   <url>
     <loc>https://phlorotannin.com/insights/phlorotannin-allergic-rhinitis-asthma</loc>
@@ -23739,6 +23760,39 @@
       <image:title>씨놀·카프·PH100 용어 정리: 개발자 자료를 검색할 때 헷갈리지 않는 기준</image:title>
     </image:image>
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/seanol-caf-ph100-research-terms-guide-2026"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/ebola-bundibugyo-pheic-cross-border-response-record-2026</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.86</priority>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og/content-quality/sepsis-warning-signs-infection-record-2026.png</image:loc>
+      <image:title>WHO 2026 Ebola Bundibugyo PHEIC: 국외 감염 이슈를 어떻게 읽어야 할까</image:title>
+    </image:image>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/ebola-bundibugyo-pheic-cross-border-response-record-2026"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/andes-hantavirus-cruise-ship-contact-tracing-travel-record-2026</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.86</priority>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og/content-quality/respiratory-virus-vaccine-2025-2026-covid-flu-rsv-record-2026.png</image:loc>
+      <image:title>크루즈선 Andes hantavirus 이슈: 여행 감염 뉴스에서 접촉자 추적을 보는 법</image:title>
+    </image:image>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/andes-hantavirus-cruise-ship-contact-tracing-travel-record-2026"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/fda-bht-ada-food-chemical-reassessment-label-record-2026</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.86</priority>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og/content-quality/ultra-processed-food-blood-sugar-inflammation-guide-2026.png</image:loc>
+      <image:title>FDA BHT·ADA 식품첨가물 재평가: 해외 식품안전 이슈를 라벨 기록으로 읽기</image:title>
+    </image:image>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/fda-bht-ada-food-chemical-reassessment-label-record-2026"/>
   </url>
   <url>
     <loc>https://phlorotannin.com/blog/psyllium-husk-fiber-cholesterol-constipation-guide</loc>
