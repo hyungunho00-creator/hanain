@@ -1,11 +1,11 @@
 {
   "min_tag_count": 5,
-  "total_questions": 1945,
-  "total_unique_tags": 2389,
-  "page_eligible_tags": 263,
+  "total_questions": 1948,
+  "total_unique_tags": 2398,
+  "page_eligible_tags": 265,
   "tags": {
     "플로로탄닌": {
-      "count": 1395,
+      "count": 1398,
       "qids": [
         "cardio-001",
         "cardio-002",
@@ -1401,7 +1401,10 @@
         "strategic-qa-respiratory-rsv-vaccine-adult-risk-pregnancy-abrysvo-record-20260605",
         "strategic-qa-hair-traction-alopecia-tight-hairstyle-extension-wig-hairline-record-20260605",
         "strategic-qa-womens-hpv-self-collection-cervical-screening-pap-positive-followup-record-20260605",
-        "strategic-qa-infection-lyme-tick-bite-expanding-rash-doxycycline-testing-record-20260605"
+        "strategic-qa-infection-lyme-tick-bite-expanding-rash-doxycycline-testing-record-20260605",
+        "strategic-qa-hair-postpartum-shedding-telogen-effluvium-iron-thyroid-record-20260606",
+        "strategic-qa-mens-hpv-vaccine-27-45-new-partner-oropharyngeal-anal-cancer-record-20260606",
+        "strategic-qa-respiratory-asthma-action-plan-rescue-inhaler-spirometry-trigger-record-20260606"
       ]
     },
     "감태": {
@@ -7597,6 +7600,35 @@
         "trend-omega3-atrial-fibrillation-supplement-20260602"
       ]
     },
+    "천식": {
+      "count": 24,
+      "qids": [
+        "rsp_021",
+        "rsp_022",
+        "rsp_026",
+        "rsp_035",
+        "rsp_043",
+        "rsp_045",
+        "rsp_054",
+        "rsp_074",
+        "rsp_092",
+        "rsp_095",
+        "rsp_096",
+        "rsp_097",
+        "resp-001",
+        "resp-101",
+        "qa200-20260527-160",
+        "trendqa-respiratory-20260530",
+        "round3-respiratory-2-20260531",
+        "trend-pollen-thunderstorm-asthma-action-plan-20260603",
+        "trend-wildfire-smoke-aqi-n95-asthma-copd-action-record-20260603",
+        "trend-monsoon-mold-dampness-asthma-allergy-home-record-20260604",
+        "trend-respiratory-cough-three-weeks-asthma-reflux-record-20260604",
+        "trend-respiratory-asthma-inhaler-spacer-action-plan-record-20260604",
+        "strategic-qa-respiratory-long-covid-cough-dyspnea-oximeter-exertion-record-20260605",
+        "strategic-qa-respiratory-asthma-action-plan-rescue-inhaler-spirometry-trigger-record-20260606"
+      ]
+    },
     "정신건강": {
       "count": 23,
       "qids": [
@@ -7623,34 +7655,6 @@
         "trend-loneliness-social-connection-health-risk-support-record-20260603",
         "trend-mental-988-suicide-warning-signs-support-record-20260604",
         "trend-mental-social-media-sleep-anxiety-boundary-record-20260604"
-      ]
-    },
-    "천식": {
-      "count": 23,
-      "qids": [
-        "rsp_021",
-        "rsp_022",
-        "rsp_026",
-        "rsp_035",
-        "rsp_043",
-        "rsp_045",
-        "rsp_054",
-        "rsp_074",
-        "rsp_092",
-        "rsp_095",
-        "rsp_096",
-        "rsp_097",
-        "resp-001",
-        "resp-101",
-        "qa200-20260527-160",
-        "trendqa-respiratory-20260530",
-        "round3-respiratory-2-20260531",
-        "trend-pollen-thunderstorm-asthma-action-plan-20260603",
-        "trend-wildfire-smoke-aqi-n95-asthma-copd-action-record-20260603",
-        "trend-monsoon-mold-dampness-asthma-allergy-home-record-20260604",
-        "trend-respiratory-cough-three-weeks-asthma-reflux-record-20260604",
-        "trend-respiratory-asthma-inhaler-spacer-action-plan-record-20260604",
-        "strategic-qa-respiratory-long-covid-cough-dyspnea-oximeter-exertion-record-20260605"
       ]
     },
     "탈모": {
@@ -7839,6 +7843,30 @@
         "qa200-20260527-160"
       ]
     },
+    "철분": {
+      "count": 19,
+      "qids": [
+        "cardio-087",
+        "woms-004",
+        "wh-extra-024",
+        "womens-003",
+        "womens-010",
+        "mens-013",
+        "ingr-006",
+        "ingr-027",
+        "qa200-20260527-047",
+        "qa200-20260527-151",
+        "qa200-20260527-177",
+        "qa200-20260527-185",
+        "trendqa-hair-20260530",
+        "round2-hair-20260530",
+        "round3-hair-1-20260531",
+        "round3-womens_health-2-20260531",
+        "trend-hair-ferritin-iron-hair-shedding-record-20260604",
+        "strategic-qa-hair-telogen-effluvium-fever-diet-stress-shedding-record-20260605",
+        "strategic-qa-hair-postpartum-shedding-telogen-effluvium-iron-thyroid-record-20260606"
+      ]
+    },
     "갱년기": {
       "count": 18,
       "qids": [
@@ -7883,29 +7911,6 @@
         "ms_089",
         "wh-extra-050",
         "ingr-015"
-      ]
-    },
-    "철분": {
-      "count": 18,
-      "qids": [
-        "cardio-087",
-        "woms-004",
-        "wh-extra-024",
-        "womens-003",
-        "womens-010",
-        "mens-013",
-        "ingr-006",
-        "ingr-027",
-        "qa200-20260527-047",
-        "qa200-20260527-151",
-        "qa200-20260527-177",
-        "qa200-20260527-185",
-        "trendqa-hair-20260530",
-        "round2-hair-20260530",
-        "round3-hair-1-20260531",
-        "round3-womens_health-2-20260531",
-        "trend-hair-ferritin-iron-hair-shedding-record-20260604",
-        "strategic-qa-hair-telogen-effluvium-fever-diet-stress-shedding-record-20260605"
       ]
     },
     "마그네슘": {
@@ -8372,6 +8377,24 @@
         "trend-mens-gynecomastia-breast-lump-medication-record-20260604"
       ]
     },
+    "갑상선": {
+      "count": 13,
+      "qids": [
+        "cardio-089",
+        "meta-006",
+        "meta_023",
+        "meta_044",
+        "meta_073",
+        "meta_096",
+        "woms-019",
+        "mens-extra-070",
+        "round3-hair-1-20260531",
+        "round3-womens_health-2-20260531",
+        "strategic-qa-hair-thyroid-iron-brittle-nails-protein-record-20260605",
+        "strategic-qa-hair-telogen-effluvium-fever-diet-stress-shedding-record-20260605",
+        "strategic-qa-hair-postpartum-shedding-telogen-effluvium-iron-thyroid-record-20260606"
+      ]
+    },
     "장내미생물": {
       "count": 13,
       "qids": [
@@ -8405,23 +8428,6 @@
         "qa200-20260527-178",
         "qa200-20260527-179",
         "qa200-20260527-180"
-      ]
-    },
-    "갑상선": {
-      "count": 12,
-      "qids": [
-        "cardio-089",
-        "meta-006",
-        "meta_023",
-        "meta_044",
-        "meta_073",
-        "meta_096",
-        "woms-019",
-        "mens-extra-070",
-        "round3-hair-1-20260531",
-        "round3-womens_health-2-20260531",
-        "strategic-qa-hair-thyroid-iron-brittle-nails-protein-record-20260605",
-        "strategic-qa-hair-telogen-effluvium-fever-diet-stress-shedding-record-20260605"
       ]
     },
     "근력운동": {
@@ -9550,6 +9556,18 @@
         "trend-digestive-hpylori-breath-test-eradication-record-20260604"
       ]
     },
+    "휴지기탈모": {
+      "count": 7,
+      "qids": [
+        "qa200-20260527-154",
+        "round3-hair-1-20260531",
+        "trend-glp1-hair-loss-telogen-effluvium-20260602",
+        "trend-hair-ferritin-iron-hair-shedding-record-20260604",
+        "strategic-qa-hair-glp1-telogen-protein-ferritin-phlorotannin-20260605",
+        "strategic-qa-hair-telogen-effluvium-fever-diet-stress-shedding-record-20260605",
+        "strategic-qa-hair-postpartum-shedding-telogen-effluvium-iron-thyroid-record-20260606"
+      ]
+    },
     "흡연": {
       "count": 7,
       "qids": [
@@ -9991,17 +10009,6 @@
         "qa200-20260527-058"
       ]
     },
-    "휴지기탈모": {
-      "count": 6,
-      "qids": [
-        "qa200-20260527-154",
-        "round3-hair-1-20260531",
-        "trend-glp1-hair-loss-telogen-effluvium-20260602",
-        "trend-hair-ferritin-iron-hair-shedding-record-20260604",
-        "strategic-qa-hair-glp1-telogen-protein-ferritin-phlorotannin-20260605",
-        "strategic-qa-hair-telogen-effluvium-fever-diet-stress-shedding-record-20260605"
-      ]
-    },
     "BRCA": {
       "count": 5,
       "qids": [
@@ -10010,6 +10017,16 @@
         "ci_108",
         "ci_136",
         "ci_144"
+      ]
+    },
+    "HPV백신": {
+      "count": 5,
+      "qids": [
+        "cancer-016",
+        "ci_022",
+        "ci_060",
+        "strategic-qa-mens-hpv-vaccine-oropharyngeal-cancer-neck-node-record-20260605",
+        "strategic-qa-mens-hpv-vaccine-27-45-new-partner-oropharyngeal-anal-cancer-record-20260606"
       ]
     },
     "LDL": {
@@ -10540,6 +10557,16 @@
         "ci_106",
         "trend-menopause-hormone-therapy-label-update-record-20260603",
         "strategic-qa-womens-menopause-ht-label-hotflash-sleep-phlorotannin-20260605"
+      ]
+    },
+    "호흡기건강": {
+      "count": 5,
+      "qids": [
+        "trend-respiratory-cough-three-weeks-asthma-reflux-record-20260604",
+        "trend-respiratory-asthma-inhaler-spacer-action-plan-record-20260604",
+        "strategic-qa-respiratory-long-covid-cough-dyspnea-oximeter-exertion-record-20260605",
+        "strategic-qa-respiratory-rsv-vaccine-adult-risk-pregnancy-abrysvo-record-20260605",
+        "strategic-qa-respiratory-asthma-action-plan-rescue-inhaler-spirometry-trigger-record-20260606"
       ]
     }
   },
@@ -12478,7 +12505,10 @@
     "strategic-qa-respiratory-rsv-vaccine-adult-risk-pregnancy-abrysvo-record-20260605": "RSV-백신을-맞아야-하는지-상담할-때-나이위험질환임신-주수-기록은-어떻게-준비하나요",
     "strategic-qa-hair-traction-alopecia-tight-hairstyle-extension-wig-hairline-record-20260605": "꽉-묶는-머리붙임머리가발-뒤-헤어라인이-밀리면-견인성-탈모-상담-기록은-어떻게-준비하나요",
     "strategic-qa-womens-hpv-self-collection-cervical-screening-pap-positive-followup-record-20260605": "HPV-자가채취-검사가-가능하다고-들었는데-Pap-검사양성-결과-상담-기록은-어떻게-준비하나요",
-    "strategic-qa-infection-lyme-tick-bite-expanding-rash-doxycycline-testing-record-20260605": "진드기-물린-뒤-붉은-발진이-커지면-라임병-검사예방-항생제-상담-기록은-어떻게-준비하나요"
+    "strategic-qa-infection-lyme-tick-bite-expanding-rash-doxycycline-testing-record-20260605": "진드기-물린-뒤-붉은-발진이-커지면-라임병-검사예방-항생제-상담-기록은-어떻게-준비하나요",
+    "strategic-qa-hair-postpartum-shedding-telogen-effluvium-iron-thyroid-record-20260606": "출산-후-머리카락이-한꺼번에-빠지면-산후-휴지기-탈모-상담-기록은-어떻게-준비하나요",
+    "strategic-qa-mens-hpv-vaccine-27-45-new-partner-oropharyngeal-anal-cancer-record-20260606": "2745세-남성이-HPV-백신을-고민할-때-새-파트너구강암항문암-위험-기록은-어떻게-준비하나요",
+    "strategic-qa-respiratory-asthma-action-plan-rescue-inhaler-spirometry-trigger-record-20260606": "천식-흡입기를-자주-쓰게-될-때-액션플랜폐기능검사유발요인-기록은-어떻게-준비하나요"
   },
-  "generated_at": "2026-06-05T14:09:05.308204+00:00"
+  "generated_at": "2026-06-06T00:27:45.560775+00:00"
 }
