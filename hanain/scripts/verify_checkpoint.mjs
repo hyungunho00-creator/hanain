@@ -1,8 +1,8 @@
 const SITE = 'https://phlorotannin.com'
 
 const EXPECTED = {
-  sitemapTotal: 3194,
-  qCount: 1954,
+  sitemapTotal: 3197,
+  qCount: 1957,
   tagCount: 266,
   blogCount: 699,
   insightCount: 244,

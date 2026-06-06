@@ -1,11 +1,11 @@
 {
   "min_tag_count": 5,
-  "total_questions": 1954,
-  "total_unique_tags": 2415,
+  "total_questions": 1957,
+  "total_unique_tags": 2429,
   "page_eligible_tags": 266,
   "tags": {
     "플로로탄닌": {
-      "count": 1404,
+      "count": 1407,
       "qids": [
         "cardio-001",
         "cardio-002",
@@ -1410,7 +1410,10 @@
         "strategic-qa-womens-pcos-irregular-period-hirsutism-insulin-resistance-fertility-record-20260606",
         "strategic-qa-hair-biotin-supplement-lab-test-interference-thyroid-troponin-record-20260606",
         "strategic-qa-mens-gynecomastia-male-breast-lump-nipple-discharge-brca-record-20260606",
-        "strategic-qa-womens-heavy-menstrual-bleeding-anemia-fibroid-abnormal-uterine-record-20260606"
+        "strategic-qa-womens-heavy-menstrual-bleeding-anemia-fibroid-abnormal-uterine-record-20260606",
+        "strategic-qa-hair-scalp-folliculitis-pustule-pain-shedding-antibiotic-record-20260606",
+        "strategic-qa-respiratory-pneumococcal-vaccine-pcv20-pcv21-risk-condition-record-20260606",
+        "strategic-qa-mens-hematuria-blood-urine-bladder-prostate-stone-record-20260606"
       ]
     },
     "감태": {
@@ -8442,6 +8445,24 @@
         "trend-fermented-food-probiotics-gut-microbiome-safety-20260602"
       ]
     },
+    "전립선": {
+      "count": 13,
+      "qids": [
+        "mens-001",
+        "mens-005",
+        "mens-012",
+        "mens-015",
+        "mens-extra-021",
+        "mens-extra-032",
+        "mens-extra-060",
+        "mens-001",
+        "mens-009",
+        "qa200-20260527-200",
+        "trendqa-mens-20260530",
+        "round2-mens-health-20260530",
+        "strategic-qa-mens-hematuria-blood-urine-bladder-prostate-stone-record-20260606"
+      ]
+    },
     "감염·염증": {
       "count": 12,
       "qids": [
@@ -8525,23 +8546,6 @@
         "qa200-20260527-096",
         "qa200-20260527-100",
         "trend-alzheimers-blood-biomarker-memory-clinic-record-20260603"
-      ]
-    },
-    "전립선": {
-      "count": 12,
-      "qids": [
-        "mens-001",
-        "mens-005",
-        "mens-012",
-        "mens-015",
-        "mens-extra-021",
-        "mens-extra-032",
-        "mens-extra-060",
-        "mens-001",
-        "mens-009",
-        "qa200-20260527-200",
-        "trendqa-mens-20260530",
-        "round2-mens-health-20260530"
       ]
     },
     "콜레스테롤": {
@@ -12545,7 +12549,10 @@
     "strategic-qa-womens-pcos-irregular-period-hirsutism-insulin-resistance-fertility-record-20260606": "생리가-불규칙하고-털여드름이-늘면-PCOS-상담-전-인슐린저항성임신-계획-기록은-어떻게-준비하나요",
     "strategic-qa-hair-biotin-supplement-lab-test-interference-thyroid-troponin-record-20260606": "탈모-때문에-비오틴을-먹고-있는데-갑상선심장효소-검사-전에는-어떤-기록을-준비하나요",
     "strategic-qa-mens-gynecomastia-male-breast-lump-nipple-discharge-brca-record-20260606": "남성-가슴-멍울이나-유두-분비가-생기면-여성형유방남성-유방암-상담-기록은-어떻게-준비하나요",
-    "strategic-qa-womens-heavy-menstrual-bleeding-anemia-fibroid-abnormal-uterine-record-20260606": "생리-양이-너무-많고-빈혈이-걱정되면-과다월경자궁근종비정상-자궁출혈-상담-기록은-어떻게-준비하나요"
+    "strategic-qa-womens-heavy-menstrual-bleeding-anemia-fibroid-abnormal-uterine-record-20260606": "생리-양이-너무-많고-빈혈이-걱정되면-과다월경자궁근종비정상-자궁출혈-상담-기록은-어떻게-준비하나요",
+    "strategic-qa-hair-scalp-folliculitis-pustule-pain-shedding-antibiotic-record-20260606": "두피에-여드름-같은-고름통증이-반복되고-머리-빠짐이-걱정될-때-모낭염-상담-기록은-어떻게-준비하나요",
+    "strategic-qa-respiratory-pneumococcal-vaccine-pcv20-pcv21-risk-condition-record-20260606": "50세-이후-또는-만성질환이-있을-때-폐렴구균-백신-PCV20PCV21-상담-기록은-어떻게-준비하나요",
+    "strategic-qa-mens-hematuria-blood-urine-bladder-prostate-stone-record-20260606": "남성이-소변에-피가-보이거나-현미경-혈뇨가-나오면-방광암전립선결석-상담-기록은-어떻게-준비하나요"
   },
-  "generated_at": "2026-06-06T01:12:46.548063+00:00"
+  "generated_at": "2026-06-06T04:03:26.712523+00:00"
 }
