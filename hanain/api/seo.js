@@ -662,6 +662,24 @@ function staticMetaFor(pathname) {
         ogImage: '/og/content-quality/dengue-chikungunya-travel-fever-joint-pain-mosquito-record-2026.png',
         ogImageAlt: 'French Guiana chikungunya travel notice와 임신 백신 관절통 모기 회피 기록을 요약한 인사이트 이미지',
       },
+      'cyclospora-produce-diarrhea-food-diary-record-2026': {
+        title: 'FDA Cyclospora 조사 | 원인 미확인 설사와 음식일지 기록',
+        desc: 'FDA 2026년 6월 Cyclospora active investigation과 CDC cyclosporiasis 자료를 바탕으로 원인 미확인 식품매개 설사, fresh produce, 음식일지, stool test 기록을 정리합니다.',
+        ogImage: '/og/content-quality/diet-microbiome-ibs-upf-fermented-food-record-2026.png',
+        ogImageAlt: 'FDA Cyclospora 원인 미확인 조사와 음식일지 설사 증상 stool test 기록을 요약한 인사이트 이미지',
+      },
+      'moringa-capsules-salmonella-supplement-lot-record-2026': {
+        title: 'FDA Moringa capsules recall | Salmonella와 보충제 lot 기록',
+        desc: 'FDA 2026년 6월 TNVitamins·Doctor’s Pride moringa capsules Salmonella recall 확대와 CDC Salmonella 자료를 바탕으로 보충제 lot, 구매 플랫폼, 설사·발열 기록을 정리합니다.',
+        ogImage: '/og/content-quality/supplement-label-buying-guide-record-2026.png',
+        ogImageAlt: 'FDA Moringa superfood capsules Salmonella recall과 보충제 lot 구매 플랫폼 증상 기록을 요약한 인사이트 이미지',
+      },
+      'dried-herring-botulism-neuro-warning-record-2026': {
+        title: 'FDA Dried herring warning | 보툴리즘 위험과 신경 증상 기록',
+        desc: 'FDA 2026년 6월 dried herring fish safety warning과 CDC botulism 자료를 바탕으로 uneviscerated fish, C. botulinum spores, lot, 시야·삼킴·호흡 신호를 정리합니다.',
+        ogImage: '/og/content-quality/sepsis-warning-signs-infection-record-2026.png',
+        ogImageAlt: 'FDA Dried herring fish safety warning과 botulism 신경 증상 lot 수입식품 기록을 요약한 인사이트 이미지',
+      },
     }
     if (insightMeta[rawSlug]) {
       return {
