@@ -1,7 +1,7 @@
 # QA Duplicate Template Detector Result
 
-- generatedAt: 2026-06-06T00:27:23.494Z
-- validatedScanned: 1948
+- generatedAt: 2026-06-06T00:47:27.099Z
+- validatedScanned: 1951
 - repeatedSentenceWarnings(>=4): 140
 - repeatedParagraphFails(>=3): 14
 - similarityPairs(>=35% manual-review, sample=120): 3360
@@ -119,6 +119,7 @@
 - count=9 ids=cardio-005, cardio-018, meta-004, meta-010, meta_032, wh-extra-070, ingr-004, qa200-20260527-083, qa-hospital-20260527-005 sample="짧은 답변 콜레스테롤 관리 검사는 단일 숫자만 보지 말고 검사 시점, 증상 변화, 복용약, 이전 결과와 함께 비교해 해석해야 정확합니다...."
 - count=9 ids=cardio-005, cardio-018, meta-004, meta-010, meta_032, wh-extra-070, ingr-004, qa200-20260527-083, qa-hospital-20260527-005 sample="자세히 보면 콜레스테롤 관리 검사 해석에서는 추세 비교가 핵심이며, 같은 검사도 조건이 다르면 결과 의미가 달라질 수 있습니다...."
 - count=9 ids=meta-013, meta-017, meta_029, meta_050, meta_076, meta_095, qa200-20260527-008, qa200-20260527-023, qa200-20260527-025 sample="짧은 답변 혈당 관리 질문은 대사질환 맥락에서 증상, 검사, 치료, 생활요인을 함께 봐야 정확한 판단이 가능합니다...."
+- count=9 ids=strategic-qa-womens-fibroid-heavy-bleeding-anemia-iron-record-20260605, strategic-qa-womens-pelvic-organ-prolapse-urinary-leakage-constipation-record-20260605, strategic-qa-mens-varicocele-testicular-pain-semen-analysis-fertility-record-20260605, strategic-qa-mens-testicular-lump-ultrasound-tumor-marker-record-20260605, strategic-qa-womens-urinary-incontinence-bladder-diary-caffeine-uti-record-20260605, strategic-qa-mens-peyronies-curvature-plaque-pain-erection-record-20260605, strategic-qa-infection-lyme-tick-bite-expanding-rash-doxycycline-testing-record-20260605, strategic-qa-mens-erectile-dysfunction-cardiovascular-risk-nitrates-sildenafil-record-20260606, strategic-qa-womens-pcos-irregular-period-hirsutism-insulin-resistance-fertility-record-20260606 sample="pubmed에는 phlorotannin-rich ecklonia cava extract가 염증 관련 표지와 대사 반응을 다룬 연구가 등재되어 있습니다...."
 - count=8 ids=neuro-001, nc_060, mental-extra-030, mental-extra-038, qa200-20260527-098, seoqa-neuro_cognitive-02, seoqa-neuro_cognitive-04, seoqa-neuro_cognitive-10 sample="자세히 보면 뇌·인지 증상 원인 평가는 생활요인만으로 결론 내리지 말고 진찰·검사·경과 관찰을 함께 묶어 해석해야 정확도가 높습니다...."
 - count=8 ids=nc_057, nc_070, mental-extra-037, mental-extra-062, mental-extra-073, nc_099, nc_108, nc_109 sample="짧은 답변 뇌·인지 증상의 치료는 손상·증상 정도와 검사 결과를 기준으로 보존치료, 약물치료, 재활치료, 시술/수술 여부를 나눠 결정합니다...."
 - count=8 ids=nc_057, nc_070, mental-extra-037, mental-extra-062, mental-extra-073, nc_099, nc_108, nc_109 sample="자세히 보면 뇌·인지 증상의 치료 방향은 “현재 기능 제한이 어느 정도인지”와 “검사에서 확인된 손상 범위가 무엇인지”를 함께 보고 정합니다...."
@@ -131,7 +132,6 @@
 - count=7 ids=wh-extra-062, mental-extra-002, mental-102, mental-110, qa200-20260527-109, qa200-20260527-115, qa-hospital-20260527-025 sample="짧은 답변 정신건강/수면 문제 관련 약물은 임의 중단·증량보다..."
 - count=7 ids=wh-extra-062, mental-extra-002, mental-102, mental-110, qa200-20260527-109, qa200-20260527-115, qa-hospital-20260527-025 sample="자세히 보면 정신건강/수면 문제 관련 약물 질문은 효과보다..."
 - count=7 ids=mens-008, mens-011, mens-016, mens-extra-007, mens-extra-012, mens-extra-035, mens-008 sample="질문은 남성건강 맥락에서 증상, 검사, 치료, 생활요인을 함께 봐야 정확한 판단이 가능합니다...."
-- count=7 ids=strategic-qa-womens-fibroid-heavy-bleeding-anemia-iron-record-20260605, strategic-qa-womens-pelvic-organ-prolapse-urinary-leakage-constipation-record-20260605, strategic-qa-mens-varicocele-testicular-pain-semen-analysis-fertility-record-20260605, strategic-qa-mens-testicular-lump-ultrasound-tumor-marker-record-20260605, strategic-qa-womens-urinary-incontinence-bladder-diary-caffeine-uti-record-20260605, strategic-qa-mens-peyronies-curvature-plaque-pain-erection-record-20260605, strategic-qa-infection-lyme-tick-bite-expanding-rash-doxycycline-testing-record-20260605 sample="pubmed에는 phlorotannin-rich ecklonia cava extract가 염증 관련 표지와 대사 반응을 다룬 연구가 등재되어 있습니다...."
 - count=6 ids=ci_020, ci_040, sh_025, sh_062, rsp_076, mental-extra-044 sample="방향은 “현재 기능 제한이 어느 정도인지”와 “검사에서 확인된 손상 범위가 무엇인지”를 함께 보고 정합니다...."
 - count=6 ids=dige-020, neuro-007, wh-extra-038, infect-extra-019, infect-extra-066, sh_093 sample="원인 평가는 생활요인만으로 결론 내리지 말고 진찰·검사·경과 관찰을 함께 묶어 해석해야 정확도가 높습니다...."
 - count=6 ids=dg_014, dg_019, dg_078, qa200-20260527-059, qa200-20260527-076, qa200-20260527-168 sample="자세히 보면 소화기 증상 질문의 핵심은 현재 상태를 구조화해 “무엇을 먼저 확인할지”를 정하는 데 있습니다...."

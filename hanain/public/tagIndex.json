@@ -1,11 +1,11 @@
 {
   "min_tag_count": 5,
-  "total_questions": 1948,
-  "total_unique_tags": 2398,
+  "total_questions": 1951,
+  "total_unique_tags": 2404,
   "page_eligible_tags": 265,
   "tags": {
     "플로로탄닌": {
-      "count": 1398,
+      "count": 1401,
       "qids": [
         "cardio-001",
         "cardio-002",
@@ -1404,7 +1404,10 @@
         "strategic-qa-infection-lyme-tick-bite-expanding-rash-doxycycline-testing-record-20260605",
         "strategic-qa-hair-postpartum-shedding-telogen-effluvium-iron-thyroid-record-20260606",
         "strategic-qa-mens-hpv-vaccine-27-45-new-partner-oropharyngeal-anal-cancer-record-20260606",
-        "strategic-qa-respiratory-asthma-action-plan-rescue-inhaler-spirometry-trigger-record-20260606"
+        "strategic-qa-respiratory-asthma-action-plan-rescue-inhaler-spirometry-trigger-record-20260606",
+        "strategic-qa-hair-seborrheic-dermatitis-dandruff-itch-flake-shampoo-record-20260606",
+        "strategic-qa-mens-erectile-dysfunction-cardiovascular-risk-nitrates-sildenafil-record-20260606",
+        "strategic-qa-womens-pcos-irregular-period-hirsutism-insulin-resistance-fertility-record-20260606"
       ]
     },
     "감태": {
@@ -6785,7 +6788,7 @@
       ]
     },
     "남성건강": {
-      "count": 44,
+      "count": 45,
       "qids": [
         "mens-001",
         "mens-002",
@@ -6830,7 +6833,8 @@
         "strategic-qa-mens-varicocele-testicular-pain-semen-analysis-fertility-record-20260605",
         "strategic-qa-mens-testicular-lump-ultrasound-tumor-marker-record-20260605",
         "strategic-qa-mens-peyronies-curvature-plaque-pain-erection-record-20260605",
-        "strategic-qa-mens-psa-screening-family-history-bph-prostatitis-shared-decision-record-20260605"
+        "strategic-qa-mens-psa-screening-family-history-bph-prostatitis-shared-decision-record-20260605",
+        "strategic-qa-mens-erectile-dysfunction-cardiovascular-risk-nitrates-sildenafil-record-20260606"
       ]
     },
     "호흡기": {
@@ -6881,6 +6885,51 @@
         "trend-monsoon-mold-dampness-asthma-allergy-home-record-20260604"
       ]
     },
+    "당뇨": {
+      "count": 40,
+      "qids": [
+        "cardio-040",
+        "cardio-081",
+        "meta-001",
+        "meta-008",
+        "meta-015",
+        "meta-017",
+        "meta_021",
+        "meta_022",
+        "meta_025",
+        "meta_029",
+        "meta_032",
+        "meta_033",
+        "meta_035",
+        "meta_036",
+        "meta_037",
+        "meta_039",
+        "meta_042",
+        "meta_045",
+        "meta_050",
+        "meta_053",
+        "meta_054",
+        "meta_060",
+        "meta_061",
+        "meta_064",
+        "meta_076",
+        "meta_078",
+        "meta_080",
+        "meta_084",
+        "meta_090",
+        "meta_092",
+        "meta_095",
+        "meta_098",
+        "meta_100",
+        "mens-extra-055",
+        "infect-extra-006",
+        "ingr-016",
+        "ingr-028",
+        "qa200-20260527-091",
+        "qa200-20260527-195",
+        "strategic-qa-mens-erectile-dysfunction-cardiovascular-risk-nitrates-sildenafil-record-20260606"
+      ]
+    },
     "뼈": {
       "count": 40,
       "qids": [
@@ -6926,52 +6975,8 @@
         "ms_090"
       ]
     },
-    "당뇨": {
-      "count": 39,
-      "qids": [
-        "cardio-040",
-        "cardio-081",
-        "meta-001",
-        "meta-008",
-        "meta-015",
-        "meta-017",
-        "meta_021",
-        "meta_022",
-        "meta_025",
-        "meta_029",
-        "meta_032",
-        "meta_033",
-        "meta_035",
-        "meta_036",
-        "meta_037",
-        "meta_039",
-        "meta_042",
-        "meta_045",
-        "meta_050",
-        "meta_053",
-        "meta_054",
-        "meta_060",
-        "meta_061",
-        "meta_064",
-        "meta_076",
-        "meta_078",
-        "meta_080",
-        "meta_084",
-        "meta_090",
-        "meta_092",
-        "meta_095",
-        "meta_098",
-        "meta_100",
-        "mens-extra-055",
-        "infect-extra-006",
-        "ingr-016",
-        "ingr-028",
-        "qa200-20260527-091",
-        "qa200-20260527-195"
-      ]
-    },
     "혈압": {
-      "count": 39,
+      "count": 40,
       "qids": [
         "cardio-009",
         "cardio-011",
@@ -7011,7 +7016,8 @@
         "trend-pregnancy-postpartum-warning-signs-blood-pressure-record-20260604",
         "trend-migraine-aura-estrogen-birth-control-stroke-risk-record-20260604",
         "strategic-qa-mens-ed-cardiovascular-bp-glucose-phlorotannin-20260605",
-        "strategic-qa-hair-oral-minoxidil-edema-heart-rate-blood-pressure-record-20260605"
+        "strategic-qa-hair-oral-minoxidil-edema-heart-rate-blood-pressure-record-20260605",
+        "strategic-qa-mens-erectile-dysfunction-cardiovascular-risk-nitrates-sildenafil-record-20260606"
       ]
     },
     "수면": {
@@ -8395,6 +8401,24 @@
         "strategic-qa-hair-postpartum-shedding-telogen-effluvium-iron-thyroid-record-20260606"
       ]
     },
+    "인슐린저항성": {
+      "count": 13,
+      "qids": [
+        "meta-001",
+        "meta-002",
+        "meta-017",
+        "meta-020",
+        "skin-001",
+        "woms-002",
+        "wh-extra-017",
+        "womens-008",
+        "womens-102",
+        "qa200-20260527-015",
+        "qa200-20260527-187",
+        "trend-pcos-glp1-insulin-resistance-pregnancy-planning-20260602",
+        "strategic-qa-womens-pcos-irregular-period-hirsutism-insulin-resistance-fertility-record-20260606"
+      ]
+    },
     "장내미생물": {
       "count": 13,
       "qids": [
@@ -8479,23 +8503,6 @@
         "trend-tattoo-ink-contamination-skin-cancer-mole-monitoring-record-20260603",
         "trend-monsoon-mold-dampness-asthma-allergy-home-record-20260604",
         "trend-respiratory-cough-three-weeks-asthma-reflux-record-20260604"
-      ]
-    },
-    "인슐린저항성": {
-      "count": 12,
-      "qids": [
-        "meta-001",
-        "meta-002",
-        "meta-017",
-        "meta-020",
-        "skin-001",
-        "woms-002",
-        "wh-extra-017",
-        "womens-008",
-        "womens-102",
-        "qa200-20260527-015",
-        "qa200-20260527-187",
-        "trend-pcos-glp1-insulin-resistance-pregnancy-planning-20260602"
       ]
     },
     "인지기능": {
@@ -9083,6 +9090,19 @@
         "trend-omega3-atrial-fibrillation-supplement-20260602"
       ]
     },
+    "PCOS": {
+      "count": 8,
+      "qids": [
+        "woms-002",
+        "woms-007",
+        "wh-extra-013",
+        "wh-extra-017",
+        "womens-008",
+        "womens-102",
+        "trend-pcos-glp1-insulin-resistance-pregnancy-planning-20260602",
+        "strategic-qa-womens-pcos-irregular-period-hirsutism-insulin-resistance-fertility-record-20260606"
+      ]
+    },
     "PSA": {
       "count": 8,
       "qids": [
@@ -9161,6 +9181,19 @@
         "trend-scalp-psoriasis-dandruff-silver-scale-hair-loss-record-20260604"
       ]
     },
+    "발기부전": {
+      "count": 8,
+      "qids": [
+        "mens-003",
+        "mens-extra-005",
+        "mens-102",
+        "qa200-20260527-195",
+        "trend-erectile-dysfunction-cardiovascular-risk-20260602",
+        "strategic-qa-mens-ed-cardiovascular-bp-glucose-phlorotannin-20260605",
+        "strategic-qa-mens-peyronies-curvature-plaque-pain-erection-record-20260605",
+        "strategic-qa-mens-erectile-dysfunction-cardiovascular-risk-nitrates-sildenafil-record-20260606"
+      ]
+    },
     "부정맥": {
       "count": 8,
       "qids": [
@@ -9172,6 +9205,19 @@
         "trend-energy-drink-preworkout-caffeine-sleep-20260602",
         "trend-cold-plunge-sauna-blood-pressure-arrhythmia-safety-20260602",
         "trend-cardiovascular-smartwatch-afib-alert-palpitations-record-20260604"
+      ]
+    },
+    "비듬": {
+      "count": 8,
+      "qids": [
+        "skin-006",
+        "infect-extra-052",
+        "sh_106",
+        "round3-hair-2-20260531",
+        "trend-scalp-psoriasis-dandruff-silver-scale-hair-loss-record-20260604",
+        "strategic-qa-hair-scalp-itch-scale-psoriasis-tinea-scarring-record-20260605",
+        "strategic-qa-hair-scalp-psoriasis-scale-itch-temporary-shedding-record-20260605",
+        "strategic-qa-hair-seborrheic-dermatitis-dandruff-itch-flake-shampoo-record-20260606"
       ]
     },
     "비타민 D": {
@@ -9316,18 +9362,6 @@
         "strategic-qa-mens-hpv-vaccine-oropharyngeal-cancer-neck-node-record-20260605"
       ]
     },
-    "PCOS": {
-      "count": 7,
-      "qids": [
-        "woms-002",
-        "woms-007",
-        "wh-extra-013",
-        "wh-extra-017",
-        "womens-008",
-        "womens-102",
-        "trend-pcos-glp1-insulin-resistance-pregnancy-planning-20260602"
-      ]
-    },
     "감염": {
       "count": 7,
       "qids": [
@@ -9400,18 +9434,6 @@
         "qa200-20260527-026"
       ]
     },
-    "발기부전": {
-      "count": 7,
-      "qids": [
-        "mens-003",
-        "mens-extra-005",
-        "mens-102",
-        "qa200-20260527-195",
-        "trend-erectile-dysfunction-cardiovascular-risk-20260602",
-        "strategic-qa-mens-ed-cardiovascular-bp-glucose-phlorotannin-20260605",
-        "strategic-qa-mens-peyronies-curvature-plaque-pain-erection-record-20260605"
-      ]
-    },
     "방광염": {
       "count": 7,
       "qids": [
@@ -9460,18 +9482,6 @@
         "trend-neuro-long-covid-brain-fog-memory-record-20260604"
       ]
     },
-    "비듬": {
-      "count": 7,
-      "qids": [
-        "skin-006",
-        "infect-extra-052",
-        "sh_106",
-        "round3-hair-2-20260531",
-        "trend-scalp-psoriasis-dandruff-silver-scale-hair-loss-record-20260604",
-        "strategic-qa-hair-scalp-itch-scale-psoriasis-tinea-scarring-record-20260605",
-        "strategic-qa-hair-scalp-psoriasis-scale-itch-temporary-shedding-record-20260605"
-      ]
-    },
     "수면무호흡": {
       "count": 7,
       "qids": [
@@ -9494,6 +9504,18 @@
         "round3-neuro_cognitive-1-20260531",
         "trend-screen-time-sleep-anxiety-digital-behavior-20260602",
         "trend-teen-social-media-sleep-mental-health-boundary-20260603"
+      ]
+    },
+    "심혈관위험": {
+      "count": 7,
+      "qids": [
+        "meta-004",
+        "mens-extra-014",
+        "trend-dyslipidemia-prevent-ldl-apob-lpa-risk-20260602",
+        "trend-lpa-once-lifetime-test-family-heart-risk-20260603",
+        "trend-cardiovascular-lpa-family-heart-risk-record-20260604",
+        "strategic-qa-mens-ed-cardiovascular-bp-glucose-phlorotannin-20260605",
+        "strategic-qa-mens-erectile-dysfunction-cardiovascular-risk-nitrates-sildenafil-record-20260606"
       ]
     },
     "임신": {
@@ -9723,6 +9745,17 @@
         "trend-pregnancy-postpartum-warning-signs-blood-pressure-record-20260604"
       ]
     },
+    "두피가려움": {
+      "count": 6,
+      "qids": [
+        "sh_106",
+        "round3-hair-2-20260531",
+        "trend-summer-swimming-scalp-itch-chlorine-saltwater-record-20260604",
+        "trend-scalp-psoriasis-dandruff-silver-scale-hair-loss-record-20260604",
+        "strategic-qa-hair-scalp-itch-scale-psoriasis-tinea-scarring-record-20260605",
+        "strategic-qa-hair-seborrheic-dermatitis-dandruff-itch-flake-shampoo-record-20260606"
+      ]
+    },
     "마음챙김": {
       "count": 6,
       "qids": [
@@ -9877,17 +9910,6 @@
         "qa200-20260527-134"
       ]
     },
-    "심혈관위험": {
-      "count": 6,
-      "qids": [
-        "meta-004",
-        "mens-extra-014",
-        "trend-dyslipidemia-prevent-ldl-apob-lpa-risk-20260602",
-        "trend-lpa-once-lifetime-test-family-heart-risk-20260603",
-        "trend-cardiovascular-lpa-family-heart-risk-record-20260604",
-        "strategic-qa-mens-ed-cardiovascular-bp-glucose-phlorotannin-20260605"
-      ]
-    },
     "암환자": {
       "count": 6,
       "qids": [
@@ -9897,6 +9919,17 @@
         "qa200-20260527-045",
         "qa200-20260527-047",
         "qa200-20260527-054"
+      ]
+    },
+    "여드름": {
+      "count": 6,
+      "qids": [
+        "skin-001",
+        "wh-extra-044",
+        "infect-extra-051",
+        "qa200-20260527-138",
+        "trend-skin-acne-retinoid-pregnancy-plan-record-20260604",
+        "strategic-qa-womens-pcos-irregular-period-hirsutism-insulin-resistance-fertility-record-20260606"
       ]
     },
     "우울": {
@@ -10219,16 +10252,6 @@
         "trend-respiratory-virus-vaccine-covid-flu-rsv-record-20260603"
       ]
     },
-    "두피가려움": {
-      "count": 5,
-      "qids": [
-        "sh_106",
-        "round3-hair-2-20260531",
-        "trend-summer-swimming-scalp-itch-chlorine-saltwater-record-20260604",
-        "trend-scalp-psoriasis-dandruff-silver-scale-hair-loss-record-20260604",
-        "strategic-qa-hair-scalp-itch-scale-psoriasis-tinea-scarring-record-20260605"
-      ]
-    },
     "만성염증": {
       "count": 5,
       "qids": [
@@ -10377,16 +10400,6 @@
         "qa200-20260527-192",
         "trend-fermented-food-probiotics-gut-microbiome-safety-20260602",
         "trend-alopecia-areata-jak-inhibitor-safety-record-20260603"
-      ]
-    },
-    "여드름": {
-      "count": 5,
-      "qids": [
-        "skin-001",
-        "wh-extra-044",
-        "infect-extra-051",
-        "qa200-20260527-138",
-        "trend-skin-acne-retinoid-pregnancy-plan-record-20260604"
       ]
     },
     "여성탈모": {
@@ -12508,7 +12521,10 @@
     "strategic-qa-infection-lyme-tick-bite-expanding-rash-doxycycline-testing-record-20260605": "진드기-물린-뒤-붉은-발진이-커지면-라임병-검사예방-항생제-상담-기록은-어떻게-준비하나요",
     "strategic-qa-hair-postpartum-shedding-telogen-effluvium-iron-thyroid-record-20260606": "출산-후-머리카락이-한꺼번에-빠지면-산후-휴지기-탈모-상담-기록은-어떻게-준비하나요",
     "strategic-qa-mens-hpv-vaccine-27-45-new-partner-oropharyngeal-anal-cancer-record-20260606": "2745세-남성이-HPV-백신을-고민할-때-새-파트너구강암항문암-위험-기록은-어떻게-준비하나요",
-    "strategic-qa-respiratory-asthma-action-plan-rescue-inhaler-spirometry-trigger-record-20260606": "천식-흡입기를-자주-쓰게-될-때-액션플랜폐기능검사유발요인-기록은-어떻게-준비하나요"
+    "strategic-qa-respiratory-asthma-action-plan-rescue-inhaler-spirometry-trigger-record-20260606": "천식-흡입기를-자주-쓰게-될-때-액션플랜폐기능검사유발요인-기록은-어떻게-준비하나요",
+    "strategic-qa-hair-seborrheic-dermatitis-dandruff-itch-flake-shampoo-record-20260606": "비듬처럼-보이는데-가렵고-기름진-각질이-반복되면-두피-지루피부염-상담-기록은-어떻게-준비하나요",
+    "strategic-qa-mens-erectile-dysfunction-cardiovascular-risk-nitrates-sildenafil-record-20260606": "발기부전이-새로-생겼을-때-심혈관-위험질산염-약실데나필-상담-기록은-어떻게-준비하나요",
+    "strategic-qa-womens-pcos-irregular-period-hirsutism-insulin-resistance-fertility-record-20260606": "생리가-불규칙하고-털여드름이-늘면-PCOS-상담-전-인슐린저항성임신-계획-기록은-어떻게-준비하나요"
   },
-  "generated_at": "2026-06-06T00:27:45.560775+00:00"
+  "generated_at": "2026-06-06T00:47:46.137112+00:00"
 }
