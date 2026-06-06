@@ -1,11 +1,11 @@
 const SITE = 'https://phlorotannin.com'
 
 const EXPECTED = {
-  sitemapTotal: 3206,
+  sitemapTotal: 3212,
   qCount: 1966,
   tagCount: 266,
-  blogCount: 699,
-  insightCount: 244,
+  blogCount: 702,
+  insightCount: 247,
   requiredBundleSlugs: [
     'glp1-era-protein-fiber-phlorotannin-checklist-2026',
     'glp1-muscle-loss-protein-resistance-training-2026',
@@ -154,6 +154,9 @@ const EXPECTED = {
     'personal-health-record-doctor-visit-summary-2026',
     'home-blood-pressure-monitor-buying-record-2026',
     'thyroid-test-tsh-symptom-record-2026',
+    'haengwoo-lee-seanol-domestic-media-timeline-2026',
+    'seanol-seapolynol-efsa-fda-ndi-global-regulatory-map-2026',
+    'seanol-caf-ph100-research-terms-guide-2026',
   ],
   draftSlug: 'ecklonia-cava-respiratory-health-clinical-trial-2026',
 }
