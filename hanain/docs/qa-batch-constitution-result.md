@@ -1,9 +1,9 @@
 # QA Batch Constitution Result
 
-- generatedAt: 2026-06-06T04:58:31.305Z
+- generatedAt: 2026-06-06T05:27:21.269Z
 - policy: 2026-06-05-strategic-qna-v1
-- srcStrategicItems: 45
-- publicStrategicItems: 45
+- srcStrategicItems: 48
+- publicStrategicItems: 48
 - status: PASS
 
 ## Failures

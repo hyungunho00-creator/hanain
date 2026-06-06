@@ -1,11 +1,11 @@
 {
   "min_tag_count": 5,
-  "total_questions": 1963,
-  "total_unique_tags": 2455,
+  "total_questions": 1966,
+  "total_unique_tags": 2465,
   "page_eligible_tags": 266,
   "tags": {
     "플로로탄닌": {
-      "count": 1413,
+      "count": 1416,
       "qids": [
         "cardio-001",
         "cardio-002",
@@ -1419,7 +1419,10 @@
         "strategic-qa-womens-postpartum-depression-anxiety-screening-bipolar-988-record-20260606",
         "strategic-qa-hair-frontal-fibrosing-alopecia-eyebrow-hairline-biopsy-record-20260606",
         "strategic-qa-mens-testicular-torsion-sudden-pain-ultrasound-emergency-record-20260606",
-        "strategic-qa-respiratory-sleep-apnea-cpap-home-sleep-test-drowsy-driving-record-20260606"
+        "strategic-qa-respiratory-sleep-apnea-cpap-home-sleep-test-drowsy-driving-record-20260606",
+        "strategic-qa-metabolism-seanol-haengwoo-lee-seapolynol-evidence-record-20260606",
+        "strategic-qa-cardiovascular-seanol-regulatory-label-cholesterol-record-20260606",
+        "strategic-qa-neuro-cognitive-haengwoo-lee-seanol-brain-evidence-record-20260606"
       ]
     },
     "감태": {
@@ -8040,6 +8043,27 @@
         "trend-neuro-long-covid-brain-fog-memory-record-20260604"
       ]
     },
+    "뇌건강": {
+      "count": 16,
+      "qids": [
+        "neuro-002",
+        "neuro-003",
+        "neuro-005",
+        "neuro-013",
+        "neuro-015",
+        "neuro-020",
+        "nc_047",
+        "mental-012",
+        "mental-016",
+        "nc_098",
+        "nc_112",
+        "nc_114",
+        "nc_122",
+        "qa200-20260527-100",
+        "qa200-20260527-102",
+        "strategic-qa-neuro-cognitive-haengwoo-lee-seanol-brain-evidence-record-20260606"
+      ]
+    },
     "대사질환": {
       "count": 16,
       "qids": [
@@ -8141,26 +8165,6 @@
         "rsp_095",
         "resp-001",
         "trendqa-respiratory-20260530"
-      ]
-    },
-    "뇌건강": {
-      "count": 15,
-      "qids": [
-        "neuro-002",
-        "neuro-003",
-        "neuro-005",
-        "neuro-013",
-        "neuro-015",
-        "neuro-020",
-        "nc_047",
-        "mental-012",
-        "mental-016",
-        "nc_098",
-        "nc_112",
-        "nc_114",
-        "nc_122",
-        "qa200-20260527-100",
-        "qa200-20260527-102"
       ]
     },
     "비타민D": {
@@ -8469,6 +8473,24 @@
         "strategic-qa-mens-hematuria-blood-urine-bladder-prostate-stone-record-20260606"
       ]
     },
+    "콜레스테롤": {
+      "count": 13,
+      "qids": [
+        "cardio-005",
+        "cardio-018",
+        "cardio-037",
+        "meta-004",
+        "meta-010",
+        "wh-extra-070",
+        "womens-009",
+        "ingr-004",
+        "ingr-006",
+        "trend-dyslipidemia-prevent-ldl-apob-lpa-risk-20260602",
+        "trend-lpa-once-lifetime-test-family-heart-risk-20260603",
+        "trend-cardiovascular-lpa-family-heart-risk-record-20260604",
+        "strategic-qa-cardiovascular-seanol-regulatory-label-cholesterol-record-20260606"
+      ]
+    },
     "감염·염증": {
       "count": 12,
       "qids": [
@@ -8552,23 +8574,6 @@
         "qa200-20260527-096",
         "qa200-20260527-100",
         "trend-alzheimers-blood-biomarker-memory-clinic-record-20260603"
-      ]
-    },
-    "콜레스테롤": {
-      "count": 12,
-      "qids": [
-        "cardio-005",
-        "cardio-018",
-        "cardio-037",
-        "meta-004",
-        "meta-010",
-        "wh-extra-070",
-        "womens-009",
-        "ingr-004",
-        "ingr-006",
-        "trend-dyslipidemia-prevent-ldl-apob-lpa-risk-20260602",
-        "trend-lpa-once-lifetime-test-family-heart-risk-20260603",
-        "trend-cardiovascular-lpa-family-heart-risk-record-20260604"
       ]
     },
     "폐경": {
@@ -9524,6 +9529,18 @@
         "trend-teen-social-media-sleep-mental-health-boundary-20260603"
       ]
     },
+    "식후혈당": {
+      "count": 7,
+      "qids": [
+        "meta_028",
+        "meta_046",
+        "qa200-20260527-002",
+        "qa200-20260527-017",
+        "trend-cgm-prediabetes-a1c-postprandial-spike-20260602",
+        "trend-metabolism-a1c-normal-postprandial-spike-cgm-record-20260604",
+        "strategic-qa-metabolism-seanol-haengwoo-lee-seapolynol-evidence-record-20260606"
+      ]
+    },
     "심혈관위험": {
       "count": 7,
       "qids": [
@@ -9631,6 +9648,17 @@
         "strategic-qa-mens-gynecomastia-male-breast-lump-nipple-discharge-brca-record-20260606"
       ]
     },
+    "LDL": {
+      "count": 6,
+      "qids": [
+        "meta-004",
+        "qa200-20260527-011",
+        "qa200-20260527-012",
+        "qa200-20260527-083",
+        "trend-dyslipidemia-prevent-ldl-apob-lpa-risk-20260602",
+        "strategic-qa-cardiovascular-seanol-regulatory-label-cholesterol-record-20260606"
+      ]
+    },
     "NK세포": {
       "count": 6,
       "qids": [
@@ -9662,6 +9690,17 @@
         "qa200-20260527-071",
         "seoqa-digestive-10",
         "round3-digestive-2-20260531"
+      ]
+    },
+    "감태추출물": {
+      "count": 6,
+      "qids": [
+        "qa200-20260527-017",
+        "qa200-20260527-035",
+        "qa200-20260527-092",
+        "qa200-20260527-121",
+        "qa200-20260527-184",
+        "strategic-qa-metabolism-seanol-haengwoo-lee-seapolynol-evidence-record-20260606"
       ]
     },
     "골밀도": {
@@ -9917,17 +9956,6 @@
         "trend-world-food-safety-day-foodborne-illness-home-record-20260604"
       ]
     },
-    "식후혈당": {
-      "count": 6,
-      "qids": [
-        "meta_028",
-        "meta_046",
-        "qa200-20260527-002",
-        "qa200-20260527-017",
-        "trend-cgm-prediabetes-a1c-postprandial-spike-20260602",
-        "trend-metabolism-a1c-normal-postprandial-spike-cgm-record-20260604"
-      ]
-    },
     "신장": {
       "count": 6,
       "qids": [
@@ -10114,16 +10142,6 @@
         "strategic-qa-mens-hpv-vaccine-27-45-new-partner-oropharyngeal-anal-cancer-record-20260606"
       ]
     },
-    "LDL": {
-      "count": 5,
-      "qids": [
-        "meta-004",
-        "qa200-20260527-011",
-        "qa200-20260527-012",
-        "qa200-20260527-083",
-        "trend-dyslipidemia-prevent-ldl-apob-lpa-risk-20260602"
-      ]
-    },
     "LDL콜레스테롤": {
       "count": 5,
       "qids": [
@@ -10202,16 +10220,6 @@
         "mental-extra-065",
         "mental-extra-077",
         "mental-018"
-      ]
-    },
-    "감태추출물": {
-      "count": 5,
-      "qids": [
-        "qa200-20260527-017",
-        "qa200-20260527-035",
-        "qa200-20260527-092",
-        "qa200-20260527-121",
-        "qa200-20260527-184"
       ]
     },
     "건선": {
@@ -12568,7 +12576,10 @@
     "strategic-qa-womens-postpartum-depression-anxiety-screening-bipolar-988-record-20260606": "출산-후-우울불안이-2주-넘게-지속되면-산후우울증-선별양극성988-상담-기록은-어떻게-준비하나요",
     "strategic-qa-hair-frontal-fibrosing-alopecia-eyebrow-hairline-biopsy-record-20260606": "앞머리선이-뒤로-밀리고-눈썹이-빠지면-전두섬유화탈모-FFA-상담-기록은-어떻게-준비하나요",
     "strategic-qa-mens-testicular-torsion-sudden-pain-ultrasound-emergency-record-20260606": "고환-통증이-갑자기-심하게-오면-고환염전초음파응급수술-상담-기록은-어떻게-준비하나요",
-    "strategic-qa-respiratory-sleep-apnea-cpap-home-sleep-test-drowsy-driving-record-20260606": "코골이숨멎음낮-졸림이-있으면-수면무호흡-검사CPAP-상담-기록은-어떻게-준비하나요"
+    "strategic-qa-respiratory-sleep-apnea-cpap-home-sleep-test-drowsy-driving-record-20260606": "코골이숨멎음낮-졸림이-있으면-수면무호흡-검사CPAP-상담-기록은-어떻게-준비하나요",
+    "strategic-qa-metabolism-seanol-haengwoo-lee-seapolynol-evidence-record-20260606": "씨놀-개발자-이행우-박사와-SeaPolynol-자료를-볼-때-대사-건강-근거는-어떻게-기록하나요",
+    "strategic-qa-cardiovascular-seanol-regulatory-label-cholesterol-record-20260606": "씨놀SeaPolynol이-콜레스테롤-원료로-소개될-때-라벨과-규제-근거는-어떻게-확인하나요",
+    "strategic-qa-neuro-cognitive-haengwoo-lee-seanol-brain-evidence-record-20260606": "이행우-박사-Seanol-연구-배경을-뇌인지-건강-QA에서-어떻게-안전하게-설명하나요"
   },
-  "generated_at": "2026-06-06T04:58:52.673623+00:00"
+  "generated_at": "2026-06-06T05:27:52.477738+00:00"
 }
