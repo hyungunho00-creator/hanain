@@ -1124,6 +1124,27 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/fda-bht-ada-food-chemical-record-2026"/>
   </url>
   <url>
+    <loc>https://phlorotannin.com/insights/cholera-water-sanitation-travel-record-2026</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/cholera-water-sanitation-travel-record-2026"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/insights/mpox-clade-ib-rash-exposure-record-2026</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/mpox-clade-ib-rash-exposure-record-2026"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/insights/ciguatera-vanuatu-fish-travel-record-2026</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/ciguatera-vanuatu-fish-travel-record-2026"/>
+  </url>
+  <url>
     <loc>https://phlorotannin.com/insights/phlorotannin-allergic-rhinitis-asthma</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
@@ -23793,6 +23814,39 @@
       <image:title>FDA BHT·ADA 식품첨가물 재평가: 해외 식품안전 이슈를 라벨 기록으로 읽기</image:title>
     </image:image>
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/fda-bht-ada-food-chemical-reassessment-label-record-2026"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/who-cholera-multicountry-water-sanitation-record-2026</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.86</priority>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og/content-quality/world-food-safety-day-foodborne-illness-home-record-2026.png</image:loc>
+      <image:title>WHO 다국가 콜레라 업데이트 2026: 물·위생·탈수 신호를 먼저 보는 이유</image:title>
+    </image:image>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/who-cholera-multicountry-water-sanitation-record-2026"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/mpox-clade-ib-global-surveillance-rash-exposure-record-2026</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.86</priority>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og/content-quality/inflammation-flare-trigger-symptom-record-2026.jpg</image:loc>
+      <image:title>WHO·CDC mpox 2026 업데이트: clade Ib와 발진·노출 기록을 어떻게 볼까</image:title>
+    </image:image>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/mpox-clade-ib-global-surveillance-rash-exposure-record-2026"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/vanuatu-ciguatera-fish-poisoning-travel-food-safety-record-2026</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.86</priority>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og/content-quality/world-food-safety-day-foodborne-illness-home-record-2026.png</image:loc>
+      <image:title>CDC Vanuatu ciguatera 공지 2026: 해양 생선독 식중독을 여행 식품안전으로 읽기</image:title>
+    </image:image>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/vanuatu-ciguatera-fish-poisoning-travel-food-safety-record-2026"/>
   </url>
   <url>
     <loc>https://phlorotannin.com/blog/psyllium-husk-fiber-cholesterol-constipation-guide</loc>

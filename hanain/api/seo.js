@@ -608,6 +608,24 @@ function staticMetaFor(pathname) {
         ogImage: '/og/content-quality/ultra-processed-food-blood-sugar-inflammation-guide-2026.png',
         ogImageAlt: 'FDA BHT ADA 식품첨가물 재평가와 가공식품 라벨 기록을 요약한 인사이트 이미지',
       },
+      'cholera-water-sanitation-travel-record-2026': {
+        title: 'WHO 다국가 콜레라 업데이트 | 물·위생·탈수 신호 기록',
+        desc: 'WHO 2026년 5월 29일 다국가 콜레라 업데이트를 바탕으로 여행 후 설사, 물·음식 노출, 탈수 신호 기록을 정리합니다.',
+        ogImage: '/og/content-quality/world-food-safety-day-foodborne-illness-home-record-2026.png',
+        ogImageAlt: 'WHO 다국가 콜레라 업데이트와 물 위생 탈수 신호 기록을 요약한 인사이트 이미지',
+      },
+      'mpox-clade-ib-rash-exposure-record-2026': {
+        title: 'WHO·CDC mpox 2026 | clade Ib와 발진·노출 기록',
+        desc: 'WHO mpox situation report #66과 CDC 2026년 현황을 바탕으로 clade Ib, 발진, 노출, 검사, 백신 상담 기록을 정리합니다.',
+        ogImage: '/og/content-quality/inflammation-flare-trigger-symptom-record-2026.jpg',
+        ogImageAlt: 'WHO CDC mpox 2026 clade Ib 발진 노출 기록을 요약한 인사이트 이미지',
+      },
+      'ciguatera-vanuatu-fish-travel-record-2026': {
+        title: 'CDC Vanuatu ciguatera | 열대 생선 식중독 여행 기록',
+        desc: 'CDC 2026년 Vanuatu ciguatera fish poisoning 여행 공지를 바탕으로 생선 섭취 시간, 증상 시간표, 해양 독소와 해양 원료 구분을 정리합니다.',
+        ogImage: '/og/content-quality/world-food-safety-day-foodborne-illness-home-record-2026.png',
+        ogImageAlt: 'Vanuatu ciguatera fish poisoning 여행 식품안전 기록을 요약한 인사이트 이미지',
+      },
     }
     if (insightMeta[rawSlug]) {
       return {
