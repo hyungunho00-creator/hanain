@@ -570,7 +570,34 @@ function staticMetaFor(pathname) {
     }
   }
   if (pathname.startsWith('/insights/')) {
-    const slug = pathname.replace('/insights/', '').split('/')[0].replace(/-/g, ' ').slice(0, 80)
+    const rawSlug = pathname.replace('/insights/', '').split('/')[0]
+    const insightMeta = {
+      'haengwoo-lee-seanol-developer-evidence-map-2026': {
+        title: '이행우 박사와 씨놀 개발자 자료 | 언론 서사와 원료 근거 맵',
+        desc: '이행우 박사, 보타메디, 씨놀 개발자 키워드를 국내 언론·회사 연혁·FDA NDI·EFSA Novel Food 자료로 나누어 읽는 인사이트입니다.',
+        ogImage: '/og/content-quality/research-study-design-evidence-record-2026.png',
+        ogImageAlt: '이행우 박사와 씨놀 개발자 자료를 언론, 연혁, 규제 근거로 구분한 인사이트 이미지',
+      },
+      'seanol-seapolynol-regulatory-map-2026': {
+        title: 'Seanol·SeaPolynol 규제 자료 맵 | FDA NDI와 EFSA Novel Food 차이',
+        desc: 'Seanol, SeaPolynol, Ecklonia cava phlorotannins를 FDA NDI, EFSA Novel Food, EU 규정, 인체 연구로 구분합니다.',
+        ogImage: '/og/content-quality/polyphenol-ingredient-comparison-phlorotannin-record-2026.png',
+        ogImageAlt: 'Seanol SeaPolynol FDA NDI EFSA Novel Food 자료를 구분한 해양 원료 인사이트 이미지',
+      },
+      'seanol-caf-ph100-terms-guide-2026': {
+        title: '씨놀·카프·PH100 용어 가이드 | 검색어를 근거 문장으로 바꾸기',
+        desc: '씨놀, 카프/CAF, PH100, SeaPolynol, Ecklonia cava phlorotannins를 연구·규제·제품 문맥으로 구분합니다.',
+        ogImage: '/og/content-quality/molecular-pathway-phlorotannin-oxidative-stress-record-2026.png',
+        ogImageAlt: '씨놀 카프 PH100 SeaPolynol 용어를 연구 문맥별로 정리한 인사이트 이미지',
+      },
+    }
+    if (insightMeta[rawSlug]) {
+      return {
+        ...insightMeta[rawSlug],
+        canonical: `${SITE}${pathname}`,
+      }
+    }
+    const slug = rawSlug.replace(/-/g, ' ').slice(0, 80)
     return {
       title: `${slug} | 플로로탄닌 인사이트`,
       desc:  `${slug} 주제를 플로로탄닌, 감태추출물, 해양 폴리페놀 관점에서 정리한 건강정보 인사이트입니다.`,
