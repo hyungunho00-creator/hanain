@@ -466,14 +466,14 @@ async function drawFront(partner, cardUrl) {
   ctx.fillText(partner.name || '', TX, 260)
 
   ctx.fillStyle = NAVY
-  ctx.font = 'bold 32px Arial, sans-serif'
-  ctx.fillText('해양 폴리페놀 건강정보 파트너', TX, 316)
+  ctx.font = 'bold 30px Arial, sans-serif'
+  ctx.fillText('회복 플래너 · AI 검색 파트너', TX, 316)
   drawGoldRule(ctx, TX, 350, 350)
 
   ctx.fillStyle = MUTED
   ctx.font = '25px Arial, sans-serif'
-  ctx.fillText('성분·연구자료·쉬운 설명을', TX, 414)
-  ctx.fillText('내 파트너 링크로 연결합니다.', TX, 454)
+  ctx.fillText('샵 AI 검색·Q&A·연구자료를', TX, 414)
+  ctx.fillText('내 파트너 링크로 바로 안내합니다.', TX, 454)
 
   ctx.fillStyle = NAVY
   ctx.font = 'bold 31px Arial, sans-serif'
@@ -499,18 +499,18 @@ async function drawBack(partner, cardUrl) {
   const TX = 82
   ctx.fillStyle = GREEN
   ctx.font = 'bold 34px Arial, sans-serif'
-  ctx.fillText('QR을 찍으면', TX, 132)
+  ctx.fillText('QR로 열리는', TX, 132)
   ctx.fillStyle = NAVY
   ctx.font = '900 48px Arial, sans-serif'
-  ctx.fillText('파트너 전용 페이지로', TX, 198)
-  ctx.fillText('바로 연결됩니다', TX, 256)
+  ctx.fillText('회복 플래너 링크', TX, 198)
+  ctx.fillText('AI 검색 에이전트', TX, 256)
   drawGoldRule(ctx, TX, 304, 390)
 
   ctx.fillStyle = NAVY
   ctx.font = '28px Arial, sans-serif'
-  ctx.fillText('1. 쉬운 플로로탄닌 설명', TX, 386)
-  ctx.fillText('2. 블로그·Q&A 자료 연결', TX, 438)
-  ctx.fillText('3. 전화·문자·명함 저장', TX, 490)
+  ctx.fillText('1. 회복 플래너 상담 흐름', TX, 386)
+  ctx.fillText('2. 샵 AI 검색 에이전트', TX, 438)
+  ctx.fillText('3. Q&A·블로그·명함 저장', TX, 490)
 
   ctx.fillStyle = NAVY
   ctx.font = 'bold 30px Arial, sans-serif'
@@ -791,14 +791,14 @@ export default function BusinessCardPage() {
   const goPartnerPath = (path) => navigate(partnerPathFor(path, routePartnerSlug))
   const easyPath = partnerPathFor('/easy', routePartnerSlug)
   const partnerMetrics = [
-    { icon: Phone, value: '바로 연결', label: '전화·문자 상담' },
-    { icon: Star, value: 'QR 명함', label: '파트너 링크' },
-    { icon: BookOpen, value: '논문 기반', label: '성분·기전 자료' },
+    { icon: Phone, value: '회복 플래너', label: '상담 흐름 정리' },
+    { icon: Star, value: 'AI 검색', label: '샵·Q&A 연결' },
+    { icon: BookOpen, value: 'QR 명함', label: '파트너 자동 링크' },
   ]
   const productHooks = [
-    '갈조류 유래 해양 폴리페놀을 쉬운 말로 먼저 이해',
-    '항산화·염증 신호·대사 연구 키워드를 부담 없이 확인',
-    '파트너 링크로 설명 페이지를 공유해도 연결 유지',
+    '회복 플래너처럼 관심사와 상담 흐름을 차분히 정리',
+    '샵 AI 검색 에이전트로 제품·Q&A·블로그 자료를 빠르게 탐색',
+    '파트너 링크로 문의·명함 저장·자료 공유까지 연결 유지',
   ]
   const mechanismPapers = [
     {
@@ -908,10 +908,10 @@ export default function BusinessCardPage() {
                       {partner.name}
                     </h1>
                     <p style={{ fontSize: compactCardPreview ? '9.8px' : '13px', color: NAVY, fontWeight: '900', letterSpacing: '0.02em', marginBottom: compactCardPreview ? '4px' : '7px', lineHeight: 1.14 }}>
-                      해양 폴리페놀 건강정보 파트너
+                      회복 플래너 · AI 검색 파트너
                     </p>
                     <div style={{ width: compactCardPreview ? '72px' : '102px', height: '2px', marginBottom: compactCardPreview ? '4px' : '7px', background: `linear-gradient(90deg, ${GOLD}, ${GOLD2})` }} />
-                    <p style={{ fontSize: compactCardPreview ? '8.2px' : '11px', color: MUTED, lineHeight: compactCardPreview ? '1.22' : '1.32', fontWeight: 700 }}>성분·연구자료·쉬운 설명을<br />내 파트너 링크로 연결합니다.</p>
+                    <p style={{ fontSize: compactCardPreview ? '8.2px' : '11px', color: MUTED, lineHeight: compactCardPreview ? '1.22' : '1.32', fontWeight: 700 }}>샵 AI 검색·Q&A·연구자료를<br />내 파트너 링크로 안내합니다.</p>
                     <div style={{ display: 'flex', alignItems: 'baseline', gap: compactCardPreview ? '6px' : '10px', flexWrap: 'wrap', marginTop: 'auto', paddingTop: compactCardPreview ? '4px' : '10px' }}>
                       <p style={{ fontSize: compactCardPreview ? '10.5px' : '14px', color: NAVY, fontWeight: '900', lineHeight: 1 }}>{partner.phoneDisplay}</p>
                       <p style={{ fontSize: compactCardPreview ? '8.5px' : '10.5px', color: NAVY, fontWeight: 800, letterSpacing: '0.03em' }}>phlorotannin.com</p>
@@ -930,11 +930,11 @@ export default function BusinessCardPage() {
                 <div style={{ position: 'relative', zIndex: 1, height: '100%', padding: compactCardPreview ? '18px 16px 15px 20px' : '32px 28px 24px 34px', display: 'grid', gridTemplateColumns: compactCardPreview ? 'minmax(0, 1fr) 96px' : 'minmax(0, 1fr) 138px', gap: compactCardPreview ? '8px' : '18px', alignItems: 'center' }}>
                   <div style={{ minWidth: 0 }}>
                     <h2 style={{ fontSize: compactCardPreview ? '1rem' : '1.34rem', fontWeight: '900', color: GREEN, lineHeight: 1.15, marginBottom: compactCardPreview ? '5px' : '8px', letterSpacing: 0 }}>
-                      QR을 찍으면<br />내 파트너 페이지가 열립니다
+                      QR로 열리는<br />회복 플래너 링크
                     </h2>
                     <div style={{ width: compactCardPreview ? '68px' : '114px', height: '2px', margin: compactCardPreview ? '6px 0 7px' : '10px 0 14px', background: `linear-gradient(90deg, ${GOLD}, ${GOLD2})` }} />
                     <p style={{ fontSize: compactCardPreview ? '7.7px' : '11px', color: NAVY, lineHeight: compactCardPreview ? '1.48' : '1.58', marginBottom: compactCardPreview ? '6px' : '12px', fontWeight: 800 }}>
-                      1. 쉬운 플로로탄닌 설명<br />2. 블로그·Q&A 자료 연결<br />3. 전화·문자·명함 저장
+                      1. 회복 플래너 상담 흐름<br />2. 샵 AI 검색 에이전트<br />3. Q&A·블로그·명함 저장
                     </p>
                     <p style={{ fontSize: compactCardPreview ? '10.5px' : '15px', color: NAVY, fontWeight: '900', lineHeight: 1.2 }}>{partner.name} 파트너</p>
                     <p style={{ fontSize: compactCardPreview ? '11px' : '15px', color: NAVY, fontWeight: '800', marginTop: compactCardPreview ? '2px' : '4px', lineHeight: 1.2 }}>{partner.phoneDisplay}</p>
