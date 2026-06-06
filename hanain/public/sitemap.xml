@@ -1145,6 +1145,27 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/ciguatera-vanuatu-fish-travel-record-2026"/>
   </url>
   <url>
+    <loc>https://phlorotannin.com/insights/canada-hepatitis-a-food-hygiene-record-2026</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/canada-hepatitis-a-food-hygiene-record-2026"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/insights/diphtheria-sub-saharan-africa-vaccine-record-2026</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/diphtheria-sub-saharan-africa-vaccine-record-2026"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/insights/mayotte-malaria-mosquito-fever-record-2026</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/insights/mayotte-malaria-mosquito-fever-record-2026"/>
+  </url>
+  <url>
     <loc>https://phlorotannin.com/insights/phlorotannin-allergic-rhinitis-asthma</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
@@ -23847,6 +23868,39 @@
       <image:title>CDC Vanuatu ciguatera 공지 2026: 해양 생선독 식중독을 여행 식품안전으로 읽기</image:title>
     </image:image>
     <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/vanuatu-ciguatera-fish-poisoning-travel-food-safety-record-2026"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/canada-hepatitis-a-manitoba-travel-food-hygiene-record-2026</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.86</priority>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og/content-quality/norovirus-handwashing-bleach-hydration-outbreak-record-2026.png</image:loc>
+      <image:title>CDC 캐나다 A형간염 공지 2026: Manitoba 여행 전후 음식·손위생 기록법</image:title>
+    </image:image>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/canada-hepatitis-a-manitoba-travel-food-hygiene-record-2026"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/sub-saharan-africa-diphtheria-vaccine-travel-record-2026</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.86</priority>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og/content-quality/respiratory-virus-vaccine-2025-2026-covid-flu-rsv-record-2026.png</image:loc>
+      <image:title>CDC 사하라 이남 아프리카 디프테리아 공지 2026: Td·Tdap 이력 확인법</image:title>
+    </image:image>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/sub-saharan-africa-diphtheria-vaccine-travel-record-2026"/>
+  </url>
+  <url>
+    <loc>https://phlorotannin.com/blog/mayotte-malaria-travel-mosquito-fever-record-2026</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.86</priority>
+    <image:image>
+      <image:loc>https://phlorotannin.com/og/content-quality/dengue-chikungunya-travel-fever-joint-pain-mosquito-record-2026.png</image:loc>
+      <image:title>CDC Mayotte 말라리아 공지 2026: 모기 회피·예방약·발열 기록을 함께 보기</image:title>
+    </image:image>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://phlorotannin.com/blog/mayotte-malaria-travel-mosquito-fever-record-2026"/>
   </url>
   <url>
     <loc>https://phlorotannin.com/blog/psyllium-husk-fiber-cholesterol-constipation-guide</loc>

@@ -626,6 +626,24 @@ function staticMetaFor(pathname) {
         ogImage: '/og/content-quality/world-food-safety-day-foodborne-illness-home-record-2026.png',
         ogImageAlt: 'Vanuatu ciguatera fish poisoning 여행 식품안전 기록을 요약한 인사이트 이미지',
       },
+      'canada-hepatitis-a-food-hygiene-record-2026': {
+        title: 'CDC 캐나다 A형간염 | Manitoba 음식·손위생 기록',
+        desc: 'CDC 2026년 6월 4일 Canada hepatitis A travel notice와 Manitoba Health 자료를 바탕으로 백신, 음식·물 노출, 손위생, PEP 상담 기준을 정리합니다.',
+        ogImage: '/og/content-quality/norovirus-handwashing-bleach-hydration-outbreak-record-2026.png',
+        ogImageAlt: '캐나다 Manitoba A형간염 여행 공지와 음식 손위생 노출 후 상담 기록을 요약한 인사이트 이미지',
+      },
+      'diphtheria-sub-saharan-africa-vaccine-record-2026': {
+        title: 'CDC 디프테리아 2026 | 사하라 이남 아프리카 Td·Tdap 기록',
+        desc: 'CDC Diphtheria in Sub-Saharan Africa travel notice와 WHO risk assessment를 바탕으로 백신 이력, 호흡기 증상, 접촉자 기록을 정리합니다.',
+        ogImage: '/og/content-quality/respiratory-virus-vaccine-2025-2026-covid-flu-rsv-record-2026.png',
+        ogImageAlt: '사하라 이남 아프리카 디프테리아 여행 공지와 Td Tdap 백신 호흡기 증상 기록을 요약한 인사이트 이미지',
+      },
+      'mayotte-malaria-mosquito-fever-record-2026': {
+        title: 'CDC Mayotte 말라리아 | 모기 회피·예방약·발열 기록',
+        desc: 'CDC 2026년 6월 2일 Mayotte malaria travel notice와 Santé publique France bulletin을 바탕으로 예방약, 모기 회피, 발열 기록을 정리합니다.',
+        ogImage: '/og/content-quality/dengue-chikungunya-travel-fever-joint-pain-mosquito-record-2026.png',
+        ogImageAlt: 'Mayotte 말라리아 여행 공지와 모기 회피 예방약 발열 시간표 기록을 요약한 인사이트 이미지',
+      },
     }
     if (insightMeta[rawSlug]) {
       return {
