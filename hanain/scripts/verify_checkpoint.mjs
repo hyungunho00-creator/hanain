@@ -1,11 +1,11 @@
 const SITE = 'https://phlorotannin.com'
 
 const EXPECTED = {
-  sitemapTotal: 3230,
+  sitemapTotal: 3236,
   qCount: 1966,
   tagCount: 266,
-  blogCount: 711,
-  insightCount: 256,
+  blogCount: 714,
+  insightCount: 259,
   requiredBundleSlugs: [
     'glp1-era-protein-fiber-phlorotannin-checklist-2026',
     'glp1-muscle-loss-protein-resistance-training-2026',
@@ -166,6 +166,9 @@ const EXPECTED = {
     'canada-hepatitis-a-manitoba-travel-food-hygiene-record-2026',
     'sub-saharan-africa-diphtheria-vaccine-travel-record-2026',
     'mayotte-malaria-travel-mosquito-fever-record-2026',
+    'fda-listeria-soft-cheese-recall-pregnancy-food-safety-record-2026',
+    'target-baby-wipes-burkholderia-recall-infant-skin-sepsis-record-2026',
+    'french-guiana-chikungunya-pregnancy-vaccine-joint-pain-record-2026',
   ],
   draftSlug: 'ecklonia-cava-respiratory-health-clinical-trial-2026',
 }

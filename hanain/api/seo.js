@@ -644,6 +644,24 @@ function staticMetaFor(pathname) {
         ogImage: '/og/content-quality/dengue-chikungunya-travel-fever-joint-pain-mosquito-record-2026.png',
         ogImageAlt: 'Mayotte 말라리아 여행 공지와 모기 회피 예방약 발열 시간표 기록을 요약한 인사이트 이미지',
       },
+      'listeria-soft-cheese-pregnancy-food-record-2026': {
+        title: 'FDA Listeria soft cheese | 임신·고위험군 식품안전 기록',
+        desc: 'FDA 2026년 6월 soft cheese Listeria investigation을 바탕으로 recalled requeson, 임신·65세 이상·면역저하 고위험군, 냉장고 교차오염 기록을 정리합니다.',
+        ogImage: '/og/content-quality/world-food-safety-day-foodborne-illness-home-record-2026.png',
+        ogImageAlt: 'FDA Listeria soft cheese 조사와 임신 고령 면역저하 식품안전 기록을 요약한 인사이트 이미지',
+      },
+      'baby-wipes-burkholderia-infant-skin-record-2026': {
+        title: 'FDA baby wipes recall | Burkholderia와 영유아 피부·감염 기록',
+        desc: 'FDA 2026년 6월 Target Up & Up baby wipes recall과 CDC Burkholderia cepacia 정보를 바탕으로 제품 lot, 영유아 피부자극, 감염 신호를 정리합니다.',
+        ogImage: '/og/content-quality/cosmetic-contact-dermatitis-patch-test-record-2026.png',
+        ogImageAlt: 'FDA Target baby wipes recall과 Burkholderia 영유아 피부 감염 제품 lot 기록을 요약한 인사이트 이미지',
+      },
+      'french-guiana-chikungunya-pregnancy-vaccine-record-2026': {
+        title: 'CDC French Guiana chikungunya | 임신·백신·관절통 기록',
+        desc: 'CDC 2026년 6월 French Guiana chikungunya travel notice와 Santé publique France bulletin을 바탕으로 임신부 여행 판단, 백신 상담, 관절통 추적 기록을 정리합니다.',
+        ogImage: '/og/content-quality/dengue-chikungunya-travel-fever-joint-pain-mosquito-record-2026.png',
+        ogImageAlt: 'French Guiana chikungunya travel notice와 임신 백신 관절통 모기 회피 기록을 요약한 인사이트 이미지',
+      },
     }
     if (insightMeta[rawSlug]) {
       return {
