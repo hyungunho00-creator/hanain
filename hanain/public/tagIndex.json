@@ -1,11 +1,11 @@
 {
   "min_tag_count": 5,
-  "total_questions": 1951,
-  "total_unique_tags": 2404,
-  "page_eligible_tags": 265,
+  "total_questions": 1954,
+  "total_unique_tags": 2415,
+  "page_eligible_tags": 266,
   "tags": {
     "플로로탄닌": {
-      "count": 1401,
+      "count": 1404,
       "qids": [
         "cardio-001",
         "cardio-002",
@@ -1407,7 +1407,10 @@
         "strategic-qa-respiratory-asthma-action-plan-rescue-inhaler-spirometry-trigger-record-20260606",
         "strategic-qa-hair-seborrheic-dermatitis-dandruff-itch-flake-shampoo-record-20260606",
         "strategic-qa-mens-erectile-dysfunction-cardiovascular-risk-nitrates-sildenafil-record-20260606",
-        "strategic-qa-womens-pcos-irregular-period-hirsutism-insulin-resistance-fertility-record-20260606"
+        "strategic-qa-womens-pcos-irregular-period-hirsutism-insulin-resistance-fertility-record-20260606",
+        "strategic-qa-hair-biotin-supplement-lab-test-interference-thyroid-troponin-record-20260606",
+        "strategic-qa-mens-gynecomastia-male-breast-lump-nipple-discharge-brca-record-20260606",
+        "strategic-qa-womens-heavy-menstrual-bleeding-anemia-fibroid-abnormal-uterine-record-20260606"
       ]
     },
     "감태": {
@@ -6566,6 +6569,62 @@
         "qa-hospital-20260527-050"
       ]
     },
+    "여성건강": {
+      "count": 51,
+      "qids": [
+        "woms-001",
+        "woms-005",
+        "woms-006",
+        "woms-008",
+        "woms-011",
+        "woms-012",
+        "woms-014",
+        "woms-015",
+        "woms-016",
+        "woms-017",
+        "woms-018",
+        "woms-019",
+        "woms-020",
+        "infect-005",
+        "qa200-20260527-153",
+        "qa200-20260527-178",
+        "qa200-20260527-181",
+        "qa200-20260527-182",
+        "qa200-20260527-183",
+        "qa200-20260527-184",
+        "qa200-20260527-185",
+        "qa200-20260527-186",
+        "qa200-20260527-187",
+        "qa200-20260527-188",
+        "qa200-20260527-189",
+        "qa200-20260527-190",
+        "qa200-20260527-191",
+        "qa200-20260527-192",
+        "trendqa-womens-20260530",
+        "round2-womens-health-20260530",
+        "trend-menopause-hormone-therapy-label-change-20260602",
+        "trend-endometriosis-clinical-diagnosis-acog-20260602",
+        "trend-pcos-glp1-insulin-resistance-pregnancy-planning-20260602",
+        "trend-hpv-self-collection-cervical-screening-20260602",
+        "trend-dense-breast-mammogram-notification-supplemental-screening-20260603",
+        "trend-menopause-hormone-therapy-label-update-record-20260603",
+        "trend-summer-uti-women-hydration-urination-symptom-record-20260604",
+        "trend-hpv-self-collection-cervical-screening-record-20260604",
+        "trend-pregnancy-postpartum-warning-signs-blood-pressure-record-20260604",
+        "trend-perimenopause-abnormal-bleeding-menopause-record-20260604",
+        "trend-migraine-aura-estrogen-birth-control-stroke-risk-record-20260604",
+        "trend-infection-recurrent-uti-antibiotic-resistance-record-20260604",
+        "trend-womens-ovarian-cancer-bloating-symptom-record-20260604",
+        "trend-womens-endometriosis-pain-cycle-record-20260604",
+        "strategic-qa-womens-menopause-ht-label-hotflash-sleep-phlorotannin-20260605",
+        "strategic-qa-womens-fibroid-heavy-bleeding-anemia-iron-record-20260605",
+        "strategic-qa-womens-pelvic-organ-prolapse-urinary-leakage-constipation-record-20260605",
+        "strategic-qa-womens-urinary-incontinence-bladder-diary-caffeine-uti-record-20260605",
+        "strategic-qa-womens-dense-breast-mammogram-notification-risk-supplemental-screening-record-20260605",
+        "strategic-qa-womens-hpv-self-collection-cervical-screening-pap-positive-followup-record-20260605",
+        "strategic-qa-womens-heavy-menstrual-bleeding-anemia-fibroid-abnormal-uterine-record-20260606"
+      ]
+    },
     "위": {
       "count": 51,
       "qids": [
@@ -6677,61 +6736,6 @@
         "qa-hospital-20260527-050"
       ]
     },
-    "여성건강": {
-      "count": 50,
-      "qids": [
-        "woms-001",
-        "woms-005",
-        "woms-006",
-        "woms-008",
-        "woms-011",
-        "woms-012",
-        "woms-014",
-        "woms-015",
-        "woms-016",
-        "woms-017",
-        "woms-018",
-        "woms-019",
-        "woms-020",
-        "infect-005",
-        "qa200-20260527-153",
-        "qa200-20260527-178",
-        "qa200-20260527-181",
-        "qa200-20260527-182",
-        "qa200-20260527-183",
-        "qa200-20260527-184",
-        "qa200-20260527-185",
-        "qa200-20260527-186",
-        "qa200-20260527-187",
-        "qa200-20260527-188",
-        "qa200-20260527-189",
-        "qa200-20260527-190",
-        "qa200-20260527-191",
-        "qa200-20260527-192",
-        "trendqa-womens-20260530",
-        "round2-womens-health-20260530",
-        "trend-menopause-hormone-therapy-label-change-20260602",
-        "trend-endometriosis-clinical-diagnosis-acog-20260602",
-        "trend-pcos-glp1-insulin-resistance-pregnancy-planning-20260602",
-        "trend-hpv-self-collection-cervical-screening-20260602",
-        "trend-dense-breast-mammogram-notification-supplemental-screening-20260603",
-        "trend-menopause-hormone-therapy-label-update-record-20260603",
-        "trend-summer-uti-women-hydration-urination-symptom-record-20260604",
-        "trend-hpv-self-collection-cervical-screening-record-20260604",
-        "trend-pregnancy-postpartum-warning-signs-blood-pressure-record-20260604",
-        "trend-perimenopause-abnormal-bleeding-menopause-record-20260604",
-        "trend-migraine-aura-estrogen-birth-control-stroke-risk-record-20260604",
-        "trend-infection-recurrent-uti-antibiotic-resistance-record-20260604",
-        "trend-womens-ovarian-cancer-bloating-symptom-record-20260604",
-        "trend-womens-endometriosis-pain-cycle-record-20260604",
-        "strategic-qa-womens-menopause-ht-label-hotflash-sleep-phlorotannin-20260605",
-        "strategic-qa-womens-fibroid-heavy-bleeding-anemia-iron-record-20260605",
-        "strategic-qa-womens-pelvic-organ-prolapse-urinary-leakage-constipation-record-20260605",
-        "strategic-qa-womens-urinary-incontinence-bladder-diary-caffeine-uti-record-20260605",
-        "strategic-qa-womens-dense-breast-mammogram-notification-risk-supplemental-screening-record-20260605",
-        "strategic-qa-womens-hpv-self-collection-cervical-screening-pap-positive-followup-record-20260605"
-      ]
-    },
     "진료준비": {
       "count": 50,
       "qids": [
@@ -6788,7 +6792,7 @@
       ]
     },
     "남성건강": {
-      "count": 45,
+      "count": 46,
       "qids": [
         "mens-001",
         "mens-002",
@@ -6834,7 +6838,8 @@
         "strategic-qa-mens-testicular-lump-ultrasound-tumor-marker-record-20260605",
         "strategic-qa-mens-peyronies-curvature-plaque-pain-erection-record-20260605",
         "strategic-qa-mens-psa-screening-family-history-bph-prostatitis-shared-decision-record-20260605",
-        "strategic-qa-mens-erectile-dysfunction-cardiovascular-risk-nitrates-sildenafil-record-20260606"
+        "strategic-qa-mens-erectile-dysfunction-cardiovascular-risk-nitrates-sildenafil-record-20260606",
+        "strategic-qa-mens-gynecomastia-male-breast-lump-nipple-discharge-brca-record-20260606"
       ]
     },
     "호흡기": {
@@ -8638,6 +8643,22 @@
         "trend-mental-social-media-sleep-anxiety-boundary-record-20260604"
       ]
     },
+    "빈혈": {
+      "count": 11,
+      "qids": [
+        "skin-014",
+        "woms-020",
+        "wh-extra-024",
+        "womens-006",
+        "mens-extra-063",
+        "qa200-20260527-047",
+        "qa200-20260527-098",
+        "qa200-20260527-151",
+        "qa200-20260527-188",
+        "strategic-qa-womens-fibroid-heavy-bleeding-anemia-iron-record-20260605",
+        "strategic-qa-womens-heavy-menstrual-bleeding-anemia-fibroid-abnormal-uterine-record-20260606"
+      ]
+    },
     "염증": {
       "count": 11,
       "qids": [
@@ -8730,21 +8751,6 @@
         "qa200-20260527-194",
         "qa200-20260527-197",
         "trend-vitamin-d-sun-sunscreen-skin-20260602"
-      ]
-    },
-    "빈혈": {
-      "count": 10,
-      "qids": [
-        "skin-014",
-        "woms-020",
-        "wh-extra-024",
-        "womens-006",
-        "mens-extra-063",
-        "qa200-20260527-047",
-        "qa200-20260527-098",
-        "qa200-20260527-151",
-        "qa200-20260527-188",
-        "strategic-qa-womens-fibroid-heavy-bleeding-anemia-iron-record-20260605"
       ]
     },
     "생리통": {
@@ -9602,6 +9608,17 @@
         "strategic-qa-mens-hpv-vaccine-oropharyngeal-cancer-neck-node-record-20260605"
       ]
     },
+    "BRCA": {
+      "count": 6,
+      "qids": [
+        "wh-extra-055",
+        "mens-007",
+        "ci_108",
+        "ci_136",
+        "ci_144",
+        "strategic-qa-mens-gynecomastia-male-breast-lump-nipple-discharge-brca-record-20260606"
+      ]
+    },
     "NK세포": {
       "count": 6,
       "qids": [
@@ -9943,6 +9960,17 @@
         "trend-loneliness-social-connection-health-risk-support-record-20260603"
       ]
     },
+    "자궁근종": {
+      "count": 6,
+      "qids": [
+        "woms-014",
+        "wh-extra-014",
+        "wh-extra-018",
+        "womens-004",
+        "strategic-qa-womens-fibroid-heavy-bleeding-anemia-iron-record-20260605",
+        "strategic-qa-womens-heavy-menstrual-bleeding-anemia-fibroid-abnormal-uterine-record-20260606"
+      ]
+    },
     "자궁내막증": {
       "count": 6,
       "qids": [
@@ -10040,16 +10068,6 @@
         "qa200-20260527-044",
         "qa200-20260527-051",
         "qa200-20260527-058"
-      ]
-    },
-    "BRCA": {
-      "count": 5,
-      "qids": [
-        "wh-extra-055",
-        "mens-007",
-        "ci_108",
-        "ci_136",
-        "ci_144"
       ]
     },
     "HPV백신": {
@@ -10302,6 +10320,16 @@
         "trend-magnesium-glycinate-sleep-safety-20260602"
       ]
     },
+    "비오틴": {
+      "count": 5,
+      "qids": [
+        "skin-010",
+        "sh_107",
+        "qa200-20260527-150",
+        "trend-biotin-hair-supplement-lab-test-interference-record-20260604",
+        "strategic-qa-hair-biotin-supplement-lab-test-interference-thyroid-troponin-record-20260606"
+      ]
+    },
     "비타민C": {
       "count": 5,
       "qids": [
@@ -10430,16 +10458,6 @@
         "wh-extra-021",
         "womens-003",
         "qa200-20260527-185"
-      ]
-    },
-    "자궁근종": {
-      "count": 5,
-      "qids": [
-        "woms-014",
-        "wh-extra-014",
-        "wh-extra-018",
-        "womens-004",
-        "strategic-qa-womens-fibroid-heavy-bleeding-anemia-iron-record-20260605"
       ]
     },
     "자외선": {
@@ -12524,7 +12542,10 @@
     "strategic-qa-respiratory-asthma-action-plan-rescue-inhaler-spirometry-trigger-record-20260606": "천식-흡입기를-자주-쓰게-될-때-액션플랜폐기능검사유발요인-기록은-어떻게-준비하나요",
     "strategic-qa-hair-seborrheic-dermatitis-dandruff-itch-flake-shampoo-record-20260606": "비듬처럼-보이는데-가렵고-기름진-각질이-반복되면-두피-지루피부염-상담-기록은-어떻게-준비하나요",
     "strategic-qa-mens-erectile-dysfunction-cardiovascular-risk-nitrates-sildenafil-record-20260606": "발기부전이-새로-생겼을-때-심혈관-위험질산염-약실데나필-상담-기록은-어떻게-준비하나요",
-    "strategic-qa-womens-pcos-irregular-period-hirsutism-insulin-resistance-fertility-record-20260606": "생리가-불규칙하고-털여드름이-늘면-PCOS-상담-전-인슐린저항성임신-계획-기록은-어떻게-준비하나요"
+    "strategic-qa-womens-pcos-irregular-period-hirsutism-insulin-resistance-fertility-record-20260606": "생리가-불규칙하고-털여드름이-늘면-PCOS-상담-전-인슐린저항성임신-계획-기록은-어떻게-준비하나요",
+    "strategic-qa-hair-biotin-supplement-lab-test-interference-thyroid-troponin-record-20260606": "탈모-때문에-비오틴을-먹고-있는데-갑상선심장효소-검사-전에는-어떤-기록을-준비하나요",
+    "strategic-qa-mens-gynecomastia-male-breast-lump-nipple-discharge-brca-record-20260606": "남성-가슴-멍울이나-유두-분비가-생기면-여성형유방남성-유방암-상담-기록은-어떻게-준비하나요",
+    "strategic-qa-womens-heavy-menstrual-bleeding-anemia-fibroid-abnormal-uterine-record-20260606": "생리-양이-너무-많고-빈혈이-걱정되면-과다월경자궁근종비정상-자궁출혈-상담-기록은-어떻게-준비하나요"
   },
-  "generated_at": "2026-06-06T00:47:46.137112+00:00"
+  "generated_at": "2026-06-06T01:12:46.548063+00:00"
 }
