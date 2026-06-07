@@ -265,11 +265,11 @@ def add_photo_grain(img, seed):
     rng = random.Random(seed)
     layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     draw = ImageDraw.Draw(layer, "RGBA")
-    for _ in range(1600):
+    for _ in range(7200):
         x = rng.randrange(W)
         y = rng.randrange(H)
-        v = rng.randrange(225, 255)
-        draw.point((x, y), fill=(v, v, v, rng.randrange(4, 16)))
+        v = rng.randrange(208, 255)
+        draw.point((x, y), fill=(v, v, v, rng.randrange(6, 22)))
     for _ in range(70):
         x = rng.randrange(-80, W)
         y = rng.randrange(-80, H)
@@ -391,7 +391,151 @@ def make(item):
     out = Image.alpha_composite(img, overlay).convert("RGB")
     out = out.filter(ImageFilter.UnsharpMask(radius=1.1, percent=115, threshold=3))
     OUT.mkdir(parents=True, exist_ok=True)
-    out.save(OUT / f"{item['slug']}.png", "PNG", optimize=False, compress_level=0)
+    out.save(OUT / f"{item['slug']}.png", "PNG", optimize=False, compress_level=1)
+
+
+ASSETS = [
+    {
+        "slug": "pertussis-whooping-cough-tdap-infant-exposure-recovery-phlorotannin-2026",
+        "kicker": "RESPIRATORY RECOVERY",
+        "title": ["백일해 기침", "가족 회복 기록"],
+        "subtitle": "기침 주차, Tdap, 영아 노출과 호흡 회복",
+        "chips": ["기침", "Tdap", "영아 노출"],
+        "accent": (42, 96, 148),
+        "warm": (229, 164, 82),
+        "motif": "respiratory",
+    },
+    {
+        "slug": "legionnaires-disease-hotel-hot-tub-pneumonia-recovery-phlorotannin-2026",
+        "kicker": "TRAVEL PNEUMONIA",
+        "title": ["레지오넬라", "여행 호흡 기록"],
+        "subtitle": "호텔, 온수 시설, 기침과 발열 회복 점검",
+        "chips": ["여행", "기침", "온수 시설"],
+        "accent": (31, 111, 130),
+        "warm": (224, 160, 82),
+        "motif": "respiratory",
+    },
+    {
+        "slug": "leptospirosis-floodwater-hurricane-rodent-urine-recovery-phlorotannin-2026",
+        "kicker": "FLOODWATER EXPOSURE",
+        "title": ["홍수물 노출", "상처와 발열 기록"],
+        "subtitle": "침수, 피부 상처, 발열 변화를 함께 확인",
+        "chips": ["홍수물", "상처", "발열"],
+        "accent": (44, 122, 104),
+        "warm": (222, 154, 76),
+        "motif": "wound",
+    },
+    {
+        "slug": "naegleria-warm-freshwater-nasal-exposure-neuro-recovery-phlorotannin-2026",
+        "kicker": "WATER SAFETY",
+        "title": ["따뜻한 담수", "코 노출 기록"],
+        "subtitle": "두통, 발열, 목 경직 신호를 빠르게 구분",
+        "chips": ["물놀이", "코 노출", "신경 신호"],
+        "accent": (34, 102, 150),
+        "warm": (215, 153, 78),
+        "motif": "respiratory",
+    },
+    {
+        "slug": "valley-fever-dust-pneumonia-fatigue-recovery-phlorotannin-2026",
+        "kicker": "DUST & PNEUMONIA",
+        "title": ["먼지 노출", "호흡 피로 기록"],
+        "subtitle": "여행지, 기침, 피로, 상담 시점을 정리",
+        "chips": ["먼지", "호흡", "피로"],
+        "accent": (130, 90, 54),
+        "warm": (42, 135, 126),
+        "motif": "respiratory",
+    },
+    {
+        "slug": "rocky-mountain-spotted-fever-tick-rash-doxycycline-recovery-phlorotannin-2026",
+        "kicker": "TICK FEVER RECORD",
+        "title": ["진드기 발열", "노출 날짜 기록"],
+        "subtitle": "발진보다 노출일과 치료 시작일을 먼저 보기",
+        "chips": ["진드기", "발열", "발진"],
+        "accent": (85, 112, 48),
+        "warm": (218, 148, 78),
+        "motif": "wound",
+    },
+    {
+        "slug": "babesiosis-tick-red-blood-cell-fatigue-anemia-recovery-phlorotannin-2026",
+        "kicker": "TICK & BLOOD",
+        "title": ["바베시아증", "빈혈 피로 기록"],
+        "subtitle": "진드기 노출, 발열, 빈혈, 회복 이력 확인",
+        "chips": ["진드기", "빈혈", "피로"],
+        "accent": (150, 58, 78),
+        "warm": (48, 136, 128),
+        "motif": "blood",
+    },
+    {
+        "slug": "new-world-screwworm-texas-wound-larvae-pet-livestock-recovery-phlorotannin-2026",
+        "kicker": "WOUND SAFETY",
+        "title": ["상처 노출", "가축과 반려동물 기록"],
+        "subtitle": "여행, 동물 접촉, 상처 변화를 먼저 확인",
+        "chips": ["상처", "여행", "동물 접촉"],
+        "accent": (23, 121, 106),
+        "warm": (218, 153, 80),
+        "motif": "wound",
+    },
+    {
+        "slug": "infant-formula-botulism-byheart-constipation-floppy-baby-recall-recovery-phlorotannin-2026",
+        "kicker": "INFANT FORMULA",
+        "title": ["분유 리콜", "보호자 기록"],
+        "subtitle": "제품명, 수유량, 변비와 힘 빠짐 신호",
+        "chips": ["제품 확인", "수유", "보호자 회복"],
+        "accent": (42, 95, 148),
+        "warm": (232, 169, 84),
+        "motif": "formula",
+    },
+    {
+        "slug": "raw-dairy-ecoli-o157-raw-cheddar-hus-child-kidney-recovery-phlorotannin-2026",
+        "kicker": "GUT SAFETY",
+        "title": ["생유 식품", "장과 신장 기록"],
+        "subtitle": "설사, 혈변, 소변, 피로 변화를 함께 정리",
+        "chips": ["Raw dairy", "장 신호", "소변"],
+        "accent": (116, 68, 132),
+        "warm": (50, 145, 128),
+        "motif": "gut",
+    },
+    {
+        "slug": "youth-nicotine-vape-pouch-addiction-quit-recovery-phlorotannin-2026",
+        "kicker": "NICOTINE RECOVERY",
+        "title": ["청소년 니코틴", "의존 신호 기록"],
+        "subtitle": "갈망, 수면, 불안, 호흡 회복 루틴",
+        "chips": ["Vape", "갈망", "수면"],
+        "accent": (39, 96, 150),
+        "warm": (232, 168, 82),
+        "motif": "nicotine",
+    },
+    {
+        "slug": "toxic-chemical-exposure-decontamination-triage-airway-recovery-phlorotannin-2026",
+        "kicker": "CHEMICAL EXPOSURE",
+        "title": ["화학물질 노출", "제염과 호흡 기록"],
+        "subtitle": "벗기기, 씻기, 공기 확보, 도움 요청",
+        "chips": ["제염", "호흡", "응급"],
+        "accent": (25, 119, 101),
+        "warm": (210, 145, 76),
+        "motif": "chemical",
+    },
+    {
+        "slug": "world-blood-donor-day-2026-iron-hydration-recovery-phlorotannin-2026",
+        "kicker": "BLOOD DONOR DAY",
+        "title": ["헌혈 전후", "회복 기록"],
+        "subtitle": "철분, 수분, 피로, 운동 복귀를 같이 보기",
+        "chips": ["헌혈", "철분", "수분"],
+        "accent": (155, 55, 76),
+        "warm": (52, 140, 132),
+        "motif": "blood",
+    },
+    {
+        "slug": "brucellosis-raw-dairy-hunter-lab-exposure-fatigue-recovery-phlorotannin-2026",
+        "kicker": "RAW DAIRY EXPOSURE",
+        "title": ["브루셀라 노출", "피로 회복 기록"],
+        "subtitle": "생유, 동물, 실험실 노출과 발열 피로 확인",
+        "chips": ["Raw dairy", "노출", "피로"],
+        "accent": (92, 105, 48),
+        "warm": (220, 154, 82),
+        "motif": "dairy",
+    },
+]
 
 
 def main():
