@@ -15,7 +15,7 @@ export default {
   categoryLabel: '호흡기·여행 회복',
   tags: ['밸리피버', '먼지노출', '폐렴', '여행후기침', '플로로탄닌'],
   heroImage: '/og/content-quality/valley-fever-dust-pneumonia-fatigue-recovery-phlorotannin-2026.png',
-  heroAlt: '밸리피버 먼지 노출과 폐렴형 기침 피로 회복 기록을 밝은 사막과 호흡기 카드로 표현한 이미지',
+  heroAlt: '밸리피버 먼지 노출과 폐렴형 기침 피로 회복 기록을 밝은 호흡기 상담 사진형 이미지로 표현한 플로로탄닌 회복 정보',
   readingMinutes: 6,
   referenceIds: [],
   tldr: [

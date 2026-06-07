@@ -15,7 +15,7 @@ export default {
   categoryLabel: '영유아 식품 안전',
   tags: ['영아보툴리즘', '분유리콜', 'ByHeart', '보호자기록', '플로로탄닌'],
   heroImage: '/og/content-quality/infant-formula-botulism-byheart-constipation-floppy-baby-recall-recovery-phlorotannin-2026.png',
-  heroAlt: '영아 보툴리즘 분유 리콜과 변비 수유 저하 목 가누기 호흡 신호를 밝은 보호자 상담 카드로 표현한 이미지',
+  heroAlt: '영아 보툴리즘 분유 리콜과 변비 수유 저하 목 가누기 호흡 신호를 밝은 보호자 상담 사진형 이미지로 표현한 플로로탄닌 회복 정보',
   readingMinutes: 6,
   referenceIds: [],
   tldr: [

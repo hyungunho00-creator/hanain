@@ -15,7 +15,7 @@ export default {
   categoryLabel: '상처·동물 노출 회복',
   tags: ['screwworm', '상처', '가축', '반려동물', '플로로탄닌'],
   heroImage: '/og/content-quality/new-world-screwworm-texas-wound-larvae-pet-livestock-recovery-phlorotannin-2026.png',
-  heroAlt: 'New World screwworm 상처 유충 반려동물 가축 노출 기록을 밝은 의료 상담 카드로 표현한 이미지',
+  heroAlt: 'New World screwworm 상처 유충 반려동물 가축 노출 기록을 밝은 의료 상담 사진형 이미지로 표현한 플로로탄닌 회복 정보',
   readingMinutes: 6,
   referenceIds: [],
   tldr: [

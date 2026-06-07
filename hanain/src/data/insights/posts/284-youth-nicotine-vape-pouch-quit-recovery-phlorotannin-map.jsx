@@ -15,7 +15,7 @@ export default {
   categoryLabel: '니코틴·수면 회복',
   tags: ['니코틴', '전자담배', '청소년', '금연', '플로로탄닌'],
   heroImage: '/og/content-quality/youth-nicotine-vape-pouch-addiction-quit-recovery-phlorotannin-2026.png',
-  heroAlt: '청소년 니코틴 전자담배 니코틴 파우치 의존 신호와 금연 회복 기록을 밝은 상담 카드로 표현한 이미지',
+  heroAlt: '청소년 니코틴 전자담배 니코틴 파우치 의존 신호와 금연 회복 기록을 밝은 상담 사진형 이미지로 표현한 플로로탄닌 회복 정보',
   readingMinutes: 6,
   referenceIds: [],
   tldr: [

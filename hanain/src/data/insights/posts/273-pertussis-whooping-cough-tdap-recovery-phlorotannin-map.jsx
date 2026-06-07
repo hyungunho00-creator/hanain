@@ -15,7 +15,7 @@ export default {
   categoryLabel: '호흡기·가족 회복',
   tags: ['백일해', 'Tdap', '오래가는기침', '영아노출', '플로로탄닌'],
   heroImage: '/og/content-quality/pertussis-whooping-cough-tdap-infant-exposure-recovery-phlorotannin-2026.png',
-  heroAlt: '백일해 오래가는 기침과 Tdap 영아 노출 기록을 밝은 호흡기 회복 카드로 표현한 이미지',
+  heroAlt: '백일해 오래가는 기침과 Tdap 영아 노출 기록을 밝은 호흡기 상담 사진형 이미지로 표현한 플로로탄닌 회복 정보',
   readingMinutes: 6,
   referenceIds: [],
   tldr: [

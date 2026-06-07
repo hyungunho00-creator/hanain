@@ -15,7 +15,7 @@ export default {
   categoryLabel: '응급·화학 노출 회복',
   tags: ['화학물질노출', '제염', '응급대응', '호흡', '플로로탄닌'],
   heroImage: '/og/content-quality/toxic-chemical-exposure-decontamination-triage-airway-recovery-phlorotannin-2026.png',
-  heroAlt: '화학물질 노출 제염 triage airway 응급 회복 기록을 밝은 안전 카드로 표현한 이미지',
+  heroAlt: '화학물질 노출 제염 triage airway 응급 회복 기록을 밝은 안전 상담 사진형 이미지로 표현한 플로로탄닌 회복 정보',
   readingMinutes: 6,
   referenceIds: [],
   tldr: [

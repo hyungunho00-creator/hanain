@@ -15,7 +15,7 @@ export default {
   categoryLabel: '혈액·헌혈 회복',
   tags: ['헌혈', '철분', '수분', '헤모글로빈', '플로로탄닌'],
   heroImage: '/og/content-quality/world-blood-donor-day-2026-iron-hydration-recovery-phlorotannin-2026.png',
-  heroAlt: '세계 헌혈자의 날 2026 혈액 한 방울 철분 수분 헌혈 후 피로 회복 기록을 밝은 신뢰 카드로 표현한 이미지',
+  heroAlt: '세계 헌혈자의 날 2026 혈액 한 방울 철분 수분 헌혈 후 피로 회복 기록을 밝은 신뢰 상담 사진형 이미지로 표현한 플로로탄닌 회복 정보',
   readingMinutes: 6,
   referenceIds: [],
   tldr: [

@@ -15,7 +15,7 @@ export default {
   categoryLabel: '진드기·감염 회복',
   tags: ['RMSF', '진드기', '발열', '발진', '플로로탄닌'],
   heroImage: '/og/content-quality/rocky-mountain-spotted-fever-tick-rash-doxycycline-recovery-phlorotannin-2026.png',
-  heroAlt: 'RMSF 진드기 노출과 발열 발진 상담 기록을 밝은 진드기 회복 카드로 표현한 이미지',
+  heroAlt: 'RMSF 진드기 노출과 발열 발진 상담 기록을 밝은 감염 회복 사진형 이미지로 표현한 플로로탄닌 회복 정보',
   readingMinutes: 6,
   referenceIds: [],
   tldr: [
