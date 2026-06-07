@@ -1,11 +1,11 @@
 {
   "min_tag_count": 5,
-  "total_questions": 1966,
-  "total_unique_tags": 2465,
+  "total_questions": 1969,
+  "total_unique_tags": 2473,
   "page_eligible_tags": 266,
   "tags": {
     "플로로탄닌": {
-      "count": 1416,
+      "count": 1419,
       "qids": [
         "cardio-001",
         "cardio-002",
@@ -1422,7 +1422,10 @@
         "strategic-qa-respiratory-sleep-apnea-cpap-home-sleep-test-drowsy-driving-record-20260606",
         "strategic-qa-metabolism-seanol-haengwoo-lee-seapolynol-evidence-record-20260606",
         "strategic-qa-cardiovascular-seanol-regulatory-label-cholesterol-record-20260606",
-        "strategic-qa-neuro-cognitive-haengwoo-lee-seanol-brain-evidence-record-20260606"
+        "strategic-qa-neuro-cognitive-haengwoo-lee-seanol-brain-evidence-record-20260606",
+        "strategic-qa-infection-measles-mmr-travel-outbreak-recovery-record-20260607",
+        "strategic-qa-cardiovascular-extreme-heat-hydration-medication-recovery-record-20260607",
+        "strategic-qa-metabolism-glp1-muscle-gut-plateau-recovery-record-20260607"
       ]
     },
     "감태": {
@@ -5971,7 +5974,7 @@
       ]
     },
     "심혈관": {
-      "count": 68,
+      "count": 69,
       "qids": [
         "cardio-019",
         "cardio-030",
@@ -6040,7 +6043,8 @@
         "trend-erectile-dysfunction-cardiovascular-risk-20260602",
         "trend-renal-denervation-resistant-hypertension-home-bp-abpm-record-20260603",
         "trend-extreme-heat-medication-plan-older-adults-hydration-record-20260604",
-        "trend-cardiovascular-smartwatch-afib-alert-palpitations-record-20260604"
+        "trend-cardiovascular-smartwatch-afib-alert-palpitations-record-20260604",
+        "strategic-qa-cardiovascular-extreme-heat-hydration-medication-recovery-record-20260607"
       ]
     },
     "폐": {
@@ -7193,6 +7197,43 @@
         "rsp_100"
       ]
     },
+    "단백질": {
+      "count": 32,
+      "qids": [
+        "cancer-008",
+        "mens-009",
+        "mens-extra-023",
+        "mens-extra-026",
+        "mens-extra-031",
+        "mens-extra-034",
+        "mens-004",
+        "rsp_085",
+        "ingr-006",
+        "qa200-20260527-009",
+        "qa200-20260527-025",
+        "qa200-20260527-029",
+        "qa200-20260527-031",
+        "qa200-20260527-043",
+        "qa200-20260527-053",
+        "qa200-20260527-126",
+        "qa200-20260527-128",
+        "qa200-20260527-133",
+        "qa200-20260527-134",
+        "qa200-20260527-152",
+        "qa200-20260527-198",
+        "trendqa-musculoskeletal-20260530",
+        "round3-metabolism-1-20260531",
+        "round3-musculoskeletal-1-20260531",
+        "trend-glp1-muscle-protein-fiber-20260602",
+        "trend-creatine-resistance-training-healthy-aging-20260602",
+        "trend-glp1-hair-loss-telogen-effluvium-20260602",
+        "trend-creatine-resistance-training-sarcopenia-older-adults-20260602",
+        "trend-metabolism-glp1-constipation-hydration-meal-record-20260604",
+        "strategic-qa-hair-glp1-telogen-protein-ferritin-phlorotannin-20260605",
+        "strategic-qa-hair-thyroid-iron-brittle-nails-protein-record-20260605",
+        "strategic-qa-metabolism-glp1-muscle-gut-plateau-recovery-record-20260607"
+      ]
+    },
     "암환자·면역·환자식": {
       "count": 32,
       "qids": [
@@ -7228,42 +7269,6 @@
         "qa200-20260527-056",
         "qa200-20260527-057",
         "qa200-20260527-058"
-      ]
-    },
-    "단백질": {
-      "count": 31,
-      "qids": [
-        "cancer-008",
-        "mens-009",
-        "mens-extra-023",
-        "mens-extra-026",
-        "mens-extra-031",
-        "mens-extra-034",
-        "mens-004",
-        "rsp_085",
-        "ingr-006",
-        "qa200-20260527-009",
-        "qa200-20260527-025",
-        "qa200-20260527-029",
-        "qa200-20260527-031",
-        "qa200-20260527-043",
-        "qa200-20260527-053",
-        "qa200-20260527-126",
-        "qa200-20260527-128",
-        "qa200-20260527-133",
-        "qa200-20260527-134",
-        "qa200-20260527-152",
-        "qa200-20260527-198",
-        "trendqa-musculoskeletal-20260530",
-        "round3-metabolism-1-20260531",
-        "round3-musculoskeletal-1-20260531",
-        "trend-glp1-muscle-protein-fiber-20260602",
-        "trend-creatine-resistance-training-healthy-aging-20260602",
-        "trend-glp1-hair-loss-telogen-effluvium-20260602",
-        "trend-creatine-resistance-training-sarcopenia-older-adults-20260602",
-        "trend-metabolism-glp1-constipation-hydration-meal-record-20260604",
-        "strategic-qa-hair-glp1-telogen-protein-ferritin-phlorotannin-20260605",
-        "strategic-qa-hair-thyroid-iron-brittle-nails-protein-record-20260605"
       ]
     },
     "심장": {
@@ -9601,6 +9606,18 @@
         "round3-musculoskeletal-1-20260531"
       ]
     },
+    "탈수": {
+      "count": 7,
+      "qids": [
+        "wh-extra-022",
+        "qa200-20260527-064",
+        "qa200-20260527-169",
+        "trend-norovirus-handwashing-bleach-hydration-outbreak-20260602",
+        "trend-glp1-compounded-dosing-error-gi-side-effect-20260603",
+        "trend-world-food-safety-day-foodborne-illness-home-record-20260604",
+        "strategic-qa-cardiovascular-extreme-heat-hydration-medication-recovery-record-20260607"
+      ]
+    },
     "헬리코박터": {
       "count": 7,
       "qids": [
@@ -10088,17 +10105,6 @@
         "strategic-qa-respiratory-sleep-apnea-cpap-home-sleep-test-drowsy-driving-record-20260606"
       ]
     },
-    "탈수": {
-      "count": 6,
-      "qids": [
-        "wh-extra-022",
-        "qa200-20260527-064",
-        "qa200-20260527-169",
-        "trend-norovirus-handwashing-bleach-hydration-outbreak-20260602",
-        "trend-glp1-compounded-dosing-error-gi-side-effect-20260603",
-        "trend-world-food-safety-day-foodborne-illness-home-record-20260604"
-      ]
-    },
     "피부건강": {
       "count": 6,
       "qids": [
@@ -10119,6 +10125,17 @@
         "nc_047",
         "qa200-20260527-079",
         "qa200-20260527-090"
+      ]
+    },
+    "혈압약": {
+      "count": 6,
+      "qids": [
+        "cardio-023",
+        "qa200-20260527-078",
+        "round2-cardiovascular-20260530",
+        "trend-heat-health-hydration-blood-pressure-20260602",
+        "trend-extreme-heat-medication-plan-older-adults-hydration-record-20260604",
+        "strategic-qa-cardiovascular-extreme-heat-hydration-medication-recovery-record-20260607"
       ]
     },
     "환자식": {
@@ -10580,16 +10597,6 @@
         "qa200-20260527-195",
         "trend-cardiovascular-lpa-family-heart-risk-record-20260604",
         "strategic-qa-mens-ed-cardiovascular-bp-glucose-phlorotannin-20260605"
-      ]
-    },
-    "혈압약": {
-      "count": 5,
-      "qids": [
-        "cardio-023",
-        "qa200-20260527-078",
-        "round2-cardiovascular-20260530",
-        "trend-heat-health-hydration-blood-pressure-20260602",
-        "trend-extreme-heat-medication-plan-older-adults-hydration-record-20260604"
       ]
     },
     "혈액순환": {
@@ -12579,7 +12586,10 @@
     "strategic-qa-respiratory-sleep-apnea-cpap-home-sleep-test-drowsy-driving-record-20260606": "코골이숨멎음낮-졸림이-있으면-수면무호흡-검사CPAP-상담-기록은-어떻게-준비하나요",
     "strategic-qa-metabolism-seanol-haengwoo-lee-seapolynol-evidence-record-20260606": "씨놀-개발자-이행우-박사와-SeaPolynol-자료를-볼-때-대사-건강-근거는-어떻게-기록하나요",
     "strategic-qa-cardiovascular-seanol-regulatory-label-cholesterol-record-20260606": "씨놀SeaPolynol이-콜레스테롤-원료로-소개될-때-라벨과-규제-근거는-어떻게-확인하나요",
-    "strategic-qa-neuro-cognitive-haengwoo-lee-seanol-brain-evidence-record-20260606": "이행우-박사-Seanol-연구-배경을-뇌인지-건강-QA에서-어떻게-안전하게-설명하나요"
+    "strategic-qa-neuro-cognitive-haengwoo-lee-seanol-brain-evidence-record-20260606": "이행우-박사-Seanol-연구-배경을-뇌인지-건강-QA에서-어떻게-안전하게-설명하나요",
+    "strategic-qa-infection-measles-mmr-travel-outbreak-recovery-record-20260607": "홍역-유행과-해외여행이-겹치면-MMR-접종노출회복-기록은-어떻게-준비하나요",
+    "strategic-qa-cardiovascular-extreme-heat-hydration-medication-recovery-record-20260607": "폭염이-길어질-때-혈압약이뇨제수분-회복-기록은-어떻게-준비하나요",
+    "strategic-qa-metabolism-glp1-muscle-gut-plateau-recovery-record-20260607": "GLP1-감량-중-정체기근손실장-불편이-걱정될-때-회복-기록은-어떻게-준비하나요"
   },
-  "generated_at": "2026-06-06T12:12:34.587111+00:00"
+  "generated_at": "2026-06-07T00:56:22.508537+00:00"
 }

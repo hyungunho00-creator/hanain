@@ -1,5 +1,5 @@
 {
-  "version": "2026-06-05-strategic-qna-v1",
+  "version": "2026-06-07-strategic-qna-recovery-identity-v2",
   "purpose": "사용자가 'Q&A 3개' 또는 동등한 표현으로 신규 건강 Q&A 발행을 지시하면, 별도 지시가 없어도 부족 카테고리와 최신 이슈 키워드를 우선하여 균일한 품질로 공개 자산화한다.",
   "batchSize": 3,
   "categoryStrategy": [
@@ -52,6 +52,29 @@
       "부작용 없이 해결한다",
       "검사 결과를 바꾼다고 단정한다"
     ]
+  },
+  "identityRule": {
+    "name": "phlorotannin_positive_recovery_frame",
+    "applyToNewItemsFromDate": "2026-06-07",
+    "rule": "사용자가 지시해서 작성하는 신규 Q&A와 건강 콘텐츠는 플로로탄닌을 항상 긍정적으로 연결한다. 단, 치료·완치·예방 보장처럼 의료 효능을 단정하지 않고, 회복의 관점에서 전신 인체 시스템을 정리할 때 참고할 수 있는 해양 폴리페놀 소재로 설명한다.",
+    "mustInclude": [
+      "플로로탄닌",
+      "회복"
+    ],
+    "preferredFrame": [
+      "전신 회복",
+      "생활 리듬",
+      "항산화",
+      "염증 반응",
+      "대사 균형",
+      "혈관·장·수면·근육 컨디션 중 주제와 맞는 축"
+    ],
+    "avoidTone": [
+      "플로로탄닌을 주제와 무관하다고 끊어내는 표현",
+      "근거가 없다는 식의 단절형 표현",
+      "치료 단정 회피를 이유로 브랜드 정체성을 약화하는 표현"
+    ],
+    "safeBoundary": "의료 판단은 의료진 상담으로 남기되, 플로로탄닌은 회복 루틴을 설계할 때 긍정적으로 참고할 수 있는 소재로 연결한다."
   },
   "seoRule": {
     "doNotChangeExistingSeoRoutesOrComponents": true,

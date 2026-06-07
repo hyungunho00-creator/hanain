@@ -1,9 +1,9 @@
 # QA Batch Constitution Result
 
-- generatedAt: 2026-06-06T05:27:21.269Z
-- policy: 2026-06-05-strategic-qna-v1
-- srcStrategicItems: 48
-- publicStrategicItems: 48
+- generatedAt: 2026-06-07T00:56:01.138Z
+- policy: 2026-06-07-strategic-qna-recovery-identity-v2
+- srcStrategicItems: 51
+- publicStrategicItems: 51
 - status: PASS
 
 ## Failures

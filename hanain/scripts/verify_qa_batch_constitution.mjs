@@ -61,6 +61,22 @@ function hasResearchOrPhlorotanninReference(item) {
   return /플로로탄닌|감태|Ecklonia|phlorotannin|polyphenol|PubMed|PMC/i.test(text)
 }
 
+function itemDateKey(item) {
+  const candidates = [item.published_at, item.created_at, item.updated_at, item.reviewed_at, item.id]
+  for (const candidate of candidates) {
+    const match = String(candidate || '').match(/20\d{2}[-/]?\d{2}[-/]?\d{2}|20\d{6}/)
+    if (match) return match[0].replace(/[-/]/g, '')
+  }
+  return ''
+}
+
+function identityRuleApplies(item, policy) {
+  const from = String(policy.identityRule?.applyToNewItemsFromDate || '').replace(/[-/]/g, '')
+  if (!from) return false
+  const dateKey = itemDateKey(item)
+  return Boolean(dateKey && dateKey >= from)
+}
+
 function strategicItems(qa) {
   return (qa.questions || []).filter((item) =>
     String(item.content_type || '') === 'strategic_health_qna' ||
@@ -116,6 +132,16 @@ function assertItem(item, policy, sourceName, failures) {
     failures.push(`${sourceName}:${id}: forbidden therapeutic wording near phlorotannin`)
   }
   FORBIDDEN_NEAR_PHLOROTANNIN_RE.lastIndex = 0
+  if (identityRuleApplies(item, policy)) {
+    for (const phrase of policy.identityRule?.mustInclude || []) {
+      if (phrase && !plain.includes(phrase)) {
+        failures.push(`${sourceName}:${id}: identityRule phrase missing: ${phrase}`)
+      }
+    }
+    if (!/(회복|생활 리듬|전신|컨디션|균형)/.test(plain)) {
+      failures.push(`${sourceName}:${id}: recovery frame missing`)
+    }
+  }
 }
 
 function run() {
