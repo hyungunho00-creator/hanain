@@ -36,6 +36,11 @@ if (exposureRepair.error || exposureRepair.status !== 0) {
 const audit = run(process.execPath, [path.join('scripts', 'audit_reader_content.cjs')]);
 handleStep('audit_reader_content', audit);
 
+const blogOgImageQuality = runPython(['scripts/audit_blog_og_image_quality.py']);
+if (blogOgImageQuality.error || blogOgImageQuality.status !== 0) {
+  process.exit(blogOgImageQuality.status || 1);
+}
+
 const siteStats = run(process.execPath, [path.join('scripts', 'update_site_stats.mjs')]);
 if (siteStats.error || siteStats.status !== 0) {
   process.exit(siteStats.status || 1);

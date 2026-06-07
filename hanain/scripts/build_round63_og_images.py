@@ -161,9 +161,9 @@ def make(item):
 
 
 def main():
-    for item in ASSETS:
-        make(item)
-    print(f"created {len(ASSETS)} round63 og images")
+    from build_high_quality_blog_og_images import main as build_high_quality
+
+    build_high_quality()
 
 
 if __name__ == "__main__":

@@ -65,7 +65,7 @@ const posts = [
       'WHO 2026년 청소년 니코틴 경고, 전자담배·니코틴 파우치, 향과 SNS 마케팅, 금단·수면·불안·금연 상담, 플로로탄닌 회복 루틴을 정리합니다.',
     og_image: '/og/content-quality/youth-nicotine-vape-pouch-addiction-quit-recovery-phlorotannin-2026.png',
     image_alt:
-      '청소년 니코틴 전자담배 니코틴 파우치 의존 신호와 금연 회복 기록을 밝은 상담 카드와 해양 분자 그래픽으로 표현한 플로로탄닌 SEO 이미지',
+      '청소년 니코틴 전자담배 니코틴 파우치 의존 신호와 금연 회복 기록을 밝은 상담 장면과 해양 폴리페놀 분자 이미지로 표현한 플로로탄닌 회복 정보',
     tags: ['니코틴', '전자담배', 'Vape', '니코틴파우치', '청소년건강', '금연회복', '플로로탄닌'],
     opening:
       'WHO는 2026년 5월 29일 World No Tobacco Day를 앞두고 청소년과 젊은 세대를 담배, 전자담배, 니코틴 파우치 중독에서 보호해야 한다고 강조했습니다. WHO는 전 세계 13~15세 어린이 최소 4천만 명이 담배 제품을 사용하고 있으며, 전자담배와 니코틴 파우치 사용이 계속 증가하고 있다고 설명합니다. 특히 향, 밝은 포장, 세련된 기기 디자인, SNS 인플루언서 마케팅은 제품을 덜 위험하고 더 친숙하게 보이게 만들 수 있습니다. 이 주제는 단순히 "피우지 마세요"가 아니라, 청소년의 수면, 집중력, 불안, 심박감, 금단, 반복 사용 패턴을 회복 기록으로 바꾸는 콘텐츠가 필요합니다.',
@@ -116,7 +116,7 @@ const posts = [
       'WHO 2026년 toxic chemical exposure 임상지침과 CDC chemical emergency 자료를 근거로 get away, get clean, get help, 제염, PPE, 호흡 신호, 플로로탄닌 회복 루틴을 정리합니다.',
     og_image: '/og/content-quality/toxic-chemical-exposure-decontamination-triage-airway-recovery-phlorotannin-2026.png',
     image_alt:
-      '화학물질 노출 제염 triage airway 응급 회복 기록을 밝은 안전 카드와 해양 분자 그래픽으로 표현한 플로로탄닌 SEO 이미지',
+      '화학물질 노출 제염 triage airway 응급 회복 기록을 밝은 안전 상담 장면과 해양 폴리페놀 분자 이미지로 표현한 플로로탄닌 회복 정보',
     tags: ['화학물질노출', 'ChemicalEmergency', 'Decontamination', 'Triage', 'Airway', '응급대응', '플로로탄닌'],
     opening:
       'WHO는 2026년 6월 4일 화학무기 또는 유해·독성 화학물질 노출 환자의 임상 관리를 위한 interim clinical guidance 업데이트를 발표했습니다. WHO는 조기 인지, 의료진 보호, 빠른 제염, 구조화된 triage, 적절한 해독제와 지지 치료가 화학물질 노출 대응의 핵심이라고 설명합니다. CDC의 chemical emergency 자료는 일반인에게 더 단순한 세 문장을 제시합니다. Get away, get clean, get help. 즉 노출 지역에서 벗어나고, 몸에서 화학물질을 제거하고, Poison Control 또는 911, 병원 도움을 받으라는 뜻입니다. 이 키워드는 전쟁·산업·재난뿐 아니라 가정용 세제 혼합, 수영장 화학물질, 농약, 공장 사고, 화재 후 연기 노출까지 확장됩니다.',
@@ -167,7 +167,7 @@ const posts = [
       'WHO World Blood Donor Day 2026, 안전한 혈액, 자발적 헌혈, 헤모글로빈, 철분, 수분, 헌혈 후 피로 회복과 플로로탄닌 회복 루틴을 정리합니다.',
     og_image: '/og/content-quality/world-blood-donor-day-2026-iron-hydration-recovery-phlorotannin-2026.png',
     image_alt:
-      '세계 헌혈자의 날 2026 혈액 한 방울 철분 수분 헌혈 후 피로 회복 기록을 밝은 신뢰 카드와 해양 분자 그래픽으로 표현한 플로로탄닌 SEO 이미지',
+      '세계 헌혈자의 날 2026 혈액 한 방울 철분 수분 헌혈 후 피로 회복 기록을 밝은 건강 상담 장면과 해양 폴리페놀 분자 이미지로 표현한 플로로탄닌 회복 정보',
     tags: ['WorldBloodDonorDay', '헌혈', '철분', '헤모글로빈', '수분', '피로회복', '플로로탄닌'],
     opening:
       'WHO는 2026년 6월 14일 World Blood Donor Day 캠페인의 슬로건을 "One Drop of Humanity. Give Blood. Save Lives."로 제시했습니다. 혈액 기증은 응급 상황, 출산, 수술, 암 치료, 만성질환 관리에서 생명을 이어주는 기반입니다. WHO는 안전한 혈액 공급이 여전히 정기적이고 자발적인 무상 헌혈자에 의존하며, 많은 나라가 안전한 혈액과 혈액제제 접근성 부족을 겪고 있다고 설명합니다. 이 키워드는 6월 중순 검색 수요가 올라갈 수 있고, 단순 캠페인 소개를 넘어 헌혈 전후 회복 기록, 철분, 수분, 헤모글로빈, 피로 관리로 확장할 수 있습니다.',

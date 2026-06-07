@@ -65,7 +65,7 @@ const posts = [
       '2026년 6월 CDC New World screwworm 업데이트를 바탕으로 텍사스 동물 사례, 상처 관리, 유충 확인, 반려동물·가축 노출, 플로로탄닌 회복 루틴을 정리합니다.',
     og_image: '/og/content-quality/new-world-screwworm-texas-wound-larvae-pet-livestock-recovery-phlorotannin-2026.png',
     image_alt:
-      'New World screwworm 텍사스 상처 유충 반려동물 가축 노출 기록을 밝은 의료 상담 카드와 해양 분자 그래픽으로 표현한 플로로탄닌 SEO 이미지',
+      'New World screwworm 텍사스 상처 유충 반려동물 가축 노출 기록을 밝은 의료 상담 장면과 해양 폴리페놀 분자 이미지로 표현한 플로로탄닌 회복 정보',
     tags: ['NewWorldScrewworm', 'screwworm', '상처관리', '가축', '반려동물', '여행건강', '플로로탄닌'],
     opening:
       'CDC는 2026년 6월 4일 New World screwworm, NWS 상황 업데이트에서 USDA-APHIS가 6월 3일 텍사스 Zavala County의 송아지에서 NWS를 확인했다고 안내했습니다. CDC는 미국에서 현지 감염 인체 사례는 보고되지 않았고 일반 대중 위험은 낮다고 설명하지만, 이 이슈가 중요한 이유는 상처, 반려동물, 가축, 여행, 야외활동이 동시에 검색되는 키워드이기 때문입니다. NWS는 열린 상처나 눈·귀·코·입·생식기 같은 부위에 알을 낳고, 부화한 유충이 살아 있는 조직을 먹으며 빠르게 악화되는 통증성 상처를 만들 수 있습니다. 2023년 이후 중앙아메리카와 멕시코를 거쳐 북상한 동물·인체 사례 흐름도 함께 언급되어 있어, 사이트 안에서는 공포가 아니라 "어떤 상처를 어떻게 기록하고 언제 상담할지"로 정리해야 합니다.',
@@ -116,7 +116,7 @@ const posts = [
       'FDA 2026년 6월 infant formula botulism 업데이트, ByHeart 리콜, Clostridium botulinum, 변비·수유 저하·목 가누기 저하·호흡 신호와 회복 기록을 정리합니다.',
     og_image: '/og/content-quality/infant-formula-botulism-byheart-constipation-floppy-baby-recall-recovery-phlorotannin-2026.png',
     image_alt:
-      '영아 보툴리즘 분유 리콜과 변비 수유 저하 목 가누기 호흡 신호를 밝은 보호자 상담 카드로 표현한 플로로탄닌 SEO 이미지',
+      '영아 보툴리즘 분유 리콜과 변비 수유 저하 목 가누기 호흡 신호를 밝은 보호자 상담 기록 이미지로 표현한 플로로탄닌 회복 정보',
     tags: ['InfantBotulism', 'ByHeart', '분유리콜', '보툴리즘', '영아건강', '보호자기록', '플로로탄닌'],
     opening:
       'FDA는 2026년 6월 3일 infant botulism 분유 조사 업데이트에서 ByHeart 시설 현장 점검을 마쳤고, 분유 원료로 쓰인 powdered milk ingredient에서 Clostridium botulinum을 확인했다고 밝혔습니다. 이 outbreak는 종료되었고 CDC도 종료를 알렸지만, FDA의 root cause investigation은 원료를 중심으로 계속되고 있습니다. 보호자가 가장 궁금해하는 지점은 "리콜 제품을 썼는지", "아기가 변비와 수유 저하를 보이는지", "목을 못 가누거나 울음이 약해졌는지"입니다. FDA 자료는 모든 ByHeart Whole Nutrition Infant Formula 제품이 리콜되었고, 영아 보툴리즘 증상이 있으면 즉시 의료진 상담이 필요하다고 안내합니다.',
@@ -167,7 +167,7 @@ const posts = [
       '2026년 CDC/FDA raw cheddar cheese E. coli O157:H7 조사, 원유·비살균 치즈, 소아 혈변·탈수·HUS 신호, 장 회복 루틴과 플로로탄닌 연결법을 정리합니다.',
     og_image: '/og/content-quality/raw-dairy-ecoli-o157-raw-cheddar-hus-child-kidney-recovery-phlorotannin-2026.png',
     image_alt:
-      'Raw dairy E. coli O157 비살균 치즈 소아 설사 HUS 신장 회복 기록을 밝은 장 건강 카드와 해양 분자 그래픽으로 표현한 플로로탄닌 SEO 이미지',
+      'Raw dairy E. coli O157 비살균 치즈 소아 설사 HUS 신장 회복 기록을 밝은 장 건강 장면과 해양 폴리페놀 분자 이미지로 표현한 플로로탄닌 회복 정보',
     tags: ['EcoliO157', 'RawDairy', '비살균치즈', 'HUS', '소아설사', '장회복', '플로로탄닌'],
     opening:
       'CDC는 2026년 4월 30일 raw cheddar cheese와 raw milk가 관련된 E. coli O157:H7 multistate outbreak 조사를 종료했다고 안내했습니다. FDA도 RAW FARM-brand raw cheddar cheese와 관련된 조사를 정리하며, 총 9명, 3개 주, 3명 입원, 1명 HUS 사례, 사망 0건을 제시했습니다. 이 outbreak는 끝났지만 콘텐츠 가치는 큽니다. 원유와 비살균 치즈는 반복적으로 검색되는 키워드이고, 특히 어린아이의 설사, 혈변, 탈수, 소변 감소, HUS 위험은 보호자가 빨리 알아야 하는 상담 포인트입니다. CDC raw milk 자료는 pasteurization이 유해균을 죽이는 데 중요하고, 원유가 E. coli, Listeria, Brucella, Salmonella 같은 감염 위험을 높일 수 있다고 설명합니다.',
