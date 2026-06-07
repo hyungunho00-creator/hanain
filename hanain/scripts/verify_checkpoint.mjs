@@ -1,11 +1,11 @@
 const SITE = 'https://phlorotannin.com'
 
 const EXPECTED = {
-  sitemapTotal: 3257,
+  sitemapTotal: 3263,
   qCount: 1969,
   tagCount: 266,
-  blogCount: 723,
-  insightCount: 268,
+  blogCount: 726,
+  insightCount: 271,
   requiredBundleSlugs: [
     'glp1-era-protein-fiber-phlorotannin-checklist-2026',
     'glp1-muscle-loss-protein-resistance-training-2026',
@@ -178,6 +178,9 @@ const EXPECTED = {
     'h5n1-dairy-raw-milk-biosecurity-recovery-phlorotannin-2026',
     'dengue-travel-mosquito-fever-hydration-recovery-phlorotannin-2026',
     'tick-bite-lyme-alpha-gal-outdoor-recovery-phlorotannin-2026',
+    'west-nile-mosquito-neuro-fatigue-recovery-phlorotannin-2026',
+    'vibrio-raw-oyster-coastal-wound-recovery-phlorotannin-2026',
+    'harmful-algal-bloom-lake-pet-skin-gut-recovery-phlorotannin-2026',
   ],
   draftSlug: 'ecklonia-cava-respiratory-health-clinical-trial-2026',
 }
