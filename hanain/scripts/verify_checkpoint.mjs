@@ -1,11 +1,11 @@
 const SITE = 'https://phlorotannin.com'
 
 const EXPECTED = {
-  sitemapTotal: 3245,
+  sitemapTotal: 3251,
   qCount: 1969,
   tagCount: 266,
-  blogCount: 717,
-  insightCount: 262,
+  blogCount: 720,
+  insightCount: 265,
   requiredBundleSlugs: [
     'glp1-era-protein-fiber-phlorotannin-checklist-2026',
     'glp1-muscle-loss-protein-resistance-training-2026',
@@ -172,6 +172,9 @@ const EXPECTED = {
     'fda-cyclospora-not-identified-produce-diarrhea-record-2026',
     'fda-moringa-capsules-salmonella-supplement-lot-record-2026',
     'fda-dried-herring-botulism-vietnam-import-neuro-record-2026',
+    'measles-mmr-travel-immunity-gap-recovery-phlorotannin-2026',
+    'extreme-heat-blood-pressure-medication-hydration-recovery-phlorotannin-2026',
+    'glp1-compounded-muscle-gut-recovery-phlorotannin-2026',
   ],
   draftSlug: 'ecklonia-cava-respiratory-health-clinical-trial-2026',
 }
