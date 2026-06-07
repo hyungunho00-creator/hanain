@@ -41,6 +41,11 @@ if (blogOgImageQuality.error || blogOgImageQuality.status !== 0) {
   process.exit(blogOgImageQuality.status || 1);
 }
 
+const publicConsumerLanguage = run(process.execPath, [path.join('scripts', 'audit_public_consumer_language.cjs')]);
+if (publicConsumerLanguage.error || publicConsumerLanguage.status !== 0) {
+  process.exit(publicConsumerLanguage.status || 1);
+}
+
 const siteStats = run(process.execPath, [path.join('scripts', 'update_site_stats.mjs')]);
 if (siteStats.error || siteStats.status !== 0) {
   process.exit(siteStats.status || 1);

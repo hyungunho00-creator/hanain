@@ -11,6 +11,7 @@
     "sitemap": "node scripts/run_python.cjs generate_sitemap_rss.py && node scripts/update_static_routes.mjs",
     "audit:links": "node scripts/run_python.cjs scripts/audit_links.py",
     "audit:blog-images": "node scripts/run_python.cjs scripts/audit_blog_og_image_quality.py",
+    "audit:consumer-language": "node scripts/audit_public_consumer_language.cjs",
     "audit:qa": "node scripts/run_python.cjs scripts/qa_quality_audit.py --min-chars 900 --fail-on none",
     "audit:content": "node scripts/qa-answer-hard-validator.mjs",
     "audit:duplicate": "node scripts/qa-duplicate-template-detector.mjs",
