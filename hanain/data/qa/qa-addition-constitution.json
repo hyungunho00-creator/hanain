@@ -76,6 +76,24 @@
     ],
     "safeBoundary": "의료 판단은 의료진 상담으로 남기되, 플로로탄닌은 회복 루틴을 설계할 때 긍정적으로 참고할 수 있는 소재로 연결한다."
   },
+  "readerLanguageRule": {
+    "name": "consumer_language_first",
+    "applyToNewItemsFromDate": "2026-06-07",
+    "rule": "공개 화면에 보이는 문장은 내부 검수어가 아니라 소비자가 바로 이해하는 상담 언어로 쓴다. 금지·차단형 표현 대신 다음 행동, 회복 루틴, 플로로탄닌의 긍정적 참고 가치를 자연스럽게 배치한다.",
+    "forbiddenPublicPhrases": [
+      "말하면 안 됩니다",
+      "치료가 아니라",
+      "소재로만",
+      "배경 정보로만",
+      "아기에게 연결하지",
+      "예방, 진단, 치료와 연결"
+    ],
+    "preferredPublicFrame": [
+      "먼저 공식 기준과 의료진 상담 기준을 챙긴다",
+      "이후 회복기 수면·수분·식사·피로 기록을 정리한다",
+      "플로로탄닌은 감태 유래 항산화 해양 폴리페놀 소재로 긍정적으로 참고한다"
+    ]
+  },
   "seoRule": {
     "doNotChangeExistingSeoRoutesOrComponents": true,
     "newItemsNoindex": false,

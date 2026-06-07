@@ -15,10 +15,22 @@ const forbidden = [
 ];
 
 const targetFiles = [];
+const consumerTargetFiles = [];
+const consumerForbidden = [
+  { label: 'internal bridge heading', pattern: /긍정\s*연결하는\s*방식|검색\s*의도/g },
+  { label: 'consumer-facing prohibition wording', pattern: /말하면\s*안\s*됩니다|아기에게\s*연결하지|예방,\s*진단,\s*치료와\s*연결/g },
+  { label: 'negative instead-of framing', pattern: /치료가\s*아니라|금연\s*수단이\s*아니라|해독제도\s*아니고|대신하지\s*않습니다|대신하지\s*않고|소재로만|배경\s*정보로만/g },
+];
 
 function addFile(filePath) {
   if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
     targetFiles.push(filePath);
+  }
+}
+
+function addConsumerFile(filePath) {
+  if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
+    consumerTargetFiles.push(filePath);
   }
 }
 
@@ -31,6 +43,37 @@ function addDir(dirPath, extension) {
   }
 }
 
+function addConsumerDir(dirPath, extension) {
+  if (!fs.existsSync(dirPath)) return;
+  for (const entry of fs.readdirSync(dirPath, { withFileTypes: true })) {
+    const child = path.join(dirPath, entry.name);
+    if (entry.isDirectory()) addConsumerDir(child, extension);
+    if (entry.isFile() && child.endsWith(extension)) addConsumerFile(child);
+  }
+}
+
+function addConsumerLocalTrendFiles(dirPath) {
+  if (!fs.existsSync(dirPath)) return;
+  for (const entry of fs.readdirSync(dirPath, { withFileTypes: true })) {
+    if (entry.isFile() && /^localTrendBlogPostsRound\d+\.js$/.test(entry.name)) {
+      addConsumerFile(path.join(dirPath, entry.name));
+    }
+  }
+}
+
+function shouldApplyConsumerAudit(filePath, text) {
+  const relativePath = path.relative(root, filePath);
+  const roundMatch = relativePath.match(/src[\\/]+data[\\/]+localTrendBlogPostsRound(\d+)\.js$/);
+  if (roundMatch) {
+    return Number(roundMatch[1]) >= 63;
+  }
+  const insightMatch = relativePath.match(/src[\\/]+data[\\/]+insights[\\/]+posts[\\/]+(\d+)-/);
+  if (insightMatch) {
+    return Number(insightMatch[1]) >= 282;
+  }
+  return false;
+}
+
 addDir(path.join(root, 'src', 'data', 'insights', 'posts'), '.jsx');
 addFile(path.join(root, 'src', 'data', 'qa.json'));
 addFile(path.join(root, 'public', 'qa.json'));
@@ -38,12 +81,32 @@ addFile(path.join(root, 'public', 'rss.xml'));
 addFile(path.join(root, 'public', 'sitemap.xml'));
 addFile(path.join(root, 'public', 'llms.txt'));
 addFile(path.join(root, 'public', 'llms-full.txt'));
+addConsumerLocalTrendFiles(path.join(root, 'src', 'data'));
+addConsumerDir(path.join(root, 'src', 'data', 'insights', 'posts'), '.jsx');
 
 const findings = [];
 
 for (const filePath of targetFiles) {
   const text = fs.readFileSync(filePath, 'utf8');
   for (const rule of forbidden) {
+    const matches = [...text.matchAll(rule.pattern)];
+    for (const match of matches) {
+      const before = text.slice(0, match.index);
+      const line = before.split(/\r?\n/).length;
+      findings.push({
+        file: path.relative(root, filePath),
+        line,
+        label: rule.label,
+        match: match[0],
+      });
+    }
+  }
+}
+
+for (const filePath of consumerTargetFiles) {
+  const text = fs.readFileSync(filePath, 'utf8');
+  if (!shouldApplyConsumerAudit(filePath, text)) continue;
+  for (const rule of consumerForbidden) {
     const matches = [...text.matchAll(rule.pattern)];
     for (const match of matches) {
       const before = text.slice(0, match.index);
@@ -71,4 +134,4 @@ if (findings.length > 0) {
   process.exit(1);
 }
 
-console.log(`[reader-content-audit] OK (${targetFiles.length} files scanned)`);
+console.log(`[reader-content-audit] OK (${targetFiles.length + consumerTargetFiles.length} files scanned)`);
