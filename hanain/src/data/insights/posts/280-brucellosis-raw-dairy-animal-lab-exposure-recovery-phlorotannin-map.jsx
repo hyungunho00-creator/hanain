@@ -1,4 +1,4 @@
-import React from 'react'
+﻿import React from 'react'
 import { H2, H3, P, UL, Callout, Hr, RelLink } from '../_helpers'
 
 const PUB = '2026-06-07'
@@ -14,7 +14,7 @@ export default {
   category: 'safety',
   categoryLabel: '식품·동물 노출 회복',
   tags: ['브루셀라증', '원유', '비살균유제품', '사냥', '실험실노출', '플로로탄닌'],
-  heroImage: '/og/content-quality/brucellosis-raw-dairy-hunter-lab-exposure-fatigue-recovery-phlorotannin-2026.png',
+  heroImage: '/og/content-quality/brucellosis-raw-dairy-hunter-lab-exposure-fatigue-recovery-phlorotannin-2026-consumer-recovery-v2.png',
   heroAlt: '브루셀라증 비살균 유제품 동물 실험실 노출과 오래가는 피로 기록을 밝은 안전 상담 사진형 이미지로 표현한 플로로탄닌 회복 정보',
   readingMinutes: 6,
   referenceIds: [],

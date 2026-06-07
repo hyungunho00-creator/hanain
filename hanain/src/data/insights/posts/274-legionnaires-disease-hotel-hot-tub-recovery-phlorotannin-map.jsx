@@ -1,4 +1,4 @@
-import React from 'react'
+﻿import React from 'react'
 import { H2, H3, P, UL, Callout, Hr, RelLink } from '../_helpers'
 
 const PUB = '2026-06-07'
@@ -14,7 +14,7 @@ export default {
   category: 'immune',
   categoryLabel: '호흡기·여행 회복',
   tags: ['레지오넬라', '호텔폐렴', '온수욕조', '여행건강', '플로로탄닌'],
-  heroImage: '/og/content-quality/legionnaires-disease-hotel-hot-tub-pneumonia-recovery-phlorotannin-2026.png',
+  heroImage: '/og/content-quality/legionnaires-disease-hotel-hot-tub-pneumonia-recovery-phlorotannin-2026-consumer-recovery-v2.png',
   heroAlt: '레지오넬라 여행 폐렴과 호텔 온수 욕조 노출 기록을 밝은 물방울 호흡기 그래픽으로 표현한 이미지',
   readingMinutes: 6,
   referenceIds: [],

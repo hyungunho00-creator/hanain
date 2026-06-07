@@ -1,4 +1,4 @@
-const PUBLISHED = '2026-06-07T23:20:00+09:00'
+﻿const PUBLISHED = '2026-06-07T23:20:00+09:00'
 
 function refs(items) {
   return items.map(([label, url]) => `- [${label}](${url})`).join('\n')
@@ -73,7 +73,7 @@ const posts = [
     meta_title: 'New World screwworm 상처·유충·가축 노출 기록 | 플로로탄닌 파트너스',
     meta_desc:
       '2026년 6월 CDC New World screwworm 업데이트를 바탕으로 텍사스 동물 사례, 상처 관리, 유충 확인, 반려동물·가축 노출, 플로로탄닌 회복 루틴을 정리합니다.',
-    og_image: '/og/content-quality/new-world-screwworm-texas-wound-larvae-pet-livestock-recovery-phlorotannin-2026.png',
+    og_image: '/og/content-quality/new-world-screwworm-texas-wound-larvae-pet-livestock-recovery-phlorotannin-2026-consumer-recovery-v2.png',
     image_alt:
       'New World screwworm 텍사스 상처 유충 반려동물 가축 노출 기록을 밝은 의료 상담 장면과 해양 폴리페놀 분자 이미지로 표현한 플로로탄닌 회복 정보',
     tags: ['NewWorldScrewworm', 'screwworm', '상처관리', '가축', '반려동물', '여행건강', '플로로탄닌'],
@@ -124,7 +124,7 @@ const posts = [
     meta_title: '영아 보툴리즘 분유 리콜: 변비·수유 저하 언제 상담할까 | 플로로탄닌',
     meta_desc:
       'ByHeart 분유 리콜을 쓴 보호자가 확인할 제품명·lot, 변비·수유 저하·목 가누기·약한 울음·호흡 신호, 병원 상담 질문과 플로로탄닌 회복 관점을 정리합니다.',
-    og_image: '/og/content-quality/infant-formula-botulism-byheart-constipation-floppy-baby-recall-recovery-phlorotannin-2026.png',
+    og_image: '/og/content-quality/infant-formula-botulism-byheart-constipation-floppy-baby-recall-recovery-phlorotannin-2026-consumer-recovery-v2.png',
     image_alt:
       '영아 보툴리즘 분유 리콜과 변비 수유 저하 목 가누기 호흡 신호를 밝은 보호자 상담 기록 이미지로 표현한 플로로탄닌 회복 정보',
     tags: ['InfantBotulism', 'ByHeart', '분유리콜', '보툴리즘', '영아건강', '보호자기록', '플로로탄닌'],
@@ -183,7 +183,7 @@ const posts = [
     meta_title: 'Raw dairy E. coli O157·HUS·소아 설사 기록 | 플로로탄닌 파트너스',
     meta_desc:
       '2026년 CDC/FDA raw cheddar cheese E. coli O157:H7 조사, 원유·비살균 치즈, 소아 혈변·탈수·HUS 신호, 장 회복 루틴과 플로로탄닌 연결법을 정리합니다.',
-    og_image: '/og/content-quality/raw-dairy-ecoli-o157-raw-cheddar-hus-child-kidney-recovery-phlorotannin-2026.png',
+    og_image: '/og/content-quality/raw-dairy-ecoli-o157-raw-cheddar-hus-child-kidney-recovery-phlorotannin-2026-consumer-recovery-v2.png',
     image_alt:
       'Raw dairy E. coli O157 비살균 치즈 소아 설사 HUS 신장 회복 기록을 밝은 장 건강 장면과 해양 폴리페놀 분자 이미지로 표현한 플로로탄닌 회복 정보',
     tags: ['EcoliO157', 'RawDairy', '비살균치즈', 'HUS', '소아설사', '장회복', '플로로탄닌'],

@@ -1,4 +1,4 @@
-import React from 'react'
+﻿import React from 'react'
 import { H2, H3, P, UL, Callout, Hr, RelLink } from '../_helpers'
 
 const PUB = '2026-06-08'
@@ -14,7 +14,7 @@ export default {
   category: 'heart',
   categoryLabel: '혈액·헌혈 회복',
   tags: ['헌혈', '철분', '수분', '헤모글로빈', '플로로탄닌'],
-  heroImage: '/og/content-quality/world-blood-donor-day-2026-iron-hydration-recovery-phlorotannin-2026.png',
+  heroImage: '/og/content-quality/world-blood-donor-day-2026-iron-hydration-recovery-phlorotannin-2026-consumer-recovery-v2.png',
   heroAlt: '세계 헌혈자의 날 2026 혈액 한 방울 철분 수분 헌혈 후 피로 회복 기록을 밝은 신뢰 상담 사진형 이미지로 표현한 플로로탄닌 회복 정보',
   readingMinutes: 6,
   referenceIds: [],

@@ -391,7 +391,7 @@ def make(item):
     out = Image.alpha_composite(img, overlay).convert("RGB")
     out = out.filter(ImageFilter.UnsharpMask(radius=1.1, percent=115, threshold=3))
     OUT.mkdir(parents=True, exist_ok=True)
-    out.save(OUT / f"{item['slug']}.png", "PNG", optimize=False, compress_level=1)
+    out.save(OUT / f"{item['slug']}-consumer-recovery-v2.png", "PNG", optimize=False, compress_level=1)
 
 
 ASSETS = [

@@ -1,4 +1,4 @@
-import React from 'react'
+﻿import React from 'react'
 import { H2, H3, P, UL, Callout, Hr, RelLink } from '../_helpers'
 
 const PUB = '2026-06-07'
@@ -14,7 +14,7 @@ export default {
   category: 'immune',
   categoryLabel: '감염·재난 회복',
   tags: ['렙토스피라증', '홍수물', '폭우', '동물소변', '플로로탄닌'],
-  heroImage: '/og/content-quality/leptospirosis-floodwater-hurricane-rodent-urine-recovery-phlorotannin-2026.png',
+  heroImage: '/og/content-quality/leptospirosis-floodwater-hurricane-rodent-urine-recovery-phlorotannin-2026-consumer-recovery-v2.png',
   heroAlt: '렙토스피라증 홍수물 노출과 발열 회복 기록을 밝은 물길과 해양 분자 그래픽으로 표현한 이미지',
   readingMinutes: 6,
   referenceIds: [],

@@ -1,4 +1,4 @@
-const PUBLISHED = '2026-06-07T20:10:00+09:00'
+﻿const PUBLISHED = '2026-06-07T20:10:00+09:00'
 
 function refs(items) {
   return items.map(([label, url]) => `- [${label}](${url})`).join('\n')
@@ -114,7 +114,7 @@ const posts = [
     meta_title: '백일해 2026 오래가는 기침·Tdap 기록 | 플로로탄닌 파트너스',
     meta_desc:
       '백일해 2026 감시, 발작적 기침, 영아·임신부 접촉, Tdap 이력, 항생제 상담, 플로로탄닌 호흡기 회복 루틴 연결법을 정리합니다.',
-    og_image: '/og/content-quality/pertussis-whooping-cough-tdap-infant-exposure-recovery-phlorotannin-2026.png',
+    og_image: '/og/content-quality/pertussis-whooping-cough-tdap-infant-exposure-recovery-phlorotannin-2026-consumer-recovery-v2.png',
     image_alt:
       '백일해 오래가는 기침과 Tdap 영아 노출 기록을 밝은 호흡기 회복 카드로 표현한 플로로탄닌 SEO 이미지',
     tags: ['백일해', 'Pertussis', 'WhoopingCough', 'Tdap', '오래가는기침', '호흡기회복', '플로로탄닌'],
@@ -165,7 +165,7 @@ const posts = [
     meta_title: '레지오넬라 여행 폐렴 호텔·온수 욕조 기록 | 플로로탄닌 파트너스',
     meta_desc:
       '레지오넬라병, 호텔·휴가 숙소, 온수 욕조, 샤워기, 폐렴 증상, 항생제 치료와 회복 기록을 플로로탄닌 호흡기 루틴 관점으로 정리합니다.',
-    og_image: '/og/content-quality/legionnaires-disease-hotel-hot-tub-pneumonia-recovery-phlorotannin-2026.png',
+    og_image: '/og/content-quality/legionnaires-disease-hotel-hot-tub-pneumonia-recovery-phlorotannin-2026-consumer-recovery-v2.png',
     image_alt:
       '레지오넬라 여행 폐렴과 호텔 온수 욕조 노출 기록을 밝은 물방울 호흡기 그래픽으로 표현한 플로로탄닌 SEO 이미지',
     tags: ['레지오넬라', 'LegionnairesDisease', '호텔', '온수욕조', '폐렴', '여행건강', '플로로탄닌'],

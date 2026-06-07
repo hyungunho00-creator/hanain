@@ -1,4 +1,4 @@
-import React from 'react'
+﻿import React from 'react'
 import { H2, H3, P, UL, Callout, Hr, RelLink } from '../_helpers'
 
 const PUB = '2026-06-07'
@@ -14,7 +14,7 @@ export default {
   category: 'gut',
   categoryLabel: '장·식품안전 회복',
   tags: ['E. coli', 'RawDairy', 'HUS', '소아설사', '플로로탄닌'],
-  heroImage: '/og/content-quality/raw-dairy-ecoli-o157-raw-cheddar-hus-child-kidney-recovery-phlorotannin-2026.png',
+  heroImage: '/og/content-quality/raw-dairy-ecoli-o157-raw-cheddar-hus-child-kidney-recovery-phlorotannin-2026-consumer-recovery-v2.png',
   heroAlt: 'Raw dairy E. coli O157 비살균 치즈 소아 설사 HUS 신장 회복 기록을 밝은 장 건강 사진형 이미지로 표현한 플로로탄닌 회복 정보',
   readingMinutes: 6,
   referenceIds: [],

@@ -1,4 +1,4 @@
-import React from 'react'
+﻿import React from 'react'
 import { H2, H3, P, UL, Callout, Hr, RelLink } from '../_helpers'
 
 const PUB = '2026-06-07'
@@ -14,7 +14,7 @@ export default {
   category: 'safety',
   categoryLabel: '물놀이·응급 신호',
   tags: ['네글레리아', '따뜻한민물', '코노출', '신경증상', '플로로탄닌'],
-  heroImage: '/og/content-quality/naegleria-warm-freshwater-nasal-exposure-neuro-recovery-phlorotannin-2026.png',
+  heroImage: '/og/content-quality/naegleria-warm-freshwater-nasal-exposure-neuro-recovery-phlorotannin-2026-consumer-recovery-v2.png',
   heroAlt: '네글레리아 따뜻한 민물 코 노출과 신경 증상 기록을 밝은 담수와 해양 분자 그래픽으로 표현한 이미지',
   readingMinutes: 6,
   referenceIds: [],

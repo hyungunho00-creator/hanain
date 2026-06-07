@@ -1,4 +1,4 @@
-import React from 'react'
+﻿import React from 'react'
 import { H2, H3, P, UL, Callout, Hr, RelLink } from '../_helpers'
 
 const PUB = '2026-06-07'
@@ -14,7 +14,7 @@ export default {
   category: 'immune',
   categoryLabel: '진드기·감염 회복',
   tags: ['RMSF', '진드기', '발열', '발진', '플로로탄닌'],
-  heroImage: '/og/content-quality/rocky-mountain-spotted-fever-tick-rash-doxycycline-recovery-phlorotannin-2026.png',
+  heroImage: '/og/content-quality/rocky-mountain-spotted-fever-tick-rash-doxycycline-recovery-phlorotannin-2026-consumer-recovery-v2.png',
   heroAlt: 'RMSF 진드기 노출과 발열 발진 상담 기록을 밝은 감염 회복 사진형 이미지로 표현한 플로로탄닌 회복 정보',
   readingMinutes: 6,
   referenceIds: [],

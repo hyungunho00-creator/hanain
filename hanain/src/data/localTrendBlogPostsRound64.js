@@ -1,4 +1,4 @@
-const PUBLISHED = '2026-06-08T00:10:00+09:00'
+﻿const PUBLISHED = '2026-06-08T00:10:00+09:00'
 
 function refs(items) {
   return items.map(([label, url]) => `- [${label}](${url})`).join('\n')
@@ -63,7 +63,7 @@ const posts = [
     meta_title: '청소년 니코틴·전자담배·니코틴 파우치 의존 기록 | 플로로탄닌 파트너스',
     meta_desc:
       'WHO 2026년 청소년 니코틴 경고, 전자담배·니코틴 파우치, 향과 SNS 마케팅, 금단·수면·불안·금연 상담, 플로로탄닌 회복 루틴을 정리합니다.',
-    og_image: '/og/content-quality/youth-nicotine-vape-pouch-addiction-quit-recovery-phlorotannin-2026.png',
+    og_image: '/og/content-quality/youth-nicotine-vape-pouch-addiction-quit-recovery-phlorotannin-2026-consumer-recovery-v2.png',
     image_alt:
       '청소년 니코틴 전자담배 니코틴 파우치 의존 신호와 금연 회복 기록을 밝은 상담 장면과 해양 폴리페놀 분자 이미지로 표현한 플로로탄닌 회복 정보',
     tags: ['니코틴', '전자담배', 'Vape', '니코틴파우치', '청소년건강', '금연회복', '플로로탄닌'],
@@ -114,7 +114,7 @@ const posts = [
     meta_title: '화학물질 노출·제염·triage·호흡 신호 기록 | 플로로탄닌 파트너스',
     meta_desc:
       'WHO 2026년 toxic chemical exposure 임상지침과 CDC chemical emergency 자료를 근거로 get away, get clean, get help, 제염, PPE, 호흡 신호, 플로로탄닌 회복 루틴을 정리합니다.',
-    og_image: '/og/content-quality/toxic-chemical-exposure-decontamination-triage-airway-recovery-phlorotannin-2026.png',
+    og_image: '/og/content-quality/toxic-chemical-exposure-decontamination-triage-airway-recovery-phlorotannin-2026-consumer-recovery-v2.png',
     image_alt:
       '화학물질 노출 제염 triage airway 응급 회복 기록을 밝은 안전 상담 장면과 해양 폴리페놀 분자 이미지로 표현한 플로로탄닌 회복 정보',
     tags: ['화학물질노출', 'ChemicalEmergency', 'Decontamination', 'Triage', 'Airway', '응급대응', '플로로탄닌'],
@@ -165,7 +165,7 @@ const posts = [
     meta_title: '세계 헌혈자의 날 2026·철분·수분·헌혈 회복 기록 | 플로로탄닌 파트너스',
     meta_desc:
       'WHO World Blood Donor Day 2026, 안전한 혈액, 자발적 헌혈, 헤모글로빈, 철분, 수분, 헌혈 후 피로 회복과 플로로탄닌 회복 루틴을 정리합니다.',
-    og_image: '/og/content-quality/world-blood-donor-day-2026-iron-hydration-recovery-phlorotannin-2026.png',
+    og_image: '/og/content-quality/world-blood-donor-day-2026-iron-hydration-recovery-phlorotannin-2026-consumer-recovery-v2.png',
     image_alt:
       '세계 헌혈자의 날 2026 혈액 한 방울 철분 수분 헌혈 후 피로 회복 기록을 밝은 건강 상담 장면과 해양 폴리페놀 분자 이미지로 표현한 플로로탄닌 회복 정보',
     tags: ['WorldBloodDonorDay', '헌혈', '철분', '헤모글로빈', '수분', '피로회복', '플로로탄닌'],

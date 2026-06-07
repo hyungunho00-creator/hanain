@@ -1,4 +1,4 @@
-const PUBLISHED = '2026-06-07T22:10:00+09:00'
+﻿const PUBLISHED = '2026-06-07T22:10:00+09:00'
 
 function refs(items) {
   return items.map(([label, url]) => `- [${label}](${url})`).join('\n')
@@ -63,7 +63,7 @@ const posts = [
     meta_title: 'RMSF 진드기 발열·발진·doxycycline 기록 | 플로로탄닌 파트너스',
     meta_desc:
       'Rocky Mountain spotted fever의 진드기 노출, 발열·두통·발진, 검사 지연, doxycycline 조기 상담, 플로로탄닌 회복 루틴 연결법을 CDC 자료로 정리합니다.',
-    og_image: '/og/content-quality/rocky-mountain-spotted-fever-tick-rash-doxycycline-recovery-phlorotannin-2026.png',
+    og_image: '/og/content-quality/rocky-mountain-spotted-fever-tick-rash-doxycycline-recovery-phlorotannin-2026-consumer-recovery-v2.png',
     image_alt:
       'RMSF 진드기 노출과 발열 발진 상담 기록을 밝은 진드기 회복 카드와 해양 분자 그래픽으로 표현한 플로로탄닌 SEO 이미지',
     tags: ['RMSF', 'RockyMountainSpottedFever', '진드기', '발진', 'Doxycycline', '감염회복', '플로로탄닌'],
@@ -114,7 +114,7 @@ const posts = [
     meta_title: '바베시아증 진드기·적혈구·빈혈 회복 기록 | 플로로탄닌 파트너스',
     meta_desc:
       'Babesiosis의 진드기 노출, 적혈구 감염, 발열·오한·피로·용혈성 빈혈, 수혈 안전, 항기생충 치료 상담과 플로로탄닌 회복 루틴을 정리합니다.',
-    og_image: '/og/content-quality/babesiosis-tick-red-blood-cell-fatigue-anemia-recovery-phlorotannin-2026.png',
+    og_image: '/og/content-quality/babesiosis-tick-red-blood-cell-fatigue-anemia-recovery-phlorotannin-2026-consumer-recovery-v2.png',
     image_alt:
       '바베시아증 진드기 노출과 적혈구 빈혈 피로 회복 기록을 밝은 혈액 카드와 해양 분자 그래픽으로 표현한 플로로탄닌 SEO 이미지',
     tags: ['Babesiosis', '바베시아증', '진드기', '적혈구', '빈혈', '수혈안전', '플로로탄닌'],
@@ -165,7 +165,7 @@ const posts = [
     meta_title: '브루셀라증 원유·동물·실험실 노출 기록 | 플로로탄닌 파트너스',
     meta_desc:
       'Brucellosis의 raw milk, 비살균 치즈, 사냥·동물 체액, 실험실 aerosol 노출, 발열·발한·관절통·피로 기록과 플로로탄닌 회복 루틴을 CDC 2026 자료로 정리합니다.',
-    og_image: '/og/content-quality/brucellosis-raw-dairy-hunter-lab-exposure-fatigue-recovery-phlorotannin-2026.png',
+    og_image: '/og/content-quality/brucellosis-raw-dairy-hunter-lab-exposure-fatigue-recovery-phlorotannin-2026-consumer-recovery-v2.png',
     image_alt:
       '브루셀라증 비살균 유제품 동물 실험실 노출과 오래가는 피로 기록을 밝은 안전 카드와 해양 분자 그래픽으로 표현한 플로로탄닌 SEO 이미지',
     tags: ['Brucellosis', '브루셀라증', 'RawMilk', '비살균유제품', '사냥', '실험실노출', '플로로탄닌'],
