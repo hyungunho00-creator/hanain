@@ -7,6 +7,7 @@ const targets = [
   path.join(root, 'public', 'qa.json'),
   path.join(root, 'src', 'data', 'localTrendBlogPosts.js'),
   path.join(root, 'src', 'data', 'insights', 'hospitalInsightConfigs.js'),
+  path.join(root, 'src', 'pages', 'handbook_content.js'),
   ...fs
     .readdirSync(path.join(root, 'src', 'data', 'insights', 'posts'))
     .filter((name) => name.endsWith('.jsx'))
