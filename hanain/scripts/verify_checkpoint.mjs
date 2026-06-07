@@ -1,11 +1,11 @@
 const SITE = 'https://phlorotannin.com'
 
 const EXPECTED = {
-  sitemapTotal: 3287,
+  sitemapTotal: 3293,
   qCount: 1969,
   tagCount: 266,
-  blogCount: 738,
-  insightCount: 283,
+  blogCount: 741,
+  insightCount: 286,
   requiredBundleSlugs: [
     'glp1-era-protein-fiber-phlorotannin-checklist-2026',
     'glp1-muscle-loss-protein-resistance-training-2026',
@@ -193,6 +193,9 @@ const EXPECTED = {
     'new-world-screwworm-texas-wound-larvae-pet-livestock-recovery-phlorotannin-2026',
     'infant-formula-botulism-byheart-constipation-floppy-baby-recall-recovery-phlorotannin-2026',
     'raw-dairy-ecoli-o157-raw-cheddar-hus-child-kidney-recovery-phlorotannin-2026',
+    'youth-nicotine-vape-pouch-addiction-quit-recovery-phlorotannin-2026',
+    'toxic-chemical-exposure-decontamination-triage-airway-recovery-phlorotannin-2026',
+    'world-blood-donor-day-2026-iron-hydration-recovery-phlorotannin-2026',
   ],
   draftSlug: 'ecklonia-cava-respiratory-health-clinical-trial-2026',
 }
