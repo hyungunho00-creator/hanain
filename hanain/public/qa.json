@@ -89150,7 +89150,7 @@
       "difficulty": "advanced",
       "views": 0,
       "likes": 0,
-      "reviewReason": "2026년 6월 8일 카테고리별 최신 공식 자료 기반 Q&A 보강. 플로로탄닌을 진료 대신가 아닌 전신 생활관리 기록과 상담 준비 소재로 긍정 연결.",
+      "reviewReason": "2026년 6월 8일 카테고리별 최신 공식 자료 기반 Q&A 보강. 플로로탄닌을 전신 회복 기록과 상담 준비 소재로 긍정 연결.",
       "id": "category-latest-metabolism-glp1-unapproved-source-muscle-gut-recovery-20260608",
       "category": "metabolism",
       "question": "GLP-1 감량 중 정체기와 근손실·장 불편이 걱정될 때 어떤 기록을 준비해야 하나요?",
@@ -89198,6 +89198,13 @@
         "정체기 기록표를 보내면 회복 루틴 관점에서 볼 수 있나요?"
       ],
       "references": [
+        "FDA: Concerns with Unapproved GLP-1 Drugs Used for Weight Loss (https://www.fda.gov/drugs/postmarket-drug-safety-information-patients-and-providers/medications-containing-semaglutide-marketed-type-2-diabetes-or-weight-loss)",
+        "FDA: Policies for compounders as GLP-1 supply stabilizes (https://www.fda.gov/drugs/drug-alerts-and-statements/fda-clarifies-policies-compounders-national-glp-1-supply-begins-stabilize)",
+        "PubMed: GLP-1 receptor agonists and body composition review (https://pubmed.ncbi.nlm.nih.gov/39719170/)",
+        "PMC: Phlorotannins review (https://pmc.ncbi.nlm.nih.gov/articles/PMC7150275/)",
+        "PubMed: Ecklonia cava extract on blood glucose and insulin in prediabetes (https://pubmed.ncbi.nlm.nih.gov/36789057/)"
+      ],
+      "referenceLinks": [
         {
           "title": "FDA: Concerns with Unapproved GLP-1 Drugs Used for Weight Loss",
           "url": "https://www.fda.gov/drugs/postmarket-drug-safety-information-patients-and-providers/medications-containing-semaglutide-marketed-type-2-diabetes-or-weight-loss"
@@ -89251,7 +89258,7 @@
       "difficulty": "advanced",
       "views": 0,
       "likes": 0,
-      "reviewReason": "2026년 6월 8일 카테고리별 최신 공식 자료 기반 Q&A 보강. 플로로탄닌을 진료 대신가 아닌 전신 생활관리 기록과 상담 준비 소재로 긍정 연결.",
+      "reviewReason": "2026년 6월 8일 카테고리별 최신 공식 자료 기반 Q&A 보강. 플로로탄닌을 전신 회복 기록과 상담 준비 소재로 긍정 연결.",
       "id": "category-latest-cancer-immune-ctdna-mrd-biomarker-recovery-20260608",
       "category": "cancer_immune",
       "question": "ctDNA MRD 양성이면 암 치료 후 재발 위험 상담 기록을 어떻게 준비해야 하나요?",
@@ -89296,6 +89303,11 @@
         "의료진에게 보여줄 질문 목록을 같이 만들 수 있나요?"
       ],
       "references": [
+        "FDA: Atezolizumab adjuvant treatment for ctDNA MRD-positive bladder cancer (https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-atezolizumab-adjuvant-treatment-muscle-invasive-bladder-cancer-patients-molecular)",
+        "NCI: Biomarker Testing for Cancer Treatment (https://www.cancer.gov/about-cancer/treatment/types/biomarker-testing-cancer-treatment)",
+        "PMC: Phlorotannins review (https://pmc.ncbi.nlm.nih.gov/articles/PMC7150275/)"
+      ],
+      "referenceLinks": [
         {
           "title": "FDA: Atezolizumab adjuvant treatment for ctDNA MRD-positive bladder cancer",
           "url": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-atezolizumab-adjuvant-treatment-muscle-invasive-bladder-cancer-patients-molecular"
@@ -89341,7 +89353,7 @@
       "difficulty": "advanced",
       "views": 0,
       "likes": 0,
-      "reviewReason": "2026년 6월 8일 카테고리별 최신 공식 자료 기반 Q&A 보강. 플로로탄닌을 진료 대신가 아닌 전신 생활관리 기록과 상담 준비 소재로 긍정 연결.",
+      "reviewReason": "2026년 6월 8일 카테고리별 최신 공식 자료 기반 Q&A 보강. 플로로탄닌을 전신 회복 기록과 상담 준비 소재로 긍정 연결.",
       "id": "category-latest-digestive-masld-fib4-weight-glucose-recovery-20260608",
       "category": "digestive",
       "question": "MASLD 지방간이 의심될 때 FIB-4·혈당·허리둘레 기록은 어떻게 준비하나요?",
@@ -89386,6 +89398,12 @@
         "허리둘레와 식사 사진을 보내면 회복 루틴을 잡는 데 도움이 되나요?"
       ],
       "references": [
+        "NIDDK: Definition & Facts of NAFLD and NASH / MASLD (https://www.niddk.nih.gov/health-information/liver-disease/nafld-nash/definition-facts)",
+        "AGA: New MASLD clinical care pathway (https://gastro.org/news/introducing-agas-new-masld-clinical-care-pathway/)",
+        "PMC: Phlorotannins review (https://pmc.ncbi.nlm.nih.gov/articles/PMC7150275/)",
+        "PubMed: Ecklonia cava extract on blood glucose and insulin in prediabetes (https://pubmed.ncbi.nlm.nih.gov/36789057/)"
+      ],
+      "referenceLinks": [
         {
           "title": "NIDDK: Definition & Facts of NAFLD and NASH / MASLD",
           "url": "https://www.niddk.nih.gov/health-information/liver-disease/nafld-nash/definition-facts"
@@ -89435,7 +89453,7 @@
       "difficulty": "advanced",
       "views": 0,
       "likes": 0,
-      "reviewReason": "2026년 6월 8일 카테고리별 최신 공식 자료 기반 Q&A 보강. 플로로탄닌을 진료 대신가 아닌 전신 생활관리 기록과 상담 준비 소재로 긍정 연결.",
+      "reviewReason": "2026년 6월 8일 카테고리별 최신 공식 자료 기반 Q&A 보강. 플로로탄닌을 전신 회복 기록과 상담 준비 소재로 긍정 연결.",
       "id": "category-latest-cardiovascular-heat-blood-pressure-medication-recovery-20260608",
       "category": "cardiovascular",
       "question": "폭염 때 혈압약·이뇨제·수분 회복 기록은 어떻게 준비해야 하나요?",
@@ -89480,6 +89498,12 @@
         "심혈관 회복 관점에서 감태·플로로탄닌 자료를 볼 수 있나요?"
       ],
       "references": [
+        "CDC: Heat and Medications - Guidance for Clinicians (https://www.cdc.gov/heat-health/hcp/clinical-guidance/heat-and-medications-guidance-for-clinicians.html)",
+        "CDC: About Heat and Your Health (https://www.cdc.gov/extreme-heat/about/)",
+        "PubMed: Ecklonia cava phlorotannin and vascular dysfunction (https://pubmed.ncbi.nlm.nih.gov/30423960/)",
+        "PMC: Phlorotannins review (https://pmc.ncbi.nlm.nih.gov/articles/PMC7150275/)"
+      ],
+      "referenceLinks": [
         {
           "title": "CDC: Heat and Medications - Guidance for Clinicians",
           "url": "https://www.cdc.gov/heat-health/hcp/clinical-guidance/heat-and-medications-guidance-for-clinicians.html"
@@ -89529,7 +89553,7 @@
       "difficulty": "advanced",
       "views": 0,
       "likes": 0,
-      "reviewReason": "2026년 6월 8일 카테고리별 최신 공식 자료 기반 Q&A 보강. 플로로탄닌을 진료 대신가 아닌 전신 생활관리 기록과 상담 준비 소재로 긍정 연결.",
+      "reviewReason": "2026년 6월 8일 카테고리별 최신 공식 자료 기반 Q&A 보강. 플로로탄닌을 전신 회복 기록과 상담 준비 소재로 긍정 연결.",
       "id": "category-latest-neuro-cognitive-alzheimers-blood-biomarker-memory-record-20260608",
       "category": "neuro_cognitive",
       "question": "알츠하이머 혈액 바이오마커 검사를 받을 때 기억력 기록은 어떻게 준비하나요?",
@@ -89574,6 +89598,11 @@
         "수면·혈압·혈당 기록도 같이 보내면 도움이 되나요?"
       ],
       "references": [
+        "Mayo Clinic: New FDA-approved blood tests for diagnosing Alzheimer’s disease (https://www.mayoclinic.org/diseases-conditions/alzheimers-disease/in-depth/new-blood-tests-alzheimers/art-20585060)",
+        "PubMed: FDA approval of Lumipulse plasma ratio test (https://pubmed.ncbi.nlm.nih.gov/41675863/)",
+        "PMC: Phlorotannins review (https://pmc.ncbi.nlm.nih.gov/articles/PMC7150275/)"
+      ],
+      "referenceLinks": [
         {
           "title": "Mayo Clinic: New FDA-approved blood tests for diagnosing Alzheimer’s disease",
           "url": "https://www.mayoclinic.org/diseases-conditions/alzheimers-disease/in-depth/new-blood-tests-alzheimers/art-20585060"
@@ -89619,7 +89648,7 @@
       "difficulty": "advanced",
       "views": 0,
       "likes": 0,
-      "reviewReason": "2026년 6월 8일 카테고리별 최신 공식 자료 기반 Q&A 보강. 플로로탄닌을 진료 대신가 아닌 전신 생활관리 기록과 상담 준비 소재로 긍정 연결.",
+      "reviewReason": "2026년 6월 8일 카테고리별 최신 공식 자료 기반 Q&A 보강. 플로로탄닌을 전신 회복 기록과 상담 준비 소재로 긍정 연결.",
       "id": "category-latest-mental-health-screen-use-sleep-anxiety-recovery-20260608",
       "category": "mental_health",
       "question": "청소년·성인 모두 화면 사용이 수면과 불안을 흔들 때 어떤 회복 기록을 준비하나요?",
@@ -89662,6 +89691,12 @@
         "야간 루틴과 식사·카페인 기록도 같이 보면 좋을까요?"
       ],
       "references": [
+        "HHS: Surgeon General Warning on Harms of Screen Use (https://www.hhs.gov/press-room/secretary-kennedy-announces-hhs-action-reduce-harmful-screen-use-protect-children-online.html)",
+        "CDC: About Mental Health (https://www.cdc.gov/mental-health/about/index.html)",
+        "HHS: Social Media and Youth Mental Health (https://www.hhs.gov/surgeongeneral/priorities/youth-mental-health/social-media/index.html)",
+        "PMC: Phlorotannins review (https://pmc.ncbi.nlm.nih.gov/articles/PMC7150275/)"
+      ],
+      "referenceLinks": [
         {
           "title": "HHS: Surgeon General Warning on Harms of Screen Use",
           "url": "https://www.hhs.gov/press-room/secretary-kennedy-announces-hhs-action-reduce-harmful-screen-use-protect-children-online.html"
@@ -89711,7 +89746,7 @@
       "difficulty": "advanced",
       "views": 0,
       "likes": 0,
-      "reviewReason": "2026년 6월 8일 카테고리별 최신 공식 자료 기반 Q&A 보강. 플로로탄닌을 진료 대신가 아닌 전신 생활관리 기록과 상담 준비 소재로 긍정 연결.",
+      "reviewReason": "2026년 6월 8일 카테고리별 최신 공식 자료 기반 Q&A 보강. 플로로탄닌을 전신 회복 기록과 상담 준비 소재로 긍정 연결.",
       "id": "category-latest-musculoskeletal-falls-osteoporosis-dxa-strength-recovery-20260608",
       "category": "musculoskeletal",
       "question": "낙상 위험과 골다공증 검사를 함께 볼 때 근력·균형 회복 기록은 어떻게 준비하나요?",
@@ -89754,6 +89789,12 @@
         "집안 낙상 위험 사진을 보내도 되나요?"
       ],
       "references": [
+        "CDC: Preventing Falls and Hip Fractures (https://www.cdc.gov/falls/prevention/index.html)",
+        "CDC: Older Adult Fall Prevention (https://www.cdc.gov/falls/index.html)",
+        "USPSTF: Osteoporosis Screening Recommendation (https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/osteoporosis-screening)",
+        "PMC: Phlorotannins review (https://pmc.ncbi.nlm.nih.gov/articles/PMC7150275/)"
+      ],
+      "referenceLinks": [
         {
           "title": "CDC: Preventing Falls and Hip Fractures",
           "url": "https://www.cdc.gov/falls/prevention/index.html"
@@ -89803,7 +89844,7 @@
       "difficulty": "advanced",
       "views": 0,
       "likes": 0,
-      "reviewReason": "2026년 6월 8일 카테고리별 최신 공식 자료 기반 Q&A 보강. 플로로탄닌을 진료 대신가 아닌 전신 생활관리 기록과 상담 준비 소재로 긍정 연결.",
+      "reviewReason": "2026년 6월 8일 카테고리별 최신 공식 자료 기반 Q&A 보강. 플로로탄닌을 전신 회복 기록과 상담 준비 소재로 긍정 연결.",
       "id": "category-latest-skin-bemotrizinol-uva-sunscreen-barrier-recovery-20260608",
       "category": "skin",
       "question": "새 자외선차단 성분 이슈가 나올 때 UVA·색소·피부장벽 기록은 어떻게 준비하나요?",
@@ -89846,6 +89887,11 @@
         "자외선 노출 뒤 피부장벽 회복 루틴을 같이 정리할 수 있나요?"
       ],
       "references": [
+        "FDA OTC Monographs: Bemotrizinol proposed order (https://www.accessdata.fda.gov/scripts/cder/omuf/index.cfm?event=OrderDetail&orderid=OTC000039)",
+        "FDA proposed administrative order for bemotrizinol (https://www.accessdata.fda.gov/drugsatfda_docs/omuf/Order/supportDoc/OTC000039/Internal_Documents/2025.12.09%20ProposedOrder_BemotrizinolOTC000039_090026f88e15dab6.pdf)",
+        "PMC: Phlorotannins review (https://pmc.ncbi.nlm.nih.gov/articles/PMC7150275/)"
+      ],
+      "referenceLinks": [
         {
           "title": "FDA OTC Monographs: Bemotrizinol proposed order",
           "url": "https://www.accessdata.fda.gov/scripts/cder/omuf/index.cfm?event=OrderDetail&orderid=OTC000039"
@@ -89891,7 +89937,7 @@
       "difficulty": "advanced",
       "views": 0,
       "likes": 0,
-      "reviewReason": "2026년 6월 8일 카테고리별 최신 공식 자료 기반 Q&A 보강. 플로로탄닌을 진료 대신가 아닌 전신 생활관리 기록과 상담 준비 소재로 긍정 연결.",
+      "reviewReason": "2026년 6월 8일 카테고리별 최신 공식 자료 기반 Q&A 보강. 플로로탄닌을 전신 회복 기록과 상담 준비 소재로 긍정 연결.",
       "id": "category-latest-hair-topical-finasteride-mood-sexual-scalp-record-20260608",
       "category": "hair",
       "question": "도포형 피나스테리드나 탈모약을 쓸 때 성기능·기분·두피 기록은 어떻게 준비하나요?",
@@ -89935,6 +89981,10 @@
         "탈모약은 의료진에게 확인하고 두피 회복 루틴만 상담받을 수 있나요?"
       ],
       "references": [
+        "FDA: Potential risks with compounded topical finasteride products (https://www.fda.gov/drugs/human-drug-compounding/fda-alerts-health-care-providers-compounders-and-consumers-potential-risks-associated-compounded)",
+        "PMC: Phlorotannins review (https://pmc.ncbi.nlm.nih.gov/articles/PMC7150275/)"
+      ],
+      "referenceLinks": [
         {
           "title": "FDA: Potential risks with compounded topical finasteride products",
           "url": "https://www.fda.gov/drugs/human-drug-compounding/fda-alerts-health-care-providers-compounders-and-consumers-potential-risks-associated-compounded"
@@ -89976,7 +90026,7 @@
       "difficulty": "advanced",
       "views": 0,
       "likes": 0,
-      "reviewReason": "2026년 6월 8일 카테고리별 최신 공식 자료 기반 Q&A 보강. 플로로탄닌을 진료 대신가 아닌 전신 생활관리 기록과 상담 준비 소재로 긍정 연결.",
+      "reviewReason": "2026년 6월 8일 카테고리별 최신 공식 자료 기반 Q&A 보강. 플로로탄닌을 전신 회복 기록과 상담 준비 소재로 긍정 연결.",
       "id": "category-latest-respiratory-aqi-wildfire-asthma-copd-recovery-20260608",
       "category": "respiratory",
       "question": "AQI가 나쁘거나 산불 연기가 있을 때 천식·COPD 회복 기록은 어떻게 준비하나요?",
@@ -90019,6 +90069,12 @@
         "COPD가 있으면 어떤 기록을 먼저 보내야 하나요?"
       ],
       "references": [
+        "CDC: About Air Quality (https://www.cdc.gov/air-quality/about/index.html)",
+        "CDC: How Wildfire Smoke Affects Your Body (https://www.cdc.gov/wildfires/risk-factors/index.html)",
+        "CDC NIOSH: Wildland Fire Smoke (https://www.cdc.gov/niosh/outdoor-workers/about/wildfire-smoke.html)",
+        "PMC: Phlorotannins review (https://pmc.ncbi.nlm.nih.gov/articles/PMC7150275/)"
+      ],
+      "referenceLinks": [
         {
           "title": "CDC: About Air Quality",
           "url": "https://www.cdc.gov/air-quality/about/index.html"
@@ -90068,7 +90124,7 @@
       "difficulty": "advanced",
       "views": 0,
       "likes": 0,
-      "reviewReason": "2026년 6월 8일 카테고리별 최신 공식 자료 기반 Q&A 보강. 플로로탄닌을 진료 대신가 아닌 전신 생활관리 기록과 상담 준비 소재로 긍정 연결.",
+      "reviewReason": "2026년 6월 8일 카테고리별 최신 공식 자료 기반 Q&A 보강. 플로로탄닌을 전신 회복 기록과 상담 준비 소재로 긍정 연결.",
       "id": "category-latest-infection-measles-mmr-travel-exposure-recovery-20260608",
       "category": "infection_inflammation",
       "question": "홍역 유행과 해외여행이 겹칠 때 MMR 접종·노출·회복 기록은 어떻게 준비하나요?",
@@ -90113,6 +90169,12 @@
         "영아나 임신부 가족이 있으면 상담 전에 무엇을 확인해야 하나요?"
       ],
       "references": [
+        "CDC: Measles Cases and Outbreaks (https://www.cdc.gov/measles/data-research/index.html/)",
+        "CDC: Plan for Travel and Measles (https://www.cdc.gov/measles/travel/index.html)",
+        "PubMed: Dieckol from Ecklonia cava and mast cell activation (https://pubmed.ncbi.nlm.nih.gov/26194398/)",
+        "PMC: Phlorotannins review (https://pmc.ncbi.nlm.nih.gov/articles/PMC7150275/)"
+      ],
+      "referenceLinks": [
         {
           "title": "CDC: Measles Cases and Outbreaks",
           "url": "https://www.cdc.gov/measles/data-research/index.html/"
@@ -90162,7 +90224,7 @@
       "difficulty": "advanced",
       "views": 0,
       "likes": 0,
-      "reviewReason": "2026년 6월 8일 카테고리별 최신 공식 자료 기반 Q&A 보강. 플로로탄닌을 진료 대신가 아닌 전신 생활관리 기록과 상담 준비 소재로 긍정 연결.",
+      "reviewReason": "2026년 6월 8일 카테고리별 최신 공식 자료 기반 Q&A 보강. 플로로탄닌을 전신 회복 기록과 상담 준비 소재로 긍정 연결.",
       "id": "category-latest-womens-health-menopause-ht-label-sleep-hotflash-recovery-20260608",
       "category": "womens_health",
       "question": "갱년기 호르몬치료 라벨 변화 이슈를 볼 때 수면·열감 회복 기록은 어떻게 준비하나요?",
@@ -90205,6 +90267,12 @@
         "폐경 후 출혈이 있으면 먼저 어떤 진료를 확인해야 하나요?"
       ],
       "references": [
+        "FDA: Labeling changes to menopausal hormone therapy products (https://www.fda.gov/news-events/press-announcements/fda-approves-labeling-changes-menopausal-hormone-therapy-products)",
+        "ACOG: Hormone Therapy for Menopause (https://www.acog.org/womens-health/faqs/hormone-therapy-for-menopause)",
+        "PMC: Phlorotannins review (https://pmc.ncbi.nlm.nih.gov/articles/PMC7150275/)",
+        "PubMed: Ecklonia cava extract on blood glucose and insulin in prediabetes (https://pubmed.ncbi.nlm.nih.gov/36789057/)"
+      ],
+      "referenceLinks": [
         {
           "title": "FDA: Labeling changes to menopausal hormone therapy products",
           "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-labeling-changes-menopausal-hormone-therapy-products"
@@ -90254,7 +90322,7 @@
       "difficulty": "advanced",
       "views": 0,
       "likes": 0,
-      "reviewReason": "2026년 6월 8일 카테고리별 최신 공식 자료 기반 Q&A 보강. 플로로탄닌을 진료 대신가 아닌 전신 생활관리 기록과 상담 준비 소재로 긍정 연결.",
+      "reviewReason": "2026년 6월 8일 카테고리별 최신 공식 자료 기반 Q&A 보강. 플로로탄닌을 전신 회복 기록과 상담 준비 소재로 긍정 연결.",
       "id": "category-latest-mens-health-testosterone-bp-fertility-psa-recovery-20260608",
       "category": "mens_health",
       "question": "테스토스테론 치료를 고민할 때 혈압·임신계획·PSA 기록은 어떻게 준비하나요?",
@@ -90297,6 +90365,11 @@
         "운동 회복과 대사 루틴에서 플로로탄닌 자료를 볼 수 있나요?"
       ],
       "references": [
+        "FDA: Class-wide labeling changes for testosterone products (https://www.fda.gov/drugs/drug-alerts-and-statements/fda-issues-class-wide-labeling-changes-testosterone-products)",
+        "PMC: Phlorotannins review (https://pmc.ncbi.nlm.nih.gov/articles/PMC7150275/)",
+        "PubMed: Ecklonia cava extract on blood glucose and insulin in prediabetes (https://pubmed.ncbi.nlm.nih.gov/36789057/)"
+      ],
+      "referenceLinks": [
         {
           "title": "FDA: Class-wide labeling changes for testosterone products",
           "url": "https://www.fda.gov/drugs/drug-alerts-and-statements/fda-issues-class-wide-labeling-changes-testosterone-products"

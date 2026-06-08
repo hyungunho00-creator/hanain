@@ -75,7 +75,7 @@ function buildAnswer(item) {
     paragraphs('오늘 바로 정리할 행동 순서', item.actions),
     paragraphs('플로로탄닌을 회복 관점으로 긍정 연결하는 방식', item.phlorotannin),
     bullets('파트너에게 이렇게 물어보면 상담이 빨라집니다', item.callPrompts),
-    references(item.references),
+    references(item.referenceLinks || item.references),
     `  <p class="qa-disclaimer">${escapeHtml(DISCLAIMER)}</p>`,
     '</div>',
   ].join('\n')
@@ -102,9 +102,13 @@ function make(seed) {
     views: 0,
     likes: 0,
     reviewReason:
-      '2026년 6월 8일 카테고리별 최신 공식 자료 기반 Q&A 보강. 플로로탄닌을 치료 대체가 아닌 전신 회복 기록과 상담 준비 소재로 긍정 연결.',
+      '2026년 6월 8일 카테고리별 최신 공식 자료 기반 Q&A 보강. 플로로탄닌을 전신 회복 기록과 상담 준비 소재로 긍정 연결.',
     ...seed,
   }
+  item.referenceLinks = Array.isArray(seed.references) ? seed.references : []
+  item.references = item.referenceLinks.map((ref) =>
+    typeof ref === 'string' ? ref : `${ref.title} (${ref.url})`,
+  )
   item.category_id = item.category
   item.slug = item.slug || slugify(item.question)
   item.answer = buildAnswer(item)
