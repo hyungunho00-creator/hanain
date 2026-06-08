@@ -132,6 +132,9 @@ async function fetchPartnerByPhone(phone) {
   if (resolved?.ok && resolved.partner) {
     return normalizeCardPartner(resolved.partner, phone)
   }
+  if (resolved?.status === 'partner_inactive') {
+    return createFallbackPartner(phone)
+  }
 
   // 1순위: Supabase partners 테이블
   const fromTable = await fetchPartnerByPhoneFromTable(phone)
@@ -140,8 +143,8 @@ async function fetchPartnerByPhone(phone) {
   // Fallback: Storage JSON → Vercel 배포 JSON
   try {
     const urls = [
-      `${PARTNERS_JSON_URL}?t=${Date.now()}`,
       `${MAIN_SITE}/partners.json?t=${Date.now()}`,
+      `${PARTNERS_JSON_URL}?t=${Date.now()}`,
     ]
     for (const url of urls) {
       try {

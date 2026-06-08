@@ -163,6 +163,7 @@ async function runAction(admin, action, payload = {}) {
       if (!raw) return { error: 'missing_partner_identifier' }
 
       const digits = normalizeDigits(raw)
+      const now = new Date().toISOString()
       const filters = []
       if (raw) filters.push(`slug.eq.${encodeURIComponent(raw)}`)
       if (digits) {
@@ -170,11 +171,34 @@ async function runAction(admin, action, payload = {}) {
         if (digits !== raw) filters.push(`slug.eq.${encodeURIComponent(digits)}`)
       }
 
-      const query = admin.from('partners').delete().select('slug,phone,name')
+      const query = admin
+        .from('partners')
+        .update({ status: 'deleted', updated_at: now })
+        .select('slug,phone,name,status')
       const { data, error } = await query.or(filters.join(','))
       if (error) return { data: { ok: false, deleted: 0 }, error: error.message || 'partner_delete_failed' }
-      const deleted = Array.isArray(data) ? data.length : 0
-      return { data: { ok: true, deleted, rows: data || [] }, error: null }
+      let rows = Array.isArray(data) ? data : []
+      let deleted = rows.length
+      if (!deleted && digits) {
+        const tombstone = {
+          slug: digits,
+          phone: digits,
+          phone_display: digits.replace(/^(\d{3})(\d{4})(\d{4})$/, '$1-$2-$3'),
+          name: payload.name || '(삭제됨)',
+          site_url: `https://phlorotannin.com/p/${digits}`,
+          memo: '',
+          status: 'deleted',
+          updated_at: now,
+        }
+        const upsert = await admin
+          .from('partners')
+          .upsert(tombstone, { onConflict: 'phone' })
+          .select('slug,phone,name,status')
+        if (upsert.error) return { data: { ok: false, deleted: 0 }, error: upsert.error.message || 'partner_tombstone_failed' }
+        rows = Array.isArray(upsert.data) ? upsert.data : []
+        deleted = rows.length
+      }
+      return { data: { ok: true, deleted, rows }, error: null }
     }
 
     case 'category_list': {

@@ -329,29 +329,21 @@ export async function resolvePartnerBySlugWithStatus(
     }
   }
 
-  const staticList = loadStaticPartners()
-  const staticMatched = findPartnerByCandidates(staticList, requestedCandidates)
-  if (staticMatched) {
-    const flags = hasPublicAccessFlags(staticMatched)
-    if (!flags.isPublic) {
-      return {
-        ok: false,
-        partner: staticMatched,
-        status: 'partner_inactive',
-        source: 'static',
-        ...base,
-        reason: `active=${flags.active},visible=${flags.visible},approved=${flags.approved}`,
-        debugMessage: 'static partner exists but inactive/hidden/unapproved',
-      }
-    }
+  const apiResult = await loadPartnerFromApi(slug)
+  if (apiResult.ok) {
     return {
-      ok: true,
-      partner: staticMatched,
-      status: 'found',
-      source: 'static',
-      ...base,
-      reason: 'resolved_from_static_partners',
-      debugMessage: 'resolved from in-repo static partner data',
+      ...apiResult,
+      route: options.route || null,
+      cacheMode: 'api-no-store',
+      fallbackMode: 'dynamic-runtime',
+    }
+  }
+  if (apiResult.status === 'partner_inactive') {
+    return {
+      ...apiResult,
+      route: options.route || null,
+      cacheMode: 'api-no-store',
+      fallbackMode: 'dynamic-runtime-inactive',
     }
   }
 
@@ -383,13 +375,29 @@ export async function resolvePartnerBySlugWithStatus(
     }
   }
 
-  const apiResult = await loadPartnerFromApi(slug)
-  if (apiResult.ok) {
+  const staticList = loadStaticPartners()
+  const staticMatched = findPartnerByCandidates(staticList, requestedCandidates)
+  if (staticMatched) {
+    const flags = hasPublicAccessFlags(staticMatched)
+    if (!flags.isPublic) {
+      return {
+        ok: false,
+        partner: staticMatched,
+        status: 'partner_inactive',
+        source: 'static',
+        ...base,
+        reason: `active=${flags.active},visible=${flags.visible},approved=${flags.approved}`,
+        debugMessage: 'static partner exists but inactive/hidden/unapproved',
+      }
+    }
     return {
-      ...apiResult,
-      route: options.route || null,
-      cacheMode: 'api-no-store',
-      fallbackMode: 'dynamic-runtime',
+      ok: true,
+      partner: staticMatched,
+      status: 'found',
+      source: 'static',
+      ...base,
+      reason: 'resolved_from_static_partners',
+      debugMessage: 'resolved from in-repo static partner data',
     }
   }
 

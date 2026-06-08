@@ -139,6 +139,14 @@ function ok(res, data) {
   res.status(200).end(JSON.stringify({ ok: true, data }))
 }
 
+function normalizeDigits(value = '') {
+  return String(value || '').replace(/\D/g, '')
+}
+
+function cleanPartnerIdentifier(value = '') {
+  return String(value || '').trim().replace(/^['"]|['"]$/g, '')
+}
+
 // ─────────────────────────────────────────
 // 액션 핸들러
 // ─────────────────────────────────────────
@@ -251,11 +259,51 @@ const HANDLERS = {
       return Array.isArray(r.data) ? r.data[0] : r.data
     }
   },
-  async partner_delete({ id }) {
-    if (!id) throw new Error('id required')
-    const r = await sb('DELETE', `/partners?id=eq.${encodeURIComponent(id)}`, undefined, { Prefer: 'return=minimal' })
-    if (!r.ok) throw new Error(`partner_delete ${r.status}`)
-    return { id }
+  async partner_delete({ id, slug, phone, name }) {
+    const raw = cleanPartnerIdentifier(phone || slug || id)
+    if (!raw) throw new Error('partner identifier required')
+
+    const digits = normalizeDigits(raw)
+    const now = new Date().toISOString()
+    const filters = []
+    if (raw) filters.push(`slug.eq.${encodeURIComponent(raw)}`)
+    if (digits) {
+      filters.push(`phone.eq.${encodeURIComponent(digits)}`)
+      if (digits !== raw) filters.push(`slug.eq.${encodeURIComponent(digits)}`)
+    }
+
+    const r = await sb(
+      'PATCH',
+      `/partners?or=(${filters.join(',')})&select=slug,phone,name,status`,
+      { status: 'deleted', updated_at: now },
+    )
+    if (!r.ok) throw new Error(`partner_delete ${r.status} ${JSON.stringify(r.data)}`)
+    let rows = Array.isArray(r.data) ? r.data : []
+    let deleted = rows.length
+
+    if (!deleted && digits) {
+      const tombstone = {
+        slug: digits,
+        phone: digits,
+        phone_display: digits.replace(/^(\d{3})(\d{4})(\d{4})$/, '$1-$2-$3'),
+        name: name || '(삭제됨)',
+        site_url: `https://phlorotannin.com/p/${digits}`,
+        memo: '',
+        status: 'deleted',
+        updated_at: now,
+      }
+      const upsert = await sb(
+        'POST',
+        '/partners?on_conflict=phone&select=slug,phone,name,status',
+        tombstone,
+        { Prefer: 'resolution=merge-duplicates,return=representation' },
+      )
+      if (!upsert.ok) throw new Error(`partner_tombstone ${upsert.status} ${JSON.stringify(upsert.data)}`)
+      rows = Array.isArray(upsert.data) ? upsert.data : []
+      deleted = rows.length
+    }
+
+    return { ok: true, deleted, rows }
   },
 
   // ─── Categories ───────────────────────────

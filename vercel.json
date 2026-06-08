@@ -7,6 +7,9 @@
     },
     "api/sitemap.js": {
       "includeFiles": "public/**"
+    },
+    "api/partners/[partnerSlug].js": {
+      "includeFiles": "public/**"
     }
   },
   "installCommand": "npm install",

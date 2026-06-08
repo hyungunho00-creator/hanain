@@ -1885,6 +1885,8 @@ export default async function handler(req, res) {
           title: `${safeName} — 플로로탄닌 정보페이지 | phlorotannin.com`,
           desc:  `${safeName} 님의 플로로탄닌·감태추출물·해양 폴리페놀 관련 건강정보 안내 페이지. 플로로탄닌 파트너스가 제공하는 종합 건강정보 데이터센터의 파트너 정보페이지입니다.`,
           canonical: `${SITE}${pathname}`,
+          ogImage: `${SITE}/og/partner-card-share-v1.png`,
+          ogImageAlt: `${safeName} 플로로탄닌 파트너 명함 공유 이미지`,
         }
         metaSource = 'partners-table'
       }
