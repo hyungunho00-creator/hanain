@@ -30,6 +30,8 @@ const LOCAL_BLOG_POSTS = [
   ...LOCAL_SEO_EXPANSION_POSTS,
 ]
 
+const PUBLISHED_BLOG_TOTAL = 741
+
 const SEARCH_TERM_GROUPS = [
   [
     '감태',
@@ -390,11 +392,19 @@ export async function getPostBySlug(slug) {
 }
 
 export async function getPostCount(category = null) {
-  let q = supabase.from('posts').select('id', { count: 'exact', head: true }).eq('status', 'published')
-  if (category && category !== 'all') q = q.eq('category', category)
-  const { count } = await q
   const localCount = LOCAL_BLOG_POSTS.filter((post) => matchesLocalPost(post, { category })).length
-  return (count || 0) + localCount
+  if (!category || category === 'all') return PUBLISHED_BLOG_TOTAL
+  try {
+    const { count, error } = await supabase
+      .from('posts')
+      .select('id', { count: 'exact', head: true })
+      .eq('status', 'published')
+      .eq('category', category)
+    if (error) return localCount
+    return (count || 0) + localCount
+  } catch {
+    return localCount
+  }
 }
 
 export async function incrementPostView(slug) {
