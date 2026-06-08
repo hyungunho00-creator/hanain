@@ -1,11 +1,11 @@
 {
   "min_tag_count": 5,
-  "total_questions": 1969,
-  "total_unique_tags": 2473,
-  "page_eligible_tags": 266,
+  "total_questions": 1982,
+  "total_unique_tags": 2487,
+  "page_eligible_tags": 275,
   "tags": {
     "플로로탄닌": {
-      "count": 1419,
+      "count": 1432,
       "qids": [
         "cardio-001",
         "cardio-002",
@@ -1425,7 +1425,20 @@
         "strategic-qa-neuro-cognitive-haengwoo-lee-seanol-brain-evidence-record-20260606",
         "strategic-qa-infection-measles-mmr-travel-outbreak-recovery-record-20260607",
         "strategic-qa-cardiovascular-extreme-heat-hydration-medication-recovery-record-20260607",
-        "strategic-qa-metabolism-glp1-muscle-gut-plateau-recovery-record-20260607"
+        "strategic-qa-metabolism-glp1-muscle-gut-plateau-recovery-record-20260607",
+        "category-latest-metabolism-glp1-unapproved-source-muscle-gut-recovery-20260608",
+        "category-latest-cancer-immune-ctdna-mrd-biomarker-recovery-20260608",
+        "category-latest-digestive-masld-fib4-weight-glucose-recovery-20260608",
+        "category-latest-cardiovascular-heat-blood-pressure-medication-recovery-20260608",
+        "category-latest-neuro-cognitive-alzheimers-blood-biomarker-memory-record-20260608",
+        "category-latest-mental-health-screen-use-sleep-anxiety-recovery-20260608",
+        "category-latest-musculoskeletal-falls-osteoporosis-dxa-strength-recovery-20260608",
+        "category-latest-skin-bemotrizinol-uva-sunscreen-barrier-recovery-20260608",
+        "category-latest-hair-topical-finasteride-mood-sexual-scalp-record-20260608",
+        "category-latest-respiratory-aqi-wildfire-asthma-copd-recovery-20260608",
+        "category-latest-infection-measles-mmr-travel-exposure-recovery-20260608",
+        "category-latest-womens-health-menopause-ht-label-sleep-hotflash-recovery-20260608",
+        "category-latest-mens-health-testosterone-bp-fertility-psa-recovery-20260608"
       ]
     },
     "감태": {
@@ -5974,7 +5987,7 @@
       ]
     },
     "심혈관": {
-      "count": 69,
+      "count": 70,
       "qids": [
         "cardio-019",
         "cardio-030",
@@ -6044,7 +6057,8 @@
         "trend-renal-denervation-resistant-hypertension-home-bp-abpm-record-20260603",
         "trend-extreme-heat-medication-plan-older-adults-hydration-record-20260604",
         "trend-cardiovascular-smartwatch-afib-alert-palpitations-record-20260604",
-        "strategic-qa-cardiovascular-extreme-heat-hydration-medication-recovery-record-20260607"
+        "strategic-qa-cardiovascular-extreme-heat-hydration-medication-recovery-record-20260607",
+        "category-latest-cardiovascular-heat-blood-pressure-medication-recovery-20260608"
       ]
     },
     "폐": {
@@ -6808,7 +6822,7 @@
       ]
     },
     "남성건강": {
-      "count": 46,
+      "count": 47,
       "qids": [
         "mens-001",
         "mens-002",
@@ -6855,7 +6869,8 @@
         "strategic-qa-mens-peyronies-curvature-plaque-pain-erection-record-20260605",
         "strategic-qa-mens-psa-screening-family-history-bph-prostatitis-shared-decision-record-20260605",
         "strategic-qa-mens-erectile-dysfunction-cardiovascular-risk-nitrates-sildenafil-record-20260606",
-        "strategic-qa-mens-gynecomastia-male-breast-lump-nipple-discharge-brca-record-20260606"
+        "strategic-qa-mens-gynecomastia-male-breast-lump-nipple-discharge-brca-record-20260606",
+        "category-latest-mens-health-testosterone-bp-fertility-psa-recovery-20260608"
       ]
     },
     "호흡기": {
@@ -6904,6 +6919,52 @@
         "trend-pollen-thunderstorm-asthma-action-plan-20260603",
         "trend-wildfire-smoke-aqi-n95-asthma-copd-action-record-20260603",
         "trend-monsoon-mold-dampness-asthma-allergy-home-record-20260604"
+      ]
+    },
+    "혈압": {
+      "count": 41,
+      "qids": [
+        "cardio-009",
+        "cardio-011",
+        "cardio-013",
+        "cardio-017",
+        "cardio-026",
+        "cardio-029",
+        "cardio-032",
+        "cardio-036",
+        "cardio-039",
+        "cardio-041",
+        "cardio-044",
+        "cardio-047",
+        "cardio-051",
+        "cardio-056",
+        "cardio-058",
+        "cardio-061",
+        "cardio-064",
+        "cardio-072",
+        "cardio-074",
+        "cardio-079",
+        "cardio-084",
+        "cardio-089",
+        "cardio-094",
+        "qa200-20260527-088",
+        "qa200-20260527-165",
+        "trendqa-cardiovascular-20260530",
+        "round3-cardiovascular-1-20260531",
+        "round3-cardiovascular-2-20260531",
+        "trend-sodium-potassium-salt-blood-pressure-20260602",
+        "trend-testosterone-therapy-low-libido-bp-monitoring-20260602",
+        "trend-oral-minoxidil-hair-loss-blood-pressure-safety-20260602",
+        "trend-cold-plunge-sauna-blood-pressure-arrhythmia-safety-20260602",
+        "trend-erectile-dysfunction-cardiovascular-risk-20260602",
+        "trend-mens-health-month-blood-pressure-waist-snoring-screening-record-20260604",
+        "trend-abdominal-aortic-aneurysm-men-smoking-screening-record-20260604",
+        "trend-pregnancy-postpartum-warning-signs-blood-pressure-record-20260604",
+        "trend-migraine-aura-estrogen-birth-control-stroke-risk-record-20260604",
+        "strategic-qa-mens-ed-cardiovascular-bp-glucose-phlorotannin-20260605",
+        "strategic-qa-hair-oral-minoxidil-edema-heart-rate-blood-pressure-record-20260605",
+        "strategic-qa-mens-erectile-dysfunction-cardiovascular-risk-nitrates-sildenafil-record-20260606",
+        "category-latest-mens-health-testosterone-bp-fertility-psa-recovery-20260608"
       ]
     },
     "당뇨": {
@@ -6996,53 +7057,8 @@
         "ms_090"
       ]
     },
-    "혈압": {
-      "count": 40,
-      "qids": [
-        "cardio-009",
-        "cardio-011",
-        "cardio-013",
-        "cardio-017",
-        "cardio-026",
-        "cardio-029",
-        "cardio-032",
-        "cardio-036",
-        "cardio-039",
-        "cardio-041",
-        "cardio-044",
-        "cardio-047",
-        "cardio-051",
-        "cardio-056",
-        "cardio-058",
-        "cardio-061",
-        "cardio-064",
-        "cardio-072",
-        "cardio-074",
-        "cardio-079",
-        "cardio-084",
-        "cardio-089",
-        "cardio-094",
-        "qa200-20260527-088",
-        "qa200-20260527-165",
-        "trendqa-cardiovascular-20260530",
-        "round3-cardiovascular-1-20260531",
-        "round3-cardiovascular-2-20260531",
-        "trend-sodium-potassium-salt-blood-pressure-20260602",
-        "trend-testosterone-therapy-low-libido-bp-monitoring-20260602",
-        "trend-oral-minoxidil-hair-loss-blood-pressure-safety-20260602",
-        "trend-cold-plunge-sauna-blood-pressure-arrhythmia-safety-20260602",
-        "trend-erectile-dysfunction-cardiovascular-risk-20260602",
-        "trend-mens-health-month-blood-pressure-waist-snoring-screening-record-20260604",
-        "trend-abdominal-aortic-aneurysm-men-smoking-screening-record-20260604",
-        "trend-pregnancy-postpartum-warning-signs-blood-pressure-record-20260604",
-        "trend-migraine-aura-estrogen-birth-control-stroke-risk-record-20260604",
-        "strategic-qa-mens-ed-cardiovascular-bp-glucose-phlorotannin-20260605",
-        "strategic-qa-hair-oral-minoxidil-edema-heart-rate-blood-pressure-record-20260605",
-        "strategic-qa-mens-erectile-dysfunction-cardiovascular-risk-nitrates-sildenafil-record-20260606"
-      ]
-    },
     "수면": {
-      "count": 36,
+      "count": 38,
       "qids": [
         "cardio-020",
         "meta-020",
@@ -7079,7 +7095,9 @@
         "trend-loneliness-social-connection-health-risk-support-record-20260603",
         "trend-mental-social-media-sleep-anxiety-boundary-record-20260604",
         "strategic-qa-womens-menopause-ht-label-hotflash-sleep-phlorotannin-20260605",
-        "strategic-qa-mens-bph-nocturia-sleep-diuretic-glucose-record-20260605"
+        "strategic-qa-mens-bph-nocturia-sleep-diuretic-glucose-record-20260605",
+        "category-latest-mental-health-screen-use-sleep-anxiety-recovery-20260608",
+        "category-latest-womens-health-menopause-ht-label-sleep-hotflash-recovery-20260608"
       ]
     },
     "소화": {
@@ -7511,6 +7529,36 @@
         "meta_096"
       ]
     },
+    "알츠하이머": {
+      "count": 25,
+      "qids": [
+        "neuro-001",
+        "nc_013",
+        "nc_020",
+        "nc_027",
+        "nc_037",
+        "nc_038",
+        "nc_040",
+        "nc_042",
+        "nc_052",
+        "nc_053",
+        "nc_057",
+        "nc_059",
+        "nc_064",
+        "nc_065",
+        "nc_071",
+        "nc_074",
+        "nc_076",
+        "nc_080",
+        "nc_082",
+        "nc_091",
+        "nc_093",
+        "nc_094",
+        "qa200-20260527-106",
+        "trend-alzheimers-blood-biomarker-memory-clinic-record-20260603",
+        "category-latest-neuro-cognitive-alzheimers-blood-biomarker-memory-record-20260608"
+      ]
+    },
     "예방": {
       "count": 25,
       "qids": [
@@ -7539,6 +7587,36 @@
         "infect-extra-077",
         "ci_123",
         "infect-107"
+      ]
+    },
+    "천식": {
+      "count": 25,
+      "qids": [
+        "rsp_021",
+        "rsp_022",
+        "rsp_026",
+        "rsp_035",
+        "rsp_043",
+        "rsp_045",
+        "rsp_054",
+        "rsp_074",
+        "rsp_092",
+        "rsp_095",
+        "rsp_096",
+        "rsp_097",
+        "resp-001",
+        "resp-101",
+        "qa200-20260527-160",
+        "trendqa-respiratory-20260530",
+        "round3-respiratory-2-20260531",
+        "trend-pollen-thunderstorm-asthma-action-plan-20260603",
+        "trend-wildfire-smoke-aqi-n95-asthma-copd-action-record-20260603",
+        "trend-monsoon-mold-dampness-asthma-allergy-home-record-20260604",
+        "trend-respiratory-cough-three-weeks-asthma-reflux-record-20260604",
+        "trend-respiratory-asthma-inhaler-spacer-action-plan-record-20260604",
+        "strategic-qa-respiratory-long-covid-cough-dyspnea-oximeter-exertion-record-20260605",
+        "strategic-qa-respiratory-asthma-action-plan-rescue-inhaler-spirometry-trigger-record-20260606",
+        "category-latest-respiratory-aqi-wildfire-asthma-copd-recovery-20260608"
       ]
     },
     "뇌·인지": {
@@ -7570,35 +7648,6 @@
         "seoqa-neuro_cognitive-10"
       ]
     },
-    "알츠하이머": {
-      "count": 24,
-      "qids": [
-        "neuro-001",
-        "nc_013",
-        "nc_020",
-        "nc_027",
-        "nc_037",
-        "nc_038",
-        "nc_040",
-        "nc_042",
-        "nc_052",
-        "nc_053",
-        "nc_057",
-        "nc_059",
-        "nc_064",
-        "nc_065",
-        "nc_071",
-        "nc_074",
-        "nc_076",
-        "nc_080",
-        "nc_082",
-        "nc_091",
-        "nc_093",
-        "nc_094",
-        "qa200-20260527-106",
-        "trend-alzheimers-blood-biomarker-memory-clinic-record-20260603"
-      ]
-    },
     "오메가3": {
       "count": 24,
       "qids": [
@@ -7626,35 +7675,6 @@
         "qa-hospital-20260527-046",
         "round2-cardiovascular-20260530",
         "trend-omega3-atrial-fibrillation-supplement-20260602"
-      ]
-    },
-    "천식": {
-      "count": 24,
-      "qids": [
-        "rsp_021",
-        "rsp_022",
-        "rsp_026",
-        "rsp_035",
-        "rsp_043",
-        "rsp_045",
-        "rsp_054",
-        "rsp_074",
-        "rsp_092",
-        "rsp_095",
-        "rsp_096",
-        "rsp_097",
-        "resp-001",
-        "resp-101",
-        "qa200-20260527-160",
-        "trendqa-respiratory-20260530",
-        "round3-respiratory-2-20260531",
-        "trend-pollen-thunderstorm-asthma-action-plan-20260603",
-        "trend-wildfire-smoke-aqi-n95-asthma-copd-action-record-20260603",
-        "trend-monsoon-mold-dampness-asthma-allergy-home-record-20260604",
-        "trend-respiratory-cough-three-weeks-asthma-reflux-record-20260604",
-        "trend-respiratory-asthma-inhaler-spacer-action-plan-record-20260604",
-        "strategic-qa-respiratory-long-covid-cough-dyspnea-oximeter-exertion-record-20260605",
-        "strategic-qa-respiratory-asthma-action-plan-rescue-inhaler-spirometry-trigger-record-20260606"
       ]
     },
     "정신건강": {
@@ -7713,6 +7733,34 @@
         "trend-hair-ferritin-iron-hair-shedding-record-20260604"
       ]
     },
+    "테스토스테론": {
+      "count": 23,
+      "qids": [
+        "wh-extra-040",
+        "wh-extra-050",
+        "wh-extra-064",
+        "mens-002",
+        "mens-006",
+        "mens-extra-007",
+        "mens-extra-011",
+        "mens-extra-012",
+        "mens-extra-020",
+        "mens-extra-033",
+        "mens-extra-043",
+        "mens-extra-052",
+        "mens-extra-053",
+        "mh-extra-071",
+        "mens-002",
+        "mens-004",
+        "mens-006",
+        "mens-008",
+        "qa200-20260527-194",
+        "round3-mens_health-2-20260531",
+        "trend-testosterone-therapy-low-libido-bp-monitoring-20260602",
+        "trend-testosterone-therapy-fertility-sperm-count-20260603",
+        "category-latest-mens-health-testosterone-bp-fertility-psa-recovery-20260608"
+      ]
+    },
     "모발": {
       "count": 22,
       "qids": [
@@ -7765,33 +7813,6 @@
         "mental-extra-031",
         "sh_097",
         "trend-migraine-aura-estrogen-birth-control-stroke-risk-record-20260604"
-      ]
-    },
-    "테스토스테론": {
-      "count": 22,
-      "qids": [
-        "wh-extra-040",
-        "wh-extra-050",
-        "wh-extra-064",
-        "mens-002",
-        "mens-006",
-        "mens-extra-007",
-        "mens-extra-011",
-        "mens-extra-012",
-        "mens-extra-020",
-        "mens-extra-033",
-        "mens-extra-043",
-        "mens-extra-052",
-        "mens-extra-053",
-        "mh-extra-071",
-        "mens-002",
-        "mens-004",
-        "mens-006",
-        "mens-008",
-        "qa200-20260527-194",
-        "round3-mens_health-2-20260531",
-        "trend-testosterone-therapy-low-libido-bp-monitoring-20260602",
-        "trend-testosterone-therapy-fertility-sperm-count-20260603"
       ]
     },
     "혈당·대사": {
@@ -7871,6 +7892,30 @@
         "qa200-20260527-160"
       ]
     },
+    "갱년기": {
+      "count": 19,
+      "qids": [
+        "woms-003",
+        "woms-008",
+        "wh-extra-001",
+        "wh-extra-002",
+        "wh-extra-003",
+        "wh-extra-005",
+        "wh-extra-006",
+        "wh-extra-007",
+        "wh-extra-008",
+        "wh-extra-009",
+        "wh-extra-010",
+        "womens-001",
+        "womens-009",
+        "qa200-20260527-183",
+        "trendqa-womens-20260530",
+        "round3-womens_health-1-20260531",
+        "trend-menopause-hormone-therapy-label-change-20260602",
+        "trend-menopause-hormone-therapy-label-update-record-20260603",
+        "category-latest-womens-health-menopause-ht-label-sleep-hotflash-recovery-20260608"
+      ]
+    },
     "철분": {
       "count": 19,
       "qids": [
@@ -7895,29 +7940,6 @@
         "strategic-qa-hair-postpartum-shedding-telogen-effluvium-iron-thyroid-record-20260606"
       ]
     },
-    "갱년기": {
-      "count": 18,
-      "qids": [
-        "woms-003",
-        "woms-008",
-        "wh-extra-001",
-        "wh-extra-002",
-        "wh-extra-003",
-        "wh-extra-005",
-        "wh-extra-006",
-        "wh-extra-007",
-        "wh-extra-008",
-        "wh-extra-009",
-        "wh-extra-010",
-        "womens-001",
-        "womens-009",
-        "qa200-20260527-183",
-        "trendqa-womens-20260530",
-        "round3-womens_health-1-20260531",
-        "trend-menopause-hormone-therapy-label-change-20260602",
-        "trend-menopause-hormone-therapy-label-update-record-20260603"
-      ]
-    },
     "근육": {
       "count": 18,
       "qids": [
@@ -7939,6 +7961,50 @@
         "ms_089",
         "wh-extra-050",
         "ingr-015"
+      ]
+    },
+    "골다공증": {
+      "count": 17,
+      "qids": [
+        "musc-003",
+        "musc-009",
+        "ms_012",
+        "ms_035",
+        "ms_056",
+        "ms_060",
+        "ms_083",
+        "ms_088",
+        "woms-013",
+        "wh-extra-007",
+        "wh-extra-015",
+        "mens-011",
+        "ingr-029",
+        "qa200-20260527-124",
+        "qa200-20260527-189",
+        "trend-musculoskeletal-osteoporosis-dexa-frax-fall-risk-record-20260604",
+        "category-latest-musculoskeletal-falls-osteoporosis-dxa-strength-recovery-20260608"
+      ]
+    },
+    "기억력": {
+      "count": 17,
+      "qids": [
+        "neuro-010",
+        "nc_019",
+        "nc_050",
+        "nc_051",
+        "nc_060",
+        "nc_068",
+        "nc_072",
+        "nc_091",
+        "qa200-20260527-095",
+        "qa200-20260527-099",
+        "qa200-20260527-101",
+        "qa200-20260527-103",
+        "round2-neuro-cognitive-20260530",
+        "round3-neuro_cognitive-2-20260531",
+        "trend-alzheimers-blood-biomarker-memory-clinic-record-20260603",
+        "trend-neuro-long-covid-brain-fog-memory-record-20260604",
+        "category-latest-neuro-cognitive-alzheimers-blood-biomarker-memory-record-20260608"
       ]
     },
     "마그네슘": {
@@ -8006,48 +8072,6 @@
         "qa200-20260527-192"
       ]
     },
-    "골다공증": {
-      "count": 16,
-      "qids": [
-        "musc-003",
-        "musc-009",
-        "ms_012",
-        "ms_035",
-        "ms_056",
-        "ms_060",
-        "ms_083",
-        "ms_088",
-        "woms-013",
-        "wh-extra-007",
-        "wh-extra-015",
-        "mens-011",
-        "ingr-029",
-        "qa200-20260527-124",
-        "qa200-20260527-189",
-        "trend-musculoskeletal-osteoporosis-dexa-frax-fall-risk-record-20260604"
-      ]
-    },
-    "기억력": {
-      "count": 16,
-      "qids": [
-        "neuro-010",
-        "nc_019",
-        "nc_050",
-        "nc_051",
-        "nc_060",
-        "nc_068",
-        "nc_072",
-        "nc_091",
-        "qa200-20260527-095",
-        "qa200-20260527-099",
-        "qa200-20260527-101",
-        "qa200-20260527-103",
-        "round2-neuro-cognitive-20260530",
-        "round3-neuro_cognitive-2-20260531",
-        "trend-alzheimers-blood-biomarker-memory-clinic-record-20260603",
-        "trend-neuro-long-covid-brain-fog-memory-record-20260604"
-      ]
-    },
     "뇌건강": {
       "count": 16,
       "qids": [
@@ -8109,6 +8133,27 @@
         "trend-at-home-gut-microbiome-test-dtc-stool-report-record-20260603",
         "trend-world-food-safety-day-foodborne-illness-home-record-20260604",
         "trend-digestive-positive-stool-test-colonoscopy-record-20260604"
+      ]
+    },
+    "피부장벽": {
+      "count": 16,
+      "qids": [
+        "skin-002",
+        "skin-011",
+        "sh_014",
+        "sh_058",
+        "infect-extra-040",
+        "infect-extra-053",
+        "sh_093",
+        "sh_096",
+        "sh_099",
+        "sh_105",
+        "qa200-20260527-147",
+        "trendqa-skin-20260530",
+        "round2-skin-20260530",
+        "round3-skin-1-20260531",
+        "trend-skin-atopic-dermatitis-moisturizer-steroid-fear-record-20260604",
+        "category-latest-skin-bemotrizinol-uva-sunscreen-barrier-recovery-20260608"
       ]
     },
     "혈관": {
@@ -8230,26 +8275,6 @@
         "infect-012",
         "infect-018",
         "strategic-qa-hair-alopecia-areata-jak-safety-autoimmune-record-20260605"
-      ]
-    },
-    "피부장벽": {
-      "count": 15,
-      "qids": [
-        "skin-002",
-        "skin-011",
-        "sh_014",
-        "sh_058",
-        "infect-extra-040",
-        "infect-extra-053",
-        "sh_093",
-        "sh_096",
-        "sh_099",
-        "sh_105",
-        "qa200-20260527-147",
-        "trendqa-skin-20260530",
-        "round2-skin-20260530",
-        "round3-skin-1-20260531",
-        "trend-skin-atopic-dermatitis-moisturizer-steroid-fear-record-20260604"
       ]
     },
     "항암·면역": {
@@ -8530,6 +8555,23 @@
         "trend-weighted-vest-rucking-bone-joint-safety-20260602"
       ]
     },
+    "불안": {
+      "count": 12,
+      "qids": [
+        "qa200-20260527-111",
+        "qa200-20260527-116",
+        "qa200-20260527-120",
+        "trendqa-mental-20260530",
+        "round3-mental_health-2-20260531",
+        "trend-screen-time-sleep-anxiety-digital-behavior-20260602",
+        "trend-youth-mental-health-sleep-screen-time-20260602",
+        "trend-ai-chatbot-mental-health-crisis-safety-20260602",
+        "trend-teen-social-media-sleep-mental-health-boundary-20260603",
+        "trend-psychological-self-help-digital-burnout-support-record-20260603",
+        "trend-mental-social-media-sleep-anxiety-boundary-record-20260604",
+        "category-latest-mental-health-screen-use-sleep-anxiety-recovery-20260608"
+      ]
+    },
     "상호작용": {
       "count": 12,
       "qids": [
@@ -8615,6 +8657,22 @@
         "sh_094"
       ]
     },
+    "간건강": {
+      "count": 11,
+      "qids": [
+        "meta-005",
+        "dige-004",
+        "dige-008",
+        "dige-017",
+        "dige-019",
+        "mens-014",
+        "mens-extra-012",
+        "seoqa-digestive-10",
+        "round3-cancer_immune-1-20260531",
+        "trend-masld-fib4-liver-fibrosis-risk-stratification-record-20260603",
+        "category-latest-digestive-masld-fib4-weight-glucose-recovery-20260608"
+      ]
+    },
     "면역력": {
       "count": 11,
       "qids": [
@@ -8645,22 +8703,6 @@
         "trendqa-skin-20260530",
         "round2-skin-20260530",
         "trend-skin-atopic-dermatitis-moisturizer-steroid-fear-record-20260604"
-      ]
-    },
-    "불안": {
-      "count": 11,
-      "qids": [
-        "qa200-20260527-111",
-        "qa200-20260527-116",
-        "qa200-20260527-120",
-        "trendqa-mental-20260530",
-        "round3-mental_health-2-20260531",
-        "trend-screen-time-sleep-anxiety-digital-behavior-20260602",
-        "trend-youth-mental-health-sleep-screen-time-20260602",
-        "trend-ai-chatbot-mental-health-crisis-safety-20260602",
-        "trend-teen-social-media-sleep-mental-health-boundary-20260603",
-        "trend-psychological-self-help-digital-burnout-support-record-20260603",
-        "trend-mental-social-media-sleep-anxiety-boundary-record-20260604"
       ]
     },
     "빈혈": {
@@ -8741,21 +8783,6 @@
         "round3-infection_inflammation-1-20260531",
         "round3-womens_health-2-20260531",
         "trend-neuro-long-covid-brain-fog-memory-record-20260604"
-      ]
-    },
-    "간건강": {
-      "count": 10,
-      "qids": [
-        "meta-005",
-        "dige-004",
-        "dige-008",
-        "dige-017",
-        "dige-019",
-        "mens-014",
-        "mens-extra-012",
-        "seoqa-digestive-10",
-        "round3-cancer_immune-1-20260531",
-        "trend-masld-fib4-liver-fibrosis-risk-stratification-record-20260603"
       ]
     },
     "검사": {
@@ -8905,6 +8932,20 @@
         "trend-glp1-compounded-dosing-error-gi-side-effect-20260603",
         "trend-metabolism-glp1-constipation-hydration-meal-record-20260604",
         "strategic-qa-hair-glp1-telogen-protein-ferritin-phlorotannin-20260605"
+      ]
+    },
+    "PSA": {
+      "count": 9,
+      "qids": [
+        "cancer-007",
+        "mens-extra-006",
+        "mens-extra-030",
+        "mens-001",
+        "ci_128",
+        "qa200-20260527-197",
+        "trend-prostate-psa-mri-screening-aua-20260602",
+        "trend-mens-psa-screening-shared-decision-family-history-record-20260604",
+        "category-latest-mens-health-testosterone-bp-fertility-psa-recovery-20260608"
       ]
     },
     "감기": {
@@ -9075,6 +9116,20 @@
         "strategic-qa-womens-hpv-self-collection-cervical-screening-pap-positive-followup-record-20260605"
       ]
     },
+    "지방간": {
+      "count": 9,
+      "qids": [
+        "meta-005",
+        "meta-017",
+        "dige-004",
+        "qa200-20260527-014",
+        "qa200-20260527-065",
+        "qa200-20260527-071",
+        "round3-digestive-2-20260531",
+        "trend-masld-fib4-liver-fibrosis-risk-stratification-record-20260603",
+        "category-latest-digestive-masld-fib4-weight-glucose-recovery-20260608"
+      ]
+    },
     "코르티솔": {
       "count": 9,
       "qids": [
@@ -9127,19 +9182,6 @@
         "womens-102",
         "trend-pcos-glp1-insulin-resistance-pregnancy-planning-20260602",
         "strategic-qa-womens-pcos-irregular-period-hirsutism-insulin-resistance-fertility-record-20260606"
-      ]
-    },
-    "PSA": {
-      "count": 8,
-      "qids": [
-        "cancer-007",
-        "mens-extra-006",
-        "mens-extra-030",
-        "mens-001",
-        "ci_128",
-        "qa200-20260527-197",
-        "trend-prostate-psa-mri-screening-aua-20260602",
-        "trend-mens-psa-screening-shared-decision-family-history-record-20260604"
       ]
     },
     "고혈압": {
@@ -9389,17 +9431,17 @@
         "strategic-qa-mens-psa-screening-family-history-bph-prostatitis-shared-decision-record-20260605"
       ]
     },
-    "지방간": {
+    "탈수": {
       "count": 8,
       "qids": [
-        "meta-005",
-        "meta-017",
-        "dige-004",
-        "qa200-20260527-014",
-        "qa200-20260527-065",
-        "qa200-20260527-071",
-        "round3-digestive-2-20260531",
-        "trend-masld-fib4-liver-fibrosis-risk-stratification-record-20260603"
+        "wh-extra-022",
+        "qa200-20260527-064",
+        "qa200-20260527-169",
+        "trend-norovirus-handwashing-bleach-hydration-outbreak-20260602",
+        "trend-glp1-compounded-dosing-error-gi-side-effect-20260603",
+        "trend-world-food-safety-day-foodborne-illness-home-record-20260604",
+        "strategic-qa-cardiovascular-extreme-heat-hydration-medication-recovery-record-20260607",
+        "category-latest-cardiovascular-heat-blood-pressure-medication-recovery-20260608"
       ]
     },
     "HPV": {
@@ -9606,18 +9648,6 @@
         "round3-musculoskeletal-1-20260531"
       ]
     },
-    "탈수": {
-      "count": 7,
-      "qids": [
-        "wh-extra-022",
-        "qa200-20260527-064",
-        "qa200-20260527-169",
-        "trend-norovirus-handwashing-bleach-hydration-outbreak-20260602",
-        "trend-glp1-compounded-dosing-error-gi-side-effect-20260603",
-        "trend-world-food-safety-day-foodborne-illness-home-record-20260604",
-        "strategic-qa-cardiovascular-extreme-heat-hydration-medication-recovery-record-20260607"
-      ]
-    },
     "헬리코박터": {
       "count": 7,
       "qids": [
@@ -9628,6 +9658,18 @@
         "qa200-20260527-060",
         "qa200-20260527-061",
         "trend-digestive-hpylori-breath-test-eradication-record-20260604"
+      ]
+    },
+    "혈압약": {
+      "count": 7,
+      "qids": [
+        "cardio-023",
+        "qa200-20260527-078",
+        "round2-cardiovascular-20260530",
+        "trend-heat-health-hydration-blood-pressure-20260602",
+        "trend-extreme-heat-medication-plan-older-adults-hydration-record-20260604",
+        "strategic-qa-cardiovascular-extreme-heat-hydration-medication-recovery-record-20260607",
+        "category-latest-cardiovascular-heat-blood-pressure-medication-recovery-20260608"
       ]
     },
     "휴지기탈모": {
@@ -9762,6 +9804,17 @@
         "mens-extra-015",
         "rsp_042",
         "resp-102"
+      ]
+    },
+    "낙상예방": {
+      "count": 6,
+      "qids": [
+        "musc-003",
+        "musc-017",
+        "qa200-20260527-136",
+        "trend-weighted-vest-rucking-bone-joint-safety-20260602",
+        "trend-older-adult-fall-prevention-balance-medication-vision-record-20260603",
+        "category-latest-musculoskeletal-falls-osteoporosis-dxa-strength-recovery-20260608"
       ]
     },
     "남성갱년기": {
@@ -9940,6 +9993,17 @@
         "ingr-028"
       ]
     },
+    "색소침착": {
+      "count": 6,
+      "qids": [
+        "skin-013",
+        "sh_101",
+        "sh_104",
+        "qa200-20260527-143",
+        "trend-melasma-tinted-sunscreen-visible-light-iron-oxide-20260603",
+        "category-latest-skin-bemotrizinol-uva-sunscreen-barrier-recovery-20260608"
+      ]
+    },
     "설사": {
       "count": 6,
       "qids": [
@@ -10017,6 +10081,17 @@
         "strategic-qa-hair-ccca-scarring-alopecia-crown-burning-biopsy-record-20260606"
       ]
     },
+    "열감": {
+      "count": 6,
+      "qids": [
+        "wh-extra-001",
+        "wh-extra-005",
+        "qa200-20260527-183",
+        "trendqa-womens-20260530",
+        "strategic-qa-womens-menopause-ht-label-hotflash-sleep-phlorotannin-20260605",
+        "category-latest-womens-health-menopause-ht-label-sleep-hotflash-recovery-20260608"
+      ]
+    },
     "우울": {
       "count": 6,
       "qids": [
@@ -10048,6 +10123,17 @@
         "womens-007",
         "trend-endometriosis-clinical-diagnosis-acog-20260602",
         "trend-womens-endometriosis-pain-cycle-record-20260604"
+      ]
+    },
+    "자외선차단제": {
+      "count": 6,
+      "qids": [
+        "mens-extra-068",
+        "round3-skin-2-20260531",
+        "trend-sunscreen-vitamin-d-uv-index-myth-20260602",
+        "trend-bemotrizinol-sunscreen-uva-broad-spectrum-20260602",
+        "trend-summer-scalp-sunburn-thinning-hair-uv-record-20260604",
+        "category-latest-skin-bemotrizinol-uva-sunscreen-barrier-recovery-20260608"
       ]
     },
     "정자": {
@@ -10127,15 +10213,15 @@
         "qa200-20260527-090"
       ]
     },
-    "혈압약": {
+    "호르몬치료": {
       "count": 6,
       "qids": [
-        "cardio-023",
-        "qa200-20260527-078",
-        "round2-cardiovascular-20260530",
-        "trend-heat-health-hydration-blood-pressure-20260602",
-        "trend-extreme-heat-medication-plan-older-adults-hydration-record-20260604",
-        "strategic-qa-cardiovascular-extreme-heat-hydration-medication-recovery-record-20260607"
+        "wh-extra-006",
+        "wh-extra-047",
+        "ci_106",
+        "trend-menopause-hormone-therapy-label-update-record-20260603",
+        "strategic-qa-womens-menopause-ht-label-hotflash-sleep-phlorotannin-20260605",
+        "category-latest-womens-health-menopause-ht-label-sleep-hotflash-recovery-20260608"
       ]
     },
     "환자식": {
@@ -10147,6 +10233,16 @@
         "qa200-20260527-044",
         "qa200-20260527-051",
         "qa200-20260527-058"
+      ]
+    },
+    "COPD": {
+      "count": 5,
+      "qids": [
+        "rsp_042",
+        "resp-002",
+        "resp-102",
+        "trend-wildfire-smoke-aqi-n95-asthma-copd-action-record-20260603",
+        "category-latest-respiratory-aqi-wildfire-asthma-copd-recovery-20260608"
       ]
     },
     "HPV백신": {
@@ -10269,14 +10365,24 @@
         "seoqa-metabolism-02"
       ]
     },
-    "낙상예방": {
+    "근력": {
       "count": 5,
       "qids": [
-        "musc-003",
         "musc-017",
+        "musc-020",
         "qa200-20260527-136",
-        "trend-weighted-vest-rucking-bone-joint-safety-20260602",
-        "trend-older-adult-fall-prevention-balance-medication-vision-record-20260603"
+        "trend-creatine-resistance-training-sarcopenia-older-adults-20260602",
+        "category-latest-musculoskeletal-falls-osteoporosis-dxa-strength-recovery-20260608"
+      ]
+    },
+    "근손실": {
+      "count": 5,
+      "qids": [
+        "round3-metabolism-1-20260531",
+        "trend-glp1-muscle-protein-fiber-20260602",
+        "trend-glp1-knee-osteoarthritis-muscle-bone-20260602",
+        "strategic-qa-metabolism-glp1-muscle-gut-plateau-recovery-record-20260607",
+        "category-latest-metabolism-glp1-unapproved-source-muscle-gut-recovery-20260608"
       ]
     },
     "남성호르몬": {
@@ -10297,6 +10403,16 @@
         "qa-hospital-20260527-005",
         "qa-hospital-20260527-009",
         "qa-hospital-20260527-044"
+      ]
+    },
+    "노출기록": {
+      "count": 5,
+      "qids": [
+        "trend-phthalates-male-fertility-semen-quality-exposure-20260602",
+        "strategic-qa-respiratory-pertussis-prolonged-cough-vaccine-exposure-record-20260605",
+        "strategic-qa-infection-mpox-rash-exposure-jynneos-testing-isolation-record-20260605",
+        "strategic-qa-infection-measles-mmr-travel-outbreak-recovery-record-20260607",
+        "category-latest-infection-measles-mmr-travel-exposure-recovery-20260608"
       ]
     },
     "단백질·류신": {
@@ -10399,16 +10515,6 @@
         "round3-skin-1-20260531"
       ]
     },
-    "색소침착": {
-      "count": 5,
-      "qids": [
-        "skin-013",
-        "sh_101",
-        "sh_104",
-        "qa200-20260527-143",
-        "trend-melasma-tinted-sunscreen-visible-light-iron-oxide-20260603"
-      ]
-    },
     "생리불순": {
       "count": 5,
       "qids": [
@@ -10417,6 +10523,16 @@
         "wh-extra-017",
         "qa200-20260527-182",
         "round3-womens_health-2-20260531"
+      ]
+    },
+    "성기능": {
+      "count": 5,
+      "qids": [
+        "mens-002",
+        "mens-extra-028",
+        "qa200-20260527-199",
+        "trend-finasteride-dutasteride-hair-loss-safety-warning-20260602",
+        "category-latest-hair-topical-finasteride-mood-sexual-scalp-record-20260608"
       ]
     },
     "소화기내과": {
@@ -10489,16 +10605,6 @@
         "trend-alopecia-areata-jak-inhibitor-safety-record-20260603"
       ]
     },
-    "열감": {
-      "count": 5,
-      "qids": [
-        "wh-extra-001",
-        "wh-extra-005",
-        "qa200-20260527-183",
-        "trendqa-womens-20260530",
-        "strategic-qa-womens-menopause-ht-label-hotflash-sleep-phlorotannin-20260605"
-      ]
-    },
     "엽산": {
       "count": 5,
       "qids": [
@@ -10509,6 +10615,16 @@
         "qa200-20260527-185"
       ]
     },
+    "이뇨제": {
+      "count": 5,
+      "qids": [
+        "trend-heat-health-hydration-blood-pressure-20260602",
+        "trend-extreme-heat-medication-plan-older-adults-hydration-record-20260604",
+        "strategic-qa-mens-bph-nocturia-sleep-diuretic-glucose-record-20260605",
+        "strategic-qa-cardiovascular-extreme-heat-hydration-medication-recovery-record-20260607",
+        "category-latest-cardiovascular-heat-blood-pressure-medication-recovery-20260608"
+      ]
+    },
     "자외선": {
       "count": 5,
       "qids": [
@@ -10517,16 +10633,6 @@
         "ingr-003",
         "qa200-20260527-139",
         "qa200-20260527-143"
-      ]
-    },
-    "자외선차단제": {
-      "count": 5,
-      "qids": [
-        "mens-extra-068",
-        "round3-skin-2-20260531",
-        "trend-sunscreen-vitamin-d-uv-index-myth-20260602",
-        "trend-bemotrizinol-sunscreen-uva-broad-spectrum-20260602",
-        "trend-summer-scalp-sunburn-thinning-hair-uv-record-20260604"
       ]
     },
     "중성지방": {
@@ -10547,6 +10653,16 @@
         "mens-010",
         "trend-creatine-resistance-training-healthy-aging-20260602",
         "trend-creatine-resistance-training-sarcopenia-older-adults-20260602"
+      ]
+    },
+    "탈모약": {
+      "count": 5,
+      "qids": [
+        "qa200-20260527-156",
+        "qa200-20260527-199",
+        "trend-finasteride-dutasteride-hair-loss-safety-warning-20260602",
+        "strategic-qa-hair-oral-minoxidil-edema-heart-rate-blood-pressure-record-20260605",
+        "category-latest-hair-topical-finasteride-mood-sexual-scalp-record-20260608"
       ]
     },
     "패혈증": {
@@ -10579,6 +10695,26 @@
         "ci_098"
       ]
     },
+    "폭염": {
+      "count": 5,
+      "qids": [
+        "trend-heat-health-hydration-blood-pressure-20260602",
+        "trend-extreme-heat-medication-plan-older-adults-hydration-record-20260604",
+        "trend-heat-exposure-male-fertility-sperm-record-20260604",
+        "strategic-qa-cardiovascular-extreme-heat-hydration-medication-recovery-record-20260607",
+        "category-latest-cardiovascular-heat-blood-pressure-medication-recovery-20260608"
+      ]
+    },
+    "피나스테리드": {
+      "count": 5,
+      "qids": [
+        "mens-008",
+        "mens-extra-003",
+        "mens-007",
+        "trend-finasteride-dutasteride-hair-loss-safety-warning-20260602",
+        "category-latest-hair-topical-finasteride-mood-sexual-scalp-record-20260608"
+      ]
+    },
     "피부노화": {
       "count": 5,
       "qids": [
@@ -10607,16 +10743,6 @@
         "sh_102",
         "qa200-20260527-093",
         "qa200-20260527-108"
-      ]
-    },
-    "호르몬치료": {
-      "count": 5,
-      "qids": [
-        "wh-extra-006",
-        "wh-extra-047",
-        "ci_106",
-        "trend-menopause-hormone-therapy-label-update-record-20260603",
-        "strategic-qa-womens-menopause-ht-label-hotflash-sleep-phlorotannin-20260605"
       ]
     },
     "호흡기건강": {
@@ -12589,7 +12715,20 @@
     "strategic-qa-neuro-cognitive-haengwoo-lee-seanol-brain-evidence-record-20260606": "이행우-박사-Seanol-연구-배경을-뇌인지-건강-QA에서-어떻게-안전하게-설명하나요",
     "strategic-qa-infection-measles-mmr-travel-outbreak-recovery-record-20260607": "홍역-유행과-해외여행이-겹치면-MMR-접종노출회복-기록은-어떻게-준비하나요",
     "strategic-qa-cardiovascular-extreme-heat-hydration-medication-recovery-record-20260607": "폭염이-길어질-때-혈압약이뇨제수분-회복-기록은-어떻게-준비하나요",
-    "strategic-qa-metabolism-glp1-muscle-gut-plateau-recovery-record-20260607": "GLP1-감량-중-정체기근손실장-불편이-걱정될-때-회복-기록은-어떻게-준비하나요"
+    "strategic-qa-metabolism-glp1-muscle-gut-plateau-recovery-record-20260607": "GLP1-감량-중-정체기근손실장-불편이-걱정될-때-회복-기록은-어떻게-준비하나요",
+    "category-latest-metabolism-glp1-unapproved-source-muscle-gut-recovery-20260608": "GLP1-감량-중-정체기와-근손실장-불편이-걱정될-때-어떤-기록을-준비해야-하나요",
+    "category-latest-cancer-immune-ctdna-mrd-biomarker-recovery-20260608": "ctDNA-MRD-양성이면-암-치료-후-재발-위험-상담-기록을-어떻게-준비해야-하나요",
+    "category-latest-digestive-masld-fib4-weight-glucose-recovery-20260608": "MASLD-지방간이-의심될-때-FIB4혈당허리둘레-기록은-어떻게-준비하나요",
+    "category-latest-cardiovascular-heat-blood-pressure-medication-recovery-20260608": "폭염-때-혈압약이뇨제수분-회복-기록은-어떻게-준비해야-하나요",
+    "category-latest-neuro-cognitive-alzheimers-blood-biomarker-memory-record-20260608": "알츠하이머-혈액-바이오마커-검사를-받을-때-기억력-기록은-어떻게-준비하나요",
+    "category-latest-mental-health-screen-use-sleep-anxiety-recovery-20260608": "청소년성인-모두-화면-사용이-수면과-불안을-흔들-때-어떤-회복-기록을-준비하나요",
+    "category-latest-musculoskeletal-falls-osteoporosis-dxa-strength-recovery-20260608": "낙상-위험과-골다공증-검사를-함께-볼-때-근력균형-회복-기록은-어떻게-준비하나요",
+    "category-latest-skin-bemotrizinol-uva-sunscreen-barrier-recovery-20260608": "새-자외선차단-성분-이슈가-나올-때-UVA색소피부장벽-기록은-어떻게-준비하나요",
+    "category-latest-hair-topical-finasteride-mood-sexual-scalp-record-20260608": "도포형-피나스테리드나-탈모약을-쓸-때-성기능기분두피-기록은-어떻게-준비하나요",
+    "category-latest-respiratory-aqi-wildfire-asthma-copd-recovery-20260608": "AQI가-나쁘거나-산불-연기가-있을-때-천식COPD-회복-기록은-어떻게-준비하나요",
+    "category-latest-infection-measles-mmr-travel-exposure-recovery-20260608": "홍역-유행과-해외여행이-겹칠-때-MMR-접종노출회복-기록은-어떻게-준비하나요",
+    "category-latest-womens-health-menopause-ht-label-sleep-hotflash-recovery-20260608": "갱년기-호르몬치료-라벨-변화-이슈를-볼-때-수면열감-회복-기록은-어떻게-준비하나요",
+    "category-latest-mens-health-testosterone-bp-fertility-psa-recovery-20260608": "테스토스테론-치료를-고민할-때-혈압임신계획PSA-기록은-어떻게-준비하나요"
   },
-  "generated_at": "2026-06-08T02:24:05.120903+00:00"
+  "generated_at": "2026-06-08T02:47:18.185075+00:00"
 }
