@@ -344,13 +344,22 @@ function PartnerManageTab() {
   const deletePartner = async (partner) => {
     if (!confirm('삭제하시겠습니까?')) return
     const id = partner.id || partner.slug
-    const r = await adminApi('partner_delete', { id })
+    const r = await adminApi('partner_delete', {
+      id,
+      slug: partner.slug,
+      phone: partner.phone || partner.phone_display || partner.phoneDisplay,
+    })
     if (r.ok) {
       await loadAll()
       return
     }
     // 폴백: 로컬에서만 제거
-    const next = partners.filter(p => (p.id || p.slug) !== id)
+    const targetPhone = String(partner.phone || partner.phone_display || partner.phoneDisplay || '').replace(/\D/g, '')
+    const next = partners.filter(p => {
+      const pId = p.id || p.slug
+      const pPhone = String(p.phone || p.phone_display || p.phoneDisplay || '').replace(/\D/g, '')
+      return pId !== id && (!targetPhone || pPhone !== targetPhone)
+    })
     try { localStorage.setItem(PARTNERS_KEY, JSON.stringify(next)) } catch {}
     setPartners(next)
     setResult({ success: false, error: `Supabase 삭제 실패 (${r.status || '?'}): ${r.error || '환경변수 미설정 가능성'}` })

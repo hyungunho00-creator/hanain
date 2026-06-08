@@ -20,6 +20,14 @@ function getBearerToken(req) {
   return auth.slice(7).trim()
 }
 
+function normalizeDigits(value = '') {
+  return String(value || '').replace(/\D/g, '')
+}
+
+function cleanPartnerIdentifier(value = '') {
+  return String(value || '').trim().replace(/^['"]|['"]$/g, '')
+}
+
 async function verifyAdmin(req, supabaseUrl, anonKey) {
   const bypassKey = env('ADMIN_API_KEY', 'VITE_BACKEND_ADMIN_KEY')
   const headerBypass = req.headers?.['x-admin-key'] || req.headers?.['X-Admin-Key']
@@ -151,10 +159,22 @@ async function runAction(admin, action, payload = {}) {
     }
 
     case 'partner_delete': {
-      const id = payload.id
-      if (!id) return { error: 'missing_partner_id' }
-      const { error } = await admin.from('partners').delete().eq('id', id)
-      return { data: { ok: !error }, error: error?.message || null }
+      const raw = cleanPartnerIdentifier(payload.phone || payload.slug || payload.id)
+      if (!raw) return { error: 'missing_partner_identifier' }
+
+      const digits = normalizeDigits(raw)
+      const filters = []
+      if (raw) filters.push(`slug.eq.${encodeURIComponent(raw)}`)
+      if (digits) {
+        filters.push(`phone.eq.${encodeURIComponent(digits)}`)
+        if (digits !== raw) filters.push(`slug.eq.${encodeURIComponent(digits)}`)
+      }
+
+      const query = admin.from('partners').delete().select('slug,phone,name')
+      const { data, error } = await query.or(filters.join(','))
+      if (error) return { data: { ok: false, deleted: 0 }, error: error.message || 'partner_delete_failed' }
+      const deleted = Array.isArray(data) ? data.length : 0
+      return { data: { ok: true, deleted, rows: data || [] }, error: null }
     }
 
     case 'category_list': {
@@ -265,7 +285,6 @@ export default async function handler(req, res) {
   )
 
   if (!supabaseUrl || !anonKey) return json(res, 500, { error: 'missing_supabase_public_env' })
-  if (!serviceKey) return json(res, 500, { error: 'missing_supabase_service_env' })
 
   const verified = await verifyAdmin(req, supabaseUrl, anonKey)
   if (!verified.ok) return json(res, 401, { error: verified.error || 'unauthorized' })
@@ -282,9 +301,17 @@ export default async function handler(req, res) {
   const payload = body.payload || {}
   if (!action) return json(res, 400, { error: 'missing_action' })
 
-  const admin = createClient(supabaseUrl, serviceKey, {
-    auth: { autoRefreshToken: false, persistSession: false },
-  })
+  const bearerToken = getBearerToken(req)
+  const admin = serviceKey
+    ? createClient(supabaseUrl, serviceKey, {
+        auth: { autoRefreshToken: false, persistSession: false },
+      })
+    : createClient(supabaseUrl, anonKey, {
+        auth: { autoRefreshToken: false, persistSession: false },
+        global: {
+          headers: bearerToken ? { Authorization: `Bearer ${bearerToken}` } : {},
+        },
+      })
 
   try {
     const result = await runAction(admin, action, payload)
