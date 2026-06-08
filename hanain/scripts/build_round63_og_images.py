@@ -148,7 +148,7 @@ def make(item):
     x = 98
     for text in item["chips"]:
         x = chip(draw, x, 416, text, accent)
-    draw.text((100, 512), "PHLOROTANNIN PARTNERS · CURRENT HEALTH SEO", fill=(90, 112, 106), font=F_SMALL)
+    draw.text((100, 512), "PHLOROTANNIN PARTNERS / RECOVERY GUIDE", fill=(90, 112, 106), font=F_SMALL)
     if item["motif"] == "wound":
         draw_wound(draw, accent, secondary)
     elif item["motif"] == "formula":
@@ -157,7 +157,7 @@ def make(item):
         draw_gut(draw, accent, secondary)
     base = base.filter(ImageFilter.UnsharpMask(radius=1.2, percent=115, threshold=3))
     OUT.mkdir(parents=True, exist_ok=True)
-    base.save(OUT / f"{item['slug']}.png", "PNG", optimize=True)
+    base.save(OUT / f"{item['slug']}.png", "PNG", optimize=False, compress_level=1)
 
 
 def main():

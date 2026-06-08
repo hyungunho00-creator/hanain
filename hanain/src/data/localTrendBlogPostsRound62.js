@@ -65,7 +65,7 @@ const posts = [
       'Rocky Mountain spotted fever의 진드기 노출, 발열·두통·발진, 검사 지연, doxycycline 조기 상담, 플로로탄닌 회복 루틴 연결법을 CDC 자료로 정리합니다.',
     og_image: '/og/content-quality/rocky-mountain-spotted-fever-tick-rash-doxycycline-recovery-phlorotannin-2026-consumer-recovery-v2.png',
     image_alt:
-      'RMSF 진드기 노출과 발열 발진 상담 기록을 밝은 진드기 회복 카드와 해양 분자 그래픽으로 표현한 플로로탄닌 SEO 이미지',
+      'RMSF 진드기 노출과 발열 발진 상담 기록을 밝은 진드기 회복 장면과 해양 폴리페놀 분자 이미지로 정리한 플로로탄닌 회복 정보',
     tags: ['RMSF', 'RockyMountainSpottedFever', '진드기', '발진', 'Doxycycline', '감염회복', '플로로탄닌'],
     opening:
       'Rocky Mountain spotted fever, RMSF는 이름과 달리 미국 전역에서 보고될 수 있는 심각한 진드기 매개 질환입니다. CDC는 RMSF의 흔한 증상이 발열, 두통, 발진이라고 설명하지만, 중요한 점은 발진이 늦게 나타날 수 있다는 것입니다. 초기 증상은 비특이적이고 열과 두통만으로 시작될 수 있어 감기, 장염, 탈수, 일반 진드기 물림으로 넘기기 쉽습니다. CDC는 RMSF가 조기에 치료되지 않으면 치명적일 수 있고, suspected rickettsial disease에서는 doxycycline이 모든 연령에서 권장되는 치료라고 안내합니다.',
@@ -116,7 +116,7 @@ const posts = [
       'Babesiosis의 진드기 노출, 적혈구 감염, 발열·오한·피로·용혈성 빈혈, 수혈 안전, 항기생충 치료 상담과 플로로탄닌 회복 루틴을 정리합니다.',
     og_image: '/og/content-quality/babesiosis-tick-red-blood-cell-fatigue-anemia-recovery-phlorotannin-2026-consumer-recovery-v2.png',
     image_alt:
-      '바베시아증 진드기 노출과 적혈구 빈혈 피로 회복 기록을 밝은 혈액 카드와 해양 분자 그래픽으로 표현한 플로로탄닌 SEO 이미지',
+      '바베시아증 진드기 노출과 적혈구 빈혈 피로 회복 기록을 밝은 혈액 회복 장면과 해양 폴리페놀 분자 이미지로 정리한 플로로탄닌 회복 정보',
     tags: ['Babesiosis', '바베시아증', '진드기', '적혈구', '빈혈', '수혈안전', '플로로탄닌'],
     opening:
       '바베시아증은 Lyme disease보다 덜 알려졌지만, 진드기 시즌에는 매우 중요한 검색 빈틈입니다. CDC 2026년 자료는 babesiosis가 적혈구를 감염시키는 미세 기생충에 의해 생기는 질환이며, 미국에서는 Babesia microti가 주요 원인이라고 설명합니다. 감염은 주로 Ixodes 진드기 물림으로 생기지만, 수혈을 통해서도 전파될 수 있습니다. 증상은 발열, 오한, 땀, 근육통, 피로처럼 흔한 감염과 비슷하지만, 적혈구가 파괴되는 용혈성 빈혈, 황달, 진한 소변 같은 단서가 중요합니다.',
@@ -167,7 +167,7 @@ const posts = [
       'Brucellosis의 raw milk, 비살균 치즈, 사냥·동물 체액, 실험실 aerosol 노출, 발열·발한·관절통·피로 기록과 플로로탄닌 회복 루틴을 CDC 2026 자료로 정리합니다.',
     og_image: '/og/content-quality/brucellosis-raw-dairy-hunter-lab-exposure-fatigue-recovery-phlorotannin-2026-consumer-recovery-v2.png',
     image_alt:
-      '브루셀라증 비살균 유제품 동물 실험실 노출과 오래가는 피로 기록을 밝은 안전 카드와 해양 분자 그래픽으로 표현한 플로로탄닌 SEO 이미지',
+      '브루셀라증 비살균 유제품 동물 실험실 노출과 오래가는 피로 기록을 밝은 안전 회복 장면과 해양 폴리페놀 분자 이미지로 정리한 플로로탄닌 회복 정보',
     tags: ['Brucellosis', '브루셀라증', 'RawMilk', '비살균유제품', '사냥', '실험실노출', '플로로탄닌'],
     opening:
       '브루셀라증은 흔한 키워드는 아니지만, raw milk, 해외 비살균 치즈, 사냥, 수의·축산·실험실 노출이 겹치면 매우 중요한 건강정보가 됩니다. CDC는 2026년 6월 2일 자료에서 브루셀라증이 Brucella 세균에 의해 생기는 질환이고, 감염된 동물 또는 오염된 동물성 제품과 접촉할 때 사람에게 전파될 수 있다고 설명합니다. 원유와 비살균 유제품, 덜 익힌 고기, 야생돼지·사슴·엘크·바이슨 등 사냥감 처리, 동물 분만 산물, 실험실 aerosol 노출이 주요 기록 포인트입니다.',

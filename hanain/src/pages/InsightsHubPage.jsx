@@ -9,7 +9,7 @@ import { usePartner } from '../context/PartnerContext'
 import { withRef } from '../lib/partnerRef'
 
 const SITE = 'https://phlorotannin.com'
-const LAST_REVIEWED = '2026-06-02'
+const LAST_REVIEWED = '2026-06-08'
 const REFERENCE_TOTAL = Object.keys(REFERENCES).length
 
 export default function InsightsHubPage() {

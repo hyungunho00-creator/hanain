@@ -139,6 +139,11 @@ def make(item):
         g = int(253 * (1 - ratio) + 248 * ratio)
         b = int(250 * (1 - ratio) + 240 * ratio)
         draw.line((0, y, W, y), fill=(r, g, b, 255))
+    for y in range(0, H, 4):
+        for x in range(0, W, 4):
+            grain = ((x * 17 + y * 31) % 29) - 14
+            shade = max(230, min(255, 246 + grain))
+            draw.point((x, y), fill=(shade, shade, shade, 28))
     draw.ellipse((742, -170, 1330, 380), fill=(*accent, 34))
     draw.ellipse((876, 342, 1286, 750), fill=(*secondary, 34))
     molecule(draw, accent, secondary)
@@ -153,7 +158,7 @@ def make(item):
     x = 98
     for text in item["chips"]:
         x = chip(draw, x, 416, text, accent)
-    draw.text((100, 512), "PHLOROTANNIN PARTNERS · SEO HEALTH ASSET", fill=(90, 112, 106), font=F_SMALL)
+    draw.text((100, 512), "PHLOROTANNIN PARTNERS / RECOVERY GUIDE", fill=(90, 112, 106), font=F_SMALL)
     if item["motif"] == "travel_midge":
         draw_travel_midge(draw, accent, secondary)
     elif item["motif"] == "cough_lungs":
@@ -162,7 +167,7 @@ def make(item):
         draw_hotel_water(draw, accent, secondary)
     base = base.filter(ImageFilter.UnsharpMask(radius=1.2, percent=115, threshold=3))
     OUT.mkdir(parents=True, exist_ok=True)
-    base.save(OUT / f"{item['slug']}.png", "PNG", optimize=True)
+    base.save(OUT / f"{item['slug']}.png", "PNG", optimize=False, compress_level=1)
 
 
 def main():

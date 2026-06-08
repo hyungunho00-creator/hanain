@@ -147,7 +147,7 @@ def make(item):
     x = 98
     for text in item["chips"]:
         x = chip(draw, x, 416, text, accent)
-    draw.text((100, 512), "PHLOROTANNIN PARTNERS · SEO HEALTH ASSET", fill=(90, 112, 106), font=F_SMALL)
+    draw.text((100, 512), "PHLOROTANNIN PARTNERS / RECOVERY GUIDE", fill=(90, 112, 106), font=F_SMALL)
     if item["motif"] == "tick":
         draw_tick(draw, accent, secondary)
     elif item["motif"] == "blood":
@@ -156,7 +156,7 @@ def make(item):
         draw_dairy_lab(draw, accent, secondary)
     base = base.filter(ImageFilter.UnsharpMask(radius=1.2, percent=115, threshold=3))
     OUT.mkdir(parents=True, exist_ok=True)
-    base.save(OUT / f"{item['slug']}.png", "PNG", optimize=True)
+    base.save(OUT / f"{item['slug']}.png", "PNG", optimize=False, compress_level=1)
 
 
 def main():

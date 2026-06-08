@@ -9,7 +9,7 @@ import { withRef } from '../lib/partnerRef'
 import { getRenderableQAAnswer, shouldEmitQASchema, answerPlainTextForMeta, stripHtml } from '../lib/qaAnswer'
 import { QA_TOTAL } from '../data/siteStats'
 
-const LAST_REVIEWED = '2026-05-21'
+const LAST_REVIEWED = '2026-06-08'
 
 const ITEMS_PER_PAGE = 20
 const QA_JSON_URL = `/qa.json?v=${QA_TOTAL}`

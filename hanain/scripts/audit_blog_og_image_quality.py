@@ -11,13 +11,13 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "src" / "data"
 REPORT = ROOT / "docs" / "blog-og-image-quality-audit-result.md"
 
-ROUND_CUTOFF = 63
+ROUND_CUTOFF = 60
 MIN_BYTES = 140_000
 MIN_WIDTH = 1200
 MIN_HEIGHT = 630
 MIN_LUMINANCE_STDDEV = 18.0
 MIN_PIXEL_ENTROPY = 2.9
-FORBIDDEN_ALT_PHRASES = ("SEO 이미지", "seo image", "generic card")
+FORBIDDEN_ALT_PHRASES = ("SEO 이미지", "seo image", "seo 이미지", "generic card", "카드")
 
 
 def find_value(text, key):
