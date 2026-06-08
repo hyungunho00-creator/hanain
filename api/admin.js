@@ -279,11 +279,22 @@ const HANDLERS = {
       `/partners?or=(${filters.join(',')})&select=slug,phone,name,status`,
       { status: 'deleted', updated_at: now },
     )
-    if (!r.ok) throw new Error(`partner_delete ${r.status} ${JSON.stringify(r.data)}`)
-    let rows = Array.isArray(r.data) ? r.data : []
+    let rows = []
+    if (r.ok) {
+      rows = Array.isArray(r.data) ? r.data : []
+    } else {
+      const hardDelete = await sb(
+        'DELETE',
+        `/partners?or=(${filters.join(',')})&select=slug,phone,name,status`,
+        undefined,
+        { Prefer: 'return=representation' },
+      )
+      if (!hardDelete.ok) throw new Error(`partner_delete ${hardDelete.status} ${JSON.stringify(hardDelete.data)}`)
+      rows = Array.isArray(hardDelete.data) ? hardDelete.data : []
+    }
     let deleted = rows.length
 
-    if (!deleted && digits) {
+    if (!deleted && digits && SB_SVC) {
       const tombstone = {
         slug: digits,
         phone: digits,

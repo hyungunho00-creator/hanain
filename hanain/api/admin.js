@@ -176,10 +176,23 @@ async function runAction(admin, action, payload = {}) {
         .update({ status: 'deleted', updated_at: now })
         .select('slug,phone,name,status')
       const { data, error } = await query.or(filters.join(','))
-      if (error) return { data: { ok: false, deleted: 0 }, error: error.message || 'partner_delete_failed' }
-      let rows = Array.isArray(data) ? data : []
+      let rows = []
+      if (error) {
+        const hardDelete = await admin
+          .from('partners')
+          .delete()
+          .select('slug,phone,name,status')
+          .or(filters.join(','))
+        if (hardDelete.error) {
+          return { data: { ok: false, deleted: 0 }, error: hardDelete.error.message || error.message || 'partner_delete_failed' }
+        }
+        rows = Array.isArray(hardDelete.data) ? hardDelete.data : []
+      } else {
+        rows = Array.isArray(data) ? data : []
+      }
       let deleted = rows.length
-      if (!deleted && digits) {
+      const canCreateTombstone = !!(process.env.SUPABASE_SECRET_KEY || process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_SERVICE_KEY)
+      if (!deleted && digits && canCreateTombstone) {
         const tombstone = {
           slug: digits,
           phone: digits,
