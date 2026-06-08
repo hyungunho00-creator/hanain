@@ -2,7 +2,7 @@
 
 - Scope: localTrendBlogPostsRound60+
 - Minimum: 1200x630, 140000 bytes, luminance stddev 18.0, pixel entropy 2.9
-- Checked: 15
+- Checked: 18
 - Failed: 0
 
 | Status | Source | Image | Bytes | Size | Stddev | Pixel entropy | Notes |
@@ -22,3 +22,6 @@
 | PASS | localTrendBlogPostsRound64.js | `/og/content-quality/youth-nicotine-vape-pouch-addiction-quit-recovery-phlorotannin-2026-consumer-recovery-v2.png` | 162442 | 1200x630 | 39.9 | 4.12 | premium enough |
 | PASS | localTrendBlogPostsRound64.js | `/og/content-quality/toxic-chemical-exposure-decontamination-triage-airway-recovery-phlorotannin-2026-consumer-recovery-v2.png` | 171201 | 1200x630 | 41.6 | 4.16 | premium enough |
 | PASS | localTrendBlogPostsRound64.js | `/og/content-quality/world-blood-donor-day-2026-iron-hydration-recovery-phlorotannin-2026-consumer-recovery-v2.png` | 157346 | 1200x630 | 41.9 | 4.08 | premium enough |
+| PASS | localTrendBlogPostsRound65.js | `/og/content-quality/listeria-soft-cheese-recall-pregnancy-fridge-recovery-phlorotannin-2026.png` | 157458 | 1200x630 | 38.2 | 4.01 | premium enough |
+| PASS | localTrendBlogPostsRound65.js | `/og/content-quality/moringa-supplement-salmonella-recall-gut-recovery-phlorotannin-2026.png` | 145900 | 1200x630 | 37.8 | 3.82 | premium enough |
+| PASS | localTrendBlogPostsRound65.js | `/og/content-quality/baby-wipes-burkholderia-recall-infant-skin-recovery-phlorotannin-2026.png` | 141111 | 1200x630 | 39.4 | 3.86 | premium enough |
