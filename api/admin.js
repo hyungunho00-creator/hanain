@@ -42,13 +42,14 @@ const SB_SVC = process.env.SUPABASE_SERVICE_ROLE_KEY ||
 // 클라이언트 노출되어도 안전한 키 (RLS 로 보호)
 const SB_ANON = process.env.VITE_SUPABASE_ANON_KEY ||
                 process.env.SUPABASE_ANON_KEY ||
-                ''
+                'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJsZnh1eWVvbHVvZWF4dXVqdGx5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU5NDEyNjMsImV4cCI6MjA5MTUxNzI2M30.EmygB1wZcIXM0_4KTC8Kuwh5RY3R9NgfEpuzXQswHck'
 
 // 레거시 토큰 — JWT 도입 후 호환성 유지용. 점진적 폐기 예정.
 const ADMIN_TOKEN = process.env.ADMIN_TOKEN || ''
 
 // 디버그 모드 — 평소엔 false (에러 메시지 익명화)
 const DEBUG = process.env.ADMIN_DEBUG === '1'
+let ACTIVE_DB_KEY = ''
 
 // ─────────────────────────────────────────
 // Supabase JWT 검증
@@ -78,9 +79,10 @@ async function verifySupabaseJwt(jwt) {
 }
 
 function sbHeaders(extra = {}) {
+  const key = ACTIVE_DB_KEY || SB_SVC
   return {
-    apikey: SB_SVC,
-    Authorization: `Bearer ${SB_SVC}`,
+    apikey: SB_SVC || SB_ANON,
+    Authorization: `Bearer ${key}`,
     'Content-Type': 'application/json',
     'Accept-Profile': 'public',
     'Content-Profile': 'public',
@@ -419,7 +421,7 @@ export default async function handler(req, res) {
   }
 
   // 서버 환경변수 사전 검증 — 에러 메시지는 의도적으로 축약 (env 이름 노출 금지)
-  if (!SB_SVC) return serverError(res, DEBUG ? 'SUPABASE_SERVICE_ROLE_KEY env not set' : 'server misconfigured')
+  if (!SB_SVC && !SB_ANON) return serverError(res, DEBUG ? 'Supabase key env not set' : 'server misconfigured')
 
   let body
   try { body = await readBody(req) } catch (e) { return badRequest(res, 'invalid body') }
@@ -460,6 +462,9 @@ export default async function handler(req, res) {
   const fn = HANDLERS[action]
   if (!fn) return badRequest(res, 'unknown action')
 
+  ACTIVE_DB_KEY = SB_SVC || (authMethod === 'jwt' ? bearer : '')
+  if (!ACTIVE_DB_KEY) return serverError(res, DEBUG ? 'No database credential available for authorized request' : 'server misconfigured')
+
   try {
     const data = await fn(body.payload || {})
     // 성공 응답에는 추가 정보 안 넣음 (감사 로그는 서버 로그로)
@@ -469,5 +474,7 @@ export default async function handler(req, res) {
     // 핸들러 내부 에러 — 메시지 익명화 (DB 구조·env 이름 누수 방지)
     if (DEBUG) console.error('[admin] handler error:', e)
     return serverError(res, DEBUG && e && e.message ? e.message : 'handler error')
+  } finally {
+    ACTIVE_DB_KEY = ''
   }
 }
