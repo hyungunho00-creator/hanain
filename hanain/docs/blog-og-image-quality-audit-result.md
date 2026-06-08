@@ -2,7 +2,7 @@
 
 - Scope: localTrendBlogPostsRound60+
 - Minimum: 1200x630, 140000 bytes, luminance stddev 18.0, pixel entropy 2.9
-- Checked: 18
+- Checked: 21
 - Failed: 0
 
 | Status | Source | Image | Bytes | Size | Stddev | Pixel entropy | Notes |
@@ -25,3 +25,6 @@
 | PASS | localTrendBlogPostsRound65.js | `/og/content-quality/listeria-soft-cheese-recall-pregnancy-fridge-recovery-phlorotannin-2026.png` | 157458 | 1200x630 | 38.2 | 4.01 | premium enough |
 | PASS | localTrendBlogPostsRound65.js | `/og/content-quality/moringa-supplement-salmonella-recall-gut-recovery-phlorotannin-2026.png` | 145900 | 1200x630 | 37.8 | 3.82 | premium enough |
 | PASS | localTrendBlogPostsRound65.js | `/og/content-quality/baby-wipes-burkholderia-recall-infant-skin-recovery-phlorotannin-2026.png` | 141111 | 1200x630 | 39.4 | 3.86 | premium enough |
+| PASS | localTrendBlogPostsRound66.js | `/og/content-quality/cruise-gi-seabird-vsp-vomiting-diarrhea-gut-recovery-phlorotannin-2026.png` | 146077 | 1200x630 | 37.1 | 3.83 | premium enough |
+| PASS | localTrendBlogPostsRound66.js | `/og/content-quality/omnipod-pod-correction-insulin-under-delivery-glucose-recovery-phlorotannin-2026.png` | 147342 | 1200x630 | 39.8 | 3.90 | premium enough |
+| PASS | localTrendBlogPostsRound66.js | `/og/content-quality/cosmetic-procedure-travel-infection-wound-recovery-phlorotannin-2026.png` | 146811 | 1200x630 | 39.5 | 3.83 | premium enough |
