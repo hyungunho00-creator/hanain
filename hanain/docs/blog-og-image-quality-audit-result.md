@@ -2,7 +2,7 @@
 
 - Scope: localTrendBlogPostsRound60+
 - Minimum: 1200x630, 140000 bytes, luminance stddev 18.0, pixel entropy 2.9
-- Checked: 21
+- Checked: 24
 - Failed: 0
 
 | Status | Source | Image | Bytes | Size | Stddev | Pixel entropy | Notes |
@@ -28,3 +28,6 @@
 | PASS | localTrendBlogPostsRound66.js | `/og/content-quality/cruise-gi-seabird-vsp-vomiting-diarrhea-gut-recovery-phlorotannin-2026.png` | 146077 | 1200x630 | 37.1 | 3.83 | premium enough |
 | PASS | localTrendBlogPostsRound66.js | `/og/content-quality/omnipod-pod-correction-insulin-under-delivery-glucose-recovery-phlorotannin-2026.png` | 147342 | 1200x630 | 39.8 | 3.90 | premium enough |
 | PASS | localTrendBlogPostsRound66.js | `/og/content-quality/cosmetic-procedure-travel-infection-wound-recovery-phlorotannin-2026.png` | 146811 | 1200x630 | 39.5 | 3.83 | premium enough |
+| PASS | localTrendBlogPostsRound67.js | `/og/content-quality/powdered-milk-salmonella-pantry-gut-recovery-record-20260609.png` | 2269421 | 1200x630 | 40.1 | 3.97 | premium enough |
+| PASS | localTrendBlogPostsRound67.js | `/og/content-quality/cdc-respiratory-piv-hmpv-cough-breathing-recovery-20260609.png` | 2269421 | 1200x630 | 38.6 | 3.86 | premium enough |
+| PASS | localTrendBlogPostsRound67.js | `/og/content-quality/mdr-xdr-shigella-travel-gut-recovery-record-20260609.png` | 2269421 | 1200x630 | 39.8 | 3.91 | premium enough |
