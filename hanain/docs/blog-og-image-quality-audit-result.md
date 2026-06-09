@@ -2,7 +2,7 @@
 
 - Scope: localTrendBlogPostsRound60+
 - Minimum: 1200x630, 140000 bytes, luminance stddev 18.0, pixel entropy 2.9
-- Checked: 24
+- Checked: 29
 - Failed: 0
 
 | Status | Source | Image | Bytes | Size | Stddev | Pixel entropy | Notes |
@@ -31,3 +31,8 @@
 | PASS | localTrendBlogPostsRound67.js | `/og/content-quality/powdered-milk-salmonella-pantry-gut-recovery-record-20260609.png` | 2269421 | 1200x630 | 40.1 | 3.97 | premium enough |
 | PASS | localTrendBlogPostsRound67.js | `/og/content-quality/cdc-respiratory-piv-hmpv-cough-breathing-recovery-20260609.png` | 2269421 | 1200x630 | 38.6 | 3.86 | premium enough |
 | PASS | localTrendBlogPostsRound67.js | `/og/content-quality/mdr-xdr-shigella-travel-gut-recovery-record-20260609.png` | 2269421 | 1200x630 | 39.8 | 3.91 | premium enough |
+| PASS | localTrendBlogPostsRound68.js | `/og/content-quality/stomach-cancer-diet-salt-vegetable-phlorotannin-20260610.png` | 2269421 | 1200x630 | 38.7 | 3.97 | premium enough |
+| PASS | localTrendBlogPostsRound68.js | `/og/content-quality/colorectal-cancer-diet-fiber-grain-phlorotannin-20260610.png` | 2269421 | 1200x630 | 38.3 | 3.92 | premium enough |
+| PASS | localTrendBlogPostsRound68.js | `/og/content-quality/liver-cancer-diet-coffee-protein-phlorotannin-20260610.png` | 2269421 | 1200x630 | 38.0 | 3.99 | premium enough |
+| PASS | localTrendBlogPostsRound68.js | `/og/content-quality/kidney-cancer-diet-sodium-water-phlorotannin-20260610.png` | 2269421 | 1200x630 | 38.2 | 3.92 | premium enough |
+| PASS | localTrendBlogPostsRound68.js | `/og/content-quality/thyroid-cancer-diet-iodine-balance-phlorotannin-20260610.png` | 2269421 | 1200x630 | 39.0 | 3.95 | premium enough |
