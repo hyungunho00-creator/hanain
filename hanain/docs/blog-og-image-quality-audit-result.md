@@ -2,7 +2,7 @@
 
 - Scope: localTrendBlogPostsRound60+
 - Minimum: 1200x630, 140000 bytes, luminance stddev 18.0, pixel entropy 2.9
-- Checked: 29
+- Checked: 34
 - Failed: 0
 
 | Status | Source | Image | Bytes | Size | Stddev | Pixel entropy | Notes |
@@ -36,3 +36,8 @@
 | PASS | localTrendBlogPostsRound68.js | `/og/content-quality/liver-cancer-diet-coffee-protein-phlorotannin-20260610.png` | 2269421 | 1200x630 | 38.0 | 3.99 | premium enough |
 | PASS | localTrendBlogPostsRound68.js | `/og/content-quality/kidney-cancer-diet-sodium-water-phlorotannin-20260610.png` | 2269421 | 1200x630 | 38.2 | 3.92 | premium enough |
 | PASS | localTrendBlogPostsRound68.js | `/og/content-quality/thyroid-cancer-diet-iodine-balance-phlorotannin-20260610.png` | 2269421 | 1200x630 | 39.0 | 3.95 | premium enough |
+| PASS | localTrendBlogPostsRound69.js | `/og/content-quality/esophageal-cancer-diet-hot-drink-reflux-phlorotannin-20260610.png` | 2269421 | 1200x630 | 37.6 | 3.90 | premium enough |
+| PASS | localTrendBlogPostsRound69.js | `/og/content-quality/gallbladder-cancer-diet-weight-gallstone-phlorotannin-20260610.png` | 2269421 | 1200x630 | 38.7 | 3.85 | premium enough |
+| PASS | localTrendBlogPostsRound69.js | `/og/content-quality/pancreatic-cancer-diet-glucose-protein-phlorotannin-20260610.png` | 2269421 | 1200x630 | 39.7 | 4.04 | premium enough |
+| PASS | localTrendBlogPostsRound69.js | `/og/content-quality/blood-cancer-diet-food-safety-protein-phlorotannin-20260610.png` | 2269421 | 1200x630 | 41.0 | 3.98 | premium enough |
+| PASS | localTrendBlogPostsRound69.js | `/og/content-quality/brain-tumor-diet-protein-healthy-fat-phlorotannin-20260610.png` | 2269421 | 1200x630 | 39.0 | 3.96 | premium enough |
