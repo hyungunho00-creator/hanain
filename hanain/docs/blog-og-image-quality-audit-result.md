@@ -2,7 +2,7 @@
 
 - Scope: localTrendBlogPostsRound60+
 - Minimum: 1200x630, 140000 bytes, luminance stddev 18.0, pixel entropy 2.9
-- Checked: 41
+- Checked: 44
 - Failed: 0
 
 | Status | Source | Image | Bytes | Size | Stddev | Pixel entropy | Notes |
@@ -48,3 +48,6 @@
 | PASS | localTrendBlogPostsRound70.js | `/og/content-quality/lung-cancer-diet-protein-beta-carotene-phlorotannin-20260611.png` | 2269421 | 1200x630 | 41.0 | 3.76 | premium enough |
 | PASS | localTrendBlogPostsRound70.js | `/og/content-quality/liposarcoma-diet-protein-muscle-phlorotannin-20260611.png` | 2269421 | 1200x630 | 41.5 | 3.88 | premium enough |
 | PASS | localTrendBlogPostsRound70.js | `/og/content-quality/colon-polyp-adenoma-diet-fiber-phlorotannin-20260611.png` | 2269421 | 1200x630 | 43.5 | 3.82 | premium enough |
+| PASS | localTrendBlogPostsRound71.js | `/og/content-quality/glp1-compounded-muscle-fiber-recovery-phlorotannin-20260611.png` | 2269421 | 1200x630 | 41.1 | 3.00 | premium enough |
+| PASS | localTrendBlogPostsRound71.js | `/og/content-quality/measles-worldcup-travel-family-recovery-phlorotannin-20260611.png` | 2269421 | 1200x630 | 40.0 | 3.08 | premium enough |
+| PASS | localTrendBlogPostsRound71.js | `/og/content-quality/wildfire-smoke-ozone-aqi-lung-recovery-phlorotannin-20260611.png` | 2269421 | 1200x630 | 39.2 | 2.90 | premium enough |
