@@ -83,7 +83,7 @@ function walk(node) {
 }
 
 function countRiskyAnswers(payload) {
-  return (payload.questions || []).filter((item) => {
+  const risky = (payload.questions || []).filter((item) => {
     const answer = [
       item.validatedAnswer,
       item.validated_answer,
@@ -93,7 +93,13 @@ function countRiskyAnswers(payload) {
       item.body,
     ].filter(Boolean).join('\n')
     return RISKY_AFTER_PHLOROTANNIN_RE.test(answer)
-  }).length
+  })
+  if (risky.length) {
+    console.error(JSON.stringify({
+      riskyIds: risky.map((item) => item.id || item.question || '(missing-id)'),
+    }, null, 2))
+  }
+  return risky.length
 }
 
 for (const qaPath of QA_PATHS) {
