@@ -2,7 +2,7 @@
 
 - Scope: localTrendBlogPostsRound60+
 - Minimum: 1200x630, 140000 bytes, luminance stddev 18.0, pixel entropy 2.9
-- Checked: 34
+- Checked: 41
 - Failed: 0
 
 | Status | Source | Image | Bytes | Size | Stddev | Pixel entropy | Notes |
@@ -41,3 +41,10 @@
 | PASS | localTrendBlogPostsRound69.js | `/og/content-quality/pancreatic-cancer-diet-glucose-protein-phlorotannin-20260610.png` | 2269421 | 1200x630 | 39.7 | 4.04 | premium enough |
 | PASS | localTrendBlogPostsRound69.js | `/og/content-quality/blood-cancer-diet-food-safety-protein-phlorotannin-20260610.png` | 2269421 | 1200x630 | 41.0 | 3.98 | premium enough |
 | PASS | localTrendBlogPostsRound69.js | `/og/content-quality/brain-tumor-diet-protein-healthy-fat-phlorotannin-20260610.png` | 2269421 | 1200x630 | 39.0 | 3.96 | premium enough |
+| PASS | localTrendBlogPostsRound70.js | `/og/content-quality/breast-cancer-diet-alcohol-weight-fiber-phlorotannin-20260611.png` | 2269421 | 1200x630 | 40.8 | 3.84 | premium enough |
+| PASS | localTrendBlogPostsRound70.js | `/og/content-quality/uterine-cancer-diet-weight-glycemic-phlorotannin-20260611.png` | 2269421 | 1200x630 | 41.9 | 3.86 | premium enough |
+| PASS | localTrendBlogPostsRound70.js | `/og/content-quality/prostate-cancer-diet-tomato-weight-phlorotannin-20260611.png` | 2269421 | 1200x630 | 43.2 | 3.85 | premium enough |
+| PASS | localTrendBlogPostsRound70.js | `/og/content-quality/testicular-cancer-diet-survivorship-protein-phlorotannin-20260611.png` | 2269421 | 1200x630 | 39.7 | 3.88 | premium enough |
+| PASS | localTrendBlogPostsRound70.js | `/og/content-quality/lung-cancer-diet-protein-beta-carotene-phlorotannin-20260611.png` | 2269421 | 1200x630 | 41.0 | 3.76 | premium enough |
+| PASS | localTrendBlogPostsRound70.js | `/og/content-quality/liposarcoma-diet-protein-muscle-phlorotannin-20260611.png` | 2269421 | 1200x630 | 41.5 | 3.88 | premium enough |
+| PASS | localTrendBlogPostsRound70.js | `/og/content-quality/colon-polyp-adenoma-diet-fiber-phlorotannin-20260611.png` | 2269421 | 1200x630 | 43.5 | 3.82 | premium enough |

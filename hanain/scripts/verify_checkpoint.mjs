@@ -1,10 +1,10 @@
 const SITE = 'https://phlorotannin.com'
 
 const EXPECTED = {
-  sitemapTotal: 3334,
+  sitemapTotal: 3341,
   qCount: 1982,
   tagCount: 275,
-  blogCount: 760,
+  blogCount: 767,
   insightCount: 286,
   requiredBundleSlugs: [
     'glp1-era-protein-fiber-phlorotannin-checklist-2026',
