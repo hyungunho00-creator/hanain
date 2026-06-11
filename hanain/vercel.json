@@ -1,7 +1,7 @@
 {
   "functions": {
     "api/seo.js": {
-      "includeFiles": "{dist/index.html,public/**}"
+      "includeFiles": "{dist/index.html,public/qa.json}"
     },
     "api/og.js": {
       "includeFiles": "{public/og/content-quality/**,dist/og/content-quality/**}"
