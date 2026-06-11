@@ -1,7 +1,23 @@
 {
   "functions": {
     "api/seo.js": {
-      "includeFiles": "{dist/index.html,public/qa.json}"
+      "includeFiles": "{dist/index.html,public/qa.json}",
+      "excludeFiles": "{public/og/**,dist/og/**}"
+    },
+    "api/og.js": {
+      "excludeFiles": "{public/og/**,dist/og/**}"
+    },
+    "api/admin.js": {
+      "excludeFiles": "{public/og/**,dist/og/**}"
+    },
+    "api/metrics.js": {
+      "excludeFiles": "{public/og/**,dist/og/**}"
+    },
+    "api/partners/[partnerSlug].js": {
+      "excludeFiles": "{public/og/**,dist/og/**}"
+    },
+    "api/vcard/[partnerSlug].js": {
+      "excludeFiles": "{public/og/**,dist/og/**}"
     }
   },
   "headers": [
