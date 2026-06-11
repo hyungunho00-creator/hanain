@@ -2,9 +2,6 @@
   "functions": {
     "api/seo.js": {
       "includeFiles": "{dist/index.html,public/qa.json}"
-    },
-    "api/og.js": {
-      "includeFiles": "{public/og/content-quality/**,dist/og/content-quality/**}"
     }
   },
   "headers": [
@@ -100,7 +97,8 @@
     }
   ],
   "rewrites": [
-    { "source": "/og-card/:path*", "destination": "/api/og?file=:path*" },
+    { "source": "/og-card/:version/:file", "destination": "/og/content-quality/:file" },
+    { "source": "/og-card/:file", "destination": "/og/content-quality/:file" },
     { "source": "/", "destination": "/api/seo?p=/" },
     { "source": "/home", "destination": "/api/seo?p=/home" },
     { "source": "/easy", "destination": "/api/seo?p=/easy" },
