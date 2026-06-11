@@ -217,6 +217,15 @@ function assert(condition, message) {
   if (!condition) throw new Error(message)
 }
 
+function qaSlug(value) {
+  return String(value || '')
+    .replace(/[^\w\s\uAC00-\uD7A3-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '')
+    .slice(0, 60)
+}
+
 async function fetchText(url, options = {}) {
   const response = await fetch(url, options)
   const text = await response.text()
@@ -265,6 +274,18 @@ async function main() {
   assert(urls.filter((url) => url.includes('/blog/')).length === EXPECTED.blogCount, 'blog URL count changed')
   assert(urls.filter((url) => url.includes('/insights/')).length === EXPECTED.insightCount, 'insight URL count changed')
   results.push(`sitemap ok: ${urls.length} URLs`)
+
+  const { response: qaResponse, text: qaJsonText } = await fetchText(`${SITE}/qa.json`)
+  assert(qaResponse.status === 200, `qa.json status ${qaResponse.status}`)
+  const qaJson = JSON.parse(qaJsonText)
+  const qaItems = Array.isArray(qaJson.questions) ? qaJson.questions : []
+  assert(qaItems.length === EXPECTED.qCount, `qa.json count ${qaItems.length}`)
+  const recentQa = qaItems.slice(-39)
+  for (const item of recentQa) {
+    const slug = qaSlug(item.question)
+    assert(slug && urls.includes(`${SITE}/q/${slug}`), `recent Q&A missing from sitemap: ${item.id || item.question}`)
+  }
+  results.push(`recent Q&A sitemap ok: ${recentQa.length} URLs`)
 
   await checkPage('/qa?category=cancer_immune', {
     xRobots: 'noindex,nofollow',

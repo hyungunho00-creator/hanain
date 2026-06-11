@@ -32,8 +32,10 @@ const BLOG_TO_QA_CAT = {
 
 function qaSlug(question) {
   return (question || '')
-    .replace(/[^\w\s가-힣]/g, '')
+    .replace(/[^\w\s가-힣-]/g, '')
     .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '')
     .slice(0, 60)
 }
 

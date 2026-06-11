@@ -357,9 +357,11 @@ else:
 
 
 def qa_slug(question: str) -> str:
-    """Q&A 슬러그 규칙 — build_qa_tag_index.py와 동일 (DO_NOT_TOUCH §3-Q)."""
-    s = re.sub(r'[^\w\s가-힣]', '', question or '')
+    """Q&A 슬러그 규칙 — QuestionDetailPage.toQuestionSlug와 동일."""
+    s = re.sub(r'[^\w\s가-힣-]', '', question or '')
     s = re.sub(r'\s+', '-', s)
+    s = re.sub(r'-+', '-', s)
+    s = s.strip('-')
     return s[:60]
 
 

@@ -76,7 +76,12 @@ function categoryPastelStyle(catId, isActive = false) {
 }
 
 function qaSlug(s) {
-  return (s || '').replace(/[^\w\s가-힣]/g, '').replace(/\s+/g, '-').slice(0, 60)
+  return (s || '')
+    .replace(/[^\w\s가-힣-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '')
+    .slice(0, 60)
 }
 
 function getAnswerSearchText(qa) {
@@ -87,8 +92,15 @@ function isPublicQa(qa) {
   return shouldEmitQASchema(qa)
 }
 
+function qaPublishedTime(qa) {
+  const raw = qa?.updated_at || qa?.updatedAt || qa?.rewrittenAt || qa?.rewritten_at || qa?.reviewed_at || qa?.reviewedAt || qa?.created_at || qa?.published_at || ''
+  const time = Date.parse(raw)
+  return Number.isFinite(time) ? time : 0
+}
+
 function isLatestQa(qa) {
-  return String(qa?.id || '').startsWith('round3-')
+  const id = String(qa?.id || '')
+  return id.startsWith('round3-') || id.startsWith('category-aeo-') || id.includes('-202606')
 }
 
 function highlightText(text, query) {
@@ -372,6 +384,8 @@ export default function QAPage() {
     filtered.sort((a, b) => {
       const latestDelta = Number(isLatestQa(b)) - Number(isLatestQa(a))
       if (latestDelta !== 0) return latestDelta
+      const timeDelta = qaPublishedTime(b) - qaPublishedTime(a)
+      if (timeDelta !== 0) return timeDelta
       return (b.views || b.view_count || 0) - (a.views || a.view_count || 0)
     })
 
