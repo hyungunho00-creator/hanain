@@ -2,7 +2,7 @@
 
 - Scope: localTrendBlogPostsRound60+
 - Minimum: 1200x630, 140000 bytes, luminance stddev 18.0, pixel entropy 2.9
-- Checked: 57
+- Checked: 70
 - Failed: 0
 
 | Status | Source | Image | Bytes | Size | Stddev | Pixel entropy | Notes |
@@ -64,3 +64,16 @@
 | PASS | localTrendBlogPostsRound72.js | `/og/content-quality/psa-prostate-mri-waist-bp-phlorotannin-20260611.png` | 503581 | 1200x630 | 57.8 | 6.95 | premium enough |
 | PASS | localTrendBlogPostsRound72.js | `/og/content-quality/indoor-air-co2-hepa-respiratory-recovery-phlorotannin-20260611.png` | 620658 | 1200x630 | 58.1 | 6.45 | premium enough |
 | PASS | localTrendBlogPostsRound72.js | `/og/content-quality/h5n1-raw-milk-poultry-exposure-recovery-phlorotannin-20260611.png` | 491347 | 1200x630 | 72.7 | 7.03 | premium enough |
+| PASS | localTrendBlogPostsRound73.js | `/og/content-quality/glp1-protein-fiber-plateau-blog-phlorotannin-20260611.png` | 2269421 | 1200x630 | 44.0 | 4.11 | premium enough |
+| PASS | localTrendBlogPostsRound73.js | `/og/content-quality/cancer-biomarker-ctdna-report-blog-phlorotannin-20260611.png` | 2269421 | 1200x630 | 48.0 | 4.17 | premium enough |
+| PASS | localTrendBlogPostsRound73.js | `/og/content-quality/constipation-fiber-fluid-gut-blog-phlorotannin-20260611.png` | 2269421 | 1200x630 | 43.9 | 4.12 | premium enough |
+| PASS | localTrendBlogPostsRound73.js | `/og/content-quality/heat-bp-medication-hydration-blog-phlorotannin-20260611.png` | 2269421 | 1200x630 | 48.5 | 4.18 | premium enough |
+| PASS | localTrendBlogPostsRound73.js | `/og/content-quality/alzheimers-blood-test-family-record-blog-phlorotannin-20260611.png` | 2269421 | 1200x630 | 45.3 | 4.14 | premium enough |
+| PASS | localTrendBlogPostsRound73.js | `/og/content-quality/teen-social-media-sleep-boundary-blog-phlorotannin-20260611.png` | 2269421 | 1200x630 | 45.3 | 4.14 | premium enough |
+| PASS | localTrendBlogPostsRound73.js | `/og/content-quality/older-strength-balance-falls-blog-phlorotannin-20260611.png` | 2269421 | 1200x630 | 42.8 | 4.10 | premium enough |
+| PASS | localTrendBlogPostsRound73.js | `/og/content-quality/bemotrizinol-uva-skin-recovery-blog-phlorotannin-20260611.png` | 2269421 | 1200x630 | 43.4 | 4.06 | premium enough |
+| PASS | localTrendBlogPostsRound73.js | `/og/content-quality/topical-finasteride-scalp-record-blog-phlorotannin-20260611.png` | 2269421 | 1200x630 | 47.1 | 4.17 | premium enough |
+| PASS | localTrendBlogPostsRound73.js | `/og/content-quality/wildfire-smoke-indoor-air-blog-phlorotannin-20260611.png` | 2269421 | 1200x630 | 44.2 | 4.13 | premium enough |
+| PASS | localTrendBlogPostsRound73.js | `/og/content-quality/measles-h5n1-family-recovery-blog-phlorotannin-20260611.png` | 2269421 | 1200x630 | 46.6 | 4.16 | premium enough |
+| PASS | localTrendBlogPostsRound73.js | `/og/content-quality/cervical-self-collection-recovery-blog-phlorotannin-20260611.png` | 2269421 | 1200x630 | 43.3 | 4.11 | premium enough |
+| PASS | localTrendBlogPostsRound73.js | `/og/content-quality/psa-waist-blood-pressure-blog-phlorotannin-20260611.png` | 2269421 | 1200x630 | 45.4 | 4.14 | premium enough |
