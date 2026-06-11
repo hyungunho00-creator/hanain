@@ -4,7 +4,7 @@ import { usePartner } from '../context/PartnerContext'
 import SEOHead from '../components/common/SEOHead'
 import RelatedQA from '../components/qa/RelatedQA'
 import LastReviewed from '../components/common/LastReviewed'
-import { MoleculeSVG, SectionHeader, StatCard, SciImage } from '../components/visual'
+import { MoleculeSVG, SectionHeader, StatCard } from '../components/visual'
 import { INSIGHTS_LIST, INSIGHT_CATEGORIES } from '../data/insights'
 import { QA_TOTAL } from '../data/siteStats'
 
@@ -356,15 +356,19 @@ function IntroHero() {
           </div>
 
           {/* 우측: 이미지 */}
-          <div className="hidden md:block relative">
-            <SciImage
-              name="flatlay-extract"
-              alt="감태 추출물 플랫레이"
-              aspect="4/3"
-              priority
-              rounded="2xl"
-            />
-            <div className="absolute -bottom-5 -right-5 bg-white rounded-md px-4 py-3 border border-gray-200">
+          <div className="relative order-first md:order-none">
+            <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-[0_24px_70px_rgba(15,23,42,0.10)]" style={{ aspectRatio: '16 / 10' }}>
+              <img
+                src="/images/site/learn-hero-education.webp"
+                alt="Phlorotannin education desk with brown seaweed extract and marine polyphenol research visuals"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+                className="h-full w-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-tr from-white/30 via-transparent to-white/10 pointer-events-none" />
+            </div>
+            <div className="absolute -bottom-5 left-6 right-6 bg-white rounded-md px-4 py-3 border border-gray-200 shadow-lg md:left-auto md:right-[-1.25rem] md:w-auto">
               <div className="text-[11px] text-gray-500 font-medium uppercase tracking-wider">갈조류 추출</div>
               <div className="text-base font-bold text-gray-900">고순도 폴리페놀</div>
             </div>

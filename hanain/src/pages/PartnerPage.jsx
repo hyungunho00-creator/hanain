@@ -312,6 +312,17 @@ export default function PartnerPage() {
           style={{ background: 'radial-gradient(ellipse at 50% 0%, rgba(0,180,216,0.22) 0%, transparent 60%)' }}
         />
         <div className="relative">
+          <div className="relative mx-auto mb-9 aspect-[16/9] max-w-4xl overflow-hidden rounded-2xl border border-white/20 bg-white/10 shadow-[0_24px_80px_rgba(0,0,0,0.28)] md:aspect-[16/7]">
+            <img
+              src="/images/site/partner-application-hero.webp"
+              alt="Phlorotannin partner application desk with digital card, contact tools, and marine polyphenol research materials"
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+              className="h-full w-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0B1A2E]/18 via-transparent to-white/10 pointer-events-none" />
+          </div>
           <p style={{ fontSize: '11px', color: GOLD, letterSpacing: '4px', fontWeight: '700', marginBottom: '12px' }}>
             PHLOROTANNIN PARTNERS
           </p>
