@@ -1,11 +1,11 @@
 {
   "min_tag_count": 5,
-  "total_questions": 1995,
-  "total_unique_tags": 2501,
-  "page_eligible_tags": 281,
+  "total_questions": 2008,
+  "total_unique_tags": 2510,
+  "page_eligible_tags": 285,
   "tags": {
     "플로로탄닌": {
-      "count": 1445,
+      "count": 1458,
       "qids": [
         "cardio-001",
         "cardio-002",
@@ -1451,11 +1451,24 @@
         "category-aeo-respiratory-wildfire-smoke-aqi-hepa-phlorotannin-20260611",
         "category-aeo-infection-dengue-travel-fever-mosquito-phlorotannin-20260611",
         "category-aeo-womens-health-menopause-ht-sleep-hotflash-phlorotannin-20260611",
-        "category-aeo-mens-health-testosterone-fertility-psa-bp-phlorotannin-20260611"
+        "category-aeo-mens-health-testosterone-fertility-psa-bp-phlorotannin-20260611",
+        "category-aeo-round2-metabolism-upf-craving-fiber-phlorotannin-20260611",
+        "category-aeo-round2-cancer-immune-personalized-vaccine-ctdna-phlorotannin-20260611",
+        "category-aeo-round2-digestive-foodborne-illness-hydration-phlorotannin-20260611",
+        "category-aeo-round2-cardiovascular-heat-bp-meds-hydration-phlorotannin-20260611",
+        "category-aeo-round2-neuro-hearing-loss-dementia-sleep-phlorotannin-20260611",
+        "category-aeo-round2-mental-sleep-screen-boundary-caffeine-phlorotannin-20260611",
+        "category-aeo-round2-musculoskeletal-weighted-vest-bone-joint-phlorotannin-20260611",
+        "category-aeo-round2-skin-uva-visible-light-sunscreen-phlorotannin-20260611",
+        "category-aeo-round2-hair-biotin-lab-test-scalp-phlorotannin-20260611",
+        "category-aeo-round2-respiratory-indoor-co2-ventilation-hepa-phlorotannin-20260611",
+        "category-aeo-round2-infection-worldcup-travel-fever-checklist-phlorotannin-20260611",
+        "category-aeo-round2-womens-hpv-self-collection-cervical-screening-phlorotannin-20260611",
+        "category-aeo-round2-mens-heat-sperm-fertility-testosterone-phlorotannin-20260611"
       ]
     },
     "감태": {
-      "count": 999,
+      "count": 1005,
       "qids": [
         "cardio-008",
         "cardio-012",
@@ -2455,11 +2468,17 @@
         "category-aeo-neuro-alzheimers-blood-test-sleep-record-phlorotannin-20260611",
         "category-aeo-musculoskeletal-knee-oa-weight-strength-glp1-phlorotannin-20260611",
         "category-aeo-hair-topical-finasteride-scalp-recovery-phlorotannin-20260611",
-        "category-aeo-womens-health-menopause-ht-sleep-hotflash-phlorotannin-20260611"
+        "category-aeo-womens-health-menopause-ht-sleep-hotflash-phlorotannin-20260611",
+        "category-aeo-round2-metabolism-upf-craving-fiber-phlorotannin-20260611",
+        "category-aeo-round2-digestive-foodborne-illness-hydration-phlorotannin-20260611",
+        "category-aeo-round2-mental-sleep-screen-boundary-caffeine-phlorotannin-20260611",
+        "category-aeo-round2-skin-uva-visible-light-sunscreen-phlorotannin-20260611",
+        "category-aeo-round2-hair-biotin-lab-test-scalp-phlorotannin-20260611",
+        "category-aeo-round2-womens-hpv-self-collection-cervical-screening-phlorotannin-20260611"
       ]
     },
     "항산화": {
-      "count": 608,
+      "count": 613,
       "qids": [
         "cardio-003",
         "cardio-004",
@@ -3068,7 +3087,12 @@
         "round2-cardiovascular-20260530",
         "category-aeo-cardiovascular-home-bp-kidney-prevent-phlorotannin-20260611",
         "category-aeo-skin-melasma-tinted-sunscreen-iron-oxide-phlorotannin-20260611",
-        "category-aeo-respiratory-wildfire-smoke-aqi-hepa-phlorotannin-20260611"
+        "category-aeo-respiratory-wildfire-smoke-aqi-hepa-phlorotannin-20260611",
+        "category-aeo-round2-cardiovascular-heat-bp-meds-hydration-phlorotannin-20260611",
+        "category-aeo-round2-musculoskeletal-weighted-vest-bone-joint-phlorotannin-20260611",
+        "category-aeo-round2-skin-uva-visible-light-sunscreen-phlorotannin-20260611",
+        "category-aeo-round2-respiratory-indoor-co2-ventilation-hepa-phlorotannin-20260611",
+        "category-aeo-round2-womens-hpv-self-collection-cervical-screening-phlorotannin-20260611"
       ]
     },
     "디에콜": {
@@ -4514,7 +4538,7 @@
       ]
     },
     "해양폴리페놀": {
-      "count": 340,
+      "count": 342,
       "qids": [
         "cardio-009",
         "cardio-019",
@@ -4855,7 +4879,9 @@
         "seoqa-respiratory-05",
         "category-aeo-cancer-immune-biomarker-ctdna-recovery-phlorotannin-20260611",
         "category-aeo-infection-dengue-travel-fever-mosquito-phlorotannin-20260611",
-        "category-aeo-mens-health-testosterone-fertility-psa-bp-phlorotannin-20260611"
+        "category-aeo-mens-health-testosterone-fertility-psa-bp-phlorotannin-20260611",
+        "category-aeo-round2-cancer-immune-personalized-vaccine-ctdna-phlorotannin-20260611",
+        "category-aeo-round2-mens-heat-sperm-fertility-testosterone-phlorotannin-20260611"
       ]
     },
     "항염증": {
@@ -6013,7 +6039,7 @@
       ]
     },
     "심혈관": {
-      "count": 71,
+      "count": 72,
       "qids": [
         "cardio-019",
         "cardio-030",
@@ -6085,7 +6111,8 @@
         "trend-cardiovascular-smartwatch-afib-alert-palpitations-record-20260604",
         "strategic-qa-cardiovascular-extreme-heat-hydration-medication-recovery-record-20260607",
         "category-latest-cardiovascular-heat-blood-pressure-medication-recovery-20260608",
-        "category-aeo-cardiovascular-home-bp-kidney-prevent-phlorotannin-20260611"
+        "category-aeo-cardiovascular-home-bp-kidney-prevent-phlorotannin-20260611",
+        "category-aeo-round2-cardiovascular-heat-bp-meds-hydration-phlorotannin-20260611"
       ]
     },
     "폐": {
@@ -6508,7 +6535,7 @@
       ]
     },
     "관절": {
-      "count": 59,
+      "count": 60,
       "qids": [
         "musc-013",
         "musc-015",
@@ -6568,11 +6595,12 @@
         "ms_090",
         "infect-004",
         "qa200-20260527-130",
-        "round2-musculoskeletal-20260530"
+        "round2-musculoskeletal-20260530",
+        "category-aeo-round2-musculoskeletal-weighted-vest-bone-joint-phlorotannin-20260611"
       ]
     },
     "여성건강": {
-      "count": 52,
+      "count": 53,
       "qids": [
         "woms-001",
         "woms-005",
@@ -6625,7 +6653,8 @@
         "strategic-qa-womens-dense-breast-mammogram-notification-risk-supplemental-screening-record-20260605",
         "strategic-qa-womens-hpv-self-collection-cervical-screening-pap-positive-followup-record-20260605",
         "strategic-qa-womens-heavy-menstrual-bleeding-anemia-fibroid-abnormal-uterine-record-20260606",
-        "category-aeo-womens-health-menopause-ht-sleep-hotflash-phlorotannin-20260611"
+        "category-aeo-womens-health-menopause-ht-sleep-hotflash-phlorotannin-20260611",
+        "category-aeo-round2-womens-hpv-self-collection-cervical-screening-phlorotannin-20260611"
       ]
     },
     "병원정보": {
@@ -6851,7 +6880,7 @@
       ]
     },
     "남성건강": {
-      "count": 48,
+      "count": 49,
       "qids": [
         "mens-001",
         "mens-002",
@@ -6900,11 +6929,12 @@
         "strategic-qa-mens-erectile-dysfunction-cardiovascular-risk-nitrates-sildenafil-record-20260606",
         "strategic-qa-mens-gynecomastia-male-breast-lump-nipple-discharge-brca-record-20260606",
         "category-latest-mens-health-testosterone-bp-fertility-psa-recovery-20260608",
-        "category-aeo-mens-health-testosterone-fertility-psa-bp-phlorotannin-20260611"
+        "category-aeo-mens-health-testosterone-fertility-psa-bp-phlorotannin-20260611",
+        "category-aeo-round2-mens-heat-sperm-fertility-testosterone-phlorotannin-20260611"
       ]
     },
     "호흡기": {
-      "count": 43,
+      "count": 44,
       "qids": [
         "rsp_038",
         "rsp_046",
@@ -6948,7 +6978,56 @@
         "trend-rsv-vaccine-older-adults-risk-20260602",
         "trend-pollen-thunderstorm-asthma-action-plan-20260603",
         "trend-wildfire-smoke-aqi-n95-asthma-copd-action-record-20260603",
-        "trend-monsoon-mold-dampness-asthma-allergy-home-record-20260604"
+        "trend-monsoon-mold-dampness-asthma-allergy-home-record-20260604",
+        "category-aeo-round2-respiratory-indoor-co2-ventilation-hepa-phlorotannin-20260611"
+      ]
+    },
+    "수면": {
+      "count": 43,
+      "qids": [
+        "cardio-020",
+        "meta-020",
+        "meta_043",
+        "neuro-007",
+        "neuro-011",
+        "neuro-016",
+        "neuro-018",
+        "mens-015",
+        "mh-extra-071",
+        "mental-extra-039",
+        "mental-003",
+        "mental-005",
+        "nc_120",
+        "sh_105",
+        "ingr-023",
+        "ingr-024",
+        "qa200-20260527-006",
+        "qa200-20260527-096",
+        "qa200-20260527-101",
+        "qa200-20260527-113",
+        "qa200-20260527-116",
+        "qa200-20260527-121",
+        "qa200-20260527-154",
+        "qa200-20260527-166",
+        "qa200-20260527-175",
+        "trendqa-neuro-20260530",
+        "trendqa-womens-20260530",
+        "round2-neuro-cognitive-20260530",
+        "round2-infection-inflammation-20260530",
+        "round2-mens-health-20260530",
+        "round3-mental_health-2-20260531",
+        "trend-youth-mental-health-sleep-screen-time-20260602",
+        "trend-loneliness-social-connection-health-risk-support-record-20260603",
+        "trend-mental-social-media-sleep-anxiety-boundary-record-20260604",
+        "strategic-qa-womens-menopause-ht-label-hotflash-sleep-phlorotannin-20260605",
+        "strategic-qa-mens-bph-nocturia-sleep-diuretic-glucose-record-20260605",
+        "category-latest-mental-health-screen-use-sleep-anxiety-recovery-20260608",
+        "category-latest-womens-health-menopause-ht-label-sleep-hotflash-recovery-20260608",
+        "category-aeo-neuro-alzheimers-blood-test-sleep-record-phlorotannin-20260611",
+        "category-aeo-mental-health-ai-chatbot-sleep-youth-phlorotannin-20260611",
+        "category-aeo-womens-health-menopause-ht-sleep-hotflash-phlorotannin-20260611",
+        "category-aeo-round2-neuro-hearing-loss-dementia-sleep-phlorotannin-20260611",
+        "category-aeo-round2-mental-sleep-screen-boundary-caffeine-phlorotannin-20260611"
       ]
     },
     "혈압": {
@@ -6996,52 +7075,6 @@
         "strategic-qa-mens-erectile-dysfunction-cardiovascular-risk-nitrates-sildenafil-record-20260606",
         "category-latest-mens-health-testosterone-bp-fertility-psa-recovery-20260608",
         "category-aeo-mens-health-testosterone-fertility-psa-bp-phlorotannin-20260611"
-      ]
-    },
-    "수면": {
-      "count": 41,
-      "qids": [
-        "cardio-020",
-        "meta-020",
-        "meta_043",
-        "neuro-007",
-        "neuro-011",
-        "neuro-016",
-        "neuro-018",
-        "mens-015",
-        "mh-extra-071",
-        "mental-extra-039",
-        "mental-003",
-        "mental-005",
-        "nc_120",
-        "sh_105",
-        "ingr-023",
-        "ingr-024",
-        "qa200-20260527-006",
-        "qa200-20260527-096",
-        "qa200-20260527-101",
-        "qa200-20260527-113",
-        "qa200-20260527-116",
-        "qa200-20260527-121",
-        "qa200-20260527-154",
-        "qa200-20260527-166",
-        "qa200-20260527-175",
-        "trendqa-neuro-20260530",
-        "trendqa-womens-20260530",
-        "round2-neuro-cognitive-20260530",
-        "round2-infection-inflammation-20260530",
-        "round2-mens-health-20260530",
-        "round3-mental_health-2-20260531",
-        "trend-youth-mental-health-sleep-screen-time-20260602",
-        "trend-loneliness-social-connection-health-risk-support-record-20260603",
-        "trend-mental-social-media-sleep-anxiety-boundary-record-20260604",
-        "strategic-qa-womens-menopause-ht-label-hotflash-sleep-phlorotannin-20260605",
-        "strategic-qa-mens-bph-nocturia-sleep-diuretic-glucose-record-20260605",
-        "category-latest-mental-health-screen-use-sleep-anxiety-recovery-20260608",
-        "category-latest-womens-health-menopause-ht-label-sleep-hotflash-recovery-20260608",
-        "category-aeo-neuro-alzheimers-blood-test-sleep-record-phlorotannin-20260611",
-        "category-aeo-mental-health-ai-chatbot-sleep-youth-phlorotannin-20260611",
-        "category-aeo-womens-health-menopause-ht-sleep-hotflash-phlorotannin-20260611"
       ]
     },
     "당뇨": {
@@ -7656,6 +7689,66 @@
         "infect-107"
       ]
     },
+    "탈모": {
+      "count": 25,
+      "qids": [
+        "skin-003",
+        "skin-006",
+        "sh_015",
+        "sh_022",
+        "sh_035",
+        "sh_042",
+        "sh_045",
+        "sh_047",
+        "sh_067",
+        "sh_071",
+        "sh_073",
+        "sh_086",
+        "woms-010",
+        "mens-008",
+        "mens-extra-003",
+        "ci_133",
+        "qa200-20260527-149",
+        "qa200-20260527-150",
+        "trendqa-hair-20260530",
+        "round2-hair-20260530",
+        "trend-oral-minoxidil-hair-loss-blood-pressure-safety-20260602",
+        "trend-rosemary-oil-hair-loss-scalp-irritation-20260602",
+        "trend-hair-ferritin-iron-hair-shedding-record-20260604",
+        "category-aeo-hair-topical-finasteride-scalp-recovery-phlorotannin-20260611",
+        "category-aeo-round2-hair-biotin-lab-test-scalp-phlorotannin-20260611"
+      ]
+    },
+    "테스토스테론": {
+      "count": 25,
+      "qids": [
+        "wh-extra-040",
+        "wh-extra-050",
+        "wh-extra-064",
+        "mens-002",
+        "mens-006",
+        "mens-extra-007",
+        "mens-extra-011",
+        "mens-extra-012",
+        "mens-extra-020",
+        "mens-extra-033",
+        "mens-extra-043",
+        "mens-extra-052",
+        "mens-extra-053",
+        "mh-extra-071",
+        "mens-002",
+        "mens-004",
+        "mens-006",
+        "mens-008",
+        "qa200-20260527-194",
+        "round3-mens_health-2-20260531",
+        "trend-testosterone-therapy-low-libido-bp-monitoring-20260602",
+        "trend-testosterone-therapy-fertility-sperm-count-20260603",
+        "category-latest-mens-health-testosterone-bp-fertility-psa-recovery-20260608",
+        "category-aeo-mens-health-testosterone-fertility-psa-bp-phlorotannin-20260611",
+        "category-aeo-round2-mens-heat-sperm-fertility-testosterone-phlorotannin-20260611"
+      ]
+    },
     "뇌·인지": {
       "count": 24,
       "qids": [
@@ -7712,64 +7805,6 @@
         "qa-hospital-20260527-046",
         "round2-cardiovascular-20260530",
         "trend-omega3-atrial-fibrillation-supplement-20260602"
-      ]
-    },
-    "탈모": {
-      "count": 24,
-      "qids": [
-        "skin-003",
-        "skin-006",
-        "sh_015",
-        "sh_022",
-        "sh_035",
-        "sh_042",
-        "sh_045",
-        "sh_047",
-        "sh_067",
-        "sh_071",
-        "sh_073",
-        "sh_086",
-        "woms-010",
-        "mens-008",
-        "mens-extra-003",
-        "ci_133",
-        "qa200-20260527-149",
-        "qa200-20260527-150",
-        "trendqa-hair-20260530",
-        "round2-hair-20260530",
-        "trend-oral-minoxidil-hair-loss-blood-pressure-safety-20260602",
-        "trend-rosemary-oil-hair-loss-scalp-irritation-20260602",
-        "trend-hair-ferritin-iron-hair-shedding-record-20260604",
-        "category-aeo-hair-topical-finasteride-scalp-recovery-phlorotannin-20260611"
-      ]
-    },
-    "테스토스테론": {
-      "count": 24,
-      "qids": [
-        "wh-extra-040",
-        "wh-extra-050",
-        "wh-extra-064",
-        "mens-002",
-        "mens-006",
-        "mens-extra-007",
-        "mens-extra-011",
-        "mens-extra-012",
-        "mens-extra-020",
-        "mens-extra-033",
-        "mens-extra-043",
-        "mens-extra-052",
-        "mens-extra-053",
-        "mh-extra-071",
-        "mens-002",
-        "mens-004",
-        "mens-006",
-        "mens-008",
-        "qa200-20260527-194",
-        "round3-mens_health-2-20260531",
-        "trend-testosterone-therapy-low-libido-bp-monitoring-20260602",
-        "trend-testosterone-therapy-fertility-sperm-count-20260603",
-        "category-latest-mens-health-testosterone-bp-fertility-psa-recovery-20260608",
-        "category-aeo-mens-health-testosterone-fertility-psa-bp-phlorotannin-20260611"
       ]
     },
     "정신건강": {
@@ -7956,6 +7991,30 @@
         "qa200-20260527-160"
       ]
     },
+    "기억력": {
+      "count": 19,
+      "qids": [
+        "neuro-010",
+        "nc_019",
+        "nc_050",
+        "nc_051",
+        "nc_060",
+        "nc_068",
+        "nc_072",
+        "nc_091",
+        "qa200-20260527-095",
+        "qa200-20260527-099",
+        "qa200-20260527-101",
+        "qa200-20260527-103",
+        "round2-neuro-cognitive-20260530",
+        "round3-neuro_cognitive-2-20260531",
+        "trend-alzheimers-blood-biomarker-memory-clinic-record-20260603",
+        "trend-neuro-long-covid-brain-fog-memory-record-20260604",
+        "category-latest-neuro-cognitive-alzheimers-blood-biomarker-memory-record-20260608",
+        "category-aeo-neuro-alzheimers-blood-test-sleep-record-phlorotannin-20260611",
+        "category-aeo-round2-neuro-hearing-loss-dementia-sleep-phlorotannin-20260611"
+      ]
+    },
     "철분": {
       "count": 19,
       "qids": [
@@ -8003,27 +8062,50 @@
         "ingr-015"
       ]
     },
-    "기억력": {
+    "뇌건강": {
       "count": 18,
       "qids": [
-        "neuro-010",
-        "nc_019",
-        "nc_050",
-        "nc_051",
-        "nc_060",
-        "nc_068",
-        "nc_072",
-        "nc_091",
-        "qa200-20260527-095",
-        "qa200-20260527-099",
-        "qa200-20260527-101",
-        "qa200-20260527-103",
-        "round2-neuro-cognitive-20260530",
-        "round3-neuro_cognitive-2-20260531",
-        "trend-alzheimers-blood-biomarker-memory-clinic-record-20260603",
-        "trend-neuro-long-covid-brain-fog-memory-record-20260604",
-        "category-latest-neuro-cognitive-alzheimers-blood-biomarker-memory-record-20260608",
-        "category-aeo-neuro-alzheimers-blood-test-sleep-record-phlorotannin-20260611"
+        "neuro-002",
+        "neuro-003",
+        "neuro-005",
+        "neuro-013",
+        "neuro-015",
+        "neuro-020",
+        "nc_047",
+        "mental-012",
+        "mental-016",
+        "nc_098",
+        "nc_112",
+        "nc_114",
+        "nc_122",
+        "qa200-20260527-100",
+        "qa200-20260527-102",
+        "strategic-qa-neuro-cognitive-haengwoo-lee-seanol-brain-evidence-record-20260606",
+        "category-aeo-neuro-alzheimers-blood-test-sleep-record-phlorotannin-20260611",
+        "category-aeo-round2-neuro-hearing-loss-dementia-sleep-phlorotannin-20260611"
+      ]
+    },
+    "피부장벽": {
+      "count": 18,
+      "qids": [
+        "skin-002",
+        "skin-011",
+        "sh_014",
+        "sh_058",
+        "infect-extra-040",
+        "infect-extra-053",
+        "sh_093",
+        "sh_096",
+        "sh_099",
+        "sh_105",
+        "qa200-20260527-147",
+        "trendqa-skin-20260530",
+        "round2-skin-20260530",
+        "round3-skin-1-20260531",
+        "trend-skin-atopic-dermatitis-moisturizer-steroid-fear-record-20260604",
+        "category-latest-skin-bemotrizinol-uva-sunscreen-barrier-recovery-20260608",
+        "category-aeo-skin-melasma-tinted-sunscreen-iron-oxide-phlorotannin-20260611",
+        "category-aeo-round2-skin-uva-visible-light-sunscreen-phlorotannin-20260611"
       ]
     },
     "골다공증": {
@@ -8048,28 +8130,6 @@
         "category-latest-musculoskeletal-falls-osteoporosis-dxa-strength-recovery-20260608"
       ]
     },
-    "뇌건강": {
-      "count": 17,
-      "qids": [
-        "neuro-002",
-        "neuro-003",
-        "neuro-005",
-        "neuro-013",
-        "neuro-015",
-        "neuro-020",
-        "nc_047",
-        "mental-012",
-        "mental-016",
-        "nc_098",
-        "nc_112",
-        "nc_114",
-        "nc_122",
-        "qa200-20260527-100",
-        "qa200-20260527-102",
-        "strategic-qa-neuro-cognitive-haengwoo-lee-seanol-brain-evidence-record-20260606",
-        "category-aeo-neuro-alzheimers-blood-test-sleep-record-phlorotannin-20260611"
-      ]
-    },
     "마그네슘": {
       "count": 17,
       "qids": [
@@ -8090,28 +8150,6 @@
         "qa-hospital-20260527-041",
         "round3-mental_health-2-20260531",
         "trend-magnesium-glycinate-sleep-safety-20260602"
-      ]
-    },
-    "피부장벽": {
-      "count": 17,
-      "qids": [
-        "skin-002",
-        "skin-011",
-        "sh_014",
-        "sh_058",
-        "infect-extra-040",
-        "infect-extra-053",
-        "sh_093",
-        "sh_096",
-        "sh_099",
-        "sh_105",
-        "qa200-20260527-147",
-        "trendqa-skin-20260530",
-        "round2-skin-20260530",
-        "round3-skin-1-20260531",
-        "trend-skin-atopic-dermatitis-moisturizer-steroid-fear-record-20260604",
-        "category-latest-skin-bemotrizinol-uva-sunscreen-barrier-recovery-20260608",
-        "category-aeo-skin-melasma-tinted-sunscreen-iron-oxide-phlorotannin-20260611"
       ]
     },
     "항생제": {
@@ -8176,6 +8214,27 @@
         "seoqa-metabolism-13",
         "seoqa-metabolism-14",
         "seoqa-metabolism-15"
+      ]
+    },
+    "식이섬유": {
+      "count": 16,
+      "qids": [
+        "dige-007",
+        "qa200-20260527-025",
+        "qa200-20260527-037",
+        "qa200-20260527-063",
+        "qa-hospital-20260527-011",
+        "qa-hospital-20260527-012",
+        "trendqa-metabolism-20260530",
+        "trendqa-digestive-20260530",
+        "round2-digestive-20260530",
+        "round3-metabolism-2-20260531",
+        "round3-digestive-1-20260531",
+        "trend-glp1-muscle-protein-fiber-20260602",
+        "trend-resistant-starch-gut-microbiome-polyphenol-20260602",
+        "trend-diet-microbiome-ibs-upf-fermented-food-20260602",
+        "category-aeo-metabolism-glp1-muscle-protein-fiber-phlorotannin-20260611",
+        "category-aeo-round2-metabolism-upf-craving-fiber-phlorotannin-20260611"
       ]
     },
     "장건강": {
@@ -8300,26 +8359,6 @@
         "dg_089"
       ]
     },
-    "식이섬유": {
-      "count": 15,
-      "qids": [
-        "dige-007",
-        "qa200-20260527-025",
-        "qa200-20260527-037",
-        "qa200-20260527-063",
-        "qa-hospital-20260527-011",
-        "qa-hospital-20260527-012",
-        "trendqa-metabolism-20260530",
-        "trendqa-digestive-20260530",
-        "round2-digestive-20260530",
-        "round3-metabolism-2-20260531",
-        "round3-digestive-1-20260531",
-        "trend-glp1-muscle-protein-fiber-20260602",
-        "trend-resistant-starch-gut-microbiome-polyphenol-20260602",
-        "trend-diet-microbiome-ibs-upf-fermented-food-20260602",
-        "category-aeo-metabolism-glp1-muscle-protein-fiber-phlorotannin-20260611"
-      ]
-    },
     "자가면역": {
       "count": 15,
       "qids": [
@@ -8338,6 +8377,26 @@
         "infect-012",
         "infect-018",
         "strategic-qa-hair-alopecia-areata-jak-safety-autoimmune-record-20260605"
+      ]
+    },
+    "카페인": {
+      "count": 15,
+      "qids": [
+        "cardio-024",
+        "cardio-074",
+        "wh-extra-023",
+        "wh-extra-057",
+        "mens-010",
+        "qa200-20260527-080",
+        "qa200-20260527-114",
+        "qa200-20260527-116",
+        "qa200-20260527-190",
+        "round3-mental_health-1-20260531",
+        "round3-mens_health-1-20260531",
+        "trend-coffee-gut-brain-axis-polyphenol-20260602",
+        "trend-energy-drink-preworkout-caffeine-sleep-20260602",
+        "strategic-qa-womens-urinary-incontinence-bladder-diary-caffeine-uti-record-20260605",
+        "category-aeo-round2-mental-sleep-screen-boundary-caffeine-phlorotannin-20260611"
       ]
     },
     "항암·면역": {
@@ -8380,6 +8439,25 @@
         "seoqa-metabolism-03"
       ]
     },
+    "갑상선": {
+      "count": 14,
+      "qids": [
+        "cardio-089",
+        "meta-006",
+        "meta_023",
+        "meta_044",
+        "meta_073",
+        "meta_096",
+        "woms-019",
+        "mens-extra-070",
+        "round3-hair-1-20260531",
+        "round3-womens_health-2-20260531",
+        "strategic-qa-hair-thyroid-iron-brittle-nails-protein-record-20260605",
+        "strategic-qa-hair-telogen-effluvium-fever-diet-stress-shedding-record-20260605",
+        "strategic-qa-hair-postpartum-shedding-telogen-effluvium-iron-thyroid-record-20260606",
+        "category-aeo-round2-hair-biotin-lab-test-scalp-phlorotannin-20260611"
+      ]
+    },
     "근골격·근감소": {
       "count": 14,
       "qids": [
@@ -8399,6 +8477,44 @@
         "qa200-20260527-136"
       ]
     },
+    "근력운동": {
+      "count": 14,
+      "qids": [
+        "meta_068",
+        "mens-009",
+        "qa200-20260527-126",
+        "qa200-20260527-198",
+        "trendqa-musculoskeletal-20260530",
+        "round2-musculoskeletal-20260530",
+        "round3-metabolism-1-20260531",
+        "round3-musculoskeletal-1-20260531",
+        "round3-musculoskeletal-2-20260531",
+        "trend-glp1-muscle-protein-fiber-20260602",
+        "trend-creatine-resistance-training-healthy-aging-20260602",
+        "trend-weighted-vest-rucking-bone-joint-safety-20260602",
+        "category-aeo-musculoskeletal-knee-oa-weight-strength-glp1-phlorotannin-20260611",
+        "category-aeo-round2-musculoskeletal-weighted-vest-bone-joint-phlorotannin-20260611"
+      ]
+    },
+    "불안": {
+      "count": 14,
+      "qids": [
+        "qa200-20260527-111",
+        "qa200-20260527-116",
+        "qa200-20260527-120",
+        "trendqa-mental-20260530",
+        "round3-mental_health-2-20260531",
+        "trend-screen-time-sleep-anxiety-digital-behavior-20260602",
+        "trend-youth-mental-health-sleep-screen-time-20260602",
+        "trend-ai-chatbot-mental-health-crisis-safety-20260602",
+        "trend-teen-social-media-sleep-mental-health-boundary-20260603",
+        "trend-psychological-self-help-digital-burnout-support-record-20260603",
+        "trend-mental-social-media-sleep-anxiety-boundary-record-20260604",
+        "category-latest-mental-health-screen-use-sleep-anxiety-recovery-20260608",
+        "category-aeo-mental-health-ai-chatbot-sleep-youth-phlorotannin-20260611",
+        "category-aeo-round2-mental-sleep-screen-boundary-caffeine-phlorotannin-20260611"
+      ]
+    },
     "수면·정신건강": {
       "count": 14,
       "qids": [
@@ -8416,25 +8532,6 @@
         "qa200-20260527-120",
         "qa200-20260527-121",
         "qa200-20260527-122"
-      ]
-    },
-    "카페인": {
-      "count": 14,
-      "qids": [
-        "cardio-024",
-        "cardio-074",
-        "wh-extra-023",
-        "wh-extra-057",
-        "mens-010",
-        "qa200-20260527-080",
-        "qa200-20260527-114",
-        "qa200-20260527-116",
-        "qa200-20260527-190",
-        "round3-mental_health-1-20260531",
-        "round3-mens_health-1-20260531",
-        "trend-coffee-gut-brain-axis-polyphenol-20260602",
-        "trend-energy-drink-preworkout-caffeine-sleep-20260602",
-        "strategic-qa-womens-urinary-incontinence-bladder-diary-caffeine-uti-record-20260605"
       ]
     },
     "프로바이오틱스": {
@@ -8475,58 +8572,22 @@
         "trend-mens-gynecomastia-breast-lump-medication-record-20260604"
       ]
     },
-    "갑상선": {
+    "알레르기": {
       "count": 13,
       "qids": [
-        "cardio-089",
-        "meta-006",
-        "meta_023",
-        "meta_044",
-        "meta_073",
-        "meta_096",
-        "woms-019",
-        "mens-extra-070",
-        "round3-hair-1-20260531",
-        "round3-womens_health-2-20260531",
-        "strategic-qa-hair-thyroid-iron-brittle-nails-protein-record-20260605",
-        "strategic-qa-hair-telogen-effluvium-fever-diet-stress-shedding-record-20260605",
-        "strategic-qa-hair-postpartum-shedding-telogen-effluvium-iron-thyroid-record-20260606"
-      ]
-    },
-    "근력운동": {
-      "count": 13,
-      "qids": [
-        "meta_068",
-        "mens-009",
-        "qa200-20260527-126",
-        "qa200-20260527-198",
-        "trendqa-musculoskeletal-20260530",
-        "round2-musculoskeletal-20260530",
-        "round3-metabolism-1-20260531",
-        "round3-musculoskeletal-1-20260531",
-        "round3-musculoskeletal-2-20260531",
-        "trend-glp1-muscle-protein-fiber-20260602",
-        "trend-creatine-resistance-training-healthy-aging-20260602",
-        "trend-weighted-vest-rucking-bone-joint-safety-20260602",
-        "category-aeo-musculoskeletal-knee-oa-weight-strength-glp1-phlorotannin-20260611"
-      ]
-    },
-    "불안": {
-      "count": 13,
-      "qids": [
-        "qa200-20260527-111",
-        "qa200-20260527-116",
-        "qa200-20260527-120",
-        "trendqa-mental-20260530",
-        "round3-mental_health-2-20260531",
-        "trend-screen-time-sleep-anxiety-digital-behavior-20260602",
-        "trend-youth-mental-health-sleep-screen-time-20260602",
-        "trend-ai-chatbot-mental-health-crisis-safety-20260602",
-        "trend-teen-social-media-sleep-mental-health-boundary-20260603",
-        "trend-psychological-self-help-digital-burnout-support-record-20260603",
-        "trend-mental-social-media-sleep-anxiety-boundary-record-20260604",
-        "category-latest-mental-health-screen-use-sleep-anxiety-recovery-20260608",
-        "category-aeo-mental-health-ai-chatbot-sleep-youth-phlorotannin-20260611"
+        "skin-002",
+        "resp-001",
+        "resp-004",
+        "infect-extra-036",
+        "infect-extra-057",
+        "sh_110",
+        "ingr-020",
+        "qa200-20260527-145",
+        "trend-tick-bite-lyme-alpha-gal-syndrome-20260603",
+        "trend-tattoo-ink-contamination-skin-cancer-mole-monitoring-record-20260603",
+        "trend-monsoon-mold-dampness-asthma-allergy-home-record-20260604",
+        "trend-respiratory-cough-three-weeks-asthma-reflux-record-20260604",
+        "category-aeo-round2-respiratory-indoor-co2-ventilation-hepa-phlorotannin-20260611"
       ]
     },
     "인슐린저항성": {
@@ -8633,23 +8694,6 @@
         "round2-cancer-immune-20260530",
         "round2-cardiovascular-20260530",
         "round3-cancer_immune-2-20260531"
-      ]
-    },
-    "알레르기": {
-      "count": 12,
-      "qids": [
-        "skin-002",
-        "resp-001",
-        "resp-004",
-        "infect-extra-036",
-        "infect-extra-057",
-        "sh_110",
-        "ingr-020",
-        "qa200-20260527-145",
-        "trend-tick-bite-lyme-alpha-gal-syndrome-20260603",
-        "trend-tattoo-ink-contamination-skin-cancer-mole-monitoring-record-20260603",
-        "trend-monsoon-mold-dampness-asthma-allergy-home-record-20260604",
-        "trend-respiratory-cough-three-weeks-asthma-reflux-record-20260604"
       ]
     },
     "인지기능": {
@@ -8877,6 +8921,21 @@
         "trend-vitamin-d-sun-sunscreen-skin-20260602"
       ]
     },
+    "대사건강": {
+      "count": 10,
+      "qids": [
+        "meta_043",
+        "meta_052",
+        "meta_068",
+        "qa200-20260527-015",
+        "trend-time-restricted-eating-evening-meal-20260602",
+        "trend-cgm-prediabetes-a1c-postprandial-spike-20260602",
+        "trend-metabolism-glp1-constipation-hydration-meal-record-20260604",
+        "trend-metabolism-a1c-normal-postprandial-spike-cgm-record-20260604",
+        "category-aeo-metabolism-glp1-muscle-protein-fiber-phlorotannin-20260611",
+        "category-aeo-round2-metabolism-upf-craving-fiber-phlorotannin-20260611"
+      ]
+    },
     "모발건강": {
       "count": 10,
       "qids": [
@@ -9012,6 +9071,21 @@
         "ms_089"
       ]
     },
+    "혈당스파이크": {
+      "count": 10,
+      "qids": [
+        "meta-011",
+        "meta_028",
+        "qa200-20260527-004",
+        "qa200-20260527-021",
+        "trendqa-metabolism-20260530",
+        "round2-metabolism-20260530",
+        "round3-metabolism-2-20260531",
+        "trend-cgm-prediabetes-a1c-postprandial-spike-20260602",
+        "trend-metabolism-a1c-normal-postprandial-spike-cgm-record-20260604",
+        "category-aeo-round2-metabolism-upf-craving-fiber-phlorotannin-20260611"
+      ]
+    },
     "후코이단": {
       "count": 10,
       "qids": [
@@ -9095,20 +9169,6 @@
         "round3-cardiovascular-1-20260531",
         "trend-ultra-processed-food-blood-sugar-label-20260602",
         "trend-sodium-potassium-salt-blood-pressure-20260602"
-      ]
-    },
-    "대사건강": {
-      "count": 9,
-      "qids": [
-        "meta_043",
-        "meta_052",
-        "meta_068",
-        "qa200-20260527-015",
-        "trend-time-restricted-eating-evening-meal-20260602",
-        "trend-cgm-prediabetes-a1c-postprandial-spike-20260602",
-        "trend-metabolism-glp1-constipation-hydration-meal-record-20260604",
-        "trend-metabolism-a1c-normal-postprandial-spike-cgm-record-20260604",
-        "category-aeo-metabolism-glp1-muscle-protein-fiber-phlorotannin-20260611"
       ]
     },
     "도파민": {
@@ -9251,18 +9311,18 @@
         "nc_122"
       ]
     },
-    "혈당스파이크": {
+    "탈수": {
       "count": 9,
       "qids": [
-        "meta-011",
-        "meta_028",
-        "qa200-20260527-004",
-        "qa200-20260527-021",
-        "trendqa-metabolism-20260530",
-        "round2-metabolism-20260530",
-        "round3-metabolism-2-20260531",
-        "trend-cgm-prediabetes-a1c-postprandial-spike-20260602",
-        "trend-metabolism-a1c-normal-postprandial-spike-cgm-record-20260604"
+        "wh-extra-022",
+        "qa200-20260527-064",
+        "qa200-20260527-169",
+        "trend-norovirus-handwashing-bleach-hydration-outbreak-20260602",
+        "trend-glp1-compounded-dosing-error-gi-side-effect-20260603",
+        "trend-world-food-safety-day-foodborne-illness-home-record-20260604",
+        "strategic-qa-cardiovascular-extreme-heat-hydration-medication-recovery-record-20260607",
+        "category-latest-cardiovascular-heat-blood-pressure-medication-recovery-20260608",
+        "category-aeo-round2-cardiovascular-heat-bp-meds-hydration-phlorotannin-20260611"
       ]
     },
     "DHA": {
@@ -9276,6 +9336,19 @@
         "ingr-009",
         "ingr-010",
         "trend-omega3-atrial-fibrillation-supplement-20260602"
+      ]
+    },
+    "HPV": {
+      "count": 8,
+      "qids": [
+        "woms-012",
+        "wh-extra-033",
+        "infect-extra-017",
+        "infect-extra-058",
+        "ci_116",
+        "trend-hpv-self-collection-cervical-screening-20260602",
+        "strategic-qa-mens-hpv-vaccine-oropharyngeal-cancer-neck-node-record-20260605",
+        "category-aeo-round2-womens-hpv-self-collection-cervical-screening-phlorotannin-20260611"
       ]
     },
     "PCOS": {
@@ -9512,29 +9585,17 @@
         "strategic-qa-mens-psa-screening-family-history-bph-prostatitis-shared-decision-record-20260605"
       ]
     },
-    "탈수": {
+    "혈압약": {
       "count": 8,
       "qids": [
-        "wh-extra-022",
-        "qa200-20260527-064",
-        "qa200-20260527-169",
-        "trend-norovirus-handwashing-bleach-hydration-outbreak-20260602",
-        "trend-glp1-compounded-dosing-error-gi-side-effect-20260603",
-        "trend-world-food-safety-day-foodborne-illness-home-record-20260604",
+        "cardio-023",
+        "qa200-20260527-078",
+        "round2-cardiovascular-20260530",
+        "trend-heat-health-hydration-blood-pressure-20260602",
+        "trend-extreme-heat-medication-plan-older-adults-hydration-record-20260604",
         "strategic-qa-cardiovascular-extreme-heat-hydration-medication-recovery-record-20260607",
-        "category-latest-cardiovascular-heat-blood-pressure-medication-recovery-20260608"
-      ]
-    },
-    "HPV": {
-      "count": 7,
-      "qids": [
-        "woms-012",
-        "wh-extra-033",
-        "infect-extra-017",
-        "infect-extra-058",
-        "ci_116",
-        "trend-hpv-self-collection-cervical-screening-20260602",
-        "strategic-qa-mens-hpv-vaccine-oropharyngeal-cancer-neck-node-record-20260605"
+        "category-latest-cardiovascular-heat-blood-pressure-medication-recovery-20260608",
+        "category-aeo-round2-cardiovascular-heat-bp-meds-hydration-phlorotannin-20260611"
       ]
     },
     "간수치": {
@@ -9573,6 +9634,18 @@
         "qa-hospital-20260527-050"
       ]
     },
+    "골밀도": {
+      "count": 7,
+      "qids": [
+        "musc-003",
+        "wh-extra-007",
+        "mens-011",
+        "mens-008",
+        "trend-glp1-knee-osteoarthritis-muscle-bone-20260602",
+        "trend-weighted-vest-rucking-bone-joint-safety-20260602",
+        "category-aeo-round2-musculoskeletal-weighted-vest-bone-joint-phlorotannin-20260611"
+      ]
+    },
     "근감소증": {
       "count": 7,
       "qids": [
@@ -9585,6 +9658,18 @@
         "trend-creatine-resistance-training-healthy-aging-20260602"
       ]
     },
+    "낙상예방": {
+      "count": 7,
+      "qids": [
+        "musc-003",
+        "musc-017",
+        "qa200-20260527-136",
+        "trend-weighted-vest-rucking-bone-joint-safety-20260602",
+        "trend-older-adult-fall-prevention-balance-medication-vision-record-20260603",
+        "category-latest-musculoskeletal-falls-osteoporosis-dxa-strength-recovery-20260608",
+        "category-aeo-round2-musculoskeletal-weighted-vest-bone-joint-phlorotannin-20260611"
+      ]
+    },
     "노화": {
       "count": 7,
       "qids": [
@@ -9595,6 +9680,18 @@
         "mens-006",
         "resp-010",
         "trendqa-musculoskeletal-20260530"
+      ]
+    },
+    "면역항암": {
+      "count": 7,
+      "qids": [
+        "ci_098",
+        "ci_104",
+        "ci_108",
+        "ci_111",
+        "ci_142",
+        "qa200-20260527-046",
+        "category-aeo-round2-cancer-immune-personalized-vaccine-ctdna-phlorotannin-20260611"
       ]
     },
     "방광염": {
@@ -9657,6 +9754,18 @@
         "category-aeo-skin-melasma-tinted-sunscreen-iron-oxide-phlorotannin-20260611"
       ]
     },
+    "설사": {
+      "count": 7,
+      "qids": [
+        "dige-018",
+        "infect-extra-002",
+        "qa200-20260527-056",
+        "qa200-20260527-064",
+        "trend-norovirus-handwashing-bleach-hydration-outbreak-20260602",
+        "trend-cancer-immune-immunotherapy-diarrhea-cough-side-effect-record-20260604",
+        "category-aeo-round2-digestive-foodborne-illness-hydration-phlorotannin-20260611"
+      ]
+    },
     "수면부족": {
       "count": 7,
       "qids": [
@@ -9667,6 +9776,18 @@
         "round3-neuro_cognitive-1-20260531",
         "trend-screen-time-sleep-anxiety-digital-behavior-20260602",
         "trend-teen-social-media-sleep-mental-health-boundary-20260603"
+      ]
+    },
+    "식중독": {
+      "count": 7,
+      "qids": [
+        "infect-extra-016",
+        "infect-extra-061",
+        "infect-006",
+        "infect-107",
+        "qa200-20260527-169",
+        "trend-world-food-safety-day-foodborne-illness-home-record-20260604",
+        "category-aeo-round2-digestive-foodborne-illness-hydration-phlorotannin-20260611"
       ]
     },
     "식후혈당": {
@@ -9741,6 +9862,18 @@
         "trend-berberine-blood-sugar-drug-interaction-20260602"
       ]
     },
+    "폭염": {
+      "count": 7,
+      "qids": [
+        "trend-heat-health-hydration-blood-pressure-20260602",
+        "trend-extreme-heat-medication-plan-older-adults-hydration-record-20260604",
+        "trend-heat-exposure-male-fertility-sperm-record-20260604",
+        "strategic-qa-cardiovascular-extreme-heat-hydration-medication-recovery-record-20260607",
+        "category-latest-cardiovascular-heat-blood-pressure-medication-recovery-20260608",
+        "category-aeo-round2-cardiovascular-heat-bp-meds-hydration-phlorotannin-20260611",
+        "category-aeo-round2-mens-heat-sperm-fertility-testosterone-phlorotannin-20260611"
+      ]
+    },
     "헬리코박터": {
       "count": 7,
       "qids": [
@@ -9751,18 +9884,6 @@
         "qa200-20260527-060",
         "qa200-20260527-061",
         "trend-digestive-hpylori-breath-test-eradication-record-20260604"
-      ]
-    },
-    "혈압약": {
-      "count": 7,
-      "qids": [
-        "cardio-023",
-        "qa200-20260527-078",
-        "round2-cardiovascular-20260530",
-        "trend-heat-health-hydration-blood-pressure-20260602",
-        "trend-extreme-heat-medication-plan-older-adults-hydration-record-20260604",
-        "strategic-qa-cardiovascular-extreme-heat-hydration-medication-recovery-record-20260607",
-        "category-latest-cardiovascular-heat-blood-pressure-medication-recovery-20260608"
       ]
     },
     "호르몬치료": {
@@ -9867,17 +9988,6 @@
         "strategic-qa-metabolism-seanol-haengwoo-lee-seapolynol-evidence-record-20260606"
       ]
     },
-    "골밀도": {
-      "count": 6,
-      "qids": [
-        "musc-003",
-        "wh-extra-007",
-        "mens-011",
-        "mens-008",
-        "trend-glp1-knee-osteoarthritis-muscle-bone-20260602",
-        "trend-weighted-vest-rucking-bone-joint-safety-20260602"
-      ]
-    },
     "골반통": {
       "count": 6,
       "qids": [
@@ -9920,17 +10030,6 @@
         "mens-extra-015",
         "rsp_042",
         "resp-102"
-      ]
-    },
-    "낙상예방": {
-      "count": 6,
-      "qids": [
-        "musc-003",
-        "musc-017",
-        "qa200-20260527-136",
-        "trend-weighted-vest-rucking-bone-joint-safety-20260602",
-        "trend-older-adult-fall-prevention-balance-medication-vision-record-20260603",
-        "category-latest-musculoskeletal-falls-osteoporosis-dxa-strength-recovery-20260608"
       ]
     },
     "남성갱년기": {
@@ -10032,17 +10131,6 @@
         "trend-at-home-gut-microbiome-test-dtc-stool-report-record-20260603"
       ]
     },
-    "면역항암": {
-      "count": 6,
-      "qids": [
-        "ci_098",
-        "ci_104",
-        "ci_108",
-        "ci_111",
-        "ci_142",
-        "qa200-20260527-046"
-      ]
-    },
     "명상": {
       "count": 6,
       "qids": [
@@ -10109,15 +10197,15 @@
         "ingr-028"
       ]
     },
-    "설사": {
+    "비오틴": {
       "count": 6,
       "qids": [
-        "dige-018",
-        "infect-extra-002",
-        "qa200-20260527-056",
-        "qa200-20260527-064",
-        "trend-norovirus-handwashing-bleach-hydration-outbreak-20260602",
-        "trend-cancer-immune-immunotherapy-diarrhea-cough-side-effect-record-20260604"
+        "skin-010",
+        "sh_107",
+        "qa200-20260527-150",
+        "trend-biotin-hair-supplement-lab-test-interference-record-20260604",
+        "strategic-qa-hair-biotin-supplement-lab-test-interference-thyroid-troponin-record-20260606",
+        "category-aeo-round2-hair-biotin-lab-test-scalp-phlorotannin-20260611"
       ]
     },
     "수분": {
@@ -10129,17 +10217,6 @@
         "qa200-20260527-063",
         "qa200-20260527-142",
         "qa200-20260527-170"
-      ]
-    },
-    "식중독": {
-      "count": 6,
-      "qids": [
-        "infect-extra-016",
-        "infect-extra-061",
-        "infect-006",
-        "infect-107",
-        "qa200-20260527-169",
-        "trend-world-food-safety-day-foodborne-illness-home-record-20260604"
       ]
     },
     "신장": {
@@ -10197,6 +10274,17 @@
         "trend-loneliness-social-connection-health-risk-support-record-20260603"
       ]
     },
+    "임신계획": {
+      "count": 6,
+      "qids": [
+        "trend-pcos-glp1-insulin-resistance-pregnancy-planning-20260602",
+        "trend-skin-acne-retinoid-pregnancy-plan-record-20260604",
+        "strategic-qa-womens-pcos-irregular-period-hirsutism-insulin-resistance-fertility-record-20260606",
+        "category-latest-mens-health-testosterone-bp-fertility-psa-recovery-20260608",
+        "category-aeo-mens-health-testosterone-fertility-psa-bp-phlorotannin-20260611",
+        "category-aeo-round2-mens-heat-sperm-fertility-testosterone-phlorotannin-20260611"
+      ]
+    },
     "자궁근종": {
       "count": 6,
       "qids": [
@@ -10252,6 +10340,17 @@
         "mental-101"
       ]
     },
+    "체중관리": {
+      "count": 6,
+      "qids": [
+        "meta-006",
+        "meta_052",
+        "round3-musculoskeletal-2-20260531",
+        "trend-glp1-muscle-protein-fiber-20260602",
+        "category-aeo-womens-health-menopause-ht-sleep-hotflash-phlorotannin-20260611",
+        "category-aeo-round2-metabolism-upf-craving-fiber-phlorotannin-20260611"
+      ]
+    },
     "치매예방": {
       "count": 6,
       "qids": [
@@ -10283,6 +10382,17 @@
         "trend-mouth-taping-snoring-sleep-apnea-20260602",
         "trend-mens-health-month-blood-pressure-waist-snoring-screening-record-20260604",
         "strategic-qa-respiratory-sleep-apnea-cpap-home-sleep-test-drowsy-driving-record-20260606"
+      ]
+    },
+    "페리틴": {
+      "count": 6,
+      "qids": [
+        "womens-006",
+        "trend-glp1-hair-loss-telogen-effluvium-20260602",
+        "trend-hair-ferritin-iron-hair-shedding-record-20260604",
+        "strategic-qa-hair-glp1-telogen-protein-ferritin-phlorotannin-20260605",
+        "strategic-qa-hair-thyroid-iron-brittle-nails-protein-record-20260605",
+        "category-aeo-round2-hair-biotin-lab-test-scalp-phlorotannin-20260611"
       ]
     },
     "피나스테리드": {
@@ -10389,6 +10499,16 @@
         "mental-102"
       ]
     },
+    "ctDNA": {
+      "count": 5,
+      "qids": [
+        "trend-personalized-cancer-vaccine-ctdna-neoantigen-trial-20260603",
+        "trend-cancer-immune-ctdna-mrd-cancer-recurrence-test-record-20260604",
+        "category-latest-cancer-immune-ctdna-mrd-biomarker-recovery-20260608",
+        "category-aeo-cancer-immune-biomarker-ctdna-recovery-phlorotannin-20260611",
+        "category-aeo-round2-cancer-immune-personalized-vaccine-ctdna-phlorotannin-20260611"
+      ]
+    },
     "가려움": {
       "count": 5,
       "qids": [
@@ -10467,6 +10587,16 @@
         "qa200-20260527-136",
         "trend-creatine-resistance-training-sarcopenia-older-adults-20260602",
         "category-latest-musculoskeletal-falls-osteoporosis-dxa-strength-recovery-20260608"
+      ]
+    },
+    "기미": {
+      "count": 5,
+      "qids": [
+        "skin-013",
+        "sh_101",
+        "trend-melasma-tinted-sunscreen-visible-light-iron-oxide-20260603",
+        "category-aeo-skin-melasma-tinted-sunscreen-iron-oxide-phlorotannin-20260611",
+        "category-aeo-round2-skin-uva-visible-light-sunscreen-phlorotannin-20260611"
       ]
     },
     "남성호르몬": {
@@ -10599,16 +10729,6 @@
         "trend-magnesium-glycinate-sleep-safety-20260602"
       ]
     },
-    "비오틴": {
-      "count": 5,
-      "qids": [
-        "skin-010",
-        "sh_107",
-        "qa200-20260527-150",
-        "trend-biotin-hair-supplement-lab-test-interference-record-20260604",
-        "strategic-qa-hair-biotin-supplement-lab-test-interference-thyroid-troponin-record-20260606"
-      ]
-    },
     "비타민C": {
       "count": 5,
       "qids": [
@@ -10729,16 +10849,6 @@
         "category-latest-cardiovascular-heat-blood-pressure-medication-recovery-20260608"
       ]
     },
-    "임신계획": {
-      "count": 5,
-      "qids": [
-        "trend-pcos-glp1-insulin-resistance-pregnancy-planning-20260602",
-        "trend-skin-acne-retinoid-pregnancy-plan-record-20260604",
-        "strategic-qa-womens-pcos-irregular-period-hirsutism-insulin-resistance-fertility-record-20260606",
-        "category-latest-mens-health-testosterone-bp-fertility-psa-recovery-20260608",
-        "category-aeo-mens-health-testosterone-fertility-psa-bp-phlorotannin-20260611"
-      ]
-    },
     "자외선": {
       "count": 5,
       "qids": [
@@ -10747,6 +10857,16 @@
         "ingr-003",
         "qa200-20260527-139",
         "qa200-20260527-143"
+      ]
+    },
+    "정자건강": {
+      "count": 5,
+      "qids": [
+        "mens-004",
+        "mens-extra-015",
+        "qa200-20260527-196",
+        "trend-phthalates-male-fertility-semen-quality-exposure-20260602",
+        "category-aeo-round2-mens-heat-sperm-fertility-testosterone-phlorotannin-20260611"
       ]
     },
     "중성지방": {
@@ -10759,14 +10879,14 @@
         "round3-digestive-2-20260531"
       ]
     },
-    "체중관리": {
+    "청소년정신건강": {
       "count": 5,
       "qids": [
-        "meta-006",
-        "meta_052",
-        "round3-musculoskeletal-2-20260531",
-        "trend-glp1-muscle-protein-fiber-20260602",
-        "category-aeo-womens-health-menopause-ht-sleep-hotflash-phlorotannin-20260611"
+        "trend-youth-mental-health-sleep-screen-time-20260602",
+        "trend-teen-social-media-sleep-mental-health-boundary-20260603",
+        "category-latest-mental-health-screen-use-sleep-anxiety-recovery-20260608",
+        "category-aeo-mental-health-ai-chatbot-sleep-youth-phlorotannin-20260611",
+        "category-aeo-round2-mental-sleep-screen-boundary-caffeine-phlorotannin-20260611"
       ]
     },
     "크레아틴": {
@@ -10799,16 +10919,6 @@
         "trend-infection-sepsis-warning-signs-fever-confusion-record-20260604"
       ]
     },
-    "페리틴": {
-      "count": 5,
-      "qids": [
-        "womens-006",
-        "trend-glp1-hair-loss-telogen-effluvium-20260602",
-        "trend-hair-ferritin-iron-hair-shedding-record-20260604",
-        "strategic-qa-hair-glp1-telogen-protein-ferritin-phlorotannin-20260605",
-        "strategic-qa-hair-thyroid-iron-brittle-nails-protein-record-20260605"
-      ]
-    },
     "폐암": {
       "count": 5,
       "qids": [
@@ -10817,16 +10927,6 @@
         "ci_096",
         "ci_097",
         "ci_098"
-      ]
-    },
-    "폭염": {
-      "count": 5,
-      "qids": [
-        "trend-heat-health-hydration-blood-pressure-20260602",
-        "trend-extreme-heat-medication-plan-older-adults-hydration-record-20260604",
-        "trend-heat-exposure-male-fertility-sperm-record-20260604",
-        "strategic-qa-cardiovascular-extreme-heat-hydration-medication-recovery-record-20260607",
-        "category-latest-cardiovascular-heat-blood-pressure-medication-recovery-20260608"
       ]
     },
     "피부노화": {
@@ -12865,7 +12965,20 @@
     "category-aeo-respiratory-wildfire-smoke-aqi-hepa-phlorotannin-20260611": "산불연기와-미세먼지-때문에-기침가슴답답함이-있을-때-AQI실내공기플로로탄닌은-어떻게-챙기나요",
     "category-aeo-infection-dengue-travel-fever-mosquito-phlorotannin-20260611": "해외여행-뒤-고열과-몸살이-있으면-뎅기열을-의심해야-하나요-회복-기록과-플로로탄닌은-어떻게-보나요",
     "category-aeo-womens-health-menopause-ht-sleep-hotflash-phlorotannin-20260611": "갱년기-호르몬치료-정보가-바뀐다는데-수면열감체중과-플로로탄닌은-어떻게-상담하면-좋나요",
-    "category-aeo-mens-health-testosterone-fertility-psa-bp-phlorotannin-20260611": "테스토스테론-치료를-고민할-때-임신계획PSA혈압과-플로로탄닌은-어떻게-같이-봐야-하나요"
+    "category-aeo-mens-health-testosterone-fertility-psa-bp-phlorotannin-20260611": "테스토스테론-치료를-고민할-때-임신계획PSA혈압과-플로로탄닌은-어떻게-같이-봐야-하나요",
+    "category-aeo-round2-metabolism-upf-craving-fiber-phlorotannin-20260611": "초가공식품을-줄이면-살이-덜-찌나요-식욕혈당플로로탄닌-루틴은-어떻게-잡아야-하나요",
+    "category-aeo-round2-cancer-immune-personalized-vaccine-ctdna-phlorotannin-20260611": "개인맞춤-암백신ctDNA-뉴스가-많을-때-가족은-식사면역회복플로로탄닌을-어떻게-준비하나요",
+    "category-aeo-round2-digestive-foodborne-illness-hydration-phlorotannin-20260611": "여름-식중독설사-뒤-장-회복은-어떻게-하나요-수분식사플로로탄닌은-어디에-넣나요",
+    "category-aeo-round2-cardiovascular-heat-bp-meds-hydration-phlorotannin-20260611": "폭염-때-혈압약을-먹는-사람은-물염분집혈압을-어떻게-기록하고-플로로탄닌은-어떻게-보나요",
+    "category-aeo-round2-neuro-hearing-loss-dementia-sleep-phlorotannin-20260611": "청력저하가-기억력과-관련-있다는데-보청기수면플로로탄닌-회복-루틴은-어떻게-잡나요",
+    "category-aeo-round2-mental-sleep-screen-boundary-caffeine-phlorotannin-20260611": "밤마다-스마트폰을-보며-잠을-못-잘-때-수면불안플로로탄닌-회복-루틴은-어떻게-세우나요",
+    "category-aeo-round2-musculoskeletal-weighted-vest-bone-joint-phlorotannin-20260611": "웨이트조끼-걷기와-러킹이-유행인데-관절골밀도플로로탄닌-회복-루틴은-어떻게-보나요",
+    "category-aeo-round2-skin-uva-visible-light-sunscreen-phlorotannin-20260611": "UVA와-가시광선까지-차단해야-한다는데-선스크린피부장벽플로로탄닌은-어떻게-고르나요",
+    "category-aeo-round2-hair-biotin-lab-test-scalp-phlorotannin-20260611": "탈모-때문에-비오틴을-먹는데-검사-수치에-영향이-있나요-두피플로로탄닌-루틴은-어떻게-보나요",
+    "category-aeo-round2-respiratory-indoor-co2-ventilation-hepa-phlorotannin-20260611": "실내-CO2가-높으면-졸리고-답답한가요-환기HEPA플로로탄닌-회복-루틴은-어떻게-하나요",
+    "category-aeo-round2-infection-worldcup-travel-fever-checklist-phlorotannin-20260611": "월드컵대규모-행사-여행-전-감염병-체크리스트와-회복-식탁-플로로탄닌은-어떻게-준비하나요",
+    "category-aeo-round2-womens-hpv-self-collection-cervical-screening-phlorotannin-20260611": "HPV-자가채취-검사가-가능해진다는데-자궁경부암-검진질건강플로로탄닌은-어떻게-보나요",
+    "category-aeo-round2-mens-heat-sperm-fertility-testosterone-phlorotannin-20260611": "폭염과-사우나가-남성-정자-건강에-영향이-있나요-수면운동플로로탄닌은-어떻게-챙기나요"
   },
-  "generated_at": "2026-06-10T23:28:17.020349+00:00"
+  "generated_at": "2026-06-11T03:52:33.247619+00:00"
 }
