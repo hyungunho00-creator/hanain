@@ -44,6 +44,7 @@ const FALLBACK_CATEGORIES = [
 // 모듈 레벨 캐시 — BlogPage에서 DB 페치 후 갱신, PostCard 등이 같은 변수 참조
 let CATEGORIES = FALLBACK_CATEGORIES
 const SEARCH_SUGGESTIONS = ['감태', '감태추출물', '디에콜', 'Ecklonia cava', '씨폴리놀', '감태 수면', '감태 갑상선']
+const BLOG_HERO_IMAGE = '/images/site/blog-health-magazine.webp'
 
 // 카테고리 라벨: 단일 모노 톤(헌법 v3 — 1색 액센트 원칙). 카테고리별 시각 구분은 카드 hover/border로 위임
 const CAT_COLORS = {
@@ -344,7 +345,7 @@ export default function BlogPage() {
         jsonLd={blogJsonLd}
       />
 
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-gray-50 overflow-x-hidden">
         {/* 헤더 — 라이트 에디토리얼 (헌법 v3) */}
         <div className="bg-white border-b border-gray-200 pt-20 pb-14 md:pt-24 md:pb-16">
           <div className="max-w-5xl mx-auto px-4">
@@ -357,19 +358,28 @@ export default function BlogPage() {
             <h1 className="text-3xl md:text-5xl font-bold mb-3 text-gray-900 tracking-tight">
               플로로탄닌 연구 블로그
             </h1>
-            <p className="text-gray-500 text-base md:text-lg max-w-xl mb-8">
+            <p className="text-gray-500 text-base md:text-lg max-w-xl mb-8 break-all sm:break-words">
               PH-100 · 에콜 · 디에콜 최신 임상·연구 정보를 전달합니다
             </p>
 
-            <form onSubmit={handleSearch} className="max-w-lg flex gap-2">
+            <figure className="mb-8 overflow-hidden rounded-xl border border-gray-200 bg-gray-50 shadow-sm">
+              <img
+                src={BLOG_HERO_IMAGE}
+                alt="태블릿으로 건강 정보를 살펴보는 밝은 식탁과 해조류, 과일, 곡물 이미지"
+                className="h-56 w-full object-cover md:h-80"
+                fetchPriority="high"
+              />
+            </figure>
+
+            <form onSubmit={handleSearch} className="max-w-lg flex flex-col gap-2 sm:flex-row">
               <input
                 value={searchInput}
                 onChange={e => setSearchInput(e.target.value)}
                 placeholder="키워드 검색 (예: PH-100, 당뇨, eckol)"
-                className="flex-1 px-4 py-3 rounded-md bg-white border border-gray-300 text-gray-900 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent"
+                className="min-w-0 flex-1 px-4 py-3 rounded-md bg-white border border-gray-300 text-gray-900 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent"
               />
               <button type="submit"
-                className="bg-gray-900 hover:bg-black text-white px-6 py-3 rounded-md text-[14px] font-medium transition-colors flex items-center gap-2">
+                className="bg-gray-900 hover:bg-black text-white px-6 py-3 rounded-md text-[14px] font-medium transition-colors flex items-center justify-center gap-2">
                 <Search className="w-4 h-4" /> 검색
               </button>
             </form>

@@ -10,6 +10,7 @@ import { getRenderableQAAnswer, shouldEmitQASchema, answerPlainTextForMeta, stri
 import { QA_TOTAL } from '../data/siteStats'
 
 const LAST_REVIEWED = '2026-06-08'
+const QA_HERO_IMAGE = '/images/site/qa-recovery-routine.webp'
 
 const ITEMS_PER_PAGE = 20
 const QA_JSON_URL = `/qa.json?v=${QA_TOTAL}`
@@ -524,7 +525,7 @@ export default function QAPage() {
   //     (중복 콘텐츠 방지, 14개 /category/:slug + 122개 /qa/tag/:tag 정식 페이지로 유도)
   const isFilteredView = activeCategory !== 'all' || !!searchQuery || page > 1
   return (
-    <div className="pt-16 pb-24 min-h-screen bg-gray-50">
+    <div className="pt-16 pb-24 min-h-screen bg-gray-50 overflow-x-hidden">
       <SEOHead
         title={`연구기반 Q&A ${totalAll.toLocaleString()}개 | 플로로탄닌·감태추출물 건강정보 아카이브`}
         description={`플로로탄닌·감태추출물·해양 폴리페놀 관련 ${totalAll.toLocaleString()}개 연구기반 Q&A. 항산화·염증·혈당·수면·면역·뇌 건강·암환자 가족 건강정보·병원정보까지 질환별로 정리한 종합 건강정보 데이터센터의 Q&A 아카이브입니다.`}
@@ -550,6 +551,15 @@ export default function QAPage() {
           </div>
 
           {/* 검색창 */}
+          <figure className="mb-8 overflow-hidden rounded-xl border border-gray-200 bg-gray-50 shadow-sm">
+            <img
+              src={QA_HERO_IMAGE}
+              alt="건강 상담 전에 질문과 생활 기록을 정리한 노트와 회복 식단"
+              className="h-56 w-full object-cover md:h-72"
+              loading="eager"
+            />
+          </figure>
+
           <form onSubmit={handleSearch} className="relative max-w-2xl">
             <div className="flex items-center bg-white border border-gray-300 rounded-md overflow-hidden focus-within:border-gray-900 transition-colors">
               <Search className="w-4 h-4 text-gray-400 ml-4 flex-shrink-0" strokeWidth={1.8} />
@@ -559,7 +569,7 @@ export default function QAPage() {
                 value={searchInput}
                 onChange={e => setSearchInput(e.target.value)}
                 placeholder="증상·질환·성분을 검색하세요 (예: 아토피, 발뒤꿈치, 탈모)"
-                className="flex-1 px-3 py-3 text-[14px] text-gray-800 outline-none placeholder-gray-400 bg-transparent"
+                className="min-w-0 flex-1 px-3 py-3 text-[14px] text-gray-800 outline-none placeholder-gray-400 bg-transparent"
               />
               {searchInput && (
                 <button type="button" onClick={clearSearch} className="p-2 mr-1 text-gray-400 hover:text-gray-600" aria-label="검색어 지우기">
@@ -568,7 +578,7 @@ export default function QAPage() {
               )}
               <button
                 type="submit"
-                className="bg-gray-900 hover:bg-black text-white px-6 py-3 text-[14px] font-medium transition-colors whitespace-nowrap"
+                className="shrink-0 bg-gray-900 hover:bg-black text-white px-4 sm:px-6 py-3 text-[14px] font-medium transition-colors whitespace-nowrap"
               >
                 검색
               </button>

@@ -19,6 +19,8 @@ import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell, LabelList,
 } from 'recharts'
 
+const PHLOROTANNIN_MOLECULE_IMAGE = '/images/site/phlorotannin-molecule-macro.webp'
+
 // ─── 데이터 ───────────────────────────────────────────────
 const MECHANISMS = [
   {
@@ -363,7 +365,7 @@ export default function PhlorotanninPage() {
   }
 
   return (
-    <div className="pt-16 min-h-screen bg-white">
+    <div className="pt-16 min-h-screen bg-white overflow-x-hidden">
       <SEOHead
         title="플로로탄닌이란? 감태추출물·해양 폴리페놀 작용기전 정리"
         description="플로로탄닌(Phlorotannin)이란 무엇인가 — 감태추출물에서 유래한 해양 폴리페놀(갈조류 폴리페놀)의 항산화·염증 기전, 혈당·면역·뇌 건강 관련 작용을 논문 근거와 함께 정리한 종합 건강정보 데이터센터 페이지입니다."
@@ -392,7 +394,7 @@ export default function PhlorotanninPage() {
                   Phlorotannin
                 </span>
               </h1>
-              <p data-speakable="true" className="text-gray-600 text-[16px] md:text-[17px] leading-[1.8] mb-8 max-w-xl break-keep">
+              <p data-speakable="true" className="text-gray-600 text-[16px] md:text-[17px] leading-[1.8] mb-8 max-w-xl break-all md:break-keep">
                 갈조류(미역·다시마·감태)에서만 발견되는 해양 폴리페놀.
                 단순한 항산화제를 넘어, <span className="text-gray-900 font-medium">6가지 분자 기전</span>으로
                 <span className="text-gray-900 font-medium"> 12개 건강 연구 영역</span>과 연결되는
@@ -412,6 +414,14 @@ export default function PhlorotanninPage() {
             {/* 우측: 이미지 + 분자 콜라주 (실제 사진 + 과학 일러스트 혼합) */}
             <div className="relative">
               {/* 메인 이미지: 감태 해조류 수중 */}
+              <figure className="relative z-10 mb-5 overflow-hidden rounded-2xl border border-gray-200 bg-gray-50 shadow-sm">
+                <img
+                  src={PHLOROTANNIN_MOLECULE_IMAGE}
+                  alt="밝은 실험 접시 위 감태 추출물과 플로로탄닌 분자 구조를 표현한 매크로 이미지"
+                  className="aspect-[4/3] w-full object-cover"
+                  fetchPriority="high"
+                />
+              </figure>
               <SciImage
                 name="seaweed-underwater"
                 alt="감태(Ecklonia cava) 자생군락 — 한국 동해 수중 촬영"

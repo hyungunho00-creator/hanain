@@ -11,6 +11,7 @@ import { withRef } from '../lib/partnerRef'
 const SITE = 'https://phlorotannin.com'
 const LAST_REVIEWED = '2026-06-08'
 const REFERENCE_TOTAL = Object.keys(REFERENCES).length
+const INSIGHTS_HERO_IMAGE = '/images/site/insights-research-desk.webp'
 
 export default function InsightsHubPage() {
   const partner = usePartner()
@@ -94,7 +95,7 @@ export default function InsightsHubPage() {
         jsonLd={jsonLd}
       />
 
-      <main className="min-h-screen bg-white">
+      <main className="min-h-screen bg-white overflow-x-hidden">
         {/* Hero */}
         <header className="border-b border-gray-100">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
@@ -107,16 +108,25 @@ export default function InsightsHubPage() {
             </nav>
             <h1
               data-speakable="true"
-              className="text-3xl sm:text-4xl font-semibold tracking-tight text-gray-900"
+              className="text-3xl sm:text-4xl font-semibold tracking-tight text-gray-900 break-all sm:break-words"
             >
               심층 인사이트 — 근거 기반 건강정보 아카이브
             </h1>
             <p
               data-speakable="true"
-              className="mt-3 text-gray-600 leading-relaxed max-w-2xl"
+              className="mt-3 text-gray-600 leading-relaxed max-w-2xl break-all sm:break-words"
             >
               플로로탄닌·감태(Ecklonia cava)와 NMN·후코이단·CoQ10·GLP-1 천연 보조 등 트렌드 원료까지, PubMed·PMC·EFSA·식약처 검증 1차 출처 {INSIGHTS_LIST.length}건의 심층 콘텐츠를 한곳에 정리했습니다.
             </p>
+
+            <figure className="mt-7 overflow-hidden rounded-xl border border-gray-200 bg-gray-50 shadow-sm">
+              <img
+                src={INSIGHTS_HERO_IMAGE}
+                alt="감태 시료와 분자 모델, 연구 자료가 놓인 플로로탄닌 근거 검토 데스크"
+                className="h-56 w-full object-cover sm:h-72"
+                fetchPriority="high"
+              />
+            </figure>
 
             {/* 신뢰 지표 카드 (정량 신호) */}
             <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-3xl">

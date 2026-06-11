@@ -16,6 +16,8 @@ import { shouldEmitQASchema, answerPlainTextForMeta } from '../lib/qaAnswer'
 import { INSIGHTS_LIST } from '../data/insights'
 
 const LAST_REVIEWED = '2026-05-21'
+const SITE_HERO_IMAGE = '/images/site/phlorotannin-hero-lab.webp'
+const SITE_ROUTINE_IMAGE = '/images/site/qa-recovery-routine.webp'
 
 function isPublicQa(item) {
   return shouldEmitQASchema(item)
@@ -202,7 +204,7 @@ export default function HomePage() {
   }
 
   return (
-    <div className="pt-16">
+    <div className="pt-16 overflow-x-hidden">
       <SEOHead
         title="플로로탄닌 건강정보 허브 | 감태추출물·해양 폴리페놀 쉽게 이해하기"
         description="플로로탄닌과 감태추출물, 해양 폴리페놀의 기본 개념을 쉽게 정리한 건강정보 허브입니다. 항산화, 염증, 수면, 혈당, 면역 건강정보로 확장되는 핵심 내용을 안내합니다."
@@ -213,25 +215,36 @@ export default function HomePage() {
 
       {/* ─── Hero — 라이트 에디토리얼 ─── */}
       <section className="relative bg-white border-b border-gray-100">
-        <div className="max-w-5xl mx-auto px-6 py-20 md:py-28">
+        <div className="max-w-5xl mx-auto w-full min-w-0 px-6 py-20 md:py-28">
           <div className="flex items-center gap-3 mb-6">
             <span className="h-px w-8 bg-gray-300" aria-hidden="true" />
             <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500">Phlorotannin Information Hub</span>
           </div>
 
-          <h1 data-speakable="true" className="text-3xl md:text-[3.25rem] font-bold text-gray-900 tracking-tight leading-[1.15] mb-5 break-keep">
+          <h1 data-speakable="true" style={{ overflowWrap: 'anywhere' }} className="max-w-[calc(100vw-3rem)] text-[1.78rem] md:text-[3.25rem] font-bold text-gray-900 tracking-tight leading-[1.24] md:leading-[1.15] mb-5 md:break-keep">
             기초 개념부터 작용 기전까지<br />
             <span className="text-gray-700">한 흐름으로 이해하는 건강 정보</span>
           </h1>
 
-          <p data-speakable="true" className="text-gray-700 text-[16px] md:text-[17px] leading-[1.8] mb-3 max-w-2xl break-keep">
-            암·당뇨·뇌질환·염증 등 다양한 이유로 찾아온 분들이 결국 같은 키워드에서 만나게 됩니다.
+          <p data-speakable="true" style={{ overflowWrap: 'anywhere' }} className="max-w-[calc(100vw-3rem)] text-gray-700 text-[16px] md:text-[17px] leading-[1.8] mb-3 md:max-w-2xl md:break-keep">
+            <span className="block">암·당뇨·뇌질환·염증 등으로 찾아온 분들이</span>
+            <span className="block">결국 같은 회복 키워드에서 만나게 됩니다.</span>
           </p>
-          <p className="text-gray-500 text-[14px] leading-[1.8] mb-10 max-w-2xl break-keep">
-            플로로탄닌 관련 정보를 단편적 소개가 아닌, 연결 구조와 이해를 돕는 방식으로 정리했습니다.
+          <p style={{ overflowWrap: 'anywhere' }} className="max-w-[calc(100vw-3rem)] text-gray-500 text-[14px] leading-[1.8] mb-8 md:max-w-2xl md:break-keep">
+            <span className="block">플로로탄닌 정보를 단편적 소개가 아니라</span>
+            <span className="block">몸의 회복 흐름을 이해하는 방식으로 정리했습니다.</span>
           </p>
 
           {/* Search — 라이트 */}
+          <figure className="mb-9 overflow-hidden rounded-xl border border-gray-200 bg-gray-50 shadow-sm">
+            <img
+              src={SITE_HERO_IMAGE}
+              alt="감태 유래 플로로탄닌 추출물과 분자 구조, 연구 자료가 놓인 밝은 연구 데스크"
+              className="h-64 w-full object-cover md:h-80"
+              fetchPriority="high"
+            />
+          </figure>
+
           <div className="relative max-w-2xl mb-8">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" strokeWidth={1.8} aria-hidden="true" />
             <input
@@ -299,6 +312,33 @@ export default function HomePage() {
       </section>
 
       {/* ─── Stats — 에디토리얼 ─── */}
+      <section className="bg-white border-b border-gray-100">
+        <div className="max-w-5xl mx-auto px-6 py-10">
+          <div className="grid gap-6 md:grid-cols-[0.95fr_1.05fr] md:items-center">
+            <figure className="overflow-hidden rounded-xl border border-gray-200 bg-gray-50 shadow-sm">
+              <img
+                src={SITE_ROUTINE_IMAGE}
+                alt="상담 전 건강 기록 노트와 회복 식단을 준비한 밝은 식탁"
+                className="h-64 w-full object-cover md:h-72"
+                loading="lazy"
+              />
+            </figure>
+            <div>
+              <div className="mb-4 flex items-center gap-3">
+                <span className="h-px w-8 bg-gray-300" aria-hidden="true" />
+                <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500">Recovery Routine</span>
+              </div>
+              <h2 className="mb-3 text-2xl font-bold tracking-tight text-gray-900 md:text-3xl">
+                질문을 기록하고, 회복 루틴으로 연결합니다
+              </h2>
+              <p className="text-[15px] leading-[1.8] text-gray-600 break-keep">
+                증상과 검사 수치, 식사·수면·컨디션 기록을 먼저 정리하면 상담의 방향이 선명해집니다. 플로로탄닌은 치료를 대신하는 문장이 아니라, 회복 관점의 식탁과 생활 루틴을 설명하는 핵심 소재로 연결됩니다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-gray-50 border-b border-gray-100 py-14 md:py-16">
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-y-10 gap-x-6">
