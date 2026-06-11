@@ -1,11 +1,11 @@
 const SITE = 'https://phlorotannin.com'
 
 const EXPECTED = {
-  sitemapTotal: 3397,
+  sitemapTotal: 3426,
   qCount: 2021,
   tagCount: 289,
-  blogCount: 770,
-  insightCount: 286,
+  blogCount: 783,
+  insightCount: 302,
   requiredBundleSlugs: [
     'glp1-era-protein-fiber-phlorotannin-checklist-2026',
     'glp1-muscle-loss-protein-resistance-training-2026',

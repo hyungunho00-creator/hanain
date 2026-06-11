@@ -30,8 +30,11 @@ const modules = import.meta.glob('./posts/*.{js,jsx}', { eager: true })
 // posts 객체 (slug → post)
 export const INSIGHTS = {}
 for (const path in modules) {
-  const post = modules[path]?.default
-  if (post?.slug) INSIGHTS[post.slug] = post
+  const loaded = modules[path]?.default
+  const posts = Array.isArray(loaded) ? loaded : [loaded]
+  for (const post of posts) {
+    if (post?.slug) INSIGHTS[post.slug] = post
+  }
 }
 
 /** publishedAt 내림차순 정렬된 배열 */

@@ -287,18 +287,27 @@ if INSIGHTS_DIR.exists():
         except Exception as e:
             print(f"  ⚠️  {fp.name} 읽기 실패: {e}")
             continue
-        m_slug = _re_slug.search(txt) or _re_factory_slug.search(txt) or _re_factory_slug_alt.search(txt)
-        if not m_slug:
+        slugs = [m.group(1) for m in _re_slug.finditer(txt)]
+        if not slugs:
+            m_slug = _re_factory_slug.search(txt) or _re_factory_slug_alt.search(txt)
+            slugs = [m_slug.group(1)] if m_slug else []
+        if not slugs:
             continue
-        slug = m_slug.group(1)
-        INSIGHT_POSTS.append({
-            "slug":        slug,
-            "title":       (_re_title.search(txt).group(1) if _re_title.search(txt) else slug),
-            "description": (_re_desc.search(txt).group(1)  if _re_desc.search(txt)  else ""),
-            "publishedAt": (_re_pub.search(txt).group(1)   if _re_pub.search(txt)   else today()),
-            "updatedAt":   (_re_upd.search(txt).group(1)   if _re_upd.search(txt)   else today()),
-            "category":    (_re_cat.search(txt).group(1)   if _re_cat.search(txt)   else "general"),
-        })
+
+        titles = [m.group(1) for m in _re_title.finditer(txt)]
+        descs = [m.group(1) for m in _re_desc.finditer(txt)]
+        cats = [m.group(1) for m in _re_cat.finditer(txt)]
+        published = (_re_pub.search(txt).group(1) if _re_pub.search(txt) else today())
+        updated = (_re_upd.search(txt).group(1) if _re_upd.search(txt) else today())
+        for idx, slug in enumerate(slugs):
+            INSIGHT_POSTS.append({
+                "slug":        slug,
+                "title":       (titles[idx] if idx < len(titles) else slug),
+                "description": (descs[idx] if idx < len(descs) else ""),
+                "publishedAt": published,
+                "updatedAt":   updated,
+                "category":    (cats[idx] if idx < len(cats) else "general"),
+            })
 
 # publishedAt 내림차순 정렬 (RSS·UI 일관성)
 INSIGHT_POSTS.sort(key=lambda p: p.get("publishedAt", ""), reverse=True)
