@@ -2,7 +2,7 @@
 
 - Scope: localTrendBlogPostsRound60+
 - Minimum: 1200x630, 140000 bytes, luminance stddev 18.0, pixel entropy 2.9
-- Checked: 44
+- Checked: 57
 - Failed: 0
 
 | Status | Source | Image | Bytes | Size | Stddev | Pixel entropy | Notes |
@@ -51,3 +51,16 @@
 | PASS | localTrendBlogPostsRound71.js | `/og/content-quality/glp1-compounded-muscle-fiber-recovery-phlorotannin-20260611.png` | 2269421 | 1200x630 | 41.1 | 3.00 | premium enough |
 | PASS | localTrendBlogPostsRound71.js | `/og/content-quality/measles-worldcup-travel-family-recovery-phlorotannin-20260611.png` | 2269421 | 1200x630 | 40.0 | 3.08 | premium enough |
 | PASS | localTrendBlogPostsRound71.js | `/og/content-quality/wildfire-smoke-ozone-aqi-lung-recovery-phlorotannin-20260611.png` | 2269421 | 1200x630 | 39.2 | 2.90 | premium enough |
+| PASS | localTrendBlogPostsRound72.js | `/og/content-quality/cgm-prediabetes-glucose-spike-recovery-phlorotannin-20260611.png` | 550770 | 1200x630 | 55.8 | 6.75 | premium enough |
+| PASS | localTrendBlogPostsRound72.js | `/og/content-quality/heat-blood-pressure-medication-hydration-phlorotannin-20260611.png` | 498139 | 1200x630 | 57.6 | 6.94 | premium enough |
+| PASS | localTrendBlogPostsRound72.js | `/og/content-quality/gut-microbiome-fermented-food-fiber-phlorotannin-20260611.png` | 535081 | 1200x630 | 59.6 | 7.08 | premium enough |
+| PASS | localTrendBlogPostsRound72.js | `/og/content-quality/cancer-biomarker-report-ctdna-recovery-phlorotannin-20260611.png` | 493992 | 1200x630 | 73.3 | 7.04 | premium enough |
+| PASS | localTrendBlogPostsRound72.js | `/og/content-quality/alzheimers-blood-biomarker-memory-clinic-phlorotannin-20260611.png` | 466784 | 1200x630 | 68.9 | 7.03 | premium enough |
+| PASS | localTrendBlogPostsRound72.js | `/og/content-quality/teen-social-media-sleep-boundary-phlorotannin-20260611.png` | 477892 | 1200x630 | 80.9 | 7.18 | premium enough |
+| PASS | localTrendBlogPostsRound72.js | `/og/content-quality/sunscreen-uva-visible-light-skin-phlorotannin-20260611.png` | 492459 | 1200x630 | 71.9 | 6.99 | premium enough |
+| PASS | localTrendBlogPostsRound72.js | `/og/content-quality/hair-loss-medication-scalp-record-phlorotannin-20260611.png` | 613104 | 1200x630 | 58.2 | 6.45 | premium enough |
+| PASS | localTrendBlogPostsRound72.js | `/og/content-quality/sarcopenia-resistance-training-protein-phlorotannin-20260611.png` | 547799 | 1200x630 | 55.5 | 6.73 | premium enough |
+| PASS | localTrendBlogPostsRound72.js | `/og/content-quality/menopause-sleep-hot-flash-metabolic-phlorotannin-20260611.png` | 617562 | 1200x630 | 58.0 | 6.41 | premium enough |
+| PASS | localTrendBlogPostsRound72.js | `/og/content-quality/psa-prostate-mri-waist-bp-phlorotannin-20260611.png` | 503581 | 1200x630 | 57.8 | 6.95 | premium enough |
+| PASS | localTrendBlogPostsRound72.js | `/og/content-quality/indoor-air-co2-hepa-respiratory-recovery-phlorotannin-20260611.png` | 620658 | 1200x630 | 58.1 | 6.45 | premium enough |
+| PASS | localTrendBlogPostsRound72.js | `/og/content-quality/h5n1-raw-milk-poultry-exposure-recovery-phlorotannin-20260611.png` | 491347 | 1200x630 | 72.7 | 7.03 | premium enough |
