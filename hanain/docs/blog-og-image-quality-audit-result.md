@@ -2,7 +2,7 @@
 
 - Scope: localTrendBlogPostsRound60+
 - Minimum: 1200x630, 140000 bytes, luminance stddev 18.0, pixel entropy 2.9
-- Checked: 70
+- Checked: 83
 - Failed: 0
 
 | Status | Source | Image | Bytes | Size | Stddev | Pixel entropy | Notes |
@@ -77,3 +77,16 @@
 | PASS | localTrendBlogPostsRound73.js | `/og/content-quality/measles-h5n1-family-recovery-blog-photo-phlorotannin-20260612.png` | 994122 | 1200x630 | 68.8 | 7.67 | premium enough |
 | PASS | localTrendBlogPostsRound73.js | `/og/content-quality/cervical-self-collection-recovery-blog-photo-phlorotannin-20260612.png` | 976179 | 1200x630 | 60.0 | 7.19 | premium enough |
 | PASS | localTrendBlogPostsRound73.js | `/og/content-quality/psa-waist-blood-pressure-blog-photo-phlorotannin-20260612.png` | 1143996 | 1200x630 | 75.8 | 7.63 | premium enough |
+| PASS | localTrendBlogPostsRound74.js | `/og/content-quality/glp1-muscle-protein-fiber-recovery-photo-magazine-phlorotannin-20260612.png` | 894659 | 1200x630 | 62.3 | 7.54 | premium enough |
+| PASS | localTrendBlogPostsRound74.js | `/og/content-quality/cancer-biomarker-recovery-table-photo-magazine-phlorotannin-20260612.png` | 870784 | 1200x630 | 71.3 | 7.52 | premium enough |
+| PASS | localTrendBlogPostsRound74.js | `/og/content-quality/constipation-gut-rhythm-fiber-polyphenol-photo-magazine-phlorotannin-20260612.png` | 862135 | 1200x630 | 66.4 | 7.45 | premium enough |
+| PASS | localTrendBlogPostsRound74.js | `/og/content-quality/extreme-heat-blood-pressure-hydration-photo-magazine-phlorotannin-20260612.png` | 893027 | 1200x630 | 69.5 | 7.38 | premium enough |
+| PASS | localTrendBlogPostsRound74.js | `/og/content-quality/alzheimers-blood-test-family-memory-photo-magazine-phlorotannin-20260612.png` | 887071 | 1200x630 | 59.5 | 7.41 | premium enough |
+| PASS | localTrendBlogPostsRound74.js | `/og/content-quality/teen-sleep-social-media-evening-rhythm-photo-magazine-phlorotannin-20260612.png` | 804506 | 1200x630 | 68.1 | 7.32 | premium enough |
+| PASS | localTrendBlogPostsRound74.js | `/og/content-quality/older-adult-strength-balance-protein-recovery-photo-magazine-phlorotannin-20260612.png` | 883026 | 1200x630 | 52.2 | 7.22 | premium enough |
+| PASS | localTrendBlogPostsRound74.js | `/og/content-quality/uva-sunscreen-skin-barrier-photoaging-photo-magazine-phlorotannin-20260612.png` | 818791 | 1200x630 | 70.2 | 7.44 | premium enough |
+| PASS | localTrendBlogPostsRound74.js | `/og/content-quality/scalp-hair-loss-protein-sleep-recovery-photo-magazine-phlorotannin-20260612.png` | 874096 | 1200x630 | 59.0 | 7.44 | premium enough |
+| PASS | localTrendBlogPostsRound74.js | `/og/content-quality/wildfire-smoke-indoor-air-lung-recovery-photo-magazine-phlorotannin-20260612.png` | 811136 | 1200x630 | 84.1 | 7.39 | premium enough |
+| PASS | localTrendBlogPostsRound74.js | `/og/content-quality/measles-h5n1-family-immunity-recovery-photo-magazine-phlorotannin-20260612.png` | 946144 | 1200x630 | 72.1 | 7.64 | premium enough |
+| PASS | localTrendBlogPostsRound74.js | `/og/content-quality/menopause-sleep-hot-flash-bone-table-photo-magazine-phlorotannin-20260612.png` | 870640 | 1200x630 | 64.6 | 7.37 | premium enough |
+| PASS | localTrendBlogPostsRound74.js | `/og/content-quality/psa-waist-blood-pressure-men-health-photo-magazine-phlorotannin-20260612.png` | 930564 | 1200x630 | 71.7 | 7.59 | premium enough |

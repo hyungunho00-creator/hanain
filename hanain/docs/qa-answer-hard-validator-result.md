@@ -1,11 +1,11 @@
 # QA Answer Hard Validator Result
 
-- generatedAt: 2026-06-06T05:27:21.429Z
-- scanned: 1966
-- publicAnswers: 1966
+- generatedAt: 2026-06-12T05:14:42.581Z
+- scanned: 2034
+- publicAnswers: 2034
 - hiddenMissingAnswer: 0
 - failures: 0
-- warnings: 569
+- warnings: 570
 - status: PASS
 
 ## Failures
@@ -583,3 +583,4 @@
 - trend-oral-minoxidil-hair-loss-blood-pressure-safety-20260602: title keyword missing in first 300 chars
 - trend-respiratory-virus-vaccine-covid-flu-rsv-record-20260603: first paragraph starts with category label
 - trend-older-adult-fall-prevention-balance-medication-vision-record-20260603: title keyword missing in first 300 chars
+- category-aeo-round2-skin-uva-visible-light-sunscreen-phlorotannin-20260611: first paragraph starts with category label

@@ -25,7 +25,7 @@ ${post.opening}
 ${optionalListSection('소비자가 진짜 궁금한 것', post.consumerQuestions)}
 ${post.current}
 
-## 상담 전에 먼저 기록할 것
+## 생활 기록으로 남길 장면
 ${bullets(post.records)}
 
 ## 회복 루틴에서 플로로탄닌을 보는 법

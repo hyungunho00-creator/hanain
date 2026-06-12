@@ -22,6 +22,12 @@ const consumerForbidden = [
   { label: 'negative instead-of framing', pattern: /치료가\s*아니라|금연\s*수단이\s*아니라|해독제도\s*아니고|대신하지\s*않습니다|대신하지\s*않고|소재로만|배경\s*정보로만/g },
 ];
 
+const magazineForbidden = [
+  { label: 'consultant-manual wording', pattern: /상담\s*전|상담\s*전에|상담에\s*가져갈|상담으로\s*이어|문의로\s*이어|전화\s*문의로\s*이어|상담\s*메뉴얼|상담\s*매뉴얼/g },
+  { label: 'defensive production wording', pattern: /치료제처럼\s*말하면|말하면\s*안\s*됩니다|소재로만|배경\s*정보로만/g },
+  { label: 'internal CTA wording', pattern: /\bCTA\b|콜\s*투\s*액션/g },
+];
+
 function addFile(filePath) {
   if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
     targetFiles.push(filePath);
@@ -74,6 +80,19 @@ function shouldApplyConsumerAudit(filePath, text) {
   return false;
 }
 
+function shouldApplyMagazineAudit(filePath) {
+  const relativePath = path.relative(root, filePath);
+  const roundMatch = relativePath.match(/src[\\/]+data[\\/]+localTrendBlogPostsRound(\d+)\.js$/);
+  if (roundMatch) {
+    return Number(roundMatch[1]) >= 74;
+  }
+  const insightMatch = relativePath.match(/src[\\/]+data[\\/]+insights[\\/]+posts[\\/]+(\d+)-/);
+  if (insightMatch) {
+    return Number(insightMatch[1]) >= 316;
+  }
+  return false;
+}
+
 addDir(path.join(root, 'src', 'data', 'insights', 'posts'), '.jsx');
 addFile(path.join(root, 'src', 'data', 'qa.json'));
 addFile(path.join(root, 'public', 'qa.json'));
@@ -107,6 +126,24 @@ for (const filePath of consumerTargetFiles) {
   const text = fs.readFileSync(filePath, 'utf8');
   if (!shouldApplyConsumerAudit(filePath, text)) continue;
   for (const rule of consumerForbidden) {
+    const matches = [...text.matchAll(rule.pattern)];
+    for (const match of matches) {
+      const before = text.slice(0, match.index);
+      const line = before.split(/\r?\n/).length;
+      findings.push({
+        file: path.relative(root, filePath),
+        line,
+        label: rule.label,
+        match: match[0],
+      });
+    }
+  }
+}
+
+for (const filePath of consumerTargetFiles) {
+  const text = fs.readFileSync(filePath, 'utf8');
+  if (!shouldApplyMagazineAudit(filePath)) continue;
+  for (const rule of magazineForbidden) {
     const matches = [...text.matchAll(rule.pattern)];
     for (const match of matches) {
       const before = text.slice(0, match.index);

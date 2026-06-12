@@ -1,4 +1,4 @@
-const PUBLISHED = '2026-06-08T14:55:00+09:00'
+﻿const PUBLISHED = '2026-06-08T14:55:00+09:00'
 
 function refs(items) {
   return items.map(([label, url]) => `- [${label}](${url})`).join('\n')
@@ -19,7 +19,7 @@ ${post.current}
 
 ${post.consumerPoint}
 
-## 상담 전에 먼저 모아둘 기록
+## 생활 기록으로 모아둘 장면
 
 ${bullets(post.records)}
 
