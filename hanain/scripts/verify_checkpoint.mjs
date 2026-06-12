@@ -1,10 +1,10 @@
 const SITE = 'https://phlorotannin.com'
 
 const EXPECTED = {
-  sitemapTotal: 3486,
+  sitemapTotal: 3499,
   qCount: 2034,
   tagCount: 297,
-  blogCount: 809,
+  blogCount: 822,
   insightCount: 315,
   requiredBundleSlugs: [
     'glp1-era-protein-fiber-phlorotannin-checklist-2026',
@@ -196,6 +196,19 @@ const EXPECTED = {
     'youth-nicotine-vape-pouch-addiction-quit-recovery-phlorotannin-2026',
     'toxic-chemical-exposure-decontamination-triage-airway-recovery-phlorotannin-2026',
     'world-blood-donor-day-2026-iron-hydration-recovery-phlorotannin-2026',
+    'metabolism-clinic-choice-doctor-symptom-record-phlorotannin-20260612',
+    'cancer-hospital-choice-biomarker-nutrition-record-phlorotannin-20260612',
+    'digestive-clinic-choice-abdominal-symptom-record-phlorotannin-20260612',
+    'cardiology-hospital-choice-blood-pressure-chest-pain-record-phlorotannin-20260612',
+    'neurology-clinic-choice-memory-stroke-symptom-record-phlorotannin-20260612',
+    'mental-health-clinic-choice-sleep-anxiety-record-phlorotannin-20260612',
+    'orthopedic-rehab-clinic-choice-pain-fall-record-phlorotannin-20260612',
+    'dermatology-clinic-choice-rash-sunscreen-record-phlorotannin-20260612',
+    'hair-loss-clinic-choice-scalp-medication-record-phlorotannin-20260612',
+    'pulmonology-clinic-choice-cough-asthma-record-phlorotannin-20260612',
+    'infection-clinic-choice-fever-rash-exposure-record-phlorotannin-20260612',
+    'womens-clinic-choice-menopause-bleeding-pregnancy-record-phlorotannin-20260612',
+    'mens-clinic-choice-psa-urination-blood-pressure-record-phlorotannin-20260612',
   ],
   draftSlug: 'ecklonia-cava-respiratory-health-clinical-trial-2026',
 }

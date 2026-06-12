@@ -2,7 +2,7 @@
 
 - Scope: localTrendBlogPostsRound60+
 - Minimum: 1200x630, 140000 bytes, luminance stddev 18.0, pixel entropy 2.9
-- Checked: 83
+- Checked: 96
 - Failed: 0
 
 | Status | Source | Image | Bytes | Size | Stddev | Pixel entropy | Notes |
@@ -90,3 +90,16 @@
 | PASS | localTrendBlogPostsRound74.js | `/og/content-quality/measles-h5n1-family-immunity-recovery-photo-magazine-phlorotannin-20260612.png` | 946144 | 1200x630 | 72.1 | 7.64 | premium enough |
 | PASS | localTrendBlogPostsRound74.js | `/og/content-quality/menopause-sleep-hot-flash-bone-table-photo-magazine-phlorotannin-20260612.png` | 870640 | 1200x630 | 64.6 | 7.37 | premium enough |
 | PASS | localTrendBlogPostsRound74.js | `/og/content-quality/psa-waist-blood-pressure-men-health-photo-magazine-phlorotannin-20260612.png` | 930564 | 1200x630 | 71.7 | 7.59 | premium enough |
+| PASS | localTrendBlogPostsRound75.js | `/og/content-quality/metabolism-clinic-choice-doctor-symptom-record-photo-hospital-choice-phlorotannin-20260612.png` | 810307 | 1200x630 | 68.3 | 7.48 | premium enough |
+| PASS | localTrendBlogPostsRound75.js | `/og/content-quality/cancer-hospital-choice-biomarker-nutrition-record-photo-hospital-choice-phlorotannin-20260612.png` | 816487 | 1200x630 | 72.2 | 7.51 | premium enough |
+| PASS | localTrendBlogPostsRound75.js | `/og/content-quality/digestive-clinic-choice-abdominal-symptom-record-photo-hospital-choice-phlorotannin-20260612.png` | 880760 | 1200x630 | 74.5 | 7.54 | premium enough |
+| PASS | localTrendBlogPostsRound75.js | `/og/content-quality/cardiology-hospital-choice-blood-pressure-chest-pain-record-photo-hospital-choice-phlorotannin-20260612.png` | 790054 | 1200x630 | 70.8 | 7.39 | premium enough |
+| PASS | localTrendBlogPostsRound75.js | `/og/content-quality/neurology-clinic-choice-memory-stroke-symptom-record-photo-hospital-choice-phlorotannin-20260612.png` | 973305 | 1200x630 | 75.9 | 7.64 | premium enough |
+| PASS | localTrendBlogPostsRound75.js | `/og/content-quality/mental-health-clinic-choice-sleep-anxiety-record-photo-hospital-choice-phlorotannin-20260612.png` | 778327 | 1200x630 | 60.4 | 7.52 | premium enough |
+| PASS | localTrendBlogPostsRound75.js | `/og/content-quality/orthopedic-rehab-clinic-choice-pain-fall-record-photo-hospital-choice-phlorotannin-20260612.png` | 839732 | 1200x630 | 58.8 | 7.53 | premium enough |
+| PASS | localTrendBlogPostsRound75.js | `/og/content-quality/dermatology-clinic-choice-rash-sunscreen-record-photo-hospital-choice-phlorotannin-20260612.png` | 793843 | 1200x630 | 65.2 | 7.36 | premium enough |
+| PASS | localTrendBlogPostsRound75.js | `/og/content-quality/hair-loss-clinic-choice-scalp-medication-record-photo-hospital-choice-phlorotannin-20260612.png` | 820530 | 1200x630 | 63.9 | 7.41 | premium enough |
+| PASS | localTrendBlogPostsRound75.js | `/og/content-quality/pulmonology-clinic-choice-cough-asthma-record-photo-hospital-choice-phlorotannin-20260612.png` | 811730 | 1200x630 | 70.6 | 7.39 | premium enough |
+| PASS | localTrendBlogPostsRound75.js | `/og/content-quality/infection-clinic-choice-fever-rash-exposure-record-photo-hospital-choice-phlorotannin-20260612.png` | 820104 | 1200x630 | 67.0 | 7.44 | premium enough |
+| PASS | localTrendBlogPostsRound75.js | `/og/content-quality/womens-clinic-choice-menopause-bleeding-pregnancy-record-photo-hospital-choice-phlorotannin-20260612.png` | 839316 | 1200x630 | 66.4 | 7.36 | premium enough |
+| PASS | localTrendBlogPostsRound75.js | `/og/content-quality/mens-clinic-choice-psa-urination-blood-pressure-record-photo-hospital-choice-phlorotannin-20260612.png` | 905440 | 1200x630 | 70.4 | 7.40 | premium enough |
