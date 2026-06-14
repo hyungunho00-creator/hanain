@@ -68,6 +68,14 @@ function toQuestionSlug(s) {
     .replace(/^-|-$/g, '')
     .slice(0, 60)
 }
+
+function engagementNumber(...values) {
+  for (const value of values) {
+    const n = Number(value)
+    if (Number.isFinite(n) && n > 0) return n
+  }
+  return 0
+}
 async function getFallbackCategory(catId) {
   const data = await ensureQaFallback()
   const cat = data.categories.find(c => c.id === catId)
@@ -88,9 +96,9 @@ async function getFallbackQuestions(catId, { page = 1, limit = PAGE_SIZE, sort =
   if (sort === 'latest') {
     arr = arr.sort((a, b) => String(b.created_at || b.id).localeCompare(String(a.created_at || a.id)))
   } else if (sort === 'likes') {
-    arr = arr.sort((a, b) => (b.likes || 0) - (a.likes || 0))
+    arr = arr.sort((a, b) => engagementNumber(b.likes, b.like_count, b.helpful_count) - engagementNumber(a.likes, a.like_count, a.helpful_count))
   } else {
-    arr = arr.sort((a, b) => (b.views || 0) - (a.views || 0))
+    arr = arr.sort((a, b) => engagementNumber(b.views, b.view_count) - engagementNumber(a.views, a.view_count))
   }
   const start = (page - 1) * limit
   const slice = arr.slice(start, start + limit)
@@ -101,8 +109,8 @@ async function getFallbackQuestions(catId, { page = 1, limit = PAGE_SIZE, sort =
       title: q.question,
       category_id: q.category,
       tags: q.tags || [],
-      view_count: q.views || 0,
-      like_count: q.likes || 0,
+      view_count: engagementNumber(q.views, q.view_count),
+      like_count: engagementNumber(q.likes, q.like_count, q.helpful_count),
       difficulty: q.difficulty,
     })),
     count: arr.length,
@@ -112,7 +120,7 @@ async function getFallbackPopular(catId, limit = 5) {
   const data = await ensureQaFallback()
   return data.questions
     .filter(q => q.category === catId && isPublicQa(q))
-    .sort((a, b) => (b.views || 0) - (a.views || 0))
+    .sort((a, b) => engagementNumber(b.views, b.view_count) - engagementNumber(a.views, a.view_count))
     .slice(0, limit)
     .map(q => ({
       id: q.id,
@@ -216,8 +224,8 @@ export default function CategoryPage() {
       title: q.question || q.title,
       category_id: q.category_id,
       tags: q.tags || [],
-      view_count: q.views || q.view_count || 0,
-      like_count: q.likes || q.like_count || 0,
+      view_count: engagementNumber(q.views, q.view_count),
+      like_count: engagementNumber(q.likes, q.like_count, q.helpful_count),
       difficulty: q.difficulty,
     }))
     setQuestions(normalized)

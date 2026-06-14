@@ -109,6 +109,14 @@ function highlightText(text, query) {
   return text.replace(regex, '<mark class="bg-gray-900 text-white rounded px-0.5">$1</mark>')
 }
 
+function engagementNumber(...values) {
+  for (const value of values) {
+    const n = Number(value)
+    if (Number.isFinite(n) && n > 0) return n
+  }
+  return 0
+}
+
 function ContactCard() {
   const partner = usePartner()
 
@@ -148,7 +156,7 @@ function ContactCard() {
 function QACard({ qa, itemKey, isOpen, onToggle, searchQuery, categories }) {
   const partner = usePartner()
   const [liked, setLiked] = useState(false)
-  const [likeCount, setLikeCount] = useState(qa.likes || 0)
+  const [likeCount, setLikeCount] = useState(engagementNumber(qa.likes, qa.like_count, qa.helpful_count))
   const renderable = getRenderableQAAnswer(qa)
 
   const handleLike = (e) => {
@@ -224,7 +232,7 @@ function QACard({ qa, itemKey, isOpen, onToggle, searchQuery, categories }) {
               dangerouslySetInnerHTML={{ __html: highlightText(qa.question, searchQuery) }}
             />
             <div className="flex items-center gap-5 mt-3 text-[12px] text-gray-400 tabular-nums">
-              <span>조회 {(qa.views || qa.view_count || 0).toLocaleString()}</span>
+              <span>조회 {engagementNumber(qa.views, qa.view_count).toLocaleString()}</span>
               <span>도움 {likeCount}</span>
             </div>
           </div>
@@ -347,7 +355,7 @@ export default function QAPage() {
 
         // 인기 질문 (조회수 순 상위 10)
         const popular = [...qs]
-          .sort((a, b) => (b.views || b.view_count || 0) - (a.views || a.view_count || 0))
+          .sort((a, b) => engagementNumber(b.views, b.view_count) - engagementNumber(a.views, a.view_count))
           .slice(0, 10)
         setPopularList(popular)
 
@@ -386,7 +394,7 @@ export default function QAPage() {
       if (latestDelta !== 0) return latestDelta
       const timeDelta = qaPublishedTime(b) - qaPublishedTime(a)
       if (timeDelta !== 0) return timeDelta
-      return (b.views || b.view_count || 0) - (a.views || a.view_count || 0)
+      return engagementNumber(b.views, b.view_count) - engagementNumber(a.views, a.view_count)
     })
 
     const total = filtered.length

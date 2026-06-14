@@ -614,8 +614,8 @@ function normalizeQa(row) {
     title,
     question: title,
     category_id: row.category_id,
-    views: row.views || 0,
-    likes: row.likes || 0,
+    views: row.views || row.view_count || 0,
+    likes: row.likes || row.like_count || row.helpful_count || 0,
   }
 }
 

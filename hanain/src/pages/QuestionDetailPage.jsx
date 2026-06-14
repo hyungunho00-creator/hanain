@@ -83,6 +83,14 @@ function toQuestionSlug(value) {
     .slice(0, 60)
 }
 
+function engagementNumber(...values) {
+  for (const value of values) {
+    const n = Number(value)
+    if (Number.isFinite(n) && n > 0) return n
+  }
+  return 0
+}
+
 async function getFallbackQuestion(slug) {
   const data = await ensureQaFallback()
   const q = data.questions.find(q => {
@@ -96,7 +104,7 @@ async function getFallbackQuestion(slug) {
     id: q.id, slug: toQuestionSlug(q.question) || slug, title: q.question,
     category_id: q.category,
     categories: cat ? { id: cat.id, name: cat.name, slug: cat.id, color: cat.color, icon: cat.icon } : null,
-    tags: q.tags || [], view_count: q.views || 0, like_count: q.likes || 0,
+    tags: q.tags || [], view_count: engagementNumber(q.views, q.view_count), like_count: engagementNumber(q.likes, q.like_count, q.helpful_count),
     difficulty: q.difficulty, visibility: 'public', author_type: 'self',
     author: q.author || QA_SCHEMA_AUTHOR.name,
     created_at: q.created_at || q.published_at || q.reviewed_at || q.reviewedAt || '2026-05-21',
@@ -130,7 +138,7 @@ async function getFallbackSameCategory(excludeId, categoryId, limit = 6) {
   const cat = data.categories.find(c => c.id === categoryId)
   const sorted = data.questions
     .filter(q => q.category === categoryId && q.id !== excludeId && shouldEmitQASchema(q))
-    .sort((a, b) => (b.views || 0) - (a.views || 0))
+    .sort((a, b) => engagementNumber(b.views, b.view_count) - engagementNumber(a.views, a.view_count))
     .slice(0, limit)
   return sorted.map(q => ({
     id: q.id,
@@ -139,8 +147,8 @@ async function getFallbackSameCategory(excludeId, categoryId, limit = 6) {
     question: q.question,
     category_id: q.category,
     categories: cat ? { id: cat.id, name: cat.name, slug: cat.id, color: cat.color } : null,
-    views: q.views || 0,
-    likes: q.likes || 0,
+    views: engagementNumber(q.views, q.view_count),
+    likes: engagementNumber(q.likes, q.like_count, q.helpful_count),
   }))
 }
 
@@ -230,7 +238,7 @@ export default function QuestionDetailPage() {
       const renderable = getRenderableQAAnswer(q)
       const publishable = Boolean(renderable.html)
       setQuestion({ ...q, _publishable: publishable, _renderableAnswer: renderable })
-      setLikeCount(q.like_count || 0)
+      setLikeCount(engagementNumber(q.like_count, q.likes, q.helpful_count))
 
       // 병렬 로드
       const [ans, rel, same, vids, likedStatus, savedStatus] = await Promise.all([
@@ -356,7 +364,7 @@ export default function QuestionDetailPage() {
           dateModified: schemaDateModified,
           author: schemaAuthor,
           answerCount: isPublicValidated ? (answers.length || 1) : 0,
-          upvoteCount: question.like_count || 0,
+          upvoteCount: engagementNumber(question.like_count, question.likes, question.helpful_count),
           ...(isPublicValidated && rawAnswerText ? {
             acceptedAnswer: {
               '@type': 'Answer',
@@ -463,7 +471,7 @@ export default function QuestionDetailPage() {
                   {/* 통계 + 액션 */}
                   <div className="flex items-center justify-between flex-wrap gap-3 pt-4 border-t border-gray-100">
                     <div className="flex items-center gap-3 text-sm text-gray-400">
-                      <span className="flex items-center gap-1"><Eye className="w-4 h-4" />{(question.view_count || 0).toLocaleString()}</span>
+                      <span className="flex items-center gap-1"><Eye className="w-4 h-4" />{engagementNumber(question.view_count, question.views).toLocaleString()}</span>
                       <span className="flex items-center gap-1"><Heart className="w-4 h-4" />{likeCount}</span>
                     </div>
                     <div className="flex items-center gap-2">
