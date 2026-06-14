@@ -9,7 +9,6 @@ import { getCategoryMeta } from '../data/qaCategoryMeta'
 import { QA_TOTAL } from '../data/siteStats'
 import { usePartner } from '../context/PartnerContext'
 import { withRef } from '../lib/partnerRef'
-import { shouldEmitQASchema } from '../lib/qaAnswer'
 
 // URL slug → category_id 매핑 (DB qa_categories 기준)
 // [2026-05-21 D6 보강] skin/hair 단독 슬러그 추가 — sitemap·qa.json 정합성 확보
@@ -45,7 +44,10 @@ function slugifyKoLocal(s) {
   return String(s || '').replace(/[^\w\s가-힣]/g, '').replace(/\s+/g, '-').slice(0, 60)
 }
 function isPublicQa(item) {
-  return shouldEmitQASchema(item)
+  if (!item || typeof item !== 'object') return false
+  if (item.noindex === true) return false
+  const answer = item.validatedAnswer || item.validated_answer || item.answer || ''
+  return Boolean(item.id && item.question && answer)
 }
 async function ensureQaFallback() {
   if (!QA_FALLBACK) {
@@ -171,34 +173,23 @@ export default function CategoryPage() {
   const [total, setTotal] = useState(0)
   const [page, setPage] = useState(1)
   const [sort, setSort] = useState('popular')
-  const [publicIds, setPublicIds] = useState(new Set())
   const [loading, setLoading] = useState(true)
   const [notFound, setNotFound] = useState(false)
 
   const totalPages = Math.ceil(total / PAGE_SIZE)
 
   useEffect(() => {
-    ensureQaFallback()
-      .then((d) => {
-        const ids = (d.questions || []).filter(isPublicQa).map((q) => q.id)
-        setPublicIds(new Set(ids))
-      })
-      .catch(() => setPublicIds(new Set()))
-  }, [])
-
-  useEffect(() => {
     async function loadCat() {
       const catId = SLUG_TO_ID[slug] || slug
-      let cat = null
-      try {
-        const cats = await getQaCategories()
-        cat = cats.find(c => c.id === catId)
-      } catch {
-        cat = null
-      }
+      let cat = await getFallbackCategory(catId)
       // [2026-05-21 D6] Supabase 미스 또는 qa.json-only 카테고리(skin/hair)는 fallback 시도
       if (!cat) {
-        cat = await getFallbackCategory(catId)
+        try {
+          const cats = await getQaCategories()
+          cat = cats.find(c => c.id === catId)
+        } catch {
+          cat = null
+        }
       }
       if (!cat) { setNotFound(true); setLoading(false); return }
       setCategory(cat)
@@ -209,10 +200,9 @@ export default function CategoryPage() {
   const loadQuestions = useCallback(async () => {
     if (!category) return
     setLoading(true)
-    let result = { data: [], count: 0 }
+    let result = await getFallbackQuestions(category.id, { page, limit: PAGE_SIZE, sort })
     // skin / hair 는 Supabase 에 없으므로 fallback 강제
-    const fallbackOnly = category._fallback || category.id === 'skin' || category.id === 'hair'
-    if (!fallbackOnly) {
+    if (!result.data || result.data.length === 0) {
       try {
         result = await getQaQuestions({ categoryId: category.id, page, limit: PAGE_SIZE, sort })
       } catch {
@@ -220,9 +210,6 @@ export default function CategoryPage() {
       }
     }
     // Supabase 응답이 비어 있으면 qa.json 으로 보강
-    if (!result.data || result.data.length === 0) {
-      result = await getFallbackQuestions(category.id, { page, limit: PAGE_SIZE, sort })
-    }
     const normalized = result.data.map(q => ({
       id: q.id,
       slug: toQuestionSlug(q.question || q.title) || q.slug || q.id,
@@ -233,49 +220,33 @@ export default function CategoryPage() {
       like_count: q.likes || q.like_count || 0,
       difficulty: q.difficulty,
     }))
-    const filtered = publicIds.size > 0
-      ? normalized.filter((q) => publicIds.has(q.id))
-      : normalized
-    setQuestions(filtered)
-    if (publicIds.size > 0 && QA_FALLBACK?.questions?.length) {
-      const validatedTotal = QA_FALLBACK.questions.filter(
-        (q) => q.category === category.id && isPublicQa(q)
-      ).length
-      setTotal(validatedTotal)
-    } else {
-      setTotal(result.count || 0)
-    }
+    setQuestions(normalized)
+    setTotal(result.count || normalized.length)
     setLoading(false)
-  }, [category, page, sort, publicIds])
+  }, [category, page, sort])
 
   useEffect(() => { loadQuestions() }, [loadQuestions])
 
   useEffect(() => {
     if (!category) return
     async function loadExtras() {
-      let pop = []
-      const fallbackOnly = category._fallback || category.id === 'skin' || category.id === 'hair'
-      if (!fallbackOnly) {
+      let pop = await getFallbackPopular(category.id, 5)
+      if (!pop || pop.length === 0) {
         try {
           pop = await getQaPopular(category.id, 5)
         } catch {
           pop = []
         }
       }
-      if (!pop || pop.length === 0) {
-        const fp = await getFallbackPopular(category.id, 5)
-        setPopular(fp)
-        return
-      }
       const normalized = pop.map(q => ({
         id: q.id,
         slug: toQuestionSlug(q.question || q.title) || q.slug || q.id,
         title: q.question || q.title,
       }))
-      setPopular(publicIds.size > 0 ? normalized.filter((q) => publicIds.has(q.id)) : normalized)
+      setPopular(normalized)
     }
     loadExtras()
-  }, [category, publicIds])
+  }, [category])
 
   if (notFound) return (
       <div className="pt-16 min-h-screen bg-gray-hana flex flex-col items-center justify-center gap-4">

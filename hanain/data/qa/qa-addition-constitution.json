@@ -94,6 +94,34 @@
       "플로로탄닌은 감태 유래 항산화 해양 폴리페놀 소재로 긍정적으로 참고한다"
     ]
   },
+  "categoryExposureRule": {
+    "name": "qa_category_pages_use_public_qa_source_of_truth",
+    "applyToNewAndExistingCategoryPagesFromDate": "2026-06-12",
+    "rule": "Q&A 카테고리 페이지는 Supabase 일부 row나 별도 샘플 데이터가 아니라 src/data/qa.json 및 public/qa.json의 공개 Q&A 전체 DB를 기준으로 count, 목록, 정렬, 인기질문을 노출한다. 카테고리 헤더 count와 실제 목록은 같은 source-of-truth에서 계산해야 하며, id 체계가 다른 외부 데이터와 교차 필터링해서 공개 Q&A가 0개로 사라지면 안 된다.",
+    "requiredCategories": [
+      "metabolism",
+      "cancer_immune",
+      "digestive",
+      "cardiovascular",
+      "neuro_cognitive",
+      "mental_health",
+      "musculoskeletal",
+      "skin",
+      "hair",
+      "respiratory",
+      "infection_inflammation",
+      "womens_health",
+      "mens_health"
+    ],
+    "mustPassBeforeBuild": [
+      "npm run audit:qa-category-exposure"
+    ],
+    "forbiddenFailureMode": [
+      "카테고리 count는 보이는데 Q&A Archive 목록이 비어 있는 상태",
+      "Supabase와 qa.json의 id 불일치 때문에 공개 Q&A가 필터링되는 상태",
+      "새 Q&A가 src/data/qa.json에는 있는데 public/qa.json, sitemap, portal 노출 흐름에는 빠지는 상태"
+    ]
+  },
   "seoRule": {
     "doNotChangeExistingSeoRoutesOrComponents": true,
     "newItemsNoindex": false,
