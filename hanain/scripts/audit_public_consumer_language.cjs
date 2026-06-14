@@ -31,6 +31,19 @@ const forbidden = [
   '\uCC38\uACE0 \uC815\uBCF4\uC77C \uBFD0',
 ];
 
+const newJournalForbidden = [
+  '\uC0C1\uB2F4 \uC804',
+  '\uC0C1\uB2F4\uC804',
+  '\uC0C1\uB2F4 \uBA54\uB274\uC5BC',
+  '\uC0C1\uB2F4\uC6D0 \uBB38\uAD6C',
+  '\uBCF4\uD638\uC790\uAC00 \uD68C\uBCF5 \uB8E8\uD2F4\uC744',
+  '\uB0B4\uAC00 \uC9C0\uAE08 \uBCD1\uC6D0 \uCE58\uB8CC\uB97C',
+];
+
+const newJournalTargets = targets.filter((file) => (
+  /localTrendBlogPostsRound(7[6-9]|[8-9]\d|\d{3,})\.js$/.test(file)
+));
+
 const failures = [];
 
 for (const file of targets) {
@@ -38,6 +51,23 @@ for (const file of targets) {
   const lines = text.split(/\r?\n/);
   lines.forEach((line, index) => {
     for (const phrase of forbidden) {
+      if (line.includes(phrase)) {
+        failures.push({
+          file: path.relative(root, file),
+          line: index + 1,
+          phrase,
+          text: line.trim().slice(0, 220),
+        });
+      }
+    }
+  });
+}
+
+for (const file of newJournalTargets) {
+  const text = fs.readFileSync(file, 'utf8');
+  const lines = text.split(/\r?\n/);
+  lines.forEach((line, index) => {
+    for (const phrase of newJournalForbidden) {
       if (line.includes(phrase)) {
         failures.push({
           file: path.relative(root, file),

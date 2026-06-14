@@ -1,10 +1,10 @@
 const SITE = 'https://phlorotannin.com'
 
 const EXPECTED = {
-  sitemapTotal: 3499,
+  sitemapTotal: 3512,
   qCount: 2034,
   tagCount: 297,
-  blogCount: 822,
+  blogCount: 835,
   insightCount: 315,
   requiredBundleSlugs: [
     'glp1-era-protein-fiber-phlorotannin-checklist-2026',
@@ -209,6 +209,19 @@ const EXPECTED = {
     'infection-clinic-choice-fever-rash-exposure-record-phlorotannin-20260612',
     'womens-clinic-choice-menopause-bleeding-pregnancy-record-phlorotannin-20260612',
     'mens-clinic-choice-psa-urination-blood-pressure-record-phlorotannin-20260612',
+    'glp1-safety-gap-muscle-gut-recovery-phlorotannin-journal-20260614',
+    'cancer-biomarker-report-recovery-table-phlorotannin-journal-20260614',
+    'foodborne-outbreak-gut-rhythm-summer-recovery-phlorotannin-journal-20260614',
+    'high-blood-pressure-home-signal-recovery-phlorotannin-journal-20260614',
+    'memory-blood-biomarker-brain-rhythm-phlorotannin-journal-20260614',
+    'social-media-sleep-youth-mental-recovery-phlorotannin-journal-20260614',
+    'fall-prevention-muscle-balance-protein-phlorotannin-journal-20260614',
+    'uva-sunscreen-skin-barrier-recovery-phlorotannin-journal-20260614',
+    'hair-loss-root-cause-scalp-recovery-phlorotannin-journal-20260614',
+    'respiratory-virus-indoor-air-recovery-phlorotannin-journal-20260614',
+    'measles-foodborne-inflammation-recovery-phlorotannin-journal-20260614',
+    'menopause-hormone-sleep-bone-recovery-phlorotannin-journal-20260614',
+    'mens-health-month-bp-waist-psa-recovery-phlorotannin-journal-20260614',
   ],
   draftSlug: 'ecklonia-cava-respiratory-health-clinical-trial-2026',
 }

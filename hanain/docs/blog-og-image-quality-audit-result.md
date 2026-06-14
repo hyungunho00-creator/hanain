@@ -2,7 +2,7 @@
 
 - Scope: localTrendBlogPostsRound60+
 - Minimum: 1200x630, 140000 bytes, luminance stddev 18.0, pixel entropy 2.9
-- Checked: 96
+- Checked: 109
 - Failed: 0
 
 | Status | Source | Image | Bytes | Size | Stddev | Pixel entropy | Notes |
@@ -103,3 +103,16 @@
 | PASS | localTrendBlogPostsRound75.js | `/og/content-quality/infection-clinic-choice-fever-rash-exposure-record-photo-hospital-choice-phlorotannin-20260612.png` | 820104 | 1200x630 | 67.0 | 7.44 | premium enough |
 | PASS | localTrendBlogPostsRound75.js | `/og/content-quality/womens-clinic-choice-menopause-bleeding-pregnancy-record-photo-hospital-choice-phlorotannin-20260612.png` | 839316 | 1200x630 | 66.4 | 7.36 | premium enough |
 | PASS | localTrendBlogPostsRound75.js | `/og/content-quality/mens-clinic-choice-psa-urination-blood-pressure-record-photo-hospital-choice-phlorotannin-20260612.png` | 905440 | 1200x630 | 70.4 | 7.40 | premium enough |
+| PASS | localTrendBlogPostsRound76.js | `/og/content-quality/glp1-safety-gap-muscle-gut-recovery-phlorotannin-journal-20260614-photo-magazine-phlorotannin-20260614.png` | 1168081 | 1200x675 | 67.5 | 7.55 | premium enough |
+| PASS | localTrendBlogPostsRound76.js | `/og/content-quality/cancer-biomarker-report-recovery-table-phlorotannin-journal-20260614-photo-magazine-phlorotannin-20260614.png` | 1086078 | 1200x675 | 69.1 | 7.85 | premium enough |
+| PASS | localTrendBlogPostsRound76.js | `/og/content-quality/foodborne-outbreak-gut-rhythm-summer-recovery-phlorotannin-journal-20260614-photo-magazine-phlorotannin-20260614.png` | 1240544 | 1200x675 | 65.4 | 7.83 | premium enough |
+| PASS | localTrendBlogPostsRound76.js | `/og/content-quality/high-blood-pressure-home-signal-recovery-phlorotannin-journal-20260614-photo-magazine-phlorotannin-20260614.png` | 937932 | 1200x675 | 65.5 | 7.51 | premium enough |
+| PASS | localTrendBlogPostsRound76.js | `/og/content-quality/memory-blood-biomarker-brain-rhythm-phlorotannin-journal-20260614-photo-magazine-phlorotannin-20260614.png` | 1096816 | 1200x675 | 57.9 | 7.63 | premium enough |
+| PASS | localTrendBlogPostsRound76.js | `/og/content-quality/social-media-sleep-youth-mental-recovery-phlorotannin-journal-20260614-photo-magazine-phlorotannin-20260614.png` | 1105013 | 1200x675 | 63.1 | 7.61 | premium enough |
+| PASS | localTrendBlogPostsRound76.js | `/og/content-quality/fall-prevention-muscle-balance-protein-phlorotannin-journal-20260614-photo-magazine-phlorotannin-20260614.png` | 1263742 | 1200x675 | 66.5 | 7.85 | premium enough |
+| PASS | localTrendBlogPostsRound76.js | `/og/content-quality/uva-sunscreen-skin-barrier-recovery-phlorotannin-journal-20260614-photo-magazine-phlorotannin-20260614.png` | 1037112 | 1200x675 | 55.4 | 7.60 | premium enough |
+| PASS | localTrendBlogPostsRound76.js | `/og/content-quality/hair-loss-root-cause-scalp-recovery-phlorotannin-journal-20260614-photo-magazine-phlorotannin-20260614.png` | 1102554 | 1200x675 | 69.9 | 7.86 | premium enough |
+| PASS | localTrendBlogPostsRound76.js | `/og/content-quality/respiratory-virus-indoor-air-recovery-phlorotannin-journal-20260614-photo-magazine-phlorotannin-20260614.png` | 1072722 | 1200x675 | 59.4 | 7.72 | premium enough |
+| PASS | localTrendBlogPostsRound76.js | `/og/content-quality/measles-foodborne-inflammation-recovery-phlorotannin-journal-20260614-photo-magazine-phlorotannin-20260614.png` | 1099835 | 1200x675 | 68.6 | 7.84 | premium enough |
+| PASS | localTrendBlogPostsRound76.js | `/og/content-quality/menopause-hormone-sleep-bone-recovery-phlorotannin-journal-20260614-photo-magazine-phlorotannin-20260614.png` | 977899 | 1200x675 | 65.3 | 7.83 | premium enough |
+| PASS | localTrendBlogPostsRound76.js | `/og/content-quality/mens-health-month-bp-waist-psa-recovery-phlorotannin-journal-20260614-photo-magazine-phlorotannin-20260614.png` | 1154448 | 1200x675 | 58.9 | 7.72 | premium enough |

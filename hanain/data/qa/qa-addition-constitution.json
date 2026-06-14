@@ -122,6 +122,36 @@
       "새 Q&A가 src/data/qa.json에는 있는데 public/qa.json, sitemap, portal 노출 흐름에는 빠지는 상태"
     ]
   },
+  "blogMagazineRule": {
+    "name": "consumer_phlorotannin_health_journal_not 상담매뉴얼",
+    "applyToNewBlogInsightAndQaFromDate": "2026-06-14",
+    "rule": "블로그, 인사이트, Q&A의 공개 본문은 소비자가 읽는 플로로탄닌 건강 정보지이자 저널형 평론이어야 한다. 병원 상담 매뉴얼처럼 '상담 전', '의사에게 말할 목록', '말하면 안 됩니다' 중심으로 쓰지 않는다. 공식 근거와 최신 이슈를 소비자의 생활 언어로 해석하고, 회복 루틴과 플로로탄닌의 긍정적 관심 포인트를 본문 맥락 안에 배치한다.",
+    "mustUseFrame": [
+      "소비자가 오늘 바로 이해할 건강 이슈",
+      "몸 전체 회복 시스템",
+      "식사·수면·수분·운동·스트레스 기록",
+      "감태 유래 해양 폴리페놀",
+      "항산화·염증 반응·장내환경·회복 리듬",
+      "플로로탄닌을 자연스럽고 강하게 궁금하게 만드는 문장"
+    ],
+    "forbiddenPublicPhrases": [
+      "상담 전",
+      "상담 매뉴얼",
+      "상담원 문구",
+      "말하면 안 됩니다",
+      "치료가 아니라",
+      "참고 정보일 뿐",
+      "소재로만",
+      "배경 정보로만"
+    ],
+    "imageRule": "카테고리별 신규 글 이미지는 카드형 아이콘 중심이 아니라 실사급 사진 또는 실사 기반 건강 저널 이미지여야 한다. 이미지에는 본문 맥락과 맞는 한글 타이틀을 넣고, SEO/AEO용 alt 값을 반드시 넣는다.",
+    "verification": [
+      "npm run audit:consumer-language",
+      "npm run audit:blog-images",
+      "npm run build",
+      "배포 후 실제 운영 URL 200, OG 이미지 200, sitemap/RSS 포함 여부 확인"
+    ]
+  },
   "seoRule": {
     "doNotChangeExistingSeoRoutesOrComponents": true,
     "newItemsNoindex": false,
