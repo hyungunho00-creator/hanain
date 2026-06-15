@@ -418,7 +418,7 @@ export default function CategoryPage() {
                   </div>
                 ) : questions.length === 0 ? (
                   <div className="p-12 text-center">
-                    <p className="text-gray-500">아직 질문이 없습니다.</p>
+                    <p className="text-gray-500">이 조건에 맞는 공개 Q&A를 축적 중입니다.</p>
                   </div>
                 ) : (
                   <div className="divide-y divide-gray-50">

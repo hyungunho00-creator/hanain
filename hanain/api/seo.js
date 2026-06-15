@@ -9,10 +9,12 @@
 import fs from 'fs'
 import path from 'path'
 import { LOCAL_TREND_BLOG_POSTS } from '../src/data/localTrendBlogPosts.js'
+import { QA_TOTAL } from '../src/data/siteStats.js'
 
 const SITE = 'https://phlorotannin.com'
 const DEFAULT_ROBOTS = 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
 const DEFAULT_GOOGLEBOT = 'index, follow, max-image-preview:large'
+const MIN_INDEXABLE_TAG_QA_COUNT = 3
 
 // 기본 OG 이미지 (모든 응답 fallback)
 const DEFAULT_OG_IMAGE = `${SITE}/og-image.png`
@@ -64,7 +66,7 @@ function ogImageForCategory(catSlug) {
 }
 
 // ─── [2026-05-21 D8] qa.json 진실원 로드 + slug → 질문 인덱스 캐시 ─────
-// /q/:slug 봇 메타·JSON-LD 가 카테고리·정확한 질문/답변을 알려면 qa.json 1,361건을
+// /q/:slug 봇 메타·JSON-LD 가 카테고리·정확한 질문/답변을 알려면 qa.json을
 // 함수 콜드스타트 시 1회 읽어 메모리 인덱스화한다. 슬러그 규칙(헌법 §3-Q 동결):
 //   slug = question.replace(/[^\w\s가-힣]/g,'').replace(/\s+/g,'-').slice(0,60)
 let CACHED_QA = null
@@ -97,11 +99,28 @@ function readQaJson() {
   }
   return null
 }
+function getQaQuestions() {
+  const qa = readQaJson()
+  if (!qa) return []
+  return qa && qa.questions ? qa.questions : (Array.isArray(qa) ? qa : [])
+}
+function isPublicQaForSeo(q) {
+  if (!q || q.noindex === true) return false
+  return Boolean(q.question && (q.validatedAnswer || q.validated_answer || q.answer || q.content))
+}
+function countQuestionsForTag(tag) {
+  const target = String(tag || '').trim()
+  if (!target) return 0
+  return getQaQuestions().filter((q) =>
+    isPublicQaForSeo(q) &&
+    Array.isArray(q.tags) &&
+    q.tags.some((item) => String(item || '').trim() === target)
+  ).length
+}
 function getQaIndex() {
   if (CACHED_QA_INDEX) return CACHED_QA_INDEX
-  const qa = readQaJson()
-  if (!qa) return null
-  const questions = (qa && qa.questions) ? qa.questions : (Array.isArray(qa) ? qa : [])
+  const questions = getQaQuestions()
+  if (!questions.length) return null
   const idx = new Map()
   for (const q of questions) {
     if (!q || !q.question) continue
@@ -422,7 +441,7 @@ function staticMetaFor(pathname) {
   if (pathname === '/blog?category=disease-health-info') {
     return {
       title: '질환별 건강정보 | 암환자 가족·당뇨·수면·면역 정보 아카이브',
-      desc:  '암환자 가족 건강정보, 당뇨·혈당, 수면, 면역, 장 건강, 뇌 건강, 피부 건강, 염증·항산화 기전까지 사람들이 실제로 검색하는 12개 질환 카테고리 건강정보를 임상 근거 기반으로 정리하는 아카이브입니다.',
+      desc:  '암환자 가족 건강정보, 당뇨·혈당, 수면, 면역, 장 건강, 뇌 건강, 피부 건강, 염증·항산화 기전까지 사람들이 실제로 검색하는 13개 건강 카테고리 정보를 근거 기반으로 정리하는 아카이브입니다.',
       canonical: `${SITE}/blog?category=disease-health-info`,
     }
   }
@@ -560,6 +579,15 @@ function staticMetaFor(pathname) {
       title: '플로로탄닌 연구 흐름 | 감태추출물과 해양 폴리페놀 근거 정리',
       desc:  '감태추출물, 디에콜, 에콜, 해양 폴리페놀 연구가 어떤 주제로 확장되어 왔는지 항산화·염증·수면·대사 관점에서 정리한 연구 흐름 페이지입니다.',
       canonical: `${SITE}/research-timeline`,
+    }
+  }
+  if (pathname === '/archive-demo') {
+    return {
+      title: '검색자산 아카이브 운영 예시 | 플로로탄닌',
+      desc: `플로로탄닌닷컴의 ${QA_TOTAL.toLocaleString()}개 Q&A, 연구 블로그, 태그 아카이브, 영상·카페·상담 연결 구조를 병원 영업 예시로 설명하는 검색자산 데모 페이지입니다.`,
+      canonical: `${SITE}/archive-demo`,
+      ogImage: `${SITE}/og-image.png`,
+      ogImageAlt: '검색자산 아카이브 운영 예시와 Q&A 블로그 영상 상담 연결 구조',
     }
   }
   if (pathname === '/insights') {
@@ -770,9 +798,20 @@ function staticMetaFor(pathname) {
     let readable = rawTag
     try { readable = decodeURIComponent(rawTag) } catch { /* keep */ }
     readable = readable.trim().slice(0, 30)
+    const matchedCount = countQuestionsForTag(readable)
+    if (matchedCount < MIN_INDEXABLE_TAG_QA_COUNT) {
+      return {
+        title: `${readable} Q&A | 플로로탄닌 건강 Q&A 아카이브`,
+        desc: `${readable} 관련 Q&A는 아직 검색 노출 기준인 ${MIN_INDEXABLE_TAG_QA_COUNT}개에 도달하지 않았습니다. 전체 ${QA_TOTAL.toLocaleString()}개 건강 Q&A 아카이브에서 관련 질문을 확인하세요.`,
+        canonical: `${SITE}${pathname}`,
+        ogImage: `${SITE}/og/qa-default.png`,
+        ogImageAlt: `${readable} 태그 Q&A 검색 비노출 안내 | 플로로탄닌 건강 Q&A 아카이브`,
+        robots: 'noindex,nofollow',
+      }
+    }
     return {
-      title: `${readable} 건강 Q&A 모음 | 플로로탄닌·감태추출물 정보센터`,
-      desc:  `${readable} 관련 연구기반 Q&A 모음. 플로로탄닌(phlorotannin)·감태추출물·해양 폴리페놀의 ${readable} 관련 건강정보를 한곳에서 확인할 수 있는 종합 건강정보 데이터센터의 태그 아카이브입니다.`,
+      title: `${readable} 건강 Q&A ${matchedCount.toLocaleString()}개 | 플로로탄닌·감태추출물 정보센터`,
+      desc:  `${readable} 관련 연구기반 Q&A ${matchedCount.toLocaleString()}개 모음. 플로로탄닌(phlorotannin)·감태추출물·해양 폴리페놀의 ${readable} 관련 건강정보를 한곳에서 확인할 수 있는 종합 건강정보 데이터센터의 태그 아카이브입니다.`,
       canonical: `${SITE}${pathname}`,
       ogImage: `${SITE}/og/qa-default.png`,
       ogImageAlt: `${readable} 태그 Q&A 아카이브 — 플로로탄닌·감태추출물 종합 건강정보 데이터센터`,
@@ -1546,7 +1585,7 @@ function buildGlossaryJsonLd() {
 }
 
 // ─── [2026-05-21 D8] /q/:slug → QAPage + BreadcrumbList (SSR) ─────
-// 1,361 Q&A 페이지 본체 자산화. 봇 첫 fetch HTML 에 QAPage 스키마를 포함시켜
+// Q&A 페이지 본체 자산화. 봇 첫 fetch HTML 에 QAPage 스키마를 포함시켜
 // Google Q&A rich result + 색인 신호 강화. qa.json 매칭 실패 시 빈 배열 반환.
 function buildQuestionJsonLd(pathname, q) {
   if (!q || !q.question) return []
@@ -1654,6 +1693,7 @@ function buildJsonLdForPath(pathname) {
     const rawTag = pathname.replace('/qa/tag/', '').split('/')[0]
     let tag = rawTag
     try { tag = decodeURIComponent(rawTag) } catch { /* keep */ }
+    if (countQuestionsForTag(tag) < MIN_INDEXABLE_TAG_QA_COUNT) return []
     return buildTagJsonLd(pathname, tag)
   }
   // ─── [2026-05-21 D8] /q/:slug → QAPage + BreadcrumbList ─────

@@ -24,6 +24,7 @@ import { withRef } from '../lib/partnerRef'
 import { shouldEmitQASchema, answerPlainTextForMeta } from '../lib/qaAnswer'
 
 const FAQ_JSONLD_MAX_PER_PAGE = 10
+const MIN_INDEXABLE_TAG_QA_COUNT = 3
 
 // 슬러그 규칙 (DO_NOT_TOUCH §3-Q — 변경 금지)
 function qaSlug(question) {
@@ -115,8 +116,11 @@ export default function QATagPage() {
   // 1글자 태그(폐/암/장/뇌/위/뼈/간)는 키워드 카니발리제이션 위험 → 브랜드+질환 조합으로 차별화
   const isShortTag = decodedTag.length === 1
   const tagDisplay = isShortTag ? `${decodedTag} 건강` : decodedTag
+  const isIndexableTag = matchedQuestions.length >= MIN_INDEXABLE_TAG_QA_COUNT
 
-  const seoTitle = isShortTag
+  const seoTitle = !isIndexableTag
+    ? `${tagDisplay} Q&A | 플로로탄닌 건강 Q&A 아카이브`
+    : isShortTag
     ? `${decodedTag} 건강정보 Q&A ${matchedQuestions.length}개 | 플로로탄닌·감태추출물·해양 폴리페놀 아카이브`
     : `${decodedTag} 건강 Q&A ${matchedQuestions.length}개 | 플로로탄닌·감태추출물 정보`
 
@@ -139,12 +143,12 @@ export default function QATagPage() {
 
   // "폐 건강 + 건강정보" 같은 단어 중첩 방지 — 1글자 태그는 tagDisplay에 "건강" 이미 포함됨
   const ariaTag = isShortTag ? decodedTag : tagDisplay  // 두 번째 자리는 원어로
-  const seoDesc = matchedQuestions.length > 0
+  const seoDesc = isIndexableTag
     ? `${tagDisplay} 관련 ${matchedQuestions.length}개 연구기반 Q&A 모음. 플로로탄닌(phlorotannin)·감태추출물(Ecklonia cava)·해양 폴리페놀 관점에서 정리한 ${ariaTag} 아카이브.${previewSuffix} 임상 근거 기반 건강 Q&A 종합 데이터센터.`
-    : `${tagDisplay} 관련 Q&A를 준비 중입니다. 플로로탄닌·감태추출물 종합 건강정보 데이터센터.`
+    : `${tagDisplay} 관련 Q&A는 아직 검색 노출 기준인 ${MIN_INDEXABLE_TAG_QA_COUNT}개에 도달하지 않았습니다. 전체 건강 Q&A 아카이브에서 관련 질문을 확인하세요.`
 
   const faqJsonLd = (() => {
-    if (matchedQuestions.length === 0) return null
+    if (!isIndexableTag) return null
     const items = matchedQuestions.slice(0, FAQ_JSONLD_MAX_PER_PAGE).map(q => {
       const ans = answerPlainTextForMeta(q)
       const slug = qaSlug(q.question)
@@ -200,6 +204,7 @@ export default function QATagPage() {
         ogType="website"
         ogImage="https://phlorotannin.com/og/qa-default.png"
         ogImageAlt={`${decodedTag} 태그 Q&A 모음 — 플로로탄닌·감태추출물 종합 건강정보 데이터센터, ${decodedTag} 관련 전문 답변 아카이브`}
+        noindex={!isIndexableTag}
         jsonLd={faqJsonLd}
       />
 
@@ -210,9 +215,9 @@ export default function QATagPage() {
           eyebrow="태그 모음"
           title={`#${decodedTag}`}
           subtitle={
-            matchedQuestions.length > 0
+            isIndexableTag
               ? `${decodedTag} 관련 ${matchedQuestions.length}개 연구기반 Q&A — 플로로탄닌·감태추출물·해양 폴리페놀 임상 근거 정리`
-              : `${decodedTag} 관련 Q&A를 준비 중입니다`
+              : `${decodedTag} 관련 Q&A는 검색 노출 기준인 ${MIN_INDEXABLE_TAG_QA_COUNT}개 도달 전입니다`
           }
           breadcrumbs={[
             { to: '/', label: '홈' },
@@ -229,9 +234,12 @@ export default function QATagPage() {
             </div>
           )}
 
-          {matchedQuestions.length === 0 ? (
+          {!isIndexableTag ? (
             <div className="bg-white border border-gray-200 rounded-xl px-6 py-12 text-center">
-              <p className="text-gray-600 mb-4">이 태그의 Q&A가 아직 없습니다.</p>
+              <p className="text-gray-600 mb-2">이 태그는 아직 독립 아카이브로 노출하지 않습니다.</p>
+              <p className="text-gray-500 text-sm mb-4">
+                관련 Q&A가 {MIN_INDEXABLE_TAG_QA_COUNT}개 이상 쌓이면 검색용 태그 페이지로 전환됩니다.
+              </p>
               <Link
                 to={withRef('/qa', partner)}
                 className="inline-flex items-center gap-1 text-gray-700 hover:text-gray-900 underline underline-offset-4 decoration-gray-300 hover:decoration-gray-700 text-sm font-medium"

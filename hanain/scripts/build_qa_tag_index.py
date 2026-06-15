@@ -2,13 +2,13 @@
 # ───────────────────────────────────────────────────────────────
 # hanain/scripts/build_qa_tag_index.py
 #
-# qa.json (1,361건)을 읽어 tagIndex.json 생성.
+# qa.json을 읽어 tagIndex.json 생성.
 #
 # 출력 파일: hanain/public/tagIndex.json
 # 구조:
 #   {
-#     "min_tag_count": 5,
-#     "total_questions": 1361,
+#     "min_tag_count": 3,
+#     "total_questions": 2034,
 #     "total_unique_tags": 1630,
 #     "page_eligible_tags": 122,   # ≥ min_tag_count
 #     "tags": {
@@ -33,7 +33,7 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 # ─── 헌법 상수 ───
-MIN_TAG_COUNT = 5
+MIN_TAG_COUNT = 3
 
 ROOT = Path(__file__).resolve().parents[1]   # hanain/
 QA_PATH = ROOT / "public" / "qa.json"

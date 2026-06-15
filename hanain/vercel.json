@@ -135,6 +135,7 @@
     { "source": "/glossary", "destination": "/api/seo?p=/glossary" },
     { "source": "/safety", "destination": "/api/seo?p=/safety" },
     { "source": "/research-timeline", "destination": "/api/seo?p=/research-timeline" },
+    { "source": "/archive-demo", "destination": "/api/seo?p=/archive-demo" },
     { "source": "/insights", "destination": "/api/seo?p=/insights" },
     { "source": "/insights/:slug", "destination": "/api/seo?p=/insights/:slug" },
     { "source": "/compare/:slug", "destination": "/api/seo?p=/compare/:slug" },

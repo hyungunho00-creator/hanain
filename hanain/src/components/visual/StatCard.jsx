@@ -6,7 +6,7 @@
  *
  * 사용 예:
  *   <StatCard value="27" suffix="%" label="공복 혈당 감소" source="Kang 2016" trend="down" />
- *   <StatCard value="1,361" label="검증된 Q&A" />
+ *   <StatCard value="2,034" label="검증된 Q&A" />
  */
 import { useEffect, useState } from 'react'
 

@@ -117,9 +117,9 @@ def make_og(slug, label, subtitle, accent):
     draw.text((bx + pad_x, by + pad_y - 4), badge_text,
               font=f_badge, fill='#FFFFFF')
 
-    # 좌하단 오른쪽: 1,361건 표식
+    # 좌하단 오른쪽: Q&A 누적 표식
     f_count = ImageFont.truetype(FONT_REG, 26)
-    count_text = '1,361건 · 13개 카테고리 · 131개 태그 페이지'
+    count_text = '2,034건 · 13개 카테고리 · 검색 태그 아카이브'
     draw.text((bx + bw + 24, by + pad_y - 2),
               count_text, font=f_count, fill='#94A3B8')
 

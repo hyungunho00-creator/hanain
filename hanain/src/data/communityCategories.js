@@ -1,4 +1,4 @@
-// 12개 질환별 카테고리 + 기타 게시판
+// 건강 커뮤니티 카테고리 + 기타 게시판
 export const COMMUNITY_CATEGORIES = [
   {
     id: 'all',

@@ -29,6 +29,7 @@ import SafetyPage from './pages/SafetyPage'
 import ResearchTimelinePage from './pages/ResearchTimelinePage'
 import InsightsHubPage from './pages/InsightsHubPage'
 import InsightPostPage from './pages/InsightPostPage'
+import ArchiveDemoPage from './pages/ArchiveDemoPage'
 import ScrollToTop from './components/common/ScrollToTop'
 import { PartnerProvider } from './context/PartnerContext'
 import { AuthProvider } from './context/AuthContext'
@@ -103,6 +104,7 @@ function AppInner() {
               <Route path="/compare/:slug" element={<ComparePage />} />
               <Route path="/safety" element={<SafetyPage />} />
               <Route path="/research-timeline" element={<ResearchTimelinePage />} />
+              <Route path="/archive-demo" element={<ArchiveDemoPage />} />
 
               <Route path="/insights" element={<InsightsHubPage />} />
               <Route path="/insights/:slug" element={<InsightPostPage />} />

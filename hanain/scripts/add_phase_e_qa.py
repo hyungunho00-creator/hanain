@@ -3,7 +3,7 @@
 # hanain/scripts/add_phase_e_qa.py
 #
 # Phase E — 30 ingredient Q&A entries 추가 스크립트
-# 1361 → 1391 questions
+# Historical phase batch for ingredient Q&A entries
 # ID prefix: ingr-001 ~ ingr-030
 # ───────────────────────────────────────────────────────────────
 import json

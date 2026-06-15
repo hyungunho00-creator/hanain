@@ -1,7 +1,7 @@
 """
 sitemap.xml + rss.xml 동적 생성 스크립트
 - 블로그 포스트 전체 자동 포함 (Supabase DB에서 실시간 조회)
-- Q&A 1,361건 + 122 태그 페이지 자동 포함 (qa.json + tagIndex.json)
+- Q&A 공개 데이터 + 검색 가능 태그 페이지 자동 포함 (qa.json + tagIndex.json)
 - 배포 전 항상 실행해야 구글/네이버 색인에 반영됨
 - 실행: python3 generate_sitemap_rss.py
 
@@ -251,6 +251,7 @@ STATIC_PAGES = [
     {"loc": "/easy",          "changefreq": "monthly", "priority": "0.80", "lastmod": today()},
     {"loc": "/safety",                       "changefreq": "monthly", "priority": "0.85", "lastmod": today()},
     {"loc": "/research-timeline",            "changefreq": "monthly", "priority": "0.80", "lastmod": today()},
+    {"loc": "/archive-demo",                 "changefreq": "monthly", "priority": "0.70", "lastmod": today()},
     {"loc": "/compare/phlorotannin-vs-fucoidan",   "changefreq": "monthly", "priority": "0.85", "lastmod": today()},
     {"loc": "/compare/phlorotannin-vs-beta-glucan","changefreq": "monthly", "priority": "0.80", "lastmod": today()},
     {"loc": "/compare/dieckol-vs-eckol",     "changefreq": "monthly", "priority": "0.80", "lastmod": today()},
@@ -571,7 +572,7 @@ for q in qa_questions:
             continue
         validated_tag_counts[t] = validated_tag_counts.get(t, 0) + 1
 
-MIN_SEARCH_TAG_COUNT = 5
+MIN_SEARCH_TAG_COUNT = 3
 tags_map = {
     tag: {'count': count}
     for tag, count in validated_tag_counts.items()

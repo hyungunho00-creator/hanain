@@ -181,6 +181,7 @@ export default function Footer() {
                   { to: '/learn',        label: '쉽게 배우기' },
                   { to: '/phlorotannin', label: '플로로탄닌 소개' },
                   { to: '/partner',     label: '파트너 참여' },
+                  { to: '/archive-demo', label: '검색자산 운영 예시' },
                   { to: '/consult',     label: '문의하기' },
                 ].map(item => (
                   <li key={item.to}>
