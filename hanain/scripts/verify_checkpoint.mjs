@@ -6,7 +6,7 @@ const EXPECTED = {
   tagCount: 534,
   blogCount: 835,
   insightCount: 315,
-  requiredBundleSlugs: [
+  requiredLocalPostSlugs: [
     'glp1-era-protein-fiber-phlorotannin-checklist-2026',
     'glp1-muscle-loss-protein-resistance-training-2026',
     'masld-fatty-liver-insulin-resistance-phlorotannin-2026',
@@ -356,16 +356,11 @@ async function main() {
   assert(wwwResponse.headers.get('location') === `${SITE}/home`, `www redirect ${wwwResponse.headers.get('location')}`)
   results.push('www redirect ok')
 
-  const { text: blogHtml } = await fetchText(`${SITE}/blog`)
-  const scripts = [...blogHtml.matchAll(/<script[^>]+src="([^"]+\.js)"/g)]
-    .map((match) => new URL(match[1], SITE).href)
-  assert(scripts.length > 0, 'no JS bundle found on /blog')
-  const bundleTexts = await Promise.all(scripts.map(async (script) => (await fetchText(script)).text))
-  const bundle = bundleTexts.join('\n')
-  for (const slug of EXPECTED.requiredBundleSlugs) {
-    assert(bundle.includes(slug), `required local post missing from production bundle: ${slug}`)
-  }
-  results.push(`production bundle local posts ok: ${EXPECTED.requiredBundleSlugs.length} slugs`)
+  await Promise.all(EXPECTED.requiredLocalPostSlugs.map((slug) => checkPage(`/blog/${slug}`, {
+      canonical: `${SITE}/blog/${slug}`,
+      robotsIncludes: 'index',
+    })))
+  results.push(`production local post routes ok: ${EXPECTED.requiredLocalPostSlugs.length} slugs`)
 
   console.log(`checkpoint ok\n- ${results.join('\n- ')}`)
 }
