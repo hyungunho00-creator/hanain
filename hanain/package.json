@@ -22,6 +22,7 @@
     "content:refine:test": "node scripts/content_refine_selftest.mjs",
     "content:refine:run": "node scripts/content_refine_run.mjs",
     "content:refine:resume": "node scripts/content_refine_run.mjs",
+    "content:refine:complete": "node scripts/content_refine_mark_completed.mjs",
     "content:refine:status": "node scripts/content_refine_status.mjs",
     "content:refine:verify": "node scripts/content_refine_verify.mjs",
     "content:refine:rollback": "node scripts/content_refine_rollback.mjs",
