@@ -8,6 +8,7 @@ import LastReviewed from '../components/common/LastReviewed'
 import { withRef } from '../lib/partnerRef'
 import { getRenderableQAAnswer, shouldEmitQASchema, answerPlainTextForMeta, stripHtml } from '../lib/qaAnswer'
 import { QA_TOTAL } from '../data/siteStats'
+import { canonicalQuestionSlug } from '../lib/qaSlug'
 
 const LAST_REVIEWED = '2026-06-08'
 const QA_HERO_IMAGE = '/images/site/qa-recovery-routine.webp'
@@ -76,12 +77,7 @@ function categoryPastelStyle(catId, isActive = false) {
 }
 
 function qaSlug(s) {
-  return (s || '')
-    .replace(/[^\w\s가-힣-]/g, '')
-    .replace(/\s+/g, '-')
-    .replace(/-+/g, '-')
-    .replace(/^-|-$/g, '')
-    .slice(0, 60)
+  return canonicalQuestionSlug(s)
 }
 
 function getAnswerSearchText(qa) {

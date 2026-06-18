@@ -15,6 +15,7 @@ import RevealContact from '../components/common/RevealContact'
 // [2026-05-21] 인사이트 진입 — 메인(/) 랜딩에서 최신 6편 직접 노출
 import { INSIGHTS_LIST, INSIGHT_CATEGORIES } from '../data/insights'
 import { QA_TOTAL, QA_CATEGORY_TOTAL } from '../data/siteStats'
+import { canonicalQuestionSlug } from '../lib/qaSlug'
 
 // ─── YouTube ID 추출 ──────────────────────────────────────────
 function extractYoutubeId(url) {
@@ -24,12 +25,7 @@ function extractYoutubeId(url) {
 }
 
 function toQuestionSlug(value) {
-  return String(value || '')
-    .replace(/[^\w\s\uAC00-\uD7A3-]/g, '')
-    .replace(/\s+/g, '-')
-    .replace(/-+/g, '-')
-    .replace(/^-|-$/g, '')
-    .slice(0, 60)
+  return canonicalQuestionSlug(value)
 }
 
 // ─── 기본 영상 (DB 없을 때 폴백) ─────────────────────────────

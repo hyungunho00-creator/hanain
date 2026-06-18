@@ -17,6 +17,7 @@
     "audit:content": "node scripts/qa-answer-hard-validator.mjs",
     "audit:duplicate": "node scripts/qa-duplicate-template-detector.mjs",
     "audit:qa-engagement": "node scripts/audit_qa_engagement_counts.mjs",
+    "audit:related-qa": "node scripts/audit_related_qa_links.mjs",
     "audit:qa-batch": "node scripts/verify_qa_batch_constitution.mjs",
     "qa:constitution": "node scripts/qa_constitution_upgrade.mjs",
     "qa:recall-rewrite": "node scripts/content_recall_rewrite_qa.mjs",

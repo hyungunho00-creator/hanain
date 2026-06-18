@@ -22,18 +22,14 @@ import { inferDominantCategory } from '../data/qaCategoryMeta'
 import { usePartner } from '../context/PartnerContext'
 import { withRef } from '../lib/partnerRef'
 import { shouldEmitQASchema, answerPlainTextForMeta } from '../lib/qaAnswer'
+import { canonicalQuestionSlug } from '../lib/qaSlug'
 
 const FAQ_JSONLD_MAX_PER_PAGE = 10
 const MIN_INDEXABLE_TAG_QA_COUNT = 3
 
 // 슬러그 규칙 (DO_NOT_TOUCH §3-Q — 변경 금지)
 function qaSlug(question) {
-  return (question || '')
-    .replace(/[^\w\s가-힣-]/g, '')
-    .replace(/\s+/g, '-')
-    .replace(/-+/g, '-')
-    .replace(/^-|-$/g, '')
-    .slice(0, 60)
+  return canonicalQuestionSlug(question)
 }
 
 function isPublicQa(qa) {

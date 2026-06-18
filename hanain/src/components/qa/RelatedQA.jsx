@@ -15,6 +15,7 @@ import { Link } from 'react-router-dom'
 import { MessageSquare, ChevronRight, Eye } from 'lucide-react'
 import { usePartner } from '../../context/PartnerContext'
 import { withRef } from '../../lib/partnerRef'
+import { canonicalQuestionSlug } from '../../lib/qaSlug'
 
 // 블로그 카테고리 → Q&A 카테고리 매핑 (fallback용)
 // 블로그: diabetes, cancer, brain, cardiovascular, inflammation, skin, research, general
@@ -28,15 +29,6 @@ const BLOG_TO_QA_CAT = {
   skin:           'skin',
   research:       null,        // 매핑 없음
   general:        null,
-}
-
-function qaSlug(question) {
-  return (question || '')
-    .replace(/[^\w\s가-힣-]/g, '')
-    .replace(/\s+/g, '-')
-    .replace(/-+/g, '-')
-    .replace(/^-|-$/g, '')
-    .slice(0, 60)
 }
 
 export default function RelatedQA({ blogTags = [], blogCategory = null, max = 3, title = '관련 Q&A' }) {
@@ -90,7 +82,7 @@ export default function RelatedQA({ blogTags = [], blogCategory = null, max = 3,
       </div>
       <ul className="space-y-2">
         {related.map(q => {
-          const slug = qaSlug(q.question)
+          const slug = q.slug || canonicalQuestionSlug(q.question)
           const views = q.views || q.view_count || 0
           return (
             <li key={`${q.id || 'qa'}-${slug}`}>

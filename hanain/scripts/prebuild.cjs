@@ -51,6 +51,11 @@ if (qaCategoryExposure.error || qaCategoryExposure.status !== 0) {
   process.exit(qaCategoryExposure.status || 1);
 }
 
+const relatedQaLinks = run(process.execPath, [path.join('scripts', 'audit_related_qa_links.mjs')]);
+if (relatedQaLinks.error || relatedQaLinks.status !== 0) {
+  process.exit(relatedQaLinks.status || 1);
+}
+
 const siteStats = run(process.execPath, [path.join('scripts', 'update_site_stats.mjs')]);
 if (siteStats.error || siteStats.status !== 0) {
   process.exit(siteStats.status || 1);

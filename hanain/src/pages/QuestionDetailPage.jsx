@@ -18,6 +18,7 @@ import { usePartner } from '../context/PartnerContext'
 import { withRef } from '../lib/partnerRef'
 import { getRenderableQAAnswer, answerPlainTextForMeta, shouldEmitQASchema } from '../lib/qaAnswer'
 import { QA_TOTAL } from '../data/siteStats'
+import { canonicalQuestionSlug, legacyQuestionSlug, questionSlugCandidates } from '../lib/qaSlug'
 
 // 카테고리 ID → OG 이미지 슬러그 (build_og_images.py 산출물과 1:1 매칭, 헌법 정합성)
 const CAT_OG_SLUG = {
@@ -60,10 +61,7 @@ function toSchemaDateTime(value, fallback = DEFAULT_QA_DATETIME) {
 }
 
 function slugifyKoLocal(s) {
-  return String(s || '')
-    .replace(/[^\w\s가-힣]/g, '')
-    .replace(/\s+/g, '-')
-    .slice(0, 60)
+  return legacyQuestionSlug(s)
 }
 
 async function ensureQaFallback() {
@@ -75,12 +73,7 @@ async function ensureQaFallback() {
 }
 
 function toQuestionSlug(value) {
-  return String(value || '')
-    .replace(/[^\w\s\uAC00-\uD7A3-]/g, '')
-    .replace(/\s+/g, '-')
-    .replace(/-+/g, '-')
-    .replace(/^-|-$/g, '')
-    .slice(0, 60)
+  return canonicalQuestionSlug(value)
 }
 
 function engagementNumber(...values) {
@@ -94,9 +87,7 @@ function engagementNumber(...values) {
 async function getFallbackQuestion(slug) {
   const data = await ensureQaFallback()
   const q = data.questions.find(q => {
-    const s = slugifyKoLocal(q.question)
-    const canonicalSlug = toQuestionSlug(q.question)
-    return s === slug || canonicalSlug === slug || q.id === slug
+    return questionSlugCandidates(q.question).includes(slug) || q.id === slug || q.slug === slug
   })
   if (!q) return null
   const cat = data.categories.find(c => c.id === q.category)
@@ -184,7 +175,7 @@ function RelatedCard({ q, partner }) {
   if (!q) return null
   const title = q.title || q.question
   if (!title) return null
-  const slug = q.slug || String(title).replace(/[^\w\s가-힣]/g, '').replace(/\s+/g, '-').slice(0, 60)
+  const slug = q.slug || canonicalQuestionSlug(title)
   if (!slug) return null
   const cat = q.categories
   return (

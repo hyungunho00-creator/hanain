@@ -9,6 +9,7 @@ import { getCategoryMeta } from '../data/qaCategoryMeta'
 import { QA_TOTAL } from '../data/siteStats'
 import { usePartner } from '../context/PartnerContext'
 import { withRef } from '../lib/partnerRef'
+import { canonicalQuestionSlug, legacyQuestionSlug } from '../lib/qaSlug'
 
 // URL slug → category_id 매핑 (DB qa_categories 기준)
 // [2026-05-21 D6 보강] skin/hair 단독 슬러그 추가 — sitemap·qa.json 정합성 확보
@@ -41,7 +42,7 @@ const PAGE_SIZE = 20
 // QuestionDetailPage.jsx 의 ensureQaFallback / getFallback* 패턴을 카테고리 페이지에 동일 적용.
 let QA_FALLBACK = null
 function slugifyKoLocal(s) {
-  return String(s || '').replace(/[^\w\s가-힣]/g, '').replace(/\s+/g, '-').slice(0, 60)
+  return legacyQuestionSlug(s)
 }
 function isPublicQa(item) {
   if (!item || typeof item !== 'object') return false
@@ -61,12 +62,7 @@ async function ensureQaFallback() {
   return QA_FALLBACK
 }
 function toQuestionSlug(s) {
-  return String(s || '')
-    .replace(/[^\w\s\uAC00-\uD7A3-]/g, '')
-    .replace(/\s+/g, '-')
-    .replace(/-+/g, '-')
-    .replace(/^-|-$/g, '')
-    .slice(0, 60)
+  return canonicalQuestionSlug(s)
 }
 
 function engagementNumber(...values) {

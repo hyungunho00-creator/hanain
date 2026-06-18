@@ -1,4 +1,5 @@
 import { createClient } from '@supabase/supabase-js'
+import { legacyQuestionSlug } from './qaSlug'
 
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || 'https://rlfxuyeoluoeaxuujtly.supabase.co'
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJsZnh1eWVvbHVvZWF4dXVqdGx5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU5NDEyNjMsImV4cCI6MjA5MTUxNzI2M30.EmygB1wZcIXM0_4KTC8Kuwh5RY3R9NgfEpuzXQswHck'
@@ -602,10 +603,7 @@ export async function getRelatedQuestions() {
 // 호환성: 기존 호출부가 [{id, question, category_id, views, likes}] 를 기대해도
 // 추가 필드는 무시되므로 회귀 없음. RelatedCard 가 q.title || q.question 모두 받음.
 function slugifyKo(s) {
-  return String(s || '')
-    .replace(/[^\w\s가-힣]/g, '')
-    .replace(/\s+/g, '-')
-    .slice(0, 60)
+  return legacyQuestionSlug(s)
 }
 
 function normalizeQa(row) {

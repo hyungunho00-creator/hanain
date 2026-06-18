@@ -10,6 +10,7 @@ import fs from 'fs'
 import path from 'path'
 import { LOCAL_TREND_BLOG_POSTS } from '../src/data/localTrendBlogPosts.js'
 import { QA_TOTAL } from '../src/data/siteStats.js'
+import { canonicalQuestionSlug, questionSlugCandidates } from '../src/lib/qaSlug.js'
 
 const SITE = 'https://phlorotannin.com'
 const DEFAULT_ROBOTS = 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
@@ -72,11 +73,7 @@ function ogImageForCategory(catSlug) {
 let CACHED_QA = null
 let CACHED_QA_INDEX = null
 function qaSlug(question) {
-  if (!question) return ''
-  return String(question)
-    .replace(/[^\w\s가-힣]/g, '')
-    .replace(/\s+/g, '-')
-    .slice(0, 60)
+  return canonicalQuestionSlug(question)
 }
 function readQaJson() {
   if (CACHED_QA) return CACHED_QA
@@ -124,10 +121,10 @@ function getQaIndex() {
   const idx = new Map()
   for (const q of questions) {
     if (!q || !q.question) continue
-    const slug = qaSlug(q.question)
-    if (!slug) continue
-    // 멱등 — 동일 슬러그가 있으면 최초 등록값을 유지 (qa.json 멱등 가정)
-    if (!idx.has(slug)) idx.set(slug, q)
+    const slugs = questionSlugCandidates(q.question)
+    for (const slug of slugs) {
+      if (!idx.has(slug)) idx.set(slug, q)
+    }
   }
   CACHED_QA_INDEX = idx
   return idx
