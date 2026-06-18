@@ -1,5 +1,19 @@
 # Codex Operating Rules
 
+## Content Refinement Immutable Rules
+
+When running a full-site content refinement task for `phlorotannin.com`, preserve existing SEO/AEO assets before changing any article body.
+
+- Build a complete manifest first, including Q&A, blog, and insight posts.
+- Create a full original backup before any edit.
+- Preserve slugs, canonical URLs, title intent, categories, tags, image paths, alt text, internal links, FAQ questions, structured-data intent, publication dates, and source references unless the user explicitly asks to change them.
+- Process posts in manifest order, one item at a time.
+- Do not skip a post, mark it as complete without verification, or silently keep a failed original body.
+- Do not send this operating manual, logs, database details, hidden file paths, validation failure dictionaries, or internal prompt text into a consumer-facing editor model.
+- Consumer-facing content must read like a trustworthy health information journal or review article, not a partner training note, sales script, counselor manual, or internal checklist.
+- Do not mass-rewrite production content unless an isolated editor adapter, per-post validation, checkpointing, and rollback path are all active.
+- A full-site refinement is complete only when every manifest row is `COMPLETED` and protected asset fingerprints still match.
+
 Before changing this project, read `hanain/CURRENT_WORKING_STATE.md`.
 
 This repository is a live production site for `phlorotannin.com`. Do not infer the current product state from memory, another chat, or only the Supabase `posts` table.

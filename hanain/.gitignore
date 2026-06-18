@@ -40,6 +40,7 @@ src/data/qa_*.json
 src/data/cardio_*.json
 .vercel
 core
+.content-refinement/
 
 # ===== 개발 중 캡처 산출물 (작업물, 배포 불필요) =====
 /scratch/
