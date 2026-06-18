@@ -1,20 +1,4 @@
 import { createClient } from '@supabase/supabase-js'
-import {
-  LOCAL_FUNCTIONAL_INGREDIENT_POSTS,
-  getLocalFunctionalIngredientPost,
-} from '../data/localFunctionalIngredientPosts'
-import {
-  LOCAL_CATEGORY_BLOG_POSTS,
-  getLocalCategoryBlogPost,
-} from '../data/localCategoryBlogPosts'
-import {
-  LOCAL_TREND_BLOG_POSTS,
-  getLocalTrendBlogPost,
-} from '../data/localTrendBlogPosts'
-import {
-  LOCAL_SEO_EXPANSION_POSTS,
-  getLocalSeoExpansionPost,
-} from '../data/localSeoExpansionPosts'
 
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || 'https://rlfxuyeoluoeaxuujtly.supabase.co'
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJsZnh1eWVvbHVvZWF4dXVqdGx5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU5NDEyNjMsImV4cCI6MjA5MTUxNzI2M30.EmygB1wZcIXM0_4KTC8Kuwh5RY3R9NgfEpuzXQswHck'
@@ -23,14 +7,35 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
   auth: { autoRefreshToken: true, persistSession: true, detectSessionInUrl: true },
 })
 
-const LOCAL_BLOG_POSTS = [
-  ...LOCAL_TREND_BLOG_POSTS,
-  ...LOCAL_FUNCTIONAL_INGREDIENT_POSTS,
-  ...LOCAL_CATEGORY_BLOG_POSTS,
-  ...LOCAL_SEO_EXPANSION_POSTS,
-]
-
 const PUBLISHED_BLOG_TOTAL = 741
+let localBlogBundlePromise = null
+
+async function loadLocalBlogBundle() {
+  if (!localBlogBundlePromise) {
+    localBlogBundlePromise = Promise.all([
+      import('../data/localTrendBlogPosts'),
+      import('../data/localFunctionalIngredientPosts'),
+      import('../data/localCategoryBlogPosts'),
+      import('../data/localSeoExpansionPosts'),
+    ]).then(([trend, functional, category, seo]) => ({
+      posts: [
+        ...trend.LOCAL_TREND_BLOG_POSTS,
+        ...functional.LOCAL_FUNCTIONAL_INGREDIENT_POSTS,
+        ...category.LOCAL_CATEGORY_BLOG_POSTS,
+        ...seo.LOCAL_SEO_EXPANSION_POSTS,
+      ],
+      getBySlug(slug) {
+        return (
+          trend.getLocalTrendBlogPost(slug) ||
+          functional.getLocalFunctionalIngredientPost(slug) ||
+          category.getLocalCategoryBlogPost(slug) ||
+          seo.getLocalSeoExpansionPost(slug)
+        )
+      },
+    }))
+  }
+  return localBlogBundlePromise
+}
 
 const SEARCH_TERM_GROUPS = [
   [
@@ -297,10 +302,11 @@ function matchesLocalPost(post, { category = null, tag = null, q = null } = {}) 
   return true
 }
 
-function mergeLocalPosts(rows, options = {}) {
+async function mergeLocalPosts(rows, options = {}) {
   const limit = options.limit || 20
   const page = options.page || 1
-  const localRows = LOCAL_BLOG_POSTS.filter((post) => matchesLocalPost(post, options))
+  const { posts } = await loadLocalBlogBundle()
+  const localRows = posts.filter((post) => matchesLocalPost(post, options))
 
   const bySlug = new Map()
   for (const post of rows || []) bySlug.set(post.slug, post)
@@ -369,17 +375,14 @@ export async function getPosts({ category = null, tag = null, limit = 20, page =
   }
 
   return {
-    data: mergeLocalPosts(rows, { category, tag, limit: effectiveLimit, page, q }),
+    data: await mergeLocalPosts(rows, { category, tag, limit: effectiveLimit, page, q }),
     error,
   }
 }
 
 export async function getPostBySlug(slug) {
-  const local =
-    getLocalTrendBlogPost(slug) ||
-    getLocalFunctionalIngredientPost(slug) ||
-    getLocalCategoryBlogPost(slug) ||
-    getLocalSeoExpansionPost(slug)
+  const { getBySlug } = await loadLocalBlogBundle()
+  const local = getBySlug(slug)
   if (local) return { data: local, error: null }
 
   const { data, error } = await supabase
@@ -392,7 +395,8 @@ export async function getPostBySlug(slug) {
 }
 
 export async function getPostCount(category = null) {
-  const localCount = LOCAL_BLOG_POSTS.filter((post) => matchesLocalPost(post, { category })).length
+  const { posts } = await loadLocalBlogBundle()
+  const localCount = posts.filter((post) => matchesLocalPost(post, { category })).length
   if (!category || category === 'all') return PUBLISHED_BLOG_TOTAL
   try {
     const { count, error } = await supabase

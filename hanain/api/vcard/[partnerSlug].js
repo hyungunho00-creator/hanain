@@ -1,4 +1,3 @@
-﻿/* global process */
 import { createClient } from '@supabase/supabase-js'
 import { readFileSync } from 'node:fs'
 import path from 'node:path'

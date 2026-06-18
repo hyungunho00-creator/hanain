@@ -4,7 +4,6 @@ import { usePartner } from '../../context/PartnerContext'
 import { withRef } from '../../lib/partnerRef'
 import { MessageSquare, Megaphone, PlayCircle, Film, BookOpen, ArrowUpRight, Utensils } from 'lucide-react'
 import RevealContact from '../common/RevealContact'
-import { getQaCategories } from '../../lib/supabase'
 import { PARTNER_CONFIG } from '../../config/partner'
 
 // 카테고리 ID → /category/:slug URL 슬러그 매핑
@@ -53,10 +52,12 @@ export default function Footer() {
 
   useEffect(() => {
     let cancelled = false
-    getQaCategories()
-      .then(list => {
-        if (cancelled || !list || !list.length) return
-        setQaCats(list.map(c => ({ id: c.id, name: c.name })))
+    fetch('/qa.json')
+      .then(r => (r.ok ? r.json() : null))
+      .then(data => {
+        const list = Array.isArray(data?.categories) ? data.categories : []
+        if (cancelled || !list.length) return
+        setQaCats(list.map(c => ({ id: c.id, name: c.name || c.label || c.id })))
       })
       .catch(() => {})
 
