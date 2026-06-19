@@ -1,6 +1,6 @@
 # QA Category Exposure Audit
 
-- generatedAt: 2026-06-19T15:42:11.058Z
+- generatedAt: 2026-06-19T15:55:15.626Z
 - sourceOfTruth: src/data/qa.json and public/qa.json
 - categories: 13
 - status: PASS
