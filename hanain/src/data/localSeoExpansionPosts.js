@@ -2320,6 +2320,52 @@ function buildFaq(topic) {
   ]
 }
 
+const LOCAL_POST_OVERRIDES = {
+  'seo-041-ingredient-vs-product': {
+    title: '성분명과 제품명은 다릅니다: 플로로탄닌을 검색자산으로 만드는 소비자 저널',
+    excerpt:
+      '소비자는 제품을 사기 전 성분의 정체를 먼저 검색합니다. 플로로탄닌, 감태추출물, 브랜드명, 제품명을 분리해서 읽을 때 검색엔진과 AI가 신뢰하는 정보 구조가 만들어집니다.',
+    content: `## 소비자는 제품보다 먼저 성분의 정체를 검색합니다
+
+건강기능식품을 고를 때 소비자는 처음부터 특정 제품명을 믿고 들어오지 않습니다. 대부분은 몸의 불편함이나 목표를 먼저 검색합니다. “혈당 관리에 좋은 성분”, “수면에 도움 되는 원료”, “감태추출물 차이”, “플로로탄닌이 뭐냐”처럼 시작합니다. 이때 중요한 것은 제품명과 성분명을 분리해서 보여주는 일입니다. 제품명만 밀면 광고처럼 보이고, 성분명만 던지면 구매까지 연결되지 않습니다. 둘 사이의 다리를 만드는 콘텐츠가 검색자산입니다.
+
+플로로탄닌은 이 구조에서 강점이 큽니다. 이름 자체가 낯설고 전문적이기 때문에 소비자는 자연스럽게 뜻을 묻습니다. 플로로탄닌이 감태 같은 갈조류에서 연구되는 해양 폴리페놀인지, 감태추출물과 어떤 관계인지, 디에콜·에콜 같은 하위 성분명과는 어떻게 다른지 알고 싶어 합니다. 이 질문을 제대로 받아 주는 글이 많아질수록 사이트는 단순 판매 페이지가 아니라 “플로로탄닌을 이해하는 정보지”가 됩니다.
+
+Google Search Central은 helpful, reliable, people-first content를 강조합니다. 건강정보와 제품정보는 특히 검색자가 실제로 궁금해하는 질문에 답해야 합니다. 제품명 반복, 과장된 효능 문장, 출처 없는 비교표는 오래가는 검색자산이 되기 어렵습니다. 반대로 성분의 정체, 원료의 범위, 제품 라벨에서 확인할 항목, 연구와 광고의 차이를 소비자 언어로 풀어내면 검색엔진과 AI가 이해하기 좋은 구조가 됩니다.
+
+## 성분명, 원료명, 제품명, 브랜드명은 역할이 다릅니다
+
+성분명은 몸이 만나는 물질의 이름입니다. 플로로탄닌, 디에콜, 에콜, 오메가3, 커큐민 같은 말이 여기에 가깝습니다. 원료명은 제품에 들어가는 재료의 범위를 말합니다. 감태추출물, 해조류추출물, 갈조류 유래 폴리페놀처럼 식품 원료와 제조 공정을 포함합니다. 제품명은 소비자가 실제로 구매하는 포장 단위의 이름입니다. 브랜드명은 그 제품을 공급하는 회사나 라인의 신뢰를 담습니다.
+
+이 네 가지를 섞으면 글이 흐려집니다. 예를 들어 “플로로탄닌 제품이 좋다”라고만 쓰면 소비자는 어떤 플로로탄닌인지, 감태추출물인지, 표준화 지표가 있는지, 제품 라벨에서 무엇을 봐야 하는지 알 수 없습니다. 반대로 “디에콜 연구가 있다”는 말만 쓰면 일반 소비자는 그것이 내가 사려는 제품과 어떤 관계인지 이해하기 어렵습니다. 좋은 정보지는 이 중간을 연결합니다.
+
+## 플로로탄닌은 이름부터 검색자산입니다
+
+플로로탄닌은 흔한 단어가 아닙니다. 바로 그 점이 자산입니다. 소비자가 처음 듣는 이름은 설명이 필요합니다. 설명이 필요한 이름은 Q&A, 블로그, 인사이트, 비교표, 이미지 alt, OG 제목, 내부 링크로 확장하기 좋습니다. “플로로탄닌 뜻”, “감태 플로로탄닌 차이”, “디에콜 플로로탄닌 관계”, “플로로탄닌 혈당 연구”, “플로로탄닌 수면 루틴” 같은 질문이 자연스럽게 생깁니다.
+
+이 질문을 받을 때 문장은 소비자 정보지처럼 가야 합니다. “이 제품을 사세요”보다 “이 성분을 이렇게 읽으면 제품 선택이 쉬워집니다”가 먼저입니다. 그 다음에 플로로탄닌이 해양 폴리페놀로서 왜 매력적인지 강하게 설명합니다. 감태 유래 소재라는 차별성, 육상 폴리페놀과 다른 바다 식물 이미지, 산화 스트레스와 대사 회복 루틴에서 소비자가 이해하기 쉬운 방향성이 있습니다.
+
+## 검색엔진과 AI가 좋아하는 구조
+
+검색엔진은 한 페이지 안의 단어만 보지 않습니다. 제목, 설명, 본문 첫 문단, 이미지 alt, 내부 링크, 카테고리, sitemap 이미지 정보, 구조화 데이터가 함께 맞아야 합니다. AI 검색도 마찬가지입니다. 질문에 직접 답하는 문단, 용어 정의, 비교 기준, 소비자가 확인할 체크포인트가 분명할수록 답변에 인용될 가능성이 높아집니다.
+
+그래서 플로로탄닌 콘텐츠는 매번 같은 문장을 반복하면 안 됩니다. 어떤 글은 성분 정의를 담당하고, 어떤 글은 감태추출물과의 관계를 설명하고, 어떤 글은 혈당·수면·장·심혈관 같은 회복 루틴으로 연결하고, 어떤 글은 제품 라벨을 읽는 법을 맡아야 합니다. 이렇게 역할이 나뉘면 사이트 전체가 하나의 정보지도처럼 보입니다.
+
+## 소비자가 실제로 궁금해하는 체크포인트
+
+첫째, 이 성분은 무엇에서 왔는지입니다. 플로로탄닌은 감태 같은 갈조류에서 연구되는 해양 폴리페놀 계열이라고 설명해야 합니다. 둘째, 제품 라벨에서 무엇을 봐야 하는지입니다. 감태추출물 함량, 표준화 지표, 1일 섭취량, 원료 출처, 부원료, 주의 문구를 확인해야 합니다. 셋째, 내 목적과 맞는지입니다. 혈당, 수면, 장 리듬, 피로, 운동 회복, 항산화 식습관 중 어디에 관심이 있는지 먼저 정해야 합니다.
+
+제품명은 구매 직전 단계에서 중요합니다. 하지만 제품명만 먼저 노출하면 소비자는 “광고구나”라고 느낍니다. 반대로 성분명으로 신뢰를 만들고, 원료명으로 제품 선택 기준을 보여주고, 그 다음 제품명으로 연결하면 설득력이 커집니다. 이것이 검색자산형 콘텐츠의 순서입니다.`,
+    category: 'buying-guide',
+    tags: ['성분명', '제품명', '감태추출물', '플로로탄닌', '검색자산', 'SEO', 'AEO', '건강기능식품'],
+    meta_title: '성분명 vs 제품명 | 플로로탄닌 검색자산 소비자 저널',
+    meta_desc:
+      '플로로탄닌, 감태추출물, 브랜드명, 제품명을 분리해 소비자가 이해하고 검색엔진·AI가 신뢰하는 건강정보 구조를 만드는 방법을 정리합니다.',
+    og_image: '/og/content-quality/ingredient-vs-product-search-asset-phlorotannin-journal-photo-20260619.jpg',
+    updated_at: '2026-06-19T09:00:00+09:00',
+  },
+}
+
 function categoryLabel(category) {
   const map = {
     metabolism: '대사질환',
@@ -2450,26 +2496,30 @@ ${topic.primaryKeyword}를 검색했을 때는 문장 강도보다 근거 구조
 }
 
 export const LOCAL_SEO_EXPANSION_POSTS = SEO_TOPICS.map((topic) => {
+  const override = LOCAL_POST_OVERRIDES[topic.slug]
   const date = new Date('2026-05-28T09:00:00+09:00')
   date.setDate(date.getDate() - (topic.idx % 21))
   const iso = date.toISOString()
-  const categoryName = categoryLabel(topic.category)
+  const category = override?.category || topic.category
+  const categoryName = categoryLabel(category)
   return {
     id: `local-seo-expansion-${topic.idx}`,
     slug: topic.slug,
-    title: topic.title,
-    excerpt: `${topic.primaryKeyword} 관점에서 확인 기준·주의점·내부 링크를 정리한 정보형 글입니다.`,
-    content: buildContent(topic),
-    category: topic.category,
-    tags: [...new Set([...(topic.tags || []), '플로로탄닌', '건강정보'])].slice(0, 8),
-    meta_title: `${topic.title} | 플로로탄닌·감태추출물 건강정보`,
-    meta_desc: `${topic.primaryKeyword}를 포함해 ${categoryName} 정보를 검토할 때 필요한 기준과 주의점을 정리했습니다.`,
-    og_image: getCategoryFallbackImage(topic.category),
+    title: override?.title || topic.title,
+    excerpt: override?.excerpt || `${topic.primaryKeyword} 관점에서 확인 기준·주의점·내부 링크를 정리한 정보형 글입니다.`,
+    content: override?.content || buildContent(topic),
+    category,
+    tags: override?.tags || [...new Set([...(topic.tags || []), '플로로탄닌', '건강정보'])].slice(0, 8),
+    meta_title: override?.meta_title || `${topic.title} | 플로로탄닌·감태추출물 건강정보`,
+    meta_desc:
+      override?.meta_desc ||
+      `${topic.primaryKeyword}를 포함해 ${categoryName} 정보를 검토할 때 필요한 기준과 주의점을 정리했습니다.`,
+    og_image: override?.og_image || getCategoryFallbackImage(category),
     status: 'published',
     view_count: 120 + (topic.idx * 17),
     published_at: iso,
     created_at: iso,
-    updated_at: '2026-05-28T09:00:00+09:00',
+    updated_at: override?.updated_at || '2026-05-28T09:00:00+09:00',
     is_local: true,
   }
 })
