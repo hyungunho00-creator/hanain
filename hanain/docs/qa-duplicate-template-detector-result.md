@@ -1,10 +1,10 @@
 # QA Duplicate Template Detector Result
 
-- generatedAt: 2026-06-21T08:22:42.479Z
+- generatedAt: 2026-06-21T08:28:40.316Z
 - validatedScanned: 2034
 - repeatedSentenceWarnings(>=4): 160
 - repeatedParagraphFails(>=3): 23
-- similarityPairs(>=35% manual-review, sample=120): 2970
+- similarityPairs(>=35% manual-review, sample=120): 2895
 - status: PASS
 
 ## Repeated Paragraph Fails
@@ -35,8 +35,8 @@
 
 ## Repeated Sentence Warnings
 
-- count=1724 ids=cardio-001, cardio-003, cardio-004, cardio-005, cardio-009, cardio-010, cardio-011, cardio-013, cardio-014, cardio-017, cardio-018, cardio-019 sample="항산화·염증 반응·대사 건강 관련 원료 연구에서 자주 다뤄지며, 개인의 증상 판단과 복용 결정은 현재 상태와 복용약을 확인해 의료진과 상의하는 방식이 안전합니다...."
-- count=1665 ids=cardio-001, cardio-005, cardio-009, cardio-011, cardio-013, cardio-017, cardio-018, cardio-019, cardio-020, cardio-022, cardio-023, cardio-024 sample="증상이 지속되거나 악화되면 해당 진료과 전문의와 상담하세요...."
+- count=1723 ids=cardio-001, cardio-003, cardio-004, cardio-005, cardio-009, cardio-010, cardio-011, cardio-013, cardio-014, cardio-017, cardio-018, cardio-019 sample="항산화·염증 반응·대사 건강 관련 원료 연구에서 자주 다뤄지며, 개인의 증상 판단과 복용 결정은 현재 상태와 복용약을 확인해 의료진과 상의하는 방식이 안전합니다...."
+- count=1664 ids=cardio-001, cardio-005, cardio-009, cardio-011, cardio-013, cardio-017, cardio-018, cardio-019, cardio-022, cardio-023, cardio-024, cardio-025 sample="증상이 지속되거나 악화되면 해당 진료과 전문의와 상담하세요...."
 - count=226 ids=cancer-011, cancer-014, ci_018, ci_041, ci_044, ci_056, ci_058, ci_070, ci_074, ci_075, ci_079, ci_093 sample="시작 시점, 악화 요인, 동반 증상, 검사 결과를 함께 확인해 구분해야 합니다...."
 - count=203 ids=cancer-001, cancer-002, cancer-003, cancer-004, cancer-005, cancer-006, cancer-007, cancer-008, cancer-009, cancer-010, cancer-011, cancer-012 sample="치료 중 건강식품 선택은 반드시 담당 의료진과 상의해야 하며, 건강정보는 치료를 대체할 수 없습니다...."
 - count=203 ids=cancer-001, cancer-002, cancer-003, cancer-004, cancer-005, cancer-006, cancer-007, cancer-008, cancer-009, cancer-010, cancer-011, cancer-012 sample="건강식품 정보는 치료를 대체하지 않으며, 약물 상호작용 가능성을 반드시 담당 의료진과 확인해야 안전합니다...."
@@ -60,7 +60,7 @@
 - count=119 ids=rsp_021, rsp_022, rsp_023, rsp_024, rsp_025, rsp_026, rsp_027, rsp_028, rsp_029, rsp_031, rsp_032, rsp_034 sample="호흡곤란, 청색증, 고열이 있으면 지체 없이 호흡기 진료를 받아야 합니다...."
 - count=119 ids=rsp_021, rsp_022, rsp_023, rsp_024, rsp_025, rsp_026, rsp_027, rsp_028, rsp_029, rsp_031, rsp_032, rsp_034 sample="호흡곤란·흉통·고열 등 급성 악화 신호가 있으면 즉시 진료가 필요합니다...."
 - count=115 ids=woms-001, woms-002, woms-003, woms-004, woms-005, woms-006, woms-007, woms-008, woms-009, woms-010, woms-011, woms-012 sample="출혈, 주기 급변이 있으면 산부인과에서 원인 평가를 받는 것이 좋습니다...."
-- count=114 ids=cardio-001, cardio-005, cardio-009, cardio-011, cardio-013, cardio-017, cardio-018, cardio-019, cardio-020, cardio-022, cardio-023, cardio-024 sample="흉통, 호흡곤란, 실신, 급격한 부종이 동반되면 지체하지 말고 응급평가를 받아야 합니다...."
+- count=113 ids=cardio-001, cardio-005, cardio-009, cardio-011, cardio-013, cardio-017, cardio-018, cardio-019, cardio-022, cardio-023, cardio-024, cardio-025 sample="흉통, 호흡곤란, 실신, 급격한 부종이 동반되면 지체하지 말고 응급평가를 받아야 합니다...."
 - count=104 ids=cardio-001, cardio-019, cardio-023, cardio-037, cardio-056, cardio-074, meta-001, meta-012, meta_031, meta_081, meta_082, meta_090 sample="현재 수치와 부작용, 병용약을 함께 확인해 의료진과 조정하는 방식이 원칙입니다...."
 - count=104 ids=cardio-001, cardio-019, cardio-023, cardio-037, cardio-056, cardio-074, meta-001, meta-012, meta_031, meta_081, meta_082, meta_090 sample="먼저 복용 중인 약 목록, 기저질환, 부작용 징후를 확인하는 것이 핵심입니다...."
 - count=103 ids=cardio-005, cardio-018, cardio-022, cardio-025, cardio-030, cardio-036, cardio-045, cardio-049, cardio-050, cardio-066, meta-004, meta-008 sample="검사 결과는 측정 조건(시간대, 금식 여부, 복용약, 수면 상태)에 영향을 받으므로 이전 검사와 같은 조건에서 비교해야 해석 오류를 줄일 수 있습니다...."
@@ -79,10 +79,10 @@
 - count=45 ids=skin-003, skin-006, skin-010, skin-014, skin-020, sh_011, sh_015, sh_022, sh_023, sh_026, sh_027, sh_031 sample="자가 판단보다는 피부과 진료를 통해 유형을 구분해야 치료 전략을 세울 수 있습니다...."
 - count=39 ids=neuro-003, neuro-014, nc_013, nc_016, nc_017, nc_019, nc_026, nc_035, nc_037, nc_041, nc_046, nc_050 sample="뇌·인지 증상 관련 질문에서는 기억 저하, 두통, 어지럼, 수면, 정서 상태를 함께 보아야 방향을 정확히 잡을 수 있습니다...."
 - count=39 ids=round2-metabolism-20260530, round2-cancer-immune-20260530, round2-digestive-20260530, round2-cardiovascular-20260530, round2-neuro-cognitive-20260530, round2-mental-health-20260530, round2-musculoskeletal-20260530, round2-skin-20260530, round2-hair-20260530, round2-respiratory-20260530, round2-infection-inflammation-20260530, round2-womens-health-20260530 sample="증상이 지속되거나 악화되면 담당 진료과 전문의와 상담하세요...."
-- count=38 ids=cardio-020, ci_034, neuro-011, neuro-016, nc_020, nc_039, nc_054, nc_078, sh_064, ms_076, woms-008, wh-extra-003 sample="자세히 보면 정신건강/수면 문제 질문의 핵심은 현재 상태를 구조화해 “무엇을 먼저 확인할지”를 정하는 데 있습니다...."
 - count=38 ids=neuro-003, neuro-010, neuro-014, nc_013, nc_016, nc_017, nc_019, nc_026, nc_032, nc_035, nc_037, nc_038 sample="자세히 보면 뇌·인지 증상 질문의 핵심은 현재 상태를 구조화해 “무엇을 먼저 확인할지”를 정하는 데 있습니다...."
 - count=37 ids=cardio-054, meta-011, meta-015, meta-016, meta-020, meta_021, meta_030, meta_036, meta_045, meta_047, meta_053, meta_054 sample="짧은 답변 혈당 관리 검사는 단일 숫자만 보지 말고 검사 시점, 증상 변화, 복용약, 이전 결과와 함께 비교해 해석해야 정확합니다...."
 - count=37 ids=cardio-054, meta-011, meta-015, meta-016, meta-020, meta_021, meta_030, meta_036, meta_045, meta_047, meta_053, meta_054 sample="자세히 보면 혈당 관리 검사 해석에서는 추세 비교가 핵심이며, 같은 검사도 조건이 다르면 결과 의미가 달라질 수 있습니다...."
+- count=37 ids=ci_034, neuro-011, neuro-016, nc_020, nc_039, nc_054, nc_078, sh_064, ms_076, woms-008, wh-extra-003, wh-extra-005 sample="자세히 보면 정신건강/수면 문제 질문의 핵심은 현재 상태를 구조화해 “무엇을 먼저 확인할지”를 정하는 데 있습니다...."
 - count=37 ids=neuro-003, neuro-010, neuro-014, nc_013, nc_016, nc_017, nc_019, nc_026, nc_032, nc_035, nc_037, nc_038 sample="짧은 답변 뇌·인지 증상 질문은 뇌·인지 맥락에서 증상, 검사, 치료, 생활요인을 함께 봐야 정확한 판단이 가능합니다...."
 - count=28 ids=mental-extra-002, mental-extra-005, mental-extra-006, mental-extra-007, mental-extra-011, mental-extra-017, mental-extra-026, mental-extra-028, mental-extra-031, mental-extra-045, mental-extra-046, mental-extra-056 sample="정신건강/수면 문제 관련 질문에서는 감정 상태뿐 아니라 수면, 일상 기능, 대인관계, 스트레스 사건을 함께 봐야 합니다...."
 - count=26 ids=round3-metabolism-1-20260531, round3-metabolism-2-20260531, round3-cancer_immune-1-20260531, round3-cancer_immune-2-20260531, round3-digestive-1-20260531, round3-digestive-2-20260531, round3-cardiovascular-1-20260531, round3-cardiovascular-2-20260531, round3-neuro_cognitive-1-20260531, round3-neuro_cognitive-2-20260531, round3-mental_health-1-20260531, round3-mental_health-2-20260531 sample="다만 이 성분명은 특정 질환 결과를 약속하는 표현이 아니라 원료명, 표준화, 섭취량, 기존 복용약과의 관계를 차분히 확인하기 위한 참고 정보로 보는 편이 안전합니다...."
@@ -212,23 +212,9 @@
 - meta-009 <-> meta-010 (0.904)
 - meta-006 <-> meta-013 (0.893)
 - meta-006 <-> meta-017 (0.893)
-- cardio-020 <-> cardio-071 (0.892)
-- cardio-020 <-> cardio-077 (0.892)
-- cardio-020 <-> cardio-085 (0.892)
-- cardio-020 <-> cardio-090 (0.892)
-- cardio-020 <-> cardio-034 (0.888)
-- cardio-020 <-> cardio-038 (0.888)
-- cardio-020 <-> cardio-057 (0.888)
-- cardio-020 <-> cardio-070 (0.888)
-- cardio-020 <-> cardio-094 (0.888)
 - meta-011 <-> meta-020 (0.888)
 - meta-015 <-> meta-020 (0.888)
 - cardio-057 <-> cardio-070 (0.885)
-- cardio-020 <-> cardio-028 (0.884)
-- cardio-020 <-> cardio-055 (0.884)
-- cardio-020 <-> cardio-065 (0.884)
-- cardio-020 <-> cardio-083 (0.884)
-- cardio-020 <-> cardio-089 (0.884)
 - cardio-057 <-> cardio-089 (0.882)
 - cardio-070 <-> cardio-089 (0.882)
 - cardio-041 <-> cardio-042 (0.88)
@@ -318,3 +304,17 @@
 - cardio-028 <-> cardio-070 (0.865)
 - cardio-028 <-> cardio-094 (0.865)
 - cardio-034 <-> cardio-055 (0.865)
+- cardio-034 <-> cardio-065 (0.865)
+- cardio-034 <-> cardio-083 (0.865)
+- cardio-034 <-> cardio-089 (0.865)
+- cardio-038 <-> cardio-055 (0.865)
+- cardio-038 <-> cardio-065 (0.865)
+- cardio-038 <-> cardio-083 (0.865)
+- cardio-038 <-> cardio-089 (0.865)
+- cardio-055 <-> cardio-057 (0.865)
+- cardio-055 <-> cardio-070 (0.865)
+- cardio-055 <-> cardio-094 (0.865)
+- cardio-057 <-> cardio-065 (0.865)
+- cardio-057 <-> cardio-083 (0.865)
+- cardio-065 <-> cardio-070 (0.865)
+- cardio-065 <-> cardio-094 (0.865)

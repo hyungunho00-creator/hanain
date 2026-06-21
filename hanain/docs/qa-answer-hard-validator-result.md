@@ -1,6 +1,6 @@
 # QA Answer Hard Validator Result
 
-- generatedAt: 2026-06-21T08:22:40.372Z
+- generatedAt: 2026-06-21T08:28:38.539Z
 - scanned: 2034
 - publicAnswers: 2034
 - hiddenMissingAnswer: 0
@@ -18,7 +18,7 @@
 - cardio-003: title keyword missing in first 300 chars
 - cardio-009: title keyword missing in first 300 chars
 - cardio-018: title keyword missing in first 300 chars
-- cardio-020: first paragraph starts with category label
+- cardio-020: title keyword missing in first 300 chars
 - cardio-044: first paragraph starts with category label
 - cardio-044: title keyword missing in first 300 chars
 - cardio-050: first paragraph starts with category label
