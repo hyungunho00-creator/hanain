@@ -1,10 +1,10 @@
 # QA Duplicate Template Detector Result
 
-- generatedAt: 2026-06-21T09:10:04.397Z
+- generatedAt: 2026-06-21T09:20:04.272Z
 - validatedScanned: 2034
 - repeatedSentenceWarnings(>=4): 160
 - repeatedParagraphFails(>=3): 23
-- similarityPairs(>=35% manual-review, sample=120): 2605
+- similarityPairs(>=35% manual-review, sample=120): 2535
 - status: PASS
 
 ## Repeated Paragraph Fails
@@ -35,8 +35,8 @@
 
 ## Repeated Sentence Warnings
 
-- count=1719 ids=cardio-001, cardio-003, cardio-004, cardio-005, cardio-009, cardio-010, cardio-011, cardio-013, cardio-014, cardio-017, cardio-018, cardio-019 sample="항산화·염증 반응·대사 건강 관련 원료 연구에서 자주 다뤄지며, 개인의 증상 판단과 복용 결정은 현재 상태와 복용약을 확인해 의료진과 상의하는 방식이 안전합니다...."
-- count=1660 ids=cardio-001, cardio-005, cardio-009, cardio-011, cardio-013, cardio-017, cardio-018, cardio-019, cardio-022, cardio-023, cardio-025, cardio-026 sample="증상이 지속되거나 악화되면 해당 진료과 전문의와 상담하세요...."
+- count=1718 ids=cardio-001, cardio-003, cardio-004, cardio-005, cardio-009, cardio-010, cardio-011, cardio-013, cardio-014, cardio-017, cardio-018, cardio-019 sample="항산화·염증 반응·대사 건강 관련 원료 연구에서 자주 다뤄지며, 개인의 증상 판단과 복용 결정은 현재 상태와 복용약을 확인해 의료진과 상의하는 방식이 안전합니다...."
+- count=1659 ids=cardio-001, cardio-005, cardio-009, cardio-011, cardio-013, cardio-017, cardio-018, cardio-019, cardio-022, cardio-023, cardio-025, cardio-026 sample="증상이 지속되거나 악화되면 해당 진료과 전문의와 상담하세요...."
 - count=226 ids=cancer-011, cancer-014, ci_018, ci_041, ci_044, ci_056, ci_058, ci_070, ci_074, ci_075, ci_079, ci_093 sample="시작 시점, 악화 요인, 동반 증상, 검사 결과를 함께 확인해 구분해야 합니다...."
 - count=203 ids=cancer-001, cancer-002, cancer-003, cancer-004, cancer-005, cancer-006, cancer-007, cancer-008, cancer-009, cancer-010, cancer-011, cancer-012 sample="치료 중 건강식품 선택은 반드시 담당 의료진과 상의해야 하며, 건강정보는 치료를 대체할 수 없습니다...."
 - count=203 ids=cancer-001, cancer-002, cancer-003, cancer-004, cancer-005, cancer-006, cancer-007, cancer-008, cancer-009, cancer-010, cancer-011, cancer-012 sample="건강식품 정보는 치료를 대체하지 않으며, 약물 상호작용 가능성을 반드시 담당 의료진과 확인해야 안전합니다...."
@@ -55,12 +55,12 @@
 - count=131 ids=meta-001, meta-002, meta-003, meta-004, meta-006, meta-008, meta-009, meta-010, meta-011, meta-012, meta-013, meta-015 sample="공복·식후 혈당, 혈압, 지질, 체중, 허리둘레, 수면, 활동량을 한 화면에서 보면 조정 우선순위를 세우기 쉽습니다...."
 - count=131 ids=meta-001, meta-002, meta-003, meta-004, meta-006, meta-008, meta-009, meta-010, meta-011, meta-012, meta-013, meta-015 sample="먼저 확인할 것 최근 검사 수치와 검사 날짜 식사 구성과 식사 시간 주당 운동 빈도·강도 복용 중 약물/건강식품 목록 체중·허리둘레 변화 증상이 시작된 시점과 악화 요인 병원 진료가 필요한 경우 혈당이 매우 높거나 저혈당 증상이 반복될 때 극심한 갈증·다뇨·의식 저하가 동반될 때 흉통·..."
 - count=131 ids=musc-001, musc-002, musc-003, musc-004, musc-005, musc-006, musc-007, musc-008, musc-009, musc-010, musc-011, musc-012 sample="통증, 부종, 잠김, 운동 제한이 지속되면 정형외과 진료와 영상검사로 손상 범위를 먼저 확인하는 것이 안전합니다...."
-- count=123 ids=cardio-034, cardio-046, cardio-065, cardio-069, cardio-071, cardio-073, cardio-087, cardio-091, cardio-094, meta_022, meta_024, meta_027 sample="질문의 핵심은 현재 상태를 구조화해 “무엇을 먼저 확인할지”를 정하는 데 있습니다...."
+- count=122 ids=cardio-046, cardio-065, cardio-069, cardio-071, cardio-073, cardio-087, cardio-091, cardio-094, meta_022, meta_024, meta_027, meta_033 sample="질문의 핵심은 현재 상태를 구조화해 “무엇을 먼저 확인할지”를 정하는 데 있습니다...."
 - count=122 ids=infect-extra-001, infect-extra-002, infect-extra-004, infect-extra-005, infect-extra-006, infect-extra-007, infect-extra-008, infect-extra-009, infect-extra-010, infect-extra-011, infect-extra-012, infect-extra-013 sample="고열, 심한 통증, 빠른 부종 악화가 있으면 감염 여부를 확인하기 위한 진료가 우선입니다...."
 - count=119 ids=rsp_021, rsp_022, rsp_023, rsp_024, rsp_025, rsp_026, rsp_027, rsp_028, rsp_029, rsp_031, rsp_032, rsp_034 sample="호흡곤란, 청색증, 고열이 있으면 지체 없이 호흡기 진료를 받아야 합니다...."
 - count=119 ids=rsp_021, rsp_022, rsp_023, rsp_024, rsp_025, rsp_026, rsp_027, rsp_028, rsp_029, rsp_031, rsp_032, rsp_034 sample="호흡곤란·흉통·고열 등 급성 악화 신호가 있으면 즉시 진료가 필요합니다...."
 - count=115 ids=woms-001, woms-002, woms-003, woms-004, woms-005, woms-006, woms-007, woms-008, woms-009, woms-010, woms-011, woms-012 sample="출혈, 주기 급변이 있으면 산부인과에서 원인 평가를 받는 것이 좋습니다...."
-- count=109 ids=cardio-001, cardio-005, cardio-009, cardio-011, cardio-013, cardio-017, cardio-018, cardio-019, cardio-022, cardio-023, cardio-025, cardio-026 sample="흉통, 호흡곤란, 실신, 급격한 부종이 동반되면 지체하지 말고 응급평가를 받아야 합니다...."
+- count=108 ids=cardio-001, cardio-005, cardio-009, cardio-011, cardio-013, cardio-017, cardio-018, cardio-019, cardio-022, cardio-023, cardio-025, cardio-026 sample="흉통, 호흡곤란, 실신, 급격한 부종이 동반되면 지체하지 말고 응급평가를 받아야 합니다...."
 - count=104 ids=cardio-001, cardio-019, cardio-023, cardio-037, cardio-056, cardio-074, meta-001, meta-012, meta_031, meta_081, meta_082, meta_090 sample="현재 수치와 부작용, 병용약을 함께 확인해 의료진과 조정하는 방식이 원칙입니다...."
 - count=104 ids=cardio-001, cardio-019, cardio-023, cardio-037, cardio-056, cardio-074, meta-001, meta-012, meta_031, meta_081, meta_082, meta_090 sample="먼저 복용 중인 약 목록, 기저질환, 부작용 징후를 확인하는 것이 핵심입니다...."
 - count=103 ids=cardio-005, cardio-018, cardio-022, cardio-025, cardio-030, cardio-036, cardio-045, cardio-049, cardio-050, cardio-066, meta-004, meta-008 sample="검사 결과는 측정 조건(시간대, 금식 여부, 복용약, 수면 상태)에 영향을 받으므로 이전 검사와 같은 조건에서 비교해야 해석 오류를 줄일 수 있습니다...."
@@ -141,12 +141,12 @@
 - count=11 ids=skin-006, skin-010, sh_015, sh_031, sh_047, sh_073, sh_086, sh_125, qa200-20260527-150, qa200-20260527-151, qa200-20260527-153 sample="짧은 답변 탈모/두피 문제 질문은 모발/두피 맥락에서 증상, 검사, 치료, 생활요인을 함께 봐야 정확한 판단이 가능합니다...."
 - count=11 ids=mental-016, seoqa-metabolism-13, seoqa-cancer_immune-03, seoqa-cancer_immune-13, seoqa-digestive-03, seoqa-digestive-13, seoqa-cardiovascular-03, seoqa-mental_health-03, seoqa-musculoskeletal-03, seoqa-skin-03, seoqa-respiratory-03 sample="짧은 답변 정신건강/수면 문제 관리는 현재 증상의 강도와 유발 요인을 먼저 파악하고, 의료진 치료 계획 안에서 생활관리 항목을 조정하는 방식이 안전합니다...."
 - count=11 ids=mental-016, seoqa-metabolism-13, seoqa-cancer_immune-03, seoqa-cancer_immune-13, seoqa-digestive-03, seoqa-digestive-13, seoqa-cardiovascular-03, seoqa-mental_health-03, seoqa-musculoskeletal-03, seoqa-skin-03, seoqa-respiratory-03 sample="자세히 보면 정신건강/수면 문제 관리에서는 한 번에 모든 것을 바꾸기보다..."
-- count=10 ids=cardio-034, cardio-046, cardio-065, cardio-069, cardio-071, cardio-073, cardio-087, cardio-091, cardio-094, ingr-009 sample="질문은 심혈관 맥락에서 증상, 검사, 치료, 생활요인을 함께 봐야 정확한 판단이 가능합니다...."
 - count=10 ids=dige-013, dige-020, dg_025, dg_031, dg_032, dg_037, dg_053, dg_079, dg_081, dg_083 sample="관련 질문에서는 증상 강도만 보지 말고 식사·수면·음주·약물 패턴과 연결해서 해석해야 합니다...."
 - count=10 ids=neuro-004, neuro-005, nc_028, nc_041, mental-extra-071, nc_095, nc_098, nc_117, qa200-20260527-104, seoqa-neuro_cognitive-03 sample="짧은 답변 뇌·인지 증상 관리는 현재 증상의 강도와 유발 요인을 먼저 파악하고, 의료진 치료 계획 안에서 생활관리 항목을 조정하는 방식이 안전합니다...."
 - count=10 ids=neuro-004, neuro-005, nc_028, nc_041, mental-extra-071, nc_095, nc_098, nc_117, qa200-20260527-104, seoqa-neuro_cognitive-03 sample="자세히 보면 뇌·인지 증상 관리에서는 한 번에 모든 것을 바꾸기보다..."
 - count=9 ids=cardio-005, cardio-018, meta-004, meta-010, meta_032, wh-extra-070, ingr-004, qa200-20260527-083, qa-hospital-20260527-005 sample="짧은 답변 콜레스테롤 관리 검사는 단일 숫자만 보지 말고 검사 시점, 증상 변화, 복용약, 이전 결과와 함께 비교해 해석해야 정확합니다...."
 - count=9 ids=cardio-005, cardio-018, meta-004, meta-010, meta_032, wh-extra-070, ingr-004, qa200-20260527-083, qa-hospital-20260527-005 sample="자세히 보면 콜레스테롤 관리 검사 해석에서는 추세 비교가 핵심이며, 같은 검사도 조건이 다르면 결과 의미가 달라질 수 있습니다...."
+- count=9 ids=cardio-046, cardio-065, cardio-069, cardio-071, cardio-073, cardio-087, cardio-091, cardio-094, ingr-009 sample="질문은 심혈관 맥락에서 증상, 검사, 치료, 생활요인을 함께 봐야 정확한 판단이 가능합니다...."
 - count=9 ids=meta-013, meta-017, meta_029, meta_050, meta_076, meta_095, qa200-20260527-008, qa200-20260527-023, qa200-20260527-025 sample="짧은 답변 혈당 관리 질문은 대사질환 맥락에서 증상, 검사, 치료, 생활요인을 함께 봐야 정확한 판단이 가능합니다...."
 - count=9 ids=strategic-qa-womens-fibroid-heavy-bleeding-anemia-iron-record-20260605, strategic-qa-womens-pelvic-organ-prolapse-urinary-leakage-constipation-record-20260605, strategic-qa-mens-varicocele-testicular-pain-semen-analysis-fertility-record-20260605, strategic-qa-mens-testicular-lump-ultrasound-tumor-marker-record-20260605, strategic-qa-womens-urinary-incontinence-bladder-diary-caffeine-uti-record-20260605, strategic-qa-mens-peyronies-curvature-plaque-pain-erection-record-20260605, strategic-qa-infection-lyme-tick-bite-expanding-rash-doxycycline-testing-record-20260605, strategic-qa-mens-erectile-dysfunction-cardiovascular-risk-nitrates-sildenafil-record-20260606, strategic-qa-womens-pcos-irregular-period-hirsutism-insulin-resistance-fertility-record-20260606 sample="pubmed에는 phlorotannin-rich ecklonia cava extract가 염증 관련 표지와 대사 반응을 다룬 연구가 등재되어 있습니다...."
 - count=8 ids=neuro-001, nc_060, mental-extra-030, mental-extra-038, qa200-20260527-098, seoqa-neuro_cognitive-02, seoqa-neuro_cognitive-04, seoqa-neuro_cognitive-10 sample="자세히 보면 뇌·인지 증상 원인 평가는 생활요인만으로 결론 내리지 말고 진찰·검사·경과 관찰을 함께 묶어 해석해야 정확도가 높습니다...."
@@ -244,10 +244,6 @@
 - meta-002 <-> meta-018 (0.877)
 - cardio-050 <-> cardio-066 (0.876)
 - cardio-026 <-> cardio-062 (0.873)
-- cardio-034 <-> cardio-071 (0.873)
-- cardio-034 <-> cardio-077 (0.873)
-- cardio-034 <-> cardio-085 (0.873)
-- cardio-034 <-> cardio-090 (0.873)
 - cardio-038 <-> cardio-071 (0.873)
 - cardio-038 <-> cardio-077 (0.873)
 - cardio-038 <-> cardio-085 (0.873)
@@ -267,10 +263,6 @@
 - cardio-044 <-> cardio-054 (0.871)
 - cardio-044 <-> cardio-063 (0.871)
 - cardio-054 <-> cardio-063 (0.871)
-- cardio-034 <-> cardio-038 (0.869)
-- cardio-034 <-> cardio-057 (0.869)
-- cardio-034 <-> cardio-070 (0.869)
-- cardio-034 <-> cardio-094 (0.869)
 - cardio-035 <-> cardio-095 (0.869)
 - cardio-038 <-> cardio-057 (0.869)
 - cardio-038 <-> cardio-070 (0.869)
@@ -294,10 +286,6 @@
 - cardio-085 <-> cardio-089 (0.869)
 - cardio-089 <-> cardio-090 (0.869)
 - cardio-075 <-> cardio-095 (0.868)
-- cardio-034 <-> cardio-055 (0.865)
-- cardio-034 <-> cardio-065 (0.865)
-- cardio-034 <-> cardio-083 (0.865)
-- cardio-034 <-> cardio-089 (0.865)
 - cardio-038 <-> cardio-055 (0.865)
 - cardio-038 <-> cardio-065 (0.865)
 - cardio-038 <-> cardio-083 (0.865)
@@ -318,3 +306,15 @@
 - cardio-029 <-> cardio-063 (0.861)
 - cardio-055 <-> cardio-065 (0.861)
 - cardio-055 <-> cardio-083 (0.861)
+- cardio-055 <-> cardio-089 (0.861)
+- cardio-065 <-> cardio-083 (0.861)
+- cardio-065 <-> cardio-089 (0.861)
+- cardio-083 <-> cardio-089 (0.861)
+- cardio-005 <-> cardio-036 (0.859)
+- cardio-005 <-> cardio-045 (0.859)
+- cardio-018 <-> cardio-036 (0.859)
+- cardio-018 <-> cardio-045 (0.859)
+- cardio-005 <-> cardio-022 (0.856)
+- cardio-005 <-> cardio-030 (0.856)
+- cardio-018 <-> cardio-022 (0.856)
+- cardio-018 <-> cardio-030 (0.856)
