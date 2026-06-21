@@ -1,10 +1,10 @@
 # QA Duplicate Template Detector Result
 
-- generatedAt: 2026-06-21T09:20:04.272Z
+- generatedAt: 2026-06-21T09:27:55.557Z
 - validatedScanned: 2034
 - repeatedSentenceWarnings(>=4): 160
 - repeatedParagraphFails(>=3): 23
-- similarityPairs(>=35% manual-review, sample=120): 2535
+- similarityPairs(>=35% manual-review, sample=120): 2466
 - status: PASS
 
 ## Repeated Paragraph Fails
@@ -35,8 +35,8 @@
 
 ## Repeated Sentence Warnings
 
-- count=1718 ids=cardio-001, cardio-003, cardio-004, cardio-005, cardio-009, cardio-010, cardio-011, cardio-013, cardio-014, cardio-017, cardio-018, cardio-019 sample="항산화·염증 반응·대사 건강 관련 원료 연구에서 자주 다뤄지며, 개인의 증상 판단과 복용 결정은 현재 상태와 복용약을 확인해 의료진과 상의하는 방식이 안전합니다...."
-- count=1659 ids=cardio-001, cardio-005, cardio-009, cardio-011, cardio-013, cardio-017, cardio-018, cardio-019, cardio-022, cardio-023, cardio-025, cardio-026 sample="증상이 지속되거나 악화되면 해당 진료과 전문의와 상담하세요...."
+- count=1717 ids=cardio-001, cardio-003, cardio-004, cardio-005, cardio-009, cardio-010, cardio-011, cardio-013, cardio-014, cardio-017, cardio-018, cardio-019 sample="항산화·염증 반응·대사 건강 관련 원료 연구에서 자주 다뤄지며, 개인의 증상 판단과 복용 결정은 현재 상태와 복용약을 확인해 의료진과 상의하는 방식이 안전합니다...."
+- count=1658 ids=cardio-001, cardio-005, cardio-009, cardio-011, cardio-013, cardio-017, cardio-018, cardio-019, cardio-022, cardio-023, cardio-025, cardio-026 sample="증상이 지속되거나 악화되면 해당 진료과 전문의와 상담하세요...."
 - count=226 ids=cancer-011, cancer-014, ci_018, ci_041, ci_044, ci_056, ci_058, ci_070, ci_074, ci_075, ci_079, ci_093 sample="시작 시점, 악화 요인, 동반 증상, 검사 결과를 함께 확인해 구분해야 합니다...."
 - count=203 ids=cancer-001, cancer-002, cancer-003, cancer-004, cancer-005, cancer-006, cancer-007, cancer-008, cancer-009, cancer-010, cancer-011, cancer-012 sample="치료 중 건강식품 선택은 반드시 담당 의료진과 상의해야 하며, 건강정보는 치료를 대체할 수 없습니다...."
 - count=203 ids=cancer-001, cancer-002, cancer-003, cancer-004, cancer-005, cancer-006, cancer-007, cancer-008, cancer-009, cancer-010, cancer-011, cancer-012 sample="건강식품 정보는 치료를 대체하지 않으며, 약물 상호작용 가능성을 반드시 담당 의료진과 확인해야 안전합니다...."
@@ -60,7 +60,7 @@
 - count=119 ids=rsp_021, rsp_022, rsp_023, rsp_024, rsp_025, rsp_026, rsp_027, rsp_028, rsp_029, rsp_031, rsp_032, rsp_034 sample="호흡곤란, 청색증, 고열이 있으면 지체 없이 호흡기 진료를 받아야 합니다...."
 - count=119 ids=rsp_021, rsp_022, rsp_023, rsp_024, rsp_025, rsp_026, rsp_027, rsp_028, rsp_029, rsp_031, rsp_032, rsp_034 sample="호흡곤란·흉통·고열 등 급성 악화 신호가 있으면 즉시 진료가 필요합니다...."
 - count=115 ids=woms-001, woms-002, woms-003, woms-004, woms-005, woms-006, woms-007, woms-008, woms-009, woms-010, woms-011, woms-012 sample="출혈, 주기 급변이 있으면 산부인과에서 원인 평가를 받는 것이 좋습니다...."
-- count=108 ids=cardio-001, cardio-005, cardio-009, cardio-011, cardio-013, cardio-017, cardio-018, cardio-019, cardio-022, cardio-023, cardio-025, cardio-026 sample="흉통, 호흡곤란, 실신, 급격한 부종이 동반되면 지체하지 말고 응급평가를 받아야 합니다...."
+- count=107 ids=cardio-001, cardio-005, cardio-009, cardio-011, cardio-013, cardio-017, cardio-018, cardio-019, cardio-022, cardio-023, cardio-025, cardio-026 sample="흉통, 호흡곤란, 실신, 급격한 부종이 동반되면 지체하지 말고 응급평가를 받아야 합니다...."
 - count=104 ids=cardio-001, cardio-019, cardio-023, cardio-037, cardio-056, cardio-074, meta-001, meta-012, meta_031, meta_081, meta_082, meta_090 sample="현재 수치와 부작용, 병용약을 함께 확인해 의료진과 조정하는 방식이 원칙입니다...."
 - count=104 ids=cardio-001, cardio-019, cardio-023, cardio-037, cardio-056, cardio-074, meta-001, meta-012, meta_031, meta_081, meta_082, meta_090 sample="먼저 복용 중인 약 목록, 기저질환, 부작용 징후를 확인하는 것이 핵심입니다...."
 - count=103 ids=cardio-005, cardio-018, cardio-022, cardio-025, cardio-030, cardio-036, cardio-045, cardio-049, cardio-050, cardio-066, meta-004, meta-008 sample="검사 결과는 측정 조건(시간대, 금식 여부, 복용약, 수면 상태)에 영향을 받으므로 이전 검사와 같은 조건에서 비교해야 해석 오류를 줄일 수 있습니다...."
@@ -244,10 +244,6 @@
 - meta-002 <-> meta-018 (0.877)
 - cardio-050 <-> cardio-066 (0.876)
 - cardio-026 <-> cardio-062 (0.873)
-- cardio-038 <-> cardio-071 (0.873)
-- cardio-038 <-> cardio-077 (0.873)
-- cardio-038 <-> cardio-085 (0.873)
-- cardio-038 <-> cardio-090 (0.873)
 - cardio-057 <-> cardio-071 (0.873)
 - cardio-057 <-> cardio-077 (0.873)
 - cardio-057 <-> cardio-085 (0.873)
@@ -264,9 +260,6 @@
 - cardio-044 <-> cardio-063 (0.871)
 - cardio-054 <-> cardio-063 (0.871)
 - cardio-035 <-> cardio-095 (0.869)
-- cardio-038 <-> cardio-057 (0.869)
-- cardio-038 <-> cardio-070 (0.869)
-- cardio-038 <-> cardio-094 (0.869)
 - cardio-055 <-> cardio-071 (0.869)
 - cardio-055 <-> cardio-077 (0.869)
 - cardio-055 <-> cardio-085 (0.869)
@@ -286,10 +279,6 @@
 - cardio-085 <-> cardio-089 (0.869)
 - cardio-089 <-> cardio-090 (0.869)
 - cardio-075 <-> cardio-095 (0.868)
-- cardio-038 <-> cardio-055 (0.865)
-- cardio-038 <-> cardio-065 (0.865)
-- cardio-038 <-> cardio-083 (0.865)
-- cardio-038 <-> cardio-089 (0.865)
 - cardio-055 <-> cardio-057 (0.865)
 - cardio-055 <-> cardio-070 (0.865)
 - cardio-055 <-> cardio-094 (0.865)
@@ -318,3 +307,14 @@
 - cardio-005 <-> cardio-030 (0.856)
 - cardio-018 <-> cardio-022 (0.856)
 - cardio-018 <-> cardio-030 (0.856)
+- meta-004 <-> meta-008 (0.852)
+- cardio-013 <-> cardio-044 (0.851)
+- cardio-013 <-> cardio-054 (0.851)
+- cardio-013 <-> cardio-063 (0.851)
+- cardio-044 <-> cardio-088 (0.851)
+- cardio-054 <-> cardio-088 (0.851)
+- cardio-063 <-> cardio-088 (0.851)
+- cardio-011 <-> cardio-088 (0.849)
+- cardio-059 <-> cardio-078 (0.849)
+- cardio-011 <-> cardio-044 (0.848)
+- cardio-011 <-> cardio-054 (0.848)
