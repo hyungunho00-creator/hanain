@@ -1,11 +1,11 @@
 # QA Answer Hard Validator Result
 
-- generatedAt: 2026-06-21T04:12:13.169Z
+- generatedAt: 2026-06-21T05:36:22.072Z
 - scanned: 2034
 - publicAnswers: 2034
 - hiddenMissingAnswer: 0
 - failures: 0
-- warnings: 569
+- warnings: 568
 - status: PASS
 
 ## Failures
@@ -15,7 +15,6 @@
 ## Warnings
 
 - cardio-001: title keyword missing in first 300 chars
-- cardio-002: title keyword missing in first 300 chars
 - cardio-003: title keyword missing in first 300 chars
 - cardio-009: title keyword missing in first 300 chars
 - cardio-018: title keyword missing in first 300 chars
