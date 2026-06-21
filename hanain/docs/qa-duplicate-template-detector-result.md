@@ -1,10 +1,10 @@
 # QA Duplicate Template Detector Result
 
-- generatedAt: 2026-06-21T09:02:44.334Z
+- generatedAt: 2026-06-21T09:10:04.397Z
 - validatedScanned: 2034
 - repeatedSentenceWarnings(>=4): 160
 - repeatedParagraphFails(>=3): 23
-- similarityPairs(>=35% manual-review, sample=120): 2676
+- similarityPairs(>=35% manual-review, sample=120): 2605
 - status: PASS
 
 ## Repeated Paragraph Fails
@@ -35,8 +35,8 @@
 
 ## Repeated Sentence Warnings
 
-- count=1720 ids=cardio-001, cardio-003, cardio-004, cardio-005, cardio-009, cardio-010, cardio-011, cardio-013, cardio-014, cardio-017, cardio-018, cardio-019 sample="항산화·염증 반응·대사 건강 관련 원료 연구에서 자주 다뤄지며, 개인의 증상 판단과 복용 결정은 현재 상태와 복용약을 확인해 의료진과 상의하는 방식이 안전합니다...."
-- count=1661 ids=cardio-001, cardio-005, cardio-009, cardio-011, cardio-013, cardio-017, cardio-018, cardio-019, cardio-022, cardio-023, cardio-025, cardio-026 sample="증상이 지속되거나 악화되면 해당 진료과 전문의와 상담하세요...."
+- count=1719 ids=cardio-001, cardio-003, cardio-004, cardio-005, cardio-009, cardio-010, cardio-011, cardio-013, cardio-014, cardio-017, cardio-018, cardio-019 sample="항산화·염증 반응·대사 건강 관련 원료 연구에서 자주 다뤄지며, 개인의 증상 판단과 복용 결정은 현재 상태와 복용약을 확인해 의료진과 상의하는 방식이 안전합니다...."
+- count=1660 ids=cardio-001, cardio-005, cardio-009, cardio-011, cardio-013, cardio-017, cardio-018, cardio-019, cardio-022, cardio-023, cardio-025, cardio-026 sample="증상이 지속되거나 악화되면 해당 진료과 전문의와 상담하세요...."
 - count=226 ids=cancer-011, cancer-014, ci_018, ci_041, ci_044, ci_056, ci_058, ci_070, ci_074, ci_075, ci_079, ci_093 sample="시작 시점, 악화 요인, 동반 증상, 검사 결과를 함께 확인해 구분해야 합니다...."
 - count=203 ids=cancer-001, cancer-002, cancer-003, cancer-004, cancer-005, cancer-006, cancer-007, cancer-008, cancer-009, cancer-010, cancer-011, cancer-012 sample="치료 중 건강식품 선택은 반드시 담당 의료진과 상의해야 하며, 건강정보는 치료를 대체할 수 없습니다...."
 - count=203 ids=cancer-001, cancer-002, cancer-003, cancer-004, cancer-005, cancer-006, cancer-007, cancer-008, cancer-009, cancer-010, cancer-011, cancer-012 sample="건강식품 정보는 치료를 대체하지 않으며, 약물 상호작용 가능성을 반드시 담당 의료진과 확인해야 안전합니다...."
@@ -60,7 +60,7 @@
 - count=119 ids=rsp_021, rsp_022, rsp_023, rsp_024, rsp_025, rsp_026, rsp_027, rsp_028, rsp_029, rsp_031, rsp_032, rsp_034 sample="호흡곤란, 청색증, 고열이 있으면 지체 없이 호흡기 진료를 받아야 합니다...."
 - count=119 ids=rsp_021, rsp_022, rsp_023, rsp_024, rsp_025, rsp_026, rsp_027, rsp_028, rsp_029, rsp_031, rsp_032, rsp_034 sample="호흡곤란·흉통·고열 등 급성 악화 신호가 있으면 즉시 진료가 필요합니다...."
 - count=115 ids=woms-001, woms-002, woms-003, woms-004, woms-005, woms-006, woms-007, woms-008, woms-009, woms-010, woms-011, woms-012 sample="출혈, 주기 급변이 있으면 산부인과에서 원인 평가를 받는 것이 좋습니다...."
-- count=110 ids=cardio-001, cardio-005, cardio-009, cardio-011, cardio-013, cardio-017, cardio-018, cardio-019, cardio-022, cardio-023, cardio-025, cardio-026 sample="흉통, 호흡곤란, 실신, 급격한 부종이 동반되면 지체하지 말고 응급평가를 받아야 합니다...."
+- count=109 ids=cardio-001, cardio-005, cardio-009, cardio-011, cardio-013, cardio-017, cardio-018, cardio-019, cardio-022, cardio-023, cardio-025, cardio-026 sample="흉통, 호흡곤란, 실신, 급격한 부종이 동반되면 지체하지 말고 응급평가를 받아야 합니다...."
 - count=104 ids=cardio-001, cardio-019, cardio-023, cardio-037, cardio-056, cardio-074, meta-001, meta-012, meta_031, meta_081, meta_082, meta_090 sample="현재 수치와 부작용, 병용약을 함께 확인해 의료진과 조정하는 방식이 원칙입니다...."
 - count=104 ids=cardio-001, cardio-019, cardio-023, cardio-037, cardio-056, cardio-074, meta-001, meta-012, meta_031, meta_081, meta_082, meta_090 sample="먼저 복용 중인 약 목록, 기저질환, 부작용 징후를 확인하는 것이 핵심입니다...."
 - count=103 ids=cardio-005, cardio-018, cardio-022, cardio-025, cardio-030, cardio-036, cardio-045, cardio-049, cardio-050, cardio-066, meta-004, meta-008 sample="검사 결과는 측정 조건(시간대, 금식 여부, 복용약, 수면 상태)에 영향을 받으므로 이전 검사와 같은 조건에서 비교해야 해석 오류를 줄일 수 있습니다...."
@@ -68,7 +68,7 @@
 - count=102 ids=mens-001, mens-002, mens-003, mens-004, mens-005, mens-006, mens-007, mens-008, mens-009, mens-010, mens-011, mens-012 sample="전립선·성기능·호르몬 관련 문제는 진단 기준이 달라 전문 평가가 필요할 수 있습니다...."
 - count=97 ids=cancer-001, cancer-003, cancer-004, cancer-009, cancer-010, cancer-011, cancer-016, cancer-018, cancer-020, ci_018, ci_019, ci_021 sample="암 치료 중 건강관리 관련 질문에서는 치료 단계(수술·항암·방사선·회복기)를 먼저 구분해야 해석 오류를 줄일 수 있습니다...."
 - count=70 ids=ci_054, skin-002, skin-004, skin-008, skin-011, skin-012, skin-016, skin-018, skin-019, sh_017, sh_018, sh_020 sample="자세히 보면 피부 증상 질문의 핵심은 현재 상태를 구조화해 “무엇을 먼저 확인할지”를 정하는 데 있습니다...."
-- count=69 ids=cardio-001, cardio-005, cardio-011, cardio-013, cardio-017, cardio-018, cardio-022, cardio-027, cardio-029, cardio-030, cardio-032, cardio-033 sample="가정혈압 추세, 증상 발생 상황, 약물 순응도를 함께 보는 접근이 필요합니다...."
+- count=68 ids=cardio-001, cardio-005, cardio-011, cardio-013, cardio-017, cardio-018, cardio-022, cardio-027, cardio-029, cardio-030, cardio-032, cardio-035 sample="가정혈압 추세, 증상 발생 상황, 약물 순응도를 함께 보는 접근이 필요합니다...."
 - count=64 ids=skin-002, skin-004, skin-008, skin-012, skin-015, skin-016, skin-018, sh_013, sh_016, sh_017, sh_018, sh_020 sample="피부 증상 관련 질문에서는 피부 타입, 자극 요인, 제품 사용 패턴, 수면·스트레스 요인을 같이 봐야 실제 원인 접근이 가능합니다...."
 - count=61 ids=skin-002, skin-004, skin-008, skin-011, skin-012, skin-016, skin-018, skin-019, sh_017, sh_018, sh_020, sh_028 sample="짧은 답변 피부 증상 질문은 피부 맥락에서 증상, 검사, 치료, 생활요인을 함께 봐야 정확한 판단이 가능합니다...."
 - count=58 ids=cancer-009, cancer-012, cancer-015, cancer-019, ci_019, ci_026, ci_027, ci_031, ci_033, ci_037, ci_043, ci_049 sample="자세히 보면 암 치료 중 건강관리 질문의 핵심은 현재 상태를 구조화해 “무엇을 먼저 확인할지”를 정하는 데 있습니다...."
