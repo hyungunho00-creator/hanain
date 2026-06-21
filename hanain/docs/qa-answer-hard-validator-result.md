@@ -1,11 +1,11 @@
 # QA Answer Hard Validator Result
 
-- generatedAt: 2026-06-18T00:35:31.046Z
+- generatedAt: 2026-06-21T04:12:13.169Z
 - scanned: 2034
 - publicAnswers: 2034
 - hiddenMissingAnswer: 0
 - failures: 0
-- warnings: 570
+- warnings: 569
 - status: PASS
 
 ## Failures
@@ -162,7 +162,6 @@
 - sh_016: first paragraph starts with category label
 - sh_017: first paragraph starts with category label
 - sh_018: first paragraph starts with category label
-- sh_019: first paragraph starts with category label
 - sh_019: title keyword missing in first 300 chars
 - sh_020: first paragraph starts with category label
 - sh_020: title keyword missing in first 300 chars

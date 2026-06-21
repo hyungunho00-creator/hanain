@@ -60,6 +60,18 @@ export const REFERENCES = {
     tags: ['review', 'overview'],
     keyFindings: '갈조류 유래 플로로탄닌의 구조·생합성·생물활성·산업적 응용 종합 정리.',
   },
+  'retinoids-antiaging-2022': {
+    id: 'retinoids-antiaging-2022',
+    pmid: '36220974',
+    pmc: 'PMC9618501',
+    doi: '10.1007/s12325-022-02319-7',
+    title: 'Use of Retinoids in Topical Antiaging Treatments: A Focused Review of Clinical Evidence for Conventional and Nanoformulations',
+    authors: 'Milosheska D, Roskar R.',
+    journal: 'Advances in Therapy',
+    year: 2022,
+    tags: ['skin', 'retinoid', 'retinol', 'antiaging', 'review'],
+    keyFindings: 'Focused review of clinical evidence for topical retinoids in anti-aging care, including efficacy limits, stability, penetration, and irritation considerations.',
+  },
 
   // ─────────────────────────────────────────────────────────────────
   // [안전성 / 약물동태]

@@ -1,6 +1,6 @@
 # QA Duplicate Template Detector Result
 
-- generatedAt: 2026-06-18T00:40:47.711Z
+- generatedAt: 2026-06-21T04:08:36.708Z
 - validatedScanned: 2034
 - repeatedSentenceWarnings(>=4): 160
 - repeatedParagraphFails(>=3): 22
@@ -34,8 +34,8 @@
 
 ## Repeated Sentence Warnings
 
-- count=1730 ids=cardio-001, cardio-002, cardio-003, cardio-004, cardio-005, cardio-007, cardio-008, cardio-009, cardio-010, cardio-011, cardio-013, cardio-014 sample="항산화·염증 반응·대사 건강 관련 원료 연구에서 자주 다뤄지며, 개인의 증상 판단과 복용 결정은 현재 상태와 복용약을 확인해 의료진과 상의하는 방식이 안전합니다...."
-- count=1671 ids=cardio-001, cardio-002, cardio-005, cardio-007, cardio-008, cardio-009, cardio-011, cardio-013, cardio-015, cardio-016, cardio-017, cardio-018 sample="증상이 지속되거나 악화되면 해당 진료과 전문의와 상담하세요...."
+- count=1729 ids=cardio-001, cardio-002, cardio-003, cardio-004, cardio-005, cardio-007, cardio-008, cardio-009, cardio-010, cardio-011, cardio-013, cardio-014 sample="항산화·염증 반응·대사 건강 관련 원료 연구에서 자주 다뤄지며, 개인의 증상 판단과 복용 결정은 현재 상태와 복용약을 확인해 의료진과 상의하는 방식이 안전합니다...."
+- count=1670 ids=cardio-001, cardio-002, cardio-005, cardio-007, cardio-008, cardio-009, cardio-011, cardio-013, cardio-015, cardio-016, cardio-017, cardio-018 sample="증상이 지속되거나 악화되면 해당 진료과 전문의와 상담하세요...."
 - count=226 ids=cancer-011, cancer-014, ci_018, ci_041, ci_044, ci_056, ci_058, ci_070, ci_074, ci_075, ci_079, ci_093 sample="시작 시점, 악화 요인, 동반 증상, 검사 결과를 함께 확인해 구분해야 합니다...."
 - count=203 ids=cancer-001, cancer-002, cancer-003, cancer-004, cancer-005, cancer-006, cancer-007, cancer-008, cancer-009, cancer-010, cancer-011, cancer-012 sample="치료 중 건강식품 선택은 반드시 담당 의료진과 상의해야 하며, 건강정보는 치료를 대체할 수 없습니다...."
 - count=203 ids=cancer-001, cancer-002, cancer-003, cancer-004, cancer-005, cancer-006, cancer-007, cancer-008, cancer-009, cancer-010, cancer-011, cancer-012 sample="건강식품 정보는 치료를 대체하지 않으며, 약물 상호작용 가능성을 반드시 담당 의료진과 확인해야 안전합니다...."
@@ -48,8 +48,8 @@
 - count=140 ids=dige-001, dige-002, dige-003, dige-004, dige-005, dige-006, dige-007, dige-008, dige-009, dige-010, dige-011, dige-012 sample="간수치 또는 위장 증상은 같은 이름이라도 원인이 달라, 검사와 진료 맥락을 함께 확인하는 것이 중요합니다...."
 - count=136 ids=mental-extra-001, mental-extra-002, mental-extra-003, mental-extra-004, mental-extra-005, mental-extra-006, mental-extra-007, mental-extra-008, mental-extra-009, mental-extra-010, mental-extra-011, mental-extra-012 sample="증상이 일상 기능을 크게 떨어뜨리거나 자해 위험 신호가 있으면 정신건강의학과 상담을 서둘러야 합니다...."
 - count=136 ids=mental-extra-001, mental-extra-002, mental-extra-003, mental-extra-004, mental-extra-005, mental-extra-006, mental-extra-007, mental-extra-008, mental-extra-009, mental-extra-010, mental-extra-011, mental-extra-012 sample="자가진단은 참고용이며, 증상이 지속되면 정신건강의학과 또는 상담기관의 평가가 필요합니다...."
-- count=135 ids=skin-001, skin-002, skin-004, skin-005, skin-007, skin-008, skin-009, skin-011, skin-012, skin-013, skin-015, skin-016 sample="발진이 급격히 번지거나 통증·열감이 심해지면 피부과 진료로 원인을 확인해야 합니다...."
-- count=135 ids=skin-001, skin-002, skin-004, skin-005, skin-007, skin-008, skin-009, skin-011, skin-012, skin-013, skin-015, skin-016 sample="가려움·발진·색소·여드름 문제는 같은 이름이라도 진단과 치료가 달라 피부과 평가가 중요합니다...."
+- count=134 ids=skin-001, skin-002, skin-004, skin-005, skin-007, skin-008, skin-009, skin-011, skin-012, skin-013, skin-015, skin-016 sample="발진이 급격히 번지거나 통증·열감이 심해지면 피부과 진료로 원인을 확인해야 합니다...."
+- count=134 ids=skin-001, skin-002, skin-004, skin-005, skin-007, skin-008, skin-009, skin-011, skin-012, skin-013, skin-015, skin-016 sample="가려움·발진·색소·여드름 문제는 같은 이름이라도 진단과 치료가 달라 피부과 평가가 중요합니다...."
 - count=131 ids=meta-001, meta-002, meta-003, meta-004, meta-006, meta-008, meta-009, meta-010, meta-011, meta-012, meta-013, meta-015 sample="혈당·혈압·지질 같은 검사 수치와 식사·운동 기록을 함께 봐야 실제 관리 우선순위를 정확히 정할 수 있습니다...."
 - count=131 ids=meta-001, meta-002, meta-003, meta-004, meta-006, meta-008, meta-009, meta-010, meta-011, meta-012, meta-013, meta-015 sample="공복·식후 혈당, 혈압, 지질, 체중, 허리둘레, 수면, 활동량을 한 화면에서 보면 조정 우선순위를 세우기 쉽습니다...."
 - count=131 ids=meta-001, meta-002, meta-003, meta-004, meta-006, meta-008, meta-009, meta-010, meta-011, meta-012, meta-013, meta-015 sample="먼저 확인할 것 최근 검사 수치와 검사 날짜 식사 구성과 식사 시간 주당 운동 빈도·강도 복용 중 약물/건강식품 목록 체중·허리둘레 변화 증상이 시작된 시점과 악화 요인 병원 진료가 필요한 경우 혈당이 매우 높거나 저혈당 증상이 반복될 때 극심한 갈증·다뇨·의식 저하가 동반될 때 흉통·..."
@@ -67,9 +67,9 @@
 - count=102 ids=mens-001, mens-002, mens-003, mens-004, mens-005, mens-006, mens-007, mens-008, mens-009, mens-010, mens-011, mens-012 sample="전립선·성기능·호르몬 관련 문제는 진단 기준이 달라 전문 평가가 필요할 수 있습니다...."
 - count=97 ids=cancer-001, cancer-003, cancer-004, cancer-009, cancer-010, cancer-011, cancer-016, cancer-018, cancer-020, ci_018, ci_019, ci_021 sample="암 치료 중 건강관리 관련 질문에서는 치료 단계(수술·항암·방사선·회복기)를 먼저 구분해야 해석 오류를 줄일 수 있습니다...."
 - count=74 ids=cardio-001, cardio-002, cardio-005, cardio-008, cardio-011, cardio-013, cardio-016, cardio-017, cardio-018, cardio-022, cardio-024, cardio-027 sample="가정혈압 추세, 증상 발생 상황, 약물 순응도를 함께 보는 접근이 필요합니다...."
-- count=71 ids=ci_054, skin-002, skin-004, skin-008, skin-011, skin-012, skin-016, skin-018, skin-019, sh_017, sh_018, sh_019 sample="자세히 보면 피부 증상 질문의 핵심은 현재 상태를 구조화해 “무엇을 먼저 확인할지”를 정하는 데 있습니다...."
+- count=70 ids=ci_054, skin-002, skin-004, skin-008, skin-011, skin-012, skin-016, skin-018, skin-019, sh_017, sh_018, sh_020 sample="자세히 보면 피부 증상 질문의 핵심은 현재 상태를 구조화해 “무엇을 먼저 확인할지”를 정하는 데 있습니다...."
 - count=64 ids=skin-002, skin-004, skin-008, skin-012, skin-015, skin-016, skin-018, sh_013, sh_016, sh_017, sh_018, sh_020 sample="피부 증상 관련 질문에서는 피부 타입, 자극 요인, 제품 사용 패턴, 수면·스트레스 요인을 같이 봐야 실제 원인 접근이 가능합니다...."
-- count=62 ids=skin-002, skin-004, skin-008, skin-011, skin-012, skin-016, skin-018, skin-019, sh_017, sh_018, sh_019, sh_020 sample="짧은 답변 피부 증상 질문은 피부 맥락에서 증상, 검사, 치료, 생활요인을 함께 봐야 정확한 판단이 가능합니다...."
+- count=61 ids=skin-002, skin-004, skin-008, skin-011, skin-012, skin-016, skin-018, skin-019, sh_017, sh_018, sh_020, sh_028 sample="짧은 답변 피부 증상 질문은 피부 맥락에서 증상, 검사, 치료, 생활요인을 함께 봐야 정확한 판단이 가능합니다...."
 - count=58 ids=cancer-009, cancer-012, cancer-015, cancer-019, ci_019, ci_026, ci_027, ci_031, ci_033, ci_037, ci_043, ci_049 sample="자세히 보면 암 치료 중 건강관리 질문의 핵심은 현재 상태를 구조화해 “무엇을 먼저 확인할지”를 정하는 데 있습니다...."
 - count=47 ids=cancer-001, cancer-005, cancer-013, cancer-018, ci_028, ci_046, ci_047, ci_062, ci_065, ci_077, ci_094, wh-extra-058 sample="짧은 답변 암 치료 중 건강관리는 손상·증상 정도와 검사 결과를 기준으로 보존치료, 약물치료, 재활치료, 시술/수술 여부를 나눠 결정합니다...."
 - count=47 ids=cancer-001, cancer-005, cancer-013, cancer-018, ci_028, ci_046, ci_047, ci_062, ci_065, ci_077, ci_094, wh-extra-058 sample="자세히 보면 암 치료 중 건강관리 방향은 “현재 기능 제한이 어느 정도인지”와 “검사에서 확인된 손상 범위가 무엇인지”를 함께 보고 정합니다...."
