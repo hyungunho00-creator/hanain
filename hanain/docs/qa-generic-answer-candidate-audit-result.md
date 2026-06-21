@@ -1,6 +1,6 @@
 # Q&A Generic Answer Candidate Audit
 
-- generatedAt: 2026-06-21T08:28:19.147Z
+- generatedAt: 2026-06-21T08:37:52.099Z
 - source: src/data/qa.json
 - totalQuestions: 2034
 - candidates: 864
