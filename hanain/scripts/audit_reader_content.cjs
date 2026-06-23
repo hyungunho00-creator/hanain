@@ -4,6 +4,9 @@ const path = require('path');
 const root = path.resolve(__dirname, '..');
 
 const forbidden = [
+  { label: 'public internal AEO heading', pattern: /AEO\s*\uD575\uC2EC\s*\uB2F5\uBCC0/g },
+  { label: 'public search-operator wording', pattern: /\uAC80\uC0C9\uC790/g },
+  { label: 'public consultant-manual heading', pattern: /\uC0C1\uB2F4\s*\uC804\s*\uC9C8\uBB38\uC73C\uB85C\s*\uBC14\uAFB8\uBA74|\uC0C1\uB2F4\s*\uB9E4\uB274\uC5BC|\uC0C1\uB2F4\s*\uBA54\uB274\uC5BC/g },
   { label: 'internal CTA wording', pattern: /\bCTA\b|CTA_/g },
   { label: 'SEO direction wording', pattern: /SEO\s*방향|검색\s*의도|상위노출|선점/g },
   { label: 'business planning wording', pattern: /사업계획|내부\s*전략|작업\s*지시/g },

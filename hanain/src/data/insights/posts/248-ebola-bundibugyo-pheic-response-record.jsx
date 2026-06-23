@@ -33,7 +33,7 @@ export default {
       <H2 id="signal">최신 신호</H2>
       <P speakable>
         WHO는 2026년 5월 Bundibugyo virus disease 상황을 PHEIC로 판단했고, 6월에는 Africa CDC와 함께 대륙
-        대응계획을 발표했습니다. 검색자가 볼 핵심은 공포가 아니라 대응 체계입니다.
+        대응계획을 발표했습니다. 독자가 볼 핵심은 공포가 아니라 대응 체계입니다.
       </P>
       <UL items={[
         '발생 지역과 여행·접촉 이력',

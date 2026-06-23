@@ -35,7 +35,7 @@ ${post.phlorotannin}
 
 ${bullets(post.consult)}
 
-## 검색자가 자주 묻는 질문
+## 독자가 자주 묻는 질문
 
 ### ${post.faqs[0][0]}
 
