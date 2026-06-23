@@ -2867,6 +2867,21 @@ function categoryPath(category) {
   return map[category] || '/blog'
 }
 
+const GENERIC_REFERENCE_BLOCK = `
+
+## 참고 자료
+
+- [Google Search Central: Creating helpful, reliable, people-first content](https://developers.google.com/search/docs/fundamentals/creating-helpful-content)
+- [FDA: Questions and Answers on Dietary Supplements](https://www.fda.gov/food/information-consumers-using-dietary-supplements/questions-and-answers-dietary-supplements)
+- [NIH Office of Dietary Supplements: Frequently Asked Questions](https://ods.od.nih.gov/HealthInformation/ODS_Frequently_Asked_Questions.aspx)
+- [PubMed: Phlorotannins from Ecklonia cava review](https://pubmed.ncbi.nlm.nih.gov/20803523/)
+`
+
+function withReferenceBlock(content) {
+  const text = String(content || '')
+  return /https?:\/\//i.test(text) ? text : `${text}${GENERIC_REFERENCE_BLOCK}`
+}
+
 function buildContent(topic) {
   const catLabel = categoryLabel(topic.category)
   const faqs = buildFaq(topic)
@@ -2924,6 +2939,13 @@ ${topic.title}는 ${catLabel} 정보를 찾는 사용자가 가장 자주 마주
 
 ${internalLinkMd}
 
+## 참고 자료
+
+- [Google Search Central: Creating helpful, reliable, people-first content](https://developers.google.com/search/docs/fundamentals/creating-helpful-content)
+- [FDA: Questions and Answers on Dietary Supplements](https://www.fda.gov/food/information-consumers-using-dietary-supplements/questions-and-answers-dietary-supplements)
+- [NIH Office of Dietary Supplements: Frequently Asked Questions](https://ods.od.nih.gov/HealthInformation/ODS_Frequently_Asked_Questions.aspx)
+- [PubMed: Phlorotannins from Ecklonia cava review](https://pubmed.ncbi.nlm.nih.gov/20803523/)
+
 ## 자주 묻는 질문(FAQ)
 
 ### 1) ${faqs[0]}
@@ -2960,7 +2982,7 @@ export const LOCAL_SEO_EXPANSION_POSTS = SEO_TOPICS.map((topic) => {
     slug: topic.slug,
     title: override?.title || topic.title,
     excerpt: override?.excerpt || `${topic.primaryKeyword} 관점에서 확인 기준·주의점·내부 링크를 정리한 정보형 글입니다.`,
-    content: override?.content || buildContent(topic),
+    content: withReferenceBlock(override?.content || buildContent(topic)),
     category,
     tags: override?.tags || [...new Set([...(topic.tags || []), '플로로탄닌', '건강정보'])].slice(0, 8),
     meta_title: override?.meta_title || `${topic.title} | 플로로탄닌·감태추출물 건강정보`,

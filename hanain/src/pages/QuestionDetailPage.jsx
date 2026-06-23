@@ -84,6 +84,24 @@ function engagementNumber(...values) {
   return 0
 }
 
+function normalizeReferenceEntry(entry) {
+  if (!entry) return null
+  if (typeof entry === 'string') {
+    const text = entry.trim()
+    if (!text) return null
+    const urlMatch = text.match(/https?:\/\/[^\s)]+/i)
+    return { title: text, url: urlMatch ? urlMatch[0] : '' }
+  }
+  if (typeof entry === 'object') {
+    const title = String(entry.title || entry.name || entry.label || entry.url || '').trim()
+    const url = String(entry.url || entry.href || entry.link || '').trim()
+    if (!title && !url) return null
+    return { title: title || url, url }
+  }
+  const text = String(entry).trim()
+  return text ? { title: text, url: '' } : null
+}
+
 async function getFallbackQuestion(slug) {
   const data = await ensureQaFallback()
   const q = data.questions.find(q => {
@@ -303,6 +321,9 @@ export default function QuestionDetailPage() {
     ? { id: 'derived', content: resolvedAnswer.html, is_official: true }
     : null)
   const isPublicValidated = shouldEmitQASchema(question)
+  const textReferences = (question.references_text || [])
+    .map(normalizeReferenceEntry)
+    .filter(Boolean)
 
   const difficultyLabel = { basic: '기초', intermediate: '중급', advanced: '심화' }[question.difficulty] || '기초'
   const authorTypeLabel = { self: '본인', family: '가족', caregiver: '보호자' }[question.author_type] || ''
@@ -396,7 +417,7 @@ export default function QuestionDetailPage() {
         description={seoDesc}
         keywords={[cat?.name, ...(question.tags || []), '플로로탄닌', '감태추출물', '해양 폴리페놀', '건강정보 아카이브', '연구기반 Q&A'].filter(Boolean).join(', ')}
         canonical={pageUrl}
-        noindex={false}
+        noindex={!isPublicValidated}
         ogType="article"
         ogImage={`https://phlorotannin.com/og/qa-${CAT_OG_SLUG[question.category_id] || 'default'}.png`}
         ogImageAlt={`${cat?.name || '건강정보'} Q&A: ${question.title} — 플로로탄닌·감태추출물 종합 건강정보 데이터센터`}
@@ -530,17 +551,29 @@ export default function QuestionDetailPage() {
               )}
 
               {/* 보조 출처 (가이드라인·진료지침 등 PubMed 비등재) */}
-              {question.references_text && question.references_text.length > 0 && (
+              {textReferences.length > 0 && (
                 <section className="bg-white rounded-lg border border-gray-200 overflow-hidden">
                   <div className="px-6 py-5">
                     <h3 className="text-[13px] font-semibold uppercase tracking-[0.14em] text-gray-700 mb-3">
                       보조 출처 (가이드라인·진료지침)
                     </h3>
                     <ul className="space-y-2 text-[13px] text-gray-700">
-                      {question.references_text.map((t, i) => (
+                      {textReferences.map((ref, i) => (
                         <li key={i} className="flex gap-3">
                           <span className="flex-shrink-0 w-6 text-[12px] text-gray-400 tabular-nums">[{i + 1}]</span>
-                          <span>{t}</span>
+                          {ref.url ? (
+                            <a
+                              href={ref.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1 text-gray-700 hover:text-gray-900 underline decoration-gray-300 underline-offset-2 break-all"
+                            >
+                              {ref.title}
+                              <ExternalLink className="w-3 h-3 shrink-0" strokeWidth={1.8} aria-hidden="true" />
+                            </a>
+                          ) : (
+                            <span>{ref.title}</span>
+                          )}
                         </li>
                       ))}
                     </ul>

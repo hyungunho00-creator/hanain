@@ -332,7 +332,8 @@ export default function QAPage() {
       .then(r => r.json())
       .then(data => {
         const qs = data.questions || []
-        setAllQuestions(qs)
+        const publicQs = qs.filter((item) => isPublicQa(item))
+        setAllQuestions(publicQs)
 
         // 카테고리 목록 — qa.json categories를 Source of Truth로 사용
         // (fix 2026-05-21: 하드코딩된 skin_hair → qa.json의 skin/hair 분리 자동 반영)
@@ -343,14 +344,14 @@ export default function QAPage() {
 
         // 카테고리별 카운트
         const counts = {}
-        qs.forEach(q => {
+        publicQs.forEach(q => {
           const c = q.category || q.category_id || ''
           counts[c] = (counts[c] || 0) + 1
         })
         setCatCounts(counts)
 
         // 인기 질문 (조회수 순 상위 10)
-        const popular = [...qs]
+        const popular = [...publicQs]
           .sort((a, b) => engagementNumber(b.views, b.view_count) - engagementNumber(a.views, a.view_count))
           .slice(0, 10)
         setPopularList(popular)

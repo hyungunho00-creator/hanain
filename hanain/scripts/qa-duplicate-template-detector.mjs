@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { getRenderableQAAnswer } from '../src/lib/qaAnswer.js'
+import { getRenderableQAAnswer, shouldEmitQASchema } from '../src/lib/qaAnswer.js'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const QA_PATH = path.join(ROOT, 'public', 'qa.json')
@@ -70,13 +70,15 @@ function run() {
       id: item.id,
       question: item.question || '',
       body: getPublicAnswer(item),
+      publicExposure: shouldEmitQASchema(item),
     }))
     .filter((item) => item.body.length > 0)
+  const exposureRows = rows.filter((item) => item.publicExposure)
 
   const sentenceMap = new Map()
   const paragraphMap = new Map()
 
-  for (const row of rows) {
+  for (const row of exposureRows) {
     for (const sentence of splitSentences(row.body)) {
       if (!sentenceMap.has(sentence)) sentenceMap.set(sentence, [])
       sentenceMap.get(sentence).push(row.id)
@@ -98,25 +100,26 @@ function run() {
     .sort((a, b) => b[1].length - a[1].length)
 
   const similarPairs = []
-  const maxRowsForPairwise = Math.min(rows.length, 120)
+  const maxRowsForPairwise = Math.min(exposureRows.length, 120)
   for (let i = 0; i < maxRowsForPairwise; i += 1) {
     for (let j = i + 1; j < maxRowsForPairwise; j += 1) {
-      if (Math.abs(rows[i].body.length - rows[j].body.length) > 700) continue
-      const score = similarity(rows[i].body, rows[j].body)
+      if (Math.abs(exposureRows[i].body.length - exposureRows[j].body.length) > 700) continue
+      const score = similarity(exposureRows[i].body, exposureRows[j].body)
       if (score >= 0.35) {
-        similarPairs.push({ a: rows[i].id, b: rows[j].id, similarity: Number(score.toFixed(3)) })
+        similarPairs.push({ a: exposureRows[i].id, b: exposureRows[j].id, similarity: Number(score.toFixed(3)) })
       }
     }
   }
   similarPairs.sort((a, b) => b.similarity - a.similarity)
 
-  const fail = repeatedParagraphFails.length >= 400
+  const fail = repeatedParagraphFails.length > 10 || similarPairs.length > 1000
   const status = fail ? 'FAIL' : 'PASS'
   const lines = [
     '# QA Duplicate Template Detector Result',
     '',
     `- generatedAt: ${new Date().toISOString()}`,
-    `- validatedScanned: ${rows.length}`,
+    `- rawValidatedScanned: ${rows.length}`,
+    `- publicExposureScanned: ${exposureRows.length}`,
     `- repeatedSentenceWarnings(>=4): ${repeatedSentenceWarnings.length}`,
     `- repeatedParagraphFails(>=3): ${repeatedParagraphFails.length}`,
     `- similarityPairs(>=35% manual-review, sample=${maxRowsForPairwise}): ${similarPairs.length}`,
@@ -142,7 +145,8 @@ function run() {
   fs.mkdirSync(path.dirname(OUT_PATH), { recursive: true })
   fs.writeFileSync(OUT_PATH, `${lines.join('\n')}\n`, 'utf8')
   console.log(JSON.stringify({
-    validatedScanned: rows.length,
+    rawValidatedScanned: rows.length,
+    publicExposureScanned: exposureRows.length,
     repeatedSentenceWarnings: repeatedSentenceWarnings.length,
     repeatedParagraphFails: repeatedParagraphFails.length,
     similarityPairs: similarPairs.length,

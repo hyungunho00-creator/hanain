@@ -11,6 +11,7 @@ import path from 'path'
 import { LOCAL_TREND_BLOG_POSTS } from '../src/data/localTrendBlogPosts.js'
 import { QA_TOTAL } from '../src/data/siteStats.js'
 import { canonicalQuestionSlug, questionSlugCandidates } from '../src/lib/qaSlug.js'
+import { answerPlainTextForMeta, shouldEmitQASchema } from '../src/lib/qaAnswer.js'
 
 const SITE = 'https://phlorotannin.com'
 const DEFAULT_ROBOTS = 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
@@ -765,9 +766,10 @@ function staticMetaFor(pathname) {
       const catId = q.category || ''
       const catName = CATEGORY_NAMES[catId] || ''
       const question = String(q.question || readable).trim()
-      const answer   = String(q.answer || '').trim()
+      const answer   = answerPlainTextForMeta(q).trim()
+      const isIndexable = shouldEmitQASchema(q)
       // description: 답변 첫 160자 (한글 가독성)
-      const descRaw = answer.replace(/\s+/g, ' ').trim()
+      const descRaw = stripToPlainText(answer).replace(/\s+/g, ' ').trim()
       const desc = descRaw
         ? (descRaw.length > 158 ? descRaw.slice(0, 157) + '…' : descRaw)
         : `${question} 관련 연구기반 Q&A — 플로로탄닌·감태추출물·해양 폴리페놀과 관련된 질환·증상·성분·건강관리 정보를 정리한 종합 건강정보 데이터센터의 Q&A 페이지입니다.`
@@ -776,6 +778,7 @@ function staticMetaFor(pathname) {
         title: `${question} | ${catName || '연구기반 Q&A'} — 플로로탄닌·감태추출물 건강정보`,
         desc,
         canonical: `${SITE}${pathname}`,
+        robots: isIndexable ? undefined : 'noindex,follow',
         ogImage: ogImageForCategory(catId),
         ogImageAlt: `${question} — ${catName || '연구기반 Q&A'} | 플로로탄닌·감태추출물 종합 건강정보 데이터센터`,
       }
@@ -1588,7 +1591,8 @@ function buildQuestionJsonLd(pathname, q) {
   if (!q || !q.question) return []
   const pageUrl = `${SITE}${pathname}`
   const question = String(q.question).trim()
-  const answer   = String(q.answer || '').trim()
+  const answer   = answerPlainTextForMeta(q).trim()
+  const isIndexable = shouldEmitQASchema(q)
   const catId    = q.category || ''
   const catName  = CATEGORY_NAMES[catId] || '건강 Q&A'
   const ogSlug   = CAT_OG_SLUG[catId] || ''
@@ -1618,9 +1622,9 @@ function buildQuestionJsonLd(pathname, q) {
       "@id": `${pageUrl}#question`,
       "name": safeQuestion,
       "text": safeQuestion,
-      "answerCount": safeAnswer ? 1 : 0,
+      "answerCount": isIndexable && safeAnswer ? 1 : 0,
       "author": { "@type": "Person", "name": "건강 정보 검색 사용자" },
-      ...(safeAnswer ? {
+      ...(isIndexable && safeAnswer ? {
         "acceptedAnswer": {
           "@type": "Answer",
           "text": safeAnswer,

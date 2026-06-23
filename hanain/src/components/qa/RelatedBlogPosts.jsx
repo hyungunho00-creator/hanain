@@ -36,6 +36,23 @@ const QA_TO_BLOG_CAT = {
   mens_health:            null,
 }
 
+const GENERIC_RELATED_TAGS = new Set([
+  '플로로탄닌',
+  '감태',
+  '감태추출물',
+  '항산화',
+  '해양폴리페놀',
+  '폴리페놀',
+  '건강정보',
+  '자주묻는질문',
+])
+
+function specificTags(tags) {
+  return (tags || [])
+    .map(t => (t || '').trim())
+    .filter(t => t && !GENERIC_RELATED_TAGS.has(t))
+}
+
 export default function RelatedBlogPosts({ qaTags = [], qaCategory = null, max = 3, title = '관련 블로그' }) {
   const partner = usePartner()
   const [posts, setPosts] = useState(null)
@@ -55,12 +72,12 @@ export default function RelatedBlogPosts({ qaTags = [], qaCategory = null, max =
 
   const related = useMemo(() => {
     if (!posts || posts.length === 0) return []
-    const tagSet = new Set((qaTags || []).map(t => (t || '').trim()).filter(Boolean))
+    const tagSet = new Set(specificTags(qaTags))
     const fallbackCat = qaCategory ? QA_TO_BLOG_CAT[qaCategory] : null
 
     const scored = []
     for (const p of posts) {
-      const pTags = (p.tags || []).map(t => (t || '').trim())
+      const pTags = specificTags(p.tags)
       const overlap = pTags.reduce((acc, t) => acc + (tagSet.has(t) ? 1 : 0), 0)
       if (overlap > 0) {
         scored.push({ p, score: overlap })

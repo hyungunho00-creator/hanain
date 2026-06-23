@@ -16,6 +16,7 @@ import { MessageSquare, ChevronRight, Eye } from 'lucide-react'
 import { usePartner } from '../../context/PartnerContext'
 import { withRef } from '../../lib/partnerRef'
 import { canonicalQuestionSlug } from '../../lib/qaSlug'
+import { shouldEmitQASchema } from '../../lib/qaAnswer'
 
 // 블로그 카테고리 → Q&A 카테고리 매핑 (fallback용)
 // 블로그: diabetes, cancer, brain, cardiovascular, inflammation, skin, research, general
@@ -29,6 +30,23 @@ const BLOG_TO_QA_CAT = {
   skin:           'skin',
   research:       null,        // 매핑 없음
   general:        null,
+}
+
+const GENERIC_RELATED_TAGS = new Set([
+  '플로로탄닌',
+  '감태',
+  '감태추출물',
+  '항산화',
+  '해양폴리페놀',
+  '폴리페놀',
+  '건강정보',
+  '자주묻는질문',
+])
+
+function specificTags(tags) {
+  return (tags || [])
+    .map(t => (t || '').trim())
+    .filter(t => t && !GENERIC_RELATED_TAGS.has(t))
 }
 
 export default function RelatedQA({ blogTags = [], blogCategory = null, max = 3, title = '관련 Q&A' }) {
@@ -49,12 +67,13 @@ export default function RelatedQA({ blogTags = [], blogCategory = null, max = 3,
 
   const related = useMemo(() => {
     if (!questions || questions.length === 0) return []
-    const tagSet = new Set((blogTags || []).map(t => (t || '').trim()).filter(Boolean))
+    const tagSet = new Set(specificTags(blogTags))
     const fallbackCat = blogCategory ? BLOG_TO_QA_CAT[blogCategory] : null
 
     const scored = []
     for (const q of questions) {
-      const qTags = (q.tags || []).map(t => (t || '').trim())
+      if (!shouldEmitQASchema(q)) continue
+      const qTags = specificTags(q.tags)
       const overlap = qTags.reduce((acc, t) => acc + (tagSet.has(t) ? 1 : 0), 0)
       if (overlap > 0) {
         scored.push({ q, score: overlap, views: q.views || q.view_count || 0 })
@@ -63,6 +82,7 @@ export default function RelatedQA({ blogTags = [], blogCategory = null, max = 3,
     // 매칭 0건 → 같은 Q&A 카테고리 fallback
     if (scored.length === 0 && fallbackCat) {
       for (const q of questions) {
+        if (!shouldEmitQASchema(q)) continue
         if (q.category === fallbackCat) {
           scored.push({ q, score: 0, views: q.views || q.view_count || 0 })
         }
