@@ -8,7 +8,7 @@
  *   - peer-reviewed 출처 ID 배열 (references.js의 키)
  *   - FAQPage용 Q&A 4~6개
  *
- * SEO 전략:
+ * 정보구조 전략:
  *   - 검색량 큰 "X vs Y" 쿼리에 직접 대응
  *   - 두 대상 모두를 다루므로 양쪽 키워드 모두에 노출
  *   - 비교 자체가 People Also Ask 노출 핵심 형태
