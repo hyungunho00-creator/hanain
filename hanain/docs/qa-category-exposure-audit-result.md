@@ -1,6 +1,6 @@
 # QA Category Exposure Audit
 
-- generatedAt: 2026-06-20T07:24:02.344Z
+- generatedAt: 2026-06-23T12:59:51.085Z
 - sourceOfTruth: src/data/qa.json and public/qa.json
 - categories: 13
 - status: PASS
@@ -9,7 +9,7 @@
 
 | category | src | public |
 |---|---:|---:|
-| metabolism | 172 | 172 |
+| metabolism | 173 | 173 |
 | cancer_immune | 225 | 225 |
 | digestive | 162 | 162 |
 | cardiovascular | 162 | 162 |
@@ -19,7 +19,7 @@
 | skin | 155 | 155 |
 | hair | 83 | 83 |
 | respiratory | 148 | 148 |
-| infection_inflammation | 149 | 149 |
+| infection_inflammation | 151 | 151 |
 | womens_health | 148 | 148 |
 | mens_health | 147 | 147 |
 

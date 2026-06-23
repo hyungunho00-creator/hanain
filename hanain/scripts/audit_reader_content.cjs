@@ -5,8 +5,9 @@ const root = path.resolve(__dirname, '..');
 
 const forbidden = [
   { label: 'public internal AEO heading', pattern: /AEO\s*\uD575\uC2EC\s*\uB2F5\uBCC0/g },
-  { label: 'public SEO/AEO operator label', pattern: /SEO\s*\/\s*AEO|AEO\s*LINKS|SEO\s*LINKS/g },
+  { label: 'public SEO/AEO operator label', pattern: /SEO\s*\/\s*AEO|AEO\/SEO|AEO\s*LINKS|SEO\s*LINKS/g },
   { label: 'public search-operator wording', pattern: /\uAC80\uC0C9\uC790/g },
+  { label: 'public search-asset wording', pattern: /\uAC80\uC0C9\uC790\uC0B0/g },
   { label: 'public search-and-ai production wording', pattern: /\uAC80\uC0C9\uACFC\s*AI\s*\uB2F5\uBCC0\uC5D0\s*\uAC15\uD55C\s*Q&A/g },
   { label: 'public awkward magazine negation', pattern: /\uC18C\uBE44\uC790\s*\uC815\uBCF4\uC9C0\uC774\s*\uC544\uB2C8\uB77C|\uAC74\uAC15\s*\uC815\uBCF4\uC9C0\uC774\s*\uC544\uB2C8\uB77C/g },
   { label: 'public consultant-manual heading', pattern: /\uC0C1\uB2F4\s*\uC804\s*\uC9C8\uBB38\uC73C\uB85C\s*\uBC14\uAFB8\uBA74|\uC0C1\uB2F4\s*\uB9E4\uB274\uC5BC|\uC0C1\uB2F4\s*\uBA54\uB274\uC5BC/g },
@@ -100,6 +101,7 @@ function shouldApplyMagazineAudit(filePath) {
 }
 
 addDir(path.join(root, 'src', 'data', 'insights', 'posts'), '.jsx');
+addFile(path.join(root, 'src', 'data', 'localSeoExpansionPosts.js'));
 addFile(path.join(root, 'src', 'data', 'qa.json'));
 addFile(path.join(root, 'public', 'qa.json'));
 addFile(path.join(root, 'public', 'rss.xml'));

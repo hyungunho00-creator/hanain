@@ -41,7 +41,7 @@ const EXAMPLE_ROWS = [
   ['블로그', '회복 기간·주의사항·병원 선택 기준 정리', '긴 체류시간과 내부링크'],
   ['네이버 카페', '실제 상담 전 체크리스트 공유', '커뮤니티 신뢰 신호'],
   ['클립/쇼츠', '30초 회복 체크포인트 영상', '짧은 영상 유입'],
-  ['상담 CTA', '전화·문자·예약 문의 연결', '전환 동선'],
+  ['문의 연결', '전화·문자·예약 문의 연결', '전환 동선'],
 ]
 
 export default function ArchiveDemoPage() {
@@ -50,22 +50,22 @@ export default function ArchiveDemoPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
-    name: '검색자산 아카이브 운영 예시',
+    name: '건강정보 아카이브 운영 예시',
     url: pageUrl,
-    description: 'Q&A, 블로그, 카페, 영상, 상담 동선을 연결하는 검색자산 아카이브 운영 예시입니다.',
+    description: 'Q&A, 블로그, 카페, 영상, 상담 동선을 연결하는 건강정보 아카이브 운영 예시입니다.',
     inLanguage: 'ko-KR',
-    about: ['검색자산', '병원 마케팅', 'Q&A 아카이브', 'AEO', 'SEO'],
+    about: ['건강정보 아카이브', '병원 마케팅', 'Q&A 아카이브', '질문형 정보', '검색 구조'],
   }
 
   return (
     <>
       <SEOHead
-        title="검색자산 아카이브 운영 예시 | 플로로탄닌"
-        description="플로로탄닌닷컴의 Q&A·블로그·태그·영상·카페·상담 연결 구조를 병원 영업 예시로 설명하는 검색자산 아카이브 데모 페이지입니다."
-        keywords="검색자산 아카이브, 병원 SEO, 병원 AEO, Q&A 아카이브, 병원 콘텐츠 마케팅"
+        title="건강정보 아카이브 운영 예시 | 플로로탄닌"
+        description="플로로탄닌닷컴의 Q&A·블로그·태그·영상·카페·상담 연결 구조를 병원 영업 예시로 설명하는 건강정보 아카이브 데모 페이지입니다."
+        keywords="건강정보 아카이브, 병원 검색 구조, 질문형 정보, Q&A 아카이브, 병원 콘텐츠 마케팅"
         canonical={pageUrl}
         ogImage="https://phlorotannin.com/og-image.png"
-        ogImageAlt="검색자산 아카이브 운영 예시와 Q&A 블로그 영상 상담 연결 구조"
+        ogImageAlt="건강정보 아카이브 운영 예시와 Q&A 블로그 영상 상담 연결 구조"
         jsonLd={jsonLd}
       />
 
@@ -79,7 +79,7 @@ export default function ArchiveDemoPage() {
               </span>
             </div>
             <h1 className="max-w-4xl text-3xl font-black leading-tight tracking-tight md:text-5xl">
-              병원 영업에서 보여줄 수 있는 검색자산 아카이브 운영 예시
+              병원 영업에서 보여줄 수 있는 건강정보 아카이브 운영 예시
             </h1>
             <p className="mt-5 max-w-3xl text-[15px] leading-8 text-gray-600 md:text-base">
               플로로탄닌닷컴은 단일 랜딩페이지가 아니라 질문형 Q&A, 연구 블로그, 태그 아카이브,
@@ -119,7 +119,7 @@ export default function ArchiveDemoPage() {
 
         <section className="border-y border-gray-200 bg-gray-50">
           <div className="mx-auto max-w-6xl px-5 py-12 md:py-16">
-            <h2 className="text-2xl font-black tracking-tight">콘텐츠 하나가 검색자산으로 쌓이는 순서</h2>
+            <h2 className="text-2xl font-black tracking-tight">콘텐츠 하나가 정보 아카이브로 쌓이는 순서</h2>
             <div className="mt-8 grid gap-4 lg:grid-cols-5">
               {FLOW.map((item, index) => {
                 const Icon = item.icon
@@ -144,9 +144,9 @@ export default function ArchiveDemoPage() {
             <div>
               <h2 className="text-2xl font-black tracking-tight">병원장에게 설명할 핵심 문장</h2>
               <p className="mt-4 text-[15px] leading-8 text-gray-600">
-                “홈페이지는 예쁘게 만드는 것보다 검색자가 묻는 질문을 계속 쌓는 구조가 중요합니다.
+                “홈페이지는 예쁘게 만드는 것보다 방문자가 실제로 묻는 질문을 계속 쌓는 구조가 중요합니다.
                 Q&A 하나가 블로그, 카페, 영상, 상담 동선으로 확장되면 병원 홈페이지가 단순 소개 페이지가 아니라
-                검색자산 아카이브로 작동합니다.”
+                건강정보 아카이브로 작동합니다.”
               </p>
               <div className="mt-6 rounded-md border border-gray-200 bg-gray-50 p-5 text-sm leading-7 text-gray-700">
                 플로로탄닌닷컴은 이 구조를 건강정보 소재로 운영한 예시입니다. 병원에는 같은 방식을
@@ -174,7 +174,7 @@ export default function ArchiveDemoPage() {
         <section className="border-t border-gray-200 bg-gray-950">
           <div className="mx-auto flex max-w-6xl flex-col gap-5 px-5 py-10 text-white md:flex-row md:items-center md:justify-between">
             <div>
-              <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-gray-400">Demo CTA</p>
+              <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-gray-400">Demo Flow</p>
               <h2 className="mt-2 text-2xl font-black">이 구조를 병원 업종으로 바꿔 보여줄 수 있습니다.</h2>
             </div>
             <Link to="/partner" className="inline-flex w-fit items-center gap-2 rounded-md bg-white px-5 py-3 text-sm font-bold text-gray-950">
