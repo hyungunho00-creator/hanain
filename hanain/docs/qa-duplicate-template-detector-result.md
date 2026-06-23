@@ -1,10 +1,10 @@
 # QA Duplicate Template Detector Result
 
-- generatedAt: 2026-06-21T09:43:20.472Z
-- validatedScanned: 2034
+- generatedAt: 2026-06-23T10:16:37.672Z
+- validatedScanned: 2037
 - repeatedSentenceWarnings(>=4): 160
-- repeatedParagraphFails(>=3): 23
-- similarityPairs(>=35% manual-review, sample=120): 2331
+- repeatedParagraphFails(>=3): 25
+- similarityPairs(>=35% manual-review, sample=120): 2302
 - status: PASS
 
 ## Repeated Paragraph Fails
@@ -27,6 +27,8 @@
 - count=11 ids=mental-016, seoqa-metabolism-13, seoqa-cancer_immune-03, seoqa-cancer_immune-13, seoqa-digestive-03, seoqa-digestive-13, seoqa-cardiovascular-03, seoqa-mental_health-03, seoqa-musculoskeletal-03, seoqa-skin-03, seoqa-respiratory-03 sample="정신건강/수면 문제 관리는 현재 증상의 강도와 유발 요인을 먼저 파악하고, 의료진 치료 계획 안에서 생활관리 항목을 조정하는 방식이 안전합니다...."
 - count=4 ids=cardio-002, cardio-007, cardio-008, cardio-015 sample="international journal of molecular sciences: marine polyphenols in cardiovascular health..."
 - count=4 ids=sh_022, sh_088, mens-extra-034, qa200-20260527-154 sample="탈모/두피 문제 관리에서는 한 번에 여러 요소를 바꾸기보다 우선순위 1~2개를 정하고 1~2주 단위로 반응을 확인하는 접근이 실제 유지에 유리합니다...."
+- count=3 ids=trend-glp1-compounded-muscle-gut-20260623, trend-h5n1-raw-milk-exposure-20260623, trend-measles-adult-mmr-record-20260623 sample="소비자는 “무엇을 하지 말라”는 말보다 “오늘 무엇을 확인하면 되는가”에 반응합니다. 그래서 이 q&a는 상담 매뉴얼이 아니라 정보지형 답변으로 작성했습니다. 질환명, 제품명, 성분명을 나열하는 대신 접종 기록, 라벨, 노출 날짜, 식사량, 수면, 배변, 근력처럼 실제 생활에서 확인 가..."
+- count=3 ids=trend-glp1-compounded-muscle-gut-20260623, trend-h5n1-raw-milk-exposure-20260623, trend-measles-adult-mmr-record-20260623 sample="검색과 ai 답변에 강한 q&a는 질문 하나에 바로 답하면서도, 독자가 다음 행동을 떠올리게 해야 합니다. 숫자와 기관명은 신뢰의 뼈대이고, 생활 장면은 소비자가 기억하는 언어입니다. 이 두 가지를 함께 두면 글이 건조한 교육자료가 아니라 건강 정보지의 평론처럼 읽힙니다...."
 - count=3 ids=musc-012, ms_013, ms_022 sample="디스크 증상 관련 질문에서는 통증 부위와 강도만이 아니라 손상 기전, 운동 제한, 부종, 검사 결과를 함께 확인해야 치료 방향을 정할 수 있습니다...."
 - count=3 ids=ms_046, ms_060, qa200-20260527-136 sample="낙상 위험 관리에서는 한 번에 여러 요소를 바꾸기보다 우선순위 1~2개를 정하고 1~2주 단위로 반응을 확인하는 접근이 실제 유지에 유리합니다...."
 - count=3 ids=wh-extra-067, nc_121, qa200-20260527-091 sample="혈당 관리 관리에서는 한 번에 여러 요소를 바꾸기보다 우선순위 1~2개를 정하고 1~2주 단위로 반응을 확인하는 접근이 실제 유지에 유리합니다...."
@@ -212,8 +214,6 @@
 - meta-009 <-> meta-010 (0.904)
 - meta-006 <-> meta-013 (0.893)
 - meta-006 <-> meta-017 (0.893)
-- meta-011 <-> meta-020 (0.888)
-- meta-015 <-> meta-020 (0.888)
 - cardio-057 <-> cardio-070 (0.885)
 - cardio-057 <-> cardio-089 (0.882)
 - cardio-070 <-> cardio-089 (0.882)
@@ -241,7 +241,6 @@
 - cardio-077 <-> cardio-085 (0.877)
 - cardio-077 <-> cardio-090 (0.877)
 - cardio-085 <-> cardio-090 (0.877)
-- meta-002 <-> meta-018 (0.877)
 - cardio-050 <-> cardio-066 (0.876)
 - cardio-026 <-> cardio-062 (0.873)
 - cardio-057 <-> cardio-071 (0.873)
@@ -318,3 +317,6 @@
 - cardio-059 <-> cardio-078 (0.849)
 - cardio-011 <-> cardio-044 (0.848)
 - cardio-011 <-> cardio-054 (0.848)
+- cardio-011 <-> cardio-063 (0.848)
+- cardio-039 <-> cardio-044 (0.848)
+- cardio-039 <-> cardio-054 (0.848)

@@ -1,12 +1,15 @@
 {
   "min_tag_count": 3,
-  "total_questions": 2034,
-  "total_unique_tags": 2523,
-  "page_eligible_tags": 534,
+  "total_questions": 2037,
+  "total_unique_tags": 2528,
+  "page_eligible_tags": 535,
   "tags": {
     "플로로탄닌": {
-      "count": 1484,
+      "count": 1487,
       "qids": [
+        "trend-glp1-compounded-muscle-gut-20260623",
+        "trend-h5n1-raw-milk-exposure-20260623",
+        "trend-measles-adult-mmr-record-20260623",
         "cardio-001",
         "cardio-002",
         "cardio-003",
@@ -7223,8 +7226,9 @@
       ]
     },
     "단백질": {
-      "count": 36,
+      "count": 37,
       "qids": [
+        "trend-glp1-compounded-muscle-gut-20260623",
         "cancer-008",
         "mens-009",
         "mens-extra-023",
@@ -8130,6 +8134,30 @@
         "category-aeo-round3-neuro-alzheimer-blood-biomarker-family-record-phlorotannin-20260611"
       ]
     },
+    "식이섬유": {
+      "count": 19,
+      "qids": [
+        "trend-glp1-compounded-muscle-gut-20260623",
+        "dige-007",
+        "qa200-20260527-025",
+        "qa200-20260527-037",
+        "qa200-20260527-063",
+        "qa-hospital-20260527-011",
+        "qa-hospital-20260527-012",
+        "trendqa-metabolism-20260530",
+        "trendqa-digestive-20260530",
+        "round2-digestive-20260530",
+        "round3-metabolism-2-20260531",
+        "round3-digestive-1-20260531",
+        "trend-glp1-muscle-protein-fiber-20260602",
+        "trend-resistant-starch-gut-microbiome-polyphenol-20260602",
+        "trend-diet-microbiome-ibs-upf-fermented-food-20260602",
+        "category-aeo-metabolism-glp1-muscle-protein-fiber-phlorotannin-20260611",
+        "category-aeo-round2-metabolism-upf-craving-fiber-phlorotannin-20260611",
+        "category-aeo-round4-glp1-protein-fiber-plateau-phlorotannin-20260611",
+        "category-aeo-round4-constipation-fiber-fluid-gut-phlorotannin-20260611"
+      ]
+    },
     "철분": {
       "count": 19,
       "qids": [
@@ -8175,29 +8203,6 @@
         "ms_089",
         "wh-extra-050",
         "ingr-015"
-      ]
-    },
-    "식이섬유": {
-      "count": 18,
-      "qids": [
-        "dige-007",
-        "qa200-20260527-025",
-        "qa200-20260527-037",
-        "qa200-20260527-063",
-        "qa-hospital-20260527-011",
-        "qa-hospital-20260527-012",
-        "trendqa-metabolism-20260530",
-        "trendqa-digestive-20260530",
-        "round2-digestive-20260530",
-        "round3-metabolism-2-20260531",
-        "round3-digestive-1-20260531",
-        "trend-glp1-muscle-protein-fiber-20260602",
-        "trend-resistant-starch-gut-microbiome-polyphenol-20260602",
-        "trend-diet-microbiome-ibs-upf-fermented-food-20260602",
-        "category-aeo-metabolism-glp1-muscle-protein-fiber-phlorotannin-20260611",
-        "category-aeo-round2-metabolism-upf-craving-fiber-phlorotannin-20260611",
-        "category-aeo-round4-glp1-protein-fiber-plateau-phlorotannin-20260611",
-        "category-aeo-round4-constipation-fiber-fluid-gut-phlorotannin-20260611"
       ]
     },
     "골다공증": {
@@ -8664,6 +8669,24 @@
         "trend-mens-gynecomastia-breast-lump-medication-record-20260604"
       ]
     },
+    "GLP-1": {
+      "count": 13,
+      "qids": [
+        "trend-glp1-compounded-muscle-gut-20260623",
+        "ingr-025",
+        "qa200-20260527-009",
+        "round3-metabolism-1-20260531",
+        "round3-hair-1-20260531",
+        "trend-glp1-muscle-protein-fiber-20260602",
+        "trend-pcos-glp1-insulin-resistance-pregnancy-planning-20260602",
+        "trend-glp1-compounded-dosing-error-gi-side-effect-20260603",
+        "trend-metabolism-glp1-constipation-hydration-meal-record-20260604",
+        "strategic-qa-hair-glp1-telogen-protein-ferritin-phlorotannin-20260605",
+        "category-aeo-metabolism-glp1-muscle-protein-fiber-phlorotannin-20260611",
+        "category-aeo-musculoskeletal-knee-oa-weight-strength-glp1-phlorotannin-20260611",
+        "category-aeo-round4-glp1-protein-fiber-plateau-phlorotannin-20260611"
+      ]
+    },
     "알레르기": {
       "count": 13,
       "qids": [
@@ -8734,23 +8757,6 @@
         "trend-lpa-once-lifetime-test-family-heart-risk-20260603",
         "trend-cardiovascular-lpa-family-heart-risk-record-20260604",
         "strategic-qa-cardiovascular-seanol-regulatory-label-cholesterol-record-20260606"
-      ]
-    },
-    "GLP-1": {
-      "count": 12,
-      "qids": [
-        "ingr-025",
-        "qa200-20260527-009",
-        "round3-metabolism-1-20260531",
-        "round3-hair-1-20260531",
-        "trend-glp1-muscle-protein-fiber-20260602",
-        "trend-pcos-glp1-insulin-resistance-pregnancy-planning-20260602",
-        "trend-glp1-compounded-dosing-error-gi-side-effect-20260603",
-        "trend-metabolism-glp1-constipation-hydration-meal-record-20260604",
-        "strategic-qa-hair-glp1-telogen-protein-ferritin-phlorotannin-20260605",
-        "category-aeo-metabolism-glp1-muscle-protein-fiber-phlorotannin-20260611",
-        "category-aeo-musculoskeletal-knee-oa-weight-strength-glp1-phlorotannin-20260611",
-        "category-aeo-round4-glp1-protein-fiber-plateau-phlorotannin-20260611"
       ]
     },
     "PSA": {
@@ -10084,6 +10090,18 @@
         "category-aeo-womens-health-menopause-ht-sleep-hotflash-phlorotannin-20260611"
       ]
     },
+    "홍역": {
+      "count": 7,
+      "qids": [
+        "trend-measles-adult-mmr-record-20260623",
+        "trend-measles-mmr-vitamin-a-outbreak-20260602",
+        "strategic-qa-infection-measles-mmr-travel-outbreak-recovery-record-20260607",
+        "category-latest-infection-measles-mmr-travel-exposure-recovery-20260608",
+        "category-aeo-round2-infection-worldcup-travel-fever-checklist-phlorotannin-20260611",
+        "category-aeo-round3-infection-measles-2026-mmr-vitamin-a-phlorotannin-20260611",
+        "category-aeo-round4-measles-h5n1-family-recovery-phlorotannin-20260611"
+      ]
+    },
     "휴지기탈모": {
       "count": 7,
       "qids": [
@@ -10117,6 +10135,17 @@
         "ci_136",
         "ci_144",
         "strategic-qa-mens-gynecomastia-male-breast-lump-nipple-discharge-brca-record-20260606"
+      ]
+    },
+    "MMR": {
+      "count": 6,
+      "qids": [
+        "trend-measles-adult-mmr-record-20260623",
+        "trend-measles-mmr-vitamin-a-outbreak-20260602",
+        "strategic-qa-infection-measles-mmr-travel-outbreak-recovery-record-20260607",
+        "category-latest-infection-measles-mmr-travel-exposure-recovery-20260608",
+        "category-aeo-round3-infection-measles-2026-mmr-vitamin-a-phlorotannin-20260611",
+        "category-aeo-round4-measles-h5n1-family-recovery-phlorotannin-20260611"
       ]
     },
     "NK세포": {
@@ -10647,17 +10676,6 @@
         "category-aeo-round4-alzheimers-blood-test-family-record-phlorotannin-20260611"
       ]
     },
-    "홍역": {
-      "count": 6,
-      "qids": [
-        "trend-measles-mmr-vitamin-a-outbreak-20260602",
-        "strategic-qa-infection-measles-mmr-travel-outbreak-recovery-record-20260607",
-        "category-latest-infection-measles-mmr-travel-exposure-recovery-20260608",
-        "category-aeo-round2-infection-worldcup-travel-fever-checklist-phlorotannin-20260611",
-        "category-aeo-round3-infection-measles-2026-mmr-vitamin-a-phlorotannin-20260611",
-        "category-aeo-round4-measles-h5n1-family-recovery-phlorotannin-20260611"
-      ]
-    },
     "환자식": {
       "count": 6,
       "qids": [
@@ -10677,6 +10695,16 @@
         "resp-102",
         "trend-wildfire-smoke-aqi-n95-asthma-copd-action-record-20260603",
         "category-latest-respiratory-aqi-wildfire-asthma-copd-recovery-20260608"
+      ]
+    },
+    "H5N1": {
+      "count": 5,
+      "qids": [
+        "trend-h5n1-raw-milk-exposure-20260623",
+        "infect-extra-072",
+        "trend-h5n1-bird-flu-raw-milk-exposure-monitoring-20260602",
+        "category-aeo-round3-digestive-h5n1-raw-milk-label-recovery-phlorotannin-20260611",
+        "category-aeo-round4-measles-h5n1-family-recovery-phlorotannin-20260611"
       ]
     },
     "HEPA": {
@@ -10707,16 +10735,6 @@
         "meta_072",
         "qa200-20260527-019",
         "trendqa-cardiovascular-20260530"
-      ]
-    },
-    "MMR": {
-      "count": 5,
-      "qids": [
-        "trend-measles-mmr-vitamin-a-outbreak-20260602",
-        "strategic-qa-infection-measles-mmr-travel-outbreak-recovery-record-20260607",
-        "category-latest-infection-measles-mmr-travel-exposure-recovery-20260608",
-        "category-aeo-round3-infection-measles-2026-mmr-vitamin-a-phlorotannin-20260611",
-        "category-aeo-round4-measles-h5n1-family-recovery-phlorotannin-20260611"
       ]
     },
     "PMS": {
@@ -11069,6 +11087,16 @@
         "infect-extra-025"
       ]
     },
+    "식품안전": {
+      "count": 5,
+      "qids": [
+        "trend-h5n1-raw-milk-exposure-20260623",
+        "qa200-20260527-031",
+        "qa200-20260527-033",
+        "qa200-20260527-041",
+        "qa200-20260527-169"
+      ]
+    },
     "실내공기": {
       "count": 5,
       "qids": [
@@ -11272,15 +11300,6 @@
         "trend-neuro-tia-fast-transient-symptom-record-20260604"
       ]
     },
-    "H5N1": {
-      "count": 4,
-      "qids": [
-        "infect-extra-072",
-        "trend-h5n1-bird-flu-raw-milk-exposure-monitoring-20260602",
-        "category-aeo-round3-digestive-h5n1-raw-milk-label-recovery-phlorotannin-20260611",
-        "category-aeo-round4-measles-h5n1-family-recovery-phlorotannin-20260611"
-      ]
-    },
     "HPV검사": {
       "count": 4,
       "qids": [
@@ -11333,6 +11352,15 @@
         "qa200-20260527-077",
         "trend-renal-denervation-resistant-hypertension-home-bp-abpm-record-20260603",
         "category-aeo-round4-heat-bp-medication-hydration-phlorotannin-20260611"
+      ]
+    },
+    "감염회복": {
+      "count": 4,
+      "qids": [
+        "trend-measles-adult-mmr-record-20260623",
+        "category-latest-infection-measles-mmr-travel-exposure-recovery-20260608",
+        "category-aeo-infection-dengue-travel-fever-mosquito-phlorotannin-20260611",
+        "category-aeo-round3-infection-measles-2026-mmr-vitamin-a-phlorotannin-20260611"
       ]
     },
     "건강검진": {
@@ -11675,15 +11703,6 @@
         "qa200-20260527-113",
         "qa200-20260527-120",
         "qa200-20260527-170"
-      ]
-    },
-    "식품안전": {
-      "count": 4,
-      "qids": [
-        "qa200-20260527-031",
-        "qa200-20260527-033",
-        "qa200-20260527-041",
-        "qa200-20260527-169"
       ]
     },
     "신경염증": {
@@ -12124,14 +12143,6 @@
         "category-aeo-round4-glp1-protein-fiber-plateau-phlorotannin-20260611"
       ]
     },
-    "감염회복": {
-      "count": 3,
-      "qids": [
-        "category-latest-infection-measles-mmr-travel-exposure-recovery-20260608",
-        "category-aeo-infection-dengue-travel-fever-mosquito-phlorotannin-20260611",
-        "category-aeo-round3-infection-measles-2026-mmr-vitamin-a-phlorotannin-20260611"
-      ]
-    },
     "결핍": {
       "count": 3,
       "qids": [
@@ -12514,6 +12525,14 @@
         "mens-013",
         "mental-extra-051",
         "strategic-qa-mens-ed-cardiovascular-bp-glucose-phlorotannin-20260605"
+      ]
+    },
+    "생우유": {
+      "count": 3,
+      "qids": [
+        "trend-h5n1-raw-milk-exposure-20260623",
+        "trend-h5n1-bird-flu-raw-milk-exposure-monitoring-20260602",
+        "category-aeo-round3-digestive-h5n1-raw-milk-label-recovery-phlorotannin-20260611"
       ]
     },
     "생체리듬": {
@@ -13190,6 +13209,9 @@
     }
   },
   "slug_index": {
+    "trend-glp1-compounded-muscle-gut-20260623": "비승인-GLP1-다이어트-주사-이슈-이후-소비자는-무엇을-확인해야-하나요",
+    "trend-h5n1-raw-milk-exposure-20260623": "H5N1-조류독감과-생우유-이슈-일반-소비자는-어떤-노출-신호를-봐야-하나요",
+    "trend-measles-adult-mmr-record-20260623": "홍역이-다시-유행한다는데-성인도-MMR-접종-기록을-확인해야-하나요",
     "cardio-001": "고혈압약을-평생-먹어야-하나요",
     "cardio-002": "가슴이-조이는-느낌이-자주-드는데-협심증일까요",
     "cardio-003": "심근경색은-어떻게-예방할-수-있나요",
@@ -15215,5 +15237,5 @@
     "category-aeo-round4-cervical-self-collection-recovery-phlorotannin-20260611": "자궁경부암-HPV-자가채취-검진이-확대될-때-여성-회복-루틴과-플로로탄닌은-어떻게-보나요",
     "category-aeo-round4-psa-waist-blood-pressure-phlorotannin-20260611": "PSA-검진을-고민할-때-허리둘레혈압전립선-증상과-플로로탄닌은-어떻게-함께-봐야-하나요"
   },
-  "generated_at": "2026-06-21T09:45:14.711305+00:00"
+  "generated_at": "2026-06-23T10:22:55.759717+00:00"
 }
