@@ -233,7 +233,7 @@ function buildStep10Topics() {
     ['lipid-interest', '고지혈증 관심층이 원료 정보를 볼 때 놓치기 쉬운 질문', 'cardiovascular'],
     ['fatty-liver-interest', '지방간 관련 건강정보: 식단 기록과 검사 지표를 우선하는 이유', 'digestive'],
     ['kidney-interest', '신장질환 관심층을 위한 성분 정보 확인 프레임', 'digestive'],
-    ['gut-health-interest', '장 건강 검색 결과를 정리할 때의 기본 분류 기준', 'digestive'],
+    ['gut-health-interest', '장 건강 검색 결과 분류법: IBS·식단·프로바이오틱스 구분', 'digestive'],
     ['stomach-health-interest', '위 건강 관심층의 정보읽기: 증상 기록 중심 접근', 'digestive'],
     ['immune-low-interest', '면역 저하 관심층이 자료를 볼 때 범위를 나누는 법', 'cancer_immune'],
     ['sleep-interest', '수면 문제 관심층이 원료 정보보다 먼저 적어야 하는 기록', 'mental_health'],

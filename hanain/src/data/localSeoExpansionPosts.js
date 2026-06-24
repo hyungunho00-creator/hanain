@@ -1762,7 +1762,7 @@ const SEO_TOPICS = [
   {
     "stage": "step10",
     "slugKey": "gut-health-interest",
-    "title": "장 건강 검색 결과를 정리할 때의 기본 분류 기준",
+    "title": "장 건강 검색 결과 분류법: IBS·식단·프로바이오틱스 구분",
     "category": "digestive",
     "tags": [
       "질환별 건강정보",
@@ -2533,6 +2533,110 @@ CDC와 NHS는 걷기, 수영, 자전거, 수중운동처럼 관절 부담을 낮
       '관절이 불편할 때 통증 점수, 운동 강도, 붓기, 다음날 반응을 기록해 활동량을 조절하는 기준과 상담 질문을 정리했습니다.',
     og_image: '/illustrations/sci/lab-interior.webp',
     updated_at: '2026-06-24T21:22:00+09:00',
+  },
+  'seo-081-gut-health-interest': {
+    title: '장 건강 검색 결과 분류법: IBS·식단·프로바이오틱스 구분',
+    excerpt:
+      '장 건강 검색 결과를 IBS, 식단·FODMAP, 프로바이오틱스, 마이크로바이옴 연구, 보충제 광고로 나눠 읽는 기준을 정리했습니다.',
+    content: `## 짧은 답: "장 건강"은 하나의 주제가 아니라 여러 질문의 묶음입니다
+
+장 건강을 검색하면 과민성장증후군, 유산균, 프리바이오틱스, 저FODMAP, 마이크로바이옴, 장누수, 보충제 광고가 한 화면에 섞입니다. 이 결과를 같은 수준의 정보처럼 읽으면 내 증상에 맞는 자료와 제품 홍보 문구가 뒤섞입니다. 먼저 검색 결과를 분류해야 합니다.
+
+좋은 장 건강 검색은 "무엇을 먹으면 좋아지나"보다 "내 질문이 증상인지, 질환 정보인지, 식단 조절인지, 원료 선택인지"를 가르는 데서 시작합니다. 플로로탄닌처럼 장·염증·마이크로바이옴 연구와 연결되는 원료도 이 분류 안에서 읽어야 합니다. 원료 연구는 흥미로운 참고 자료일 수 있지만, 복통이나 설사 원인을 바로 설명하는 진단 자료는 아닙니다.
+
+## 먼저 나눌 6가지 검색 결과
+
+| 분류 | 예시 검색어 | 먼저 볼 것 |
+|---|---|---|
+| 증상·진단 정보 | 복통, 설사, 변비, 혈변, IBS, 셀리악병, GERD | 기간, 경고 신호, 진료 필요성 |
+| 식단 조절 | 저FODMAP, 유당, 글루텐, 매운 음식, 카페인 | 제거식 기간, 재도전, 영양 균형 |
+| 프로바이오틱스 | 유산균 균주, CFU, 프리바이오틱스, 신바이오틱스 | 균주, 대상자, 안전성, 제품 표시 |
+| 마이크로바이옴 연구 | 장내세균, 다양성, 대사산물, 단쇄지방산 | 연구 설계와 사람 대상 여부 |
+| 보충제·광고 | 장 청소, 독소 배출, 장누수 해결, 후기 | 근거 출처, 과장 표현, 병용 위험 |
+| 원료 연구 | 플로로탄닌, 해양 폴리페놀, 항산화, 염증 반응 | 세포·동물·사람 연구 구분 |
+
+## 증상 검색은 경고 신호부터 봅니다
+
+NIDDK는 과민성장증후군을 복통과 배변 습관 변화가 반복되는 기능성 장 질환으로 설명하지만, 모든 복통과 설사가 IBS라는 뜻은 아닙니다. 체중 감소, 혈변, 지속적인 발열, 밤에 깨는 설사, 빈혈 의심, 삼킴 곤란, 갑자기 심해지는 통증처럼 경고 신호가 있으면 생활 팁보다 진료가 먼저입니다.
+
+셀리악병이나 GERD처럼 장 건강 검색에 자주 섞이는 질환도 원인과 관리가 다릅니다. 글루텐을 무작정 끊거나, 위산 역류를 장내세균 문제로만 설명하면 필요한 검사를 놓칠 수 있습니다. 증상 검색 결과는 "가능성 목록"이지 자기진단 결론이 아닙니다.
+
+## 식단 검색은 제거보다 기록이 먼저입니다
+
+저FODMAP, 유당 제한, 글루텐 제한 같은 식단 조절은 사람에 따라 도움이 될 수 있지만, 오래 넓게 제한하면 식사의 질이 떨어질 수 있습니다. NIDDK도 IBS 식단에서는 개인별 유발 음식을 찾는 과정과 전문가 도움을 함께 안내합니다.
+
+기록은 간단해야 지속됩니다. 날짜, 식사, 증상 시간, 배변 변화, 수면, 스트레스, 운동량을 2주 정도 적고 반복 패턴을 봅니다. 한 번 불편했다고 특정 음식을 영구 금지로 정하기보다, 양과 조리법, 함께 먹은 음식, 컨디션을 같이 봐야 합니다.
+
+## 프로바이오틱스 검색은 균주와 대상자를 봅니다
+
+NCCIH는 프로바이오틱스가 상황에 따라 유용할 수 있지만, 효과는 균주와 건강 상태에 따라 달라질 수 있고 안전성 확인도 필요하다고 안내합니다. "유산균 100억" 같은 숫자만으로 제품을 비교하면 연구 대상자, 균주, 보관 조건, 복용 기간이 빠집니다.
+
+프로바이오틱스 검색 결과를 볼 때는 제품명보다 균주명, 연구 대상, 주요 결과지표, 이상반응, 면역저하자·중증질환자 주의 여부를 먼저 확인합니다. 프리바이오틱스와 신바이오틱스도 같은 원칙입니다. 이름이 비슷하다고 같은 효과를 뜻하지 않습니다.
+
+## 마이크로바이옴 연구는 제품 광고로 바로 옮기지 않습니다
+
+Harvard Nutrition Source는 마이크로바이옴을 식사, 환경, 약물, 생활요인과 상호작용하는 복잡한 생태계로 설명합니다. 연구에서 특정 세균군이나 대사산물이 언급됐다고 해서 특정 제품 하나가 곧바로 장 건강을 해결한다는 뜻은 아닙니다.
+
+검색 결과에서 "장내세균 다양성 증가" 같은 문구를 보면 연구가 사람 대상인지, 어떤 측정법을 썼는지, 변화가 실제 증상 개선과 연결됐는지 확인해야 합니다. 세포·동물 연구는 작용 가능성을 보는 자료이고, 사람 대상 연구는 대상자와 기간, 용량을 함께 봐야 합니다.
+
+## 보충제와 플로로탄닌은 별도 칸에 둡니다
+
+FDA와 NCCIH는 건강보조식품 정보를 볼 때 제품 주장과 안전성, 약물 병용 가능성을 신중히 확인하라고 안내합니다. "장 청소", "독소 배출", "장누수 해결"처럼 강한 표현은 근거와 범위를 따져야 합니다. 특히 증상이 지속되는데 보충제로만 버티면 진료 시점을 놓칠 수 있습니다.
+
+플로로탄닌은 감태 등 갈조류에 들어 있는 해양 폴리페놀 계열 성분입니다. 장 건강 맥락에서는 산화 스트레스, 염증 반응, 장내 환경 연구와 연결해 읽을 수 있지만, IBS나 셀리악병, GERD 같은 질환을 직접 해결한다고 말하면 범위를 넘어섭니다. 원료 정보는 증상 기록과 진료 판단 위에 놓는 참고 자료로 분리하는 편이 정확합니다.
+
+## 검색 결과 정리 순서
+
+1. 내 검색어가 증상, 질환명, 식단, 균주, 원료, 제품명 중 무엇인지 표시합니다.
+2. 경고 신호가 있으면 검색 정리보다 진료 질문을 먼저 만듭니다.
+3. 식단 정보는 2주 기록과 연결되는 것만 우선 적용합니다.
+4. 프로바이오틱스는 균주명과 대상자를 확인합니다.
+5. 마이크로바이옴 연구는 세포·동물·사람 연구를 나눕니다.
+6. 보충제 광고는 출처, 제한점, 병용 위험을 따로 적습니다.
+
+## 자주 묻는 질문
+
+### Q. 장 건강 검색 결과에서 제일 먼저 봐야 할 것은 무엇인가요?
+내 문제가 증상인지, 질환 정보인지, 식단 조절인지, 제품 선택인지 먼저 나누는 것입니다. 분류가 되면 필요한 출처와 질문이 달라집니다.
+
+### Q. 프로바이오틱스는 장 건강에 무조건 좋은가요?
+무조건이라고 보기 어렵습니다. 균주, 대상자, 건강 상태, 복용 기간, 제품 품질에 따라 해석이 달라집니다.
+
+### Q. 장누수나 독소 배출 문구는 어떻게 봐야 하나요?
+강한 표현일수록 출처와 연구 설계를 확인해야 합니다. 진단명처럼 쓰였는지, 광고 표현인지, 사람 대상 근거가 있는지 분리해서 보세요.
+
+### Q. 플로로탄닌은 장 건강 글에서 어떤 위치인가요?
+장내 환경과 염증 반응 연구를 읽을 때 참고할 수 있는 원료 정보입니다. 다만 증상 원인 감별이나 질환 관리를 대신하지 않습니다.
+
+## 함께 읽으면 좋은 글
+
+- [장내 미생물과 건강 기전 쉽게 이해하기](/blog/gut-microbiome-health-mechanism-easy-explanation)
+- [프리바이오틱스·프로바이오틱스·신바이오틱스 차이](/blog/prebiotics-probiotics-synbiotics-gut-health-difference-choice-phlorotannin)
+- [프로바이오틱스 균주 선택 기준](/blog/probiotics-strain-selection-decision-guide)
+- [장 면역과 해양 폴리페놀 정보](/blog/gut-immune-health-info-marine-polyphenol)
+- [플로로탄닌·마이크로바이옴·염증 연구 읽기](/blog/phlorotannin-gut-microbiome-tlr4-myd88-colitis-research)
+- [장 건강과 마이크로바이옴 읽는 법](/blog/phlorotannin-health-guide-phloro-16)
+
+## 참고자료
+
+- [NIDDK. Irritable Bowel Syndrome.](https://www.niddk.nih.gov/health-information/digestive-diseases/irritable-bowel-syndrome)
+- [NIDDK. Eating, Diet, & Nutrition for IBS.](https://www.niddk.nih.gov/health-information/digestive-diseases/irritable-bowel-syndrome/eating-diet-nutrition)
+- [NIDDK. Celiac Disease.](https://www.niddk.nih.gov/health-information/digestive-diseases/celiac-disease)
+- [NIDDK. Acid Reflux, GER & GERD in Adults.](https://www.niddk.nih.gov/health-information/digestive-diseases/acid-reflux-ger-gerd-adults)
+- [NCCIH. Probiotics: Usefulness and Safety.](https://www.nccih.nih.gov/health/probiotics-usefulness-and-safety)
+- [Harvard T.H. Chan School of Public Health. The Nutrition Source: Microbiome.](https://nutritionsource.hsph.harvard.edu/microbiome/)
+- [NCCIH. Know the Science.](https://www.nccih.nih.gov/health/know-science)
+- [NCCIH. Checklist for Understanding Health News Stories.](https://www.nccih.nih.gov/health/know-science/facts-health-news-stories/checklist-for-understanding-health-news-stories)
+- [NCCIH. Using Dietary Supplements Wisely.](https://www.nccih.nih.gov/health/using-dietary-supplements-wisely)
+- [FDA. Dietary Supplements.](https://www.fda.gov/food/dietary-supplements)
+`,
+    category: 'digestive',
+    tags: ['장건강', '마이크로바이옴', '과민성장증후군', '프로바이오틱스', '저FODMAP', '건강정보검증', '보충제광고', '플로로탄닌'],
+    meta_title: '장 건강 검색 결과 분류법: IBS·식단·프로바이오틱스',
+    meta_desc:
+      '장 건강 검색 결과를 IBS, 식단, 프로바이오틱스, 마이크로바이옴 연구, 보충제 광고로 나눠 근거 중심으로 읽는 법을 정리했습니다.',
+    og_image: '/illustrations/sci/kelp-specimen.webp',
+    updated_at: '2026-06-24T21:40:00+09:00',
   },
   'seo-041-ingredient-vs-product': {
     title: '성분명과 제품명은 다릅니다: 플로로탄닌을 정보 자산으로 만드는 소비자 저널',
