@@ -1,12 +1,12 @@
 # Site-wide Content Quality Audit
 
-- generatedAt: 2026-05-29T04:56:08.792Z
-- QA scanned: 1741
+- generatedAt: 2026-06-24T09:03:43.002Z
+- QA scanned: 2037
 - Blog-like scanned: 20
-- Insight scanned: 141
+- Insight scanned: 291
 - Category description scanned: 13
-- Tag description scanned: 190
-- rewriteRequired total: 556
+- Tag description scanned: 535
+- rewriteRequired total: 598
 
 ## Critical (Top 80)
 
@@ -14,30 +14,25 @@
 - [qa] cardio-003 | 심근경색은 어떻게 예방할 수 있나요? | category=cardiovascular | topicMatch=0 | bad=false | action=rewrite
 - [qa] cardio-009 | 저혈압인데 어지럼증이 심합니다. 원인이 무엇인가요? | category=cardiovascular | topicMatch=0 | bad=false | action=rewrite
 - [qa] cardio-018 | 달걀을 많이 먹으면 콜레스테롤이 올라가나요? | category=cardiovascular | topicMatch=0 | bad=false | action=rewrite
-- [qa] cardio-040 | 당뇨병 환자가 심혈관 합병증을 예방하려면 어떻게 해야 하나요? | category=cardiovascular | topicMatch=0 | bad=false | action=rewrite
 - [qa] cardio-044 | 수면무호흡증과 고혈압은 어떤 관계가 있나요? | category=cardiovascular | topicMatch=0 | bad=false | action=rewrite
 - [qa] cardio-054 | 혈당이 높으면 혈관이 어떻게 손상되나요? | category=cardiovascular | topicMatch=0 | bad=false | action=rewrite
 - [qa] cardio-063 | 혈압이 높을 때 두통이 생기나요? | category=cardiovascular | topicMatch=0 | bad=false | action=rewrite
-- [qa] cardio-097 | 혈당과 혈압을 동시에 잘 관리하려면 어떻게 해야 하나요? | category=cardiovascular | topicMatch=0 | bad=false | action=rewrite
 - [qa] meta-004 | LDL 콜레스테롤이 200을 넘었는데 어떻게 해야 하나요? | category=metabolism | topicMatch=0 | bad=false | action=rewrite
-- [qa] meta-005 | 비알코올성 지방간을 식이로 관리할 수 있나요? | category=metabolism | topicMatch=0 | bad=false | action=rewrite
-- [qa] meta-007 | 공복혈당이 100~125mg/dL인 당뇨 전단계인데 어떻게 관리해야 하나요? | category=metabolism | topicMatch=0 | bad=false | action=rewrite
 - [qa] meta-008 | 당화혈색소(HbA1c)를 낮추는 데 가장 효과적인 방법은? | category=metabolism | topicMatch=0 | bad=false | action=rewrite
 - [qa] meta-010 | 폐경 후 혈당과 콜레스테롤이 갑자기 나빠지는 이유는? | category=metabolism | topicMatch=0 | bad=false | action=rewrite
 - [qa] meta-013 | 탄수화물을 완전히 끊으면 당뇨가 낫나요? | category=metabolism | topicMatch=0 | bad=false | action=rewrite
 - [qa] meta-015 | 오메가-3가 혈당에 영향을 미치나요? | category=metabolism | topicMatch=0 | bad=false | action=rewrite
-- [qa] meta-019 | 살 빼면 당뇨가 완전 회복(임상적 관해)이 가능할 수 있나요? | category=metabolism | topicMatch=0 | bad=false | action=rewrite
 - [qa] meta-020 | 혈당을 낮추는 데 수면이 왜 중요한가요? | category=metabolism | topicMatch=0 | bad=false | action=rewrite
 - [qa] meta_021 | 공복혈당이 높으면 당뇨병인가요? | category=metabolism | topicMatch=0 | bad=false | action=rewrite
 - [qa] meta_025 | 당화혈색소(HbA1c)란 무엇인가요? | category=metabolism | topicMatch=0 | bad=false | action=rewrite
 - [qa] meta_029 | 당뇨 환자는 과일을 먹으면 안 되나요? | category=metabolism | topicMatch=0 | bad=false | action=rewrite
 - [qa] meta_032 | LDL과 HDL 콜레스테롤의 차이는 무엇인가요? | category=metabolism | topicMatch=0 | bad=false | action=rewrite
 - [qa] meta_037 | 비알코올성 지방간은 어떻게 치료하나요? | category=metabolism | topicMatch=0 | bad=false | action=rewrite
+- [qa] meta_038 | 복부지방과 피하지방의 차이는 무엇인가요? | category=metabolism | topicMatch=0 | bad=false | action=rewrite
 - [qa] meta_045 | 혈당을 낮추는 자연 식품이 있나요? | category=metabolism | topicMatch=0 | bad=false | action=rewrite
 - [qa] meta_047 | 스트레스가 혈당을 높이나요? | category=metabolism | topicMatch=0 | bad=false | action=rewrite
 - [qa] meta_050 | 당뇨 전단계에서 당뇨병으로 진행을 막을 수 있나요? | category=metabolism | topicMatch=0 | bad=false | action=rewrite
 - [qa] meta_053 | 커피가 혈당에 영향을 주나요? | category=metabolism | topicMatch=0 | bad=false | action=rewrite
-- [qa] meta_061 | 당뇨병 환자에게 운동이 왜 중요한가요? | category=metabolism | topicMatch=0 | bad=false | action=rewrite
 - [qa] meta_062 | 식이섬유가 혈당에 미치는 영향은? | category=metabolism | topicMatch=0 | bad=false | action=rewrite
 - [qa] meta_076 | 비만과 제2형 당뇨병의 관계는? | category=metabolism | topicMatch=0 | bad=false | action=rewrite
 - [qa] meta_084 | 탄수화물의 혈당지수(GI)란 무엇인가요? | category=metabolism | topicMatch=0 | bad=false | action=rewrite
@@ -56,10 +51,8 @@
 - [qa] cancer-016 | 자궁경부암 예방 접종(HPV 백신)은 성인도 맞아야 하나요? | category=cancer_immune | topicMatch=0 | bad=false | action=rewrite
 - [qa] cancer-019 | 암과 스트레스는 어떤 관계가 있나요? | category=cancer_immune | topicMatch=0 | bad=false | action=rewrite
 - [qa] cancer-020 | 암 예방을 위해 어떤 검진을 받아야 하나요? | category=cancer_immune | topicMatch=0 | bad=false | action=rewrite
-- [qa] ci_016 | 암 예방을 위한 생활 습관은 무엇인가요? | category=cancer_immune | topicMatch=0 | bad=false | action=rewrite
 - [qa] ci_018 | 암세포는 왜 면역계를 피하나요? | category=cancer_immune | topicMatch=0 | bad=false | action=rewrite
 - [qa] ci_019 | 면역항암제(면역관문억제제)란 무엇인가요? | category=cancer_immune | topicMatch=0 | bad=false | action=rewrite
-- [qa] ci_022 | HPV 백신이 자궁경부암을 예방하나요? | category=cancer_immune | topicMatch=0 | bad=false | action=rewrite
 - [qa] ci_026 | 암은 유전되나요? | category=cancer_immune | topicMatch=0 | bad=false | action=rewrite
 - [qa] ci_030 | 항산화제가 암을 예방하나요? | category=cancer_immune | topicMatch=0 | bad=false | action=rewrite
 - [qa] ci_031 | 폐암의 가장 큰 위험 요인은 무엇인가요? | category=cancer_immune | topicMatch=0 | bad=false | action=rewrite
@@ -73,7 +66,6 @@
 - [qa] ci_053 | 정기 암 검진에서 어떤 항목을 받아야 하나요? | category=cancer_immune | topicMatch=0 | bad=false | action=rewrite
 - [qa] ci_054 | 흑색종(피부암)의 위험 신호는? | category=cancer_immune | topicMatch=0 | bad=false | action=rewrite
 - [qa] ci_056 | 갑상선암이 증가하는 이유는 무엇인가요? | category=cancer_immune | topicMatch=0 | bad=false | action=rewrite
-- [qa] ci_060 | 암 예방 백신이 있나요? | category=cancer_immune | topicMatch=0 | bad=false | action=rewrite
 - [qa] ci_068 | 고형암과 혈액암의 차이는? | category=cancer_immune | topicMatch=0 | bad=false | action=rewrite
 - [qa] ci_075 | 암의 종양 유전자와 종양 억제 유전자 차이는? | category=cancer_immune | topicMatch=0 | bad=false | action=rewrite
 - [qa] ci_080 | 암 환자에게 보완 대체 의학이 도움이 되나요? | category=cancer_immune | topicMatch=0 | bad=false | action=rewrite
@@ -90,15 +82,26 @@
 - [qa] dg_012 | 역류성 식도염을 예방하는 생활 습관은? | category=digestive | topicMatch=0 | bad=false | action=rewrite
 - [qa] dg_018 | 지방간은 어떻게 관리하나요? | category=digestive | topicMatch=0 | bad=false | action=rewrite
 - [qa] dg_022 | 담석증은 어떻게 예방하나요? | category=digestive | topicMatch=0 | bad=false | action=rewrite
+- [qa] dg_074 | 혈변이 꼭 암을 의미하나요? | category=digestive | topicMatch=0 | bad=false | action=rewrite
+- [qa] dg_075 | 간염(A형, B형, C형)의 차이는? | category=digestive | topicMatch=0 | bad=false | action=rewrite
+- [qa] dg_088 | 비알코올성 지방간(NASH)이 간경변으로 진행될 수 있나요? | category=digestive | topicMatch=0 | bad=false | action=rewrite
+- [qa] dg_089 | 소화기암 예방을 위한 핵심 식이 지침은? | category=digestive | topicMatch=0 | bad=false | action=rewrite
+- [qa] neuro-001 | 알츠하이머병과 혈관성 치매의 차이는 무엇인가요? | category=neuro_cognitive | topicMatch=0 | bad=false | action=rewrite
+- [qa] neuro-003 | 뇌에 좋다는 식품들이 실제로 인지기능을 높이나요? | category=neuro_cognitive | topicMatch=0 | bad=false | action=rewrite
+- [qa] neuro-005 | 치매 예방에 가장 효과적인 생활습관은 무엇인가요? | category=neuro_cognitive | topicMatch=0 | bad=false | action=rewrite
+- [qa] neuro-010 | 기억력이 갑자기 나빠진 것 같은데 치매 초기인가요? | category=neuro_cognitive | topicMatch=0 | bad=false | action=rewrite
 
 ## High (Top 80)
 
-- [qa] cardio-002 | 가슴이 조이는 느낌이 자주 드는데 협심증일까요? | category=cardiovascular | topicMatch=1 | bad=false | action=rewrite
 - [qa] cardio-004 | 심방세동 진단을 받았는데 어떻게 관리해야 하나요? | category=cardiovascular | topicMatch=1 | bad=false | action=rewrite
-- [qa] cardio-020 | 수면 부족이 심장병 위험을 높이나요? | category=cardiovascular | topicMatch=1 | bad=false | action=rewrite
+- [qa] cardio-005 | 좋은 콜레스테롤(HDL)을 높이는 방법이 있나요? | category=cardiovascular | topicMatch=1 | bad=false | action=rewrite
+- [qa] cardio-028 | 부모님이 심장병이 있으면 저도 걸릴 확률이 높나요? | category=cardiovascular | topicMatch=1 | bad=false | action=rewrite
+- [qa] cardio-072 | 베타차단제와 칼슘채널차단제의 차이는 무엇인가요? | category=cardiovascular | topicMatch=1 | bad=false | action=rewrite
 - [qa] cardio-081 | 당뇨가 있으면 심혈관 질환 위험이 얼마나 높아지나요? | category=cardiovascular | topicMatch=1 | bad=false | action=rewrite
 - [qa] cardio-095 | 심방세동의 카테터 절제술은 어떤 원리인가요? | category=cardiovascular | topicMatch=1 | bad=false | action=rewrite
+- [qa] cardio-098 | 수영이 심혈관 건강에 효과적인 이유는 무엇인가요? | category=cardiovascular | topicMatch=1 | bad=false | action=rewrite
 - [qa] meta-001 | 당뇨약을 10년 넘게 복용 중인데 혈당이 계속 높은 이유가 무엇인가요? | category=metabolism | topicMatch=1 | bad=false | action=rewrite
+- [qa] meta-005 | 비알코올성 지방간을 식이로 관리할 수 있나요? | category=metabolism | topicMatch=1 | bad=false | action=rewrite
 - [qa] meta-011 | 혈당 스파이크가 반복되면 어떤 장기 손상이 생기나요? | category=metabolism | topicMatch=1 | bad=false | action=rewrite
 - [qa] meta-014 | 당뇨 환자가 운동 전후로 주의해야 할 점은 무엇인가요? | category=metabolism | topicMatch=1 | bad=false | action=rewrite
 - [qa] meta-016 | 혈당 측정기와 연속혈당측정기(CGM)의 차이는 무엇인가요? | category=metabolism | topicMatch=1 | bad=false | action=rewrite
@@ -106,7 +109,6 @@
 - [qa] meta_028 | 혈당 스파이크란 무엇이고 어떻게 예방하나요? | category=metabolism | topicMatch=1 | bad=false | action=rewrite
 - [qa] meta_031 | 콜레스테롤 수치가 높으면 반드시 약을 먹어야 하나요? | category=metabolism | topicMatch=1 | bad=false | action=rewrite
 - [qa] meta_036 | 간헐적 단식이 혈당 조절에 도움이 되나요? | category=metabolism | topicMatch=1 | bad=false | action=rewrite
-- [qa] meta_046 | 밥 대신 현미를 먹으면 혈당 관리에 도움이 되나요? | category=metabolism | topicMatch=1 | bad=false | action=rewrite
 - [qa] meta_054 | 알코올이 혈당에 어떤 영향을 미치나요? | category=metabolism | topicMatch=1 | bad=false | action=rewrite
 - [qa] meta_055 | 수면 부족이 혈당과 체중에 미치는 영향은? | category=metabolism | topicMatch=1 | bad=false | action=rewrite
 - [qa] meta_056 | 혈당계로 자가 측정 시 어제와 오늘 수치가 다른데 괜찮은가요? | category=metabolism | topicMatch=1 | bad=false | action=rewrite
@@ -119,15 +121,14 @@
 - [qa] meta_075 | 탄수화물, 단백질, 지방 중 어떤 것이 혈당을 가장 많이 올리나요? | category=metabolism | topicMatch=1 | bad=false | action=rewrite
 - [qa] meta_079 | 식사 순서(채소→단백질→탄수화물)가 혈당에 미치는 영향은? | category=metabolism | topicMatch=1 | bad=false | action=rewrite
 - [qa] meta_080 | 콩팥(신장) 기능과 혈당 조절은 어떤 관계인가요? | category=metabolism | topicMatch=1 | bad=false | action=rewrite
-- [qa] meta_086 | 배고프지 않아도 정해진 시간에 먹어야 혈당 관리에 좋은가요? | category=metabolism | topicMatch=1 | bad=false | action=rewrite
 - [qa] meta_092 | 혈당이 높으면 시력에 영향을 주나요? | category=metabolism | topicMatch=1 | bad=false | action=rewrite
-- [qa] meta_093 | 감자와 고구마 중 혈당 관리에 어떤 것이 더 좋나요? | category=metabolism | topicMatch=1 | bad=false | action=rewrite
 - [qa] meta_098 | 식후 2시간 혈당은 얼마가 정상인가요? | category=metabolism | topicMatch=1 | bad=false | action=rewrite
 - [qa] cancer-004 | 항산화 보충제가 암 예방에 효과적인가요? | category=cancer_immune | topicMatch=1 | bad=false | action=rewrite
 - [qa] cancer-005 | 면역항암제 치료 중 식이 관리는 어떻게 해야 하나요? | category=cancer_immune | topicMatch=1 | bad=false | action=rewrite
 - [qa] cancer-013 | 암 치료 후 재발을 예방하기 위해 어떻게 해야 하나요? | category=cancer_immune | topicMatch=1 | bad=false | action=rewrite
 - [qa] cancer-014 | T세포와 B세포의 차이는 무엇이고 면역에서 어떤 역할을 하나요? | category=cancer_immune | topicMatch=1 | bad=false | action=rewrite
 - [qa] cancer-018 | 항암 치료 중 고열량 식사를 해야 한다고 들었는데 맞나요? | category=cancer_immune | topicMatch=1 | bad=false | action=rewrite
+- [qa] ci_016 | 암 예방을 위한 생활 습관은 무엇인가요? | category=cancer_immune | topicMatch=1 | bad=false | action=rewrite
 - [qa] ci_021 | 암 표지자(종양 표지자) 검사는 신뢰할 수 있나요? | category=cancer_immune | topicMatch=1 | bad=false | action=rewrite
 - [qa] ci_027 | BRCA1/2 유전자 변이가 있으면 반드시 암이 생기나요? | category=cancer_immune | topicMatch=1 | bad=false | action=rewrite
 - [qa] ci_034 | 면역 기능과 수면의 관계는? | category=cancer_immune | topicMatch=1 | bad=false | action=rewrite
@@ -160,7 +161,6 @@
 - [qa] nc_083 | 스마트 약물(nootropics)이 인지를 향상시키나요? | category=neuro_cognitive | topicMatch=1 | bad=false | action=rewrite
 - [qa] nc_088 | 인지 기능 향상을 위한 일상적 실천 방법은? | category=neuro_cognitive | topicMatch=1 | bad=false | action=rewrite
 - [qa] skin-004 | 피부 노화를 늦추는 가장 효과적인 방법은? | category=skin | topicMatch=1 | bad=false | action=rewrite
-- [qa] skin-016 | 로즈힙오일과 아르간오일 중 어떤 것이 피부에 더 좋나요? | category=skin | topicMatch=1 | bad=false | action=rewrite
 - [qa] skin-019 | 피부 문신 제거 과정에서 주의할 점은 무엇인가요? | category=skin | topicMatch=1 | bad=false | action=rewrite
 - [qa] sh_011 | 여드름이 생기는 원인은 무엇인가요? | category=hair | topicMatch=1 | bad=false | action=rewrite
 - [qa] sh_013 | 피부 보습이 중요한 이유는? | category=skin | topicMatch=1 | bad=false | action=rewrite
@@ -169,7 +169,7 @@
 - [qa] sh_018 | 피부 타입에 맞는 세안 방법은? | category=skin | topicMatch=1 | bad=false | action=rewrite
 - [qa] sh_029 | 여드름 흉터를 없애는 방법은? | category=skin | topicMatch=1 | bad=false | action=rewrite
 - [qa] sh_030 | 피부 노화를 예방하는 핵심 스킨케어는? | category=skin | topicMatch=1 | bad=false | action=rewrite
+- [qa] sh_031 | 헤어 드라이어 사용이 모발 손상을 주나요? | category=hair | topicMatch=1 | bad=false | action=rewrite
 - [qa] sh_032 | 피부과 의사가 권하는 기본 스킨케어 루틴은? | category=skin | topicMatch=1 | bad=false | action=rewrite
+- [qa] sh_036 | 두피 비듬의 원인과 관리는? | category=hair | topicMatch=1 | bad=false | action=rewrite
 - [qa] sh_037 | 피부 습진과 건선은 어떻게 다른가요? | category=skin | topicMatch=1 | bad=false | action=rewrite
-- [qa] sh_043 | 피부 결절과 낭종의 차이는? | category=skin | topicMatch=1 | bad=false | action=rewrite
-- [qa] sh_047 | 탈모에 두피 마사지가 효과적인가요? | category=hair | topicMatch=1 | bad=false | action=rewrite

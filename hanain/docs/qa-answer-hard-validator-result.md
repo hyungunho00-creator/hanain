@@ -1,11 +1,11 @@
 # QA Answer Hard Validator Result
 
-- generatedAt: 2026-06-24T08:39:04.814Z
+- generatedAt: 2026-06-24T09:04:12.736Z
 - scanned: 2037
 - publicAnswers: 2037
 - hiddenMissingAnswer: 0
 - failures: 0
-- warnings: 566
+- warnings: 564
 - status: PASS
 
 ## Failures
@@ -577,6 +577,4 @@
 - seoqa-respiratory-05: first paragraph starts with category label
 - trend-energy-drink-preworkout-caffeine-sleep-20260602: title keyword missing in first 300 chars
 - trend-oral-minoxidil-hair-loss-blood-pressure-safety-20260602: title keyword missing in first 300 chars
-- trend-respiratory-virus-vaccine-covid-flu-rsv-record-20260603: first paragraph starts with category label
-- trend-older-adult-fall-prevention-balance-medication-vision-record-20260603: title keyword missing in first 300 chars
 - category-aeo-round2-skin-uva-visible-light-sunscreen-phlorotannin-20260611: first paragraph starts with category label

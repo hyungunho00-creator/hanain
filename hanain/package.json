@@ -30,6 +30,7 @@
     "content:refine:rollback": "node scripts/content_refine_rollback.mjs",
     "audit:qa-batch": "node scripts/verify_qa_batch_constitution.mjs",
     "qa:restore-quality-batch": "node scripts/restore_qa_quality_batch_20260624.mjs",
+    "qa:sync-indexable-twins": "node scripts/sync_qa_indexable_twins.mjs",
     "qa:constitution": "node scripts/qa_constitution_upgrade.mjs",
     "qa:recall-rewrite": "node scripts/content_recall_rewrite_qa.mjs",
     "seo:expand": "node scripts/expand_existing_seo_assets.mjs",

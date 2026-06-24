@@ -21,29 +21,6 @@
     "rewriteRequired": true
   },
   {
-    "slug": "가슴이-조이는-느낌이-자주-드는데-협심증일까요",
-    "type": "qa",
-    "title": "가슴이 조이는 느낌이 자주 드는데 협심증일까요?",
-    "category": "cardiovascular",
-    "tags": [
-      "협심증",
-      "흉통",
-      "플로로탄닌"
-    ],
-    "priority": "high",
-    "reason": "low topic match score: 1",
-    "requiredTopicTerms": [
-      "가슴이",
-      "조이는",
-      "느낌이",
-      "자주",
-      "드는데",
-      "협심증일까요"
-    ],
-    "bannedCurrentPhrases": [],
-    "rewriteRequired": true
-  },
-  {
     "slug": "심근경색은-어떻게-예방할-수-있나요",
     "type": "qa",
     "title": "심근경색은 어떻게 예방할 수 있나요?",
@@ -54,7 +31,11 @@
       "플로로탄닌",
       "폴리페놀",
       "항산화",
-      "항염증"
+      "항염증",
+      "심장질환예방",
+      "혈압관리",
+      "LDL콜레스테롤",
+      "금연"
     ],
     "priority": "critical",
     "reason": "low topic match score: 0",
@@ -83,6 +64,28 @@
       "진단을",
       "받았는데",
       "관리해야"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "좋은-콜레스테롤HDL을-높이는-방법이-있나요",
+    "type": "qa",
+    "title": "좋은 콜레스테롤(HDL)을 높이는 방법이 있나요?",
+    "category": "cardiovascular",
+    "tags": [
+      "이상지질혈증",
+      "콜레스테롤",
+      "플로로탄닌"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 1",
+    "requiredTopicTerms": [
+      "좋은",
+      "콜레스테롤",
+      "hdl",
+      "높이는",
+      "방법이"
     ],
     "bannedCurrentPhrases": [],
     "rewriteRequired": true
@@ -138,47 +141,28 @@
     "rewriteRequired": true
   },
   {
-    "slug": "수면-부족이-심장병-위험을-높이나요",
+    "slug": "부모님이-심장병이-있으면-저도-걸릴-확률이-높나요",
     "type": "qa",
-    "title": "수면 부족이 심장병 위험을 높이나요?",
+    "title": "부모님이 심장병이 있으면 저도 걸릴 확률이 높나요?",
     "category": "cardiovascular",
     "tags": [
-      "심장",
-      "수면",
+      "심장병",
+      "유전",
       "플로로탄닌",
       "감태",
-      "디에콜"
+      "항산화",
+      "항염증",
+      "에콜"
     ],
     "priority": "high",
     "reason": "low topic match score: 1",
     "requiredTopicTerms": [
-      "수면",
-      "부족이",
-      "심장병",
-      "위험을",
-      "높이나요"
-    ],
-    "bannedCurrentPhrases": [],
-    "rewriteRequired": true
-  },
-  {
-    "slug": "당뇨병-환자가-심혈관-합병증을-예방하려면-어떻게-해야-하나요",
-    "type": "qa",
-    "title": "당뇨병 환자가 심혈관 합병증을 예방하려면 어떻게 해야 하나요?",
-    "category": "cardiovascular",
-    "tags": [
-      "심혈관",
-      "당뇨",
-      "플로로탄닌"
-    ],
-    "priority": "critical",
-    "reason": "low topic match score: 0",
-    "requiredTopicTerms": [
-      "당뇨병",
-      "환자가",
-      "심혈관",
-      "합병증을",
-      "예방하려면"
+      "부모님이",
+      "심장병이",
+      "있으면",
+      "저도",
+      "걸릴",
+      "확률이"
     ],
     "bannedCurrentPhrases": [],
     "rewriteRequired": true
@@ -252,6 +236,32 @@
     "rewriteRequired": true
   },
   {
+    "slug": "베타차단제와-칼슘채널차단제의-차이는-무엇인가요",
+    "type": "qa",
+    "title": "베타차단제와 칼슘채널차단제의 차이는 무엇인가요?",
+    "category": "cardiovascular",
+    "tags": [
+      "혈압",
+      "약물",
+      "플로로탄닌",
+      "감태",
+      "폴리페놀",
+      "디에콜",
+      "에콜",
+      "갈조류"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 1",
+    "requiredTopicTerms": [
+      "베타차단제와",
+      "칼슘채널차단제의",
+      "차이는",
+      "무엇인가요"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
     "slug": "당뇨가-있으면-심혈관-질환-위험이-얼마나-높아지나요",
     "type": "qa",
     "title": "당뇨가 있으면 심혈관 질환 위험이 얼마나 높아지나요?",
@@ -305,22 +315,28 @@
     "rewriteRequired": true
   },
   {
-    "slug": "혈당과-혈압을-동시에-잘-관리하려면-어떻게-해야-하나요",
+    "slug": "수영이-심혈관-건강에-효과적인-이유는-무엇인가요",
     "type": "qa",
-    "title": "혈당과 혈압을 동시에 잘 관리하려면 어떻게 해야 하나요?",
+    "title": "수영이 심혈관 건강에 효과적인 이유는 무엇인가요?",
     "category": "cardiovascular",
     "tags": [
-      "혈관",
-      "당화혈색소",
-      "플로로탄닌"
+      "심장",
+      "수영",
+      "플로로탄닌",
+      "감태",
+      "항산화",
+      "항염증",
+      "에콜"
     ],
-    "priority": "critical",
-    "reason": "low topic match score: 0",
+    "priority": "high",
+    "reason": "low topic match score: 1",
     "requiredTopicTerms": [
-      "혈당과",
-      "혈압을",
-      "동시에",
-      "관리하려면"
+      "수영이",
+      "심혈관",
+      "건강에",
+      "효과적인",
+      "이유는",
+      "무엇인가요"
     ],
     "bannedCurrentPhrases": [],
     "rewriteRequired": true
@@ -386,38 +402,13 @@
       "플로로탄닌",
       "항산화"
     ],
-    "priority": "critical",
-    "reason": "low topic match score: 0",
+    "priority": "high",
+    "reason": "low topic match score: 1",
     "requiredTopicTerms": [
       "비알코올성",
       "지방간을",
       "식이로",
       "관리할"
-    ],
-    "bannedCurrentPhrases": [],
-    "rewriteRequired": true
-  },
-  {
-    "slug": "공복혈당이-100125mgdL인-당뇨-전단계인데-어떻게-관리해야-하나요",
-    "type": "qa",
-    "title": "공복혈당이 100~125mg/dL인 당뇨 전단계인데 어떻게 관리해야 하나요?",
-    "category": "metabolism",
-    "tags": [
-      "당뇨전단계",
-      "공복혈당",
-      "예방",
-      "생활습관",
-      "플로로탄닌"
-    ],
-    "priority": "critical",
-    "reason": "low topic match score: 0",
-    "requiredTopicTerms": [
-      "공복혈당이",
-      "100",
-      "125mg",
-      "dl인",
-      "당뇨",
-      "전단계인데"
     ],
     "bannedCurrentPhrases": [],
     "rewriteRequired": true
@@ -631,33 +622,6 @@
     "rewriteRequired": true
   },
   {
-    "slug": "살-빼면-당뇨가-완전-회복임상적-관해이-가능할-수-있나요",
-    "type": "qa",
-    "title": "살 빼면 당뇨가 완전 회복(임상적 관해)이 가능할 수 있나요?",
-    "category": "metabolism",
-    "tags": [
-      "당뇨완치",
-      "체중감량",
-      "관해",
-      "생활습관",
-      "플로로탄닌",
-      "해양폴리페놀",
-      "폴리페놀"
-    ],
-    "priority": "critical",
-    "reason": "low topic match score: 0",
-    "requiredTopicTerms": [
-      "빼면",
-      "당뇨가",
-      "완전",
-      "회복",
-      "임상적",
-      "관해"
-    ],
-    "bannedCurrentPhrases": [],
-    "rewriteRequired": true
-  },
-  {
     "slug": "혈당을-낮추는-데-수면이-왜-중요한가요",
     "type": "qa",
     "title": "혈당을 낮추는 데 수면이 왜 중요한가요?",
@@ -735,11 +699,11 @@
     "title": "혈당 스파이크란 무엇이고 어떻게 예방하나요?",
     "category": "metabolism",
     "tags": [
-      "혈당",
-      "인슐린",
-      "플로로탄닌",
-      "해양폴리페놀",
-      "폴리페놀"
+      "혈당스파이크",
+      "식후혈당",
+      "식사순서",
+      "걷기",
+      "플로로탄닌"
     ],
     "priority": "high",
     "reason": "low topic match score: 1",
@@ -876,6 +840,29 @@
     "rewriteRequired": true
   },
   {
+    "slug": "복부지방과-피하지방의-차이는-무엇인가요",
+    "type": "qa",
+    "title": "복부지방과 피하지방의 차이는 무엇인가요?",
+    "category": "metabolism",
+    "tags": [
+      "복부지방",
+      "내장지방",
+      "피하지방",
+      "허리둘레",
+      "대사증후군"
+    ],
+    "priority": "critical",
+    "reason": "low topic match score: 0",
+    "requiredTopicTerms": [
+      "복부지방과",
+      "피하지방의",
+      "차이는",
+      "무엇인가요"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
     "slug": "혈당을-낮추는-자연-식품이-있나요",
     "type": "qa",
     "title": "혈당을 낮추는 자연 식품이 있나요?",
@@ -894,31 +881,6 @@
       "낮추는",
       "자연",
       "식품이"
-    ],
-    "bannedCurrentPhrases": [],
-    "rewriteRequired": true
-  },
-  {
-    "slug": "밥-대신-현미를-먹으면-혈당-관리에-도움이-되나요",
-    "type": "qa",
-    "title": "밥 대신 현미를 먹으면 혈당 관리에 도움이 되나요?",
-    "category": "metabolism",
-    "tags": [
-      "당뇨",
-      "혈당",
-      "대사",
-      "플로로탄닌",
-      "감태"
-    ],
-    "priority": "high",
-    "reason": "low topic match score: 1",
-    "requiredTopicTerms": [
-      "대신",
-      "현미를",
-      "먹으면",
-      "혈당",
-      "관리에",
-      "도움이"
     ],
     "bannedCurrentPhrases": [],
     "rewriteRequired": true
@@ -1093,33 +1055,6 @@
       "조절에",
       "도움이",
       "되나요"
-    ],
-    "bannedCurrentPhrases": [],
-    "rewriteRequired": true
-  },
-  {
-    "slug": "당뇨병-환자에게-운동이-왜-중요한가요",
-    "type": "qa",
-    "title": "당뇨병 환자에게 운동이 왜 중요한가요?",
-    "category": "metabolism",
-    "tags": [
-      "당뇨",
-      "혈당",
-      "인슐린",
-      "플로로탄닌",
-      "감태",
-      "폴리페놀",
-      "디에콜",
-      "에콜",
-      "갈조류"
-    ],
-    "priority": "critical",
-    "reason": "low topic match score: 0",
-    "requiredTopicTerms": [
-      "당뇨병",
-      "환자에게",
-      "운동이",
-      "중요한가요"
     ],
     "bannedCurrentPhrases": [],
     "rewriteRequired": true
@@ -1398,31 +1333,6 @@
     "rewriteRequired": true
   },
   {
-    "slug": "배고프지-않아도-정해진-시간에-먹어야-혈당-관리에-좋은가요",
-    "type": "qa",
-    "title": "배고프지 않아도 정해진 시간에 먹어야 혈당 관리에 좋은가요?",
-    "category": "metabolism",
-    "tags": [
-      "당뇨",
-      "혈당",
-      "대사",
-      "플로로탄닌",
-      "감태"
-    ],
-    "priority": "high",
-    "reason": "low topic match score: 1",
-    "requiredTopicTerms": [
-      "배고프지",
-      "않아도",
-      "정해진",
-      "시간에",
-      "먹어야",
-      "혈당"
-    ],
-    "bannedCurrentPhrases": [],
-    "rewriteRequired": true
-  },
-  {
     "slug": "혈당이-높으면-시력에-영향을-주나요",
     "type": "qa",
     "title": "혈당이 높으면 시력에 영향을 주나요?",
@@ -1440,32 +1350,6 @@
       "시력에",
       "영향을",
       "주나요"
-    ],
-    "bannedCurrentPhrases": [],
-    "rewriteRequired": true
-  },
-  {
-    "slug": "감자와-고구마-중-혈당-관리에-어떤-것이-더-좋나요",
-    "type": "qa",
-    "title": "감자와 고구마 중 혈당 관리에 어떤 것이 더 좋나요?",
-    "category": "metabolism",
-    "tags": [
-      "혈당",
-      "플로로탄닌",
-      "감태",
-      "해양폴리페놀",
-      "폴리페놀",
-      "항산화"
-    ],
-    "priority": "high",
-    "reason": "low topic match score: 1",
-    "requiredTopicTerms": [
-      "감자와",
-      "고구마",
-      "혈당",
-      "관리에",
-      "어떤",
-      "것이"
     ],
     "bannedCurrentPhrases": [],
     "rewriteRequired": true
@@ -2037,10 +1921,13 @@
       "폴리페놀",
       "항산화",
       "디에콜",
-      "에콜"
+      "에콜",
+      "금연",
+      "국가암검진",
+      "예방접종"
     ],
-    "priority": "critical",
-    "reason": "low topic match score: 0",
+    "priority": "high",
+    "reason": "low topic match score: 1",
     "requiredTopicTerms": [
       "예방을",
       "위한",
@@ -2116,28 +2003,6 @@
       "표지자",
       "검사는",
       "신뢰할"
-    ],
-    "bannedCurrentPhrases": [],
-    "rewriteRequired": true
-  },
-  {
-    "slug": "HPV-백신이-자궁경부암을-예방하나요",
-    "type": "qa",
-    "title": "HPV 백신이 자궁경부암을 예방하나요?",
-    "category": "cancer_immune",
-    "tags": [
-      "암",
-      "예방",
-      "플로로탄닌",
-      "감태"
-    ],
-    "priority": "critical",
-    "reason": "low topic match score: 0",
-    "requiredTopicTerms": [
-      "hpv",
-      "백신이",
-      "자궁경부암을",
-      "예방하나요"
     ],
     "bannedCurrentPhrases": [],
     "rewriteRequired": true
@@ -2619,28 +2484,6 @@
       "증가하는",
       "이유는",
       "무엇인가요"
-    ],
-    "bannedCurrentPhrases": [],
-    "rewriteRequired": true
-  },
-  {
-    "slug": "암-예방-백신이-있나요",
-    "type": "qa",
-    "title": "암 예방 백신이 있나요?",
-    "category": "cancer_immune",
-    "tags": [
-      "암",
-      "예방",
-      "플로로탄닌",
-      "항산화",
-      "디에콜",
-      "갈조류"
-    ],
-    "priority": "critical",
-    "reason": "low topic match score: 0",
-    "requiredTopicTerms": [
-      "예방",
-      "백신이"
     ],
     "bannedCurrentPhrases": [],
     "rewriteRequired": true
@@ -3656,26 +3499,6 @@
     "rewriteRequired": true
   },
   {
-    "slug": "치매를-예방하는-방법이-있나요",
-    "type": "qa",
-    "title": "치매를 예방하는 방법이 있나요?",
-    "category": "neuro_cognitive",
-    "tags": [
-      "치매",
-      "인지",
-      "플로로탄닌"
-    ],
-    "priority": "critical",
-    "reason": "low topic match score: 0",
-    "requiredTopicTerms": [
-      "치매를",
-      "예방하는",
-      "방법이"
-    ],
-    "bannedCurrentPhrases": [],
-    "rewriteRequired": true
-  },
-  {
     "slug": "두통의-종류에는-어떤-것이-있나요",
     "type": "qa",
     "title": "두통의 종류에는 어떤 것이 있나요?",
@@ -4562,8 +4385,8 @@
       "항염증",
       "에콜"
     ],
-    "priority": "high",
-    "reason": "low topic match score: 1",
+    "priority": "critical",
+    "reason": "low topic match score: 0",
     "requiredTopicTerms": [
       "로즈힙오일과",
       "아르간오일",
@@ -4682,27 +4505,6 @@
     "rewriteRequired": true
   },
   {
-    "slug": "아토피-피부염-관리-방법은",
-    "type": "qa",
-    "title": "아토피 피부염 관리 방법은?",
-    "category": "skin",
-    "tags": [
-      "피부",
-      "아토피",
-      "피부염",
-      "플로로탄닌"
-    ],
-    "priority": "critical",
-    "reason": "low topic match score: 0",
-    "requiredTopicTerms": [
-      "아토피",
-      "피부염",
-      "방법은"
-    ],
-    "bannedCurrentPhrases": [],
-    "rewriteRequired": true
-  },
-  {
     "slug": "탈모의-종류에는-어떤-것이-있나요",
     "type": "qa",
     "title": "탈모의 종류에는 어떤 것이 있나요?",
@@ -4800,30 +4602,6 @@
     "rewriteRequired": true
   },
   {
-    "slug": "레티놀이-피부에-어떤-효과가-있나요",
-    "type": "qa",
-    "title": "레티놀이 피부에 어떤 효과가 있나요?",
-    "category": "skin",
-    "tags": [
-      "피부",
-      "플로로탄닌",
-      "감태",
-      "항산화",
-      "항염증",
-      "에콜"
-    ],
-    "priority": "critical",
-    "reason": "low topic match score: 0",
-    "requiredTopicTerms": [
-      "레티놀이",
-      "피부에",
-      "어떤",
-      "효과가"
-    ],
-    "bannedCurrentPhrases": [],
-    "rewriteRequired": true
-  },
-  {
     "slug": "비타민-C-세럼이-피부에-도움이-되나요",
     "type": "qa",
     "title": "비타민 C 세럼이 피부에 도움이 되나요?",
@@ -4916,6 +4694,30 @@
     "rewriteRequired": true
   },
   {
+    "slug": "헤어-드라이어-사용이-모발-손상을-주나요",
+    "type": "qa",
+    "title": "헤어 드라이어 사용이 모발 손상을 주나요?",
+    "category": "hair",
+    "tags": [
+      "모발",
+      "플로로탄닌",
+      "감태",
+      "디에콜"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 1",
+    "requiredTopicTerms": [
+      "헤어",
+      "드라이어",
+      "사용이",
+      "모발",
+      "손상을",
+      "주나요"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
     "slug": "피부과-의사가-권하는-기본-스킨케어-루틴은",
     "type": "qa",
     "title": "피부과 의사가 권하는 기본 스킨케어 루틴은?",
@@ -4988,6 +4790,30 @@
     "rewriteRequired": true
   },
   {
+    "slug": "두피-비듬의-원인과-관리는",
+    "type": "qa",
+    "title": "두피 비듬의 원인과 관리는?",
+    "category": "hair",
+    "tags": [
+      "피부",
+      "피부염",
+      "플로로탄닌",
+      "항산화",
+      "디에콜",
+      "갈조류"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 1",
+    "requiredTopicTerms": [
+      "두피",
+      "비듬의",
+      "원인과",
+      "관리는"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
     "slug": "피부-습진과-건선은-어떻게-다른가요",
     "type": "qa",
     "title": "피부 습진과 건선은 어떻게 다른가요?",
@@ -5029,6 +4855,31 @@
       "화학",
       "박피",
       "필링"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "자외선에-의한-피부-손상을-어떻게-예방하나요",
+    "type": "qa",
+    "title": "자외선에 의한 피부 손상을 어떻게 예방하나요?",
+    "category": "skin",
+    "tags": [
+      "피부",
+      "플로로탄닌",
+      "감태",
+      "항산화",
+      "항염증",
+      "에콜"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 1",
+    "requiredTopicTerms": [
+      "자외선에",
+      "의한",
+      "피부",
+      "손상을",
+      "예방하나요"
     ],
     "bannedCurrentPhrases": [],
     "rewriteRequired": true
@@ -5281,8 +5132,8 @@
       "디에콜",
       "갈조류"
     ],
-    "priority": "high",
-    "reason": "low topic match score: 1",
+    "priority": "critical",
+    "reason": "low topic match score: 0",
     "requiredTopicTerms": [
       "피부에",
       "좋은",
@@ -6661,6 +6512,109 @@
     "rewriteRequired": true
   },
   {
+    "slug": "전립선-건강을-위해-식이에서-무엇을-조심해야-하나요",
+    "type": "qa",
+    "title": "전립선 건강을 위해 식이에서 무엇을 조심해야 하나요?",
+    "category": "mens_health",
+    "tags": [
+      "전립선",
+      "전립선건강",
+      "라이코펜",
+      "남성건강",
+      "플로로탄닌",
+      "감태",
+      "폴리페놀",
+      "항산화",
+      "디에콜",
+      "에콜"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 1",
+    "requiredTopicTerms": [
+      "전립선",
+      "건강을",
+      "위해",
+      "식이에서",
+      "무엇을",
+      "조심해야"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "발기부전이-심혈관-질환의-신호일-수-있나요",
+    "type": "qa",
+    "title": "발기부전이 심혈관 질환의 신호일 수 있나요?",
+    "category": "mens_health",
+    "tags": [
+      "발기부전",
+      "심혈관",
+      "혈관건강",
+      "남성건강",
+      "플로로탄닌"
+    ],
+    "priority": "critical",
+    "reason": "low topic match score: 0",
+    "requiredTopicTerms": [
+      "발기부전이",
+      "심혈관",
+      "질환의",
+      "신호일"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "정자-건강을-개선하는-방법이-있나요",
+    "type": "qa",
+    "title": "정자 건강을 개선하는 방법이 있나요?",
+    "category": "mens_health",
+    "tags": [
+      "정자건강",
+      "남성난임",
+      "항산화",
+      "남성건강",
+      "플로로탄닌",
+      "감태",
+      "해양폴리페놀",
+      "폴리페놀"
+    ],
+    "priority": "critical",
+    "reason": "low topic match score: 0",
+    "requiredTopicTerms": [
+      "정자",
+      "건강을",
+      "개선하는",
+      "방법이"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "전립선비대증BPH을-식이와-생활습관으로-관리할-수-있나요",
+    "type": "qa",
+    "title": "전립선비대증(BPH)을 식이와 생활습관으로 관리할 수 있나요?",
+    "category": "mens_health",
+    "tags": [
+      "전립선비대증",
+      "BPH",
+      "야간빈뇨",
+      "전립선",
+      "플로로탄닌"
+    ],
+    "priority": "critical",
+    "reason": "low topic match score: 0",
+    "requiredTopicTerms": [
+      "전립선비대증",
+      "bph",
+      "식이와",
+      "생활습관으로",
+      "관리할"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
     "slug": "남성이-유방암에-걸릴-수-있나요",
     "type": "qa",
     "title": "남성이 유방암에 걸릴 수 있나요?",
@@ -6698,14 +6652,64 @@
       "항염증",
       "에콜"
     ],
-    "priority": "critical",
-    "reason": "low topic match score: 0",
+    "priority": "high",
+    "reason": "low topic match score: 1",
     "requiredTopicTerms": [
       "남성",
       "탈모를",
       "최대한",
       "늦추는",
       "방법은"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "근력-운동-후-단백질을-얼마나-먹어야-하나요",
+    "type": "qa",
+    "title": "근력 운동 후 단백질을 얼마나 먹어야 하나요?",
+    "category": "mens_health",
+    "tags": [
+      "단백질",
+      "근력운동",
+      "근육성장",
+      "스포츠영양",
+      "플로로탄닌",
+      "해양폴리페놀",
+      "폴리페놀"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 1",
+    "requiredTopicTerms": [
+      "근력",
+      "운동",
+      "단백질을",
+      "얼마나",
+      "먹어야"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "남성에게-유독-복부비만이-잘-생기는-이유는",
+    "type": "qa",
+    "title": "남성에게 유독 복부비만이 잘 생기는 이유는?",
+    "category": "mens_health",
+    "tags": [
+      "복부비만",
+      "내장지방",
+      "남성건강",
+      "대사증후군",
+      "플로로탄닌"
+    ],
+    "priority": "critical",
+    "reason": "low topic match score: 0",
+    "requiredTopicTerms": [
+      "남성에게",
+      "유독",
+      "복부비만이",
+      "생기는",
+      "이유는"
     ],
     "bannedCurrentPhrases": [],
     "rewriteRequired": true
@@ -6732,35 +6736,6 @@
       "여성과",
       "다른",
       "점이"
-    ],
-    "bannedCurrentPhrases": [],
-    "rewriteRequired": true
-  },
-  {
-    "slug": "남성-탈모안드로겐성-탈모는-왜-생기고-어떻게-관리하나요",
-    "type": "qa",
-    "title": "남성 탈모(안드로겐성 탈모)는 왜 생기고 어떻게 관리하나요?",
-    "category": "mens_health",
-    "tags": [
-      "탈모",
-      "안드로겐",
-      "DHT",
-      "피나스테리드",
-      "플로로탄닌",
-      "감태",
-      "항염증",
-      "디에콜",
-      "에콜"
-    ],
-    "priority": "high",
-    "reason": "low topic match score: 1",
-    "requiredTopicTerms": [
-      "남성",
-      "탈모",
-      "안드로겐성",
-      "탈모",
-      "생기고",
-      "관리하나요"
     ],
     "bannedCurrentPhrases": [],
     "rewriteRequired": true
@@ -6813,6 +6788,34 @@
       "고환암은",
       "조기에",
       "발견할"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "남성에게-많은-통풍의-원인과-예방법은",
+    "type": "qa",
+    "title": "남성에게 많은 통풍의 원인과 예방법은?",
+    "category": "mens_health",
+    "tags": [
+      "통풍",
+      "요산",
+      "퓨린",
+      "맥주",
+      "플로로탄닌",
+      "감태",
+      "항염증",
+      "디에콜",
+      "에콜"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 1",
+    "requiredTopicTerms": [
+      "남성에게",
+      "많은",
+      "통풍의",
+      "원인과",
+      "예방법은"
     ],
     "bannedCurrentPhrases": [],
     "rewriteRequired": true
@@ -6963,38 +6966,6 @@
     "rewriteRequired": true
   },
   {
-    "slug": "남성-피부-관리에서-자외선-차단이-중요한-이유는",
-    "type": "qa",
-    "title": "남성 피부 관리에서 자외선 차단이 중요한 이유는?",
-    "category": "mens_health",
-    "tags": [
-      "남성피부",
-      "자외선차단",
-      "노화",
-      "피부암",
-      "플로로탄닌",
-      "감태",
-      "해양폴리페놀",
-      "폴리페놀",
-      "항산화",
-      "항염증",
-      "디에콜",
-      "에콜"
-    ],
-    "priority": "high",
-    "reason": "low topic match score: 1",
-    "requiredTopicTerms": [
-      "남성",
-      "피부",
-      "관리에서",
-      "자외선",
-      "차단이",
-      "중요한"
-    ],
-    "bannedCurrentPhrases": [],
-    "rewriteRequired": true
-  },
-  {
     "slug": "남성에게-유방암이-발생할-수-있나요",
     "type": "qa",
     "title": "남성에게 유방암이 발생할 수 있나요?",
@@ -7047,38 +7018,6 @@
       "회복",
       "기간은",
       "얼마나"
-    ],
-    "bannedCurrentPhrases": [],
-    "rewriteRequired": true
-  },
-  {
-    "slug": "남성-당뇨-환자의-발-관리가-중요한-이유는",
-    "type": "qa",
-    "title": "남성 당뇨 환자의 발 관리가 중요한 이유는?",
-    "category": "mens_health",
-    "tags": [
-      "당뇨발",
-      "당뇨병성족부",
-      "말초신경병증",
-      "절단위험",
-      "플로로탄닌",
-      "감태",
-      "해양폴리페놀",
-      "폴리페놀",
-      "항산화",
-      "항염증",
-      "디에콜",
-      "에콜"
-    ],
-    "priority": "critical",
-    "reason": "low topic match score: 0",
-    "requiredTopicTerms": [
-      "남성",
-      "당뇨",
-      "환자의",
-      "관리가",
-      "중요한",
-      "이유는"
     ],
     "bannedCurrentPhrases": [],
     "rewriteRequired": true
@@ -7311,6 +7250,32 @@
     "rewriteRequired": true
   },
   {
+    "slug": "요로감염이-자꾸-재발하는-이유가-있나요",
+    "type": "qa",
+    "title": "요로감염이 자꾸 재발하는 이유가 있나요?",
+    "category": "infection_inflammation",
+    "tags": [
+      "요로감염",
+      "방광염",
+      "대장균",
+      "재발",
+      "플로로탄닌",
+      "감태",
+      "디에콜",
+      "에콜"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 1",
+    "requiredTopicTerms": [
+      "요로감염이",
+      "자꾸",
+      "재발하는",
+      "이유가"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
     "slug": "A형-간염과-B형-간염의-차이는-무엇인가요",
     "type": "qa",
     "title": "A형 간염과 B형 간염의 차이는 무엇인가요?",
@@ -7485,6 +7450,33 @@
       "감염인가요",
       "세균과의",
       "관계는",
+      "무엇인가요"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "모낭염이-반복될-때-원인과-예방법은-무엇인가요",
+    "type": "qa",
+    "title": "모낭염이 반복될 때 원인과 예방법은 무엇인가요?",
+    "category": "infection_inflammation",
+    "tags": [
+      "모낭염",
+      "포도상구균",
+      "피부감염",
+      "피부장벽",
+      "플로로탄닌",
+      "감태",
+      "디에콜",
+      "에콜"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 1",
+    "requiredTopicTerms": [
+      "모낭염이",
+      "반복될",
+      "원인과",
+      "예방법은",
       "무엇인가요"
     ],
     "bannedCurrentPhrases": [],
@@ -7846,6 +7838,35 @@
       "어떤",
       "원인이",
       "있을까요"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "불안-장애의-다양한-유형GAD-공황-특정-공포증-등을-어떻게-구분하나요",
+    "type": "qa",
+    "title": "불안 장애의 다양한 유형(GAD, 공황, 특정 공포증 등)을 어떻게 구분하나요?",
+    "category": "mental_health",
+    "tags": [
+      "불안장애",
+      "GAD",
+      "특정공포증",
+      "분류",
+      "플로로탄닌",
+      "감태",
+      "항산화",
+      "디에콜",
+      "에콜"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 1",
+    "requiredTopicTerms": [
+      "불안",
+      "장애의",
+      "다양한",
+      "유형",
+      "gad",
+      "공황"
     ],
     "bannedCurrentPhrases": [],
     "rewriteRequired": true
@@ -8327,6 +8348,33 @@
     "rewriteRequired": true
   },
   {
+    "slug": "번아웃-증후군이란-무엇이고-어떻게-회복하나요",
+    "type": "qa",
+    "title": "번아웃 증후군이란 무엇이고, 어떻게 회복하나요?",
+    "category": "mental_health",
+    "tags": [
+      "번아웃",
+      "만성피로",
+      "스트레스",
+      "플로로탄닌",
+      "해양폴리페놀",
+      "폴리페놀",
+      "업무스트레스",
+      "수면",
+      "정신건강"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 1",
+    "requiredTopicTerms": [
+      "번아웃",
+      "증후군이란",
+      "무엇이고",
+      "회복하나요"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
     "slug": "조울증과-우울증은-어떻게-다른가요-치료도-다른가요",
     "type": "qa",
     "title": "조울증과 우울증은 어떻게 다른가요? 치료도 다른가요?",
@@ -8433,8 +8481,8 @@
       "EGFR",
       "표적치료"
     ],
-    "priority": "high",
-    "reason": "low topic match score: 1",
+    "priority": "critical",
+    "reason": "low topic match score: 0",
     "requiredTopicTerms": [
       "egfr",
       "돌연변이",
@@ -9717,6 +9765,29 @@
     "rewriteRequired": true
   },
   {
+    "slug": "식중독의-주요-원인과-여름철-예방-수칙은",
+    "type": "qa",
+    "title": "식중독의 주요 원인과 여름철 예방 수칙은?",
+    "category": "infection_inflammation",
+    "tags": [
+      "식중독",
+      "노로바이러스",
+      "예방"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 1",
+    "requiredTopicTerms": [
+      "식중독의",
+      "주요",
+      "원인과",
+      "여름철",
+      "예방",
+      "수칙은"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
     "slug": "A형-간염은-어떻게-감염되고-BC형-간염과-어떻게-다른가요",
     "type": "qa",
     "title": "A형 간염은 어떻게 감염되고 B·C형 간염과 어떻게 다른가요?",
@@ -10216,34 +10287,6 @@
     "rewriteRequired": true
   },
   {
-    "slug": "피부과-레이저-시술-후-관리가-중요한-이유는-무엇인가요",
-    "type": "qa",
-    "title": "피부과 레이저 시술 후 관리가 중요한 이유는 무엇인가요?",
-    "category": "skin",
-    "tags": [
-      "레이저시술",
-      "피부관리",
-      "시술후케어",
-      "자외선차단",
-      "플로로탄닌",
-      "감태",
-      "항산화",
-      "항염증"
-    ],
-    "priority": "high",
-    "reason": "low topic match score: 1",
-    "requiredTopicTerms": [
-      "피부과",
-      "레이저",
-      "시술",
-      "관리가",
-      "중요한",
-      "이유는"
-    ],
-    "bannedCurrentPhrases": [],
-    "rewriteRequired": true
-  },
-  {
     "slug": "피부-모공이-크게-보이는-이유와-줄이는-방법은",
     "type": "qa",
     "title": "피부 모공이 크게 보이는 이유와 줄이는 방법은?",
@@ -10369,8 +10412,8 @@
       "항산화",
       "항염증"
     ],
-    "priority": "high",
-    "reason": "low topic match score: 1",
+    "priority": "critical",
+    "reason": "low topic match score: 0",
     "requiredTopicTerms": [
       "피부에",
       "좋은",
@@ -10588,8 +10631,8 @@
       "항산화",
       "항염증"
     ],
-    "priority": "high",
-    "reason": "low topic match score: 1",
+    "priority": "critical",
+    "reason": "low topic match score: 0",
     "requiredTopicTerms": [
       "피부에",
       "자꾸",
@@ -10945,29 +10988,6 @@
     "rewriteRequired": true
   },
   {
-    "slug": "당뇨환자-식단배달을-고를-때-탄수화물은-어떻게-확인하나요",
-    "type": "qa",
-    "title": "당뇨환자 식단배달을 고를 때 탄수화물은 어떻게 확인하나요?",
-    "category": "metabolism",
-    "tags": [
-      "당뇨환자식단배달",
-      "탄수화물",
-      "혈당·대사",
-      "자주묻는질문"
-    ],
-    "priority": "critical",
-    "reason": "low topic match score: 0",
-    "requiredTopicTerms": [
-      "당뇨환자",
-      "식단배달을",
-      "고를",
-      "탄수화물은",
-      "확인하나요"
-    ],
-    "bannedCurrentPhrases": [],
-    "rewriteRequired": true
-  },
-  {
     "slug": "저당-음료라고-써-있으면-당뇨환자가-안심해도-되나요",
     "type": "qa",
     "title": "저당 음료라고 써 있으면 당뇨환자가 안심해도 되나요?",
@@ -11067,30 +11087,6 @@
     "rewriteRequired": true
   },
   {
-    "slug": "감태추출물은-혈당-관리에-도움이-되나요",
-    "type": "qa",
-    "title": "감태추출물은 혈당 관리에 도움이 되나요?",
-    "category": "metabolism",
-    "tags": [
-      "감태추출물",
-      "혈당관리",
-      "플로로탄닌",
-      "혈당·대사",
-      "자주묻는질문"
-    ],
-    "priority": "high",
-    "reason": "low topic match score: 1",
-    "requiredTopicTerms": [
-      "감태추출물은",
-      "혈당",
-      "관리에",
-      "도움이",
-      "되나요"
-    ],
-    "bannedCurrentPhrases": [],
-    "rewriteRequired": true
-  },
-  {
     "slug": "베르베린은-당뇨약-대신-먹어도-되나요",
     "type": "qa",
     "title": "베르베린은 당뇨약 대신 먹어도 되나요?",
@@ -11115,30 +11111,6 @@
     "rewriteRequired": true
   },
   {
-    "slug": "저탄고지-식단은-당뇨-전단계에-괜찮나요",
-    "type": "qa",
-    "title": "저탄고지 식단은 당뇨 전단계에 괜찮나요?",
-    "category": "metabolism",
-    "tags": [
-      "저탄고지",
-      "당뇨전단계",
-      "지질",
-      "혈당·대사",
-      "자주묻는질문"
-    ],
-    "priority": "critical",
-    "reason": "low topic match score: 0",
-    "requiredTopicTerms": [
-      "저탄고지",
-      "식단은",
-      "당뇨",
-      "전단계에",
-      "괜찮나요"
-    ],
-    "bannedCurrentPhrases": [],
-    "rewriteRequired": true
-  },
-  {
     "slug": "단백질-쉐이크는-혈당을-올리나요",
     "type": "qa",
     "title": "단백질 쉐이크는 혈당을 올리나요?",
@@ -11157,28 +11129,6 @@
       "쉐이크는",
       "혈당을",
       "올리나요"
-    ],
-    "bannedCurrentPhrases": [],
-    "rewriteRequired": true
-  },
-  {
-    "slug": "공복운동이-혈당에-더-좋나요",
-    "type": "qa",
-    "title": "공복운동이 혈당에 더 좋나요?",
-    "category": "metabolism",
-    "tags": [
-      "공복운동",
-      "저혈당",
-      "운동",
-      "혈당·대사",
-      "자주묻는질문"
-    ],
-    "priority": "critical",
-    "reason": "low topic match score: 0",
-    "requiredTopicTerms": [
-      "공복운동이",
-      "혈당에",
-      "좋나요"
     ],
     "bannedCurrentPhrases": [],
     "rewriteRequired": true
@@ -11331,55 +11281,6 @@
     "rewriteRequired": true
   },
   {
-    "slug": "암환자-식단배달은-일반-도시락과-무엇을-다르게-봐야-하나요",
-    "type": "qa",
-    "title": "암환자 식단배달은 일반 도시락과 무엇을 다르게 봐야 하나요?",
-    "category": "cancer_immune",
-    "tags": [
-      "암환자식단배달",
-      "환자식",
-      "암환자·면역·환자식",
-      "자주묻는질문"
-    ],
-    "priority": "high",
-    "reason": "low topic match score: 1",
-    "requiredTopicTerms": [
-      "암환자",
-      "식단배달은",
-      "일반",
-      "도시락과",
-      "무엇을",
-      "다르게"
-    ],
-    "bannedCurrentPhrases": [],
-    "rewriteRequired": true
-  },
-  {
-    "slug": "항암-중-당뇨가-있으면-식단을-어떤-기준으로-맞춰야-하나요",
-    "type": "qa",
-    "title": "항암 중 당뇨가 있으면 식단을 어떤 기준으로 맞춰야 하나요?",
-    "category": "cancer_immune",
-    "tags": [
-      "암환자당뇨",
-      "혈당관리",
-      "환자식",
-      "암환자·면역·환자식",
-      "자주묻는질문"
-    ],
-    "priority": "high",
-    "reason": "low topic match score: 1",
-    "requiredTopicTerms": [
-      "항암",
-      "당뇨가",
-      "있으면",
-      "식단을",
-      "어떤",
-      "기준으로"
-    ],
-    "bannedCurrentPhrases": [],
-    "rewriteRequired": true
-  },
-  {
     "slug": "항암-중-건강기능식품은-언제부터-다시-먹어도-되나요",
     "type": "qa",
     "title": "항암 중 건강기능식품은 언제부터 다시 먹어도 되나요?",
@@ -11405,9 +11306,9 @@
     "rewriteRequired": true
   },
   {
-    "slug": "감태추출물이나-플로로탄닌은-항암치료-대신-쓸-수-있나요",
+    "slug": "감태추출물이나-플로로탄닌은-항암진료-대신-쓸-수-있나요",
     "type": "qa",
-    "title": "감태추출물이나 플로로탄닌은 항암치료 대신 쓸 수 있나요?",
+    "title": "감태추출물이나 플로로탄닌은 항암진료 대신 쓸 수 있나요?",
     "category": "cancer_immune",
     "tags": [
       "감태추출물",
@@ -11421,7 +11322,7 @@
     "requiredTopicTerms": [
       "감태추출물이나",
       "플로로탄닌은",
-      "항암치료",
+      "항암진료",
       "대신"
     ],
     "bannedCurrentPhrases": [],
@@ -11610,8 +11511,8 @@
       "암환자·면역·환자식",
       "자주묻는질문"
     ],
-    "priority": "high",
-    "reason": "low topic match score: 1",
+    "priority": "critical",
+    "reason": "low topic match score: 0",
     "requiredTopicTerms": [
       "암환자",
       "면역력에",
@@ -11748,31 +11649,6 @@
     "rewriteRequired": true
   },
   {
-    "slug": "항암-중-체력이-떨어지면-운동보다-식사를-먼저-챙겨야-하나요",
-    "type": "qa",
-    "title": "항암 중 체력이 떨어지면 운동보다 식사를 먼저 챙겨야 하나요?",
-    "category": "cancer_immune",
-    "tags": [
-      "체력저하",
-      "식사",
-      "운동",
-      "암환자·면역·환자식",
-      "자주묻는질문"
-    ],
-    "priority": "high",
-    "reason": "low topic match score: 1",
-    "requiredTopicTerms": [
-      "항암",
-      "체력이",
-      "떨어지면",
-      "운동보다",
-      "식사를",
-      "먼저"
-    ],
-    "bannedCurrentPhrases": [],
-    "rewriteRequired": true
-  },
-  {
     "slug": "암환자에게-저잔사식은-언제-필요한가요",
     "type": "qa",
     "title": "암환자에게 저잔사식은 언제 필요한가요?",
@@ -11791,6 +11667,31 @@
       "저잔사식은",
       "언제",
       "필요한가요"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "암환자-회복기-식단에서-플로로탄닌-정보는-어떻게-봐야-하나요",
+    "type": "qa",
+    "title": "암환자 회복기 식단에서 플로로탄닌 정보는 어떻게 봐야 하나요?",
+    "category": "cancer_immune",
+    "tags": [
+      "플로로탄닌",
+      "회복기식단",
+      "근거읽기",
+      "암환자·면역·환자식",
+      "자주묻는질문"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 1",
+    "requiredTopicTerms": [
+      "암환자",
+      "회복기",
+      "식단에서",
+      "플로로탄닌",
+      "정보는",
+      "봐야"
     ],
     "bannedCurrentPhrases": [],
     "rewriteRequired": true
@@ -11839,30 +11740,6 @@
       "커피를",
       "완전히",
       "끊어야"
-    ],
-    "bannedCurrentPhrases": [],
-    "rewriteRequired": true
-  },
-  {
-    "slug": "위염이-자주-재발할-때-식사기록은-어떻게-남기나요",
-    "type": "qa",
-    "title": "위염이 자주 재발할 때 식사기록은 어떻게 남기나요?",
-    "category": "digestive",
-    "tags": [
-      "위염",
-      "식사기록",
-      "소화불량",
-      "소화·간",
-      "자주묻는질문"
-    ],
-    "priority": "high",
-    "reason": "low topic match score: 1",
-    "requiredTopicTerms": [
-      "위염이",
-      "자주",
-      "재발할",
-      "식사기록은",
-      "남기나요"
     ],
     "bannedCurrentPhrases": [],
     "rewriteRequired": true
@@ -12416,8 +12293,8 @@
       "근골격·근감소",
       "자주묻는질문"
     ],
-    "priority": "high",
-    "reason": "low topic match score: 1",
+    "priority": "critical",
+    "reason": "low topic match score: 0",
     "requiredTopicTerms": [
       "콜라겐은",
       "관절보다",
@@ -12922,7 +12799,7 @@
       "병원정보",
       "진료준비",
       "소화기내과",
-      "감태 플로로탄닌",
+      "감태 유래 해양 폴리페놀",
       "건강식품원료"
     ],
     "priority": "critical",
@@ -13652,6 +13529,33 @@
     "rewriteRequired": true
   },
   {
+    "slug": "뇌인지-정보에서-생활관리와-원료-정보를-분리하는-이유는-한눈정리편",
+    "type": "qa",
+    "title": "뇌·인지 정보에서 생활관리와 원료 정보를 분리하는 이유는? - 한눈정리편",
+    "category": "neuro_cognitive",
+    "tags": [
+      "뇌·인지",
+      "플로로탄닌",
+      "정보검증",
+      "생활기록",
+      "의료진상담우선",
+      "감태",
+      "해양폴리페놀"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 1",
+    "requiredTopicTerms": [
+      "인지",
+      "정보에서",
+      "생활관리와",
+      "원료",
+      "정보를",
+      "분리하는"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
     "slug": "정신건강-관심층이-식사수면-기록을-어떻게-남기면-좋나요-실전편",
     "type": "qa",
     "title": "정신건강 관심층이 식사·수면 기록을 어떻게 남기면 좋나요? - 실전편",
@@ -13922,6 +13826,33 @@
     "rewriteRequired": true
   },
   {
+    "slug": "피부-정보에서-생활관리와-원료-정보를-분리하는-이유는-한눈정리편",
+    "type": "qa",
+    "title": "피부 정보에서 생활관리와 원료 정보를 분리하는 이유는? - 한눈정리편",
+    "category": "skin",
+    "tags": [
+      "피부",
+      "플로로탄닌",
+      "정보검증",
+      "생활기록",
+      "의료진상담우선",
+      "감태",
+      "해양폴리페놀"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 1",
+    "requiredTopicTerms": [
+      "피부",
+      "정보에서",
+      "생활관리와",
+      "원료",
+      "정보를",
+      "분리하는"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
     "slug": "호흡기-관심층이-식사수면-기록을-어떻게-남기면-좋나요-실전편",
     "type": "qa",
     "title": "호흡기 관심층이 식사·수면 기록을 어떻게 남기면 좋나요? - 실전편",
@@ -13944,6 +13875,1220 @@
       "수면",
       "기록을",
       "남기면"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "혈압은-정상인데-LDL-콜레스테롤이-높으면-무엇부터-관리해야-하나요",
+    "type": "qa",
+    "title": "혈압은 정상인데 LDL 콜레스테롤이 높으면 무엇부터 관리해야 하나요?",
+    "category": "cardiovascular",
+    "tags": [
+      "LDL콜레스테롤",
+      "심혈관",
+      "혈압",
+      "식단",
+      "플로로탄닌"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 1",
+    "requiredTopicTerms": [
+      "혈압은",
+      "정상인데",
+      "ldl",
+      "콜레스테롤이",
+      "높으면",
+      "무엇부터"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "GLP1-다이어트-중-근손실이-걱정될-때-단백질과-운동은-어떻게-기록하나요",
+    "type": "qa",
+    "title": "GLP-1 다이어트 중 근손실이 걱정될 때 단백질과 운동은 어떻게 기록하나요?",
+    "category": "metabolism",
+    "tags": [
+      "GLP-1",
+      "근손실",
+      "단백질",
+      "근력운동",
+      "다이어트",
+      "플로로탄닌"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 1",
+    "requiredTopicTerms": [
+      "glp",
+      "다이어트",
+      "근손실이",
+      "걱정될",
+      "단백질과",
+      "운동은"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "초가공식품을-줄이면-혈당-스파이크와-염증-관리에-실제로-도움이-되나요",
+    "type": "qa",
+    "title": "초가공식품을 줄이면 혈당 스파이크와 염증 관리에 실제로 도움이 되나요?",
+    "category": "metabolism",
+    "tags": [
+      "초가공식품",
+      "혈당스파이크",
+      "식이섬유",
+      "염증",
+      "식사기록",
+      "플로로탄닌"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 1",
+    "requiredTopicTerms": [
+      "초가공식품을",
+      "줄이면",
+      "혈당",
+      "스파이크와",
+      "염증",
+      "관리에"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "스마트워치가-심박수-이상을-알려줄-때-바로-병원에-가야-하나요",
+    "type": "qa",
+    "title": "스마트워치가 심박수 이상을 알려줄 때 바로 병원에 가야 하나요?",
+    "category": "cardiovascular",
+    "tags": [
+      "스마트워치",
+      "심박수",
+      "부정맥",
+      "두근거림",
+      "혈압",
+      "플로로탄닌"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 1",
+    "requiredTopicTerms": [
+      "스마트워치가",
+      "심박수",
+      "이상을",
+      "알려줄",
+      "바로",
+      "병원에"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "브레인포그가-오래갈-때-롱코비드인지-수면부족인지-어떻게-구분하나요",
+    "type": "qa",
+    "title": "브레인포그가 오래갈 때 롱코비드인지 수면부족인지 어떻게 구분하나요?",
+    "category": "neuro_cognitive",
+    "tags": [
+      "브레인포그",
+      "롱코비드",
+      "수면부족",
+      "집중력",
+      "피로",
+      "플로로탄닌"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 1",
+    "requiredTopicTerms": [
+      "브레인포그가",
+      "오래갈",
+      "롱코비드인지",
+      "수면부족인지",
+      "구분하나요"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "건망증이-늘었을-때-치매-초기-신호와-평범한-기억력-저하를-어떻게-구분하나요",
+    "type": "qa",
+    "title": "건망증이 늘었을 때 치매 초기 신호와 평범한 기억력 저하를 어떻게 구분하나요?",
+    "category": "neuro_cognitive",
+    "tags": [
+      "건망증",
+      "치매초기",
+      "기억력",
+      "브레인헬스",
+      "보호자기록",
+      "플로로탄닌"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 1",
+    "requiredTopicTerms": [
+      "건망증이",
+      "늘었을",
+      "치매",
+      "초기",
+      "신호와",
+      "평범한"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "두피가-가렵고-비듬이-많을-때-샴푸를-바꾸면-충분한가요",
+    "type": "qa",
+    "title": "두피가 가렵고 비듬이 많을 때 샴푸를 바꾸면 충분한가요?",
+    "category": "hair",
+    "tags": [
+      "두피가려움",
+      "비듬",
+      "지루피부염",
+      "샴푸",
+      "두피관리",
+      "플로로탄닌"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 1",
+    "requiredTopicTerms": [
+      "두피가",
+      "가렵고",
+      "비듬이",
+      "많을",
+      "샴푸를",
+      "바꾸면"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "롱코비드-피로와-염증감이-오래갈-때-어떤-기록을-남겨야-하나요",
+    "type": "qa",
+    "title": "롱코비드 피로와 염증감이 오래갈 때 어떤 기록을 남겨야 하나요?",
+    "category": "infection_inflammation",
+    "tags": [
+      "롱코비드",
+      "피로",
+      "염증",
+      "심박수",
+      "브레인포그",
+      "플로로탄닌"
+    ],
+    "priority": "critical",
+    "reason": "low topic match score: 0",
+    "requiredTopicTerms": [
+      "롱코비드",
+      "피로와",
+      "염증감이",
+      "오래갈",
+      "어떤",
+      "기록을"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "폭염이-시작되면-혈압약을-먹는-사람은-물을-얼마나-마시고-무엇을-기록해야-하나요",
+    "type": "qa",
+    "title": "폭염이 시작되면 혈압약을 먹는 사람은 물을 얼마나 마시고 무엇을 기록해야 하나요?",
+    "category": "cardiovascular",
+    "tags": [
+      "폭염",
+      "혈압약",
+      "수분섭취",
+      "온열질환",
+      "이뇨제",
+      "여름건강"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 1",
+    "requiredTopicTerms": [
+      "폭염이",
+      "시작되면",
+      "혈압약을",
+      "먹는",
+      "사람은",
+      "물을"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "GLP1-체중관리를-하는-사람은-근손실을-막기-위해-단백질과-운동을-어떻게-챙겨야-하나요",
+    "type": "qa",
+    "title": "GLP-1 체중관리를 하는 사람은 근손실을 막기 위해 단백질과 운동을 어떻게 챙겨야 하나요?",
+    "category": "metabolism",
+    "tags": [
+      "GLP-1",
+      "근손실",
+      "단백질",
+      "식이섬유",
+      "근력운동",
+      "체중관리"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 1",
+    "requiredTopicTerms": [
+      "glp",
+      "체중관리를",
+      "하는",
+      "사람은",
+      "근손실을",
+      "막기"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "크레아틴이-건강노화와-근감소-예방에-도움-된다고-하는데-먹기-전에-무엇을-확인해야-하나요",
+    "type": "qa",
+    "title": "크레아틴이 건강노화와 근감소 예방에 도움 된다고 하는데, 먹기 전에 무엇을 확인해야 하나요?",
+    "category": "musculoskeletal",
+    "tags": [
+      "크레아틴",
+      "근력운동",
+      "근감소증",
+      "건강노화",
+      "단백질",
+      "신장질환주의"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 1",
+    "requiredTopicTerms": [
+      "크레아틴이",
+      "건강노화와",
+      "근감소",
+      "예방에",
+      "도움",
+      "된다고"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "장내미생물-관리를-위해-유산균보다-식이섬유와-저항성전분을-먼저-봐야-하나요",
+    "type": "qa",
+    "title": "장내미생물 관리를 위해 유산균보다 식이섬유와 저항성전분을 먼저 봐야 하나요?",
+    "category": "digestive",
+    "tags": [
+      "장내미생물",
+      "저항성전분",
+      "식이섬유",
+      "폴리페놀",
+      "장건강",
+      "유산균"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 1",
+    "requiredTopicTerms": [
+      "장내미생물",
+      "관리를",
+      "위해",
+      "유산균보다",
+      "식이섬유와",
+      "저항성전분을"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "수면-시간보다-취침-시간이-불규칙한-것이-심혈관-건강에-더-문제가-될-수-있나요",
+    "type": "qa",
+    "title": "수면 시간보다 취침 시간이 불규칙한 것이 심혈관 건강에 더 문제가 될 수 있나요?",
+    "category": "cardiovascular",
+    "tags": [
+      "수면규칙성",
+      "심혈관",
+      "생체리듬",
+      "수면무호흡",
+      "취침시간",
+      "감태수면"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 2",
+    "requiredTopicTerms": [
+      "수면",
+      "시간보다",
+      "취침",
+      "시간이",
+      "불규칙한",
+      "것이"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "커피가-장내미생물과-기분에-영향을-준다는-연구는-어떻게-이해해야-하나요",
+    "type": "qa",
+    "title": "커피가 장내미생물과 기분에 영향을 준다는 연구는 어떻게 이해해야 하나요?",
+    "category": "digestive",
+    "tags": [
+      "커피",
+      "장내미생물",
+      "장뇌축",
+      "폴리페놀",
+      "카페인",
+      "디카페인"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 1",
+    "requiredTopicTerms": [
+      "커피가",
+      "장내미생물과",
+      "기분에",
+      "영향을",
+      "준다는",
+      "연구는"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "입테이핑이-코골이나-수면무호흡에-도움이-된다고-하는데-안전하게-해도-되나요",
+    "type": "qa",
+    "title": "입테이핑이 코골이나 수면무호흡에 도움이 된다고 하는데 안전하게 해도 되나요?",
+    "category": "respiratory",
+    "tags": [
+      "입테이핑",
+      "코골이",
+      "수면무호흡",
+      "코호흡",
+      "호흡안전",
+      "수면건강"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 1",
+    "requiredTopicTerms": [
+      "입테이핑이",
+      "코골이나",
+      "수면무호흡에",
+      "도움이",
+      "된다고",
+      "하는데"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "오메가3-보충제는-심장에-무조건-좋은가요-심방세동-위험도-봐야-하나요",
+    "type": "qa",
+    "title": "오메가3 보충제는 심장에 무조건 좋은가요, 심방세동 위험도 봐야 하나요?",
+    "category": "cardiovascular",
+    "tags": [
+      "오메가3",
+      "심방세동",
+      "EPA",
+      "DHA",
+      "부정맥",
+      "심혈관보충제"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 3",
+    "requiredTopicTerms": [
+      "오메가3",
+      "보충제는",
+      "심장에",
+      "무조건",
+      "좋은가요",
+      "심방세동"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "에너지드링크나-프리워크아웃을-먹고-운동해도-괜찮나요-수면과-심박을-봐야-하나요",
+    "type": "qa",
+    "title": "에너지드링크나 프리워크아웃을 먹고 운동해도 괜찮나요, 수면과 심박을 봐야 하나요?",
+    "category": "cardiovascular",
+    "tags": [
+      "에너지드링크",
+      "카페인",
+      "프리워크아웃",
+      "수면손실",
+      "두근거림",
+      "부정맥"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 1",
+    "requiredTopicTerms": [
+      "에너지드링크나",
+      "프리워크아웃을",
+      "먹고",
+      "운동해도",
+      "괜찮나요",
+      "수면과"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "폐경-호르몬요법-라벨이-바뀌었다는데-갱년기-증상이-있으면-바로-상담해도-되나요",
+    "type": "qa",
+    "title": "폐경 호르몬요법 라벨이 바뀌었다는데 갱년기 증상이 있으면 바로 상담해도 되나요?",
+    "category": "womens_health",
+    "tags": [
+      "폐경",
+      "호르몬요법",
+      "갱년기",
+      "안면홍조",
+      "여성건강",
+      "HRT"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 3",
+    "requiredTopicTerms": [
+      "폐경",
+      "호르몬요법",
+      "라벨이",
+      "바뀌었다는데",
+      "갱년기",
+      "증상이"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "테스토스테론-치료가-다시-이슈라는데-피곤하고-성욕이-떨어지면-맞아도-되나요",
+    "type": "qa",
+    "title": "테스토스테론 치료가 다시 이슈라는데 피곤하고 성욕이 떨어지면 맞아도 되나요?",
+    "category": "mens_health",
+    "tags": [
+      "테스토스테론",
+      "TRT",
+      "남성건강",
+      "혈압",
+      "저테스토스테론",
+      "성욕저하"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 1",
+    "requiredTopicTerms": [
+      "테스토스테론",
+      "치료가",
+      "다시",
+      "이슈라는데",
+      "피곤하고",
+      "성욕이"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "2026년-콜레스테롤-가이드라인이-바뀌었다는데-LDL만-보면-되나요",
+    "type": "qa",
+    "title": "2026년 콜레스테롤 가이드라인이 바뀌었다는데 LDL만 보면 되나요?",
+    "category": "cardiovascular",
+    "tags": [
+      "콜레스테롤",
+      "LDL",
+      "ApoB",
+      "Lp(a)",
+      "PREVENT",
+      "심혈관위험"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 1",
+    "requiredTopicTerms": [
+      "2026년",
+      "콜레스테롤",
+      "가이드라인이",
+      "바뀌었다는데",
+      "ldl만",
+      "보면"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "먹는-미녹시딜이-탈모에-좋다는데-혈압이나-부작용은-어떻게-확인해야-하나요",
+    "type": "qa",
+    "title": "먹는 미녹시딜이 탈모에 좋다는데 혈압이나 부작용은 어떻게 확인해야 하나요?",
+    "category": "hair",
+    "tags": [
+      "경구미녹시딜",
+      "탈모",
+      "혈압",
+      "부종",
+      "두피건강",
+      "모발기록"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 1",
+    "requiredTopicTerms": [
+      "먹는",
+      "미녹시딜이",
+      "탈모에",
+      "좋다는데",
+      "혈압이나",
+      "부작용은"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "감기나-독감이-유행할-때-공기청정기와-환기가-실제로-도움이-되나요",
+    "type": "qa",
+    "title": "감기나 독감이 유행할 때 공기청정기와 환기가 실제로 도움이 되나요?",
+    "category": "respiratory",
+    "tags": [
+      "실내공기질",
+      "환기",
+      "공기청정기",
+      "호흡기바이러스",
+      "HEPA",
+      "감기예방정보"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 1",
+    "requiredTopicTerms": [
+      "감기나",
+      "독감이",
+      "유행할",
+      "공기청정기와",
+      "환기가",
+      "실제로"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "청소년이-밤늦게-휴대폰을-보면-불안이나-우울이-더-심해질-수-있나요",
+    "type": "qa",
+    "title": "청소년이 밤늦게 휴대폰을 보면 불안이나 우울이 더 심해질 수 있나요?",
+    "category": "mental_health",
+    "tags": [
+      "청소년정신건강",
+      "수면",
+      "스크린타임",
+      "불안",
+      "우울",
+      "디지털습관",
+      "플로로탄닌"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 2",
+    "requiredTopicTerms": [
+      "청소년이",
+      "밤늦게",
+      "휴대폰을",
+      "보면",
+      "불안이나",
+      "우울이"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "중장년-근감소가-걱정되면-크레아틴을-먹는-게-도움이-되나요",
+    "type": "qa",
+    "title": "중장년 근감소가 걱정되면 크레아틴을 먹는 게 도움이 되나요?",
+    "category": "musculoskeletal",
+    "tags": [
+      "근감소",
+      "크레아틴",
+      "저항운동",
+      "근력",
+      "단백질",
+      "중장년건강",
+      "플로로탄닌"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 1",
+    "requiredTopicTerms": [
+      "중장년",
+      "근감소가",
+      "걱정되면",
+      "크레아틴을",
+      "먹는",
+      "도움이"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "미국-선크림-새-성분-이야기가-많은데-SPF-숫자만-보면-되나요",
+    "type": "qa",
+    "title": "미국 선크림 새 성분 이야기가 많은데 SPF 숫자만 보면 되나요?",
+    "category": "skin",
+    "tags": [
+      "자외선차단제",
+      "베모트리지노",
+      "SPF",
+      "UVA",
+      "UVB",
+      "피부노화",
+      "플로로탄닌"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 3",
+    "requiredTopicTerms": [
+      "미국",
+      "선크림",
+      "성분",
+      "이야기가",
+      "많은데",
+      "spf"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "프탈레이트-같은-환경호르몬이-남성-난임에-영향을-준다는데-정액검사-전에-무엇을-기록해야-하나요",
+    "type": "qa",
+    "title": "프탈레이트 같은 환경호르몬이 남성 난임에 영향을 준다는데, 정액검사 전에 무엇을 기록해야 하나요?",
+    "category": "mens_health",
+    "tags": [
+      "남성난임",
+      "정액검사",
+      "프탈레이트",
+      "환경호르몬",
+      "정자건강",
+      "노출기록",
+      "남성건강"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 1",
+    "requiredTopicTerms": [
+      "프탈레이트",
+      "같은",
+      "환경호르몬이",
+      "남성",
+      "난임에",
+      "영향을"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "노로바이러스는-손소독제로-안-잡힌다던데-가족끼리-계속-옮을-때-무엇부터-해야-하나요",
+    "type": "qa",
+    "title": "노로바이러스는 손소독제로 안 잡힌다던데, 가족끼리 계속 옮을 때 무엇부터 해야 하나요?",
+    "category": "infection_inflammation",
+    "tags": [
+      "노로바이러스",
+      "손씻기",
+      "표면소독",
+      "탈수",
+      "구토",
+      "설사",
+      "감염관리"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 1",
+    "requiredTopicTerms": [
+      "노로바이러스는",
+      "손소독제로",
+      "잡힌다던데",
+      "가족끼리",
+      "계속",
+      "옮을"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "김치나-요거트를-먹으면-프로바이오틱스-영양제를-안-먹어도-장-건강에-충분한가요",
+    "type": "qa",
+    "title": "김치나 요거트를 먹으면 프로바이오틱스 영양제를 안 먹어도 장 건강에 충분한가요?",
+    "category": "digestive",
+    "tags": [
+      "발효식품",
+      "프로바이오틱스",
+      "장내미생물",
+      "장건강",
+      "김치",
+      "요거트",
+      "안전성"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 1",
+    "requiredTopicTerms": [
+      "김치나",
+      "요거트를",
+      "먹으면",
+      "프로바이오틱스",
+      "영양제를",
+      "먹어도"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "AI-챗봇에게-불안이나-우울-상담을-해도-괜찮나요-어디까지-믿어야-하나요",
+    "type": "qa",
+    "title": "AI 챗봇에게 불안이나 우울 상담을 해도 괜찮나요, 어디까지 믿어야 하나요?",
+    "category": "mental_health",
+    "tags": [
+      "AI챗봇",
+      "정신건강",
+      "불안",
+      "우울",
+      "위기상담",
+      "자살예방",
+      "상담연결"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 1",
+    "requiredTopicTerms": [
+      "ai",
+      "챗봇에게",
+      "불안이나",
+      "우울",
+      "상담을",
+      "해도"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "가중조끼나-러킹이-골밀도와-근력에-좋다는데-무릎허리에-부담은-없나요",
+    "type": "qa",
+    "title": "가중조끼나 러킹이 골밀도와 근력에 좋다는데, 무릎·허리에 부담은 없나요?",
+    "category": "musculoskeletal",
+    "tags": [
+      "가중조끼",
+      "러킹",
+      "골밀도",
+      "근력운동",
+      "무릎통증",
+      "허리통증",
+      "낙상예방"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 1",
+    "requiredTopicTerms": [
+      "가중조끼나",
+      "러킹이",
+      "골밀도와",
+      "근력에",
+      "좋다는데",
+      "무릎"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "냉수욕이나-사우나를-번갈아-하면-혈압과-심장-건강에-정말-좋은가요",
+    "type": "qa",
+    "title": "냉수욕이나 사우나를 번갈아 하면 혈압과 심장 건강에 정말 좋은가요?",
+    "category": "cardiovascular",
+    "tags": [
+      "냉수욕",
+      "사우나",
+      "혈압",
+      "부정맥",
+      "심박",
+      "심혈관",
+      "안전"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 1",
+    "requiredTopicTerms": [
+      "냉수욕이나",
+      "사우나를",
+      "번갈아",
+      "하면",
+      "혈압과",
+      "심장"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "탈모약-피나스테리드나-두타스테리드를-시작하기-전에-어떤-부작용을-기록해야-하나요",
+    "type": "qa",
+    "title": "탈모약 피나스테리드나 두타스테리드를 시작하기 전에 어떤 부작용을 기록해야 하나요?",
+    "category": "hair",
+    "tags": [
+      "피나스테리드",
+      "두타스테리드",
+      "탈모약",
+      "성기능",
+      "기분변화",
+      "부작용기록",
+      "모발두피"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 2",
+    "requiredTopicTerms": [
+      "탈모약",
+      "피나스테리드나",
+      "두타스테리드를",
+      "시작하기",
+      "전에",
+      "어떤"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "HPV-자가채취-검사가-가능해지면-자궁경부암-검진을-병원에서-안-받아도-되나요",
+    "type": "qa",
+    "title": "HPV 자가채취 검사가 가능해지면 자궁경부암 검진을 병원에서 안 받아도 되나요?",
+    "category": "womens_health",
+    "tags": [
+      "HPV",
+      "자가채취",
+      "자궁경부암",
+      "선별검사",
+      "여성건강",
+      "추적검사",
+      "HPV검사"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 2",
+    "requiredTopicTerms": [
+      "hpv",
+      "자가채취",
+      "검사가",
+      "가능해지면",
+      "자궁경부암",
+      "검진을"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "발기부전이-심혈관질환-위험-신호일-수-있다는데-어떤-검사를-확인해야-하나요",
+    "type": "qa",
+    "title": "발기부전이 심혈관질환 위험 신호일 수 있다는데, 어떤 검사를 확인해야 하나요?",
+    "category": "mens_health",
+    "tags": [
+      "발기부전",
+      "심혈관",
+      "혈압",
+      "혈당",
+      "지질",
+      "남성건강",
+      "복용약"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 3",
+    "requiredTopicTerms": [
+      "발기부전이",
+      "심혈관질환",
+      "위험",
+      "신호일",
+      "있다는데",
+      "어떤"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "꽃가루-알레르기가-심한데-기침과-숨참이-생기면-천식-행동계획을-확인해야-하나요",
+    "type": "qa",
+    "title": "꽃가루 알레르기가 심한데 기침과 숨참이 생기면 천식 행동계획을 확인해야 하나요?",
+    "category": "respiratory",
+    "tags": [
+      "꽃가루",
+      "천식",
+      "알레르기비염",
+      "뇌우천식",
+      "흡입기",
+      "공기질",
+      "호흡기"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 2",
+    "requiredTopicTerms": [
+      "꽃가루",
+      "알레르기가",
+      "심한데",
+      "기침과",
+      "숨참이",
+      "생기면"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "진드기에-물린-뒤-라임병과-알파갈-증후군은-어떤-증상을-따로-기록해야-하나요",
+    "type": "qa",
+    "title": "진드기에 물린 뒤 라임병과 알파갈 증후군은 어떤 증상을 따로 기록해야 하나요?",
+    "category": "infection_inflammation",
+    "tags": [
+      "진드기",
+      "라임병",
+      "알파갈증후군",
+      "발진",
+      "알레르기",
+      "야외활동",
+      "감염염증"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 2",
+    "requiredTopicTerms": [
+      "진드기에",
+      "물린",
+      "라임병과",
+      "알파갈",
+      "증후군은",
+      "어떤"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "기미와-색소침착이-있으면-선스크린을-SPF만-보고-고르면-되나요",
+    "type": "qa",
+    "title": "기미와 색소침착이 있으면 선스크린을 SPF만 보고 고르면 되나요?",
+    "category": "skin",
+    "tags": [
+      "기미",
+      "색소침착",
+      "틴티드선스크린",
+      "철산화물",
+      "SPF",
+      "가시광선",
+      "피부"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 1",
+    "requiredTopicTerms": [
+      "기미와",
+      "색소침착이",
+      "있으면",
+      "선스크린을",
+      "spf만",
+      "보고"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "피클볼을-하다가-손목이나-아킬레스가-아프면-어떤-부상-신호를-먼저-기록해야-하나요",
+    "type": "qa",
+    "title": "피클볼을 하다가 손목이나 아킬레스가 아프면 어떤 부상 신호를 먼저 기록해야 하나요?",
+    "category": "musculoskeletal",
+    "tags": [
+      "피클볼",
+      "손목골절",
+      "아킬레스건",
+      "무릎통증",
+      "근골격건강",
+      "운동부상"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 2",
+    "requiredTopicTerms": [
+      "피클볼을",
+      "하다가",
+      "손목이나",
+      "아킬레스가",
+      "아프면",
+      "어떤"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "GLP1-복합조제-제품을-쓰는-사람이-구토나-복통이-있으면-무엇을-먼저-확인해야-하나요",
+    "type": "qa",
+    "title": "GLP-1 복합조제 제품을 쓰는 사람이 구토나 복통이 있으면 무엇을 먼저 확인해야 하나요?",
+    "category": "digestive",
+    "tags": [
+      "GLP-1",
+      "세마글루타이드",
+      "티르제파타이드",
+      "복합조제",
+      "위장관증상",
+      "구토",
+      "탈수"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 2",
+    "requiredTopicTerms": [
+      "glp",
+      "복합조제",
+      "제품을",
+      "쓰는",
+      "사람이",
+      "구토나"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "치밀유방-알림을-받으면-맘모그램-뒤-초음파나-MRI를-꼭-추가해야-하나요",
+    "type": "qa",
+    "title": "치밀유방 알림을 받으면 맘모그램 뒤 초음파나 MRI를 꼭 추가해야 하나요?",
+    "category": "womens_health",
+    "tags": [
+      "치밀유방",
+      "맘모그램",
+      "유방촬영",
+      "유방초음파",
+      "유방MRI",
+      "여성건강",
+      "검진"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 3",
+    "requiredTopicTerms": [
+      "치밀유방",
+      "알림을",
+      "받으면",
+      "맘모그램",
+      "초음파나",
+      "mri를"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "TRT를-시작하기-전에-임신-계획이-있으면-정자수와-호르몬-검사를-먼저-해야-하나요",
+    "type": "qa",
+    "title": "TRT를 시작하기 전에 임신 계획이 있으면 정자수와 호르몬 검사를 먼저 해야 하나요?",
+    "category": "mens_health",
+    "tags": [
+      "TRT",
+      "테스토스테론",
+      "남성난임",
+      "정자수",
+      "LH",
+      "FSH",
+      "남성건강"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 3",
+    "requiredTopicTerms": [
+      "trt를",
+      "시작하기",
+      "전에",
+      "임신",
+      "계획이",
+      "있으면"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "문신을-하기-전후에-피부-안전을-위해-어떤-기록을-남겨야-하나요",
+    "type": "qa",
+    "title": "문신을 하기 전후에 피부 안전을 위해 어떤 기록을 남겨야 하나요?",
+    "category": "skin",
+    "tags": [
+      "문신",
+      "타투잉크",
+      "피부안전",
+      "알레르기",
+      "피부암관찰",
+      "감염"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 1",
+    "requiredTopicTerms": [
+      "문신을",
+      "하기",
+      "전후에",
+      "피부",
+      "안전을",
+      "위해"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "고령자-낙상과-고관절-골절을-예방하려면-어떤-기록을-먼저-봐야-하나요",
+    "type": "qa",
+    "title": "고령자 낙상과 고관절 골절을 예방하려면 어떤 기록을 먼저 봐야 하나요?",
+    "category": "musculoskeletal",
+    "tags": [
+      "낙상예방",
+      "고관절골절",
+      "균형운동",
+      "시력검사",
+      "약물검토",
+      "근골격"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 3",
+    "requiredTopicTerms": [
+      "고령자",
+      "낙상과",
+      "고관절",
+      "골절을",
+      "예방하려면",
+      "어떤"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "폭염이-시작되기-전에-고령자와-혈압약-복용자는-무엇을-미리-기록해야-하나요",
+    "type": "qa",
+    "title": "폭염이 시작되기 전에 고령자와 혈압약 복용자는 무엇을 미리 기록해야 하나요?",
+    "category": "cardiovascular",
+    "tags": [
+      "폭염",
+      "온열질환",
+      "이뇨제",
+      "혈압약",
+      "고령자건강",
+      "심혈관"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 1",
+    "requiredTopicTerms": [
+      "폭염이",
+      "시작되기",
+      "전에",
+      "고령자와",
+      "혈압약",
+      "복용자는"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "RSV-백신을-맞아야-하나요-고령자-호흡기-회복과-플로로탄닌-루틴은-어떻게-보나요",
+    "type": "qa",
+    "title": "RSV 백신을 맞아야 하나요, 고령자 호흡기 회복과 플로로탄닌 루틴은 어떻게 보나요?",
+    "category": "respiratory",
+    "tags": [
+      "RSV",
+      "RSV백신",
+      "고령자호흡기",
+      "기침",
+      "호흡곤란",
+      "회복식탁",
+      "항산화",
+      "플로로탄닌"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 1",
+    "requiredTopicTerms": [
+      "rsv",
+      "백신을",
+      "맞아야",
+      "고령자",
+      "호흡기",
+      "회복과"
+    ],
+    "bannedCurrentPhrases": [],
+    "rewriteRequired": true
+  },
+  {
+    "slug": "알츠하이머-혈액검사-시대에-가족-기록과-플로로탄닌-회복-관점은-어떻게-보나요",
+    "type": "qa",
+    "title": "알츠하이머 혈액검사 시대에 가족 기록과 플로로탄닌 회복 관점은 어떻게 보나요?",
+    "category": "neuro_cognitive",
+    "tags": [
+      "알츠하이머",
+      "혈액검사",
+      "기억력",
+      "가족기록",
+      "수면",
+      "플로로탄닌"
+    ],
+    "priority": "high",
+    "reason": "low topic match score: 1",
+    "requiredTopicTerms": [
+      "알츠하이머",
+      "혈액검사",
+      "시대에",
+      "가족",
+      "기록과",
+      "플로로탄닌"
     ],
     "bannedCurrentPhrases": [],
     "rewriteRequired": true

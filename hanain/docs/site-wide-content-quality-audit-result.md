@@ -1,31 +1,30 @@
 # Site-wide Content Quality Audit Result
 
-- generatedAt: 2026-05-29T04:56:08.798Z
-- qaScanned: 1741
-- qaCriticalOrHigh: 556
+- generatedAt: 2026-06-24T09:03:43.011Z
+- qaScanned: 2037
+- qaCriticalOrHigh: 598
 - qaBadPhrase: 0
 - status: PASS
 
 ## Top Issues (First 80)
 
 - cardio-001 | 고혈압약을 평생 먹어야 하나요? | priority=critical | topicMatch=0
-- cardio-002 | 가슴이 조이는 느낌이 자주 드는데 협심증일까요? | priority=high | topicMatch=1
 - cardio-003 | 심근경색은 어떻게 예방할 수 있나요? | priority=critical | topicMatch=0
 - cardio-004 | 심방세동 진단을 받았는데 어떻게 관리해야 하나요? | priority=high | topicMatch=1
+- cardio-005 | 좋은 콜레스테롤(HDL)을 높이는 방법이 있나요? | priority=high | topicMatch=1
 - cardio-009 | 저혈압인데 어지럼증이 심합니다. 원인이 무엇인가요? | priority=critical | topicMatch=0
 - cardio-018 | 달걀을 많이 먹으면 콜레스테롤이 올라가나요? | priority=critical | topicMatch=0
-- cardio-020 | 수면 부족이 심장병 위험을 높이나요? | priority=high | topicMatch=1
-- cardio-040 | 당뇨병 환자가 심혈관 합병증을 예방하려면 어떻게 해야 하나요? | priority=critical | topicMatch=0
+- cardio-028 | 부모님이 심장병이 있으면 저도 걸릴 확률이 높나요? | priority=high | topicMatch=1
 - cardio-044 | 수면무호흡증과 고혈압은 어떤 관계가 있나요? | priority=critical | topicMatch=0
 - cardio-054 | 혈당이 높으면 혈관이 어떻게 손상되나요? | priority=critical | topicMatch=0
 - cardio-063 | 혈압이 높을 때 두통이 생기나요? | priority=critical | topicMatch=0
+- cardio-072 | 베타차단제와 칼슘채널차단제의 차이는 무엇인가요? | priority=high | topicMatch=1
 - cardio-081 | 당뇨가 있으면 심혈관 질환 위험이 얼마나 높아지나요? | priority=high | topicMatch=1
 - cardio-095 | 심방세동의 카테터 절제술은 어떤 원리인가요? | priority=high | topicMatch=1
-- cardio-097 | 혈당과 혈압을 동시에 잘 관리하려면 어떻게 해야 하나요? | priority=critical | topicMatch=0
+- cardio-098 | 수영이 심혈관 건강에 효과적인 이유는 무엇인가요? | priority=high | topicMatch=1
 - meta-001 | 당뇨약을 10년 넘게 복용 중인데 혈당이 계속 높은 이유가 무엇인가요? | priority=high | topicMatch=1
 - meta-004 | LDL 콜레스테롤이 200을 넘었는데 어떻게 해야 하나요? | priority=critical | topicMatch=0
-- meta-005 | 비알코올성 지방간을 식이로 관리할 수 있나요? | priority=critical | topicMatch=0
-- meta-007 | 공복혈당이 100~125mg/dL인 당뇨 전단계인데 어떻게 관리해야 하나요? | priority=critical | topicMatch=0
+- meta-005 | 비알코올성 지방간을 식이로 관리할 수 있나요? | priority=high | topicMatch=1
 - meta-008 | 당화혈색소(HbA1c)를 낮추는 데 가장 효과적인 방법은? | priority=critical | topicMatch=0
 - meta-010 | 폐경 후 혈당과 콜레스테롤이 갑자기 나빠지는 이유는? | priority=critical | topicMatch=0
 - meta-011 | 혈당 스파이크가 반복되면 어떤 장기 손상이 생기나요? | priority=high | topicMatch=1
@@ -34,7 +33,6 @@
 - meta-015 | 오메가-3가 혈당에 영향을 미치나요? | priority=critical | topicMatch=0
 - meta-016 | 혈당 측정기와 연속혈당측정기(CGM)의 차이는 무엇인가요? | priority=high | topicMatch=1
 - meta-017 | 지방간과 당뇨는 어떤 연관이 있나요? | priority=high | topicMatch=1
-- meta-019 | 살 빼면 당뇨가 완전 회복(임상적 관해)이 가능할 수 있나요? | priority=critical | topicMatch=0
 - meta-020 | 혈당을 낮추는 데 수면이 왜 중요한가요? | priority=critical | topicMatch=0
 - meta_021 | 공복혈당이 높으면 당뇨병인가요? | priority=critical | topicMatch=0
 - meta_025 | 당화혈색소(HbA1c)란 무엇인가요? | priority=critical | topicMatch=0
@@ -44,8 +42,8 @@
 - meta_032 | LDL과 HDL 콜레스테롤의 차이는 무엇인가요? | priority=critical | topicMatch=0
 - meta_036 | 간헐적 단식이 혈당 조절에 도움이 되나요? | priority=high | topicMatch=1
 - meta_037 | 비알코올성 지방간은 어떻게 치료하나요? | priority=critical | topicMatch=0
+- meta_038 | 복부지방과 피하지방의 차이는 무엇인가요? | priority=critical | topicMatch=0
 - meta_045 | 혈당을 낮추는 자연 식품이 있나요? | priority=critical | topicMatch=0
-- meta_046 | 밥 대신 현미를 먹으면 혈당 관리에 도움이 되나요? | priority=high | topicMatch=1
 - meta_047 | 스트레스가 혈당을 높이나요? | priority=critical | topicMatch=0
 - meta_050 | 당뇨 전단계에서 당뇨병으로 진행을 막을 수 있나요? | priority=critical | topicMatch=0
 - meta_053 | 커피가 혈당에 영향을 주나요? | priority=critical | topicMatch=0
@@ -53,7 +51,6 @@
 - meta_055 | 수면 부족이 혈당과 체중에 미치는 영향은? | priority=high | topicMatch=1
 - meta_056 | 혈당계로 자가 측정 시 어제와 오늘 수치가 다른데 괜찮은가요? | priority=high | topicMatch=1
 - meta_059 | 마그네슘이 혈당 조절에 도움이 되나요? | priority=high | topicMatch=1
-- meta_061 | 당뇨병 환자에게 운동이 왜 중요한가요? | priority=critical | topicMatch=0
 - meta_062 | 식이섬유가 혈당에 미치는 영향은? | priority=critical | topicMatch=0
 - meta_064 | 비만 수술 후 당뇨가 완전 회복(임상적 관해)이 가능할 수 있나요? | priority=high | topicMatch=1
 - meta_067 | 설탕 대신 인공 감미료를 쓰면 혈당이 안 오르나요? | priority=high | topicMatch=1
@@ -65,9 +62,7 @@
 - meta_079 | 식사 순서(채소→단백질→탄수화물)가 혈당에 미치는 영향은? | priority=high | topicMatch=1
 - meta_080 | 콩팥(신장) 기능과 혈당 조절은 어떤 관계인가요? | priority=high | topicMatch=1
 - meta_084 | 탄수화물의 혈당지수(GI)란 무엇인가요? | priority=critical | topicMatch=0
-- meta_086 | 배고프지 않아도 정해진 시간에 먹어야 혈당 관리에 좋은가요? | priority=high | topicMatch=1
 - meta_092 | 혈당이 높으면 시력에 영향을 주나요? | priority=high | topicMatch=1
-- meta_093 | 감자와 고구마 중 혈당 관리에 어떤 것이 더 좋나요? | priority=high | topicMatch=1
 - meta_095 | 발에 감각이 없거나 저린 것이 당뇨와 관련이 있나요? | priority=critical | topicMatch=0
 - meta_097 | SGLT-2 억제제는 어떻게 혈당을 낮추나요? | priority=critical | topicMatch=0
 - meta_098 | 식후 2시간 혈당은 얼마가 정상인가요? | priority=high | topicMatch=1
@@ -88,3 +83,8 @@
 - cancer-016 | 자궁경부암 예방 접종(HPV 백신)은 성인도 맞아야 하나요? | priority=critical | topicMatch=0
 - cancer-018 | 항암 치료 중 고열량 식사를 해야 한다고 들었는데 맞나요? | priority=high | topicMatch=1
 - cancer-019 | 암과 스트레스는 어떤 관계가 있나요? | priority=critical | topicMatch=0
+- cancer-020 | 암 예방을 위해 어떤 검진을 받아야 하나요? | priority=critical | topicMatch=0
+- ci_016 | 암 예방을 위한 생활 습관은 무엇인가요? | priority=high | topicMatch=1
+- ci_018 | 암세포는 왜 면역계를 피하나요? | priority=critical | topicMatch=0
+- ci_019 | 면역항암제(면역관문억제제)란 무엇인가요? | priority=critical | topicMatch=0
+- ci_021 | 암 표지자(종양 표지자) 검사는 신뢰할 수 있나요? | priority=high | topicMatch=1
