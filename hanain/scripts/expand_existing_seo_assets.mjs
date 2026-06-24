@@ -268,7 +268,7 @@ function buildStep11Topics() {
     ['sleep-caffeine-light', '수면 루틴 관리: 카페인·빛·식사 시간 기록법'],
     ['bp-home-monitoring-diary', '가정 혈압 기록을 정보 해석과 연결하는 방법'],
     ['digestive-food-trigger-log', '소화 불편 관심층의 음식 유발 요인 기록법'],
-    ['joint-activity-dose', '관절 불편 시 활동량 조절 기록의 기본 구조'],
+    ['joint-activity-dose', '관절 불편 활동량 조절 기록법: 통증·운동·휴식 기준표'],
     ['skin-trigger-journal', '피부 트리거 저널: 화장품·식사·수면 동시 기록법'],
     ['caregiver-weekly-review', '보호자를 위한 주간 리뷰 시트 작성법'],
     ['supplement-inventory-sheet', '복용 원료 인벤토리 시트: 진료실 전달용 정리법'],

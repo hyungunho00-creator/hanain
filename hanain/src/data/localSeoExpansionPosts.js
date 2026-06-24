@@ -2224,7 +2224,7 @@ const SEO_TOPICS = [
   {
     "stage": "step11",
     "slugKey": "joint-activity-dose",
-    "title": "관절 불편 시 활동량 조절 기록의 기본 구조",
+    "title": "관절 불편 활동량 조절 기록법: 통증·운동·휴식 기준표",
     "category": "disease-health-info",
     "tags": [
       "식단관리",
@@ -2422,6 +2422,117 @@ HHS OIG도 건강보조식품의 구조·기능 표시가 법적 요건과 근�
       '특허, 논문, 임상시험, 광고 문구는 서로 다른 정보입니다. 건강기능식품과 플로로탄닌 자료를 근거 중심으로 읽는 기준을 정리했습니다.',
     og_image: '/og/content-quality/review-vs-evidence-phlorotannin-trust-journal-photo-20260619.jpg',
     updated_at: '2026-06-24T20:57:25+09:00',
+  },
+  'seo-102-joint-activity-dose': {
+    title: '관절 불편 활동량 조절 기록법: 통증·운동·휴식 기준표',
+    excerpt:
+      '관절이 불편할 때 운동을 무조건 쉬거나 밀어붙이기보다 통증, 붓기, 강도, 다음날 반응을 함께 기록해 활동량을 조절하는 기준을 정리했습니다.',
+    content: `## 짧은 답: 활동량은 "그날 통증"보다 다음날 반응까지 보고 조절합니다
+
+관절이 불편할 때 가장 흔한 실수는 두 가지입니다. 조금 아프다고 모든 활동을 멈추거나, 반대로 참고 밀어붙인 뒤 다음날 붓기와 뻣뻣함이 커지는 것입니다. 관절 불편 기록의 목적은 병명을 스스로 단정하는 것이 아니라, 어떤 활동이 부담을 키우고 어떤 활동은 유지 가능한지 의료진과 함께 볼 자료를 남기는 데 있습니다.
+
+NIAMS와 NICE 같은 공공·임상 가이드는 골관절염 관리에서 운동, 체중, 교육, 맞춤형 조절을 중요하게 다룹니다. CDC도 관절염이 있는 사람에게 관절 친화적 신체활동이 통증과 기능, 삶의 질 관리에 도움이 될 수 있다고 안내합니다. 핵심은 "운동을 할까 말까"가 아니라 "어떤 강도와 양을 내 몸의 반응에 맞춰 조절할까"입니다.
+
+## 먼저 진료가 필요한 신호
+
+다음 상황은 기록표보다 진료 판단이 먼저입니다.
+
+- 갑자기 심한 통증이 시작됐거나 외상 뒤 관절 모양이 달라졌을 때
+- 관절이 뜨겁고 붓거나, 열감·발열·전신 증상이 함께 있을 때
+- 체중을 싣기 어렵거나 걷는 양이 급격히 줄었을 때
+- 통증이 밤에도 계속 깨우거나, 휴식해도 빠르게 악화될 때
+- 류마티스 관절염, 통풍, 감염, 골절, 수술 이력처럼 별도 관리가 필요한 병력이 있을 때
+
+MedlinePlus도 관절 통증은 관절염, 부상, 과사용, 감염 등 여러 원인과 연결될 수 있다고 설명합니다. 그래서 기록은 진단을 대신하지 않고, 진료 때 "언제, 무엇을 하면, 얼마나 악화되는지"를 보여주는 보조 자료로 써야 합니다.
+
+## 하루 기록표에 넣을 8가지
+
+| 항목 | 적는 방법 | 왜 필요한가 |
+|---|---|---|
+| 관절 위치 | 오른쪽 무릎, 왼쪽 엄지, 양쪽 손가락처럼 구체화 | 원인이 다른 부위를 섞지 않기 위해 |
+| 활동 종류 | 걷기, 계단, 자전거, 근력운동, 집안일 | 부담을 만든 동작을 찾기 위해 |
+| 활동량 | 시간, 거리, 반복 횟수, 세트 수 | 다음 조절 단위를 만들기 위해 |
+| 강도 | 숨찬 정도나 RPE 0~10 | 같은 30분이라도 부담이 다르기 때문에 |
+| 통증 점수 | 전·중·후·다음날 아침 0~10 | 당일 통증과 지연 반응을 구분하기 위해 |
+| 붓기·열감 | 없음, 약간, 뚜렷함 | 염증성 반응이나 과부하 단서를 보기 위해 |
+| 뻣뻣함 | 아침 지속 시간, 움직인 뒤 변화 | 관절염 유형과 기능 변화를 구분하기 위해 |
+| 회복 요인 | 수면, 약 복용, 냉온찜질, 휴식 | 활동만 탓하지 않고 회복 조건을 함께 보기 위해 |
+
+## 늘릴 때와 줄일 때의 기준
+
+활동량을 늘리는 기준은 단순합니다. 운동 중 불편감이 가볍고, 끝난 뒤 몇 시간 안에 가라앉으며, 다음날 붓기나 뻣뻣함이 뚜렷하게 늘지 않으면 현재 양은 대체로 관찰 가능한 범위입니다. 이때도 시간이나 반복 횟수는 한 번에 크게 올리지 말고 작은 단위로 조정하는 편이 안전합니다.
+
+줄여야 하는 신호도 기록으로 잡아야 합니다. 운동 중 날카로운 통증이 생기거나, 절뚝거림이 커지거나, 다음날 통증 점수가 2점 이상 올라가고 붓기·열감이 동반되면 같은 활동을 반복하기보다 시간, 속도, 경사, 무게, 반복 수 중 하나를 줄입니다. 관절은 "의지로 이기는 대상"이 아니라 부하와 회복의 균형을 맞춰야 하는 구조입니다.
+
+## 어떤 운동부터 기록할까
+
+CDC와 NHS는 걷기, 수영, 자전거, 수중운동처럼 관절 부담을 낮추기 쉬운 활동을 관절 친화적 선택지로 설명합니다. NICE와 ACR/Arthritis Foundation 가이드라인도 골관절염 관리에서 운동을 핵심 축으로 다루지만, 사람마다 통증 위치와 기능 수준이 다르기 때문에 맞춤 조절이 필요합니다.
+
+기록을 시작할 때는 세 가지를 나눠 적으면 좋습니다.
+
+1. 유산소 활동: 걷기, 실내 자전거, 수영처럼 지속 시간을 조절하기 쉬운 활동
+2. 근력 활동: 허벅지, 엉덩이, 종아리, 손 주변 근육처럼 관절을 지지하는 운동
+3. 가동범위 활동: 아침 뻣뻣함과 움직임 제한을 확인하는 부드러운 관절 움직임
+
+세 가지를 한꺼번에 늘리면 무엇이 부담이었는지 알기 어렵습니다. 한 주에는 한 변수만 바꾸고, 나머지는 유지하는 방식이 기록의 품질을 높입니다.
+
+## 보충제와 플로로탄닌은 어디에 놓을까
+
+관절 불편이 있을 때 보충제부터 바꾸면 활동량, 수면, 체중, 약 복용, 염증성 질환 여부를 놓치기 쉽습니다. 플로로탄닌은 감태 등 갈조류에 들어 있는 해양 폴리페놀 계열 성분으로 산화 스트레스와 염증 반응 연구에서 다뤄지지만, 관절 통증의 원인 감별이나 진료 계획을 대신하지 않습니다.
+
+보충제를 검토한다면 먼저 2~4주 활동·통증 기록을 만든 뒤, 복용 중인 약과 질환 이력, 수술 예정 여부를 함께 적어 상담 질문으로 가져가야 합니다. NCCIH도 건강보조식품을 사용할 때는 제품 주장, 안전성, 병용 가능성을 신중히 확인하라고 안내합니다. 좋은 판단은 "무엇을 먹을까"보다 "무엇을 관찰하고 비교할까"에서 시작됩니다.
+
+## 상담 전에 정리할 질문
+
+- 통증 위치와 양상이 골관절염, 염증성 관절염, 과사용, 부상 중 어디에 가까운가요?
+- 지금 유지해도 되는 활동과 줄여야 할 활동은 무엇인가요?
+- 걷기, 자전거, 수영, 근력운동 중 어떤 순서로 시작하는 것이 좋나요?
+- 통증 점수나 붓기가 어느 정도면 운동을 멈추고 진료를 받아야 하나요?
+- 보충제나 진통제를 함께 쓰는 경우 주의할 병용 위험이 있나요?
+
+## 자주 묻는 질문
+
+### Q. 아프면 운동을 완전히 쉬어야 하나요?
+갑작스럽고 심한 통증, 붓기, 열감, 외상 뒤 통증은 진료가 먼저입니다. 다만 만성 관절 불편에서는 모든 활동을 끊기보다 관절 친화적 활동을 낮은 강도에서 기록하며 조절하는 접근이 자주 권고됩니다.
+
+### Q. 통증 점수는 어떻게 적나요?
+0은 통증 없음, 10은 견디기 어려운 통증으로 두고 활동 전, 활동 중, 활동 직후, 다음날 아침을 같은 기준으로 적습니다. 같은 숫자보다 변화 방향이 더 중요합니다.
+
+### Q. 다음날 더 아프면 실패인가요?
+실패가 아니라 조절 신호입니다. 시간, 속도, 경사, 무게, 반복 수 중 하나를 줄이고, 회복 뒤 다시 낮은 단계에서 확인합니다.
+
+### Q. 플로로탄닌을 관절 불편 관리에 바로 연결해도 되나요?
+바로 연결하지 않는 편이 좋습니다. 관절 불편은 원인이 다양하므로 진료와 활동 기록이 먼저이고, 플로로탄닌 같은 원료 정보는 보조 판단 자료로 분리해 읽어야 합니다.
+
+## 함께 읽으면 좋은 글
+
+- [무릎 골관절염 PRP 주사와 보존적 관리 기록](/insights/knee-osteoarthritis-prp-injection-conservative-care-record-2026)
+- [웨이트 조끼·러킹과 관절 안전 기록](/insights/weighted-vest-rucking-bone-joint-safety-record-2026)
+- [GLP-1 사용 중 무릎·근육·뼈 건강 기록](/insights/glp1-knee-osteoarthritis-muscle-bone-record-2026)
+- [플로로탄닌과 골관절염 연구 읽기](/insights/phlorotannin-osteoarthritis-joint)
+- [MSM과 관절·피부 원료 정보](/insights/ingredient-msm-joint-skin)
+- [무릎 관절염과 MSM·콜라겐 정보 읽기](/insights/knee-arthritis-orthopedics-msm-collagen-guide)
+
+## 참고자료
+
+- [NIAMS. Osteoarthritis.](https://www.niams.nih.gov/health-topics/osteoarthritis)
+- [CDC. About Physical Activity and Arthritis.](https://www.cdc.gov/arthritis/prevention/index.html)
+- [CDC. Physical Activity and Self-Management Education Programs.](https://www.cdc.gov/arthritis/programs/index.html)
+- [MedlinePlus. Arthritis.](https://medlineplus.gov/arthritis.html)
+- [MedlinePlus Medical Encyclopedia. Joint pain.](https://medlineplus.gov/ency/article/003261.htm)
+- [NICE. Osteoarthritis in over 16s: diagnosis and management.](https://www.nice.org.uk/guidance/ng226)
+- [American College of Rheumatology/Arthritis Foundation guideline for osteoarthritis.](https://pmc.ncbi.nlm.nih.gov/articles/PMC10518852/)
+- [NHS. Osteoarthritis treatment and support.](https://www.nhs.uk/conditions/osteoarthritis/treatment/)
+- [WHO. Physical activity.](https://www.who.int/news-room/fact-sheets/detail/physical-activity)
+- [NCCIH. Using Dietary Supplements Wisely.](https://www.nccih.nih.gov/health/using-dietary-supplements-wisely)
+`,
+    category: 'disease-health-info',
+    tags: ['관절통', '골관절염', '활동량기록', '운동강도', '통증일지', '무릎통증', '생활관리', '플로로탄닌'],
+    meta_title: '관절 불편 활동량 조절 기록법: 운동·휴식 기준',
+    meta_desc:
+      '관절이 불편할 때 통증 점수, 운동 강도, 붓기, 다음날 반응을 기록해 활동량을 조절하는 기준과 상담 질문을 정리했습니다.',
+    og_image: '/illustrations/sci/lab-interior.webp',
+    updated_at: '2026-06-24T21:22:00+09:00',
   },
   'seo-041-ingredient-vs-product': {
     title: '성분명과 제품명은 다릅니다: 플로로탄닌을 정보 자산으로 만드는 소비자 저널',
