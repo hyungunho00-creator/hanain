@@ -163,7 +163,7 @@ function buildStep8Topics() {
     ['cell-vs-human-study', '세포실험과 인체적용시험 차이: 검색 결과를 해석하는 기준'],
     ['paper-not-proof', '논문이 있어도 결론이 고정되지 않는 이유'],
     ['antioxidant-number', '항산화 수치 해석: 수치 하나로 결론 내리지 않는 법'],
-    ['patent-vs-evidence', '특허와 근거는 왜 다른가: 정보 소비자 체크포인트'],
+    ['patent-vs-evidence', '특허와 과학적 근거는 다릅니다: 건강정보 소비자 체크리스트'],
     ['review-vs-evidence', '후기와 근거를 구분하는 실전 프레임'],
     ['ingredient-vs-product', '원료명과 제품명을 분리해서 읽는 방법'],
     ['chronic-condition-checklist', '만성질환 관심층이 건강식품 정보를 볼 때 확인할 것'],
