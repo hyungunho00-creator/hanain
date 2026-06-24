@@ -1,9 +1,9 @@
 # QA Duplicate Template Detector Result
 
-- generatedAt: 2026-06-23T23:11:24.824Z
+- generatedAt: 2026-06-24T08:38:57.082Z
 - rawValidatedScanned: 2037
-- publicExposureScanned: 151
-- repeatedSentenceWarnings(>=4): 6
+- publicExposureScanned: 171
+- repeatedSentenceWarnings(>=4): 7
 - repeatedParagraphFails(>=3): 4
 - similarityPairs(>=35% manual-review, sample=120): 0
 - status: PASS
@@ -19,6 +19,7 @@
 
 - count=38 ids=round2-metabolism-20260530, round2-cancer-immune-20260530, round2-digestive-20260530, round2-cardiovascular-20260530, round2-neuro-cognitive-20260530, round2-mental-health-20260530, round2-musculoskeletal-20260530, round2-skin-20260530, round2-hair-20260530, round2-respiratory-20260530, round2-infection-inflammation-20260530, round2-womens-health-20260530 sample="증상이 지속되거나 악화되면 담당 진료과 전문의와 상담하세요...."
 - count=25 ids=round3-metabolism-1-20260531, round3-metabolism-2-20260531, round3-cancer_immune-1-20260531, round3-digestive-1-20260531, round3-digestive-2-20260531, round3-cardiovascular-1-20260531, round3-cardiovascular-2-20260531, round3-neuro_cognitive-1-20260531, round3-neuro_cognitive-2-20260531, round3-mental_health-1-20260531, round3-mental_health-2-20260531, round3-musculoskeletal-1-20260531 sample="다만 이 성분명은 특정 질환 결과를 약속하는 표현이 아니라 원료명, 표준화, 섭취량, 기존 복용약과의 관계를 차분히 확인하기 위한 참고 정보로 보는 편이 안전합니다...."
+- count=20 ids=trend-heat-health-hydration-blood-pressure-20260602, trend-ultra-processed-food-blood-sugar-label-20260602, trend-sodium-potassium-salt-blood-pressure-20260602, trend-creatine-resistance-training-healthy-aging-20260602, trend-resistant-starch-gut-microbiome-polyphenol-20260602, trend-sleep-regularity-heart-risk-20260602, trend-coffee-gut-brain-axis-polyphenol-20260602, trend-time-restricted-eating-evening-meal-20260602, trend-omega3-atrial-fibrillation-supplement-20260602, trend-pfas-drinking-water-home-check-20260602, trend-exosome-scalp-injection-hair-loss-fda-safety-20260603, trend-lpa-once-lifetime-test-family-heart-risk-20260603 sample="이 답변은 일반 건강정보이며 진단이나 치료 지시가 아닙니다...."
 - count=13 ids=round2-metabolism-20260530, round2-cancer-immune-20260530, round2-digestive-20260530, round2-cardiovascular-20260530, round2-neuro-cognitive-20260530, round2-mental-health-20260530, round2-musculoskeletal-20260530, round2-skin-20260530, round2-hair-20260530, round2-respiratory-20260530, round2-infection-inflammation-20260530, round2-womens-health-20260530 sample="상담자가 원인을 좁히고 다음 확인 항목을 정하는 데 도움이 됩니다...."
 - count=13 ids=round2-metabolism-20260530, round2-cancer-immune-20260530, round2-digestive-20260530, round2-cardiovascular-20260530, round2-neuro-cognitive-20260530, round2-mental-health-20260530, round2-musculoskeletal-20260530, round2-skin-20260530, round2-hair-20260530, round2-respiratory-20260530, round2-infection-inflammation-20260530, round2-womens-health-20260530 sample="이 정보는 특정 결과를 약속하는 문구가 아니라 성분표와 연구 배경을 읽기 위한 참고 자료로 두는 편이 안전합니다...."
 - count=13 ids=round2-metabolism-20260530, round2-cancer-immune-20260530, round2-digestive-20260530, round2-cardiovascular-20260530, round2-neuro-cognitive-20260530, round2-mental-health-20260530, round2-musculoskeletal-20260530, round2-skin-20260530, round2-hair-20260530, round2-respiratory-20260530, round2-infection-inflammation-20260530, round2-womens-health-20260530 sample="제품을 고를 때는 원료명, 1일 섭취량, 표준화 표시, 기존 복용약과의 관계를 함께 적어 상담에 가져가면 판단이 훨씬 또렷해집니다...."
