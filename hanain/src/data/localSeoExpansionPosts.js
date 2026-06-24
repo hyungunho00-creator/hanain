@@ -1311,7 +1311,7 @@ const SEO_TOPICS = [
   {
     "stage": "step9",
     "slugKey": "compare-collagen",
-    "title": "플로로탄닌 vs 콜라겐: 역할·근거 범위를 나눠 보는 비교 가이드",
+    "title": "플로로탄닌 vs 콜라겐 비교: 역할·근거·선택 기준",
     "category": "ingredient-comparison",
     "tags": [
       "플로로탄닌",
@@ -2637,6 +2637,94 @@ FDA와 NCCIH는 건강보조식품 정보를 볼 때 제품 주장과 안전성,
       '장 건강 검색 결과를 IBS, 식단, 프로바이오틱스, 마이크로바이옴 연구, 보충제 광고로 나눠 근거 중심으로 읽는 법을 정리했습니다.',
     og_image: '/illustrations/sci/kelp-specimen.webp',
     updated_at: '2026-06-24T21:40:00+09:00',
+  },
+  'seo-060-compare-collagen': {
+    title: '플로로탄닌 vs 콜라겐 비교: 역할·근거·선택 기준',
+    excerpt:
+      '플로로탄닌과 콜라겐은 경쟁 성분이 아닙니다. 구조 단백질·펩타이드 보충제와 해양 폴리페놀 연구 소재의 차이를 근거 중심으로 정리했습니다.',
+    content: `## 짧은 답: 콜라겐은 "재료"에 가깝고, 플로로탄닌은 "환경 연구 축"에 가깝습니다
+
+플로로탄닌과 콜라겐은 같은 질문에 답하는 성분이 아닙니다. 콜라겐은 피부, 힘줄, 연골, 뼈 같은 결합조직에 많은 구조 단백질이고, 보충제 시장에서는 주로 가수분해 콜라겐 펩타이드 형태로 다뤄집니다. 플로로탄닌은 감태 등 갈조류에 들어 있는 해양 폴리페놀 계열 성분으로, 산화 스트레스와 염증 반응 같은 연구축에서 읽어야 합니다.
+
+따라서 "어느 쪽이 더 좋나"보다 "내 질문이 재료 보충인지, 피부·관절 기능 기록인지, 산화·염증 환경을 읽는 연구 정보인지"를 먼저 나눠야 합니다. 둘을 같은 효과 경쟁표로 놓으면 광고 문구는 쉬워지지만, 실제 판단은 흐려집니다.
+
+## 핵심 비교표
+
+| 구분 | 콜라겐 | 플로로탄닌 |
+|---|---|---|
+| 성격 | 구조 단백질에서 유래한 펩타이드·아미노산 공급원 | 갈조류 유래 해양 폴리페놀 |
+| 주로 연결되는 질문 | 피부 탄력, 보습, 주름, 관절 보충제, 단백질 섭취 | 산화 스트레스, 염증 반응, 대사·장내 환경 연구 |
+| 근거를 볼 때 | 가수분해 형태, 용량, 기간, 대상자, 피부·관절 지표 | 세포·동물·사람 연구 구분, 추출물 표준화, 지표성분 |
+| 소비자 오해 | 먹은 콜라겐이 그대로 피부 콜라겐으로 간다고 단정 | 항산화 연구를 질환 개선 주장으로 확장 |
+| 안전 확인 | 원료 출처, 알레르기, 단백질 제한, 첨가물 | 복용약, 질환, 제품 함량, 연구 원료와의 차이 |
+
+## 콜라겐을 읽을 때
+
+Harvard Nutrition Source는 콜라겐을 몸의 결합조직에 많은 단백질로 설명하고, 보충제 근거는 제품 형태와 연구 설계에 따라 해석해야 한다고 안내합니다. 콜라겐 보충제 연구는 주로 가수분해 콜라겐이나 콜라겐 펩타이드로 진행됩니다. 여기서 중요한 것은 "콜라겐"이라는 단어가 아니라 용량, 기간, 대상자, 결과지표입니다.
+
+피부 관련 리뷰와 임상 연구들은 탄력, 보습, 주름 같은 지표를 다루지만, 모든 제품과 모든 사람에게 같은 효과를 보장하지 않습니다. 또 콜라겐 합성에는 단백질 섭취, 비타민 C, 수면, 자외선 노출, 흡연, 나이 같은 요인이 함께 작용합니다. 콜라겐 제품만 따로 떼어 만능 재료처럼 읽으면 과장됩니다.
+
+## 플로로탄닌을 읽을 때
+
+플로로탄닌은 감태와 갈조류에 들어 있는 해양 폴리페놀입니다. PubMed Central에 공개된 여러 리뷰와 연구는 플로로탄닌을 항산화, 염증 반응, 대사, 장내 환경 같은 주제에서 다룹니다. 다만 이 연구들이 곧바로 "피부 콜라겐을 늘린다"거나 "관절을 고친다"는 소비자 결론으로 이어지는 것은 아닙니다.
+
+플로로탄닌 자료를 볼 때는 어떤 갈조류에서 얻은 추출물인지, 디에콜·에콜 같은 지표성분이 언급되는지, 실험이 세포·동물·사람 중 어디에서 진행됐는지, 제품 1일 섭취량과 연구 용량이 연결되는지 확인해야 합니다. 원료 연구와 제품 광고는 한 칸 떨어뜨려 읽는 것이 정확합니다.
+
+## 피부·관절 문맥에서 같이 보는 법
+
+피부 노화나 관절 불편 글에서는 콜라겐과 플로로탄닌이 자주 함께 등장합니다. 그러나 역할은 다릅니다. 콜라겐은 결합조직 재료와 펩타이드 보충제 문맥에서 읽고, 플로로탄닌은 자외선, 산화 스트레스, 염증 반응 같은 환경 요인 연구 문맥에서 읽습니다.
+
+예를 들어 피부가 관심사라면 자외선 차단, 단백질 섭취, 비타민 C, 수면, 흡연 여부, 피부과 진료 이력과 함께 봐야 합니다. 관절이 관심사라면 통증 위치, 활동량, 붓기, 영상검사, 체중, 근력운동 기록이 먼저입니다. 성분 비교는 이 기록 위에 얹는 보조 자료입니다.
+
+## 선택 전에 확인할 질문
+
+1. 내 질문은 피부, 관절, 단백질 섭취, 항산화 연구 중 어디에 가까운가요?
+2. 제품 광고가 사람 대상 연구를 말하는지, 세포·동물 연구를 넓혀 말하는지 확인했나요?
+3. 콜라겐 제품은 가수분해 형태, 원료 출처, 용량, 기간을 표시하나요?
+4. 플로로탄닌 제품은 지표성분과 추출물 표준화 정보를 제시하나요?
+5. 복용 중인 약, 알레르기, 신장질환, 임신·수유, 수술 예정 같은 안전 변수가 있나요?
+
+## 자주 묻는 질문
+
+### Q. 콜라겐과 플로로탄닌 중 하나만 고르면 되나요?
+목표가 다르기 때문에 단순 선택 문제가 아닙니다. 콜라겐은 펩타이드·단백질 보충 문맥이고, 플로로탄닌은 해양 폴리페놀 연구 문맥입니다.
+
+### Q. 콜라겐을 먹으면 바로 피부 콜라겐이 되나요?
+그렇게 단정하면 안 됩니다. 소화 과정에서 펩타이드와 아미노산으로 분해되고, 몸의 합성·분해 균형과 생활요인이 함께 작용합니다.
+
+### Q. 플로로탄닌은 콜라겐을 대체하나요?
+대체한다고 보기 어렵습니다. 플로로탄닌은 구조 단백질이 아니라 폴리페놀 계열 성분이며, 연구 질문 자체가 다릅니다.
+
+### Q. 함께 먹어도 되나요?
+개인 질환, 복용약, 제품 함량, 알레르기에 따라 달라집니다. 보충제를 여러 개 겹칠수록 제품 라벨과 상담 기록이 필요합니다.
+
+## 함께 읽으면 좋은 글
+
+- [플로로탄닌 항노화·콜라겐 연구 읽기](/insights/phlorotannin-anti-aging-collagen)
+- [해양 콜라겐 펩타이드 근거 정리](/insights/ingredient-marine-collagen-peptide)
+- [피부과 관점의 콜라겐·아스타잔틴 체크](/insights/dermatology-collagen-astaxanthin-skin-check)
+- [무릎관절 상담에서 MSM·콜라겐보다 먼저 볼 것](/insights/knee-arthritis-orthopedics-msm-collagen-guide)
+- [UVB·MMP-1·콜라겐 분해와 플로로탄닌 연구](/blog/phlorotannin-uvb-mmp-photoaging-collagen-skin-research)
+- [플로로탄닌과 콜라겐의 구조·흡수 차이](/blog/phlorotannin-collagen-molecular-structure-absorption-difference)
+
+## 참고자료
+
+- [Harvard T.H. Chan School of Public Health. Collagen.](https://nutritionsource.hsph.harvard.edu/collagen/)
+- [NCCIH. Using Dietary Supplements Wisely.](https://www.nccih.nih.gov/health/using-dietary-supplements-wisely)
+- [FDA. Dietary Supplements.](https://www.fda.gov/food/dietary-supplements)
+- [MedlinePlus Medical Encyclopedia. Vitamin C.](https://medlineplus.gov/ency/article/002404.htm)
+- [Oral collagen supplementation: dermatological applications review.](https://pmc.ncbi.nlm.nih.gov/articles/PMC6835901/)
+- [Phlorotannins and marine polyphenol research review.](https://pmc.ncbi.nlm.nih.gov/articles/PMC9127514/)
+- [Ecklonia cava phlorotannin research.](https://pmc.ncbi.nlm.nih.gov/articles/PMC8306378/)
+- [Recent phlorotannin research review.](https://pmc.ncbi.nlm.nih.gov/articles/PMC12909174/)
+`,
+    category: 'ingredient-comparison',
+    tags: ['플로로탄닌', '콜라겐', '성분비교', '해양폴리페놀', '콜라겐펩타이드', '피부건강', '관절건강', '보충제안전'],
+    meta_title: '플로로탄닌 vs 콜라겐 비교: 역할·근거·선택 기준',
+    meta_desc:
+      '플로로탄닌과 콜라겐의 역할, 근거 범위, 피부·관절 문맥, 보충제 선택 전 확인할 기준을 근거 중심으로 정리했습니다.',
+    og_image: '/illustrations/sci/seaweed-underwater.webp',
+    updated_at: '2026-06-24T21:53:00+09:00',
   },
   'seo-041-ingredient-vs-product': {
     title: '성분명과 제품명은 다릅니다: 플로로탄닌을 정보 자산으로 만드는 소비자 저널',
