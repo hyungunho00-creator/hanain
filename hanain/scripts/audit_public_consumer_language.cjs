@@ -19,6 +19,10 @@ const targets = [
 ];
 
 const forbidden = [
+  '읽고 남는환',
+  '구매 욕구',
+  '강하게 어필',
+  '강한 소재',
   '\uB9D0\uD558\uBA74 \uC548 \uB429\uB2C8\uB2E4',
   '\uD45C\uD604\uD558\uBA74 \uC548 \uB429\uB2C8\uB2E4',
   '\uC18C\uC7AC\uB85C\uB9CC',

@@ -1292,6 +1292,7 @@ const BASE_LOCAL_TREND_BLOG_POSTS = TREND_POST_CONFIGS.map((c, index) => ({
   title: c.title,
   excerpt: c.excerpt,
   content: buildContent(c),
+  sources: c.sources || [],
   category: c.category,
   tags: c.tags,
   meta_title: c.metaTitle || `${c.title} | 플로로탄닌 건강정보`,
